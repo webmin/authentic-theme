@@ -24,7 +24,7 @@ $module_custom_config_file = "$root_directory/$current_theme/modules/$module/con
 &foreign_available($module) || &error($theme_text{'mconfig_eaccess'});
 %module_info = &get_module_info($module);
 
-&ui_print_header(&text('config_dir', $module_info{'desc'}), $theme_text{'theme_xhred_global_prefs'}, "", undef, 0, 1);
+&ui_print_header(&text('config_dir', "<span>" . $module_info{'desc'} . "</span>"), $theme_text{'theme_xhred_global_prefs'}, "", undef, 0, 1);
 $module_dir         = &module_root_directory($module);
 $module_config_file = $module_custom_config_file;
 

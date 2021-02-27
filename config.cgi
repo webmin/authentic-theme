@@ -41,7 +41,7 @@ if (-r &help_file($module, "config_intro")) {
 } else {
     $help = undef;
 }
-&ui_print_header(&text('config_dir', $module_info{'desc'}), $text{'config_title'}, "", $help, 0, 1);
+&ui_print_header(&text('config_dir', "<span>" . $module_info{'desc'} . "</span>"), $text{'config_title'}, "", $help, 0, 1);
 $module_dir = &module_root_directory($module);
 
 # Read the config.info file to find sections
