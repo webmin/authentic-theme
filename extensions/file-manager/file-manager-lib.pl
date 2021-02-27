@@ -1066,7 +1066,6 @@ sub get_tree
     my @r;
     my $ic;
     my $rp;
-    my $lb;
     my $df = int($d);
     my @ap = @allowed_paths;
     my $fr = scalar(@ap) > 1;
@@ -1095,11 +1094,9 @@ sub get_tree
                 return;
             }
             my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
-            my $pp = $fu ? $af[$ic] : undef;
-            $lb = "$pp/$td";
-            $lb =~ s/^\/\//\//;
+            my $pp = ($fu && $af[$ic] ne '/') ? $af[$ic] : undef;
             my $c  = $r{$td} =
-              { key => html_escape($lb), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
+              { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
             defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
         }
     };
