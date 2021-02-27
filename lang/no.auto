@@ -51,3 +51,5 @@ settings_theme_config_admins_only_privileged_description=Dette alternativet, hvi
 theme_xhred_global_prefs=Preferanser
 mconfig_eaccess=Denne modulen er ikke tilgjengelig
 mconfig_ecannot=Det finnes ingen tilpassede konfigurasjonsfiler for denne modulen
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Denne funksjonen krever at <tt>SELinux</tt> er installert og aktivert
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Denne funksjonen krever at filsystemet er montert med <tt>ACLs</tt> slått på og <kbd>getfacl</kbd> -kommandoen må være tilgjengelig

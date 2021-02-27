@@ -1203,3 +1203,5 @@ settings_theme_config_admins_only_privileged_description=Ez az opció, ha a szer
 theme_xhred_global_prefs=preferenciák
 mconfig_eaccess=Ehhez a modulhoz nem lehet hozzáférni
 mconfig_ecannot=Ehhez a modulhoz nem található egyedi konfigurációs fájl
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ehhez a funkcióhoz telepíteni és engedélyezni kell a <tt>SELinux</tt> t
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Ehhez a funkcióhoz a fájlrendszert úgy kell csatlakoztatni, hogy az <tt>ACL-ek</tt> be vannak kapcsolva, és a <kbd>getfacl</kbd> parancsnak elérhetőnek kell lennie

@@ -175,3 +175,5 @@ settings_theme_config_admins_only_privileged_description=Această opțiune, dac�
 theme_xhred_global_prefs=Preferințe
 mconfig_eaccess=Acest modul nu poate fi accesat
 mconfig_ecannot=Nu a fost găsit niciun fișier de configurare personalizat pentru acest modul
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Această caracteristică necesită instalarea și activarea <tt>SELinux</tt>
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Această caracteristică necesită montarea sistemului de fișiere cu <tt>ACL-urile</tt> activate și comanda <kbd>getfacl</kbd> trebuie să fie disponibilă

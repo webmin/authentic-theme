@@ -1038,3 +1038,5 @@ settings_theme_config_admins_only_privileged_description=Pokud tato možnost vyn
 theme_xhred_global_prefs=Předvolby
 mconfig_eaccess=K tomuto modulu není přístup
 mconfig_ecannot=Pro tento modul nebyl nalezen žádný vlastní konfigurační soubor
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Tato funkce vyžaduje instalaci a povolení <tt>SELinux</tt>
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Tato funkce vyžaduje připojení systému souborů se zapnutými <tt>ACL</tt> a musí být k dispozici příkaz <kbd>getfacl</kbd>

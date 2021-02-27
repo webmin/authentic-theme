@@ -352,3 +352,5 @@ settings_theme_config_admins_only_privileged_description=如果由服务器管�
 theme_xhred_global_prefs=优先
 mconfig_eaccess=无法访问该模块
 mconfig_ecannot=找不到此模块的自定义配置文件
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=此功能需要安装并启用<tt>SELinux</tt>
+theme_xhred_filemanager_mconfig_columns_acls_disabled=此功能要求在打开<tt>ACL</tt>的情况下挂载文件系统，并且<kbd>getfacl</kbd>命令必须可用

@@ -576,3 +576,5 @@ settings_theme_config_admins_only_privileged_description=Pilihan ini, jika diteg
 theme_xhred_global_prefs=Keutamaan
 mconfig_eaccess=Modul ini tidak dapat diakses
 mconfig_ecannot=Tidak terdapat fail konfigurasi tersuai untuk modul ini
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ciri ini memerlukan <tt>SELinux</tt> dipasang dan diaktifkan
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Fungsi ini memerlukan sistem fail dipasang dengan <tt>ACLs</tt> dihidupkan dan perintah <kbd>getfacl</kbd> mesti ada

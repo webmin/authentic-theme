@@ -85,3 +85,5 @@ settings_theme_config_admins_only_privileged_description=Wenn diese Option vom S
 theme_xhred_global_prefs=Einstellungen
 mconfig_eaccess=Auf dieses Modul kann nicht zugegriffen werden
 mconfig_ecannot=Für dieses Modul wurde keine benutzerdefinierte Konfigurationsdatei gefunden
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Für diese Funktion muss <tt>SELinux</tt> installiert und aktiviert sein
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Für diese Funktion muss das Dateisystem mit aktivierten <tt>ACLs</tt> bereitgestellt werden und der Befehl <kbd>getfacl</kbd> muss verfügbar sein

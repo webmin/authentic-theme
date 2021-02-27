@@ -1203,3 +1203,5 @@ settings_theme_config_admins_only_privileged_description=Bu seçenek, sunucu yö
 theme_xhred_global_prefs=Tercihler
 mconfig_eaccess=Bu modüle erişilemez
 mconfig_ecannot=Bu modül için özel bir yapılandırma dosyası bulunamadı
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Bu özellik <tt>SELinux</tt> 'un kurulmasını ve etkinleştirilmesini gerektirir
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Bu özellik, dosya sisteminin <tt>ACL'ler</tt> açık olarak monte edilmesini ve <kbd>getfacl</kbd> komutunun mevcut olmasını gerektirir

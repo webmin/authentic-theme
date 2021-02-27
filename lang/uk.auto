@@ -1203,3 +1203,5 @@ settings_theme_config_admins_only_privileged_description=Цей параметр
 theme_xhred_global_prefs=Преференції
 mconfig_eaccess=Цей модуль недоступний
 mconfig_ecannot=Для цього модуля не знайдено спеціального конфігураційного файлу
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ця функція вимагає встановлення та ввімкнення <tt>SELinux</tt>
+theme_xhred_filemanager_mconfig_columns_acls_disabled=Ця функція вимагає монтування файлової системи з увімкненими <tt>ACL</tt> і має бути доступна команда <kbd>getfacl</kbd>

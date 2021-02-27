@@ -1203,3 +1203,5 @@ settings_theme_config_admins_only_privileged_description=אפשרות זו, אם
 theme_xhred_global_prefs=העדפות
 mconfig_eaccess=לא ניתן לגשת למודול זה
 mconfig_ecannot=לא נמצא קובץ תצורה מותאם אישית עבור מודול זה
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=תכונה זו מחייבת התקנת <tt>SELinux</tt> ומופעלת
+theme_xhred_filemanager_mconfig_columns_acls_disabled=תכונה זו מחייבת התקנת מערכת קבצים עם <tt>ACLs</tt> מופעלת והפקודה <kbd>getfacl</kbd> חייבת להיות זמינה
