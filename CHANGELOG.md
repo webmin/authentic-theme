@@ -1,5 +1,13 @@
 ## Changelog
 
+#### Version 19.72-RC2 (February 27, 2021)
+* Add file tree-view optimizations for speed and security in File Manager
+* Fix file tree-view child counter bubble styling in File Manager
+* Fix support when multi allowed directories are used in File Manager
+* Fix navigation menu detection with File Manager config
+* Fix tooltip placement to be conditional to avoid breakage for the last element
+* Fix bugs
+
 #### Version 19.71 (February 24, 2021)
 * Add ability to hide and reorder panels on Dashboard
 * Add ability to use server side generated passwords [forum.virtualmin.com/t/108121](https://forum.virtualmin.com/t/cant-find-increasing-password-length-settings-anymore/108121)
