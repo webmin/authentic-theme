@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, $remote_user, $current_theme, %theme_text);
+our (%text, %in, $root_directory, $config_directory, $remote_user, $current_theme, %theme_text, %theme_config);
 
 require("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
@@ -126,6 +126,10 @@ if (-r $module_custom_config_file) {
 
     # Load user preferences
     &load_module_preferences($module, \%newconfig);
+
+    # Assign theme expected defaults if missing
+    map {my $__ = ""; $newconfig{$_} eq $__ && ($newconfig{$_} = ($theme_config{$_} || $__))} keys %newconfig;
+
     &generate_config(\%newconfig, $module_config_file, $module, undef, undef, $in{'section'});
     print &ui_table_end();
     print &ui_form_end(
