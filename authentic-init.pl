@@ -221,7 +221,7 @@ sub embed_header
 
     };
     print ' <script>';
-    &$_sstj('theme_server_data_available_acls', 'get_acls_status33', 'filemin');
+    &$_sstj('theme_server_data_available_acls', 'get_acls_status', 'filemin');
     &$_sstj('theme_server_data_available_selinux', 'is_selinux_enabled');
     print "</script>\n";
 
