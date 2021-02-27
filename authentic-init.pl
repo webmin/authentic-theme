@@ -176,6 +176,58 @@ sub embed_header
     print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
     print "</script>\n";
 
+    #
+    # Server statuses to JavaScript. Start.
+    # This code is only called once upon main page load
+    # and requires full page reload to have it re-applied
+    my $_sstj = sub {
+        my ($var, $sub, $mod, $jsFunc, $perlSubArgs) = @_;
+        my $quote_closing    = '"';
+        my $quote_opening    = '"';
+        my $quotes_resetting = sub {
+            $quote_closing = '';
+            $quote_opening = '';
+        };
+        if ($jsFunc) {
+            &$quotes_resetting;
+        }
+        my $rs;
+        local $main::error_must_die = 1;
+        eval {
+            if ($mod && &foreign_available($mod)) {
+                &foreign_require($mod);
+                $rs = &foreign_call($mod, $sub);
+            } elsif (!$mod) {
+                $rs = &foreign_call('main', $sub);
+            }
+            if ($jsFunc) {
+                $rs = "$jsFunc($rs)";
+            } else {
+                if ($rs =~ /^[-+]?([\d]+|[\d]+.[\d]+)$/) {
+                    &$quotes_resetting;
+                }
+                if ($rs =~ /^(true|false)$/) {
+                    &$quotes_resetting;
+                }
+            }
+        };
+        if ($rs eq undef) {
+            $rs = 'null';
+            &$quotes_resetting;
+        }
+        print "$var=$quote_opening";
+        print $rs;
+        print "$quote_closing;";
+
+    };
+    print ' <script>';
+    &$_sstj('settings_server_data_available_acls', 'get_acls_status', 'filemin');
+    &$_sstj('settings_server_data_available_selinux', 'is_selinux_enabled');
+    print "</script>\n";
+
+    # Server statuses to JavaScript. End.
+    #
+
     embed_settings();
     embed_tconfig();
 
@@ -1316,7 +1368,7 @@ sub header_html_data
       '" data-slider-fixed="' .         ($theme_config{'settings_side_slider_fixed'} eq "true" &&
                                  $get_user_level eq '0' &&
                                  $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
-      '" data-sestatus="' . is_selinux_enabled() . '" data-shell="' .
+      '" data-shell="' .
       foreign_available("shell") . '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . $has_usermin .
       '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
