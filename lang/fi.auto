@@ -1205,3 +1205,4 @@ mconfig_eaccess=Tätä moduulia ei voi käyttää
 mconfig_ecannot=Tälle moduulille ei löydy mukautettua kokoonpanotiedostoa
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Tämä ominaisuus edellyttää, että <tt>SELinux</tt> asennetaan ja otetaan käyttöön
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Tämä ominaisuus edellyttää, että tiedostojärjestelmä on asennettu siten, että <tt>ACL: t</tt> on päällä ja <kbd>getfacl</kbd> -komennon on oltava käytettävissä
+theme_xhred_global_module_preferences=Moduulin asetukset

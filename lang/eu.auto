@@ -1205,3 +1205,4 @@ mconfig_eaccess=Ezin da modulu honetara sartu
 mconfig_ecannot=Ez dago modulu honetarako konfigurazio fitxategi pertsonalizaturik
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Funtzio honek <tt>SELinux</tt> instalatu eta gaitu behar du
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Eginbide honek fitxategi sistema <tt>ACL</tt> aktibatuta muntatu behar du eta <kbd>getfacl</kbd> komandoa erabilgarri egon behar da
+theme_xhred_global_module_preferences=Moduluaren hobespenak

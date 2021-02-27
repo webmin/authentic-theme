@@ -1205,3 +1205,4 @@ mconfig_eaccess=لا يمكن الوصول إلى هذه الوحدة
 mconfig_ecannot=لم يتم العثور على ملف تكوين مخصص لهذه الوحدة
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=تتطلب هذه الميزة تثبيت وتمكين <tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=تتطلب هذه الميزة تثبيت نظام الملفات مع تشغيل <tt>قوائم التحكم بالوصول (ACL)</tt> وإتاحة الأمر <kbd>getfacl</kbd>
+theme_xhred_global_module_preferences=تفضيلات الوحدة

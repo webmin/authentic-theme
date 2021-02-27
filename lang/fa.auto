@@ -1205,3 +1205,4 @@ mconfig_eaccess=این ماژول قابل دسترسی نیست
 mconfig_ecannot=هیچ پرونده پیکربندی سفارشی برای این ماژول یافت نشد
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=این ویژگی نیاز به نصب و فعال کردن <tt>SELinux</tt> دارد
 theme_xhred_filemanager_mconfig_columns_acls_disabled=این ویژگی نیاز به نصب فایل سیستم با روشن شدن <tt>ACLs</tt> دارد و دستور <kbd>getfacl</kbd> باید در دسترس باشد
+theme_xhred_global_module_preferences=تنظیمات برگزیده ماژول

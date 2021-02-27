@@ -95,3 +95,4 @@ mconfig_eaccess=このモジュールにはアクセスできません
 mconfig_ecannot=このモジュールのカスタム構成ファイルが見つかりません
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=この機能を使用するには、<tt>SELinux</tt>をインストールして有効にする必要があります
 theme_xhred_filemanager_mconfig_columns_acls_disabled=この機能を使用するには、<tt>ACL</tt>をオンにしてファイルシステムをマウントし、<kbd>getfacl</kbd>コマンドを使用できるようにする必要があります。
+theme_xhred_global_module_preferences=モジュール設定

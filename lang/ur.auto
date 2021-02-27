@@ -1205,3 +1205,4 @@ mconfig_eaccess=اس ماڈیول تک رسائی نہیں ہوسکتی ہے
 mconfig_ecannot=اس ماڈیول کے لئے کوئی کسٹم کنفیگریشن فائل نہیں ملی ہے
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=This feature requires <tt>SELinux</tt> being installed and enabled
 theme_xhred_filemanager_mconfig_columns_acls_disabled=This feature requires file system be mounted with <tt>ACLs</tt> turned on and <kbd>getfacl</kbd> command must be available
+theme_xhred_global_module_preferences=ماڈیول کی ترجیحات

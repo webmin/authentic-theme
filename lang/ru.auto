@@ -982,3 +982,4 @@ mconfig_eaccess=Этот модуль недоступен
 mconfig_ecannot=Для этого модуля не найден файл пользовательской конфигурации
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Эта функция требует установки и включения <tt>SELinux</tt>.
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Эта функция требует, чтобы файловая система была смонтирована с включенными <tt>ACL</tt> и должна быть доступна команда <kbd>getfacl</kbd>.
+theme_xhred_global_module_preferences=Настройки модуля

@@ -1205,3 +1205,4 @@ mconfig_eaccess=Không thể truy cập mô-đun này
 mconfig_ecannot=Không có tệp cấu hình tùy chỉnh nào được tìm thấy cho mô-đun này
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Tính năng này yêu cầu <tt>SELinux</tt> được cài đặt và bật
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Tính năng này yêu cầu hệ thống tệp được gắn kết với <tt>ACLs</tt> được bật và lệnh <kbd>getfacl</kbd> phải khả dụng
+theme_xhred_global_module_preferences=Tùy chọn mô-đun

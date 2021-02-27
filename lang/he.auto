@@ -1205,3 +1205,4 @@ mconfig_eaccess=לא ניתן לגשת למודול זה
 mconfig_ecannot=לא נמצא קובץ תצורה מותאם אישית עבור מודול זה
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=תכונה זו מחייבת התקנת <tt>SELinux</tt> ומופעלת
 theme_xhred_filemanager_mconfig_columns_acls_disabled=תכונה זו מחייבת התקנת מערכת קבצים עם <tt>ACLs</tt> מופעלת והפקודה <kbd>getfacl</kbd> חייבת להיות זמינה
+theme_xhred_global_module_preferences=העדפות מודול

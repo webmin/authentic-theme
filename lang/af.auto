@@ -1205,3 +1205,4 @@ mconfig_eaccess=Hierdie module kan nie verkry word nie
 mconfig_ecannot=Daar is geen persoonlike konfigurasielêer vir hierdie module gevind nie
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Hierdie funksie vereis dat <tt>SELinux</tt> geïnstalleer en geaktiveer word
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Hierdie funksie vereis dat lêerstelsel gemonteer is met <tt>ACL's</tt> aangeskakel en <kbd>getfacl</kbd> opdrag moet beskikbaar wees
+theme_xhred_global_module_preferences=Modulevoorkeure

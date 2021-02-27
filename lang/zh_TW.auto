@@ -1205,3 +1205,4 @@ mconfig_eaccess=無法訪問該模塊
 mconfig_ecannot=找不到此模塊的自定義配置文件
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=此功能需要安裝並啟用<tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=此功能要求在打開<tt>ACL</tt>的情況下掛載文件系統，並且<kbd>getfacl</kbd>命令必須可用
+theme_xhred_global_module_preferences=模塊首選項

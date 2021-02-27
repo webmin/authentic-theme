@@ -1205,3 +1205,4 @@ mconfig_eaccess=Dan il-modulu ma jistax jiġi aċċessat
 mconfig_ecannot=M'hemm l-ebda fajl ta 'konfigurazzjoni tad-dwana misjub għal dan il-modulu
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Din il-karatteristika teħtieġ li <tt>SELinux</tt> jiġi installat u attivat
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Din il-karatteristika teħtieġ li s-sistema tal-fajls tkun immuntata b '<tt>ACLs</tt> mixgħula u l-kmand <kbd>getfacl</kbd> għandu jkun disponibbli
+theme_xhred_global_module_preferences=Preferenzi tal-modulu

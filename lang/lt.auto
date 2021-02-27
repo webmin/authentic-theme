@@ -1205,3 +1205,4 @@ mconfig_eaccess=Šio modulio pasiekti negalima
 mconfig_ecannot=Šiam moduliui nerastas pritaikytas konfigūracijos failas
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Šiai funkcijai reikia įdiegti ir įgalinti <tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Šiai funkcijai reikia, kad failų sistema būtų prijungta su įjungtomis <tt>ACL</tt>, o <kbd>getfacl</kbd> komanda turi būti prieinama
+theme_xhred_global_module_preferences=Modulio nuostatos

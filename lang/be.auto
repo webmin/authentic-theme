@@ -1205,3 +1205,4 @@ mconfig_eaccess=Немагчыма атрымаць доступ да гэтаг
 mconfig_ecannot=Карыстальніцкі файл канфігурацыі для гэтага модуля не знойдзены
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Для гэтай функцыі патрабуецца ўсталяваць і ўключыць <tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Гэтая функцыя патрабуе мантавання файлавай сістэмы з уключанымі <tt>ACL</tt> і павінна быць даступная каманда <kbd>getfacl</kbd>
+theme_xhred_global_module_preferences=Перавагі модуля

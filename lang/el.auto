@@ -1205,3 +1205,4 @@ mconfig_eaccess=Δεν είναι δυνατή η πρόσβαση σε αυτή
 mconfig_ecannot=Δεν βρέθηκε προσαρμοσμένο αρχείο διαμόρφωσης για αυτήν την ενότητα
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Αυτή η λειτουργία απαιτεί <tt>SELinux</tt> να εγκατασταθεί και να ενεργοποιηθεί
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Αυτή η δυνατότητα απαιτεί την εγκατάσταση του συστήματος αρχείων με <tt>ACLs</tt> ενεργοποιημένο και η εντολή <kbd>getfacl</kbd> πρέπει να είναι διαθέσιμη
+theme_xhred_global_module_preferences=Προτιμήσεις ενότητας
