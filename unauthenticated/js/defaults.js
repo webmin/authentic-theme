@@ -105,7 +105,7 @@ var
     config_portable_module_filemanager_records_for_server_pagination = 1000,
     config_portable_module_filemanager_default_sort = 0,
     config_portable_module_filemanager_hide_tree_view = false,
-    config_portable_module_filemanager_tree_expand_search = true,
+    config_portable_module_filemanager_tree_expand_search = false,
     config_portable_module_filemanager_tree_view_depth = 3,
     config_portable_module_filemanager_tree_exclude_on_first_load = true,
     config_portable_module_filemanager_hide_actions = true,
