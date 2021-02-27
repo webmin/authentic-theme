@@ -221,8 +221,8 @@ sub embed_header
 
     };
     print ' <script>';
-    &$_sstj('settings_server_data_available_acls', 'get_acls_status', 'filemin');
-    &$_sstj('settings_server_data_available_selinux', 'is_selinux_enabled');
+    &$_sstj('theme_server_data_available_acls', 'get_acls_status33', 'filemin');
+    &$_sstj('theme_server_data_available_selinux', 'is_selinux_enabled');
     print "</script>\n";
 
     # Server statuses to JavaScript. End.
