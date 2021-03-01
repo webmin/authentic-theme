@@ -49,10 +49,11 @@ if ($in{'cancel'} eq '1') {
         }
     } else {
         my $list = transname();
+        my $gnu_tar_param = get_tar_verbatim();
         open my $fh, ">", $list or die $!;
         print $fh "$_\n" for @entries_list;
         close $fh;
-        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd) . " --verbatim-files-from -T " . $list;
+        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
     }
     system_logged($command);
 }

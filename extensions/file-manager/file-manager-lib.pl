@@ -1174,6 +1174,16 @@ sub get_element_index
     return $idx;
 }
 
+sub get_tar_verbatim
+{
+    my $test_param = 'verbatim-files-from';
+    my $out        = &backquote_command("tar --help |grep $test_param");
+    if ($out && $out =~ /$test_param/m) {
+        return " --$test_param";
+    }
+    return "";
+}
+
 sub get_gpg_version
 {
     my ($gpg) = @_;
