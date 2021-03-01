@@ -37,7 +37,7 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
 
         my $file  = "$cwd/$in{'arch'}.tar.gz";
         my $fileq = quotemeta($file);
-        $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . " -T " . $list;
+        $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . " --verbatim-files-from -T " . $list;
         system($command);
 
         if ($encrypt && $key_id) {

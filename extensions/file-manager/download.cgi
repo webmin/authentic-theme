@@ -52,7 +52,7 @@ if ($in{'cancel'} eq '1') {
         open my $fh, ">", $list or die $!;
         print $fh "$_\n" for @entries_list;
         close $fh;
-        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd) . " -T " . $list;
+        $command = "tar czf " . quotemeta($target) . " -C " . quotemeta($cwd) . " --verbatim-files-from -T " . $list;
     }
     system_logged($command);
 }
