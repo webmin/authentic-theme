@@ -1153,7 +1153,7 @@ sub paster
     if ($x) {
         set_response('cc');
     }
-    if ($m) {
+    if ($m && $o) {
         unlink_file($s);
     }
 
