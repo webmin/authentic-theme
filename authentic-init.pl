@@ -205,14 +205,17 @@ sub embed_header
                 if ($rs =~ /^[-+]?([\d]+|[\d]+.[\d]+)$/) {
                     &$quotes_resetting();
                 }
-                if ($rs =~ /^(true|false)$/) {
+                if ($rs =~ /^(true|false|null|undefined)$/) {
                     &$quotes_resetting();
                 }
             }
         };
         if (!defined($rs)) {
-            $rs = 'null';
+            $rs = "null";
             &$quotes_resetting();
+        }
+        if (!length(trim($rs)) && !$quote_opening) {
+            $rs = "null";
         }
         return "$var=$quote_opening$rs$quote_closing;";
     };
