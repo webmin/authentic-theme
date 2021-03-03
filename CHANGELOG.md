@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.73-RC1 (March 04, 2021)
+* Fiх to prevent deleting files (data loss) on error when pasting in File Manager [sourceforge.net#5458](https://sourceforge.net/p/webadmin/bugs/5458/)
+* Fiх _tar_ command to add files starting with a dash in File Manager [sourceforge.net#5457](https://sourceforge.net/p/webadmin/bugs/5457/)
+* Fix panels order in side slider correspond with dashboard
+* Fix on load issue with Servers Index module
+* Fix sub-title font family and size
+
 #### Version 19.72 (February 28, 2021)
 * Add error handler when viewed/edited file outside of allowed path
 * Add file tree-view optimizations for speed and security in File Manager
