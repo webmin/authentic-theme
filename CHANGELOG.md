@@ -11,7 +11,7 @@
 * Fix bugs
 
 #### Version 19.71 (February 24, 2021)
-* Add ability to hide and reorder panels on Dashboard
+* Add ability to hide and reorder panels on dashboard
 * Add ability to use server side generated passwords [forum.virtualmin.com/t/108121](https://forum.virtualmin.com/t/cant-find-increasing-password-length-settings-anymore/108121)
 * Add better error handling for pages with SSL certificate errors [forum.virtualmin.com/t/108760](https://forum.virtualmin.com/t/post-install-lets-encrypt-disconnect-error/108760/7)
 * Add reworked theme configuration page
@@ -69,7 +69,7 @@
 * Add ability for admins to enforce palette for login page [#1488/comment-674190326](https://github.com/authentic-theme/authentic-theme/issues/1488#issuecomment-674190326)
 * Add ability to manually register progressive page for module developers [wiki/progressive](https://github.com/authentic-theme/authentic-theme/wiki/Progressive-Pages)
 * Fiх to add better outline for selected text in editor [#1490](https://github.com/authentic-theme/authentic-theme/issues/1490#issuecomment-674392206)
-* Fix displaying Virtualmin Pro version twice on Dashboard
+* Fix displaying Virtualmin Pro version twice on dashboard
 * Fiх to direct to the right form's URL, when opened via proxy [virtualmin.com/69681](https://www.virtualmin.com/node/69681)
 
 #### Version 19.53 (July 28, 2020)
@@ -132,7 +132,7 @@
 * Fiх stats history duration inaccuracy [#1464](https://github.com/authentic-theme/authentic-theme/issues/1464)
 * Fix top navigation in Running Processes module for other languages
 * Fix missing borders in high-contrast mode
-* Fix not to style links at Dashboard in alerts
+* Fix not to style links on dashboard in alerts
 * Fix error message line height and don't convert links to buttons on error pages
 * Fix to prevent editor panel go over dropdowns
 * Fix to force disable spellcheck for new mail composer
@@ -142,9 +142,9 @@
 * Fix broken tree-view in extra admin mode in Virtualmin
 * Fix blur event for new mail composer in Usermin
 * Fix to add missing icon in change password link in navigation menu
-* Fix to respect user option for displaying hostname on Dashboard
+* Fix to respect user option for displaying hostname on dashboard
 * Fix to print DS record each on new line on Setup DNSSEC Key page in BIND module
-* Fix system monitors icons alignment on Dashboard
+* Fix system monitors icons alignment on dashboard
 * Fiх reloading and redirects when webprefix is used [webmin/webmin#1195](https://github.com/webmin/webmin/issues/1195)
 * Fix displaying password meter while typing
 
@@ -156,7 +156,7 @@
 * Add hotkeys to maximize/normalize file editor window (Alt + ▵/Alt + ▿)
 * Add ability to select/deselect row using ⇧ + ▵ or ⇧ + ▿ in File Manager
 * Add better post server-error handling for initial load in File Manager
-* Add ability to save accordions state used last time on Dashboard
+* Add ability to save accordions state used last time on dashboard
 * Add ability to clear table/accordion filter with escape key as well
 * Fix to improve keyboard navigation (up/down/pgup/pgdn/home/end) in File Manager
 * Fix to embed font family and size values inline for new mail composer
@@ -230,7 +230,7 @@
 * Fix other bugs
 
 #### Version 19.40 (October 31, 2019)
-* Add basic stats history charts to Dashboard [#1415/comment-542940377](https://github.com/authentic-theme/authentic-theme/issues/1415#issuecomment-542940377)
+* Add basic stats history charts to dashboard [#1415/comment-542940377](https://github.com/authentic-theme/authentic-theme/issues/1415#issuecomment-542940377)
 * Add brand new mail composer with scheduled emails for Usermin [#431/comment-529125690](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-529125690)
 * Add keyboard navigation support for tree-view in File Manager [#629/comment-526274970](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-526274970)
 * Add mobile color themes to blend with current palette [#1405](https://github.com/authentic-theme/authentic-theme/issues/1405)
@@ -241,7 +241,7 @@
 * Fiх to prevent progressive output on initial load [#1396](https://github.com/authentic-theme/authentic-theme/issues/1396)
 * Fix issues with directory tree-view in File Manager in Usermin
 * Fix bundle background load to try/catch errors for callbacks
-* Fix CPU core count start from one on Dashboard
+* Fix CPU core count start from one on dashboard
 * Fix reauthenticate screen interaction with other elements, and improve its error handling
 * Fix stack order for popovers
 * Fix issues with dropdowns in latest versions of Chrome
@@ -265,7 +265,7 @@
 * Add ability to exclude entries from search using semicolon separated list in File Manager
 * Add caching for searched results in File Manager for faster data management upon large search results
 * Add rename and delete operation support on cached search results in File Manager
-* Add support for updating alerts on Dashboard in background [#1380](https://github.com/authentic-theme/authentic-theme/issues/1380)
+* Add support for updating alerts on dashboard in background [#1380](https://github.com/authentic-theme/authentic-theme/issues/1380)
 * Fix to have greater accuracy when rendering iconed rows
 * Fix bugs
 
@@ -313,7 +313,7 @@
 * Add password meter and password visibility toggle [#1327](https://github.com/authentic-theme/authentic-theme/issues/1327)
 * Add ability to change document title output [#1326](https://github.com/authentic-theme/authentic-theme/issues/1326#issuecomment-486816033)
 * Add user friendly message upon server reboot [#1307](https://github.com/authentic-theme/authentic-theme/issues/1307#issuecomment-469652215)
-* Add ability to store opened/closed state of collapsible panels on Dashboard upon page refresh [@b201085](https://github.com/authentic-theme/authentic-theme/commit/b201085b5ea13d2c1c8f35986b24126ba81076f5)
+* Add ability to store opened/closed state of collapsible panels on dashboard upon page refresh [@b201085](https://github.com/authentic-theme/authentic-theme/commit/b201085b5ea13d2c1c8f35986b24126ba81076f5)
 * Add perfected history manipulation to move back and forth through the user's history
 * Add paste with the same name for files, while keeping extension in File Manager
 * Add ability to select all items in directory on all pages for further operations in File Manager
@@ -387,14 +387,14 @@
 * Add brand new mail listing, search and controls for mailbox module in Usermin [#431/comment-407828197](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-407828197)
 * Add ability to search for text when editing config files manually [#1198](https://github.com/authentic-theme/authentic-theme/issues/1198)
 * Add support to setup and display background for login page [#1195](https://github.com/authentic-theme/authentic-theme/issues/1195)
-* Add optimisations to bring speed to Dashboard; rely on core subroutines to extract data
+* Add optimisations to bring speed to dashboard; rely on core subroutines to extract data
 * Add brand favicons to display for each module [#1227](https://github.com/authentic-theme/authentic-theme/issues/1227)
-* Add to display database quota along with disk space on Dashboard [#1206](https://github.com/authentic-theme/authentic-theme/issues/1206)
+* Add to display database quota along with disk space on dashboard [#1206](https://github.com/authentic-theme/authentic-theme/issues/1206)
 * Add ability to stop/start automatic scrolling on user interaction [#1224](https://github.com/authentic-theme/authentic-theme/issues/1224)
 * Add ability to manually select syntax for editor in File Manager and Custom Commands module [#1222](https://github.com/authentic-theme/authentic-theme/issues/1222)
 * Add significant UI improvements to Custom Commands module for default mode
 * Add support for creating symbolic links in File Manager [#629/comment-426615864](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-426615864)
-* Add ability to control number of shown virtual servers on Dashboard [#1200](https://github.com/authentic-theme/authentic-theme/issues/1200)
+* Add ability to control number of shown virtual servers on dashboard [#1200](https://github.com/authentic-theme/authentic-theme/issues/1200)
 * Add ability to open multiple tabs simultaneously (quickly) [#1196](https://github.com/authentic-theme/authentic-theme/issues/1196)
 * Add theme overlays native support [#1186](https://github.com/authentic-theme/authentic-theme/issues/1186)
 * Add ability to disable new mail UI
@@ -408,7 +408,7 @@
 * Fix download issues across UI [virtualmin.com/58225](https://virtualmin.com/node/58225) [sourceforge.net/5176](https://sourceforge.net/p/webadmin/bugs/5176)
 * Fix referer error when downloading file in some browsers [virtualmin.com/59234](https://virtualmin.com/node/59234)
 * Fix connection error message appearing on slow connections [sourceforge.net/5059](https://sourceforge.net/p/webadmin/bugs/5059) [sourceforge.net/5187](https://sourceforge.net/p/webadmin/bugs/5187)
-* Fix to display local time on Dashboard [sourceforge.net/5212](https://sourceforge.net/p/webadmin/bugs/5212)
+* Fix to display local time on dashboard [sourceforge.net/5212](https://sourceforge.net/p/webadmin/bugs/5212)
 * Fix module link detection at navigation menu in Usermin
 * Fix to improve editor's height and its save buttons positioning
 * Fix to catch pages with progressive output called from autocomplete menu
