@@ -182,14 +182,13 @@ sub embed_header
     # and requires full page reload to have it re-applied
     my $_sstj = sub {
         my ($var, $sub, $mod, $jsFunc, $perlSubArgs) = @_;
-        my $quote_closing    = '"';
         my $quote_opening    = '"';
+        my $quote_closing    = $quote_opening;
         my $quotes_resetting = sub {
-            $quote_closing = '';
-            $quote_opening = '';
+            $quote_opening = $quote_closing = '';
         };
         if ($jsFunc) {
-            &$quotes_resetting;
+            &$quotes_resetting();
         }
         my $rs;
         local $main::error_must_die = 1;
@@ -204,25 +203,22 @@ sub embed_header
                 $rs = "$jsFunc($rs)";
             } else {
                 if ($rs =~ /^[-+]?([\d]+|[\d]+.[\d]+)$/) {
-                    &$quotes_resetting;
+                    &$quotes_resetting();
                 }
                 if ($rs =~ /^(true|false)$/) {
-                    &$quotes_resetting;
+                    &$quotes_resetting();
                 }
             }
         };
-        if ($rs eq undef) {
+        if (!defined($rs)) {
             $rs = 'null';
-            &$quotes_resetting;
+            &$quotes_resetting();
         }
-        print "$var=$quote_opening";
-        print $rs;
-        print "$quote_closing;";
-
+        return "$var=$quote_opening$rs$quote_closing;";
     };
     print ' <script>';
-    &$_sstj('theme_server_data_available_acls', 'get_acls_status', 'filemin');
-    &$_sstj('theme_server_data_available_selinux', 'is_selinux_enabled');
+    print &$_sstj('theme_server_data_available_acls', 'get_acls_status', 'filemin');
+    print &$_sstj('theme_server_data_available_selinux', 'is_selinux_enabled');
     print "</script>\n";
 
     # Server statuses to JavaScript. End.
