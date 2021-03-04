@@ -453,7 +453,7 @@ sub replace_meta
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv) = ('1.972', '1.820', '6.14', '9.5', '14.08');
+    my ($wv, $uv, $vv, $cv, $fv) = ('1.973', '1.820', '6.14', '9.5', '14.08');
 
     my $vc = $v;
     if ($vc && $vc =~ /(\.).*?(\.)/) {
