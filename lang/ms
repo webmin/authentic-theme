@@ -435,7 +435,7 @@ theme_xhred_filemanager_buffer_error=Gagal menyisipkan ke buffer - izin ditolak.
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` sudah ada di `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Tidak dapat membuat $3 `<strong><em>$1</em></strong>` di `<strong><tt>$2</tt></strong>` - izin ditolak.
 
-filemanager_paste_warning=Tidak dapat menyisipkan ke target. Ada kemungkinan bahwa objek yang diminta bisa saja diganti <em>diganti namanya, dipindahkan</em> atau <em>dihapus</em> saat/sebelum menempelkan. Penyebab lain yang mungkin adalah bahwa tujuan tidak dapat ditulis. Mungkin sebaiknya periksa atribut objek tersebut.
+theme_xhred_filemanager_paste_warning=Tidak dapat menyisipkan ke target. Ada kemungkinan bahwa objek yang diminta bisa saja diganti <em>diganti namanya, dipindahkan</em> atau <em>dihapus</em> saat/sebelum menempelkan. Penyebab lain yang mungkin adalah bahwa tujuan tidak dapat ditulis. Mungkin sebaiknya periksa atribut objek tersebut.
 
 theme_xhred_filemanager_delete_warning=Penghapusan telahberhasil dilakukan namun tidak untuk semua objek. Ada kemungkinan bahwa objjek yang diminta bisa saja  <em>diganti nama</em> atau <em>dipindah</em> sebelum dihapus. Izin yang dibatasi (atribut) adalah kemungkinan penyebab lainnya. Pesan kesalahan:
 

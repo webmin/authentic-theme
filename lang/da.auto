@@ -351,7 +351,7 @@ theme_xhred_filemanager_buffer_error=Kunne ikke indsætte filer i bufferen - til
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` findes allerede i `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Kan ikke oprette $3 `<strong><em>$1</em></strong>` i `<strong><tt>$2</tt></strong>` - adgang nægtet.
 
-filemanager_paste_warning=Kunne indsætte mål (er). Det er muligt, at de eller de anmodede objekter kunne have været <em>omdøbt, flyttet</em> eller <em>slettet</em> mens/før du indsætter. En anden mulig årsag er, at destinationen ikke kan skrives. Det er værd at kontrollere objekternes attributter.
+theme_xhred_filemanager_paste_warning=Kunne indsætte mål (er). Det er muligt, at de eller de anmodede objekter kunne have været <em>omdøbt, flyttet</em> eller <em>slettet</em> mens/før du indsætter. En anden mulig årsag er, at destinationen ikke kan skrives. Det er værd at kontrollere objekternes attributter.
 
 theme_xhred_filemanager_delete_warning=Sletningen er afsluttet med succes, men ikke for alle objekter. Det er muligt, at de eller de anmodede objekter kunne have været <em>omdøbt</em> eller <em>flyttet</em> før sletning. Begrænsede tilladelser (attributter) er en anden mulig årsag. Fejl besked:
 

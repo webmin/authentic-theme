@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=Ezin izan da fitxategiak bufferrean itsatsi
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` dagoeneko badago `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Ezin da $3 sortu `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - Baimena ukatu.
 
-filemanager_paste_warning=Huts egin du helburuak (k) itsatsiz. Litekeena da eskatutako objektu (e) k <em>i izena aldatzea, lekuz aldatzea</em> edo <em>ezabatu</em> izatea itsatsi aurretik /. Beste arrazoi posible bat da helmuga ezin dela idatzi. Objektuen atributuak egiaztatzea merezi du.
+theme_xhred_filemanager_paste_warning=Huts egin du helburuak (k) itsatsiz. Litekeena da eskatutako objektu (e) k <em>i izena aldatzea, lekuz aldatzea</em> edo <em>ezabatu</em> izatea itsatsi aurretik /. Beste arrazoi posible bat da helmuga ezin dela idatzi. Objektuen atributuak egiaztatzea merezi du.
 
 theme_xhred_filemanager_delete_warning=Ezabatzea ondo amaitu da, baina ez objektu guztientzat. Litekeena da eskatutako objektu (e) k <em>eko izena aldatu edo</em> ren izena aldatu izana edo ezabatzea aurretik ezabatzea. Mugatutako baimenak (atributuak) beste arrazoi posible bat da. Errore mezua:
 

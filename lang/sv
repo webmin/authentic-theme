@@ -435,7 +435,7 @@ theme_xhred_filemanager_buffer_error=Det gick inte att klistra in filer till buf
 filemanager_create_object_exists=$3 `<samp><em>$1</em></samp>` finns redan i `<samp><tt>$2</tt></samp>`
 filemanager_create_object_denied=Kan inte skapa $3 `<samp><em>$1</em></samp>` i `<samp><tt>$2</tt></samp>` - åtkomst nekad.
 
-filemanager_paste_warning=Det gick inte att klistra in mål(en). Det är möjligt att de begärda objekten har blivit <em>omdöpta, flyttade</em> eller <em>borttagna</em> medan/innan du klistrade in. En annan möjlig orsak är att destinationen är skrivskyddad.  Det är värt att ta en titt på objektens attribut.
+theme_xhred_filemanager_paste_warning=Det gick inte att klistra in mål(en). Det är möjligt att de begärda objekten har blivit <em>omdöpta, flyttade</em> eller <em>borttagna</em> medan/innan du klistrade in. En annan möjlig orsak är att destinationen är skrivskyddad.  Det är värt att ta en titt på objektens attribut.
 
 theme_xhred_filemanager_delete_warning=Borttagning av filer är utförda men inte för alla objekten. Det är möjligt att de begärda objekten har blivit <em>omdöpta</em> eller <em>flyttade</em> innan borttagningen. Begränsad behörighet (attribut) är en annan möjlig orsak.  Felmeddelande:
 

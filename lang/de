@@ -435,7 +435,7 @@ theme_xhred_filemanager_buffer_error=Dateien nicht in den Zwischenspeicher kopie
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` existiert bereits in `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Anlegen von $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` nicht möglich - keine Berechtigung.
 
-filemanager_paste_warning=Einfügen im Ziel fehlgeschagen. Möglicherweise wurden die Quell Elemente <em>umbenannt, verschoben</em> oder <em>gelöscht</em>. Alternativ fehlt Ihnen die Schreibberechtigung im Ziel, dies sollten sie überprüfen.
+theme_xhred_filemanager_paste_warning=Einfügen im Ziel fehlgeschagen. Möglicherweise wurden die Quell Elemente <em>umbenannt, verschoben</em> oder <em>gelöscht</em>. Alternativ fehlt Ihnen die Schreibberechtigung im Ziel, dies sollten sie überprüfen.
 
 theme_xhred_filemanager_delete_warning=Nicht alle Elemente wurden erfolgreich gelöscht. Möglicherweise wurden die Quell Elemente <em>umbenannt oder verschoben</em>. Alternativ fehlt Ihnen die Löschberechtigung. Fehlermeldung:
 

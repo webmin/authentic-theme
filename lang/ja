@@ -430,7 +430,7 @@ theme_xhred_filemanager_buffer_error= ファイルをバッファに貼り付け
 filemanager_create_object_exists= <strong><tt>$2</tt></strong>に既に$ 3<strong> <em>$1</em>
 filemanager_create_object_denied= `<strong><tt>$2</tt></strong>`で$3`<strong><em>$1</em></strong>`を作成できません。
 
-filemanager_paste_warning= ターゲットを貼り付けることができませんでした。貼り付けの前/中に要求されたオブジェクトが<em>名前変更、移動</em>、または<em>削除</em>されている可能性があります。別の考えられる原因は、宛先が書き込み可能でないことです。オブジェクトの属性をチェックする価値があります。
+theme_xhred_filemanager_paste_warning= ターゲットを貼り付けることができませんでした。貼り付けの前/中に要求されたオブジェクトが<em>名前変更、移動</em>、または<em>削除</em>されている可能性があります。別の考えられる原因は、宛先が書き込み可能でないことです。オブジェクトの属性をチェックする価値があります。
 
 theme_xhred_filemanager_delete_warning= 削除は正常に終了しましたが、すべてのオブジェクトに対して正常に終了しませんでした。削除する前に、要求されたオブジェクトを<em>名前を変更</em>または<em>移動</em>できた可能性があります。制限されたアクセス許可（属性）は別の考えられる原因です。エラーメッセージ:
 

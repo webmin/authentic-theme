@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=A fájlok beillesztése a pufferbe nem sike
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` már létezik a `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Nem lehet $3 létrehozni `<strong><em>$1</em></strong>` ban ben `<strong><tt>$2</tt></strong>` - hozzáférés megtagadva.
 
-filemanager_paste_warning=Nem sikerült beilleszteni a célokat. Lehetséges, hogy a kért objektum (oka) t beillesztés előtt/átnevezése, áthelyezése </em>vagy<em> törlése </em> lehetett. Egy másik lehetséges ok az, hogy a rendeltetési hely nem írható. Érdemes ellenőrizni az objektumok attribútumait.
+theme_xhred_filemanager_paste_warning=Nem sikerült beilleszteni a célokat. Lehetséges, hogy a kért objektum (oka) t beillesztés előtt/átnevezése, áthelyezése </em>vagy<em> törlése </em> lehetett. Egy másik lehetséges ok az, hogy a rendeltetési hely nem írható. Érdemes ellenőrizni az objektumok attribútumait.
 
 theme_xhred_filemanager_delete_warning=A törlés sikeresen befejeződött, de nem minden objektum esetében. Lehetséges, hogy a kért objektum (oka) t törlés előtt át lehetne nevezni </em>vagy<em> áthelyezni </em>. A korlátozott engedélyek (attribútumok) egy másik lehetséges oka. Hiba üzenet:
 

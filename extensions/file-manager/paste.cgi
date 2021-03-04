@@ -26,7 +26,7 @@ my $dir = $arr[1];
 chomp($act);
 chomp($dir);
 my $from = abs_path($base . $dir);
-my @errors;
+my %errors;
 my $mv = ($act eq "copy"            ? 0 : 1);
 my $fr = (length $request_uri{'ua'} ? 1 : 0);
 my $fo = ($request_uri{'ua'} eq '1' ? 1 : 0);
@@ -41,13 +41,15 @@ for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
     } else {
         $out = paster("$cwd", "$arr[$i]", "$from/$arr[$i]", "$cwd/$arr[$i]", $fo, $mv);
     }
-    $out && push(@errors, $out);
+    if ($out) {
+        $errors{"$arr[$i]"} = $out;
+    }
 }
 
-if (scalar(@errors) > 0) {
+if (%errors) {
     set_response('err');
     redirect_local('list.cgi?path=' .
-                 urlize($path) . '&module=' . $in{'module'} . '&error=' . text('filemanager_paste_warning') . extra_query());
+                 urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
 } else {
     set_response_count(scalar(@arr) - 2);
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());

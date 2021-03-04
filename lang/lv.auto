@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=Neizdevās ielīmēt failus buferī - atļa
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` jau pastāv `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Nevar izveidot $3 `<strong><em>$1</em></strong>` iekšā `<strong><tt>$2</tt></strong>` - atļauja liegta.
 
-filemanager_paste_warning=Neizdevās ielīmēt mērķi (-us). Iespējams, ka pieprasīto (-os) objektu (-us) varēja <em>pārdēvēt, pārvietot</em> vai <em>izdzēst</em>, kamēr/pirms ielīmēšanas. Vēl viens iespējamais iemesls ir tas, ka galamērķi nevar ierakstīt. Ir vērts pārbaudīt objektu atribūtus.
+theme_xhred_filemanager_paste_warning=Neizdevās ielīmēt mērķi (-us). Iespējams, ka pieprasīto (-os) objektu (-us) varēja <em>pārdēvēt, pārvietot</em> vai <em>izdzēst</em>, kamēr/pirms ielīmēšanas. Vēl viens iespējamais iemesls ir tas, ka galamērķi nevar ierakstīt. Ir vērts pārbaudīt objektu atribūtus.
 
 theme_xhred_filemanager_delete_warning=Dzēšana ir veiksmīgi pabeigta, bet ne visiem objektiem. Iespējams, ka pieprasītais (-ie) objekts (-i) pirms dzēšanas varēja būt <em>pārdēvēts</em> vai <em>pārvietots</em>. Cits iespējamais iemesls ir ierobežotas atļaujas (atribūti). Kļūdas ziņojums:
 

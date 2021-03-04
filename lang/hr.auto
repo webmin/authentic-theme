@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=Nije uspjelo zalijepiti datoteke na međusp
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` već postoji u `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Ne mogu stvoriti $3 `<strong><em>$1</em></strong>` u `<strong><tt>$2</tt></strong>` - odbijeno odobrenje.
 
-filemanager_paste_warning=Nije uspjelo zalijepiti ciljeve. Moguće je da su traženi objekti (i) bili preimenovani, premješteni </em>ili</em> izbrisani </em> tijekom/prije lijepljenja. Drugi mogući uzrok je to što odredište ne može biti zapisano. Vrijedno je provjeriti atribute objekata.
+theme_xhred_filemanager_paste_warning=Nije uspjelo zalijepiti ciljeve. Moguće je da su traženi objekti (i) bili preimenovani, premješteni </em>ili</em> izbrisani </em> tijekom/prije lijepljenja. Drugi mogući uzrok je to što odredište ne može biti zapisano. Vrijedno je provjeriti atribute objekata.
 
 theme_xhred_filemanager_delete_warning=Brisanje je uspješno završeno, ali ne za sve objekte. Moguće je da su zatraženi objekti (ovi) mogli biti <em>preimenovani</em> ili <em>premješteni</em> prije brisanja. Drugi je mogući uzrok ograničena dopuštenja (atributi). Poruka o pogrešci:
 

@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=Nepavyko įklijuoti failų į buferį - ats
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` jau egzistuoja `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Neįmanoma sukurti $3 `<strong><em>$1</em></strong>` į `<strong><tt>$2</tt></strong>` - leidimas nesuteiktas.
 
-filemanager_paste_warning=Nepavyko įklijuoti tikslo (-ų). Gali būti, kad prašomas (-i) objektas (-ai) galėjo būti <em>pervardyti, perkelti</em> arba <em>ištrinti</em>, kol/prieš įklijuodami. Kita galima priežastis yra ta, kad kelionės tikslo negalima rašyti. Verta patikrinti objektų atributus.
+theme_xhred_filemanager_paste_warning=Nepavyko įklijuoti tikslo (-ų). Gali būti, kad prašomas (-i) objektas (-ai) galėjo būti <em>pervardyti, perkelti</em> arba <em>ištrinti</em>, kol/prieš įklijuodami. Kita galima priežastis yra ta, kad kelionės tikslo negalima rašyti. Verta patikrinti objektų atributus.
 
 theme_xhred_filemanager_delete_warning=Trinti sėkmingai baigta, bet ne visus objektus. Gali būti, kad prašomas (-i) objektas (-ai) galėjo būti <em>pervadintas</em> arba <em>perkeltas</em> prieš ištrinant. Riboti leidimai (atributai) yra dar viena galima priežastis. Klaidos pranešimas:
 

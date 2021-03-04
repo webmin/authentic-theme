@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=Không thể dán tệp vào bộ đệm - 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` đã tồn tại trong `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Không thể tạo $3 `<strong><em>$1</em></strong>` trong `<strong><tt>$2</tt></strong>` - sự cho phép bị từ chối.
 
-filemanager_paste_warning=Không thể dán mục tiêu. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên, di chuyển</em> hoặc <em>đã xóa</em> trong khi/trước khi dán. Một nguyên nhân khác có thể là đích đến không thể ghi được. Đó là giá trị kiểm tra thuộc tính của đối tượng.
+theme_xhred_filemanager_paste_warning=Không thể dán mục tiêu. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên, di chuyển</em> hoặc <em>đã xóa</em> trong khi/trước khi dán. Một nguyên nhân khác có thể là đích đến không thể ghi được. Đó là giá trị kiểm tra thuộc tính của đối tượng.
 
 theme_xhred_filemanager_delete_warning=Xóa đã kết thúc thành công nhưng không phải cho tất cả các đối tượng. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên</em> hoặc <em>di chuyển</em> trước khi xóa. Quyền hạn chế (thuộc tính) là một nguyên nhân có thể khác. Thông báo lỗi:
 

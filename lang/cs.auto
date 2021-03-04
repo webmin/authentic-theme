@@ -274,7 +274,7 @@ theme_xhred_filemanager_buffer_error=Nepodařilo se vložit soubory do vyrovnáv
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` již existuje v `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Nelze vytvořit $3 `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - přístup odepřen.
 
-filemanager_paste_warning=Vložení cílů se nezdařilo. Je možné, že požadované objekty mohly být během/před vložením <em>přejmenovány, přesunuty</em> nebo <em>odstraněny</em>. Další možnou příčinou je, že cíl nelze zapisovat. Stojí za to zkontrolovat atributy objektů.
+theme_xhred_filemanager_paste_warning=Vložení cílů se nezdařilo. Je možné, že požadované objekty mohly být během/před vložením <em>přejmenovány, přesunuty</em> nebo <em>odstraněny</em>. Další možnou příčinou je, že cíl nelze zapisovat. Stojí za to zkontrolovat atributy objektů.
 
 theme_xhred_filemanager_delete_warning=Odstranění bylo úspěšně dokončeno, ale ne u všech objektů. Je možné, že požadované objekty mohly být před vymazáním <em>přejmenovány</em> nebo <em>přesunuty</em>. Omezená oprávnění (atributy) jsou další možnou příčinou. Chybové hlášení:
 

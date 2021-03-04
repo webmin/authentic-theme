@@ -357,7 +357,7 @@ theme_xhred_filemanager_buffer_error=Nie udało się wkleić plików do bufora -
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` już istnieje w `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Nie można utworzyć $3 `<strong><em>$1</em></strong>` w `<strong><tt>$2</tt></strong>` - odmowa zgody.
 
-filemanager_paste_warning=Nie udało się wkleić celów. Możliwe jest, że żądane obiekty mogły zostać <em>zmienione, przeniesione</em> lub <em>usunięte</em> podczas/przed wklejeniem. Inną możliwą przyczyną jest brak możliwości zapisu miejsca docelowego. Warto sprawdzić atrybuty obiektów.
+theme_xhred_filemanager_paste_warning=Nie udało się wkleić celów. Możliwe jest, że żądane obiekty mogły zostać <em>zmienione, przeniesione</em> lub <em>usunięte</em> podczas/przed wklejeniem. Inną możliwą przyczyną jest brak możliwości zapisu miejsca docelowego. Warto sprawdzić atrybuty obiektów.
 
 theme_xhred_filemanager_delete_warning=Usuwanie zakończyło się pomyślnie, ale nie dla wszystkich obiektów. Możliwe jest, że żądane obiekty mogły zostać <em>przemianowane</em> lub <em>przeniesione</em> przed usunięciem. Ograniczone uprawnienia (atrybuty) to kolejna możliwa przyczyna. Komunikat o błędzie:
 

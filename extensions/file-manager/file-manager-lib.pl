@@ -14,6 +14,7 @@ use Encode qw(decode encode);
 use File::Basename;
 use File::MimeInfo;
 use File::Find;
+use File::Copy;
 use File::Grep qw( fdo );
 use POSIX;
 
@@ -1149,12 +1150,17 @@ sub paster
             $j = $j . (!$x ? '' : '(' . $x . ')');
         }
     }
-    my ($o, $e) = copy_source_dest($s, $j);
+    my ($o, $e);
+    if ($m) {
+        $o = move($s, $j);
+        if (!$o && $!) {
+            $e = $!;
+        }
+    } else {
+        ($o, $e) = copy_source_dest($s, $j);
+    }
     if ($x) {
         set_response('cc');
-    }
-    if ($m && $o) {
-        unlink_file($s);
     }
 
     return $e;

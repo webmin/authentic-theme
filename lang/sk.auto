@@ -438,7 +438,7 @@ theme_xhred_filemanager_buffer_error=Vloženie súborov do vyrovnávacej pamäte
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` už existuje v `<strong><tt>$2</tt></strong>`
 filemanager_create_object_denied=Nedá sa vytvoriť $3 `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - prístup zamietnutý.
 
-filemanager_paste_warning=Cieľ sa nepodarilo prilepiť. Je možné, že požadované objekty mohli byť počas vkladania/pred vložením <em>premenované, presunuté</em> alebo <em>odstránené</em>. Ďalšou možnou príčinou je, že cieľ nie je zapisovateľný. Stojí za to skontrolovať atribúty objektov.
+theme_xhred_filemanager_paste_warning=Cieľ sa nepodarilo prilepiť. Je možné, že požadované objekty mohli byť počas vkladania/pred vložením <em>premenované, presunuté</em> alebo <em>odstránené</em>. Ďalšou možnou príčinou je, že cieľ nie je zapisovateľný. Stojí za to skontrolovať atribúty objektov.
 
 theme_xhred_filemanager_delete_warning=Odstránenie bolo úspešne ukončené, ale nie pre všetky objekty. Je možné, že požadované objekty mohli byť pred odstránením <em>premenované</em> alebo <em>presunuté</em>. Obmedzené povolenia (atribúty) sú ďalšou možnou príčinou. Chybná správa:
 
