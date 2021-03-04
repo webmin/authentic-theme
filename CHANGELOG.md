@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 19.73-RC1 (March 04, 2021)
+#### Version 19.73 (March 04, 2021)
+* Add cut/paste operation to actually move files (instead of copy and delete) in File Manager
 * Fiх to prevent deleting files (data loss) on error when pasting in File Manager [sourceforge.net#5458](https://sourceforge.net/p/webadmin/bugs/5458/)
 * Fiх _tar_ command to add files starting with a dash in File Manager [sourceforge.net#5457](https://sourceforge.net/p/webadmin/bugs/5457/)
 * Fix panels order in side slider correspond with dashboard
