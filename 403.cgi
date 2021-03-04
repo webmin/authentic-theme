@@ -9,6 +9,6 @@ use strict;
 
 our $trust_unknown_referers = 1;
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 error_40x();

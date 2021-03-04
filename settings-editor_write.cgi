@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %gconfig, $get_user_level, %theme_text, $has_usermin);
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 $get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
 

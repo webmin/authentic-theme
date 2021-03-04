@@ -11,7 +11,7 @@ our (%in,             %gconfig,     %text,                $current_theme, $confi
      $remote_user,    $title,       %theme_config,        %theme_text,    $get_user_level,
      $has_virtualmin, $has_usermin, $has_usermin_version, $has_usermin_conf_dir);
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 header($title, 'stripped');
 

@@ -10,7 +10,7 @@ use strict;
 
 our (%in, $cwd);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 my $command;
 my $has_zip    = has_command('zip');

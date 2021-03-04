@@ -5,9 +5,9 @@
 #
 use strict;
 
-use lib ("@{[miniserv::getenv('theme_root')]}/lib");
+use lib ("$ENV{'THEME_ROOT'}/lib");
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-funcs.pl");
+do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
 
 use Cwd 'abs_path';
 use Encode qw(decode encode);

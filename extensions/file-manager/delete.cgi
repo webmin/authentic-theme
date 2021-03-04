@@ -13,7 +13,7 @@ use File::Path;
 
 our (%in, %text, $cwd, $path);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 my %errors;
 my @deleted_entries;

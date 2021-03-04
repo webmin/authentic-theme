@@ -9,7 +9,7 @@ use strict;
 
 our (%text, %in, %userconfig, %config, $special_folder_id);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/mail/mail-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 my %mails;
 

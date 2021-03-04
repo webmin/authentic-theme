@@ -7,7 +7,7 @@
 #
 use strict;
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/mail/mail-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 # Find mail messages matching some pattern
 our (%text, %in, %userconfig);

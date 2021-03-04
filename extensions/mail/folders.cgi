@@ -7,11 +7,11 @@
 #
 use strict;
 
-use lib ("@{[miniserv::getenv('theme_root')]}/lib");
+use lib ("$ENV{'THEME_ROOT'}/lib");
 
 our (%in);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/mail/mail-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 my %temporary;
 my @folders_data = list_folders_sorted();

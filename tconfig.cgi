@@ -9,8 +9,8 @@ use strict;
 
 our ($remote_user, %gconfig, %text, %in, %theme_config, %theme_text, $has_usermin, $get_user_level);
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
-do("@{[miniserv::getenv('theme_root')]}/tconfig-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/tconfig-lib.pl");
 
 ($get_user_level ne '0' && $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true') &&
   error($theme_text{'settings_theme_config_admins_only_privileged_error'});

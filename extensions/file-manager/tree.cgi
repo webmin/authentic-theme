@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %text, @allowed_paths, $cwd, $base, $path);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 kill_previous($0, $$);
 

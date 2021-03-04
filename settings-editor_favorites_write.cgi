@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %gconfig, %theme_text, $config_directory, $current_theme, $remote_user, $has_usermin);
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 theme_make_config_dir();
 

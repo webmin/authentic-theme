@@ -42,7 +42,7 @@ our (@theme_bundle_css,
      $theme_root_directory,
      $title);
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-funcs.pl");
+do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
 
 init_vars();
 
@@ -236,7 +236,7 @@ sub embed_header
     print "</script>\n";
 
     if ($args[2]) {
-        do("@{[miniserv::getenv('theme_root')]}/dependencies.pl");
+        do("$ENV{'THEME_ROOT'}/dependencies.pl");
     }
 
     if ($args[3] eq '1') {

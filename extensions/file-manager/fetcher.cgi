@@ -9,7 +9,7 @@ use strict;
 
 our (%in);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (is_root() && supports_users()) {
     if ($in{'list_users'} || $in{'home_base'}) {

@@ -10,7 +10,7 @@ use strict;
 my %email;
 our (%in);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/mail/mail-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
 
 my @folders = list_folders_sorted();
 my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;

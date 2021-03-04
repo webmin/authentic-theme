@@ -7,6 +7,6 @@
 #
 use strict;
 
-do("@{[miniserv::getenv('theme_root')]}/authentic-lib.pl");
+do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 authentic();

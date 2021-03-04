@@ -10,7 +10,7 @@ use strict;
 
 our (%text, @remote_user_info, $path);
 
-do("@{[miniserv::getenv('theme_root')]}/extensions/file-manager/file-manager-lib.pl");
+do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 get_paths();
 my $confdir = "$remote_user_info[7]/.filemin";
