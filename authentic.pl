@@ -463,6 +463,15 @@ sub theme_ui_columns_end
     return $rv;
 }
 
+sub theme_ui_help
+{
+    my ($title) = @_;
+    return (
+"<sup class=\"ui_help\" data-container=\"body\" data-placement=\"auto right\" data-title=\"$title\" data-toggle=\"tooltip\"><i class=\"fa fa-0_80x fa-question-circle cursor-help\"></i></sup>"
+    );
+}
+
+
 sub theme_ui_link
 {
 
