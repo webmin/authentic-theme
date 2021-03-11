@@ -88,3 +88,7 @@ mconfig_ecannot=Für dieses Modul wurde keine benutzerdefinierte Konfigurationsd
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Für diese Funktion muss <tt>SELinux</tt> installiert und aktiviert sein
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Für diese Funktion muss das Dateisystem mit aktivierten <tt>ACLs</tt> bereitgestellt werden und der Befehl <kbd>getfacl</kbd> muss verfügbar sein
 theme_xhred_global_module_preferences=Moduleinstellungen
+
+#19.74
+settings_sysinfo_real_time_status_forced=Ja, gezwungen
+settings_sysinfo_real_time_status_forced_warn=Das Aktivieren der Echtzeitüberwachung im Force-Modus wird nicht empfohlen, da die Hintergrundsammlung auch dann durchgeführt wird, wenn die Registerkarte "Browser" nicht fokussiert ist. Dies kann zu einer Serverüberlastung führen, wenn mehrere Registerkarten geöffnet sind

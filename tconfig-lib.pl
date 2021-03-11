@@ -275,23 +275,7 @@ sub theme_settings_format
     my $v = (length $theme_config{$k} ? $theme_config{$k} : $v);
 
     if ($v eq 'true' || $v eq 'false') {
-        my $disabled;
-
-        # Force disabled state
-        if (!has_command('git') &&
-            ($k eq 'settings_sysinfo_theme_updates' ||
-                $k eq 'settings_sysinfo_theme_updates_for_usermin'))
-        {
-            $disabled = " pointer-events-none";
-        }
-
-        $v =
-          '<span class="awradio awobject' . $disabled . '">' . '<input class="iawobject" type="radio" name="' . $k .
-          '" id="' . $k . '_1" value="true"' . ($v eq 'true' && ' checked') . '>' . '<label class="lawobject" for="' .
-          $k . '_1">' . $text{'yes'} . '</label>' . '<input class="iawobject" type="radio" name="' .
-          $k . '" id="' . $k . '_0" value="false"' . ($v eq 'false' && ' checked') .
-          '>' . '<label class="lawobject" for="' . $k . '_0">' . $text{'no'} . '</label>' . '</span>
-            ';
+        $v = ui_yesno_radio($k, $v, 'true', 'false');
 
     } elsif ($k =~ /settings_sysinfo_hidden_panels_user/ &&
              $theme_config{'settings_sysinfo_hidden_panels_user'})
@@ -315,7 +299,7 @@ sub theme_settings_format
         }
 
     } elsif ($k eq 'settings_sysinfo_easypie_charts_size') {
-        $v = ui_textbox($k, $v, 2);
+        $v = ui_textbox($k, $v, 3);
     } elsif ($k =~ /settings_hotkey_toggle_key_/ ||
              $k eq 'settings_hotkey_focus_search'  ||
              $k eq 'settings_hotkey_navigation'    ||
@@ -526,6 +510,9 @@ sub theme_settings_format
                 </select>';
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
+    } elsif ($k eq 'settings_sysinfo_real_time_status') {
+        my $yes_forced = "$theme_text{'settings_sysinfo_real_time_status_forced'} <sup @{[get_button_tooltip('settings_sysinfo_real_time_status_forced_warn')]} class=\"fa fa-exclamation-circle\"></sup>";
+        $v = ui_radio($k, $v, [[1, $text{'yes'}], [2, $yes_forced], [0, $text{'no'}]]);
     }
     my $description     = $theme_text{ $k . '_description' };
     my $popover_trigger = 'click';

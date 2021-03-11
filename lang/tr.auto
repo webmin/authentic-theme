@@ -1206,3 +1206,7 @@ mconfig_ecannot=Bu modül için özel bir yapılandırma dosyası bulunamadı
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Bu özellik <tt>SELinux</tt> 'un kurulmasını ve etkinleştirilmesini gerektirir
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Bu özellik, dosya sisteminin <tt>ACL'ler</tt> açık olarak monte edilmesini ve <kbd>getfacl</kbd> komutunun mevcut olmasını gerektirir
 theme_xhred_global_module_preferences=Modül tercihleri
+
+#19.74
+settings_sysinfo_real_time_status_forced=Evet, zorunlu
+settings_sysinfo_real_time_status_forced_warn=Zorla modunda gerçek zamanlı izlemeyi etkinleştirmek önerilmez çünkü tarayıcı sekmesi odaklanılmadığında bile arka planda toplama gerçekleştirilir ve bu durum, birden çok sekme açıkken sunucunun aşırı yüklenmesine neden olabilir.

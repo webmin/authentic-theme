@@ -1206,3 +1206,7 @@ mconfig_ecannot=Ehhez a modulhoz nem található egyedi konfigurációs fájl
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ehhez a funkcióhoz telepíteni és engedélyezni kell a <tt>SELinux</tt> t
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Ehhez a funkcióhoz a fájlrendszert úgy kell csatlakoztatni, hogy az <tt>ACL-ek</tt> be vannak kapcsolva, és a <kbd>getfacl</kbd> parancsnak elérhetőnek kell lennie
 theme_xhred_global_module_preferences=A modul beállításai
+
+#19.74
+settings_sysinfo_real_time_status_forced=Igen, kénytelen
+settings_sysinfo_real_time_status_forced_warn=A valós idejű felügyelet bekapcsolása kényszerített módban nem ajánlott, mert a háttérgyűjtést akkor is elvégezzük, ha a böngésző lap nincs fókuszálva, ami a szerver túlterhelését okozhatja, ha több fül van megnyitva

@@ -1206,3 +1206,7 @@ mconfig_ecannot=Không có tệp cấu hình tùy chỉnh nào được tìm th�
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Tính năng này yêu cầu <tt>SELinux</tt> được cài đặt và bật
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Tính năng này yêu cầu hệ thống tệp được gắn kết với <tt>ACLs</tt> được bật và lệnh <kbd>getfacl</kbd> phải khả dụng
 theme_xhred_global_module_preferences=Tùy chọn mô-đun
+
+#19.74
+settings_sysinfo_real_time_status_forced=Có, bắt buộc
+settings_sysinfo_real_time_status_forced_warn=Không khuyến khích bật theo dõi thời gian thực ở chế độ bắt buộc vì thu thập nền sẽ được thực hiện ngay cả khi tab trình duyệt không được tập trung, có khả năng gây quá tải máy chủ với nhiều tab được mở

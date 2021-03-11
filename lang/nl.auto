@@ -1093,3 +1093,7 @@ mconfig_ecannot=Er is geen aangepast configuratiebestand gevonden voor deze modu
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Deze functie vereist dat <tt>SELinux</tt> is geïnstalleerd en ingeschakeld
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Deze functie vereist dat het bestandssysteem is aangekoppeld met <tt>ACL's</tt> ingeschakeld en het <kbd>getfacl</kbd> -commando moet beschikbaar zijn
 theme_xhred_global_module_preferences=Module voorkeuren
+
+#19.74
+settings_sysinfo_real_time_status_forced=Ja, gedwongen
+settings_sysinfo_real_time_status_forced_warn=Het inschakelen van realtime monitoring in de force-modus wordt afgeraden omdat het verzamelen op de achtergrond wordt uitgevoerd, zelfs als het browsertabblad niet is gefocust, waardoor de server mogelijk overbelast raakt met meerdere geopende tabbladen

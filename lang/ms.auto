@@ -579,3 +579,7 @@ mconfig_ecannot=Tidak terdapat fail konfigurasi tersuai untuk modul ini
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ciri ini memerlukan <tt>SELinux</tt> dipasang dan diaktifkan
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Fungsi ini memerlukan sistem fail dipasang dengan <tt>ACLs</tt> dihidupkan dan perintah <kbd>getfacl</kbd> mesti ada
 theme_xhred_global_module_preferences=Keutamaan modul
+
+#19.74
+settings_sysinfo_real_time_status_forced=Ya, terpaksa
+settings_sysinfo_real_time_status_forced_warn=Mengaktifkan pemantauan masa nyata dalam mod kekuatan tidak digalakkan kerana pengumpulan latar belakang akan dilakukan walaupun tab penyemak imbas tidak difokuskan, berpotensi menyebabkan pelayan berlebihan dengan banyak tab dibuka

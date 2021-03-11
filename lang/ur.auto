@@ -1206,3 +1206,7 @@ mconfig_ecannot=اس ماڈیول کے لئے کوئی کسٹم کنفیگریش
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=This feature requires <tt>SELinux</tt> being installed and enabled
 theme_xhred_filemanager_mconfig_columns_acls_disabled=This feature requires file system be mounted with <tt>ACLs</tt> turned on and <kbd>getfacl</kbd> command must be available
 theme_xhred_global_module_preferences=ماڈیول کی ترجیحات
+
+#19.74
+settings_sysinfo_real_time_status_forced=ہاں ، جبری
+settings_sysinfo_real_time_status_forced_warn=ریئل ٹائم مانیٹرنگ کو فورس موڈ میں چالو کرنے کی حوصلہ شکنی کی جاتی ہے کیونکہ پس منظر کا مجموعہ اس وقت بھی انجام دیا جائے گا جب براؤزر ٹیب پر توجہ مرکوز نہیں کی جاتی ہے ، جس کی وجہ سے ممکنہ طور پر متعدد ٹیبز کے ساتھ سرور اوورلوڈ کھولا جاتا ہے۔

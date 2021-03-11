@@ -1118,3 +1118,7 @@ mconfig_ecannot=Der findes ingen brugerdefineret konfigurationsfil til dette mod
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Denne funktion kræver, at <tt>SELinux</tt> er installeret og aktiveret
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Denne funktion kræver, at filsystemet er monteret med <tt>ACL'er</tt> slået til, og kommandoen <kbd>getfacl</kbd> skal være tilgængelig
 theme_xhred_global_module_preferences=Modulindstillinger
+
+#19.74
+settings_sysinfo_real_time_status_forced=Ja tvunget
+settings_sysinfo_real_time_status_forced_warn=Aktivering af realtidsovervågning i krafttilstand frarådes, fordi baggrundssamling udføres, selv når browserfanen ikke er fokuseret, hvilket potentielt kan forårsage serveroverbelastning med flere åbne faner

@@ -1206,3 +1206,7 @@ mconfig_ecannot=Pre tento modul sa nenašiel žiadny vlastný konfiguračný sú
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Táto funkcia vyžaduje, aby bol <tt>SELinux</tt> nainštalovaný a povolený
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Táto funkcia vyžaduje, aby bol systém súborov pripojený so zapnutými <tt>ACL</tt> a musel byť k dispozícii príkaz <kbd>getfacl</kbd>
 theme_xhred_global_module_preferences=Predvoľby modulu
+
+#19.74
+settings_sysinfo_real_time_status_forced=Áno, vynútené
+settings_sysinfo_real_time_status_forced_warn=Povolenie monitorovania v reálnom čase v silovom režime sa neodporúča, pretože zhromažďovanie pozadia sa vykoná, aj keď karta prehliadača nie je zameraná, čo môže pri otvorení viacerých kariet spôsobiť preťaženie servera.
