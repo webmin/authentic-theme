@@ -2460,34 +2460,35 @@ sub settings_get_select_editor_color
 sub settings_get_select_document_title
 {
     my ($v, $k) = @_;
+    my $prod_name = get_product_name() ne 'webmin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'};
     return '<select class="ui_select" name="' . $k . '">
       <option value="3"'
       . ($v eq '3' && ' selected') .
-      '>' . theme_text('settings_document_title_option_3', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_3', ucfirst($prod_name)) . '</option>
       <option value="7"'
       . ($v eq '7' && ' selected') .
-      '>' . theme_text('settings_document_title_option_7', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_7', ucfirst($prod_name)) . '</option>
       <option value="1"'
-      . ($v eq '1' && ' selected') . '>' . theme_text('settings_document_title_option_1', ucfirst(get_product_name())) .
+      . ($v eq '1' && ' selected') . '>' . theme_text('settings_document_title_option_1', ucfirst($prod_name)) .
       ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
       <option value="2"'
       . ($v eq '2' && ' selected') .
-      '>' . theme_text('settings_document_title_option_2', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_2', ucfirst($prod_name)) . '</option>
       <option value="4"'
       . ($v eq '4' && ' selected') .
-      '>' . theme_text('settings_document_title_option_4', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_4', ucfirst($prod_name)) . '</option>
       <option value="5"'
       . ($v eq '5' && ' selected') .
-      '>' . theme_text('settings_document_title_option_5', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_5', ucfirst($prod_name)) . '</option>
       <option value="8"'
       . ($v eq '8' && ' selected') .
-      '>' . theme_text('settings_document_title_option_8', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_8', ucfirst($prod_name)) . '</option>
       <option value="9"'
       . ($v eq '9' && ' selected') .
-      '>' . theme_text('settings_document_title_option_9', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_9', ucfirst($prod_name)) . '</option>
       <option value="6"'
       . ($v eq '6' && ' selected') .
-      '>' . theme_text('settings_document_title_option_6', ucfirst(get_product_name())) . '</option>
+      '>' . theme_text('settings_document_title_option_6', ucfirst($prod_name)) . '</option>
       </select>';
 
 }
