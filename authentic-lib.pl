@@ -525,7 +525,7 @@ sub get_extended_sysinfo
             }
         }
         if ($get_user_level eq '0' &&
-            $theme_config{'settings_sysinfo_real_time_status'} ne 'false' &&
+            $theme_config{'settings_sysinfo_real_time_status'} ne '0' &&
             $theme_config{'settings_sysinfo_real_time_stored'} ne 'false' &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {

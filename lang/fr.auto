@@ -54,3 +54,7 @@ mconfig_ecannot=Aucun fichier de configuration personnalisé n'a été trouvé p
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Cette fonctionnalité nécessite l'installation et l'activation de <tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Cette fonctionnalité nécessite que le système de fichiers soit monté avec les <tt>ACL</tt> activés et la commande <kbd>getfacl</kbd> doit être disponible
 theme_xhred_global_module_preferences=Préférences du module
+
+#19.74
+settings_sysinfo_real_time_status_forced=Oui, forcé
+settings_sysinfo_real_time_status_forced_warn=L'activation de la surveillance en temps réel en mode forcé est déconseillée car la collecte en arrière-plan sera effectuée même lorsque l'onglet du navigateur n'est pas ciblé, ce qui peut entraîner une surcharge du serveur avec plusieurs onglets ouverts

@@ -178,3 +178,7 @@ mconfig_ecannot=Nu a fost găsit niciun fișier de configurare personalizat pent
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Această caracteristică necesită instalarea și activarea <tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Această caracteristică necesită montarea sistemului de fișiere cu <tt>ACL-urile</tt> activate și comanda <kbd>getfacl</kbd> trebuie să fie disponibilă
 theme_xhred_global_module_preferences=Preferințele modulului
+
+#19.74
+settings_sysinfo_real_time_status_forced=Da, forțat
+settings_sysinfo_real_time_status_forced_warn=Activarea monitorizării în timp real în modul de forță este descurajată, deoarece colectarea fundalului va fi efectuată chiar și atunci când fila browserului nu este focalizată, ceea ce poate provoca supraîncărcarea serverului cu mai multe file deschise

@@ -315,7 +315,7 @@ const stats = {
                     })
                 }
             });
-            this.extend.state() && this.query();
+            (this.extend.state() || this.extend.enabled() === 2) && this.query();
         },
 
         // Stop querying

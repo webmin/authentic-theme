@@ -36,3 +36,7 @@ mconfig_ecannot=Non è stato trovato alcun file di configurazione personalizzato
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Questa funzione richiede che <tt>SELinux</tt> sia installato e abilitato
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Questa funzione richiede che il file system sia montato con <tt>ACL</tt> attivati e il comando <kbd>getfacl</kbd> deve essere disponibile
 theme_xhred_global_module_preferences=Preferenze del modulo
+
+#19.74
+settings_sysinfo_real_time_status_forced=Sì, forzato
+settings_sysinfo_real_time_status_forced_warn=L'abilitazione del monitoraggio in tempo reale in modalità forzata è sconsigliata perché la raccolta in background verrà eseguita anche quando la scheda del browser non è focalizzata, causando potenzialmente un sovraccarico del server con più schede aperte

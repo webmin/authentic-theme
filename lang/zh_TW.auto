@@ -1206,3 +1206,7 @@ mconfig_ecannot=找不到此模塊的自定義配置文件
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=此功能需要安裝並啟用<tt>SELinux</tt>
 theme_xhred_filemanager_mconfig_columns_acls_disabled=此功能要求在打開<tt>ACL</tt>的情況下掛載文件系統，並且<kbd>getfacl</kbd>命令必須可用
 theme_xhred_global_module_preferences=模塊首選項
+
+#19.74
+settings_sysinfo_real_time_status_forced=是的，強迫
+settings_sysinfo_real_time_status_forced_warn=不建議在強制模式下啟用實時監視，因為即使瀏覽器選項卡未聚焦時也會執行後台收集，這可能會導致打開多個選項卡時服務器過載

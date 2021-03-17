@@ -1206,3 +1206,7 @@ mconfig_ecannot=Δεν βρέθηκε προσαρμοσμένο αρχείο δ
 theme_xhred_filemanager_mconfig_columns_selinux_disabled=Αυτή η λειτουργία απαιτεί <tt>SELinux</tt> να εγκατασταθεί και να ενεργοποιηθεί
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Αυτή η δυνατότητα απαιτεί την εγκατάσταση του συστήματος αρχείων με <tt>ACLs</tt> ενεργοποιημένο και η εντολή <kbd>getfacl</kbd> πρέπει να είναι διαθέσιμη
 theme_xhred_global_module_preferences=Προτιμήσεις ενότητας
+
+#19.74
+settings_sysinfo_real_time_status_forced=Ναι, αναγκασμένος
+settings_sysinfo_real_time_status_forced_warn=Δεν επιτρέπεται η ενεργοποίηση της παρακολούθησης σε πραγματικό χρόνο σε κατάσταση λειτουργίας, επειδή η συλλογή παρασκηνίου θα πραγματοποιηθεί ακόμα και όταν η καρτέλα του προγράμματος περιήγησης δεν είναι εστιασμένη, προκαλώντας δυνητικά υπερφόρτωση διακομιστή με ανοιχτές πολλές καρτέλες
