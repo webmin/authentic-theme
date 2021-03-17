@@ -26,7 +26,7 @@ my @sections;
 my @config_quick_access;
 
 # Format options for display and build quick access filter
-foreach my $sections (keys @settings) {
+foreach my $sections (0 .. $#settings) {
     foreach my $section ($settings[$sections]) {
         for (my $i = 0; $i < scalar(@{ $section->[0]->{'data'} }); $i++) {
             my @key_value_formated =
