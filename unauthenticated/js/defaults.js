@@ -149,7 +149,7 @@ var
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
     settings_sysinfo_csf_updates = true,
-    settings_sysinfo_query_timeout = 500,
+    settings_sysinfo_query_timeout = 1000,
 
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',
