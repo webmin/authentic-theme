@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 19.74-beta2 (March 18, 2021)
+* Add a message to reload the page when theme upgraded in background [#1521](https://github.com/authentic-theme/authentic-theme/issues/1521)
+* Add an option to force stats collection when tab is not focused [webmin/webmin#1460](https://github.com/webmin/webmin/issues/1460#issuecomment-801078993)
+* Fix to display start/kill buttons for Scheduled Cron Jobs module
+* Fiх theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
+* Fix to align checkboxes and labels correctly when displaying Virtualmin features
+
 #### Version 19.73 (March 04, 2021)
 * Add cut/paste operation to actually move files (instead of copy and delete) in File Manager
 * Fiх to prevent deleting files (data loss) on error when pasting in File Manager [sourceforge.net#5458](https://sourceforge.net/p/webadmin/bugs/5458/)
