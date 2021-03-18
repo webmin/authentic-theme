@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=העדפות מודול
 #19.74
 settings_sysinfo_real_time_status_forced=כן, מאולץ
 settings_sysinfo_real_time_status_forced_warn=הפעלת ניטור בזמן אמת במצב כוח מתייאשת מכיוון שאיסוף הרקע יבוצע גם כאשר כרטיסיית הדפדפן אינה ממוקדת, ועלולה לגרום לעומס יתר בשרת עם כרטיסיות מרובות שנפתחות
+theme_xhred_theme_update_available=מותקנת גרסה חדשה של Theme Authentic

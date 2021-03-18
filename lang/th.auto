@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=การตั้งค่าโมดู
 #19.74
 settings_sysinfo_real_time_status_forced=ใช่บังคับ
 settings_sysinfo_real_time_status_forced_warn=การเปิดใช้งานการตรวจสอบแบบเรียลไทม์ในโหมดบังคับเป็นสิ่งที่ไม่ควรทำเนื่องจากการรวบรวมพื้นหลังจะดำเนินการแม้ว่าจะไม่ได้โฟกัสแท็บเบราว์เซอร์ก็ตามอาจทำให้เซิร์ฟเวอร์ทำงานหนักเกินไปเมื่อเปิดหลายแท็บ
+theme_xhred_theme_update_available=ติดตั้ง Authentic Theme เวอร์ชันใหม่แล้ว

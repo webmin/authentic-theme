@@ -1122,3 +1122,4 @@ theme_xhred_global_module_preferences=Preferencias del módulo
 #19.74
 settings_sysinfo_real_time_status_forced=Si, forzado
 settings_sysinfo_real_time_status_forced_warn=No se recomienda habilitar el monitoreo en tiempo real en el modo forzado porque la recopilación en segundo plano se realizará incluso cuando la pestaña del navegador no esté enfocada, lo que podría causar una sobrecarga del servidor con varias pestañas abiertas
+theme_xhred_theme_update_available=Se instala una nueva versión de Authentic Theme

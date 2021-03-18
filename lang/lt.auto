@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Modulio nuostatos
 #19.74
 settings_sysinfo_real_time_status_forced=Taip, priversti
 settings_sysinfo_real_time_status_forced_warn=Įjungti realaus laiko stebėjimą priverstiniu režimu nerekomenduojama, nes foninis rinkimas bus atliekamas net ir tada, kai naršyklės skirtukas nebus sutelktas, o tai gali sukelti serverio perkrovą atidarius kelis skirtukus
+theme_xhred_theme_update_available=Įdiegta nauja Autentiškos temos versija

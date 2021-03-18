@@ -510,3 +510,4 @@ theme_xhred_global_module_preferences=Preferències del mòdul
 #19.74
 settings_sysinfo_real_time_status_forced=Sí, forçat
 settings_sysinfo_real_time_status_forced_warn=Es desaconsella habilitar la supervisió en temps real en mode de força perquè la recopilació de fons es realitzarà fins i tot quan la pestanya del navegador no estigui enfocada, cosa que pot provocar una sobrecàrrega del servidor amb diverses pestanyes obertes.
+theme_xhred_theme_update_available=S'instal·la una nova versió d'Autentic Theme

@@ -359,3 +359,4 @@ theme_xhred_global_module_preferences=模块首选项
 #19.74
 settings_sysinfo_real_time_status_forced=是的，强迫
 settings_sysinfo_real_time_status_forced_warn=不建议在强制模式下启用实时监视，因为即使浏览器选项卡未聚焦时也会执行后台收集，这可能会导致打开多个选项卡时服务器过载
+theme_xhred_theme_update_available=安装了新版本的Authentic Theme

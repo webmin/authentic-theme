@@ -116,7 +116,6 @@ theme_xhred_filemanager_successful_ownership=Право собственност
 
 theme_xhred_notifications_packages_updates=Обновление пакетов
 theme_xhred_notifications_theme_update=Обновление темы
-
 theme_xhred_notifications_firewall_update=Обновление брандмауэра
 theme_xhred_notifications_firewall_update_message=Новая версия <strong>ConfigServer Server Security and Firewall</strong> <em>%v</em> доступна для установки. Пожалуйста обновите.
 
@@ -987,3 +986,4 @@ theme_xhred_global_module_preferences=Настройки модуля
 #19.74
 settings_sysinfo_real_time_status_forced=Да, принудительно
 settings_sysinfo_real_time_status_forced_warn=Включение мониторинга в реальном времени в принудительном режиме не рекомендуется, поскольку фоновый сбор будет выполняться, даже если вкладка браузера не сфокусирована, что может вызвать перегрузку сервера при открытии нескольких вкладок.
+theme_xhred_theme_update_available=Установлена новая версия Authentic Theme

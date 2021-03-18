@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Moduulin asetukset
 #19.74
 settings_sysinfo_real_time_status_forced=Kyllä, pakko
 settings_sysinfo_real_time_status_forced_warn=Reaaliaikaisen valvonnan käyttöönottoa pakotustilassa ei suositella, koska taustakokoelma suoritetaan myös silloin, kun selaimen välilehti ei ole kohdistettu, mikä voi aiheuttaa palvelimen ylikuormituksen, kun useita välilehtiä on avattu
+theme_xhred_theme_update_available=Uusi versio Authentic Theme -asennuksesta on asennettu

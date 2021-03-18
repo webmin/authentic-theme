@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Predvoľby modulu
 #19.74
 settings_sysinfo_real_time_status_forced=Áno, vynútené
 settings_sysinfo_real_time_status_forced_warn=Povolenie monitorovania v reálnom čase v silovom režime sa neodporúča, pretože zhromažďovanie pozadia sa vykoná, aj keď karta prehliadača nie je zameraná, čo môže pri otvorení viacerých kariet spôsobiť preťaženie servera.
+theme_xhred_theme_update_available=Je nainštalovaná nová verzia autentickej témy

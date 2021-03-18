@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Tùy chọn mô-đun
 #19.74
 settings_sysinfo_real_time_status_forced=Có, bắt buộc
 settings_sysinfo_real_time_status_forced_warn=Không khuyến khích bật theo dõi thời gian thực ở chế độ bắt buộc vì thu thập nền sẽ được thực hiện ngay cả khi tab trình duyệt không được tập trung, có khả năng gây quá tải máy chủ với nhiều tab được mở
+theme_xhred_theme_update_available=Một phiên bản mới của Chủ đề đích thực đã được cài đặt

@@ -2380,7 +2380,7 @@ sub get_theme_user_link
     my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
     my $link           = '/tconfig.cgi';
 
-    my $mversion = theme_mversion_str();
+    my $mversion = theme_version(1, 1);
 
     return '' . theme_version() . $mversion .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
@@ -2725,7 +2725,7 @@ sub get_xhr_request
                     backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart");
                 }
                 my $tversion = theme_version();
-                my $mversion = theme_mversion_str();
+                my $mversion = theme_version(1, 1);
                 $tversion = $tversion . $mversion;
 
                 @update_rs = {

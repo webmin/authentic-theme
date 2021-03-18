@@ -289,7 +289,7 @@ sub embed_header
         {
             print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -1298,44 +1298,45 @@ sub theme_night_mode_login
 
 sub theme_version
 {
-    my ($string, $mod) = @_;
-    my %tinfo       = get_theme_info($current_theme);
-    my $version     = $tinfo{'version'};
-    my $mversion    = $tinfo{'mversion'};
-    my $development = string_contains($version, '-');
+    my ($string, $minor) = @_;
+    my %tinfo        = get_theme_info($current_theme);
+    my $version      = $tinfo{'version'};
+    my $mversion     = $tinfo{'mversion'};
+    my $is_alpha     = string_contains($version, 'alpha');
+    my $is_beta      = string_contains($version, 'beta');
+    my $is_rc        = string_contains($version, 'RC');
+    my $is_devel_ver = $is_alpha || $is_beta || $is_rc;
 
-    if ($mod) {
+    # Return minor version only
+    if ($minor) {
+
+        # Format minor version suffix
+        if ($string) {
+            $mversion = int($mversion);
+            if ($mversion > 1) {
+                $mversion = "-$mversion";
+            } else {
+                $mversion = undef;
+            }
+        }
         return $mversion;
     }
 
+    # Return theme version as timestamp
     if ($string) {
         $version =~ s/(alpha|beta|RC)\d*|\.|-//ig;
-        if (theme_debug_mode() || $development) {
-            $version .= (time() . "1$mversion");
+        if (theme_debug_mode() || $is_devel_ver) {
+            $version .= ("9" . time() . "$mversion");
         } else {
             $version .= ('99999999999' . $mversion);
         }
     }
-
     return $version;
-}
-
-sub theme_mversion_str
-{
-    my $mversion = int(theme_version(0, 1));
-    if ($mversion > 1) {
-        $mversion = "-$mversion";
-    } else {
-        $mversion = undef;
-    }
-
-    return $mversion;
 }
 
 sub theme_debug_mode
 {
-    my $debug_mode = "$root_directory/$current_theme/unauthenticated/js/authentic.src.js";
-    if (-r $debug_mode) {
+    if (-r "$ENV{'THEME_ROOT'}/dependencies.pl") {
         return 1;
     } else {
         return 0;
@@ -1381,7 +1382,7 @@ sub header_html_data
       theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
       get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
+      '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
       get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
 }

@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=تفضيلات الوحدة
 #19.74
 settings_sysinfo_real_time_status_forced=نعم ، قسري
 settings_sysinfo_real_time_status_forced_warn=لا يُنصح بتمكين المراقبة في الوقت الفعلي في وضع القوة لأنه سيتم تنفيذ مجموعة الخلفية حتى عندما لا تكون علامة تبويب المتصفح مركزة ، مما قد يتسبب في تحميل زائد للخادم مع فتح علامات تبويب متعددة
+theme_xhred_theme_update_available=تم تثبيت إصدار جديد من Authentic Theme

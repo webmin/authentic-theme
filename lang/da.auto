@@ -1122,3 +1122,4 @@ theme_xhred_global_module_preferences=Modulindstillinger
 #19.74
 settings_sysinfo_real_time_status_forced=Ja tvunget
 settings_sysinfo_real_time_status_forced_warn=Aktivering af realtidsovervågning i krafttilstand frarådes, fordi baggrundssamling udføres, selv når browserfanen ikke er fokuseret, hvilket potentielt kan forårsage serveroverbelastning med flere åbne faner
+theme_xhred_theme_update_available=En ny version af Authentic Theme er installeret

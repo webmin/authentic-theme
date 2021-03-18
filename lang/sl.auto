@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Nastavitve modula
 #19.74
 settings_sysinfo_real_time_status_forced=Da, prisilno
 settings_sysinfo_real_time_status_forced_warn=Omogočanje sprotnega nadzora v prisilnem načinu se odsvetuje, ker se bo zbiranje ozadja izvajalo tudi, če zavihek brskalnika ni osredotočen, kar bi lahko povzročilo preobremenitev strežnika z več zavihki
+theme_xhred_theme_update_available=Nameščena je nova različica avtentične teme

@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Modül tercihleri
 #19.74
 settings_sysinfo_real_time_status_forced=Evet, zorunlu
 settings_sysinfo_real_time_status_forced_warn=Zorla modunda gerçek zamanlı izlemeyi etkinleştirmek önerilmez çünkü tarayıcı sekmesi odaklanılmadığında bile arka planda toplama gerçekleştirilir ve bu durum, birden çok sekme açıkken sunucunun aşırı yüklenmesine neden olabilir.
+theme_xhred_theme_update_available=Authentic Theme'in yeni bir sürümü yüklendi

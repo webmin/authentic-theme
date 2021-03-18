@@ -1210,3 +1210,4 @@ theme_xhred_global_module_preferences=Moduluaren hobespenak
 #19.74
 settings_sysinfo_real_time_status_forced=Bai, behartuta
 settings_sysinfo_real_time_status_forced_warn=Denbora errealeko monitorizazioa indarrean moduan gaitzea ez da gomendagarria atzeko planoko bilketa egingo baita arakatzailearen fitxa bideratuta ez dagoenean, eta horrek zerbitzariaren gainkarga sor dezake fitxa anitz irekita daudelarik.
+theme_xhred_theme_update_available=Benetako Gaiaren bertsio berria instalatuta dago

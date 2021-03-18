@@ -1128,3 +1128,4 @@ theme_xhred_global_module_preferences=Preferencje modułu
 #19.74
 settings_sysinfo_real_time_status_forced=Tak, wymuszony
 settings_sysinfo_real_time_status_forced_warn=Włączanie monitorowania w czasie rzeczywistym w trybie wymuszonym jest odradzane, ponieważ zbieranie w tle będzie wykonywane nawet wtedy, gdy karta przeglądarki nie jest aktywna, co może spowodować przeciążenie serwera przy otwartych wielu kartach
+theme_xhred_theme_update_available=Zainstalowana jest nowa wersja Authentic Theme
