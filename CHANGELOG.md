@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 19.74-beta2 (March 18, 2021)
-* Add a message to reload the page when theme upgraded in background [#1521](https://github.com/authentic-theme/authentic-theme/issues/1521)
+#### Version 19.74-beta3 (March 19, 2021)
+* Add to display a link to reload the page when the theme upgraded in background [#1521](https://github.com/authentic-theme/authentic-theme/issues/1521#issuecomment-802347210)
 * Add an option to force stats collection when tab is not focused [webmin/webmin#1460](https://github.com/webmin/webmin/issues/1460#issuecomment-801078993)
 * Fix to display start/kill buttons for Scheduled Cron Jobs module
 * Fiх theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
