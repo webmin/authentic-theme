@@ -19,7 +19,7 @@ sub theme_settings_raw
                        'settings_webmin_default_module',
                        'settings_right_virtualmin_default',
                        'settings_right_cloudmin_default',
-                       'settings_right_clone_page',
+                       'settings_right_page_keep',
                        'settings_right_reload',
                        'settings_document_title',
                        'settings_cm_editor_palette',
@@ -169,7 +169,7 @@ sub theme_settings_filter
         push(@theme_settings_filter,
              'settings_right_default_tab_webmin',
              'settings_right_reload',
-             'settings_right_clone_page');
+             'settings_right_page_keep');
     }
 
     # Assign default for options provided by the server side

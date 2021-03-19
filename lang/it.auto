@@ -42,5 +42,5 @@ settings_sysinfo_real_time_status_forced=Sì, forzato
 settings_sysinfo_real_time_status_forced_warn=L'abilitazione del monitoraggio in tempo reale in modalità forzata è sconsigliata perché la raccolta in background verrà eseguita anche quando la scheda del browser non è focalizzata, causando potenzialmente un sovraccarico del server con più schede aperte
 theme_xhred_theme_update_available=È installata una nuova versione di Authentic Theme
 
-settings_right_clone_page=Carica la stessa pagina sull'interruttore del server
-settings_right_clone_page_description=Questa opzione proverà a caricare la stessa pagina alla selezione del server, se modificata dall'elenco a discesa del menu di navigazione
+settings_right_page_keep=Carica la stessa pagina sull'interruttore del server
+settings_right_page_keep_description=Questa opzione proverà a caricare la stessa pagina alla selezione del server, se modificata dall'elenco a discesa del menu di navigazione

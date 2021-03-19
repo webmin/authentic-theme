@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=העדפות מודול
 settings_sysinfo_real_time_status_forced=כן, מאולץ
 settings_sysinfo_real_time_status_forced_warn=הפעלת ניטור בזמן אמת במצב כוח מתייאשת מכיוון שאיסוף הרקע יבוצע גם כאשר כרטיסיית הדפדפן אינה ממוקדת, ועלולה לגרום לעומס יתר בשרת עם כרטיסיות מרובות שנפתחות
 theme_xhred_theme_update_available=מותקנת גרסה חדשה של Theme Authentic
-settings_right_clone_page=טען את אותו הדף במתג השרת
-settings_right_clone_page_description=אפשרות זו תנסה לטעון את אותו הדף לאחר בחירת השרת, לאחר שינויו מהרשימה הנפתחת של תפריט הניווט
+settings_right_page_keep=טען את אותו הדף במתג השרת
+settings_right_page_keep_description=אפשרות זו תנסה לטעון את אותו הדף לאחר בחירת השרת, לאחר שינויו מהרשימה הנפתחת של תפריט הניווט

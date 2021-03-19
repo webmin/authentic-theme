@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=Postavke modula
 settings_sysinfo_real_time_status_forced=Da, prisilno
 settings_sysinfo_real_time_status_forced_warn=Omogućavanje nadzora u stvarnom vremenu u načinu prisile ne preporučuje se jer će se prikupljanje u pozadini izvoditi čak i kada kartica preglednika nije fokusirana, što potencijalno može uzrokovati preopterećenje poslužitelja s više otvorenih kartica
 theme_xhred_theme_update_available=Instalirana je nova verzija Autentične teme
-settings_right_clone_page=Učitajte istu stranicu na prekidač poslužitelja
-settings_right_clone_page_description=Ova će opcija pokušati učitati istu stranicu po odabiru poslužitelja, kada se promijeni s padajućeg popisa navigacijskog izbornika
+settings_right_page_keep=Učitajte istu stranicu na prekidač poslužitelja
+settings_right_page_keep_description=Ova će opcija pokušati učitati istu stranicu po odabiru poslužitelja, kada se promijeni s padajućeg popisa navigacijskog izbornika
