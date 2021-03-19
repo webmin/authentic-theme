@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=Predvoľby modulu
 settings_sysinfo_real_time_status_forced=Áno, vynútené
 settings_sysinfo_real_time_status_forced_warn=Povolenie monitorovania v reálnom čase v silovom režime sa neodporúča, pretože zhromažďovanie pozadia sa vykoná, aj keď karta prehliadača nie je zameraná, čo môže pri otvorení viacerých kariet spôsobiť preťaženie servera.
 theme_xhred_theme_update_available=Je nainštalovaná nová verzia autentickej témy
-settings_right_page_keep=Rovnaká stránka sa načíta do prepínača servera
-settings_right_page_keep_description=Táto možnosť sa pokúsi načítať rovnakú stránku po výbere servera, keď sa zmení z rozbaľovacieho zoznamu navigačnej ponuky
+settings_right_page_keep=Načítajte rovnakú stránku do prepínača domény
+settings_right_page_keep_description=Táto možnosť sa pokúsi načítať rovnakú stránku po výbere domény, keď sa zmení z rozbaľovacieho zoznamu navigačnej ponuky
