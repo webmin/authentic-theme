@@ -94,5 +94,5 @@ settings_sysinfo_real_time_status_forced=Ja, gezwungen
 settings_sysinfo_real_time_status_forced_warn=Das Aktivieren der Echtzeitüberwachung im Force-Modus wird nicht empfohlen, da die Hintergrundsammlung auch dann durchgeführt wird, wenn die Registerkarte "Browser" nicht fokussiert ist. Dies kann zu einer Serverüberlastung führen, wenn mehrere Registerkarten geöffnet sind
 theme_xhred_theme_update_available=Eine neue Version von Authentic Theme wird installiert
 
-settings_right_virtualmin_clone_prev=Laden Sie dieselbe Seite auf den Domain-Switch
-settings_right_virtualmin_clone_prev_description=Diese Option versucht, dieselbe Seite zu laden, wenn virtuelle Server (Domänen) über das Navigationsmenü geändert werden
+settings_right_clone_page=Laden Sie dieselbe Seite auf den Server-Switch
+settings_right_clone_page_description=Diese Option versucht, dieselbe Seite bei der Serverauswahl zu laden, wenn sie aus der Dropdown-Liste des Navigationsmenüs geändert wird

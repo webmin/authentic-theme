@@ -585,5 +585,5 @@ settings_sysinfo_real_time_status_forced=Ya, terpaksa
 settings_sysinfo_real_time_status_forced_warn=Mengaktifkan pemantauan masa nyata dalam mod kekuatan tidak digalakkan kerana pengumpulan latar belakang akan dilakukan walaupun tab penyemak imbas tidak difokuskan, berpotensi menyebabkan pelayan berlebihan dengan banyak tab dibuka
 theme_xhred_theme_update_available=Versi baru Tema Autentik dipasang
 
-settings_right_virtualmin_clone_prev=Muatkan halaman yang sama pada pertukaran domain
-settings_right_virtualmin_clone_prev_description=Pilihan ini akan cuba memuat halaman yang sama apabila pelayan maya (domain) diubah dari menu navigasi
+settings_right_clone_page=Muatkan halaman yang sama pada suis pelayan
+settings_right_clone_page_description=Pilihan ini akan cuba memuatkan halaman yang sama setelah pilih pelayan, apabila diubah dari senarai dropdown menu navigasi

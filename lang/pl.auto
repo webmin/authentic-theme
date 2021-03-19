@@ -1129,5 +1129,5 @@ theme_xhred_global_module_preferences=Preferencje modułu
 settings_sysinfo_real_time_status_forced=Tak, wymuszony
 settings_sysinfo_real_time_status_forced_warn=Włączanie monitorowania w czasie rzeczywistym w trybie wymuszonym jest odradzane, ponieważ zbieranie w tle będzie wykonywane nawet wtedy, gdy karta przeglądarki nie jest aktywna, co może spowodować przeciążenie serwera przy otwartych wielu kartach
 theme_xhred_theme_update_available=Zainstalowana jest nowa wersja Authentic Theme
-settings_right_virtualmin_clone_prev=Załaduj tę samą stronę na przełączniku domeny
-settings_right_virtualmin_clone_prev_description=Ta opcja spowoduje próbę załadowania tej samej strony, gdy serwery wirtualne (domeny) zostaną zmienione z menu nawigacyjnego
+settings_right_clone_page=Załaduj tę samą stronę na przełączniku serwera
+settings_right_clone_page_description=Ta opcja spróbuje załadować tę samą stronę po wybraniu serwera, po zmianie z listy rozwijanej menu nawigacyjnego

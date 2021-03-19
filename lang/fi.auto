@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=Moduulin asetukset
 settings_sysinfo_real_time_status_forced=Kyllä, pakko
 settings_sysinfo_real_time_status_forced_warn=Reaaliaikaisen valvonnan käyttöönottoa pakotustilassa ei suositella, koska taustakokoelma suoritetaan myös silloin, kun selaimen välilehti ei ole kohdistettu, mikä voi aiheuttaa palvelimen ylikuormituksen, kun useita välilehtiä on avattu
 theme_xhred_theme_update_available=Uusi versio Authentic Theme -asennuksesta on asennettu
-settings_right_virtualmin_clone_prev=Lataa sama sivu verkkotunnuskytkimelle
-settings_right_virtualmin_clone_prev_description=Tämä vaihtoehto yrittää ladata saman sivun, kun virtuaalipalvelimia (toimialueita) vaihdetaan navigointivalikosta
+settings_right_clone_page=Lataa sama sivu palvelinkytkimelle
+settings_right_clone_page_description=Tämä vaihtoehto yrittää ladata saman sivun palvelimen valinnan jälkeen, kun se muutetaan navigointivalikon avattavasta luettelosta

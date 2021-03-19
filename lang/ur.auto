@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=ماڈیول کی ترجیحات
 settings_sysinfo_real_time_status_forced=ہاں ، جبری
 settings_sysinfo_real_time_status_forced_warn=ریئل ٹائم مانیٹرنگ کو فورس موڈ میں چالو کرنے کی حوصلہ شکنی کی جاتی ہے کیونکہ پس منظر کا مجموعہ اس وقت بھی انجام دیا جائے گا جب براؤزر ٹیب پر توجہ مرکوز نہیں کی جاتی ہے ، جس کی وجہ سے ممکنہ طور پر متعدد ٹیبز کے ساتھ سرور اوورلوڈ کھولا جاتا ہے۔
 theme_xhred_theme_update_available=مستند تھیم کا ایک نیا ورژن انسٹال ہوا ہے
-settings_right_virtualmin_clone_prev=ڈومین سوئچ پر اسی صفحے کو لوڈ کریں
-settings_right_virtualmin_clone_prev_description=جب یہ ورچوئل سرور (ڈومینز) نیویگیشن مینو سے تبدیل ہوجائے گا تو یہ آپشن اسی صفحے کو لوڈ کرنے کی کوشش کرے گا
+settings_right_clone_page=سرور سوئچ پر اسی صفحے کو لوڈ کریں
+settings_right_clone_page_description=جب یہ نیویگیشن مینو ڈراپ ڈاؤن فہرست سے تبدیل ہوتا ہے ، تو یہ اختیار سرور کے انتخاب پر ایک ہی صفحے کو لوڈ کرنے کی کوشش کرے گا

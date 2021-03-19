@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=تنظیمات برگزیده ماژول
 settings_sysinfo_real_time_status_forced=بله ، مجبور
 settings_sysinfo_real_time_status_forced_warn=فعال کردن نظارت بر زمان واقعی در حالت نیرو دلسرد نمی شود ، زیرا جمع آوری پس زمینه حتی در صورت عدم تمرکز برگه مرورگر انجام می شود ، به طور بالقوه باعث ایجاد سربار بیش از حد سرور با باز شدن چندین برگه می شود
 theme_xhred_theme_update_available=نسخه جدیدی از Authentic Theme نصب شده است
-settings_right_virtualmin_clone_prev=بارگیری همان صفحه در سوئیچ دامنه
-settings_right_virtualmin_clone_prev_description=این گزینه سعی می کند هنگام تغییر سرورهای مجازی (دامنه ها) از منوی پیمایش ، همان صفحه را بارگیری کند
+settings_right_clone_page=بارگیری همان صفحه در سوئیچ سرور
+settings_right_clone_page_description=این گزینه سعی می کند هنگام تغییر از فهرست کشویی منوی پیمایش ، همان صفحه را روی انتخاب سرور بارگیری کند

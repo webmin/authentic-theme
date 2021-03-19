@@ -1211,5 +1211,5 @@ theme_xhred_global_module_preferences=Nastavitve modula
 settings_sysinfo_real_time_status_forced=Da, prisilno
 settings_sysinfo_real_time_status_forced_warn=Omogočanje sprotnega nadzora v prisilnem načinu se odsvetuje, ker se bo zbiranje ozadja izvajalo tudi, če zavihek brskalnika ni osredotočen, kar bi lahko povzročilo preobremenitev strežnika z več zavihki
 theme_xhred_theme_update_available=Nameščena je nova različica avtentične teme
-settings_right_virtualmin_clone_prev=Naloži isto stran na stikalo domene
-settings_right_virtualmin_clone_prev_description=Ta možnost bo poskušala naložiti isto stran, ko se v navigacijskem meniju spremenijo navidezni strežniki (domene)
+settings_right_clone_page=Naloži isto stran na strežniško stikalo
+settings_right_clone_page_description=Ta možnost bo poskušala naložiti isto stran ob izbiri strežnika, ko jo spremenite s spustnega seznama navigacijskega menija
