@@ -489,6 +489,10 @@ sub string_ends_with
     return substr($_[0], -$length, $length) eq $_[1];
 }
 
+sub array_flatten {
+  return map {ref eq 'ARRAY' ? @$_ : $_} @_;
+}
+
 sub array_contains
 {
     my ($array_reference, $search, $loose) = @_;
