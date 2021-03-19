@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=A modul beállításai
 settings_sysinfo_real_time_status_forced=Igen, kénytelen
 settings_sysinfo_real_time_status_forced_warn=A valós idejű felügyelet bekapcsolása kényszerített módban nem ajánlott, mert a háttérgyűjtést akkor is elvégezzük, ha a böngésző lap nincs fókuszálva, ami a szerver túlterhelését okozhatja, ha több fül van megnyitva
 theme_xhred_theme_update_available=A Hiteles téma új verziója telepítve van
+settings_right_virtualmin_clone_prev=Töltse be ugyanazt az oldalt a tartományváltóra
+settings_right_virtualmin_clone_prev_description=Ez az opció megpróbálja ugyanazt az oldalt betölteni, amikor a virtuális szerverek (tartományok) megváltoznak a navigációs menüből

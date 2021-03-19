@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=Modulevoorkeure
 settings_sysinfo_real_time_status_forced=Ja, gedwing
 settings_sysinfo_real_time_status_forced_warn=Aktiveer real-time monitering in kragmodus word ontmoedig omdat agtergrondversameling uitgevoer sal word, selfs as die blaaier-oortjie nie gefokus is nie, wat moontlik bedieneroorlading kan veroorsaak met verskeie oop oortjies
 theme_xhred_theme_update_available='N Nuwe weergawe van Authentic Theme is geïnstalleer
+settings_right_virtualmin_clone_prev=Laai dieselfde bladsy op die domein skakelaar
+settings_right_virtualmin_clone_prev_description=Hierdie opsie sal probeer om dieselfde bladsy te laai as virtuele bedieners (domeine) van die navigasie-menu verander word

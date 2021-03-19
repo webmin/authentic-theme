@@ -1046,3 +1046,5 @@ theme_xhred_global_module_preferences=Předvolby modulu
 settings_sysinfo_real_time_status_forced=Ano, vynucený
 settings_sysinfo_real_time_status_forced_warn=Povolení monitorování v reálném čase v režimu vynucení se nedoporučuje, protože sběr pozadí bude proveden, i když karta prohlížeče není zaměřena, což může způsobit přetížení serveru při otevření více karet
 theme_xhred_theme_update_available=Je nainstalována nová verze Authentic Theme
+settings_right_virtualmin_clone_prev=Načtěte stejnou stránku do přepínače domény
+settings_right_virtualmin_clone_prev_description=Tato možnost se pokusí načíst stejnou stránku při změně virtuálních serverů (domén) z navigační nabídky

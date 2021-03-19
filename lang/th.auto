@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=การตั้งค่าโมดู
 settings_sysinfo_real_time_status_forced=ใช่บังคับ
 settings_sysinfo_real_time_status_forced_warn=การเปิดใช้งานการตรวจสอบแบบเรียลไทม์ในโหมดบังคับเป็นสิ่งที่ไม่ควรทำเนื่องจากการรวบรวมพื้นหลังจะดำเนินการแม้ว่าจะไม่ได้โฟกัสแท็บเบราว์เซอร์ก็ตามอาจทำให้เซิร์ฟเวอร์ทำงานหนักเกินไปเมื่อเปิดหลายแท็บ
 theme_xhred_theme_update_available=ติดตั้ง Authentic Theme เวอร์ชันใหม่แล้ว
+settings_right_virtualmin_clone_prev=โหลดหน้าเดียวกันบนสวิตช์โดเมน
+settings_right_virtualmin_clone_prev_description=ตัวเลือกนี้จะพยายามโหลดหน้าเดียวกันเมื่อเซิร์ฟเวอร์เสมือน (โดเมน) ถูกเปลี่ยนจากเมนูการนำทาง

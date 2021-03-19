@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=Налаштування модуля
 settings_sysinfo_real_time_status_forced=Так, примусово
 settings_sysinfo_real_time_status_forced_warn=Увімкнення моніторингу в режимі реального часу в силовому режимі не рекомендується, оскільки збір у фоновому режимі буде виконуватися навіть тоді, коли вкладка браузера не сфокусована, що потенційно може спричинити перевантаження сервера при відкритті декількох вкладок
 theme_xhred_theme_update_available=Встановлено нову версію автентичної теми
+settings_right_virtualmin_clone_prev=Завантажте ту саму сторінку на комутатор домену
+settings_right_virtualmin_clone_prev_description=Ця опція спробує завантажити ту саму сторінку, коли віртуальні сервери (домени) змінюються в меню навігації

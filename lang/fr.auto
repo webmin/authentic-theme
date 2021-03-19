@@ -59,3 +59,6 @@ theme_xhred_global_module_preferences=Préférences du module
 settings_sysinfo_real_time_status_forced=Oui, forcé
 settings_sysinfo_real_time_status_forced_warn=L'activation de la surveillance en temps réel en mode forcé est déconseillée car la collecte en arrière-plan sera effectuée même lorsque l'onglet du navigateur n'est pas ciblé, ce qui peut entraîner une surcharge du serveur avec plusieurs onglets ouverts
 theme_xhred_theme_update_available=Une nouvelle version d'Authentic Theme est installée
+
+settings_right_virtualmin_clone_prev=Charger la même page sur le commutateur de domaine
+settings_right_virtualmin_clone_prev_description=Cette option essaiera de charger la même page lorsque les serveurs virtuels (domaines) sont modifiés à partir du menu de navigation

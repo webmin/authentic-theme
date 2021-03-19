@@ -183,3 +183,6 @@ theme_xhred_global_module_preferences=Preferințele modulului
 settings_sysinfo_real_time_status_forced=Da, forțat
 settings_sysinfo_real_time_status_forced_warn=Activarea monitorizării în timp real în modul de forță este descurajată, deoarece colectarea fundalului va fi efectuată chiar și atunci când fila browserului nu este focalizată, ceea ce poate provoca supraîncărcarea serverului cu mai multe file deschise
 theme_xhred_theme_update_available=Este instalată o nouă versiune a temei autentice
+
+settings_right_virtualmin_clone_prev=Încărcați aceeași pagină pe comutatorul de domeniu
+settings_right_virtualmin_clone_prev_description=Această opțiune va încerca să încarce aceeași pagină atunci când serverele virtuale (domeniile) sunt schimbate din meniul de navigare

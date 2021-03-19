@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=모듈 환경 설정
 settings_sysinfo_real_time_status_forced=예, 강제
 settings_sysinfo_real_time_status_forced_warn=강제 모드에서 실시간 모니터링을 활성화하는 것은 권장되지 않습니다. 브라우저 탭에 초점이 맞춰져 있지 않은 경우에도 백그라운드 수집이 수행되어 여러 탭이 열린 상태에서 서버 과부하가 발생할 수 있기 때문입니다.
 theme_xhred_theme_update_available=새로운 버전의 Authentic Theme가 설치되었습니다.
+settings_right_virtualmin_clone_prev=도메인 스위치에 동일한 페이지로드
+settings_right_virtualmin_clone_prev_description=이 옵션은 탐색 메뉴에서 가상 서버 (도메인)가 변경 될 때 동일한 페이지를로드하려고합니다.

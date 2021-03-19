@@ -1123,3 +1123,5 @@ theme_xhred_global_module_preferences=Modulindstillinger
 settings_sysinfo_real_time_status_forced=Ja tvunget
 settings_sysinfo_real_time_status_forced_warn=Aktivering af realtidsovervågning i krafttilstand frarådes, fordi baggrundssamling udføres, selv når browserfanen ikke er fokuseret, hvilket potentielt kan forårsage serveroverbelastning med flere åbne faner
 theme_xhred_theme_update_available=En ny version af Authentic Theme er installeret
+settings_right_virtualmin_clone_prev=Indlæs samme side på domæneswitch
+settings_right_virtualmin_clone_prev_description=Denne mulighed forsøger at indlæse den samme side, når virtuelle servere (domæner) ændres fra navigationsmenuen

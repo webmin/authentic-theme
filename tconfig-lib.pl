@@ -18,6 +18,7 @@ sub theme_settings_raw
                        'settings_right_default_tab_usermin',
                        'settings_webmin_default_module',
                        'settings_right_virtualmin_default',
+                       'settings_right_virtualmin_clone_prev',
                        'settings_right_cloudmin_default',
                        'settings_right_reload',
                        'settings_document_title',
@@ -162,10 +163,13 @@ sub theme_settings_filter
     my @theme_settings_filter;
 
     # Exclude list of combined settings for Virtualmin/Cloudmin
-    if (!&foreign_available("server-manager") &&
+    if (!foreign_available("server-manager") &&
         !foreign_available("virtual-server"))
     {
-        push(@theme_settings_filter, 'settings_right_default_tab_webmin', 'settings_right_reload');
+        push(@theme_settings_filter,
+             'settings_right_default_tab_webmin',
+             'settings_right_reload',
+             'settings_right_virtualmin_clone_prev');
     }
 
     # Assign default for options provided by the server side
@@ -511,7 +515,8 @@ sub theme_settings_format
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
     } elsif ($k eq 'settings_sysinfo_real_time_status') {
-        my $yes_forced = "$theme_text{'settings_sysinfo_real_time_status_forced'} <sup @{[get_button_tooltip('settings_sysinfo_real_time_status_forced_warn')]} class=\"fa fa-exclamation-circle\"></sup>";
+        my $yes_forced =
+"$theme_text{'settings_sysinfo_real_time_status_forced'} <sup @{[get_button_tooltip('settings_sysinfo_real_time_status_forced_warn')]} class=\"fa fa-exclamation-circle\"></sup>";
         $v = ui_radio($k, $v, [[1, $text{'yes'}], [2, $yes_forced], [0, $text{'no'}]]);
     }
     my $description     = $theme_text{ $k . '_description' };

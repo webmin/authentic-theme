@@ -1268,3 +1268,5 @@ theme_xhred_global_module_preferences=Module preferences
 settings_sysinfo_real_time_status_forced=Yes, forced
 settings_sysinfo_real_time_status_forced_warn=Enabling real-time monitoring in force mode is discouraged because background collection will be performed even when browser tab is not focused, potentially causing server overload with multiple tabs opened
 theme_xhred_theme_update_available=A new version of Authentic Theme is installed
+settings_right_virtualmin_clone_prev=Load same page on domain switch
+settings_right_virtualmin_clone_prev_description=This option will try to load the same page when virtual servers (domains) are changed from the navigation menu

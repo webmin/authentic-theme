@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=Moduļa preferences
 settings_sysinfo_real_time_status_forced=Jā, piespiedu kārtā
 settings_sysinfo_real_time_status_forced_warn=Reāllaika monitoringa iespējošana spēka režīmā nav ieteicama, jo fona apkopošana tiks veikta pat tad, ja pārlūkprogrammas cilne nav fokusēta, kas var izraisīt servera pārslodzi, ja ir atvērtas vairākas cilnes.
 theme_xhred_theme_update_available=Ir instalēta jauna autentiskās motīva versija
+settings_right_virtualmin_clone_prev=Ielādējiet to pašu lapu domēna slēdzī
+settings_right_virtualmin_clone_prev_description=Šī opcija mēģinās ielādēt to pašu lapu, kad navigācijas izvēlnē tiek mainīti virtuālie serveri (domēni)

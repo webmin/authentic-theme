@@ -987,3 +987,6 @@ theme_xhred_global_module_preferences=Настройки модуля
 settings_sysinfo_real_time_status_forced=Да, принудительно
 settings_sysinfo_real_time_status_forced_warn=Включение мониторинга в реальном времени в принудительном режиме не рекомендуется, поскольку фоновый сбор будет выполняться, даже если вкладка браузера не сфокусирована, что может вызвать перегрузку сервера при открытии нескольких вкладок.
 theme_xhred_theme_update_available=Установлена новая версия Authentic Theme
+
+settings_right_virtualmin_clone_prev=Загрузить ту же страницу при переключении домена
+settings_right_virtualmin_clone_prev_description=Эта опция попытается загрузить ту же страницу при изменении виртуальных серверов (доменов) из меню навигации.

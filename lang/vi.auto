@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=Tùy chọn mô-đun
 settings_sysinfo_real_time_status_forced=Có, bắt buộc
 settings_sysinfo_real_time_status_forced_warn=Không khuyến khích bật theo dõi thời gian thực ở chế độ bắt buộc vì thu thập nền sẽ được thực hiện ngay cả khi tab trình duyệt không được tập trung, có khả năng gây quá tải máy chủ với nhiều tab được mở
 theme_xhred_theme_update_available=Một phiên bản mới của Chủ đề đích thực đã được cài đặt
+settings_right_virtualmin_clone_prev=Tải cùng một trang trên chuyển đổi miền
+settings_right_virtualmin_clone_prev_description=Tùy chọn này sẽ cố gắng tải cùng một trang khi máy chủ ảo (tên miền) được thay đổi từ menu điều hướng

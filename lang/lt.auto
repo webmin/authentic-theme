@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=Modulio nuostatos
 settings_sysinfo_real_time_status_forced=Taip, priversti
 settings_sysinfo_real_time_status_forced_warn=Įjungti realaus laiko stebėjimą priverstiniu režimu nerekomenduojama, nes foninis rinkimas bus atliekamas net ir tada, kai naršyklės skirtukas nebus sutelktas, o tai gali sukelti serverio perkrovą atidarius kelis skirtukus
 theme_xhred_theme_update_available=Įdiegta nauja Autentiškos temos versija
+settings_right_virtualmin_clone_prev=Įkelkite tą patį puslapį į domeno jungiklį
+settings_right_virtualmin_clone_prev_description=Ši parinktis bandys įkelti tą patį puslapį, kai naršymo meniu pakeičiami virtualūs serveriai (domenai)

@@ -1211,3 +1211,5 @@ theme_xhred_global_module_preferences=Preferenzi tal-modulu
 settings_sysinfo_real_time_status_forced=Iva, sfurzat
 settings_sysinfo_real_time_status_forced_warn=L-abilitazzjoni tal-monitoraġġ fil-ħin reali fil-modalità seħħ hija skuraġġita minħabba li l-ġbir tal-isfond se jsir anke meta t-tab tal-browser ma jkunx iffokat, u potenzjalment jikkawża tagħbija żejda fuq is-server b'ħafna tabs miftuħa.
 theme_xhred_theme_update_available=Verżjoni ġdida ta 'Tema Awtentika hija installata
+settings_right_virtualmin_clone_prev=Tagħbija l-istess paġna fuq swiċċ tad-dominju
+settings_right_virtualmin_clone_prev_description=Din l-għażla tipprova tgħabbi l-istess paġna meta s-servers virtwali (oqsma) jinbidlu mill-menu tan-navigazzjoni
