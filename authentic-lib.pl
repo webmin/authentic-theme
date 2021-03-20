@@ -2389,7 +2389,7 @@ sub get_theme_user_link
       '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
       '" data-href="' .                                    (($global_prefix || $gconfig{'webprefix'}) . $link) .
       '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
-      $theme_text{'settings_right_theme_configurable_options_title'} . '"><i class="fa fa-cogs"></i></a></div>';
+      $theme_text{'settings_right_theme_left_configuration_title'} . '"><i class="fa2 fa-fw fa2-palette fa-0_90x"></i></a></div>';
 }
 
 sub settings_get_select_navigation_color
