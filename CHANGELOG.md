@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.74-RC2 (March 20, 2021)
+#### Version 19.74-RC3 (March 20, 2021)
 * Add ability to load the same content page on domain select
 * Add to display a link to reload the page when the theme upgraded in background [#1521](https://github.com/authentic-theme/authentic-theme/issues/1521#issuecomment-802347210)
 * Add an option to force stats collection when tab is not focused [webmin/webmin#1460](https://github.com/webmin/webmin/issues/1460#issuecomment-801078993)
 * Fix to display start/kill buttons for Scheduled Cron Jobs module
 * Fiх theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
+* Fix various inconsistencies in animation and improve visual performance
 * Fix to align checkboxes and labels correctly when displaying Virtualmin features
 
 #### Version 19.73 (March 04, 2021)
