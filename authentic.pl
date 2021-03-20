@@ -1061,8 +1061,9 @@ sub theme_ui_opt_textbox
                      $value eq '' ? 1 : 0,
                      [[1, $opt1, "onClick='$dis1'"], [0, $opt2 || " ", "onClick='$dis2'"]], $dis) .
       "\n";
+    my $min_width = $size ? '' : ' min-width: 15%;';
     $rv .=
-"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; min-width: 15%;' type='text' name=\""
+"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px;$min_width' type='text' name=\""
       . &quote_escape($name)
       . "\" " . "size=$size value=\"" .
       &quote_escape($value) . "\"" . ($dis ? " disabled=true" : "") . ($max ? " maxlength=$max" : "") .
