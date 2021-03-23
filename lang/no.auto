@@ -62,3 +62,4 @@ theme_xhred_theme_update_available=En ny versjon av Authentic Theme er installer
 
 settings_right_page_keep=Last inn samme side på domenebryteren
 settings_right_page_keep_description=Dette alternativet vil prøve å laste inn den samme siden ved valg av domene, når den endres fra rullegardinlisten til navigasjonsmenyen
+settings_embed_product_branding_privileged=Vis merkevaresprutskjerm ved første lasting

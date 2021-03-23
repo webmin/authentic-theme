@@ -11,6 +11,7 @@ var
     settings_cm_editor_palette = 'monokai',
     settings_global_palette_unauthenticated = 'light',
     settings_theme_config_admins_only_privileged = false,
+    settings_embed_product_branding_privileged = true,
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
@@ -150,8 +151,11 @@ var
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
     settings_sysinfo_csf_updates = true,
-    settings_sysinfo_query_timeout = 1000,
-    settings_embed_product_branding = true,
+    settings_sysinfo_query_timeout = 1000,    
+
+    // Control min and max time for branding to show in seconds
+    settings_product_branding_show_time_min_privileged = 1,
+    settings_product_branding_show_time_max_privileged = 6,
 
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',

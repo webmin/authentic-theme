@@ -1130,3 +1130,4 @@ settings_sysinfo_real_time_status_forced_warn=Habilitar o monitoramento em tempo
 theme_xhred_theme_update_available=Uma nova versão do Authentic Theme está instalada
 settings_right_page_keep=Carregar a mesma página na troca de domínio
 settings_right_page_keep_description=Esta opção tentará carregar a mesma página ao selecionar o domínio, quando alterada na lista suspensa do menu de navegação
+settings_embed_product_branding_privileged=Mostrar tela inicial da marca no carregamento inicial

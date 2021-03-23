@@ -1213,3 +1213,4 @@ settings_sysinfo_real_time_status_forced_warn=Aktiveer real-time monitering in k
 theme_xhred_theme_update_available='N Nuwe weergawe van Authentic Theme is geïnstalleer
 settings_right_page_keep=Laai dieselfde bladsy op die domein skakelaar
 settings_right_page_keep_description=Hierdie opsie sal probeer om dieselfde bladsy te laai wanneer die domein gekies word, as dit verander word in die keuselys van die navigasie-menu
+settings_embed_product_branding_privileged=Wys handelsmerk-spatskerm tydens aanvanklike laai

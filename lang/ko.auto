@@ -1213,3 +1213,4 @@ settings_sysinfo_real_time_status_forced_warn=강제 모드에서 실시간 모�
 theme_xhred_theme_update_available=새로운 버전의 Authentic Theme가 설치되었습니다.
 settings_right_page_keep=도메인 스위치에 동일한 페이지로드
 settings_right_page_keep_description=이 옵션은 탐색 메뉴 드롭 다운 목록에서 변경할 때 도메인 선택시 동일한 페이지를로드하려고합니다.
+settings_embed_product_branding_privileged=초기로드시 브랜딩 스플래시 화면 표시

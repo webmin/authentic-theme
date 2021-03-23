@@ -1213,3 +1213,4 @@ settings_sysinfo_real_time_status_forced_warn=فعال کردن نظارت بر 
 theme_xhred_theme_update_available=نسخه جدیدی از Authentic Theme نصب شده است
 settings_right_page_keep=بارگیری همان صفحه در سوئیچ دامنه
 settings_right_page_keep_description=این گزینه سعی می کند هنگام تغییر از لیست کشویی منوی پیمایش ، همان صفحه را روی انتخاب دامنه بارگیری کند
+settings_embed_product_branding_privileged=در بارگذاری اولیه صفحه پاششی مارک تجاری را نشان دهید

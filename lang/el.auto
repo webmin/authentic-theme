@@ -1213,3 +1213,4 @@ settings_sysinfo_real_time_status_forced_warn=Δεν επιτρέπεται η �
 theme_xhred_theme_update_available=Έχει εγκατασταθεί μια νέα έκδοση του Αυθεντικού θέματος
 settings_right_page_keep=Φόρτωση της ίδιας σελίδας στο διακόπτη τομέα
 settings_right_page_keep_description=Αυτή η επιλογή θα προσπαθήσει να φορτώσει την ίδια σελίδα κατά την επιλογή τομέα, όταν αλλάξει από την αναπτυσσόμενη λίστα μενού πλοήγησης
+settings_embed_product_branding_privileged=Εμφάνιση οθόνης splash branding κατά την αρχική φόρτωση

@@ -54,6 +54,10 @@ sub theme_header
     my $body_initial = !fetch_stripped() ? ' data-load-initial="1"' : undef;
     print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!fetch_stripped());
+
+    # Embed branding
+    embed_product_branding() if (!fetch_stripped());
+    
     if (@_ > 1 && $_[1] ne 'stripped') {
 
         # Print default container
@@ -199,9 +203,6 @@ sub theme_footer
 
     # Post-body header overlay
     embed_overlay_postbody() if (!fetch_stripped());
-
-    # Embed branding
-    embed_product_branding() if (!fetch_stripped());
 
     print '</body>', "\n";
     print '</html>', "\n";

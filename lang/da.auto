@@ -1125,3 +1125,4 @@ settings_sysinfo_real_time_status_forced_warn=Aktivering af realtidsovervågning
 theme_xhred_theme_update_available=En ny version af Authentic Theme er installeret
 settings_right_page_keep=Indlæs samme side på domæneswitch
 settings_right_page_keep_description=Denne mulighed forsøger at indlæse den samme side ved valg af domæne, når den ændres fra rullemenuen til navigationsmenuen
+settings_embed_product_branding_privileged=Vis splash-skærm til branding ved første indlæsning

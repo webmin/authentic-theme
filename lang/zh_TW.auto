@@ -1213,3 +1213,4 @@ settings_sysinfo_real_time_status_forced_warn=不建議在強制模式下啟用�
 theme_xhred_theme_update_available=安裝了新版本的Authentic Theme
 settings_right_page_keep=在域交換機上加載同一頁面
 settings_right_page_keep_description=從導航菜單下拉列表中更改時，此選項將嘗試在選擇域時加載同一頁面
+settings_embed_product_branding_privileged=在初始加載時顯示品牌初始屏幕

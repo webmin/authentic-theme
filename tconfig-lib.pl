@@ -25,6 +25,7 @@ sub theme_settings_raw
                        'settings_cm_editor_palette',
                        'settings_global_palette_unauthenticated',
                        'settings_theme_config_admins_only_privileged',
+                       'settings_embed_product_branding_privileged',
             ]
          }
         ],
@@ -238,6 +239,7 @@ sub theme_settings_filter
     if ($get_user_level ne '0') {
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
+             'settings_embed_product_branding_privileged',
              'settings_hotkey_slider',
              'settings_hotkey_toggle_slider',
              'settings_global_palette_unauthenticated',

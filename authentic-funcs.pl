@@ -738,7 +738,7 @@ sub acl_system_status
 
 sub embed_product_branding
 {
-    return if ($theme_config{"settings_embed_product_branding"} eq 'false');
+    return if ($theme_config{"settings_embed_product_branding_privileged"} eq 'false');
     return &custom_embed_product_branding(@_)
       if (defined(&custom_embed_product_branding));
 

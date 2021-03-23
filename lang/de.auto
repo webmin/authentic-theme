@@ -96,3 +96,4 @@ theme_xhred_theme_update_available=Eine neue Version von Authentic Theme wird in
 
 settings_right_page_keep=Laden Sie dieselbe Seite auf den Domain-Switch
 settings_right_page_keep_description=Diese Option versucht, dieselbe Seite bei der Domänenauswahl zu laden, wenn sie aus der Dropdown-Liste des Navigationsmenüs geändert wird
+settings_embed_product_branding_privileged=Beim ersten Laden wird der Branding-Begrüßungsbildschirm angezeigt

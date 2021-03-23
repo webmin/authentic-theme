@@ -1213,3 +1213,4 @@ settings_sysinfo_real_time_status_forced_warn=A valós idejű felügyelet bekapc
 theme_xhred_theme_update_available=A Hiteles téma új verziója telepítve van
 settings_right_page_keep=Töltse be ugyanazt az oldalt a tartományváltóra
 settings_right_page_keep_description=Ez az opció megpróbálja ugyanazt az oldalt betölteni a tartomány kiválasztásakor, amikor megváltoztatja a navigációs menü legördülő listájából
+settings_embed_product_branding_privileged=A márkajelzés kezdőképernyőjének megjelenítése az első betöltéskor

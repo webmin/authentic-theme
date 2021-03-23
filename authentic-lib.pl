@@ -383,7 +383,7 @@ sub print_goto_link
     if ($server_goto) {
         my $dlink_goto = quote_escape($server_goto);
         $dlink_goto =~ s/&amp;/&/g;
-        print "<script data-goto>plugins.navigation.detect(\"$dlink_goto\");plugins.navigation.detect(\"$dlink_goto\", 1);\$(\"script[data-goto]\").remove();if (!settings_embed_product_branding) { page.load.done(); }</script>";
+        print "<script data-goto>plugins.navigation.detect(\"$dlink_goto\");plugins.navigation.detect(\"$dlink_goto\", 1);\$(\"script[data-goto]\").remove();</script>";
     }
 }
 

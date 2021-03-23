@@ -1100,3 +1100,4 @@ settings_sysinfo_real_time_status_forced_warn=Het inschakelen van realtime monit
 theme_xhred_theme_update_available=Er is een nieuwe versie van Authentic Theme geïnstalleerd
 settings_right_page_keep=Laad dezelfde pagina op de domeinschakelaar
 settings_right_page_keep_description=Deze optie zal proberen om dezelfde pagina te laden bij het selecteren van een domein, indien gewijzigd in de vervolgkeuzelijst van het navigatiemenu
+settings_embed_product_branding_privileged=Toon het opstartscherm van de branding bij het eerste laden
