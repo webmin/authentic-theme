@@ -154,7 +154,7 @@ sub embed_header
     print '<head>', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
-    embed_favicon() if (!fetch_mode());
+    embed_favicon() if (!fetch_stripped());
     print ' <title>',
       ( $args[4] ?
           (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
@@ -162,11 +162,11 @@ sub embed_header
       ),
       '</title>', "\n";
 
-    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n" if (!fetch_mode());
+    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n" if (!fetch_stripped());
 
     ($args[1] && (print($args[1] . "\n")));
 
-    if (get_stripped()) {
+    if (fetch_stripped()) {
         print "</head>\n";
         return;
     }
@@ -502,7 +502,7 @@ sub embed_js_bundle
 sub embed_js_scripts
 {
 
-    (get_stripped() && return);
+    return if (fetch_stripped());
 
     my $js = $config_directory . "/$current_theme/scripts.js";
     if (-r $js && -s $js) {
@@ -1599,25 +1599,20 @@ sub get_tuconfig_file
     return -r $oconfig ? $oconfig : "$oconfig.js";
 }
 
-sub fetch_mode
+sub fetch_stripped
 {
-    return get_stripped() || get_raw();
-}
-
-sub get_stripped
-{
-    if (get_env('request_uri') =~ /stripped=1/ || get_env('http_x_pjax') eq 'true') {
+    if (get_env('http_x_requested_with') eq "XMLHttpRequest")
+    {
         return 1;
     } else {
         return 0;
     }
 }
 
-sub get_raw
+sub fetch_content
 {
-    if (get_env('request_uri') =~ /stripped=1&stripped=2/ ||
-        get_module_name() eq "file" ||
-        get_env('http_progressive_output') eq 'progressive')
+    if (get_env('request_uri') =~ /fetch-content=1/ ||
+        get_module_name() eq "file")
     {
         return 1;
     } else {

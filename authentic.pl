@@ -42,7 +42,7 @@ do("$ENV{'THEME_ROOT'}/authentic-init.pl");
 sub theme_header
 {
 
-    (get_raw() && return);
+    return if (fetch_content());
     my $tref   = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
@@ -51,12 +51,13 @@ sub theme_header
                   (@_ > 1 ? '1' : '0'),
                   ($tref  ? 1   : 0)
                  ));
-    print '<body ' . header_body_data(undef) . ' ' . $tconfig{'inbody'} . '>' . "\n";
-    embed_overlay_prebody();
+    my $body_initial = !fetch_stripped() ? ' data-load-initial="1"' : undef;
+    print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
+    embed_overlay_prebody() if (!fetch_stripped());
     if (@_ > 1 && $_[1] ne 'stripped') {
 
         # Print default container
-        print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
+        print '<div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
         print '<div class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
@@ -142,7 +143,7 @@ sub theme_header
 
 sub theme_footer
 {
-    (get_raw() && return);
+    return if (fetch_content());
     ((!$miniserv::theme_header_captured && !$miniserv::page_capture) && return);
     my %this_module_info = &get_module_info(&get_module_name());
     for (my $i = 0; $i + 1 < @_; $i += 2) {
@@ -164,7 +165,7 @@ sub theme_footer
     }
 
     print "</div>\n";
-    embed_port_shell();
+    embed_port_shell() if (!fetch_stripped());
     embed_footer((theme_debug_mode()),
                  (
                   (get_module_name() ||
@@ -178,7 +179,8 @@ sub theme_footer
                      get_env('request_uri') =~ /\/settings-backgrounds.cgi/
                   ) ? '1' : '0'
                  ),
-                 $_[0]);
+                 $_[0]
+    ) if (!fetch_stripped());
     embed_pm_scripts();
 
     if (get_env('script_name') eq '/session_login.cgi' ||
@@ -189,13 +191,17 @@ sub theme_footer
 
     if ($theme_config{'settings_hide_top_loader'} ne 'true' &&
         get_env('script_name') ne '/session_login.cgi' &&
-        get_env('script_name') ne '/pam_login.cgi')
+        get_env('script_name') ne '/pam_login.cgi'     &&
+        !fetch_stripped())
     {
         print '<div class="top-aprogress"></div>', "\n";
     }
 
     # Post-body header overlay
-    embed_overlay_postbody();
+    embed_overlay_postbody() if (!fetch_stripped());
+
+    # Embed branding
+    embed_product_branding() if (!fetch_stripped());
 
     print '</body>', "\n";
     print '</html>', "\n";
@@ -470,7 +476,6 @@ sub theme_ui_help
 "<sup class=\"ui_help\" data-container=\"body\" data-placement=\"auto right\" data-title=\"$title\" data-toggle=\"tooltip\"><i class=\"fa fa-0_80x fa-question-circle cursor-help\"></i></sup>"
     );
 }
-
 
 sub theme_ui_link
 {

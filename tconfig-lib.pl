@@ -204,6 +204,11 @@ sub theme_settings_filter
              'settings_sysinfo_max_servers');
     }
 
+    # Exclude Dashboard link option when switch available
+    if (dashboard_switch()) {
+      push(@theme_settings_filter, 'settings_sysinfo_link_mini');
+    }
+
     # Exclude Cloudmin related options
     if (!&foreign_available("server-manager")) {
         push(@theme_settings_filter, 'settings_right_cloudmin_default', 'settings_hotkey_toggle_key_cloudmin');

@@ -13,8 +13,10 @@ our (%in,
      %gconfig,
      $current_lang_info,
      $root_directory,
+     $current_theme,
      $remote_user,
-     $get_user_level);
+     $get_user_level,
+     $server_goto);
 
 =head2 settings(file, [grep_pattern])
 Parses given JavaScript filename to a hash reference
@@ -489,8 +491,9 @@ sub string_ends_with
     return substr($_[0], -$length, $length) eq $_[1];
 }
 
-sub array_flatten {
-  return map {ref eq 'ARRAY' ? @$_ : $_} @_;
+sub array_flatten
+{
+    return map {ref eq 'ARRAY' ? @$_ : $_} @_;
 }
 
 sub array_contains
@@ -604,8 +607,8 @@ sub is_switch_webmail
 {
     return (
             (
-             !get_theme_temp_data('goto', 1) && (!$theme_config{'settings_right_default_tab_usermin'} ||
-                                                 $theme_config{'settings_right_default_tab_usermin'} =~ /mail/)
+             !$server_goto && (!$theme_config{'settings_right_default_tab_usermin'} ||
+                               $theme_config{'settings_right_default_tab_usermin'} =~ /mail/)
             ) ? 1 : 0);
 }
 
@@ -731,6 +734,41 @@ sub acl_system_status
     } else {
         return indexof($show, split(/\s+/, $access{'show'})) >= 0;
     }
+}
+
+sub embed_product_branding
+{
+    return if ($theme_config{"settings_embed_product_branding"} eq 'false');
+    return &custom_embed_product_branding(@_)
+      if (defined(&custom_embed_product_branding));
+
+    my $brand;
+    my $brand_name;
+    my $brand_dir = "$root_directory/$current_theme/images/brand";
+    my $loader    = read_file_contents("$brand_dir/loader.html");
+
+    # Define brand image for Virtualmin
+    if (foreign_available("virtual-server")) {
+        $brand = read_file_contents("$brand_dir/virtualmin.html");
+        $brand_name = "brand-virtualmin";
+    } 
+    
+    # Define brand image for Cloudmin
+    elsif (foreign_available("virtual-server")) {
+        $brand = read_file_contents("$brand_dir/cloudmin.html");
+        $brand_name = "brand-cloudmin";
+    }
+
+    # Webmin/Usermin brand image
+    else {
+        my $prod = get_product_name();
+        $brand = read_file_contents("$brand_dir/$prod.html");
+        $brand_name = "brand-$prod";
+    }
+    $brand =
+"<div class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
+    $brand .= "<script>page.branding.process()</script>";
+    print $brand;
 }
 
 1;

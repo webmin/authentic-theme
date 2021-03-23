@@ -151,6 +151,7 @@ var
     settings_perform_content_scrolling = true,
     settings_sysinfo_csf_updates = true,
     settings_sysinfo_query_timeout = 1000,
+    settings_embed_product_branding = true,
 
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',

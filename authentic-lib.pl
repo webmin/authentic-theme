@@ -22,7 +22,7 @@ our (
     %theme_text,               %module_text_full,    %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
     $theme_requested_from_tab, $t_uri___i,           $theme_module_query_id, $has_virtualmin, $has_cloudmin,
     $has_usermin,              $has_usermin_version, $has_usermin_root_dir,  $has_usermin_conf_dir,
-    $mode_status,              $t_var_switch_m,      $t_var_product_m);
+    $mode_status,              $t_var_switch_m,      $t_var_product_m,       $server_goto);
 
 init_type();
 init_config();
@@ -151,10 +151,56 @@ sub get_swith_mode
     return ($t_var_switch_m, $t_var_product_m);
 }
 
+sub server_goto_id
+{
+    if ($server_goto =~ /\/virtual-server\// && $server_goto =~ /dom=(\d+)/) {
+        return "$1";
+    } elsif ($server_goto =~ /\/server-manager\// && $server_goto =~ /id=(\d+)/) {
+        return "$1";
+    }
+    return 0;
+}
+
+sub is_switch_override
+{
+    my ($type) = @_;
+    if (!$server_goto ||
+        defined($in{'xhr-navigation-type'}))
+    {
+        return -1;
+    }
+
+    if ($type eq 'dashboard') {
+        if (($server_goto =~ /sysinfo\.cgi/ || $server_goto eq '/') && dashboard_switch()) {
+            return 1;
+        }
+    } elsif ($type eq 'webmin' || $type eq 'usermin') {
+        if ($type eq 'webmin') {
+            if ($server_goto !~ /\/virtual-server\// && $server_goto !~ /\/server-manager\//) {
+                return 1;
+            }
+        } else {
+            if ($server_goto =~ /\/mailbox\//) {
+                return 1;
+            }
+        }
+    } elsif ($server_goto =~ /\/$type\//) {
+        return 1;
+    }
+
+    return -1;
+}
+
 sub print_switch_webmin
 {
-    print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"' .
-      (is_switch_webmin() ? " checked" : "") . '>
+    print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"'
+      .
+      (
+        (is_switch_override('mailbox') != 1 &&
+           ((is_switch_webmin() || is_switch_override('webmin') == 1) && is_switch_override('dashboard') == -1)
+        ) ? " checked" : ""
+      ) .
+      '>
         <label'
       . get_button_tooltip(
                            (get_product_name() eq 'usermin' ? 'theme_xhred_titles_um' :
@@ -173,9 +219,15 @@ sub print_switch_webmin
 
 sub print_switch_dashboard
 {
-    print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"' .
-      (($theme_requested_url =~ /sysinfo/ || ($get_user_level eq '2' && get_webmin_switch_mode() ne '1')) ? " checked" : "")
-      . '>
+    print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
+      .
+      (
+        (is_switch_override('dashboard') == 1 ||
+           $theme_requested_url =~ /sysinfo/  ||
+           ($get_user_level eq '2' && get_webmin_switch_mode() ne '1')
+        ) ? " checked" : ""
+      ) .
+      '>
           <label'
       . get_button_tooltip('theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto right') .
       ' for="open_dashboard" style="padding-top: 1px;">
@@ -186,7 +238,7 @@ sub print_switch_dashboard
 sub print_switch_virtualmin
 {
     print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"' .
-      (is_switch_virtualmin() ? " checked" : "") . '>
+      (is_switch_virtualmin() && is_switch_override('webmin') != 1 ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_vm', 'settings_hotkey_toggle_key_virtualmin', 'auto right') .
       ' for="open_virtualmin">
@@ -197,7 +249,7 @@ sub print_switch_virtualmin
 sub print_switch_cloudmin
 {
     print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"' .
-      (is_switch_cloudmin() ? " checked" : "") . '>
+      (is_switch_cloudmin() && is_switch_override('webmin') != 1 ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_cm', 'settings_hotkey_toggle_key_cloudmin', 'auto right') .
       ' for="open_cloudmin">
@@ -208,7 +260,7 @@ sub print_switch_cloudmin
 sub print_switch_webmail
 {
     print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"' .
-      (is_switch_webmail() ? " checked" : "") . '>
+      (is_switch_webmail() || is_switch_override('mailbox') == 1 ? " checked" : "") . '>
           <label'
       . get_button_tooltip('theme_xhred_titles_mail', 'settings_hotkey_toggle_key_webmail', 'auto right') .
       ' for="open_webmail">
@@ -218,7 +270,7 @@ sub print_switch_webmail
 
 sub print_switch_thirdlane
 {
-    print '<input class="dynamic" id="open_thirdlane" id="open_cloudmin" name="product-switcher" type="radio">
+    print '<input class="dynamic" id="open_thirdlane" name="product-switcher" type="radio">
           <label for="open_thirdlane">
           <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTI0LjksNDguOEMxMS44LDQ4LjgsMSwzOC4xLDEsMjQuOVMxMS44LDEsMjQuOSwxczIzLjksMTAuNywyMy45LDIzLjlTMzguMSw0OC44LDI0LjksNDguOHogTTI0LjksMy44Yy0xMS43LDAtMjEuMSw5LjUtMjEuMSwyMS4xczkuNSwyMS4xLDIxLjEsMjEuMWMxMS43LDAsMjEuMS05LjUsMjEuMS0yMS4xUzM2LjYsMy44LDI0LjksMy44eiIvPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDIwLjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywxOC4xLDI1LjEsMjAuMiwxNi42LDIwLjJ6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDI3LjRjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywyNS4zLDI1LjEsMjcuNCwxNi42LDI3LjR6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDM0LjZjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywzMi41LDI1LjEsMzQuNiwxNi42LDM0LjZ6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==">
           <span class="block">'
@@ -323,6 +375,16 @@ sub print_category_link
     print '<a' .              ($state && ' data-parent-hidden') . ' href="' .
       (($link !~ /^\// && $link !~ /^http/) ? ('/' . $link) : $link) . '"> ' . $label . '</a>' . "\n";
     print '</li>' . "\n";
+}
+
+sub print_goto_link
+{
+    # Print goto hidden li element
+    if ($server_goto) {
+        my $dlink_goto = quote_escape($server_goto);
+        $dlink_goto =~ s/&amp;/&/g;
+        print "<script data-goto>plugins.navigation.detect(\"$dlink_goto\");plugins.navigation.detect(\"$dlink_goto\", 1);\$(\"script[data-goto]\").remove();if (!settings_embed_product_branding) { page.load.done(); }</script>";
+    }
 }
 
 sub print_sysinfo_link
@@ -525,7 +587,7 @@ sub get_extended_sysinfo
             }
         }
         if ($get_user_level eq '0' &&
-            $theme_config{'settings_sysinfo_real_time_status'} ne '0' &&
+            $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
             $theme_config{'settings_sysinfo_real_time_stored'} ne 'false' &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {
@@ -854,19 +916,24 @@ sub print_left_menu
                 }
 
                 # Print Virtual Server Summary link
+                my $print_server_summary = sub {
+                    my ($dom_id) = @_;
+                    return '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
+                      $gconfig{'webprefix'} . '/virtual-server/summary_domain.cgi?dom=' .
+                      $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
+                      $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                };
                 if (($get_user_level eq '0' || $get_user_level eq '1') &&
-                    $__custom_link eq '0' &&
+                    !$__custom_link &&
                     $link =~ /\/virtual-server\/domain_form.cgi/ &&
                     domain_available_count())
                 {
                     my $dom_id = $item->{'link'};
-                    $dom_id =~ /gparent=(\d*)/;
+                    $dom_id =~ /gparent=(\d+)/;
                     $dom_id = $1;
                     if ($dom_id) {
-                        print '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                          $gconfig{'webprefix'} . '/virtual-server/summary_domain.cgi?dom=' .
-                          $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                          $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                        print &$print_server_summary($dom_id);
+                        $__custom_link++;
                     }
                 }
 
@@ -2344,7 +2411,6 @@ sub get_default_target
     my $taget_data;
     my $in_local;
     my $module;
-
     if ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
         $module = 'virtualmin';
     } elsif ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
@@ -2369,6 +2435,10 @@ sub get_default_target
                       undef);
     }
 
+    my $server_goto_id = server_goto_id();
+    if ($server_goto_id) {
+        $default = $server_goto_id;
+    }
     return $default;
 }
 
@@ -2385,11 +2455,12 @@ sub get_theme_user_link
     return '' . theme_version() . $mversion .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
-      . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
-      '"><i class="fa fa-info-circle"></i></a><a href="' . (($global_prefix || $gconfig{'webprefix'}) . $link) .
-      '" data-href="' .                                    (($global_prefix || $gconfig{'webprefix'}) . $link) .
-      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
-      $theme_text{'settings_right_theme_left_configuration_title'} . '"><i class="fa2 fa-fw fa2-palette fa-0_90x"></i></a></div>';
+      . '" class="btn btn-default btn-xxs' .
+      ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' .
+      (($global_prefix || $gconfig{'webprefix'}) . $link) . '" data-href="' .
+      (($global_prefix || $gconfig{'webprefix'}) . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' .
+      $is_hidden . '" data-container="body" title="' . $theme_text{'settings_right_theme_left_configuration_title'} .
+      '"><i class="fa2 fa-fw fa2-palette fa-0_90x"></i></a></div>';
 }
 
 sub settings_get_select_navigation_color
@@ -2460,35 +2531,28 @@ sub settings_get_select_editor_color
 sub settings_get_select_document_title
 {
     my ($v, $k) = @_;
-    my $prod_name = get_product_name() ne 'webmin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'};
+    my $prod_name =
+      get_product_name() ne 'webmin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'};
     return '<select class="ui_select" name="' . $k . '">
       <option value="3"'
-      . ($v eq '3' && ' selected') .
-      '>' . theme_text('settings_document_title_option_3', ucfirst($prod_name)) . '</option>
+      . ($v eq '3' && ' selected') . '>' . theme_text('settings_document_title_option_3', ucfirst($prod_name)) . '</option>
       <option value="7"'
-      . ($v eq '7' && ' selected') .
-      '>' . theme_text('settings_document_title_option_7', ucfirst($prod_name)) . '</option>
+      . ($v eq '7' && ' selected') . '>' . theme_text('settings_document_title_option_7', ucfirst($prod_name)) . '</option>
       <option value="1"'
       . ($v eq '1' && ' selected') . '>' . theme_text('settings_document_title_option_1', ucfirst($prod_name)) .
       ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
       <option value="2"'
-      . ($v eq '2' && ' selected') .
-      '>' . theme_text('settings_document_title_option_2', ucfirst($prod_name)) . '</option>
+      . ($v eq '2' && ' selected') . '>' . theme_text('settings_document_title_option_2', ucfirst($prod_name)) . '</option>
       <option value="4"'
-      . ($v eq '4' && ' selected') .
-      '>' . theme_text('settings_document_title_option_4', ucfirst($prod_name)) . '</option>
+      . ($v eq '4' && ' selected') . '>' . theme_text('settings_document_title_option_4', ucfirst($prod_name)) . '</option>
       <option value="5"'
-      . ($v eq '5' && ' selected') .
-      '>' . theme_text('settings_document_title_option_5', ucfirst($prod_name)) . '</option>
+      . ($v eq '5' && ' selected') . '>' . theme_text('settings_document_title_option_5', ucfirst($prod_name)) . '</option>
       <option value="8"'
-      . ($v eq '8' && ' selected') .
-      '>' . theme_text('settings_document_title_option_8', ucfirst($prod_name)) . '</option>
+      . ($v eq '8' && ' selected') . '>' . theme_text('settings_document_title_option_8', ucfirst($prod_name)) . '</option>
       <option value="9"'
-      . ($v eq '9' && ' selected') .
-      '>' . theme_text('settings_document_title_option_9', ucfirst($prod_name)) . '</option>
+      . ($v eq '9' && ' selected') . '>' . theme_text('settings_document_title_option_9', ucfirst($prod_name)) . '</option>
       <option value="6"'
-      . ($v eq '6' && ' selected') .
-      '>' . theme_text('settings_document_title_option_6', ucfirst($prod_name)) . '</option>
+      . ($v eq '6' && ' selected') . '>' . theme_text('settings_document_title_option_6', ucfirst($prod_name)) . '</option>
       </select>';
 
 }
@@ -2999,6 +3063,8 @@ sub content
       '</li></ul>';
     print '</aside>' . "\n";
 
+    print_goto_link();
+
     # Authenticated logo
     embed_logo();
 
@@ -3112,7 +3178,6 @@ sub get_available_modules
     } else {
         return @mods;
     }
-
 }
 
 sub theme_config_save
@@ -3128,7 +3193,7 @@ sub theme_config_save
     # Master administrator must also save certain options to
     # global `settings.js` config file to affect all users
     if ($get_user_level eq '0') {
-        delete @a{ grep(!/^settings_/,   keys %a) };
+        delete @a{ grep(!/^settings_/, keys %a) };
 
         # Never save user-based options to global config
         delete @a{ grep(/_user$/, keys %a) };

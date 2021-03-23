@@ -17,39 +17,42 @@ if ((!%in) ||
 my @leftitems = list_combined_webmin_menu(undef, \%in);
 
 if (
-    ($get_user_level ne '2' || $get_user_level eq '2' && get_webmin_switch_mode() eq '1') && (
-        dashboard_switch()
-        ||
-        (   $in{'xhr-navigation-type'} ne 'virtualmin' &&
-            $in{'xhr-navigation-type'} ne 'cloudmin'   &&
-            $in{'xhr-navigation-type'} ne 'webmail'    &&
-            (   (($theme_config{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
-                (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
-                    get_product_name() eq 'usermin'))
-        ) ||
-        $in{'xhr-navigation-type'} eq 'webmin' ||
-        ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
-            $get_user_level eq '4' &&
-            !$in{'xhr-navigation-type'}) ||
-        ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
-            ($get_user_level eq '1' || $get_user_level eq '2') &&
-            !$in{'xhr-navigation-type'}) ||
+    (
+     ($get_user_level ne '2' || $get_user_level eq '2' && get_webmin_switch_mode() eq '1') && (
+         dashboard_switch()
+         ||
+         (   $in{'xhr-navigation-type'} ne 'virtualmin' &&
+             $in{'xhr-navigation-type'} ne 'cloudmin'   &&
+             $in{'xhr-navigation-type'} ne 'webmail'    &&
+             (   (($theme_config{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
+                 (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
+                     get_product_name() eq 'usermin'))
+         ) ||
+         $in{'xhr-navigation-type'} eq 'webmin' ||
+         ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
+             $get_user_level eq '4' &&
+             !$in{'xhr-navigation-type'}) ||
+         ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+             ($get_user_level eq '1' || $get_user_level eq '2') &&
+             !$in{'xhr-navigation-type'}) ||
 
-        (
-         $get_user_level ne '3' && (
-                                    (!foreign_available("virtual-server")                &&
-                                     !$theme_config{'settings_right_default_tab_webmin'} &&
-                                     !$in{'xhr-navigation-type'}                         &&
-                                     $get_user_level ne '4'
-                                    ) ||
-                                    (!foreign_available("virtual-server") &&
-                                     $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
-                                     !$in{'xhr-navigation-type'}) ||
-                                    (!foreign_available("server-manager") &&
-                                     $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
-                                     !$in{'xhr-navigation-type'})))
+         (
+          $get_user_level ne '3' && (
+                                     (!foreign_available("virtual-server")                &&
+                                      !$theme_config{'settings_right_default_tab_webmin'} &&
+                                      !$in{'xhr-navigation-type'}                         &&
+                                      $get_user_level ne '4'
+                                     ) ||
+                                     (!foreign_available("virtual-server") &&
+                                      $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
+                                      !$in{'xhr-navigation-type'}) ||
+                                     (!foreign_available("server-manager") &&
+                                      $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+                                      !$in{'xhr-navigation-type'})))
 
-    ))
+     )
+    ) ||
+    (is_switch_override('webmin') == 1 && is_switch_override('usermin') != 1))
 {
     print_search();
 
@@ -131,44 +134,44 @@ if (
     print_sysinfo_link($get_user_level eq '3' ? 1 : undef);
     print_netdata_link();
     print_left_custom_links();
-}
 
-elsif ($get_user_level eq '2' && dashboard_switch()
-       ||
-       (
-        ((!$theme_config{'settings_right_default_tab_webmin'} && $in{'xhr-navigation-type'} ne 'cloudmin') ||
-         (foreign_available("virtual-server") &&
+} elsif (is_switch_override('virtual-server') == 1 ||
+         ($get_user_level eq '2' && dashboard_switch())
+         ||
+         (
+          ((!$theme_config{'settings_right_default_tab_webmin'} && $in{'xhr-navigation-type'} ne 'cloudmin') ||
+           (foreign_available("virtual-server") &&
              $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ &&
              $in{'xhr-navigation-type'} ne 'cloudmin') ||
-         $in{'xhr-navigation-type'} eq 'virtualmin'
-        ) &&
-        get_product_name() ne 'usermin' &&
-        $get_user_level ne '4'))
+           $in{'xhr-navigation-type'} eq 'virtualmin'
+          ) &&
+          get_product_name() ne 'usermin' &&
+          $get_user_level ne '4'))
 {
     print_left_menu('virtual-server', \@leftitems, 0, 0, $in{'dom'}, $in{'xhr-navigation-type'});
     print_sysinfo_link();
     print_sysstat_link();
-}
 
-elsif (
-       (!$theme_config{'settings_right_default_tab_webmin'} ||
-        (foreign_available("server-manager") &&
-         $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
-         $in{'xhr-navigation-type'} ne 'virtualmin') ||
-        $in{'xhr-navigation-type'} eq 'cloudmin'
-       ) &&
-       get_product_name() ne 'usermin')
+} elsif (is_switch_override('server-manager') == 1
+         ||
+         (
+          (!$theme_config{'settings_right_default_tab_webmin'} ||
+           (foreign_available("server-manager") &&
+             $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/ &&
+             $in{'xhr-navigation-type'} ne 'virtualmin') ||
+           $in{'xhr-navigation-type'} eq 'cloudmin'
+          ) &&
+          get_product_name() ne 'usermin'))
 {
 
     print_left_menu('server-manager', \@leftitems, 0, 0, $in{'sid'}, $in{'xhr-navigation-type'});
     print_sysinfo_link();
-}
 
-elsif (foreign_available("mailbox") &&
-       (
-        (!$theme_config{'settings_right_default_tab_usermin'} ||
-         $theme_config{'settings_right_default_tab_usermin'} =~ /mail/) ||
-        $in{'xhr-navigation-type'} eq 'webmail'))
+} elsif (foreign_available("mailbox") &&
+         is_switch_override('mailbox') == 1 || (
+          (!$theme_config{'settings_right_default_tab_usermin'} ||
+           $theme_config{'settings_right_default_tab_usermin'} =~ /mail/) ||
+          $in{'xhr-navigation-type'} eq 'webmail'))
 {
 
     print_left_menu('mailbox', \@leftitems, 0, 0, 0, $in{'xhr-navigation-type'});
