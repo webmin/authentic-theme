@@ -1957,7 +1957,7 @@ sub embed_login_head
     print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
-    embed_favicon($inline);
+    embed_favicon();
     print '<title>', $title, '</title>', "\n";
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 

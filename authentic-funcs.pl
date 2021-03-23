@@ -13,6 +13,7 @@ our (%in,
      %gconfig,
      $current_lang_info,
      $root_directory,
+     $config_directory,
      $current_theme,
      $remote_user,
      $get_user_level,
@@ -428,6 +429,13 @@ sub trim
     return $s;
 }
 
+sub trim_lines
+{
+    my $s = shift;
+    $s =~ s/[\n\r]//g;
+    return $s;
+}
+
 sub replace
 {
     my ($from, $to, $string) = @_;
@@ -744,25 +752,27 @@ sub embed_product_branding
 
     my $brand;
     my $brand_name;
-    my $brand_dir = "$root_directory/$current_theme/images/brand";
-    my $loader    = read_file_contents("$brand_dir/loader.html");
+    my $brand_dir_default = "$root_directory/$current_theme/images/brand";
+    my $brand_dir_custom  = "$config_directory/$current_theme/brand";
+    my $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
+    my $loader            = read_file_contents("$brand_dir/loader.html");
 
     # Define brand image for Virtualmin
     if (foreign_available("virtual-server")) {
-        $brand = read_file_contents("$brand_dir/virtualmin.html");
+        $brand      = read_file_contents("$brand_dir/virtualmin.html");
         $brand_name = "brand-virtualmin";
-    } 
-    
+    }
+
     # Define brand image for Cloudmin
     elsif (foreign_available("virtual-server")) {
-        $brand = read_file_contents("$brand_dir/cloudmin.html");
+        $brand      = read_file_contents("$brand_dir/cloudmin.html");
         $brand_name = "brand-cloudmin";
     }
 
     # Webmin/Usermin brand image
     else {
         my $prod = get_product_name();
-        $brand = read_file_contents("$brand_dir/$prod.html");
+        $brand      = read_file_contents("$brand_dir/$prod.html");
         $brand_name = "brand-$prod";
     }
     $brand =
