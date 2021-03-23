@@ -27,6 +27,7 @@ our (@theme_bundle_css,
      $theme_requested_url,
      $t_var_product_m,
      $t_var_switch_m,
+     $server_goto,
      $xnav,
      %config,
      %gaccess,
@@ -150,10 +151,10 @@ sub embed_header
 
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
-    print ' <head>', "\n";
+    print '<head>', "\n";
     embed_noscript();
-    print '<meta charset="utf-8">', "\n";
-    embed_favicon();
+    print ' <meta charset="utf-8">', "\n";
+    embed_favicon() if (!fetch_mode());
     print ' <title>',
       ( $args[4] ?
           (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
@@ -161,12 +162,12 @@ sub embed_header
       ),
       '</title>', "\n";
 
-    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n" if (!fetch_mode());
 
     ($args[1] && (print($args[1] . "\n")));
 
     if (get_stripped()) {
-        print '</head>';
+        print "</head>\n";
         return;
     }
 
@@ -289,7 +290,7 @@ sub embed_header
         {
             print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -606,9 +607,6 @@ sub embed_port_shell
 sub embed_footer
 {
     my (@args) = @_;
-
-    (get_stripped() && return);
-
     if (get_env('script_name') !~ /session_login.cgi/ &&
         get_env('script_name') !~ /pam_login.cgi/     &&
         get_env('script_name') !~ /password_form.cgi/ &&
@@ -706,6 +704,8 @@ sub init_vars
     our %gaccess = &get_module_acl();
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
+
+    our $server_goto = get_theme_temp_data('goto', 1);
 
     our ($t_var_switch_m, $t_var_product_m) = get_swith_mode();
 
@@ -1382,7 +1382,7 @@ sub header_html_data
       theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
       get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
+      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
       get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
 }
@@ -1505,6 +1505,12 @@ sub get_theme_temp_data
         foreach (@gotos) {
             $tmp_file = "$tmp_dir/$_";
             if (-r $tmp_file) {
+                my $tmp_file_mod = (stat($tmp_file))[9];
+                my $tmp_file_age = time() - $tmp_file_mod;
+                if ($tmp_file_age >= 15) {
+                    unlink_file($tmp_file);
+                    next;
+                }
                 read_file($tmp_file, \%theme_temp_data);
                 last;
             }
@@ -1591,6 +1597,11 @@ sub get_tuconfig_file
 {
     my $oconfig = "$config_directory/$current_theme/settings-$remote_user";
     return -r $oconfig ? $oconfig : "$oconfig.js";
+}
+
+sub fetch_mode
+{
+    return get_stripped() || get_raw();
 }
 
 sub get_stripped
