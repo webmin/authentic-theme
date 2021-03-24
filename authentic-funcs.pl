@@ -776,7 +776,7 @@ sub embed_product_branding
         $brand_name = "brand-$prod";
     }
     $brand =
-"<div class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
+"<div tabindex=\"1\" class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
     $brand .= "<script>page.branding.process()</script>";
     print $brand;
 }
