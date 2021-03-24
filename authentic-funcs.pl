@@ -764,7 +764,7 @@ sub embed_product_branding
     }
 
     # Define brand image for Cloudmin
-    elsif (foreign_available("virtual-server")) {
+    elsif (foreign_available("server-manager")) {
         $brand      = read_file_contents("$brand_dir/cloudmin.html");
         $brand_name = "brand-cloudmin";
     }
