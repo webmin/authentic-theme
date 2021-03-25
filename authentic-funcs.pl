@@ -750,21 +750,46 @@ sub embed_product_branding
     return &custom_embed_product_branding(@_)
       if (defined(&custom_embed_product_branding));
 
-    my $brand;
-    my $brand_name;
-    my $brand_dir_default = "$root_directory/$current_theme/images/brand";
-    my $brand_dir_custom  = "$config_directory/$current_theme/brand";
-    my $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
-    my $loader            = read_file_contents("$brand_dir/loader.html");
+    my ($brand,
+        $brand_name,
+        $brand_dir_default,
+        $brand_dir_custom,
+        $brand_dir,
+        $loader,
+        $request_uri,
+        $vm_mod_name,
+        $vm_available,
+        $vm_requested,
+        $cm_mod_name,
+        $cm_available,
+        $cm_requested);
+
+    # Set brand directory
+    $brand_name;
+    $brand_dir_default = "$root_directory/$current_theme/images/brand";
+    $brand_dir_custom  = "$config_directory/$current_theme/brand";
+    $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
+    $loader            = read_file_contents("$brand_dir/loader.html");
+    $request_uri       = get_theme_temp_data('goto', 1);
+
+    # Virtualmin available
+    $vm_mod_name  = "virtual-server";
+    $vm_available = foreign_available($vm_mod_name);
+    $vm_requested = $vm_available && $request_uri =~ /$vm_mod_name/;
+
+    # Cloudmin available and requested
+    $cm_mod_name  = "server-manager";
+    $cm_available = foreign_available($cm_mod_name);
+    $cm_requested = $cm_available && $request_uri =~ /$cm_mod_name/;
 
     # Define brand image for Virtualmin
-    if (foreign_available("virtual-server")) {
+    if ($vm_available && $vm_requested && (!$cm_available || ($cm_available && !$cm_requested))) {
         $brand      = read_file_contents("$brand_dir/virtualmin.html");
         $brand_name = "brand-virtualmin";
     }
 
     # Define brand image for Cloudmin
-    elsif (foreign_available("server-manager")) {
+    elsif ($cm_available && $cm_requested) {
         $brand      = read_file_contents("$brand_dir/cloudmin.html");
         $brand_name = "brand-cloudmin";
     }
