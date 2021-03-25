@@ -665,20 +665,12 @@ sub init_vars
     our $theme_requested_from_module = get_env('http_x_requested_from');
     our $theme_requested_from_tab    = get_env('http_x_requested_from_tab');
 
-    if ($theme_requested_url =~ /sysinfo.cgi/ || (grep {/xhr-info/} keys %in)) {
+    if ($theme_requested_url =~ /sysinfo\.cgi/ || (grep {/xhr-info/} keys %in)) {
         if (foreign_available("virtual-server")) {
             %theme_text = (load_language('virtual-server'), %theme_text);
         }
         if (foreign_available("server-manager")) {
             %theme_text = (load_language('server-manager'), %theme_text);
-        }
-    }
-
-    if (!(grep {/xhr-/} keys %in)) {
-        if ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
-            $theme_requested_url = 'virtual-server';
-        } elsif ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
-            $theme_requested_url = 'server-manager';
         }
     }
 
