@@ -142,7 +142,8 @@ const stats = {
 
                     // Update pie-charts
                     if ($pc.length) {
-                        $pc.data('easyPieChart').update(v);
+                        let piechart = $pc.data('easyPieChart');
+                        piechart && piechart.update(v);
                     }
 
                     // Update line-charts

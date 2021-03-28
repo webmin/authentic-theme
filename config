@@ -6,3 +6,4 @@ functions=authentic.pl
 inframe=0
 noindex=1
 beta_updates=0
+nolinks=1

@@ -19,10 +19,9 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory, $var_directory,
 
-    %theme_text,               %module_text_full,    %theme_config, $get_user_level, $global_prefix, $theme_requested_url,
-    $theme_requested_from_tab, $t_uri___i,           $theme_module_query_id, $has_virtualmin, $has_cloudmin,
-    $has_usermin,              $has_usermin_version, $has_usermin_root_dir,  $has_usermin_conf_dir,
-    $mode_status,              $t_var_switch_m,      $t_var_product_m,       $server_goto);
+    %theme_text,     %module_text_full, %theme_config, $get_user_level, $theme_webprefix, $http_x_url,
+    $has_virtualmin, $has_cloudmin, 
+    $has_usermin,    $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
 
 init_type();
 init_config();
@@ -34,369 +33,6 @@ sub authentic
     header([$title]);
     content();
     footer();
-}
-
-sub print_category
-{
-    my ($c, $label) = @_;
-    $label = $c eq "others" ? $theme_text{'left_others'} : $label;
-
-    my %icon_table = ('webmin'            => 'fa-cog',
-                      'usermin'           => 'fa-cog',
-                      'settings'          => 'fa-cog',
-                      'global_setting'    => 'fa-cog',
-                      'cat_settings'      => 'fa-cog',
-                      'system'            => 'fa2 fa2-system',
-                      'cat_system'        => 'fa2 fa2-system',
-                      'servers'           => 'fa2 fa2-server',
-                      'other'             => 'fa2 fa2-tools',
-                      'info'              => 'fa-info',
-                      'hardware'          => 'fa2 fa2-disk',
-                      'global_hardware'   => 'fa2 fa2-disk',
-                      'global_storage'    => 'fa2 fa2-disk',
-                      'cluster'           => 'fa2 fa2-cluster',
-                      'global_cluster'    => 'fa-power-off',
-                      'unused'            => 'fa-puzzle-piece',
-                      'global_unused'     => 'fa-puzzle-piece',
-                      'mail'              => 'fa2 fa2-email scaled1_5',
-                      'global_mail'       => 'fa2 fa2-email scaled1_5',
-                      'email'             => 'fa2 fa2-email scaled1_5',
-                      'global_email'      => 'fa2 fa2-email scaled1_5',
-                      'login'             => 'fa-user',
-                      'global_login'      => 'fa-user',
-                      'apps'              => 'fa2 fa2-server',
-                      'global_apps'       => 'fa2 fa2-server',
-                      'custom'            => 'fa2 fa2-system',
-                      'global_custom'     => 'fa2 fa2-system',
-                      'net'               => 'fa2 fa2-network',
-                      'ip'                => 'fa2 fa2-network',
-                      'global_ip'         => 'fa2 fa2-network',
-                      'check'             => 'fa-user-md',
-                      'global_check'      => 'fa-user-md',
-                      'add'               => 'fa-plus',
-                      'global_add'        => 'fa-plus',
-                      'backup'            => 'fa-backup fa-1_15x',
-                      'global_backup'     => 'fa-backup fa-1_15x',
-                      'global_server',    => 'fa-cogs',
-                      'cat_server',       => 'fa-cogs',
-                      'global_system'     => 'fa-cogs',
-                      'global_delete'     => 'fa-plug',
-                      'cat_delete'        => 'fa-plug',
-                      'global_logs'       => 'fa-file-text',
-                      'cat_logs'          => 'fa-file-text',
-                      'global_services'   => 'fa-puzzle-piece',
-                      'cat_services'      => 'fa-puzzle-piece',
-                      'create_new'        => 'fa-plus',
-                      'create_add'        => 'fa-plus',
-                      'create_create'     => 'fa-server-add',
-                      'global_gce'        => 'fa-google',
-                      'global_ec2'        => 'fa2 fa2-amazon scaled1_5',
-                      'global_hosts'      => 'fa-globe',
-                      'global_virtualmin' => 'fa-virtualmin scaled1_5',
-                      'global_owners'     => 'fa-users',
-                      'global_monitor'    => 'fa2 fa2-system',
-                      'global_settings'   => 'fa-cloud',
-                      'cat_manage'        => 'fa2 fa2-tools',
-                      'cat_res'           => 'fa-share-alt',
-                      'global_admin'      => 'fa-key',
-                      'cat_admin'         => 'fa-key',
-                      'global_power'      => 'fa-power-off',
-                      'cat_power'         => 'fa-power-off',);
-    my $icon = $icon_table{$c} || 'fa-link';
-
-    if ($label) {
-
-        # Show link to close or open catgory
-        print '<li class="has-sub">' . "\n";
-        print '<a data-has-sub-link href="#' .
-          $c . '"><i class="fa ' . $icon . ' fa-fw"></i> <span>' . $label . '</span></a>' . "\n";
-        print '</li>' . "\n";
-    }
-}
-
-sub get_swith_mode
-{
-    my ($t_var_switch_m, $t_var_product_m);
-
-    if (&get_product_name() eq 'webmin' &&
-        &foreign_available("asterisk"))
-    {
-        $t_var_switch_m  = '2';
-        $t_var_product_m = '5';
-    } elsif (&get_product_name() eq 'usermin' &&
-             &foreign_available("mailbox"))
-    {
-        $t_var_switch_m  = '2';
-        $t_var_product_m = '4';
-    } elsif (!&foreign_available("virtual-server") && !&foreign_available("server-manager") ||
-             &get_product_name() eq 'usermin' ||
-             $get_user_level eq '2')
-    {
-
-        $t_var_switch_m  = '2';
-        $t_var_product_m = '1';
-    } elsif (&foreign_available("virtual-server") &&
-             &foreign_available("server-manager"))
-    {
-        $t_var_switch_m  = '3';
-        $t_var_product_m = '3';
-    } elsif (&foreign_available("virtual-server") ||
-             &foreign_available("server-manager") && (!&foreign_available("virtual-server") ||
-                                                      !&foreign_available("server-manager")))
-    {
-        $t_var_switch_m  = '2';
-        $t_var_product_m = '2';
-    }
-
-    return ($t_var_switch_m, $t_var_product_m);
-}
-
-sub server_goto_id
-{
-    if ($server_goto =~ /\/virtual-server\// && $server_goto =~ /dom=(\d+)/) {
-        return "$1";
-    } elsif ($server_goto =~ /\/server-manager\// && $server_goto =~ /id=(\d+)/) {
-        return "$1";
-    }
-    return 0;
-}
-
-sub is_switch_override
-{
-    my ($type) = @_;
-    if (!$server_goto ||
-        defined($in{'xhr-navigation-type'}))
-    {
-        return -1;
-    }
-
-    if ($type eq 'dashboard') {
-        if (($server_goto =~ /sysinfo\.cgi/ || $server_goto eq '/') && dashboard_switch()) {
-            return 1;
-        }
-    } elsif ($type eq 'webmin' || $type eq 'usermin') {
-        if ($type eq 'webmin') {
-            if ($server_goto !~ /\/virtual-server\// && $server_goto !~ /\/server-manager\//) {
-                return 1;
-            }
-        } else {
-            if ($server_goto =~ /\/mailbox\//) {
-                return 1;
-            }
-        }
-    } elsif ($server_goto =~ /\/$type\//) {
-        return 1;
-    }
-
-    return -1;
-}
-
-sub print_switch_webmin
-{
-    print '<input class="dynamic" id="open_' . &get_product_name() . '" name="product-switcher" type="radio"'
-      .
-      (
-        (is_switch_override('mailbox') != 1 &&
-           ((is_switch_webmin() || is_switch_override('webmin') == 1) && is_switch_override('dashboard') == -1)
-        ) ? " checked" : ""
-      ) .
-      '>
-        <label'
-      . get_button_tooltip(
-                           (get_product_name() eq 'usermin' ? 'theme_xhred_titles_um' :
-                              'theme_xhred_titles_wm'
-                           ),
-                           'settings_hotkey_toggle_key_' . get_product_name() . '',
-                           'auto bottom'
-      ) .
-      ' for="open_' . get_product_name() . '">
-                <i class="wbm-webmin wbm-sm"></i><span>'
-      . (&get_product_name() eq 'webmin' ? $theme_text{'theme_xhred_titles_wm'} :
-           $theme_text{'theme_xhred_titles_um'}
-      ) .
-      '</span></label>';
-}
-
-sub print_switch_dashboard
-{
-    print '<input class="dynamic" id="open_dashboard" name="product-switcher" type="radio"'
-      .
-      (
-        (is_switch_override('dashboard') == 1 ||
-           $theme_requested_url =~ /sysinfo/  ||
-           ($get_user_level eq '2' && get_webmin_switch_mode() ne '1')
-        ) ? " checked" : ""
-      ) .
-      '>
-          <label'
-      . get_button_tooltip('theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto right') .
-      ' for="open_dashboard" style="padding-top: 1px;">
-          <i class="fa fa-stack fa-dashboard"></i><span>'
-      . $theme_text{'theme_xhred_titles_dashboard'} . '</span></label>';
-}
-
-sub print_switch_virtualmin
-{
-    print '<input class="dynamic" id="open_virtualmin" name="product-switcher" type="radio"' .
-      (is_switch_virtualmin() && is_switch_override('webmin') != 1 ? " checked" : "") . '>
-          <label'
-      . get_button_tooltip('theme_xhred_titles_vm', 'settings_hotkey_toggle_key_virtualmin', 'auto right') .
-      ' for="open_virtualmin">
-          <i class="wbm-virtualmin wbm-sm"></i><span>'
-      . $theme_text{'theme_xhred_titles_vm'} . '</span></label>';
-}
-
-sub print_switch_cloudmin
-{
-    print '<input class="dynamic" id="open_cloudmin" name="product-switcher" type="radio"' .
-      (is_switch_cloudmin() && is_switch_override('webmin') != 1 ? " checked" : "") . '>
-          <label'
-      . get_button_tooltip('theme_xhred_titles_cm', 'settings_hotkey_toggle_key_cloudmin', 'auto right') .
-      ' for="open_cloudmin">
-          <i class="wbm-cloudmin wbm-sm"></i><span>'
-      . $theme_text{'theme_xhred_titles_cm'} . '</span></label>';
-}
-
-sub print_switch_webmail
-{
-    print '<input class="dynamic" id="open_webmail" name="product-switcher" type="radio"' .
-      (is_switch_webmail() || is_switch_override('mailbox') == 1 ? " checked" : "") . '>
-          <label'
-      . get_button_tooltip('theme_xhred_titles_mail', 'settings_hotkey_toggle_key_webmail', 'auto right') .
-      ' for="open_webmail">
-          <i class="fa fa-stack fa-envelope"></i>
-          <span>' . $theme_text{'theme_xhred_titles_mail'} . '</span></label>';
-}
-
-sub print_switch_thirdlane
-{
-    print '<input class="dynamic" id="open_thirdlane" name="product-switcher" type="radio">
-          <label for="open_thirdlane">
-          <img alt="" style="margin-left:3px; height:17px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxnPjxwYXRoIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTI0LjksNDguOEMxMS44LDQ4LjgsMSwzOC4xLDEsMjQuOVMxMS44LDEsMjQuOSwxczIzLjksMTAuNywyMy45LDIzLjlTMzguMSw0OC44LDI0LjksNDguOHogTTI0LjksMy44Yy0xMS43LDAtMjEuMSw5LjUtMjEuMSwyMS4xczkuNSwyMS4xLDIxLjEsMjEuMWMxMS43LDAsMjEuMS05LjUsMjEuMS0yMS4xUzM2LjYsMy44LDI0LjksMy44eiIvPjwvZz48Zz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDIwLjJjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywxOC4xLDI1LjEsMjAuMiwxNi42LDIwLjJ6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDI3LjRjLTAuOCwwLTEuNC0wLjYtMS40LTEuNHMwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywyNS4zLDI1LjEsMjcuNCwxNi42LDI3LjR6Ii8+PC9nPjwvZz48Zz48Zz48cGF0aCBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik0xNi42LDM0LjZjLTAuOCwwLTEuNC0wLjYtMS40LTEuNGMwLTAuOCwwLjYtMS40LDEuNC0xLjRjOC4yLDAsMTYuMy0yLDE2LjQtMi4xYzAuNy0wLjIsMS41LDAuMywxLjcsMWMwLjIsMC43LTAuMywxLjUtMSwxLjdDMzMuMywzMi41LDI1LjEsMzQuNiwxNi42LDM0LjZ6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==">
-          <span class="block">'
-      . $theme_text{'theme_xhred_titles_thirdlane'} . '</span></label>';
-}
-
-sub print_switch
-{
-    my $o = ($theme_config{'settings_switch_rdisplay'} ne 'true' ? 'd' :
-               'r');
-
-    print '<div class="switch-toggle switch-' . $t_var_switch_m . ' switch-mins">';
-    if ($t_var_product_m eq '1') {
-        if ($o eq 'd') {
-            if ($get_user_level eq '2') {
-                if (get_webmin_switch_mode() eq '1') {
-                    print_switch_webmin();
-                }
-                print_switch_virtualmin();
-                if (get_webmin_switch_mode() ne '1') {
-                    print_switch_dashboard();
-                }
-
-            } else {
-                print_switch_webmin();
-                print_switch_dashboard();
-            }
-        } else {
-            if ($get_user_level eq '2') {
-                if (get_webmin_switch_mode() ne '1') {
-                    print_switch_dashboard();
-                }
-                print_switch_virtualmin();
-                if (get_webmin_switch_mode() eq '1') {
-                    print_switch_webmin();
-                }
-
-            } else {
-                print_switch_dashboard();
-                print_switch_webmin();
-            }
-        }
-    }
-    if ($t_var_product_m eq '2') {
-
-        if ($o eq 'd') {
-            print_switch_webmin();
-            &foreign_available("virtual-server") ? print_switch_virtualmin() :
-              print_switch_cloudmin();
-
-        } else {
-            &foreign_available("virtual-server") ? print_switch_virtualmin() :
-              print_switch_cloudmin();
-            print_switch_webmin();
-
-        }
-
-    }
-    if ($t_var_product_m eq '3') {
-        if ($o eq 'd') {
-            print_switch_webmin();
-            print_switch_virtualmin();
-            print_switch_cloudmin();
-
-        } else {
-            print_switch_cloudmin();
-            print_switch_virtualmin();
-            print_switch_webmin();
-
-        }
-    }
-    if ($t_var_product_m eq '4') {
-
-        if ($o eq 'd') {
-            print_switch_webmail();
-            print_switch_webmin();
-        } else {
-            print_switch_webmin();
-            print_switch_webmail();
-        }
-
-    }
-    if ($t_var_product_m eq '5') {
-
-        if ($o eq 'd') {
-            print_switch_webmin();
-            print_switch_thirdlane();
-        } else {
-            print_switch_thirdlane();
-            print_switch_webmin();
-        }
-
-    }
-    print '<a></a>
-            </div><div class="toggle-space"></div>';
-}
-
-sub print_category_link
-{
-    my ($link, $label, $state) = @_;
-    print '<li data-linked' . ($state && ' class="hidden"') . '>' . "\n";
-    print '<a' .              ($state && ' data-parent-hidden') . ' href="' .
-      (($link !~ /^\// && $link !~ /^http/) ? ('/' . $link) : $link) . '"> ' . $label . '</a>' . "\n";
-    print '</li>' . "\n";
-}
-
-sub print_goto_link
-{
-    # Print goto hidden li element
-    if ($server_goto) {
-        my $dlink_goto = quote_escape($server_goto);
-        $dlink_goto =~ s/&amp;/&/g;
-        print "<script data-goto>plugins.navigation.detect(\"$dlink_goto\");plugins.navigation.detect(\"$dlink_goto\", 1);\$(\"script[data-goto]\").remove();</script>";
-    }
-}
-
-sub print_sysinfo_link
-{
-    my ($user) = @_;
-    if (dashboard_switch() ne '1') {
-        print '<li data-linked data-after><a href="' .
-          $gconfig{'webprefix'} . '/sysinfo.cgi" class="navigation_module_trigger' .
-          ($theme_config{'settings_sysinfo_link_mini'} eq 'true' && ' hidden') .
-          '"><i class="fa fa-fw ' . ($user ? 'fa-user-circle' : 'fa-dashboard') .
-          '"></i> <span>' . $theme_text{'theme_xhred_titles_dashboard'} . '</span></a></li>' . "\n";
-    }
 }
 
 sub get_sysinfo_warning
@@ -559,9 +195,9 @@ sub get_extended_sysinfo
                             $t->{"value"} =~ s/<img src='\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
 
                             $returned_sysinfo .= '<tr>
-                                <td>' . replace('href=\'', "href='$gconfig{'webprefix'}", $t->{"desc"}) . '</td>
+                                <td>' . replace('href=\'', "href='$theme_webprefix", $t->{"desc"}) . '</td>
                                 <td>'
-                              . replace('href=\'', "href='$gconfig{'webprefix'}", $t->{"value"}) . '</td>
+                              . replace('href=\'', "href='$theme_webprefix", $t->{"value"}) . '</td>
                               </tr>';
                         }
                     } elsif ($info->{'type'} eq 'chart') {
@@ -688,7 +324,7 @@ sub print_charts
 
         $returned_sysinfo .= '<tr>
                                 <td style="width:25%">'
-          . replace('edit_domain', 'summary_domain', replace('href=\'', "href='$gconfig{'webprefix'}", $t->{"desc"})) .
+          . replace('edit_domain', 'summary_domain', replace('href=\'', "href='$theme_webprefix", $t->{"desc"})) .
           '</td>
                                 <td style="width:60%">
                                 <div class="graph-container">
@@ -702,397 +338,6 @@ sub print_charts
 
     return $returned_sysinfo;
 
-}
-
-sub print_sysstat_link
-{
-    my $link;
-    if ($get_user_level eq '0') {
-        if (-d $root_directory . "/virtual-server/pro/timeplot") {
-            $link = 'virtual-server/pro';
-        } elsif (-d $root_directory . "/server-manager/timeplot") {
-            $link = 'server-manager';
-        }
-        if ($link) {
-            print '<li data-linked data-after><a href="' . $gconfig{'webprefix'} .
-              '/' . $link . '/history.cgi" class="navigation_module_trigger"><i class="fa fa-fw fa-area-chart"></i> <span>' .
-              $theme_text{'left_statistics'} . '</span></a></li>' . "\n";
-        }
-    }
-}
-
-sub print_netdata_link
-{
-    my $link;
-    if ($get_user_level eq '0') {
-        if (has_command('netdata') &&
-            $theme_config{'settings_leftmenu_netdata'} ne 'false')
-        {
-            ($theme_config{'settings_leftmenu_netdata_link'} ? ($link = $theme_config{'settings_leftmenu_netdata_link'}) :
-               ($link = 'http://' . get_system_hostname() . ':19999'));
-        }
-
-        if ($link) {
-            print '<li data-after class="leftmenu_netdata_link"><a target="_blank" href="' . $link .
-              '" class="navigation_external_link leftmenu_netdata_link"><i class="fa fa-fw fa-line-chart"></i> <span>' .
-              $theme_text{'left_netdata'} . '</span></a></li>' . "\n";
-        }
-    }
-}
-
-sub print_search
-{
-    if (-r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'}) {
-        print '<li class="menu-container search-form-container"><form id="webmin_search_form" action="' .
-          $gconfig{'webprefix'} . '/webmin_search.cgi" role="search">' . "\n";
-        print '<div class="form-group">' . "\n";
-        print '<i class="fa fa-search"></i>' . "\n";
-        print '<input type="text" class="form-control sidebar-search" name="search" placeholder="' .
-          $theme_text{'left_search'} . '">' . "\n";
-        print '</div>' . "\n";
-        print '</form></li>' . "\n";
-    } else {
-        print '<br>';
-    }
-}
-
-sub add_webprefix
-{
-    my ($link) = @_;
-    my $webprefix = $gconfig{'webprefix'};
-
-    if (substr($link, -5) eq '&amp;') {
-        $link = substr($link, 0, -5);
-    }
-
-    if (!string_starts_with($link, "http") && !string_starts_with($link, "ftp") && !string_starts_with($link, "www")) {
-        if (!string_starts_with($link, "/")) {
-            $link = "/" . $link;
-        }
-        $link = (!string_starts_with($link, $webprefix) ? ($webprefix . $link) : $link);
-    }
-    return $link;
-}
-
-sub print_left_custom_links
-{
-    my $extra = $theme_config{'settings_leftmenu_custom_links'};
-    if ($extra) {
-        $extra = replace('\'', '"', un_urlize($extra, 1));
-        if ($extra && $extra =~ m/"extra":/) {
-            my ($extra) = $extra =~ /\{(?:\{.*\}|[^{])*\}/sg;
-            my $extra_json = convert_from_json($extra);
-            foreach my $e (@{ $extra_json->{'extra'} }) {
-                if (length($e->{"link"}) && (!length($e->{"level"}) || string_contains($e->{"level"}, $get_user_level))) {
-                    my $target = $e->{"target"};
-                    if ($target) {
-                        $target = " target=\"$target\"";
-                    }
-                    if ($e->{"port"}) {
-                        my $host = get_env('http_host');
-                        $host =~ s/:(\d+)$/:$e->{'port'}/;
-                        $e->{"link"} = "//$host$e->{'link'}";
-                    }
-                    my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
-                    my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
-                    print '<li ' . $type . ' data-after><a ' . $target . ' href="' .
-                      $e->{"link"} . '" class="' . $type_class . '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>';
-                    utf8::encode($e->{'title'});
-                    print $e->{'title'};
-                    print '</span></a></li>';
-                }
-            }
-        }
-    }
-}
-
-sub print_left_menu
-{
-    my ($module, $items, $group, $id, $selected, $xhr) = @_;
-    my $__hr           = 0;
-    my $__custom_print = 0;
-    my $__custom_link  = 0;
-    my $__mail_spinner = 0;
-
-    foreach my $item (@$items) {
-        if ($module eq $item->{'module'} || $group) {
-
-            my $link = add_webprefix($item->{'link'});
-            my $icon;
-
-            if ($theme_config{'settings_mail_ui'} ne 'false' && string_contains($link, 'mailbox/index.cgi?id')) {
-                next;
-            }
-
-            if ($item->{'type'} eq 'item' &&
-                $link ne add_webprefix("/virtual-server/pro/history.cgi"))
-            {
-
-                # Define an icon for the link/accordion
-                if ($link eq add_webprefix("/virtual-server/index.cgi") ||
-                    $link eq add_webprefix("/server-manager/index.cgi"))
-                {
-                    $icon = '<i class="fa fa-fw fa-tasks"></i>';
-                } elsif ($link =~ /\/virtual-server\/edit_newvalidate.cgi/ &&
-                         $get_user_level ne '0')
-                {
-                    $icon = '<i class="fa fa-fw fa-user-md"></i>';
-                } elsif ($link eq add_webprefix("/mailbox/list_folders.cgi") ||
-                         $link eq add_webprefix("/mailbox/list_ifolders.cgi"))
-                {
-                    $icon = '<i class="fa fa-fw fa-folder"></i>';
-                } elsif ($link eq add_webprefix("/mailbox/list_addresses.cgi")) {
-                    $icon = '<i class="fa fa-fw fa-address-book"></i>';
-                } elsif ($link eq add_webprefix("/filter/edit_forward.cgi")) {
-                    $icon = '<i class="fa fa-fw fa-share"></i>';
-                } elsif ($link eq add_webprefix("/filter/edit_auto.cgi")) {
-                    $icon = '<i class="fa fa-fw fa-reply-all"></i>';
-                } elsif ($link eq add_webprefix("/filter/")) {
-                    $icon = '<i class="fa fa-fw fa-filter"></i>';
-                } elsif ($link eq add_webprefix("/mailbox/edit_sig.cgi")) {
-                    $icon = '<i class="fa fa-fw fa-pencil"></i>';
-                } elsif ($link =~ /mailbox\/index.cgi?id=/) {
-                    $icon = '<i class="fa fa-fw fa-folder-o"></i>';
-                }
-                if ($get_user_level == 1) {
-                    if ($link =~ /\/virtual-server\/edit_pass.cgi/ &&
-                        $link !~ /\/virtual-server\/edit_pass.cgi\?/)
-                    {
-                        $icon = '<i class="fa fa-fw fa-key"></i>';
-                    } elsif ($link =~ /\/virtual-server\/edit_newplan.cgi/) {
-                        $icon = '<i class="fa fa-fw fa-list"></i>';
-                    } elsif ($link =~ /\/virtual-server\/edit_newresels.cgi/) {
-                        $icon = '<i class="fa fa-fw fa-cog"></i>';
-                    } elsif ($link =~ /\/virtual-server\/bwgraph.cgi/ && $id ne 'cat_logs') {
-                        $icon = '<i class="fa fa-fw fa-line-chart"></i>';
-                    }
-                }
-
-                if ($link =~ /\/virtual-server\/domain_form.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-server-add"></i>';
-
-                } elsif ($link =~ /\/virtual-server\/edit_domain.cgi/ ||
-                         $link =~ /\/server-manager\/edit_serv.cgi/)
-                {
-                    $icon = '<i class="fa fa-fw fa2 fa2-settings"></i>';
-                } elsif ($link =~ /\/virtual-server\/view_domain.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-info-circle"></i>';
-
-                } elsif ($link =~ /\/virtual-server\/list_users.cgi/) {
-                    $icon = '<i class="fa fa-fw fa2 fa2-users-cog"></i>';
-                } elsif ($link =~ /\/virtual-server\/list_aliases.cgi/) {
-                    $icon = '<i class="fa fa-fw fa2 fa2-maillist"></i>';
-                } elsif ($link =~ /\/virtual-server\/list_databases.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-database"></i>';
-                } elsif ($link =~ /\/virtual-server\/list_scripts.cgi/ ||
-                         $link =~ /\/server-manager\/mass_update_form.cgi/)
-                {
-                    $icon = '<i class="fa fa-fw fa-update scaled1"></i>';
-                } elsif ($link =~ /\/filemin\/index.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-file-manager scaled2"></i>';
-
-                } elsif ($link =~ /\/virtual-server\/edit_html.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-globe"></i>';
-                } elsif ($link =~ /\/server-manager\/edit_pass.cgi/ || $link =~ /\/virtual-server\/edit_pass.cgi$/) {
-                    $icon = '<i class="fa fa-fw fa-key"></i>';
-                } elsif ($link =~ /\/server-manager\/save_serv.cgi/ && $link =~ /recheck=1/) {
-                    $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
-                } elsif ($link =~ /\/server-manager\/create_form.cgi/ && $group != 1) {
-                    $icon = '<i class="fa fa-fw fa-server-add"></i>';
-                } elsif ($link =~ /\/server-manager\/save_serv.cgi/) {
-                    if ($link =~ /refresh=1/) {
-                        $icon = '<i class="fa fa-fw fa-refresh"></i>';
-                    } elsif ($link =~ /regen=1/) {
-                        $icon = '<i class="fa fa-fw fa-retweet"></i>';
-                    }
-                } elsif ($link =~ /^http:\/\// ||
-                         $link =~ /^https:\/\// ||
-                         $link =~ /^ftp:\/\//   ||
-                         $link =~ /^ftps:\/\//)
-                {
-                    $icon = '<i class="fa fa-fw fa-external-link"></i>';
-                } elsif ($link =~ /\/servers\/link.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-webmin scaled1_5"></i>';
-                }
-
-                # Print Virtual Server Summary link
-                my $print_server_summary = sub {
-                    my ($dom_id) = @_;
-                    return '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                      $gconfig{'webprefix'} . '/virtual-server/summary_domain.cgi?dom=' .
-                      $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                      $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
-                };
-                if (($get_user_level eq '0' || $get_user_level eq '1') &&
-                    !$__custom_link &&
-                    $link =~ /\/virtual-server\/domain_form.cgi/ &&
-                    domain_available_count())
-                {
-                    my $dom_id = $item->{'link'};
-                    $dom_id =~ /gparent=(\d+)/;
-                    $dom_id = $1;
-                    if ($dom_id) {
-                        print &$print_server_summary($dom_id);
-                        $__custom_link++;
-                    }
-                }
-
-                # Set variable in case it hasn't been set before
-                if (!length $link) {
-                    $icon = undef;
-                }
-
-                print '<li data-linked'
-                  .
-                  ( $item->{'target'} ? ' class="navigation_external"' :
-                      ''
-                  ) .
-                  '>' . "\n";
-                print '<a ' .
-                  ($link !~ /switch_user/ ? ' target="' . ($item->{'target'} ? '_blank' : 'page') . '" ' : '') . ' '
-                  .
-                  ( (!$group && !$item->{'target'}) ? "class=\"navigation_module_trigger\" " :
-                      ''
-                  ) .
-                  'href="' . $link . '">' .
-                  ($icon =~ /<i/ ? $icon : '') . ' <span>' . $item->{'desc'} . '</span></a>' . "\n";
-                print '</li>' . "\n";
-                print "\n";
-
-            } elsif ($item->{'type'} eq 'html') {
-                print '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
-                  $item->{'html'} . '</span></li>';
-            } elsif ($item->{'type'} eq 'text' && $item->{'desc'}) {
-                if ($mode_status == 1) {
-                    $mode_status =
-"<span><strong>$theme_text{'theme_global_access_level'}</strong>:&nbsp;&nbsp;<em>@{[html_escape($item->{'desc'})]}</em></span>";
-                } else {
-                    $mode_status++;
-                }
-            } elsif ($item->{'type'} eq 'cat') {
-
-                # Skip printing Webmin category because there is a switch for it
-                if ($item->{'id'} eq 'cat_webmin' && $get_user_level eq '2') {
-                    next;
-                }
-
-                my $c = $item->{'id'};
-                if ($item->{'module'} ne 'mailbox') {
-                    &print_category($c, $item->{'desc'});
-                    print '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $c . '">' . "\n";
-                }
-                print_left_menu($module, $item->{'members'}, 1, $c);
-
-                if (($c eq 'global_setting' || $c eq 'global_settings' && &foreign_available("webmin")) &&
-                    $__custom_print eq '0')
-                {
-                    &print_category_link($gconfig{'webprefix'} . "/tconfig.cgi",
-                                         $theme_text{'settings_right_theme_left_configuration_title'}, 1);
-                    &print_category_link($gconfig{'webprefix'} . "/settings-editor_read.cgi",
-                                         $theme_text{'settings_right_theme_left_extensions_title'}, 1);
-                    &print_category_link($gconfig{'webprefix'} . "/settings-logos.cgi",
-                                         $theme_text{'settings_right_theme_left_logo_title'}, 1);
-                    &print_category_link($gconfig{'webprefix'} . "/settings-backgrounds.cgi",
-                                         $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, 1);
-
-                    $__custom_print++;
-
-                    if (check_pro_package('vm') eq '1' &&
-                        $item->{'module'} eq 'virtual-server')
-                    {
-                        &print_category_link($gconfig{'webprefix'} . "/virtual-server/licence.cgi",
-                                             $theme_text{'right_vlcheck'}, 1);
-                    }
-
-                    if (check_pro_package('cm') eq '1' &&
-                        $item->{'module'} eq 'server-manager')
-                    {
-                        &print_category_link($gconfig{'webprefix'} . "/server-manager/licence.cgi",
-                                             $theme_text{'right_slcheck'}, 1);
-                    }
-
-                } elsif (!foreign_available("webmin") &&
-                         $__custom_print eq '0' &&
-                         $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true')
-                {
-                    print_category_link($gconfig{'webprefix'} . "/tconfig.cgi", $theme_text{'settings_title'}, 1);
-                    $__custom_print++;
-                }
-                if ($item->{'module'} ne 'mailbox') {
-                    print "</ul></li>\n";
-                }
-            } elsif ($item->{'type'} eq 'hr') {
-                if ($__hr eq '1') {
-                    print_search();
-                }
-                $__hr++;
-            } elsif (($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') &&
-                     $item->{'module'} ne 'mailbox')
-            {
-
-                # For with an input of some kind
-                if ($item->{'cgi'}) {
-                    print "<li class=\"menu-container\"><form action='$item->{'cgi'}'>\n";
-                } else {
-                    print "<li class=\"menu-container\"><form>\n";
-                }
-                foreach my $h (@{ $item->{'hidden'} }) {
-                    print ui_hidden(@$h);
-                }
-
-                print $item->{'desc'}, "\n";
-                if ($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') {
-                    my $default = get_default_target();
-                    my @dname;
-
-                    if ($item->{'name'} eq 'dname' && foreign_available('virtual-server')) {
-                        @dname = [
-                            map {
-                                [$_->{'id'},
-                                 virtual_server::shorten_domain_name($_),
-                                 "title=\"" . virtual_server::show_domain_name($_) . "\""]
-                              }
-                              grep {virtual_server::can_edit_domain($_)}
-                              sort {$a->{'dom'} cmp $b->{'dom'}} virtual_server::list_domains()];
-                    }
-                    print ui_select(
-                        ($item->{'name'} eq 'dname' ? 'dom' :
-                           $item->{'name'}
-                        ),
-                        ((($selected || $selected == 0) && $xhr) ? $selected :
-                           ( $default ? $default :
-                               $item->{'value'}
-                           )
-                        ),
-                        ($item->{'name'} eq 'dname' ? @dname : $item->{'menu'}),
-                        1,
-                        0,
-                        0,
-                        0,
-                        "data-autocomplete-title=\"
-                            "
-                          . (
-                             ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ ||
-                                $in{'xhr-navigation-type'} eq 'virtualmin'
-                             ) ? $theme_text{'right_fdoms'} :
-                               $theme_text{'right_fvm2'}
-                          ) .
-                          "
-                            \" "
-                          . "style='width:"
-                          .
-                          (
-                            ($theme_config{'settings_leftmenu_width'} ? $theme_config{'settings_leftmenu_width'} :
-                               '260'
-                            ) - 24
-                          ) .
-                          "px; margin-top: 0 !important' disabled");
-
-                }
-                print "</form></li>\n";
-            }
-        }
-    }
 }
 
 sub print_easypie_charts
@@ -1349,7 +594,7 @@ sub get_sysinfo_vars
         $ip   = " ($ip)" if ($ip);
         $host = &get_display_hostname() . $ip;
         if (&foreign_available("net")) {
-            $host = '<a href=\'' . $gconfig{'webprefix'} . '/net/list_dns.cgi\'>' . $host . '</a>';
+            $host = '<a href=\'' . $theme_webprefix . '/net/list_dns.cgi\'>' . $host . '</a>';
         }
 
         # Operating System Info
@@ -1387,7 +632,7 @@ sub get_sysinfo_vars
                       ( ($vs_license eq '1') ?
                           ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_vlcheck'} . '" href=\'' .
-                          $gconfig{'webprefix'} . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
+                          $theme_webprefix . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
@@ -1419,7 +664,7 @@ sub get_sysinfo_vars
                       ( ($cm_licensed eq '1') ?
                           ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_slcheck'} . '" href=\'' .
-                          $gconfig{'webprefix'} . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
+                          $theme_webprefix . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
@@ -1475,7 +720,7 @@ sub get_sysinfo_vars
                   ) .
                   '" class="btn btn-xxs btn-' .
                   ($authentic_remote_beta ? 'warning' : 'success') . ' authentic_update" href=\'' .
-                  ($global_prefix || $gconfig{'webprefix'}) . '/tconfig.cgi\'><i class="fa fa-fw ' .
+                  $theme_webprefix . '/tconfig.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
                   '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_beta ? 'hidden' : 'btn-info') .
 '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
@@ -1486,8 +731,8 @@ sub get_sysinfo_vars
                   $authentic_remote_version_tag . '/authentic-theme-' .
                   $authentic_remote_version_local . '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' .
                   $theme_text{'theme_download'} . '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' .
-                  ($global_prefix || $gconfig{'webprefix'}) . '/tconfig.cgi\' data-href=\'' .
-                  ($global_prefix || $gconfig{'webprefix'}) . '/tconfig.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
+                  $theme_webprefix . '/tconfig.cgi\' data-href=\'' .
+                  $theme_webprefix . '/tconfig.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
                   $theme_text{'theme_xhred_global_configuration'} . '</a>' . '</div>';
 
             } else {
@@ -1507,10 +752,10 @@ sub get_sysinfo_vars
         my $no_theme_date_time = $theme_config{'settings_theme_make_date'} eq 'false';
         if (foreign_available("time")) {
             if ($no_theme_date_time) {
-                $local_time = '<a href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+                $local_time = '<a href=\'' . $theme_webprefix . '/time/\'>' . $local_time . '</a>';
             } else {
                 $local_time = '<a data-convertible-timestamp-full="' . $_time . '"  data-convertible-date-full="' .
-                  $local_time . '" href=\'' . $gconfig{'webprefix'} . '/time/\'>' . $local_time . '</a>';
+                  $local_time . '" href=\'' . $theme_webprefix . '/time/\'>' . $local_time . '</a>';
             }
         } else {
             if ($no_theme_date_time) {
@@ -1602,14 +847,14 @@ sub get_sysinfo_vars
                     $uptime_text = &theme_text('body_upmins', $minute);
                 }
 
-                $uptime = '<a href=\'' . $gconfig{'webprefix'} . '/init/\'>' . $uptime_text . '</a>';
+                $uptime = '<a href=\'' . $theme_webprefix . '/init/\'>' . $uptime_text . '</a>';
 
             }
 
             # Running processes
             my @procs = proc::list_processes();
             $running_proc = scalar(@procs);
-            $running_proc = '<a href=\'' . $gconfig{'webprefix'} . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
+            $running_proc = '<a href=\'' . $theme_webprefix . '/proc/index_tree.cgi\'>' . $running_proc . '</a>';
         }
 
         # Load averages
@@ -1693,7 +938,7 @@ sub get_sysinfo_vars
 
             $msg =~ s/([0-9]+)/"<i class=\'badge badge-danger font-style-normal\'> $1 <\/i>"/eg;
             $package_message =
-              '<a href=\'' . $gconfig{'webprefix'} . '/package-updates/index.cgi?mode=updates\'>' . $msg . '</a>';
+              '<a href=\'' . $theme_webprefix . '/package-updates/index.cgi?mode=updates\'>' . $msg . '</a>';
 
         }
     }
@@ -1794,7 +1039,7 @@ sub print_favorites
 '<sup style="position: absolute; margin: 25px 0 0 -10px;" class="hidden">&nbsp;&nbsp;<small class="text-white"> <a aria-label="'
       . $theme_text{'theme_xhred_filemanager_context_edit'}
       . '" href="' .
-      $gconfig{'webprefix'} . '/settings-editor_' . (foreign_available('webmin') ? undef : 'favorites_') . 'read.cgi?file=' .
+      $theme_webprefix . '/settings-editor_' . (foreign_available('webmin') ? undef : 'favorites_') . 'read.cgi?file=' .
       $config_directory . '/' . $current_theme . '/favorites-' . $remote_user . '.json" class="fa fa-pencil-square-o' .
       ($f =~ m/"favorites":/ ? '' : ' hidden') . '" style="display: inline; font-size: 1em;"></a></small></sup></h1>
               </li>';
@@ -1813,7 +1058,7 @@ sub print_favorites
                   <a class="menu-exclude-link" href="'
                       . ((string_starts_with($ln, "!edit") || string_starts_with($ln, "!view")) ?
                            undef :
-                           $gconfig{'webprefix'}
+                           $theme_webprefix
                       ) .
                       ($ln) . '"><i data-product="' . ($ic) . '" class="wbm-' .
                       ($ic) . ' wbm-sm">&nbsp;</i><span class="f__c">
@@ -1981,7 +1226,7 @@ sub embed_login_head
 
     } else {
         print '<link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+          $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 
         print
 '<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
@@ -2031,7 +1276,7 @@ sub error_40x
     embed_login_head(!$main::session_id);
     print '<body class="error_40x" ' . $tconfig{'inbody'} . '>' . "\n";
     print '<meta http-equiv="refresh" content="' . $block_time . '; url=' .
-      ($gconfig{'webprefix'} ? $gconfig{'webprefix'} : '/') . '">';
+      ($theme_webprefix ? $theme_webprefix : '/') . '">';
     embed_overlay_prebody();
     print '<div class="container error_40x" data-dcontainer="1">' . "\n";
 
@@ -2364,23 +1609,20 @@ sub theme_make_config_dir
     }
 }
 
-sub domain_available
+sub virtualmin_domain_available
 {
-    my ($id, $type) = @_;
+    my ($id, $type, $gkey) = @_;
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server", "virtual-server-lib.pl");
         foreach my $dom (&virtual_server::list_visible_domains()) {
             if ($id eq $dom->{$type}) {
-                return $dom;
+                return $gkey ? $dom->{$gkey} : $dom->{$type};
             }
         }
-    } else {
-        return undef;
     }
-
 }
 
-sub domain_available_count
+sub virtualmin_domain_available_count
 {
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server", "virtual-server-lib.pl");
@@ -2389,57 +1631,17 @@ sub domain_available_count
     }
 }
 
-sub server_available
+sub cloudmin_server_available
 {
-    my ($id, $type) = @_;
+    my ($id, $type, $gkey) = @_;
     if (&foreign_available('server-manager')) {
         &foreign_require("server-manager", "server-manager-lib.pl");
         foreach my $host (&server_manager::list_managed_servers()) {
             if ($id eq $host->{$type}) {
-                return $host;
+                return $gkey ? $host->{$gkey} : $host->{$type};
             }
         }
-    } else {
-        return undef;
     }
-
-}
-
-sub get_default_target
-{
-    my $default;
-    my $taget_data;
-    my $in_local;
-    my $module;
-    if ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/) {
-        $module = 'virtualmin';
-    } elsif ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) {
-        $module = 'cloudmin';
-    }
-
-    if ($theme_requested_url =~ /virtual-server/ || $theme_requested_url =~ /server-manager/) {
-        $module = ($theme_requested_url =~ /virtual-server/ ? 'virtualmin' :
-                     'cloudmin');
-        $in_local = $t_uri___i;
-    } else {
-        $in_local = $in{$theme_module_query_id};
-    }
-
-    $taget_data = ($module eq 'virtualmin' ? domain_available($in_local, 'dom') :
-                     server_available($in_local, 'host'));
-    if ($taget_data) {
-        $default = $taget_data->{'id'};
-    } else {
-        $default = $theme_config{ 'settings_right_' . $module . '_default' };
-        $default = ($default ne 'index.cgi' ? $default :
-                      undef);
-    }
-
-    my $server_goto_id = server_goto_id();
-    if ($server_goto_id) {
-        $default = $server_goto_id;
-    }
-    return $default;
 }
 
 sub get_theme_user_link
@@ -2457,8 +1659,8 @@ sub get_theme_user_link
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' .
       ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' .
-      (($global_prefix || $gconfig{'webprefix'}) . $link) . '" data-href="' .
-      (($global_prefix || $gconfig{'webprefix'}) . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' .
+      ($theme_webprefix . $link) . '" data-href="' .
+      ($theme_webprefix . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' .
       $is_hidden . '" data-container="body" title="' . $theme_text{'settings_right_theme_left_configuration_title'} .
       '"><i class="fa2 fa-fw fa2-palette fa-0_90x"></i></a></div>';
 }
@@ -2575,11 +1777,7 @@ sub get_xhr_request
     if ($in =~ /xhr-/) {
         head();
 
-        if ($in{'xhr-navigation'} eq '1') {
-            do("$ENV{'THEME_ROOT'}/navigation.pl");
-        } elsif ($in{'xhr-default'} eq '1') {
-            print get_default_right();
-        } elsif ($in{'xhr-settings'} eq '1') {
+        if ($in{'xhr-settings'} eq '1') {
             if ($in{'restore'} eq '1') {
                 theme_config_restore();
             }
@@ -2892,102 +2090,6 @@ sub get_xhr_request
     }
 }
 
-sub get_default_right
-{
-    # Check user settings on default page for Virtualmin/Cloudmin
-    if ($theme_requested_url =~ /virtual-server/ &&
-        (   $t_uri___i ||
-            (   length $theme_config{'settings_right_virtualmin_default'} &&
-                $theme_config{'settings_right_virtualmin_default'} ne ''  &&
-                (\domain_available($theme_config{'settings_right_virtualmin_default'}, 'id') ||
-                    $theme_config{'settings_right_virtualmin_default'} eq 'index.cgi')))
-
-      )
-    {
-        if ($get_user_level eq '2') {
-            if ($t_uri___i) {
-                my $dom = domain_available($t_uri___i, 'dom');
-                if ($dom) {
-                    return '/virtual-server/view_domain.cgi?dom=' . $dom->{'id'};
-                } else {
-                    return '/sysinfo.cgi';
-                }
-            } else {
-                return '/sysinfo.cgi';
-            }
-
-        } else {
-            if ($theme_config{'settings_right_virtualmin_default'} eq 'index.cgi' &&
-                !$t_uri___i)
-            {
-                return '/virtual-server/index.cgi';
-            } else {
-                if (!$t_uri___i) {
-                    return '/virtual-server/summary_domain.cgi?dom=' . $theme_config{'settings_right_virtualmin_default'};
-                } else {
-                    if ($t_uri___i) {
-                        my $dom = domain_available($t_uri___i, 'dom');
-                        if ($dom) {
-                            return '/virtual-server/summary_domain.cgi?dom=' . $dom->{'id'};
-                        } else {
-                            return '/virtual-server/index.cgi';
-                        }
-                    } else {
-                        return '/virtual-server/index.cgi';
-                    }
-                }
-
-            }
-        }
-    } elsif ($theme_requested_url =~ /server-manager/ &&
-             ($t_uri___i ||
-              ( length $theme_config{'settings_right_cloudmin_default'} &&
-                $theme_config{'settings_right_cloudmin_default'} ne ''  &&
-                (\server_available($theme_config{'settings_right_cloudmin_default'}, 'id') ||
-                    $theme_config{'settings_right_cloudmin_default'} eq 'index.cgi'))))
-    {
-        if ($theme_config{'settings_right_cloudmin_default'} eq 'index.cgi' &&
-            !$t_uri___i)
-        {
-            return '/server-manager/index.cgi';
-        } else {
-            if (!$t_uri___i) {
-                return '/server-manager/edit_serv.cgi?id=' . $theme_config{'settings_right_cloudmin_default'};
-            } else {
-
-                if ($t_uri___i) {
-                    my $host = server_available($t_uri___i, 'host');
-                    if ($host) {
-                        return '/server-manager/edit_serv.cgi?id=' . $host->{'id'};
-                    } else {
-                        return '/server-manager/index.cgi';
-                    }
-                } else {
-                    return '/server-manager/index.cgi';
-                }
-            }
-        }
-    }
-
-    # Going to default right page for Webmin/Usermin
-    my $minfo = &get_goto_module();
-    return ($minfo ? "$minfo->{'dir'}/" : '/sysinfo.cgi');
-
-    # Prevent Virtualmin/Cloudmin module from being set as default page
-    if ($minfo->{'dir'} eq 'virtual-server' ||
-        $minfo->{'dir'} eq 'server-manager')
-    {
-        return '/sysinfo.cgi';
-    }
-
-    # Goto Inbox in Usermin Mail mode
-    if ($get_user_level eq '3' & foreign_available("mailbox") &&
-        $theme_requested_url =~ /mailbox/)
-    {
-        return '/mailbox/index.cgi?id=INBOX';
-    }
-}
-
 sub init_type
 {
     (($ENV{'CONTENT_TYPE'}  =~ /multipart\/form-data/i) ? ReadParseMime() :
@@ -3010,13 +2112,6 @@ sub init
     # Make sure that config directory exists
     theme_make_config_dir();
 
-    # Register hooks
-    $theme_module_query_id = ($theme_requested_url =~ /virtual-server/ ? 'dom' : 'sid');
-    $theme_requested_url =~ /virtual-server/ ? ($t_uri___i = ($in{'domain'} ? $in{'domain'} : $in{'dom'})) :
-      undef;
-    $theme_requested_url =~ /server-manager/ ? ($t_uri___i = ($in{'serv'} ? $in{'serv'} : $in{'server'})) :
-      undef;
-
     # Provide unobstructive access for AJAX calls
     get_xhr_request();
 
@@ -3036,20 +2131,13 @@ sub content
     print '</button>' . "\n";
     print '</div>' . "\n";
 
-    print '<aside style="' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
-
-    &print_switch();
-
     # Navigation
-    print '<ul class="navigation">' . "\n";
-    do("$ENV{'THEME_ROOT'}/navigation.pl");
-    print '</ul>' . "\n";
-
-    # Buttons
-    print '<br><br><ul class="user-links">';
-    do("$ENV{'THEME_ROOT'}/buttons.pl");
-    print '</ul>';
-    print "<script>plugins.navigation.get.buttons();</script>";
+    do("$ENV{'THEME_ROOT'}/navigation-lib.pl");
+    print '<aside style="' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
+    print_switch();
+    print "<ul class=\"navigation\">\n";
+    print nav_menu();
+    print "</ul>\n";
 
     # Custom text
     print '<ul class="user-html"><li class="user-html-string">'
@@ -3062,8 +2150,6 @@ sub content
       ) .
       '</li></ul>';
     print '</aside>' . "\n";
-
-    print_goto_link();
 
     # Authenticated logo
     embed_logo();

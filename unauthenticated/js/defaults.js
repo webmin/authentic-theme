@@ -2,9 +2,9 @@
 
 var
     // General defaults
-    settings_right_default_tab_usermin = 'mail',
-    settings_right_virtualmin_default = 'sysinfo.cgi',
-    settings_right_cloudmin_default = 'sysinfo.cgi',
+    settings_right_default_tab_usermin = 'webmail',
+    settings_right_virtualmin_default = 'index.cgi',
+    settings_right_cloudmin_default = 'index.cgi',
     settings_right_page_keep = true,
     settings_right_reload = true,
     settings_document_title = 1,

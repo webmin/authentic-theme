@@ -51,12 +51,12 @@ sub theme_header
                   (@_ > 1 ? '1' : '0'),
                   ($tref  ? 1   : 0)
                  ));
-    my $body_initial = !fetch_stripped() ? ' data-load-initial="1"' : undef;
+    my $body_initial = !http_x_request() ? ' data-load-initial="1"' : undef;
     print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
-    embed_overlay_prebody() if (!fetch_stripped());
+    embed_overlay_prebody() if (!http_x_request());
 
     # Embed branding
-    embed_product_branding() if (!fetch_stripped());
+    embed_product_branding() if (!http_x_request());
     
     if (@_ > 1 && $_[1] ne 'stripped') {
 
@@ -169,7 +169,7 @@ sub theme_footer
     }
 
     print "</div>\n";
-    embed_port_shell() if (!fetch_stripped());
+    embed_port_shell() if (!http_x_request());
     embed_footer((theme_debug_mode()),
                  (
                   (get_module_name() ||
@@ -184,7 +184,7 @@ sub theme_footer
                   ) ? '1' : '0'
                  ),
                  $_[0]
-    ) if (!fetch_stripped());
+    ) if (!http_x_request());
     embed_pm_scripts();
 
     if (get_env('script_name') eq '/session_login.cgi' ||
@@ -196,13 +196,13 @@ sub theme_footer
     if ($theme_config{'settings_hide_top_loader'} ne 'true' &&
         get_env('script_name') ne '/session_login.cgi' &&
         get_env('script_name') ne '/pam_login.cgi'     &&
-        !fetch_stripped())
+        !http_x_request())
     {
         print '<div class="top-aprogress"></div>', "\n";
     }
 
     # Post-body header overlay
-    embed_overlay_postbody() if (!fetch_stripped());
+    embed_overlay_postbody() if (!http_x_request());
 
     print '</body>', "\n";
     print '</html>', "\n";
@@ -1251,10 +1251,10 @@ sub theme_redirect
     }
     $url = "$prefix$url" if ($url && $noredir);
 
-    my ($parent) = parse_servers_path();
-    if ($parent) {
+    my ($remote_server_webprefix) = parse_remote_server_webprefix();
+    if ($remote_server_webprefix) {
         ($link) = $arg2 =~ /:\d+(.*)/;
-        $url = "$parent$link";
+        $url = "$remote_server_webprefix$link";
     } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/))) {
         print "Location: $arg1\n\n";
         return;

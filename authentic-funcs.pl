@@ -15,9 +15,9 @@ our (%in,
      $root_directory,
      $config_directory,
      $current_theme,
+     $theme_webprefix,
      $remote_user,
-     $get_user_level,
-     $server_goto);
+     $get_user_level);
 
 =head2 settings(file, [grep_pattern])
 Parses given JavaScript filename to a hash reference
@@ -536,7 +536,7 @@ sub get_chooser_button_template
 {
     my ($onclick, $icon) = @_;
     return
-"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$gconfig{'webprefix'}/$onclick, \"chooser\"); chooser.ifield = ifield; window.ifield = ifield'>
+"<button class='btn btn-default chooser_button' type=button onClick='ifield = form.$_[0]; chooser = window.open(\"$theme_webprefix/$onclick, \"chooser\"); chooser.ifield = ifield; window.ifield = ifield'>
   <i class=\"fa $icon vertical-align-middle\"></i>
  </button>\n";
 }
@@ -562,6 +562,7 @@ sub hash_to_query
 
 sub head
 {
+    print "x-no-links: 1\n";
     print "Content-type: text/html\n\n";
 }
 
@@ -571,53 +572,6 @@ sub module_text_full
         %module_text_full = load_language(get_module_name());
     }
     return %module_text_full;
-}
-
-sub is_switch_webmin
-{
-    return (
-        ((($theme_config{'settings_right_default_tab_webmin'} eq '/' && get_product_name() eq 'webmin')) ||
-           (($theme_config{'settings_right_default_tab_usermin'} eq '/' || !foreign_available("mailbox")) &&
-             get_product_name() eq 'usermin') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/ && $get_user_level eq '4') ||
-           ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/   &&
-             ($get_user_level eq '1' || $get_user_level eq '2'))
-           ||
-           ( $get_user_level ne '3' &&
-             (   (!foreign_available("virtual-server") && !$theme_config{'settings_right_default_tab_webmin'}) ||
-                 (!foreign_available("virtual-server") && $theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/)
-                 ||
-                 (!foreign_available("server-manager") &&
-                     $theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/))
-           )
-        ) ? 1 : 0);
-}
-
-sub is_switch_virtualmin
-{
-    return (
-            (
-             (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
-                !$theme_config{'settings_right_default_tab_webmin'} ||
-                ($theme_config{'settings_right_default_tab_webmin'} =~ /virtualmin/)
-             ) &&
-               $get_user_level ne '4'
-            ) ? 1 : 0);
-}
-
-sub is_switch_cloudmin
-{
-    return ((!$theme_config{'settings_right_default_tab_webmin'} && $get_user_level eq '4') ||
-            ($theme_config{'settings_right_default_tab_webmin'} =~ /cloudmin/) ? 1 : 0);
-}
-
-sub is_switch_webmail
-{
-    return (
-            (
-             !$server_goto && (!$theme_config{'settings_right_default_tab_usermin'} ||
-                               $theme_config{'settings_right_default_tab_usermin'} =~ /mail/)
-            ) ? 1 : 0);
 }
 
 sub strip_html
@@ -744,66 +698,19 @@ sub acl_system_status
     }
 }
 
-sub embed_product_branding
+sub parse_remote_server_webprefix
 {
-    return if ($theme_config{"settings_embed_product_branding_privileged"} eq 'false');
-    return &custom_embed_product_branding(@_)
-      if (defined(&custom_embed_product_branding));
+    my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
 
-    my ($brand,
-        $brand_name,
-        $brand_dir_default,
-        $brand_dir_custom,
-        $brand_dir,
-        $loader,
-        $request_uri,
-        $vm_mod_name,
-        $vm_available,
-        $vm_requested,
-        $cm_mod_name,
-        $cm_available,
-        $cm_requested);
+    if ($parent) {
+        my ($parent_link)      = $parent        =~ /(\S*link\.cgi\/[\d]{8,16})/;
+        my ($parent_prefix)    = $parent_link   =~ /:\d+(.*\/link.cgi\/\S*\d)/;
+        my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
 
-    # Set brand directory
-    $brand_name;
-    $brand_dir_default = "$root_directory/$current_theme/images/brand";
-    $brand_dir_custom  = "$config_directory/$current_theme/brand";
-    $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
-    $loader            = read_file_contents("$brand_dir/loader.html");
-    $request_uri       = get_theme_temp_data('goto', 1);
-
-    # Virtualmin available
-    $vm_mod_name  = "virtual-server";
-    $vm_available = foreign_available($vm_mod_name);
-    $vm_requested = $vm_available && $request_uri =~ /$vm_mod_name/;
-
-    # Cloudmin available and requested
-    $cm_mod_name  = "server-manager";
-    $cm_available = foreign_available($cm_mod_name);
-    $cm_requested = $cm_available && $request_uri =~ /$cm_mod_name/;
-
-    # Define brand image for Virtualmin
-    if ($vm_available && $vm_requested && (!$cm_available || ($cm_available && !$cm_requested))) {
-        $brand      = read_file_contents("$brand_dir/virtualmin.html");
-        $brand_name = "brand-virtualmin";
+        return ($parent_prefix, $parent_webprefix);
+    } else {
+        return (undef, undef);
     }
-
-    # Define brand image for Cloudmin
-    elsif ($cm_available && $cm_requested) {
-        $brand      = read_file_contents("$brand_dir/cloudmin.html");
-        $brand_name = "brand-cloudmin";
-    }
-
-    # Webmin/Usermin brand image
-    else {
-        my $prod = get_product_name();
-        $brand      = read_file_contents("$brand_dir/$prod.html");
-        $brand_name = "brand-$prod";
-    }
-    $brand =
-"<div tabindex=\"1\" class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
-    $brand .= "<script>page.branding.process()</script>";
-    print $brand;
 }
 
 1;

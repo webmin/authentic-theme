@@ -169,15 +169,19 @@ sub theme_settings_filter
     {
         push(@theme_settings_filter,
              'settings_right_default_tab_webmin',
-             'settings_right_reload',
-             'settings_right_page_keep');
+             'settings_right_reload', 'settings_right_page_keep');
     }
 
     # Assign default for options provided by the server side
     else {
         if (!$theme_config{'settings_right_default_tab_webmin'}) {
-            $theme_config{'settings_right_default_tab_webmin'} =
-              (foreign_available("virtual-server") ? 'virtualmin' : '/');
+            my $def_tab = '/';
+            if (foreign_available("server-manager")) {
+                $def_tab = 'cloudmin';
+            } elsif (foreign_available("virtual-server")) {
+                $def_tab = 'virtualmin';
+            }
+            $theme_config{'settings_right_default_tab_webmin'} = $def_tab;
         }
     }
 
@@ -203,11 +207,6 @@ sub theme_settings_filter
              'settings_right_virtualmin_default',
              'settings_hotkey_toggle_key_virtualmin',
              'settings_sysinfo_max_servers');
-    }
-
-    # Exclude Dashboard link option when switch available
-    if (dashboard_switch()) {
-      push(@theme_settings_filter, 'settings_sysinfo_link_mini');
     }
 
     # Exclude Cloudmin related options
@@ -424,8 +423,8 @@ sub theme_settings_format
 
                 '
           . (get_usermin_data('mailbox') &&
-             ' <option value="mail"' .
-             ($v eq 'mail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
+             ' <option value="webmail"' .
+             ($v eq 'webmail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
           '
 
                 </select>';
@@ -463,7 +462,7 @@ sub theme_settings_format
         if (foreign_available('virtual-server')) {
             $v = &ui_select($k,
                             $v,
-                            [[undef,       undef],
+                            [[undef,       $theme_text{'theme_xhred_titles_dashboard'}],
                              ['index.cgi', $theme_text{'theme_config_virtualmin'}],
                              map    {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
                                grep {&virtual_server::can_edit_domain($_)}
@@ -475,7 +474,7 @@ sub theme_settings_format
             my @servers = &server_manager::list_available_managed_servers_sorted();
             $v = &ui_select($k,
                             $v,
-                            [[undef,       undef],
+                            [[undef,       $theme_text{'theme_xhred_titles_dashboard'}],
                              ['index.cgi', $theme_text{'theme_config_cloudmin'}],
                              map {[$_->{'id'}, $_->{'host'}]} @servers,
                             ]);

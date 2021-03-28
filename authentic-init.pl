@@ -12,22 +12,16 @@ our (@theme_bundle_css,
      %theme_text,
      %theme_temp_data,
      $get_user_level,
-     $global_prefix,
-     $parent_webprefix,
+     $theme_webprefix,
+     $theme_server_webprefix,
      $has_cloudmin,
      $has_usermin_conf_dir,
      $has_usermin_root_dir,
      $has_usermin_version,
      $has_usermin,
      $has_virtualmin,
-     $theme_module_query_id,
-     $t_uri___i,
-     $theme_requested_from_module,
-     $theme_requested_from_tab,
-     $theme_requested_url,
-     $t_var_product_m,
-     $t_var_switch_m,
-     $server_goto,
+     $http_x_url,
+     $server_x_goto,
      $xnav,
      %config,
      %gaccess,
@@ -110,7 +104,7 @@ sub embed_favicon
         $product = 'cloudmin';
     }
 
-    my $favicon_path = $gconfig{'webprefix'} . '/images/favicons/' . $product;
+    my $favicon_path = $theme_webprefix . '/images/favicons/' . $product;
     my $ref_link     = 'data-link-ref';
 
     my $favicon_dpath = "$root_directory/$current_theme/images/favicons/$product";
@@ -148,7 +142,7 @@ sub embed_header
     print '<head>', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
-    embed_favicon() if (!fetch_stripped());
+    embed_favicon() if (!http_x_request());
     print ' <title>',
       ( $args[4] ?
           (get_product_name() eq 'usermin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'}) :
@@ -156,17 +150,17 @@ sub embed_header
       ),
       '</title>', "\n";
 
-    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n" if (!fetch_stripped());
+    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n" if (!http_x_request());
 
     ($args[1] && (print($args[1] . "\n")));
 
-    if (fetch_stripped()) {
+    if (http_x_request()) {
         print "</head>\n";
         return;
     }
 
     # Print default options
-    print " <script src=\"$gconfig{'webprefix'}/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
+    print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
     print ' <script>';
     print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
     print "</script>\n";
@@ -238,7 +232,7 @@ sub embed_header
 
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
-                print ' <link href="' . $gconfig{'webprefix'} .
+                print ' <link href="' . $theme_webprefix .
                   '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
@@ -253,15 +247,14 @@ sub embed_header
 
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
-
-                if (is_st_p() &&
+                if (sysstats_available() &&
                     $js eq 'timeplot')
                 {
                     next;
                 }
 
-                print ' <script src="' . $gconfig{'webprefix'} .
-                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
+                print ' <script src="' .
+                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -269,7 +262,7 @@ sub embed_header
     } else {
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
-                print ' <link href="' . $gconfig{'webprefix'} .
+                print ' <link href="' . $theme_webprefix .
                   '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
@@ -282,7 +275,7 @@ sub embed_header
         if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
         {
-            print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/' .
+            print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
               ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
@@ -294,14 +287,14 @@ sub embed_header
         if ($args[2]) {
             foreach my $js (@theme_bundle_js) {
 
-                if (is_st_p() &&
+                if (sysstats_available() &&
                     $js eq 'timeplot')
                 {
                     next;
                 }
 
-                print ' <script src="' . $gconfig{'webprefix'} .
-                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
+                print ' <script src="' .
+                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -404,7 +397,7 @@ sub embed_styles
 {
     if ($theme_config{'settings_contrast_mode'} eq 'true') {
         print ' <link href="' .
-          $gconfig{'webprefix'} . '/unauthenticated/css/high-contrast.' . (theme_debug_mode() ? 'src' : 'min') . '.css?' .
+          $theme_webprefix . '/unauthenticated/css/high-contrast.' . (theme_debug_mode() ? 'src' : 'min') . '.css?' .
           time() . '" rel="stylesheet" data-high-contrast>' . "\n";
     }
 
@@ -462,41 +455,41 @@ sub embed_pm_scripts
 
 sub embed_css_fonts
 {
-    print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/fonts-roboto.' .
+    print ' <link href="' . $theme_webprefix . '/unauthenticated/css/fonts-roboto.' .
       (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 }
 
 sub embed_css_bundle
 {
     print ' <link href="' .
-      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
 
 sub embed_css_night_rider
 {
     if (theme_night_mode_login() || theme_night_mode()) {
-        print ' <link href="' . $gconfig{'webprefix'} . '/unauthenticated/css/palettes/nightrider.' .
+        print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/nightrider.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
 sub embed_js_timeplot
 {
-    print ' <script src="' . $gconfig{'webprefix'} . '/unauthenticated/js/timeplot.' .
+    print ' <script src="' . $theme_webprefix . '/unauthenticated/js/timeplot.' .
       (theme_debug_mode() ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
 }
 
 sub embed_js_bundle
 {
     print ' <script src="' .
-      $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
+      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
 }
 
 sub embed_js_scripts
 {
 
-    return if (fetch_stripped());
+    return if (http_x_request());
 
     my $js = $config_directory . "/$current_theme/scripts.js";
     if (-r $js && -s $js) {
@@ -611,7 +604,7 @@ sub embed_footer
         if (get_module_name() =~ /mysql/ ||
             get_module_name() =~ /postgresql/)
         {
-            print ' <script src="' . $gconfig{'webprefix'} . '/extensions/sql.' .
+            print ' <script src="' . $theme_webprefix . '/extensions/sql.' .
               ($args[0] ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
         }
 
@@ -619,19 +612,19 @@ sub embed_footer
         if (get_module_name() =~ /file-manager/ ||
             get_module_name() =~ /filemin/)
         {
-            print ' <script src="' . $gconfig{'webprefix'} . '/extensions/file-manager/file-manager.' .
+            print ' <script src="' . $theme_webprefix . '/extensions/file-manager/file-manager.' .
               ($args[0] ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
         }
 
     }
 }
 
-sub is_st_p
+sub sysstats_available
 {
-    return ($theme_requested_url !~ /\/virtual-server\/pro\/history.cgi/ &&
-            $theme_requested_url !~ /\/server-manager\/bwgraph.cgi/ &&
-            $theme_requested_url !~ /\/server-manager\/history.cgi/ &&
-            $theme_requested_url !~ /\/server-manager\/one_history.cgi/) ?
+    return ($http_x_url !~ /\/virtual-server\/pro\/history.cgi/ &&
+            $http_x_url !~ /\/server-manager\/bwgraph.cgi/ &&
+            $http_x_url !~ /\/server-manager\/history.cgi/ &&
+            $http_x_url !~ /\/server-manager\/one_history.cgi/) ?
       1 :
       0;
 }
@@ -660,12 +653,10 @@ sub init_vars
 
     our %theme_text = (load_language($current_theme), %text);
 
-    our $theme_requested_url =
-      (get_env('http_webmin_path') || get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
-    our $theme_requested_from_module = get_env('http_x_requested_from');
-    our $theme_requested_from_tab    = get_env('http_x_requested_from_tab');
+    our $http_x_url =
+      (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
 
-    if ($theme_requested_url =~ /sysinfo\.cgi/ || (grep {/xhr-info/} keys %in)) {
+    if ($http_x_url =~ /sysinfo\.cgi/ || (grep {/xhr-info/} keys %in)) {
         if (foreign_available("virtual-server")) {
             %theme_text = (load_language('virtual-server'), %theme_text);
         }
@@ -677,13 +668,10 @@ sub init_vars
     our ($get_user_level, $has_virtualmin, $has_cloudmin) = get_user_level();
     our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_data();
 
-    our $t_uri__x = get_env('script_name');
-    our $t_uri___i;
-    our $theme_module_query_id;
-
-    my ($server_prefix_local, $parent_webprefix_local) = parse_servers_path();
-    our $global_prefix    = ($server_prefix_local ? $server_prefix_local : $gconfig{'webprefix'});
-    our $parent_webprefix = $parent_webprefix_local;
+    # Set webprefix that should be used by the theme
+    my ($server_webprefix) = parse_remote_server_webprefix();
+    $theme_webprefix = $gconfig{'webprefix'};
+    $theme_webprefix = $server_webprefix, $theme_server_webprefix = 1 if ($server_webprefix);
 
     our $xnav = "xnavigation=1";
 
@@ -691,9 +679,7 @@ sub init_vars
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
 
-    our $server_goto = get_theme_temp_data('goto', 1);
-
-    our ($t_var_switch_m, $t_var_product_m) = get_swith_mode();
+    $server_x_goto = get_theme_temp_data('goto');
 
 }
 
@@ -756,26 +742,6 @@ sub get_usermin_data
               substr($has_usermin_version, 5 * 2 - 1);
         }
         return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
-    }
-}
-
-sub get_webmin_switch_mode
-{
-    my $user = $remote_user;
-    $user =~ s/-//g;
-    return ($theme_config{"settings_show_webmin_tab_$user"} ne "false" ? 1 : 0);
-}
-
-sub dashboard_switch
-{
-    if (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
-        (!foreign_available("virtual-server") &&
-            !foreign_available("server-manager") &&
-            (get_product_name() ne 'usermin' || (get_product_name() eq 'usermin' && !foreign_available("mailbox")))))
-    {
-        return 1;
-    } else {
-        return 0;
     }
 }
 
@@ -1360,13 +1326,13 @@ sub header_html_data
       '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-editor-palette="' . $theme_config{'settings_cm_editor_palette'} . '" data-theme-version="' . theme_version(0) .
-      '" data-theme-mversion="' . theme_version(0, 1) . '"  data-level="' . $get_user_level . '" data-user-home="' .
-      get_user_home() . '" data-user-id="' . get_user_id() . '" data-user="' . $remote_user . '" data-dashboard="' .
-      dashboard_switch() . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
-      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' .
-      theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') . '" data-initial-wizard="' .
-      get_initial_wizard() . '" data-webprefix="' . $global_prefix . '" data-webprefix-parent="' . $parent_webprefix .
+      ' data-editor-palette="' . $theme_config{'settings_cm_editor_palette'} .
+      '" data-theme-version="' . theme_version(0) . '" data-theme-mversion="' . theme_version(0, 1) .
+      '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' .
+      get_user_id() . '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' .
+      get_current_user_language() . '" data-language-full="' . get_current_user_language(1) . '" data-charset="' .
+      get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
+      '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
       '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
@@ -1517,21 +1483,6 @@ sub get_theme_temp_data
     return $data;
 }
 
-sub parse_servers_path
-{
-    my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
-
-    if ($parent) {
-        my ($parent_link)      = $parent        =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix)    = $parent_link   =~ /:\d+(.*\/link.cgi\/\S*\d)/;
-        my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
-
-        return ($parent_prefix, $parent_webprefix);
-    } else {
-        return (undef, undef);
-    }
-}
-
 sub get_user_home
 {
     if (!supports_users()) {
@@ -1585,7 +1536,7 @@ sub get_tuconfig_file
     return -r $oconfig ? $oconfig : "$oconfig.js";
 }
 
-sub fetch_stripped
+sub http_x_request
 {
     if (get_env('http_x_requested_with') eq "XMLHttpRequest") {
         return 1;
@@ -1692,6 +1643,64 @@ sub lib_csf_control
             return csf_strings();
         }
     }
+}
+
+sub embed_product_branding
+{
+    return if ($theme_config{"settings_embed_product_branding_privileged"} eq 'false');
+    return &custom_embed_product_branding(@_)
+      if (defined(&custom_embed_product_branding));
+
+    my ($brand,
+        $brand_name,
+        $brand_dir_default,
+        $brand_dir_custom,
+        $brand_dir,
+        $loader,
+        $request_uri,
+        $vm_mod_name,
+        $vm_available,
+        $cm_mod_name,
+        $cm_available);
+
+    # Set brand directory
+    $brand_name;
+    $brand_dir_default = "$root_directory/$current_theme/images/brand";
+    $brand_dir_custom  = "$config_directory/$current_theme/brand";
+    $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
+    $loader            = read_file_contents("$brand_dir/loader.html");
+    $request_uri       = get_theme_temp_data('goto', 1);
+
+    # Virtualmin available
+    $vm_mod_name  = "virtual-server";
+    $vm_available = foreign_available($vm_mod_name);
+
+    # Cloudmin available and requested
+    $cm_mod_name  = "server-manager";
+    $cm_available = foreign_available($cm_mod_name);
+
+    # Define brand image for Virtualmin
+    if ($vm_available && !$cm_available) {
+        $brand      = read_file_contents("$brand_dir/virtualmin.html");
+        $brand_name = "brand-virtualmin";
+    }
+
+    # Define brand image for Cloudmin
+    elsif ($cm_available) {
+        $brand      = read_file_contents("$brand_dir/cloudmin.html");
+        $brand_name = "brand-cloudmin";
+    }
+
+    # Webmin/Usermin brand image
+    else {
+        my $prod = get_product_name();
+        $brand      = read_file_contents("$brand_dir/$prod.html");
+        $brand_name = "brand-$prod";
+    }
+    $brand =
+"<div tabindex=\"1\" class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
+    $brand .= "<script>page.branding.process()</script>";
+    print $brand;
 }
 
 1;
