@@ -7,3 +7,4 @@ inframe=0
 noindex=1
 beta_updates=0
 nolinks=1
+csp_headers=script-src 'self' 'unsafe-inline' 'unsafe-eval'

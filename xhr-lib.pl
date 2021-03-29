@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%in);
+our (%in, %gconfig);
 
 sub xhr
 {
@@ -30,6 +30,12 @@ sub xhr
                 @menu         = (@menu, @submenu);
                 $data{'menu'} = \@menu;
             }
+
+        }
+
+        # Returns default goto if set
+        if ($action eq 'goto') {
+            $data{'gotomodule'} = $gconfig{'gotomodule'};
         }
 
         # Returns requested navigation

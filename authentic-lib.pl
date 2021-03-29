@@ -1765,7 +1765,7 @@ sub settings_get_select_default_module
     my @modules = get_available_module_infos();
     my $select = ui_select($name,
                            $value,
-                           [["", ""], map {[$_->{'dir'}, $_->{'desc'}]}
+                           [["", $theme_text{'theme_xhred_titles_dashboard'}], map {[$_->{'dir'}, $_->{'desc'}]}
                               sort {$a->{'desc'} cmp $b->{'desc'}} @modules
                            ]);
     return $select;
