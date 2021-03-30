@@ -216,7 +216,7 @@ sub nav_webmin_menu
     {
         $rv .= nav_menu_link('/webmin/refresh_modules.cgi', $theme_text{'left_refresh_modules'}, 'fa-refresh');
     }
-    $rv .= nav_link_sysinfo($get_user_level eq '3' ? 1 : undef);
+    $rv .= nav_link_sysinfo($get_user_level eq '3');
     $rv .= nav_link_netdata();
     $rv .= nav_theme_links();
     $rv .= nav_links();
@@ -256,12 +256,13 @@ sub nav_mailbox_menu
 {
     my ($page) = @_;
     my $rv;
-    my $mod  = 'mailbox';
-    my @menu = list_combined_webmin_menu(undef, \%in, $mod);
+    my $mod       = 'mailbox';
+    my $nofolders = $theme_config{'settings_mail_ui'} ne 'false' ? 1 : 0;
+    my @menu      = list_combined_webmin_menu({ 'nofolders' => $nofolders }, \%in, $mod);
     ($rv) = nav_list_combined_menu($mod, \@menu, undef, undef, $page);
-    $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'},           'fa-cog');
     $rv .= nav_menu_link("/changepass/",      $theme_text{'theme_left_mail_change_password'}, 'fa-key');
-    $rv .= nav_link_sysinfo(1);
+    $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'},           'fa-cog');
+    $rv .= nav_link_sysinfo('user');
     $rv .= nav_links();
     return $rv;
 }
@@ -461,7 +462,7 @@ sub nav_link_sysinfo
     my ($user) = @_;
     return
       nav_menu_link('/sysinfo.cgi',
-                    $theme_text{'theme_xhred_titles_dashboard'},
+                    $user ? $theme_text{'body_header1'} : $theme_text{'theme_xhred_titles_dashboard'},
                     ($user ? 'fa-user-circle' : 'fa-dashboard'),
                     $theme_config{'settings_sysinfo_link_mini'} eq 'true', 1)
       if (dashboard_switch() ne '1');
@@ -953,8 +954,8 @@ sub nav_links
 # XXX - needs further refactor
 sub print_switch_webmin
 {
-    my ($tab) = @_;
-    my $prod = get_product_name();
+    my ($tab)   = @_;
+    my $prod    = get_product_name();
     my $checked = 0;
     if ($tab eq $prod) {
         $checked = 1;
