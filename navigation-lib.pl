@@ -232,7 +232,7 @@ sub nav_virtualmin_menu
     my $mod  = 'virtual-server';
     my $def  = nav_get_server_id($mod);
     my @menu = list_combined_webmin_menu({ 'dom' => "$def" }, \%in, $mod);
-    ($rv, $login_mode) = nav_list_combined_menu($mod, \@menu, undef, undef, $page);
+    ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     $rv .= nav_link_sysinfo();
     $rv .= nav_link_sysstat();
     $rv .= nav_links($login_mode);
@@ -246,7 +246,7 @@ sub nav_cloudmin_menu
     my $mod  = 'server-manager';
     my $def  = nav_get_server_id($mod);
     my @menu = list_combined_webmin_menu({ 'id' => "$def" }, \%in, $mod);
-    ($rv, $login_mode) = nav_list_combined_menu($mod, \@menu, undef, undef, $page);
+    ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     $rv .= nav_link_sysinfo();
     $rv .= nav_links($login_mode);
     return $rv;
@@ -258,10 +258,9 @@ sub nav_mailbox_menu
     my $rv;
     my $mod       = 'mailbox';
     my $nofolders = $theme_config{'settings_mail_ui'} ne 'false' ? 1 : 0;
-    my @menu      = list_combined_webmin_menu({ 'nofolders' => $nofolders }, \%in, $mod);
-    ($rv) = nav_list_combined_menu($mod, \@menu, undef, undef, $page);
-    $rv .= nav_menu_link("/changepass/",      $theme_text{'theme_left_mail_change_password'}, 'fa-key');
-    $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'},           'fa-cog');
+    my @menu      = list_combined_webmin_menu({ 'nofolders' => $nofolders });
+    ($rv) = nav_list_combined_menu([$mod, 'changepass'], \@menu, undef, undef, $page);
+    $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'}, 'fa-cog');
     $rv .= nav_link_sysinfo('user');
     $rv .= nav_links();
     return $rv;
@@ -542,7 +541,7 @@ sub nav_theme_links
 # Return HTML menu structure for given module
 sub nav_list_combined_menu
 {
-    my ($module, $items, $id, $group, $page) = @_;
+    my ($modules, $items, $id, $group, $page) = @_;
     my $nav_pos;
     my $extra_links;
     my $login_mode;
@@ -566,7 +565,7 @@ sub nav_list_combined_menu
         return $link;
     };
     foreach my $item (@$items) {
-        if ($module eq $item->{'module'} || $group) {
+        if ((grep {$_ eq $item->{'module'}} @{$modules}) || $group) {
 
             my $link = &$gwp($item->{'link'});
             my $icon;
@@ -640,7 +639,10 @@ sub nav_list_combined_menu
 
                 } elsif ($link =~ /\/virtual-server\/edit_html\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
-                } elsif ($link =~ /\/server-manager\/edit_pass\.cgi/ || $link =~ /\/virtual-server\/edit_pass\.cgi$/) {
+                } elsif ($link =~ /\/server-manager\/edit_pass\.cgi/ ||
+                         $link =~ /\/virtual-server\/edit_pass\.cgi$/ ||
+                         $link =~ /\/changepass\/$/)
+                {
                     $icon = '<i class="fa fa-fw fa-key"></i>';
                 } elsif ($link =~ /\/server-manager\/save_serv\.cgi/ && $link =~ /recheck=1/) {
                     $icon = '<i class="fa fa-fw fa-exclamation-triangle"></i>';
@@ -721,7 +723,7 @@ sub nav_list_combined_menu
                 }
                 $rv .= nav_cat($item->{'id'}, $item->{'desc'});
                 $rv .= '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $item->{'id'} . '">' . "\n";
-                my ($rvx) = nav_list_combined_menu($item->{'module'}, $item->{'members'}, $item->{'id'}, 'group');
+                my ($rvx) = nav_list_combined_menu([$item->{'module'}], $item->{'members'}, $item->{'id'}, 'group');
                 $rv .= $rvx;
 
                 if (($item->{'id'} eq 'global_setting' || $item->{'id'} eq 'global_settings') &&
