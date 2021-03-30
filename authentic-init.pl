@@ -832,14 +832,12 @@ sub set_user_level
 
 sub get_initial_wizard
 {
-    # Going to Post-Installation Wizard
-    if ($get_user_level eq '0') {
-        our %virtualmin_config = foreign_config('virtual-server');
-        if (%virtualmin_config && $virtualmin_config{'wizard_run'} ne '1') {
-            return 1;
-        }
+    # Do user need to go to Virtualmin post installation wizard
+    my $mod_vm = 'virtual-server';
+    if ($get_user_level eq '0' && foreign_exists($mod_vm)) {
+        my %virtualmin_config = foreign_config($mod_vm);
+        return $virtualmin_config{'wizard_run'};
     }
-    return 0;
 }
 
 sub get_button_style
