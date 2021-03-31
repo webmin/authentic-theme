@@ -1,12 +1,13 @@
 ## Changelog
 
-#### Version 19.74-RC6 (March 31, 2021)
+#### Version 19.74-RC7 (March 31, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
 * Add navigation menu code refactoring improving speed and stability
 * Add ability to setup custom company branding and favicons [#639/comment-801339035](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-801339035)
 * Add ability to load the same content page on domain select
 * Add to display a link to reload the page when the theme upgraded in background [#1521](https://github.com/authentic-theme/authentic-theme/issues/1521#issuecomment-802347210)
 * Add an option to force stats collection when tab is not focused [webmin/webmin#1460](https://github.com/webmin/webmin/issues/1460#issuecomment-801078993)
+* Add to display question mark icon next to any help link which brings tooltip
 * Add better wrapping of large tables for better mobile support
 * Fix to display start/kill buttons for Scheduled Cron Jobs module
 * Fiх theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
