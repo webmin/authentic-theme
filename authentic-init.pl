@@ -110,16 +110,18 @@ sub embed_favicon
     my $favicon_dpath = "$root_directory/$current_theme/images/favicons/$product";
     my $favicon_cpath = "$config_directory/$current_theme/favicons/$product";
     my $favicon_spath = -r $favicon_cpath ? $favicon_cpath : $favicon_dpath;
-    print ' <link ' . $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="data:text/css;base64,' .
-      trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/apple-touch-icon.png')))) . '">' . "\n";
-    print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="data:text/css;base64,' .
-      trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-32x32.png')))) . '">' . "\n";
-    print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="data:text/css;base64,' .
-      trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png')))) . '">' . "\n";
-    print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
-      trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png')))) . '">' . "\n";
 
+    # Embed standard favicons using a direct link
     if (!-r $favicon_cpath) {
+        print ' <link ' .
+          $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">' . "\n";
+        print ' <link ' .
+          $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">' . "\n";
+        print ' <link ' . $ref_link .
+          ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">' . "\n";
+        print ' <link ' .
+          $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
+
         print ' <link ' .
           $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' . $favicon_path . '/manifest.json">' . "\n";
         print ' <link ' . $ref_link .
@@ -127,9 +129,20 @@ sub embed_favicon
         print ' <meta ' .
           $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">' . "\n";
     }
+
+    # Embed custom favicons using base64 encoding
+    else {
+        print ' <link ' . $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/apple-touch-icon.png')))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-32x32.png')))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png')))) . '">' . "\n";
+        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png')))) . '">' . "\n";
+    }
     print ' <meta name="msapplication-TileColor" content="' . get_theme_color() . '">' . "\n";
     print ' <meta name="theme-color" content="' . get_theme_color() . '">' . "\n";
-
 }
 
 sub embed_header
