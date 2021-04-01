@@ -236,6 +236,8 @@ sub nav_virtualmin_menu
     $rv .= nav_link_sysinfo();
     $rv .= nav_link_sysstat();
     $rv .= nav_links($login_mode);
+    $rv .= nav_detect_page($page);
+    $rv .= nav_detect_script();
     return $rv;
 }
 
@@ -249,6 +251,8 @@ sub nav_cloudmin_menu
     ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     $rv .= nav_link_sysinfo();
     $rv .= nav_links($login_mode);
+    $rv .= nav_detect_page($page);
+    $rv .= nav_detect_script();
     return $rv;
 }
 
@@ -263,6 +267,8 @@ sub nav_mailbox_menu
     $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'}, 'fa-cog');
     $rv .= nav_link_sysinfo('user');
     $rv .= nav_links();
+    $rv .= nav_detect_page($page);
+    $rv .= nav_detect_script();
     return $rv;
 }
 
@@ -809,8 +815,6 @@ sub nav_list_combined_menu
             }
         }
     }
-    $rv .= nav_detect_page($page);
-    $rv .= nav_detect_script();
     return ($rv, $login_mode);
 }
 
@@ -950,6 +954,7 @@ sub nav_links
       ' class="user-link' . ($theme_config{'settings_leftmenu_button_refresh'} ne 'true' && ' hidden') .
 '"><a class="menu-exclude-link pd-rt-4" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
     $rv .= '</ul>';
+    $rv .= "\n";
     return $rv;
 }
 
