@@ -1655,7 +1655,7 @@ sub get_theme_user_link
     my $mversion = theme_version(1, 1);
 
     return '' . theme_version() . $mversion .
-' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(0, this);this.classList.add(\'disabled\')" data-container="body" title="'
+' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' .
       ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' .
@@ -2188,7 +2188,7 @@ sub update_notice
 
     my @version           = split(/ /, $changelog_version[0]);
     my $changelog_content = '
-      <div class="modal fade fade9" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal fade fade5" id="update_notice" tabindex="-1" role="dialog" aria-labelledby="update_notice_label" aria-hidden="true" data-backdrop="static" data-keyboard="true">
           <div class="modal-dialog modal-dialog-update">
             <div class="modal-content">
               <div class="modal-header background-success background--bordered">
