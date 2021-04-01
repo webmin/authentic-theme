@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.74-RC7 (March 31, 2021)
+#### Version 19.74-RC8 (April 01, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
 * Add navigation menu code refactoring improving speed and stability
 * Add ability to setup custom company branding and favicons [#639/comment-801339035](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-801339035)
@@ -13,6 +13,7 @@
 * Fiх theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
 * Fix various inconsistencies in animation and improve visual performance
 * Fix to align checkboxes and labels correctly when displaying Virtualmin features
+* Fix bugs
 
 #### Version 19.73 (March 04, 2021)
 * Add cut/paste operation to actually move files (instead of copy and delete) in File Manager
