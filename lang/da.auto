@@ -667,7 +667,6 @@ theme_xhred_global_installed_and_latest_version=Installeret og seneste version
 theme_xhred_global_latest_stable=Seneste stabile
 theme_xhred_global_latest_beta=Seneste beta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Vis Webmin-switch i navigationsmenuen?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Forbereder download. Arkivering af %number nummerfil (er). Vent %dots

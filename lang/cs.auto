@@ -590,7 +590,6 @@ theme_xhred_global_installed_and_latest_version=Nainstalovaná a nejnovější v
 theme_xhred_global_latest_stable=Poslední stabilní
 theme_xhred_global_latest_beta=Nejnovější beta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Zobrazit přepínač Webmin v navigační nabídce?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Příprava stahování. Archivace souborů %number. Počkejte prosím %dots

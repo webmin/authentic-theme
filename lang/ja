@@ -745,7 +745,6 @@ theme_xhred_global_installed_and_latest_version= インストール済みの最�
 theme_xhred_global_latest_stable= 最新の安定版
 theme_xhred_global_latest_beta= 最新のβ版
 theme_xhred_global_firewall= ファイアーウォール
-theme_xhred_settings_show_webmin_tab= ナビゲーションメニューにWebminスイッチを表示しますか？
 
 #19.14
 theme_xhred_filemanager_preparing_download= ダウンロードの準備中。 %number個のファイルをアーカイブしています。 %dotsをお待ちください

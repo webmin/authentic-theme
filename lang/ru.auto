@@ -540,7 +540,6 @@ theme_xhred_global_installed_and_latest_version=Установлена и пос
 theme_xhred_global_latest_stable=Последний стабильный
 theme_xhred_global_latest_beta=Последняя бета
 theme_xhred_global_firewall=Брандмауэр
-theme_xhred_settings_show_webmin_tab=Показать переключатель Webmin в меню навигации?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Подготовка к загрузке. Архивирование %number файлов. Пожалуйста, подождите %dots

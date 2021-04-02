@@ -265,9 +265,17 @@ sub theme_settings_filter
              'settings_sysinfo_theme_updates',
              'settings_cache_interval',
              'settings_sysinfo_theme_updates_for_usermin');
-        if ($get_user_level eq 3) {
+        if ($get_user_level eq '3') {
             push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmin', 'settings_webmin_default_module');
-        } elsif ($get_user_level ne 3) {
+        } elsif ($get_user_level eq '2' || $get_user_level eq '4') {
+            push(@theme_settings_filter,
+                 'settings_hotkey_toggle_key_webmin',
+                 'settings_hotkey_toggle_key_usermin',
+                 'settings_hotkey_toggle_key_webmail',
+                 'settings_right_default_tab_webmin',
+                 'settings_webmin_default_module');
+        }
+        if ($get_user_level ne '3') {
             push(@theme_settings_filter, 'settings_right_default_tab_usermin');
         }
     }

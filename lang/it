@@ -750,7 +750,6 @@ theme_xhred_global_installed_and_latest_version=Installato e ultima versione
 theme_xhred_global_latest_stable=Ultima stabile
 theme_xhred_global_latest_beta=Ultima beta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Mostrare interruttore Webmin nel menu di navigazione?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Preparazione del download. Archiviazione di %number file. Attendere %dots

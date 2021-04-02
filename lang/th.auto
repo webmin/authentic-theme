@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=เวอร์ชันที�
 theme_xhred_global_latest_stable=มั่นคงล่าสุด
 theme_xhred_global_latest_beta=เบต้าล่าสุด
 theme_xhred_global_firewall=ไฟร์วอลล์
-theme_xhred_settings_show_webmin_tab=แสดงสวิตช์ Webmin ในเมนูนำทางหรือไม่
 
 #19.14
 theme_xhred_filemanager_preparing_download=กำลังเตรียมการดาวน์โหลด การเก็บถาวรไฟล์ %number กรุณารอ %dots

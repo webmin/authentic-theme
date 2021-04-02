@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Asennettu ja uusin versio
 theme_xhred_global_latest_stable=Viimeisin vakaa
 theme_xhred_global_latest_beta=Uusin beeta
 theme_xhred_global_firewall=palomuuri
-theme_xhred_settings_show_webmin_tab=Näytä Webmin-kytkin navigointivalikossa?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Latauksen valmistelu. Arkistoidaan %number tiedostoja. Odota %dots

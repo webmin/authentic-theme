@@ -749,7 +749,6 @@ theme_xhred_global_installed_and_latest_version=Instalat și versiune ultimă
 theme_xhred_global_latest_stable=Utlimul stabil
 theme_xhred_global_latest_beta=Ultimul beta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Arăt comutare la Webmin in meniul de navigare?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Prepar download. Arhivez %number fișier(e). Te rog așteptă%dots

@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Instalirana i najnovija verzija
 theme_xhred_global_latest_stable=Najnovije stabilno
 theme_xhred_global_latest_beta=Najnovija beta verzija
 theme_xhred_global_firewall=firewall
-theme_xhred_settings_show_webmin_tab=Pokazati prekidač Webmin u navigacijskom izborniku?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Priprema za preuzimanje. Arhiviranje datoteke s %number. Pričekajte %dots

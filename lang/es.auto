@@ -667,7 +667,6 @@ theme_xhred_global_installed_and_latest_version=Instalado y última versión
 theme_xhred_global_latest_stable=Último establo
 theme_xhred_global_latest_beta=Última beta
 theme_xhred_global_firewall=Cortafuegos
-theme_xhred_settings_show_webmin_tab=¿Mostrar el interruptor de Webmin en el menú de navegación?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Preparando descarga. Archivando %number archivo (s). Por favor espere %dots

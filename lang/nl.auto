@@ -642,7 +642,6 @@ theme_xhred_global_installed_and_latest_version=Geïnstalleerde en nieuwste vers
 theme_xhred_global_latest_stable=Nieuwste stal
 theme_xhred_global_latest_beta=Nieuwste bèta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Webmin-schakelaar weergeven in navigatiemenu?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Download voorbereiden. %number Nummerbestand (en) archiveren. Even geduld %dots

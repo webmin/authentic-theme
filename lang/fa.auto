@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=نصب شده و آخرین نس
 theme_xhred_global_latest_stable=آخرین پایدار
 theme_xhred_global_latest_beta=آخرین بتا
 theme_xhred_global_firewall=دیواره آتش
-theme_xhred_settings_show_webmin_tab=نمایش سوئیچ وبمین در منوی ناوبری؟
 
 #19.14
 theme_xhred_filemanager_preparing_download=آماده سازی بارگیری بایگانی %number (پرونده) پرونده لطفا %dots صبر کنید

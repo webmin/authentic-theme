@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Nainštalovaná a najnovšia ver
 theme_xhred_global_latest_stable=Najnovšia stabilita
 theme_xhred_global_latest_beta=Najnovšie beta
 theme_xhred_global_firewall=POŽARNE dvere
-theme_xhred_settings_show_webmin_tab=Zobraziť prepínač Webmin v navigačnej ponuke?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Pripravuje sa sťahovanie. Archivácia súborov s %number. Čakajte %dots

@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=انسٹال اور جدید ت�
 theme_xhred_global_latest_stable=تازہ ترین مستحکم
 theme_xhred_global_latest_beta=تازہ ترین بیٹا
 theme_xhred_global_firewall=فائر وال
-theme_xhred_settings_show_webmin_tab=نیویگیشن مینو میں ویب مین سوئچ دکھائیں؟
 
 #19.14
 theme_xhred_filemanager_preparing_download=ڈاؤن لوڈ کی تیاری کر رہا ہے۔ %number فائل (زبانیں) کو محفوظ کرنا۔ برائے مہربانی %dots انتظار کریں

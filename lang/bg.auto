@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Инсталирана и най
 theme_xhred_global_latest_stable=Последна стабилна
 theme_xhred_global_latest_beta=Последна бета версия
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Показване на превключвателя на Webmin в менюто за навигация?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Подготовка за изтегляне. Архивиране на %number (и) файлове (файлове). Моля, изчакайте %dots

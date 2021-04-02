@@ -750,7 +750,6 @@ theme_xhred_global_installed_and_latest_version=Installerad och senaste versione
 theme_xhred_global_latest_stable=Senaste stabila
 theme_xhred_global_latest_beta=Senaste betan
 theme_xhred_global_firewall=Brandvägg
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Förbereder nerladdning. Arkiverar %number fil(er). Vänta%dots

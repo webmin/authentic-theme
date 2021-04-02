@@ -35,7 +35,13 @@ sub xhr
 
         # Returns default goto if set
         if ($action eq 'goto') {
-            $data{'gotomodule'} = $gconfig{'gotomodule'};
+            my $mod_def = $gconfig{'gotomodule'};
+
+            # Validate if default goto is allowed for the given user
+            if ($mod_def && foreign_available($mod_def)) {
+                $data{'gotomodule'} = $mod_def;
+            }
+
         }
 
         # Returns requested navigation

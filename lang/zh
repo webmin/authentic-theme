@@ -750,7 +750,6 @@ theme_xhred_global_installed_and_latest_version=已安装最新版本
 theme_xhred_global_latest_stable=最新稳定版
 theme_xhred_global_latest_beta=最新 beta 版
 theme_xhred_global_firewall=防火墙
-theme_xhred_settings_show_webmin_tab=Show Webmin switch in navigation menu?
 
 #19.14
 theme_xhred_filemanager_preparing_download=正在准备下载。正在归档 %number 文件。请等待%dots

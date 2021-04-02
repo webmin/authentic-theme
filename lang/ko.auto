@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=설치 및 최신 버전
 theme_xhred_global_latest_stable=최신 안정
 theme_xhred_global_latest_beta=최신 베타
 theme_xhred_global_firewall=방화벽
-theme_xhred_settings_show_webmin_tab=탐색 메뉴에 Webmin 스위치를 표시 하시겠습니까?
 
 #19.14
 theme_xhred_filemanager_preparing_download=다운로드 준비 중입니다. %number 파일을 보관 중입니다. %dots 기다려주십시오

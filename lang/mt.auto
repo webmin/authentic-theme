@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Installat u l-aħħar verżjoni
 theme_xhred_global_latest_stable=L-aħħar stabbli
 theme_xhred_global_latest_beta=L-aħħar beta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Uri l-iswiċċ ta 'Webmin fil-menu ta' navigazzjoni?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Tħejji t-tniżżil. Arkivjar %number fajl (i). Jekk jogħġbok stenna %dots

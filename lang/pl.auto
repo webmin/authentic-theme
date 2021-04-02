@@ -673,7 +673,6 @@ theme_xhred_global_installed_and_latest_version=Zainstalowana i najnowsza wersja
 theme_xhred_global_latest_stable=Ostatnia stajnia
 theme_xhred_global_latest_beta=Najnowsza wersja beta
 theme_xhred_global_firewall=Zapora ogniowa
-theme_xhred_settings_show_webmin_tab=Pokaż przełącznik Webmin w menu nawigacyjnym?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Przygotowuję pobieranie. Archiwizacja plików z %number. Poczekaj %dots

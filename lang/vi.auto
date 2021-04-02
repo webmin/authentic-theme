@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Phiên bản cài đặt và m�
 theme_xhred_global_latest_stable=Ổn định mới nhất
 theme_xhred_global_latest_beta=Bản beta mới nhất
 theme_xhred_global_firewall=Bức tường lửa
-theme_xhred_settings_show_webmin_tab=Hiển thị chuyển đổi Webmin trong menu điều hướng?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Chuẩn bị tải về. Lưu trữ %number tập tin. Vui lòng đợi %dots

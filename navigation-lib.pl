@@ -38,14 +38,18 @@ sub nav_detector
     my $prd_cm           = "cloudmin";
     my $mod_cm           = "server-manager";
     my $mod_cm_available = foreign_available($mod_cm);
+    my $mod_cm_access    = $get_user_level eq '4';
 
     my $prd_vm           = "virtualmin";
     my $mod_vm           = "virtual-server";
     my $mod_vm_available = foreign_available($mod_vm);
+    my $mod_vm_access    = $get_user_level eq '2';
 
     my $prd_mb           = "webmail";
     my $mod_mb           = "mailbox";
     my $mod_mb_available = foreign_available($mod_mb);
+
+    my $mod_um_access = $get_user_level eq '3';
 
     my $prd_db      = "dashboard";
     my $prd_db_mode = 0;
@@ -57,9 +61,13 @@ sub nav_detector
 
     # If we have goto substitute default
     if ($req_goto) {
-        if ($req_goto =~ /\/$mod_cm\//) {
+        if ($req_goto =~ /\/$mod_cm\// ||
+            $mod_cm_access)
+        {
             $nav_def_tab = $prd_cm;
-        } elsif ($req_goto =~ /\/$mod_vm\//) {
+        } elsif ($req_goto =~ /\/$mod_vm\// ||
+                 $mod_vm_access)
+        {
             $nav_def_tab = $prd_vm;
         } elsif ($req_goto =~ /\/$mod_mb\//) {
             $nav_def_tab = $prd_mb;
@@ -69,10 +77,25 @@ sub nav_detector
 
         # Page should be what was it reload on
         $page = $req_goto;
+
+        # For modes with dashboard switch
+        if ($page =~ /$page_sysinfo/ &&
+            (   $mod_cm_access ||
+                $mod_vm_access ||
+                (!$mod_cm_available &&
+                    !$mod_vm_available &&
+                    !$mod_mb_available)))
+        {
+            $nav_def_tab = $prd_db;
+        }
     }
 
     # If no goto and defaults not set
     else {
+
+        # Validate if default goto is allowed for the given user
+        $mod_def = undef if ($mod_def && !foreign_available($mod_def));
+
         if (!$nav_def_tab) {
 
             # Define default tab
@@ -103,8 +126,13 @@ sub nav_detector
             $prd_db_mode = 1;
         }
 
+        # Check if specific single switch mode first
+        if ($mod_cm_access || $mod_vm_access) {
+            $nav_def_tab = $prd_vm;
+        }
+
         # Check if real product is set
-        if ($nav_def_tab eq '/') {
+        elsif ($nav_def_tab eq '/') {
             $nav_def_tab = $prod;
         }
 
@@ -130,17 +158,19 @@ sub nav_detector
 
         # Define for modules
         else {
+            my $type_cm = (($mod_cm_available && $nav_def_tab eq $prd_cm) || $mod_cm_access);
+            my $type_vm = (($mod_vm_available && $nav_def_tab eq $prd_vm) || $mod_vm_access);
             my $prod_target =
-              ($mod_cm_available && $nav_def_tab eq $prd_cm) ? $prd_cm :
-              ($mod_vm_available && $nav_def_tab eq $prd_vm) ? $prd_vm :
+              $type_cm ? $prd_cm :
+              $type_vm ? $prd_vm :
               undef;
 
             if ($prod_target) {
                 $page = $theme_config{"settings_right_${prod_target}_default"};
                 if ($page eq $page_index) {
                     $page =
-                      ($mod_cm_available && $nav_def_tab eq $prd_cm) ? "$theme_webprefix/$mod_cm/$page_index" :
-                      ($mod_vm_available && $nav_def_tab eq $prd_vm) ? "$theme_webprefix/$mod_vm/$page_index" :
+                      $type_cm ? "$theme_webprefix/$mod_cm/$page_index" :
+                      $type_vm ? "$theme_webprefix/$mod_vm/$page_index" :
                       $page_sysinfo_def;
                 }
 
@@ -148,20 +178,28 @@ sub nav_detector
                 elsif ($page =~ /^(\d+)$/) {
                     my $id_ = "$1";
                     my $id;
-                    if ($id_) {
-                        if ($mod_cm_available && $nav_def_tab eq $prd_cm) {
+                    if ($id_ ||
+
+                        # Cloudmin default server's id is '0'
+                        $id_ eq '0')
+                    {
+                        if ($type_cm) {
                             $id = cloudmin_server_available($id_, 'id');
-                        } elsif ($mod_vm_available && $nav_def_tab eq $prd_vm) {
+                        } elsif ($type_vm) {
                             $id = virtualmin_domain_available($id_, 'id');
                         }
                     }
 
                     # If current user has access to domain/server
-                    if ($id) {
-                        my $vm_file = $get_user_level eq '2' ? 'view_domain.cgi' : 'summary_domain.cgi';
+                    if ($id ||
+
+                        # Cloudmin default server's id is '0'
+                        $id eq '0')
+                    {
+                        my $vm_file = $mod_vm_access ? 'view_domain.cgi' : 'summary_domain.cgi';
                         $page =
-                          $nav_def_tab eq $prd_cm ? "$theme_webprefix/$mod_cm/edit_serv.cgi?id=$id" :
-                          $nav_def_tab eq $prd_vm ? "$theme_webprefix/$mod_vm/$vm_file?dom=$id" :
+                          $type_cm ? "$theme_webprefix/$mod_cm/edit_serv.cgi?id=$id" :
+                          $type_vm ? "$theme_webprefix/$mod_vm/$vm_file?dom=$id" :
                           $page_sysinfo_def;
                     }
 
@@ -169,29 +207,57 @@ sub nav_detector
                     else {
                         $page = $page_sysinfo_def;
                     }
+                } else {
+
+                    # If default page is not set assume dashboard
+                    $page = $page_sysinfo_def;
                 }
             }
 
-            # If it is not set assume dashboard
+            # If default page is not set assume dashboard
             else {
                 $page = $page_sysinfo_def;
             }
         }
 
         # In case of Usermin
-        if ($get_user_level eq '3') {
+        if ($mod_um_access) {
             if ($nav_def_tab eq $prod) {
                 $page = $mod_def eq $mod_mb ? $page_sysinfo_def : "$theme_webprefix/$mod_def/$page_index";
             } elsif ($nav_def_tab eq $prd_mb) {
                 $page = "$theme_webprefix/$mod_mb/$page_index?id=INBOX";
             }
         }
+
+        # For modes with dashboard switch
+        if ($page =~ /$page_sysinfo/ &&
+            (   $mod_cm_access ||
+                $mod_vm_access ||
+                (!$mod_cm_available &&
+                    !$mod_vm_available &&
+                    !$mod_mb_available)))
+        {
+            $nav_def_tab = $prd_db;
+        }
+    }
+
+    # For modes with dashboard switch and various options presets
+    if ($mod_cm_access || $mod_vm_access) {
+        if ($page =~ /$page_sysinfo/) {
+            $nav_def_tab = $prd_db;
+        } elsif ($mod_cm_access) {
+            $nav_def_tab = $prd_cm;
+        } elsif ($mod_vm_access) {
+            $nav_def_tab = $prd_vm;
+        }
     }
 
     # Temporary patch to address older, existing user configuration
     $nav_def_tab = $prd_mb if ($nav_def_tab eq 'mail');
-    $tab         = $nav_def_tab;
-    $page        = $page;
+
+    # Return detected tab and page
+    $tab  = $nav_def_tab;
+    $page = $page;
 
     return ($tab, $page);
 }
@@ -266,7 +332,7 @@ sub nav_cloudmin_menu
     my ($rv, $login_mode);
     my $mod  = 'server-manager';
     my $def  = nav_get_server_id($mod);
-    my @menu = list_combined_webmin_menu({ 'id' => "$def" }, \%in, $mod);
+    my @menu = list_combined_webmin_menu({ 'server' => "$def" }, \%in, $mod);
     ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     $rv .= nav_link_sysinfo();
     $rv .= nav_links($login_mode);
@@ -293,13 +359,18 @@ sub nav_mailbox_menu
 
 sub nav_menu
 {
+    my ($tab_mode) = @_;
     my ($tab, $page) = nav_detector();
     my $rv;
 
-    if ($tab eq 'virtualmin') {
-        $rv = nav_virtualmin_menu($page);
-    } elsif ($tab eq 'cloudmin') {
+    if ($tab eq 'cloudmin' ||
+        $tab_mode eq 'cloudmin')
+    {
         $rv = nav_cloudmin_menu($page);
+    } elsif ($tab eq 'virtualmin' ||
+             $tab_mode eq 'virtualmin')
+    {
+        $rv = nav_virtualmin_menu($page);
     } elsif ($tab eq 'webmail') {
         $rv = nav_mailbox_menu($page);
     } else {
@@ -329,7 +400,7 @@ sub nav_get_server_id
     {
         my $id_ = "$1";
         if ($id_ =~ /^(\d+)$/) {
-            $default = $id_;
+            $default = "$id_";
         }
     }
     return $default;
@@ -450,7 +521,8 @@ sub nav_cat
                       'global_admin'      => 'fa-key',
                       'cat_admin'         => 'fa-key',
                       'global_power'      => 'fa-power-off',
-                      'cat_power'         => 'fa-power-off',);
+                      'cat_power'         => 'fa-power-off',
+                      'cat_webmin'        => 'fa-webmin webmin-cat-menu',);
 
     my $icon = $icon_table{$c} || 'fa-link';
     if ($label) {
@@ -741,11 +813,6 @@ sub nav_list_combined_menu
 "<span><strong>$theme_text{'theme_global_access_level'}</strong>:&nbsp;&nbsp;<em>@{[html_escape($item->{'desc'})]}</em></span>";
                 }
             } elsif ($item->{'type'} eq 'cat') {
-
-                # Skip printing Webmin category because there is a switch for it
-                if ($item->{'id'} eq 'cat_webmin' && $get_user_level eq '2') {
-                    next;
-                }
                 $rv .= nav_cat($item->{'id'}, $item->{'desc'});
                 $rv .= '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $item->{'id'} . '">' . "\n";
                 my ($rvx) = nav_list_combined_menu([$item->{'module'}], $item->{'members'}, $item->{'id'}, 'group');
@@ -1115,28 +1182,16 @@ sub print_switch
     if ($t_var_product_m eq '1') {
         if ($o eq 'd') {
             if ($get_user_level eq '2') {
-                if (get_webmin_switch_mode() eq '1') {
-                    print_switch_webmin($tab);
-                }
                 print_switch_virtualmin($tab);
-                if (get_webmin_switch_mode() ne '1') {
-                    print_switch_dashboard($tab);
-                }
-
+                print_switch_dashboard($tab);
             } else {
                 print_switch_webmin($tab);
                 print_switch_dashboard($tab);
             }
         } else {
             if ($get_user_level eq '2') {
-                if (get_webmin_switch_mode() ne '1') {
-                    print_switch_dashboard($tab);
-                }
+                print_switch_dashboard($tab);
                 print_switch_virtualmin($tab);
-                if (get_webmin_switch_mode() eq '1') {
-                    print_switch_webmin($tab);
-                }
-
             } else {
                 print_switch_dashboard($tab);
                 print_switch_webmin($tab);
@@ -1144,19 +1199,29 @@ sub print_switch
         }
     }
     if ($t_var_product_m eq '2') {
+        if ($get_user_level eq '4') {
+            if ($o eq 'd') {
+                print_switch_cloudmin($tab);
+                print_switch_dashboard($tab);
 
-        if ($o eq 'd') {
-            print_switch_webmin($tab);
-            &foreign_available("virtual-server") ? print_switch_virtualmin($tab) :
-              print_switch_cloudmin($tab);
+            } else {
+                print_switch_dashboard($tab);
+                print_switch_cloudmin($tab);
 
+            }
         } else {
-            &foreign_available("virtual-server") ? print_switch_virtualmin($tab) :
-              print_switch_cloudmin($tab);
-            print_switch_webmin($tab);
+            if ($o eq 'd') {
+                print_switch_webmin($tab);
+                &foreign_available("virtual-server") ? print_switch_virtualmin($tab) :
+                  print_switch_cloudmin($tab);
 
+            } else {
+                &foreign_available("virtual-server") ? print_switch_virtualmin($tab) :
+                  print_switch_cloudmin($tab);
+                print_switch_webmin($tab);
+
+            }
         }
-
     }
     if ($t_var_product_m eq '3') {
         if ($o eq 'd') {
@@ -1187,17 +1252,10 @@ sub print_switch
 }
 
 # XXX - needs further refactor
-sub get_webmin_switch_mode
-{
-    my $user = $remote_user;
-    $user =~ s/-//g;
-    return ($theme_config{"settings_show_webmin_tab_$user"} ne "false" ? 1 : 0);
-}
-
-# XXX - needs further refactor
 sub dashboard_switch
 {
-    if (($get_user_level eq '2' && get_webmin_switch_mode() ne '1') ||
+    if ($get_user_level eq '2' ||
+        $get_user_level eq '4' ||
         (!foreign_available("virtual-server") &&
             !foreign_available("server-manager") &&
             (get_product_name() ne 'usermin' || (get_product_name() eq 'usermin' && !foreign_available("mailbox")))))

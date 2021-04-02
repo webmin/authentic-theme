@@ -749,7 +749,6 @@ theme_xhred_global_installed_and_latest_version=Installert og siste versjon
 theme_xhred_global_latest_stable=Siste stabil
 theme_xhred_global_latest_beta=Siste beta
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Vis Webmin-bryter i navigasjonsmenyen?
 
 #19.14
 theme_xhred_filemanager_preparing_download=Forbereder nedlasting. Arkiverer %number fil(er). Vennligst vent%dots

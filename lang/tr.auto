@@ -755,7 +755,6 @@ theme_xhred_global_installed_and_latest_version=Yüklü ve en son sürüm
 theme_xhred_global_latest_stable=Son kararlı
 theme_xhred_global_latest_beta=En son beta sürümü
 theme_xhred_global_firewall=Firewall
-theme_xhred_settings_show_webmin_tab=Gezinme menüsünde Webmin anahtarı gösterilsin mi?
 
 #19.14
 theme_xhred_filemanager_preparing_download=İndirme hazırlanıyor. %number dosya (lar) ı arşivleniyor. Lütfen %dots bekleyin
