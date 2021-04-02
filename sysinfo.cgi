@@ -9,7 +9,10 @@ use strict;
 
 our (%in,             %gconfig,     %text,                $current_theme, $config_directory,
      $remote_user,    $title,       %theme_config,        %theme_text,    $get_user_level,
-     $has_virtualmin, $has_usermin, $has_usermin_version, $has_usermin_conf_dir);
+     $has_virtualmin, $has_usermin, $has_usermin_version, $has_usermin_conf_dir,
+     $theme_webprefix, $trust_unknown_referers);
+
+$trust_unknown_referers = 1;
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
@@ -172,7 +175,7 @@ if ($get_user_level ne '3') {
         foreach my $mod (@commonmods) {
             my %minfo = &get_module_info($mod);
             $commonmods_data .=
-              ui_table_row($minfo{'desc'}, "<a href='$mod/'>" . ($text{ 'common_' . $mod } || $minfo{'longdesc'}) . "</a>");
+              ui_table_row($minfo{'desc'}, "<a href='$theme_webprefix/$mod/'>" . ($text{ 'common_' . $mod } || $minfo{'longdesc'}) . "</a>");
         }
     }
     $commonmods_data .= ui_table_end();
