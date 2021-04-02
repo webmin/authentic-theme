@@ -95,6 +95,7 @@ sub get_theme_color
 
 sub embed_favicon
 {
+    return if ($theme_config{"settings_embed_favicon"} eq 'false');
     my $product = get_product_name() eq 'usermin' ? 'usermin' : 'webmin';
 
     if ($get_user_level eq '1' || $get_user_level eq '2') {

@@ -157,6 +157,9 @@ var
     settings_product_branding_show_time_min_privileged = 1,
     settings_product_branding_show_time_max_privileged = 6,
 
+    // Embed default/custom favicons
+    settings_embed_favicon = true,
+
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',
 
