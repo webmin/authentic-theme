@@ -171,6 +171,9 @@ sub nav_detector
         }
     }
 
+    # Temporary patch to address older, existing user configuration
+    $nav_def_tab = $prd_mb if ($nav_def_tab eq 'mail');
+
     $tab  = $nav_def_tab;
     $page = $page;
 
