@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.74-RC8 (April 01, 2021)
+#### Version 19.74-RC9 (April 02, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
 * Add navigation menu code refactoring improving speed and stability
 * Add ability to setup custom company branding and favicons [#639/comment-801339035](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-801339035)
