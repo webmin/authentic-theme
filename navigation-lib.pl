@@ -50,8 +50,10 @@ sub nav_detector
     my $prd_db      = "dashboard";
     my $prd_db_mode = 0;
 
-    my $page_sysinfo = "$theme_webprefix/sysinfo.cgi";
-    my $nav_def_tab  = $theme_config{"settings_right_default_tab_$prod"};
+    my $page_index       = "index.cgi";
+    my $page_sysinfo     = "sysinfo.cgi";
+    my $page_sysinfo_def = "$theme_webprefix/$page_sysinfo";
+    my $nav_def_tab      = $theme_config{"settings_right_default_tab_$prod"};
 
     # If we have goto substitute default
     if ($req_goto) {
@@ -86,9 +88,15 @@ sub nav_detector
         }
 
         # If default set and if module available
+        my $page_def = $theme_config{"settings_${prod}_default_module"};
         if (($nav_def_tab eq $prd_cm && !$mod_cm_available) ||
             ($nav_def_tab eq $prd_vm && !$mod_vm_available) ||
-            ($nav_def_tab eq $prd_mb && !$mod_mb_available))
+            ($nav_def_tab eq $prd_mb && !$mod_mb_available) ||
+            ($nav_def_tab eq $prod   &&
+                !$mod_cm_available &&
+                !$mod_vm_available &&
+                !$mod_mb_available &&
+                !$page_def))
         {
             # This is the single product switch mode
             $nav_def_tab = $prd_db;
@@ -103,11 +111,20 @@ sub nav_detector
         # Define default page for Webmin/Usermin
         if ($nav_def_tab eq $prod || $nav_def_tab eq $prd_db) {
             if ($mod_def) {
-                $page        = "$theme_webprefix/$mod_def/index.cgi";
+                $page        = "$theme_webprefix/$mod_def/$page_index";
                 $nav_def_tab = $prod;
             } else {
-                $page        = $page_sysinfo;
-                $nav_def_tab = $prd_db if ($prd_db_mode);
+
+                # If default Webmin/Usermin module is actually set
+                if ($page_def && $page_def ne $page_sysinfo) {
+                    $page = "$theme_webprefix/$page_def";
+                }
+
+                # Define safe default
+                else {
+                    $page        = "$page_sysinfo_def";
+                    $nav_def_tab = $prd_db if ($prd_db_mode);
+                }
             }
         }
 
@@ -120,11 +137,11 @@ sub nav_detector
 
             if ($prod_target) {
                 $page = $theme_config{"settings_right_${prod_target}_default"};
-                if ($page eq 'index.cgi') {
+                if ($page eq $page_index) {
                     $page =
-                      ($mod_cm_available && $nav_def_tab eq $prd_cm) ? "$theme_webprefix/$mod_cm/index.cgi" :
-                      ($mod_vm_available && $nav_def_tab eq $prd_vm) ? "$theme_webprefix/$mod_vm/index.cgi" :
-                      $page_sysinfo;
+                      ($mod_cm_available && $nav_def_tab eq $prd_cm) ? "$theme_webprefix/$mod_cm/$page_index" :
+                      ($mod_vm_available && $nav_def_tab eq $prd_vm) ? "$theme_webprefix/$mod_vm/$page_index" :
+                      $page_sysinfo_def;
                 }
 
                 # If set to domain/server id, try using it
@@ -145,37 +162,36 @@ sub nav_detector
                         $page =
                           $nav_def_tab eq $prd_cm ? "$theme_webprefix/$mod_cm/edit_serv.cgi?id=$id" :
                           $nav_def_tab eq $prd_vm ? "$theme_webprefix/$mod_vm/$vm_file?dom=$id" :
-                          $page_sysinfo;
+                          $page_sysinfo_def;
                     }
 
                     # Fallback to default for user
                     else {
-                        $page = $page_sysinfo;
+                        $page = $page_sysinfo_def;
                     }
                 }
             }
 
             # If it is not set assume dashboard
             else {
-                $page = $page_sysinfo;
+                $page = $page_sysinfo_def;
             }
         }
 
         # In case of Usermin
         if ($get_user_level eq '3') {
             if ($nav_def_tab eq $prod) {
-                $page = $mod_def eq $mod_mb ? $page_sysinfo : "$theme_webprefix/$mod_def/index.cgi";
+                $page = $mod_def eq $mod_mb ? $page_sysinfo_def : "$theme_webprefix/$mod_def/$page_index";
             } elsif ($nav_def_tab eq $prd_mb) {
-                $page = "$theme_webprefix/$mod_mb/index.cgi?id=INBOX";
+                $page = "$theme_webprefix/$mod_mb/$page_index?id=INBOX";
             }
         }
     }
 
     # Temporary patch to address older, existing user configuration
     $nav_def_tab = $prd_mb if ($nav_def_tab eq 'mail');
-
-    $tab  = $nav_def_tab;
-    $page = $page;
+    $tab         = $nav_def_tab;
+    $page        = $page;
 
     return ($tab, $page);
 }

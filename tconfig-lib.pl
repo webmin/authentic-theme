@@ -267,6 +267,8 @@ sub theme_settings_filter
              'settings_sysinfo_theme_updates_for_usermin');
         if ($get_user_level eq 3) {
             push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmin', 'settings_webmin_default_module');
+        } elsif ($get_user_level ne 3) {
+            push(@theme_settings_filter, 'settings_right_default_tab_usermin');
         }
     }
     return @theme_settings_filter;

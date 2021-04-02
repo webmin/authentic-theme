@@ -846,12 +846,13 @@ sub set_user_level
 
 sub get_initial_wizard
 {
-    # Do user need to go to Virtualmin post installation wizard
+    # Prevent running Virtualmin post installation wizard
     my $mod_vm = 'virtual-server';
     if ($get_user_level eq '0' && foreign_exists($mod_vm)) {
         my %virtualmin_config = foreign_config($mod_vm);
         return $virtualmin_config{'wizard_run'};
     }
+    return 1;
 }
 
 sub get_button_style
