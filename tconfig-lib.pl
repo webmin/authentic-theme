@@ -616,4 +616,111 @@ sub theme_footer
         ));
 }
 
+sub settings_get_select_navigation_color
+{
+    my ($v, $k) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+
+                    <option value="blue"'
+      . ($v eq 'blue' && ' selected') . '>Royal Blue (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+
+                    <option value="darkBlue"'
+      . ($v eq 'darkBlue' && ' selected') . '>Midnight Blue</option>
+
+                    <option value="lightBlue"'
+      . ($v eq 'lightBlue' && ' selected') . '>Dodger Blue</option>
+
+                    <option value="gold"'
+      . ($v eq 'gold' && ' selected') . '>Pale Golden</option>
+
+                    <option value="green"'
+      . ($v eq 'green' && ' selected') . '>Sea Green</option>
+
+                 <option value="red"'
+      . ($v eq 'red' && ' selected') . '>Dark Red</option>
+
+                    <option value="indianRed"'
+      . ($v eq 'indianRed' && ' selected') . '>Indian Red</option>
+
+                    <option value="orange"'
+      . ($v eq 'orange' && ' selected') . '>Longhorn Orange</option>
+
+                    <option value="white"'
+      . ($v eq 'white' && ' selected') . '>White Snow</option>
+
+                    <option value="brown"'
+      . ($v eq 'brown' && ' selected') . '>Saddle Brown</option>
+
+
+                    <option value="purple"'
+      . ($v eq 'purple' && ' selected') . '>Dark Purple</option>
+
+                    <option value="grey"'
+      . ($v eq 'grey' && ' selected') . '>Dim Gray</option>
+
+                    <option value="darkGrey"'
+      . ($v eq 'darkGrey' && ' selected') . '>Dark Gray</option>
+
+      </select>';
+
+}
+
+sub settings_get_select_editor_color
+{
+    my ($v, $k) = @_;
+    return '<select class="ui_select" name="' . $k . '">
+
+            <option value="monokai"'
+      . ($v eq 'monokai' && ' selected') . '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
+
+            <option value="elegant"'
+      . ($v eq 'elegant' && ' selected') . '>' . $theme_text{'theme_xhred_global_light'} . '</option>
+
+
+        </select>';
+
+}
+
+sub settings_get_select_document_title
+{
+    my ($v, $k) = @_;
+    my $prod_name =
+      get_product_name() ne 'webmin' ? $theme_text{'theme_xhred_titles_um'} : $theme_text{'theme_xhred_titles_wm'};
+    return '<select class="ui_select" name="' . $k . '">
+      <option value="3"'
+      . ($v eq '3' && ' selected') . '>' . theme_text('settings_document_title_option_3', ucfirst($prod_name)) . '</option>
+      <option value="7"'
+      . ($v eq '7' && ' selected') . '>' . theme_text('settings_document_title_option_7', ucfirst($prod_name)) . '</option>
+      <option value="1"'
+      . ($v eq '1' && ' selected') . '>' . theme_text('settings_document_title_option_1', ucfirst($prod_name)) .
+      ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+      <option value="2"'
+      . ($v eq '2' && ' selected') . '>' . theme_text('settings_document_title_option_2', ucfirst($prod_name)) . '</option>
+      <option value="4"'
+      . ($v eq '4' && ' selected') . '>' . theme_text('settings_document_title_option_4', ucfirst($prod_name)) . '</option>
+      <option value="5"'
+      . ($v eq '5' && ' selected') . '>' . theme_text('settings_document_title_option_5', ucfirst($prod_name)) . '</option>
+      <option value="8"'
+      . ($v eq '8' && ' selected') . '>' . theme_text('settings_document_title_option_8', ucfirst($prod_name)) . '</option>
+      <option value="9"'
+      . ($v eq '9' && ' selected') . '>' . theme_text('settings_document_title_option_9', ucfirst($prod_name)) . '</option>
+      <option value="6"'
+      . ($v eq '6' && ' selected') . '>' . theme_text('settings_document_title_option_6', ucfirst($prod_name)) . '</option>
+      </select>';
+
+}
+
+sub settings_get_select_default_module
+{
+    my ($name, $value) = @_;
+    my @modules = get_available_module_infos();
+    my $select = ui_select($name,
+                           $value,
+                           [["", $theme_text{'theme_xhred_titles_dashboard'}],
+                            map    {[$_->{'dir'}, $_->{'desc'}]}
+                              sort {$a->{'desc'} cmp $b->{'desc'}} @modules
+                           ]);
+    return $select;
+}
+
 1;
