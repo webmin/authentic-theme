@@ -1606,41 +1606,6 @@ sub theme_make_config_dir
     }
 }
 
-sub virtualmin_domain_available
-{
-    my ($id, $type, $gkey) = @_;
-    if (&foreign_available('virtual-server')) {
-        &foreign_require("virtual-server", "virtual-server-lib.pl");
-        foreach my $dom (&virtual_server::list_visible_domains()) {
-            if ($id eq $dom->{$type}) {
-                return $gkey ? $dom->{$gkey} : $dom->{$type};
-            }
-        }
-    }
-}
-
-sub virtualmin_domain_available_count
-{
-    if (&foreign_available('virtual-server')) {
-        &foreign_require("virtual-server", "virtual-server-lib.pl");
-        my %doms = virtual_server::list_visible_domains();
-        return scalar(keys %doms);
-    }
-}
-
-sub cloudmin_server_available
-{
-    my ($id, $type, $gkey) = @_;
-    if (&foreign_available('server-manager')) {
-        &foreign_require("server-manager", "server-manager-lib.pl");
-        foreach my $host (&server_manager::list_managed_servers()) {
-            if ($id eq $host->{$type}) {
-                return $gkey ? $host->{$gkey} : $host->{$type};
-            }
-        }
-    }
-}
-
 sub get_theme_user_link
 {
     my $is_hidden = (!foreign_available("webmin") &&

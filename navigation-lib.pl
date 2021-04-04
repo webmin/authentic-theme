@@ -184,9 +184,9 @@ sub nav_detector
                         $id_ eq '0')
                     {
                         if ($type_cm) {
-                            $id = cloudmin_server_available($id_, 'id');
+                            $id = nav_cloudmin_server_available($id_, 'id');
                         } elsif ($type_vm) {
-                            $id = virtualmin_domain_available($id_, 'id');
+                            $id = nav_virtualmin_domain_available($id_, 'id');
                         }
                     }
 
@@ -270,6 +270,7 @@ sub nav_webmin_menu
 
     my @menus  = list_modules_webmin_menu();
     my $unused = $theme_config{'settings_leftmenu_section_hide_unused_modules'} eq 'true';
+    my $nomailbox = $theme_config{'settings_mail_ui'} ne 'false' ? 1 : 0;
     my $extra_links;
 
     foreach my $menu (@menus) {
@@ -277,6 +278,7 @@ sub nav_webmin_menu
         $rv .= nav_cat($menu->{'id'}, $menu->{'desc'});
         $rv .= "<li class=\"sub-wrapper\"><ul class=\"sub\" style=\"display: none;\" id=\"$menu->{'id'}\">\n";
         foreach my $module (@{ $menu->{'members'} }) {
+            next if ($module->{'id'} eq 'mailbox' && $nomailbox);
             $rv .= nav_cat_link("$theme_webprefix/$module->{'id'}/", $module->{'desc'});
             if (!$extra_links++) {
                 if ($get_user_level eq '0' || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
@@ -771,7 +773,7 @@ sub nav_list_combined_menu
                 };
                 if (($get_user_level eq '0' || $get_user_level eq '1') &&
                     $link =~ /\/virtual-server\/domain_form\.cgi/ &&
-                    virtualmin_domain_available_count())
+                    nav_virtualmin_domain_available_count())
                 {
                     my $dom_id = $item->{'link'};
                     $dom_id =~ /gparent=(\d+)/;
@@ -1265,5 +1267,41 @@ sub dashboard_switch
         return 0;
     }
 }
+
+sub nav_virtualmin_domain_available
+{
+    my ($id, $type, $gkey) = @_;
+    if (&foreign_available('virtual-server')) {
+        &foreign_require("virtual-server", "virtual-server-lib.pl");
+        foreach my $dom (&virtual_server::list_visible_domains()) {
+            if ($id eq $dom->{$type}) {
+                return $gkey ? $dom->{$gkey} : $dom->{$type};
+            }
+        }
+    }
+}
+
+sub nav_virtualmin_domain_available_count
+{
+    if (&foreign_available('virtual-server')) {
+        &foreign_require("virtual-server", "virtual-server-lib.pl");
+        my %doms = virtual_server::list_visible_domains();
+        return scalar(keys %doms);
+    }
+}
+
+sub nav_cloudmin_server_available
+{
+    my ($id, $type, $gkey) = @_;
+    if (&foreign_available('server-manager')) {
+        &foreign_require("server-manager", "server-manager-lib.pl");
+        foreach my $host (&server_manager::list_managed_servers()) {
+            if ($id eq $host->{$type}) {
+                return $gkey ? $host->{$gkey} : $host->{$type};
+            }
+        }
+    }
+}
+
 
 1;

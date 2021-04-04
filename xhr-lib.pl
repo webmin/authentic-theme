@@ -63,7 +63,8 @@ sub xhr
     # Check if action is allowed
     if ($type eq 'can') {
         if ($action eq 'view_dom') {
-            $data{$action} = virtualmin_domain_available($in{'dom'}, 'id');
+            require("$ENV{'THEME_ROOT'}/navigation-lib.pl");
+            $data{$action} = nav_virtualmin_domain_available($in{'dom'}, 'id');
         }
     }
 
