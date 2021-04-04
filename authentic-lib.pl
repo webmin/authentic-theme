@@ -2286,6 +2286,14 @@ sub theme_config_save
         write_file(get_tgconfig_file(), \%a);
 
         # Check for Usermin configuration
+        if ($has_usermin_conf_dir) {
+            my $theme_settings_webmin_file  = get_tgconfig_file();
+            my $theme_settings_usermin_file = $theme_settings_webmin_file;
+            $theme_settings_usermin_file =~ s/$config_directory/$has_usermin_conf_dir/;
+            if (!-l $theme_settings_usermin_file) {
+                symlink_file($theme_settings_webmin_file, $theme_settings_usermin_file);
+            }
+        }
     }
 }
 
@@ -2306,17 +2314,12 @@ sub theme_config_restore
 {
     my $tuconfig_file = get_tuconfig_file();
     unlink_file($tuconfig_file);
-    if ($has_usermin) {
-        my $tuuconfig_file = $tuconfig_file;
-        $tuuconfig_file =~ s/webmin/usermin/;
-        unlink_file($tuuconfig_file);
-    }
     if ($get_user_level eq '0') {
         my $tgconfig_file = get_tgconfig_file();
         unlink_file($tgconfig_file);
         if ($has_usermin) {
             my $tugconfig_file = $tgconfig_file;
-            $tugconfig_file =~ s/webmin/usermin/;
+            $tugconfig_file =~ s/$config_directory/$has_usermin_conf_dir/;
             unlink_file($tugconfig_file);
         }
     }
@@ -2425,7 +2428,7 @@ sub get_autocomplete_shell
             $unit_tmp =~ s/\|/,/g;
             $unit_tmp =~ s/;/,/g;
 
-            my @units_tmp = split /,/, $unit_tmp;
+            my @units_tmp          = split /,/, $unit_tmp;
             my @units_possible_tmp = ('start', 'stop', 'restart', 'try-restart', 'reload', 'force-reload', 'status');
             @rs_tmp = (@units_tmp ? @units_tmp : @units_possible_tmp);
             my @rs_cmd;
