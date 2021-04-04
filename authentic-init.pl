@@ -291,7 +291,7 @@ sub embed_header
         {
             print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -680,7 +680,7 @@ sub init_vars
     }
 
     our ($get_user_level, $has_virtualmin, $has_cloudmin) = get_user_level();
-    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_data();
+    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_vars();
 
     # Set webprefix that should be used by the theme
     my ($server_webprefix) = parse_remote_server_webprefix();
@@ -723,40 +723,43 @@ sub check_pro_package
     }
 }
 
-sub get_usermin_data
+sub get_usermin_vars
 {
-    my ($module) = @_;
     my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
+    eval {
+        if (&foreign_installed("usermin")) {
+            &foreign_require("usermin");
+            my %uminiserv;
+            &usermin::get_usermin_miniserv_config(\%uminiserv);
 
-    $has_usermin_root_dir = $root_directory;
-    $has_usermin_conf_dir = $config_directory;
-    $has_usermin_root_dir =~ s/web/user/;
-    $has_usermin_conf_dir =~ s/web/user/;
+            # Usermin config dir
+            $has_usermin_conf_dir = $uminiserv{'env_WEBMIN_CONFIG'};
 
-    if ($module) {
-        if (-r "$has_usermin_root_dir/$module") {
-            return 1;
-        } else {
-            return 0;
-        }
-    } else {
-        if (!-d $has_usermin_conf_dir . '/' . $current_theme) {
-            mkdir($has_usermin_conf_dir . '/' . $current_theme, 0755);
-        }
+            # Usermin root dir
+            $has_usermin_root_dir = $uminiserv{'root'};
 
-        if (-r $has_usermin_root_dir . '/web-lib-funcs.pl') {
-            $has_usermin = 1;
-        }
+            # Usermin version
+            $has_usermin_version = $uminiserv{'server'};
+            $has_usermin_version =~ /\/([\d\.]+)/;
+            $has_usermin_version = "$1";
+            if (length($has_usermin_version) > 6) {
+                $has_usermin_version =
+                  substr($has_usermin_version, 0, 5) . "." .
+                  substr($has_usermin_version, 5, 5 - 1) . "." .
+                  substr($has_usermin_version, 5 * 2 - 1);
+            }
 
-        $has_usermin_version = read_file_lines($has_usermin_conf_dir . '/version', 1)->[0];
-        if (length($has_usermin_version) > 6) {
-            $has_usermin_version =
-              substr($has_usermin_version, 0, 5) . "." .
-              substr($has_usermin_version, 5, 5 - 1) . "." .
-              substr($has_usermin_version, 5 * 2 - 1);
+            # Usermin installed
+            $has_usermin = -r $has_usermin_root_dir;
+
+            # Usermin Authentic Theme config dir exists
+            my $theme_conf_usermin = "$has_usermin_conf_dir/$current_theme";
+            if (!-d $theme_conf_usermin) {
+                mkdir($theme_conf_usermin, 0755);
+            }
         }
-        return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
-    }
+    };
+    return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
 }
 
 sub get_current_user_language
@@ -1347,7 +1350,7 @@ sub header_html_data
       get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
       '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
+      '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
       get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
 }

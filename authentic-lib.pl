@@ -2284,6 +2284,8 @@ sub theme_config_save
         # Never save user-based options to global config
         delete @a{ grep(/_user$/, keys %a) };
         write_file(get_tgconfig_file(), \%a);
+
+        # Check for Usermin configuration
     }
 }
 

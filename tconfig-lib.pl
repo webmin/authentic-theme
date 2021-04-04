@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%gconfig, %text, %theme_config, %theme_text, $has_usermin, $get_user_level);
+our (%gconfig, %text, %theme_config, %theme_text, $has_usermin, $has_usermin_root_dir, $get_user_level);
 
 sub theme_settings_raw
 {
@@ -220,7 +220,7 @@ sub theme_settings_filter
     }
 
     # Exclude list of settings for Webmail
-    if (!get_usermin_data("mailbox")) {
+    if (!-r "$has_usermin_root_dir/mailbox") {
         push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmail', 'settings_right_default_tab_usermin');
     }
 
@@ -429,13 +429,10 @@ sub theme_settings_format
     } elsif ($k eq 'settings_right_default_tab_usermin') {
         $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
-          . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>
-
-                '
-          . (get_usermin_data('mailbox') &&
-             ' <option value="webmail"' .
-             ($v eq 'webmail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option> ') .
-          '
+          . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>       
+                <option value="webmail"' .
+          ($v eq 'webmail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option>
+          
 
                 </select>';
     } elsif ($k eq 'settings_hotkey_toggle_modifier') {
