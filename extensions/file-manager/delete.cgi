@@ -8,6 +8,8 @@
 #
 use strict;
 
+use lib ("$ENV{'THEME_ROOT'}/lib");
+
 use File::Copy;
 use File::Path;
 
