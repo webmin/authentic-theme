@@ -508,7 +508,6 @@ sub embed_js_scripts
     my $js = $config_directory . "/$current_theme/scripts.js";
     if (-r $js && -s $js) {
         $js = read_file_contents($js);
-        $js =~ tr/\r\n/;/d;
         print ' <script data-custom-script>' . $js . '</script>' . "\n";
     }
 }
