@@ -726,7 +726,7 @@ sub get_usermin_vars
 {
     my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
     eval {
-        if (&foreign_installed("usermin")) {
+        if (&foreign_exists("usermin")) {
             &foreign_require("usermin");
             my %uminiserv;
             &usermin::get_usermin_miniserv_config(\%uminiserv);
