@@ -76,7 +76,7 @@ sub theme_settings_raw
                        'settings_leftmenu_netdata',
                        'settings_leftmenu_netdata_link',
                        'settings_leftmenu_user_html',
-                       'settings_leftmenu_user_html_only_for_administrator',
+                       'settings_leftmenu_user_html_privileged',
                        'settings_leftmenu_custom_links',
             ]
          }
@@ -255,7 +255,7 @@ sub theme_settings_filter
              'settings_leftmenu_section_hide_unused_modules',
              'settings_leftmenu_netdata',
              'settings_leftmenu_netdata_link',
-             'settings_leftmenu_user_html_only_for_administrator',
+             'settings_leftmenu_user_html_privileged',
              'settings_table_init_datatables',
              'settings_side_slider_enabled',
              'settings_side_slider_fixed',
@@ -278,6 +278,13 @@ sub theme_settings_filter
         if ($get_user_level ne '3') {
             push(@theme_settings_filter, 'settings_right_default_tab_usermin');
         }
+
+        # If admin limits user HTML snippet for nav menu
+        if ($theme_config{'settings_leftmenu_user_html_privileged'} eq 'true')
+        {
+            push(@theme_settings_filter, 'settings_leftmenu_user_html');
+        }
+
     }
     return @theme_settings_filter;
 }
@@ -401,7 +408,7 @@ sub theme_settings_format
         } elsif ($k eq 'settings_leftmenu_user_html') {
             $width = ' width: 95%; ';
         }
-
+        $v =~ s/(<(\/|\s*)(html|head|meta|link|title|body).*?>)//g;
         $v = '
                 <input style="display: inline;'
           . $width . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' .

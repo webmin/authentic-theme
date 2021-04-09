@@ -1996,17 +1996,6 @@ sub content
                      $get_user_level eq '3' ? 'usermin' :
                      undef);
     print "</ul>\n";
-
-    # Custom text
-    print '<ul class="user-html"><li class="user-html-string">'
-      .
-      (
-        ($theme_config{'settings_leftmenu_user_html_only_for_administrator'} ne 'true' ||
-           $theme_config{'settings_leftmenu_user_html_only_for_administrator'} eq 'true' && $get_user_level eq '0'
-        ) ? $theme_config{'settings_leftmenu_user_html'} :
-          undef
-      ) .
-      '</li></ul>';
     print '</aside>' . "\n";
 
     # Authenticated logo

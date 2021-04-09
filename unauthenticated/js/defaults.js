@@ -48,7 +48,7 @@ var
     settings_leftmenu_button_refresh = false,
     settings_leftmenu_netdata = true,
     settings_leftmenu_user_html = '',
-    settings_leftmenu_user_html_only_for_administrator = false,
+    settings_leftmenu_user_html_privileged = false,
     settings_leftmenu_custom_links = '',
     
     // Side slider options
