@@ -1077,29 +1077,54 @@ sub get_tree
     my $wanted = sub {
         my $td = $File::Find::name;
         if (-d $td && !-l $td) {
+            my $push_label = sub {
+                my ($td, $afic) = @_;
+                my ($pd, $cd)   = $td =~ m|^ (.+) / ([^/]+) \z|x;
+                my $pp = ($fu && $afic ne '/') ? $afic : undef;
+                my $c  = $r{$td} =
+                  { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
+                defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
+            };
+
             my ($ix) = grep {$af[$_] eq $td} (0 .. @af - 1);
             $ic = $ix if (defined($ix));
-            if (!grep {$af[$ic] =~ /^\Q$_\E/} @ap) {
+            my $afic = $af[$ic];
+            if (!grep {$afic =~ /^\Q$_\E/} @ap &&
+                !grep {$td =~ /^\Q$_\E/} @ap)
+            {
                 return;
             }
             my $dc = $td =~ tr[/][];
-            if ($e && $af[$ic] eq '/' && $dc == 1) {
+
+            # Exclude non essentials on start
+            if ($e && $afic eq '/' && $dc == 1) {
                 if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
                     return;
                 }
             }
+
+            # Home directory only
             if ($fu) {
-                $td =~ s/^$af[$ic]//;
+                $td =~ s/^$afic//;
+            }
+
+            # Starting with sub-directory in multiple allowed paths
+            elsif ($e && $fr && $ix && $dc > 1) {
+                my $tdx  = $td;
+                my @tdxs = split('/', $tdx);
+                my @tdxss;
+                for (my $i = 1; $i <= ($dc - 1); $i++) {
+                    push(@tdxss, $tdxs[$i]);
+                    my $tdxx = join("/", @tdxss);
+                    $tdxx =~ s|^\Q/\E/?||;
+                    &$push_label($tdxx, $afic);
+                }
             }
             $td =~ s|^\Q/\E/?||;
             if ($r{$td} || !$td) {
                 return;
             }
-            my ($pd, $cd) = $td =~ m|^ (.+) / ([^/]+) \z|x;
-            my $pp = ($fu && $af[$ic] ne '/') ? $af[$ic] : undef;
-            my $c  = $r{$td} =
-              { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
-            defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
+            &$push_label($td, $afic);
         }
     };
     my $preprocess = sub {
