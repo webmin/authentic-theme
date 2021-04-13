@@ -1083,7 +1083,7 @@ sub get_tree
                 my $pp = ($fu && $afic ne '/') ? $afic : undef;
                 my $c  = $r{$td} =
                   { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
-                defined $pd ? (push @{ $r{$pd}{children} }, $c) : (push @r, $c);
+                defined $pd ? (push @{ $r{$pd}{'children'} }, $c) : (push @r, $c);
             };
 
             my ($ix) = grep {$af[$_] eq $td} (0 .. @af - 1);
