@@ -98,12 +98,18 @@ foreach my $name (@entries_list) {
         if (!$unzip_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'unzip');
         } else {
-            if ($password) {
-                $pparam = (" -P " . quotemeta($password) . " ");
+            my $x7z_cmd = has_command('7z');
+            if ($password && $x7z_cmd) {
+                $pparam = (" -p" . quotemeta($password) . " ");
+                $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($cwd) . $pparam);
+            } else {
+                if ($password) {
+                    $pparam = (" -P " . quotemeta($password) . " ");
+                }
+                my $unzip_out = `unzip --help`;
+                my $uu        = ($unzip_out =~ /-UU/ ? '-UU' : undef);
+                $status = system("$unzip_cmd $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
             }
-            my $unzip_out = `unzip --help`;
-            my $uu        = ($unzip_out =~ /-UU/ ? '-UU' : undef);
-            $status = system("$unzip_cmd $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
         }
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
         my $unrar_cmd = has_command('unar') || has_command('unrar');
@@ -163,7 +169,7 @@ foreach my $name (@entries_list) {
             }
         } elsif ($status == 1280 || $status == 65280) {
             $errors{$name} = $text{'filemanager_archive_password_required'};
-        } elsif ($status == 256 || $status == 512 || $status == 768 || $status == 20992) {
+        } elsif ($status == 256 || $status == 512 || $status == 768 || $status == 20736 || $status == 20992) {
             $errors{$name} = $text{'filemanager_archive_password_wrong'};
         } elsif ($status == 2304 || $status == 2560) {
             $errors{$name} = $text{'filemanager_archive_file_not_found'};
