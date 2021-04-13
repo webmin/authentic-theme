@@ -259,8 +259,8 @@ settings_grayscale_level_navigation=Filtre en niveaux de gris
 settings_grayscale_level_navigation_description=Valeurs par défaut/actuelles <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtre sépia
 settings_sepia_level_navigation_description=Valeurs par défaut/actuelles <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Filtre saturé
-settings_saturate_level_navigation_description=Valeurs par défaut/actuelles <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Filtre saturé
+settings_saturation_level_navigation_description=Valeurs par défaut/actuelles <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Hue-faire pivoter le filtre
 settings_hue_level_navigation_description=Valeurs par défaut/actuelles <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
 settings_invert_level_navigation=Inverser le filtre

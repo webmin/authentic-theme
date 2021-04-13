@@ -259,8 +259,8 @@ settings_grayscale_level_navigation=灰度滤镜
 settings_grayscale_level_navigation_description=默认/当前值 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=棕褐色过滤器
 settings_sepia_level_navigation_description=默认/当前值 <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=饱和过滤器
-settings_saturate_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=饱和过滤器
+settings_saturation_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=色调-旋转滤镜
 settings_hue_level_navigation_description=默认/当前值 <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
 settings_invert_level_navigation=反转滤波器

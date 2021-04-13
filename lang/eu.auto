@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Eskala handiko iragazkia
 settings_grayscale_level_navigation_description=Lehenetsia/uneko balioak <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia iragazkia
 settings_sepia_level_navigation_description=Lehenetsia/uneko balioak <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Saturatu iragazkia
-settings_saturate_level_navigation_description=Lehenetsia/uneko balioek <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Saturatu iragazkia
+settings_saturation_level_navigation_description=Lehenetsia/uneko balioek <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Biratu bira iragazkia
 settings_hue_level_navigation_description=Lehenetsia/uneko balioak <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Aldatu iragazkia

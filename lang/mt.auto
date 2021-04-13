@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Filtru fuq skala griża
 settings_grayscale_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtru tas-seba
 settings_sepia_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Filtru saturat
-settings_saturate_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Filtru saturat
+settings_saturation_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Idawwar filtru bil-lewn
 settings_hue_level_navigation_description=Inadempjenza tal/valuri kurrenti <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Inverta filtru

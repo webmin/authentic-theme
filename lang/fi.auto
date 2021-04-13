@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Harmaasävyinen suodatin
 settings_grayscale_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Seepiasuodatin
 settings_sepia_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Kyllästetty suodatin
-settings_saturate_level_navigation_description=Default/virta-arvot <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Kyllästetty suodatin
+settings_saturation_level_navigation_description=Default/virta-arvot <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Sävyä kiertävä suodatin
 settings_hue_level_navigation_description=Default/nykyiset arvot <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Käännä suodatin

@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Фільтр у шэрага адцення
 settings_grayscale_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Фільтр сэпіі
 settings_sepia_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Насыціць фільтр
-settings_saturate_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Насыціць фільтр
+settings_saturation_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Адценне-паварот фільтра
 settings_hue_level_navigation_description=/ Бягучыя значэння па змаўчанні <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Інвертаваць фільтр

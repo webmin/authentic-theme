@@ -75,19 +75,15 @@ sub settings_filter
 
 sub get_theme_color
 {
-    my %theme_colors = ('blue'      => '#2d5d9d',
-                        'darkBlue'  => '#31506b',
-                        'lightBlue' => '#23689e',
-                        'gold'      => '#947c55',
-                        'green'     => '#277b4c',
-                        'red'       => '#9e1f32',
-                        'indianRed' => '#b14f4f',
-                        'orange'    => '#a9713f',
-                        'white'     => '#ffffff',
-                        'brown'     => '#5d4636',
-                        'purple'    => '#543c53',
-                        'grey'      => '#4d5250',
-                        'darkGrey'  => '#3d423f');
+    my %theme_colors = ('blue'   => '#005fd2',
+                        'brown'  => '#5d4636',
+                        'gold'   => '#947c55',
+                        'green'  => '#277b4c',
+                        'grey'   => '#4d5250',
+                        'orange' => '#a9713f',
+                        'purple' => '#543c53',
+                        'red'    => '#9e1f32',
+                        'white'  => '#ffffff');
 
     my $color = $theme_config{'settings_navigation_color'};
     return $theme_colors{$color};
@@ -790,7 +786,7 @@ sub get_filters
 {
     return 'filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
       ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
-      ')' . ' saturate(' . $theme_config{'settings_saturate_level_navigation'} .
+      ')' . ' saturate(' . $theme_config{'settings_saturation_level_navigation'} .
       ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
       'deg)' . ' invert(' . $theme_config{'settings_invert_level_navigation'} .
       ') brightness(' . $theme_config{'settings_brightness_level_navigation'} .

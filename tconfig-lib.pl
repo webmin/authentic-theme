@@ -55,7 +55,7 @@ sub theme_settings_raw
                        'settings_navigation_color',
                        'settings_grayscale_level_navigation',
                        'settings_sepia_level_navigation',
-                       'settings_saturate_level_navigation',
+                       'settings_saturation_level_navigation',
                        'settings_hue_level_navigation',
                        'settings_invert_level_navigation',
                        'settings_brightness_level_navigation',
@@ -280,8 +280,7 @@ sub theme_settings_filter
         }
 
         # If admin limits user HTML snippet for nav menu
-        if ($theme_config{'settings_leftmenu_user_html_privileged'} eq 'true')
-        {
+        if ($theme_config{'settings_leftmenu_user_html_privileged'} eq 'true') {
             push(@theme_settings_filter, 'settings_leftmenu_user_html');
         }
 
@@ -345,7 +344,7 @@ sub theme_settings_format
         $v = ui_textbox($k, $v, 1);
     } elsif ($k eq 'settings_grayscale_level_navigation' ||
              $k eq 'settings_sepia_level_navigation'      ||
-             $k eq 'settings_saturate_level_navigation'   ||
+             $k eq 'settings_saturation_level_navigation' ||
              $k eq 'settings_hue_level_navigation'        ||
              $k eq 'settings_invert_level_navigation'     ||
              $k eq 'settings_brightness_level_navigation' ||
@@ -360,12 +359,12 @@ sub theme_settings_format
         my $range_step;
 
         if ($k eq 'settings_grayscale_level_navigation' ||
-            $k eq 'settings_sepia_level_navigation'    ||
-            $k eq 'settings_saturate_level_navigation' ||
+            $k eq 'settings_sepia_level_navigation'      ||
+            $k eq 'settings_saturation_level_navigation' ||
             $k eq 'settings_invert_level_navigation')
         {
 
-            if ($k eq 'settings_saturate_level_navigation') {
+            if ($k eq 'settings_saturation_level_navigation') {
                 $range_max = '3';
             }
             $range_step = '0.01';
@@ -629,44 +628,33 @@ sub settings_get_select_navigation_color
     return '<select class="ui_select" name="' . $k . '">
 
                     <option value="blue"'
-      . ($v eq 'blue' && ' selected') . '>Royal Blue (' . $theme_text{'theme_xhred_global_default'} . ')</option>
-
-                    <option value="darkBlue"'
-      . ($v eq 'darkBlue' && ' selected') . '>Midnight Blue</option>
-
-                    <option value="lightBlue"'
-      . ($v eq 'lightBlue' && ' selected') . '>Dodger Blue</option>
-
-                    <option value="gold"'
-      . ($v eq 'gold' && ' selected') . '>Pale Golden</option>
-
-                    <option value="green"'
-      . ($v eq 'green' && ' selected') . '>Sea Green</option>
-
-                 <option value="red"'
-      . ($v eq 'red' && ' selected') . '>Dark Red</option>
-
-                    <option value="indianRed"'
-      . ($v eq 'indianRed' && ' selected') . '>Indian Red</option>
-
-                    <option value="orange"'
-      . ($v eq 'orange' && ' selected') . '>Longhorn Orange</option>
-
-                    <option value="white"'
-      . ($v eq 'white' && ' selected') . '>White Snow</option>
+      . ($v eq 'blue' && ' selected') . '>Blue (' . $theme_text{'theme_xhred_global_default'} . ')</option>
 
                     <option value="brown"'
-      . ($v eq 'brown' && ' selected') . '>Saddle Brown</option>
+      . ($v eq 'brown' && ' selected') . '>Brown</option>
 
+                    <option value="gold"'
+      . ($v eq 'gold' && ' selected') . '>Gold</option>
 
-                    <option value="purple"'
-      . ($v eq 'purple' && ' selected') . '>Dark Purple</option>
+                    <option value="green"'
+      . ($v eq 'green' && ' selected') . '>Green</option>
 
                     <option value="grey"'
-      . ($v eq 'grey' && ' selected') . '>Dim Gray</option>
+      . ($v eq 'grey' && ' selected') . '>Gray</option>
 
-                    <option value="darkGrey"'
-      . ($v eq 'darkGrey' && ' selected') . '>Dark Gray</option>
+                    <option value="orange"'
+      . ($v eq 'orange' && ' selected') . '>Orange</option>
+      
+                    <option value="purple"'
+      . ($v eq 'purple' && ' selected') . '>Purple</option>
+      
+                 <option value="red"'
+      . ($v eq 'red' && ' selected') . '>Red</option>
+
+                    <option value="white"'
+      . ($v eq 'white' && ' selected') . '>White</option>
+
+
 
       </select>';
 

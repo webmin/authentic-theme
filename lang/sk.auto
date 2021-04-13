@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Filter v odtieňoch sivej
 settings_grayscale_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sépiový filter
 settings_sepia_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Nasýtený filter
-settings_saturate_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Nasýtený filter
+settings_saturation_level_navigation_description=Default/aktuálnej hodnoty <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Odtieňový filter
 settings_hue_level_navigation_description=Default/aktuálnej hodnoty <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Invertovať filter

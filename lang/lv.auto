@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Pelēktoņu filtrs
 settings_grayscale_level_navigation_description=Default/pašreizējais vērtības <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sēpijas filtrs
 settings_sepia_level_navigation_description=Default/pašreizējais vērtības <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Piesātināts filtrs
-settings_saturate_level_navigation_description=Default/pašreizējais vērtības <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Piesātināts filtrs
+settings_saturation_level_navigation_description=Default/pašreizējais vērtības <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Krāsu pagriešanas filtrs
 settings_hue_level_navigation_description=Default/pašreizējais vērtības <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Apgrieztais filtrs

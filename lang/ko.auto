@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=그레이 스케일 필터
 settings_grayscale_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=세피아 필터
 settings_sepia_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=포화 필터
-settings_saturate_level_navigation_description=기본/전류 값 <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=포화 필터
+settings_saturation_level_navigation_description=기본/전류 값 <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=색조 회전 필터
 settings_hue_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=필터 반전

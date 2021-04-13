@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Gri tonlamalı filtre
 settings_grayscale_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepya filtresi
 settings_sepia_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Doygun filtre
-settings_saturate_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Doygun filtre
+settings_saturation_level_navigation_description=Standart/akım değerleri <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Ton döndürme filtresi
 settings_hue_level_navigation_description=Standart/akım değerleri <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Filtreyi ters çevir

@@ -98,8 +98,8 @@ settings_grayscale_level_navigation=Filtr ve stupních šedi
 settings_grayscale_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sépiový filtr
 settings_sepia_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Nasycený filtr
-settings_saturate_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Nasycený filtr
+settings_saturation_level_navigation_description=Default/aktuální hodnoty <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Hue-rotate filter
 settings_hue_level_navigation_description=Default/aktuální hodnoty <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Invertovat filtr

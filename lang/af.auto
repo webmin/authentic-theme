@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Grysskaalfilter
 settings_grayscale_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia-filter
 settings_sepia_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Versadigde filter
-settings_saturate_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Versadigde filter
+settings_saturation_level_navigation_description=Verstek/huidige waardes <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Hue-draai filter
 settings_hue_level_navigation_description=Verstek/huidige waardes <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Keer die filter om

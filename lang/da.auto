@@ -175,8 +175,8 @@ settings_grayscale_level_navigation=Gråtonefilter
 settings_grayscale_level_navigation_description=Standard/aktuelle værdier <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia-filter
 settings_sepia_level_navigation_description=Standard/aktuelle værdier <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Mættet filter
-settings_saturate_level_navigation_description=Default/aktuelle værdier <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Mættet filter
+settings_saturation_level_navigation_description=Default/aktuelle værdier <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Nuance-roter filter
 settings_hue_level_navigation_description=Standard/aktuelle værdier <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Inverter filter

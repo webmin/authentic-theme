@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Szürkeárnyalatos szűrő
 settings_grayscale_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Szépia szűrő
 settings_sepia_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Telített szűrő
-settings_saturate_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Telített szűrő
+settings_saturation_level_navigation_description=Alapértelmezett/aktuális értékek <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Színárnyalat-elforgatás
 settings_hue_level_navigation_description=Default/aktuális értékek <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Fordított szűrő

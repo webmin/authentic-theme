@@ -254,8 +254,8 @@ settings_grayscale_level_navigation=グレースケールフィルタ
 settings_grayscale_level_navigation_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=セピアフィルター
 settings_sepia_level_navigation_description=デフォルト/電流値 <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=飽和フィルタ
-settings_saturate_level_navigation_description=デフォルト/電流値 <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=飽和フィルタ
+settings_saturation_level_navigation_description=デフォルト/電流値 <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=色相-フィルタを回転させる
 settings_hue_level_navigation_description=デフォルト/電流値 <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
 settings_invert_level_navigation=反転フィルタ

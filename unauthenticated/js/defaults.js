@@ -28,7 +28,7 @@ var
     settings_navigation_color = 'blue',
     settings_grayscale_level_navigation = '0',
     settings_sepia_level_navigation = '0',
-    settings_saturate_level_navigation = '1.50',
+    settings_saturation_level_navigation = '1',
     settings_hue_level_navigation = '0',
     settings_invert_level_navigation = '0',
     settings_brightness_level_navigation = '1',

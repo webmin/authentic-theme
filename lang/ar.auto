@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=مرشح درجات الرمادي
 settings_grayscale_level_navigation_description=افتراضي/القيم الحالية <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=مرشح بني داكن
 settings_sepia_level_navigation_description=افتراضي/القيم الحالية <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=فلتر مشبع
-settings_saturate_level_navigation_description=افتراضي/القيم الحالية <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=فلتر مشبع
+settings_saturation_level_navigation_description=افتراضي/القيم الحالية <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=مرشح التدوير
 settings_hue_level_navigation_description=افتراضي/القيم الحالية <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=مرشح عكس

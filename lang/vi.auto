@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=Bộ lọc thang độ xám
 settings_grayscale_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Bộ lọc Sepia
 settings_sepia_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Bộ lọc bão hòa
-settings_saturate_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Bộ lọc bão hòa
+settings_saturation_level_navigation_description=Default/giá trị hiện tại <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Bộ lọc xoay Huế
 settings_hue_level_navigation_description=Default/giá trị hiện tại <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
 settings_invert_level_navigation=Bộ lọc đảo

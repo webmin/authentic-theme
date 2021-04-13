@@ -258,8 +258,8 @@ settings_grayscale_level_navigation=Filtru nuanţe de gri
 settings_grayscale_level_navigation_description=Valori implicite/curente <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtru nuanţe sepia
 settings_sepia_level_navigation_description=Valori implicite/curente <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Filtru nuanţe saturate
-settings_saturate_level_navigation_description=Valori implicite/curente <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Filtru nuanţe saturate
+settings_saturation_level_navigation_description=Valori implicite/curente <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Filtru cu nuanţe inversate
 settings_hue_level_navigation_description=Valori implicite/curente <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
 settings_invert_level_navigation=Filtru de inversare

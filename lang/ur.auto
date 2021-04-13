@@ -262,8 +262,8 @@ settings_grayscale_level_navigation=گرے اسکیل فلٹر
 settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=سیپیا فلٹر
 settings_sepia_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=مطمئن فلٹر
-settings_saturate_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=مطمئن فلٹر
+settings_saturation_level_navigation_description=Default/current values <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 
 settings_hue_level_navigation=ہیو گھومنے والا فلٹر
 settings_hue_level_navigation_description=Default/current values <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°

@@ -259,8 +259,8 @@ settings_grayscale_level_navigation=Filtre del color
 settings_grayscale_level_navigation_description=Valor per defecte/Actual: <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filtre tintat Sípia
 settings_sepia_level_navigation_description=Valor per defecte/Actual: <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturate_level_navigation=Filtre de saturació
-settings_saturate_level_navigation_description=Valor per defecte/Actual: <code>1</code>/<code data-name="settings_saturate_level_navigation">0</code>
+settings_saturation_level_navigation=Filtre de saturació
+settings_saturation_level_navigation_description=Valor per defecte/Actual: <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
 settings_hue_level_navigation=Filtre de matís
 settings_hue_level_navigation_description=Valor per defecte/Actual: <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
 settings_invert_level_navigation=Filtre d'inversió
