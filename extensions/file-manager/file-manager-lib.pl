@@ -653,6 +653,11 @@ sub print_content
     my %list_data;
     my $query = $in{'query'};
     my @list;
+    my $clear_path = sub {
+        my ($path) = @_;
+        $path =~ s/[\/]+/\//g;
+        return $path;
+    };
 
     # In case of search trim the list accordingly
     if ($query) {
@@ -670,19 +675,19 @@ sub print_content
     if (test_allowed_paths()) {
 
         # Leave only allowed
-        my @tmp_list;
-        for $path (@allowed_paths) {
-            my $slashed = $path;
-            $slashed .= "/" if ($slashed !~ /\/$/);
-            push @tmp_list, grep {
-                string_starts_with($slashed, "$cwd/$_/") ||
-                  index($slashed, $_) != -1 ||
-                  index("$cwd/$_", $slashed) != -1
-            } @list;
+        my @allowed_list;
+        for my $allowed_path (@allowed_paths) {
+            push(
+                @allowed_list,
+                grep {
+                    my $list_path = &$clear_path("$cwd/$_");
+                    $list_path =~ /^\Q$allowed_path\E/ ||
+                    $allowed_path =~ /^\Q$list_path\E/
+                } @list);
         }
 
         # Remove duplicates
-        my %hash = map {$_, 1} @tmp_list;
+        my %hash = map {$_, 1} @allowed_list;
         @list = keys %hash;
     }
 
