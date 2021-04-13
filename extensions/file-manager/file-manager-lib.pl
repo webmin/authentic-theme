@@ -1114,7 +1114,7 @@ sub get_tree
             }
 
             # Starting with sub-directory in multiple allowed paths
-            elsif ($e && $fr && $ix && $dc > 1) {
+            elsif ($e && $fr && defined($ix) && $dc > 1) {
                 my $tdx  = $td;
                 my @tdxs = split('/', $tdx);
                 my @tdxss;
