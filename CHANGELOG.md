@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 19.75-beta1 (April 12, 2021)
+* Add improvements to color palettes
+* Fix file tree-view with sub-directory in multiple allowed paths in File Manager
+* Fix various inessential issues
+
 #### Version 19.74 (April 04, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
 * Add ability to setup custom company branding and favicons [#639/comment-801339035](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-801339035)
