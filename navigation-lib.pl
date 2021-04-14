@@ -1032,7 +1032,7 @@ sub nav_links
     }
 
     # User button link
-    $menu_width_needed += ($button_width + (4 * $button_margin)) + ($char_width * length($remote_user));
+    $menu_width_needed += ($button_width + (4 * $button_margin)) + int($char_width * (length($remote_user) / 1.5));
 
     # Logout button link
     $menu_width_needed += $button_width;
@@ -1040,8 +1040,8 @@ sub nav_links
     if ($menu_width - $menu_width_needed < $button_width - $button_margin) {
         $menu_elem_br = '<li class="flex-br"></li>';
     }
-
-    $rv .= "$menu_elem_br<li $user_title class=\"user-link user-link-acl\">";
+    my $cursor_def = !$foreign_acl ? ' cursor-default' : undef;
+    $rv .= "$menu_elem_br<li $user_title class=\"user-link user-link-acl$cursor_def\">";
     if ($foreign_acl) {
         $rv .=
           '<a class="menu-exclude-link" data-href="' . $theme_webprefix . '/acl/edit_user.cgi" href="' .
