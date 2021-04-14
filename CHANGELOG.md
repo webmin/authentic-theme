@@ -1,8 +1,8 @@
 ## Changelog
 
-#### Version 19.75-beta1 (April 12, 2021)
-* Add improvements to color palettes
-* Fix file tree-view with sub-directory in multiple allowed paths in File Manager
+#### Version 19.75-RC1 (April 14, 2021)
+* Add improvements to color palettes for navigation menu and side slider
+* Fix file tree-view with sub-directories in multiple allowed paths in File Manager
 * Fix various inessential issues
 
 #### Version 19.74 (April 04, 2021)
