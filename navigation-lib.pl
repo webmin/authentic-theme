@@ -627,8 +627,8 @@ sub nav_theme_links
                         $host =~ s/:(\d+)$/:$e->{'port'}/;
                         $e->{"link"} = "//$host$e->{'link'}";
                     }
-                    my $type = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
-                    my $type_class = $type ? "navigation_module_trigger" : "navigation_external_link";
+                    my $type       = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
+                    my $type_class = $type ? "navigation_module_trigger"             : "navigation_external_link";
                     $rv .= '<li ' . $type . ' data-after><a ' . $target . ' href="' .
                       $e->{"link"} . '" class="' . $type_class . '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>';
                     utf8::encode($e->{'title'});
@@ -920,8 +920,7 @@ sub nav_links
       get_button_tooltip('theme_xhred_tooltip_navigation_pinned', 'settings_hotkey_navigation', 'auto top') .
       ' class="user-link cursor-pointer' .
       ($theme_config{'settings_collapse_navigation_link'} eq 'false' && ' hidden') . '">';
-    $rv .=
-'<span><i data-collapse-trigger="1" class="fa fa2 fa-fw fa2-collapse-left"></i></span>';
+    $rv .= '<span><i data-collapse-trigger="1" class="fa fa2 fa-fw fa2-collapse-left"></i></span>';
     $rv .= '</li>';
 
     if ($theme_config{'settings_sysinfo_link_mini'} eq 'true' &&
@@ -1001,18 +1000,57 @@ sub nav_links
               undef);
     }
     my $user_title = get_button_tooltip($title_proc, undef, 'auto top', 1, undef, "aside");
+    my $menu_elem_br;
+    my $menu_width         = $theme_config{'settings_leftmenu_width'};
+    my $button_width       = 26;
+    my $button_margin      = 2;
+    my $char_width         = 5;
+    my $menu_lnk_colla     = $theme_config{'settings_collapse_navigation_link'} eq 'true';
+    my $menu_lnk_dashb     = $theme_config{'settings_sysinfo_link_mini'} eq 'true';
+    my $menu_lnk_night     = $theme_config{'settings_show_night_mode_link'} eq 'true';
+    my $menu_lnk_term      = $theme_config{'settings_show_terminal_link2'} eq 'true';
+    my $menu_lnk_favor     = $theme_config{'settings_favorites'} eq 'true';
+    my $menu_lnk_themeconf = $theme_config{'settings_theme_options_button'} eq 'true';
+    my $menu_lnk_lang      = $theme_config{'settings_leftmenu_button_language'} eq 'true';
+    my $menu_lnk_refresh   = $theme_config{'settings_leftmenu_button_refresh'} eq 'true';
 
-    $rv .= "<li $user_title class=\"user-link user-link-acl\">";
+    # Link buttons widths
+    my $menu_width_needed = 0;
+    foreach my $e (
+                   ($menu_lnk_colla,
+                    $menu_lnk_dashb,
+                    $menu_lnk_night,
+                    $menu_lnk_term,
+                    $menu_lnk_favor,
+                    $menu_lnk_themeconf,
+                    $menu_lnk_lang,
+                    $menu_lnk_refresh))
+    {
+        if ($e) {
+            $menu_width_needed += ($button_width + $button_margin);
+        }
+    }
+
+    # User button link
+    $menu_width_needed += ($button_width + (4 * $button_margin)) + ($char_width * length($remote_user));
+
+    # Logout button link
+    $menu_width_needed += $button_width;
+
+    if ($menu_width - $menu_width_needed < $button_width - $button_margin) {
+        $menu_elem_br = '<li class="flex-br"></li>';
+    }
+
+    $rv .= "$menu_elem_br<li $user_title class=\"user-link user-link-acl\">";
     if ($foreign_acl) {
         $rv .=
-          '<a class="menu-exclude-link" data-href="' .
-          $theme_webprefix . '/acl/edit_user.cgi" href="' . $theme_webprefix . '/acl/edit_user.cgi?user=' .
-          (get_env('base_remote_user') eq "root" ? "root" : $remote_user) . '"><i class="fa2 fa-fw ' .
-          get_user_icon() . '"></i>&nbsp;<span>' . $remote_user . '</span></a>';
+          '<a class="menu-exclude-link" data-href="' . $theme_webprefix . '/acl/edit_user.cgi" href="' .
+          $theme_webprefix . '/acl/edit_user.cgi?user=' . (get_env('base_remote_user') eq "root" ? "root" : $remote_user) .
+          '"><i class="fa2 fa-fw ' . get_user_icon() . '"></i>&nbsp;<span>' . $remote_user . '</span></a>';
     } else {
         $rv .=
-          '<a class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' . get_user_icon() .
-          '"></i>&nbsp;<span class="pointer-events-none">' . $remote_user . '</span></a>';
+          '<a class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' .
+          get_user_icon() . '"></i>&nbsp;<span class="pointer-events-none">' . $remote_user . '</span></a>';
     }
     $rv .= '</li>';
 
@@ -1023,7 +1061,8 @@ sub nav_links
         !get_env('ssl_user') &&
         get_env('http_user_agent') !~ /webmin/i)
     {
-        my $tooltip = get_button_tooltip(($main::session_id ? 'theme_tooltip_logout' : 'theme_xhred_tooltip_switch_user'), undef, 'auto top');
+        my $tooltip = get_button_tooltip(($main::session_id ? 'theme_tooltip_logout' : 'theme_xhred_tooltip_switch_user'),
+                                         undef, 'auto top');
         $rv .= "<li $tooltip class=\"user-link __logout-link\">";
         if ($main::session_id) {
             $rv .=
@@ -1312,7 +1351,8 @@ sub nav_menu_html_snippet
     $html_snippet =~ s/(<(\/|\s*)(html|head|meta|link|title|body).*?>)//g;
 
     if ($html_snippet_limited ne 'true' ||
-       ($html_snippet_limited eq 'true' && $get_user_level eq '0')) {
+        ($html_snippet_limited eq 'true' && $get_user_level eq '0'))
+    {
         $rv = '<li class="menu-container"><ul class="user-html"><li class="user-html-string">';
         $rv .= $html_snippet;
         $rv .= "</li></ul></li>";
