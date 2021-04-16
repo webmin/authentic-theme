@@ -323,6 +323,7 @@ sub nav_virtualmin_menu
     ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     $rv .= nav_link_sysinfo();
     $rv .= nav_link_sysstat();
+    $rv .= nav_theme_links();
     $rv .= nav_links($login_mode);
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page);
@@ -339,6 +340,7 @@ sub nav_cloudmin_menu
     my @menu = list_combined_webmin_menu({ 'server' => "$def" }, \%in, $mod);
     ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     $rv .= nav_link_sysinfo();
+    $rv .= nav_theme_links();
     $rv .= nav_links($login_mode);
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page);
@@ -356,6 +358,7 @@ sub nav_mailbox_menu
     ($rv) = nav_list_combined_menu([$mod, 'changepass'], \@menu, undef, undef, $page);
     $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'}, 'fa-cog');
     $rv .= nav_link_sysinfo('user');
+    $rv .= nav_theme_links();
     $rv .= nav_links();
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page);
