@@ -1154,9 +1154,19 @@ sub get_tree
 
 sub paster
 {
-    my ($c, $f, $s, $d, $r, $m) = @_;
+    my ($c, $f, $s, $d, $r, $m, $z) = @_;
     my $x;
-    my $j = $c . ($f =~ m/^\// ? undef : '/') . $f;
+    my $j  = $c . ($f =~ m/^\// ? undef : '/') . $f;
+    my $zz = sub {
+        my ($q, $h) = @_;
+        my ($u, $g);
+        (undef, undef, $u) = getpwnam($h);
+        $g = getgrnam($h);
+        if (defined($u) && defined($g)) {
+            system("chown -R $u:$g " . quotemeta("$q"));
+        }
+    };
+
     if (!$r && -f $j ne -d $j) {
         for (my $t = 1;; $t += 1) {
             my ($jn, $je) = $j =~ /(.*)\.(.*)/;
@@ -1184,11 +1194,13 @@ sub paster
     my ($o, $e);
     if ($m) {
         $o = move($s, $j);
+        &$zz($j, $z) if ($o);
         if (!$o && $!) {
             $e = $!;
         }
     } else {
         ($o, $e) = copy_source_dest($s, $j);
+        &$zz($j, $z) if ($o);
     }
     if ($x) {
         set_response('cc');

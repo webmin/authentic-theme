@@ -39,7 +39,7 @@ for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
     if ((-e "$cwd/$arr[$i]") && $cwd ne $from && !$fr) {
         set_response('ep');
     } else {
-        $out = paster("$cwd", "$arr[$i]", "$from/$arr[$i]", "$cwd/$arr[$i]", $fo, $mv);
+        $out = paster("$cwd", "$arr[$i]", "$from/$arr[$i]", "$cwd/$arr[$i]", $fo, $mv, $in{'fownergroup'});
     }
     if ($out) {
         $errors{"$arr[$i]"} = $out;
