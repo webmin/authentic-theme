@@ -3190,7 +3190,8 @@ const mail = (function() {
 
                 } else {
                     events();
-                    panel.append(row((data.folder_index === 0 ? _.lang('mail_no_new_mail') : _.lang('mail_no_mail')), 'messages.row.empty'))
+                    panel.append(row((data.folder_index === 0 ? _.lang('mail_no_new_mail') : _.lang('mail_no_mail')), 'messages.row.empty'));
+                    folders.update(data);
                 }
 
                 // Dismiss the loader for all calls
