@@ -1,8 +1,8 @@
 ## Changelog
 
-#### Version 19.75-RC2 (April 14, 2021)
+#### Version 19.75-RC3 (April 19, 2021)
 * Add improvements to color palettes for navigation menu and side slider
-* Add improvements to bottom link buttons in navigation menu
+* Fix accessibility contrast for default and most palettes
 * Fix file tree-view with sub-directories in multiple allowed paths in File Manager
 * Fix various inessential issues
 
