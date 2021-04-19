@@ -1,10 +1,10 @@
 ## Changelog
 
-#### Version 19.75-RC3 (April 19, 2021)
+#### Version 19.75 (April 19, 2021)
 * Add improvements to color palettes for navigation menu and side slider
-* Fix accessibility contrast for default and most palettes
+* Fix accessibility contrast for navigation menu and side slider
 * Fix file tree-view with sub-directories in multiple allowed paths in File Manager
-* Fix various inessential issues
+* Fix various minor issues
 
 #### Version 19.74 (April 04, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
