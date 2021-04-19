@@ -1007,7 +1007,7 @@ sub nav_links
     my $menu_width         = $theme_config{'settings_leftmenu_width'};
     my $button_width       = 26;
     my $button_margin      = 2;
-    my $char_width         = 5.94;
+    my $char_width         = 5.73;
     my $menu_lnk_colla     = $theme_config{'settings_collapse_navigation_link'} eq 'true';
     my $menu_lnk_dashb     = $theme_config{'settings_sysinfo_link_mini'} eq 'true';
     my $menu_lnk_night     = $theme_config{'settings_show_night_mode_link'} eq 'true';
