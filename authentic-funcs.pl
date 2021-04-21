@@ -332,10 +332,16 @@ sub get_theme_language
         $s{$key} = $theme_text{$key};
     }
 
-    # Pass additional language strings
-    my %xhred = ('vm', 'scripts_desc');
-    foreach my $key (keys %xhred) {
-        $s{ $key . "_" . $xhred{$key} } = $text{ $xhred{$key} } if ($text{ $xhred{$key} });
+    # Pass additional language strings on initial load
+    my @mod_extra_lang = ("virtual-server");
+    foreach my $mod (@mod_extra_lang) {
+        if (foreign_available($mod)) {
+            $mod =~ s/\-/_/g;
+            my @extras = ('scripts_desc');
+            foreach my $key (@extras) {
+                $s{"${mod}_${key}"} = $theme_text{$key} || "";
+            }
+        }
     }
     return convert_to_json(\%s);
 

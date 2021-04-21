@@ -659,18 +659,21 @@ sub init_vars
                          settings(get_taconfig_file()),
                          settings(get_tgconfig_file(), "settings_"),
                          settings(get_tuconfig_file(), "settings_"));
-
-    our %theme_text = (load_language($current_theme), %text);
-
     our $http_x_url =
       (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
 
-    if ($http_x_url =~ /sysinfo\.cgi/ || (grep {/xhr-info/} keys %in)) {
-        if (foreign_available("virtual-server")) {
-            %theme_text = (load_language('virtual-server'), %theme_text);
-        }
-        if (foreign_available("server-manager")) {
-            %theme_text = (load_language('server-manager'), %theme_text);
+    # Load theme language
+    our %theme_text = (load_language($current_theme), %text);
+
+    # Load other modules language strings conditionally
+    if (!http_x_request() ||
+        ($http_x_url =~ /sysinfo\.cgi/ || grep {/xhr-info/} keys %in))
+    {
+        my @text_mods = ("virtual-server", "server-manager");
+        foreach my $mod (@text_mods) {
+            if (foreign_available($mod)) {
+                %theme_text = (load_language($mod), %theme_text);
+            }
         }
     }
 
