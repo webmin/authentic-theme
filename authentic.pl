@@ -57,7 +57,7 @@ sub theme_header
 
     # Embed branding
     embed_product_branding() if (!http_x_request());
-    
+
     if (@_ > 1 && $_[1] ne 'stripped') {
 
         # Print default container
@@ -161,7 +161,7 @@ sub theme_footer
                 $url = "/" . &get_module_name() . "/$url";
             }
             $url = "$gconfig{'webprefix'}$url" if ($url =~ /^\//);
-            $url = $url . "/" if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
+            $url = $url . "/"                  if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
             print
 "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
               &text('main_return', $_[$i + 1]), "</a>\n";
@@ -1204,7 +1204,7 @@ sub theme_ui_radio_table
 {
     my ($name, $sel, $rows, $nobold) = @_;
     return "" if (!@$rows);
-    my $rv = "<table class='ui_radio_table'>\n";
+    my $rv = "<table data-radio-table=\"$name\" class='ui_radio_table'>\n";
     foreach my $r (@$rows) {
         $rv .= "<tr>\n";
         $rv .=
