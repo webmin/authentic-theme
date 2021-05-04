@@ -709,6 +709,8 @@ sub settings_get_select_default_module
 {
     my ($name, $value) = @_;
     my @modules = get_available_module_infos();
+    @modules = grep { !$_->{'hidden'} &&
+                      !$_->{'webmin_hidden'} } @modules;
     my $select = ui_select($name,
                            $value,
                            [["", $theme_text{'theme_xhred_titles_dashboard'}],
