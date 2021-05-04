@@ -75,14 +75,14 @@ sub settings_filter
 
 sub get_theme_color
 {
-    my %theme_colors = ('blue'   => '#005fd2',
-                        'brown'  => '#5d4636',
-                        'gold'   => '#947c55',
+    my %theme_colors = ('blue'   => '#0359c1',
+                        'brown'  => '#5d4839',
+                        'gold'   => '#917851',
                         'green'  => '#277b4c',
-                        'grey'   => '#4d5250',
-                        'orange' => '#a9713f',
+                        'grey'   => '#4c5250',
+                        'orange' => '#946a44',
                         'purple' => '#543c53',
-                        'red'    => '#9e1f32',
+                        'red'    => '#a02638',
                         'white'  => '#ffffff');
 
     my $color = $theme_config{'settings_navigation_color'};
