@@ -75,7 +75,7 @@ sub settings_filter
 
 sub get_theme_color
 {
-    my %theme_colors = ('blue'   => '#0359c1',
+    my %theme_colors = ('blue'   => '#0d5ab7',
                         'brown'  => '#5d4839',
                         'gold'   => '#917851',
                         'green'  => '#277b4c',
