@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.76-beta1 (May 06, 2021)
+* Fix bugs
+
 #### Version 19.75 (April 19, 2021)
 * Add improvements to color palettes for navigation menu and side slider
 * Fix accessibility contrast for navigation menu and side slider
