@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Apņēmusies
 theme_xhred_global_resolved_issues=Atrisinātās problēmas %value izlaidumos
 
 #18.48
-theme_force_upgrade=Piespiest atjaunināšanas motīvu
+theme_force_upgrade=Atjaunināt motīvu
 theme_xhred_force_upgrade_beta=Instalējiet jaunāko izstrādes versiju (beta)
 theme_xhred_force_upgrade_stable=Instalējiet jaunāko versiju (stabila)
 theme_xhred_source_encoding=Avota kodējums

@@ -594,7 +594,6 @@ theme_xhred_global_committed_on= コミットした
 theme_xhred_global_resolved_issues=リリース %value で解決された問題
 
 #18.48
-theme_force_upgrade=強制的にアップデート
 theme_xhred_force_upgrade_beta= 最新の開発版をインストールする(ベータ版)
 theme_xhred_force_upgrade_stable= 最新リリース版をインストールする(安定版)
 theme_xhred_source_encoding= ソースエンコーディング

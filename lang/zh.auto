@@ -2,6 +2,9 @@ settings_right_hotkey_options=热键
 
 settings_right_reload=在选项卡开关上加载默认页面
 
+#18.48
+theme_force_upgrade=更新主题
+
 settings_webmin_default_module=Webmin的默认页面
 
 #19.20

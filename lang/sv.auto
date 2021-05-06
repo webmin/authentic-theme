@@ -2,6 +2,9 @@ settings_right_hotkey_options=Snabbtangenter
 
 settings_right_reload=Ladda standardsidan på flikomkopplaren
 
+#18.48
+theme_force_upgrade=Uppdatera tema
+
 settings_webmin_default_module=Standardsida för Webmin
 
 #19.53

@@ -599,7 +599,6 @@ theme_xhred_global_committed_on=Upplagd den
 theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
 
 #18.48
-theme_force_upgrade=Uppdatera temat
 theme_xhred_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
 theme_xhred_force_upgrade_stable=Installera senaste versionen (stabil)
 theme_xhred_source_encoding=Källkodning

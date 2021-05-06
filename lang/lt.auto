@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Įsipareigojo
 theme_xhred_global_resolved_issues=Išspręstos problemos %value leidimais
 
 #18.48
-theme_force_upgrade=Priverstinai atnaujinti temą
+theme_force_upgrade=Atnaujinti temą
 theme_xhred_force_upgrade_beta=Įdiekite naujausią kūrimo versiją (beta)
 theme_xhred_force_upgrade_stable=Įdiekite naujausią išleidimo versiją (stabili)
 theme_xhred_source_encoding=Šaltinio kodavimas

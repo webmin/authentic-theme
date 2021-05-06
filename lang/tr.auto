@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Kararlı
 theme_xhred_global_resolved_issues=%value bültenlerinde çözülen sorunlar
 
 #18.48
-theme_force_upgrade=Güncelleme temasını zorla
+theme_force_upgrade=Temayı güncelleyin
 theme_xhred_force_upgrade_beta=En son geliştirme sürümünü yükle (beta)
 theme_xhred_force_upgrade_stable=En son sürüm sürümünü yükle (kararlı)
 theme_xhred_source_encoding=Kaynak kodlaması

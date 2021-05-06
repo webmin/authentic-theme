@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Impenjat fuqha
 theme_xhred_global_resolved_issues=Kwistjonijiet solvuti fi rilaxxi tal- %value
 
 #18.48
-theme_force_upgrade=Forza it-tema tal-aġġornament
+theme_force_upgrade=Aġġorna t-tema
 theme_xhred_force_upgrade_beta=Installa l-aħħar verżjoni tal-iżvilupp (beta)
 theme_xhred_force_upgrade_stable=Installa l-aħħar verżjoni tar-rilaxx (stabbli)
 theme_xhred_source_encoding=Kodifikazzjoni tas-sors

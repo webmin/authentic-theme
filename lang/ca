@@ -599,7 +599,6 @@ theme_xhred_global_committed_on=Realitzada el
 theme_xhred_global_resolved_issues=Problemes resolts en %value
 
 #18.48
-theme_force_upgrade=Actualització manual
 theme_xhred_force_upgrade_beta=Instal·la l'última versió beta disponible
 theme_xhred_force_upgrade_stable=Instal·la l'última versió estable disponible
 theme_xhred_source_encoding=Codi font

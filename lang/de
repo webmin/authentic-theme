@@ -599,7 +599,6 @@ theme_xhred_global_committed_on=Hinzugefügt am
 theme_xhred_global_resolved_issues=Gelöste Probleme in %value Release
 
 #18.48
-theme_force_upgrade=Erzwinge Design Update
 theme_xhred_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
 theme_xhred_force_upgrade_stable=Installiere aktuelle Release Version (stable)
 theme_xhred_source_encoding=Quellen Enkodierung

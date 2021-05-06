@@ -2,6 +2,9 @@ settings_right_hotkey_options=Hotkeys
 
 settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
 
+#18.48
+theme_force_upgrade=Thema aktualisieren
+
 settings_webmin_default_module=Standardseite für Webmin
 
 #19.20

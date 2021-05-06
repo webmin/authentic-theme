@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Záväzok
 theme_xhred_global_resolved_issues=Vyriešené problémy v vydaniach s %value
 
 #18.48
-theme_force_upgrade=Vynútiť aktualizáciu témy
+theme_force_upgrade=Aktualizovať tému
 theme_xhred_force_upgrade_beta=Inštalácia najnovšej vývojovej verzie (beta)
 theme_xhred_force_upgrade_stable=Nainštalovať najnovšiu verziu (stabilná)
 theme_xhred_source_encoding=Zdrojové kódovanie

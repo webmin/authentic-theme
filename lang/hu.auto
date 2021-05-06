@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Elkötelezett
 theme_xhred_global_resolved_issues=Megoldott problémák a %value kiadásokban
 
 #18.48
-theme_force_upgrade=A frissítési téma kényszerítése
+theme_force_upgrade=Téma frissítése
 theme_xhred_force_upgrade_beta=Telepítse a legújabb fejlesztői verziót (béta)
 theme_xhred_force_upgrade_stable=Telepítse a legfrissebb verziót (stabil)
 theme_xhred_source_encoding=Forrás kódolás

@@ -2,6 +2,9 @@ settings_right_hotkey_options=Hurtigtaster
 
 settings_right_reload=Last inn standardsiden på fanebryteren
 
+#18.48
+theme_force_upgrade=Oppdater tema
+
 settings_webmin_default_module=Standardside for Webmin
 
 #19.70

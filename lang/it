@@ -599,7 +599,6 @@ theme_xhred_global_committed_on=Finalizzato il
 theme_xhred_global_resolved_issues=Problemi risolti nei rilasci %value
 
 #18.48
-theme_force_upgrade=Forza aggiornamento tema
 theme_xhred_force_upgrade_beta=Installa l'ultima versione di sviluppo (beta)
 theme_xhred_force_upgrade_stable=Installa l'ultima versione rilasciata (stable)
 theme_xhred_source_encoding=Codifica sorgente

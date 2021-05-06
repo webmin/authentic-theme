@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=มุ่งมั่นที่
 theme_xhred_global_resolved_issues=แก้ไขปัญหาในการเปิดตัว %value
 
 #18.48
-theme_force_upgrade=บังคับการอัพเดตธีม
+theme_force_upgrade=อัปเดตธีม
 theme_xhred_force_upgrade_beta=ติดตั้งเวอร์ชันการพัฒนาล่าสุด (เบต้า)
 theme_xhred_force_upgrade_stable=ติดตั้งรุ่นล่าสุด (เสถียร)
 theme_xhred_source_encoding=การเข้ารหัสแหล่งที่มา

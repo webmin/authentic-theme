@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=متعهد شد
 theme_xhred_global_resolved_issues=موارد حل شده در %value انتشار نسخه
 
 #18.48
-theme_force_upgrade=تم به روزرسانی نیرو
+theme_force_upgrade=موضوع را به روز کنید
 theme_xhred_force_upgrade_beta=آخرین نسخه توسعه (بتا) را نصب کنید
 theme_xhred_force_upgrade_stable=نصب آخرین نسخه نسخه (پایدار)
 theme_xhred_source_encoding=رمزگذاری منبع

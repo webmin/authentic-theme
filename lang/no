@@ -598,7 +598,6 @@ theme_xhred_global_committed_on=Sendt inn
 theme_xhred_global_resolved_issues=Løste problemer i %value utgivelser
 
 #18.48
-theme_force_upgrade=Tving oppdatering av tema
 theme_xhred_force_upgrade_beta=Installer siste utviklingsversjon (beta)
 theme_xhred_force_upgrade_stable=Installer siste ordinære versjon (stabil)
 theme_xhred_source_encoding=Kilde-koding

@@ -395,6 +395,7 @@ theme_xhred_global_committed_on=Совершено на
 theme_xhred_global_resolved_issues=Решенные проблемы в %value выпуска
 
 #18.48
+theme_force_upgrade=Обновить тему
 theme_xhred_source_encoding=Исходная кодировка
 theme_update_footer=Пожалуйста, будьте любезны сообщать об ошибках в $1 хранилище. Следите за темой на канале $2 для получения последних обновлений.
 theme_xhred_encoding_manually_set=Ручная настройка кодировки

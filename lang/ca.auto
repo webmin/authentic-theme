@@ -2,6 +2,9 @@ settings_right_hotkey_options=Tecles d'accés directe
 
 settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
 
+#18.48
+theme_force_upgrade=Actualitza el tema
+
 settings_webmin_default_module=Pàgina predeterminada per a Webmin
 
 #19.10

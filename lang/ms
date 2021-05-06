@@ -599,7 +599,6 @@ theme_xhred_global_committed_on=Dikomit pada
 theme_xhred_global_resolved_issues=Isu terselesaikan dalam rilis %value
 
 #18.48
-theme_force_upgrade=Paksa pembaruan tema
 theme_xhred_force_upgrade_beta=Install versi pengembangan terbaru (beta)
 theme_xhred_force_upgrade_stable=Install versi rilis terkini (stabil)
 theme_xhred_source_encoding=Sumber encoding

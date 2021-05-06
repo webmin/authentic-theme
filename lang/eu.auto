@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Konpromisoa
 theme_xhred_global_resolved_issues=Arazoak konpondu dira %value oharretan
 
 #18.48
-theme_force_upgrade=Indarrean eguneratzeko gaia
+theme_force_upgrade=Eguneratu gaia
 theme_xhred_force_upgrade_beta=Instalatu azken bertsio bertsioa (beta)
 theme_xhred_force_upgrade_stable=Instalatu azken bertsio bertsioa (egonkorra)
 theme_xhred_source_encoding=Iturriaren kodetzea

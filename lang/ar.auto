@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=ملتزم
 theme_xhred_global_resolved_issues=حل المشاكل في إصدارات %value
 
 #18.48
-theme_force_upgrade=فرض موضوع التحديث
+theme_force_upgrade=تحديث المظهر
 theme_xhred_force_upgrade_beta=تثبيت أحدث إصدار تطوير (تجريبي)
 theme_xhred_force_upgrade_stable=تثبيت أحدث إصدار (مستقر)
 theme_xhred_source_encoding=ترميز المصدر

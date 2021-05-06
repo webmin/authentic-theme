@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Sitoutunut
 theme_xhred_global_resolved_issues=Ratkaisut ongelmat %value -julkaisuissa
 
 #18.48
-theme_force_upgrade=Pakota päivitys teema
+theme_force_upgrade=Päivitä teema
 theme_xhred_force_upgrade_beta=Asenna uusin kehitysversio (beta)
 theme_xhred_force_upgrade_stable=Asenna uusin versio (vakaa)
 theme_xhred_source_encoding=Lähdekoodaus

@@ -599,7 +599,6 @@ theme_xhred_global_committed_on=致力于
 theme_xhred_global_resolved_issues=在 %value 发布中已解决的问题
 
 #18.48
-theme_force_upgrade=强制更新主题
 theme_xhred_force_upgrade_beta=安装最新开发版本（测试版）
 theme_xhred_force_upgrade_stable=安装最新发布版本（稳定）
 theme_xhred_source_encoding=源编码

@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Zavezana naprej
 theme_xhred_global_resolved_issues=Odpravljene težave v %value izpustov %value
 
 #18.48
-theme_force_upgrade=Prisiljava temo posodobitve
+theme_force_upgrade=Posodobi temo
 theme_xhred_force_upgrade_beta=Namestite najnovejšo razvojno različico (beta)
 theme_xhred_force_upgrade_stable=Namestite najnovejšo različico različice (stabilno)
 theme_xhred_source_encoding=Kodiranje vira

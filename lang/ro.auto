@@ -4,6 +4,9 @@ settings_right_hotkey_options=Taste rapide
 
 settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
 
+#18.48
+theme_force_upgrade=Actualizați tema
+
 settings_webmin_default_module=Pagină implicită pentru Webmin
 
 #19.20

@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Toegewy aan
 theme_xhred_global_resolved_issues=Kwessies opgelos in %value
 
 #18.48
-theme_force_upgrade=Dwing opdateringstema
+theme_force_upgrade=Dateer tema op
 theme_xhred_force_upgrade_beta=Installeer nuutste ontwikkelingsweergawe (beta)
 theme_xhred_force_upgrade_stable=Installeer die nuutste weergawe (stabiel)
 theme_xhred_source_encoding=Bronkodering

@@ -234,7 +234,6 @@ theme_xhred_git_compare_changes=Сравнить изменения
 theme_left_mail_change_password=Сменить Пароль
 
 #18.48
-theme_force_upgrade=Быстро обновить тему
 theme_xhred_force_upgrade_beta=Установить последнюю бета версию
 theme_xhred_force_upgrade_stable=Установить последнюю стабильную версию
 

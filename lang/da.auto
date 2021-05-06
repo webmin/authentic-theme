@@ -514,7 +514,7 @@ theme_xhred_global_committed_on=Forpligtet den
 theme_xhred_global_resolved_issues=Løste problemer i %value værdiudgivelser
 
 #18.48
-theme_force_upgrade=Tving opdateringstema
+theme_force_upgrade=Opdater tema
 theme_xhred_force_upgrade_beta=Installer den nyeste udviklingsversion (beta)
 theme_xhred_force_upgrade_stable=Installer den nyeste version (stabil)
 theme_xhred_source_encoding=Kildekodning

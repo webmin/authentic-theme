@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=에 헌신
 theme_xhred_global_resolved_issues=%value 릴리스에서 해결 된 문제
 
 #18.48
-theme_force_upgrade=강제 업데이트 테마
+theme_force_upgrade=테마 업데이트
 theme_xhred_force_upgrade_beta=최신 개발 버전 (베타) 설치
 theme_xhred_force_upgrade_stable=최신 릴리스 버전 설치 (안정적)
 theme_xhred_source_encoding=소스 인코딩

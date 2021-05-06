@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Cam kết
 theme_xhred_global_resolved_issues=Đã giải quyết các vấn đề trong bản phát hành %value
 
 #18.48
-theme_force_upgrade=Buộc cập nhật chủ đề
+theme_force_upgrade=Cập nhật chủ đề
 theme_xhred_force_upgrade_beta=Cài đặt phiên bản phát triển mới nhất (beta)
 theme_xhred_force_upgrade_stable=Cài đặt phiên bản phát hành mới nhất (ổn định)
 theme_xhred_source_encoding=Mã hóa nguồn

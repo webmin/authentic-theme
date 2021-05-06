@@ -2,6 +2,9 @@ settings_right_hotkey_options=Raccourcis clavier
 
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
 
+#18.48
+theme_force_upgrade=Mettre à jour le thème
+
 settings_webmin_default_module=Page par défaut pour Webmin
 
 #19.70

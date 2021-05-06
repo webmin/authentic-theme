@@ -598,7 +598,6 @@ theme_xhred_global_committed_on=Comis pe
 theme_xhred_global_resolved_issues=Probleme rezolvate în %value
 
 #18.48
-theme_force_upgrade=Forţează actualizarea temei folosind ultima publicare de pe GitHub
 theme_xhred_force_upgrade_beta=Install latest development version (beta)
 theme_xhred_force_upgrade_stable=Install latest release version (stable)
 theme_xhred_source_encoding=Source encoding

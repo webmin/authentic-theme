@@ -127,16 +127,16 @@ foreach my $s (@settings) {
 print ui_table_end();
 
 # Print footer with left and
-my @theme_footer = theme_footer();
+my @theme_controls = theme_controls($sname);
 print '
 <table class="ui_form_end_buttons" style="width:100%">
     <tbody>
         <tr>
             <td>
-                ' . $theme_footer[0] . '
+                ' . $theme_controls[0] . '
             </td>
             <td>
-                ' . $theme_footer[1] . '
+                ' . $theme_controls[1] . '
             </td>
         </tr>
     </tbody>

@@ -489,7 +489,7 @@ theme_xhred_global_committed_on=Toegewijd op
 theme_xhred_global_resolved_issues=Problemen opgelost in %value releases
 
 #18.48
-theme_force_upgrade=Update-thema afdwingen
+theme_force_upgrade=Update thema
 theme_xhred_force_upgrade_beta=Installeer de nieuwste ontwikkelingsversie (bèta)
 theme_xhred_force_upgrade_stable=Installeer de laatste releaseversie (stabiel)
 theme_xhred_source_encoding=Broncodering

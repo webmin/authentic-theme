@@ -10,6 +10,9 @@ settings_right_reload=タブスイッチにデフォルトページをロード
 
 settings_favorites=お気に入りボタンを表示
 
+#18.48
+theme_force_upgrade=テーマを更新
+
 settings_webmin_default_module=Webminのデフォルトページ
 
 #19.20

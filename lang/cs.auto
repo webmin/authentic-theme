@@ -437,7 +437,7 @@ theme_xhred_global_committed_on=Závazek
 theme_xhred_global_resolved_issues=Vyřešené problémy ve vydáních s %value
 
 #18.48
-theme_force_upgrade=Vynutit aktualizaci motivu
+theme_force_upgrade=Aktualizovat téma
 theme_xhred_force_upgrade_beta=Nainstalovat nejnovější vývojovou verzi (beta)
 theme_xhred_force_upgrade_stable=Nainstalujte nejnovější verzi (stabilní)
 theme_xhred_source_encoding=Zdrojové kódování

@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=Predano na
 theme_xhred_global_resolved_issues=Riješena su pitanja u %value izdanja %value
 
 #18.48
-theme_force_upgrade=Tema ažuriranja forme
+theme_force_upgrade=Ažuriraj temu
 theme_xhred_force_upgrade_beta=Instalirajte najnoviju razvojnu verziju (beta)
 theme_xhred_force_upgrade_stable=Instalirajte najnoviju verziju izdanja (stabilno)
 theme_xhred_source_encoding=Kodiranje izvora

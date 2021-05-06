@@ -602,7 +602,7 @@ theme_xhred_global_committed_on=致力於
 theme_xhred_global_resolved_issues=已解決%value版本中的問題
 
 #18.48
-theme_force_upgrade=強制更新主題
+theme_force_upgrade=更新主題
 theme_xhred_force_upgrade_beta=安裝最新的開發版本（測試版）
 theme_xhred_force_upgrade_stable=安裝最新版本（穩定）
 theme_xhred_source_encoding=源編碼

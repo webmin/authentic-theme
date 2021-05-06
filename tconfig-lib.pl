@@ -566,10 +566,11 @@ sub theme_settings_format
             "<span>$v</span>"];
 }
 
-sub theme_footer
+sub theme_controls
 {
+    my ($section) = @_;
     my $update_dropdown = (
-        $get_user_level eq '0' ?
+        ($get_user_level eq '0' && $section eq $theme_text{'settings_right_soft_updates_page_options'}) ?
           '                     <span id="force_update_menu_cnt" class="dropup"'
           .
           ( has_command('git') ?
@@ -577,7 +578,7 @@ sub theme_footer
               get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
           ) .
           '>
-                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover' .
+                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover capitalize' .
           (has_command('git') ? undef : ' disabled') .
           '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                          <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' .
@@ -595,26 +596,26 @@ sub theme_footer
           '');
     return (
         "<div class=\"btn-group\">
-            <a style=\"min-width:90px\" class=\"btn btn-success\" id=\"atsave\">
+            <a style=\"min-width:90px\" class=\"btn btn-success capitalize\" id=\"atsave\">
                 <i class=\"fa fa-fw fa-floppy-o\" style=\"margin-right:7px;\"></i>$text{'save'}
             </a>
-            <a style=\"min-width:146px\" class=\"btn btn-default\" id=\"atrestore\">
+            <a style=\"min-width:146px\" class=\"btn btn-default capitalize\" id=\"atrestore\">
                 <i class=\"fa fa-fw fa-history\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_restore_defaults'}
             </a>
-            <a style=\"min-width:132px\" class=\"btn btn-default\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
+            <a style=\"min-width:132px\" class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
                 <i class=\"fa fa-fw fa-hourglass-o\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_clear_local_cache'}
             </a>
             $update_dropdown
         </div>",
         ($get_user_level eq '0' ?
            "<div class=\"btn-group\">
-            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-backgrounds.cgi\">
+            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-backgrounds.cgi\">
                 <i class=\"fa fa-fw fa-image\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_bgs'}
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-logos.cgi\">
+            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-logos.cgi\">
                 <i class=\"fa fa-fw fa-file-image-o\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_logos'}
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit\" id=\"edit_styles\" href=\"$gconfig{'webprefix'}/settings-editor_read.cgi\">
+            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_styles\" href=\"$gconfig{'webprefix'}/settings-editor_read.cgi\">
                 <i class=\"fa fa-fw fa-file-code-o\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_theme_extensions'}
             </a>
         </div>" :
@@ -709,8 +710,7 @@ sub settings_get_select_default_module
 {
     my ($name, $value) = @_;
     my @modules = get_available_module_infos();
-    @modules = grep { !$_->{'hidden'} &&
-                      !$_->{'webmin_hidden'} } @modules;
+    @modules = grep {!$_->{'hidden'} && !$_->{'webmin_hidden'}} @modules;
     my $select = ui_select($name,
                            $value,
                            [["", $theme_text{'theme_xhred_titles_dashboard'}],
