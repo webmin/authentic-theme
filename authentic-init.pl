@@ -287,7 +287,7 @@ sub embed_header
         {
             print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -752,7 +752,10 @@ sub get_usermin_vars
 
             # Usermin Authentic Theme config dir exists
             my $theme_conf_usermin = "$has_usermin_conf_dir/$current_theme";
-            if (!-d $theme_conf_usermin) {
+            if ($has_usermin &&
+                $has_usermin_conf_dir &&
+                !-d $theme_conf_usermin)
+            {
                 mkdir($theme_conf_usermin, 0755);
             }
         }
@@ -1348,7 +1351,7 @@ sub header_html_data
       get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
       '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
+      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
       get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
 }
