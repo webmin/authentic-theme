@@ -871,7 +871,12 @@ sub get_button_style
     my $icon;
     my $class = "default";
 
-    if (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
+    if (string_contains($keys, 'mail_fchange')) {
+        $class = "default";
+    } elsif (string_contains($keys, 'sform_ok')) {
+        $icon  = "search";
+        $class = "info";
+    } elsif (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
         $icon = "backup fa-1_25x";
     } elsif (string_contains($keys, "pass_ok")) {
         $icon  = " fa2 fa2-key";
