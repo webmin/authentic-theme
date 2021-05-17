@@ -1120,6 +1120,9 @@ sub get_button_style
         $icon = "clock";
     } elsif (string_contains($keys, "uedit_mail") || string_contains($keys, "newnotify_ok")) {
         $icon = "envelope-o";
+    } elsif (string_contains($keys, "reply_send")) {
+        $icon = "send";
+        $class = "success ";
     } elsif (string_contains($keys, "sendmail")) {
         $icon  = "envelope-o";
         $class = "info ";
