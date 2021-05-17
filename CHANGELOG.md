@@ -1,6 +1,7 @@
 ## Changelog
 
-#### Version 19.76-beta1 (May 06, 2021)
+#### Version 19.76-beta2 (May 17, 2021)
+* Fix multiple issues with read mail module
 * Fix bugs
 
 #### Version 19.75 (April 19, 2021)
