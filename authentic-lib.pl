@@ -1278,9 +1278,13 @@ sub error_40x
     print '<div class="container error_40x" data-dcontainer="1">' . "\n";
 
     if (defined($in{'code'})) {
+        my $file = get_env('request_uri');
+        if ($file) {
+          $file = "&nbsp; —  <kbd data-error>" . html_escape("$file") . "</kbd>";
+        }
         print '<div class="alert alert-danger error_40x">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
-          html_escape($in{'code'}) . '</strong><br><span>' . html_escape($in{'message'}) . "</span>\n";
+          html_escape($in{'code'}) . '</strong><br><span>' . html_escape($in{'message'}) . "$file</span>\n";
         print '</div>' . "\n";
     }
     &footer();
