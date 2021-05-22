@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%in, %gconfig);
+our (%in, %gconfig, $root_directory);
 
 sub xhr
 {
@@ -38,7 +38,10 @@ sub xhr
             my $mod_def = $gconfig{'gotomodule'};
 
             # Validate if default goto is allowed for the given user
-            if ($mod_def && foreign_available($mod_def)) {
+            if ($mod_def &&
+                foreign_available($mod_def) &&
+                -r "$root_directory/$mod_def/index.cgi")
+            {
                 $data{'gotomodule'} = $mod_def;
             }
 

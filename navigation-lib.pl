@@ -94,7 +94,10 @@ sub nav_detector
     else {
 
         # Validate if default goto is allowed for the given user
-        $mod_def = undef if ($mod_def && !foreign_available($mod_def));
+        $mod_def = undef
+          if ($mod_def &&
+              (!foreign_available($mod_def) ||
+                !-r "$root_directory/$mod_def/$page_index"));
 
         if (!$nav_def_tab) {
 
