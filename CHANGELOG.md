@@ -1,8 +1,8 @@
 ## Changelog
 
-#### Version 19.76-beta3 (May 23, 2021)
+#### Version 19.76-beta4 (May 23, 2021)
 * Add ability to fully revert theme settings to current on cancel [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
-* Add better email printing output for read mail module in Webmin (Usermin on todo for upcoming beta4)
+* Add better email printing output for read mail module in Webmin (Usermin on todo for upcoming beta5)
 * Fix multiple issues with read mail module
 * Fix bottom button links positioning in navigation menu
 * Fiх file tree-view issues when used with various allowed paths in File Manager [webmin/webmin#1487](https://github.com/webmin/webmin/issues/1487)
