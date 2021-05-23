@@ -1069,7 +1069,7 @@ sub print_content
 
 sub get_tree
 {
-    my ($p, $d, $e) = @_;
+    my ($p, $d, $e, $y) = @_;
     my %r;
     my @r;
     my $ic;
@@ -1120,7 +1120,7 @@ sub get_tree
             }
 
             # Starting with sub-directory in multiple allowed paths
-            elsif ($e && $fr && defined($ix) && $dc > 1) {
+            elsif ($y && $fr && defined($ix) && $dc > 1) {
                 my $tdx  = $td;
                 my @tdxs = split('/', $tdx);
                 my @tdxss;
@@ -1142,7 +1142,7 @@ sub get_tree
         my $td = $File::Find::name;
         my $dc = $td      =~ tr[/][];
         my $xc = $af[$ic] =~ tr[/][];
-        my $dd = ($p || ($e && $af[$ic] ne '/')) ? $df + $xc : $df + 1;
+        my $dd = ($p || ($y && $af[$ic] ne '/')) ? $df + $xc : $df + 1;
         if ($dd) {
             if ($dc < $dd) {
                 return sort {"\L$a" cmp "\L$b"} @_;
