@@ -1082,7 +1082,7 @@ sub get_tree
 
     # Check the queried path is allowed in the first place
     if (length($p)) {
-        return \@r if (grep {$_ =~ /^$p/} @ap);
+        return \@r if (grep {$_ =~ /^\Q$p\E/} @ap);
     }
 
     my $wanted = sub {
@@ -1116,7 +1116,7 @@ sub get_tree
 
             # Home directory only
             if ($fu) {
-                $td =~ s/^$afic//;
+                $td =~ s/^\Q$afic\E//;
             }
 
             # Starting with sub-directory in multiple allowed paths
