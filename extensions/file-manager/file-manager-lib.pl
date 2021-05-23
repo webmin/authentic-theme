@@ -681,8 +681,8 @@ sub print_content
                 @allowed_list,
                 grep {
                     my $list_path = &$clear_path("$cwd/$_");
-                    $list_path =~ /^\Q$allowed_path\E/ ||
-                    $allowed_path =~ /^\Q$list_path\E/
+                    $list_path      =~ /^\Q$allowed_path\E\// ||
+                      $allowed_path =~ /^\Q$list_path\E/
                 } @list);
         }
 
@@ -1061,6 +1061,7 @@ sub print_content
                             uid           => $remote_user_info[2],
                             guid          => $remote_user_info[3],
                             allowed_paths => \@allowed_paths,
+                            base          => $base,
                             access        => $access{'work_as_user'} };
 
     print_json([\%list_data]);
@@ -1079,6 +1080,11 @@ sub get_tree
     my @af = length($p) ? ($p) : @ap;
     my $fu = scalar(@af) == 1;
 
+    # Check the queried path is allowed in the first place
+    if (length($p)) {
+        return \@r if (grep {$_ =~ /^$p/} @ap);
+    }
+
     my $wanted = sub {
         my $td = $File::Find::name;
         if (-d $td && !-l $td) {
@@ -1091,6 +1097,7 @@ sub get_tree
                 defined $pd ? (push @{ $r{$pd}{'children'} }, $c) : (push @r, $c);
             };
 
+            my $dc = $td =~ tr[/][];
             my ($ix) = grep {$af[$_] eq $td} (0 .. @af - 1);
             $ic = $ix if (defined($ix));
             my $afic = $af[$ic];
@@ -1099,11 +1106,10 @@ sub get_tree
             {
                 return;
             }
-            my $dc = $td =~ tr[/][];
 
             # Exclude non essentials on start
             if ($e && $afic eq '/' && $dc == 1) {
-                if ($td =~ /^\/(cdrom|dev|lib|lost\+found|mnt|proc|run|snaps|sys|tmp|.trash)/i) {
+                if ($td =~ /^\/(cdrom|dev|lib|lost\+found|proc|run|snaps|sys|tmp|.trash)/i) {
                     return;
                 }
             }
@@ -1134,8 +1140,9 @@ sub get_tree
     };
     my $preprocess = sub {
         my $td = $File::Find::name;
-        my $dc = $td =~ tr[/][];
-        my $dd = ($df > 0 ? ($df + 1) : 0);
+        my $dc = $td      =~ tr[/][];
+        my $xc = $af[$ic] =~ tr[/][];
+        my $dd = ($p || ($e && $af[$ic] ne '/')) ? $df + $xc : $df + 1;
         if ($dd) {
             if ($dc < $dd) {
                 return sort {"\L$a" cmp "\L$b"} @_;
