@@ -92,7 +92,9 @@ const mail = (function() {
                 quote_escape: Convert.quoteEscape,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
-                preloader_dismiss: page.handle.content.preloader_dismiss,
+                preloader: {
+                    hide: page.handle.content.preloader.hide,
+                },
                 moment: moment,
 
                 select: (data, size = '34') => {
@@ -3196,7 +3198,7 @@ const mail = (function() {
 
                 // Dismiss the loader for all calls
                 setTimeout(() => {
-                    _.plugin.preloader_dismiss();
+                    _.plugin.preloader.hide();
                 }, 2e2);
             },
 
