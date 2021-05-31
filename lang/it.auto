@@ -48,3 +48,7 @@ theme_xhred_theme_update_available=È installata una nuova versione di Authentic
 settings_right_page_keep=Carica la stessa pagina sull'interruttore di dominio
 settings_right_page_keep_description=Questa opzione proverà a caricare la stessa pagina alla selezione del dominio, se modificata dall'elenco a discesa del menu di navigazione
 settings_embed_product_branding_privileged=Mostra la schermata iniziale del marchio al caricamento iniziale
+
+#19.76
+theme_xhred_global_show_all=Mostra tutto
+theme_xhred_filemanager_context_prop_show_all=Mostra tutte le proprietà

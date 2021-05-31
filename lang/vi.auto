@@ -1213,3 +1213,7 @@ theme_xhred_theme_update_available=Một phiên bản mới của Chủ đề đ
 settings_right_page_keep=Tải cùng một trang trên chuyển đổi miền
 settings_right_page_keep_description=Tùy chọn này sẽ cố gắng tải cùng một trang khi chọn miền, khi được thay đổi từ danh sách thả xuống của menu điều hướng
 settings_embed_product_branding_privileged=Hiển thị màn hình giật gân thương hiệu khi tải ban đầu
+
+#19.76
+theme_xhred_global_show_all=Hiển thị tất cả
+theme_xhred_filemanager_context_prop_show_all=Hiển thị tất cả các thuộc tính

@@ -1048,3 +1048,7 @@ theme_xhred_theme_update_available=Je nainstalována nová verze Authentic Theme
 settings_right_page_keep=Načtěte stejnou stránku do přepínače domény
 settings_right_page_keep_description=Tato možnost se pokusí načíst stejnou stránku při výběru domény, když se změní z rozevíracího seznamu navigační nabídky
 settings_embed_product_branding_privileged=Zobrazit úvodní obrazovku značky při počátečním načítání
+
+#19.76
+theme_xhred_global_show_all=Ukázat vše
+theme_xhred_filemanager_context_prop_show_all=Zobrazit všechny vlastnosti

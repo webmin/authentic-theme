@@ -83,3 +83,7 @@ theme_xhred_theme_update_available=En ny version av Authentic Theme är installe
 settings_right_page_keep=Ladda samma sida på domänbytaren
 settings_right_page_keep_description=Det här alternativet försöker ladda samma sida när domänen väljs, när den ändras från rullgardinsmenyn för navigeringsmenyn
 settings_embed_product_branding_privileged=Visa varumärkets stänkskärm vid första laddningen
+
+#19.76
+theme_xhred_global_show_all=Visa allt
+theme_xhred_filemanager_context_prop_show_all=Visa alla fastigheter

@@ -590,3 +590,7 @@ theme_xhred_theme_update_available=Versi baru Tema Autentik dipasang
 settings_right_page_keep=Muatkan halaman yang sama pada pertukaran domain
 settings_right_page_keep_description=Pilihan ini akan cuba memuatkan halaman yang sama setelah pilih domain, apabila diubah dari daftar turun menu navigasi
 settings_embed_product_branding_privileged=Tunjukkan skrin percikan jenama pada pemuatan awal
+
+#19.76
+theme_xhred_global_show_all=Tunjukkan semua
+theme_xhred_filemanager_context_prop_show_all=Tunjukkan semua harta tanah

@@ -13,6 +13,15 @@ sub xhr
     my $subtype = $in{'subtype'};
     my $action  = $in{'action'};
     my %data    = ();
+    my $output  = sub {
+        my ($data) = @_;
+
+        # Set no links header
+        print "x-no-links: 1\n";
+
+        # Return fetched data if any
+        print_json($data);
+    };
 
     if ($type eq 'nav') {
 
@@ -71,11 +80,107 @@ sub xhr
         }
     }
 
-    # Set no links header
-    print "x-no-links: 1\n";
+    if ($type eq 'file') {
 
-    # Return fetched data if any
-    print_json(\%data);
+        # Generate given file info
+        if ($action eq 'stat') {
+            my ($module, $sumtype, $jailed_user, $jailed_user_home, $cfile, $mime, $dir, $fzi, $fz, $ft, $s, $sz, $nz);
+            $module           = $in{'module'};
+            $cfile            = $in{'file'};
+            $sumtype          = $in{'checksum'};
+            $jailed_user      = get_fm_jailed_user($module, 1);
+            $jailed_user_home = get_fm_jailed_user($module);
+            if ($jailed_user) {
+                switch_to_unix_user_local($jailed_user);
+                $cfile = $jailed_user_home . $cfile;
+            } else {
+                set_user_level();
+            }
+
+            my $get_file_checksum = sub {
+                my ($cfile, $cmd) = @_;
+                my $sum                   = 0;
+                my @allowed_checksum_cmds = ('md5sum', 'sha1sum', 'sha256sum');
+                foreach my $c (@allowed_checksum_cmds) {
+                    if ($cmd eq $c) {
+                        if (has_command($c)) {
+                            $sum = &backquote_command("$c " . quotemeta($cfile) . " 2>/dev/null");
+                            $sum =~ s/(\S+)(\s+)(.*)/$1/;
+                            $sum = trim($sum);
+                        } else {
+                            $sum = -1;
+                        }
+                    }
+                }
+                return $sum;
+            };
+
+            # Get given checksum and exit
+            if ($sumtype) {
+                my $sum = &$get_file_checksum($cfile, $sumtype);
+                $data{'checksum'} = $sum;
+                &$output(\%data);
+                exit;
+            }
+
+            # Build extended file stats
+            $fzi = recursive_disk_usage($cfile);
+            $dir = -d $cfile;
+            $fz  = $fzi;
+            $fz  = nice_size($fz, -1);
+            $ft  = backquote_command("file -b " . quotemeta($cfile) . " 2>/dev/null");
+            $s   = backquote_command("stat " . quotemeta($cfile) . " 2>/dev/null");
+            $ft  = trim($ft);
+            $s =~ /(Size:)(\s+)(\d+)(\s+)/;
+            $sz = length($3) + length($4);
+            $nz = length($fz);
+            $sz -= $nz;
+            $sz = " " x ($sz + 2);
+            $s =~ s/(Size:)(\s+)(\d+)(\s+)/$1$2$fz$sz/;
+
+            if (!$dir) {
+                $mime = guess_mime_type($cfile, -1);
+                if ($mime == -1) {
+                    $mime = undef;
+                } else {
+                    $mime = " ($mime) ";
+                }
+            }
+            $s =~ s/(File:)(.*)\n/$1$2\n  Type: $ft\n/ if ($ft);
+            $s =~ s/(File:)(\s+)(.*)/$1$2$cfile$mime/;
+            $s =~ s/(Birth:\s+-.*[\n\s]+)//m;
+            $s =~ s/\((\s*)(\d+\/)\s*(.*?)\)/($2$3)/g;
+
+            if (has_command('lsattr')) {
+                my $lsattr;
+                my $lsattr_param = $dir ? " -d" : undef;
+                $lsattr = backquote_command("lsattr$lsattr_param " . quotemeta($cfile) . " 2>/dev/null");
+                $lsattr =~ s/(\S+)(\s+)(.*)/$1/;
+                $s      =~ s/(Links:)(.*)\n/$1$2\n Attrs: $lsattr/ if ($lsattr);
+            }
+
+            if (!$dir) {
+                my @csums = ('md5sum', 'sha1sum', 'sha256sum');
+                foreach my $c (@csums) {
+                    my ($sp, $sumv, $sum, $sumn);
+                    $sum  = 'data-a-checksum="' . $c . '"';
+                    $sumn = $c;
+                    $sumn =~ s/sum//;
+                    $sp = " " x (6 - length($sumn));
+                    if ($fzi < 1024000) {
+                        $sumv = &$get_file_checksum($cfile, $c);
+                        $sum  = $sumv if ($sumv != -1);
+                    }
+                    $s = rtrim($s);
+                    $s = "$s\n";
+                    $s .= "$sp$sumn: $sum\n" if ($sumv != -1);
+                }
+            }
+            $data{'content'} = rtrim($s);
+            $data{'size'}    = [$fz, $fzi];
+        }
+    }
+    &$output(\%data);
 }
 
 1;

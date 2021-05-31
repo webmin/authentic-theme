@@ -1271,3 +1271,8 @@ theme_xhred_theme_update_available=A new version of Authentic Theme is installed
 settings_right_page_keep=Load same page on domain switch
 settings_right_page_keep_description=This option will try to load the same page upon domain select, when changed from the navigation menu dropdown list
 settings_embed_product_branding_privileged=Show branding splash screen on initial loading
+
+
+#19.76
+theme_xhred_global_show_all=Show all
+theme_xhred_filemanager_context_prop_show_all=Show all properties

@@ -367,3 +367,7 @@ theme_xhred_theme_update_available=安装了新版本的Authentic Theme
 settings_right_page_keep=在域交换机上加载同一页面
 settings_right_page_keep_description=从导航菜单下拉列表中更改后，此选项将尝试在选择域时加载同一页面
 settings_embed_product_branding_privileged=在初始加载时显示品牌初始屏幕
+
+#19.76
+theme_xhred_global_show_all=显示所有
+theme_xhred_filemanager_context_prop_show_all=显示所有属性

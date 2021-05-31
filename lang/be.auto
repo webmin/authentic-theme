@@ -1213,3 +1213,7 @@ theme_xhred_theme_update_available=Усталявана новая версія 
 settings_right_page_keep=Загрузіць тую ж старонку на камутатары дамена
 settings_right_page_keep_description=Гэты параметр паспрабуе загрузіць тую ж старонку пры выбары дамена пры змене з выпадальнага спісу навігацыйнага меню
 settings_embed_product_branding_privileged=Паказаць экран-застаўку брэнда пры першапачатковай загрузцы
+
+#19.76
+theme_xhred_global_show_all=Паказаць усё
+theme_xhred_filemanager_context_prop_show_all=Паказаць усе ўласцівасці

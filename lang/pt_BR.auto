@@ -1213,3 +1213,7 @@ theme_xhred_theme_update_available=Uma nova versão do Authentic Theme está ins
 settings_right_page_keep=Carregar a mesma página na troca de domínio
 settings_right_page_keep_description=Esta opção tentará carregar a mesma página ao selecionar o domínio, quando alterada na lista suspensa do menu de navegação
 settings_embed_product_branding_privileged=Mostrar tela inicial da marca no carregamento inicial
+
+#19.76
+theme_xhred_global_show_all=Mostre tudo
+theme_xhred_filemanager_context_prop_show_all=Mostrar todas as propriedades

@@ -1213,3 +1213,7 @@ theme_xhred_theme_update_available=Authentic Theme'in yeni bir sürümü yüklen
 settings_right_page_keep=Aynı sayfayı etki alanı anahtarına yükleyin
 settings_right_page_keep_description=Bu seçenek, gezinme menüsü açılır listesinden değiştirildiğinde, alan seçildiğinde aynı sayfayı yüklemeyi deneyecektir.
 settings_embed_product_branding_privileged=İlk yüklemede marka tanıtım ekranını göster
+
+#19.76
+theme_xhred_global_show_all=Hepsini Göster ↓
+theme_xhred_filemanager_context_prop_show_all=Tüm özellikleri göster

@@ -15,6 +15,7 @@ line2=File viewer and editor,11
 config_portable_module_filemanager_editor_maximized=Automatically maximize panel when opening,1,true-Yes,false-No
 config_portable_module_filemanager_editor_detect_encoding=Automatically detect file encoding,1,true-Yes,false-No
 config_portable_module_filemanager_view_limit=Maximum number of bytes to load when viewing a large file,0,6
+config_portable_module_filemanager_checksum_limit=Maximum number of bytes to auto-generate file checksums,0,6
 
 line3=Advanced options,11
 config_portable_module_filemanager_hide_toolbar=Hide toolbar,1,true-Yes,false-No

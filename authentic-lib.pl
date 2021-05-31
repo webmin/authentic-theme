@@ -1280,7 +1280,7 @@ sub error_40x
     if (defined($in{'code'})) {
         my $file = get_env('request_uri');
         if ($file) {
-          $file = "&nbsp; —  <kbd data-error>" . html_escape("$file") . "</kbd>";
+            $file = "&nbsp; —  <kbd data-error>" . html_escape("$file") . "</kbd>";
         }
         print '<div class="alert alert-danger error_40x">' . "\n";
         print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
@@ -1724,32 +1724,6 @@ sub get_xhr_request
                 eval {$data = Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, $data));};
             }
             print $data;
-        } elsif ($in{'xhr-file_stats'} eq '1') {
-            ### This old and ugly designed `get_xhr_request` sub needs a refactoring
-            my $module           = $in{'xhr-file_stats_cmodule'};
-            my $jailed_user      = get_fm_jailed_user($module, 1);
-            my $jailed_user_home = get_fm_jailed_user($module);
-            my $cfile            = $in{'xhr-file_stats_file'};
-            if ($jailed_user) {
-                switch_to_unix_user_local($jailed_user);
-                $cfile = $jailed_user_home . $cfile;
-            } else {
-                set_user_level();
-            }
-            my $fz = recursive_disk_usage($cfile);
-            $fz = nice_size($fz, -1);
-            my $f = &backquote_command("file " . quotemeta($cfile) . " 2>/dev/null");
-            my $s = &backquote_command("stat " . quotemeta($cfile) . " 2>/dev/null");
-            $f = trim($f);
-            $s =~ /(Size:)(\s+)(\d+)(\s+)/;
-            my $sz = length($3) + length($4);
-            my $nz = length($fz);
-            $sz -= $nz;
-            $sz = " " x ($sz + 2);
-            $s =~ s/(Size:)(\s+)(\d+)(\s+)/$1$2$fz$sz/;
-            $s =~ s/(File:)(\s+)(.*)/$1$2$f/;
-            my @data = [$fz, $s];
-            print convert_to_json(\@data);
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
             my $module      = $in{'xhr-get_gpg_keys_cmodule'};
             my $jailed_user = get_fm_jailed_user($module, 1);

@@ -1125,3 +1125,7 @@ theme_xhred_theme_update_available=En ny version af Authentic Theme er installer
 settings_right_page_keep=Indlæs samme side på domæneswitch
 settings_right_page_keep_description=Denne mulighed forsøger at indlæse den samme side ved valg af domæne, når den ændres fra rullemenuen til navigationsmenuen
 settings_embed_product_branding_privileged=Vis splash-skærm til branding ved første indlæsning
+
+#19.76
+theme_xhred_global_show_all=Vis alt
+theme_xhred_filemanager_context_prop_show_all=Vis alle egenskaber
