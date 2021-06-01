@@ -50,7 +50,7 @@ var
     settings_leftmenu_user_html = '',
     settings_leftmenu_user_html_privileged = false,
     settings_leftmenu_custom_links = '',
-    
+
     // Side slider options
     settings_side_slider_enabled = true,
     settings_side_slider_fixed = false,
@@ -93,7 +93,7 @@ var
     settings_hotkey_custom_7_user = '',
     settings_hotkey_custom_8_user = '',
     settings_hotkey_custom_9_user = '',
-    
+
     // Theme updates options defaults
     settings_sysinfo_theme_updates = false,
     settings_cache_interval = 86400,
@@ -152,7 +152,7 @@ var
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
     settings_sysinfo_csf_updates = true,
-    settings_sysinfo_query_timeout = 1000,    
+    settings_sysinfo_query_timeout = 1000,
 
     // Control min and max time for branding to show in seconds
     settings_product_branding_show_time_min_privileged = 1,
@@ -165,7 +165,10 @@ var
     settings_usermin_default_module = 'sysinfo.cgi',
 
     // This option can be set to `nav`, `gray` or `white`
-    settings_side_slider_palette = 'nav';
-    //
-    //
-    //
+    settings_side_slider_palette = 'nav',
+
+    // This option associates extra names for a given module/page to be searchable in autocomplete dropdown
+    settings_autocomplete_extra_associations = { 'en': [{ 'mysql': 'MySQL, MariaDB' }, { 'virtual-server': [[ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ]] }] };
+//
+//
+//
