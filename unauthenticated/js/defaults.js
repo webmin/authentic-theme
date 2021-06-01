@@ -168,7 +168,7 @@ var
     settings_side_slider_palette = 'nav',
 
     // This option associates extra names for a given module/page to be searchable in autocomplete dropdown
-    settings_autocomplete_extra_associations_privileged = { 'en': [{ 'mysql': 'MySQL, MariaDB' }, { 'virtual-server': [[ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ]] }] };
+    settings_autocomplete_extra_associations_privileged = { 'en': [{ 'mysql': 'MySQL MariaDB' }, { 'virtual-server': [[ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ]] }] };
 //
 //
 //
