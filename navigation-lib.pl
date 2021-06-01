@@ -556,9 +556,9 @@ sub nav_search
         $rv = "<li class=\"menu-container search-form-container\">\n";
         $rv .= "<form id=\"webmin_search_form\" action=\"$theme_webprefix/webmin_search.cgi\" role=\"search\">\n";
         $rv .= "<div class=\"form-group\">\n";
-        $rv .= "<i class=\"fa fa-search\"></i>\n";
         $rv .=
 "<input type=\"text\" class=\"form-control sidebar-search\" name=\"search\" placeholder=\"$theme_text{'left_search'}\">\n";
+        $rv .= "<i class=\"fa fa-search\"></i>\n";
         $rv .= "</div>\n";
         $rv .= "</form>\n</li>\n";
     }
