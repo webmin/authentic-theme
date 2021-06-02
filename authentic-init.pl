@@ -287,7 +287,7 @@ sub embed_header
         {
             print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2] ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -971,6 +971,15 @@ sub get_button_style
     {
         $class = "danger ";
         $icon  = "times-circle-o";
+    } elsif (string_contains($keys, "cert_remove")) {
+        $class = "warning ";
+        $icon  = " fa2 fa2-certificate-delete";
+    } elsif (string_contains($keys, "cert_copyall2")) {
+        $class = "info ";
+        $icon = " fa2 fa2-certificate-global";
+    } elsif (string_contains($keys, "cert_copyall")) {
+        $class = "info ";
+        $icon  = " fa2 fa2-certificate-add";
     } elsif (string_contains($keys, "upgrade") ||
              string_contains($keys, "massg_ok") ||
              string_contains($keys, "massscript_ok"))
@@ -1126,7 +1135,7 @@ sub get_button_style
     } elsif (string_contains($keys, "uedit_mail") || string_contains($keys, "newnotify_ok")) {
         $icon = "envelope-o";
     } elsif (string_contains($keys, "reply_send")) {
-        $icon = "send";
+        $icon  = "send";
         $class = "success ";
     } elsif (string_contains($keys, "sendmail")) {
         $icon  = "envelope-o";
@@ -1240,10 +1249,13 @@ sub get_button_style
         $class = "success ";
         $icon  = "key";
     } elsif (string_contains($keys, "letsencrypt_title") ||
-             string_contains($keys, "cert_letsonly") ||
              string_contains($keys, "ssl_copycert"))
     {
-        $icon = "certificate";
+        $class = "success ";
+        $icon  = " fa2 fa2-certificate-request";
+    } elsif (string_contains($keys, "cert_letsonly")) {
+        $icon  = " fa2 fa2-certificate-update-time";
+        $class = "info ";
     } elsif (string_contains($keys, "index_tree")) {
         $icon = "tree";
     }
@@ -1359,7 +1371,7 @@ sub header_html_data
       get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
       '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' . ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
+      '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
       get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
 }
