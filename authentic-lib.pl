@@ -2110,6 +2110,10 @@ sub theme_config_save
         delete @a{ grep(/_user$/, keys %a) };
         write_file(get_tgconfig_file(), \%a);
 
+        # Never save extra options
+        delete @a{ grep(/_extra_/, keys %a) };
+        write_file(get_tgconfig_file(), \%a);
+
         # Check for Usermin configuration
         if ($has_usermin_conf_dir) {
             my $theme_settings_webmin_file  = get_tgconfig_file();
