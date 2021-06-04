@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, %theme_text);
+our (%text, %in, $root_directory, $config_directory, $current_lang, $default_lang, %theme_text);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
@@ -27,6 +27,7 @@ my (%access,
     $section,
     $module,
     $module_dir,
+    $module_dir_conf_file,
     %moduletext);
 
 $module = $in{'module'}     || $ARGV[0];
@@ -42,10 +43,17 @@ if (-r &help_file($module, "config_intro")) {
     $help = undef;
 }
 &ui_print_header(&text('config_dir', "<span>" . $module_info{'desc'} . "</span>"), $text{'config_title'}, "", $help, 0, 1);
-$module_dir = &module_root_directory($module);
+$module_dir           = &module_root_directory($module);
+$module_dir_conf_file = "$module_dir/config.info";
+if ($current_lang && $default_lang &&
+    $current_lang ne $default_lang &&
+    -r "$module_dir_conf_file.$current_lang")
+{
+    $module_dir_conf_file .= ".$current_lang";
+}
 
 # Read the config.info file to find sections
-&read_file("$module_dir/config.info", \%info, \@info_order);
+&read_file($module_dir_conf_file, \%info, \@info_order);
 my @config_quick_access;
 my $config_quick_access_section;
 my $config_quick_access_category;
@@ -146,7 +154,7 @@ if (-r "$module_dir/config_info.pl") {
 if (!$func) {
 
     # Use config.info to create config inputs
-    &generate_config(\%newconfig, "$module_dir/config.info", $module, undef, undef, $in{'section'});
+    &generate_config(\%newconfig, $module_dir_conf_file, $module, undef, undef, $in{'section'});
 }
 print &ui_table_end();
 print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
