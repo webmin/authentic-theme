@@ -151,12 +151,22 @@ sub xhr
             $s =~ s/(Birth:\s+-.*[\n\s]+)//m;
             $s =~ s/\((\s*)(\d+\/)\s*(.*?)\)/($2$3)/g;
 
-            if (has_command('lsattr')) {
+            my $lsattr_cmd = has_command('lsattr');
+            if ($lsattr_cmd) {
                 my $lsattr;
                 my $lsattr_param = $dir ? " -d" : undef;
-                $lsattr = backquote_command("lsattr$lsattr_param " . quotemeta($cfile) . " 2>/dev/null");
+                $lsattr = backquote_command("$lsattr_cmd$lsattr_param " . quotemeta($cfile) . " 2>/dev/null");
                 $lsattr =~ s/(\S+)(\s+)(.*)/$1/;
                 $s      =~ s/(Links:)(.*)\n/$1$2\n Attrs: $lsattr/ if ($lsattr);
+            }
+
+            my $getfacl_cmd = has_command('getfacl');
+            if ($getfacl_cmd) {
+                my $lbl = $lsattr_cmd ? "Attrs:" : "Links:";
+                my $getfacl = backquote_command("$getfacl_cmd -p " . quotemeta($cfile) . " 2>/dev/null");
+                my @getfacls = ($getfacl =~ /^(?!(#|user::|group::|other::))([\w\:\-\_]+)/gm);
+                $getfacl = join(' ', @getfacls);
+                $s =~ s/($lbl)(.*)\n/$1$2\n  ACLs:$getfacl\n/ if ($getfacl);
             }
 
             if (!$dir) {
