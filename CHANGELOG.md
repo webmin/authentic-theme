@@ -1,15 +1,16 @@
 ## Changelog
 
-#### Version 19.76-beta6 (May 28, 2021)
+#### Version 19.76-RC1 (June 06, 2021)
+* Add fonts loaded on demand using unicode-range to provide support for all languages
 * Add ability to fully revert theme settings to current on cancel [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
-* Add better email printing output for read mail module in Webmin (Usermin on todo for upcoming beta7)
+* Add better email printing output for read mail module
 * Fix multiple issues with read mail module
+* Fix progressive output content extraction and loader premature dismissal issue
 * Fix bottom button links positioning in navigation menu
 * Fiх file tree-view issues when used with various allowed paths in File Manager [webmin/webmin#1487](https://github.com/webmin/webmin/issues/1487)
 * Fix to add a test if defined default module has an actual index page and can be used
 * Fiх bugs for Servers Index module [#1540](https://github.com/authentic-theme/authentic-theme/issues/1540)
-* Fix progressive output content extraction and loader premature dismissal
-* Fix various other bugs
+* Fix various other issues
 
 #### Version 19.75 (April 19, 2021)
 * Add improvements to color palettes for navigation menu and side slider
