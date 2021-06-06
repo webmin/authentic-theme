@@ -596,27 +596,27 @@ sub theme_controls
           '');
     return (
         "<div class=\"btn-group\">
-            <a style=\"min-width:90px\" class=\"btn btn-success capitalize\" id=\"atsave\">
-                <i class=\"fa fa-fw fa-floppy-o\" style=\"margin-right:7px;\"></i>$text{'save'}
+            <a class=\"btn btn-success capitalize\" id=\"atsave\">
+                <i class=\"fa fa-fw fa-floppy-o\"></i>$text{'save'}
             </a>
-            <a style=\"min-width:146px\" class=\"btn btn-default capitalize\" id=\"atrestore\">
-                <i class=\"fa fa-fw fa-history\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_restore_defaults'}
+            <a class=\"btn btn-default capitalize\" id=\"atrestore\">
+                <i class=\"fa fa-fw fa-history\"></i>$theme_text{'settings_right_restore_defaults'}
             </a>
-            <a style=\"min-width:132px\" class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
-                <i class=\"fa fa-fw fa-hourglass-o\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_clear_local_cache'}
+            <a class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
+                <i class=\"fa fa-fw fa-hourglass-o\"></i>$theme_text{'settings_right_clear_local_cache'}
             </a>
             $update_dropdown
         </div>",
         ($get_user_level eq '0' ?
            "<div class=\"btn-group\">
             <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-backgrounds.cgi\">
-                <i class=\"fa fa-fw fa-image\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_bgs'}
+                <i class=\"fa fa-fw fa-image\"></i>$theme_text{'theme_xhred_settings_right_theme_bgs'}
             </a>
             <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-logos.cgi\">
-                <i class=\"fa fa-fw fa-file-image-o\" style=\"margin-right:7px;\"></i>$theme_text{'theme_xhred_settings_right_theme_logos'}
+                <i class=\"fa fa-fw fa-file-image-o\"></i>$theme_text{'theme_xhred_settings_right_theme_logos'}
             </a>
             <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_styles\" href=\"$gconfig{'webprefix'}/settings-editor_read.cgi\">
-                <i class=\"fa fa-fw fa-file-code-o\" style=\"margin-right:7px;\"></i>$theme_text{'settings_right_theme_extensions'}
+                <i class=\"fa fa-fw fa-file-code-o\"></i>$theme_text{'settings_right_theme_extensions'}
             </a>
         </div>" :
            ""
