@@ -95,7 +95,7 @@ print
   . &theme_text('password_ok')
   . '</button>' . "\n";
 print
-'<script>document.addEventListener("DOMContentLoaded", function(event) {var l=document.querySelector(".top-aprogress");l&&l.remove();var o=document.querySelector("input[name=\"old\"]");o&&o.focus();});function spinner(){var x=document.querySelector(".fa.fa-unlock"),s =\'<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 2px; margin-left: -22px;"><span class="cspinner-icon white small"></span></span></span>\';x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}</script>';
+'<script>document.addEventListener("DOMContentLoaded", function(event) {var l=document.querySelector(".top-aprogress");l&&l.remove();var o=document.querySelector("input[name=\"old\"]");o&&o.focus();});function spinner(){var x=document.querySelector(".fa.fa-unlock"),s =\'<span class="cspinner_container" style="position: absolute; width: 18px; height: 14px; display: inline-block;"><span class="cspinner" style="margin-top: 0; margin-left: -23px;"><span class="cspinner-icon white small"></span></span></span>\';x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}</script>';
 print '</div>';
 print '</form>' . "\n";
 

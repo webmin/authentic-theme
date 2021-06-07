@@ -7,7 +7,7 @@ use strict;
 
 use Fcntl qw( :flock );
 
-our (%gconfig, %in, $get_user_level, $current_theme, $config_directory, %theme_text, %theme_config);
+our (%gconfig, %in, $get_user_level, $current_theme, $config_directory, $theme_webprefix, %theme_text, %theme_config);
 
 my $csf_conf     = "/etc/csf";
 my $csf_lib      = "/var/lib/csf";
@@ -76,7 +76,7 @@ sub csf_strings
 ' &nbsp;&nbsp;&nbsp;&nbsp;<a class="label label-danger csf-submit" data-id="csf_lfdstatus" class="label label-danger">Stopped</a> '
       );
     $csf_data = (
-        '<a href=\'' . $gconfig{'webprefix'} . '/csf/index.cgi\' data-id="csf_link_open">' .
+        '<a href=\'' . $theme_webprefix . '/csf/index.cgi\' data-id="csf_link_open">' .
           $theme_text{'theme_xhred_csf'} . '</a> ' . product_version_update($csf_installed_version, 'f') . ''
 
           . ($csf_update_required eq '1' ?
@@ -134,22 +134,32 @@ sub csf_mod
     open(my $fh, '>', $csf_header_mod) or die $!;
 
     print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' .
-      (theme_version(1)) . '" rel="shortcut icon" href="' . $gconfig{'webprefix'} . '/images/favicon-webmin.ico">' . "\n";
+      (theme_version(1)) . '" rel="shortcut icon" href="' . $theme_webprefix . '/images/favicons/webmin/favicon.ico">' . "\n";
     print $fh '<link href="' .
-      $gconfig{'webprefix'} . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
-    print $fh '<link href="' . $gconfig{'webprefix'} .
+      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+    print $fh '<link href="' . $theme_webprefix .
       '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
 
-    print $fh '<link href="' . $gconfig{'webprefix'} .
+    print $fh '<link href="' . $theme_webprefix .
       '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+    
+    # Print object with language strings
+    print $fh ' <script>';
+    print $fh 'var v___theme_language = ' . get_theme_language();
+    print $fh "</script>\n";
+
+    # Print default options
+    print $fh '<script>';
+    print $fh 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
+    print $fh "</script>\n";
 
     print $fh '<script src="' .
-      $gconfig{'webprefix'} . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
+      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
 
     print $fh '<link href="' .
-      $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      $theme_webprefix . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     print $fh '<script src="' .
-      $gconfig{'webprefix'} . '/extensions/csf/csf.' . $ext . '.js?' . theme_version(1) . '"></script>' . "\n";
+      $theme_webprefix . '/extensions/csf/csf.' . $ext . '.js?' . theme_version(1) . '"></script>' . "\n";
 
     close $fh;
 

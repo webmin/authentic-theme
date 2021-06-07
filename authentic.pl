@@ -1192,7 +1192,7 @@ sub theme_ui_buttons_row
     return "<form action='$script' method='post' class='ui_buttons_form'>\n" .
       $hiddens . "<table>" . "<tr class='ui_buttons_row'> " . "<td data-nowrap class=ui_buttons_label>" .
       ($before ? $before . " " : "") . &ui_submit($label) . ($after ? " " . $after : "") .
-      "</td>\n" . "<td class=ui_buttons_value>" . $desc . "</td></tr>\n" . "</table>\n" . "</form>\n";
+      "</td>\n" . "<td class=ui_buttons_value><span>" . $desc . "</span></td></tr>\n" . "</table>\n" . "</form>\n";
 }
 
 sub theme_ui_buttons_end
