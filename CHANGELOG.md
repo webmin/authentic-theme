@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.76-RC1 (June 06, 2021)
+#### Version 19.80-RC1 (June 07, 2021)
 * Add fonts loaded on demand using unicode-range to provide support for all languages
 * Add ability to fully revert theme settings to current on cancel [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
 * Add better email printing output for read mail module
