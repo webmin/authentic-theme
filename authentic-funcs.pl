@@ -225,7 +225,7 @@ sub theme_ui_checkbox_local
       "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") .
       " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" . ($tags ? " " . $tags : "") .
       "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
-      (length $label ? $label : '&nbsp;') . '</label></span>' . $after;
+      (length $label ? "<span data-label-text>$label</span>" : '&nbsp;') . '</label></span>' . $after;
 }
 
 sub theme_make_date_local
