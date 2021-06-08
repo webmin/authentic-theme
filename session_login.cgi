@@ -183,8 +183,8 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
 
     if (!$gconfig{'noremember'}) {
         print '<div class="input-group form-group">
-              <span class="awcheckbox awobject"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save">'
-          . $theme_text{'login_save'} . '</label></span>
+              <span class="awcheckbox awobject thick"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save"><span>'
+          . $theme_text{'login_save'} . '</span></label></span>
            </div>' . "\n";
     }
     print '<div class="form-group form-signin-group">';

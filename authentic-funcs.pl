@@ -211,7 +211,7 @@ sub ui_dropdown_local
 
 sub theme_ui_checkbox_local
 {
-    my ($name, $value, $label, $sel, $tags, $dis) = @_;
+    my ($name, $value, $label, $sel, $tags, $dis, $cls) = @_;
     my $after;
     my $rand = int rand(1e4);
     if ($label =~ /^([^<]*)(<[\000-\377]*)$/) {
@@ -220,7 +220,7 @@ sub theme_ui_checkbox_local
     }
     $label = trim($label);
     my $bl = string_ends_with($label, '<br>') ? ' ds-bl-fs' : undef;
-    return "<span class=\"awcheckbox awobject$bl\"><input class=\"iawobject\" type=\"checkbox\" " .
+    return "<span class=\"awcheckbox awobject$bl$cls\"><input class=\"iawobject\" type=\"checkbox\" " .
       "name=\"" . &quote_escape($name) .
       "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") .
       " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" . ($tags ? " " . $tags : "") .
