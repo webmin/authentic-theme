@@ -1222,7 +1222,7 @@ sub get_button_style
              string_contains($keys, "rdmass_ok"))
     {
         $icon = "times-circle-o";
-    } elsif (string_contains($keys, "users_dok") || string_contains($keys, "users_delete")) {
+    } elsif (string_contains($keys, "users_dok") || string_contains($keys, "users_delete") || string_contains($keys, "users_dconfirm")) {
         $class = "danger ";
         $icon  = "user-times";
     } elsif (string_contains($keys, "index_mass2")) {
