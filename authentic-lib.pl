@@ -610,7 +610,7 @@ sub get_sysinfo_vars
           product_version_update(get_webmin_version(1), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
           '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
-          '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-fwh fa-book"></i></a></div>';
+          '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-book"></i></a></div>';
 
         # Virtualmin version
         if ($has_virtualmin) {
