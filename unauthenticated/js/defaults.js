@@ -15,8 +15,8 @@ var
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
-    settings_sysinfo_easypie_charts_size = 190,
-    settings_sysinfo_easypie_charts_width = 3,
+    settings_sysinfo_easypie_charts_size = 196,
+    settings_sysinfo_easypie_charts_width = 4,
     settings_sysinfo_easypie_charts_scale = 10,
     settings_sysinfo_max_servers = 10,
     settings_sysinfo_real_time_status = 1,
