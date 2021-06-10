@@ -11,6 +11,7 @@ PROD=${DIR##*/}
 GIT="git"
 CURL="curl"
 CURLTIMEOUT=5
+GHAPIURL="https://api.github.com"
 REPO="authentic-theme/authentic-theme"
 PARAMS="$*"
 
@@ -62,7 +63,7 @@ else
       # Try to download latest version of the update script for Webmin/Usermin
       if type ${CURL} >/dev/null 2>&1
       then
-        GITAPI="https://api.github.com/repos/webmin/webmin/contents"
+        GITAPI="$GHAPIURL/repos/webmin/webmin/contents"
         UPDATE="update-from-repo.sh"
 
         # Get latest update script
@@ -84,7 +85,18 @@ else
         else
           if type ${CURL} >/dev/null 2>&1
           then
-            VERSION=$($CURL -s https://api.github.com/repos/$REPO/releases/latest  --connect-timeout $CURLTIMEOUT | grep tag_name | head -n 1)
+            PULL_URL="$GHAPIURL/repos/$REPO/releases/latest"
+            FRS=$($CURL -s $PULL_URL  --connect-timeout $CURLTIMEOUT)
+            if [[ $FRS == *"Moved Permanently"* ]]; then
+              PULL_URL=$(echo $FRS | perl -n -e 'm{\"url\":\s*\"(https://.*?)$\"};print $1;')
+              if [ -z "${PULL_URL}" ]; then
+                echo -e "\e[49;0;33;82mError: Authentic Theme repo has been moved permanently; however, a new URL cannot be parsed.\e[0m";
+                exit
+              fi
+              VERSION=$($CURL -s $PULL_URL  --connect-timeout $CURLTIMEOUT | grep tag_name | head -n 1)
+            else
+              VERSION=$(echo "$FRS" | grep tag_name | head -n 1)
+            fi
             [[ $VERSION =~ [0-9]+\.[0-9]+|[0-9]+\.[0-9]+\.[0-9]+ ]]
             PRRELEASE="--branch ${BASH_REMATCH[0]} --quiet"
             PRRELEASETAG=${BASH_REMATCH[0]}
