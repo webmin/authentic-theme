@@ -1,14 +1,12 @@
 ## Changelog
 
-#### Version 19.80-RC6 (June 09, 2021)
+#### Version 19.80 (June 10, 2021)
+* Add improvements to various aspects of the UI
 * Add fonts loaded on demand using unicode-range to provide support for all languages
 * Add ability to fully revert theme settings to current on cancel [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
-* Add better email printing output for read mail module
-* Fix multiple issues with read mail module
-* Fix progressive output content extraction and loader premature dismissal issue
-* Fix bottom button links positioning in navigation menu
 * Fiх file tree-view issues when used with various allowed paths in File Manager [webmin/webmin#1487](https://github.com/webmin/webmin/issues/1487)
-* Fix to add a test if defined default module has an actual index page and can be used
+* Fix progressive output content extraction and loader premature dismissal issue
+* Fix emails printing and other issues for read mail module
 * Fiх bugs for Servers Index module [#1540](https://github.com/authentic-theme/authentic-theme/issues/1540)
 * Fix various other issues
 
@@ -16,7 +14,6 @@
 * Add improvements to color palettes for navigation menu and side slider
 * Fix accessibility contrast for navigation menu and side slider
 * Fix file tree-view with sub-directories in multiple allowed paths in File Manager
-* Fix various minor issues
 
 #### Version 19.74 (April 04, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
@@ -32,7 +29,6 @@
 * Fix to display start/kill buttons for Scheduled Cron Jobs module
 * Fix various inconsistencies in animation and improve visual performance
 * Fix to align checkboxes and labels correctly when displaying Virtualmin features
-* Fix bugs
 
 <!--- separator --->
 
