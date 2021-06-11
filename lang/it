@@ -111,6 +111,7 @@ settings_right_theme_left_logo_title=Controllo logo del tema
 settings_right_theme_configurable_options_title=Opzioni impostabili per Authentic Theme
 
 settings_right_hotkey_options=Tasti di scelta rapida
+
 settings_right_hotkey_custom_options_description=I link personalizzati ti permettono di utilizzare cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. L'<code>URL</code> può essere estratto dal riquadro destro del contenuto della pagina attualmente aperta, leggendone l'origine. E' importante che l'<code>URL</code> non abbia una barra all'inizio e non utilizzi prefissi. Per esempio, per passare rapidamente ad Apache, impostare il campo<code>Link personalizzato 1</code> a <code>/apache/</code>. Se il modificatore predefinito dei tasti di scelta rapida è impostato a <code>Alt,</code> premendo <code>Alt+1</code>, si aprirà il modulo Apache.
 settings_hotkey_custom_1_user=Link personalizzato <code>1</code>
 settings_hotkey_custom_2_user=Link personalizzato <code>2</code>
@@ -122,11 +123,10 @@ settings_hotkey_custom_7_user=Link personalizzato <code>7</code>
 settings_hotkey_custom_8_user=Link personalizzato <code>8</code>
 settings_hotkey_custom_9_user=Link personalizzato <code>9</code>
 
-settings_right_reload=Carica la pagina predefinita sull'interruttore di tabulazione
-
 settings_navigation_color=Color palette
 settings_loader_top=Attiva la barra di caricamento della pagina nella parte superiore dello schermo
 settings_loader_left=Attiva spinner per il menu di navigazione
+settings_right_reload=Carica la pagina predefinita sull'interruttore di tabulazione
 
 settings_right_hide_table_icons=Nascondi icone della tabella
 settings_right_hide_table_icons_description=Rimuovi completamente le icone dalle tabelle della pagina di contenuto e visualizza semplici link con il simbolo chevron a destra.
@@ -602,22 +602,13 @@ theme_xhred_global_committed_on=Finalizzato il
 theme_xhred_global_resolved_issues=Problemi risolti nei rilasci %value
 
 #18.48
+theme_force_upgrade=Aggiorna tema
 theme_xhred_force_upgrade_beta=Installa l'ultima versione di sviluppo (beta)
 theme_xhred_force_upgrade_stable=Installa l'ultima versione rilasciata (stable)
 theme_xhred_source_encoding=Codifica sorgente
 theme_update_footer=Per favore, siate gentili nel segnalare i bug al repository $1. Segui il canale $2 del tema per gli ultimi aggiornamenti.
 theme_xhred_encoding_manually_set=Imposta codifica manualmente
 theme_xhred_filemanager_save_to_change_encoding=Il file deve essere salvato, per consentire la modifica della codifica.
-theme_force_upgrade=Aggiorna tema
-settings_webmin_default_module=Pagina predefinita per Webmin
-theme_xhred_filemanager_context_move_to_trash=Sposta nel cestino
-theme_xhred_filemanager_context_permanently_delete=Elimina definitivamente
-theme_xhred_global_remove=Rimuovi
-theme_xhred_filemanager_settings_deletion_mode=Elimina i file in modo sicuro spostandoli nel cestino
-theme_xhred_filemanager_successful_removal=La rimozione nel cestino di <tt>$1</tt> è riuscita.
-theme_xhred_filemanager_removing_selected=Rimozione degli elementi selezionati.
-theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma non per tutti gli oggetti. È possibile che gli oggetti richiesti siano stati <em>rinominati</em> o <em>spostati</em> prima della rimozione. Le autorizzazioni limitate (attributi) sono un'altra possibile causa. Messaggio di errore:
-theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>Certificato SSL autofirmato</a>
 
 #18.49
 theme_xhred_filemanager_user_switch=Passa a utente (Ctrl+M)
@@ -646,6 +637,8 @@ theme_xhred_sysinfo_update_failed=Le informazioni di sistema non possono essere 
 theme_xhred_global_development_version=Versione di sviluppo
 
 right_vm_server_summary=Riepilogo del server virtuale
+
+settings_webmin_default_module=Pagina predefinita per Webmin
 
 theme_xhred_global_unbeforeunload_title=Le modifiche apportate potrebbero non essere salvate.
 theme_xhred_global_unbeforeunload_message=Se continui, le modifiche non salvate in questa pagina potrebbero andare perse definitivamente.
@@ -1180,6 +1173,16 @@ theme_xhred_filemanager_search_limit_type=Tipo di file
 theme_xhred_filemanager_search_limit_size=Dimensione del file
 theme_xhred_filemanager_search_limit_size_desc=es. <2K o >3M-<5M
 
+theme_xhred_filemanager_context_move_to_trash=Sposta nel cestino
+theme_xhred_filemanager_context_permanently_delete=Elimina definitivamente
+theme_xhred_global_remove=Rimuovi
+theme_xhred_filemanager_settings_deletion_mode=Elimina i file in modo sicuro spostandoli nel cestino
+theme_xhred_filemanager_successful_removal=La rimozione nel cestino di <tt>$1</tt> è riuscita.
+theme_xhred_filemanager_removing_selected=Rimozione degli elementi selezionati.
+theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma non per tutti gli oggetti. È possibile che gli oggetti richiesti siano stati <em>rinominati</em> o <em>spostati</em> prima della rimozione. Le autorizzazioni limitate (attributi) sono un'altra possibile causa. Messaggio di errore:
+
+theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>Certificato SSL autofirmato</a>
+
 #19.71
 settings_sysinfo_hidden_panels_user=Pannelli nascosti
 theme_xhred_tooltip_dashboard_panels_disable=Nascondi il pannello $1 
@@ -1207,7 +1210,6 @@ theme_xhred_global_module_preferences=Preferenze del modulo
 settings_sysinfo_real_time_status_forced=Sì, forzato
 settings_sysinfo_real_time_status_forced_warn=L'abilitazione del monitoraggio in tempo reale in modalità forzata è sconsigliata perché la raccolta in background verrà eseguita anche quando la scheda del browser non è focalizzata, causando potenzialmente un sovraccarico del server con più schede aperte
 theme_xhred_theme_update_available=È installata una nuova versione di Authentic Theme
-
 settings_right_page_keep=Carica la stessa pagina sull'interruttore di dominio
 settings_right_page_keep_description=Questa opzione proverà a caricare la stessa pagina alla selezione del dominio, se modificata dall'elenco a discesa del menu di navigazione
 settings_embed_product_branding_privileged=Mostra la schermata iniziale del logo al caricamento iniziale
