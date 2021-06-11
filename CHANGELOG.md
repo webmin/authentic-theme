@@ -1,12 +1,12 @@
 ## Changelog
 
 #### Version 19.80 (June 10, 2021)
-* Add improvements to various aspects of the UI
-* Add fonts loaded on demand using unicode-range to provide support for all languages
-* Add ability to fully revert theme settings to current on cancel [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
+* Add improvements to various aspects of the UI [forum.virtualmin.com/t/111034](https://forum.virtualmin.com/t/authentic-theme-19-80-release-overview/111034)
+* Add new properties popup for File Manager to display overall file details [#629/comment-851638537](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-851638537)
+* Add ability to fully revert theme settings to existing when page is not saved [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
 * Fiх file tree-view issues when used with various allowed paths in File Manager [webmin/webmin#1487](https://github.com/webmin/webmin/issues/1487)
 * Fix progressive output content extraction and loader premature dismissal issue
-* Fix emails printing and other issues for read mail module
+* Fix emails printing and other UI issues for Read User Mail module
 * Fiх bugs for Servers Index module [#1540](https://github.com/authentic-theme/authentic-theme/issues/1540)
 * Fix various other issues
 
