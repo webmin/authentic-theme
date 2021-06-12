@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.81 (June 12, 2021)
+* Fiх bugs [#1548](https://github.com/authentic-theme/authentic-theme/issues/1548) [#1552](https://github.com/authentic-theme/authentic-theme/issues/1552)
+
 #### Version 19.80 (June 10, 2021)
 * Add improvements to various aspects of the UI [forum.virtualmin.com/t/111034](https://forum.virtualmin.com/t/authentic-theme-19-80-release-overview/111034)
 * Add new properties popup for File Manager to display overall file details [#629/comment-851638537](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-851638537)
