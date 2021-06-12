@@ -278,28 +278,31 @@ sub nav_webmin_menu
 
     foreach my $menu (@menus) {
         next if ($menu->{'id'} eq 'unused' && $unused);
-        $rv .= nav_cat($menu->{'id'}, $menu->{'desc'});
-        $rv .= "<li class=\"sub-wrapper\"><ul class=\"sub\" style=\"display: none;\" id=\"$menu->{'id'}\">\n";
-        foreach my $module (@{ $menu->{'members'} }) {
-            next if ($module->{'id'} eq 'mailbox' && $nomailbox);
-            $rv .= nav_cat_link("$theme_webprefix/$module->{'id'}/", $module->{'desc'});
-            if (!$extra_links++) {
-                if ($get_user_level eq '0' || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
-                    $rv .= nav_cat_link("$theme_webprefix/tconfig.cgi",
-                                        $theme_text{'settings_right_theme_left_configuration_title'}, 'hidden');
-                }
-                if ($get_user_level eq '0') {
-                    $rv .= nav_cat_link("$theme_webprefix/settings-editor_read.cgi",
-                                        $theme_text{'settings_right_theme_left_extensions_title'}, 'hidden');
-                    $rv .=
-                      nav_cat_link("$theme_webprefix/settings-logos.cgi",
-                                   $theme_text{'settings_right_theme_left_logo_title'}, 'hidden');
-                    $rv .= nav_cat_link("$theme_webprefix/settings-backgrounds.cgi",
-                                        $theme_text{'settings_right_theme_left_background_title'}, 'hidden');
-                }
+        if ($menu->{'type'} eq 'cat') {
+            $rv .= nav_cat($menu->{'id'}, $menu->{'desc'});
+            $rv .= "<li class=\"sub-wrapper\"><ul class=\"sub\" style=\"display: none;\" id=\"$menu->{'id'}\">\n";
+            foreach my $module (@{ $menu->{'members'} }) {
+                next if ($module->{'id'} eq 'mailbox' && $nomailbox);
+                $rv .= nav_cat_link("/$module->{'id'}/", $module->{'desc'});
             }
+            $rv .= "</ul></li>\n";
+        } elsif ($menu->{'type'} eq 'item' &&
+                 $menu->{'desc'})
+        {
+            $rv .= nav_menu_link($menu->{'link'}, $menu->{'desc'}, 'fa-link');
         }
-        $rv .= "</ul></li>\n";
+    }
+    if (!$extra_links++) {
+        if ($get_user_level eq '0' || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
+            $rv .= nav_cat_link("/tconfig.cgi", $theme_text{'settings_right_theme_left_configuration_title'}, 'hidden');
+        }
+        if ($get_user_level eq '0') {
+            $rv .=
+              nav_cat_link("/settings-editor_read.cgi", $theme_text{'settings_right_theme_left_extensions_title'}, 'hidden');
+            $rv .= nav_cat_link("/settings-logos.cgi", $theme_text{'settings_right_theme_left_logo_title'}, 'hidden');
+            $rv .=
+              nav_cat_link("/settings-backgrounds.cgi", $theme_text{'settings_right_theme_left_background_title'}, 'hidden');
+        }
     }
     if (&foreign_available("webmin") &&
         $theme_config{'settings_leftmenu_section_hide_refresh_modules'} ne 'true')
@@ -446,6 +449,7 @@ sub nav_detect_script
 sub nav_menu_link
 {
     my ($link, $text, $icon, $hidden, $after) = @_;
+    my $external_link = ($link =~ /^(http:\/\/|https:\/\/|ftp:\/\/|ftps:\/\/)/);
     if ($icon !~ /\s+/) {
         $icon = "fa fa-fw $icon";
     }
@@ -455,17 +459,21 @@ sub nav_menu_link
     if ($hidden) {
         $hidden = " hidden";
     }
+    $link = "/$link" if (!$external_link && $link !~ /^\//);
+    $link = ($external_link ? $link : "$theme_webprefix$link");
     return
-"<li data-linked$after><a href=\"$theme_webprefix$link\" class=\"navigation_module_trigger$hidden\"><i class=\"$icon\"></i> <span>$text</span></a></li>\n";
+"<li data-linked$after><a href=\"$link\" class=\"navigation_module_trigger$hidden\"><i class=\"$icon\"></i> <span>$text</span></a></li>\n";
 }
 
 sub nav_cat_link
 {
     my ($link, $label, $hidden) = @_;
     my $rv;
+    my $external_link = ($link =~ /^(http:\/\/|https:\/\/|ftp:\/\/|ftps:\/\/)/);
+    $link = "/$link" if (!$external_link && $link !~ /^\//);
     $rv = '<li data-linked' . ($hidden && ' class="hidden"') . '>' . "\n";
     $rv .= '<a' . ($hidden && ' data-parent-hidden') . ' href="' .
-      (($link !~ /^\// && $link !~ /^http/) ? ('/' . $link) : $link) . '"> ' . $label . '</a>' . "\n";
+      ($external_link ? $link : "$theme_webprefix$link") . '"> ' . $label . '</a>' . "\n";
     $rv .= "</li>\n";
     return $rv;
 }
@@ -834,35 +842,32 @@ sub nav_list_combined_menu
                     $get_user_level eq '0' &&
                     !$extra_links++)
                 {
-                    $rv .= nav_cat_link($theme_webprefix . "/tconfig.cgi",
-                                        $theme_text{'settings_right_theme_left_configuration_title'}, 'hidden');
-                    $rv .= nav_cat_link($theme_webprefix . "/settings-editor_read.cgi",
+                    $rv .=
+                      nav_cat_link("/tconfig.cgi", $theme_text{'settings_right_theme_left_configuration_title'}, 'hidden');
+                    $rv .= nav_cat_link("/settings-editor_read.cgi",
                                         $theme_text{'settings_right_theme_left_extensions_title'}, 'hidden');
-                    $rv .= nav_cat_link($theme_webprefix . "/settings-logos.cgi",
-                                        $theme_text{'settings_right_theme_left_logo_title'}, 'hidden');
-                    $rv .= nav_cat_link($theme_webprefix . "/settings-backgrounds.cgi",
+                    $rv .=
+                      nav_cat_link("/settings-logos.cgi", $theme_text{'settings_right_theme_left_logo_title'}, 'hidden');
+                    $rv .= nav_cat_link("/settings-backgrounds.cgi",
                                         $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, 'hidden');
 
                     if (check_pro_package('vm') eq '1' &&
                         $item->{'module'} eq 'virtual-server')
                     {
-                        $rv .=
-                          nav_cat_link($theme_webprefix . "/virtual-server/licence.cgi", $theme_text{'right_vlcheck'}, 1);
+                        $rv .= nav_cat_link("/virtual-server/licence.cgi", $theme_text{'right_vlcheck'}, 1);
                     }
 
                     if (check_pro_package('cm') eq '1' &&
                         $item->{'module'} eq 'server-manager')
                     {
-                        $rv .=
-                          nav_cat_link($theme_webprefix . "/server-manager/licence.cgi", $theme_text{'right_slcheck'}, 1);
+                        $rv .= nav_cat_link("/server-manager/licence.cgi", $theme_text{'right_slcheck'}, 1);
                     }
 
                 } elsif ($get_user_level ne '0' &&
                          $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
                          !$extra_links++)
                 {
-                    $rv .= nav_cat_link($theme_webprefix . "/tconfig.cgi",
-                                        $theme_text{'settings_right_theme_left_configuration_title'}, 1);
+                    $rv .= nav_cat_link("/tconfig.cgi", $theme_text{'settings_right_theme_left_configuration_title'}, 1);
                 }
                 $rv .= "</ul></li>\n";
             } elsif ($item->{'type'} eq 'hr') {
