@@ -1860,37 +1860,42 @@ sub get_xhr_request
             ) = get_sysinfo_vars(\@info);
 
             # Build update info
-            my @updated_info = { "data"                     => 1,
-                                 "cpu_percent"              => $cpu_percent,
-                                 "mem_percent"              => $mem_percent,
-                                 "virt_percent"             => $virt_percent,
-                                 "disk_percent"             => $disk_percent,
-                                 "host"                     => $host,
-                                 "os"                       => $os,
-                                 "webmin_version"           => $webmin_version,
-                                 "virtualmin_version"       => $virtualmin_version,
-                                 "cloudmin_version"         => $cloudmin_version,
-                                 "authentic_theme_version"  => $authentic_theme_version,
-                                 "local_time"               => $local_time,
-                                 "kernel_arch"              => $kernel_arch,
-                                 "cpu_type"                 => $cpu_type,
-                                 "cpu_temperature"          => $cpu_temperature,
-                                 "hdd_temperature"          => $hdd_temperature,
-                                 "uptime"                   => $uptime,
-                                 "proc"                     => $running_proc,
-                                 "cpu"                      => $load,
-                                 "mem"                      => $real_memory,
-                                 "virt"                     => $virtual_memory,
-                                 "disk"                     => $disk_space,
-                                 "package_message"          => $package_message,
-                                 "csf_title"                => $csf_title,
-                                 "csf_data"                 => $csf_data,
-                                 "csf_remote_version"       => $csf_remote_version,
-                                 "authentic_remote_version" => $authentic_remote_version,
-                                 "csf_deny"                 => (defined(&csf_temporary_list) ? csf_temporary_list() : undef),
-                                 "collect_interval"         => get_module_config_data('system-status', 'collect_interval'),
-                                 "extended_si"              => get_extended_sysinfo(\@info, undef),
-                                 "warning_si"               => get_sysinfo_warning(\@info), };
+            my @updated_info = {
+                  "data"                     => 1,
+                  "cpu_percent"              => $cpu_percent,
+                  "mem_percent"              => $mem_percent,
+                  "virt_percent"             => $virt_percent,
+                  "disk_percent"             => $disk_percent,
+                  "host"                     => $host,
+                  "os"                       => $os,
+                  "webmin_version"           => $webmin_version,
+                  "virtualmin_version"       => $virtualmin_version,
+                  "cloudmin_version"         => $cloudmin_version,
+                  "authentic_theme_version"  => $authentic_theme_version,
+                  "local_time"               => $local_time,
+                  "kernel_arch"              => $kernel_arch,
+                  "cpu_type"                 => $cpu_type,
+                  "cpu_temperature"          => $cpu_temperature,
+                  "hdd_temperature"          => $hdd_temperature,
+                  "uptime"                   => $uptime,
+                  "proc"                     => $running_proc,
+                  "cpu"                      => $load,
+                  "mem"                      => $real_memory,
+                  "virt"                     => $virtual_memory,
+                  "disk"                     => $disk_space,
+                  "package_message"          => $package_message,
+                  "authentic_remote_version" => $authentic_remote_version,
+                  "csf_title"                => $csf_title,
+                  "csf_data"                 => $csf_data,
+                  "csf_remote_version"       => $csf_remote_version,
+                  "csf_deny"                 => (
+                      (defined(&csf_temporary_list) && $theme_config{'settings_sysinfo_csf_temp_list_privileged'} ne 'false')
+                      ? csf_temporary_list() :
+                        undef
+                  ),
+                  "collect_interval" => get_module_config_data('system-status', 'collect_interval'),
+                  "extended_si"      => get_extended_sysinfo(\@info, undef),
+                  "warning_si"       => get_sysinfo_warning(\@info), };
             print convert_to_json(\@updated_info);
         } elsif ($in{'xhr-search-in-file'} eq '1') {
             set_user_level();

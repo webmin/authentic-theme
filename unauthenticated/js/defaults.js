@@ -151,8 +151,11 @@ var
     settings_mailbox_slash_delimiter = true,
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
-    settings_sysinfo_csf_updates = true,
     settings_sysinfo_query_timeout = 1000,
+
+    // ConfigServer Security & Firewall related
+    settings_sysinfo_csf_updates = true,
+    settings_sysinfo_csf_temp_list_privileged = true,
 
     // Control min and max time for branding to show in seconds
     settings_product_branding_show_time_min_privileged = 1,
