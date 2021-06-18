@@ -976,7 +976,7 @@ sub get_button_style
         $icon  = " fa2 fa2-certificate-delete";
     } elsif (string_contains($keys, "cert_copyall2")) {
         $class = "info ";
-        $icon = " fa2 fa2-certificate-global";
+        $icon  = " fa2 fa2-certificate-global";
     } elsif (string_contains($keys, "cert_copyall")) {
         $class = "info ";
         $icon  = " fa2 fa2-certificate-add";
@@ -1222,7 +1222,10 @@ sub get_button_style
              string_contains($keys, "rdmass_ok"))
     {
         $icon = "times-circle-o";
-    } elsif (string_contains($keys, "users_dok") || string_contains($keys, "users_delete") || string_contains($keys, "users_dconfirm")) {
+    } elsif (string_contains($keys, "users_dok") ||
+             string_contains($keys, "users_delete") ||
+             string_contains($keys, "users_dconfirm"))
+    {
         $class = "danger ";
         $icon  = "user-times";
     } elsif (string_contains($keys, "index_mass2")) {
@@ -1347,7 +1350,8 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
+    return 'data-redirect="' . get_theme_temp_data('redirected') .
+      '" data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
       format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
       ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
       '"' . ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
@@ -1365,11 +1369,10 @@ sub header_html_data
       . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
       ' data-editor-palette="' . $theme_config{'settings_cm_editor_palette'} .
       '" data-theme-version="' . theme_version(0) . '" data-theme-mversion="' . theme_version(0, 1) .
-      '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' .
-      get_user_id() . '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' .
-      get_current_user_language() . '" data-language-full="' . get_current_user_language(1) . '" data-charset="' .
-      get_charset() . '" data-notice="' . theme_post_update() . '" data-redirect="' . get_theme_temp_data('redirected') .
-      '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
+      '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
+      '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
+      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' .
+      theme_post_update() . '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
       '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
       '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
