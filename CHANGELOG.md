@@ -1,7 +1,12 @@
 ## Changelog
 
+#### Version 19.82-RC1 (June 19, 2021)
+* Fiх to speed up parsing data in match [#1497](https://github.com/authentic-theme/authentic-theme/issues/1497)
+* Fix to update search directory and allow it being modified in File Manager search dialog
+* Fix automatic page scrolling
+
 #### Version 19.81 (June 12, 2021)
-* Fiх bugs [#1548](https://github.com/authentic-theme/authentic-theme/issues/1548) [#1552](https://github.com/authentic-theme/authentic-theme/issues/1552)
+* Fix bugs [#1548](https://github.com/authentic-theme/authentic-theme/issues/1548) [#1552](https://github.com/authentic-theme/authentic-theme/issues/1552)
 
 #### Version 19.80 (June 10, 2021)
 * Add improvements to various aspects of the UI [forum.virtualmin.com/t/111034](https://forum.virtualmin.com/t/authentic-theme-19-80-release-overview/111034)
@@ -10,7 +15,7 @@
 * Fiх file tree-view issues when used with various allowed paths in File Manager [webmin/webmin#1487](https://github.com/webmin/webmin/issues/1487)
 * Fix progressive output content extraction and loader premature dismissal issue
 * Fix emails printing and other UI issues for Read User Mail module
-* Fiх bugs for Servers Index module [#1540](https://github.com/authentic-theme/authentic-theme/issues/1540)
+* Fix bugs for Servers Index module [#1540](https://github.com/authentic-theme/authentic-theme/issues/1540)
 * Fix various other issues
 
 #### Version 19.75 (April 19, 2021)
@@ -27,7 +32,7 @@
 * Add an option to force stats collection when tab is not focused [webmin/webmin#1460](https://github.com/webmin/webmin/issues/1460#issuecomment-801078993)
 * Add to display question mark icon next to any help link which brings tooltip
 * Add better wrapping of large tables for better mobile support
-* Fiх theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
+* Fix theme configuration page to work with older Perl versions [#1520](https://github.com/authentic-theme/authentic-theme/issues/1520)
 * Fix help popovers to work with links and adjust to content
 * Fix to display start/kill buttons for Scheduled Cron Jobs module
 * Fix various inconsistencies in animation and improve visual performance
