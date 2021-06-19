@@ -510,6 +510,7 @@ sub embed_js_scripts
 
 sub embed_noscript
 {
+    return if (http_x_request());
     my $noscript = <<EOF;
       <noscript>
       <style>
