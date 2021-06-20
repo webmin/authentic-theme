@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.82-RC2 (June 20, 2021)
+#### Version 19.82-RC3 (June 20, 2021)
 * Add ability to install previous stable theme versions from a dropdown on theme configuration page
 * Fiх data parsing regression on page load [webmin/webmin#1497](https://github.com/webmin/webmin/issues/1497)
 * Fix to update search directory and allow it being modified in File Manager search dialog
