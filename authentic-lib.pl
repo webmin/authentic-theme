@@ -1627,7 +1627,7 @@ sub get_theme_user_link
       ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' . ($theme_webprefix . $link) .
       '" data-href="' . ($theme_webprefix . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' .
       $is_hidden . '" data-container="body" title="' . $theme_text{'settings_right_theme_left_configuration_title'} .
-      '"><i class="fa2 fa-fw fa2-palette fa-0_90x"></i></a></div>';
+      '"><i class="fa2 fa-fw fa2-palette"></i></a></div>';
 }
 
 sub get_xhr_request
