@@ -5,7 +5,15 @@
 #
 use strict;
 
-our (%gconfig, %text, %theme_config, %theme_text, $has_usermin, $has_usermin_root_dir, $get_user_level);
+our (%gconfig,
+     %text,
+     $root_directory,
+     $current_theme,
+     %theme_config,
+     %theme_text,
+     $has_usermin,
+     $has_usermin_root_dir,
+     $get_user_level);
 
 sub theme_settings_raw
 {
@@ -568,7 +576,23 @@ sub theme_settings_format
 
 sub theme_controls
 {
-    my ($section) = @_;
+    my ($section)                 = @_;
+    my $changelog_contents        = read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md");
+    my @changelog_stable_versions = ($changelog_contents =~ /####\s+Version\s+(\d+.\d+\s+\([\d\w\s,]+\))/g);
+    my $stable_versions_dropdown_submenu;
+    my $stable_versions_dropdown_submenu_content;
+    if (@changelog_stable_versions) {
+        $stable_versions_dropdown_submenu         = ' class="dropdown-submenu prelocked clickable"';
+        $stable_versions_dropdown_submenu_content = '<ul class="dropdown-menu theme-versions" role="menu">';
+        foreach my $ver (@changelog_stable_versions) {
+            my ($ver_str) = ($ver =~ /^(\d+.\d+)\s+/);
+            $stable_versions_dropdown_submenu_content .=
+              '<li><a tabindex="-1" href="javascript:;" data-git="1" data-stable="1" data-version="' .
+              $ver_str . '" class="authentic_update">&nbsp;' . $ver . '</a></li>';
+        }
+        $stable_versions_dropdown_submenu_content .= '</ul>';
+    }
+
     my $update_dropdown = (
         ($get_user_level eq '0' && $section eq $theme_text{'settings_right_soft_updates_page_options'}) ?
           '                     <span id="force_update_menu_cnt" class="dropup"'
@@ -578,17 +602,19 @@ sub theme_controls
               get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
           ) .
           '>
-                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover capitalize' .
-          (has_command('git') ? undef : ' disabled') .
+                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover capitalize'
+          . (has_command('git') ? undef : ' disabled') .
           '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                          <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' .
           $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
                                          <span class="caret"></span>
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
-                                         <li><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-package-install margined-right-8"></i>'
-          . $theme_text{'theme_xhred_force_upgrade_stable'} . '</a></li>
-                                         <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa fa-fw fa-git-commit margined-right-8"></i>'
+                                         <li' . $stable_versions_dropdown_submenu .
+'><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa2 fa2-release-tagged fa-0_90x"></i>'
+          . $theme_text{'theme_xhred_force_upgrade_stable'}
+          . '</a>' . $stable_versions_dropdown_submenu_content . '</li>
+                                         <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa2 fa2-release-master"></i>'
           . $theme_text{'theme_xhred_force_upgrade_beta'} . '</a></li>
                                        </ul>
                                    </span>'

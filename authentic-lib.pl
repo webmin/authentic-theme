@@ -1781,6 +1781,7 @@ sub get_xhr_request
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};
+            my $update_version          = $in{'xhr-update-version'};
             my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
                 @update_rs = { "no_git" =>
@@ -1790,7 +1791,7 @@ sub get_xhr_request
                                  ), };
                 print convert_to_json(\@update_rs);
             } else {
-                if ($update_force ne "1") {
+                if ($update_force ne "1" && !$update_version) {
                     my $authentic_remote_data;
 
                     if ($version_type eq '-release') {
@@ -1813,6 +1814,7 @@ sub get_xhr_request
                 }
                 my $usermin = ($has_usermin && $usermin_enabled_updates);
                 my $usermin_root;
+                $version_type = "$version_type:$update_version" if ($update_version);
                 backquote_logged("yes | $root_directory/$current_theme/theme-update.sh $version_type -no-restart");
                 if ($usermin) {
                     $usermin_root = $root_directory;
