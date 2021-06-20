@@ -653,9 +653,6 @@ sub init_vars
         do("$root_directory/$current_theme/.debug.pl");
     }
 
-    my %tconfig_local = settings("$config_directory/$current_theme/config");
-    our %tconfig = (%tconfig, %tconfig_local);
-
     our %theme_config = (settings(get_tdconfig_file()),
                          settings(get_taconfig_file()),
                          settings(get_tgconfig_file(), "settings_"),

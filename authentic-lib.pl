@@ -676,9 +676,10 @@ sub get_sysinfo_vars
         if ($get_user_level eq '0') {
 
             # Theme version/update
-            my $authentic_remote_data       = theme_remote_version(1);
-            my $authentic_installed_version = theme_version();
-            my $incompatible                = theme_update_incompatible($authentic_remote_data);
+            my $authentic_remote_data             = theme_remote_version(1);
+            my $authentic_installed_version       = theme_version();
+            my $authentic_installed_version_devel = $authentic_installed_version =~ /alpha|beta|RC/;
+            my $incompatible                      = theme_update_incompatible($authentic_remote_data);
 
             ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
             my $authentic_remote_version_local = $authentic_remote_version;
@@ -693,8 +694,7 @@ sub get_sysinfo_vars
                     &&
                     (
                         (
-                         ($authentic_remote_version_local !~ /alpha|beta|RC/ &&
-                          $authentic_installed_version    =~ /alpha|beta|RC/
+                         ($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel
                          ) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
@@ -712,11 +712,10 @@ sub get_sysinfo_vars
                   '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
                   $theme_text{'theme_name'} . '</a> ' . $authentic_installed_version . '. ' .
                   ($authentic_remote_beta ? $theme_text{'theme_git_patch_available'} : $theme_text{'theme_update_available'})
-                  . ' ' . $authentic_remote_version_local . '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="'
-                  .
-                  ( $authentic_remote_beta ? 1 :
-                      0
-                  ) .
+                  . ' ' . $authentic_remote_version_local .
+                  '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="1" data-stable="' .
+                  ((($authentic_remote_beta && $tconfig{'beta_updates'} eq '1') || $authentic_installed_version_devel) ?
+                    0 : 1) .
                   '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
                   ' authentic_update" href=\'' . $theme_webprefix . '/tconfig.cgi\'><i class="fa fa-fw ' .
                   ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
@@ -1416,9 +1415,10 @@ sub theme_remote_version
     my $remote_version = 0;
     my $remote_release;
     my $error;
+    my $installed_version_devel = theme_version() =~ /alpha|beta|RC/;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
-        if (($tconfig{'beta_updates'} eq '1' || $force_beta_check) && !$force_stable_check) {
+        if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
             if (!$nocache) {
                 $remote_version = theme_cached('version-theme-development');
             }
@@ -1624,10 +1624,10 @@ sub get_theme_user_link
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' .
-      ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' . ($theme_webprefix . $link) .
-      '" data-href="' . ($theme_webprefix . $link) . '" class="btn btn-default btn-xxs btn-hidden hidden' .
-      $is_hidden . '" data-container="body" title="' . $theme_text{'settings_right_theme_left_configuration_title'} .
-      '"><i class="fa2 fa-fw fa2-palette"></i></a></div>';
+      ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' .
+      ($theme_webprefix . $link) . '" data-href="' . ($theme_webprefix . $link) .
+      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
+      $theme_text{'settings_right_theme_left_configuration_title'} . '"><i class="fa2 fa-fw fa2-palette"></i></a></div>';
 }
 
 sub get_xhr_request
