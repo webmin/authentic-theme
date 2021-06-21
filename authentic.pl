@@ -301,100 +301,98 @@ sub theme_ui_upload
 
 sub theme_icons_table
 {
-    my $hide_table_icons = ($theme_config{'settings_right_hide_table_icons'} eq 'true' ? 1 : 0);
-    print '<div class="row icons-row' . (!$hide_table_icons && ' vertical-align') . '">' . "\n";
+    my $sm = $theme_config{'settings_right_small_table_icons'} eq 'true' ? ' small-icons' : undef;
+    my $ff;
+    my $in = scalar(@{ $_[0] });
+    print "<div class=\"row icons-row$sm\">\n";
     for (my $i = 0; $i < @{ $_[0] }; $i++) {
-
-        $hide_table_icons &&
-          print '<div style="margin-bottom: -5px; text-align: left;" class="col-sm-3">' . "\n";
         &generate_icon($_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref($_[4]) ? $_[4]->[$i] : $_[4],
                        $_[5], $_[6], $_[7]->[$i], $_[8]->[$i]);
-
-        $hide_table_icons && print '</div>' . "\n";
+        $ff .= '<div class="icons-container-filler"></div>', "\n" if (!$sm);
     }
-    print '</div>' . "\n";
+    if ($in < 2) {
+        $ff .= "$ff" x 16;
+    } elsif ($in < 4) {
+        $ff .= "$ff" x 8;
+    } elsif ($in < 8) {
+        $ff .= "$ff" x 4;
+    } elsif ($in < 16) {
+        $ff .= "$ff" x 2;
+    }
+    print "$ff</div>\n";
 }
 
 sub theme_generate_icon
 {
     my ($icon, $title, $link, $href, $width, $height, $before, $after) = @_;
-    if ($theme_config{'settings_right_hide_table_icons'} eq 'true') {
-        print '<div>';
-        print $before;
-        print '<a' . ($before ? ' class="inline-block"' : ' ') .
-          'href="' . $link . '" ' . $href . '><p><i class="fa fa-fw fa-angle-right' .
-          ($before ? ' hidden' : '') . '">&nbsp;&nbsp;</i>' . $title . '</p></a>';
-        print $after;
+    my $icon_outer = $icon;
+    my $wp         = $gconfig{'webprefix'};
+
+    $icon =~ s/^$wp//g if ($wp);
+    $icon =~ s/\/images//g;
+    $icon =~ s/images//g;
+
+    my $grayscaled_table_icons = ($theme_config{'settings_right_grayscaled_table_icons'} ne 'false' ? 0 : 1);
+    my $animate_table_icons = ($theme_config{'settings_right_animate_table_icons'} ne 'false' ? 0 :
+                                 1);
+    (my $___svg = $icon) =~ s/.gif/.svg/;
+
+    (!-r $root_directory . "/" . get_module_name() . "/" . $icon_outer) &&
+      ($icon_outer = undef);
+
+    my $mod            = get_module_name();
+    my $images_modules = 'images/modules';
+    my $root_images    = $root_directory . "/$current_theme/$images_modules/";
+    my $__icon = (-r $root_images . $icon            ? $wp . "/$images_modules" . $icon :
+                    -r $root_images . $mod . $icon   ? $wp . "/$images_modules/" . $mod . $icon :
+                    -r $root_images . $mod . $___svg ? $wp . "/$images_modules/" . $mod . $___svg :
+                    $icon_outer                      ? $icon_outer :
+                    ($wp . "/images/not_found.svg"));
+
+    if ($theme_config{'settings_right_small_table_icons'} eq 'true') {
+        print '<div class="col-xs-1 small-icons-container' .
+          (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
+          '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
+          '" data-title="' . $title . '" data-toggle="tooltip" data-container="body">';
+        if ($_[6] || $_[7]) {
+            if ($_[6]) {
+                print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
+            }
+            if ($_[7]) {
+                print
+"<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
+            }
+        }
+        print "<a href=\"$link\" class=\"icon_link\">" . '<img class="ui_icon' .
+          ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt="">';
+        print "<span class=\"hidden\">$title</span></a>\n";
         print '</div>';
     } else {
-        my $icon_outer = $icon;
-        my $wp         = $gconfig{'webprefix'};
-
-        $icon =~ s/^$wp//g if ($wp);
-        $icon =~ s/\/images//g;
-        $icon =~ s/images//g;
-
-        my $grayscaled_table_icons = ($theme_config{'settings_right_grayscaled_table_icons'} ne 'false' ? 0 : 1);
-        my $animate_table_icons = ($theme_config{'settings_right_animate_table_icons'} ne 'false' ? 0 :
-                                     1);
-        (my $___svg = $icon) =~ s/.gif/.svg/;
-
-        (!-r $root_directory . "/" . get_module_name() . "/" . $icon_outer) &&
-          ($icon_outer = undef);
-
-        my $mod            = get_module_name();
-        my $images_modules = 'images/modules';
-        my $root_images    = $root_directory . "/$current_theme/$images_modules/";
-        my $__icon = (-r $root_images . $icon            ? $wp . "/$images_modules" . $icon :
-                        -r $root_images . $mod . $icon   ? $wp . "/$images_modules/" . $mod . $icon :
-                        -r $root_images . $mod . $___svg ? $wp . "/$images_modules/" . $mod . $___svg :
-                        $icon_outer                      ? $icon_outer :
-                        ($wp . "/images/not_found.svg"));
-
-        if ($theme_config{'settings_right_small_table_icons'} eq 'true') {
-            print '<div class="col-xs-1 small-icons-container' .
-              (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
-              '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
-              '" data-title="' . $title . '" data-toggle="tooltip" data-placement="auto top" data-container="body">';
-            if ($_[6] || $_[7]) {
-                if ($_[6]) {
-                    print "<span class='hidden-forged hidden-forged-6'>$_[6]</span>\n";
-                }
-                if ($_[7]) {
-                    print
-"<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
-                }
+        print '<div class="col-xs-1 icons-container' . (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
+          '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
+          '" data-title="' . (($theme_config{'settings_right_small_table_icons'} eq 'true') ? $title : '') .
+          '" data-toggle="tooltip" data-container="body">';
+        if ($_[6] || $_[7]) {
+            if ($_[6]) {
+                print "<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";
             }
-            print "<a href=\"$link\" class=\"icon_link\">" . '<img class="ui_icon' .
-              ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt="">';
-            print "<span class=\"hidden\">$title</span></a>\n";
-            print '</div>';
-        } else {
-            print '<div class="col-xs-1 icons-container' . (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
-              '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
-              '" data-title="' . (($theme_config{'settings_right_small_table_icons'} eq 'true') ? $title : '') .
-              '" data-toggle="tooltip" data-placement="auto top" data-container="body">';
-            if ($_[6] || $_[7]) {
-                if ($_[6]) {
-                    print "<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";
-                }
-                if ($_[7]) {
-                    print
+            if ($_[7]) {
+                print
 "<span style='position: absolute; top:2px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
-                }
             }
-            print "<a href=\"$link\" class=\"icon_link\" data-title=\""
-              .
-              ( ($_[6] || $_[7]) ? $title :
-                  (string_contains($title, '<tt') ? "<span class='word-break-all'>$title</span>" : undef)
-              ) .
-              "\" data-toggle=\"tooltip\" data-placement=\"auto bottom\" data-container=\"body\" " .
-              (string_contains($title, '<tt') ? " data-fbplacement" : undef) . ">" . '<img class="ui_icon' .
-              ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt=""><br>';
-            print "$title</a>\n";
-            print '</div>';
         }
+        print "<a href=\"$link\" class=\"icon_link\" data-title=\""
+          .
+          ( ($_[6] || $_[7]) ? $title :
+              (string_contains($title, '<tt') ? "<span class='word-break-all'>$title</span>" : undef)
+          ) .
+          "\" data-toggle=\"tooltip\" data-placement=\"auto bottom\" data-container=\"body\" " .
+          (string_contains($title, '<tt') ? " data-fbplacement" : undef) . ">" . '<img class="ui_icon' .
+          ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt=""><br>';
+        print "$title</a>\n";
+        print "</div>\n";
     }
+
 }
 
 sub theme_ui_columns_start

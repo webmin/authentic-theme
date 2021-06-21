@@ -59,7 +59,6 @@ var
     settings_side_slider_favorites_enabled = true,
 
     // Table options
-    settings_right_hide_table_icons = false,
     settings_right_small_table_icons = false,
     settings_right_animate_table_icons = true,
     settings_right_grayscaled_table_icons = true,

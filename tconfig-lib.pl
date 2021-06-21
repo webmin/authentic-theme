@@ -107,7 +107,6 @@ sub theme_settings_raw
          {  'id'    => 's5',
             'title' => &theme_text('settings_right_table_options'),
             'data'  => [
-                       'settings_right_hide_table_icons',
                        'settings_right_small_table_icons',
                        'settings_right_animate_table_icons',
                        'settings_right_grayscaled_table_icons',
