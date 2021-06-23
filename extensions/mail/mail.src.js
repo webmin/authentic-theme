@@ -3128,7 +3128,7 @@ const mail = (function() {
                                             $$.create.$('layout.column.9', 0, 'span',
                                                 $$.create.radio(0, 'limit_def', 1, _.lang('global_no'), 'limit_def0', 'checked') +
                                                 $$.create.radio(0, 'limit_def', 0, _.lang('mail_search_limit_results_yes') + ' ' + $$.create.input(
-                                                    'limit', '', 20, 'number', ['step="20"', 'min="10"']) + ' latest messages', 'limit_def1')
+                                                    'limit', '', 20, 'number', ['step="10"', 'min="10"']) + ' latest messages', 'limit_def1')
                                             )
                                         )
                                     ),
