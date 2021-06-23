@@ -1,8 +1,8 @@
 ## Changelog
 
-#### Version 19.82-RC5 (June 22, 2021)
+#### Version 19.82-RC6 (June 23, 2021)
 * Add ability to install previous stable theme versions from a dropdown on theme configuration page
-* Fix table icons to dinamically fill flex container
+* Fix table icons to dynamically fill flex container
 * Fiх data parsing regression on page load [webmin/webmin#1497](https://github.com/webmin/webmin/issues/1497)
 * Fix to update search directory and allow it being modified in File Manager search dialog
 * Fix automatic page scrolling
