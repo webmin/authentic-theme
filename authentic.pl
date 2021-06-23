@@ -779,7 +779,7 @@ sub theme_ui_oneradio
       &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\_$rand\"" .
       ($tags ? " " . $tags : "") . ">";
     $ret .=
-      '<label class="lawobject" for="' . $id . '_' . $rand . '">' . (length $label ? $label : '&nbsp;') . '</label></span>';
+      '<label class="lawobject" for="' . $id . '_' . $rand . '">' . (length $label ? "&nbsp;&nbsp;$label&nbsp;" : '&nbsp;&nbsp;') . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
