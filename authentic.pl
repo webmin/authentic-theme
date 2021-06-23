@@ -743,7 +743,7 @@ sub theme_ui_radio
         $rv .= $o->[2] . ' ';
         $rv .= '><label class="lawobject" ';
         $rv .= 'for="' . $id . '_' . $rand . '">';
-        $rv .= '' . (length $label ? $label : '&nbsp;');
+        $rv .= '' . (length $label ? "&nbsp;&nbsp;$label&nbsp;" : '&nbsp;&nbsp;');
         $rv .= '</label></span>' . $after . "\n";
     }
 
