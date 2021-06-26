@@ -1,11 +1,13 @@
 ## Changelog
 
-#### Version 19.82-RC8 (June 25, 2021)
+#### Version 19.82 (June 26, 2021)
 * Add ability to install previous stable theme versions from a dropdown on theme configuration page
-* Fix table icons to dynamically fill flex container
 * Fiх data parsing regression on page load [webmin/webmin#1497](https://github.com/webmin/webmin/issues/1497)
+* Fix font rendering for Microsoft Windows users
+* Fix table icons to dynamically fill flex container
 * Fix to update search directory and allow it being modified in File Manager search dialog
 * Fix automatic page scrolling
+* Fix other bugs
 
 #### Version 19.81 (June 12, 2021)
 * Fiх theme update script to function if repo moved to new organization [#1548](https://github.com/authentic-theme/authentic-theme/issues/1548)
@@ -19,7 +21,6 @@
 * Fix progressive output content extraction and loader premature dismissal issue
 * Fix emails printing and other UI issues for Read User Mail module
 * Fiх bugs for Servers Index module [#1540](https://github.com/authentic-theme/authentic-theme/issues/1540)
-* Fix various other issues
 
 #### Version 19.75 (April 19, 2021)
 * Add improvements to color palettes for navigation menu and side slider
