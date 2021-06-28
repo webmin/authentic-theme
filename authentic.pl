@@ -532,7 +532,7 @@ sub theme_select_rows_link
     $form = int($form);
     my $js = "var sel = { " . join(",", map {"\"" . &quote_escape($_) . "\":1"} @$rows) . " }; ";
     $js .=
-"for(var i=0; i<document.forms[$form].${field}.length; i++) { var r = document.forms[$form].${field}[i]; r.checked = sel[r.value]; } ";
+"for(var i=0; i<document.forms[$form].${field}.length; i++) { var r = document.forms[$form].${field}[i]; r.checked = sel[r.value]; \$(r).trigger(\"change\"); } ";
     $js .= "return false;";
     return "<a href='#' onClick='$js'>$text</a>";
 }
