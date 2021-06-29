@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.82 (June 26, 2021)
+#### Version 19.82 (June 29, 2021)
 * Add ability to install previous stable theme versions from a dropdown on theme configuration page
 * Fiх data parsing regression on page load [webmin/webmin#1497](https://github.com/webmin/webmin/issues/1497)
+* Fix broken after content for radio subroutine in theme UI library
+* Fix to update search directory and allow it being modified in File Manager search dialog
 * Fix font rendering for Microsoft Windows users
 * Fix table icons to dynamically fill flex container
-* Fix to update search directory and allow it being modified in File Manager search dialog
 * Fix automatic page scrolling
 * Fix other bugs
 
