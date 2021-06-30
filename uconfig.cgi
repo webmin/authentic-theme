@@ -58,6 +58,7 @@ foreach my $i (@info_order) {
     } else {
         my $value = $p[0];
         $value =~ s/<(?:[^>'"]*|(['"]).*?\1)*>//gs;
+        $value = &entities_to_ascii($value);
         push(@config_quick_access,
              {  value   => $value,
                 section => $config_quick_access_section,
