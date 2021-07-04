@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.83-RC1 (July 04, 2021)
+* Fix mail related issues for Usermin
+
 #### Version 19.82 (June 29, 2021)
 * Add ability to install previous stable theme versions from a dropdown on theme configuration page
 * Fiх data parsing regression on page load [webmin/webmin#1497](https://github.com/webmin/webmin/issues/1497)
