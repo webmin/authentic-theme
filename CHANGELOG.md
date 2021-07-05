@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.83-RC1 (July 04, 2021)
+#### Version 19.83-RC2 (July 05, 2021)
 * Fix mail related issues for Usermin
 
 #### Version 19.82 (June 29, 2021)
