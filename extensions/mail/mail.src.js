@@ -3238,12 +3238,11 @@ const mail = (function() {
                                 }
 
                                 // Refresh the page if user is not interacting with the page or idle for more than 60 seconds
-                                let last_interaction_ago = parseInt((Date.now() - last_interaction_time) / 1000),
+                                let is_active_search = $$.element('controls.search.clear.icon').length,
                                     is_checked = panel.find('[name="d"]:checked').length,
                                     is_pagination = panel.find('[href*="index.cgi"][href*="start=0"]').length,
                                     is_open = panel.find('.open').length;
-                                if (((is_checked || is_pagination || is_open) && last_interaction_ago > 60) ||
-                                    (!is_checked && !is_pagination && !is_open)) {
+                                if (!is_checked && !is_pagination && !is_open && !is_active_search) {
                                     refreshing();
                                 }
                             }, parseInt(config.d.u.refresh) * 1000);
