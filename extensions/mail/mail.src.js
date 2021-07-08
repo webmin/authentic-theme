@@ -3237,7 +3237,7 @@ const mail = (function() {
                                     this.refresh(false, true);
                                 }
 
-                                // Refresh the page if user is not interacting with the page or idle for more than 60 seconds
+                                // Refresh the page if user is not interacting with the page
                                 let is_active_search = $$.element('controls.search.clear.icon').length,
                                     is_checked = panel.find('[name="d"]:checked').length,
                                     is_pagination = panel.find('[href*="index.cgi"][href*="start=0"]').length,
