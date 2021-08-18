@@ -1,8 +1,11 @@
 ## Changelog
 
-#### Version 19.83-RC4 (July 11, 2021)
+#### Version 19.83-RC5 (August 18, 2021)
+* Fiх displaying modal window above the backdrop in File Manager on Apple mobile devices [webmin/webmin#1508](https://github.com/webmin/webmin/issues/1508)
+* Fiх to respect Webmin _nohostname_ config option when generating document title [#1554](https://github.com/authentic-theme/authentic-theme/issues/1554)
 * Fix mail related issues for Usermin
-* Fix more column labels align
+* Fix elements vertical alignments
+* Fix other minor bugs
 
 #### Version 19.82 (June 29, 2021)
 * Add ability to install previous stable theme versions from a dropdown on theme configuration page
@@ -12,7 +15,6 @@
 * Fix font rendering for Microsoft Windows users
 * Fix table icons to dynamically fill flex container
 * Fix automatic page scrolling
-* Fix other bugs
 
 #### Version 19.81 (June 12, 2021)
 * Fiх theme update script to function if repo moved to new organization [#1548](https://github.com/authentic-theme/authentic-theme/issues/1548)
