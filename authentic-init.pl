@@ -119,12 +119,12 @@ sub embed_favicon
         print ' <link ' .
           $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
 
-        print ' <link ' .
-          $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' . $favicon_path . '/manifest.json">' . "\n";
+        print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
+          $theme_webprefix . '/manifest-' . $product . '.json">' . "\n";
         print ' <link ' . $ref_link .
           ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="' . get_theme_color() . '">' . "\n";
         print ' <meta ' .
-          $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-144x144.png">' . "\n";
+          $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-150x150.png">' . "\n";
     }
 
     # Embed custom favicons using base64 encoding
@@ -137,9 +137,14 @@ sub embed_favicon
           trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png')))) . '">' . "\n";
         print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
           trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png')))) . '">' . "\n";
+        if (-r "$favicon_cpath/manifest.json") {
+            print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
+              $theme_webprefix . '/manifest-c-' . $product . '.json">' . "\n";
+        }
     }
     print ' <meta name="msapplication-TileColor" content="' . get_theme_color() . '">' . "\n";
     print ' <meta name="theme-color" content="' . get_theme_color() . '">' . "\n";
+    print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
 }
 
 sub embed_header
