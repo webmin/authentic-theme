@@ -1198,7 +1198,7 @@ sub embed_login_head
     print '<head>', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
-    embed_favicon();
+    embed_favicon('login-page');
     print '<title>', $title, '</title>', "\n";
     print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
 
@@ -2038,7 +2038,7 @@ sub update_notice
                 <hr>
                 <h4 data-development style="margin-top:20px;">'
       . $theme_text{'theme_development_support'} .
-'&nbsp;&nbsp;<a href="https://github.com/authentic-theme/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg faa-pulse animated-hover fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
+'&nbsp;&nbsp;<a href="https://github.com/authentic-theme/authentic-theme#donate" target="_blank" class="fa fa-fw fa-lg fa-heartbeat" style="color: #c9302c; cursor: alias;"></a></h4>'
       .
       theme_text(
         'theme_update_footer',
