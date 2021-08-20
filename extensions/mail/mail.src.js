@@ -62,6 +62,11 @@ const mail = (function() {
             pjax: {
                 fetch: get_pjax_content,
             },
+            fetch: {
+                options: {
+                    headers: { 'x-requested-with': 'XMLHttpRequest' },
+                }
+            },
             load: load,
             sdata: get_server_data,
             mavailable: core.moduleAvailable,
@@ -901,7 +906,7 @@ const mail = (function() {
                 }
 
                 // Get reply form as provided
-                fetch(`${prefix}/${xtarget.reply}?${form}`)
+                fetch(`${prefix}/${xtarget.reply}?${form}`, _.fetch.options)
                     .then(rs => {
                         return rs.text();
                     }).then(rs => {
@@ -1381,7 +1386,7 @@ const mail = (function() {
 
                                                     // Discard the draft
                                                     purge: function(id, folder, message) {
-                                                        fetch(`${xtarget.delete}&id=${id}&folder=${folder}&d=${message}`).then(r => {
+                                                        fetch(`${xtarget.delete}&id=${id}&folder=${folder}&d=${message}`, _.fetch.options).then(r => {
                                                             r.text().then(() => {
                                                                 draft.refresh();
                                                             });
@@ -1529,7 +1534,7 @@ const mail = (function() {
                                                     }).then(file => {
                                                         if (file) {
                                                             let suid = generate.random();
-                                                            fetch(xtarget.getSize + file).then(r => {
+                                                            fetch(xtarget.getSize + file, _.fetch.options).then(r => {
                                                                 r.text().then(rs => {
                                                                     let s = rs.split(`|`),
                                                                         size = s[1].replace(/\s+/g, String());
@@ -1665,7 +1670,7 @@ const mail = (function() {
                                             scheduled.events();
 
                                             // Bring address book autocompletion
-                                            fetch(xtarget.addressBook)
+                                            fetch(xtarget.addressBook, _.fetch.options)
                                                 .then(function(rs) {
                                                     return rs.text();
                                                 })
@@ -2837,7 +2842,7 @@ const mail = (function() {
                  */
                 $($$.$.controls.search.link).on('click', function() {
                     let link = this.getAttribute('data-href');
-                    fetch(link)
+                    fetch(link, _.fetch.options)
                         .then(function(response) {
                             return response.json();
                         })
@@ -3556,4 +3561,3 @@ const mail = (function() {
         compose: compose.message
     }
 })();
-
