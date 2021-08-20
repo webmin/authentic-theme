@@ -1869,6 +1869,7 @@ const mail = (function() {
                                                 let xhr = new XMLHttpRequest(),
                                                     link = ((scheduled.status() && !draft_status) ? xtarget.schedule : form.getAttribute('action'));
                                                 xhr.open("POST", link);
+                                                xhr.setRequestHeader('x-requested-with', 'XMLHttpRequest');
                                                 xhr.upload.onprogress = (e) => {
                                                     !draft_status &&
                                                         (
