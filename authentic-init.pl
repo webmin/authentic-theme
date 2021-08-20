@@ -119,7 +119,7 @@ sub embed_favicon
     $manifest_contents =~ s/\%desc\%/$manifest_desc/;
     $manifest_contents =~ s/\%prod\%/$product_name/g;
     $manifest_contents =~ s/\%color\%/$manifest_color/;
-    write_file_contents("$config_directory/$current_theme/manifest.json", $manifest_contents);
+    write_file_contents("$config_directory/$current_theme/manifest-$product_name.json", $manifest_contents);
 
     my $favicon_path = $theme_webprefix . '/images/favicons/' . $product_name;
     my $ref_link     = 'data-link-ref';
@@ -159,7 +159,7 @@ sub embed_favicon
     print ' <meta name="theme-color" content="' . $manifest_color . '">' . "\n";
     print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
     print ' <link ' . $ref_link .
-      ' crossorigin="use-credentials" rel="manifest" href="' . $theme_webprefix . '/manifest-' . $product . '.json">' . "\n";
+      ' crossorigin="use-credentials" rel="manifest" href="' . $theme_webprefix . '/manifest-' . $product_name . '.json">' . "\n";
 }
 
 sub embed_header
