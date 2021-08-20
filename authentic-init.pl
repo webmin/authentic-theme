@@ -102,6 +102,7 @@ sub embed_favicon
     }
 
     # Generate manifest file from template
+    my $theme_config_dir         = "$config_directory/$current_theme";
     my $display_hostname         = get_display_hostname();
     my $manifest_product_name_uc = ucfirst($product_name);
     my $manifest_product_name_uc_with_hostname =
@@ -119,13 +120,13 @@ sub embed_favicon
     $manifest_contents =~ s/\%desc\%/$manifest_desc/;
     $manifest_contents =~ s/\%prod\%/$product_name/g;
     $manifest_contents =~ s/\%color\%/$manifest_color/;
-    write_file_contents("$config_directory/$current_theme/manifest-$product_name.json", $manifest_contents);
+    write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents) if (-w $theme_config_dir);
 
     my $favicon_path = $theme_webprefix . '/images/favicons/' . $product_name;
     my $ref_link     = 'data-link-ref';
 
     my $favicon_dpath = "$root_directory/$current_theme/images/favicons/$product_name";
-    my $favicon_cpath = "$config_directory/$current_theme/favicons/$product_name";
+    my $favicon_cpath = "$theme_config_dir/favicons/$product_name";
     my $favicon_spath = -r $favicon_cpath ? $favicon_cpath : $favicon_dpath;
 
     # Embed standard favicons using a direct link
@@ -158,8 +159,8 @@ sub embed_favicon
     print ' <meta name="msapplication-TileColor" content="' . $manifest_color . '">' . "\n";
     print ' <meta name="theme-color" content="' . $manifest_color . '">' . "\n";
     print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
-    print ' <link ' . $ref_link .
-      ' crossorigin="use-credentials" rel="manifest" href="' . $theme_webprefix . '/manifest-' . $product_name . '.json">' . "\n";
+    print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
+      $theme_webprefix . '/manifest-' . $product_name . '.json">' . "\n";
 }
 
 sub embed_header
