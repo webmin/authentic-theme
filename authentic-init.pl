@@ -91,7 +91,10 @@ sub get_theme_color
 
 sub embed_favicon
 {
+    my ($is_login_page) = @_;
+
     return if ($theme_config{"settings_embed_favicon_privileged"} eq 'false');
+
     my $product      = get_product_name() eq 'usermin' ? 'usermin' : 'webmin';
     my $product_name = $product;
     if ($get_user_level eq '1' || $get_user_level eq '2') {
@@ -101,26 +104,8 @@ sub embed_favicon
         $product_name = 'cloudmin';
     }
 
-    # Generate manifest file from template
-    my $theme_config_dir         = "$config_directory/$current_theme";
-    my $display_hostname         = get_display_hostname();
-    my $manifest_product_name_uc = ucfirst($product_name);
-    my $manifest_product_name_uc_with_hostname =
-      $manifest_product_name_uc . ($display_hostname ? " on " . $display_hostname : "");
-    my %manifest_prod_descs = ('webmin'     => 'Powerful and flexible web-based server management control panel',
-                               'usermin'    => 'Powerful and flexible web-based user management interface',
-                               'virtualmin' => 'Powerful and flexible web hosting control panel',
-                               'cloudmin'   => 'Powerful and flexible cloud computing platform');
-    my $manifest_desc     = $manifest_prod_descs{$product_name};
-    my $manifest_color    = get_theme_color() || "#0d5ab7";
-    my $manifest_file     = "$root_directory/$current_theme/manifest.template";
-    my $manifest_contents = read_file_contents($manifest_file);
-    $manifest_contents =~ s/\%name\%/$manifest_product_name_uc_with_hostname/;
-    $manifest_contents =~ s/\%name_short\%/$manifest_product_name_uc/;
-    $manifest_contents =~ s/\%desc\%/$manifest_desc/;
-    $manifest_contents =~ s/\%prod\%/$product_name/g;
-    $manifest_contents =~ s/\%color\%/$manifest_color/;
-    write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents) if (-w $theme_config_dir);
+    my $theme_config_dir = "$config_directory/$current_theme";
+    my $theme_user_color = get_theme_color() || "#0d5ab7";
 
     my $favicon_path = $theme_webprefix . '/images/favicons/' . $product_name;
     my $ref_link     = 'data-link-ref';
@@ -140,7 +125,7 @@ sub embed_favicon
         print ' <link ' .
           $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
         print ' <link ' . $ref_link .
-          ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="' . $manifest_color . '">' . "\n";
+          ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="' . $theme_user_color . '">' . "\n";
         print ' <meta ' .
           $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-150x150.png">' . "\n";
     }
@@ -156,11 +141,33 @@ sub embed_favicon
         print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
           trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png')))) . '">' . "\n";
     }
-    print ' <meta name="msapplication-TileColor" content="' . $manifest_color . '">' . "\n";
-    print ' <meta name="theme-color" content="' . $manifest_color . '">' . "\n";
-    print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
-    print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
-      $theme_webprefix . '/manifest-' . $product_name . '.json">' . "\n";
+    print ' <meta name="msapplication-TileColor" content="' . $theme_user_color . '">' . "\n";
+    print ' <meta name="theme-color" content="' . $theme_user_color . '">' . "\n";
+    if (!$is_login_page) {
+
+        # Generate manifest file from template
+        my $display_hostname         = get_display_hostname();
+        my $manifest_product_name_uc = ucfirst($product_name);
+        my $manifest_product_name_uc_with_hostname =
+          $manifest_product_name_uc . ($display_hostname ? " on " . $display_hostname : "");
+        my %manifest_prod_descs = ('webmin'     => 'Powerful and flexible web-based server management control panel',
+                                   'usermin'    => 'Powerful and flexible web-based user management interface',
+                                   'virtualmin' => 'Powerful and flexible web hosting control panel',
+                                   'cloudmin'   => 'Powerful and flexible cloud computing platform');
+        my $manifest_desc     = $manifest_prod_descs{$product_name};
+        my $manifest_file     = "$root_directory/$current_theme/manifest.template";
+        my $manifest_contents = read_file_contents($manifest_file);
+        $manifest_contents =~ s/\%name\%/$manifest_product_name_uc_with_hostname/;
+        $manifest_contents =~ s/\%name_short\%/$manifest_product_name_uc/;
+        $manifest_contents =~ s/\%desc\%/$manifest_desc/;
+        $manifest_contents =~ s/\%prod\%/$product_name/g;
+        $manifest_contents =~ s/\%color\%/$theme_user_color/;
+        write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents) if (-w $theme_config_dir);
+
+        print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
+        print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
+          $theme_webprefix . '/manifest-' . $product_name . '.json">' . "\n";
+    }
 }
 
 sub embed_header
