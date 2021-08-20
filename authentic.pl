@@ -1277,7 +1277,6 @@ sub theme_header_redirect_download
     print "<html>\n";
     print "<head>\n";
     print '<meta charset="' . get_charset() . '">', "\n";
-    embed_favicon();
     print "</head>\n";
     my $script =
       '<form data-predownload action="' .
