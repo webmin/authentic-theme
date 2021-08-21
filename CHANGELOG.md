@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 19.83-RC9 (August 20, 2021)
-* Add ability to install on desktop or mobile device
+#### Version 19.83 (August 21, 2021)
+* Add ability to install a panel as Chrome application on desktop or mobile device [#1459](https://github.com/authentic-theme/authentic-theme/issues/1459)
 * Fiх displaying modal window above the backdrop in File Manager on Apple mobile devices [webmin/webmin#1508](https://github.com/webmin/webmin/issues/1508)
 * Fiх to respect Webmin _nohostname_ config option when generating document title [#1554](https://github.com/authentic-theme/authentic-theme/issues/1554)
 * Fix mail related issues for Usermin
