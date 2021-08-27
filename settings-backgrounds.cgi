@@ -7,7 +7,7 @@
 #
 use strict;
 
-our (%in, %gconfig, $current_theme, $config_directory, $get_user_level, %theme_text);
+our (%in, $theme_webprefix, $current_theme, $config_directory, $get_user_level, %theme_text);
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
@@ -66,11 +66,11 @@ print '
             </td>
             <td align="right">
                 <a class="btn btn-default page_footer_ajax_submit" href="'
-  . $gconfig{'webprefix'} .
+  . $theme_webprefix .
   '/settings-editor_read.cgi"><i class="fa fa-fw fa-file-code-o"> </i> ' . $theme_text{'settings_right_theme_extensions'} . '
                 </a>
                 <a class="btn btn-default page_footer_ajax_submit" href="'
-  . $gconfig{'webprefix'} . '/settings-logos.cgi"><i class="fa fa-fw fa-file-image-o"> </i> ' .
+  . $theme_webprefix . '/settings-logos.cgi"><i class="fa fa-fw fa-file-image-o"> </i> ' .
   $theme_text{'theme_xhred_settings_right_theme_logos'} . '
                 </a>
             </td>

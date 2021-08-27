@@ -152,7 +152,7 @@ if (-r $module_custom_config_file) {
     print &ui_form_end(
                    [["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
     %moduletext = &load_language($module);
-    &ui_print_footer("/$module", $moduletext{'index_return'} || $text{'index'});
+    &ui_print_footer("/$module/", $moduletext{'index_return'} || $text{'index'});
 
 } else {
     &error($theme_text{'mconfig_ecannot'});

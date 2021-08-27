@@ -9,6 +9,7 @@ our (%gconfig,
      %text,
      $root_directory,
      $current_theme,
+     $theme_webprefix,
      %theme_config,
      %theme_text,
      $has_usermin,
@@ -634,13 +635,13 @@ sub theme_controls
         </div>",
         ($get_user_level eq '0' ?
            "<div class=\"btn-group\">
-            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-backgrounds.cgi\">
+            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-backgrounds.cgi\">
                 <i class=\"fa fa-fw fa-image\"></i>$theme_text{'theme_xhred_settings_right_theme_bgs'}
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$gconfig{'webprefix'}/settings-logos.cgi\">
+            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-logos.cgi\">
                 <i class=\"fa fa-fw fa-file-image-o\"></i>$theme_text{'theme_xhred_settings_right_theme_logos'}
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_styles\" href=\"$gconfig{'webprefix'}/settings-editor_read.cgi\">
+            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_styles\" href=\"$theme_webprefix/settings-editor_read.cgi\">
                 <i class=\"fa fa-fw fa-file-code-o\"></i>$theme_text{'settings_right_theme_extensions'}
             </a>
         </div>" :

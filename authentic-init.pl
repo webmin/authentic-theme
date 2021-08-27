@@ -707,9 +707,12 @@ sub init_vars
     our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_vars();
 
     # Set webprefix that should be used by the theme
-    my ($server_webprefix) = parse_remote_server_webprefix();
     $theme_webprefix = $gconfig{'webprefix'};
-    $theme_webprefix = $server_webprefix, $theme_server_webprefix = 1 if ($server_webprefix);
+    my ($server_webprefix) = parse_remote_server_webprefix();
+    if ($server_webprefix) {
+        $theme_webprefix        = $server_webprefix;
+        $theme_server_webprefix = 1;
+    }
 
     our $xnav = "xnavigation=1";
 
@@ -1667,8 +1670,7 @@ sub get_button_tooltip
                    $theme_config{'settings_hotkeys_active'} ne 'false' &&
                    $hot_key ?
                    " (" . ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
-                   ''
-                )
+                   '')
              ) .
              '"');
 }

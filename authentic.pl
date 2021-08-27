@@ -35,7 +35,8 @@ our ($get_user_level,
      $session_id,
      $ui_formcount,
      $theme_ui_post_header_text,
-     $user_module_config_directory,);
+     $user_module_config_directory,
+     $theme_webprefix);
 
 do("$ENV{'THEME_ROOT'}/authentic-init.pl");
 
@@ -82,10 +83,10 @@ sub theme_header
                 !$nolo)
             {
                 print
-                  "<a href='$gconfig{'webprefix'}/session_login.cgi?logout=1'>",
+                  "<a href='$theme_webprefix/session_login.cgi?logout=1'>",
                   "$text{'main_logout'}</a><br>";
             } elsif ($gconfig{'gotoone'} && @avail == 1 && !$nolo) {
-                print "<a href=$gconfig{'webprefix'}/switch_user.cgi>", "$text{'main_switch'}</a><br>";
+                print "<a href=$theme_webprefix/switch_user.cgi>", "$text{'main_switch'}</a><br>";
             }
 
         }
@@ -93,7 +94,7 @@ sub theme_header
             my $idx = $this_module_info{'index_link'};
             my $mi  = $module_index_link || "/" . &get_module_name() . "/$idx";
             my $mt  = $module_index_name || $text{'header_module'};
-            print "<a href=\"$gconfig{'webprefix'}$mi\">$mt</a><br>\n";
+            print "<a href=\"$theme_webprefix$mi\">$mt</a><br>\n";
         }
         if (ref($_[2]) eq "ARRAY" &&
             !get_env('anonymous_user') &&
@@ -112,7 +113,7 @@ sub theme_header
                 my $cprog =
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
-                print "<a href=\"$gconfig{'webprefix'}/$cprog?", &get_module_name() . "\">", $text{'header_config'},
+                print "<a href=\"$theme_webprefix/$cprog?", &get_module_name() . "\">", $text{'header_config'},
                   "</a><br>\n";
             }
         }
@@ -160,7 +161,7 @@ sub theme_footer
             } elsif ($url =~ /^\?/ && &get_module_name()) {
                 $url = "/" . &get_module_name() . "/$url";
             }
-            $url = "$gconfig{'webprefix'}$url" if ($url =~ /^\//);
+            $url = "$theme_webprefix$url" if ($url =~ /^\//);
             $url = $url . "/"                  if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
             print
 "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
@@ -326,7 +327,7 @@ sub theme_generate_icon
 {
     my ($icon, $title, $link, $href, $width, $height, $before, $after) = @_;
     my $icon_outer = $icon;
-    my $wp         = $gconfig{'webprefix'};
+    my $wp         = $theme_webprefix;
 
     $icon =~ s/^$wp//g if ($wp);
     $icon =~ s/\/images//g;
@@ -475,6 +476,15 @@ sub theme_ui_help
 "<sup class=\"ui_help\" data-container=\"body\" data-placement=\"auto right\" data-title=\"$title\" data-toggle=\"tooltip\"><i class=\"fa fa-0_80x fa-question-circle cursor-help\"></i></sup>"
     );
 }
+
+sub theme_hlink
+{
+my $mod = $_[2] ? $_[2] : &get_module_name();
+my $width = $_[3] || $tconfig{'help_width'} || $gconfig{'help_width'} || 600;
+my $height = $_[4] || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
+return "<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$_[1]\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$_[1]\">$_[0]</a>";
+}
+
 
 sub theme_ui_link
 {
@@ -1237,7 +1247,7 @@ sub theme_redirect
 
     my $origin   = $ENV{'HTTP_ORIGIN'};
     my $referer  = $ENV{'HTTP_REFERER'};
-    my $prefix   = $gconfig{'webprefix'};
+    my $prefix   = $theme_webprefix;
     my $noredir  = $gconfig{'webprefixnoredir'};
     my $relredir = $gconfig{'relative_redir'};
     my ($arg1, $arg2) = ($_[0], $_[1]);
@@ -1321,15 +1331,15 @@ sub theme_js_redirect
     my ($url, $window) = @_;
     $window ||= "window";
     if ($url =~ /^\//) {
-        $url = $gconfig{'webprefix'} . $url;
+        $url = $theme_webprefix . $url;
     }
-    if ($url eq "/" || $url eq "$gconfig{'webprefix'}/") {
+    if ($url eq "/" || $url eq "$theme_webprefix/") {
         eval "use File::Basename";
         my $module = dirname(get_env('script_name'));
         if ($module ne '/') {
-            $url = "$gconfig{'webprefix'}$module";
+            $url = "$theme_webprefix$module";
         } else {
-            $url = "$gconfig{'webprefix'}/sysinfo.cgi";
+            $url = "$theme_webprefix/sysinfo.cgi";
         }
     }
     return

@@ -7,7 +7,7 @@
 #
 use strict;
 
-our (%in, %gconfig, $get_user_level, %theme_text, $has_usermin);
+our (%in, $theme_webprefix, $get_user_level, %theme_text, $has_usermin);
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
@@ -23,8 +23,8 @@ if ($has_usermin) {
     unlink_file($_file);
     write_file_contents($_file, $in{'data'});
 }
-if ($ENV{'HTTP_X_PJAX'} eq "true") {
-    redirect($gconfig{'webprefix'} . "/tconfig.cgi");
+if (http_x_request()) {
+    redirect("$theme_webprefix/tconfig.cgi");
 } else {
     head();
 }
