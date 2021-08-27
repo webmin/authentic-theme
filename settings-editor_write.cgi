@@ -7,7 +7,7 @@
 #
 use strict;
 
-our (%in, $theme_webprefix, $get_user_level, %theme_text, $has_usermin);
+our (%in, $get_user_level, %theme_text, $has_usermin);
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
@@ -23,8 +23,4 @@ if ($has_usermin) {
     unlink_file($_file);
     write_file_contents($_file, $in{'data'});
 }
-if (http_x_request()) {
-    redirect("$theme_webprefix/tconfig.cgi");
-} else {
-    head();
-}
+redirect("tconfig.cgi");

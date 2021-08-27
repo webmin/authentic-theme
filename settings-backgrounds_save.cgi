@@ -34,4 +34,4 @@ if ($in{'unauthenticated_bg'} eq "1" &&
     }
 }
 
-redirect('/settings-backgrounds.cgi?saved=1');
+redirect("settings-backgrounds.cgi?saved=1");

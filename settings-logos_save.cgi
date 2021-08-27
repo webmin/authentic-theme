@@ -53,4 +53,4 @@ if ($in{'unauthenticated_logo'} eq "1" &&
     }
 }
 
-redirect('/settings-logos.cgi?saved=1');
+redirect("settings-logos.cgi?saved=1");

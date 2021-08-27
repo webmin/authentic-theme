@@ -179,7 +179,7 @@ if (has_command('identify')) {
     $data{'error'} = $text{'theme_xhred_filemanager_preview_images_deps_error1'};
     my $package_updates = "package-updates";
     if (foreign_available($package_updates)) {
-        my $redir                = "$gconfig{'webprefix'}/$request_uri{'module'}";
+        my $redir                = "../$request_uri{'module'}";
         my $pkgname              = ($gconfig{'os_type'} =~ /debian/ ? 'imagemagick' : 'ImageMagick');
         my %package_updates_lang = load_language($package_updates);
         my $update_failed        = html_escape($package_updates_lang{'update_failed'});
@@ -187,7 +187,7 @@ if (has_command('identify')) {
         my $update_error         = html_escape(text('global_deps_error', "<kbd>$pkgname</kbd>"));
         my $installing_text      = html_escape(text('global_deps_installing', "<code>$pkgname</code>"));
         my $install_link =
-"$gconfig{'webprefix'}/$package_updates/update.cgi?source=3&confirm=1&mode=new&u=$pkgname&redir=$redir&redirdesc=File%20Manager&xnavigation=1";
+"../$package_updates/update.cgi?source=3&confirm=1&mode=new&u=$pkgname&redir=$redir&redirdesc=File%20Manager&xnavigation=1";
         $data{'error'} .= " "
           .
           text('theme_xhred_filemanager_preview_images_deps_error2',
