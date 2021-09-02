@@ -35,6 +35,8 @@ sub nav_detector
     my $prod    = get_product_name();
     my $mod_def = $gconfig{'gotomodule'};
 
+    my $mod_rt_access    = $get_user_level eq '0';
+
     my $prd_cm           = "cloudmin";
     my $mod_cm           = "server-manager";
     my $mod_cm_available = foreign_available($mod_cm);
@@ -124,9 +126,21 @@ sub nav_detector
                 !$mod_mb_available &&
                 !$page_def))
         {
+            # Cloudmin mode
+            if ($mod_cm_available && $mod_rt_access) {
+                $nav_def_tab = $prd_cm;
+            }
+
+            # Virtualmin mode
+            elsif ($mod_vm_available && $mod_rt_access) {
+                $nav_def_tab = $prd_vm;
+            }
+
             # This is the single product switch mode
-            $nav_def_tab = $prd_db;
-            $prd_db_mode = 1;
+            else {
+                $nav_def_tab = $prd_db;
+                $prd_db_mode = 1;
+            }
         }
 
         # Check if specific single switch mode first
