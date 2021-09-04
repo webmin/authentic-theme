@@ -13,4 +13,6 @@ sub module_install
         symlink_logged("$config_directory/authentic-theme/$f",
         	           "$root_directory/authentic-theme/$f");
     }
+
+    clear_theme_cache();
 }
