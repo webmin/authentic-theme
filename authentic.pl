@@ -1388,7 +1388,8 @@ sub theme_select_server
 sub theme_post_change_theme
 {
     # Clear module modifications
-    lib_csf_control('unload');
+    lib_csf_control('unload')
+      if (defined(&lib_csf_control));
 
     # Remove error handler
     error_40x_handler(1);
