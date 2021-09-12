@@ -12,6 +12,7 @@ our (%in,
      $base_remote_user,
      $remote_user,
      $theme_webprefix,
+     $theme_server_webprefix,
      %theme_text,
      %theme_config,
      $get_user_level,
@@ -690,7 +691,8 @@ sub nav_list_combined_menu
                 !string_starts_with($link, "www"))
             {
                 $link = "/$link" if (!string_starts_with($link, "/"));
-                $link = "$theme_webprefix$link";
+                $link = "$theme_webprefix$link"
+                    if($theme_server_webprefix);
             }
         }
         return $link;
