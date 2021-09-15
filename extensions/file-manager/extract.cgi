@@ -119,8 +119,8 @@ foreach my $name (@entries_list) {
             if ($password) {
                 $pparam = (" -p " . quotemeta($password) . " ");
             }
-            if ($unrar_cmd eq 'unar') {
-                $status = system("$unrar_cmd $pparam -r " . quotemeta("$cwd/$name") . " -o " . quotemeta($cwd));
+            if ($unrar_cmd =~ /unar$/) {
+                $status = system("$unrar_cmd $pparam " . quotemeta("$cwd/$name") . " -o " . quotemeta($cwd));
                 if ($status == 512) {
                     $status = 65280;
                 }
