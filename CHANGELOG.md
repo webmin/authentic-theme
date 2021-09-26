@@ -3,7 +3,7 @@
 #### Version 19.84-beta3 (September 26, 2021)
 * Update major upstream libraries
 * Fix to use new API to extract webprefix
-* Fix page redirect on page reload in proxy mode
+* Fix redirect on page reload in proxy mode
 * Fiх webprefix duplication in standard proxy mode [forum.virtualmin.com/t/112199](https://forum.virtualmin.com/t/112199)
 
 #### Version 19.83 (August 28, 2021)
