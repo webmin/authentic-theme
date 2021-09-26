@@ -704,19 +704,4 @@ sub acl_system_status
     }
 }
 
-sub parse_remote_server_webprefix
-{
-    my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
-
-    if ($parent) {
-        my ($parent_link)      = $parent        =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix)    = $parent_link   =~ /:\d+(.*\/link.cgi\/\S*\d)/;
-        my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
-
-        return ($parent_prefix, $parent_webprefix);
-    } else {
-        return (undef, undef);
-    }
-}
-
 1;

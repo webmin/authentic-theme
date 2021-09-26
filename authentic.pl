@@ -1259,7 +1259,7 @@ sub theme_redirect
     }
     $url = "$prefix$url" if ($url && $noredir);
 
-    my ($remote_server_webprefix) = parse_remote_server_webprefix();
+    my $remote_server_webprefix = &get_webprefix();
     if ($remote_server_webprefix) {
         ($link) = $arg2 =~ /:\d+(.*)/;
         $url = "$remote_server_webprefix$link";

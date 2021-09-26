@@ -688,11 +688,12 @@ sub nav_list_combined_menu
         if ($link) {
             if (!string_starts_with($link, "http") &&
                 !string_starts_with($link, "ftp") &&
-                !string_starts_with($link, "www"))
+                !string_starts_with($link, "www") &&
+                !string_starts_with($link, "../"))
             {
                 $link = "/$link" if (!string_starts_with($link, "/"));
                 $link = "$theme_webprefix$link"
-                    if($theme_server_webprefix);
+                    if($link !~ /^\Q$theme_webprefix\E/);
             }
         }
         return $link;

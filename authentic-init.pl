@@ -707,12 +707,7 @@ sub init_vars
     our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_vars();
 
     # Set webprefix that should be used by the theme
-    $theme_webprefix = $gconfig{'webprefix'};
-    my ($server_webprefix) = parse_remote_server_webprefix();
-    if ($server_webprefix) {
-        $theme_webprefix        = $server_webprefix;
-        $theme_server_webprefix = 1;
-    }
+    our ($theme_webprefix, $theme_server_webprefix) = &get_webprefix();
 
     our $xnav = "xnavigation=1";
 
