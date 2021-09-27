@@ -113,8 +113,7 @@ sub theme_header
                 my $cprog =
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
-                print "<a href=\"$theme_webprefix/$cprog?", &get_module_name() . "\">", $text{'header_config'},
-                  "</a><br>\n";
+                print "<a href=\"$theme_webprefix/$cprog?", &get_module_name() . "\">", $text{'header_config'}, "</a><br>\n";
             }
         }
         print "</div>\n";
@@ -162,7 +161,7 @@ sub theme_footer
                 $url = "/" . &get_module_name() . "/$url";
             }
             $url = "$theme_webprefix$url" if ($url =~ /^\//);
-            $url = $url . "/"                  if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
+            $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
             print
 "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
               &text('main_return', $_[$i + 1]), "</a>\n";
@@ -479,12 +478,12 @@ sub theme_ui_help
 
 sub theme_hlink
 {
-my $mod = $_[2] ? $_[2] : &get_module_name();
-my $width = $_[3] || $tconfig{'help_width'} || $gconfig{'help_width'} || 600;
-my $height = $_[4] || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
-return "<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$_[1]\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$_[1]\">$_[0]</a>";
+    my $mod    = $_[2] ? $_[2] : &get_module_name();
+    my $width  = $_[3] || $tconfig{'help_width'}  || $gconfig{'help_width'}  || 600;
+    my $height = $_[4] || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
+    return
+"<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$_[1]\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$_[1]\">$_[0]</a>";
 }
-
 
 sub theme_ui_link
 {
@@ -789,7 +788,8 @@ sub theme_ui_oneradio
       &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\_$rand\"" .
       ($tags ? " " . $tags : "") . ">";
     $ret .=
-      '<label class="lawobject" for="' . $id . '_' . $rand . '">' . (length $label ? "&nbsp;&nbsp;$label&nbsp;" : '&nbsp;&nbsp;') . '</label></span>';
+      '<label class="lawobject" for="' . $id . '_' . $rand . '">' .
+      (length $label ? "&nbsp;&nbsp;$label&nbsp;" : '&nbsp;&nbsp;') . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
@@ -1236,6 +1236,22 @@ sub theme_make_date
 sub theme_nice_size
 {
     return theme_nice_size_local(@_);
+}
+
+sub theme_get_webprefix
+{
+    my $webprefix             = $gconfig{'webprefix'};
+    my $parent_proxy_detected = 0;
+    my $parent_proxy          = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'};
+    if ($parent_proxy) {
+        my ($parent_proxy_link)   = $parent_proxy      =~ /(\S*?\/link\.cgi\/[\d]{8,16})/;
+        my ($parent_proxy_prefix) = $parent_proxy_link =~ /:\d+(\S*?\/link\.cgi\/\S*?\d+)/;
+        if ($parent_proxy_prefix) {
+            $webprefix             = $parent_proxy_prefix;
+            $parent_proxy_detected = 1;
+        }
+    }
+    return wantarray ? ($webprefix, $parent_proxy_detected) : $webprefix;
 }
 
 sub theme_redirect
