@@ -707,7 +707,7 @@ sub init_vars
     our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_vars();
 
     # Set webprefix that should be used by the theme
-    our ($theme_webprefix, $theme_server_webprefix) = &get_webprefix();
+    our ($theme_webprefix, $theme_server_webprefix) = theme_get_webprefix_local('array');
 
     our $xnav = "xnavigation=1";
 

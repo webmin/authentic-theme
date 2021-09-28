@@ -1240,18 +1240,7 @@ sub theme_nice_size
 
 sub theme_get_webprefix
 {
-    my $webprefix             = $gconfig{'webprefix'};
-    my $parent_proxy_detected = 0;
-    my $parent_proxy          = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'};
-    if ($parent_proxy) {
-        my ($parent_proxy_link)   = $parent_proxy      =~ /(\S*?\/link\.cgi\/[\d]{8,16})/;
-        my ($parent_proxy_prefix) = $parent_proxy_link =~ /:\d+(\S*?\/link\.cgi\/\S*?\d+)/;
-        if ($parent_proxy_prefix) {
-            $webprefix             = $parent_proxy_prefix;
-            $parent_proxy_detected = 1;
-        }
-    }
-    return wantarray ? ($webprefix, $parent_proxy_detected) : $webprefix;
+    return theme_get_webprefix_local(@_);
 }
 
 sub theme_redirect
@@ -1275,8 +1264,8 @@ sub theme_redirect
     }
     $url = "$prefix$url" if ($url && $noredir);
 
-    my $remote_server_webprefix = &get_webprefix();
-    if ($remote_server_webprefix) {
+    my ($remote_server_webprefix, $remote_server_linked) = &theme_get_webprefix_local('array');
+    if ($remote_server_webprefix && !$remote_server_linked) {
         ($link) = $arg2 =~ /:\d+(.*)/;
         $url = "$remote_server_webprefix$link";
     } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/))) {

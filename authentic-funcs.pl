@@ -398,6 +398,24 @@ sub switch_to_unix_user_local
     }
 }
 
+sub theme_get_webprefix_local
+{
+    my ($array) = @_;
+    my $webprefix             = $gconfig{'webprefix'};
+    my $parent_proxy_detected = 1;
+    my $parent_proxy          = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'};
+    if ($parent_proxy) {
+        my ($parent_proxy_link)   = $parent_proxy      =~ /(\S*?\/link\.cgi\/[\d]{8,16})/;
+        my ($parent_proxy_prefix) = $parent_proxy_link =~ /:\d+(\S*?\/link\.cgi\/\S*?\d+)/;
+        if ($parent_proxy_prefix) {
+            $webprefix             = $parent_proxy_prefix;
+            $parent_proxy_detected = 1;
+        }
+    }
+    return $array ? ($webprefix, $parent_proxy_detected) : $webprefix;
+}
+
+
 sub get_text_ltr
 {
     if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {
