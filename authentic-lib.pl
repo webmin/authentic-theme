@@ -188,16 +188,15 @@ sub get_extended_sysinfo
                             my $__start     = '<i class="fa fa-fw fa-lg fa-play text-success"></i>';
                             my $__restart   = '<i class="fa fa-fw fa-lg fa-refresh text-info"></i>';
 
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/up.gif'.*?>/$__checkmark/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/stop.png'.*?>/$__stop/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/down.gif'.*?>/$__down/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/start.png'.*?>/$__start/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/up.gif'.*?>/$__checkmark/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/stop.png'.*?>/$__stop/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/down.gif'.*?>/$__down/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/start.png'.*?>/$__start/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
 
                             $returned_sysinfo .= '<tr>
-                                <td>' . replace('href=\'', "href='$theme_webprefix", $t->{"desc"}) . '</td>
-                                <td>'
-                              . replace('href=\'', "href='$theme_webprefix", $t->{"value"}) . '</td>
+                                <td>' . $t->{"desc"} . '</td>
+                                <td>' . $t->{"value"} . '</td>
                               </tr>';
                         }
                     } elsif ($info->{'type'} eq 'chart') {
@@ -324,7 +323,7 @@ sub print_charts
 
         $returned_sysinfo .= '<tr>
                                 <td style="width:25%">'
-          . replace('edit_domain', 'summary_domain', replace('href=\'', "href='$theme_webprefix", $t->{"desc"})) . '</td>
+          . replace('edit_domain', 'summary_domain', $t->{"desc"}) . '</td>
                                 <td style="width:60%">
                                 <div class="graph-container">
                                     <div class="graph">' . $bar . '</div>
