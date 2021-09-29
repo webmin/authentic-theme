@@ -1,10 +1,14 @@
 ## Changelog
 
-#### Version 19.84-beta3 (September 26, 2021)
+#### Version 19.84-beta4 (September 29, 2021)
 * Update major upstream libraries
-* Fix to use new API to extract webprefix
+* Fix progressive output fetching when HTML present
 * Fix redirect on page reload in proxy mode
 * Fiх webprefix duplication in standard proxy mode [forum.virtualmin.com/t/112199](https://forum.virtualmin.com/t/112199)
+* Fix server redirects upon form submissions with Servers Index module
+* Fix alerts buttons positioning
+* Fix display of menu and slider toggle buttons
+* Fix post-install script to clear menu caches
 
 #### Version 19.83 (August 28, 2021)
 * Add ability to install a panel as Chrome application on desktop or mobile device [#1459](https://github.com/authentic-theme/authentic-theme/issues/1459)
