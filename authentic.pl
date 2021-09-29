@@ -972,6 +972,8 @@ sub theme_ui_alert_box
     $rv .= '<div class="alert ' . $type . '" style=" ' . $style . '">' . "\n";
     $rv .= '<i class="fa fa-fw ' . $fa . '"></i> <strong>' . $tmsg . '</strong>';
     $rv .= ($new_line ? '<br>' : '&nbsp;') . "\n";
+    $msg =~ s/button class="btn/button class="btn btn-tiny/gm;
+    $msg =~ s/input class="ui_submit/input class="ui_submit btn btn-default btn-xs/gm;
     $rv .= $msg . "\n";
     $rv .= '</div>' . "\n";
 
