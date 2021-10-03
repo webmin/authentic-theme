@@ -264,7 +264,6 @@ theme_xhred_nice_size_TBB=bps
 theme_xhred_nice_size_GBB=千兆位
 theme_xhred_nice_size_MBB=兆比特
 theme_xhred_nice_size_kBB=千比特
-settings_table_init_datatables=初始化表排序和搜索的最大行数
 theme_xhred_global_rows=行数
 
 #19.42

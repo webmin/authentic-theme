@@ -1111,7 +1111,6 @@ theme_xhred_nice_size_TBB=tb
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=kbps
-settings_table_init_datatables=Maximálny počet riadkov na inicializáciu triedenia a vyhľadávania tabuľky
 theme_xhred_global_rows=riadky
 
 #19.42

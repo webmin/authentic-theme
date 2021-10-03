@@ -1095,7 +1095,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=テーブルのソートと検索を初期化する最大行数
 theme_xhred_global_rows=行
 
 #19.42

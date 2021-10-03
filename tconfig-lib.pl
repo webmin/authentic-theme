@@ -111,7 +111,6 @@ sub theme_settings_raw
                        'settings_right_small_table_icons',
                        'settings_right_animate_table_icons',
                        'settings_right_grayscaled_table_icons',
-                       'settings_table_init_datatables',
             ]
          }
         ],
@@ -264,7 +263,6 @@ sub theme_settings_filter
              'settings_leftmenu_netdata',
              'settings_leftmenu_netdata_link',
              'settings_leftmenu_user_html_privileged',
-             'settings_table_init_datatables',
              'settings_side_slider_enabled',
              'settings_side_slider_fixed',
              'settings_side_slider_sysinfo_enabled',
@@ -357,8 +355,7 @@ sub theme_settings_format
              $k eq 'settings_invert_level_navigation'     ||
              $k eq 'settings_brightness_level_navigation' ||
              $k eq 'settings_contrast_level_navigation'   ||
-             $k eq 'settings_leftmenu_width'              ||
-             $k eq 'settings_table_init_datatables')
+             $k eq 'settings_leftmenu_width')
     {
 
         my $range_max = '1';
@@ -390,11 +387,6 @@ sub theme_settings_format
             $range_min  = '260';
             $range_max  = '520';
             $range_step = '1';
-            $iwidth     = '25';
-        } elsif ($k eq 'settings_table_init_datatables') {
-            $range_min  = '500';
-            $range_max  = '50000';
-            $range_step = '500';
             $iwidth     = '25';
         }
         $v = '

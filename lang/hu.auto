@@ -1111,7 +1111,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=kbps
-settings_table_init_datatables=A táblák rendezésének és keresésének inicializálására szolgáló sorok maximális száma
 theme_xhred_global_rows=sorok
 
 #19.42

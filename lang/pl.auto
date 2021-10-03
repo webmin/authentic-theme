@@ -1029,7 +1029,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mb/s
 theme_xhred_nice_size_kBB=Kb/s
-settings_table_init_datatables=Maksymalna liczba wierszy do zainicjowania sortowania i wyszukiwania tabeli
 theme_xhred_global_rows=Wydziwianie
 
 #19.42

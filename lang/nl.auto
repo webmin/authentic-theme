@@ -998,7 +998,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximumaantal rijen om het sorteren en zoeken van tabellen te initialiseren
 theme_xhred_global_rows=Rijen
 
 #19.42

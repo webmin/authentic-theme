@@ -1111,7 +1111,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gb/giây
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kb/giây
-settings_table_init_datatables=Số lượng hàng tối đa để khởi tạo sắp xếp và tìm kiếm bảng
 theme_xhred_global_rows=Hàng
 
 #19.42

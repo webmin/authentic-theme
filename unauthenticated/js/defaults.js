@@ -62,7 +62,6 @@ var
     settings_right_small_table_icons = false,
     settings_right_animate_table_icons = true,
     settings_right_grayscaled_table_icons = true,
-    settings_table_init_datatables = 20000,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
@@ -139,6 +138,7 @@ var
     // E.g. to change options below, you would need to open browser's console,
     // change an option boolean value and call `theme.config.save()` function.
     //
+    settings_table_init_datatables = 20000,
     settings_right_page_hide_persistent_vscroll = true,
     settings_hide_top_loader = false,
     settings_theme_make_date = true,

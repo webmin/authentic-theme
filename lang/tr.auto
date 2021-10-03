@@ -1111,7 +1111,6 @@ theme_xhred_nice_size_TBB=Tbps'dir
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=kbps
-settings_table_init_datatables=Tablo sıralama ve aramayı başlatmak için maksimum satır sayısı
 theme_xhred_global_rows=Satırlar
 
 #19.42

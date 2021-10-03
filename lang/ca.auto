@@ -414,7 +414,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Nombre màxim de files per inicialitzar la classificació i la cerca de taules
 theme_xhred_global_rows=Files
 
 #19.42

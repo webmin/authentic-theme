@@ -888,7 +888,6 @@ theme_xhred_nice_size_TBB=Тбит/с
 theme_xhred_nice_size_GBB=Гбит/с
 theme_xhred_nice_size_MBB=Мбит/с
 theme_xhred_nice_size_kBB=Кбит/с
-settings_table_init_datatables=Максимальное количество строк для инициализации сортировки таблицы и поиска
 theme_xhred_global_rows=Ряды
 
 #19.42

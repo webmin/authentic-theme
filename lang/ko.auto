@@ -1111,7 +1111,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=테이블 정렬 및 검색을 초기화하는 최대 행 수
 theme_xhred_global_rows=행
 
 #19.42

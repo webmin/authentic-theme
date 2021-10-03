@@ -87,7 +87,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Numărul maxim de rânduri pentru inițializarea sortării și căutării tabelelor
 theme_xhred_global_rows=rânduri
 
 #19.42
