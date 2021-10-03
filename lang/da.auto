@@ -41,13 +41,6 @@ settings_loader_top=Aktivér sidefremskyndelseslæsser øverst på skærmen
 settings_loader_left=Aktivér spinner til navigationsmenu
 settings_right_reload=Indlæs standardsiden på fanebladet
 
-settings_right_hide_table_icons=Skjul tabelikoner
-settings_right_hide_table_icons_description=Fjern ikoner helt fra indholdssidetabellerne og vis almindelige links med højre chevron
-settings_right_small_table_icons=Små tabelikoner
-settings_right_small_table_icons_description=Erstat tabelikoner med standardstørrelse med små, og der vises link til ikoner med værktøjstip
-settings_right_animate_table_icons=Animere tabelikoner med fokus
-settings_right_grayscaled_table_icons=Gråskala bordikoner og kun bringe farve i fokus
-
 settings_leftmenu_section_hide_refresh_modules=Skjul linket til opdateringsmoduler
 settings_leftmenu_section_hide_unused_modules=Skjul ikke-brugt modulssektion
 settings_favorites=Vis favoritknap
@@ -1128,3 +1121,11 @@ settings_embed_product_branding_privileged=Vis splash-skærm til branding ved f�
 #19.76
 theme_xhred_global_show_all=Vis alt
 theme_xhred_filemanager_context_prop_show_all=Vis alle egenskaber
+
+#19.84
+settings_right_table_links_type=Tabellinks viser type
+settings_right_table_links_type_2=Store ikoner med tekst
+settings_right_table_links_type_1=Små ikoner med værktøjstiptekst
+settings_right_table_links_type_0=Ingen ikoner, kun tekstlinks
+settings_right_table_animate_icons=Vis on-hover-animation for tabelikon-links
+settings_right_table_grayscaled_icons=Vis links til tabelikon i gråtoner, medmindre du holder markøren

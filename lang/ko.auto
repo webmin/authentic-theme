@@ -128,13 +128,6 @@ settings_loader_top=화면 상단에 페이지 진행 로더 사용
 settings_loader_left=탐색 메뉴에 스피너 사용
 settings_right_reload=탭 스위치에 기본 페이지로드
 
-settings_right_hide_table_icons=테이블 아이콘 숨기기
-settings_right_hide_table_icons_description=컨텐츠 페이지 테이블에서 아이콘을 완전히 제거하고 오른쪽 갈매기 형 표시가있는 일반 링크를 표시합니다.
-settings_right_small_table_icons=작은 테이블 아이콘
-settings_right_small_table_icons_description=작은 크기의 표준 크기 테이블 아이콘으로 대체하고 툴팁을 사용하여 디스플레이 아이콘 링크
-settings_right_animate_table_icons=초점에 테이블 아이콘 애니메이션
-settings_right_grayscaled_table_icons=그레이 스케일 테이블 아이콘 및 초점에만 색상 제공
-
 settings_leftmenu_section_hide_refresh_modules=새로 고침 모듈 링크 숨기기
 settings_leftmenu_section_hide_unused_modules=사용하지 않는 모듈 섹션 숨기기
 settings_favorites=즐겨 찾기 버튼 표시
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=초기로드시 브랜딩 스플래�
 #19.76
 theme_xhred_global_show_all=모두 표시
 theme_xhred_filemanager_context_prop_show_all=모든 속성보기
+
+#19.84
+settings_right_table_links_type=테이블 링크 표시 유형
+settings_right_table_links_type_2=텍스트가 있는 큰 아이콘
+settings_right_table_links_type_1=툴팁 텍스트가 있는 작은 아이콘
+settings_right_table_links_type_0=아이콘 없음, 텍스트 링크만 있음
+settings_right_table_animate_icons=테이블 아이콘 링크에 대한 애니메이션 표시
+settings_right_table_grayscaled_icons=마우스를 가져가지 않는 한 테이블 아이콘 링크를 회색조로 표시

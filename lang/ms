@@ -125,13 +125,6 @@ settings_navigation_color=Color palette
 settings_loader_top=Aktifkan progress loader laman pada bagian atas layar
 settings_loader_left=Aktifkan spinner untuk menu navigasi
 
-settings_right_hide_table_icons=Sembunyikan tabel ikon untuk frame kanan
-settings_right_hide_table_icons_description=Sepenuhnya hapus ikon dari tabel laman konten dan tampilkan tautan murni dengan chevron yang tepat
-settings_right_small_table_icons=Ikon tabel kecil
-settings_right_small_table_icons_description=Gantikan ikon tabel ukuran standar dengan yang kecil dan ikon tampilan link menggunakan tooltip
-settings_right_animate_table_icons=Animasikan ikon tabel pada fokus
-settings_right_grayscaled_table_icons=Abu-abu-kan ikon tabel dan hanya membawa warna pada fokus
-
 settings_leftmenu_section_hide_refresh_modules=Sembunyikantautan modul refresh
 settings_leftmenu_section_hide_unused_modules=Sembunyikan bagian modul yang tidak terpakai
 settings_favorites=Tampilkan tombol favorit

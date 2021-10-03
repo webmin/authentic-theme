@@ -370,3 +370,11 @@ settings_embed_product_branding_privileged=在初始加载时显示品牌初始�
 #19.76
 theme_xhred_global_show_all=显示所有
 theme_xhred_filemanager_context_prop_show_all=显示所有属性
+
+#19.84
+settings_right_table_links_type=表格链接显示类型
+settings_right_table_links_type_2=带文字的大图标
+settings_right_table_links_type_1=带有工具提示文本的小图标
+settings_right_table_links_type_0=没有图标，只有文字链接
+settings_right_table_animate_icons=显示表格图标链接的悬停动画
+settings_right_table_grayscaled_icons=除非悬停，否则以灰度显示表格图标链接

@@ -137,13 +137,6 @@ settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
 settings_right_reload=Load default page on tab switch
 
-settings_right_hide_table_icons=Hide table icons
-settings_right_hide_table_icons_description=Completely remove icons from the content page tables and display plain links with right chevron
-settings_right_small_table_icons=Small table icons
-settings_right_small_table_icons_description=Substitute standard size table icons with small ones and display icons link using tooltip
-settings_right_animate_table_icons=Animate table icons on focus
-settings_right_grayscaled_table_icons=Grayscale table icons and bring color on focus only
-
 settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
 settings_leftmenu_section_hide_unused_modules=Hide un-used modules section
 settings_favorites=Show favorites button
@@ -1275,3 +1268,12 @@ settings_embed_product_branding_privileged=Show branding splash screen on initia
 #19.76
 theme_xhred_global_show_all=Show all
 theme_xhred_filemanager_context_prop_show_all=Show all properties
+
+
+#19.84
+settings_right_table_links_type=Table links display type
+settings_right_table_links_type_2=Large icons with text
+settings_right_table_links_type_1=Small icons with tooltip text
+settings_right_table_links_type_0=No icons, just text links
+settings_right_table_animate_icons=Show on-hover animation for table icon links
+settings_right_table_grayscaled_icons=Show table icon links in grayscale unless hovered

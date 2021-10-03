@@ -125,13 +125,6 @@ settings_navigation_color=Color palette
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
 
-settings_right_hide_table_icons=Dölj tabellikonerna för högra ramen
-settings_right_hide_table_icons_description=Ta bort samtliga ikoner från tabellerna och visa i stället endast textlänkar med en högersparre
-settings_right_small_table_icons=Små tabellikoner
-settings_right_small_table_icons_description=Ersätt tabellikonerna med små ikoner och visa i stället namnet som ett verktygstips
-settings_right_animate_table_icons=Animera tabellikonerna när de hamnar i fokus
-settings_right_grayscaled_table_icons=Låt tabellikonerna vara gråa och ta fram färgen när den hamnar i fokus
-
 settings_leftmenu_section_hide_refresh_modules=Dölj uppdateringslänk
 settings_leftmenu_section_hide_unused_modules=Dölj oanvända moduler
 settings_favorites=Visa favoritknapp

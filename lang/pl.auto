@@ -47,13 +47,6 @@ settings_loader_top=Włącz moduł ładujący postęp strony na górze ekranu
 settings_loader_left=Włącz pokrętło w menu nawigacyjnym
 settings_right_reload=Załaduj domyślną stronę na przełączniku kart
 
-settings_right_hide_table_icons=Ukryj ikony tabeli
-settings_right_hide_table_icons_description=Całkowicie usuń ikony z tabel stron treści i wyświetlaj proste linki prawym szewronem
-settings_right_small_table_icons=Ikony małego stołu
-settings_right_small_table_icons_description=Zamień standardowe ikony tabel rozmiarów na małe i wyświetl ikony linków za pomocą podpowiedzi
-settings_right_animate_table_icons=Animuj ikony na stole
-settings_right_grayscaled_table_icons=Ikony tabeli w skali szarości i tylko skupiają kolor
-
 settings_leftmenu_section_hide_refresh_modules=Ukryj link do modułów odświeżania
 settings_leftmenu_section_hide_unused_modules=Ukryj sekcję nieużywanych modułów
 settings_favorites=Pokaż przycisk ulubionych
@@ -1134,3 +1127,11 @@ settings_embed_product_branding_privileged=Pokaż ekran powitalny marki podczas 
 #19.76
 theme_xhred_global_show_all=Pokaż wszystko
 theme_xhred_filemanager_context_prop_show_all=Pokaż wszystkie właściwości
+
+#19.84
+settings_right_table_links_type=Typ wyświetlania linków do tabeli
+settings_right_table_links_type_2=Duże ikony z tekstem
+settings_right_table_links_type_1=Małe ikony z tekstem podpowiedzi
+settings_right_table_links_type_0=Żadnych ikon, tylko linki tekstowe
+settings_right_table_animate_icons=Pokaż animację po najechaniu kursorem na linki do ikon tabeli
+settings_right_table_grayscaled_icons=Pokaż łącza ikon tabeli w skali szarości, chyba że najedziesz kursorem

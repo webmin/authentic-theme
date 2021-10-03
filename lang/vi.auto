@@ -128,13 +128,6 @@ settings_loader_top=Cho phép trình tải tiến trình trang ở trên cùng c
 settings_loader_left=Bật spinner cho menu điều hướng
 settings_right_reload=Tải trang mặc định trên chuyển đổi tab
 
-settings_right_hide_table_icons=Ẩn biểu tượng bảng
-settings_right_hide_table_icons_description=Xóa hoàn toàn các biểu tượng khỏi bảng trang nội dung và hiển thị các liên kết đơn giản với chevron phải
-settings_right_small_table_icons=Biểu tượng bảng nhỏ
-settings_right_small_table_icons_description=Thay thế các biểu tượng bảng kích thước tiêu chuẩn với các biểu tượng nhỏ và biểu tượng hiển thị liên kết bằng cách sử dụng tooltip
-settings_right_animate_table_icons=Biểu tượng bảng động
-settings_right_grayscaled_table_icons=Biểu tượng bảng thang độ xám và chỉ mang lại màu sắc tập trung
-
 settings_leftmenu_section_hide_refresh_modules=Ẩn liên kết mô-đun làm mới
 settings_leftmenu_section_hide_unused_modules=Ẩn phần mô-đun không sử dụng
 settings_favorites=Hiển thị nút yêu thích
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Hiển thị màn hình giật gân t
 #19.76
 theme_xhred_global_show_all=Hiển thị tất cả
 theme_xhred_filemanager_context_prop_show_all=Hiển thị tất cả các thuộc tính
+
+#19.84
+settings_right_table_links_type=Loại hiển thị liên kết bảng
+settings_right_table_links_type_2=Biểu tượng lớn với văn bản
+settings_right_table_links_type_1=Các biểu tượng nhỏ với văn bản chú giải công cụ
+settings_right_table_links_type_0=Không có biểu tượng, chỉ liên kết văn bản
+settings_right_table_animate_icons=Hiển thị hoạt ảnh khi di chuột cho các liên kết biểu tượng bảng
+settings_right_table_grayscaled_icons=Hiển thị các liên kết biểu tượng bảng ở thang độ xám trừ khi được di chuột

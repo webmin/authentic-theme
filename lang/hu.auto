@@ -128,13 +128,6 @@ settings_loader_top=Engedélyezze az oldalfejlesztőt a képernyő tetején
 settings_loader_left=Spinner engedélyezése a navigációs menüben
 settings_right_reload=Az alapértelmezett oldal betöltése a fülkapcsolóra
 
-settings_right_hide_table_icons=Asztal ikonok elrejtése
-settings_right_hide_table_icons_description=Teljesen távolítsa el az ikonokat a tartalomlap-táblázatokból, és jelenítsen meg egyszerű linkeket a jobb oldali felülettel
-settings_right_small_table_icons=Kis asztali ikonok
-settings_right_small_table_icons_description=Helyezze a szabványos méretű tábla ikonjait kicsikre, és a megjelenítő ikonok linkjét használja az eszköztipp segítségével
-settings_right_animate_table_icons=Animált asztali ikonok a hangsúly
-settings_right_grayscaled_table_icons=Szürkeárnyalatos asztali ikonok, és csak a hangsúly fókuszál
-
 settings_leftmenu_section_hide_refresh_modules=A modulok frissítése link elrejtése
 settings_leftmenu_section_hide_unused_modules=A nem használt modulok rész elrejtése
 settings_favorites=Kedvencek megjelenítése gomb
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=A márkajelzés kezdőképernyőjéne
 #19.76
 theme_xhred_global_show_all=Mutasd az összeset
 theme_xhred_filemanager_context_prop_show_all=Minden tulajdonság megjelenítése
+
+#19.84
+settings_right_table_links_type=A táblázat linkjeinek megjelenítési típusa
+settings_right_table_links_type_2=Nagy ikonok szöveggel
+settings_right_table_links_type_1=Kis ikonok tooltip szöveggel
+settings_right_table_links_type_0=Nincsenek ikonok, csak szöveges linkek
+settings_right_table_animate_icons=A táblázat ikonjainak linkjein mutató animáció megjelenítése
+settings_right_table_grayscaled_icons=A táblázat ikon linkjeinek megjelenítése szürkeárnyalatos, ha nem mozgatja

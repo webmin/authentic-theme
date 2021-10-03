@@ -125,13 +125,6 @@ settings_navigation_color=Fargepalett
 settings_loader_top=Aktiver side fremdriftslasert på toppen av skjermen
 settings_loader_left=Aktiver spinner for navigasjonsmeny
 
-settings_right_hide_table_icons=Skjul tabellikoner for høyre ramme
-settings_right_hide_table_icons_description=Fjerner ikoner helt fra tabeller på innholdssiden og viser vanlige lenker med høyre dobbelthake
-settings_right_small_table_icons=Små tabellikoner
-settings_right_small_table_icons_description=Erstatt standard størrelse tabellikoner med små ikoner og vis ikonenes lenke som verktøytips
-settings_right_animate_table_icons=Animer tabellikoner ved fokus
-settings_right_grayscaled_table_icons=Gråskaler tabellikoner og sett farge kun på fokus ikon
-
 settings_leftmenu_section_hide_refresh_modules=Skjul lenken Oppfrisk moduler
 settings_leftmenu_section_hide_unused_modules=Skjul lenken Ubrukte moduler
 settings_favorites=Vis Favoritter-knapp

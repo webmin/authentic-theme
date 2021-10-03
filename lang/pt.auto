@@ -46,13 +46,6 @@ settings_loader_top=Ativar o carregador de progresso da página na parte superio
 settings_loader_left=Ativar o botão giratório para o menu de navegação
 settings_right_reload=Carregar página padrão na troca de guia
 
-settings_right_hide_table_icons=Ocultar ícones da tabela
-settings_right_hide_table_icons_description=Remova completamente os ícones das tabelas da página de conteúdo e exiba links simples com a divisa direita
-settings_right_small_table_icons=Ícones de mesa pequena
-settings_right_small_table_icons_description=Substitua ícones da tabela de tamanho padrão por pequenos e vincule os ícones usando a dica de ferramenta
-settings_right_animate_table_icons=Animar ícones da tabela em foco
-settings_right_grayscaled_table_icons=Ícones de tabela em escala de cinza e traz cor apenas ao foco
-
 settings_leftmenu_section_hide_refresh_modules=Ocultar link de módulos de atualização
 settings_leftmenu_section_hide_unused_modules=Ocultar seção de módulos não utilizados
 settings_favorites=Mostrar botão de favoritos
@@ -1133,3 +1126,11 @@ settings_embed_product_branding_privileged=Mostrar tela inicial da marca no carr
 #19.76
 theme_xhred_global_show_all=Mostre tudo
 theme_xhred_filemanager_context_prop_show_all=Mostrar todas as propriedades
+
+#19.84
+settings_right_table_links_type=Tipo de exibição de links de tabela
+settings_right_table_links_type_2=Ícones grandes com texto
+settings_right_table_links_type_1=Ícones pequenos com texto de dica de ferramenta
+settings_right_table_links_type_0=Sem ícones, apenas links de texto
+settings_right_table_animate_icons=Mostrar animação ao passar o mouse para links de ícones de mesa
+settings_right_table_grayscaled_icons=Mostrar links de ícones de mesa em escala de cinza, a menos que seja pairado

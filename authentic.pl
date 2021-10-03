@@ -301,25 +301,57 @@ sub theme_ui_upload
 
 sub theme_icons_table
 {
-    my $sm = $theme_config{'settings_right_small_table_icons'} eq 'true' ? ' small-icons' : undef;
-    my $ff;
-    my $in = scalar(@{ $_[0] });
-    print "<div class=\"row icons-row$sm\">\n";
-    for (my $i = 0; $i < @{ $_[0] }; $i++) {
-        &generate_icon($_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref($_[4]) ? $_[4]->[$i] : $_[4],
-                       $_[5], $_[6], $_[7]->[$i], $_[8]->[$i]);
-        $ff .= '<div class="icons-container-filler"></div>', "\n" if (!$sm);
+    my $lt = $theme_config{'settings_right_table_links_type'};
+    my $sm = $lt eq '1' ? ' small-icons' : undef;
+    my $nl = $lt eq '0' ? 1              : undef;
+
+    if ($nl) {
+
+        # Print plain text links
+        print "<div class=\"links-row-padded\">";
+        print
+"<div class=\"row-flex row-flex-cols-sm-1 row-flex-cols-md-2 row-flex-cols-lg-3 row-flex-cols-xl-3 row-flex-cols-xxl-4 links-row\">";
+        for (my $i = 0; $i < @{ $_[0] }; $i++) {
+            my $after;
+            if ($_[8]->[$i]) {
+                $after = $_[8]->[$i];
+                $after =~
+s/ui_link/margined-left-4 btn btn-default btn-transparent-link btn-xxs btn-xxs-compact btn-hover-hide f__lnk_t_btn-el/g;
+                $after =~ s/>\((.*?)\)</>$1</g;
+            }
+            my $before;
+            $before = $_[7]->[$i];
+            print "<div class=\"col-flex-sm-6" . ($before ? " link-row-col" : " link-row-col-narrow") . "\">";
+            print "$before <a class='row-link' href='$_[0]->[$i]' " . (ref($_[4]) ? $_[4]->[$i] : $_[4]) .
+              ">" . ($before ? "" : "<i class='fa fa-fw fa-angle-right'>&nbsp;&nbsp;</i>") .
+              "<span>@{[html_strip($_[1]->[$i], ' ')]}</span></a> $after";
+            print "</div>";
+        }
+        print "</div>";
+        print "</div>";
+
+    } else {
+
+        # Print icons
+        my $ff;
+        my $in = scalar(@{ $_[0] });
+        print "<div class=\"row icons-row$sm\">\n";
+        for (my $i = 0; $i < @{ $_[0] }; $i++) {
+            &generate_icon($_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref($_[4]) ? $_[4]->[$i] : $_[4],
+                           $_[5], $_[6], $_[7]->[$i], $_[8]->[$i]);
+            $ff .= '<div class="icons-container-filler"></div>', "\n" if (!$sm);
+        }
+        if ($in < 2) {
+            $ff .= "$ff" x 16;
+        } elsif ($in < 4) {
+            $ff .= "$ff" x 8;
+        } elsif ($in < 8) {
+            $ff .= "$ff" x 4;
+        } elsif ($in < 16) {
+            $ff .= "$ff" x 2;
+        }
+        print "$ff</div>\n";
     }
-    if ($in < 2) {
-        $ff .= "$ff" x 16;
-    } elsif ($in < 4) {
-        $ff .= "$ff" x 8;
-    } elsif ($in < 8) {
-        $ff .= "$ff" x 4;
-    } elsif ($in < 16) {
-        $ff .= "$ff" x 2;
-    }
-    print "$ff</div>\n";
 }
 
 sub theme_generate_icon
@@ -328,12 +360,14 @@ sub theme_generate_icon
     my $icon_outer = $icon;
     my $wp         = $theme_webprefix;
 
+    my $lt = $theme_config{'settings_right_table_links_type'};
+
     $icon =~ s/^$wp//g if ($wp);
     $icon =~ s/\/images//g;
     $icon =~ s/images//g;
 
-    my $grayscaled_table_icons = ($theme_config{'settings_right_grayscaled_table_icons'} ne 'false' ? 0 : 1);
-    my $animate_table_icons = ($theme_config{'settings_right_animate_table_icons'} ne 'false' ? 0 :
+    my $grayscaled_table_icons = ($theme_config{'settings_right_table_grayscaled_icons'} ne 'false' ? 0 : 1);
+    my $animate_table_icons = ($theme_config{'settings_right_table_animate_icons'} ne 'false' ? 0 :
                                  1);
     (my $___svg = $icon) =~ s/.gif/.svg/;
 
@@ -349,7 +383,7 @@ sub theme_generate_icon
                     $icon_outer                      ? $icon_outer :
                     ($wp . "/images/not_found.svg"));
 
-    if ($theme_config{'settings_right_small_table_icons'} eq 'true') {
+    if ($lt eq '1') {
         print '<div class="col-xs-1 small-icons-container' .
           (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
           '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
@@ -369,9 +403,8 @@ sub theme_generate_icon
         print '</div>';
     } else {
         print '<div class="col-xs-1 icons-container' . (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
-          '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
-          '" data-title="' . (($theme_config{'settings_right_small_table_icons'} eq 'true') ? $title : '') .
-          '" data-toggle="tooltip" data-container="body">';
+          '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') . '" data-title="' .
+          (($lt eq '1') ? $title : '') . '" data-toggle="tooltip" data-container="body">';
         if ($_[6] || $_[7]) {
             if ($_[6]) {
                 print "<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";

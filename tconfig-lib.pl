@@ -108,9 +108,9 @@ sub theme_settings_raw
          {  'id'    => 's5',
             'title' => &theme_text('settings_right_table_options'),
             'data'  => [
-                       'settings_right_small_table_icons',
-                       'settings_right_animate_table_icons',
-                       'settings_right_grayscaled_table_icons',
+                       'settings_right_table_links_type',
+                       'settings_right_table_animate_icons',
+                       'settings_right_table_grayscaled_icons',
             ]
          }
         ],
@@ -537,6 +537,13 @@ sub theme_settings_format
         my $yes_forced =
 "$theme_text{'settings_sysinfo_real_time_status_forced'} <sup @{[get_button_tooltip('settings_sysinfo_real_time_status_forced_warn')]} class=\"fa fa-exclamation-circle\"></sup>";
         $v = ui_radio($k, $v, [[1, $text{'yes'}], [2, $yes_forced], [0, $text{'no'}]]);
+    } elsif ($k eq 'settings_right_table_links_type') {
+        $v = ui_radio($k,
+                      $v,
+                      [[2, $theme_text{'settings_right_table_links_type_2'}],
+                       [1, $theme_text{'settings_right_table_links_type_1'}],
+                       [0, $theme_text{'settings_right_table_links_type_0'}]
+                      ]);
     }
     my $description     = $theme_text{ $k . '_description' };
     my $popover_trigger = 'click';

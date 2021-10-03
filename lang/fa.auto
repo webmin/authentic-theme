@@ -128,13 +128,6 @@ settings_loader_top=لودر پیشرفت صفحه را در بالای صفحه
 settings_loader_left=فعال کردن اسپینر برای منوی پیمایش
 settings_right_reload=صفحه پیش فرض را در سوئیچ تب بارگیری کنید
 
-settings_right_hide_table_icons=نمادهای جدول را مخفی کنید
-settings_right_hide_table_icons_description=نمادها را به طور کامل از جداول صفحه محتوا حذف کرده و پیوندهای ساده را با شورون سمت راست نمایش دهید
-settings_right_small_table_icons=نمادهای جدول کوچک
-settings_right_small_table_icons_description=نمادهای جدول اندازه استاندارد را با موارد کوچک جایگزین کنید و نمادهای صفحه را با استفاده از ابزار ابزار پیوند دهید
-settings_right_animate_table_icons=نمادهای جدول را روی تمرکز تحریک کنید
-settings_right_grayscaled_table_icons=نمادهای جدول خاکستری و رنگ را فقط روی تمرکز قرار دهید
-
 settings_leftmenu_section_hide_refresh_modules=پیوند ماژول های تازه کردن را مخفی کنید
 settings_leftmenu_section_hide_unused_modules=بخش ماژول های استفاده نشده را مخفی کنید
 settings_favorites=دکمه نمایش موارد دلخواه
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=در بارگذاری اولیه صف
 #19.76
 theme_xhred_global_show_all=نمایش همه
 theme_xhred_filemanager_context_prop_show_all=نمایش تمام خصوصیات
+
+#19.84
+settings_right_table_links_type=نوع نمایش پیوندهای جدول
+settings_right_table_links_type_2=نمادهای بزرگ با متن
+settings_right_table_links_type_1=نمادهای کوچک با متن راهنمای ابزار
+settings_right_table_links_type_0=بدون آیکون ، فقط پیوندهای متنی
+settings_right_table_animate_icons=نمایش متحرک در حال حرکت برای پیوندهای نماد جدول
+settings_right_table_grayscaled_icons=پیوندهای نماد جدول را در مقیاس خاکستری نشان دهید مگر اینکه در حالت شناور باشد

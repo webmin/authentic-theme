@@ -125,13 +125,6 @@ settings_navigation_color=Color palette
 settings_loader_top=Habilitar la barra de progrés superior
 settings_loader_left=Habilitar el selector pel menú de navegació
 
-settings_right_hide_table_icons=Amagar les icones
-settings_right_hide_table_icons_description=Mostra enllaços en comptes d'icones en les taules.
-settings_right_small_table_icons=Icones petites en les taules
-settings_right_small_table_icons_description=Mostra icones petites en les taules.
-settings_right_animate_table_icons=Habilita l'animació de les icones
-settings_right_grayscaled_table_icons=Mostra les icones sense color
-
 settings_leftmenu_section_hide_refresh_modules=Amagar l'enllaç d'actualització de mòduls
 settings_leftmenu_section_hide_unused_modules=Amagar l'enllaç dels mòduls no utilitzats
 settings_favorites=Mostrar el botó de favorits

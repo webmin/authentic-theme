@@ -128,13 +128,6 @@ settings_loader_top=Attiva la barra di caricamento della pagina nella parte supe
 settings_loader_left=Attiva spinner per il menu di navigazione
 settings_right_reload=Carica la pagina predefinita sull'interruttore di tabulazione
 
-settings_right_hide_table_icons=Nascondi icone della tabella
-settings_right_hide_table_icons_description=Rimuovi completamente le icone dalle tabelle della pagina di contenuto e visualizza semplici link con il simbolo chevron a destra.
-settings_right_small_table_icons=Icone piccole della tabella
-settings_right_small_table_icons_description=Sostituire le icone delle tabelle di dimensioni standard con icone piccole e mostra i link delle icone utilizzando tooltip.
-settings_right_animate_table_icons=Anima icone della tabella al passaggio del mouse
-settings_right_grayscaled_table_icons=Icone della tabella in scala di grigi e diventano colorate solo al passaggio del mouse
-
 settings_leftmenu_section_hide_refresh_modules=Nascondi il link Ricarica moduli
 settings_leftmenu_section_hide_unused_modules=Nascondi il link Moduli inutilizzati
 settings_favorites=Mostra pulsante Preferiti

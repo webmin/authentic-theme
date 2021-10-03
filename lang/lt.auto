@@ -128,13 +128,6 @@ settings_loader_top=Ekrano viršuje įgalinkite puslapio eigos kaupiklį
 settings_loader_left=Įgalinti naršymo meniu suktuką
 settings_right_reload=Įkelkite numatytąjį puslapį į skirtuko jungiklį
 
-settings_right_hide_table_icons=Slėpti lentelės piktogramas
-settings_right_hide_table_icons_description=Visiškai pašalinkite piktogramas iš turinio puslapio lentelių ir rodykite paprastas nuorodas su dešine viršuje
-settings_right_small_table_icons=Mažos lentelės piktogramos
-settings_right_small_table_icons_description=Pakeiskite standartinio dydžio lentelės piktogramas mažomis ir rodykite piktogramas naudodami patarimą
-settings_right_animate_table_icons=Animacinių stalo piktogramų fokusavimas
-settings_right_grayscaled_table_icons=Pilkos spalvos lentelės piktogramos ir spalvos bus skiriamos tik fokusui
-
 settings_leftmenu_section_hide_refresh_modules=Slėpti atnaujinimo modulių nuorodą
 settings_leftmenu_section_hide_unused_modules=Slėpti nenaudotų modulių skyrių
 settings_favorites=Rodyti mygtuką Parankiniai
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Pradiniame įkrovime rodykite prekės
 #19.76
 theme_xhred_global_show_all=Rodyti viską
 theme_xhred_filemanager_context_prop_show_all=Rodyti visas savybes
+
+#19.84
+settings_right_table_links_type=Lentelės nuorodų rodymo tipas
+settings_right_table_links_type_2=Didelės piktogramos su tekstu
+settings_right_table_links_type_1=Mažos piktogramos su patarimų tekstu
+settings_right_table_links_type_0=Nėra piktogramų, tik teksto nuorodos
+settings_right_table_animate_icons=Rodyti lentelės piktogramų nuorodų animaciją
+settings_right_table_grayscaled_icons=Rodyti lentelės piktogramos nuorodas pilkos spalvos skalėje, nebent užveskite pelės žymeklį

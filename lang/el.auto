@@ -128,13 +128,6 @@ settings_loader_top=Ενεργοποίηση του προγράμματος φ�
 settings_loader_left=Ενεργοποίηση spinner για μενού πλοήγησης
 settings_right_reload=Φόρτωση προεπιλεγμένης σελίδας στο διακόπτη καρτέλας
 
-settings_right_hide_table_icons=Απόκρυψη εικονιδίων πίνακα
-settings_right_hide_table_icons_description=Καταργήστε εντελώς τα εικονίδια από τους πίνακες σελίδων περιεχομένου και εμφανίστε απλούς συνδέσμους με το δεξί chevron
-settings_right_small_table_icons=Μικρό τραπέζι εικονίδια
-settings_right_small_table_icons_description=Αντικαταστήστε εικονίδια πίνακα τυπικού μεγέθους με μικρά και συνδέστε εικονίδια οθόνης χρησιμοποιώντας την επεξήγηση εργαλείου
-settings_right_animate_table_icons=Εστίαση των επιτραπέζιων εικονιδίων στην εστίαση
-settings_right_grayscaled_table_icons=Τα εικονίδια πίνακα κλίμακας του γκρι και φέρνουν το χρώμα μόνο στην εστίαση
-
 settings_leftmenu_section_hide_refresh_modules=Απόκρυψη συνδέσμου μονάδων ανανέωσης
 settings_leftmenu_section_hide_unused_modules=Απόκρυψη ενότητας μη χρησιμοποιημένων ενοτήτων
 settings_favorites=Εμφάνιση κουμπιού αγαπημένων
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Εμφάνιση οθόνης splash 
 #19.76
 theme_xhred_global_show_all=Προβολή όλων
 theme_xhred_filemanager_context_prop_show_all=Εμφάνιση όλων των ιδιοτήτων
+
+#19.84
+settings_right_table_links_type=Τύπος εμφάνισης συνδέσμων πίνακα
+settings_right_table_links_type_2=Μεγάλα εικονίδια με κείμενο
+settings_right_table_links_type_1=Μικρά εικονίδια με κείμενο επεξήγησης εργαλείου
+settings_right_table_links_type_0=Χωρίς εικονίδια, μόνο σύνδεσμοι κειμένου
+settings_right_table_animate_icons=Εμφάνιση κινούμενης εικόνας για συνδέσμους εικονιδίων πίνακα
+settings_right_table_grayscaled_icons=Εμφάνιση συνδέσμων εικονιδίων πίνακα σε κλίμακα του γκρι, εκτός εάν είναι τοποθετημένη σε πτέρυγα

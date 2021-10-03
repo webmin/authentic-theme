@@ -520,3 +520,11 @@ settings_embed_product_branding_privileged=Mostra la pantalla de presentació de
 #19.76
 theme_xhred_global_show_all=Mostrar tots
 theme_xhred_filemanager_context_prop_show_all=Mostra totes les propietats
+
+#19.84
+settings_right_table_links_type=Tipus de visualització d'enllaços de taula
+settings_right_table_links_type_2=Icones grans amb text
+settings_right_table_links_type_1=Icones petites amb text d’informació
+settings_right_table_links_type_0=No hi ha icones, només enllaços de text
+settings_right_table_animate_icons=Mostra l'animació per sobre dels enllaços d'icones de taula
+settings_right_table_grayscaled_icons=Mostra els enllaços d'icones de taula en escala de grisos tret que es passi el cursor

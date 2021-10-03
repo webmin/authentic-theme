@@ -128,13 +128,6 @@ settings_loader_top=Gaitu orrialdearen aurrera kargatzailea pantailaren gainean
 settings_loader_left=Gaitu spinner nabigazio menua
 settings_right_reload=Kargatu lehenetsitako orria fitxa aldatzailean
 
-settings_right_hide_table_icons=Ezkutatu taularen ikonoak
-settings_right_hide_table_icons_description=Erabat kendu ikonoak eduki orriko tauletatik eta eskuineko estekak erakutsi eskuineko chevron-ekin
-settings_right_small_table_icons=Taula ikono txikiak
-settings_right_small_table_icons_description=Aldatu tamaina estandarraren mahai ikonoak txikiekin eta ikonoak esteka esteka erabiliz
-settings_right_animate_table_icons=Animatu taularen ikonoak fokuan
-settings_right_grayscaled_table_icons=Taulako ikonoak eskala grisan jarri eta kolorea soilik fokua dute
-
 settings_leftmenu_section_hide_refresh_modules=Ezkutatu freskatze moduluen esteka
 settings_leftmenu_section_hide_unused_modules=Ezkutatu erabili gabeko moduluen atala
 settings_favorites=Erakutsi gogokoen botoia
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Erakutsi marka hasierako pantaila has
 #19.76
 theme_xhred_global_show_all=Erakutsi dena
 theme_xhred_filemanager_context_prop_show_all=Erakutsi propietate guztiak
+
+#19.84
+settings_right_table_links_type=Taulako estekak bistaratzeko mota
+settings_right_table_links_type_2=Testuarekin ikono handiak
+settings_right_table_links_type_1=Aholku testua duten ikono txikiak
+settings_right_table_links_type_0=Ez dago ikonorik, testu estekak baizik
+settings_right_table_animate_icons=Erakutsi pasatzean animazioa taulako ikonoen esteketarako
+settings_right_table_grayscaled_icons=Erakutsi taulako ikonoen estekak grisen eskalan, kokatu ezean

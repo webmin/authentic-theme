@@ -128,13 +128,6 @@ settings_loader_top=Aktiveer vorderingslaaier aan die bokant van die skerm
 settings_loader_left=Skakel spin vir die navigasiekieslys in
 settings_right_reload=Laai die standaardbladsy op die tabskakelaar
 
-settings_right_hide_table_icons=Versteek tabelikone
-settings_right_hide_table_icons_description=Verwyder ikone heeltemal van die inhoudsbladsye en vertoon gewone skakels met die regterkant
-settings_right_small_table_icons=Klein tabelikone
-settings_right_small_table_icons_description=Vervang standaardgrootte-tabelikone met kleintjies en vertoon ikone skakel met behulp van gereedskapstip
-settings_right_animate_table_icons=Animeer tabelikone op fokus
-settings_right_grayscaled_table_icons=Grysskaal-tabelikone en bring slegs kleur in fokus
-
 settings_leftmenu_section_hide_refresh_modules=Versteek skakel vir verfrissende modules
 settings_leftmenu_section_hide_unused_modules=Versteek gedeelte van ongebruikte modules
 settings_favorites=Wys gunstelinge-knoppie
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Wys handelsmerk-spatskerm tydens aanv
 #19.76
 theme_xhred_global_show_all=Wys alles
 theme_xhred_filemanager_context_prop_show_all=Toon alle eiendomme
+
+#19.84
+settings_right_table_links_type=Tipe skakels vertoon tipe
+settings_right_table_links_type_2=Groot ikone met teks
+settings_right_table_links_type_1=Klein ikone met teksgids
+settings_right_table_links_type_0=Geen ikone nie, slegs teksskakels
+settings_right_table_animate_icons=Wys animasie op die sweef vir skakels met tafelikone
+settings_right_table_grayscaled_icons=Wys skakels in die grysskaal van die tabelikoon, tensy dit deur die muis gehou word

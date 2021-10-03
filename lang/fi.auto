@@ -128,13 +128,6 @@ settings_loader_top=Ota sivun edistymisen lataus käyttöön näytön yläreunaa
 settings_loader_left=Ota kehrä navigointivalikossa käyttöön
 settings_right_reload=Lataa oletussivu välilehden kytkimelle
 
-settings_right_hide_table_icons=Piilota pöydän kuvakkeet
-settings_right_hide_table_icons_description=Poista kuvakkeet kokonaan sisältösivutaulukoista ja näytä selkeät linkit oikealla rintakehällä
-settings_right_small_table_icons=Pienet taulukko kuvakkeet
-settings_right_small_table_icons_description=Korvaa vakiokokotaulukon kuvakkeet pienillä ja näyttökuvakkeilla on linkki työkaluvinkin avulla
-settings_right_animate_table_icons=Animoi pöydän kuvakkeet keskittyä
-settings_right_grayscaled_table_icons=Harmaasävypöydän kuvakkeet ja tuo väri vain tarkennukseen
-
 settings_leftmenu_section_hide_refresh_modules=Piilota päivitysmoduulilinkki
 settings_leftmenu_section_hide_unused_modules=Piilota käyttämättömät moduulit -osa
 settings_favorites=Näytä suosikit -painike
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Näytä brändäyskuvaruutu ensimmäi
 #19.76
 theme_xhred_global_show_all=Näytä kaikki
 theme_xhred_filemanager_context_prop_show_all=Näytä kaikki ominaisuudet
+
+#19.84
+settings_right_table_links_type=Taulukolinkkien näyttötyyppi
+settings_right_table_links_type_2=Suuret kuvakkeet tekstillä
+settings_right_table_links_type_1=Pienet kuvakkeet työkaluvinkillä
+settings_right_table_links_type_0=Ei kuvakkeita, vain tekstilinkkejä
+settings_right_table_animate_icons=Näytä pöydän kuvakkeen linkkien päällä oleva animaatio
+settings_right_table_grayscaled_icons=Näytä taulukon kuvakkeiden linkit harmaasävyinä, ellei niitä vedetä

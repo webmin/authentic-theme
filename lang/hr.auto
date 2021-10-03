@@ -128,13 +128,6 @@ settings_loader_top=Omogućite program za učitavanje napredovanja stranice na v
 settings_loader_left=Omogući spinner za navigacijski izbornik
 settings_right_reload=Učitajte zadanu stranicu na prekidač kartice
 
-settings_right_hide_table_icons=Sakrij ikone stola
-settings_right_hide_table_icons_description=Potpuno uklonite ikone sa tablica stranica sa sadržajem i prikažite obične veze s desnim ševronom
-settings_right_small_table_icons=Male ikone stola
-settings_right_small_table_icons_description=Zamijenite male ikone tablice standardnih veličina i povežite ikone na zaslonu pomoću tipke
-settings_right_animate_table_icons=Animirane ikone tablice na fokusu
-settings_right_grayscaled_table_icons=Igre stola u sivim tonovima i donose boju samo u fokusu
-
 settings_leftmenu_section_hide_refresh_modules=Sakrij vezu za osvježavanje modula
 settings_leftmenu_section_hide_unused_modules=Sakrij odjeljak neiskorištenih modula
 settings_favorites=Prikaži gumb favorita
@@ -1216,3 +1209,11 @@ settings_embed_product_branding_privileged=Pokaži početni zaslon marke s poče
 #19.76
 theme_xhred_global_show_all=Pokaži sve
 theme_xhred_filemanager_context_prop_show_all=Prikaži sva svojstva
+
+#19.84
+settings_right_table_links_type=Vrsta prikaza tabličnih veza
+settings_right_table_links_type_2=Velike ikone s tekstom
+settings_right_table_links_type_1=Male ikone s tekstom opisa
+settings_right_table_links_type_0=Nema ikona, samo tekstualne veze
+settings_right_table_animate_icons=Prikaz animacije pri držanju pokazivača za veze na ikone tablice
+settings_right_table_grayscaled_icons=Prikažite veze ikona tablice u sivim tonovima, osim ako zadržite pokazivač miša
