@@ -1545,6 +1545,7 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
+        unlink_file("$theme_var_dir/software-latest");
 
         # Clear stats history
         unlink_file("$theme_var_dir/stats-$remote_user.json");
