@@ -47,14 +47,18 @@ sub get_sysinfo_warning
         $returned_data .= '<br>';
         foreach my $info (@{$info_ref}) {
             if ($info->{'type'} eq 'warning') {
-                $returned_data .= replace("ui_submit ui_form_end_submit",
-                                          "btn-tiny ui_submit ui_form_end_submit",
-                                          &ui_alert_box($info->{'warning'},
-                                                        $info->{'level'} || 'warn',
-                                                        undef,
-                                                        1,
-                                                        $info->{'desc'} || undef
-                                          ));
+                my $def_level = $info->{'level'} || 'warn';
+                my $info_data = $info->{'warning'};
+
+                # Customize hardcode types
+                if ($info_data &&
+                    $info_data =~ /\/fix_os\.cgi/m)
+                {
+                    $def_level = 'info';
+                }
+                my $alert_data = &ui_alert_box($info_data, $def_level, undef, 1, $info->{'desc'});
+                $returned_data .=
+                  replace("ui_submit ui_form_end_submit", "btn-tiny ui_submit ui_form_end_submit", $alert_data);
             }
         }
     }
@@ -692,9 +696,7 @@ sub get_sysinfo_vars
                        (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /alpha|beta|RC/))
                     &&
                     (
-                        (
-                         ($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel
-                         ) &&
+                        (($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
                         lc($authentic_remote_version_local) gt lc($authentic_installed_version))
@@ -1578,7 +1580,7 @@ sub clear_theme_cache
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server");
         &virtual_server::clear_links_cache();
-        
+
         my $licence_status = &virtual_server::cache_file_path("licence-status");
         unlink_file($licence_status);
 
