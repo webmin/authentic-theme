@@ -1578,6 +1578,12 @@ sub clear_theme_cache
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server");
         &virtual_server::clear_links_cache();
+        
+        my $licence_status = &virtual_server::cache_file_path("licence-status");
+        unlink_file($licence_status);
+
+        my $collected_info_file = &virtual_server::cache_file_path("collected");
+        unlink_file($collected_info_file);
     }
 
     # Clear potentially stuck menus and other cache
