@@ -113,8 +113,7 @@ sub theme_header
                 my $cprog =
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
-                print "<a href=\"$theme_webprefix/$cprog?", &get_module_name() . "\">", $text{'header_config'},
-                  "</a><br>\n";
+                print "<a href=\"$theme_webprefix/$cprog?", &get_module_name() . "\">", $text{'header_config'}, "</a><br>\n";
             }
         }
         print "</div>\n";
@@ -162,7 +161,7 @@ sub theme_footer
                 $url = "/" . &get_module_name() . "/$url";
             }
             $url = "$theme_webprefix$url" if ($url =~ /^\//);
-            $url = $url . "/"                  if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
+            $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
             print
 "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
               &text('main_return', $_[$i + 1]), "</a>\n";
@@ -302,25 +301,57 @@ sub theme_ui_upload
 
 sub theme_icons_table
 {
-    my $sm = $theme_config{'settings_right_small_table_icons'} eq 'true' ? ' small-icons' : undef;
-    my $ff;
-    my $in = scalar(@{ $_[0] });
-    print "<div class=\"row icons-row$sm\">\n";
-    for (my $i = 0; $i < @{ $_[0] }; $i++) {
-        &generate_icon($_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref($_[4]) ? $_[4]->[$i] : $_[4],
-                       $_[5], $_[6], $_[7]->[$i], $_[8]->[$i]);
-        $ff .= '<div class="icons-container-filler"></div>', "\n" if (!$sm);
+    my $lt = $theme_config{'settings_right_table_links_type'};
+    my $sm = $lt eq '1' ? ' small-icons' : undef;
+    my $nl = $lt eq '0' ? 1              : undef;
+
+    if ($nl) {
+
+        # Print plain text links
+        print "<div class=\"links-row-padded\">";
+        print
+"<div class=\"row-flex row-flex-cols-sm-1 row-flex-cols-md-2 row-flex-cols-lg-3 row-flex-cols-xl-3 row-flex-cols-xxl-4 links-row\">";
+        for (my $i = 0; $i < @{ $_[0] }; $i++) {
+            my $after;
+            if ($_[8]->[$i]) {
+                $after = $_[8]->[$i];
+                $after =~
+s/ui_link/margined-left-4 btn btn-default btn-transparent-link btn-xxs btn-xxs-compact btn-hover-hide f__lnk_t_btn-el/g;
+                $after =~ s/>\((.*?)\)</>$1</g;
+            }
+            my $before;
+            $before = $_[7]->[$i];
+            print "<div class=\"col-flex-sm-6" . ($before ? " link-row-col" : " link-row-col-narrow") . "\">";
+            print "$before <a class='row-link' href='$_[0]->[$i]' " . (ref($_[4]) ? $_[4]->[$i] : $_[4]) .
+              ">" . ($before ? "" : "<i class='fa fa-fw fa-angle-right'>&nbsp;&nbsp;</i>") .
+              "<span>@{[html_strip($_[1]->[$i], ' ')]}</span></a> $after";
+            print "</div>";
+        }
+        print "</div>";
+        print "</div>";
+
+    } else {
+
+        # Print icons
+        my $ff;
+        my $in = scalar(@{ $_[0] });
+        print "<div class=\"row icons-row$sm\">\n";
+        for (my $i = 0; $i < @{ $_[0] }; $i++) {
+            &generate_icon($_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref($_[4]) ? $_[4]->[$i] : $_[4],
+                           $_[5], $_[6], $_[7]->[$i], $_[8]->[$i]);
+            $ff .= '<div class="icons-container-filler"></div>', "\n" if (!$sm);
+        }
+        if ($in < 2) {
+            $ff .= "$ff" x 16;
+        } elsif ($in < 4) {
+            $ff .= "$ff" x 8;
+        } elsif ($in < 8) {
+            $ff .= "$ff" x 4;
+        } elsif ($in < 16) {
+            $ff .= "$ff" x 2;
+        }
+        print "$ff</div>\n";
     }
-    if ($in < 2) {
-        $ff .= "$ff" x 16;
-    } elsif ($in < 4) {
-        $ff .= "$ff" x 8;
-    } elsif ($in < 8) {
-        $ff .= "$ff" x 4;
-    } elsif ($in < 16) {
-        $ff .= "$ff" x 2;
-    }
-    print "$ff</div>\n";
 }
 
 sub theme_generate_icon
@@ -329,12 +360,14 @@ sub theme_generate_icon
     my $icon_outer = $icon;
     my $wp         = $theme_webprefix;
 
+    my $lt = $theme_config{'settings_right_table_links_type'};
+
     $icon =~ s/^$wp//g if ($wp);
     $icon =~ s/\/images//g;
     $icon =~ s/images//g;
 
-    my $grayscaled_table_icons = ($theme_config{'settings_right_grayscaled_table_icons'} ne 'false' ? 0 : 1);
-    my $animate_table_icons = ($theme_config{'settings_right_animate_table_icons'} ne 'false' ? 0 :
+    my $grayscaled_table_icons = ($theme_config{'settings_right_table_grayscaled_icons'} ne 'false' ? 0 : 1);
+    my $animate_table_icons = ($theme_config{'settings_right_table_animate_icons'} ne 'false' ? 0 :
                                  1);
     (my $___svg = $icon) =~ s/.gif/.svg/;
 
@@ -350,7 +383,7 @@ sub theme_generate_icon
                     $icon_outer                      ? $icon_outer :
                     ($wp . "/images/not_found.svg"));
 
-    if ($theme_config{'settings_right_small_table_icons'} eq 'true') {
+    if ($lt eq '1') {
         print '<div class="col-xs-1 small-icons-container' .
           (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
           '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
@@ -370,9 +403,8 @@ sub theme_generate_icon
         print '</div>';
     } else {
         print '<div class="col-xs-1 icons-container' . (!$_[6] && !$_[7] ? ' forged-xx-skip' : ' gl-icon-container') .
-          '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') .
-          '" data-title="' . (($theme_config{'settings_right_small_table_icons'} eq 'true') ? $title : '') .
-          '" data-toggle="tooltip" data-container="body">';
+          '' . (!$grayscaled_table_icons && ' grayscaled') . '' . (!$animate_table_icons && ' animated') . '" data-title="' .
+          (($lt eq '1') ? $title : '') . '" data-toggle="tooltip" data-container="body">';
         if ($_[6] || $_[7]) {
             if ($_[6]) {
                 print "<span class='hidden-forged hidden-forged-6' forged-xx-data forged-xx-sub>$_[6]</span>\n";
@@ -479,12 +511,12 @@ sub theme_ui_help
 
 sub theme_hlink
 {
-my $mod = $_[2] ? $_[2] : &get_module_name();
-my $width = $_[3] || $tconfig{'help_width'} || $gconfig{'help_width'} || 600;
-my $height = $_[4] || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
-return "<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$_[1]\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$_[1]\">$_[0]</a>";
+    my $mod    = $_[2] ? $_[2] : &get_module_name();
+    my $width  = $_[3] || $tconfig{'help_width'}  || $gconfig{'help_width'}  || 600;
+    my $height = $_[4] || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
+    return
+"<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$_[1]\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$_[1]\">$_[0]</a>";
 }
-
 
 sub theme_ui_link
 {
@@ -789,7 +821,8 @@ sub theme_ui_oneradio
       &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") . " id=\"$id\_$rand\"" .
       ($tags ? " " . $tags : "") . ">";
     $ret .=
-      '<label class="lawobject" for="' . $id . '_' . $rand . '">' . (length $label ? "&nbsp;&nbsp;$label&nbsp;" : '&nbsp;&nbsp;') . '</label></span>';
+      '<label class="lawobject" for="' . $id . '_' . $rand . '">' .
+      (length $label ? "&nbsp;&nbsp;$label&nbsp;" : '&nbsp;&nbsp;') . '</label></span>';
     $ret .= "$after\n";
     return $ret;
 }
@@ -972,6 +1005,8 @@ sub theme_ui_alert_box
     $rv .= '<div class="alert ' . $type . '" style=" ' . $style . '">' . "\n";
     $rv .= '<i class="fa fa-fw ' . $fa . '"></i> <strong>' . $tmsg . '</strong>';
     $rv .= ($new_line ? '<br>' : '&nbsp;') . "\n";
+    $msg =~ s/button class="btn/button class="btn btn-tiny/gm;
+    $msg =~ s/input class="ui_submit/input class="ui_submit btn btn-default btn-xs/gm;
     $rv .= $msg . "\n";
     $rv .= '</div>' . "\n";
 
@@ -1238,6 +1273,11 @@ sub theme_nice_size
     return theme_nice_size_local(@_);
 }
 
+sub theme_get_webprefix
+{
+    return theme_get_webprefix_local(@_);
+}
+
 sub theme_redirect
 {
     if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
@@ -1259,10 +1299,11 @@ sub theme_redirect
     }
     $url = "$prefix$url" if ($url && $noredir);
 
-    my ($remote_server_webprefix) = parse_remote_server_webprefix();
+    my ($remote_server_webprefix, $remote_server_linked) = &theme_get_webprefix_local('array');
     if ($remote_server_webprefix) {
         ($link) = $arg2 =~ /:\d+(.*)/;
-        $url = "$remote_server_webprefix$link";
+        $url = "$remote_server_webprefix$link"
+          if ($url !~ /^$remote_server_webprefix/ || !$remote_server_linked);
     } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/))) {
         print "Location: $arg1\n\n";
         return;

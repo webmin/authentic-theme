@@ -12,6 +12,7 @@ our (%in,
      $base_remote_user,
      $remote_user,
      $theme_webprefix,
+     $theme_server_webprefix,
      %theme_text,
      %theme_config,
      $get_user_level,
@@ -34,6 +35,8 @@ sub nav_detector
 
     my $prod    = get_product_name();
     my $mod_def = $gconfig{'gotomodule'};
+
+    my $mod_rt_access    = $get_user_level eq '0';
 
     my $prd_cm           = "cloudmin";
     my $mod_cm           = "server-manager";
@@ -124,9 +127,21 @@ sub nav_detector
                 !$mod_mb_available &&
                 !$page_def))
         {
+            # Cloudmin mode
+            if ($mod_cm_available && $mod_rt_access) {
+                $nav_def_tab = $prd_cm;
+            }
+
+            # Virtualmin mode
+            elsif ($mod_vm_available && $mod_rt_access) {
+                $nav_def_tab = $prd_vm;
+            }
+
             # This is the single product switch mode
-            $nav_def_tab = $prd_db;
-            $prd_db_mode = 1;
+            else {
+                $nav_def_tab = $prd_db;
+                $prd_db_mode = 1;
+            }
         }
 
         # Check if specific single switch mode first
@@ -673,10 +688,12 @@ sub nav_list_combined_menu
         if ($link) {
             if (!string_starts_with($link, "http") &&
                 !string_starts_with($link, "ftp") &&
-                !string_starts_with($link, "www"))
+                !string_starts_with($link, "www") &&
+                !string_starts_with($link, "../"))
             {
                 $link = "/$link" if (!string_starts_with($link, "/"));
-                $link = "$theme_webprefix$link";
+                $link = "$theme_webprefix$link"
+                    if($link !~ /^\Q$theme_webprefix\E/);
             }
         }
         return $link;

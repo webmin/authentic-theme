@@ -124,13 +124,6 @@ settings_hotkey_custom_9_user=Vlastni odkaz <code>9</code>
 settings_navigation_color=Color palette
 settings_loader_left=Povolit posuvník pro navigační panel
 
-settings_right_hide_table_icons=Schovat ikony v tabulkách v pravém rámci
-settings_right_hide_table_icons_description=Úplně odstranit ikony ze stránek a zobrazit textové linky se šipkou
-settings_right_small_table_icons=Malé ikony tabulek
-settings_right_small_table_icons_description=Nahradit standardní velikost ikon v tabulkách malými ikonami a zobrazit odkaz v tooltip
-settings_right_animate_table_icons=Animovat ikony tabulek při výberu
-settings_right_grayscaled_table_icons=Nechat ikony černobílé a zbarvit je pouze při najetí myši
-
 settings_leftmenu_section_hide_refresh_modules=Schovat odkaz Refresh Modules
 settings_leftmenu_section_hide_unused_modules=Schovat odkaz Unused Modules
 settings_favorites=Show favorites button

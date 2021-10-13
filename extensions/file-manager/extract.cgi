@@ -23,8 +23,8 @@ my $delete   = $in{'delete'};
 
 foreach my $name (@entries_list) {
     my $no_command;
-    $status     = 0;
-    $status_gpg = 0;
+    $status     = undef;
+    $status_gpg = undef;
     $gpg        = 0;
     $iname      = $name;
     if (string_ends_with($name, '.gpg') || string_ends_with($name, '.pgp')) {
@@ -119,8 +119,8 @@ foreach my $name (@entries_list) {
             if ($password) {
                 $pparam = (" -p " . quotemeta($password) . " ");
             }
-            if ($unrar_cmd eq 'unar') {
-                $status = system("$unrar_cmd $pparam -r " . quotemeta("$cwd/$name") . " -o " . quotemeta($cwd));
+            if ($unrar_cmd =~ /unar$/) {
+                $status = system("$unrar_cmd $pparam " . quotemeta("$cwd/$name") . " -o " . quotemeta($cwd));
                 if ($status == 512) {
                     $status = 65280;
                 }

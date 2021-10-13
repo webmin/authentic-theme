@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 19.84-beta4 (September 29, 2021)
+* Update major upstream libraries
+* Fix progressive output fetching when HTML present
+* Fix redirect on page reload in proxy mode
+* Fiх webprefix duplication in standard proxy mode [forum.virtualmin.com/t/112199](https://forum.virtualmin.com/t/112199)
+* Fix server redirects upon form submissions with Servers Index module
+* Fix alerts buttons positioning
+* Fix display of menu and slider toggle buttons
+* Fix post-install script to clear menu caches
+
 #### Version 19.83 (August 28, 2021)
 * Add ability to install a panel as Chrome application on desktop or mobile device [#1459](https://github.com/authentic-theme/authentic-theme/issues/1459)
 * Fiх displaying modal window above the backdrop in File Manager on Apple mobile devices [webmin/webmin#1508](https://github.com/webmin/webmin/issues/1508)

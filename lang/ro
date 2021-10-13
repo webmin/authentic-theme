@@ -124,13 +124,6 @@ settings_navigation_color=Color palette
 settings_loader_top=Activează bara de încărcare a paginii în partea superioară a ecranului
 settings_loader_left=Activează spinner pentru meniul de navigare
 
-settings_right_hide_table_icons=Ascunde pictogramele tabelelor din cadrul din dreapta
-settings_right_hide_table_icons_description=Elimină complet pictogramele din tabelele paginii de conținut și afișează doar linkuri cu săgeată la dreapta
-settings_right_small_table_icons=Pictograme mici in tabele
-settings_right_small_table_icons_description=Substituează pictogramele tabelelor de dimensiune standard cu unele mici și afișează linkul pictogramelor folosind chenar cu descriere
-settings_right_animate_table_icons=Animează pictogramele tabelelor la focus pe el
-settings_right_grayscaled_table_icons=Tranformă în scala gri pictogramele tabelelor și colorează-le doar la focus pe el
-
 settings_leftmenu_section_hide_refresh_modules=Ascunde linkul Împrospătează Module
 settings_leftmenu_section_hide_unused_modules=Ascunde linkul Module Neutilizate
 settings_favorites=Arată butonul pentru favorite

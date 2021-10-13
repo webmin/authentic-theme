@@ -87,7 +87,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Numărul maxim de rânduri pentru inițializarea sortării și căutării tabelelor
 theme_xhred_global_rows=rânduri
 
 #19.42
@@ -194,3 +193,11 @@ settings_embed_product_branding_privileged=Afișați ecranul de prezentare a mă
 #19.76
 theme_xhred_global_show_all=Arata tot
 theme_xhred_filemanager_context_prop_show_all=Afișați toate proprietățile
+
+#19.84
+settings_right_table_links_type=Tipul de afișare a legăturilor de tabel
+settings_right_table_links_type_2=Icoane mari cu text
+settings_right_table_links_type_1=Pictograme mici cu text de tip tooltip
+settings_right_table_links_type_0=Fără pictograme, doar linkuri text
+settings_right_table_animate_icons=Afișați animația on-hover pentru linkurile cu pictograme de masă
+settings_right_table_grayscaled_icons=Afișați legăturile cu pictograma tabelului în tonuri de gri, cu excepția cazului în care este plasat

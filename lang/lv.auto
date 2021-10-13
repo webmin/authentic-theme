@@ -128,13 +128,6 @@ settings_loader_top=Ekrāna augšdaļā iespējot lapas virzības augšupielādi
 settings_loader_left=Iespējot navigācijas izvēlnes vērpējus
 settings_right_reload=Ielādējiet noklusējuma lapu cilnes slēdzī
 
-settings_right_hide_table_icons=Slēpt tabulas ikonas
-settings_right_hide_table_icons_description=Pilnībā noņemiet ikonas no satura lapu tabulām un parādiet vienkāršās saites ar labo šavronu
-settings_right_small_table_icons=Nelielas tabulas ikonas
-settings_right_small_table_icons_description=Aizstājiet standarta izmēra tabulas ikonas ar mazām un displeja ikonu saiti, izmantojot rīka padomu
-settings_right_animate_table_icons=Dzīves centrā esošās tabulas ikonas
-settings_right_grayscaled_table_icons=Pelēktoņu tabulas ikonas un piešķir krāsu tikai fokusam
-
 settings_leftmenu_section_hide_refresh_modules=Slēpt saiti atsvaidzināt moduļus
 settings_leftmenu_section_hide_unused_modules=Slēpt sadaļu Neizmantotie moduļi
 settings_favorites=Rādīt izlases pogu
@@ -1111,7 +1104,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maksimālais rindu skaits, lai sāktu tabulas kārtošanu un meklēšanu
 theme_xhred_global_rows=Rindas
 
 #19.42
@@ -1217,3 +1209,11 @@ settings_embed_product_branding_privileged=Sākotnēji ielādējot, parādiet z�
 #19.76
 theme_xhred_global_show_all=Parādīt visu
 theme_xhred_filemanager_context_prop_show_all=Parādīt visus rekvizītus
+
+#19.84
+settings_right_table_links_type=Tabulas saišu attēlojuma veids
+settings_right_table_links_type_2=Lielas ikonas ar tekstu
+settings_right_table_links_type_1=Nelielas ikonas ar rīka padoma tekstu
+settings_right_table_links_type_0=Nav ikonu, tikai teksta saites
+settings_right_table_animate_icons=Rādīt tabulas ikonu saišu animāciju uz kursora
+settings_right_table_grayscaled_icons=Rādīt tabulas ikonu saites pelēktoņos, ja vien nav novietots kursors

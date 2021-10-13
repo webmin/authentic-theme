@@ -128,13 +128,6 @@ settings_loader_top=在屏幕頂部啟用頁面進度加載器
 settings_loader_left=啟用微調器的導航菜單
 settings_right_reload=在選項卡開關上加載默認頁面
 
-settings_right_hide_table_icons=隱藏表格圖標
-settings_right_hide_table_icons_description=從內容頁表中完全刪除圖標，並使用右V形顯示純鏈接
-settings_right_small_table_icons=小表圖標
-settings_right_small_table_icons_description=用小圖標替換標準尺寸表圖標，並使用工具提示顯示鏈接
-settings_right_animate_table_icons=重點關注動畫表圖標
-settings_right_grayscaled_table_icons=灰度表圖標，僅使顏色聚焦
-
 settings_leftmenu_section_hide_refresh_modules=隱藏刷新模塊鏈接
 settings_leftmenu_section_hide_unused_modules=隱藏未使用的模塊部分
 settings_favorites=顯示收藏夾按鈕
@@ -1111,7 +1104,6 @@ theme_xhred_nice_size_TBB=bps
 theme_xhred_nice_size_GBB=千兆位
 theme_xhred_nice_size_MBB=兆比特
 theme_xhred_nice_size_kBB=千比特
-settings_table_init_datatables=初始化表排序和搜索的最大行數
 theme_xhred_global_rows=行數
 
 #19.42
@@ -1217,3 +1209,11 @@ settings_embed_product_branding_privileged=在初始加載時顯示品牌初始�
 #19.76
 theme_xhred_global_show_all=顯示所有
 theme_xhred_filemanager_context_prop_show_all=顯示所有屬性
+
+#19.84
+settings_right_table_links_type=表格鏈接顯示類型
+settings_right_table_links_type_2=帶文字的大圖標
+settings_right_table_links_type_1=帶有工具提示文本的小圖標
+settings_right_table_links_type_0=沒有圖標，只有文字鏈接
+settings_right_table_animate_icons=顯示表格圖標鏈接的懸停動畫
+settings_right_table_grayscaled_icons=除非懸停，否則以灰度顯示表格圖標鏈接

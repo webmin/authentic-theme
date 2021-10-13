@@ -24,7 +24,7 @@ my $delete       = $in{'arcmove'} ? 1 : 0;
 my $encrypt      = $in{'arcencr'} ? 1 : 0;
 my $password     = $in{'arcencr_val'};
 my $key_id       = quotemeta($in{'arkkey'});
-
+my $status;
 if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
     if ($in{'method'} eq 'tar') {
         if (!has_command('tar')) {
@@ -39,7 +39,7 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
         my $fileq = quotemeta($file);
         my $gnu_tar_param = get_tar_verbatim();
         $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
-        system($command);
+        $status = system($command);
 
         if ($encrypt && $key_id) {
             my %webminconfig = foreign_config("webmin");
@@ -49,11 +49,12 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
             if (!has_command($gpgpath)) {
                 $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
             }
-
-            if (system($gpg) != 0) {
+            $status = system($gpg);
+            if ($status != 0) {
                 $errors{$file} = "$text{'filemanager_archive_gpg_error'}: $?";
+            } else {
+                unlink_file($file);
             }
-            unlink_file($file);
         }
     } elsif ($in{'method'} eq 'zip') {
         if (!has_command('zip')) {
@@ -71,11 +72,11 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
                 $errors{$name} = lc($text{'theme_xhred_global_no_target'});
             }
         }
-        system($command);
+        $status = system($command);
     }
 
     if ($delete) {
-        if (!%errors) {
+        if (!%errors && $status == 0) {
             foreach my $name (@entries_list) {
                 unlink_file("$cwd/$name");
             }

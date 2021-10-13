@@ -398,6 +398,23 @@ sub switch_to_unix_user_local
     }
 }
 
+sub theme_get_webprefix_local
+{
+    my ($array)               = @_;
+    my $webprefix             = $gconfig{'webprefix'};
+    my $parent_proxy_detected = 0;
+    my $parent_proxy          = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'};
+    if ($parent_proxy) {
+        my ($parent_proxy_link)   = $parent_proxy      =~ /(\S*?\/link\.cgi\/[\d]{8,16})/;
+        my ($parent_proxy_prefix) = $parent_proxy_link =~ /:\d+(\S*?\/link\.cgi\/\S*?\d+)/;
+        if ($parent_proxy_prefix) {
+            $webprefix             = $parent_proxy_prefix;
+            $parent_proxy_detected = 1;
+        }
+    }
+    return $array ? ($webprefix, $parent_proxy_detected) : $webprefix;
+}
+
 sub get_text_ltr
 {
     if ($current_lang_info && $current_lang_info->{'rtl'} eq "1") {
@@ -466,10 +483,53 @@ sub replace_meta
     return $string;
 }
 
+sub product_version_update_remote
+{
+    my ($latest_known_versions_remote, $latest_known_versions_remote_error, %versions_remote);
+    my $software_latest_cache       = theme_cached('software-latest');
+    my $software_latest_cache_extra = sub {
+        my ($software_latest_cache_original) = @_;
+        my $software_latest_cache_extra_csf  = theme_cached('version-csf-stable');
+        my $software_latest_cache_merged     = {};
+
+        if ($software_latest_cache_original && $software_latest_cache_extra_csf) {
+            $software_latest_cache_extra_csf = { 'csf' => $software_latest_cache_extra_csf };
+            $software_latest_cache_merged    = { %{$software_latest_cache_original}, %{$software_latest_cache_extra_csf} };
+        } elsif (!$software_latest_cache_original && $software_latest_cache_extra_csf) {
+            $software_latest_cache_merged = { 'csf' => $software_latest_cache_extra_csf };
+        } elsif ($software_latest_cache_original && !$software_latest_cache_extra_csf) {
+            $software_latest_cache_merged = $software_latest_cache_original;
+        }
+        return $software_latest_cache_merged;
+    };
+
+    if ($software_latest_cache) {
+        return &$software_latest_cache_extra($software_latest_cache);
+    } else {
+        http_download("virtualmin.com", 443, '/software-latest',
+                      \$latest_known_versions_remote,
+                      \$latest_known_versions_remote_error,
+                      undef, 1, undef, undef, 5);
+        if ($latest_known_versions_remote &&
+            !$latest_known_versions_remote_error)
+        {
+            %versions_remote = map {split /=/, $_} (split(/\n/, $latest_known_versions_remote));
+        }
+        theme_cached('software-latest', \%versions_remote, $latest_known_versions_remote_error);
+        return &$software_latest_cache_extra(\%versions_remote);
+    }
+
+}
+
 sub product_version_update
 {
     my ($v, $p) = @_;
-    my ($wv, $uv, $vv, $cv, $fv) = ('1.974', '1.823', '6.16', '9.5', '14.10');
+    my $software_versions_remote = product_version_update_remote();
+    my ($wv, $uv, $vv, $cv, $fv) = ($software_versions_remote->{'webmin'},
+                                    $software_versions_remote->{'usermin'},
+                                    $software_versions_remote->{'virtual-server'},
+                                    $software_versions_remote->{'server-manager'},
+                                    $software_versions_remote->{'csf'} || '14.11');
 
     my $vc = $v;
     if ($vc && $vc =~ /(\.).*?(\.)/) {
@@ -701,21 +761,6 @@ sub acl_system_status
         return 1;
     } else {
         return indexof($show, split(/\s+/, $access{'show'})) >= 0;
-    }
-}
-
-sub parse_remote_server_webprefix
-{
-    my ($parent) = get_env('http_complete_webmin_path') || get_env('http_webmin_path');
-
-    if ($parent) {
-        my ($parent_link)      = $parent        =~ /(\S*link\.cgi\/[\d]{8,16})/;
-        my ($parent_prefix)    = $parent_link   =~ /:\d+(.*\/link.cgi\/\S*\d)/;
-        my ($parent_webprefix) = $parent_prefix =~ /^(\/\w+)\/.*\/link\.cgi\//;
-
-        return ($parent_prefix, $parent_webprefix);
-    } else {
-        return (undef, undef);
     }
 }
 

@@ -125,13 +125,6 @@ settings_navigation_color=Color palette
 settings_loader_top=Fortschrittsanzeige Oben auf der Seite einschalten
 settings_loader_left=Drehende Anzeige im Navigations Menü einschalten
 
-settings_right_hide_table_icons=Tabellen Symbole im rechten Fenster nicht anzeigen
-settings_right_hide_table_icons_description=Entferne Symbole aus allen Inhaltstabellen und zeige stattdessen Links an.
-settings_right_small_table_icons=Kleine Tabellen Symbole
-settings_right_small_table_icons_description=Mache Tabellen Symbole kleiner und zeige den Link als Tooltip
-settings_right_animate_table_icons=Animiere Tabellen Symbole bei Eingabe
-settings_right_grayscaled_table_icons=Farbige Tabellen Symbole nur bei Eingabe anzeigen
-
 settings_leftmenu_section_hide_refresh_modules=Eintrag Module aktualisieren verbergen
 settings_leftmenu_section_hide_unused_modules=Eintrag Nicht benutzte Module verbergen
 settings_favorites=Knopf für Favoriten anzeigen
@@ -1100,7 +1093,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximale Anzahl Reihen beim Sortieren und Suchen in der Tabelle
 theme_xhred_global_rows=Reihen
 
 #19.42

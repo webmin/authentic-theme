@@ -47,14 +47,18 @@ sub get_sysinfo_warning
         $returned_data .= '<br>';
         foreach my $info (@{$info_ref}) {
             if ($info->{'type'} eq 'warning') {
-                $returned_data .= replace("ui_submit ui_form_end_submit",
-                                          "btn-tiny ui_submit ui_form_end_submit",
-                                          &ui_alert_box($info->{'warning'},
-                                                        $info->{'level'} || 'warn',
-                                                        undef,
-                                                        1,
-                                                        $info->{'desc'} || undef
-                                          ));
+                my $def_level = $info->{'level'} || 'warn';
+                my $info_data = $info->{'warning'};
+
+                # Customize hardcode types
+                if ($info_data &&
+                    $info_data =~ /\/fix_os\.cgi/m)
+                {
+                    $def_level = 'info';
+                }
+                my $alert_data = &ui_alert_box($info_data, $def_level, undef, 1, $info->{'desc'});
+                $returned_data .=
+                  replace("ui_submit ui_form_end_submit", "btn-tiny ui_submit ui_form_end_submit", $alert_data);
             }
         }
     }
@@ -188,16 +192,15 @@ sub get_extended_sysinfo
                             my $__start     = '<i class="fa fa-fw fa-lg fa-play text-success"></i>';
                             my $__restart   = '<i class="fa fa-fw fa-lg fa-refresh text-info"></i>';
 
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/up.gif'.*?>/$__checkmark/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/stop.png'.*?>/$__stop/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/down.gif'.*?>/$__down/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/start.png'.*?>/$__start/g;
-                            $t->{"value"} =~ s/<img src='\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/up.gif'.*?>/$__checkmark/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/stop.png'.*?>/$__stop/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/down.gif'.*?>/$__down/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/start.png'.*?>/$__start/g;
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
 
                             $returned_sysinfo .= '<tr>
-                                <td>' . replace('href=\'', "href='$theme_webprefix", $t->{"desc"}) . '</td>
-                                <td>'
-                              . replace('href=\'', "href='$theme_webprefix", $t->{"value"}) . '</td>
+                                <td>' . $t->{"desc"} . '</td>
+                                <td>' . $t->{"value"} . '</td>
                               </tr>';
                         }
                     } elsif ($info->{'type'} eq 'chart') {
@@ -324,7 +327,7 @@ sub print_charts
 
         $returned_sysinfo .= '<tr>
                                 <td style="width:25%">'
-          . replace('edit_domain', 'summary_domain', replace('href=\'', "href='$theme_webprefix", $t->{"desc"})) . '</td>
+          . replace('edit_domain', 'summary_domain', $t->{"desc"}) . '</td>
                                 <td style="width:60%">
                                 <div class="graph-container">
                                     <div class="graph">' . $bar . '</div>
@@ -693,9 +696,7 @@ sub get_sysinfo_vars
                        (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /alpha|beta|RC/))
                     &&
                     (
-                        (
-                         ($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel
-                         ) &&
+                        (($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel) &&
                          lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
                         ) ||
                         lc($authentic_remote_version_local) gt lc($authentic_installed_version))
@@ -1546,6 +1547,7 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
+        unlink_file("$theme_var_dir/software-latest");
 
         # Clear stats history
         unlink_file("$theme_var_dir/stats-$remote_user.json");
@@ -1578,6 +1580,12 @@ sub clear_theme_cache
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server");
         &virtual_server::clear_links_cache();
+
+        my $licence_status = &virtual_server::cache_file_path("licence-status");
+        unlink_file($licence_status);
+
+        my $collected_info_file = &virtual_server::cache_file_path("collected");
+        unlink_file($collected_info_file);
     }
 
     # Clear potentially stuck menus and other cache

@@ -16,13 +16,6 @@ settings_loader_top=Schakel paginavoortganglader in bovenaan het scherm
 settings_loader_left=Schakel spinner in voor navigatiemenu
 settings_right_reload=Laad de standaardpagina op de tabschakelaar
 
-settings_right_hide_table_icons=Tabelpictogrammen verbergen
-settings_right_hide_table_icons_description=Verwijder pictogrammen volledig uit de tabellen van de inhoudspagina en geef duidelijke links weer met de rechter chevron
-settings_right_small_table_icons=Kleine tafel iconen
-settings_right_small_table_icons_description=Vervang tabelpictogrammen van standaardformaat door kleine en geef pictogrammen weer via tooltip
-settings_right_animate_table_icons=Animeren tabel pictogrammen op focus
-settings_right_grayscaled_table_icons=Grijswaarden tabelpictogrammen en breng alleen kleur op focus
-
 settings_leftmenu_section_hide_refresh_modules=Verberg ververs modules link
 settings_leftmenu_section_hide_unused_modules=Verberg ongebruikte modules sectie
 settings_favorites=Knop Favorieten weergeven
@@ -998,7 +991,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Maximumaantal rijen om het sorteren en zoeken van tabellen te initialiseren
 theme_xhred_global_rows=Rijen
 
 #19.42
@@ -1104,3 +1096,11 @@ settings_embed_product_branding_privileged=Toon het opstartscherm van de brandin
 #19.76
 theme_xhred_global_show_all=Toon alles
 theme_xhred_filemanager_context_prop_show_all=Toon alle eigendommen
+
+#19.84
+settings_right_table_links_type=Weergavetype tabelkoppelingen
+settings_right_table_links_type_2=Grote pictogrammen met tekst
+settings_right_table_links_type_1=Kleine pictogrammen met knopinfotekst
+settings_right_table_links_type_0=Geen pictogrammen, alleen tekstlinks
+settings_right_table_animate_icons=On-hover-animatie weergeven voor koppelingen naar tabelpictogrammen
+settings_right_table_grayscaled_icons=Toon tabelpictogramkoppelingen in grijstinten, tenzij de muisaanwijzer erop staat

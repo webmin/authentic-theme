@@ -70,3 +70,11 @@ settings_embed_product_branding_privileged=Vis merkevaresprutskjerm ved første 
 #19.76
 theme_xhred_global_show_all=Vis alt
 theme_xhred_filemanager_context_prop_show_all=Vis alle eiendommer
+
+#19.84
+settings_right_table_links_type=Tabelllenker viser type
+settings_right_table_links_type_2=Store ikoner med tekst
+settings_right_table_links_type_1=Små ikoner med verktøytips
+settings_right_table_links_type_0=Ingen ikoner, bare tekstkoblinger
+settings_right_table_animate_icons=Vis animasjon på musen for lenker til tabellikon
+settings_right_table_grayscaled_icons=Vis koblinger for tabellikon i gråtoner med mindre du holder markøren

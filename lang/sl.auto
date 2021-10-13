@@ -128,13 +128,6 @@ settings_loader_top=Omogoči nalagalec napredka strani na vrhu zaslona
 settings_loader_left=Omogoči vrtenje za navigacijski meni
 settings_right_reload=Naložite privzeto stran na stikalo za zavihek
 
-settings_right_hide_table_icons=Skrij ikone tabele
-settings_right_hide_table_icons_description=Iz tabel z vsebinsko stranjo v celoti odstranite ikone in prikažite navadne povezave z desnim ševronom
-settings_right_small_table_icons=Majhne ikone mize
-settings_right_small_table_icons_description=Nadomestite ikone tabele standardne velikosti z majhnimi in prikazne ikone s pomočjo namigi
-settings_right_animate_table_icons=Animirane ikone tabele v fokusu
-settings_right_grayscaled_table_icons=Ikone tabel v sivih barvah in prinašajo barvo samo s poudarkom
-
 settings_leftmenu_section_hide_refresh_modules=Skrij povezavo za osvežitev modulov
 settings_leftmenu_section_hide_unused_modules=Skrij razdelek neuporabljenih modulov
 settings_favorites=Prikaži gumb priljubljenih
@@ -1111,7 +1104,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Največje število vrstic za začetek razvrščanja in iskanja tabel
 theme_xhred_global_rows=Vrstice
 
 #19.42
@@ -1217,3 +1209,11 @@ settings_embed_product_branding_privileged=Pokaži začetni zaslon blagovne znam
 #19.76
 theme_xhred_global_show_all=Pokaži vse
 theme_xhred_filemanager_context_prop_show_all=Pokaži vse lastnosti
+
+#19.84
+settings_right_table_links_type=Vrsta prikaza povezav do tabel
+settings_right_table_links_type_2=Velike ikone z besedilom
+settings_right_table_links_type_1=Majhne ikone z besedilom opisov
+settings_right_table_links_type_0=Brez ikon, samo besedilne povezave
+settings_right_table_animate_icons=Prikažite animacijo pri miški za povezave do ikon tabele
+settings_right_table_grayscaled_icons=Povezave do ikon tabele prikazujte v sivinah, razen če jih premaknete

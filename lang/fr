@@ -125,13 +125,6 @@ settings_navigation_color=Palette de couleurs
 settings_loader_top=Activer le chargeur de progression de page en haut de l'écran
 settings_loader_left=Activer le spinner pour le menu de navigation
 
-settings_right_hide_table_icons=Masquer les icônes de table
-settings_right_hide_table_icons_description=Supprimez complètement les icônes des tableaux de la page de contenu et affichez des liens simples avec le chevron droit
-settings_right_small_table_icons=Les petits icônes de table
-settings_right_small_table_icons_description=Remplacez les icônes de table de taille standard par de petites et affichez le lien des icônes à l'aide de l'info-bulle
-settings_right_animate_table_icons=Animer les icônes de table sur le focus
-settings_right_grayscaled_table_icons=Icônes de table en niveaux de gris et mettre la couleur au point uniquement
-
 settings_leftmenu_section_hide_refresh_modules=Masquer le lien des modules d'actualisation
 settings_leftmenu_section_hide_unused_modules=Masquer la section des modules non utilisés
 settings_favorites=Afficher le bouton des favoris
@@ -1105,7 +1098,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Nombre maximum de lignes pour initialiser le tri et la recherche de table
 theme_xhred_global_rows=Lignes
 
 #19.42

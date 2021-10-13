@@ -1,0 +1,7 @@
+#19.84
+settings_right_table_links_type=Tipo di visualizzazione dei collegamenti alle tabelle
+settings_right_table_links_type_2=Icone grandi con testo
+settings_right_table_links_type_1=Piccole icone con testo del suggerimento
+settings_right_table_links_type_0=Nessuna icona, solo link di testo
+settings_right_table_animate_icons=Mostra l'animazione al passaggio del mouse per i collegamenti alle icone della tabella
+settings_right_table_grayscaled_icons=Mostra i collegamenti dell'icona della tabella in scala di grigi a meno che non sia passato il mouse

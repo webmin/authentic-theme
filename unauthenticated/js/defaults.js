@@ -59,10 +59,9 @@ var
     settings_side_slider_favorites_enabled = true,
 
     // Table options
-    settings_right_small_table_icons = false,
-    settings_right_animate_table_icons = true,
-    settings_right_grayscaled_table_icons = true,
-    settings_table_init_datatables = 20000,
+    settings_right_table_links_type = 2,
+    settings_right_table_animate_icons = false,
+    settings_right_table_grayscaled_icons = true,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
@@ -139,6 +138,7 @@ var
     // E.g. to change options below, you would need to open browser's console,
     // change an option boolean value and call `theme.config.save()` function.
     //
+    settings_table_init_datatables = 20000,
     settings_right_page_hide_persistent_vscroll = true,
     settings_hide_top_loader = false,
     settings_theme_make_date = true,

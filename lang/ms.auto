@@ -487,7 +487,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Bilangan baris maksimum untuk memulakan penyusunan dan carian jadual
 theme_xhred_global_rows=Baris
 
 #19.42
@@ -594,3 +593,11 @@ settings_embed_product_branding_privileged=Tunjukkan skrin percikan jenama pada 
 #19.76
 theme_xhred_global_show_all=Tunjukkan semua
 theme_xhred_filemanager_context_prop_show_all=Tunjukkan semua harta tanah
+
+#19.84
+settings_right_table_links_type=Jenis paparan pautan jadual
+settings_right_table_links_type_2=Ikon besar dengan teks
+settings_right_table_links_type_1=Ikon kecil dengan teks petua alat
+settings_right_table_links_type_0=Tiada ikon, hanya pautan teks
+settings_right_table_animate_icons=Tunjukkan animasi on-hover untuk pautan ikon jadual
+settings_right_table_grayscaled_icons=Tunjukkan pautan ikon jadual dalam skala kelabu kecuali dituding

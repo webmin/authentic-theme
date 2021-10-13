@@ -41,13 +41,6 @@ settings_loader_top=Habilite el cargador de progreso de página en la parte supe
 settings_loader_left=Habilitar ruleta para el menú de navegación
 settings_right_reload=Cargar página predeterminada en el interruptor de pestaña
 
-settings_right_hide_table_icons=Ocultar iconos de tabla
-settings_right_hide_table_icons_description=Elimine completamente los iconos de las tablas de la página de contenido y muestre enlaces simples con el chevron derecho
-settings_right_small_table_icons=Iconos de mesa pequeña
-settings_right_small_table_icons_description=Sustituya los iconos de la tabla de tamaño estándar por pequeños y visualice el enlace de los iconos con información sobre herramientas
-settings_right_animate_table_icons=Animar iconos de mesa en foco
-settings_right_grayscaled_table_icons=Iconos de la tabla en escala de grises y traen color solo al foco
-
 settings_leftmenu_section_hide_refresh_modules=Ocultar enlace de módulos de actualización
 settings_leftmenu_section_hide_unused_modules=Ocultar sección de módulos no utilizados
 settings_favorites=Mostrar botón de favoritos
@@ -1023,7 +1016,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Número máximo de filas para inicializar la clasificación y búsqueda de tablas
 theme_xhred_global_rows=Filas
 
 #19.42
@@ -1129,3 +1121,11 @@ settings_embed_product_branding_privileged=Mostrar la pantalla de presentación 
 #19.76
 theme_xhred_global_show_all=Mostrar todo
 theme_xhred_filemanager_context_prop_show_all=Mostrar todas las propiedades
+
+#19.84
+settings_right_table_links_type=Tipo de visualización de enlaces de tabla
+settings_right_table_links_type_2=Iconos grandes con texto
+settings_right_table_links_type_1=Iconos pequeños con texto de información sobre herramientas
+settings_right_table_links_type_0=Sin íconos, solo enlaces de texto
+settings_right_table_animate_icons=Mostrar animación al pasar el mouse por encima de los enlaces de los íconos de la tabla
+settings_right_table_grayscaled_icons=Mostrar los vínculos de los íconos de la tabla en escala de grises a menos que se sitúe sobre ellos

@@ -128,13 +128,6 @@ settings_loader_top=اسکرین کے اوپری حصے میں پیج پروگر
 settings_loader_left=نیویگیشن مینو کیلئے اسپنر کو فعال کریں
 settings_right_reload=ٹیب سوئچ پر پہلے سے طے شدہ صفحہ لوڈ کریں
 
-settings_right_hide_table_icons=ٹیبل شبیہیں چھپائیں
-settings_right_hide_table_icons_description=مشمولاتی صفحہ کے جدولوں سے شبیہیں مکمل طور پر ہٹائیں اور دائیں شیورون کے ساتھ سیدھے روابط دکھائیں
-settings_right_small_table_icons=چھوٹے ٹیبل شبیہیں
-settings_right_small_table_icons_description=چھوٹے سائز والے معیاری سائز کے ٹیبل شبیہیں اور ٹول ٹپ کا استعمال کرتے ہوئے آئیکنز ڈسپلے کریں
-settings_right_animate_table_icons=فوکس پر ٹیبل شبیہیں متحرک کریں
-settings_right_grayscaled_table_icons=گرے اسکیل ٹیبل شبیہیں اور صرف فوکس پر رنگ لائیں
-
 settings_leftmenu_section_hide_refresh_modules=ریفریش ماڈیولز لنک چھپائیں
 settings_leftmenu_section_hide_unused_modules=غیر استعمال شدہ ماڈیولز سیکشن کو چھپائیں
 settings_favorites=پسندیدہ بٹن دکھائیں
@@ -1111,7 +1104,6 @@ theme_xhred_nice_size_TBB=ٹی بی پی ایس
 theme_xhred_nice_size_GBB=جی بی پی ایس
 theme_xhred_nice_size_MBB=ایم بی پی ایس
 theme_xhred_nice_size_kBB=کے بی پی ایس
-settings_table_init_datatables=جدول ترتیب اور تلاش شروع کرنے کیلئے قطار کی زیادہ سے زیادہ تعداد
 theme_xhred_global_rows=قطاریں
 
 #19.42
@@ -1217,3 +1209,11 @@ settings_embed_product_branding_privileged=ابتدائی لوڈنگ پر برا
 #19.76
 theme_xhred_global_show_all=سارے دکھاو
 theme_xhred_filemanager_context_prop_show_all=تمام خصوصیات دکھائیں
+
+#19.84
+settings_right_table_links_type=ٹیبل لنکس ڈسپلے کی قسم۔
+settings_right_table_links_type_2=متن کے ساتھ بڑے شبیہیں۔
+settings_right_table_links_type_1=ٹول ٹپ ٹیکسٹ کے ساتھ چھوٹے شبیہیں۔
+settings_right_table_links_type_0=کوئی شبیہیں نہیں ، صرف متن کے لنکس۔
+settings_right_table_animate_icons=ٹیبل آئیکن لنکس کے لیے آن ہور حرکت پذیری دکھائیں۔
+settings_right_table_grayscaled_icons=گرے اسکیل میں ٹیبل آئیکن لنکس دکھائیں جب تک کہ ہور نہ ہو۔

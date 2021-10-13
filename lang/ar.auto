@@ -128,13 +128,6 @@ settings_loader_top=تفعيل أداة تحميل تقدم الصفحة أعل�
 settings_loader_left=تمكين الدوار لقائمة التنقل
 settings_right_reload=تحميل الصفحة الافتراضية على مفتاح التبويب
 
-settings_right_hide_table_icons=إخفاء أيقونات الجدول
-settings_right_hide_table_icons_description=قم بإزالة الرموز تمامًا من جداول صفحة المحتوى وعرض الارتباطات العادية باستخدام شارة رتبة اليمين
-settings_right_small_table_icons=أيقونات طاولة صغيرة
-settings_right_small_table_icons_description=استبدل أيقونات جدول الحجم القياسي برموز صغيرة وارتباط رموز العرض باستخدام تلميح الأدوات
-settings_right_animate_table_icons=تحريك أيقونات الجدول على التركيز
-settings_right_grayscaled_table_icons=أيقونات جدول درجات الرمادي وإضفاء اللون على التركيز فقط
-
 settings_leftmenu_section_hide_refresh_modules=إخفاء رابط وحدات التحديث
 settings_leftmenu_section_hide_unused_modules=إخفاء قسم الوحدات غير المستخدمة
 settings_favorites=إظهار زر المفضلة
@@ -1111,7 +1104,6 @@ theme_xhred_nice_size_TBB=تبس
 theme_xhred_nice_size_GBB=غيغابت في الثانية
 theme_xhred_nice_size_MBB=ميغابت في الثانية
 theme_xhred_nice_size_kBB=كيلوبت في الثانية
-settings_table_init_datatables=أقصى عدد من الصفوف لتهيئة فرز الجدول والبحث
 theme_xhred_global_rows=الصفوف
 
 #19.42
@@ -1217,3 +1209,11 @@ settings_embed_product_branding_privileged=عرض شاشة البداية للع
 #19.76
 theme_xhred_global_show_all=عرض الكل
 theme_xhred_filemanager_context_prop_show_all=عرض كل الخصائص
+
+#19.84
+settings_right_table_links_type=نوع عرض روابط الجدول
+settings_right_table_links_type_2=أيقونات كبيرة مع نص
+settings_right_table_links_type_1=أيقونات صغيرة مع نص تلميح
+settings_right_table_links_type_0=لا توجد رموز ، فقط روابط نصية
+settings_right_table_animate_icons=إظهار الرسوم المتحركة عند التمرير لروابط أيقونة الجدول
+settings_right_table_grayscaled_icons=إظهار ارتباطات أيقونات الجدول بتدرج الرمادي ما لم يتم تمرير الماوس فوقها

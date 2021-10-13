@@ -128,13 +128,6 @@ settings_loader_top=Agħti l-loader tal-progress tal-paġna fuq il-parti ta 'fuq
 settings_loader_left=Agħti spinner għall-menu tan-navigazzjoni
 settings_right_reload=Tagħbija paġna default fuq swiċċ tab
 
-settings_right_hide_table_icons=Aħbi l-ikoni tal-mejda
-settings_right_hide_table_icons_description=Neħħi kompletament l-ikoni mit-tabelli tal-paġna tal-kontenut u turi rabtiet sempliċi ma 'chevron dritt
-settings_right_small_table_icons=Ikoni tal-mejda żgħar
-settings_right_small_table_icons_description=Ibdel l-ikoni tal-mejda tad-daqs standard b'dawk żgħar u ikona li turi rabta bl-użu ta 'tooltip
-settings_right_animate_table_icons=Janimaw l-ikoni tal-mejda fuq il-fokus
-settings_right_grayscaled_table_icons=Ikoni tal-mejda fuq skala griża u jġibu l-kulur fuq il-fokus biss
-
 settings_leftmenu_section_hide_refresh_modules=Aħbi rabta ta 'moduli ta' riħ
 settings_leftmenu_section_hide_unused_modules=Aħbi t-taqsima tal-moduli mhux użati
 settings_favorites=Uri l-buttuna favorita
@@ -1111,7 +1104,6 @@ theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-settings_table_init_datatables=Numru massimu ta 'ringieli għall-inizjalizzazzjoni tal-issortjar u t-tfittxija tat-tabella
 theme_xhred_global_rows=Rings
 
 #19.42
@@ -1217,3 +1209,11 @@ settings_embed_product_branding_privileged=Uri l-iskrin tat-tixrid tal-marka mat
 #19.76
 theme_xhred_global_show_all=Uri kollox
 theme_xhred_filemanager_context_prop_show_all=Uri l-proprjetajiet kollha
+
+#19.84
+settings_right_table_links_type=Tip ta 'wiri ta' links tal-mejda
+settings_right_table_links_type_2=Ikoni kbar bit-test
+settings_right_table_links_type_1=Ikoni żgħar bit-test tal-għodda
+settings_right_table_links_type_0=L-ebda ikona, biss links tat-test
+settings_right_table_animate_icons=Uri animazzjoni on-hover għal links tal-ikona tal-mejda
+settings_right_table_grayscaled_icons=Uri l-links tal-ikona tal-mejda fi skala tal-griż sakemm ma tkunx imtella '

@@ -103,3 +103,11 @@ settings_embed_product_branding_privileged=Beim ersten Laden wird der Branding-B
 #19.76
 theme_xhred_global_show_all=Zeige alles
 theme_xhred_filemanager_context_prop_show_all=Alle Eigenschaften anzeigen
+
+#19.84
+settings_right_table_links_type=Anzeigetyp für Tabellenlinks
+settings_right_table_links_type_2=Große Symbole mit Text
+settings_right_table_links_type_1=Kleine Symbole mit Tooltip-Text
+settings_right_table_links_type_0=Keine Symbole, nur Textlinks
+settings_right_table_animate_icons=Zeigen Sie die On-Hover-Animation für Tabellensymbol-Links an
+settings_right_table_grayscaled_icons=Tabellensymbol-Links in Graustufen anzeigen, es sei denn, sie bewegen den Mauszeiger
