@@ -608,7 +608,7 @@ sub theme_ui_form_end
         $rv .= '<div class="btn-group end_submits">';
         foreach $b (@$buttons) {
             if (ref($b)) {
-                $rv .= &ui_submit($b->[1], $b->[0], $b->[3], $b->[4]) . ($b->[2] ? " " . $b->[2] : "");
+                $rv .= &ui_submit($b->[1], $b->[0], $b->[3], $b->[4], $b->[5], $b->[6]) . ($b->[2] ? " " . $b->[2] : "");
             } elsif ($b) {
                 $rv .= "<span>$b</span>\n";
             } else {
@@ -985,7 +985,7 @@ sub theme_ui_hr
 
 sub theme_ui_alert_box
 {
-    my ($msg, $class, $style, $new_line, $desc_to_title) = @_;
+    my ($msg, $class, $style, $new_line, $desc_to_title, $desc_icon) = @_;
     my ($rv, $type, $tmsg, $fa);
 
     if ($class eq "success") {
@@ -1000,6 +1000,10 @@ sub theme_ui_alert_box
 
     if ($desc_to_title) {
         $tmsg = $desc_to_title;
+    }
+
+    if ($desc_icon) {
+        $fa = $desc_icon;
     }
 
     $rv .= '<div class="alert ' . $type . '" style=" ' . $style . '">' . "\n";
