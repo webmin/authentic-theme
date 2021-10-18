@@ -204,6 +204,11 @@ sub theme_footer
     # Post-body header overlay
     embed_overlay_postbody() if (!http_x_request());
 
+    # Refresh menu if requested on redirect
+    if (get_env('request_uri') =~ /vrm=1/) {
+        theme_post_save_domains();
+    }
+
     print '</body>', "\n";
     print '</html>', "\n";
 }
@@ -1395,7 +1400,7 @@ sub theme_js_redirect
 
 sub theme_post_save_domain
 {
-    my ($d, $action) = @_;
+    my ($d) = @_;
     print '<script>';
     print 'theme_post_save=' . ($d->{'id'} ? $d->{'id'} : '-1') . '', "\n";
     print '</script>';
@@ -1403,7 +1408,6 @@ sub theme_post_save_domain
 
 sub theme_post_save_domains
 {
-    my ($d, $action) = @_;
     print '<script>';
     print 'theme_post_save=0', "\n";
     print '</script>';
