@@ -5,19 +5,8 @@
 #
 use strict;
 
-our (%in,
-     $root_directory,
-     %gconfig,
-     %gaccess,
-     $base_remote_user,
-     $remote_user,
-     $theme_webprefix,
-     $theme_server_webprefix,
-     %theme_text,
-     %theme_config,
-     $get_user_level,
-     $http_x_url,
-     $server_x_goto);
+our (%in, $root_directory, %gconfig, %gaccess, $base_remote_user, $remote_user, $theme_webprefix, $theme_server_webprefix,
+     %theme_text, %theme_config, $get_user_level, $http_x_url, $server_x_goto);
 
 # Detects the state of navigation menu on initial load
 # Returns navigation tab name and right page defaults
@@ -36,7 +25,7 @@ sub nav_detector
     my $prod    = get_product_name();
     my $mod_def = $gconfig{'gotomodule'};
 
-    my $mod_rt_access    = $get_user_level eq '0';
+    my $mod_rt_access = $get_user_level eq '0';
 
     my $prd_cm           = "cloudmin";
     my $mod_cm           = "server-manager";
@@ -486,7 +475,7 @@ sub nav_cat_link
     my $rv;
     my $external_link = ($link =~ /^(http:\/\/|https:\/\/|ftp:\/\/|ftps:\/\/)/);
     $link = "/$link" if (!$external_link && $link !~ /^\//);
-    $rv = '<li data-linked' . ($hidden && ' class="hidden"') . '>' . "\n";
+    $rv   = '<li data-linked' . ($hidden && ' class="hidden"') . '>' . "\n";
     $rv .= '<a' . ($hidden && ' data-parent-hidden') . ' href="' .
       ($external_link ? $link : "$theme_webprefix$link") . '"> ' . $label . '</a>' . "\n";
     $rv .= "</li>\n";
@@ -693,7 +682,7 @@ sub nav_list_combined_menu
             {
                 $link = "/$link" if (!string_starts_with($link, "/"));
                 $link = "$theme_webprefix$link"
-                    if($link !~ /^\Q$theme_webprefix\E/);
+                  if ($link !~ /^\Q$theme_webprefix\E/);
             }
         }
         return $link;
@@ -823,7 +812,7 @@ sub nav_list_combined_menu
                     $icon = undef;
                 }
 
-                $rv .= '<li data-linked'
+                $rv .= '<li' . ($item->{'inactive'} ? " data-link-inactive" : "") . ' data-linked'
                   .
                   ( $item->{'target'} ? ' class="navigation_external"' :
                       ''
