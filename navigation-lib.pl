@@ -326,15 +326,17 @@ sub nav_webmin_menu
 sub nav_virtualmin_menu
 {
     my ($page) = @_;
-    my ($rv, $login_mode);
-    my $mod  = 'virtual-server';
-    my $def  = nav_get_server_id($mod);
-    my @menu = list_combined_webmin_menu({ 'dom' => "$def" }, \%in, $mod);
-    ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
+    my $mod    = 'virtual-server';
+    my $def    = nav_get_server_id($mod);
+    my @menu   = list_combined_webmin_menu({ 'dom' => "$def" }, \%in, $mod);
+    my $menu   = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
+    my $rv     = $menu->{'before'};
     $rv .= nav_link_sysinfo();
     $rv .= nav_link_sysstat();
+    $rv .= $menu->{'after'}
+      if ($menu->{'after'});
     $rv .= nav_theme_links();
-    $rv .= nav_links($login_mode);
+    $rv .= nav_links($menu->{'mode'});
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page);
     $rv .= nav_detect_script();
@@ -344,14 +346,14 @@ sub nav_virtualmin_menu
 sub nav_cloudmin_menu
 {
     my ($page) = @_;
-    my ($rv, $login_mode);
-    my $mod  = 'server-manager';
-    my $def  = nav_get_server_id($mod);
-    my @menu = list_combined_webmin_menu({ 'server' => "$def" }, \%in, $mod);
-    ($rv, $login_mode) = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
+    my $mod    = 'server-manager';
+    my $def    = nav_get_server_id($mod);
+    my @menu   = list_combined_webmin_menu({ 'server' => "$def" }, \%in, $mod);
+    my $menu   = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
+    my $rv     = $menu->{'before'};
     $rv .= nav_link_sysinfo();
     $rv .= nav_theme_links();
-    $rv .= nav_links($login_mode);
+    $rv .= nav_links($menu->{'mode'});
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page);
     $rv .= nav_detect_script();
@@ -360,12 +362,12 @@ sub nav_cloudmin_menu
 
 sub nav_mailbox_menu
 {
-    my ($page) = @_;
-    my $rv;
+    my ($page)    = @_;
     my $mod       = 'mailbox';
     my $nofolders = $theme_config{'settings_mail_ui'} ne 'false' ? 1 : 0;
     my @menu      = list_combined_webmin_menu({ 'nofolders' => $nofolders });
-    ($rv) = nav_list_combined_menu([$mod, 'changepass'], \@menu, undef, undef, $page);
+    my $menu      = nav_list_combined_menu([$mod, 'changepass'], \@menu, undef, undef, $page);
+    my $rv        = $menu->{'before'};
     $rv .= nav_menu_link("/uconfig.cgi?$mod", $theme_text{'theme_left_mail_prefs'}, 'fa-cog');
     $rv .= nav_link_sysinfo('user');
     $rv .= nav_theme_links();
@@ -663,11 +665,8 @@ sub nav_theme_links
 sub nav_list_combined_menu
 {
     my ($modules, $items, $id, $group, $page) = @_;
-    my $nav_pos;
-    my $extra_links;
-    my $login_mode;
+    my ($nav_pos, $extra_links, $rv, $rv_after, $login_mode);
 
-    my $rv;
     my $gwp = sub {
         my ($link) = @_;
 
@@ -692,6 +691,7 @@ sub nav_list_combined_menu
 
             my $link = &$gwp($item->{'link'});
             my $icon;
+            my $rv_after_local;
 
             if ($item->{'type'} eq 'item' &&
                 $link !~ /virtual-server\/pro\/history\.cgi/)
@@ -722,6 +722,9 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-pencil"></i>';
                 } elsif ($link =~ /mailbox\/index\.cgi?id=/) {
                     $icon = '<i class="fa fa-fw fa-folder-o"></i>';
+                } elsif ($link =~ /demo_history\.cgi$/) {
+                    $icon           = '<i class="fa fa-fw fa-area-chart"></i>';
+                    $rv_after_local = $link;
                 }
                 if ($get_user_level == 1) {
                     if ($link =~ /\/virtual-server\/edit_pass\.cgi/ &&
@@ -812,13 +815,14 @@ sub nav_list_combined_menu
                     $icon = undef;
                 }
 
-                $rv .= '<li' . ($item->{'inactive'} ? " data-link-inactive" : "") . ' data-linked'
+                my $rv_;
+                $rv_ = '<li' . ($item->{'inactive'} ? " data-link-inactive" : "") . ' data-linked'
                   .
                   ( $item->{'target'} ? ' class="navigation_external"' :
                       ''
                   ) .
                   '>' . "\n";
-                $rv .=
+                $rv_ .=
                   '<a ' .
                   ($link !~ /switch_user/ ? ' target="' . ($item->{'target'} ? '_blank' : 'page') . '" ' : '') . ' '
                   .
@@ -827,8 +831,14 @@ sub nav_list_combined_menu
                   ) .
                   'href="' . $link . '">' .
                   ($icon =~ /<i/ ? $icon : '') . ' <span>' . $item->{'desc'} . '</span></a>' . "\n";
-                $rv .= '</li>' . "\n";
-                $rv .= "\n";
+                $rv_ .= '</li>' . "\n";
+                $rv_ .= "\n";
+
+                if ($rv_after_local) {
+                    $rv_after .= $rv_;
+                } else {
+                    $rv .= $rv_;
+                }
 
             } elsif ($item->{'type'} eq 'html') {
                 $rv .= '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
@@ -841,8 +851,8 @@ sub nav_list_combined_menu
             } elsif ($item->{'type'} eq 'cat') {
                 $rv .= nav_cat($item->{'id'}, $item->{'desc'});
                 $rv .= '<li class="sub-wrapper"><ul class="sub" style="display: none;" id="' . $item->{'id'} . '">' . "\n";
-                my ($rvx) = nav_list_combined_menu([$item->{'module'}], $item->{'members'}, $item->{'id'}, 'group');
-                $rv .= $rvx;
+                my $menu = nav_list_combined_menu([$item->{'module'}], $item->{'members'}, $item->{'id'}, 'group');
+                $rv .= $menu->{'before'};
 
                 if (($item->{'id'} eq 'global_setting' || $item->{'id'} eq 'global_settings') &&
                     $get_user_level eq '0' &&
@@ -924,7 +934,9 @@ sub nav_list_combined_menu
             }
         }
     }
-    return ($rv, $login_mode);
+    return { 'before' => $rv,
+             'after'  => $rv_after,
+             'mode'   => $login_mode };
 }
 
 # Returns a list of tiny square buttons for navigation menu
