@@ -50,8 +50,7 @@ sub theme_header
                  (($ttitle ne $title ? ($title ? "$ttitle - $title" : $ttitle) : $ttitle),
                   $_[7], theme_debug_mode(),
                   (@_ > 1 ? '1' : '0'),
-                  ($tref  ? 1   : 0)
-                 ));
+                  ($tref  ? 1   : 0)));
     my $body_initial = !http_x_request() ? ' data-load-initial="1"' : undef;
     print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!http_x_request());
@@ -1284,7 +1283,8 @@ sub theme_nice_size
 
 sub theme_get_webprefix
 {
-    return theme_get_webprefix_local(@_);
+    return theme_get_webprefix_local(@_)
+      if (defined(&theme_get_webprefix_local));
 }
 
 sub theme_redirect
