@@ -56,9 +56,14 @@ sub get_sysinfo_warning
                 {
                     $def_level = 'info';
                 }
-                my $alert_data = &ui_alert_box($info_data, $def_level, undef, 1, $info->{'desc'});
-                $returned_data .=
-                  replace("ui_submit ui_form_end_submit", "btn-tiny ui_submit ui_form_end_submit", $alert_data);
+                if (ref($info_data) eq 'HASH') {
+                    $returned_data .= $info_data->{'alert'};
+                } else {
+                    $returned_data .=
+                      replace("ui_submit ui_form_end_submit",
+                              "btn-tiny ui_submit ui_form_end_submit",
+                              &ui_alert_box($info_data, $def_level, undef, 1, $info->{'desc'}));
+                }
             }
         }
     }
@@ -118,13 +123,7 @@ sub get_extended_sysinfo
                                                          $theme_text{'theme_xhred_sysinfo_vm_package_updates'} :
                                                          ($info->{'id'} . '-' . $info->{'module'} eq 'acl_logins-acl' ?
                                                             $theme_text{'theme_xhred_sysinfo_recent_logins'} :
-                                                            ($info->{'desc'})
-                                                         )
-                                                      )
-                                                   )
-                                                )
-                                             )
-                                          ));
+                                                            ($info->{'desc'}))))))));
 
                     $returned_sysinfo .= '
                     <div draggable="true" data-referrer="' .
@@ -1356,8 +1355,7 @@ sub theme_update_incompatible
                              .
                              theme_text('theme_git_patch_incompatible_message_desc',
                                         $force_button,
-                                        ($theme_text{'theme_xhred_titles_wm'} . "/" . $theme_text{'theme_xhred_titles_um'})
-                             )
+                                        ($theme_text{'theme_xhred_titles_wm'} . "/" . $theme_text{'theme_xhred_titles_um'}))
                     ) };
     } elsif (
 
@@ -1377,8 +1375,7 @@ sub theme_update_incompatible
                                          .
                                          theme_text('theme_git_patch_incompatible_message_desc',
                                                     $force_button,
-                                                    $theme_text{'theme_xhred_titles_wm'}
-                                         )
+                                                    $theme_text{'theme_xhred_titles_wm'})
                     ) };
     } elsif (
 
@@ -1400,8 +1397,7 @@ sub theme_update_incompatible
                                          .
                                          theme_text('theme_git_patch_incompatible_message_desc',
                                                     $force_button,
-                                                    $theme_text{'theme_xhred_titles_um'}
-                                         )
+                                                    $theme_text{'theme_xhred_titles_um'})
                     ) };
     }
 
@@ -1726,8 +1722,7 @@ sub get_xhr_request
                                                     { 'file',    $cfile, 'limit', $in{'xhr-encoding_convert_limit'},
                                                       'reverse', $in{'xhr-encoding_convert_reverse'},
                                                       'head',    $in{'xhr-encoding_convert_head'},
-                                                      'tail',    $in{'xhr-encoding_convert_tail'}
-                                                    });
+                                                      'tail',    $in{'xhr-encoding_convert_tail'} });
             if (-s $cfile < 128 || -T $cfile) {
                 eval {$data = Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, $data));};
             }
@@ -1792,11 +1787,11 @@ sub get_xhr_request
             my $update_version          = $in{'xhr-update-version'};
             my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
             if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
-                @update_rs = { "no_git" =>
-                                 replace((!has_command('curl') || !has_command('bash') ? '>git<'  : '~'),
-                                         (!has_command('curl')                         ? '>curl<' : '>bash<'),
-                                         $theme_text{'theme_git_patch_no_git_message'}
-                                 ), };
+                @update_rs = {
+                               "no_git" => replace((!has_command('curl') || !has_command('bash') ? '>git<'  : '~'),
+                                                   (!has_command('curl')                         ? '>curl<' : '>bash<'),
+                                                   $theme_text{'theme_git_patch_no_git_message'}
+                               ), };
                 print convert_to_json(\@update_rs);
             } else {
                 if ($update_force ne "1" && !$update_version) {
