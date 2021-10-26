@@ -54,6 +54,12 @@ if ($current_lang && $default_lang &&
 
 # Read the config.info file to find sections
 &read_file($module_dir_conf_file, \%info, \@info_order);
+
+# Call any config pre-filter function
+if (&foreign_func_exists($module, 'config_pre_load')) {
+    &foreign_call($module, "config_pre_load", \%info, \@info_order);
+}
+
 my @config_quick_access;
 my $config_quick_access_section;
 my $config_quick_access_category;

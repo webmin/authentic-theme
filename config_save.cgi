@@ -55,8 +55,7 @@ if (!$custom_config) {
 &save_module_preferences($module, \%newconfig);
 
 # Call any post-config save function
-$config_post_save = "${module}::config_post_save";
-if (defined(&$config_post_save)) {
+if (&foreign_func_exists($module, 'config_post_save')) {
     &foreign_call($module, "config_post_save", \%newconfig, \%oldconfig);
 }
 
