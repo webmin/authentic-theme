@@ -56,7 +56,8 @@ if ($current_lang && $default_lang &&
 &read_file($module_dir_conf_file, \%info, \@info_order);
 
 # Call any config preload function
-if (&foreign_func_exists($module, 'config_pre_load')) {
+if (&foreign_require($module) &&
+    &foreign_func_exists($module, 'config_pre_load')) {
     &foreign_call($module, "config_pre_load", \%info, \@info_order);
 }
 
