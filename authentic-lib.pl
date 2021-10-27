@@ -1196,6 +1196,7 @@ sub embed_login_head
     my $title = $text{'session_header'};
 
     print '<head>', "\n";
+    print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
     embed_favicon('login-page');

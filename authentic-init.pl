@@ -178,6 +178,7 @@ sub embed_header
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
     print '<head>', "\n";
+    print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
     embed_favicon() if (!http_x_request());
