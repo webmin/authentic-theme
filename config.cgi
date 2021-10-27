@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, $current_lang, $default_lang, %theme_text);
+our (%gconfig, %text, %in, $root_directory, $config_directory, $current_lang, $default_lang, %theme_text);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
@@ -145,7 +145,17 @@ if ($section) {
     }
 }
 print &ui_table_start($sname, "width=100%", 2);
+
+# Load module config defaults (fill missing)
+my $moddefconf = "$module_dir/config";
+$moddefconf = "$module_dir/config-$gconfig{'os_type'}"
+    if (-r "$module_dir/config-$gconfig{'os_type'}");
+&read_file($moddefconf, \%newconfig);
+
+# Load module config custom
 &read_file("$config_directory/$module/config", \%newconfig);
+
+# Load module config user custom
 &load_module_preferences($module, \%newconfig);
 
 my $func;
