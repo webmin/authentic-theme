@@ -1277,3 +1277,7 @@ settings_right_table_links_type_1=Small icons with tooltip text
 settings_right_table_links_type_0=No icons, just text links
 settings_right_table_animate_icons=Show on-hover animation for table icon links
 settings_right_table_grayscaled_icons=Show table icon links in grayscale unless hovered
+theme_xhred_upload_initial_info_dir=Drag and drop a directory here or click to select
+theme_xhred_upload_one_dir_with=1 directory with
+theme_xhred_upload_err_dir_mode=Error: Attempt to drag and drop a file with directory uploads enabled
+theme_xhred_upload_err_files_mode=Error: Attempt to drag and drop a directory
