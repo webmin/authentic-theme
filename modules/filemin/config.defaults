@@ -1,6 +1,5 @@
 columns=size,owner_user,permissions,last_mod_time
 per_page=30
-menu_style=1
 
 config_portable_module_filemanager_default_sort=0
 config_portable_module_filemanager_records_for_server_pagination=1000
