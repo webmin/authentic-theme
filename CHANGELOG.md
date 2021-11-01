@@ -1,14 +1,23 @@
 ## Changelog
 
-#### Version 19.84-beta4 (September 29, 2021)
-* Update major upstream libraries
-* Fix progressive output fetching when HTML present
+#### Version 19.84-beta5 (November 01, 2021)
+* Update numerous of major upstream libraries
+* Add support for purging trash in File Manager [forum.virtualmin.com/t/112778](https://forum.virtualmin.com/t/cant-delete-files-from-trash/112778/6?u=ilia)
+* Add support for remote products versions fetching for displaying outdated on Dashboard
+* Add better indent prints for progressive output
+* Fiх navigation detect with URLs containing query
+* Fiх ealier migrated files to Virtualmin Pro directory to support progressive output properly
+* Fix progressive output fetching when HTML is present
 * Fix redirect on page reload in proxy mode
 * Fiх webprefix duplication in standard proxy mode [forum.virtualmin.com/t/112199](https://forum.virtualmin.com/t/112199)
 * Fix server redirects upon form submissions with Servers Index module
 * Fix alerts buttons positioning
 * Fix display of menu and slider toggle buttons
 * Fix post-install script to clear menu caches
+* Fix not to scroll nested preformatted text
+* Fix to align _tt_ tags inside of tables row
+
+<!--- separator --->
 
 #### Version 19.83 (August 28, 2021)
 * Add ability to install a panel as Chrome application on desktop or mobile device [#1459](https://github.com/authentic-theme/authentic-theme/issues/1459)
@@ -61,7 +70,6 @@
 * Fix various inconsistencies in animation and improve visual performance
 * Fix to align checkboxes and labels correctly when displaying Virtualmin features
 
-<!--- separator --->
 
 #### Version 19.73 (March 04, 2021)
 * Add cut/paste operation to actually move files (instead of copy and delete) in File Manager
