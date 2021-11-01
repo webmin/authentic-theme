@@ -1281,3 +1281,7 @@ theme_xhred_upload_initial_info_dir=Drag and drop a directory here or click to s
 theme_xhred_upload_one_dir_with=1 directory with
 theme_xhred_upload_err_dir_mode=Error: Attempt to add a file with directory uploads enabled
 theme_xhred_upload_err_files_mode=Error: Attempt to add a directory in files-only upload mode
+theme_xhred_filemanager_context_empty_trash=Empty Trash
+theme_xhred_filemanager_empty_trash_button=Purge all files in trash
+theme_xhred_filemanager_emptying_trash_selected=Emptying trash.
+theme_xhred_filemanager_successful_emptying_trash=Purging trash <tt>$1</tt> was successful.

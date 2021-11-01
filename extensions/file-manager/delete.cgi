@@ -22,19 +22,26 @@ my @deleted_entries;
 
 my @entries_list = get_entries_list();
 my $fsid         = $in{'fsid'};
-my $to_trash     = $in{'trash'};
 my $time         = strftime('%Y-%m-%d_%H:%M:%S', localtime());
+my $tdirname     = '.Trash';
+my $mkpath_      = sub {
+    my ($dir) = @_;
+    my $rs = mkpath($dir, { owner => int($in{'uid'}), group => int($in{'guid'}) });
+    return $rs;
+};
 
 foreach my $name (@entries_list) {
     my $name_ = $name;
     $name = simplify_path($name);
-    my $mkpath_ = sub {
-        my ($dir) = @_;
-        my $rs = mkpath($dir, { owner => int($in{'uid'}), group => int($in{'guid'}) });
-        return $rs;
-    };
-    if ($to_trash) {
-        my $tdir    = "$in{'home'}/.Trash/$cwd";
+    if ($in{'etrash'}) {
+        my $tdir = "$cwd/$tdirname/";
+        if (!&unlink_file($tdir)) {
+            $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));
+        } else {
+            push(@deleted_entries, $name);
+        }
+    } elsif ($in{'trash'}) {
+        my $tdir    = "$in{'home'}/$tdirname/$cwd";
         my %mkpopts = { owner => int($in{'uid'}), group => int($in{'guid'}) };
         my $mkpathr = &$mkpath_($tdir);
         my $tfile;
