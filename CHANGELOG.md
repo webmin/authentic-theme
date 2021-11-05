@@ -1,16 +1,18 @@
 ## Changelog
 
-#### Version 19.84-beta5 (November 01, 2021)
+#### Version 19.84-RC1 (November 05, 2021)
 * Update numerous of major upstream libraries
 * Add support for purging trash in File Manager [forum.virtualmin.com/t/112778](https://forum.virtualmin.com/t/cant-delete-files-from-trash/112778/6?u=ilia)
 * Add support for remote products versions fetching for displaying outdated on Dashboard
 * Add better indent prints for progressive output
+* Add an option to automatically convert tab key press to spaces when editing a file
 * Fiх navigation detect with URLs containing query
 * Fiх ealier migrated files to Virtualmin Pro directory to support progressive output properly
 * Fix progressive output fetching when HTML is present
 * Fix redirect on page reload in proxy mode
 * Fiх webprefix duplication in standard proxy mode [forum.virtualmin.com/t/112199](https://forum.virtualmin.com/t/112199)
 * Fix server redirects upon form submissions with Servers Index module
+* Fix BIND module highlight syntax when editing manually
 * Fix alerts buttons positioning
 * Fix display of menu and slider toggle buttons
 * Fix post-install script to clear menu caches
