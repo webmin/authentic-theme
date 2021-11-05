@@ -14,6 +14,7 @@ config_portable_module_filemanager_tree_exclude_on_first_load=Ignoriere Verzeich
 line2=Dateibetrachter und Dateieditor,11
 config_portable_module_filemanager_editor_maximized=Maximiere Fenster beim öffnen,1,true-Ja,false-Nein
 config_portable_module_filemanager_editor_detect_encoding=Zeichensatz der Datei automatisch ermitteln,1,true-Ja,false-Nein
+config_portable_module_filemanager_editor_tabs_to_spaces=Beim Bearbeiten einer Datei die Tabulatortaste automatisch in Leerzeichen umwandeln,1,true-Yes,false-No
 config_portable_module_filemanager_view_limit=Lade maximimal Bytes beim Anzeigen einer großen Datei,0,6
 config_portable_module_filemanager_checksum_limit=Maximale Dateigröße für das automatische generieren von Checksummen,0,6
 

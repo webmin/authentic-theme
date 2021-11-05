@@ -117,6 +117,7 @@ var
     config_portable_module_filemanager_remember_tabs = true,
     config_portable_module_filemanager_editor_maximized = false,
     config_portable_module_filemanager_editor_detect_encoding = true,
+    config_portable_module_filemanager_editor_tabs_to_spaces = false,
     config_portable_module_filemanager_view_limit = 512000,
     config_portable_module_filemanager_checksum_limit = 1024000,
     config_portable_module_filemanager_move_to_trash = false,
@@ -155,6 +156,9 @@ var
     // ConfigServer Security & Firewall related
     settings_sysinfo_csf_updates = true,
     settings_sysinfo_csf_temp_list_privileged = true,
+
+    // File Manager related
+    config_portable_module_filemanager_editor_tabs_to_spaces_number = "    ",
 
     // Control min and max time for branding to show in seconds
     settings_product_branding_show_time_min_privileged = 1,
