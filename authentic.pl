@@ -1134,8 +1134,8 @@ sub theme_ui_checked_columns_row
     my $rv;
     $rv .= "<tr" . ($cb ? " " . $cb : "") . " class='ui_checked_columns'>\n";
     $rv .=
-      "<td class='ui_checked_checkbox' " . (ref($tdtags) ? $tdtags->[0] : '') .
-      ">" . &ui_checkbox($checkname, $checkvalue, undef, $checked, $tags, $disabled, ' thick') . "</td>\n";
+      "<td class='ui_checked_checkbox flexed' " . (ref($tdtags) ? $tdtags->[0] : '') .
+      "><div class=\"wh-100p flex-wrapper flex-centered flex-start\">" . &ui_checkbox($checkname, $checkvalue, undef, $checked, $tags, $disabled, ' thick') . "</div></td>\n";
     my $i;
     for ($i = 0; $i < @$cols; $i++) {
         $rv .= "<td " . (ref($tdtags) ? $tdtags->[$i + 1] : '') . ">";
