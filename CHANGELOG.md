@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.84-RC1 (November 05, 2021)
+#### Version 19.84-RC2 (November 06, 2021)
 * Update numerous of major upstream libraries
 * Add support for purging trash in File Manager [forum.virtualmin.com/t/112778](https://forum.virtualmin.com/t/cant-delete-files-from-trash/112778/6?u=ilia)
 * Add support for remote products versions fetching for displaying outdated on Dashboard
 * Add better indent prints for progressive output
 * Add an option to automatically convert tab key press to spaces when editing a file
+* Fiх layout for more advanced commands in Custom Commands module [#1544](https://github.com/authentic-theme/authentic-theme/issues/1544)
 * Fiх navigation detect with URLs containing query
 * Fiх ealier migrated files to Virtualmin Pro directory to support progressive output properly
 * Fix progressive output fetching when HTML is present
