@@ -955,7 +955,9 @@ sub print_content
                 $type_archive =~ /application-x-rar|application-vnd\.rar/   ||
                 $type_archive =~ /application-x-rpm/                        ||
                 $type_archive =~ /application-x-deb|debian\.binary-package/ ||
-                $type_archive =~ /x-compressed-tar/                         ||
+                $type_archive =~ /application-x-raw-disk-image/             ||
+                $type_archive =~ /application-x-cd-image/                   ||
+                $type_archive =~ /-compressed-tar/                          ||
                 $type_archive =~ /-x-tar/                                   ||
                 $type_archive =~ /-x-bzip/                                  ||
                 $type_archive =~ /-gzip/                                    ||

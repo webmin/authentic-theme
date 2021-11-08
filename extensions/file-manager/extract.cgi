@@ -83,7 +83,10 @@ foreach my $name (@entries_list) {
         } else {
             $status = system("$xz_cmd -d -f -k " . quotemeta("$cwd/$name"));
         }
-    } elsif ($archive_type =~ /x-7z/) {
+    } elsif ($archive_type =~ /x-7z/ ||
+             $archive_type =~ /x-raw-disk-image/ ||
+             $archive_type =~ /x-cd-image/)
+    {
         my $x7z_cmd = has_command('7z');
         if (!$x7z_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', '7z');
