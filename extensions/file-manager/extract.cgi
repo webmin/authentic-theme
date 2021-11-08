@@ -55,7 +55,7 @@ foreach my $name (@entries_list) {
     }
 
     my $archive_type = mimetype($cwd . '/' . $name);
-    if ($archive_type =~ /x-tar/ || $archive_type =~ /x-compressed-tar/) {
+    if ($archive_type =~ /x-tar/ || $archive_type =~ /-compressed-tar/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
