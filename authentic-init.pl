@@ -908,6 +908,9 @@ sub get_button_style
         $class = "warning ";
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
+    } elsif (string_contains($keys, "form_edit")) {
+        $icon = "pencil-square-o";
+        $class = "success ";
     } elsif (string_contains($keys, "docker_reg")) {
         $class = "success ";
         $icon  = "server-add";
@@ -1093,7 +1096,7 @@ sub get_button_style
     } elsif (string_contains($keys, "ddrop_empty")) {
         $class = "warning ";
         $icon  = "times-circle-o";
-    } elsif (string_contains($keys, "start") || string_contains($keys, "index_run")) {
+    } elsif (string_contains($keys, "start") || string_contains($keys, "index_run") || string_contains($keys, "form_exec")) {
         $class = "success ";
         $icon  = "play";
     } elsif (string_contains($keys, "index_stop") ||
