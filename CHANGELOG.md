@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 19.84-RC3 (November 08, 2021)
+#### Version 19.84-RC4 (November 09, 2021)
 * Update numerous of major upstream libraries
 * Add support for purging trash in File Manager [forum.virtualmin.com/t/112778](https://forum.virtualmin.com/t/cant-delete-files-from-trash/112778/6?u=ilia)
 * Add support for remote products versions fetching for displaying outdated on Dashboard
