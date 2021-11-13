@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%in, %gconfig, $root_directory);
+our (%in, %gconfig, $root_directory, $remote_user, $get_user_level);
 
 sub xhr
 {
@@ -81,6 +81,21 @@ sub xhr
     }
 
     if ($type eq 'file') {
+        if ($action eq 'motd') {
+
+            # Get user motd file
+            if ($subtype eq 'get') {
+                $data{'motd'} = get_all_users_motd_data($remote_user);
+            }
+
+            # Save user motd file (only allowed to broadcast for master admin)
+            if ($subtype eq 'set' &&
+                $get_user_level eq '0')
+            {
+                my $data = convert_from_json($in{'data'});
+                put_user_motd($data);
+            }
+        }
 
         # Generate given file info
         if ($action eq 'stat') {
@@ -162,8 +177,8 @@ sub xhr
 
             my $getfacl_cmd = has_command('getfacl');
             if ($getfacl_cmd) {
-                my $lbl = $lsattr_cmd ? "Attrs:" : "Links:";
-                my $getfacl = backquote_command("$getfacl_cmd -p " . quotemeta($cfile) . " 2>/dev/null");
+                my $lbl      = $lsattr_cmd ? "Attrs:" : "Links:";
+                my $getfacl  = backquote_command("$getfacl_cmd -p " . quotemeta($cfile) . " 2>/dev/null");
                 my @getfacls = ($getfacl =~ /^(?!(#|user::|group::|other::))([\w\:\-\_]+)/gm);
                 $getfacl = join(' ', @getfacls);
                 $s =~ s/($lbl)(.*)\n/$1$2\n  ACLs:$getfacl\n/ if ($getfacl);

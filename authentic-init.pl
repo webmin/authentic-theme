@@ -177,7 +177,7 @@ sub embed_header
 
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
-    print '<head>', "\n";
+    print '<head>',                                           "\n";
     print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
@@ -909,7 +909,7 @@ sub get_button_style
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
     } elsif (string_contains($keys, "form_edit")) {
-        $icon = "pencil-square-o";
+        $icon  = "pencil-square-o";
         $class = "success ";
     } elsif (string_contains($keys, "docker_reg")) {
         $class = "success ";
@@ -1399,9 +1399,10 @@ sub header_html_data
       '" data-theme-version="' . theme_version(0) . '" data-theme-mversion="' . theme_version(0, 1) .
       '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
       '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
-      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() . '" data-notice="' .
-      theme_post_update() . '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' . $theme_webprefix .
-      '" data-current-product="' . get_product_name() . '" data-module="' . ($module ? "$module" : get_module_name()) .
+      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() .
+      '" data-notice="' . theme_post_update() . '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' .
+      $theme_webprefix . '" data-current-product="' . get_product_name() . '" data-pro-vm="' . check_pro_package('vm') .
+      '"  data-pro-cm="' . check_pro_package('cm') . '" data-module="' . ($module ? "$module" : get_module_name()) .
       '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
       '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
       get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';

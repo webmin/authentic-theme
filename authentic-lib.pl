@@ -10,6 +10,7 @@ use lib ("$ENV{'THEME_ROOT'}/lib");
 use File::Grep qw( fgrep fmap fdo );
 use Encode qw( encode decode );
 use Time::Local;
+use File::Find;
 
 BEGIN {push(@INC, "..");}
 use WebminCore;
@@ -541,7 +542,8 @@ sub get_sysinfo_vars
         $csf_title,
         $csf_data,
         $csf_remote_version,
-        $authentic_remote_version);
+        $authentic_remote_version,
+        $local_motd);
 
     if (@info) {
         $info_arr = @info[0]->{'raw'};
@@ -939,6 +941,9 @@ sub get_sysinfo_vars
         }
     }
 
+    # Get broadcasted, local message of the day from admins
+    $local_motd = get_all_users_motd_data();
+
     return ($cpu_percent,
             $mem_percent,
             $virt_percent,
@@ -964,8 +969,79 @@ sub get_sysinfo_vars
             $csf_title,
             $csf_data,
             $csf_remote_version,
-            $authentic_remote_version);
+            $authentic_remote_version,
+            $local_motd);
 
+}
+
+sub put_user_motd
+{
+    my ($data)         = @_;
+    my ($tvardir)      = theme_var_dir();
+    my $user_motd_file = "$tvardir/motd.$remote_user";
+    &write_file_contents($user_motd_file, &serialise_variable($data));
+}
+
+sub get_user_motd
+{
+    my ($file) = @_;
+    if (-r $file) {
+        my $data = &read_file_contents($file);
+        return &unserialise_variable($data);
+    }
+    return;
+}
+
+sub get_all_users_motd_data
+{
+    my ($specific_user) = @_;
+    my ($tvardir)       = theme_var_dir();
+    my @users_motd_files;
+    my %users_motd;
+    find(
+        {
+           wanted => sub {
+               push(@users_motd_files, "$tvardir/$_")
+                 if ((!$specific_user && $_ =~ /^motd\.[a-zA-Z0-9]+$/) ||
+                     ($specific_user =~ /^[a-zA-Z0-9]+$/ && $_ =~ /^motd\.$specific_user$/));
+           },
+        },
+        $tvardir);
+    foreach my $user_motd_file (@users_motd_files) {
+        my $user_motd = get_user_motd($user_motd_file);
+        my ($user) = $user_motd_file =~ /\.([^.]+)$/;
+        if ($user_motd) {
+            my @user_motd_allowed;
+            foreach my $motd (@{$user_motd}) {
+
+                # Skip message if cannot be displayed for the give user
+                if ($specific_user ||
+                    ($motd->{'target'} eq 'all' ||
+                        ($get_user_level eq '0' && $motd->{'target'} eq 'adm') ||
+                        ($get_user_level eq '1' && $motd->{'target'} eq 'res') ||
+                        ($get_user_level eq '2' && $motd->{'target'} eq 'vm')  ||
+                        ($get_user_level eq '4' && $motd->{'target'} eq 'cm')))
+                {
+                    # Remove any script tag
+                    $motd->{'msg'} =~ s/<script.+?>//g;
+
+                    # Extract possible link in message
+                    my ($href) = $motd->{'msg'} =~ /(?|<a.*?href=\s*['"](.*?)['">]|<a.*?href=\s*(.*?)[\s*>])/;
+
+                    # Remove all attrs from tags
+                    $motd->{'msg'} =~ s/(<[a-zA-Z]+).*?(>)/$1$2/gi;
+
+                    # Restore link if any
+                    $motd->{'msg'} =~ s/<a>/<a href='$href'>/g if ($href);
+
+                    # Push as allowed
+                    push(@user_motd_allowed, $motd);
+                }
+            }
+            $users_motd{ lc($user) } = \@user_motd_allowed;
+        }
+    }
+    return \%users_motd;
 }
 
 sub get_current_user_config
@@ -1195,7 +1271,7 @@ sub embed_login_head
     # Define page title
     my $title = $text{'session_header'};
 
-    print '<head>', "\n";
+    print '<head>',                                           "\n";
     print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print '<meta charset="utf-8">', "\n";
@@ -1862,7 +1938,8 @@ sub get_xhr_request
                  $csf_title,
                  $csf_data,
                  $csf_remote_version,
-                 $authentic_remote_version
+                 $authentic_remote_version,
+                 $local_motd
             ) = get_sysinfo_vars(\@info);
 
             # Build update info
@@ -1891,6 +1968,7 @@ sub get_xhr_request
                   "disk"                     => $disk_space,
                   "package_message"          => $package_message,
                   "authentic_remote_version" => $authentic_remote_version,
+                  "local_motd"               => $local_motd,
                   "csf_title"                => $csf_title,
                   "csf_data"                 => $csf_data,
                   "csf_remote_version"       => $csf_remote_version,
