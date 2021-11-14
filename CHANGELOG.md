@@ -1,14 +1,15 @@
 ## Changelog
 
-#### Version 19.84-RC4 (November 09, 2021)
+#### Version 19.84 (November 15, 2021)
 * Update numerous of major upstream libraries
+* Add ability for administrators to broadcast messages to other users on the system [virtualmin/motd#1](https://github.com/virtualmin/virtualmin-messageoftheday/issues/1#issuecomment-968371746)
 * Add support for purging trash in File Manager [forum.virtualmin.com/t/112778](https://forum.virtualmin.com/t/cant-delete-files-from-trash/112778/6?u=ilia)
 * Add support for remote products versions fetching for displaying outdated on Dashboard
 * Add better indent prints for progressive output
 * Add an option to automatically convert tab key press to spaces when editing a file
-* Fiх layout for more advanced commands in Custom Commands module [#1544](https://github.com/authentic-theme/authentic-theme/issues/1544)
+* Fiх layout for more advanced commands in Custom Commands module [#1544](https://github.com/virtualmin/authentic-theme/issues/1544#issuecomment-962495501)
 * Fiх navigation detect with URLs containing query
-* Fiх ealier migrated files to Virtualmin Pro directory to support progressive output properly
+* Fiх fix progressive output for files that earlier were migrated to Pro product
 * Fix progressive output fetching when HTML is present
 * Fix redirect on page reload in proxy mode
 * Fiх webprefix duplication in standard proxy mode [forum.virtualmin.com/t/112199](https://forum.virtualmin.com/t/112199)
