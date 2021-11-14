@@ -153,6 +153,9 @@ var
     settings_perform_content_scrolling = true,
     settings_sysinfo_query_timeout = 1000,
 
+    // Notifications related
+    config_portable_notifications_self = false,
+
     // ConfigServer Security & Firewall related
     settings_sysinfo_csf_updates = true,
     settings_sysinfo_csf_temp_list_privileged = true,
