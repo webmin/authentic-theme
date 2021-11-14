@@ -705,7 +705,7 @@ sub init_vars
     }
 
     our ($get_user_level, $has_virtualmin, $has_cloudmin) = get_user_level();
-    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir) = get_usermin_vars();
+    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir) = get_usermin_vars();
 
     # Set webprefix that should be used by the theme
     our ($theme_webprefix, $theme_server_webprefix) = theme_get_webprefix_local('array');
@@ -748,7 +748,7 @@ sub check_pro_package
 
 sub get_usermin_vars
 {
-    my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
+    my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
     eval {
         if (&foreign_exists("usermin")) {
             &foreign_require("usermin");
@@ -757,6 +757,9 @@ sub get_usermin_vars
 
             # Usermin config dir
             $has_usermin_conf_dir = $uminiserv{'env_WEBMIN_CONFIG'};
+
+            # Usermin var dir
+            $has_usermin_var_dir = $uminiserv{'env_WEBMIN_VAR'};
 
             # Usermin root dir
             $has_usermin_root_dir = $uminiserv{'root'};
@@ -785,7 +788,7 @@ sub get_usermin_vars
             }
         }
     };
-    return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
+    return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
 }
 
 sub get_current_user_language

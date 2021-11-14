@@ -1297,6 +1297,7 @@ theme_xhred_modal_motd_select_adm=Master administrators
 theme_xhred_modal_motd_select_res=Resellers
 theme_xhred_modal_motd_select_vm=Server owners
 theme_xhred_modal_motd_select_cm=Machine owners
+theme_xhred_modal_motd_select_um=Mail users
 theme_xhred_modal_motd_btn_add=Add new broadcast message
 theme_xhred_modal_motd_btn_rm=Remove current broadcast message
 theme_xhred_global_hide=Hide

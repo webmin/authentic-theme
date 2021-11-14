@@ -22,7 +22,7 @@ our (
 
     %theme_text,     %module_text_full, %theme_config, $get_user_level, $theme_webprefix, $http_x_url,
     $has_virtualmin, $has_cloudmin,
-    $has_usermin,    $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir);
+    $has_usermin,    $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
 
 init_type();
 init_config();
@@ -976,10 +976,13 @@ sub get_sysinfo_vars
 
 sub put_user_motd
 {
-    my ($data)         = @_;
-    my ($tvardir)      = theme_var_dir();
+    my ($data) = @_;
+    my ($tvardir, $webmin_var) = theme_var_dir();
     my $user_motd_file = "$tvardir/motd.$remote_user";
-    &write_file_contents($user_motd_file, &serialise_variable($data));
+    $data = &serialise_variable($data);
+    &write_file_contents($user_motd_file,                                             $data);
+    &write_file_contents(replace($webmin_var, $has_usermin_var_dir, $user_motd_file), $data)
+      if ($has_usermin_var_dir);
 }
 
 sub get_user_motd
@@ -1020,6 +1023,7 @@ sub get_all_users_motd_data
                         ($get_user_level eq '0' && $motd->{'target'} eq 'adm') ||
                         ($get_user_level eq '1' && $motd->{'target'} eq 'res') ||
                         ($get_user_level eq '2' && $motd->{'target'} eq 'vm')  ||
+                        ($get_user_level eq '3' && $motd->{'target'} eq 'um')  ||
                         ($get_user_level eq '4' && $motd->{'target'} eq 'cm')))
                 {
                     # Remove any script tag
