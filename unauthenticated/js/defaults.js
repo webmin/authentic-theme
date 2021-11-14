@@ -154,7 +154,7 @@ var
     settings_sysinfo_query_timeout = 1000,
 
     // Notifications related
-    config_portable_notifications_self = false,
+    config_portable_notifications_self = true,
 
     // ConfigServer Security & Firewall related
     settings_sysinfo_csf_updates = true,

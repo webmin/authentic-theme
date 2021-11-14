@@ -83,17 +83,22 @@ sub xhr
     if ($type eq 'file') {
         if ($action eq 'motd') {
 
-            # Get user motd file
+            # Get current user motd file
             if ($subtype eq 'get') {
                 $data{'motd'} = get_all_users_motd_data($remote_user);
             }
 
-            # Save user motd file (only allowed to broadcast for master admin)
+            # Save current user motd file
             if ($subtype eq 'set' &&
                 $get_user_level eq '0')
             {
                 my $data = convert_from_json($in{'data'});
                 put_user_motd($data);
+            }
+            
+            # Get current user motd sent messages
+            if ($subtype eq 'receive') {
+                $data{'motd'} = get_all_users_motd_data();
             }
         }
 
