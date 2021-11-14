@@ -4,6 +4,7 @@ settings_right_reload=在选项卡开关上加载默认页面
 
 #18.48
 theme_force_upgrade=更新主题
+theme_update_footer=请向 $1 存储库报告错误。加入我们的 $2 频道以获取最新消息。
 
 settings_webmin_default_module=Webmin的默认页面
 

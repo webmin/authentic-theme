@@ -595,7 +595,6 @@ theme_xhred_global_resolved_issues=Isu terselesaikan dalam rilis %value
 theme_xhred_force_upgrade_beta=Install versi pengembangan terbaru (beta)
 theme_xhred_force_upgrade_stable=Install versi rilis terkini (stabil)
 theme_xhred_source_encoding=Sumber encoding
-theme_update_footer=Mohon melaporkan bug ke repositori $1. Ikuti kanal tema $2 untuk pembaruan terkini.
 theme_xhred_encoding_manually_set=Atur encoding secara manual
 theme_xhred_filemanager_save_to_change_encoding=Berkas harus disimpan, agar encoding dapat diubah.
 

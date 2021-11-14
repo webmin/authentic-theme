@@ -4,6 +4,7 @@ settings_right_reload=Carregueu la pàgina predeterminada al commutador de pesta
 
 #18.48
 theme_force_upgrade=Actualitza el tema
+theme_update_footer=Si us plau, informeu d'errors al repositori $1. Uneix-te al nostre canal $2 per rebre les últimes notícies.
 
 settings_webmin_default_module=Pàgina predeterminada per a Webmin
 

@@ -511,7 +511,7 @@ theme_force_upgrade=Opdater tema
 theme_xhred_force_upgrade_beta=Installer den nyeste udviklingsversion (beta)
 theme_xhred_force_upgrade_stable=Installer den nyeste version (stabil)
 theme_xhred_source_encoding=Kildekodning
-theme_update_footer=Vær venlig at rapportere fejl til $1 depot. Følg temas $2 kanal for de seneste opdateringer.
+theme_update_footer=Vær venlig at rapportere fejl til $1-lageret. Tilmeld dig vores $2 kanal for at få de seneste nyheder.
 theme_xhred_encoding_manually_set=Manuelt indstillet kodning
 theme_xhred_filemanager_save_to_change_encoding=Filen skal gemmes for at ændre kodningen.
 

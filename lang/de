@@ -595,7 +595,6 @@ theme_xhred_global_resolved_issues=Gelöste Probleme in %value Release
 theme_xhred_force_upgrade_beta=Installiere aktuelle Entwickler Version (beta)
 theme_xhred_force_upgrade_stable=Installiere aktuelle Release Version (stable)
 theme_xhred_source_encoding=Quellen Enkodierung
-theme_update_footer=Bitte melde Fehler an Entwickler Repository $1 . Folge $2 für aktuelle Design Updates.
 theme_xhred_encoding_manually_set=Enkodierung händisch ändern
 theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden damit Enkodierung geändert werden kann.
 

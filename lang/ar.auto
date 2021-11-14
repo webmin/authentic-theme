@@ -599,7 +599,7 @@ theme_force_upgrade=تحديث المظهر
 theme_xhred_force_upgrade_beta=تثبيت أحدث إصدار تطوير (تجريبي)
 theme_xhred_force_upgrade_stable=تثبيت أحدث إصدار (مستقر)
 theme_xhred_source_encoding=ترميز المصدر
-theme_update_footer=الرجاء التكرم بإبلاغ الأخطاء إلى مستودع $1. تابع قناة $2 للموضوع للحصول على آخر التحديثات.
+theme_update_footer=الرجاء الإبلاغ عن الأخطاء إلى المستودع$1. انضم إلى قناة$2 الخاصة بنا للحصول على آخر الأخبار.
 theme_xhred_encoding_manually_set=تعيين الترميز يدويًا
 theme_xhred_filemanager_save_to_change_encoding=يجب حفظ الملف للسماح بتغيير الترميز.
 

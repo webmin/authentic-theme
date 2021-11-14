@@ -599,7 +599,7 @@ theme_force_upgrade=테마 업데이트
 theme_xhred_force_upgrade_beta=최신 개발 버전 (베타) 설치
 theme_xhred_force_upgrade_stable=최신 릴리스 버전 설치 (안정적)
 theme_xhred_source_encoding=소스 인코딩
-theme_update_footer=$1 리포지토리에 버그를보고하십시오. 최신 업데이트를 보려면 테마의 $2 채널을 따르십시오.
+theme_update_footer=$1 저장소에 버그를 보고해 주십시오. 최신 뉴스를 얻으려면 $2 채널에 가입하십시오.
 theme_xhred_encoding_manually_set=수동으로 인코딩 설정
 theme_xhred_filemanager_save_to_change_encoding=인코딩을 변경하려면 파일을 저장해야합니다.
 

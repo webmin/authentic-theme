@@ -4,6 +4,7 @@ settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
 
 #18.48
 theme_force_upgrade=Mettre à jour le thème
+theme_update_footer=Merci de bien vouloir signaler les bogues au référentiel $1. Rejoignez notre chaîne $2 pour obtenir les dernières nouvelles.
 
 settings_webmin_default_module=Page par défaut pour Webmin
 

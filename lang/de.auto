@@ -4,6 +4,7 @@ settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
 
 #18.48
 theme_force_upgrade=Thema aktualisieren
+theme_update_footer=Bitte melden Sie Fehler an das $1-Repository. Treten Sie unserem $2-Kanal bei, um die neuesten Nachrichten zu erhalten.
 
 settings_webmin_default_module=Standardseite für Webmin
 

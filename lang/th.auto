@@ -599,7 +599,7 @@ theme_force_upgrade=อัปเดตธีม
 theme_xhred_force_upgrade_beta=ติดตั้งเวอร์ชันการพัฒนาล่าสุด (เบต้า)
 theme_xhred_force_upgrade_stable=ติดตั้งรุ่นล่าสุด (เสถียร)
 theme_xhred_source_encoding=การเข้ารหัสแหล่งที่มา
-theme_update_footer=โปรดรายงานข้อผิดพลาดให้กับที่เก็บแบบ $1 ติดตามช่อง $2 ของชุดรูปแบบสำหรับการอัปเดตล่าสุด
+theme_update_footer=โปรดกรุณารายงานจุดบกพร่องไปยังที่เก็บ $1 เข้าร่วมช่อง $2 ของเราเพื่อรับข่าวสารล่าสุด
 theme_xhred_encoding_manually_set=ตั้งค่าการเข้ารหัสด้วยตนเอง
 theme_xhred_filemanager_save_to_change_encoding=ต้องบันทึกไฟล์เพื่อให้สามารถเปลี่ยนการเข้ารหัสได้
 

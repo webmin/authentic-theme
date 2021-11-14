@@ -599,7 +599,7 @@ theme_force_upgrade=Aġġorna t-tema
 theme_xhred_force_upgrade_beta=Installa l-aħħar verżjoni tal-iżvilupp (beta)
 theme_xhred_force_upgrade_stable=Installa l-aħħar verżjoni tar-rilaxx (stabbli)
 theme_xhred_source_encoding=Kodifikazzjoni tas-sors
-theme_update_footer=Jekk jogħġbok kun tip ta ’bugs ta’ rappurtar għar-repożitorju ta ’$1. Segwi l-kanal tat-tema $2 għall-aħħar aġġornamenti.
+theme_update_footer=Jekk jogħġbok kun ġentili li tirrapporta bugs lil $1 repożitorju. Ingħaqad mal-kanal $2 tagħna biex tikseb l-aħħar aħbarijiet.
 theme_xhred_encoding_manually_set=Issettja kodifikazzjoni manwali
 theme_xhred_filemanager_save_to_change_encoding=Il-fajl irid jiġi ssejvjat sabiex il-kodifikazzjoni tinbidel.
 

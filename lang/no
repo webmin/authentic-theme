@@ -594,7 +594,6 @@ theme_xhred_global_resolved_issues=Løste problemer i %value utgivelser
 theme_xhred_force_upgrade_beta=Installer siste utviklingsversjon (beta)
 theme_xhred_force_upgrade_stable=Installer siste ordinære versjon (stabil)
 theme_xhred_source_encoding=Kilde-koding
-theme_update_footer=Vær snill å rapportere feil til $ 1 depot. Følg temaets $ 2 kanal for de siste oppdateringene.
 theme_xhred_encoding_manually_set=Sett koding manuelt
 theme_xhred_filemanager_save_to_change_encoding=Filen må lagres før koding kan endres.
 

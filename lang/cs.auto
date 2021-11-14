@@ -441,7 +441,7 @@ theme_force_upgrade=Aktualizovat téma
 theme_xhred_force_upgrade_beta=Nainstalovat nejnovější vývojovou verzi (beta)
 theme_xhred_force_upgrade_stable=Nainstalujte nejnovější verzi (stabilní)
 theme_xhred_source_encoding=Zdrojové kódování
-theme_update_footer=Prosím buďte laskaví, abyste hlásili chyby do úložiště $1. Sledujte nejnovější kanál $2.
+theme_update_footer=Hláste prosím chyby do úložiště $1. Připojte se k našemu kanálu $2 a získejte nejnovější zprávy.
 theme_xhred_encoding_manually_set=Ručně nastavit kódování
 theme_xhred_filemanager_save_to_change_encoding=Aby bylo možné změnit kódování, musí být soubor uložen.
 

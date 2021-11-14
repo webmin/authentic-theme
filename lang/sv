@@ -595,7 +595,6 @@ theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
 theme_xhred_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
 theme_xhred_force_upgrade_stable=Installera senaste versionen (stabil)
 theme_xhred_source_encoding=Källkodning
-theme_update_footer=Hittar du fel i temat får du gärna rapportera dem på $1. Följ temat på $2 för de senaste uppdateringarna.
 theme_xhred_encoding_manually_set=Ange kodning manuellt
 theme_xhred_filemanager_save_to_change_encoding=Filen måste sparas innan kodningen ändras.
 

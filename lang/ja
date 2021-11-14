@@ -590,7 +590,6 @@ theme_xhred_global_resolved_issues=リリース %value で解決された問題
 theme_xhred_force_upgrade_beta= 最新の開発版をインストールする(ベータ版)
 theme_xhred_force_upgrade_stable= 最新リリース版をインストールする(安定版)
 theme_xhred_source_encoding= ソースエンコーディング
-theme_update_footer= $1のリポジトリにバグを報告してください。テーマの$2チャンネルをフォローして、最新のアップデートを入手してください。
 theme_xhred_encoding_manually_set= 手動でエンコーディングを設定する
 theme_xhred_filemanager_save_to_change_encoding= エンコーディングを変更できるようにするには、ファイルを保存する必要があります。
 

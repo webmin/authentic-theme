@@ -2129,7 +2129,7 @@ sub update_notice
       theme_text(
         'theme_update_footer',
 '<a class="badge fa fa-github" target="_blank" href="https://github.com/authentic-theme/authentic-theme/issues"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;GitHub</span></a>',
-'<a target="_blank" class="badge background-info fa fa-twitter" href="https://twitter.com/authentic_theme"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;Twitter</span></a>'
+'<a target="_blank" class="badge background-info fa fa2 fa2-telegram" href="https://t.me/virtualmin"><span class="font-family-default">&nbsp;&nbsp;&nbsp;&nbsp;Telegram</span></a>'
       ) .
       '
               </div>

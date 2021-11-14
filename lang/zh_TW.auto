@@ -599,7 +599,7 @@ theme_force_upgrade=更新主題
 theme_xhred_force_upgrade_beta=安裝最新的開發版本（測試版）
 theme_xhred_force_upgrade_stable=安裝最新版本（穩定）
 theme_xhred_source_encoding=源編碼
-theme_update_footer=請善意向$1存儲庫報告錯誤。關注主題的$2頻道以獲取最新更新。
+theme_update_footer=請向 $1 存儲庫報告錯誤。加入我們的 $2 頻道以獲取最新消息。
 theme_xhred_encoding_manually_set=手動設置編碼
 theme_xhred_filemanager_save_to_change_encoding=必須保存文件，以便允許更改編碼。
 

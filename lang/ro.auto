@@ -6,6 +6,7 @@ settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
 
 #18.48
 theme_force_upgrade=Actualizați tema
+theme_update_footer=Vă rugăm să raportați erorile către depozitul $1. Alăturați-vă canalului nostru $2 pentru a primi cele mai recente știri.
 
 settings_webmin_default_module=Pagină implicită pentru Webmin
 

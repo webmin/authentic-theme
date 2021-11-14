@@ -599,7 +599,7 @@ theme_force_upgrade=Eguneratu gaia
 theme_xhred_force_upgrade_beta=Instalatu azken bertsio bertsioa (beta)
 theme_xhred_force_upgrade_stable=Instalatu azken bertsio bertsioa (egonkorra)
 theme_xhred_source_encoding=Iturriaren kodetzea
-theme_update_footer=Mesedez, izan txostenak akatsak $1 biltegira. Jarraitu gaiaren $2 kanalari azken eguneratzeetarako.
+theme_update_footer=Mesedez, izan adeitsu akatsen berri ematen $1 biltegira. Sartu gure $2 kanalean azken berriak jasotzeko.
 theme_xhred_encoding_manually_set=Eskuz kodetzea
 theme_xhred_filemanager_save_to_change_encoding=Fitxategia gorde behar da kodetzea aldatu ahal izateko.
 

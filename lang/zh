@@ -595,7 +595,6 @@ theme_xhred_global_resolved_issues=在 %value 发布中已解决的问题
 theme_xhred_force_upgrade_beta=安装最新开发版本（测试版）
 theme_xhred_force_upgrade_stable=安装最新发布版本（稳定）
 theme_xhred_source_encoding=源编码
-theme_update_footer=请善意报告 $1 仓库的错误。按照主题的 $2 频道获取最新更新。
 theme_xhred_encoding_manually_set=手动设置编码
 theme_xhred_filemanager_save_to_change_encoding=必须保存文件，以便允许更改编码。
 

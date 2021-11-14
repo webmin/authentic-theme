@@ -599,7 +599,7 @@ theme_force_upgrade=تھیم کو اپ ڈیٹ کریں
 theme_xhred_force_upgrade_beta=جدید ترین ترقیاتی ورژن (بیٹا) انسٹال کریں
 theme_xhred_force_upgrade_stable=تازہ ترین ریلیز ورژن انسٹال کریں (مستحکم)
 theme_xhred_source_encoding=ماخذ کی انکوڈنگ
-theme_update_footer=براہ کرم کیڑے کو $1 مخزن میں اطلاع دینا تازہ ترین تازہ ترین معلومات کے لئے تھیم کے $2 چینل کو فالو کریں۔
+theme_update_footer=براہ کرم $1 ریپوزٹری میں کیڑے کی اطلاع دینے کے لیے مہربانی کریں۔ تازہ ترین خبریں حاصل کرنے کے لیے ہمارا $2 چینل جوائن کریں۔
 theme_xhred_encoding_manually_set=دستی طور پر انکوڈنگ ترتیب دیں
 theme_xhred_filemanager_save_to_change_encoding=انکوڈنگ کو تبدیل کرنے کی اجازت دینے کے لئے فائل کو بچانا ضروری ہے۔
 

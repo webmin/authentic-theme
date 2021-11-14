@@ -595,7 +595,6 @@ theme_xhred_global_resolved_issues=Problemes resolts en %value
 theme_xhred_force_upgrade_beta=Instal·la l'última versió beta disponible
 theme_xhred_force_upgrade_stable=Instal·la l'última versió estable disponible
 theme_xhred_source_encoding=Codi font
-theme_update_footer=Per tal de millorar dia a dia, t'agraïm que ens informis de qualsevol error que trobis a $1. Segueix-nos al canal de $2 per estar assabentat de les últimes novetats.
 theme_xhred_encoding_manually_set=Escriure directament el codi font
 theme_xhred_filemanager_save_to_change_encoding=L'arxiu s'ha de desar prèviament per tal de poder canviar el codi.
 

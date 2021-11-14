@@ -599,7 +599,7 @@ theme_force_upgrade=Aktualizovať tému
 theme_xhred_force_upgrade_beta=Inštalácia najnovšej vývojovej verzie (beta)
 theme_xhred_force_upgrade_stable=Nainštalovať najnovšiu verziu (stabilná)
 theme_xhred_source_encoding=Zdrojové kódovanie
-theme_update_footer=Prosím, láskavo nahlasujte chyby do úložiska $1. Ak chcete získať najnovšie aktualizácie, postupujte podľa kanála $2.
+theme_update_footer=Prosím, nahláste chyby do úložiska $1. Pripojte sa k nášmu kanálu $2 a získajte najnovšie správy.
 theme_xhred_encoding_manually_set=Manuálne nastavenie kódovania
 theme_xhred_filemanager_save_to_change_encoding=Aby bolo možné zmeniť kódovanie, musí byť súbor uložený.
 

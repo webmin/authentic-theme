@@ -599,7 +599,7 @@ theme_force_upgrade=Cập nhật chủ đề
 theme_xhred_force_upgrade_beta=Cài đặt phiên bản phát triển mới nhất (beta)
 theme_xhred_force_upgrade_stable=Cài đặt phiên bản phát hành mới nhất (ổn định)
 theme_xhred_source_encoding=Mã hóa nguồn
-theme_update_footer=Vui lòng loại báo cáo lỗi cho kho lưu trữ $1. Theo dõi kênh $2 của chủ đề để cập nhật mới nhất.
+theme_update_footer=Vui lòng thông báo lỗi cho $1 repository. Tham gia kênh $2 của chúng tôi để nhận những tin tức mới nhất.
 theme_xhred_encoding_manually_set=Đặt mã hóa thủ công
 theme_xhred_filemanager_save_to_change_encoding=Tập tin phải được lưu, để cho phép thay đổi mã hóa.
 

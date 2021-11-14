@@ -599,7 +599,7 @@ theme_force_upgrade=Päivitä teema
 theme_xhred_force_upgrade_beta=Asenna uusin kehitysversio (beta)
 theme_xhred_force_upgrade_stable=Asenna uusin versio (vakaa)
 theme_xhred_source_encoding=Lähdekoodaus
-theme_update_footer=Ole hyvä ja ilmoita virheistä $1 -varastoon. Seuraa teeman $2 -kanavaa saadaksesi uusimmat päivitykset.
+theme_update_footer=Ole ystävällinen ja raportoi virheistä $1 arkistoon. Liity $2-kanavallemme saadaksesi viimeisimmät uutiset.
 theme_xhred_encoding_manually_set=Aseta koodaus manuaalisesti
 theme_xhred_filemanager_save_to_change_encoding=Tiedosto on tallennettava, jotta koodausta voidaan muuttaa.
 

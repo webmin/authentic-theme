@@ -599,7 +599,7 @@ theme_force_upgrade=موضوع را به روز کنید
 theme_xhred_force_upgrade_beta=آخرین نسخه توسعه (بتا) را نصب کنید
 theme_xhred_force_upgrade_stable=نصب آخرین نسخه نسخه (پایدار)
 theme_xhred_source_encoding=رمزگذاری منبع
-theme_update_footer=لطفاً در مخازن $1 با اشکالات گزارشگر مهربان باشید. برای آخرین به روزرسانی ها کانال $2 را دنبال کنید.
+theme_update_footer=لطفاً با مهربانی اشکالات را به مخزن $1 گزارش دهید. برای دریافت آخرین اخبار به کانال $2 ما بپیوندید.
 theme_xhred_encoding_manually_set=رمزگذاری را به صورت دستی تنظیم کنید
 theme_xhred_filemanager_save_to_change_encoding=برای اینکه امکان تغییر رمزگذاری فراهم شود ، باید پرونده را ذخیره کنید.
 

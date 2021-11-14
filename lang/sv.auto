@@ -4,6 +4,7 @@ settings_right_reload=Ladda standardsidan på flikomkopplaren
 
 #18.48
 theme_force_upgrade=Uppdatera tema
+theme_update_footer=Var snäll och rapportera buggar till $1-förrådet. Gå med i vår $2-kanal för att få de senaste nyheterna.
 
 settings_webmin_default_module=Standardsida för Webmin
 

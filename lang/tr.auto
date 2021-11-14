@@ -599,7 +599,7 @@ theme_force_upgrade=Temayı güncelleyin
 theme_xhred_force_upgrade_beta=En son geliştirme sürümünü yükle (beta)
 theme_xhred_force_upgrade_stable=En son sürüm sürümünü yükle (kararlı)
 theme_xhred_source_encoding=Kaynak kodlaması
-theme_update_footer=Lütfen $1 deposuna hataları bildirin. En son güncellemeler için temanın $2 kanalını takip edin.
+theme_update_footer=Lütfen hataları $1 deposuna bildirin. En son haberleri almak için $2 kanalımıza katılın.
 theme_xhred_encoding_manually_set=Kodlamayı manuel olarak ayarlama
 theme_xhred_filemanager_save_to_change_encoding=Kodlamanın değiştirilebilmesi için dosya kaydedilmelidir.
 

@@ -12,6 +12,7 @@ settings_favorites=お気に入りボタンを表示
 
 #18.48
 theme_force_upgrade=テーマを更新
+theme_update_footer=バグを $1リポジトリに報告してください。最新のニュースを入手するには、 $2チャネルに参加してください。
 
 settings_webmin_default_module=Webminのデフォルトページ
 

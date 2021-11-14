@@ -599,7 +599,7 @@ theme_force_upgrade=Atnaujinti temą
 theme_xhred_force_upgrade_beta=Įdiekite naujausią kūrimo versiją (beta)
 theme_xhred_force_upgrade_stable=Įdiekite naujausią išleidimo versiją (stabili)
 theme_xhred_source_encoding=Šaltinio kodavimas
-theme_update_footer=Prašome maloniai pranešti apie klaidas $1 saugykloje. Norėdami gauti naujausius atnaujinimus, skaitykite temos $2 kanalą.
+theme_update_footer=Prašome pranešti apie klaidas $1 saugyklai. Prisijunkite prie mūsų $2 kanalo ir gaukite paskutines naujienas.
 theme_xhred_encoding_manually_set=Rankiniu būdu nustatykite kodavimą
 theme_xhred_filemanager_save_to_change_encoding=Failas turi būti išsaugotas, kad būtų galima pakeisti kodavimą.
 

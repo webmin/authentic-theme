@@ -599,7 +599,7 @@ theme_force_upgrade=Dateer tema op
 theme_xhred_force_upgrade_beta=Installeer nuutste ontwikkelingsweergawe (beta)
 theme_xhred_force_upgrade_stable=Installeer die nuutste weergawe (stabiel)
 theme_xhred_source_encoding=Bronkodering
-theme_update_footer=Rapporteer asseblief foute by $1 bewaarplek. Volg die $2 -kanaal van die tema vir die nuutste opdaterings.
+theme_update_footer=Wees asseblief vriendelik en rapporteer foute aan $1-bewaarplek. Sluit aan by ons $2-kanaal om die jongste nuus te kry.
 theme_xhred_encoding_manually_set=Stel kodering handmatig in
 theme_xhred_filemanager_save_to_change_encoding=Die lêer moet gestoor word om die kodering te laat verander.
 

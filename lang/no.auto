@@ -4,6 +4,7 @@ settings_right_reload=Last inn standardsiden på fanebryteren
 
 #18.48
 theme_force_upgrade=Oppdater tema
+theme_update_footer=Vær så snill å rapportere feil til $1-depotet. Bli med på $2-kanalen vår for å få de siste nyhetene.
 
 settings_webmin_default_module=Standardside for Webmin
 

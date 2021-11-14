@@ -599,7 +599,7 @@ theme_force_upgrade=Téma frissítése
 theme_xhred_force_upgrade_beta=Telepítse a legújabb fejlesztői verziót (béta)
 theme_xhred_force_upgrade_stable=Telepítse a legfrissebb verziót (stabil)
 theme_xhred_source_encoding=Forrás kódolás
-theme_update_footer=Kérjük, szíveskedjen bejelenteni a hibákat az $1 lerakatba. Kövesse a téma $2 csatornáját a legújabb frissítésekhez.
+theme_update_footer=Kérjük, jelezze a hibákat a $1 adattárnak. Csatlakozzon $2 csatornánkhoz a legfrissebb hírekért.
 theme_xhred_encoding_manually_set=A kódolás kézi beállítása
 theme_xhred_filemanager_save_to_change_encoding=A fájlt el kell menteni a kódolás megváltoztatásának lehetővé tétele érdekében.
 

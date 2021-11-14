@@ -599,7 +599,7 @@ theme_force_upgrade=עדכן נושא
 theme_xhred_force_upgrade_beta=התקן את גרסת הפיתוח האחרונה (בטא)
 theme_xhred_force_upgrade_stable=התקן את גרסת המהדורה האחרונה (יציבה)
 theme_xhred_source_encoding=קידוד מקור
-theme_update_footer=אנא הקפד לדווח על באגים למאגר $1. עקוב אחר הערוץ $2 של הנושא לקבלת העדכונים האחרונים.
+theme_update_footer=נא להיות אדיב לדווח על באגים למאגר $1. הצטרף לערוץ $2 שלנו כדי לקבל את החדשות האחרונות.
 theme_xhred_encoding_manually_set=הגדרת קידוד ידנית
 theme_xhred_filemanager_save_to_change_encoding=יש לשמור את הקובץ על מנת לאפשר שינוי קידוד.
 

@@ -599,7 +599,7 @@ theme_force_upgrade=Абнавіць тэму
 theme_xhred_force_upgrade_beta=Усталюйце апошнюю версію распрацоўкі (бэта-версія)
 theme_xhred_force_upgrade_stable=Усталюйце апошнюю версію выпуску (стабільная)
 theme_xhred_source_encoding=Кадаванне крыніц
-theme_update_footer=Будзьце ласкавыя, паведамляючы пра памылкі ў сховішчы $1 Сачыце за тэмай $2 канала для апошніх абнаўленняў.
+theme_update_footer=Калі ласка, паведаміце пра памылкі ў сховішча $1. Далучайцеся да нашага канала $2, каб атрымліваць апошнія навіны.
 theme_xhred_encoding_manually_set=Уручную ўсталяваць кадаванне
 theme_xhred_filemanager_save_to_change_encoding=Файл павінен быць захаваны, каб дазволіць кадаванне змяніцца.
 

@@ -599,7 +599,7 @@ theme_force_upgrade=Atjaunināt motīvu
 theme_xhred_force_upgrade_beta=Instalējiet jaunāko izstrādes versiju (beta)
 theme_xhred_force_upgrade_stable=Instalējiet jaunāko versiju (stabila)
 theme_xhred_source_encoding=Avota kodējums
-theme_update_footer=Lūdzu, laipni ziņojiet par kļūdām $1 krātuvē. Sekojiet tēmas $2 kanālam, lai iegūtu jaunākos atjauninājumus.
+theme_update_footer=Lūdzu, ziņojiet par kļūdām $1 repozitorijā. Pievienojieties mūsu $2 kanālam, lai saņemtu jaunākās ziņas.
 theme_xhred_encoding_manually_set=Kodēšana manuāli
 theme_xhred_filemanager_save_to_change_encoding=Fails ir jāsaglabā, lai varētu mainīt kodējumu.
 

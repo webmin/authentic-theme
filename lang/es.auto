@@ -511,7 +511,7 @@ theme_force_upgrade=Actualizar tema
 theme_xhred_force_upgrade_beta=Instale la última versión de desarrollo (beta)
 theme_xhred_force_upgrade_stable=Instale la última versión de lanzamiento (estable)
 theme_xhred_source_encoding=Codificación fuente
-theme_update_footer=Sea amable al informar errores al repositorio $1. Siga el canal $2 del tema para obtener las últimas actualizaciones.
+theme_update_footer=Por favor, informe los errores al repositorio $1. Únase a nuestro canal $2 para recibir las últimas noticias.
 theme_xhred_encoding_manually_set=Establecer manualmente la codificación
 theme_xhred_filemanager_save_to_change_encoding=El archivo debe guardarse para permitir que se cambie la codificación.
 

@@ -595,7 +595,6 @@ theme_xhred_global_resolved_issues=Problèmes résolus dans les versions %value
 theme_xhred_force_upgrade_beta=Installer la dernière version de développement (bêta)
 theme_xhred_force_upgrade_stable=Installer la dernière version (stable)
 theme_xhred_source_encoding=Encodage source
-theme_update_footer=Merci de bien vouloir signaler les bogues au référentiel $1. Suivez la chaîne à $2 du thème pour les dernières mises à jour.
 theme_xhred_encoding_manually_set=Encodage défini manuellement
 theme_xhred_filemanager_save_to_change_encoding=Le fichier doit être enregistré pour permettre la modification du codage.
 

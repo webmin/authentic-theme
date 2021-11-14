@@ -486,7 +486,7 @@ theme_force_upgrade=Update thema
 theme_xhred_force_upgrade_beta=Installeer de nieuwste ontwikkelingsversie (bèta)
 theme_xhred_force_upgrade_stable=Installeer de laatste releaseversie (stabiel)
 theme_xhred_source_encoding=Broncodering
-theme_update_footer=Gelieve bugs te melden aan de $1 -repository. Volg het $2 -kanaal van het thema voor de laatste updates.
+theme_update_footer=Wees vriendelijk om bugs te melden aan $1 repository. Word lid van ons $2-kanaal voor het laatste nieuws.
 theme_xhred_encoding_manually_set=Codering handmatig instellen
 theme_xhred_filemanager_save_to_change_encoding=Bestand moet worden opgeslagen om codering te kunnen wijzigen.
 
