@@ -1002,8 +1002,8 @@ sub get_all_users_motd_data
         {
            wanted => sub {
                push(@users_motd_files, "$tvardir/$_")
-                 if ((!$specific_user && $_ =~ /^motd\.[a-zA-Z0-9]+$/) ||
-                     ($specific_user =~ /^[a-zA-Z0-9]+$/ && $_ =~ /^motd\.$specific_user$/));
+                 if ((!$specific_user && $_ =~ /^motd\.[a-zA-Z0-9\_\-]+$/) ||
+                     ($specific_user =~ /^[a-zA-Z0-9\_\-]+$/ && $_ =~ /^motd\.$specific_user$/));
            },
         },
         $tvardir);
@@ -1014,7 +1014,7 @@ sub get_all_users_motd_data
             my @user_motd_allowed;
             foreach my $motd (@{$user_motd}) {
 
-                # Skip message if cannot be displayed for the give user
+                # Skip message if cannot be displayed for the given user
                 if ($specific_user ||
                     ($motd->{'target'} eq 'all' ||
                         ($get_user_level eq '0' && $motd->{'target'} eq 'adm') ||
