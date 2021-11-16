@@ -10,6 +10,9 @@ theme_update_footer=Vă rugăm să raportați erorile către depozitul $1. Alăt
 
 settings_webmin_default_module=Pagină implicită pentru Webmin
 
+#19.09
+theme_git_patch_incompatible_message_desc=Pot exista modificări incompatibile, care ar putea împiedica tema să funcționeze așa cum a fost proiectată. Continuarea operațiunii de actualizare folosind UI nu este posibilă.
+
 #19.20
 extensions_mail_flag_spam_status=Starea spamului
 extensions_mail_flag_spam_status_data=$1 din $2

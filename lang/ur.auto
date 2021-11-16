@@ -694,7 +694,7 @@ theme_xhred_global_empty=خالی
 theme_xhred_global_click_here=یہاں کلک کریں
 theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 and $5 to work properly.
 theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 to work properly.
-theme_git_patch_incompatible_message_desc=There might be incompatible changes, that could stop the theme from working as designed. To bypass this warning, and force install the theme anyway $1, or upgrade $2 to the latest development  version first using console, by running <kbd>update-from-repo.sh</kbd> script from its directory.
+theme_git_patch_incompatible_message_desc=غیر موافق تبدیلیاں ہو سکتی ہیں، جو تھیم کو ڈیزائن کے مطابق کام کرنے سے روک سکتی ہیں۔ UI کا استعمال کرتے ہوئے اپ گریڈ آپریشن جاری رکھنا ممکن نہیں ہے۔
 theme_xhred_global_outdated=یہ ورژن پرانا ہے
 
 #19.10

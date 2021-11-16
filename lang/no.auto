@@ -8,6 +8,9 @@ theme_update_footer=Vær så snill å rapportere feil til $1-depotet. Bli med p�
 
 settings_webmin_default_module=Standardside for Webmin
 
+#19.09
+theme_git_patch_incompatible_message_desc=Det kan være inkompatible endringer som kan stoppe temaet fra å fungere som det er designet. Det er ikke mulig å fortsette oppgraderingen med brukergrensesnittet.
+
 #19.70
 theme_xhred_filemanager_context_view=Utsikt
 theme_xhred_file_viewer=File Viewer

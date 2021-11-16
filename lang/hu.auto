@@ -694,7 +694,7 @@ theme_xhred_global_empty=Üres
 theme_xhred_global_click_here=kattints ide
 theme_git_patch_incompatible_message=A $1 <em>$2</em> ezen verziójának telepítéséhez a megfelelő működéshez szükség van a $3 és $5 legújabb és/vagy esetleg még nem kiadott verziójára.
 theme_git_patch_incompatible_message_s=A $1 <em>$2</em> ezen verziójának telepítéséhez a megfelelő működéshez szükség van a $3 legújabb és/vagy esetleg még nem kiadott verziójára.
-theme_git_patch_incompatible_message_desc=Lehet, hogy inkompatibilisek a változások, amelyek megakadályozhatják a téma megfelelő működését. A figyelmeztetés megkerülésére és a téma telepítésére kényszerítve $1, vagy frissítse a $2 <kbd>update-from-repo.sh</kbd> a legújabb fejlesztési verzióra, először a konzol használatával, futtatva a <kbd>update-from-repo.sh</kbd> szkriptet a könyvtárából.
+theme_git_patch_incompatible_message_desc=Előfordulhatnak nem kompatibilis módosítások, amelyek megakadályozhatják a téma tervezett működését. A frissítési művelet folytatása a felhasználói felület használatával nem lehetséges.
 theme_xhred_global_outdated=Ez a verzió elavult
 
 #19.10

@@ -8,6 +8,9 @@ theme_update_footer=Var snäll och rapportera buggar till $1-förrådet. Gå med
 
 settings_webmin_default_module=Standardsida för Webmin
 
+#19.09
+theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar som kan hindra temat från att fungera som det är tänkt. Det är inte möjligt att fortsätta uppgraderingen med UI.
+
 #19.53
 settings_global_palette_unauthenticated=Inloggningssidan färgpalett
 

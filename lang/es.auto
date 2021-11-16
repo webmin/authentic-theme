@@ -606,7 +606,7 @@ theme_xhred_global_empty=Vacío
 theme_xhred_global_click_here=haga clic aquí
 theme_git_patch_incompatible_message=La instalación de esta versión de $1 <em>$2</em> requiere la versión más reciente y/o posiblemente inédita de $3 y $5 para funcionar correctamente.
 theme_git_patch_incompatible_message_s=La instalación de esta versión de $1 <em>$2</em> requiere la versión más reciente y/o posiblemente inédita de $3 para funcionar correctamente.
-theme_git_patch_incompatible_message_desc=Puede haber cambios incompatibles, que podrían impedir que el tema funcione según lo diseñado. Para omitir esta advertencia y forzar la instalación del tema de todos modos $1, o actualizar $2 a la última versión de desarrollo primero usando la consola, ejecutando el script <kbd>update-from-repo.sh</kbd> desde su directorio.
+theme_git_patch_incompatible_message_desc=Puede haber cambios incompatibles que podrían impedir que el tema funcione como se diseñó. No es posible continuar con la operación de actualización mediante la interfaz de usuario.
 theme_xhred_global_outdated=Ésta versión es antigua
 
 #19.10

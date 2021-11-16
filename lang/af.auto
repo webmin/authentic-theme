@@ -694,7 +694,7 @@ theme_xhred_global_empty=leë
 theme_xhred_global_click_here=Klik hier
 theme_git_patch_incompatible_message=Om hierdie weergawe van $1 <em>$2</em> te installeer, is die nuutste en/of moontlik onuitgereikte weergawe van $3 en $5 korrek om te werk.
 theme_git_patch_incompatible_message_s=Om hierdie weergawe van $1 <em>$2</em> te installeer, is die nuutste en/of moontlik nie-vrygestelde weergawe van $3 nodig om korrek te werk.
-theme_git_patch_incompatible_message_desc=Daar kan onverenigbare veranderinge wees, wat kan keer dat die tema werk soos ontwerp. Om hierdie waarskuwing te omseil, en die tema in elk geval $1 te dwing, of $2 te gradeer na die nuutste ontwikkelingsweergawe deur eers konsole te gebruik, deur die <kbd>update-from-repo.sh</kbd> from- <kbd>update-from-repo.sh</kbd> skrip uit die gids te laat loop.
+theme_git_patch_incompatible_message_desc=Daar kan onversoenbare veranderinge wees, wat kan keer dat die tema werk soos ontwerp. Dit is nie moontlik om voort te gaan met opgradering met UI nie.
 theme_xhred_global_outdated=Hierdie weergawe is verouderd
 
 #19.10

@@ -8,6 +8,9 @@ theme_update_footer=Merci de bien vouloir signaler les bogues au référentiel $
 
 settings_webmin_default_module=Page par défaut pour Webmin
 
+#19.09
+theme_git_patch_incompatible_message_desc=Il pourrait y avoir des changements incompatibles, qui pourraient empêcher le thème de fonctionner comme prévu. Il n'est pas possible de poursuivre l'opération de mise à niveau à l'aide de l'interface utilisateur.
+
 #19.70
 theme_xhred_filemanager_context_view=Vue
 theme_xhred_file_viewer=Visionneuse de fichiers

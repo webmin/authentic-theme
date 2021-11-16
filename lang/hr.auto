@@ -694,7 +694,7 @@ theme_xhred_global_empty=Prazan
 theme_xhred_global_click_here=kliknite ovdje
 theme_git_patch_incompatible_message=Instaliranje ove verzije $1 <em>$2</em> zahtijeva da najnovija i/ili eventualno neobjavljena verzija $3 i $5 radi ispravnog rada.
 theme_git_patch_incompatible_message_s=Instaliranje ove verzije $1 <em>$2</em> zahtijeva da najnovija i/ili eventualno neobjavljena verzija $3 radi ispravno.
-theme_git_patch_incompatible_message_desc=Možda postoje nekompatibilne promjene, koje bi mogle zaustaviti rad teme kako je zamišljeno. Da biste zaobišli ovo upozorenje i prisilili instalaciju teme ionako $1 ili nadogradite $2 na najnoviju razvojnu verziju prvo pomoću konzole, pokretanjem skripte <kbd>update-from-repo.sh</kbd> iz svoje mape.
+theme_git_patch_incompatible_message_desc=Možda postoje nekompatibilne promjene koje bi mogle spriječiti rad teme kako je dizajniran. Nastavak operacije nadogradnje pomoću korisničkog sučelja nije moguć.
 theme_xhred_global_outdated=Ova verzija je zastarjela
 
 #19.10

@@ -687,7 +687,6 @@ theme_xhred_global_empty=空
 theme_xhred_global_click_here=点击此处
 theme_git_patch_incompatible_message=安装此版本的 $1 <em>$2</em>需要最新和/或可能未发布的 $3 <em>$4</em> 和 $5 <em>$6</em> 版本才能正常运行。
 theme_git_patch_incompatible_message_s=安装此版本的 $1 <em>$2</em> 需要最新和/或可能未发布的 $3 <em>$4</em> 版本才能正常运行。
-theme_git_patch_incompatible_message_desc=这可能是不兼容的更改，可能会阻止主题按设计工作。要绕过此警告，并强制安装主题 $1，或者首先使用控制台将 $2 升级到最新的开发版本，方法是从其目录运行 <kbd>update-from-repo.sh</kbd>脚本。
 theme_xhred_global_outdated=此版本已过时
 
 #19.10

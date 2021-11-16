@@ -606,7 +606,7 @@ theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=Klik her
 theme_git_patch_incompatible_message=Installation af denne version af $1 <em>$2</em> kræver den nyeste og/eller muligvis ikke-udgivne version af $3 og $5 for at fungere korrekt.
 theme_git_patch_incompatible_message_s=Installation af denne version af $1 <em>$2</em> kræver den nyeste og/eller muligvis ikke-udgivne version af $3 for at fungere korrekt.
-theme_git_patch_incompatible_message_desc=Der kan være uforenelige ændringer, der kan forhindre temaet i at fungere som designet. For at omgå denne advarsel og tvinge installationen af temaet alligevel $1 eller opgradere $2 til den nyeste udviklingsversion først ved hjælp af konsol ved at køre <kbd>update-from-repo.sh</kbd> script fra dens bibliotek.
+theme_git_patch_incompatible_message_desc=Der kan være inkompatible ændringer, der kan forhindre temaet i at fungere som designet. Det er ikke muligt at fortsætte opgraderingen ved hjælp af brugergrænsefladen.
 theme_xhred_global_outdated=Denne version er forældet
 
 #19.10

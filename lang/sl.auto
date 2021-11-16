@@ -694,7 +694,7 @@ theme_xhred_global_empty=Prazno
 theme_xhred_global_click_here=Klikni tukaj
 theme_git_patch_incompatible_message=Če namestite to različico $1 <em>$2</em>, za pravilno delovanje potrebuje najnovejša in/ali morda neobjavljena različica $3 in $5.
 theme_git_patch_incompatible_message_s=Če namestite to različico $1 <em>$2</em>, za pravilno delovanje potrebuje najnovejša in/ali morda neobjavljena različica $3.
-theme_git_patch_incompatible_message_desc=Lahko pride do nezdružljivih sprememb, ki lahko preprečijo, da bi tema delovala po načrtih. Če želite zaobiti to opozorilo in prisiliti temo tako ali tako $1 ali nadgraditi $2 na najnovejšo razvojno različico najprej s konzolo, <kbd>update-from-repo.sh</kbd> skript <kbd>update-from-repo.sh</kbd> iz svojega imenika.
+theme_git_patch_incompatible_message_desc=Morda pride do nezdružljivih sprememb, ki lahko preprečijo, da bi tema delovala, kot je bila zasnovana. Nadaljevanje nadgradnje z uporabniškim vmesnikom ni mogoče.
 theme_xhred_global_outdated=Ta različica je zastarela
 
 #19.10

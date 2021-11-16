@@ -694,7 +694,7 @@ theme_xhred_global_empty=Tukšs
 theme_xhred_global_click_here=noklikšķiniet šeit
 theme_git_patch_incompatible_message=Lai instalētu šo $1 <em>$2</em> versiju, lai tā pareizi darbotos, nepieciešama jaunākā un/vai, iespējams, neizpausta $3 un $5 versija.
 theme_git_patch_incompatible_message_s=Lai instalētu šo $1 <em>$2</em> versiju, lai tā pareizi darbotos, nepieciešama jaunākā un/vai, iespējams, neizpausta $3 versija.
-theme_git_patch_incompatible_message_desc=Var būt nesaderīgas izmaiņas, kas var liegt motīva darbībai, kā paredzēts. Lai apietu šo brīdinājumu un jebkurā gadījumā piespiestu motīva instalēšanu, izmantojot $1, vai jauniniet $2 uz jaunāko izstrādes versiju, palaižot <kbd>update-from-repo.sh</kbd> skriptu no tā direktorijas.
+theme_git_patch_incompatible_message_desc=Var būt nesaderīgas izmaiņas, kas var neļaut motīvam darboties, kā paredzēts. Nav iespējams turpināt jaunināšanas darbību, izmantojot lietotāja saskarni.
 theme_xhred_global_outdated=Šī versija ir novecojusi
 
 #19.10

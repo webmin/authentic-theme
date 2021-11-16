@@ -612,7 +612,7 @@ theme_xhred_global_empty=Pusty
 theme_xhred_global_click_here=Kliknij tutaj
 theme_git_patch_incompatible_message=Instalacja tej wersji $1 <em>$2</em> wymaga najnowszej i/lub prawdopodobnie niepublikowanej wersji $3 i $5 do poprawnego działania.
 theme_git_patch_incompatible_message_s=Instalacja tej wersji $1 <em>$2</em> wymaga najnowszej i/lub prawdopodobnie niepublikowanej wersji $3 do poprawnego działania.
-theme_git_patch_incompatible_message_desc=Mogą występować niezgodne zmiany, które mogą uniemożliwić działanie motywu zgodnie z przeznaczeniem. Aby ominąć to ostrzeżenie i wymusić instalację motywu $1 lub uaktualnij $2 do najnowszej wersji programistycznej najpierw za pomocą konsoli, uruchamiając skrypt <kbd>update-from-repo.sh</kbd> z jego katalogu.
+theme_git_patch_incompatible_message_desc=Mogą wystąpić niekompatybilne zmiany, które mogą uniemożliwić działanie motywu zgodnie z założeniami. Kontynuowanie operacji aktualizacji za pomocą interfejsu użytkownika nie jest możliwe.
 theme_xhred_global_outdated=Ta wersja jest nieaktualna
 
 #19.10

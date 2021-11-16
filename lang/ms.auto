@@ -78,7 +78,7 @@ theme_xhred_global_empty=Kosong
 theme_xhred_global_click_here=tekan di sini
 theme_git_patch_incompatible_message=Memasang versi $1 <em>$2</em> ini memerlukan versi $3 dan $5 yang terkini dan/atau belum dirilis untuk berfungsi dengan baik.
 theme_git_patch_incompatible_message_s=Memasang versi $1 <em>$2</em> ini memerlukan versi $3 yang terkini dan/atau belum dirilis untuk berfungsi dengan baik.
-theme_git_patch_incompatible_message_desc=Mungkin ada perubahan yang tidak sesuai, yang dapat menghentikan tema daripada berfungsi seperti yang dirancang. Untuk memintas amaran ini, dan paksa memasang tema $1, atau tingkatkan $2 ke versi pengembangan terbaru terlebih dahulu menggunakan konsol, dengan menjalankan skrip <kbd>update-from-repo.sh</kbd> dari direktori.
+theme_git_patch_incompatible_message_desc=Mungkin terdapat perubahan yang tidak serasi, yang boleh menghalang tema daripada berfungsi seperti yang direka. Meneruskan operasi naik taraf menggunakan UI tidak boleh dilakukan.
 theme_xhred_global_outdated=Versi ini sudah usang
 
 #19.10

@@ -694,7 +694,7 @@ theme_xhred_global_empty=Tyhjä
 theme_xhred_global_click_here=Klikkaa tästä
 theme_git_patch_incompatible_message=Tämän $1 <em>$2</em> version asentaminen vaatii $3 ja $5 uusimman ja/tai mahdollisesti julkistamattoman version toimimaan oikein.
 theme_git_patch_incompatible_message_s=Tämän $1 <em>$2</em> version asentaminen vaatii $3 uusimman ja/tai mahdollisesti julkistamattoman version toimimaan oikein.
-theme_git_patch_incompatible_message_desc=Siellä saattaa olla yhteensopimattomia muutoksia, jotka voivat estää teema toimimasta suunnitellulla tavalla. Ohittaa tämä varoitus ja pakottaa teema asentamaan joka tapauksessa $1 tai päivitä $2 uusimpaan kehitysversioon ensin konsolin avulla suorittamalla <kbd>update-from-repo.sh</kbd> komentosarjan hakemistosta.
+theme_git_patch_incompatible_message_desc=Saattaa olla yhteensopimattomia muutoksia, jotka voivat estää teemaa toimimasta suunnitellusti. Päivityksen jatkaminen käyttöliittymän avulla ei ole mahdollista.
 theme_xhred_global_outdated=Tämä versio on vanhentunut
 
 #19.10

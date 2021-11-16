@@ -694,7 +694,7 @@ theme_xhred_global_empty=Empty
 theme_xhred_global_click_here=klikatu hemen
 theme_git_patch_incompatible_message=$1 <em>$2</em> bertsio hau instalatzeak behar bezala funtziona dezan $3 eta $5 bertsio berrienak eta/edo agian argitaratu gabeak behar ditu.
 theme_git_patch_incompatible_message_s=$1 <em>$2</em> bertsio hau instalatzeak behar bezala funtziona dezan $3 bertsio berriena eta/edo agian argitaratu gabekoa behar du.
-theme_git_patch_incompatible_message_desc=Aldaketa bateraezinak izan litezke, gaia diseinatutako moduan funtziona dezaten. Saihesbidea ohar hau, eta indarrean jartzeko gaiaren instalatu hala $1, edo berritzea $2 garapen azken bertsioa lehen kontsola erabiliz, korrika arabera <kbd>update-from-repo.sh</kbd> gidoia bere agendan.
+theme_git_patch_incompatible_message_desc=Aldaketa bateraezinak egon daitezke, gaiak diseinatu bezala funtzionatzeari utz diezaiokete. Ezin da bertsio berritze-eragiketa jarraitu UI erabiliz.
 theme_xhred_global_outdated=Bertsio hau zaharkituta dago
 
 #19.10

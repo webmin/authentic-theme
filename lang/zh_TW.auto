@@ -694,7 +694,7 @@ theme_xhred_global_empty=空的
 theme_xhred_global_click_here=點擊這裡
 theme_git_patch_incompatible_message=安裝此版本的$1 <em>$2</em>需要最新的和/或可能未發布的$3和$5版本才能正常工作。
 theme_git_patch_incompatible_message_s=安裝此版本的$1 <em>$2</em>需要最新的和/或可能未發布的$3版本才能正常工作。
-theme_git_patch_incompatible_message_desc=可能存在不兼容的更改，可能會阻止主題按設計工作。要繞過此警告，無論如何都要強制安裝主題$1，或者首先使用控制台從目錄中運行<kbd>update-from-repo.sh</kbd>腳本，將$2升級到最新開發版本。
+theme_git_patch_incompatible_message_desc=可能存在不兼容的更改，這可能會阻止主題按設計工作。無法使用 UI 繼續升級操作。
 theme_xhred_global_outdated=此版本已過時
 
 #19.10

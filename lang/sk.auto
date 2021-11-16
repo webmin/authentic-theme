@@ -694,7 +694,7 @@ theme_xhred_global_empty=prázdny
 theme_xhred_global_click_here=kliknite tu
 theme_git_patch_incompatible_message=Inštalácia tejto verzie $1 <em>$2</em> vyžaduje najnovšiu a/alebo pravdepodobne nevydanú verziu $3 a $5, aby správne fungovala.
 theme_git_patch_incompatible_message_s=Inštalácia tejto verzie $1 <em>$2</em> vyžaduje, aby najnovšia a/alebo pravdepodobne nevydaná verzia $3 fungovala správne.
-theme_git_patch_incompatible_message_desc=Mohli by nastať nezlučiteľné zmeny, ktoré by mohli zabrániť téme v práci tak, ako bola navrhnutá. Ak chcete toto upozornenie obísť a vynútiť inštaláciu témy $1, alebo inovujte najskôr $2 na najnovšiu vývojovú verziu pomocou konzoly spustením skriptu <kbd>update-from-repo.sh</kbd> z adresára.
+theme_git_patch_incompatible_message_desc=Môžu sa vyskytnúť nekompatibilné zmeny, ktoré by mohli zabrániť tomu, aby téma fungovala tak, ako bola navrhnutá. Pokračovanie v aktualizácii pomocou používateľského rozhrania nie je možné.
 theme_xhred_global_outdated=Táto verzia je zastaraná
 
 #19.10

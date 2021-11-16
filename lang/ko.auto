@@ -694,7 +694,7 @@ theme_xhred_global_empty=빈
 theme_xhred_global_click_here=여기를 클릭하십시오
 theme_git_patch_incompatible_message=이 $1 <em>$2</em> 버전을 설치하려면 $3 및 $5의 최신 및/또는 미공개 버전이 제대로 작동해야합니다.
 theme_git_patch_incompatible_message_s=이 $1 <em>$2</em> 버전을 설치하려면 $3의 최신 및/또는 출시되지 않은 버전이 제대로 작동해야합니다.
-theme_git_patch_incompatible_message_desc=호환되지 않는 변경 사항이있을 수 있으며, 이는 테마가 디자인 된대로 작동하지 못하게 할 수 있습니다. 이 경고를 무시하고 디렉토리에서 <kbd>update-from-repo.sh</kbd> 스크립트를 실행하여 먼저 콘솔을 사용하여 테마를 $1로 설치하거나 $2 를 최신 개발 버전으로 업그레이드하십시오.
+theme_git_patch_incompatible_message_desc=테마가 설계된 대로 작동하지 않을 수 있는 호환되지 않는 변경 사항이 있을 수 있습니다. UI를 사용하여 업그레이드 작업을 계속할 수 없습니다.
 theme_xhred_global_outdated=이 버전은 구식입니다
 
 #19.10

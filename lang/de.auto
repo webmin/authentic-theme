@@ -8,6 +8,9 @@ theme_update_footer=Bitte melden Sie Fehler an das $1-Repository. Treten Sie uns
 
 settings_webmin_default_module=Standardseite für Webmin
 
+#19.09
+theme_git_patch_incompatible_message_desc=Möglicherweise gibt es inkompatible Änderungen, die dazu führen können, dass das Design nicht wie vorgesehen funktioniert. Die Fortsetzung des Upgrade-Vorgangs über die Benutzeroberfläche ist nicht möglich.
+
 #19.20
 extensions_mail_flag_spam_status=Spam-Status
 extensions_mail_flag_spam_status_data=$1 von $2

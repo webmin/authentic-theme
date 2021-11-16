@@ -694,7 +694,7 @@ theme_xhred_global_empty=Tuščia
 theme_xhred_global_click_here=paspauskite čia
 theme_git_patch_incompatible_message=Norint įdiegti šią $1 <em>$2</em> versiją reikia tinkamos naujausios ir (arba) galbūt neišleistos $3 ir $5 versijos.
 theme_git_patch_incompatible_message_s=Norint įdiegti šią $1 <em>$2</em> versiją, reikalinga naujausia ir (arba) galbūt neišleista $3 versija, kad ji tinkamai veiktų.
-theme_git_patch_incompatible_message_desc=Gali būti nesuderinamų pakeitimų, dėl kurių tema gali nebeveikti taip, kaip numatyta. Norėdami apeiti šį įspėjimą ir vis tiek priversti įdiegti temą $1, arba pirmiausia atnaujinkite $2 į naujausią kūrimo versiją naudodami konsolę, paleisdami „ <kbd>update-from-repo.sh</kbd> scenarijų iš savo katalogo.
+theme_git_patch_incompatible_message_desc=Gali būti nesuderinamų pakeitimų, dėl kurių tema gali neveikti taip, kaip numatyta. Tęsti naujovinimo operaciją naudojant vartotojo sąsają neįmanoma.
 theme_xhred_global_outdated=Ši versija pasenusi
 
 #19.10

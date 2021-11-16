@@ -694,7 +694,7 @@ theme_xhred_global_empty=ריק
 theme_xhred_global_click_here=לחץ כאן
 theme_git_patch_incompatible_message=התקנת גרסה זו של $1 <em>$2</em> מחייבת גרסה אחרונה ו/או אולי לא פורסמה של $3 ו- $5 כדי לעבוד כראוי.
 theme_git_patch_incompatible_message_s=התקנת גרסה זו של $1 <em>$2</em> מחייבת גרסה אחרונה ו/או אולי לא פורסמה של $3 כדי לעבוד כראוי.
-theme_git_patch_incompatible_message_desc=יתכנו שינויים שאינם תואמים, שיכולים למנוע מהעיצוב לעבוד כמתוכנן. כדי לעקוף אזהרה זו, ולאלץ להתקין את העיצוב בכל מקרה $1, או לשדרג $2 לגרסת הפיתוח האחרונה באמצעות הקונסולה, על ידי הפעלת סקריפט <kbd>update-from-repo.sh</kbd> שלה.
+theme_git_patch_incompatible_message_desc=ייתכן שיהיו שינויים לא תואמים, שעלולים למנוע מהנושא לפעול כפי שתוכנן. המשך פעולת השדרוג באמצעות ממשק המשתמש אינו אפשרי.
 theme_xhred_global_outdated=גרסה זו אינה מיושנת
 
 #19.10

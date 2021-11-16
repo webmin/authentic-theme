@@ -687,7 +687,6 @@ theme_xhred_global_empty=Vide
 theme_xhred_global_click_here=cliquez ici
 theme_git_patch_incompatible_message=L'installation de cette version de $1 <em>$2</em> nécessite la dernière version et/ou peut-être non publiée de $3 et $5 pour fonctionner correctement.
 theme_git_patch_incompatible_message_s=L'installation de cette version de $1 <em>$2</em> nécessite la dernière version et/ou peut-être non publiée de $3 pour fonctionner correctement.
-theme_git_patch_incompatible_message_desc=Il peut y avoir des modifications incompatibles, qui pourraient empêcher le thème de fonctionner comme prévu. Pour contourner cet avertissement et forcer l'installation du thème de toute façon $1, ou mettre à niveau $2 vers la dernière version de développement en utilisant d'abord la console, en exécutant le script <kbd>update-from-repo.sh</kbd> à partir de son répertoire.
 theme_xhred_global_outdated=Cette version n'est plus à jour
 
 #19.10

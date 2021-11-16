@@ -694,7 +694,7 @@ theme_xhred_global_empty=Trống
 theme_xhred_global_click_here=bấm vào đây
 theme_git_patch_incompatible_message=Việc cài đặt phiên bản $1 <em>$2</em> này yêu cầu phiên bản mới nhất và/hoặc có thể chưa được phát hành của $3 và $5 để hoạt động chính xác.
 theme_git_patch_incompatible_message_s=Việc cài đặt phiên bản $1 <em>$2</em> này yêu cầu phiên bản mới nhất và/hoặc có thể chưa được phát hành của $3 để hoạt động chính xác.
-theme_git_patch_incompatible_message_desc=Có thể có những thay đổi không tương thích, có thể ngăn chủ đề hoạt động như thiết kế. Để bỏ qua cảnh báo này, và buộc cài đặt chủ đề bằng $1, hoặc nâng cấp $2 lên phiên bản phát triển mới nhất trước tiên bằng giao diện điều khiển, bằng cách chạy tập lệnh <kbd>update-from-repo.sh</kbd> từ thư mục của nó.
+theme_git_patch_incompatible_message_desc=Có thể có những thay đổi không tương thích, có thể ngăn chủ đề hoạt động như được thiết kế. Không thể tiếp tục hoạt động nâng cấp bằng giao diện người dùng.
 theme_xhred_global_outdated=Phiên bản này là lỗi thời
 
 #19.10

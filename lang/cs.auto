@@ -536,7 +536,7 @@ theme_xhred_global_empty=Prázdný
 theme_xhred_global_click_here=klikněte zde
 theme_git_patch_incompatible_message=Instalace této verze $1 <em>$2</em> vyžaduje, aby nejnovější a/nebo možná nevydaná verze $3 a $5 fungovala správně.
 theme_git_patch_incompatible_message_s=Instalace této verze $1 <em>$2</em> vyžaduje, aby nejnovější a/nebo možná nevydaná verze $3 fungovala správně.
-theme_git_patch_incompatible_message_desc=Mohou se vyskytnout nekompatibilní změny, které by mohly zabránit tomu, aby téma fungovalo tak, jak bylo navrženo. Chcete-li toto varování obejít a vynutit instalaci motivu $1 nebo upgradovat $2 na nejnovější vývojovou verzi nejprve pomocí konzole, <kbd>update-from-repo.sh</kbd> skript <kbd>update-from-repo.sh</kbd> ze svého adresáře.
+theme_git_patch_incompatible_message_desc=Mohou existovat nekompatibilní změny, které by mohly zabránit tomu, aby téma fungovalo tak, jak bylo navrženo. Pokračování v upgradu pomocí uživatelského rozhraní není možné.
 theme_xhred_global_outdated=Tato verze je zastaralá
 
 #19.10

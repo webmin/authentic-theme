@@ -694,7 +694,7 @@ theme_xhred_global_empty=Boş
 theme_xhred_global_click_here=buraya Tıkla
 theme_git_patch_incompatible_message=$1 <em>$2</em> sürümünün yüklenmesi için düzgün çalışması için $3 ve $5 'un en son ve/veya muhtemelen yayınlanmamış sürümü gerekir.
 theme_git_patch_incompatible_message_s=Bu $1 <em>$2</em> sürümünü yüklemek için düzgün çalışabilmek için $3 'un en son ve/veya muhtemelen yayınlanmamış sürümü gerekir.
-theme_git_patch_incompatible_message_desc=Temanın tasarlandığı gibi çalışmasını engelleyebilecek uyumsuz değişiklikler olabilir. Bu uyarıyı atlamak ve temayı yine de $1 yüklemeye zorlamak veya dizininden <kbd>update-from-repo.sh</kbd> komut dosyasını çalıştırarak ilk önce konsolu kullanarak en son geliştirme sürümüne $2 yükseltmek.
+theme_git_patch_incompatible_message_desc=Temanın tasarlandığı gibi çalışmasını engelleyebilecek uyumsuz değişiklikler olabilir. UI kullanarak yükseltme işlemine devam etmek mümkün değildir.
 theme_xhred_global_outdated=Bu sürüm eski
 
 #19.10

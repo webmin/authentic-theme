@@ -8,6 +8,9 @@ theme_update_footer=Si us plau, informeu d'errors al repositori $1. Uneix-te al 
 
 settings_webmin_default_module=Pàgina predeterminada per a Webmin
 
+#19.09
+theme_git_patch_incompatible_message_desc=Pot ser que hi hagi canvis incompatibles, que podrien impedir que el tema funcioni tal com s'ha dissenyat. No és possible continuar l'operació d'actualització mitjançant la interfície d'usuari.
+
 #19.10
 theme_xhred_filemanager_edit_html=Edita com a HTML
 theme_xhred_global_example=Exemple

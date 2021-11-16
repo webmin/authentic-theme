@@ -694,7 +694,7 @@ theme_xhred_global_empty=Vojta
 theme_xhred_global_click_here=għafas hawn
 theme_git_patch_incompatible_message=L-installazzjoni ta 'din il-verżjoni ta' $1 <em>$2</em> teħtieġ l-iktar verżjoni reċenti u/jew possibilment mhux rilaxxata ta '$3 u $5 biex taħdem sewwa.
 theme_git_patch_incompatible_message_s=L-installazzjoni ta 'din il-verżjoni ta' $1 <em>$2</em> teħtieġ l-iktar verżjoni reċenti u/jew possibbilment mhux rilaxxata ta '$3 biex taħdem sewwa.
-theme_git_patch_incompatible_message_desc=Jista 'jkun hemm tibdil inkompatibbli, li jista' jwaqqaf it-tema milli taħdem kif iddisinjat. Biex taqbeż din it-twissija, u ġġiegħel tinstalla t-tema xorta waħda $1, jew taġġorna $2 għall-aħħar verżjoni ta 'żvilupp l-ewwel billi tuża console, billi <kbd>update-from-repo.sh</kbd> skritt <kbd>update-from-repo.sh</kbd> mid-direttorju tagħha.
+theme_git_patch_incompatible_message_desc=Jista 'jkun hemm bidliet inkompatibbli, li jistgħu jwaqqfu t-tema milli taħdem kif iddisinjat. It-tkomplija tal-operat tal-aġġornament bl-użu tal-UI mhix possibbli.
 theme_xhred_global_outdated=Din il-verżjoni hija skaduta
 
 #19.10
