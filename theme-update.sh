@@ -5,7 +5,7 @@
 #########################################################
 
 # Get parent dir based on script's location
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DIR="$(echo "$DIR" | sed 's/\/authentic-theme.*//g')"
 PROD=${DIR##*/}
 GIT="git"
@@ -15,7 +15,7 @@ GHAPIURL="https://api.github.com"
 REPO="authentic-theme/authentic-theme"
 PARAMS="$*"
 
-if [[ "$1" == "-h" || "$1" == "-help" || "$1" == "--help" ]] ; then
+if [[ "$1" == "-h" || "$1" == "-help" || "$1" == "--help" ]]; then
   echo -e "\e[0m\e[49;0;33;82mAuthentic Theme\e[0m update script - updates theme to the latest development or stable (release version)"
   echo "Usage:  ./$(basename "$0") { [-force] | [-release] | [-release:number] }"
   exit 0
@@ -34,8 +34,7 @@ else
   if [[ $EUID -ne 0 ]]; then
     echo -e "\e[49;0;31;82mError: This command has to be run under the root user.\e[0m"
   else
-    if ! type ${GIT} >/dev/null 2>&1
-    then
+    if ! type ${GIT} >/dev/null 2>&1; then
       # Use `PATH` from Webmin `config` file
       if [[ -f "/etc/webmin/config" ]]; then
         WMCONF="/etc/webmin/config"
@@ -58,11 +57,9 @@ else
     fi
 
     # Require `git` command availability
-    if type ${GIT} >/dev/null 2>&1
-    then
+    if type ${GIT} >/dev/null 2>&1; then
       # Try to download latest version of the update script for Webmin/Usermin
-      if type ${CURL} >/dev/null 2>&1
-      then
+      if type ${CURL} >/dev/null 2>&1; then
         GITAPI="$GHAPIURL/repos/webmin/webmin/contents"
         UPDATE="update-from-repo.sh"
 
@@ -72,10 +69,10 @@ else
           chmod +x "$DIR"/${UPDATE}
         fi
       else
-        echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m";
+        echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m"
         exit
       fi
-      
+
       # Pull latest changes
       if [[ "$PARAMS" == *"-release"* ]]; then
         if [[ "$PARAMS" == *":"* ]] && [[ "$PARAMS" != *"latest"* ]]; then
@@ -83,17 +80,16 @@ else
           PRRELEASE="--branch ${RRELEASE} --quiet"
           PRRELEASETAG=${1##*:}
         else
-          if type ${CURL} >/dev/null 2>&1
-          then
+          if type ${CURL} >/dev/null 2>&1; then
             PULL_URL="$GHAPIURL/repos/$REPO/releases/latest"
-            FRS=$($CURL -s $PULL_URL  --connect-timeout $CURLTIMEOUT)
+            FRS=$($CURL -s $PULL_URL --connect-timeout $CURLTIMEOUT)
             if [[ $FRS == *"Moved Permanently"* ]]; then
               PULL_URL=$(echo $FRS | perl -n -e 'm{\"url\":\s*\"(https://.*?)$\"};print $1;')
               if [ -z "${PULL_URL}" ]; then
-                echo -e "\e[49;0;33;82mError: Authentic Theme repo has been moved permanently; however, a new URL cannot be parsed.\e[0m";
+                echo -e "\e[49;0;33;82mError: Authentic Theme repo has been moved permanently, however, a new URL cannot be parsed.\e[0m"
                 exit
               fi
-              VERSION=$($CURL -s $PULL_URL  --connect-timeout $CURLTIMEOUT | grep tag_name | head -n 1)
+              VERSION=$($CURL -s $PULL_URL --connect-timeout $CURLTIMEOUT | grep tag_name | head -n 1)
             else
               VERSION=$(echo "$FRS" | grep tag_name | head -n 1)
             fi
@@ -101,7 +97,7 @@ else
             PRRELEASE="--branch ${BASH_REMATCH[0]} --quiet"
             PRRELEASETAG=${BASH_REMATCH[0]}
           else
-            echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m";
+            echo -e "\e[49;0;33;82mError: Command \`curl\` is not installed or not in the \`PATH\`.\e[0m"
             exit
           fi
         fi
@@ -144,9 +140,10 @@ else
 \e[47;1;31;82mWarning!\e[0m Installing this version of \e[49;1;37;182mAuthentic Theme\e[0m \e[49;32m"${TVER^}"\e[0m requires
 latest and/or possibly unreleased version of \e[49;1;37;182m"${PROD^}"\e[0m to work properly.
 Your current version of \e[49;1;37;182m"${PROD^}"\e[0m is \e[49;33m"${PVER^}"\e[0m. There might be incompatible
-changes, that could stop the theme from working as designed.
-It is recommended to upgrade \e[49;1;37;182m"${PROD^}"\e[0m to the latest development version, by
-running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m directory."
+changes, that could stop the theme from working as designed. It is
+recommended to upgrade \e[49;1;37;182m"${PROD^}"\e[0m to the latest development version, by
+running first \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m
+directory. This is strongly \e[3mnot advised\e[0m for any production system!"
 
             if [[ "$PARAMS" != *"-force"* ]]; then
               read -p "Do you want to continue to force install the theme anyway? [y/N] " -n 1 -r
@@ -185,8 +182,7 @@ running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m direc
 
         # Restart Webmin/Usermin in case it's running
         if [ "$2" != "-no-restart" ]; then
-          if ps aux | grep -v grep | grep "$PROD"/miniserv.pl > /dev/null
-          then
+          if ps aux | grep -v grep | grep "$PROD"/miniserv.pl >/dev/null; then
             echo -e "\e[49;3;37;182mRestarting "${PROD^}"..\e[0m"
             service "$PROD" restart >/dev/null 2>&1
           fi
@@ -197,7 +193,7 @@ running \e[3m\`update-from-repo.sh\`\e[0m script from \e[3m\`"$DIR"\`\e[0m direc
         echo -e "\e[49;0;31;82m${ERROR}Updating Authentic Theme, failed.\e[0m"
       fi
     else
-      echo -e "\e[49;0;33;82mError: Command \`git\` is not installed or not in the \`PATH\`.\e[0m";
+      echo -e "\e[49;0;33;82mError: Command \`git\` is not installed or not in the \`PATH\`.\e[0m"
     fi
   fi
 fi
