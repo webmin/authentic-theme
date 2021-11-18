@@ -7,10 +7,22 @@
 #
 use strict;
 
-our (%in,             %gconfig,     %text,                $current_theme, $config_directory,
-     $remote_user,    $title,       %theme_config,        %theme_text,    $get_user_level,
-     $has_virtualmin, $has_usermin, $has_usermin_version, $has_usermin_conf_dir,
-     $theme_webprefix, $trust_unknown_referers);
+our (%in,
+     %gconfig,
+     %text,
+     $current_theme,
+     $config_directory,
+     $remote_user,
+     $title,
+     %theme_config,
+     %theme_text,
+     $get_user_level,
+     $has_virtualmin,
+     $has_usermin,
+     $has_usermin_version,
+     $has_usermin_conf_dir,
+     $theme_webprefix,
+     $trust_unknown_referers);
 
 $trust_unknown_referers = 1;
 
@@ -22,13 +34,33 @@ print '<div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1
 
 # Get system info to show
 my @info = theme_list_combined_system_info();
-my ($cpu_percent,        $mem_percent,             $virt_percent,    $disk_percent,
-    $host,               $os,                      $webmin_version,  $virtualmin_version,
-    $cloudmin_version,   $authentic_theme_version, $local_time,      $kernel_arch,
-    $cpu_type,           $cpu_temperature,         $hdd_temperature, $uptime,
-    $running_proc,       $load,                    $real_memory,     $virtual_memory,
-    $disk_space,         $package_message,         $csf_title,       $csf_data,
-    $csf_remote_version, $authentic_remote_version
+my ($cpu_percent,
+    $mem_percent,
+    $virt_percent,
+    $disk_percent,
+    $host,
+    $os,
+    $webmin_version,
+    $virtualmin_version,
+    $cloudmin_version,
+    $authentic_theme_version,
+    $local_time,
+    $kernel_arch,
+    $cpu_type,
+    $cpu_temperature,
+    $cpu_fans,
+    $hdd_temperature,
+    $uptime,
+    $running_proc,
+    $load,
+    $real_memory,
+    $virtual_memory,
+    $disk_space,
+    $package_message,
+    $csf_title,
+    $csf_data,
+    $csf_remote_version,
+    $authentic_remote_version
 ) = get_sysinfo_vars(\@info);
 
 if ($get_user_level ne '3') {
@@ -101,7 +133,14 @@ if ($get_user_level ne '3') {
 
     # Temperatures
     if ($cpu_temperature) {
-        push @table_data, [$theme_text{'body_cputemps'}, $cpu_temperature, 'sysinfo_cpu_temperature'];
+        my $cores = () = $cpu_temperature =~ /&#176;/g;
+        my $label = $cores > 1 ? $theme_text{'body_cputemps'} : $theme_text{'body_cputemp'};
+        push @table_data, [$label, $cpu_temperature, 'sysinfo_cpu_temperature'];
+        if ($cpu_fans) {
+            my $fans = () = $cpu_fans =~ /$theme_text{'body_cpufan_rpm'}/g;
+            $label = $fans > 1 ? $theme_text{'body_cpufans'} : $theme_text{'body_cpufan'};
+            push @table_data, [$label, $cpu_fans, 'sysinfo_cpu_fans'];
+        }
     }
     if ($hdd_temperature) {
         push @table_data, [$theme_text{'body_drivetemps'}, $hdd_temperature, 'sysinfo_hdd_temperature'];
@@ -175,7 +214,8 @@ if ($get_user_level ne '3') {
         foreach my $mod (@commonmods) {
             my %minfo = &get_module_info($mod);
             $commonmods_data .=
-              ui_table_row($minfo{'desc'}, "<a href='$theme_webprefix/$mod/'>" . ($text{ 'common_' . $mod } || $minfo{'longdesc'}) . "</a>");
+              ui_table_row($minfo{'desc'},
+                           "<a href='$theme_webprefix/$mod/'>" . ($text{ 'common_' . $mod } || $minfo{'longdesc'}) . "</a>");
         }
     }
     $commonmods_data .= ui_table_end();

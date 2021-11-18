@@ -531,6 +531,7 @@ sub get_sysinfo_vars
         $kernel_arch,
         $cpu_type,
         $cpu_temperature,
+        $cpu_fans,
         $hdd_temperature,
         $uptime,
         $running_proc,
@@ -790,16 +791,28 @@ sub get_sysinfo_vars
 
         # Temperatures
         if ($info->{'cputemps'}) {
+            my $cpucores = scalar(@{ $info->{'cputemps'} });
             foreach my $t (@{ $info->{'cputemps'} }) {
                 $cpu_temperature .=
                   '<span class="badge-custom badge-drivestatus badge-cpustatus" data-stats="cpu"> ' .
-                  $theme_text{'theme_global_core'} . ' ' . (int($t->{'core'}) + 1) . ': '
+                  ($cpucores > 1 ? ($theme_text{'theme_global_core'} . ' ' . (int($t->{'core'}) + 1) . ': ') : '')
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
                       (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
                       (int($t->{'temp'}) . '&#176;C ')
                   ) .
                   '</span>';
+            }
+            if ($info->{'cpufans'}) {
+                my $cpufans = scalar(@{ $info->{'cpufans'} });
+                foreach my $t (@{ $info->{'cpufans'} }) {
+                    $cpu_fans .=
+                      '<span class="badge-custom badge-drivestatus badge-cpufans bg-semi-transparent" data-stats="fans"> ' .
+                      ($cpufans > 1 ? ($theme_text{'theme_global_fan'} . ' ' . $t->{'fan'} . ': ') : '')
+                      .
+                      "$t->{'rpm'} $theme_text{'body_cpufan_rpm'}" .
+                      '</span>';
+                }
             }
         }
         if ($info->{'drivetemps'}) {
@@ -958,6 +971,7 @@ sub get_sysinfo_vars
             $kernel_arch,
             $cpu_type,
             $cpu_temperature,
+            $cpu_fans,
             $hdd_temperature,
             $uptime,
             $running_proc,
@@ -1931,6 +1945,7 @@ sub get_xhr_request
                  $kernel_arch,
                  $cpu_type,
                  $cpu_temperature,
+                 $cpu_fans,
                  $hdd_temperature,
                  $uptime,
                  $running_proc,
@@ -1963,6 +1978,7 @@ sub get_xhr_request
                   "kernel_arch"              => $kernel_arch,
                   "cpu_type"                 => $cpu_type,
                   "cpu_temperature"          => $cpu_temperature,
+                  "cpu_fans"                 => $cpu_fans,
                   "hdd_temperature"          => $hdd_temperature,
                   "uptime"                   => $uptime,
                   "proc"                     => $running_proc,

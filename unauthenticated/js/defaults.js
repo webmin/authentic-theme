@@ -152,6 +152,8 @@ var
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
     settings_sysinfo_query_timeout = 1000,
+    settings_sysinfo_cpu_fans_base_rpm = 1000,
+    settings_sysinfo_cpu_and_fans_side_slider_always_show = false,
 
     // Notifications related
     config_portable_notifications_self = true,
