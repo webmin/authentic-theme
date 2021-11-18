@@ -7,6 +7,7 @@
 * Add support for remote products versions fetching for displaying outdated on Dashboard
 * Add better indent prints for progressive output
 * Add an option to automatically convert tab key press to spaces when editing a file
+* Add support for displaying CPU fans nicely
 * Fiх layout for more advanced commands in Custom Commands module [#1544](https://github.com/virtualmin/authentic-theme/issues/1544#issuecomment-962495501)
 * Fiх navigation detect with URLs containing query
 * Fiх fix progressive output for files that earlier were migrated to Pro product
