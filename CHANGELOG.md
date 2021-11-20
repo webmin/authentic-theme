@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.84.2 (November 20, 2021)
+* Fix support for new two dot theme version format
+
 #### Version 19.84.1 (November 20, 2021)
 * Fix to always reset previous search for data tables on full page reload
 * Fix to properly allow only one MPM mode selected for Apache modules page
