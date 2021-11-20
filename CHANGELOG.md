@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.84.1 (November 20, 2021)
+* Fix to always reset previous search for data tables on full page reload
+* Fix to properly allow only one MPM mode selected for Apache modules page
+* Fix to treat new reset features page in Virtualmin as progressive
+* Fiх wording for update warning message [#1563](https://github.com/authentic-theme/authentic-theme/issues/1563)
+
 #### Version 19.84 (November 15, 2021)
 * Update numerous of major upstream libraries
 * Add ability for administrators to broadcast messages to other users on the system [virtualmin/motd#1](https://github.com/virtualmin/virtualmin-messageoftheday/issues/1#issuecomment-968371746)
