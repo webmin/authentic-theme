@@ -1330,6 +1330,18 @@ sub theme_version
     my $is_rc        = string_contains($version, 'RC');
     my $is_devel_ver = $is_alpha || $is_beta || $is_rc;
 
+    # XXX refactor target - this sub should do only one thing not multiple
+    my $version_suf = $version;
+    my ($version_sim) = $version_suf =~ /([\d]+\.[\d]+)/;
+    if ($version_suf =~ /[\d]+\.[\d]+\.([\d]+)/) {
+        $version_suf = $1;
+        if ($version_suf <= 9) {
+            $version_suf = "0$version_suf";
+        }
+    } else {
+        $version_suf = "00";
+    }
+
     # Return minor version only
     if ($minor) {
 
@@ -1347,11 +1359,12 @@ sub theme_version
 
     # Return theme version as timestamp
     if ($string) {
+        $version = $version_sim;
         $version =~ s/(alpha|beta|RC)\d*|\.|-//ig;
         if (theme_debug_mode() || $is_devel_ver) {
-            $version .= ("9" . time() . "$mversion");
+            $version .= $version_suf . ("9" . time() . "$mversion");
         } else {
-            $version .= ('99999999999' . $mversion);
+            $version .= $version_suf . ('99999999999' . $mversion);
         }
     }
     return $version;
