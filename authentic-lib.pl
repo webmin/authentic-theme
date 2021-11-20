@@ -681,10 +681,11 @@ sub get_sysinfo_vars
         if ($get_user_level eq '0') {
 
             # Theme version/update
-            my $authentic_remote_data             = theme_remote_version(1);
-            my $authentic_installed_version       = theme_version();
-            my $authentic_installed_version_devel = $authentic_installed_version =~ /alpha|beta|RC/;
-            my $incompatible                      = theme_update_incompatible($authentic_remote_data);
+            my $authentic_remote_data                = theme_remote_version(1);
+            my $authentic_installed_version          = theme_version();
+            my ($authentic_installed_version_parsed) = $authentic_installed_version =~ /([0-9\.]+)/;
+            my $authentic_installed_version_devel    = $authentic_installed_version =~ /alpha|beta|RC/;
+            my $incompatible                         = theme_update_incompatible($authentic_remote_data);
 
             ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
             my $authentic_remote_version_local = $authentic_remote_version;
@@ -699,7 +700,7 @@ sub get_sysinfo_vars
                     &&
                     (
                         (($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel) &&
-                         lc($authentic_remote_version_local) ge substr($authentic_installed_version, 0, 5)
+                         lc($authentic_remote_version_local) ge $authentic_installed_version_parsed
                         ) ||
                         lc($authentic_remote_version_local) gt lc($authentic_installed_version))
 
@@ -808,10 +809,8 @@ sub get_sysinfo_vars
                 foreach my $t (@{ $info->{'cpufans'} }) {
                     $cpu_fans .=
                       '<span class="badge-custom badge-drivestatus badge-cpufans bg-semi-transparent" data-stats="fans"> ' .
-                      ($cpufans > 1 ? ($theme_text{'theme_global_fan'} . ' ' . $t->{'fan'} . ': ') : '')
-                      .
-                      "$t->{'rpm'} $theme_text{'body_cpufan_rpm'}" .
-                      '</span>';
+                      ($cpufans > 1 ? ($theme_text{'theme_global_fan'} . ' ' . $t->{'fan'} . ': ') : '') .
+                      "$t->{'rpm'} $theme_text{'body_cpufan_rpm'}" . '</span>';
                 }
             }
         }
