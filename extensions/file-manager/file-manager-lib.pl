@@ -852,8 +852,7 @@ sub print_content
              nice_number($info_files,   ","),
              nice_number($info_folders, ","),
              nice_number($totals,       ","),
-             nice_number($pages,        ",")
-        )
+             nice_number($pages,        ","))
       ) .
       "</div>";
 
@@ -919,7 +918,9 @@ sub print_content
         my $is_img     = 0;
         if ($list[$count - 1][15] == 1) {
             $is_file = 0;
-            $href    = "index.cgi?path=" . &urlize("$path/$link");
+            my $alink = "$path/$link";
+            $alink = &resolve_links($alink) if (-l $alink);
+            $href  = "index.cgi?path=" . &urlize($alink);
         } else {
             my ($fname, $fpath, $fsuffix) =
               fileparse($list[$count - 1][0]);
