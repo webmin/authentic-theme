@@ -1247,3 +1247,4 @@ theme_global_fan=خنک کننده
 body_cpufans=فن های CPU
 body_cpufan_rpm=دور در دقیقه
 body_cpufan=فن CPU
+filemanager_symlink_exists=نمی توان <tt>$1</tt> ایجاد کرد زیرا فایل از قبل در <tt>$2</tt>

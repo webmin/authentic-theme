@@ -1025,3 +1025,4 @@ theme_global_fan=Кулер
 body_cpufans=Вентиляторы процессора
 body_cpufan_rpm=Об / мин
 body_cpufan=Вентилятор процессора
+filemanager_symlink_exists=Невозможно создать <tt>$1</tt> поскольку файл уже существует в <tt>$2</tt>

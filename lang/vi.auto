@@ -1247,3 +1247,4 @@ theme_global_fan=Mát hơn
 body_cpufans=Quạt CPU
 body_cpufan_rpm=RPM
 body_cpufan=quạt làm mát bộ xứ lí trung tâm
+filemanager_symlink_exists=Không thể tạo <tt>$1</tt> vì tệp đã tồn tại trong <tt>$2</tt>

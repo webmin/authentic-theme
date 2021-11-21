@@ -129,3 +129,4 @@ theme_global_fan=Kylare
 body_cpufans=CPU-fläktar
 body_cpufan_rpm=RPM
 body_cpufan=CPU fläkt
+filemanager_symlink_exists=Det går inte att skapa <tt>$1</tt> eftersom filen redan finns i <tt>$2</tt>

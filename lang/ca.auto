@@ -562,3 +562,4 @@ theme_global_fan=Més fred
 body_cpufans=Ventiladors de CPU
 body_cpufan_rpm=RPM
 body_cpufan=Ventilador de la CPU
+filemanager_symlink_exists=No es pot crear <tt>$1</tt> perquè el fitxer ja existeix a <tt>$2</tt>

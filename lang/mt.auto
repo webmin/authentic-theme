@@ -1247,3 +1247,4 @@ theme_global_fan=Cooler
 body_cpufans=Fannijiet tas-CPU
 body_cpufan_rpm=RPM
 body_cpufan=Fann tas-CPU
+filemanager_symlink_exists=Ma tistax toħloq <tt>$1</tt> peress li l-fajl diġà jeżisti fi <tt>$2</tt>

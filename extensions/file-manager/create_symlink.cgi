@@ -11,23 +11,24 @@ our (%in, %text, $cwd, $path);
 
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
+my @entries_list = get_entries_list();
 my $path_urlized = urlize($path);
+my $error;
 
-if (!$in{'name'}) {
+if (!@entries_list) {
     redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
 }
-
-my $symlink    = "$cwd/$in{'name'}_symlink";
-my $is_symlink = (-l $symlink);
-if ($is_symlink || -d $symlink || -e $symlink) {
-    print_error(
-          (
-           text('filemanager_create_object_exists',
-                html_escape("$in{'name'}_symlink"),
-                html_escape($path), ($is_symlink ? $text{'theme_xhred_global_symbolic'} : $text{'theme_xhred_global_target'})
-           )
-          ));
-} else {
-    symlink_file("$cwd/$in{'name'}", $symlink);
-    redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+foreach my $name (@entries_list) {
+    my $name_ = $name;
+    $name = simplify_path($name);
+    my $symlink = "$cwd/${name}_symlink";
+    if (-e $symlink) {
+        $symlink .= "_" . int(rand() * 10000);
+    }
+    if (symlink_file("$cwd/$name", $symlink) == 0) {
+        $error .= "<br>" if ($error);
+        $error .= text('filemanager_symlink_exists', html_escape("${name_}_symlink"), html_escape($cwd));
+    }
 }
+redirect_local('list.cgi?path=' . $path_urlized . '&module=' . $in{'module'} . '&error=' . $error . extra_query());
+

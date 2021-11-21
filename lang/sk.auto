@@ -1247,3 +1247,4 @@ theme_global_fan=Chladič
 body_cpufans=ventilátory CPU
 body_cpufan_rpm=RPM
 body_cpufan=ventilátor CPU
+filemanager_symlink_exists=Nie je možné vytvoriť <tt>$1</tt> pretože súbor už existuje v <tt>$2</tt>

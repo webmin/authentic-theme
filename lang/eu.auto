@@ -1247,3 +1247,4 @@ theme_global_fan=Hotza
 body_cpufans=CPU zaleak
 body_cpufan_rpm=RPM
 body_cpufan=CPU haizagailua
+filemanager_symlink_exists=Ezin sortu <tt>$1</tt> fitxategia dagoeneko existitzen gisa <tt>$2</tt>

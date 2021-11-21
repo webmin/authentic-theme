@@ -1307,3 +1307,4 @@ theme_global_fan=Fan
 body_cpufans=CPU fans
 body_cpufan_rpm=RPM
 body_cpufan=CPU fan
+filemanager_symlink_exists=Cannot create <tt>$1</tt> as file already exists in <tt>$2</tt>

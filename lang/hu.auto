@@ -1247,3 +1247,4 @@ theme_global_fan=Hűtő
 body_cpufans=CPU ventilátorok
 body_cpufan_rpm=FORDULAT
 body_cpufan=CPU ventilátor
+filemanager_symlink_exists=A(z) <tt>$1</tt> nem hozható létre, mivel a fájl már létezik a(z) <tt>$2</tt>

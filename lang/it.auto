@@ -41,3 +41,4 @@ theme_global_fan=Più fresco
 body_cpufans=Ventole della CPU
 body_cpufan_rpm=RPM
 body_cpufan=Ventola della CPU
+filemanager_symlink_exists=Impossibile creare <tt>$1</tt> poiché il file esiste già in <tt>$2</tt>

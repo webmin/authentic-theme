@@ -1159,3 +1159,4 @@ theme_global_fan=Kølere
 body_cpufans=CPU blæsere
 body_cpufan_rpm=RPM
 body_cpufan=CPU blæser
+filemanager_symlink_exists=Kan ikke oprette <tt>$1</tt> da filen allerede findes i <tt>$2</tt>

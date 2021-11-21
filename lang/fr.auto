@@ -112,3 +112,4 @@ theme_global_fan=Glacière
 body_cpufans=ventilateurs de processeur
 body_cpufan_rpm=RPM
 body_cpufan=ventilateur de CPU
+filemanager_symlink_exists=Impossible de créer <tt>$1</tt> car le fichier existe déjà dans <tt>$2</tt>

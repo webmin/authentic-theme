@@ -1247,3 +1247,4 @@ theme_global_fan=Hladnjak
 body_cpufans=CPU ventilatori
 body_cpufan_rpm=RPM
 body_cpufan=CPU ventilator
+filemanager_symlink_exists=Nije moguće stvoriti <tt>$1</tt> jer datoteka već postoji u <tt>$2</tt>

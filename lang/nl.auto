@@ -1134,3 +1134,4 @@ theme_global_fan=Koeler
 body_cpufans=CPU-fans
 body_cpufan_rpm=RPM
 body_cpufan=CPU ventilator
+filemanager_symlink_exists=<tt>$1</tt> niet aanmaken omdat het bestand al bestaat in <tt>$2</tt>

@@ -1247,3 +1247,4 @@ theme_global_fan=מְצַנֵן
 body_cpufans=מאווררי מעבד
 body_cpufan_rpm=סל"ד
 body_cpufan=מאוורר מעבד
+filemanager_symlink_exists=לא ניתן ליצור <tt>$1</tt> מכיוון שהקובץ כבר קיים ב- <tt>$2</tt>

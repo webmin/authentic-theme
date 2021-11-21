@@ -235,3 +235,4 @@ theme_global_fan=Mai rece
 body_cpufans=ventilatoare CPU
 body_cpufan_rpm=RPM
 body_cpufan=ventilator CPU
+filemanager_symlink_exists=Nu se poate crea <tt>$1</tt> deoarece fișierul există deja în <tt>$2</tt>

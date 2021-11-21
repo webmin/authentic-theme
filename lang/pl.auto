@@ -1165,3 +1165,4 @@ theme_global_fan=Chłodnica
 body_cpufans=Wentylatory procesora
 body_cpufan_rpm=RPM
 body_cpufan=Wentylator procesora
+filemanager_symlink_exists=Nie można utworzyć <tt>$1</tt> ponieważ plik już istnieje w <tt>$2</tt>

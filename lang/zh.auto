@@ -412,3 +412,4 @@ theme_global_fan=冷却器
 body_cpufans=CPU风扇
 body_cpufan_rpm=转速
 body_cpufan=CPU风扇
+filemanager_symlink_exists=无法创建<tt>$1</tt> <tt>$2</tt>已存在文件

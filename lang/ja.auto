@@ -154,3 +154,4 @@ theme_global_fan=クーラー
 body_cpufans=CPUファン
 body_cpufan_rpm=RPM
 body_cpufan=CPUファン
+filemanager_symlink_exists=ファイルはすでに<tt>$2</tt> <tt>$1</tt>を作成できません

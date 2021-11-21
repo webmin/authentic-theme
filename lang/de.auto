@@ -145,3 +145,4 @@ theme_global_fan=Kühler
 body_cpufans=CPU-Lüfter
 body_cpufan_rpm=Drehzahl
 body_cpufan=CPU-Lüfter
+filemanager_symlink_exists=<tt>$1</tt> kann nicht erstellt werden, da Datei bereits in <tt>$2</tt>

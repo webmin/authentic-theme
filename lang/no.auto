@@ -112,3 +112,4 @@ theme_global_fan=Kjølere
 body_cpufans=CPU-vifter
 body_cpufan_rpm=RPM
 body_cpufan=CPU vifte
+filemanager_symlink_exists=Kan ikke opprette <tt>$1</tt> da filen allerede eksisterer i <tt>$2</tt>

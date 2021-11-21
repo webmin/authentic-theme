@@ -1159,3 +1159,4 @@ theme_global_fan=Enfriador
 body_cpufans=Ventiladores de CPU
 body_cpufan_rpm=RPM
 body_cpufan=ventilador de la CPU
+filemanager_symlink_exists=No se puede crear <tt>$1</tt> porque el archivo ya existe en <tt>$2</tt>

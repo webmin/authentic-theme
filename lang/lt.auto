@@ -1247,3 +1247,4 @@ theme_global_fan=Aušintuvas
 body_cpufans=CPU ventiliatoriai
 body_cpufan_rpm=RPM
 body_cpufan=CPU ventiliatorius
+filemanager_symlink_exists=Negalima sukurti <tt>$1</tt> nes failas jau yra <tt>$2</tt>

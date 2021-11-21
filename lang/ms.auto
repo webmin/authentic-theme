@@ -632,3 +632,4 @@ theme_global_fan=Lebih sejuk
 body_cpufans=Peminat CPU
 body_cpufan_rpm=RPM
 body_cpufan=kipas CPU
+filemanager_symlink_exists=Tidak boleh mencipta <tt>$1</tt> kerana fail sudah wujud dalam <tt>$2</tt>

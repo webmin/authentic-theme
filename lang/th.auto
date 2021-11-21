@@ -1247,3 +1247,4 @@ theme_global_fan=คูลเลอร์
 body_cpufans=พัดลมซีพียู
 body_cpufan_rpm=RPM
 body_cpufan=พัดลมซีพียู
+filemanager_symlink_exists=ไม่สามารถสร้าง <tt>$1</tt> เนื่องจากไฟล์มีอยู่แล้วใน <tt>$2</tt>

@@ -1089,3 +1089,4 @@ theme_global_fan=Chladič
 body_cpufans=ventilátory CPU
 body_cpufan_rpm=RPM
 body_cpufan=ventilátor CPU
+filemanager_symlink_exists=<tt>$1</tt> nelze vytvořit, protože soubor již v <tt>$2</tt>
