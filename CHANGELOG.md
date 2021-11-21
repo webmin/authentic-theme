@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.84.4 (November 21, 2021)
+* Fix to drop showing old tooltips for symlinks on hover in File Manager
+* Fix to resolve symlink path when opening a directory in File Manager
+
 #### Version 19.84.3 (November 21, 2021)
 * Add support for creating multiple symlinks at once in File Manager
 * Add new hotkey _Ctrl+Alt+C_ to copy filename with full path to clipboard in File Manager
