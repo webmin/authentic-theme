@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.84.3 (November 21, 2021)
+* Add support for creating multiple symlinks at once in File Manager
+* Add new hotkey _Ctrl+Alt+C_ to copy filename with full path to clipboard in File Manager
+
 #### Version 19.84.2 (November 20, 2021)
 * Fix support for new two dot theme version format
 
