@@ -577,14 +577,14 @@ sub theme_controls
 {
     my ($section)                 = @_;
     my $changelog_contents        = read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md");
-    my @changelog_stable_versions = ($changelog_contents =~ /####\s+Version\s+(\d+.\d+\s+\([\d\w\s,]+\))/g);
+    my @changelog_stable_versions = ($changelog_contents =~ /####\s+Version\s+((?|\d+.\d+\s+|\d+.\d+.\d+\s+)\([\d\w\s,]+\))/g);
     my $stable_versions_dropdown_submenu;
     my $stable_versions_dropdown_submenu_content;
     if (@changelog_stable_versions) {
         $stable_versions_dropdown_submenu         = ' class="dropdown-submenu prelocked clickable"';
         $stable_versions_dropdown_submenu_content = '<ul class="dropdown-menu theme-versions" role="menu">';
         foreach my $ver (@changelog_stable_versions) {
-            my ($ver_str) = ($ver =~ /^(\d+.\d+)\s+/);
+            my ($ver_str) = ($ver =~ /^(?|(\d+.\d+)\s+|(\d+.\d+.\d+)\s+)/);
             $stable_versions_dropdown_submenu_content .=
               '<li><a tabindex="-1" href="javascript:;" data-git="1" data-stable="1" data-version="' .
               $ver_str . '" class="authentic_update">&nbsp;' . $ver . '</a></li>';
