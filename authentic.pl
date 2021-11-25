@@ -415,7 +415,7 @@ sub theme_generate_icon
             }
             if ($_[7]) {
                 print
-"<span style='position: absolute; top:2px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
+"<span style='position: absolute; top:3px; right: 4px;' class='hidden-forged hidden-forged-7'>$_[7]</span>\n";
             }
         }
         print "<a href=\"$link\" class=\"icon_link\" data-title=\""
