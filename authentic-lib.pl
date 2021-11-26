@@ -152,11 +152,12 @@ sub get_extended_sysinfo
                               '
                       . $formatted_title . '<span class="pull-right on-hover"><i class="fa fa-fw fa-times-thin" '
                       .
-                      get_button_tooltip("<span data-no-wrap>" .
-                                             theme_text('theme_xhred_tooltip_dashboard_panels_disable', $formatted_title) .
-                                             "</span>",
+                      get_button_tooltip(theme_text('theme_xhred_tooltip_dashboard_panels_disable', $formatted_title),
                                          undef,
-                                         'auto right'
+                                         'auto right',
+                                         undef,
+                                         undef,
+                                         '#extended_sysinfo-1 .panel'
                       ) .
                       '></i></span></a>
                           </h4>
