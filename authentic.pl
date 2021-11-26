@@ -1403,14 +1403,14 @@ sub theme_post_save_domain
     my ($d) = @_;
     print '<script>';
     print 'theme_post_save=' . ($d->{'id'} ? $d->{'id'} : '-1') . '', "\n";
-    print '</script>';
+    print "</script>\n";
 }
 
 sub theme_post_save_domains
 {
     print '<script>';
     print 'theme_post_save=0', "\n";
-    print '</script>';
+    print "</script>\n";
 }
 
 sub theme_post_save_server
@@ -1422,7 +1422,7 @@ sub theme_post_save_server
     {
         print '<script>';
         print 'theme_post_save=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
-        print '</script>';
+        print "</script>\n";
     }
 }
 
@@ -1431,7 +1431,7 @@ sub theme_select_server
     my ($s) = @_;
     print '<script>';
     print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '0') . '', "\n";
-    print '</script>';
+    print "</script>\n";
 }
 
 sub theme_post_change_theme
@@ -1447,7 +1447,7 @@ sub theme_post_change_modules
 {
     print '<script>';
     print 'theme_post_save=-1', "\n";
-    print '</script>';
+    print "</script>\n";
 }
 
 sub theme_ui_text_color
