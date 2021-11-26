@@ -157,7 +157,7 @@ sub get_extended_sysinfo
                                          'auto right',
                                          undef,
                                          undef,
-                                         '#extended_sysinfo-1 .panel'
+                                         '#system-status .panel-body'
                       ) .
                       '></i></span></a>
                           </h4>
