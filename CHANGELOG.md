@@ -1,9 +1,10 @@
 ## Changelog
 
-#### Version 19.84.5 (November 26, 2021)
+#### Version 19.84.5 (November 27, 2021)
 * Fix scheduled cron jobs radios positioning
 * Fix password strength meter algorithm
 * Fix broken tooltip positioning on the dashboard for panels with fixed right side slider
+* Fix to focus search field for custom select dropdown
 
 #### Version 19.84.4 (November 21, 2021)
 * Fix to drop showing old tooltips for symlinks on hover in File Manager
