@@ -21,7 +21,7 @@ sub module_install
     flush_webmin_caches();
 
     # Clear links cache
-    if (&foreign_available('virtual-server')) {
+    if (&foreign_check('virtual-server')) {
         &foreign_require("virtual-server");
         &virtual_server::clear_links_cache();
     }
