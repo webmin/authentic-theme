@@ -1317,13 +1317,17 @@ sub theme_redirect
         print "Location: $arg1\n\n";
         return;
     } elsif (string_contains($arg1, '../')) {
+        $main::ignore_errors = 1;
         set_theme_temp_data('redirected', $arg1) if ($arg1 !~ /switch\.cgi/);
+        $main::ignore_errors = 0;
         print "Location: $arg1\n\n";
         return;
     }
 
     if (!theme_redirect_download($url)) {
+        $main::ignore_errors = 1;
         set_theme_temp_data('redirected', $url);
+        $main::ignore_errors = 0;
         print "Location: $url\n\n";
     }
 }

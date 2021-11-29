@@ -33,7 +33,9 @@ header($title, 'stripped');
 print '<div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
 
 # Get system info to show
+$main::ignore_errors = 1;
 my @info = theme_list_combined_system_info();
+$main::ignore_errors = 0;
 my ($cpu_percent,
     $mem_percent,
     $virt_percent,

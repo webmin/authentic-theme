@@ -162,7 +162,9 @@ sub embed_favicon
         $manifest_contents =~ s/\%desc\%/$manifest_desc/;
         $manifest_contents =~ s/\%prod\%/$product_name/g;
         $manifest_contents =~ s/\%color\%/$theme_user_color/;
+        $main::ignore_errors = 1;
         write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents) if (-w $theme_config_dir);
+        $main::ignore_errors = 0;
 
         print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
         print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
