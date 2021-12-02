@@ -707,7 +707,8 @@ sub init_vars
     }
 
     our ($get_user_level, $has_virtualmin, $has_cloudmin) = get_user_level();
-    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir) = get_usermin_vars();
+    our ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir) =
+      get_usermin_vars();
 
     # Set webprefix that should be used by the theme
     our ($theme_webprefix, $theme_server_webprefix) = theme_get_webprefix_local('array');
@@ -718,7 +719,8 @@ sub init_vars
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
 
-    $server_x_goto = get_theme_temp_data('goto');
+    $server_x_goto = get_theme_temp_data('goto')
+      if (!http_x_request());
 
 }
 
@@ -1506,7 +1508,7 @@ sub get_env
 sub set_theme_temp_data
 {
     my ($key, $value) = @_;
-    my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $salt = substr(encode_base64($main::session_id), 0, 6);
     my %var;
 
     $salt =~ tr/A-Za-z0-9//cd;
@@ -1525,48 +1527,38 @@ sub set_theme_temp_data
 sub get_theme_temp_data
 {
     my ($key, $keep) = @_;
-    my $salt = substr(encode_base64($main::session_id), 0, 16);
-    my $data;
-    my %theme_temp_data;
-
+    my ($data, $tmp_file, %theme_temp_data);
+    my $salt = substr(encode_base64($main::session_id), 0, 6);
     $salt =~ tr/A-Za-z0-9//cd;
-
-    my $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
 
     # Process multiple goto requests
     if ($key eq 'goto') {
-        my (%theme_goto_temp);
-        my $tmp_dir = tempname_dir();
-        my @gotos;
+        my $tmp_dir = "/tmp/.webmin";
         opendir(my $dir, $tmp_dir);
-        @gotos = grep {/^\.theme/ && $_ =~ /$salt/ && $_ =~ /goto/ && -f "$tmp_dir/$_"} readdir($dir);
+        my @gotos = grep {/^\.theme_/ && /$salt/ && /$key/ && /$remote_user/} readdir($dir);
         closedir $dir;
-        foreach (@gotos) {
-            $tmp_file = "$tmp_dir/$_";
-            if (-r $tmp_file) {
-                my $tmp_file_mod = (stat($tmp_file))[9];
-                my $tmp_file_age = time() - $tmp_file_mod;
-                if ($tmp_file_age >= 15) {
-                    unlink_file($tmp_file);
-                    next;
-                }
-                read_file($tmp_file, \%theme_temp_data);
-                last;
-            }
+        if (-r "$tmp_dir/$gotos[0]") {
+            $tmp_file = "$tmp_dir/$gotos[0]";
         }
     } else {
+        $tmp_file = tempname('.theme_' . $salt . '_' . get_product_name() . '_' . $key . '_' . $remote_user);
+    }
+
+    if ($tmp_file &&
+        -r $tmp_file)
+    {
         read_file($tmp_file, \%theme_temp_data);
+        unlink_file($tmp_file) if (!$keep);
+
+        $data = $theme_temp_data{$key};
+        if ($data) {
+            $data =~ s/[?|&]$xnav//g;
+            $data =~ s/[?|&]randomized=[\d]+//g;
+            $data =~ s/\.cgi&/.cgi?/g;
+        }
     }
-
-    if (!$keep && -r $tmp_file) {
-        unlink_file($tmp_file);
-    }
-
-    $data = $theme_temp_data{$key};
-    $data =~ s/[?|&]$xnav//g;
-    $data =~ s/[?|&]randomized=[\d]+//g;
-    $data =~ s/.cgi&/.cgi?/g;
-
+    webmin_debug_var_dump($data, "data-$key" . "-" . int(rand() * 1000000))
+      if ($data && $key eq 'goto' && !http_x_request());
     return $data;
 }
 

@@ -136,7 +136,7 @@ sub kill_previous
 sub tokenize
 {
     my ($key, $value) = @_;
-    my $salt = substr(encode_base64($main::session_id), 0, 16);
+    my $salt = substr(encode_base64($main::session_id), 0, 6);
     my %var;
     my $user = $remote_user;
     my $tmp_file;

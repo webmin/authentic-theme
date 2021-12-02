@@ -670,7 +670,7 @@ sub current_kill_previous
 sub current_to_filename
 {
     my ($filename) = @_;
-    my $salt       = substr(encode_base64($main::session_id), 0, 16);
+    my $salt       = substr(encode_base64($main::session_id), 0, 6);
     my $user       = $remote_user;
 
     $filename =~ s/(?|([\w-]+$)|([\w-]+)\.)//;

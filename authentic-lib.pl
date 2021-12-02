@@ -153,12 +153,7 @@ sub get_extended_sysinfo
                       . $formatted_title . '<span class="pull-right on-hover"><i class="fa fa-fw fa-times-thin" '
                       .
                       get_button_tooltip(theme_text('theme_xhred_tooltip_dashboard_panels_disable', $formatted_title),
-                                         undef,
-                                         'auto right',
-                                         undef,
-                                         undef,
-                                         '#system-status .panel-body'
-                      ) .
+                                         undef, 'auto right', undef, undef, '#system-status .panel-body') .
                       '></i></span></a>
                           </h4>
                         </div>
@@ -1629,7 +1624,7 @@ sub theme_var_dir
 sub clear_theme_cache
 {
     my ($root)  = @_;
-    my $salt    = substr(encode_base64($main::session_id), 0, 16);
+    my $salt    = substr(encode_base64($main::session_id), 0, 6);
     my $tmp_dir = tempname_dir();
     my ($theme_var_dir, $product_var) = theme_var_dir();
 
@@ -1684,7 +1679,7 @@ sub clear_theme_cache
 
     # Clear session specific temporary files
     opendir(my $dir, $tmp_dir);
-    grep {unlink_file("$tmp_dir/$_") if (/^\.theme/ && $_ =~ /$salt/)} readdir($dir);
+    grep {unlink_file("$tmp_dir/$_") if (/^\.theme_/ && /$salt/)} readdir($dir);
     closedir $dir;
 }
 
