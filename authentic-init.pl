@@ -1557,8 +1557,6 @@ sub get_theme_temp_data
             $data =~ s/\.cgi&/.cgi?/g;
         }
     }
-    webmin_debug_var_dump($data, "data-$key" . "-" . int(rand() * 1000000))
-      if ($data && $key eq 'goto' && !http_x_request());
     return $data;
 }
 
