@@ -1533,11 +1533,11 @@ sub get_theme_temp_data
 
     # Process multiple goto requests
     if ($key eq 'goto') {
-        my $tmp_dir = "/tmp/.webmin";
+        my $tmp_dir = tempname_dir();
         opendir(my $dir, $tmp_dir);
         my @gotos = grep {/^\.theme_/ && /$salt/ && /$key/ && /$remote_user/} readdir($dir);
         closedir $dir;
-        if (-r "$tmp_dir/$gotos[0]") {
+        if ($tmp_dir && $gotos[0] && -r "$tmp_dir/$gotos[0]") {
             $tmp_file = "$tmp_dir/$gotos[0]";
         }
     } else {
@@ -1548,7 +1548,8 @@ sub get_theme_temp_data
         -r $tmp_file)
     {
         read_file($tmp_file, \%theme_temp_data);
-        unlink_file($tmp_file) if (!$keep);
+        unlink_file($tmp_file)
+          if (!$keep && length trim($tmp_file) > 3);
 
         $data = $theme_temp_data{$key};
         if ($data) {
