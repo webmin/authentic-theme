@@ -1,10 +1,9 @@
 ## Changelog
 
-#### Version 19.84.6-RC1 (December 03, 2021)
-* Fiх connection flooding for server owners and mail users with non-standard configurations [sourceforge.net#492](https://sourceforge.net/p/webadmin/usermin-bugs/492/)
-* Fix to make initial loads resilient with low disk space
-* Fiх regression preventing password complexity meter shown [#1568](https://github.com/authentic-theme/authentic-theme/issues/1568)
-* Fix login page box to remove shadow and border
+#### Version 19.84.6 (December 04, 2021)
+* Fiх connection flooding for server owners and mail users with disabled status collection [sourceforge.net#492](https://sourceforge.net/p/webadmin/usermin-bugs/492/)
+* Fiх regression preventing password complexity meter shown for some pages [#1568](https://github.com/authentic-theme/authentic-theme/issues/1568)
+* Fix to make initial load resilient to errors
 
 #### Version 19.84.5 (November 27, 2021)
 * Fix scheduled cron jobs radios positioning
