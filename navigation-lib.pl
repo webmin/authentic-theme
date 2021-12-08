@@ -726,6 +726,7 @@ sub nav_list_combined_menu
                     $icon           = '<i class="fa fa-fw fa-area-chart"></i>';
                     $rv_after_local = $link;
                 }
+
                 if ($get_user_level == 1) {
                     if ($link =~ /\/virtual-server\/edit_pass\.cgi/ &&
                         $link !~ /\/virtual-server\/edit_pass\.cgi\?/)
@@ -786,7 +787,7 @@ sub nav_list_combined_menu
                          $link =~ /^ftps:\/\//)
                 {
                     $icon = '<i class="fa fa-fw fa-external-link"></i>';
-                } elsif ($link =~ /\/\.\.\/servers\/link\.cgi/) {
+                } elsif ($link =~ /\.\.\/servers\/link\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-webmin scaled1_5"></i>';
                 }
 
