@@ -853,6 +853,18 @@ sub get_sysinfo_vars
                     $uptime_text = &theme_text('body_upmins', $minute);
                 }
 
+                # Trim System uptime Ses for Enlgish lang only
+                if ($current_lang eq 'en') {
+                    if ($day == 1) {
+                        $uptime_text =~ s/ys/y/;
+                    }
+                    if ($hour == 1) {
+                        $uptime_text =~ s/rs/r/;
+                    }
+                    if ($minute == 1) {
+                        $uptime_text =~ s/es/e/;
+                    }
+                }
                 $uptime = '<a href=\'' . $theme_webprefix . '/init/\'>' . $uptime_text . '</a>';
 
             }
