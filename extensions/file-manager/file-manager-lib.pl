@@ -908,6 +908,7 @@ sub print_content
         unless (-e $request_uri{'module'} . '/' . $img) {
             $img = "images/icons/mime/unknown.png";
         }
+        my $is_link = string_contains($type, 'symlink');
 
         my $actions =
 "<a class='action-link' href='javascript:void(0)' onclick='renameDialog(\"$hlink\")' title='$text{'rename'}' data-container='body'>$rename_icon</a>";
@@ -992,7 +993,7 @@ sub print_content
               (
 "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
                   . $size . "</span>");
-            push(@td_tags, 'class="col-size"');
+            push(@td_tags, 'data-order="' . ($is_link ? 0 : $is_file ? $list[$count - 1][8] : -1) . '" class="col-size"');
         }
         if ($userconfig{'columns'} =~ /owner_user/) {
             my $user;
