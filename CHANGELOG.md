@@ -1,9 +1,16 @@
 ## Changelog
 
+#### Version 19.84.7-RC1 (December 13, 2021)
+* Fix navigation detection with menu reload after progressive call end
+* Fix navigation detection processing depending on intermediate user interaction
+* Fiх sorting by size in File Manager [#629/comment-990445478](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-990445478)
+* Fix to display missing icon on navigation menu for opening Webmin link in Cloudmin
+* Fix various align issues for teletype text
+
 #### Version 19.84.6 (December 04, 2021)
+* Fix to make initial load resilient to errors
 * Fiх connection flooding for server owners and mail users with disabled status collection [sourceforge.net#492](https://sourceforge.net/p/webadmin/usermin-bugs/492/)
 * Fiх regression preventing password complexity meter shown for some pages [#1568](https://github.com/authentic-theme/authentic-theme/issues/1568)
-* Fix to make initial load resilient to errors
 
 #### Version 19.84.5 (November 27, 2021)
 * Fix scheduled cron jobs radios positioning
@@ -36,7 +43,7 @@
 * Add better indent prints for progressive output
 * Add an option to automatically convert tab key press to spaces when editing a file
 * Add support for displaying CPU fans nicely
-* Fiх layout for more advanced commands in Custom Commands module [#1544](https://github.com/virtualmin/authentic-theme/issues/1544#issuecomment-962495501)
+* Fiх layout for more advanced commands in Custom Commands module [#1544](https://github.com/authentic-theme/authentic-theme/issues/1544#issuecomment-962495501)
 * Fiх navigation detect with URLs containing query
 * Fiх fix progressive output for files that earlier were migrated to Pro product
 * Fix progressive output fetching when HTML is present
