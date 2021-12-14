@@ -1,10 +1,11 @@
 ## Changelog
 
-#### Version 19.84.7-RC1 (December 13, 2021)
+#### Version 19.84.7 (December 14, 2021)
 * Fix navigation detection with menu reload after progressive call end
 * Fix navigation detection processing depending on intermediate user interaction
 * Fiх sorting by size in File Manager [#629/comment-990445478](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-990445478)
 * Fix to display missing icon on navigation menu for opening Webmin link in Cloudmin
+* Fix various popover positioning issues
 * Fix various align issues for teletype text
 
 #### Version 19.84.6 (December 04, 2021)
