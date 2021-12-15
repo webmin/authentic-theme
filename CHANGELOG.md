@@ -7,6 +7,7 @@
 * Fix to display missing icon on navigation menu for opening Webmin link in Cloudmin
 * Fix various popover positioning issues
 * Fix various align issues for teletype text
+* Fix Custom Commands module support in Usermin
 
 #### Version 19.84.6 (December 04, 2021)
 * Fix to make initial load resilient to errors
