@@ -236,3 +236,5 @@ body_cpufans=ventilatoare CPU
 body_cpufan_rpm=RPM
 body_cpufan=ventilator CPU
 filemanager_symlink_exists=Nu se poate crea <tt>$1</tt> deoarece fișierul există deja în <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copiați toate informațiile de sistem în clipboard; Țineți apăsată tasta pentru a copia datele text simplu, în loc de reducere
+theme_xhred_tooltip_side_slider_clipboard_account=Copiați toate informațiile despre cont în clipboard; Țineți apăsată tasta pentru a copia datele text simplu, în loc de reducere

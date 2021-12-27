@@ -155,3 +155,5 @@ body_cpufans=CPUファン
 body_cpufan_rpm=RPM
 body_cpufan=CPUファン
 filemanager_symlink_exists=ファイルはすでに<tt>$2</tt> <tt>$1</tt>を作成できません
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=すべてのシステム情報をクリップボードにコピーします。キーを押したままにして、マークダウンではなくプレーンテキストデータをコピーします
+theme_xhred_tooltip_side_slider_clipboard_account=すべてのアカウント情報をクリップボードにコピーします。キーを押したままにして、マークダウンではなくプレーンテキストデータをコピーします

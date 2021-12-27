@@ -1248,3 +1248,5 @@ body_cpufans=מאווררי מעבד
 body_cpufan_rpm=סל"ד
 body_cpufan=מאוורר מעבד
 filemanager_symlink_exists=לא ניתן ליצור <tt>$1</tt> מכיוון שהקובץ כבר קיים ב- <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=העתק את כל מידע המערכת ללוח; החזק את המקש כדי להעתיק נתוני טקסט רגיל במקום סימון
+theme_xhred_tooltip_side_slider_clipboard_account=העתק את כל פרטי החשבון ללוח; החזק את המקש כדי להעתיק נתוני טקסט רגיל במקום סימון

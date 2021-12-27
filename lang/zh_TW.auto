@@ -1248,3 +1248,5 @@ body_cpufans=CPU風扇
 body_cpufan_rpm=轉速
 body_cpufan=CPU風扇
 filemanager_symlink_exists=無法創建<tt>$1</tt> <tt>$2</tt>已存在文件
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=將所有系統信息複製到剪貼板；按住鍵複製純文本數據而不是降價
+theme_xhred_tooltip_side_slider_clipboard_account=將所有賬戶信息複製到剪貼板；按住鍵複製純文本數據而不是降價

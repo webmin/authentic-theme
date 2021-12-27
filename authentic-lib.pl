@@ -413,13 +413,21 @@ sub print_sysstats_panel_start
               . '></i></span>';
         }
     }
+    my $copy_to_clipboard = sub {
+        my ($type) = @_;
+        return
+'<span class="btn btn-transparent-link pull-right _clipboard_sysinfo_cnt"><i class="fa2 fa-fw fa fa2-clipboard-markdown _clipboard_sysinfo_" '
+          . get_button_tooltip("theme_xhred_tooltip_side_slider_clipboard_$type", undef, 'auto right')
+          . '></i></span>';
+    };
     my %virtualmin_config = foreign_config('virtual-server');
     my %cloudmin_config   = foreign_config('server-manager');
 
     print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
     print '<h3 class="panel-title">' .
-      $recollect . '' . ($get_user_level eq '3' ? $theme_text{'body_header1'} : $theme_text{'body_header0'})
+      $recollect . '' . ($get_user_level eq '3' ? (&$copy_to_clipboard('account') . $theme_text{'body_header1'}) :
+                         (&$copy_to_clipboard('sysinfo') . $theme_text{'body_header0'}))
       .
       ( $cloudmin_config{'docs_link'} &&
           foreign_available("server-manager") ?

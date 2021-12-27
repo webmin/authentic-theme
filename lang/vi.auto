@@ -1248,3 +1248,5 @@ body_cpufans=Quạt CPU
 body_cpufan_rpm=RPM
 body_cpufan=quạt làm mát bộ xứ lí trung tâm
 filemanager_symlink_exists=Không thể tạo <tt>$1</tt> vì tệp đã tồn tại trong <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Sao chép tất cả thông tin hệ thống vào khay nhớ tạm; giữ phím để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
+theme_xhred_tooltip_side_slider_clipboard_account=Sao chép tất cả thông tin tài khoản vào khay nhớ tạm; giữ phím để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
