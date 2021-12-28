@@ -1,7 +1,7 @@
 ## Changelog
 
 #### Version 19.84.8-beta1 (December 28, 2021)
-* Add support for copying complete system information to clipboard [#1569](https://github.com/authentic-theme/authentic-theme/issues/1569)
+* Add support for copying complete system information to clipboard [webmin/webmin#1569](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
 
 #### Version 19.84.7 (December 14, 2021)
 * Fix navigation detection with menu reload after progressive call end
