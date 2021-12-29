@@ -130,3 +130,5 @@ body_cpufans=CPU-fläktar
 body_cpufan_rpm=RPM
 body_cpufan=CPU fläkt
 filemanager_symlink_exists=Det går inte att skapa <tt>$1</tt> eftersom filen redan finns i <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiera all systeminformation till urklipp; håll tangenten nedtryckt för att kopiera oformaterad textdata istället för markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Kopiera all kontoinformation till urklipp; håll ned tangenten för att kopiera oformaterad text i stället för att markera

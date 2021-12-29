@@ -633,3 +633,5 @@ body_cpufans=Peminat CPU
 body_cpufan_rpm=RPM
 body_cpufan=kipas CPU
 filemanager_symlink_exists=Tidak boleh mencipta <tt>$1</tt> kerana fail sudah wujud dalam <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Salin semua maklumat sistem ke papan keratan; pegang kekunci untuk menyalin data teks biasa dan bukannya penurunan harga
+theme_xhred_tooltip_side_slider_clipboard_account=Salin semua maklumat akaun ke papan keratan; pegang kekunci untuk menyalin data teks biasa dan bukannya penurunan harga

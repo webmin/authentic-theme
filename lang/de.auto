@@ -146,3 +146,5 @@ body_cpufans=CPU-Lüfter
 body_cpufan_rpm=Drehzahl
 body_cpufan=CPU-Lüfter
 filemanager_symlink_exists=<tt>$1</tt> kann nicht erstellt werden, da Datei bereits in <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopieren Sie alle Systeminformationen in die Zwischenablage; Halten Sie die Taste gedrückt, um Nur-Text-Daten zu kopieren, anstatt einen Markdown zu machen
+theme_xhred_tooltip_side_slider_clipboard_account=Kopieren Sie alle Kontoinformationen in die Zwischenablage; Halten Sie die Taste gedrückt, um Nur-Text-Daten zu kopieren, anstatt Markdown

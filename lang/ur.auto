@@ -1248,3 +1248,5 @@ body_cpufans=سی پی یو کے پرستار
 body_cpufan_rpm=RPM
 body_cpufan=سی پی یو فین
 filemanager_symlink_exists=Cannot create <tt>$1</tt> as file already exists in <tt>$2</tt>
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=کلپ بورڈ پر سسٹم کی تمام معلومات کاپی کریں۔ مارک ڈاؤن کے بجائے سادہ ٹیکسٹ ڈیٹا کاپی کرنے کے لیے کلید کو پکڑیں۔
+theme_xhred_tooltip_side_slider_clipboard_account=اکاؤنٹ کی تمام معلومات کلپ بورڈ پر کاپی کریں۔ مارک ڈاؤن کے بجائے سادہ ٹیکسٹ ڈیٹا کاپی کرنے کے لیے کلید کو پکڑیں۔
