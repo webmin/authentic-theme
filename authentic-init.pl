@@ -921,6 +921,12 @@ sub get_button_style
     } elsif (string_contains($keys, "docker_reg")) {
         $class = "success ";
         $icon  = "server-add";
+    } elsif (string_contains($keys, "login_enable")) {
+        $class = "success ";
+        $icon = " fa-1_15x fa2 fa2-account-key";
+    } elsif (string_contains($keys, "login_disable")) {
+        $class = "warning ";
+        $icon = " fa-1_15x fa2 fa2-key-minus";
     } elsif (string_contains($keys, "save") ||
              string_contains($keys, "backup_ok2")    ||
              string_contains($keys, "sharedips_ok")  ||
