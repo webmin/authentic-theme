@@ -7,4 +7,4 @@ depends_reason=https://github.com/webmin/webmin/commit/ae6921a
 webmin=1
 usermin=1
 bootstrap=3
-
+spa=1
