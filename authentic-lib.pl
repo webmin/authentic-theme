@@ -127,7 +127,7 @@ sub get_extended_sysinfo
                                                             ($info->{'desc'}))))))));
 
                     $returned_sysinfo .= '
-                    <div draggable="true" data-referrer="' .
+                    <div draggable="false" data-referrer="' .
                       $info->{'id'} . '" data-sorter="' . $info->{'module'} . '" class="panel '
                       .
                       ( $info->{'level'} ? (' panel-' . ($info->{'level'} ne 'warn' ? $info->{'level'} : 'warning') . '') :
