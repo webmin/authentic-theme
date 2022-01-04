@@ -120,7 +120,7 @@ var
     config_portable_module_filemanager_editor_tabs_to_spaces = false,
     config_portable_module_filemanager_view_limit = 512000,
     config_portable_module_filemanager_checksum_limit = 1024000,
-    config_portable_module_filemanager_move_to_trash = true,
+    config_portable_module_filemanager_move_to_trash = false,
 
 
     // Locale defaults
