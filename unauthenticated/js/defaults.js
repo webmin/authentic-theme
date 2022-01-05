@@ -113,6 +113,7 @@ var
     config_portable_module_filemanager_hovered_toolbar = false,
     config_portable_module_filemanager_calculate_size = true,
     config_portable_module_filemanager_force_tar = true,
+    config_portable_module_filemanager_put_into_directory_on_extract = true,
     config_portable_module_filemanager_switch_users = true,
     config_portable_module_filemanager_remember_tabs = true,
     config_portable_module_filemanager_editor_maximized = false,
@@ -121,7 +122,6 @@ var
     config_portable_module_filemanager_view_limit = 512000,
     config_portable_module_filemanager_checksum_limit = 1024000,
     config_portable_module_filemanager_move_to_trash = false,
-
 
     // Locale defaults
     config_portable_theme_locale_language = false,
@@ -179,7 +179,7 @@ var
     settings_side_slider_palette = 'nav',
 
     // This option associates extra names for a given module/page to be searchable in autocomplete dropdown
-    settings_autocomplete_extra_associations_privileged = { 'en': [{ 'mysql': 'MySQL MariaDB' }, { 'virtual-server': [[ 'rename_form', 'rename alter' ], [ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ], [ 'edit_newvalidate', 'fix reset' ] ] }] };
+    settings_autocomplete_extra_associations_privileged = { 'en': [{ 'csf': 'csf' }, { 'mysql': 'MySQL MariaDB' }, { 'virtual-server': [[ 'rename_form', 'rename alter' ], [ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ], [ 'edit_newvalidate', 'fix reset' ] ] }] };
 //
 //
 //
