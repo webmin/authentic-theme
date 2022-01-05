@@ -113,7 +113,7 @@ var
     config_portable_module_filemanager_hovered_toolbar = false,
     config_portable_module_filemanager_calculate_size = true,
     config_portable_module_filemanager_force_tar = true,
-    config_portable_module_filemanager_put_into_directory_on_extract = true,
+    config_portable_module_filemanager_files_safe_mode = true,
     config_portable_module_filemanager_switch_users = true,
     config_portable_module_filemanager_remember_tabs = true,
     config_portable_module_filemanager_editor_maximized = false,

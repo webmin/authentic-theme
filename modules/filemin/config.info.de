@@ -24,5 +24,6 @@ config_portable_module_filemanager_hovered_toolbar=Automatisch ausklappen beim �
 config_portable_module_filemanager_remember_tabs=Reiter beim Öffnen wiederherstellen,1,true-Ja,false-Nein
 config_portable_module_filemanager_calculate_size=Dateigröße beim Betätigen der Leertaste bewrechnen,1,true-Ja,false-Nein
 config_portable_module_filemanager_force_tar=Nutze<code>tar</code> Befehl für herunterzuladende Archive&#44; auch wenn <code>zip</code> verfügbar ist,1,true-Ja,false-Nein
+config_portable_module_filemanager_files_safe_mode=Vorhandene Dateien beim Komprimieren/Extrahieren und Kodieren/Dekodieren nicht überschreiben,1,true-Ja,false-Nein
 config_portable_module_filemanager_switch_users=Setze bei Dateioperationen Besitzer und Gruppe identisch zum Heimatverzeichnis,1,true-Ja,false-Nein
 config_portable_module_filemanager_hide_actions=Verstecke Spalte mit den Action Icons,1,true-Ja,false-Nein

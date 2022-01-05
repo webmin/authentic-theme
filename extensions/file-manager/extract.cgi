@@ -7,51 +7,43 @@
 #
 use strict;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, %config, $cwd, $path);
 
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 my @entries_list = get_entries_list();
 my %errors;
 my $status;
-my $status_gpg;
 my $pparam;
-my $iname;
-my $gpg;
-my $password = $in{'password'};
-my $delete   = $in{'delete'};
+my $password  = $in{'password'};
+my $delete    = $in{'delete'};
+my $ecwd      = $cwd;
+my $safe_mode = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
 
 foreach my $name (@entries_list) {
     my $no_command;
-    $status     = undef;
-    $status_gpg = undef;
-    $gpg        = 0;
-    $iname      = $name;
-    if (string_ends_with($name, '.gpg') || string_ends_with($name, '.pgp')) {
-        my $gpgpath = get_gpg_path();
-        $gpg = 1;
-        $name =~ s/\.(gpg|pgp)$//;
-        my $pparam_gpg;
-        if ($password) {
-            my $gpg_ver = get_gpg_version($gpgpath);
-            if ($gpg_ver ge '2.1') {
-                $pparam_gpg = " --pinentry-mode loopback ";
-            } else {
-                $pparam_gpg = " --yes --batch  ";
+    $ecwd   = $cwd;
+    $status = undef;
+
+    # Based on options put extracted content to a separate directory
+    if ($safe_mode) {
+        my ($fname, $fext) = file_name_extension_splitter($name);
+
+        # If directory exists add a numerable suffix
+        if (-e "$ecwd/$fname") {
+            my $__ = 1;
+            for (;;) {
+                my $necwd = "$ecwd/$fname(" . $__++ . ")";
+                if (!-e $necwd) {
+                    $ecwd = $necwd;
+                    last;
+                }
             }
-            $pparam_gpg .= "  --passphrase-fd 0 ";
+        } else {
+            $ecwd = "$ecwd/$fname";
         }
-
-        $status_gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $pparam_gpg --output @{[quotemeta($name)]} --decrypt " .
-          quotemeta("$cwd/$iname");
-
-        open my $fh => "| $status_gpg" or $no_command = 1;
-        print $fh $password;
-        close $fh;
-        $status_gpg = $?;
-        if (!has_command($gpgpath) || $no_command) {
-            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', $gpgpath);
-        }
+        my $qecwd = quotemeta($ecwd);
+        system("mkdir $qecwd");
     }
 
     my $archive_type = mimetype($cwd . '/' . $name);
@@ -60,14 +52,14 @@ foreach my $name (@entries_list) {
         if (!$tar_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         } else {
-            $status = system("$tar_cmd xpf " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
+            $status = system("$tar_cmd xpf " . quotemeta("$cwd/$name") . " -C " . quotemeta($ecwd));
         }
     } elsif ($archive_type =~ /x-bzip/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         } else {
-            $status = system("$tar_cmd xjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($cwd));
+            $status = system("$tar_cmd xjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($ecwd));
         }
     } elsif ($archive_type =~ /\/gzip/) {
         my $gz_cmd = has_command('gunzip') || has_command('gzip');
@@ -94,7 +86,7 @@ foreach my $name (@entries_list) {
             if ($password) {
                 $pparam = (" -p" . quotemeta($password) . " ");
             }
-            $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($cwd) . $pparam);
+            $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($ecwd) . $pparam);
         }
     } elsif ($archive_type =~ /\/zip/) {
         my $unzip_cmd = has_command('unzip');
@@ -104,14 +96,14 @@ foreach my $name (@entries_list) {
             my $x7z_cmd = has_command('7z');
             if ($password && $x7z_cmd) {
                 $pparam = (" -p" . quotemeta($password) . " ");
-                $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($cwd) . $pparam);
+                $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($ecwd) . $pparam);
             } else {
                 if ($password) {
                     $pparam = (" -P " . quotemeta($password) . " ");
                 }
                 my $unzip_out = `unzip --help`;
                 my $uu        = ($unzip_out =~ /-UU/ ? '-UU' : undef);
-                $status = system("$unzip_cmd $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($cwd));
+                $status = system("$unzip_cmd $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($ecwd));
             }
         }
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
@@ -123,13 +115,13 @@ foreach my $name (@entries_list) {
                 $pparam = (" -p " . quotemeta($password) . " ");
             }
             if ($unrar_cmd =~ /unar$/) {
-                $status = system("$unrar_cmd $pparam " . quotemeta("$cwd/$name") . " -o " . quotemeta($cwd));
+                $status = system("$unrar_cmd $pparam " . quotemeta("$cwd/$name") . " -o " . quotemeta($ecwd));
                 if ($status == 512) {
                     $status = 65280;
                 }
             } else {
                 $pparam =~ s/(?<=.)\s//;
-                $status = system("$unrar_cmd $pparam x -r -y -o+ " . quotemeta("$cwd/$name") . " " . quotemeta($cwd));
+                $status = system("$unrar_cmd $pparam x -r -y -o+ " . quotemeta("$cwd/$name") . " " . quotemeta($ecwd));
             }
         }
     } elsif ($archive_type =~ /\/x-rpm/) {
@@ -158,19 +150,12 @@ foreach my $name (@entries_list) {
         }
     }
 
-    if (!%errors && ($delete || $gpg) && ($status == 0 && $status_gpg == 0)) {
+    if (!%errors && $delete && $status == 0) {
         unlink_file("$cwd/$name");
-        if ($delete && $gpg) {
-            unlink_file("$cwd/$iname");
-        }
     }
 
-    if ($status != 0 || $status_gpg != 0) {
-        if ($gpg) {
-            if ($status_gpg == 512) {
-                $errors{$name} = $text{'filemanager_archive_gpg_private_error'};
-            }
-        } elsif ($status == 1280 || $status == 65280) {
+    if ($status != 0) {
+        if ($status == 1280 || $status == 65280) {
             $errors{$name} = $text{'filemanager_archive_password_required'};
         } elsif ($status == 256 || $status == 512 || $status == 768 || $status == 20736 || $status == 20992) {
             $errors{$name} = $text{'filemanager_archive_password_wrong'};

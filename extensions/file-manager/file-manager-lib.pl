@@ -1163,6 +1163,13 @@ sub get_tree
     return \@r;
 }
 
+sub file_name_extension_splitter
+{
+    my ($file) = @_;
+    my ($name, $extension) = $file =~ /(?|(.*)\.([a-zA-Z]+\.(?|gpg|pgp))|(.*)\.((?|tar|wbm|wbt)\..*)|(.*)\.(?=(.*))|(.*)())/;
+    return ($name, $extension);
+}
+
 sub paster
 {
     my ($c, $f, $s, $d, $r, $m, $z) = @_;
@@ -1180,7 +1187,7 @@ sub paster
 
     if (!$r && -f $j ne -d $j) {
         for (my $t = 1;; $t += 1) {
-            my ($jn, $je) = $j =~ /(.*)\.(.*)/;
+            my ($jn, $je) = file_name_extension_splitter($j);
             if (!-e ($jn . '(' . $t . ')' . ".$je") && (!-e ($j . '(' . $t . ')'))) {
                 $x = $t;
                 last;
@@ -1195,7 +1202,7 @@ sub paster
     if (-d $j) {
         $j = $j . (!$x ? '' : '(' . $x . ')');
     } else {
-        my ($jn, $je) = $j =~ /(.*)\.(.*)/;
+        my ($jn, $je) = file_name_extension_splitter($j);
         if ($je) {
             $j = $jn . (!$x ? '' : '(' . $x . ')') . ".$je";
         } else {

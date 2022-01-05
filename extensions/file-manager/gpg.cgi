@@ -7,37 +7,60 @@
 #
 use strict;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, %config, $cwd, $path);
 
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 my @entries_list = get_entries_list();
 my %errors;
 my $status;
-my $action     = $in{'action'};
-my $delete     = $in{'delete'};
-my $passphrase = $in{'passphrase'};
+my $action      = $in{'action'};
+my $action_name = $action eq 'encrypt' ? 'encrypted' : 'decrypted';
+my $delete      = $in{'delete'};
+my $passphrase  = $in{'passphrase'};
+my $safe_mode   = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
 
 my $gpgpath = get_gpg_path();
 my $no_command;
 
 foreach my $name (@entries_list) {
-    next if (-d "$cwd/$name");
-    my $localtime = POSIX::strftime('%H%M%S', localtime());
     my ($iname, $fname, $fext);
     my $gpg;
 
     $iname = $name;
-    $iname =~ s/\.(gpg|pgp)$// if ($action eq "decrypt");
-    ($fname, $fext) = $iname =~ /^(?|(.*)\.(tar\.gz)|(.*)\.(wbt\.gz)|(.*)\.(.*)|(.*))$/;
-    $fext   = ".$fext" if ($fext);
-    $iname  = $fname . "_" . substr($action, 0, 1) . "$localtime" . $fext;
+
+    # Clean name when decrypting
+    if ($action eq "decrypt") {
+        $iname =~ s/\.(gpg|pgp)$//;
+        $iname =~ s/(?|(_encrypted\(\d+\))|(_encrypted))//;
+    }
+    ($fname, $fext) = file_name_extension_splitter($iname);
+    $fext  = ".$fext" if ($fext);
+    $iname = $fname . "_" . $action_name;
+    my $ffext;
+    $ffext = ".gpg" if ($action eq "encrypt");
+
+    # Check if file exist
+    if ($safe_mode && -e "$cwd/$iname$fext$ffext") {
+        my $__ = 1;
+        for (;;) {
+            my $niname = "$iname(" . $__++ . ")";
+            if (!-e "$cwd/$niname$fext$ffext") {
+                $iname = "$niname$fext";
+                last;
+            }
+        }
+    } else {
+        $iname .= $fext;
+        unlink_file("$cwd/$iname$ffext") if (-e "$cwd/$iname$ffext");
+    }
     $status = 0;
 
     if ($action eq "encrypt") {
-        my $key = quotemeta($in{'key'});
+        my $key   = quotemeta($in{'key'});
+        my $fpath = "$cwd/$name";
         $gpg =
-"cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($iname)]}.gpg --recipient $key @{[quotemeta($name)]}";
+"cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($iname)]}.gpg --recipient $key @{[quotemeta($fpath)]}";
         $status = system($gpg);
 
     } elsif ($action eq "decrypt") {
@@ -51,7 +74,8 @@ foreach my $name (@entries_list) {
             }
             $extra .= "  --passphrase-fd 0 ";
         }
-        $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($iname)]} --decrypt @{[quotemeta($name)]}";
+        my $fpath = "$cwd/$name";
+        $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($iname)]} --decrypt @{[quotemeta($fpath)]}";
         open my $fh => "| $gpg" or $no_command = 1;
         print $fh $passphrase;
         close $fh;
@@ -67,7 +91,7 @@ foreach my $name (@entries_list) {
     }
     if ($status != 0) {
         if ($status == 512) {
-            $errors{ $name } = $text{'filemanager_archive_gpg_private_error'};
+            $errors{$name} = $text{'filemanager_archive_gpg_private_error'};
         }
     }
 }

@@ -7,7 +7,7 @@
 #
 use strict;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, %config, $cwd, $path);
 
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
@@ -25,6 +25,8 @@ my $encrypt      = $in{'arcencr'} ? 1 : 0;
 my $password     = $in{'arcencr_val'};
 my $key_id       = quotemeta($in{'arkkey'});
 my $status;
+my $safe_mode = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
+
 if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
     if ($in{'method'} eq 'tar') {
         if (!has_command('tar')) {
@@ -35,11 +37,21 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
         print $fh "$_\n" for @entries_list;
         close $fh;
 
-        my $file  = "$cwd/$in{'arch'}.tar.gz";
-        my $fileq = quotemeta($file);
+        my $file = "$cwd/$in{'arch'}.tar.gz";
+        if (-e $file && $safe_mode) {
+            my $__ = 1;
+            for (;;) {
+                my $new_file = "$cwd/$in{'arch'}(" . $__++ . ").tar.gz";
+                if (!-e $new_file) {
+                    $file = $new_file;
+                    last;
+                }
+            }
+        }
+        my $fileq         = quotemeta($file);
         my $gnu_tar_param = get_tar_verbatim();
         $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
-        $status = system($command);
+        $status  = system($command);
 
         if ($encrypt && $key_id) {
             my %webminconfig = foreign_config("webmin");
@@ -64,7 +76,18 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
         if ($encrypt && $password) {
             $pparam = (" -P " . quotemeta($password) . " ");
         }
-        $command = "cd " . quotemeta($cwd) . " && zip $pparam -r " . quotemeta("$cwd/$in{'arch'}.zip");
+        my $zipped_file = "$cwd/$in{'arch'}.zip";
+        if (-e $zipped_file && $safe_mode) {
+            my $__ = 1;
+            for (;;) {
+                my $new_zipped_file = "$cwd/$in{'arch'}(" . $__++ . ").zip";
+                if (!-e $new_zipped_file) {
+                    $zipped_file = $new_zipped_file;
+                    last;
+                }
+            }
+        }
+        $command = "cd " . quotemeta($cwd) . " && zip $pparam -r " . quotemeta($zipped_file);
         foreach my $name (@entries_list) {
             $command .= " " . quotemeta($name);
 
