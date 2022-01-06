@@ -952,7 +952,8 @@ sub print_content
                 $type_archive = mimetype($link_gpg);
                 $is_gpg       = 1;
             }
-            if ($type_archive =~ /application-zip/ ||
+            if (!$is_gpg &&
+                ($type_archive =~ /application-zip/ ||
                 $type_archive =~ /application-x-7z-compressed/              ||
                 $type_archive =~ /application-x-rar|application-vnd\.rar/   ||
                 $type_archive =~ /application-x-rpm/                        ||
@@ -963,7 +964,7 @@ sub print_content
                 $type_archive =~ /-x-tar/                                   ||
                 $type_archive =~ /-x-bzip/                                  ||
                 $type_archive =~ /-gzip/                                    ||
-                $type_archive =~ /-x-xz/)
+                $type_archive =~ /-x-xz/))
             {
                 $is_archive = 1;
                 $actions =
@@ -1166,7 +1167,7 @@ sub get_tree
 sub file_name_extension_splitter
 {
     my ($file) = @_;
-    my ($name, $extension) = $file =~ /(?|(.*)\.([a-zA-Z]+\.(?|gpg|pgp))|(.*)\.((?|tar|wbm|wbt)\..*)|(.*)\.(?=(.*))|(.*)())/;
+    my ($name, $extension) = $file =~ /(?|(.*)\.((?|tar|wbm|wbt)\..*)|(.*)\.([a-zA-Z]+\.(?|gpg|pgp))|(.*)\.(?=(.*))|(.*)())/;
     return ($name, $extension);
 }
 
