@@ -44,3 +44,5 @@ body_cpufan=Ventola della CPU
 filemanager_symlink_exists=Impossibile creare <tt>$1</tt> poiché il file esiste già in <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copia tutte le informazioni di sistema negli appunti; tieni premuto il tasto per copiare i dati di testo normale anziché il markdown
 theme_xhred_tooltip_side_slider_clipboard_account=Copia tutte le informazioni sull'account negli appunti; tieni premuto il tasto per copiare i dati di testo normale anziché il markdown
+tooltip_back_to_servers_index_master=Modulo indice dei server Webmin sulla macchina master
+tooltip_list_other_servers=Elenco di altri server Webmin registrati

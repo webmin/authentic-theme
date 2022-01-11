@@ -415,3 +415,5 @@ body_cpufan=CPU风扇
 filemanager_symlink_exists=无法创建<tt>$1</tt> <tt>$2</tt>已存在文件
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=将所有系统信息复制到剪贴板；按住键复制纯文本数据而不是降价
 theme_xhred_tooltip_side_slider_clipboard_account=将所有账户信息复制到剪贴板；按住键复制纯文本数据而不是降价
+tooltip_back_to_servers_index_master=主机上的 Webmin 服务器索引模块
+tooltip_list_other_servers=其他已注册的 Webmin 服务器列表

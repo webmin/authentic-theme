@@ -1250,3 +1250,5 @@ body_cpufan=CPU ventilators
 filemanager_symlink_exists=Nevar izveidot <tt>$1</tt> jo fails jau pastāv mapē <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopēt visu sistēmas informāciju starpliktuvē; turiet taustiņu, lai kopētu vienkārša teksta datus, nevis atzīmes
 theme_xhred_tooltip_side_slider_clipboard_account=Kopējiet visu konta informāciju starpliktuvē; turiet nospiestu taustiņu, lai kopētu vienkārša teksta datus, nevis atzīmes
+tooltip_back_to_servers_index_master=Webmin serveru indeksa modulis galvenajā mašīnā
+tooltip_list_other_servers=Citu reģistrēto Webmin serveru saraksts

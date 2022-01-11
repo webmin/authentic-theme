@@ -1250,3 +1250,5 @@ body_cpufan=فن CPU
 filemanager_symlink_exists=نمی توان <tt>$1</tt> ایجاد کرد زیرا فایل از قبل در <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=تمام اطلاعات سیستم را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید را نگه دارید
 theme_xhred_tooltip_side_slider_clipboard_account=تمام اطلاعات حساب را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید را نگه دارید
+tooltip_back_to_servers_index_master=ماژول نمایه سرورهای وبمین در ماشین اصلی
+tooltip_list_other_servers=لیست سایر سرورهای وبمین ثبت شده

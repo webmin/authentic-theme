@@ -115,3 +115,5 @@ body_cpufan=CPU vifte
 filemanager_symlink_exists=Kan ikke opprette <tt>$1</tt> da filen allerede eksisterer i <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier all systeminformasjon til utklippstavlen; hold nede tasten for å kopiere ren tekstdata i stedet for markering
 theme_xhred_tooltip_side_slider_clipboard_account=Kopier all kontoinformasjon til utklippstavlen; hold nede tasten for å kopiere ren tekstdata i stedet for markering
+tooltip_back_to_servers_index_master=Webmin-servere-indeksmodul på hovedmaskin
+tooltip_list_other_servers=Liste over andre registrerte Webmin-servere

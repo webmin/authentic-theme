@@ -1250,3 +1250,5 @@ body_cpufan=ventilator CPU
 filemanager_symlink_exists=<tt>$1</tt> ni mogoče ustvariti, saj datoteka že obstaja v <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopirajte vse sistemske informacije v odložišče; držite tipko, da kopirate podatke z navadnim besedilom namesto zmanjšanja
 theme_xhred_tooltip_side_slider_clipboard_account=Kopirajte vse podatke o računu v odložišče; držite tipko, da kopirate podatke z navadnim besedilom namesto zmanjšanja
+tooltip_back_to_servers_index_master=Indeksni modul strežnikov Webmin na glavnem računalniku
+tooltip_list_other_servers=Seznam drugih registriranih strežnikov Webmin

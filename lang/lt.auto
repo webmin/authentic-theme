@@ -1250,3 +1250,5 @@ body_cpufan=CPU ventiliatorius
 filemanager_symlink_exists=Negalima sukurti <tt>$1</tt> nes failas jau yra <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Nukopijuokite visą sistemos informaciją į mainų sritį; laikykite nuspaudę klavišą, norėdami nukopijuoti grynojo teksto duomenis, o ne žymėti
 theme_xhred_tooltip_side_slider_clipboard_account=Nukopijuokite visą paskyros informaciją į mainų sritį; laikykite nuspaudę klavišą, norėdami nukopijuoti paprasto teksto duomenis, o ne žymėti
+tooltip_back_to_servers_index_master=Webmin serverių indekso modulis pagrindiniame kompiuteryje
+tooltip_list_other_servers=Kitų registruotų Webmin serverių sąrašas

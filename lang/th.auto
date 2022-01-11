@@ -1250,3 +1250,5 @@ body_cpufan=พัดลมซีพียู
 filemanager_symlink_exists=ไม่สามารถสร้าง <tt>$1</tt> เนื่องจากไฟล์มีอยู่แล้วใน <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=คัดลอกข้อมูลระบบทั้งหมดไปยังคลิปบอร์ด กดปุ่มค้างไว้เพื่อคัดลอกข้อมูลข้อความธรรมดาแทนการทำเครื่องหมาย
 theme_xhred_tooltip_side_slider_clipboard_account=คัดลอกข้อมูลบัญชีทั้งหมดไปยังคลิปบอร์ด กดปุ่มค้างไว้เพื่อคัดลอกข้อมูลข้อความธรรมดาแทนการทำเครื่องหมาย
+tooltip_back_to_servers_index_master=โมดูลดัชนีเซิร์ฟเวอร์ Webmin บนเครื่องหลัก
+tooltip_list_other_servers=รายชื่อเซิร์ฟเวอร์ Webmin อื่นๆ ที่ลงทะเบียนแล้ว

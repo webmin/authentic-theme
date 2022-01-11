@@ -1250,3 +1250,5 @@ body_cpufan=CPU fanı
 filemanager_symlink_exists=Oluşturulamıyor <tt>$1</tt> dosyası zaten mevcut olduğu için <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Tüm sistem bilgilerini panoya kopyalayın; düz metin verilerini işaretlemek yerine kopyalamak için tuşu basılı tutun
 theme_xhred_tooltip_side_slider_clipboard_account=Tüm hesap bilgilerini panoya kopyalayın; düz metin verilerini işaretlemek yerine kopyalamak için tuşu basılı tutun
+tooltip_back_to_servers_index_master=Ana makinede Webmin sunucuları dizin modülü
+tooltip_list_other_servers=Diğer kayıtlı Webmin sunucularının listesi

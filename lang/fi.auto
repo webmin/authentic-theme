@@ -1250,3 +1250,5 @@ body_cpufan=CPU tuuletin
 filemanager_symlink_exists=<tt>$1</tt> ei voi luoda, koska tiedosto on jo olemassa hakemistossa <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopioi kaikki järjestelmätiedot leikepöydälle; pidä näppäintä painettuna kopioidaksesi pelkkää tekstiä tiedot merkinnän sijaan
 theme_xhred_tooltip_side_slider_clipboard_account=Kopioi kaikki tilitiedot leikepöydälle; pidä näppäintä painettuna kopioidaksesi pelkkää tekstiä tiedot merkinnän sijaan
+tooltip_back_to_servers_index_master=Webmin-palvelinten indeksimoduuli pääkoneessa
+tooltip_list_other_servers=Luettelo muista rekisteröidyistä Webmin-palvelimista

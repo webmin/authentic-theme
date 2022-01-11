@@ -6,7 +6,7 @@
 use strict;
 
 our (%in, $root_directory, %gconfig, %gaccess, $base_remote_user, $remote_user, $theme_webprefix, $theme_server_webprefix,
-     %theme_text, %theme_config, $get_user_level, $http_x_url, $server_x_goto);
+     $xnav, %theme_text, %theme_config, $get_user_level, $http_x_url, $server_x_goto);
 
 # Detects the state of navigation menu on initial load
 # Returns navigation tab name and right page defaults
@@ -1067,6 +1067,9 @@ sub nav_links
     # Logout button link
     $menu_width_needed += $button_width;
 
+    # Servers index menu
+    $menu_width_needed += $button_width * 2;
+
     if ($menu_width - $menu_width_needed < $button_width - $button_margin) {
         $menu_elem_br = '<li class="flex-br"></li>';
     }
@@ -1104,6 +1107,26 @@ sub nav_links
               $theme_webprefix . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
         }
         $rv .= '</li>';
+    } else {
+        if ($theme_server_webprefix) {
+            my $master_link           = get_env('http_webmin_servers');
+            my $tooltip_go_to_master  = get_button_tooltip('tooltip_back_to_servers_index_master', undef, 'auto top');
+            my $tooltip_other_servers = get_button_tooltip('tooltip_list_other_servers',           undef, 'auto top');
+            $rv .= "<li class=\"user-link servers-index-link\">";
+            $rv .=
+              '<a ' . $tooltip_go_to_master . ' data-nref class="menu-exclude-link" href="' .
+              $master_link . '?' . $xnav . '"><i class="fa fa-fw fa2 fa2-server"></i></a>';
+            $rv .= '
+                <div data-http-webmin-servers="' .
+              $master_link . '" ' . $tooltip_other_servers . ' class="popover-trigger hidden">
+                    <a data-servers-index="popover">
+                        <span class="popover-trigger-toggle" type="button" data-toggle="popover-trigger">
+                            <span class="caret-" href="#">▼</span>
+                        </span>
+                    </a>
+                </div>
+            </li>';
+        }
     }
 
     $rv .=

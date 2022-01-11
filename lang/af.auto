@@ -1250,3 +1250,5 @@ body_cpufan=CPU-waaier
 filemanager_symlink_exists=Kan nie <tt>$1</tt> skep nie aangesien lêer reeds in <tt>$2</tt>
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopieer alle stelselinligting na knipbord; hou sleutel in om gewone teksdata te kopieer eerder as afmerk
 theme_xhred_tooltip_side_slider_clipboard_account=Kopieer alle rekeninginligting na knipbord; hou sleutel in om gewone teksdata te kopieer eerder as afmerk
+tooltip_back_to_servers_index_master=Webmin-bedieners-indeksmodule op meestermasjien
+tooltip_list_other_servers=Lys van ander geregistreerde Webmin-bedieners
