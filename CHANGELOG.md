@@ -1,7 +1,8 @@
 ## Changelog
 
-#### Version 19.84.8-beta1 (December 28, 2021)
+#### Version 19.85-beta1 (January 12, 2021)
 * Add support for copying complete system information to clipboard [webmin/webmin#1569](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
+* Add support for displaying other Webmin servers in navigation menu [sourceforge.net/tread#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7)
 
 #### Version 19.84.7 (December 14, 2021)
 * Fix navigation detection with menu reload after progressive call end
@@ -235,7 +236,7 @@
 * Add improvements to mail module in Usermin for smoother UX
 * Add mail automatic refresh support to mail module in Usermin
 * Add support for aliases in new mail composer
-* Add better support for HTML descriptions in Custom Commands module [sourceforge.net#600155](https://sourceforge.net/p/webadmin/discussion/600155/thread/015e51d013/#98b2)
+* Add better support for HTML descriptions in Custom Commands module [sourceforge.net/tread#015e51d013](https://sourceforge.net/p/webadmin/discussion/600155/thread/015e51d013/#98b2)
 * Add clear cache menu option to side slider dropdown
 * Add translations to 41 languages
 * Add dozens of other UI improvements
