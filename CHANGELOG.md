@@ -1,8 +1,8 @@
 ## Changelog
 
 #### Version 19.85-beta1 (January 12, 2021)
-* Add support for copying complete system information to clipboard [webmin/webmin#1569](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
-* Add support for displaying other Webmin servers in navigation menu [sourceforge.net/tread#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7)
+* Add ability to copy complete system information to clipboard [webmin/webmin#1569](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
+* Add ability to display other Webmin servers in navigation menu [sourceforge.net/tread#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7)
 
 #### Version 19.84.7 (December 14, 2021)
 * Fix navigation detection with menu reload after progressive call end
