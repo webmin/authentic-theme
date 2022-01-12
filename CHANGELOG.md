@@ -1,8 +1,16 @@
 ## Changelog
 
-#### Version 19.85-beta1 (January 12, 2021)
+#### Version 19.85-beta2 (January 13, 2021)
 * Add ability to copy complete system information to clipboard [webmin/webmin#1569](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
-* Add ability to display other Webmin servers in navigation menu [sourceforge.net/tread#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7)
+* Add ability to display other Webmin servers in navigation menu [sourceforge.net/tread#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
+* Add ability to optionally control existing file overwriting upon compress/decompress in File Manager
+* Add better support for a new upcoming version of Virtualmin Support module
+* Add support to copy text from draggable by holding ⎇ key
+* Fix to display delete/move to trash button color conditionally based on option in File Manager
+* Fix system monitors icons for System and Server Status module
+* Fix Custom Commands module support in Usermin
+
+<!--- separator --->
 
 #### Version 19.84.7 (December 14, 2021)
 * Fix navigation detection with menu reload after progressive call end
@@ -63,7 +71,6 @@
 * Fix not to scroll nested preformatted text
 * Fix to align _tt_ tags inside of tables row
 
-<!--- separator --->
 
 #### Version 19.83 (August 28, 2021)
 * Add ability to install a panel as Chrome application on desktop or mobile device [#1459](https://github.com/authentic-theme/authentic-theme/issues/1459)
