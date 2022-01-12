@@ -1068,7 +1068,7 @@ sub nav_links
     $menu_width_needed += $button_width;
 
     # Servers index menu
-    $menu_width_needed += $button_width * 2;
+    $menu_width_needed += $button_width * 2 if ($theme_server_webprefix);
 
     if ($menu_width - $menu_width_needed < $button_width - $button_margin) {
         $menu_elem_br = '<li class="flex-br"></li>';
