@@ -1248,7 +1248,16 @@ body_cpufans=مراوح وحدة المعالجة المركزية
 body_cpufan_rpm=دورة في الدقيقة
 body_cpufan=مروحة وحدة المعالجة المركزية
 filemanager_symlink_exists=لا يمكن إنشاء <tt>$1</tt> لأن الملف موجود بالفعل في <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=نسخ جميع معلومات النظام إلى الحافظة ؛ اضغط باستمرار على مفتاح لنسخ بيانات النص العادي بدلاً من التخفيضات
 theme_xhred_tooltip_side_slider_clipboard_account=نسخ جميع معلومات الحساب إلى الحافظة ؛ اضغط باستمرار لنسخ بيانات النص العادي بدلاً من التخفيضات
 tooltip_back_to_servers_index_master=وحدة فهرس خوادم Webmin على الجهاز الرئيسي
 tooltip_list_other_servers=قائمة خوادم Webmin الأخرى المسجلة
+theme_xhred_status_module_mon_up=فوق
+theme_xhred_status_module_mon_down=تحت
+theme_xhred_status_module_mon_webmin=Webmin معطل
+theme_xhred_status_module_mon_timed=نفد وقته
+theme_xhred_status_module_mon_not=غير مثبت
+theme_xhred_status_module_mon_skip=تم تخطي
+theme_xhred_status_module_mon_quest=غير متاح

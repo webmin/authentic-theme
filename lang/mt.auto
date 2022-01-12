@@ -1248,7 +1248,16 @@ body_cpufans=Fannijiet tas-CPU
 body_cpufan_rpm=RPM
 body_cpufan=Fann tas-CPU
 filemanager_symlink_exists=Ma tistax toħloq <tt>$1</tt> peress li l-fajl diġà jeżisti fi <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Ikkopja l-informazzjoni kollha tas-sistema fil-clipboard; żomm iċ-ċavetta biex tikkopja dejta b'test sempliċi aktar milli markdown
 theme_xhred_tooltip_side_slider_clipboard_account=Ikkopja l-informazzjoni kollha tal-kont fil-clipboard; żomm iċ-ċavetta biex tikkopja dejta b'test sempliċi aktar milli markdown
 tooltip_back_to_servers_index_master=Webmin servers indiċi modulu fuq magna kaptan
 tooltip_list_other_servers=Lista ta' servers oħra Webmin irreġistrati
+theme_xhred_status_module_mon_up=Up
+theme_xhred_status_module_mon_down='l isfel
+theme_xhred_status_module_mon_webmin=Webmin huwa mwaqqaf
+theme_xhred_status_module_mon_timed=Timed out
+theme_xhred_status_module_mon_not=Mhux installat
+theme_xhred_status_module_mon_skip=Qabeż
+theme_xhred_status_module_mon_quest=Mhux disponibbli

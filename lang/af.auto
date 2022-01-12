@@ -1248,7 +1248,16 @@ body_cpufans=CPU-aanhangers
 body_cpufan_rpm=RPM
 body_cpufan=CPU-waaier
 filemanager_symlink_exists=Kan nie <tt>$1</tt> skep nie aangesien lêer reeds in <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopieer alle stelselinligting na knipbord; hou sleutel in om gewone teksdata te kopieer eerder as afmerk
 theme_xhred_tooltip_side_slider_clipboard_account=Kopieer alle rekeninginligting na knipbord; hou sleutel in om gewone teksdata te kopieer eerder as afmerk
 tooltip_back_to_servers_index_master=Webmin-bedieners-indeksmodule op meestermasjien
 tooltip_list_other_servers=Lys van ander geregistreerde Webmin-bedieners
+theme_xhred_status_module_mon_up=Op
+theme_xhred_status_module_mon_down=Af
+theme_xhred_status_module_mon_webmin=Webmin is af
+theme_xhred_status_module_mon_timed=Tyd is verstreke
+theme_xhred_status_module_mon_not=Nie geïnstalleer nie
+theme_xhred_status_module_mon_skip=Oorgeslaan
+theme_xhred_status_module_mon_quest=Nie beskikbaar nie

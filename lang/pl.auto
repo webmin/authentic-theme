@@ -1166,7 +1166,16 @@ body_cpufans=Wentylatory procesora
 body_cpufan_rpm=RPM
 body_cpufan=Wentylator procesora
 filemanager_symlink_exists=Nie można utworzyć <tt>$1</tt> ponieważ plik już istnieje w <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Skopiuj wszystkie informacje o systemie do schowka; przytrzymaj klawisz, aby skopiować dane w postaci zwykłego tekstu zamiast przecen
 theme_xhred_tooltip_side_slider_clipboard_account=Skopiuj wszystkie informacje o koncie do schowka; przytrzymaj klawisz, aby skopiować dane w postaci zwykłego tekstu zamiast przecen
 tooltip_back_to_servers_index_master=Moduł indeksowania serwerów Webmin na maszynie głównej
 tooltip_list_other_servers=Lista innych zarejestrowanych serwerów Webmin
+theme_xhred_status_module_mon_up=W górę
+theme_xhred_status_module_mon_down=W dół
+theme_xhred_status_module_mon_webmin=Webmin nie działa
+theme_xhred_status_module_mon_timed=Przekroczono limit czasu
+theme_xhred_status_module_mon_not=Nie zainstalowany
+theme_xhred_status_module_mon_skip=Pominięto
+theme_xhred_status_module_mon_quest=Niedostępne

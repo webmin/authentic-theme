@@ -1248,7 +1248,16 @@ body_cpufans=Вентылятары працэсара
 body_cpufan_rpm=Абароты ў хвіліну
 body_cpufan=Вентылятар працэсара
 filemanager_symlink_exists=Немагчыма стварыць <tt>$1</tt> бо файл ужо існуе ў <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Скапіруйце ўсю сістэмную інфармацыю ў буфер абмену; утрымлівайце клавішу, каб скапіяваць тэкставыя даныя, а не ўцэнку
 theme_xhred_tooltip_side_slider_clipboard_account=Скапіруйце ўсю інфармацыю ўліковага запісу ў буфер абмену; утрымлівайце клавішу, каб скапіяваць тэкставыя даныя, а не ўцэнку
 tooltip_back_to_servers_index_master=Модуль індэксу сервераў Webmin на галоўнай машыне
 tooltip_list_other_servers=Спіс іншых зарэгістраваных сервераў Webmin
+theme_xhred_status_module_mon_up=Уверх
+theme_xhred_status_module_mon_down=Уніз
+theme_xhred_status_module_mon_webmin=Webmin не працуе
+theme_xhred_status_module_mon_timed=Тайм-аўт
+theme_xhred_status_module_mon_not=Не ўстаноўлена
+theme_xhred_status_module_mon_skip=Прапушчаны
+theme_xhred_status_module_mon_quest=Не даступны

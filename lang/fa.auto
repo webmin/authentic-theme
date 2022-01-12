@@ -1248,7 +1248,16 @@ body_cpufans=فن های CPU
 body_cpufan_rpm=دور در دقیقه
 body_cpufan=فن CPU
 filemanager_symlink_exists=نمی توان <tt>$1</tt> ایجاد کرد زیرا فایل از قبل در <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=تمام اطلاعات سیستم را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید را نگه دارید
 theme_xhred_tooltip_side_slider_clipboard_account=تمام اطلاعات حساب را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید را نگه دارید
 tooltip_back_to_servers_index_master=ماژول نمایه سرورهای وبمین در ماشین اصلی
 tooltip_list_other_servers=لیست سایر سرورهای وبمین ثبت شده
+theme_xhred_status_module_mon_up=بالا
+theme_xhred_status_module_mon_down=پایین
+theme_xhred_status_module_mon_webmin=وب مین از کار افتاده است
+theme_xhred_status_module_mon_timed=وقت تمام شد
+theme_xhred_status_module_mon_not=نصب نشده
+theme_xhred_status_module_mon_skip=رد شد
+theme_xhred_status_module_mon_quest=در دسترس نیست

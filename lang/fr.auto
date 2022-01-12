@@ -113,7 +113,16 @@ body_cpufans=ventilateurs de processeur
 body_cpufan_rpm=RPM
 body_cpufan=ventilateur de CPU
 filemanager_symlink_exists=Impossible de créer <tt>$1</tt> car le fichier existe déjà dans <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copiez toutes les informations système dans le presse-papiers ; maintenez la touche enfoncée pour copier les données en texte brut plutôt que la démarque
 theme_xhred_tooltip_side_slider_clipboard_account=Copiez toutes les informations de compte dans le presse-papiers ; maintenez la touche enfoncée pour copier les données en texte brut plutôt que la démarque
 tooltip_back_to_servers_index_master=Module d'indexation des serveurs Webmin sur la machine maître
 tooltip_list_other_servers=Liste des autres serveurs Webmin enregistrés
+theme_xhred_status_module_mon_up=En haut
+theme_xhred_status_module_mon_down=Vers le bas
+theme_xhred_status_module_mon_webmin=Webmin est en panne
+theme_xhred_status_module_mon_timed=Fin du temps
+theme_xhred_status_module_mon_not=Pas installé
+theme_xhred_status_module_mon_skip=Ignoré
+theme_xhred_status_module_mon_quest=Indisponible

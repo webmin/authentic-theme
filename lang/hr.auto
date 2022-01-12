@@ -1248,7 +1248,16 @@ body_cpufans=CPU ventilatori
 body_cpufan_rpm=RPM
 body_cpufan=CPU ventilator
 filemanager_symlink_exists=Nije moguće stvoriti <tt>$1</tt> jer datoteka već postoji u <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopirajte sve informacije o sustavu u međuspremnik; držite tipku za kopiranje običnih tekstualnih podataka umjesto smanjenja
 theme_xhred_tooltip_side_slider_clipboard_account=Kopirajte sve podatke o računu u međuspremnik; držite tipku za kopiranje običnih tekstualnih podataka umjesto smanjenja
 tooltip_back_to_servers_index_master=Indeksni modul Webmin poslužitelja na glavnom stroju
 tooltip_list_other_servers=Popis ostalih registriranih Webmin poslužitelja
+theme_xhred_status_module_mon_up=gore
+theme_xhred_status_module_mon_down=dolje
+theme_xhred_status_module_mon_webmin=Webmin ne radi
+theme_xhred_status_module_mon_timed=Isteklo
+theme_xhred_status_module_mon_not=Nije instalirano
+theme_xhred_status_module_mon_skip=Preskočeno
+theme_xhred_status_module_mon_quest=Nije dostupno

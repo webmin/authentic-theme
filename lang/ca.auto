@@ -563,7 +563,16 @@ body_cpufans=Ventiladors de CPU
 body_cpufan_rpm=RPM
 body_cpufan=Ventilador de la CPU
 filemanager_symlink_exists=No es pot crear <tt>$1</tt> perquè el fitxer ja existeix a <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copieu tota la informació del sistema al porta-retalls; Mantingueu premuda la tecla per copiar dades de text senzill en lloc de rebaixar
 theme_xhred_tooltip_side_slider_clipboard_account=Copieu tota la informació del compte al porta-retalls; Mantingueu premuda la tecla per copiar dades de text senzill en lloc de rebaixar
 tooltip_back_to_servers_index_master=Mòdul d'índex dels servidors Webmin a la màquina mestra
 tooltip_list_other_servers=Llista d'altres servidors Webmin registrats
+theme_xhred_status_module_mon_up=Amunt
+theme_xhred_status_module_mon_down=Avall
+theme_xhred_status_module_mon_webmin=Webmin està caigut
+theme_xhred_status_module_mon_timed=S'ha acabat el temps
+theme_xhred_status_module_mon_not=No està instal · lat
+theme_xhred_status_module_mon_skip=Saltat
+theme_xhred_status_module_mon_quest=No disponible

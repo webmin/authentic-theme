@@ -1248,7 +1248,16 @@ body_cpufans=Вентилатори на процесора
 body_cpufan_rpm=RPM
 body_cpufan=Вентилатор на процесора
 filemanager_symlink_exists=Не може да се създаде <tt>$1</tt> тъй като файлът вече съществува в <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Копирайте цялата системна информация в клипборда; задръжте клавиша, за да копирате обикновени текстови данни, а не намаление
 theme_xhred_tooltip_side_slider_clipboard_account=Копирайте цялата информация за акаунта в клипборда; задръжте клавиша, за да копирате обикновени текстови данни, а не намаление
 tooltip_back_to_servers_index_master=Модул за индексиране на сървърите на Webmin на главната машина
 tooltip_list_other_servers=Списък с други регистрирани сървъри на Webmin
+theme_xhred_status_module_mon_up=нагоре
+theme_xhred_status_module_mon_down=надолу
+theme_xhred_status_module_mon_webmin=Webmin не работи
+theme_xhred_status_module_mon_timed=Времето изтече
+theme_xhred_status_module_mon_not=Не е инсталирано
+theme_xhred_status_module_mon_skip=Пропуснати
+theme_xhred_status_module_mon_quest=Не е наличен

@@ -113,7 +113,16 @@ body_cpufans=CPU-vifter
 body_cpufan_rpm=RPM
 body_cpufan=CPU vifte
 filemanager_symlink_exists=Kan ikke opprette <tt>$1</tt> da filen allerede eksisterer i <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier all systeminformasjon til utklippstavlen; hold nede tasten for å kopiere ren tekstdata i stedet for markering
 theme_xhred_tooltip_side_slider_clipboard_account=Kopier all kontoinformasjon til utklippstavlen; hold nede tasten for å kopiere ren tekstdata i stedet for markering
 tooltip_back_to_servers_index_master=Webmin-servere-indeksmodul på hovedmaskin
 tooltip_list_other_servers=Liste over andre registrerte Webmin-servere
+theme_xhred_status_module_mon_up=Opp
+theme_xhred_status_module_mon_down=Ned
+theme_xhred_status_module_mon_webmin=Webmin er nede
+theme_xhred_status_module_mon_timed=Tidsavbrudd
+theme_xhred_status_module_mon_not=Ikke installert
+theme_xhred_status_module_mon_skip=Hoppet over
+theme_xhred_status_module_mon_quest=Ikke tilgjengelig

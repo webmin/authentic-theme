@@ -1248,7 +1248,16 @@ body_cpufans=CPU 팬
 body_cpufan_rpm=RPM
 body_cpufan=CPU 팬
 filemanager_symlink_exists=파일이 <tt>$2</tt> <tt>$1</tt> 를) 만들 수 없습니다
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=모든 시스템 정보를 클립보드에 복사합니다. 키를 누르고 있으면 마크다운이 아닌 일반 텍스트 데이터를 복사할 수 있습니다
 theme_xhred_tooltip_side_slider_clipboard_account=모든 계정 정보를 클립보드에 복사합니다. 키를 누르고 있으면 마크다운이 아닌 일반 텍스트 데이터를 복사할 수 있습니다
 tooltip_back_to_servers_index_master=마스터 시스템의 Webmin 서버 색인 모듈
 tooltip_list_other_servers=기타 등록된 Webmin 서버 목록
+theme_xhred_status_module_mon_up=위로
+theme_xhred_status_module_mon_down=아래에
+theme_xhred_status_module_mon_webmin=웹민이 다운되었습니다
+theme_xhred_status_module_mon_timed=시간 초과
+theme_xhred_status_module_mon_not=설치되지 않음
+theme_xhred_status_module_mon_skip=건너뜀
+theme_xhred_status_module_mon_quest=사용할 수 없습니다

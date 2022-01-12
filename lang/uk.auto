@@ -1248,7 +1248,16 @@ body_cpufans=Вентилятори процесора
 body_cpufan_rpm=RPM
 body_cpufan=Вентилятор процесора
 filemanager_symlink_exists=Неможливо створити <tt>$1</tt> оскільки файл уже існує в <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Скопіюйте всю системну інформацію в буфер обміну; утримуйте клавішу ⎇, щоб скопіювати звичайні текстові дані, а не розцінку
 theme_xhred_tooltip_side_slider_clipboard_account=Скопіюйте всю інформацію облікового запису в буфер обміну; утримуйте клавішу ⎇, щоб скопіювати звичайні текстові дані, а не розцінку
 tooltip_back_to_servers_index_master=Модуль індексування серверів Webmin на головній машині
 tooltip_list_other_servers=Список інших зареєстрованих серверів Webmin
+theme_xhred_status_module_mon_up=Вгору
+theme_xhred_status_module_mon_down=Вниз
+theme_xhred_status_module_mon_webmin=Webmin не працює
+theme_xhred_status_module_mon_timed=Час вийшов
+theme_xhred_status_module_mon_not=Не встановлено
+theme_xhred_status_module_mon_skip=Пропущено
+theme_xhred_status_module_mon_quest=Недоступний

@@ -633,7 +633,16 @@ body_cpufans=Peminat CPU
 body_cpufan_rpm=RPM
 body_cpufan=kipas CPU
 filemanager_symlink_exists=Tidak boleh mencipta <tt>$1</tt> kerana fail sudah wujud dalam <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Salin semua maklumat sistem ke papan keratan; pegang kekunci untuk menyalin data teks biasa dan bukannya penurunan harga
 theme_xhred_tooltip_side_slider_clipboard_account=Salin semua maklumat akaun ke papan keratan; pegang kekunci untuk menyalin data teks biasa dan bukannya penurunan harga
 tooltip_back_to_servers_index_master=Modul indeks pelayan webmin pada mesin induk
 tooltip_list_other_servers=Senarai pelayan Webmin berdaftar lain
+theme_xhred_status_module_mon_up=Naik
+theme_xhred_status_module_mon_down=Bawah
+theme_xhred_status_module_mon_webmin=Webmin tidak berfungsi
+theme_xhred_status_module_mon_timed=Tamat masa
+theme_xhred_status_module_mon_not=Tidak dipasang
+theme_xhred_status_module_mon_skip=Dilangkau
+theme_xhred_status_module_mon_quest=Tidak tersedia

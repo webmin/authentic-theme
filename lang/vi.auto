@@ -1248,7 +1248,16 @@ body_cpufans=Quạt CPU
 body_cpufan_rpm=RPM
 body_cpufan=quạt làm mát bộ xứ lí trung tâm
 filemanager_symlink_exists=Không thể tạo <tt>$1</tt> vì tệp đã tồn tại trong <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Sao chép tất cả thông tin hệ thống vào khay nhớ tạm; giữ phím để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
 theme_xhred_tooltip_side_slider_clipboard_account=Sao chép tất cả thông tin tài khoản vào khay nhớ tạm; giữ phím để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
 tooltip_back_to_servers_index_master=Mô-đun chỉ mục máy chủ Webmin trên máy chủ
 tooltip_list_other_servers=Danh sách các máy chủ Webmin đã đăng ký khác
+theme_xhred_status_module_mon_up=Hướng lên
+theme_xhred_status_module_mon_down=Xuống
+theme_xhred_status_module_mon_webmin=Webmin không hoạt động
+theme_xhred_status_module_mon_timed=Hết giờ
+theme_xhred_status_module_mon_not=Chưa cài đặt
+theme_xhred_status_module_mon_skip=Đã bỏ qua
+theme_xhred_status_module_mon_quest=Không có sẵn

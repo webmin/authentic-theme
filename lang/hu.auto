@@ -1248,7 +1248,16 @@ body_cpufans=CPU ventilátorok
 body_cpufan_rpm=FORDULAT
 body_cpufan=CPU ventilátor
 filemanager_symlink_exists=A(z) <tt>$1</tt> nem hozható létre, mivel a fájl már létezik a(z) <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Másolja az összes rendszerinformációt a vágólapra; Tartsa lenyomva a billentyűt az egyszerű szöveges adatok másolásához, nem pedig a jelöléshez
 theme_xhred_tooltip_side_slider_clipboard_account=Másolja az összes fiókinformációt a vágólapra; Tartsa lenyomva a billentyűt az egyszerű szöveges adatok másolásához, nem pedig a jelöléshez
 tooltip_back_to_servers_index_master=Webmin szerverek indexmodulja a főgépen
 tooltip_list_other_servers=Egyéb regisztrált Webmin szerverek listája
+theme_xhred_status_module_mon_up=Fel
+theme_xhred_status_module_mon_down=Le
+theme_xhred_status_module_mon_webmin=A Webmin nem működik
+theme_xhred_status_module_mon_timed=Időtúllépés
+theme_xhred_status_module_mon_not=Nem telepített
+theme_xhred_status_module_mon_skip=Kihagyva
+theme_xhred_status_module_mon_quest=Nem elérhető

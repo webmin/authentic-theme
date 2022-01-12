@@ -1248,7 +1248,16 @@ body_cpufans=CPU ventiliatoriai
 body_cpufan_rpm=RPM
 body_cpufan=CPU ventiliatorius
 filemanager_symlink_exists=Negalima sukurti <tt>$1</tt> nes failas jau yra <tt>$2</tt>
+
+#19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Nukopijuokite visą sistemos informaciją į mainų sritį; laikykite nuspaudę klavišą, norėdami nukopijuoti grynojo teksto duomenis, o ne žymėti
 theme_xhred_tooltip_side_slider_clipboard_account=Nukopijuokite visą paskyros informaciją į mainų sritį; laikykite nuspaudę klavišą, norėdami nukopijuoti paprasto teksto duomenis, o ne žymėti
 tooltip_back_to_servers_index_master=Webmin serverių indekso modulis pagrindiniame kompiuteryje
 tooltip_list_other_servers=Kitų registruotų Webmin serverių sąrašas
+theme_xhred_status_module_mon_up=Aukštyn
+theme_xhred_status_module_mon_down=Žemyn
+theme_xhred_status_module_mon_webmin=Webmin neveikia
+theme_xhred_status_module_mon_timed=Laikas baigėsi
+theme_xhred_status_module_mon_not=Neįdiegta
+theme_xhred_status_module_mon_skip=Praleistas
+theme_xhred_status_module_mon_quest=Nepasiekiamas
