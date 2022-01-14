@@ -1067,6 +1067,7 @@ sub print_content
                             guid          => $remote_user_info[3],
                             allowed_paths => \@allowed_paths,
                             base          => $base,
+                            subprivileged => !$access{'work_as_root'},
                             access        => $access{'work_as_user'} };
 
     print_json([\%list_data]);
