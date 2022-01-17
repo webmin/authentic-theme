@@ -546,8 +546,6 @@ sub theme_settings_format
                       ]);
     }
     my $description     = $theme_text{ $k . '_description' };
-    my $popover_trigger = 'click';
-    my $cursor          = ($popover_trigger eq 'click' ? ' cursor-pointer' : undef);
 
     # Return formatted
     return [
@@ -555,12 +553,10 @@ sub theme_settings_format
              (
               $description && (
                              $k =~ /level_navigation|leftmenu_width/ ? undef :
-                             '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-help' .
-                             $cursor . '" data-html="true" data-toggle="popover" data-trigger="' . $popover_trigger .
-                             '" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
+                             '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-pointer tconfig-popover" data-html="true" data-toggle="popover" data-trigger="click" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
               )
              ) .
-               '' . $theme_text{$k} . ''
+               '<span data-text>' . $theme_text{$k} . '</span>'
                .
                (
                  $description && ($k =~ /level_navigation|leftmenu_width/ ?
