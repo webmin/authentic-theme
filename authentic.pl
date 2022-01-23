@@ -203,11 +203,6 @@ sub theme_footer
     # Post-body header overlay
     embed_overlay_postbody() if (!http_x_request());
 
-    # Refresh menu if requested on redirect
-    if (get_env('request_uri') =~ /vrm=1/) {
-        theme_post_save_domains();
-    }
-
     print '</body>', "\n";
     print '</html>', "\n";
 }
@@ -1134,8 +1129,9 @@ sub theme_ui_checked_columns_row
     my $rv;
     $rv .= "<tr" . ($cb ? " " . $cb : "") . " class='ui_checked_columns'>\n";
     $rv .=
-      "<td class='ui_checked_checkbox flexed' " . (ref($tdtags) ? $tdtags->[0] : '') .
-      "><div class=\"wh-100p flex-wrapper flex-centered flex-start\">" . &ui_checkbox($checkname, $checkvalue, undef, $checked, $tags, $disabled, ' thick') . "</div></td>\n";
+      "<td class='ui_checked_checkbox flexed' " .
+      (ref($tdtags) ? $tdtags->[0] : '') . "><div class=\"wh-100p flex-wrapper flex-centered flex-start\">" .
+      &ui_checkbox($checkname, $checkvalue, undef, $checked, $tags, $disabled, ' thick') . "</div></td>\n";
     my $i;
     for ($i = 0; $i < @$cols; $i++) {
         $rv .= "<td " . (ref($tdtags) ? $tdtags->[$i + 1] : '') . ">";
@@ -1307,6 +1303,7 @@ sub theme_redirect
         ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
     }
     $url = "$prefix$url" if ($url && $noredir);
+    theme_redirect_url_alterer(\$url);
 
     my ($remote_server_webprefix, $remote_server_linked) = &theme_get_webprefix_local('array');
     if ($remote_server_webprefix) {
@@ -1329,6 +1326,24 @@ sub theme_redirect
         set_theme_temp_data('redirected', $url);
         $main::ignore_errors = 0;
         print "Location: $url\n\n";
+    }
+}
+
+sub theme_redirect_url_alterer
+{
+    my ($u) = @_;
+    my ($q) = $u =~ /\.cgi.*(\?)/;
+    my $r   = &globals('get', 'navigation-reload');
+
+    if ($r) {
+        if ($u !~ /\.cgi/) {
+            if ($u !~ /\/$/) {
+                $$u .= '/';
+            }
+            $$u .= 'index.cgi';
+        }
+        my $t = $q ? '&' : '?';
+        $$u .= "${t}refresh-navigation=1";
     }
 }
 
