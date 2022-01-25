@@ -1323,7 +1323,8 @@ sub theme_redirect
 
     if (!theme_redirect_download($url)) {
         $main::ignore_errors = 1;
-        set_theme_temp_data('redirected', $url);
+        set_theme_temp_data('redirected', $url)
+          if (!theme_set_redirect_forbidden($url));
         $main::ignore_errors = 0;
         print "Location: $url\n\n";
     }
@@ -1345,6 +1346,18 @@ sub theme_redirect_url_alterer
         my $t = $q ? '&' : '?';
         $$u .= "${t}refresh-navigation=1";
     }
+}
+
+sub theme_set_redirect_forbidden
+{
+    my ($url) = @_;
+
+    if ($url &&
+        ($url =~ /\/tunnel\/link\.cgi\//))
+    {
+        return 1;
+    }
+    return 0;
 }
 
 sub theme_header_redirect_download
