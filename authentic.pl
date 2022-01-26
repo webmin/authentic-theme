@@ -197,7 +197,7 @@ sub theme_footer
         get_env('script_name') ne '/pam_login.cgi'     &&
         !http_x_request())
     {
-        if (!globals('get', 'error-fatal-ignored')) {
+        if (!globals('get', 'error-fatal')) {
             print '<div class="top-aprogress"></div>', "\n";
         }
     }
