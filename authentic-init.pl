@@ -251,7 +251,7 @@ sub embed_header
     };
     print ' <script>';
     print &$_sstj('theme_server_data_available_acls', 'get_acls_status', 'filemin');
-    print &$_sstj('theme_server_data_available_selinux', 'is_selinux_enabled');
+    print &$_sstj('theme_server_data_available_selinux', 'get_selinux_status', 'filemin');
     print "</script>\n";
 
     # Server statuses to JavaScript. End.
@@ -1730,6 +1730,7 @@ sub lib_csf_control
 
 sub embed_product_branding
 {
+    return if (globals('get', 'error-fatal-ignored'));
     return if ($theme_config{"settings_embed_product_branding_privileged"} eq 'false');
     return &custom_embed_product_branding(@_)
       if (defined(&custom_embed_product_branding));
