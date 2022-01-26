@@ -197,7 +197,9 @@ sub theme_footer
         get_env('script_name') ne '/pam_login.cgi'     &&
         !http_x_request())
     {
-        print '<div class="top-aprogress"></div>', "\n";
+        if (!globals('get', 'error-fatal-ignored')) {
+            print '<div class="top-aprogress"></div>', "\n";
+        }
     }
 
     # Post-body header overlay
