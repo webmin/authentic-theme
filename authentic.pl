@@ -56,7 +56,7 @@ sub theme_header
     embed_overlay_prebody() if (!http_x_request());
 
     # Embed branding
-    embed_product_branding() if (!http_x_request());
+    embed_product_branding() if (!http_x_request() && !get_env('http_referer'));
 
     if (@_ > 1 && $_[1] ne 'stripped') {
 
