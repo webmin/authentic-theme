@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=وقت ختم
 theme_xhred_status_module_mon_not=انسٹال نہیں ہے۔
 theme_xhred_status_module_mon_skip=چھوڑ دیا
 theme_xhred_status_module_mon_quest=دستیاب نہیں ہے
+theme_xhred_webminlog_module_no_command_escapes=ایگزیکیٹڈ کمانڈ کے لیے بیک سلیش کو ٹوگل کریں۔
+settings_navigation_auto_fold_category=آٹو فولڈ غیر فعال زمرے

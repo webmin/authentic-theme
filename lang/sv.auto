@@ -143,3 +143,5 @@ theme_xhred_status_module_mon_timed=Timeout
 theme_xhred_status_module_mon_not=Inte installerad
 theme_xhred_status_module_mon_skip=Hoppat över
 theme_xhred_status_module_mon_quest=Inte tillgänglig
+theme_xhred_webminlog_module_no_command_escapes=Växla omvänt snedstreck för kört kommando
+settings_navigation_auto_fold_category=Vik inaktiva kategorier automatiskt

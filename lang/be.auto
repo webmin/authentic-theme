@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=Тайм-аўт
 theme_xhred_status_module_mon_not=Не ўстаноўлена
 theme_xhred_status_module_mon_skip=Прапушчаны
 theme_xhred_status_module_mon_quest=Не даступны
+theme_xhred_webminlog_module_no_command_escapes=Пераключэнне зваротнай касой рысы для выкананай каманды
+settings_navigation_auto_fold_category=Аўтаматычнае згортванне неактыўных катэгорый

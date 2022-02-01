@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=Времето изтече
 theme_xhred_status_module_mon_not=Не е инсталирано
 theme_xhred_status_module_mon_skip=Пропуснати
 theme_xhred_status_module_mon_quest=Не е наличен
+theme_xhred_webminlog_module_no_command_escapes=Превключване на обратна наклонена черта за изпълнена команда
+settings_navigation_auto_fold_category=Автоматично сгъване на неактивни категории

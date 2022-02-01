@@ -26,6 +26,7 @@ var
 
     // Navigation menu options defaults
     settings_navigation_color = 'blue',
+    settings_navigation_auto_fold_category = true,
     settings_grayscale_level_navigation = '0',
     settings_sepia_level_navigation = '0',
     settings_saturation_level_navigation = '1',
