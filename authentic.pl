@@ -611,9 +611,9 @@ sub theme_ui_form_end
             if (ref($b)) {
                 $rv .= &ui_submit($b->[1], $b->[0], $b->[3], $b->[4], $b->[5], $b->[6]) . ($b->[2] ? " " . $b->[2] : "");
             } elsif ($b) {
-                $rv .= "<span>$b</span>\n";
+                $rv .= "<span data-ui-form-end='inline'>$b</span>\n";
             } else {
-                $rv .= "<span>&nbsp;</span>\n";
+                $rv .= "<span data-ui-form-end='empty'>&nbsp;</span>\n";
             }
         }
         $rv .= '</div>';
