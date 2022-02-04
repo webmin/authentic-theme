@@ -162,8 +162,8 @@ sub theme_footer
             $url = "$theme_webprefix$url" if ($url =~ /^\//);
             $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
             print
-"&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> ",
-              &text('main_return', $_[$i + 1]), "</a>\n";
+"&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> <span>",
+              &text('main_return', $_[$i + 1]), "</span></a>\n";
         }
     }
 
@@ -557,7 +557,7 @@ sub theme_select_all_link
     my ($field, $form, $text) = @_;
     $form = int($form);
     $text ||= $text{'ui_selall'};
-    return "<a class='select_all' href='#' onclick='theme_select_all_link($form, \"$field\"); return false'>$text</a>";
+    return "<a class='select_all' href='#' onclick='theme_select_all_link($form, \"$field\"); return false'><span>$text</span></a>";
 }
 
 sub theme_select_invert_link
@@ -566,7 +566,7 @@ sub theme_select_invert_link
     my ($field, $form, $text) = @_;
     $form = int($form);
     $text ||= $text{'ui_selinv'};
-    return "<a class='select_invert' href='#' onclick='theme_select_invert_link($form, \"$field\"); return false'>$text</a>";
+    return "<a class='select_invert' href='#' onclick='theme_select_invert_link($form, \"$field\"); return false'><span>$text</span></a>";
 }
 
 sub theme_select_rows_link
@@ -577,7 +577,7 @@ sub theme_select_rows_link
     $js .=
 "for(var i=0; i<document.forms[$form].${field}.length; i++) { var r = document.forms[$form].${field}[i]; r.checked = sel[r.value]; \$(r).trigger(\"change\"); } ";
     $js .= "return false;";
-    return "<a href='#' onClick='$js'>$text</a>";
+    return "<a href='#' onClick='$js'><span>$text</span></a>";
 }
 
 sub theme_ui_form_start
@@ -611,9 +611,9 @@ sub theme_ui_form_end
             if (ref($b)) {
                 $rv .= &ui_submit($b->[1], $b->[0], $b->[3], $b->[4], $b->[5], $b->[6]) . ($b->[2] ? " " . $b->[2] : "");
             } elsif ($b) {
-                $rv .= "<span>$b</span>\n";
+                $rv .= "<span data-ui-form-end='inline'>$b</span>\n";
             } else {
-                $rv .= "<span>&nbsp;</span>\n";
+                $rv .= "<span data-ui-form-end='empty'>&nbsp;</span>\n";
             }
         }
         $rv .= '</div>';

@@ -6,6 +6,7 @@
 * Add ability to optionally control existing file overwriting upon compress/decompress in File Manager
 * Add better support for a new upcoming version of Virtualmin Support module
 * Add support to copy text from draggable by holding ⎇ key
+* Add an option to disable auto folding inactive categories in navigation menu
 * Fix to display delete/move to trash button color conditionally based on option in File Manager
 * Fix system monitors icons for System and Server Status module
 * Fix Custom Commands module support in Usermin

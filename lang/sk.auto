@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=Vypršal
 theme_xhred_status_module_mon_not=Nie je nainštalované
 theme_xhred_status_module_mon_skip=Preskočené
 theme_xhred_status_module_mon_quest=Nie je k dispozícií
+theme_xhred_webminlog_module_no_command_escapes=Prepnúť spätné lomky pre vykonaný príkaz
+settings_navigation_auto_fold_category=Automatické skladanie neaktívnych kategórií

@@ -1103,3 +1103,5 @@ theme_xhred_status_module_mon_timed=Čas vypršel
 theme_xhred_status_module_mon_not=Není instalován
 theme_xhred_status_module_mon_skip=Přeskočeno
 theme_xhred_status_module_mon_quest=Není dostupný
+theme_xhred_webminlog_module_no_command_escapes=Přepnout zpětná lomítka pro vykonaný příkaz
+settings_navigation_auto_fold_category=Automatické skládání neaktivních kategorií

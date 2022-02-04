@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=Tyd is verstreke
 theme_xhred_status_module_mon_not=Nie geïnstalleer nie
 theme_xhred_status_module_mon_skip=Oorgeslaan
 theme_xhred_status_module_mon_quest=Nie beskikbaar nie
+theme_xhred_webminlog_module_no_command_escapes=Wissel agterste skuinsstreepies vir uitgevoer opdrag
+settings_navigation_auto_fold_category=Vou onaktiewe kategorieë outomaties

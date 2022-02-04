@@ -1173,3 +1173,5 @@ theme_xhred_status_module_mon_timed=Timeout
 theme_xhred_status_module_mon_not=Ikke installeret
 theme_xhred_status_module_mon_skip=Sprang over
 theme_xhred_status_module_mon_quest=Ikke tilgængelig
+theme_xhred_webminlog_module_no_command_escapes=Skift omvendte skråstreger for udført kommando
+settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier

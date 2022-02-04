@@ -1100,7 +1100,7 @@ sub get_button_style
     {
         $class = "info ";
         $icon  = "search";
-    } elsif (string_contains($keys, "dmass_move") || string_contains($keys, "domains_move")) {
+    } elsif (string_contains($keys, "dmass_move") || string_contains($keys, "domains_move") || string_contains($keys, "databases_remoteok")) {
         $class = "warning ";
         $icon  = " fa2 fa2-transfer";
     } elsif (string_contains($keys, "restart") || string_contains($keys, "edit_kill")) {

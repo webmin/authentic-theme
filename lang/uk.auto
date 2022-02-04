@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=Час вийшов
 theme_xhred_status_module_mon_not=Не встановлено
 theme_xhred_status_module_mon_skip=Пропущено
 theme_xhred_status_module_mon_quest=Недоступний
+theme_xhred_webminlog_module_no_command_escapes=Перемикач зворотну косу риску для виконаної команди
+settings_navigation_auto_fold_category=Автоматичне згортання неактивних категорій

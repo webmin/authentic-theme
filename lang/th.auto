@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=หมดเวลา
 theme_xhred_status_module_mon_not=ไม่ได้ติดตั้ง
 theme_xhred_status_module_mon_skip=ข้าม
 theme_xhred_status_module_mon_quest=ไม่ว่าง
+theme_xhred_webminlog_module_no_command_escapes=สลับแบ็กสแลชสำหรับคำสั่งที่ดำเนินการ
+settings_navigation_auto_fold_category=พับอัตโนมัติหมวดหมู่ที่ไม่ใช้งาน

@@ -72,6 +72,7 @@ sub theme_settings_raw
                        'settings_navigation_always_collapse',
                        'settings_leftmenu_width',
                        'settings_switch_rdisplay',
+                       'settings_navigation_auto_fold_category',
                        'settings_leftmenu_section_hide_refresh_modules',
                        'settings_leftmenu_section_hide_unused_modules',
                        'settings_collapse_navigation_link',

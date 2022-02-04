@@ -1261,3 +1261,5 @@ theme_xhred_status_module_mon_timed=시간 초과
 theme_xhred_status_module_mon_not=설치되지 않음
 theme_xhred_status_module_mon_skip=건너뜀
 theme_xhred_status_module_mon_quest=사용할 수 없습니다
+theme_xhred_webminlog_module_no_command_escapes=실행된 명령에 대한 백슬래시 전환
+settings_navigation_auto_fold_category=자동 접기 비활성 카테고리

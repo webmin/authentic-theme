@@ -126,3 +126,5 @@ theme_xhred_status_module_mon_timed=Fin du temps
 theme_xhred_status_module_mon_not=Pas installé
 theme_xhred_status_module_mon_skip=Ignoré
 theme_xhred_status_module_mon_quest=Indisponible
+theme_xhred_webminlog_module_no_command_escapes=Basculer les barres obliques inverses pour la commande exécutée
+settings_navigation_auto_fold_category=Plier automatiquement les catégories inactives

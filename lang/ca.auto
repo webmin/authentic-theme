@@ -576,3 +576,5 @@ theme_xhred_status_module_mon_timed=S'ha acabat el temps
 theme_xhred_status_module_mon_not=No està instal · lat
 theme_xhred_status_module_mon_skip=Saltat
 theme_xhred_status_module_mon_quest=No disponible
+theme_xhred_webminlog_module_no_command_escapes=Commuta les barres invertides per a l'ordre executada
+settings_navigation_auto_fold_category=Plega automàticament les categories inactives

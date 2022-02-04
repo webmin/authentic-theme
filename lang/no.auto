@@ -126,3 +126,5 @@ theme_xhred_status_module_mon_timed=Tidsavbrudd
 theme_xhred_status_module_mon_not=Ikke installert
 theme_xhred_status_module_mon_skip=Hoppet over
 theme_xhred_status_module_mon_quest=Ikke tilgjengelig
+theme_xhred_webminlog_module_no_command_escapes=Veksle omvendt skråstrek for utført kommando
+settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier
