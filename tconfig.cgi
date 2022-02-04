@@ -39,6 +39,7 @@ foreach my $sections (0 .. $#settings) {
             }
             $section->[0]->{'data'}[$i] = [$key_value_formated[0][0], $key_value_formated[0][1]];
             $key_value_formated[0][0] =~ s/<div.*?>.*?<\/div>//gm;
+            $key_value_formated[0][0] =~ s/<span\s+data-text.*?>(.*?)<\/span>/$1/gm;
             $key_value_formated[0][0] =~ s/<span.*?>.*?<\/span>//gm;
             $key_value_formated[0][0] =~ s/<sup.*?>.*?<\/sup>//gm;
             $key_value_formated[0][0] =~ s/<code>(.*?)<\/code>.*/$1/;
