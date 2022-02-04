@@ -994,7 +994,7 @@ sub theme_ui_alert_box
     } elsif ($class eq "info") {
         $type = 'alert-info', $tmsg = ($theme_text{'theme_global_info'} . '!'), $fa = 'fa-info-circle';
     } elsif ($class eq "warn") {
-        $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa-exclamation-circle';
+        $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa2 fa2-warning fa-1_15x margined-left--2';
     } elsif ($class eq "danger") {
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     }
