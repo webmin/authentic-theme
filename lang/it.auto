@@ -57,3 +57,5 @@ theme_xhred_status_module_mon_skip=saltato
 theme_xhred_status_module_mon_quest=Non disponibile
 theme_xhred_webminlog_module_no_command_escapes=Attiva/disattiva le barre rovesciate per il comando eseguito
 settings_navigation_auto_fold_category=Ripiega automaticamente le categorie inattive
+theme_xhred_tooltip_virtualmin_templates_filter_generating=Generazione di un elenco ricercabile di opzioni per il modello
+theme_xhred_tooltip_virtualmin_templates_filter=Cerca in tutte le opzioni del modello

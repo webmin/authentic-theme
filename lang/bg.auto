@@ -1263,3 +1263,5 @@ theme_xhred_status_module_mon_skip=Пропуснати
 theme_xhred_status_module_mon_quest=Не е наличен
 theme_xhred_webminlog_module_no_command_escapes=Превключване на обратна наклонена черта за изпълнена команда
 settings_navigation_auto_fold_category=Автоматично сгъване на неактивни категории
+theme_xhred_tooltip_virtualmin_templates_filter_generating=Генериране на списък с опции за търсене за шаблона
+theme_xhred_tooltip_virtualmin_templates_filter=Търсете във всички опции на шаблона

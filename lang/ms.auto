@@ -648,3 +648,5 @@ theme_xhred_status_module_mon_skip=Dilangkau
 theme_xhred_status_module_mon_quest=Tidak tersedia
 theme_xhred_webminlog_module_no_command_escapes=Togol garis miring ke belakang untuk arahan yang dilaksanakan
 settings_navigation_auto_fold_category=Autolipat kategori tidak aktif
+theme_xhred_tooltip_virtualmin_templates_filter_generating=Menjana senarai pilihan yang boleh dicari untuk templat
+theme_xhred_tooltip_virtualmin_templates_filter=Cari di seluruh semua pilihan templat

@@ -1263,3 +1263,5 @@ theme_xhred_status_module_mon_skip=건너뜀
 theme_xhred_status_module_mon_quest=사용할 수 없습니다
 theme_xhred_webminlog_module_no_command_escapes=실행된 명령에 대한 백슬래시 전환
 settings_navigation_auto_fold_category=자동 접기 비활성 카테고리
+theme_xhred_tooltip_virtualmin_templates_filter_generating=템플릿에 대한 검색 가능한 옵션 목록 생성
+theme_xhred_tooltip_virtualmin_templates_filter=템플릿의 모든 옵션에서 검색

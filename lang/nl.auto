@@ -1150,3 +1150,5 @@ theme_xhred_status_module_mon_skip=overgeslagen
 theme_xhred_status_module_mon_quest=Niet beschikbaar
 theme_xhred_webminlog_module_no_command_escapes=Schakel backslashes in voor uitgevoerde opdracht
 settings_navigation_auto_fold_category=Inactieve categorieën automatisch vouwen
+theme_xhred_tooltip_virtualmin_templates_filter_generating=Doorzoekbare lijst met opties voor de sjabloon genereren
+theme_xhred_tooltip_virtualmin_templates_filter=Doorzoek alle opties van de sjabloon

@@ -1263,3 +1263,5 @@ theme_xhred_status_module_mon_skip=تم تخطي
 theme_xhred_status_module_mon_quest=غير متاح
 theme_xhred_webminlog_module_no_command_escapes=تبديل الخطوط المائلة العكسية للأمر المنفذ
 settings_navigation_auto_fold_category=طي الفئات غير النشطة تلقائيًا
+theme_xhred_tooltip_virtualmin_templates_filter_generating=إنشاء قائمة خيارات يمكن البحث فيها للقالب
+theme_xhred_tooltip_virtualmin_templates_filter=ابحث في جميع خيارات النموذج

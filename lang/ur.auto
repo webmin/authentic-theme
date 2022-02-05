@@ -1263,3 +1263,5 @@ theme_xhred_status_module_mon_skip=چھوڑ دیا
 theme_xhred_status_module_mon_quest=دستیاب نہیں ہے
 theme_xhred_webminlog_module_no_command_escapes=ایگزیکیٹڈ کمانڈ کے لیے بیک سلیش کو ٹوگل کریں۔
 settings_navigation_auto_fold_category=آٹو فولڈ غیر فعال زمرے
+theme_xhred_tooltip_virtualmin_templates_filter_generating=ٹیمپلیٹ کے لیے اختیارات کی تلاش کے قابل فہرست تیار کرنا
+theme_xhred_tooltip_virtualmin_templates_filter=ٹیمپلیٹ کے تمام اختیارات میں تلاش کریں۔
