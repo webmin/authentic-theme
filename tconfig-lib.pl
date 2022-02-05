@@ -619,7 +619,7 @@ sub theme_controls
     return (
         "<div class=\"btn-group\">
             <a class=\"btn btn-success capitalize\" id=\"atsave\">
-                <i class=\"fa fa-fw fa-floppy-o\"></i><span>$text{'save'}</span>
+                <i class=\"fa fa-fw fa-floppy-o\"></i><span>$text{'save'}&nbsp;</span>
             </a>
             <a class=\"btn btn-default capitalize\" id=\"atrestore\">
                 <i class=\"fa fa-fw fa-history\"></i><span>$theme_text{'settings_right_restore_defaults'}</span>
