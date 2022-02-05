@@ -81,6 +81,30 @@ sub xhr
     }
 
     if ($type eq 'file') {
+        if ($action eq 'cache') {
+            if ($in{'module'} eq 'virtual-server') {
+                if ($in{'submodule'} eq 'server-templates') {
+                    if (foreign_available('virtual-server')) {
+                        foreign_require("virtual-server");
+                        my $var_dir            = $virtual_server::module_var_directory;
+                        my $server_template_id = int($in{'server-template-id'});
+                        my $server_template_id_user_file =
+                          "$var_dir/$in{'module'}-$in{'submodule'}-$server_template_id.$remote_user";
+                        if ($in{'subaction'} eq 'get') {
+                            if (-r $server_template_id_user_file) {
+                                $data{'cached'} = unserialise_variable(read_file_contents($server_template_id_user_file));
+                            }
+                        } elsif ($in{'subaction'} eq 'put') {
+                            my $data = convert_from_json($in{'data'});
+                            write_file_contents($server_template_id_user_file, serialise_variable($data));
+                            &$output(\%data);
+                            exit;
+                        }
+                    }
+                }
+            }
+        }
+
         if ($action eq 'motd') {
 
             # Get current user motd file
@@ -95,7 +119,7 @@ sub xhr
                 my $data = convert_from_json($in{'data'});
                 put_user_motd($data);
             }
-            
+
             # Get current user motd sent messages
             if ($subtype eq 'receive') {
                 $data{'motd'} = get_all_users_motd_data();
@@ -124,7 +148,7 @@ sub xhr
                 foreach my $c (@allowed_checksum_cmds) {
                     if ($cmd eq $c) {
                         if (has_command($c)) {
-                            $sum = &backquote_command("$c " . quotemeta($cfile) . " 2>/dev/null");
+                            $sum = backquote_command("$c " . quotemeta($cfile) . " 2>/dev/null");
                             $sum =~ s/(\S+)(\s+)(.*)/$1/;
                             $sum = trim($sum);
                         } else {

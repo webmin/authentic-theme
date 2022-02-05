@@ -1682,16 +1682,26 @@ sub clear_theme_cache
         &apache::module_install();
     }
 
-    # Clear links cache
+    # Clear Virtualmin related cache
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server");
+
+        # Clear menu links cache
         &virtual_server::clear_links_cache();
 
+        # Clear license status cache
         my $licence_status = &virtual_server::cache_file_path("licence-status");
         unlink_file($licence_status);
 
+        # Clear collected data
         my $collected_info_file = &virtual_server::cache_file_path("collected");
         unlink_file($collected_info_file);
+
+        # Clear server templates cache
+        my $vm_var_dir = $virtual_server::module_var_directory;
+        opendir(my $dir, $vm_var_dir);
+        grep {unlink_file("$vm_var_dir/$_") if (/^virtual\-server\-server\-templates/)} readdir($dir);
+        closedir $dir;
     }
 
     # Clear potentially stuck menus and other cache

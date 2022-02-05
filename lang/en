@@ -1323,3 +1323,6 @@ theme_xhred_status_module_mon_skip=Skipped
 theme_xhred_status_module_mon_quest=Not available
 theme_xhred_webminlog_module_no_command_escapes=Toggle backslashes for executed command
 settings_navigation_auto_fold_category=Auto fold inactive categories
+theme_xhred_tooltip_virtualmin_templates_filter_generating=Generating searchable list of options in templates
+theme_xhred_tooltip_virtualmin_templates_filter=Search through all options in templates
+
