@@ -1,12 +1,13 @@
 ## Changelog
 
-#### Version 19.85-RC2 (February 04, 2022)
+#### Version 19.85-RC3 (February 05, 2022)
 * Add ability to copy complete system information to clipboard with a single click [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
 * Add support to copy text from draggable by holding ⎇ key [webmin#1569/comment-1003734006](https://github.com/webmin/webmin/issues/1569#issuecomment-1003734006)
 * Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
 * Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
 * Add further multiple improvements to elements align across various browsers/platforms
 * Add an option to disable auto folding inactive categories in navigation menu
+* Add support for filtering server templates options in Virtualmin
 * Add visual improvements to Bandwidth Usage submodule in Virtualmin
 * Add various improvements and fixes to Edit Databases submodule in Virtualmin
 * Add ability to detach edited file to separate editor in Custom Commands module
