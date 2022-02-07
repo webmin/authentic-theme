@@ -55,8 +55,8 @@ sub theme_header
     print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!http_x_request());
 
-    # Embed branding
-    embed_product_branding() if (!http_x_request() && !get_env('http_referer'));
+    # Embed branding on login only
+    embed_product_branding() if (!http_x_request());
 
     if (@_ > 1 && $_[1] ne 'stripped') {
 
