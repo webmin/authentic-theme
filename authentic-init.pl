@@ -719,7 +719,7 @@ sub init_vars
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
 
-    setvar('theme-goto', get_theme_temp_data('goto', 1));
+    setvar('theme-goto', get_theme_temp_data('goto', 'keep'));
     $server_x_goto = get_theme_temp_data('goto')
       if (!http_x_request());
 
@@ -1738,11 +1738,6 @@ sub embed_product_branding
     return if ($theme_config{"settings_embed_product_branding_privileged"} eq 'false');
     return &custom_embed_product_branding(@_)
       if (defined(&custom_embed_product_branding));
-
-    # Embed only if page not reloaded or opened in a new tab
-    if (getvar('theme-goto', 'main', 'unset')) {
-        return;
-    }
 
     my ($brand,
         $brand_name,

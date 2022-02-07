@@ -58,7 +58,8 @@ sub theme_header
     # Embed branding
     embed_product_branding()
       if (!http_x_request() &&
-          (!get_env('http_referer') || get_env('http_referer') =~ /(session|pam)_login\.cgi/));
+          (!get_env('http_referer') || get_env('http_referer') =~ /(session|pam)_login\.cgi/) &&
+          !getvar('theme-goto', 'main', 'unset'));
 
     if (@_ > 1 && $_[1] ne 'stripped') {
 
