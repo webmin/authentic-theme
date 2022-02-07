@@ -199,7 +199,7 @@ sub theme_footer
         get_env('script_name') ne '/pam_login.cgi'     &&
         !http_x_request())
     {
-        if (!globals('get', 'error-fatal')) {
+        if (!getvar('error-fatal')) {
             print '<div class="top-aprogress"></div>', "\n";
         }
     }
@@ -1341,7 +1341,7 @@ sub theme_redirect_url_alterer
 {
     my ($u) = @_;
     my ($q) = $u =~ /\.cgi.*(\?)/;
-    my $r   = &globals('get', 'navigation-reload');
+    my $r   = &getvar('navigation-reload');
 
     if ($r) {
         if ($u !~ /\.cgi/) {
