@@ -1204,7 +1204,6 @@ settings_sysinfo_real_time_status_forced_warn=Reaaliaikaisen valvonnan käyttö�
 theme_xhred_theme_update_available=Uusi versio Authentic Theme -asennuksesta on asennettu
 settings_right_page_keep=Lataa sama sivu verkkotunnuskytkimelle
 settings_right_page_keep_description=Tämä vaihtoehto yrittää ladata saman sivun verkkotunnuksen valinnan yhteydessä, kun se muutetaan navigointivalikon avattavasta luettelosta
-settings_embed_product_branding_privileged=Näytä brändäyskuvaruutu ensimmäisen latauksen yhteydessä
 
 #19.76
 theme_xhred_global_show_all=Näytä kaikki

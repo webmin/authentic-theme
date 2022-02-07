@@ -1204,7 +1204,6 @@ settings_sysinfo_real_time_status_forced_warn=Активирането на мо
 theme_xhred_theme_update_available=Инсталирана е нова версия на автентична тема
 settings_right_page_keep=Заредете същата страница на превключвателя на домейн
 settings_right_page_keep_description=Тази опция ще се опита да зареди същата страница при избор на домейн, когато се промени от падащия списък на менюто за навигация
-settings_embed_product_branding_privileged=Показване на началния екран на марката при първоначално зареждане
 
 #19.76
 theme_xhred_global_show_all=Покажи всичко

@@ -1122,7 +1122,6 @@ settings_sysinfo_real_time_status_forced_warn=Włączanie monitorowania w czasie
 theme_xhred_theme_update_available=Zainstalowana jest nowa wersja Authentic Theme
 settings_right_page_keep=Załaduj tę samą stronę na przełączniku domeny
 settings_right_page_keep_description=Ta opcja spowoduje próbę załadowania tej samej strony po wybraniu domeny, po zmianie z listy rozwijanej menu nawigacyjnego
-settings_embed_product_branding_privileged=Pokaż ekran powitalny marki podczas pierwszego wczytywania
 
 #19.76
 theme_xhred_global_show_all=Pokaż wszystko

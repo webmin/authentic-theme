@@ -192,7 +192,6 @@ theme_xhred_theme_update_available=Este instalată o nouă versiune a temei aute
 
 settings_right_page_keep=Încărcați aceeași pagină pe comutatorul de domeniu
 settings_right_page_keep_description=Această opțiune va încerca să încarce aceeași pagină la selectarea domeniului, când este modificată din lista derulantă a meniului de navigare
-settings_embed_product_branding_privileged=Afișați ecranul de prezentare a mărcii la încărcarea inițială
 
 #19.76
 theme_xhred_global_show_all=Arata tot

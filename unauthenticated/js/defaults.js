@@ -11,7 +11,6 @@ var
     settings_cm_editor_palette = 'monokai',
     settings_global_palette_unauthenticated = 'light',
     settings_theme_config_admins_only_privileged = false,
-    settings_embed_product_branding_privileged = true,
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
@@ -178,6 +177,9 @@ var
 
     // This option can be set to `nav`, `gray` or `white`
     settings_side_slider_palette = 'nav',
+
+    // Show splash screen upon login
+    settings_embed_product_branding_privileged = true,
 
     // This option associates extra names for a given module/page to be searchable in autocomplete dropdown
     settings_autocomplete_extra_associations_privileged = { 'en': [{ 'csf': 'csf' }, { 'mysql': 'MySQL MariaDB' }, { 'virtual-server': [[ 'edit_limits', 'jail chroot allowed' ], [ 'rename_form', 'rename alter' ], [ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ], [ 'edit_newvalidate', 'fix reset' ] ] }] };

@@ -1204,7 +1204,6 @@ settings_sysinfo_real_time_status_forced_warn=Povolenie monitorovania v reálnom
 theme_xhred_theme_update_available=Je nainštalovaná nová verzia autentickej témy
 settings_right_page_keep=Načítajte rovnakú stránku do prepínača domény
 settings_right_page_keep_description=Táto možnosť sa pokúsi načítať rovnakú stránku po výbere domény, keď sa zmení z rozbaľovacieho zoznamu navigačnej ponuky
-settings_embed_product_branding_privileged=Zobraziť úvodnú obrazovku budovania značky pri prvom načítaní
 
 #19.76
 theme_xhred_global_show_all=Ukázať všetko

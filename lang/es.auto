@@ -1115,7 +1115,6 @@ settings_sysinfo_real_time_status_forced_warn=No se recomienda habilitar el moni
 theme_xhred_theme_update_available=Se instala una nueva versión de Authentic Theme
 settings_right_page_keep=Cargar la misma página en el cambio de dominio
 settings_right_page_keep_description=Esta opción intentará cargar la misma página al seleccionar el dominio, cuando se cambia desde la lista desplegable del menú de navegación
-settings_embed_product_branding_privileged=Mostrar la pantalla de presentación de la marca en la carga inicial
 
 #19.76
 theme_xhred_global_show_all=Mostrar todo

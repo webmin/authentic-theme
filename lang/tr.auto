@@ -1204,7 +1204,6 @@ settings_sysinfo_real_time_status_forced_warn=Zorla modunda gerçek zamanlı izl
 theme_xhred_theme_update_available=Authentic Theme'in yeni bir sürümü yüklendi
 settings_right_page_keep=Aynı sayfayı etki alanı anahtarına yükleyin
 settings_right_page_keep_description=Bu seçenek, gezinme menüsü açılır listesinden değiştirildiğinde, alan seçildiğinde aynı sayfayı yüklemeyi deneyecektir.
-settings_embed_product_branding_privileged=İlk yüklemede marka tanıtım ekranını göster
 
 #19.76
 theme_xhred_global_show_all=Hepsini Göster ↓

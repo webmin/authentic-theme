@@ -519,7 +519,6 @@ theme_xhred_theme_update_available=S'instal·la una nova versió d'Autentic Them
 
 settings_right_page_keep=Carregueu la mateixa pàgina al commutador de domini
 settings_right_page_keep_description=Aquesta opció intentarà carregar la mateixa pàgina en seleccionar el domini, quan es canviï de la llista desplegable del menú de navegació
-settings_embed_product_branding_privileged=Mostra la pantalla de presentació de marca en carregar-se inicialment
 
 #19.76
 theme_xhred_global_show_all=Mostrar tots

@@ -1204,7 +1204,6 @@ settings_sysinfo_real_time_status_forced_warn=لا يُنصح بتمكين ال�
 theme_xhred_theme_update_available=تم تثبيت إصدار جديد من Authentic Theme
 settings_right_page_keep=تحميل نفس الصفحة على تبديل المجال
 settings_right_page_keep_description=سيحاول هذا الخيار تحميل نفس الصفحة عند تحديد المجال ، عند التغيير من القائمة المنسدلة لقائمة التنقل
-settings_embed_product_branding_privileged=عرض شاشة البداية للعلامة التجارية عند التحميل الأولي
 
 #19.76
 theme_xhred_global_show_all=عرض الكل

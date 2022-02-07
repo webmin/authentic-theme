@@ -1204,7 +1204,6 @@ settings_sysinfo_real_time_status_forced_warn=Omogućavanje nadzora u stvarnom v
 theme_xhred_theme_update_available=Instalirana je nova verzija Autentične teme
 settings_right_page_keep=Učitajte istu stranicu na preklopnik domene
 settings_right_page_keep_description=Ova će opcija pokušati učitati istu stranicu nakon odabira domene, kada se promijeni s padajućeg popisa navigacijskog izbornika
-settings_embed_product_branding_privileged=Pokaži početni zaslon marke s početnim učitavanjem
 
 #19.76
 theme_xhred_global_show_all=Pokaži sve
