@@ -179,8 +179,8 @@ sub embed_header
 
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
-    print '<head>',                                           "\n";
-    print ' <meta name="color-scheme" content="only light">', "\n";
+    print '<head>',                                               "\n";
+    print ' <meta name="color-scheme" content="only light">',     "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
     embed_favicon() if (!http_x_request());
@@ -250,7 +250,7 @@ sub embed_header
         return "$var=$quote_opening$rs$quote_closing;";
     };
     print ' <script>';
-    print &$_sstj('theme_server_data_available_acls', 'get_acls_status', 'filemin');
+    print &$_sstj('theme_server_data_available_acls',    'get_acls_status',    'filemin');
     print &$_sstj('theme_server_data_available_selinux', 'get_selinux_status', 'filemin');
     print "</script>\n";
 
@@ -719,6 +719,7 @@ sub init_vars
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
 
+    globals('set', 'theme-goto', get_theme_temp_data('goto', 1));
     $server_x_goto = get_theme_temp_data('goto')
       if (!http_x_request());
 
@@ -923,10 +924,10 @@ sub get_button_style
         $icon  = "server-add";
     } elsif (string_contains($keys, "login_enable")) {
         $class = "success ";
-        $icon = " fa-1_15x fa2 fa2-account-key";
+        $icon  = " fa-1_15x fa2 fa2-account-key";
     } elsif (string_contains($keys, "login_disable")) {
         $class = "warning ";
-        $icon = " fa-1_15x fa2 fa2-key-minus";
+        $icon  = " fa-1_15x fa2 fa2-key-minus";
     } elsif (string_contains($keys, "save") ||
              string_contains($keys, "backup_ok2")    ||
              string_contains($keys, "sharedips_ok")  ||
@@ -1100,7 +1101,10 @@ sub get_button_style
     {
         $class = "info ";
         $icon  = "search";
-    } elsif (string_contains($keys, "dmass_move") || string_contains($keys, "domains_move") || string_contains($keys, "databases_remoteok")) {
+    } elsif (string_contains($keys, "dmass_move") ||
+             string_contains($keys, "domains_move") ||
+             string_contains($keys, "databases_remoteok"))
+    {
         $class = "warning ";
         $icon  = " fa2 fa2-transfer";
     } elsif (string_contains($keys, "restart") || string_contains($keys, "edit_kill")) {
@@ -1194,14 +1198,14 @@ sub get_button_style
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     } elsif (
-        (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
-        ||
-        (string_contains($keys, "create") &&
+         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc")
+         ) ||
+         (string_contains($keys, "create") &&
             !string_contains($keys, "user_priv_create_view")) ||
-        string_contains($keys, "index_crnow") ||
-        string_contains($keys, "view_new")    ||
-        string_contains($keys, "mass_ok")     ||
-        string_contains($keys, "rmass_ok"))
+         string_contains($keys, "index_crnow") ||
+         string_contains($keys, "view_new")    ||
+         string_contains($keys, "mass_ok")     ||
+         string_contains($keys, "rmass_ok"))
     {
         $class = "success ";
         $icon  = "plus-circle";
@@ -1735,13 +1739,17 @@ sub embed_product_branding
     return &custom_embed_product_branding(@_)
       if (defined(&custom_embed_product_branding));
 
+    # Embed only if page not reloaded or opened in a new tab
+    if (globals('got', 'theme-goto')) {
+        return;
+    }
+
     my ($brand,
         $brand_name,
         $brand_dir_default,
         $brand_dir_custom,
         $brand_dir,
         $loader,
-        $request_uri,
         $vm_mod_name,
         $vm_available,
         $cm_mod_name,
@@ -1753,7 +1761,6 @@ sub embed_product_branding
     $brand_dir_custom  = "$config_directory/$current_theme/brand";
     $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
     $loader            = read_file_contents("$brand_dir/loader.html");
-    $request_uri       = get_theme_temp_data('goto', 1);
 
     # Virtualmin available
     $vm_mod_name  = "virtual-server";
