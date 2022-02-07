@@ -55,8 +55,10 @@ sub theme_header
     print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!http_x_request());
 
-    # Embed branding on login only
-    embed_product_branding() if (!http_x_request());
+    # Embed branding
+    embed_product_branding()
+      if (!http_x_request() &&
+          (!get_env('http_referer') || get_env('http_referer') =~ /(session|pam)_login\.cgi/));
 
     if (@_ > 1 && $_[1] ne 'stripped') {
 
@@ -557,7 +559,8 @@ sub theme_select_all_link
     my ($field, $form, $text) = @_;
     $form = int($form);
     $text ||= $text{'ui_selall'};
-    return "<a class='select_all' href='#' onclick='theme_select_all_link($form, \"$field\"); return false'><span>$text</span></a>";
+    return
+"<a class='select_all' href='#' onclick='theme_select_all_link($form, \"$field\"); return false'><span>$text</span></a>";
 }
 
 sub theme_select_invert_link
@@ -566,7 +569,8 @@ sub theme_select_invert_link
     my ($field, $form, $text) = @_;
     $form = int($form);
     $text ||= $text{'ui_selinv'};
-    return "<a class='select_invert' href='#' onclick='theme_select_invert_link($form, \"$field\"); return false'><span>$text</span></a>";
+    return
+"<a class='select_invert' href='#' onclick='theme_select_invert_link($form, \"$field\"); return false'><span>$text</span></a>";
 }
 
 sub theme_select_rows_link
@@ -994,7 +998,8 @@ sub theme_ui_alert_box
     } elsif ($class eq "info") {
         $type = 'alert-info', $tmsg = ($theme_text{'theme_global_info'} . '!'), $fa = 'fa-info-circle';
     } elsif ($class eq "warn") {
-        $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'), $fa = 'fa2 fa2-warning fa-1_15x margined-left--2';
+        $type = 'alert-warning', $tmsg = ($theme_text{'theme_global_warning'} . '!'),
+          $fa = 'fa2 fa2-warning fa-1_15x margined-left--2';
     } elsif ($class eq "danger") {
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     }
