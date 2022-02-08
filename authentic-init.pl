@@ -179,8 +179,8 @@ sub embed_header
 
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
-    print '<head>',                                               "\n";
-    print ' <meta name="color-scheme" content="only light">',     "\n";
+    print '<head>',                                           "\n";
+    print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
     embed_favicon() if (!http_x_request());
@@ -1045,7 +1045,7 @@ sub get_button_style
     } elsif (string_contains($keys, "index_reboot reboot_title")) {
         $icon  = "refresh-mdi fa-1_25x";
         $class = "warning ";
-    } elsif (string_contains($keys, "docker_reg")) {
+    } elsif (string_contains($keys, "docker_reg") || string_contains($keys, "wizard_finish")) {
         $icon = "check-circle-o";
     } elsif (string_contains($keys, "tmpl_nprev") || string_contains($keys, "wizard_prev")) {
         $icon = "arrow-circle-o-left";
@@ -1062,6 +1062,8 @@ sub get_button_style
         }
     } elsif (string_contains($keys, "cancel")) {
         $icon = "times-circle-o";
+    } elsif (string_contains($keys, "wizard_end")) {
+        $icon = "virtualmin fa-1_05x";
     } elsif (string_contains($keys, "ticket_submit")) {
         $icon = "question-circle";
     } elsif (string_contains($keys, "trace_change")) {
@@ -1198,14 +1200,14 @@ sub get_button_style
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     } elsif (
-         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc")
-         ) ||
-         (string_contains($keys, "create") &&
+        (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
+        ||
+        (string_contains($keys, "create") &&
             !string_contains($keys, "user_priv_create_view")) ||
-         string_contains($keys, "index_crnow") ||
-         string_contains($keys, "view_new")    ||
-         string_contains($keys, "mass_ok")     ||
-         string_contains($keys, "rmass_ok"))
+        string_contains($keys, "index_crnow") ||
+        string_contains($keys, "view_new")    ||
+        string_contains($keys, "mass_ok")     ||
+        string_contains($keys, "rmass_ok"))
     {
         $class = "success ";
         $icon  = "plus-circle";
