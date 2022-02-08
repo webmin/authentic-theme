@@ -579,3 +579,4 @@ theme_xhred_webminlog_module_no_command_escapes=Commuta les barres invertides pe
 settings_navigation_auto_fold_category=Plega automàticament les categories inactives
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generació d'una llista d'opcions cercables per a la plantilla
 theme_xhred_tooltip_virtualmin_templates_filter=Cerca a totes les opcions de la plantilla
+theme_sysinfo_vmforum=Comunitat Virtualmin

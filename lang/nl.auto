@@ -1151,3 +1151,4 @@ theme_xhred_webminlog_module_no_command_escapes=Schakel backslashes in voor uitg
 settings_navigation_auto_fold_category=Inactieve categorieën automatisch vouwen
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Doorzoekbare lijst met opties voor de sjabloon genereren
 theme_xhred_tooltip_virtualmin_templates_filter=Doorzoek alle opties van de sjabloon
+theme_sysinfo_vmforum=Virtualmin-gemeenschap

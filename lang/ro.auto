@@ -252,3 +252,4 @@ theme_xhred_webminlog_module_no_command_escapes=Comutați barele oblice inverse 
 settings_navigation_auto_fold_category=Pliază automat categoriile inactive
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Se generează o listă de opțiuni care poate fi căutată pentru șablon
 theme_xhred_tooltip_virtualmin_templates_filter=Căutați în toate opțiunile șablonului
+theme_sysinfo_vmforum=Comunitatea Virtualmin

@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Preklopite poševnice nazaj za i
 settings_navigation_auto_fold_category=Samodejno prepogibanje neaktivnih kategorij
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Ustvarjanje seznama možnosti iskanja za predlogo
 theme_xhred_tooltip_virtualmin_templates_filter=Iščite po vseh možnostih predloge
+theme_sysinfo_vmforum=Virtualmin skupnost

@@ -1324,4 +1324,4 @@ theme_xhred_webminlog_module_no_command_escapes=Toggle backslashes for executed 
 settings_navigation_auto_fold_category=Auto fold inactive categories
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generating searchable list of options for the template
 theme_xhred_tooltip_virtualmin_templates_filter=Search throughout all options of the template
-
+theme_sysinfo_vmforum=Virtualmin Community

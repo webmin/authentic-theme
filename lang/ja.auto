@@ -171,3 +171,4 @@ theme_xhred_webminlog_module_no_command_escapes=実行されたコマンドの�
 settings_navigation_auto_fold_category=非アクティブなカテゴリを自動折りたたみ
 theme_xhred_tooltip_virtualmin_templates_filter_generating=テンプレートのオプションの検索可能なリストを生成する
 theme_xhred_tooltip_virtualmin_templates_filter=テンプレートのすべてのオプションを検索
+theme_sysinfo_vmforum=Virtualminコミュニティ

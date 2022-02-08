@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Перемикач зворот�
 settings_navigation_auto_fold_category=Автоматичне згортання неактивних категорій
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Створення списку доступних для пошуку параметрів для шаблону
 theme_xhred_tooltip_virtualmin_templates_filter=Пошук у всіх параметрах шаблону
+theme_sysinfo_vmforum=Спільнота Virtualmin

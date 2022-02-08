@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Chuyển đổi dấu gạch ch�
 settings_navigation_auto_fold_category=Tự động gấp các danh mục không hoạt động
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Tạo danh sách các tùy chọn có thể tìm kiếm cho mẫu
 theme_xhred_tooltip_virtualmin_templates_filter=Tìm kiếm trong tất cả các tùy chọn của mẫu
+theme_sysinfo_vmforum=Cộng đồng Virtualmin

@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Yürütülen komut için ters e�
 settings_navigation_auto_fold_category=Etkin olmayan kategorileri otomatik katla
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Şablon için aranabilir seçenekler listesi oluşturma
 theme_xhred_tooltip_virtualmin_templates_filter=Şablonun tüm seçeneklerinde arama yapın
+theme_sysinfo_vmforum=Virtualmin Topluluğu

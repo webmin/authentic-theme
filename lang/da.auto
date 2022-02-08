@@ -1176,3 +1176,4 @@ theme_xhred_webminlog_module_no_command_escapes=Skift omvendte skråstreger for 
 settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererer søgbar liste over muligheder for skabelonen
 theme_xhred_tooltip_virtualmin_templates_filter=Søg i alle skabelonens muligheder
+theme_sysinfo_vmforum=Virtualmin-fællesskab

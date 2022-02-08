@@ -162,3 +162,4 @@ theme_xhred_webminlog_module_no_command_escapes=Backslashes für ausgeführten B
 settings_navigation_auto_fold_category=Inaktive Kategorien automatisch falten
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generieren einer durchsuchbaren Liste mit Optionen für die Vorlage
 theme_xhred_tooltip_virtualmin_templates_filter=Durchsuchen Sie alle Optionen der Vorlage
+theme_sysinfo_vmforum=Virtualmin-Community

@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Превключване на о
 settings_navigation_auto_fold_category=Автоматично сгъване на неактивни категории
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Генериране на списък с опции за търсене за шаблона
 theme_xhred_tooltip_virtualmin_templates_filter=Търсете във всички опции на шаблона
+theme_sysinfo_vmforum=Virtualmin общност

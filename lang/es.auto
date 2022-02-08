@@ -1175,3 +1175,4 @@ theme_xhred_webminlog_module_no_command_escapes=Alternar barras diagonales inver
 settings_navigation_auto_fold_category=Categorías inactivas de plegado automático
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generación de una lista de búsqueda de opciones para la plantilla
 theme_xhred_tooltip_virtualmin_templates_filter=Buscar en todas las opciones de la plantilla
+theme_sysinfo_vmforum=Comunidad Virtualmin

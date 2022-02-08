@@ -619,7 +619,7 @@ sub get_sysinfo_vars
           product_version_update(get_webmin_version(1), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
           '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
-          '" href="http://doxfer.webmin.com" target="_blank"><i class="fa fa-book"></i></a></div>';
+          '" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';
 
         # Virtualmin version
         if ($has_virtualmin) {
@@ -642,12 +642,13 @@ sub get_sysinfo_vars
                           $theme_text{'right_vlcheck'} . '" href=\'' .
                           $theme_webprefix . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
-                      ) .
+                      )
+                ) .
+                      ($vs_license eq '1' ? '' : '&nbsp;') . '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' . $theme_text{'theme_sysinfo_vmforum'} .
+                      '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>' .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
                       $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
-                      '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa fa-book"></i></a>'
-
-                ));
+                      '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>');
         }
 
         # Cloudmin version
@@ -677,7 +678,7 @@ sub get_sysinfo_vars
                       ) .
                       '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
                       $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
-'" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa fa-book"></i></a>'
+'" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>'
                   ));
         }
 

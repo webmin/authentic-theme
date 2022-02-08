@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=สลับแบ็กสแ�
 settings_navigation_auto_fold_category=พับอัตโนมัติหมวดหมู่ที่ไม่ใช้งาน
 theme_xhred_tooltip_virtualmin_templates_filter_generating=กำลังสร้างรายการตัวเลือกที่สามารถค้นหาได้สำหรับเทมเพลต
 theme_xhred_tooltip_virtualmin_templates_filter=ค้นหาตลอดตัวเลือกทั้งหมดของเทมเพลต
+theme_sysinfo_vmforum=ชุมชน Virtualmin

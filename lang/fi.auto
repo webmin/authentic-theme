@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Vaihtaa kenoviivaa suoritetulle 
 settings_navigation_auto_fold_category=Taita automaattisesti ei-aktiiviset luokat
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Luodaan mallille haettavan luettelon vaihtoehtoja
 theme_xhred_tooltip_virtualmin_templates_filter=Hae mallin kaikista vaihtoehdoista
+theme_sysinfo_vmforum=Virtualmin-yhteisö

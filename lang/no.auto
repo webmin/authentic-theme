@@ -129,3 +129,4 @@ theme_xhred_webminlog_module_no_command_escapes=Veksle omvendt skråstrek for ut
 settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererer søkbar liste over alternativer for malen
 theme_xhred_tooltip_virtualmin_templates_filter=Søk gjennom alle alternativene i malen
+theme_sysinfo_vmforum=Virtualmin-fellesskap

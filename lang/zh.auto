@@ -429,3 +429,4 @@ theme_xhred_webminlog_module_no_command_escapes=为执行的命令切换反斜�
 settings_navigation_auto_fold_category=自动折叠非活动类别
 theme_xhred_tooltip_virtualmin_templates_filter_generating=为模板生成可搜索的选项列表
 theme_xhred_tooltip_virtualmin_templates_filter=搜索模板的所有选项
+theme_sysinfo_vmforum=Virtualmin 社区

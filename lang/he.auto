@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=החלף נטוי לאחור ע�
 settings_navigation_auto_fold_category=קיפול אוטומטי של קטגוריות לא פעילות
 theme_xhred_tooltip_virtualmin_templates_filter_generating=יצירת רשימה ניתנת לחיפוש של אפשרויות עבור התבנית
 theme_xhred_tooltip_virtualmin_templates_filter=חפש בכל האפשרויות של התבנית
+theme_sysinfo_vmforum=קהילת Virtualmin

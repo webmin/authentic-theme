@@ -146,3 +146,4 @@ theme_xhred_webminlog_module_no_command_escapes=Växla omvänt snedstreck för k
 settings_navigation_auto_fold_category=Vik inaktiva kategorier automatiskt
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererar sökbar lista med alternativ för mallen
 theme_xhred_tooltip_virtualmin_templates_filter=Sök igenom alla alternativ i mallen
+theme_sysinfo_vmforum=Virtualmin-gemenskapen

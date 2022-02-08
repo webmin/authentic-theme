@@ -1264,3 +1264,4 @@ theme_xhred_webminlog_module_no_command_escapes=Εναλλαγή ανάστρο�
 settings_navigation_auto_fold_category=Αυτόματη αναδίπλωση ανενεργών κατηγοριών
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Δημιουργία λίστας επιλογών με δυνατότητα αναζήτησης για το πρότυπο
 theme_xhred_tooltip_virtualmin_templates_filter=Αναζήτηση σε όλες τις επιλογές του προτύπου
+theme_sysinfo_vmforum=Virtualmin Community
