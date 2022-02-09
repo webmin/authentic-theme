@@ -1216,7 +1216,7 @@ sub theme_ui_hidden_table_start
         $rv .= "<tr" . ($tb ? " " . $tb : "") . "><td>";
         if (defined($heading)) {
             $rv .=
-"<a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
+"<a tabindex='-1' class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
         }
         if (defined($rightheading)) {
             $rv .= "<td align=right>$rightheading</td>";
