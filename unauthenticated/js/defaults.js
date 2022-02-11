@@ -182,7 +182,48 @@ var
     settings_embed_product_branding_privileged = true,
 
     // This option associates extra names for a given module/page to be searchable in autocomplete dropdown
-    settings_autocomplete_extra_associations_privileged = { 'en': [{ 'csf': 'csf' }, { 'mysql': 'MySQL MariaDB' }, { 'virtual-server': [[ 'edit_limits', 'jail chroot allowed' ], [ 'rename_form', 'rename alter' ], [ 'edit_newmysqls', 'MySQL MariaDB' ], [ 'dkim', 'DKIM' ], [ 'edit_domdkim', 'DKIM' ], [ 'dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS' ], [ 'list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze' ], [ 'edit_newvalidate', 'fix reset' ] ] }] };
+    settings_autocomplete_extra_associations_privileged = {
+        'en': [
+            { 'acl': 'acl 2fa two-factor twofactor permissions modules permissions authentication' },
+            { 'webmin': 'ssl 2fa two-factor twofactor tempdir language port address logging authentication cron schedule ip 10000' },
+            { 'usermin': 'ssl 2fa two-factor twofactor authentication language port address 20000' },
+            { 'apache': 'webserver httpd http https 80 443' },
+            { 'bind8': '53 master slave zone' },
+            { 'dovecot': 'mail 143 993 995' },
+            { 'mysql': 'mysql mariadb 3306' },
+            { 'postfix': 'mail queue smtp 25 587' },
+            { 'proftpd': '21 ftp' },
+            { 'sshd': '22 sftp' },
+            { 'status': 'monitors' },
+            { 'filemin': 'files nautilus krusader total double norton midnight commander mc far' },
+            { 'firewalld': 'iptables' },
+            { 'firewall': 'iptables' },
+            { 'firewall6': 'iptables' },
+            { 'fail2ban': 'jail brute-force bruteforce firewall iptables' },
+            { 'net': 'routing gateways hostname dns /etc/hosts' },
+            { 'fdisk': 'fdisk' },
+            { 'lvm': 'lvm' },
+            { 'csf': 'csf' },
+            {
+                'virtual-server': [
+                    ['edit_limits', 'jail chroot allowed acl shell'],
+                    ['rename_form', 'rename alter'],
+                    ['edit_newmysqls', 'MySQL MariaDB'],
+                    ['dkim', 'DKIM'],
+                    ['edit_domdkim', 'DKIM'],
+                    ['dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS'],
+                    ['list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze'],
+                    ['edit_newvalidate', 'fix reset'],
+                    ['list_scripts', 'wordpress roundcube whmcs phpmyadmin'],
+                    ['list_users', 'new add password realname fullname email database permissions quota mail forwarding shell thunderbird outlook geary'],
+                    ['edit_domain', 'domain update plan template password features dns website database mariadb mysql mail spam webalizer webmin login awstats'],
+                    ['domain_form', 'new add domain'],
+                    ['edit_newupgrade', 'support donate patron pay money buy shop license licence serial'],
+                    ['migrate_form', 'cpanel ensim plesk lxadmin directadmin'],
+                ]
+            }
+        ]
+    };
 //
 //
 //
