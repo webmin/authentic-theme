@@ -616,26 +616,26 @@ sub theme_controls
           '');
     return (
         "<div class=\"btn-group\">
-            <a class=\"btn btn-success capitalize\" id=\"atsave\">
+            <a tabindex='1' class=\"btn btn-success capitalize\" id=\"atsave\">
                 <i class=\"fa fa-fw fa-floppy-o\"></i><span>$text{'save'}&nbsp;</span>
             </a>
-            <a class=\"btn btn-default capitalize\" id=\"atrestore\">
+            <a tabindex='1' class=\"btn btn-default capitalize\" id=\"atrestore\">
                 <i class=\"fa fa-fw fa-history\"></i><span>$theme_text{'settings_right_restore_defaults'}</span>
             </a>
-            <a class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
+            <a tabindex='1' class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
                 <i class=\"fa fa-fw fa-hourglass-o\"></i><span>$theme_text{'settings_right_clear_local_cache'}</span>
             </a>
             $update_dropdown
         </div>",
         ($get_user_level eq '0' ?
            "<div class=\"btn-group\">
-            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-backgrounds.cgi\">
+            <a tabindex='1' class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-backgrounds.cgi\">
                 <i class=\"fa fa-fw fa-image\"></i><span>$theme_text{'theme_xhred_settings_right_theme_bgs'}</span>
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-logos.cgi\">
+            <a tabindex='1' class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-logos.cgi\">
                 <i class=\"fa fa-fw fa-file-image-o\"></i><span>$theme_text{'theme_xhred_settings_right_theme_logos'}</span>
             </a>
-            <a class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_styles\" href=\"$theme_webprefix/settings-editor_read.cgi\">
+            <a tabindex='1' class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_styles\" href=\"$theme_webprefix/settings-editor_read.cgi\">
                 <i class=\"fa fa-fw fa-file-code-o\"></i><span>$theme_text{'settings_right_theme_extensions'}</span>
             </a>
         </div>" :
