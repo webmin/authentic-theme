@@ -185,7 +185,7 @@ var
     settings_autocomplete_extra_associations_privileged = {
         'en': [
             { 'acl': 'acl 2fa two-factor twofactor permissions modules permissions authentication' },
-            { 'webmin': 'ssl lets encrypt let\'s encrypt 2fa two-factor twofactor tempdir language port address logging authentication cron schedule ip 10000' },
+            { 'webmin': 'ssl lets encrypt let\'s encrypt 2fa two-factor twofactor install module tempdir language port address logging authentication cron schedule ip 10000' },
             { 'usermin': 'ssl lets encrypt let\'s encrypt 2fa two-factor twofactor authentication language port address 20000' },
             { 'apache': 'webserver httpd http https 80 443' },
             { 'bind8': '53 master slave zone' },
