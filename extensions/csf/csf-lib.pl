@@ -143,6 +143,9 @@ sub csf_mod
     print $fh '<link href="' . $theme_webprefix .
       '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
     
+    # Print default options
+    print $fh " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
+
     # Print object with language strings
     print $fh ' <script>';
     print $fh 'var v___theme_language = ' . get_theme_language();
