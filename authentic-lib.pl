@@ -409,7 +409,7 @@ sub print_sysstats_panel_start
         if (@recollect) {
             $recollect =
 '<span class="btn btn-transparent-link pull-right _sync_sysinfo_cnt"><i class="fa fa-fw fa fa-reload _sync_sysinfo_" '
-              . get_button_tooltip('theme_xhred_tooltip_side_slider_sync_sysinfo', undef, 'auto right')
+              . get_button_tooltip('theme_xhred_tooltip_side_slider_refresh_sysinfo', undef, 'auto right')
               . '></i></span>';
         }
     }
@@ -420,14 +420,28 @@ sub print_sysstats_panel_start
           . get_button_tooltip("theme_xhred_tooltip_side_slider_clipboard_$type", undef, 'auto right')
           . '></i></span>';
     };
+    my $submit_support_ticket = sub {
+        my $vs_license = check_pro_package('vm');
+        return $vs_license ?
+          (
+'<span class="btn btn-transparent-link pull-right _support_ticket_cnt"><i class="fa2 fa-fw fa fa2-life-ring _support_ticket_" '
+              . get_button_tooltip('theme_xhred_tooltip_support_ticket', undef, 'auto right')
+              . '></i></span>') :
+          undef;
+    };
     my %virtualmin_config = foreign_config('virtual-server');
     my %cloudmin_config   = foreign_config('server-manager');
 
     print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
-    print '<h3 class="panel-title">' .
-      $recollect . '' . ($get_user_level eq '3' ? (&$copy_to_clipboard('account') . $theme_text{'body_header1'}) :
-                         (&$copy_to_clipboard('sysinfo') . $theme_text{'body_header0'}))
+    print '<h3 class="panel-title">'
+      .
+      ( $recollect . ''
+          .
+          ( $get_user_level eq '3' ? (&$copy_to_clipboard('account') . $theme_text{'body_header1'}) :
+              (&$copy_to_clipboard('sysinfo') . $theme_text{'body_header0'})
+          ) .
+          (1 == 1 ? &$submit_support_ticket() : undef))
       .
       ( $cloudmin_config{'docs_link'} &&
           foreign_available("server-manager") ?
@@ -619,7 +633,7 @@ sub get_sysinfo_vars
           product_version_update(get_webmin_version(1), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
           '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
-          '" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';
+'" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';
 
         # Virtualmin version
         if ($has_virtualmin) {
@@ -641,14 +655,16 @@ sub get_sysinfo_vars
                           ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
                           $theme_text{'right_vlcheck'} . '" href=\'' .
                           $theme_webprefix . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
-                          '</div>'
-                      )
-                ) .
-                      ($vs_license eq '1' ? '' : '&nbsp;') . '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' . $theme_text{'theme_sysinfo_vmforum'} .
-                      '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>' .
-                      '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
-                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
-                      '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>');
+                          '</div>')
+                  ) .
+                  ($vs_license eq '1' ? '' : '&nbsp;') .
+                  '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
+                  $theme_text{'theme_sysinfo_vmforum'} .
+                  '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>'
+                  . '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1'
+                  . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
+'" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>'
+            );
         }
 
         # Cloudmin version
