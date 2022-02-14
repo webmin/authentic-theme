@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 19.85-RC5 (February 13, 2022)
-* Add ability to copy complete system information to clipboard with a single click [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
-* Add support to copy text from draggable by holding ⎇ key [webmin#1569/comment-1003734006](https://github.com/webmin/webmin/issues/1569#issuecomment-1003734006)
-* Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
-* Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
+#### Version 19.85-RC6 (February 14, 2022)
 * Add improved focus state for elements to support navigation using keyboard with tab key
+* Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
+* Add ability to copy complete system information to clipboard with a single click [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
+* Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
+* Add support to copy text from draggable by holding ⎇ key [webmin#1569/comment-1003734006](https://github.com/webmin/webmin/issues/1569#issuecomment-1003734006)
+* Add ability for submitting support tickets using dashboard for Virtualmin Pro users
 * Add further multiple improvements to elements align across various browsers/platforms
 * Add an option to disable auto folding inactive categories in navigation menu
 * Add support for filtering server templates options in Virtualmin
@@ -21,10 +22,11 @@
 * Fix to avoid fetching navigation menu on simple domain selection on Virtualmin Virtual Servers page
 * Fiх upload tracker for safe user in File Manager [#1576](https://github.com/virtualmin/authentic-theme/issues/1576)
 * Fiх configuration page work in File Manager when opened in a separate tab [sourceforge.net#5539](https://sourceforge.net/p/webadmin/bugs/5539/)
+* Fix to display delete/move to trash button color conditionally based on option in File Manager
+* Fix calculations of directory size in File Manager to be error resilient
 * Fix various bugs for FTP Directory Restrictions submodule in Virtualmin
 * Fix table rendering upon submit for Backup Virtual Servers submodule in Virtualmin
 * Fiх highlight syntax detection for Custom Commands module when editing a file [webmin#1591](https://github.com/webmin/webmin/issues/1591)
-* Fix to display delete/move to trash button color conditionally based on option in File Manager
 * Fix regression bug for spinner positioning in File Manager on retrieving directory size
 * Fix returning to module index after saving configuration in File Manager
 * Fiх false redirection after opening a link in HTTP Tunnel module [virtualmin/virtualmin-gpl#358](https://github.com/virtualmin/virtualmin-gpl/issues/358)
