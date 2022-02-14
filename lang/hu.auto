@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Kizárja az elengedhetetlen k
 theme_xhred_filemanager_tree_expand_search=Bontsa ki az összes olyan ágat, amely egyezéseket tartalmaz, a fanézet szűrése közben
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Kényszerít a háttérállapot-gyűjtemény szinkronizálására
 theme_xhred_tooltip_side_slider_go_to_dashboard=Ugrás az irányítópultra
 theme_xhred_tooltip_side_slider_open_favorites_control=Nyissa meg a kedvencek vezérlését
 theme_xhred_tooltip_side_slider_delete_all_notification=Az összes értesítés törlése
@@ -1249,8 +1248,8 @@ body_cpufan=CPU ventilátor
 filemanager_symlink_exists=A(z) <tt>$1</tt> nem hozható létre, mivel a fájl már létezik a(z) <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Másolja az összes rendszerinformációt a vágólapra; Tartsa lenyomva a billentyűt az egyszerű szöveges adatok másolásához, nem pedig a jelöléshez
-theme_xhred_tooltip_side_slider_clipboard_account=Másolja az összes fiókinformációt a vágólapra; Tartsa lenyomva a billentyűt az egyszerű szöveges adatok másolásához, nem pedig a jelöléshez
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Másolja az összes rendszerinformációt a vágólapra; Tartsa lenyomva az Alt billentyűt az egyszerű szöveges adatok másolásához, nem pedig a jelöléshez
+theme_xhred_tooltip_side_slider_clipboard_account=Másolja az összes fiókinformációt a vágólapra; Tartsa lenyomva az Alt billentyűt az egyszerű szöveges adatok másolásához, nem pedig a jelöléshez
 tooltip_back_to_servers_index_master=Webmin szerverek indexmodulja a főgépen
 tooltip_list_other_servers=Egyéb regisztrált Webmin szerverek listája
 theme_xhred_status_module_mon_up=Fel
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=Inaktív kategóriák automatikus hajtoga
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Kereshető opciólista létrehozása a sablonhoz
 theme_xhred_tooltip_virtualmin_templates_filter=Keressen a sablon összes lehetőségében
 theme_sysinfo_vmforum=Virtualmin közösség
+theme_xhred_tooltip_support_ticket=Támogatási jegy benyújtása csatolt rendszerinformációkkal; Tartsa lenyomva az Al billentyűt a támogatási hivatkozás vágólapra másolásához
+theme_xhred_tooltip_side_slider_refresh_sysinfo=A rendszerinformációk frissítésének kényszerítése

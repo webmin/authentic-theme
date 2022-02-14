@@ -651,7 +651,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Wyklucz zbędne katalogi z pr
 theme_xhred_filemanager_tree_expand_search=Rozwiń wszystkie gałęzie zawierające dopasowania podczas filtrowania widoku drzewa
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Wymuś zsynchronizowanie kolekcji statusu w tle
 theme_xhred_tooltip_side_slider_go_to_dashboard=Przejdź do panelu
 theme_xhred_tooltip_side_slider_open_favorites_control=Otwórz kontrolę ulubionych
 theme_xhred_tooltip_side_slider_delete_all_notification=Usuń wszystkie powiadomienia
@@ -1167,8 +1166,8 @@ body_cpufan=Wentylator procesora
 filemanager_symlink_exists=Nie można utworzyć <tt>$1</tt> ponieważ plik już istnieje w <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Skopiuj wszystkie informacje o systemie do schowka; przytrzymaj klawisz, aby skopiować dane w postaci zwykłego tekstu zamiast przecen
-theme_xhred_tooltip_side_slider_clipboard_account=Skopiuj wszystkie informacje o koncie do schowka; przytrzymaj klawisz, aby skopiować dane w postaci zwykłego tekstu zamiast przecen
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Skopiuj wszystkie informacje o systemie do schowka; przytrzymaj klawisz Alt, aby skopiować dane w postaci zwykłego tekstu zamiast przecen
+theme_xhred_tooltip_side_slider_clipboard_account=Skopiuj wszystkie informacje o koncie do schowka; przytrzymaj klawisz Alt, aby skopiować dane w postaci zwykłego tekstu zamiast przecen
 tooltip_back_to_servers_index_master=Moduł indeksowania serwerów Webmin na maszynie głównej
 tooltip_list_other_servers=Lista innych zarejestrowanych serwerów Webmin
 theme_xhred_status_module_mon_up=W górę
@@ -1183,3 +1182,5 @@ settings_navigation_auto_fold_category=Automatyczne składanie nieaktywnych kate
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generowanie przeszukiwalnej listy opcji szablonu
 theme_xhred_tooltip_virtualmin_templates_filter=Przeszukuj wszystkie opcje szablonu
 theme_sysinfo_vmforum=Społeczność Virtualmin
+theme_xhred_tooltip_support_ticket=Prześlij zgłoszenie pomocy technicznej z dołączonymi informacjami o systemie; przytrzymaj klawisz Alt, aby skopiować link wsparcia do schowka
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Wymuś odświeżenie informacji o systemie

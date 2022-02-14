@@ -725,7 +725,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=在树视图的初始加载�
 theme_xhred_filemanager_tree_expand_search=在过滤树视图时展开包含匹配项的所有分支
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=强制同步后台状态集合
 theme_xhred_tooltip_side_slider_go_to_dashboard=转到仪表板
 theme_xhred_tooltip_side_slider_open_favorites_control=打开收藏夹控件
 theme_xhred_tooltip_side_slider_delete_all_notification=删除所有通知

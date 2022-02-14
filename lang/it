@@ -731,7 +731,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Escludi le cartelle non essen
 theme_xhred_filemanager_tree_expand_search=Espandi tutti i rami che contengono corrispondenze filtrando la visualizzazione ad albero
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Forza la sincronizzazione della raccolta dello stato in background
 theme_xhred_tooltip_side_slider_go_to_dashboard=Vai alla dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Apri controllo preferiti
 theme_xhred_tooltip_side_slider_delete_all_notification=Elimina tutte le notifiche

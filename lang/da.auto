@@ -645,7 +645,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Ekskluder uundværlige mapper
 theme_xhred_filemanager_tree_expand_search=Udvid alle grene, der indeholder tændstikker, mens du filtrerer trævisning
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Tving til at synkronisere samling af baggrundstatus
 theme_xhred_tooltip_side_slider_go_to_dashboard=Gå til dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Åbn favoritkontrol
 theme_xhred_tooltip_side_slider_delete_all_notification=Slet alle underretninger
@@ -1161,8 +1160,8 @@ body_cpufan=CPU blæser
 filemanager_symlink_exists=Kan ikke oprette <tt>$1</tt> da filen allerede findes i <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier alle systemoplysninger til udklipsholder; hold tasten nede for at kopiere almindelig tekstdata i stedet for markdown
-theme_xhred_tooltip_side_slider_clipboard_account=Kopier alle kontooplysninger til udklipsholder; hold tasten nede for at kopiere almindelig tekstdata i stedet for markdown
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier alle systemoplysninger til udklipsholder; hold Alt-tasten nede for at kopiere almindelig tekstdata i stedet for markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Kopier alle kontooplysninger til udklipsholder; hold Alt-tasten nede for at kopiere almindelig tekstdata i stedet for markdown
 tooltip_back_to_servers_index_master=Webmin-servere indeksmodul på mastermaskine
 tooltip_list_other_servers=Liste over andre registrerede Webmin-servere
 theme_xhred_status_module_mon_up=Op
@@ -1177,3 +1176,5 @@ settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererer søgbar liste over muligheder for skabelonen
 theme_xhred_tooltip_virtualmin_templates_filter=Søg i alle skabelonens muligheder
 theme_sysinfo_vmforum=Virtualmin-fællesskab
+theme_xhred_tooltip_support_ticket=Indsend supportbillet med vedhæftede systemoplysninger; hold Alt-tasten nede for at kopiere supportlinket til udklipsholderen
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Tving til at opdatere systemoplysninger

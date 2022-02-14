@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=درختوں کے نظارے 
 theme_xhred_filemanager_tree_expand_search=درختوں کے نظارے کو فلٹر کرتے وقت میچوں والی تمام شاخوں کو پھیلائیں
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=پس منظر کی حیثیت کا مجموعہ ہم وقت سازی کرنے پر مجبور کریں
 theme_xhred_tooltip_side_slider_go_to_dashboard=ڈیش بورڈ پر جائیں
 theme_xhred_tooltip_side_slider_open_favorites_control=اوپن فیورٹ کنٹرول
 theme_xhred_tooltip_side_slider_delete_all_notification=تمام اطلاعات کو حذف کریں
@@ -1249,8 +1248,8 @@ body_cpufan=سی پی یو فین
 filemanager_symlink_exists=Cannot create <tt>$1</tt> as file already exists in <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=کلپ بورڈ پر سسٹم کی تمام معلومات کاپی کریں۔ مارک ڈاؤن کے بجائے سادہ ٹیکسٹ ڈیٹا کاپی کرنے کے لیے کلید کو پکڑیں۔
-theme_xhred_tooltip_side_slider_clipboard_account=اکاؤنٹ کی تمام معلومات کلپ بورڈ پر کاپی کریں۔ مارک ڈاؤن کے بجائے سادہ ٹیکسٹ ڈیٹا کاپی کرنے کے لیے کلید کو پکڑیں۔
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=کلپ بورڈ پر سسٹم کی تمام معلومات کاپی کریں۔ مارک ڈاؤن کے بجائے سادہ ٹیکسٹ ڈیٹا کاپی کرنے کے لیے Alt کلید کو پکڑیں۔
+theme_xhred_tooltip_side_slider_clipboard_account=اکاؤنٹ کی تمام معلومات کلپ بورڈ پر کاپی کریں۔ مارک ڈاؤن کے بجائے سادہ ٹیکسٹ ڈیٹا کاپی کرنے کے لیے Alt کلید کو پکڑیں۔
 tooltip_back_to_servers_index_master=ماسٹر مشین پر ویب مین سرورز انڈیکس ماڈیول
 tooltip_list_other_servers=دوسرے رجسٹرڈ ویب من سرورز کی فہرست
 theme_xhred_status_module_mon_up=اوپر
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=آٹو فولڈ غیر فعال زمرے
 theme_xhred_tooltip_virtualmin_templates_filter_generating=ٹیمپلیٹ کے لیے اختیارات کی تلاش کے قابل فہرست تیار کرنا
 theme_xhred_tooltip_virtualmin_templates_filter=ٹیمپلیٹ کے تمام اختیارات میں تلاش کریں۔
 theme_sysinfo_vmforum=ورچوئل مین کمیونٹی
+theme_xhred_tooltip_support_ticket=منسلک نظام کی معلومات کے ساتھ سپورٹ ٹکٹ جمع کروائیں؛ سپورٹ لنک کو کلپ بورڈ پر کاپی کرنے کے لیے Alt کلید کو پکڑیں۔
+theme_xhred_tooltip_side_slider_refresh_sysinfo=سسٹم کی معلومات کو ریفریش کرنے پر مجبور کریں۔

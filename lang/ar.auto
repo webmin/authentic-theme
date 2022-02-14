@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=استبعاد الدلائل
 theme_xhred_filemanager_tree_expand_search=قم بتوسيع كل الفروع التي تحتوي على تطابقات أثناء تصفية عرض الشجرة
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=القوة لمزامنة مجموعة حالة الخلفية
 theme_xhred_tooltip_side_slider_go_to_dashboard=الذهاب إلى لوحة القيادة
 theme_xhred_tooltip_side_slider_open_favorites_control=فتح تحكم المفضلة
 theme_xhred_tooltip_side_slider_delete_all_notification=حذف جميع الإخطارات
@@ -1249,8 +1248,8 @@ body_cpufan=مروحة وحدة المعالجة المركزية
 filemanager_symlink_exists=لا يمكن إنشاء <tt>$1</tt> لأن الملف موجود بالفعل في <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=نسخ جميع معلومات النظام إلى الحافظة ؛ اضغط باستمرار على مفتاح لنسخ بيانات النص العادي بدلاً من التخفيضات
-theme_xhred_tooltip_side_slider_clipboard_account=نسخ جميع معلومات الحساب إلى الحافظة ؛ اضغط باستمرار لنسخ بيانات النص العادي بدلاً من التخفيضات
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=نسخ جميع معلومات النظام إلى الحافظة ؛ اضغط مع الاستمرار على مفتاح Alt لنسخ بيانات النص العادي بدلاً من العلامة التجارية
+theme_xhred_tooltip_side_slider_clipboard_account=نسخ جميع معلومات الحساب إلى الحافظة ؛ اضغط مع الاستمرار على مفتاح Alt لنسخ بيانات النص العادي بدلاً من العلامة التجارية
 tooltip_back_to_servers_index_master=وحدة فهرس خوادم Webmin على الجهاز الرئيسي
 tooltip_list_other_servers=قائمة خوادم Webmin الأخرى المسجلة
 theme_xhred_status_module_mon_up=فوق
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=طي الفئات غير النشطة ت�
 theme_xhred_tooltip_virtualmin_templates_filter_generating=إنشاء قائمة خيارات يمكن البحث فيها للقالب
 theme_xhred_tooltip_virtualmin_templates_filter=ابحث في جميع خيارات النموذج
 theme_sysinfo_vmforum=مجتمع Virtualmin
+theme_xhred_tooltip_support_ticket=إرسال تذكرة دعم مع معلومات النظام المرفقة ؛ اضغط مع الاستمرار على مفتاح Alt لنسخ رابط الدعم إلى الحافظة
+theme_xhred_tooltip_side_slider_refresh_sysinfo=القوة لتحديث معلومات النظام

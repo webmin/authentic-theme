@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Izslēdziet nebūtiskus direk
 theme_xhred_filemanager_tree_expand_search=Filtrējot koka skatu, paplašiniet visas filiāles, kurās ir atbilstības
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Piespiest sinhronizēt fona statusa kolekciju
 theme_xhred_tooltip_side_slider_go_to_dashboard=Dodieties uz informācijas paneli
 theme_xhred_tooltip_side_slider_open_favorites_control=Atveriet izlases vadību
 theme_xhred_tooltip_side_slider_delete_all_notification=Dzēst visus paziņojumus
@@ -1249,8 +1248,8 @@ body_cpufan=CPU ventilators
 filemanager_symlink_exists=Nevar izveidot <tt>$1</tt> jo fails jau pastāv mapē <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopēt visu sistēmas informāciju starpliktuvē; turiet taustiņu, lai kopētu vienkārša teksta datus, nevis atzīmes
-theme_xhred_tooltip_side_slider_clipboard_account=Kopējiet visu konta informāciju starpliktuvē; turiet nospiestu taustiņu, lai kopētu vienkārša teksta datus, nevis atzīmes
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopēt visu sistēmas informāciju starpliktuvē; turiet nospiestu taustiņu Alt, lai kopētu vienkārša teksta datus, nevis atzīmes
+theme_xhred_tooltip_side_slider_clipboard_account=Kopēt visu konta informāciju starpliktuvē; turiet nospiestu taustiņu Alt, lai kopētu vienkārša teksta datus, nevis atzīmes
 tooltip_back_to_servers_index_master=Webmin serveru indeksa modulis galvenajā mašīnā
 tooltip_list_other_servers=Citu reģistrēto Webmin serveru saraksts
 theme_xhred_status_module_mon_up=Uz augšu
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=Automātiski salocīt neaktīvās kategor
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Veidnes opciju meklēšanas saraksta ģenerēšana
 theme_xhred_tooltip_virtualmin_templates_filter=Meklējiet visās veidnes opcijās
 theme_sysinfo_vmforum=Virtualmin kopiena
+theme_xhred_tooltip_support_ticket=Iesniegt atbalsta biļeti ar pievienotu sistēmas informāciju; turiet nospiestu taustiņu Al, lai kopētu atbalsta saiti starpliktuvē
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Piespiest atsvaidzināt sistēmas informāciju

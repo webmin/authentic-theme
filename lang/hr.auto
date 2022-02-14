@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Izuzmi nebitne direktorije iz
 theme_xhred_filemanager_tree_expand_search=Proširite sve grane koje sadrže podudaranja dok filtrirate prikaz stabla
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Prisilite se na sinkronizaciju zbirke statusa pozadine
 theme_xhred_tooltip_side_slider_go_to_dashboard=Idite na nadzornu ploču
 theme_xhred_tooltip_side_slider_open_favorites_control=Otvori kontrolu favorita
 theme_xhred_tooltip_side_slider_delete_all_notification=Izbrišite sve obavijesti
@@ -1249,8 +1248,8 @@ body_cpufan=CPU ventilator
 filemanager_symlink_exists=Nije moguće stvoriti <tt>$1</tt> jer datoteka već postoji u <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopirajte sve informacije o sustavu u međuspremnik; držite tipku za kopiranje običnih tekstualnih podataka umjesto smanjenja
-theme_xhred_tooltip_side_slider_clipboard_account=Kopirajte sve podatke o računu u međuspremnik; držite tipku za kopiranje običnih tekstualnih podataka umjesto smanjenja
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopirajte sve informacije o sustavu u međuspremnik; držite tipku Alt da biste kopirali obični tekstualni podaci umjesto smanjenja
+theme_xhred_tooltip_side_slider_clipboard_account=Kopirajte sve podatke o računu u međuspremnik; držite tipku Alt da biste kopirali obični tekstualni podaci umjesto smanjenja
 tooltip_back_to_servers_index_master=Indeksni modul Webmin poslužitelja na glavnom stroju
 tooltip_list_other_servers=Popis ostalih registriranih Webmin poslužitelja
 theme_xhred_status_module_mon_up=gore
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=Automatsko preklapanje neaktivnih kategor
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generiranje pretraživog popisa opcija za predložak
 theme_xhred_tooltip_virtualmin_templates_filter=Pretražite sve opcije predloška
 theme_sysinfo_vmforum=Virtualmin zajednica
+theme_xhred_tooltip_support_ticket=Pošaljite ulaznicu za podršku s priloženim informacijama o sustavu; držite tipku Alt za kopiranje veze za podršku u međuspremnik
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Prisilno osvježavanje informacija o sustavu

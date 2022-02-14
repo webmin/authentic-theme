@@ -519,7 +519,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Исключить несущ
 theme_xhred_filemanager_tree_expand_search=Разверните все ветви, содержащие совпадения, при фильтрации древовидного представления.
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Принудительно синхронизировать фоновый сбор статуса
 theme_xhred_tooltip_side_slider_go_to_dashboard=Перейти к приборной панели
 theme_xhred_tooltip_side_slider_open_favorites_control=Управление открытым избранным
 theme_xhred_tooltip_side_slider_delete_all_notification=Удалить все уведомления
@@ -1027,8 +1026,8 @@ body_cpufan=Вентилятор процессора
 filemanager_symlink_exists=Невозможно создать <tt>$1</tt> поскольку файл уже существует в <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Скопируйте всю системную информацию в буфер обмена; удерживайте кнопку ⎇, чтобы скопировать данные в виде обычного текста, а не уценку
-theme_xhred_tooltip_side_slider_clipboard_account=Скопируйте всю информацию об аккаунте в буфер обмена; удерживайте кнопку ⎇, чтобы скопировать данные в виде обычного текста, а не уценку
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Скопируйте всю системную информацию в буфер обмена; удерживайте клавишу Alt, чтобы скопировать текстовые данные, а не уценку
+theme_xhred_tooltip_side_slider_clipboard_account=Скопируйте всю информацию об учетной записи в буфер обмена; удерживайте клавишу Alt, чтобы скопировать текстовые данные, а не уценку
 tooltip_back_to_servers_index_master=Индексный модуль серверов Webmin на главной машине
 tooltip_list_other_servers=Список других зарегистрированных серверов Webmin
 theme_xhred_status_module_mon_up=Вверх
@@ -1043,3 +1042,5 @@ settings_navigation_auto_fold_category=Автоматически сворачи
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Создание списка опций для шаблона с возможностью поиска
 theme_xhred_tooltip_virtualmin_templates_filter=Поиск по всем параметрам шаблона
 theme_sysinfo_vmforum=Сообщество Virtualmin
+theme_xhred_tooltip_support_ticket=Отправьте заявку в службу поддержки с прикрепленной системной информацией; удерживайте клавишу Alt, чтобы скопировать ссылку поддержки в буфер обмена
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Принудительно обновить системную информацию

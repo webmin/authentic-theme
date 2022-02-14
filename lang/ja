@@ -720,7 +720,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load= ツリービューの初期�
 theme_xhred_filemanager_tree_expand_search= ツリービューのフィルタ処理中に一致するすべての分岐を展開する
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo= バックグラウンド状態収集を強制的に同期させる
 theme_xhred_tooltip_side_slider_go_to_dashboard= ダッシュボードに進む
 theme_xhred_tooltip_side_slider_open_favorites_control= お気に入りコントロールを開く
 theme_xhred_tooltip_side_slider_delete_all_notification= すべての通知を削除する

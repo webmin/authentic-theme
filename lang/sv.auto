@@ -131,8 +131,8 @@ body_cpufan=CPU fläkt
 filemanager_symlink_exists=Det går inte att skapa <tt>$1</tt> eftersom filen redan finns i <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiera all systeminformation till urklipp; håll tangenten nedtryckt för att kopiera oformaterad textdata istället för markdown
-theme_xhred_tooltip_side_slider_clipboard_account=Kopiera all kontoinformation till urklipp; håll ned tangenten för att kopiera oformaterad text i stället för att markera
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiera all systeminformation till urklipp; håll ned Alt-tangenten för att kopiera oformaterad text i stället för att markera
+theme_xhred_tooltip_side_slider_clipboard_account=Kopiera all kontoinformation till urklipp; håll ned Alt-tangenten för att kopiera oformaterad text i stället för att markera
 tooltip_back_to_servers_index_master=Webmin-servrars indexmodul på huvudmaskinen
 tooltip_list_other_servers=Lista över andra registrerade Webmin-servrar
 theme_xhred_status_module_mon_up=Upp
@@ -147,3 +147,5 @@ settings_navigation_auto_fold_category=Vik inaktiva kategorier automatiskt
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererar sökbar lista med alternativ för mallen
 theme_xhred_tooltip_virtualmin_templates_filter=Sök igenom alla alternativ i mallen
 theme_sysinfo_vmforum=Virtualmin-gemenskapen
+theme_xhred_tooltip_support_ticket=Skicka in supportärende med bifogad systeminformation; håll ned Alt-tangenten för att kopiera supportlänken till urklipp
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Tvinga att uppdatera systeminformationen

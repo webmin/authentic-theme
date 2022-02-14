@@ -114,8 +114,8 @@ body_cpufan=CPU vifte
 filemanager_symlink_exists=Kan ikke opprette <tt>$1</tt> da filen allerede eksisterer i <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier all systeminformasjon til utklippstavlen; hold nede tasten for å kopiere ren tekstdata i stedet for markering
-theme_xhred_tooltip_side_slider_clipboard_account=Kopier all kontoinformasjon til utklippstavlen; hold nede tasten for å kopiere ren tekstdata i stedet for markering
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier all systeminformasjon til utklippstavlen; hold Alt-tasten for å kopiere ren tekstdata i stedet for markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Kopier all kontoinformasjon til utklippstavlen; hold Alt-tasten for å kopiere ren tekstdata i stedet for markdown
 tooltip_back_to_servers_index_master=Webmin-servere-indeksmodul på hovedmaskin
 tooltip_list_other_servers=Liste over andre registrerte Webmin-servere
 theme_xhred_status_module_mon_up=Opp
@@ -130,3 +130,5 @@ settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererer søkbar liste over alternativer for malen
 theme_xhred_tooltip_virtualmin_templates_filter=Søk gjennom alle alternativene i malen
 theme_sysinfo_vmforum=Virtualmin-fellesskap
+theme_xhred_tooltip_support_ticket=Send inn støttebillett med vedlagt systeminformasjon; hold Alt-tasten for å kopiere støttelenken til utklippstavlen
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Tving til å oppdatere systeminformasjon

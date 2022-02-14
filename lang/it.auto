@@ -44,8 +44,8 @@ body_cpufan=Ventola della CPU
 filemanager_symlink_exists=Impossibile creare <tt>$1</tt> poiché il file esiste già in <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copia tutte le informazioni di sistema negli appunti; tieni premuto il tasto per copiare i dati di testo normale anziché il markdown
-theme_xhred_tooltip_side_slider_clipboard_account=Copia tutte le informazioni sull'account negli appunti; tieni premuto il tasto per copiare i dati di testo normale anziché il markdown
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copia tutte le informazioni di sistema negli appunti; tieni premuto il tasto Alt per copiare i dati di testo normale anziché il markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Copia tutte le informazioni sull'account negli appunti; tieni premuto il tasto Alt per copiare i dati di testo normale anziché il markdown
 tooltip_back_to_servers_index_master=Modulo indice dei server Webmin sulla macchina master
 tooltip_list_other_servers=Elenco di altri server Webmin registrati
 theme_xhred_status_module_mon_up=Su
@@ -60,3 +60,5 @@ settings_navigation_auto_fold_category=Ripiega automaticamente le categorie inat
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generazione di un elenco ricercabile di opzioni per il modello
 theme_xhred_tooltip_virtualmin_templates_filter=Cerca in tutte le opzioni del modello
 theme_sysinfo_vmforum=Comunità Virtualmin
+theme_xhred_tooltip_support_ticket=Invia un ticket di supporto con le informazioni di sistema allegate; tieni premuto il tasto Alt per copiare il collegamento di supporto negli appunti
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Forza l'aggiornamento delle informazioni di sistema

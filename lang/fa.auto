@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=دایرکتوری های غ�
 theme_xhred_filemanager_tree_expand_search=در حالی که فیلتر نمای درخت ، همه شاخه هایی که حاوی مسابقات هستند را گسترش دهید
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=مجبور برای همگام سازی مجموعه وضعیت پس زمینه
 theme_xhred_tooltip_side_slider_go_to_dashboard=برو به داشبورد
 theme_xhred_tooltip_side_slider_open_favorites_control=کنترل موارد دلخواه را باز کنید
 theme_xhred_tooltip_side_slider_delete_all_notification=همه اعلان ها را حذف کنید
@@ -1249,8 +1248,8 @@ body_cpufan=فن CPU
 filemanager_symlink_exists=نمی توان <tt>$1</tt> ایجاد کرد زیرا فایل از قبل در <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=تمام اطلاعات سیستم را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید را نگه دارید
-theme_xhred_tooltip_side_slider_clipboard_account=تمام اطلاعات حساب را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید را نگه دارید
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=تمام اطلاعات سیستم را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید Alt را نگه دارید
+theme_xhred_tooltip_side_slider_clipboard_account=تمام اطلاعات حساب را در کلیپ بورد کپی کنید. برای کپی کردن داده های متن ساده به جای علامت گذاری، کلید Alt را نگه دارید
 tooltip_back_to_servers_index_master=ماژول نمایه سرورهای وبمین در ماشین اصلی
 tooltip_list_other_servers=لیست سایر سرورهای وبمین ثبت شده
 theme_xhred_status_module_mon_up=بالا
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=Ø¯Ø³ØªÙ‌ÙØ§Û ØºÛ�
 theme_xhred_tooltip_virtualmin_templates_filter_generating=ایجاد لیست قابل جستجو از گزینه ها برای الگو
 theme_xhred_tooltip_virtualmin_templates_filter=در تمام گزینه های قالب جستجو کنید
 theme_sysinfo_vmforum=انجمن Virtualmin
+theme_xhred_tooltip_support_ticket=ارسال تیکت پشتیبانی با اطلاعات سیستم پیوست شده؛ کلید Alt را نگه دارید تا پیوند پشتیبانی را در کلیپ بورد کپی کنید
+theme_xhred_tooltip_side_slider_refresh_sysinfo=اجباری برای تازه کردن اطلاعات سیستم

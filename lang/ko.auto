@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=트리 뷰를위한 초기로
 theme_xhred_filemanager_tree_expand_search=트리 뷰를 필터링하는 동안 일치하는 항목이 포함 된 모든 분기 확장
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=백그라운드 상태 수집을 강제로 동기화
 theme_xhred_tooltip_side_slider_go_to_dashboard=대시 보드로 이동
 theme_xhred_tooltip_side_slider_open_favorites_control=즐겨 찾기 제어 열기
 theme_xhred_tooltip_side_slider_delete_all_notification=모든 알림 삭제
@@ -1249,8 +1248,8 @@ body_cpufan=CPU 팬
 filemanager_symlink_exists=파일이 <tt>$2</tt> <tt>$1</tt> 를) 만들 수 없습니다
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=모든 시스템 정보를 클립보드에 복사합니다. 키를 누르고 있으면 마크다운이 아닌 일반 텍스트 데이터를 복사할 수 있습니다
-theme_xhred_tooltip_side_slider_clipboard_account=모든 계정 정보를 클립보드에 복사합니다. 키를 누르고 있으면 마크다운이 아닌 일반 텍스트 데이터를 복사할 수 있습니다
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=모든 시스템 정보를 클립보드에 복사합니다. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 Alt 키를 누르십시오
+theme_xhred_tooltip_side_slider_clipboard_account=모든 계정 정보를 클립보드에 복사합니다. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 Alt 키를 누르십시오
 tooltip_back_to_servers_index_master=마스터 시스템의 Webmin 서버 색인 모듈
 tooltip_list_other_servers=기타 등록된 Webmin 서버 목록
 theme_xhred_status_module_mon_up=위로
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=자동 접기 비활성 카테고리
 theme_xhred_tooltip_virtualmin_templates_filter_generating=템플릿에 대한 검색 가능한 옵션 목록 생성
 theme_xhred_tooltip_virtualmin_templates_filter=템플릿의 모든 옵션에서 검색
 theme_sysinfo_vmforum=Virtualmin 커뮤니티
+theme_xhred_tooltip_support_ticket=첨부된 시스템 정보와 함께 지원 티켓을 제출하십시오. 지원 링크를 클립보드에 복사하려면 Alt 키를 누르세요
+theme_xhred_tooltip_side_slider_refresh_sysinfo=시스템 정보를 강제로 새로 고침

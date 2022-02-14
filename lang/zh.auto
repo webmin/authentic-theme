@@ -414,8 +414,8 @@ body_cpufan=CPU风扇
 filemanager_symlink_exists=无法创建<tt>$1</tt> <tt>$2</tt>已存在文件
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=将所有系统信息复制到剪贴板；按住键复制纯文本数据而不是降价
-theme_xhred_tooltip_side_slider_clipboard_account=将所有账户信息复制到剪贴板；按住键复制纯文本数据而不是降价
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=将所有系统信息复制到剪贴板；按住 Alt 键复制纯文本数据而不是 markdown
+theme_xhred_tooltip_side_slider_clipboard_account=将所有帐户信息复制到剪贴板；按住 Alt 键复制纯文本数据而不是 markdown
 tooltip_back_to_servers_index_master=主机上的 Webmin 服务器索引模块
 tooltip_list_other_servers=其他已注册的 Webmin 服务器列表
 theme_xhred_status_module_mon_up=向上
@@ -430,3 +430,5 @@ settings_navigation_auto_fold_category=自动折叠非活动类别
 theme_xhred_tooltip_virtualmin_templates_filter_generating=为模板生成可搜索的选项列表
 theme_xhred_tooltip_virtualmin_templates_filter=搜索模板的所有选项
 theme_sysinfo_vmforum=Virtualmin 社区
+theme_xhred_tooltip_support_ticket=提交附有系统信息的支持票；按住 Alt 键将支持链接复制到剪贴板
+theme_xhred_tooltip_side_slider_refresh_sysinfo=强制刷新系统信息

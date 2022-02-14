@@ -645,7 +645,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Excluya los directorios no es
 theme_xhred_filemanager_tree_expand_search=Expanda todas las ramas que contienen coincidencias mientras filtra la vista de árbol
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Fuerza para sincronizar la recopilación de estado de fondo
 theme_xhred_tooltip_side_slider_go_to_dashboard=Ir al panel de control
 theme_xhred_tooltip_side_slider_open_favorites_control=Control de favoritos abierto
 theme_xhred_tooltip_side_slider_delete_all_notification=Eliminar todas las notificaciones
@@ -1160,8 +1159,8 @@ body_cpufan=ventilador de la CPU
 filemanager_symlink_exists=No se puede crear <tt>$1</tt> porque el archivo ya existe en <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copie toda la información del sistema al portapapeles; mantenga presionada la tecla para copiar datos de texto sin formato en lugar de rebajas
-theme_xhred_tooltip_side_slider_clipboard_account=Copie toda la información de la cuenta al portapapeles; mantenga presionada la tecla para copiar datos de texto sin formato en lugar de rebajas
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copie toda la información del sistema al portapapeles; mantenga presionada la tecla Alt para copiar datos de texto sin formato en lugar de rebajas
+theme_xhred_tooltip_side_slider_clipboard_account=Copie toda la información de la cuenta al portapapeles; mantenga presionada la tecla Alt para copiar datos de texto sin formato en lugar de rebajas
 tooltip_back_to_servers_index_master=Módulo de índice de servidores Webmin en la máquina maestra
 tooltip_list_other_servers=Lista de otros servidores Webmin registrados
 theme_xhred_status_module_mon_up=Arriba
@@ -1176,3 +1175,5 @@ settings_navigation_auto_fold_category=Categorías inactivas de plegado automát
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generación de una lista de búsqueda de opciones para la plantilla
 theme_xhred_tooltip_virtualmin_templates_filter=Buscar en todas las opciones de la plantilla
 theme_sysinfo_vmforum=Comunidad Virtualmin
+theme_xhred_tooltip_support_ticket=Envíe un ticket de soporte con la información del sistema adjunta; mantenga presionada la tecla Alt para copiar el enlace de soporte al portapapeles
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Forzar la actualización de la información del sistema

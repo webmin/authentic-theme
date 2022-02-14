@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Eskludi direttorji mhux essen
 theme_xhred_filemanager_tree_expand_search=Wessgħet il-fergħat kollha li fihom it-taqbiliet waqt li tkun iffiltrata s-siġra
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Seħħ biex tissinkronizza l-ġbir tal-istatus tal-isfond
 theme_xhred_tooltip_side_slider_go_to_dashboard=Mur fuq id-dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Iftaħ il-kontroll tal-favoriti
 theme_xhred_tooltip_side_slider_delete_all_notification=Ħassar in-notifiki kollha
@@ -1249,8 +1248,8 @@ body_cpufan=Fann tas-CPU
 filemanager_symlink_exists=Ma tistax toħloq <tt>$1</tt> peress li l-fajl diġà jeżisti fi <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Ikkopja l-informazzjoni kollha tas-sistema fil-clipboard; żomm iċ-ċavetta biex tikkopja dejta b'test sempliċi aktar milli markdown
-theme_xhred_tooltip_side_slider_clipboard_account=Ikkopja l-informazzjoni kollha tal-kont fil-clipboard; żomm iċ-ċavetta biex tikkopja dejta b'test sempliċi aktar milli markdown
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Ikkopja l-informazzjoni kollha tas-sistema fil-clipboard; żomm iċ-ċavetta Alt biex tikkopja dejta b'test sempliċi minflok markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Ikkopja l-informazzjoni kollha tal-kont fil-clipboard; żomm iċ-ċavetta Alt biex tikkopja dejta b'test sempliċi minflok markdown
 tooltip_back_to_servers_index_master=Webmin servers indiċi modulu fuq magna kaptan
 tooltip_list_other_servers=Lista ta' servers oħra Webmin irreġistrati
 theme_xhred_status_module_mon_up=Up
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=Jintewa awtomatikament kategoriji inattiv
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Tiġġenera lista ta' għażliet li tista' titfittex għall-mudell
 theme_xhred_tooltip_virtualmin_templates_filter=Fittex fl-għażliet kollha tal-mudell
 theme_sysinfo_vmforum=Komunità Virtualmin
+theme_xhred_tooltip_support_ticket=Ibgħat biljett ta' appoġġ b'informazzjoni tas-sistema mehmuża; żomm il-buttuna Alt biex tikkopja l-link ta' appoġġ mal-clipboard
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Imġiegħel li jġedded l-informazzjoni tas-sistema

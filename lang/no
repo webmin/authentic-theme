@@ -724,7 +724,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Ekskluder uviktige kataloger 
 theme_xhred_filemanager_tree_expand_search=Utvid alle grener som inneholder treff mens du filtrerer trevisningen
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Tving synkronisering av bakgrunnsstatusinnsamling
 theme_xhred_tooltip_side_slider_go_to_dashboard=Gå til instrumentpanel
 theme_xhred_tooltip_side_slider_open_favorites_control=Åpne Favoritter-kontroll
 theme_xhred_tooltip_side_slider_delete_all_notification=Slett alle varsler

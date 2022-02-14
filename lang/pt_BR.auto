@@ -733,7 +733,6 @@ theme_xhred_filemanager_tree_exclude_on_first_load=Excluir diretórios não esse
 theme_xhred_filemanager_tree_expand_search=Expanda todas as ramificações que contêm correspondências ao filtrar a exibição em árvore
 
 #19.12
-theme_xhred_tooltip_side_slider_sync_sysinfo=Forçar a sincronização da coleção de status em segundo plano
 theme_xhred_tooltip_side_slider_go_to_dashboard=Ir para a dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Controle de favoritos abertos
 theme_xhred_tooltip_side_slider_delete_all_notification=Excluir todas as notificações
@@ -1249,8 +1248,8 @@ body_cpufan=ventilador da CPU
 filemanager_symlink_exists=Não é possível criar <tt>$1</tt> porque o arquivo já existe em <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copie todas as informações do sistema para a área de transferência; segure a tecla para copiar dados de texto simples em vez de markdown
-theme_xhred_tooltip_side_slider_clipboard_account=Copie todas as informações da conta para a área de transferência; segure a tecla para copiar dados de texto simples em vez de markdown
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copie todas as informações do sistema para a área de transferência; segure a tecla Alt para copiar dados de texto simples em vez de markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Copie todas as informações da conta para a área de transferência; segure a tecla Alt para copiar dados de texto simples em vez de markdown
 tooltip_back_to_servers_index_master=Módulo de índice de servidores Webmin na máquina mestre
 tooltip_list_other_servers=Lista de outros servidores Webmin registrados
 theme_xhred_status_module_mon_up=Acima
@@ -1265,3 +1264,5 @@ settings_navigation_auto_fold_category=Dobrar automaticamente categorias inativa
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Gerando uma lista pesquisável de opções para o modelo
 theme_xhred_tooltip_virtualmin_templates_filter=Pesquise em todas as opções do modelo
 theme_sysinfo_vmforum=Comunidade Virtualmin
+theme_xhred_tooltip_support_ticket=Enviar ticket de suporte com informações do sistema anexadas; segure a tecla Alt para copiar o link de suporte para a área de transferência
+theme_xhred_tooltip_side_slider_refresh_sysinfo=Forçar a atualização das informações do sistema
