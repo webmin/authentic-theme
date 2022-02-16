@@ -71,7 +71,10 @@ const mail = (function() {
             sdata: get_server_data,
             mavailable: core.moduleAvailable,
             lang: theme_language,
-            notification: plugins.messenger.post,
+            notification: {
+                post: plugins.messenger.post,
+                hideAll: plugins.messenger.toast.hideAll,
+            },
             file_chooser: plugins.chooser.file,
             button: {
                 progress: snippets.progressive_button,
@@ -1473,14 +1476,13 @@ const mail = (function() {
                                                     cancel: {
                                                         label: _.lang('global_undo'),
                                                         action: function() {
-                                                            this.hide();
                                                             draft.control.undo();
                                                         }
                                                     }
                                                 };
-                                                _.notification([$$.$.notification.type.trash, _.lang('mail_composer_discarded_draft')], 5, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
+                                                _.notification.post([$$.$.notification.type.trash, _.lang('mail_composer_discarded_draft')], 10, "warning", `discard-${id}`, 1, ['bottom', 'center'], undo);
                                                 target.classList.add(classes.hidden);
-                                            })
+                                            });
 
                                             // Event for controlling visibility of extra recipients fields
                                             rcs.querySelectorAll('button').forEach((b) => {
@@ -1540,7 +1542,7 @@ const mail = (function() {
                                                                         size = s[1].replace(/\s+/g, String());
                                                                     if (size == -1 || size == -2) {
                                                                         let message = size == -1 ? error.read : error.dir
-                                                                        _.notification([$$.$.notification.danger, message], 10, "error", 0, 1, ['bottom', 'center'])
+                                                                        _.notification.post([$$.$.notification.danger, message], 10, "error", 0, 1, ['bottom', 'center'])
                                                                     } else {
                                                                         add_attachment('server', suid, { name: file }, size, true);
                                                                     }
@@ -1939,7 +1941,7 @@ const mail = (function() {
 
                                                                 // Send error notification
                                                                 error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
-                                                                _.notification([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
+                                                                _.notification.post([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
 
                                                                 // Reset progress
                                                                 _.button.progress(this, 0);
@@ -1951,7 +1953,7 @@ const mail = (function() {
 
                                                                 // Send success notification
                                                                 status = rs.innerHTML;
-                                                                _.notification([scheduled.status() ? $$.$.notification.type.scheduled : $$.$.notification.success, status], 10, "success", 0, 1, ['bottom', 'center'])
+                                                                _.notification.post([scheduled.status() ? $$.$.notification.type.scheduled : $$.$.notification.success, status], 10, "success", 0, 1, ['bottom', 'center'])
                                                                 paneled && panel.close();
 
                                                                 // Delete previously stored draft message
@@ -2236,7 +2238,6 @@ const mail = (function() {
          */
         const get = (data) => {
                 loader.start();
-                // _.notification('hide-all');
                 fetching.abort();
                 fetching.state = $.post(_.path.extensions + '/mail/messages.cgi?' + _.plugin.json_to_query(data),
                     function(data) {
@@ -2614,7 +2615,7 @@ const mail = (function() {
                  */
                 button.forward.on('click', function() {
                     // Produce notification (temporary)
-                    _.notification([$$.$.notification.danger, 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['bottom', 'center'])
+                    _.notification.post([$$.$.notification.danger, 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['bottom', 'center'])
                 });
 
                 /**
@@ -2891,7 +2892,7 @@ const mail = (function() {
 
                 actions = _.plugin.json_to_query(actions);
                 messages = `&d=${messages.join('&d=')}`;
-                refetch && (loader.start(), _.notification('hide-all'));
+                refetch && (loader.start(), _.notification.hideAll());
                 $.post(target + hidden + actions + encodeURI(messages), function() {
                     if (reset) {
                         storage.reset();
@@ -2943,7 +2944,7 @@ const mail = (function() {
                 if (data.error) {
                     let errors = data.error.error;
                     for (let i = 0; i < errors.length; i++) {
-                        _.notification([$$.$.notification.error, errors[i]], 20, "error", i, 1, ['bottom', 'center']);
+                        _.notification.post([$$.$.notification.error, errors[i]], 20, "error", i, 1, ['bottom', 'center']);
                     }
 
                     // If redirect requested, follow it
@@ -2956,7 +2957,7 @@ const mail = (function() {
 
                 let messages_list_available = messages_list.length > 128 ? 1 : 0;
                 if (!messages_list_available && data.searched) {
-                    _.notification([$$.$.notification.type.search, _.lang('mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
+                    _.notification.post([$$.$.notification.type.search, _.lang('mail_search_empty')], 5, "info", 0, 1, ['bottom', 'center'])
                     return
                 }
 
