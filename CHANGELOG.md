@@ -1,24 +1,24 @@
 ## Changelog
 
-#### Version 19.85-RC8 (February 16, 2022)
+#### Version 19.85 (February 16, 2022)
 * Add improved focus state for elements to support navigation using keyboard with tab key
-* Add reworked toast notifications with showing timeout and support swipes on mobile devices
-* Add basic API for module developers
+* Add reworked toast notifications with better support for mobile devices
+* Add basic theme API for module developers [authentic-theme/wiki/API](https://github.com/authentic-theme/authentic-theme/wiki/API)
 * Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
-* Add ability to copy complete system information to clipboard with a single click [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
+* Add ability to copy overall system information to clipboard from the dashboard [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
+* Add ability for submitting support tickets using the dashboard for Virtualmin Pro users
 * Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
 * Add support to copy text from draggable by holding ⎇ key [webmin#1569/comment-1003734006](https://github.com/webmin/webmin/issues/1569#issuecomment-1003734006)
-* Add ability for submitting support tickets using dashboard for Virtualmin Pro users
 * Add further multiple improvements to elements align across various browsers/platforms
 * Add an option to disable auto folding inactive categories in navigation menu
 * Add support for filtering server templates options in Virtualmin
 * Add visual improvements to Bandwidth Usage submodule in Virtualmin
 * Add various improvements and fixes to Edit Databases submodule in Virtualmin
-* Add ability to detach edited file to separate editor in Custom Commands module
+* Add ability to detach edited file to a separate editor in Custom Commands module
 * Add various visual improvements to Webmin Actions Log module
 * Add visual improvements to PHP Options submodule in Virtualmin
 * Add better support for a new upcoming version of Virtualmin Support module
-* Add multiple improvements to ConfigServer Security & Firewall module support
+* Add multiple improvements for ConfigServer Security & Firewall module support
 * Add Virtualmin community link to the dashboard
 * Fix system monitors icons for System and Server Status module
 * Fix to avoid fetching navigation menu on simple domain selection on Virtualmin Virtual Servers page
@@ -26,12 +26,12 @@
 * Fiх configuration page work in File Manager when opened in a separate tab [sourceforge.net#5539](https://sourceforge.net/p/webadmin/bugs/5539/)
 * Fix to display delete/move to trash button color conditionally based on option in File Manager
 * Fix calculations of directory size in File Manager to be error resilient
-* Fix various bugs for FTP Directory Restrictions submodule in Virtualmin
-* Fix table rendering upon submit for Backup Virtual Servers submodule in Virtualmin
-* Fiх highlight syntax detection for Custom Commands module when editing a file [webmin#1591](https://github.com/webmin/webmin/issues/1591)
 * Fix regression bug for spinner positioning in File Manager on retrieving directory size
 * Fix returning to module index after saving configuration in File Manager
+* Fix various bugs for FTP Directory Restrictions submodule in Virtualmin
+* Fix table rendering upon submit for Backup Virtual Servers submodule in Virtualmin
 * Fiх false redirection after opening a link in HTTP Tunnel module [virtualmin/virtualmin-gpl#358](https://github.com/virtualmin/virtualmin-gpl/issues/358)
+* Fiх highlight syntax detection for Custom Commands module when editing a file [webmin#1591](https://github.com/webmin/webmin/issues/1591)
 * Fix Custom Commands module support in Usermin
 
 <!--- separator --->
