@@ -1,8 +1,9 @@
 ## Changelog
 
-#### Version 19.85-RC7 (February 16, 2022)
+#### Version 19.85-RC8 (February 16, 2022)
 * Add improved focus state for elements to support navigation using keyboard with tab key
 * Add reworked toast notifications with showing timeout and support swipes on mobile devices
+* Add basic API for module developers
 * Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
 * Add ability to copy complete system information to clipboard with a single click [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
 * Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
