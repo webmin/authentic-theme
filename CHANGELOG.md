@@ -7,7 +7,7 @@
 * Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
 * Add ability to copy overall system information to clipboard from the dashboard [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
 * Add ability for submitting support tickets using the dashboard for Virtualmin Pro users
-* Add to display nice toast notification if no space left on device
+* Add ability to explicitly tell if no space left on device with toast notification
 * Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
 * Add support to copy text from draggable by holding ⎇ key [webmin#1569/comment-1003734006](https://github.com/webmin/webmin/issues/1569#issuecomment-1003734006)
 * Add further multiple improvements to elements align across various browsers/platforms
