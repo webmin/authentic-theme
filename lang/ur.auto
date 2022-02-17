@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=ٹیمپلیٹ کے تمام ا�
 theme_sysinfo_vmforum=ورچوئل مین کمیونٹی
 theme_xhred_tooltip_support_ticket=منسلک نظام کی معلومات کے ساتھ سپورٹ ٹکٹ جمع کروائیں؛ سپورٹ لنک کو کلپ بورڈ پر کاپی کرنے کے لیے Alt کلید کو پکڑیں۔
 theme_xhred_tooltip_side_slider_refresh_sysinfo=سسٹم کی معلومات کو ریفریش کرنے پر مجبور کریں۔
+theme_xhred_disk_quota_error_title=کوٹے سے باہر
+theme_xhred_disk_quota_error_message=آلے میں کوئی جگہ نہیں بچی

@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Търсете във всичк
 theme_sysinfo_vmforum=Virtualmin общност
 theme_xhred_tooltip_support_ticket=Изпратете билет за поддръжка с приложена системна информация; задръжте клавиша Alt, за да копирате връзката за поддръжка в клипборда
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Принудително обновяване на системната информация
+theme_xhred_disk_quota_error_title=Извън квотата
+theme_xhred_disk_quota_error_message=Няма повече свободно място на устройството

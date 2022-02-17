@@ -651,3 +651,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Cari di seluruh semua pilihan te
 theme_sysinfo_vmforum=Komuniti Virtualmin
 theme_xhred_tooltip_support_ticket=Serahkan tiket sokongan dengan maklumat sistem yang dilampirkan; tahan kekunci Alt untuk menyalin pautan sokongan ke papan keratan
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Paksa untuk memuat semula maklumat sistem
+theme_xhred_disk_quota_error_title=Habis kuota
+theme_xhred_disk_quota_error_message=Tiada lagi ruang di dalam peranti

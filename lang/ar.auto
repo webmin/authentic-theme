@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=ابحث في جميع خيار�
 theme_sysinfo_vmforum=مجتمع Virtualmin
 theme_xhred_tooltip_support_ticket=إرسال تذكرة دعم مع معلومات النظام المرفقة ؛ اضغط مع الاستمرار على مفتاح Alt لنسخ رابط الدعم إلى الحافظة
 theme_xhred_tooltip_side_slider_refresh_sysinfo=القوة لتحديث معلومات النظام
+theme_xhred_disk_quota_error_title=خارج الحصة
+theme_xhred_disk_quota_error_message=لم يتبقى مساحة في الجهاز

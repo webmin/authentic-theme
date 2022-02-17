@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Tìm kiếm trong tất cả cá
 theme_sysinfo_vmforum=Cộng đồng Virtualmin
 theme_xhred_tooltip_support_ticket=Gửi phiếu hỗ trợ với thông tin hệ thống đính kèm; giữ phím Alt để sao chép liên kết hỗ trợ vào khay nhớ tạm
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Buộc làm mới thông tin hệ thống
+theme_xhred_disk_quota_error_title=Hết hạn ngạch
+theme_xhred_disk_quota_error_message=không còn chỗ trống trên thiết bị

@@ -1326,3 +1326,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Search throughout all options of
 theme_sysinfo_vmforum=Virtualmin Community
 theme_xhred_tooltip_support_ticket=Submit support ticket with attached system information; hold ⎇ key to copy support link to clipboard
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Force to refresh system information
+theme_xhred_disk_quota_error_title=Out of quota
+theme_xhred_disk_quota_error_message=No space left on device

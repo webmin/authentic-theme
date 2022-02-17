@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Keressen a sablon összes lehet�
 theme_sysinfo_vmforum=Virtualmin közösség
 theme_xhred_tooltip_support_ticket=Támogatási jegy benyújtása csatolt rendszerinformációkkal; Tartsa lenyomva az Al billentyűt a támogatási hivatkozás vágólapra másolásához
 theme_xhred_tooltip_side_slider_refresh_sysinfo=A rendszerinformációk frissítésének kényszerítése
+theme_xhred_disk_quota_error_title=Túl a kvótán
+theme_xhred_disk_quota_error_message=Nincs hely az eszközön

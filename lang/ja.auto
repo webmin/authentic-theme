@@ -174,3 +174,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=テンプレートのすべて�
 theme_sysinfo_vmforum=Virtualminコミュニティ
 theme_xhred_tooltip_support_ticket=システム情報を添付したサポートチケットを送信します。 Altキーを押したままにして、サポートリンクをクリップボードにコピーします
 theme_xhred_tooltip_side_slider_refresh_sysinfo=システム情報を強制的に更新する
+theme_xhred_disk_quota_error_title=クォータを超えています
+theme_xhred_disk_quota_error_message=デバイスにスペースが残っていません

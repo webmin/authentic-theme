@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Şablonun tüm seçeneklerinde a
 theme_sysinfo_vmforum=Virtualmin Topluluğu
 theme_xhred_tooltip_support_ticket=Ekli sistem bilgileriyle destek bileti gönderin; destek bağlantısını panoya kopyalamak için Alt tuşunu basılı tutun
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Sistem bilgilerini yenilemeye zorla
+theme_xhred_disk_quota_error_title=kota dışında
+theme_xhred_disk_quota_error_message=Cihazda boş alan kalmadı

@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Soek deur alle opsies van die sj
 theme_sysinfo_vmforum=Virtualmin-gemeenskap
 theme_xhred_tooltip_support_ticket=Dien ondersteuningskaartjie in met aangehegte stelselinligting; hou Alt-sleutel in om ondersteuningskakel na knipbord te kopieer
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Dwing om stelselinligting te verfris
+theme_xhred_disk_quota_error_title=Buite kwota
+theme_xhred_disk_quota_error_message=geen spasie oor op die toestel nie

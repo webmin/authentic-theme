@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=템플릿의 모든 옵션에서
 theme_sysinfo_vmforum=Virtualmin 커뮤니티
 theme_xhred_tooltip_support_ticket=첨부된 시스템 정보와 함께 지원 티켓을 제출하십시오. 지원 링크를 클립보드에 복사하려면 Alt 키를 누르세요
 theme_xhred_tooltip_side_slider_refresh_sysinfo=시스템 정보를 강제로 새로 고침
+theme_xhred_disk_quota_error_title=할당량 부족
+theme_xhred_disk_quota_error_message=기기에 남은 공간이 없습니다

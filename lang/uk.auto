@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Пошук у всіх пара�
 theme_sysinfo_vmforum=Спільнота Virtualmin
 theme_xhred_tooltip_support_ticket=Подати заявку в службу підтримки з доданою системною інформацією; утримуйте клавішу Alt, щоб скопіювати посилання на підтримку в буфер обміну
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Примусово оновити системну інформацію
+theme_xhred_disk_quota_error_title=Поза квоти
+theme_xhred_disk_quota_error_message=На пристрої не залишилося місця

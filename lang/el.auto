@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Αναζήτηση σε όλες
 theme_sysinfo_vmforum=Virtualmin Community
 theme_xhred_tooltip_support_ticket=Υποβάλετε δελτίο υποστήριξης με συνημμένες πληροφορίες συστήματος. κρατήστε πατημένο το πλήκτρο Alt για να αντιγράψετε τον σύνδεσμο υποστήριξης στο πρόχειρο
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Αναγκαστική ανανέωση πληροφοριών συστήματος
+theme_xhred_disk_quota_error_title=Εκτός ποσόστωσης
+theme_xhred_disk_quota_error_message=Δεν υπάρχει χώρος στην συσκευή

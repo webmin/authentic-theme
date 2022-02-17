@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Pretražite sve opcije predlošk
 theme_sysinfo_vmforum=Virtualmin zajednica
 theme_xhred_tooltip_support_ticket=Pošaljite ulaznicu za podršku s priloženim informacijama o sustavu; držite tipku Alt za kopiranje veze za podršku u međuspremnik
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Prisilno osvježavanje informacija o sustavu
+theme_xhred_disk_quota_error_title=Izvan kvote
+theme_xhred_disk_quota_error_message=Nema više mjesta na uređaju

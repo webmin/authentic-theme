@@ -149,3 +149,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Sök igenom alla alternativ i ma
 theme_sysinfo_vmforum=Virtualmin-gemenskapen
 theme_xhred_tooltip_support_ticket=Skicka in supportärende med bifogad systeminformation; håll ned Alt-tangenten för att kopiera supportlänken till urklipp
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Tvinga att uppdatera systeminformationen
+theme_xhred_disk_quota_error_title=Utom kvot
+theme_xhred_disk_quota_error_message=Inget utrymme kvar på enheten

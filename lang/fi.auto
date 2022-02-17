@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Hae mallin kaikista vaihtoehdois
 theme_sysinfo_vmforum=Virtualmin-yhteisö
 theme_xhred_tooltip_support_ticket=Lähetä tukilippu ja liitteenä olevat järjestelmätiedot; pidä Al-näppäintä painettuna kopioidaksesi tukilinkin leikepöydälle
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Pakota päivittämään järjestelmätiedot
+theme_xhred_disk_quota_error_title=Kiintiö loppu
+theme_xhred_disk_quota_error_message=laitteessa ei ole tilaa jäljellä

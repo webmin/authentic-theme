@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Bilatu txantiloiaren aukera guzt
 theme_sysinfo_vmforum=Virtualmin Komunitatea
 theme_xhred_tooltip_support_ticket=Bidali laguntza-txartela erantsita sistemaren informazioarekin; eutsi Alt tekla euskarriaren esteka arbelean kopiatzeko
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Behartu sistemaren informazioa freskatzera
+theme_xhred_disk_quota_error_title=Kupotik kanpo
+theme_xhred_disk_quota_error_message=Ez da lekurik geratzen gailuan

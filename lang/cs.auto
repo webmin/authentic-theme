@@ -1108,3 +1108,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Prohledávejte všechny možnost
 theme_sysinfo_vmforum=Komunita Virtualmin
 theme_xhred_tooltip_support_ticket=Odešlete lístek podpory s připojenými informacemi o systému; podržením klávesy Alt zkopírujete odkaz na podporu do schránky
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Vynutit aktualizaci systémových informací
+theme_xhred_disk_quota_error_title=Mimo kvótu
+theme_xhred_disk_quota_error_message=Na zařízení nezbývá místo

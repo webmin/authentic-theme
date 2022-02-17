@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=در تمام گزینه های 
 theme_sysinfo_vmforum=انجمن Virtualmin
 theme_xhred_tooltip_support_ticket=ارسال تیکت پشتیبانی با اطلاعات سیستم پیوست شده؛ کلید Alt را نگه دارید تا پیوند پشتیبانی را در کلیپ بورد کپی کنید
 theme_xhred_tooltip_side_slider_refresh_sysinfo=اجباری برای تازه کردن اطلاعات سیستم
+theme_xhred_disk_quota_error_title=خارج از سهمیه
+theme_xhred_disk_quota_error_message=هیچ فضایی در دستگاه باقی نمانده است

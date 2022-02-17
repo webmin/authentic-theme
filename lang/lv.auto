@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Meklējiet visās veidnes opcij�
 theme_sysinfo_vmforum=Virtualmin kopiena
 theme_xhred_tooltip_support_ticket=Iesniegt atbalsta biļeti ar pievienotu sistēmas informāciju; turiet nospiestu taustiņu Al, lai kopētu atbalsta saiti starpliktuvē
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Piespiest atsvaidzināt sistēmas informāciju
+theme_xhred_disk_quota_error_title=Ārpus kvotas
+theme_xhred_disk_quota_error_message=Ierīcē vairs nav vietas

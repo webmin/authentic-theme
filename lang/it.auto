@@ -62,3 +62,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Cerca in tutte le opzioni del mo
 theme_sysinfo_vmforum=Comunità Virtualmin
 theme_xhred_tooltip_support_ticket=Invia un ticket di supporto con le informazioni di sistema allegate; tieni premuto il tasto Alt per copiare il collegamento di supporto negli appunti
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forza l'aggiornamento delle informazioni di sistema
+theme_xhred_disk_quota_error_title=Fuori quota
+theme_xhred_disk_quota_error_message=Nessuno spazio rimasto sul dispositivo

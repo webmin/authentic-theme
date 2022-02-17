@@ -1184,3 +1184,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Przeszukuj wszystkie opcje szabl
 theme_sysinfo_vmforum=Społeczność Virtualmin
 theme_xhred_tooltip_support_ticket=Prześlij zgłoszenie pomocy technicznej z dołączonymi informacjami o systemie; przytrzymaj klawisz Alt, aby skopiować link wsparcia do schowka
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Wymuś odświeżenie informacji o systemie
+theme_xhred_disk_quota_error_title=Poza limitem
+theme_xhred_disk_quota_error_message=Brak miejsca w urządzeniu

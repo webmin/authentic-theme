@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=חפש בכל האפשרויות
 theme_sysinfo_vmforum=קהילת Virtualmin
 theme_xhred_tooltip_support_ticket=שלח כרטיס תמיכה עם מידע מערכת מצורף; החזק את מקש Alt כדי להעתיק את קישור התמיכה ללוח
 theme_xhred_tooltip_side_slider_refresh_sysinfo=הכריח לרענן את מידע המערכת
+theme_xhred_disk_quota_error_title=מחוץ למכסה
+theme_xhred_disk_quota_error_message=אין עוד מקום במכשיר

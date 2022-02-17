@@ -255,3 +255,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Căutați în toate opțiunile �
 theme_sysinfo_vmforum=Comunitatea Virtualmin
 theme_xhred_tooltip_support_ticket=Trimiteți biletul de asistență cu informații despre sistem atașate; țineți apăsată tasta Alt pentru a copia linkul de asistență în clipboard
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forțați reîmprospătarea informațiilor de sistem
+theme_xhred_disk_quota_error_title=Din cotă
+theme_xhred_disk_quota_error_message=Nu a mai rămas spațiu pe dispozitiv

@@ -1266,3 +1266,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Vyhľadávajte vo všetkých mo�
 theme_sysinfo_vmforum=Komunita Virtualmin
 theme_xhred_tooltip_support_ticket=Odoslať podporný lístok s pripojenými systémovými informáciami; Ak chcete skopírovať odkaz na podporu do schránky, podržte kláves Alt
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Vynútiť obnovenie systémových informácií
+theme_xhred_disk_quota_error_title=Mimo kvóty
+theme_xhred_disk_quota_error_message=Na zariadení nie je dostatok miesta

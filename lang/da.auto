@@ -1178,3 +1178,5 @@ theme_xhred_tooltip_virtualmin_templates_filter=Søg i alle skabelonens mulighed
 theme_sysinfo_vmforum=Virtualmin-fællesskab
 theme_xhred_tooltip_support_ticket=Indsend supportbillet med vedhæftede systemoplysninger; hold Alt-tasten nede for at kopiere supportlinket til udklipsholderen
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Tving til at opdatere systemoplysninger
+theme_xhred_disk_quota_error_title=Uden for kvote
+theme_xhred_disk_quota_error_message=Ikke mere plads på enheden
