@@ -317,7 +317,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Geen resultaten gevonde
 theme_xhred_filemanager_buffer_error=Kan bestanden niet in de buffer plakken - toestemming geweigerd.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` bestaat al in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Kan $3 niet maken `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - toestemming geweigerd.
+filemanager_create_object_denied=Kan $3 niet maken `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - toestemming geweigerd : $4.
 
 theme_xhred_filemanager_paste_warning=Kan doel (en) niet plakken. Het is mogelijk dat het/de gevraagde object (en) tijdens/voor het plakken <em>hernoemd, verplaatst</em> of <em>verwijderd</em> zijn. Een andere mogelijke oorzaak is dat de bestemming niet beschrijfbaar is. Het is de moeite waard om de kenmerken van objecten te controleren.
 

@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ni najdenih rezultatov<
 theme_xhred_filemanager_buffer_error=Ni bilo mogoče prilepiti datotek v medpomnilnik - dovoljenje zavrnjeno.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` že obstaja v `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 ni mogoče ustvariti `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - dovoljenje zavrnjeno.
+filemanager_create_object_denied=$3 ni mogoče ustvariti `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - dovoljenje zavrnjeno : $4.
 
 theme_xhred_filemanager_paste_warning=Ciljev ni bilo mogoče prilepiti. Možno je, da bi bili zahtevani predmeti preimenovani, premaknjeni </em>ali</em> izbrisani </em>, preden so bili pred lepljenjem. Drug možen vzrok je, da cilj ni mogoče zapisati. Vredno je preveriti atribute predmetov.
 

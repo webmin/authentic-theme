@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class=“h5”>未找到結果</sp
 theme_xhred_filemanager_buffer_error=無法將文件粘貼到緩衝區-權限被拒絕。
 
 filemanager_create_object_exists=三塊錢`<strong><em>$1</em></strong>`已經存在於`<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=無法創建 $3 `<strong><em>$1</em></strong>`在`<strong><tt>$2</tt></strong>` - 沒有權限。
+filemanager_create_object_denied=無法創建 $3 `<strong><em>$1</em></strong>`在`<strong><tt>$2</tt></strong>` - 沒有權限 : $4。
 
 theme_xhred_filemanager_paste_warning=無法粘貼目標。在粘貼之前/之前，被請求的對象可能已被<em>重命名，移動</em>或<em>刪除</em>。另一個可能的原因是目的地不可寫。值得檢查對象的屬性。
 

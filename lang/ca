@@ -426,7 +426,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">No s'ha trobat cap resu
 theme_xhred_filemanager_buffer_error=S'ha produït un error mentres s'enganxaven els arxius al búfer - permís denegat.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` ja existeix a `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=No es pot crear $3 `<strong><em>$1</em></strong>` en `<strong><tt>$2</tt></strong>` - permís denegat.
+filemanager_create_object_denied=No es pot crear $3 `<strong><em>$1</em></strong>` en `<strong><tt>$2</tt></strong>` - permís denegat : $4.
 
 theme_xhred_filemanager_paste_warning=No és possible enganxar l'objecte. Podria ser que els objectes s'hagin canviat de nom, mogut, eliminat o que no tinguis permís d'escriptura.
 

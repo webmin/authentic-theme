@@ -272,7 +272,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Nebyly nalezeny žádn�
 theme_xhred_filemanager_buffer_error=Nepodařilo se vložit soubory do vyrovnávací paměti - oprávnění odepřeno.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` již existuje v `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Nelze vytvořit $3 `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - přístup odepřen.
+filemanager_create_object_denied=Nelze vytvořit $3 `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - přístup odepřen : $4.
 
 theme_xhred_filemanager_paste_warning=Vložení cílů se nezdařilo. Je možné, že požadované objekty mohly být během/před vložením <em>přejmenovány, přesunuty</em> nebo <em>odstraněny</em>. Další možnou příčinou je, že cíl nelze zapisovat. Stojí za to zkontrolovat atributy objektů.
 

@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">결과가 없습니다<
 theme_xhred_filemanager_buffer_error=파일을 버퍼에 붙여 넣지 못했습니다. 권한이 거부되었습니다.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` 이미 존재합니다 `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 만들 수 없습니다 `<strong><em>$1</em></strong>` 에 `<strong><tt>$2</tt></strong>` -권한이 거부되었습니다.
+filemanager_create_object_denied=$3 만들 수 없습니다 `<strong><em>$1</em></strong>` 에 `<strong><tt>$2</tt></strong>` -권한이 거부되었습니다 : $4.
 
 theme_xhred_filemanager_paste_warning=대상을 붙여 넣지 못했습니다. 붙여 넣기 도중/요청하기 전에 요청한 개체가 <em>이름 바꾸기, 이동</em> 또는 <em>삭제</em>되었을 수 있습니다. 또 다른 가능한 원인은 대상이 쓰기 가능하지 않기 때문입니다. 객체의 속성을 확인할 가치가 있습니다.
 

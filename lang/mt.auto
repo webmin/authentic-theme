@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ma nstab l-ebda riżult
 theme_xhred_filemanager_buffer_error=Naqset milli tippejstja l-fajls fil-bafer - permess miċħud.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` diġa jeżisti fil `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Ma tistax toħloq $3 `<strong><em>$1</em></strong>` fi `<strong><tt>$2</tt></strong>` - permess miċħud.
+filemanager_create_object_denied=Ma tistax toħloq $3 `<strong><em>$1</em></strong>` fi `<strong><tt>$2</tt></strong>` - permess miċħud : $4.
 
 theme_xhred_filemanager_paste_warning=Naqset milli tippejstja l-mira. Huwa possibbli li l-oġġett (i) mitlubin setgħu ġew <em>isem mill-ġdid, imċaqlaq</em> jew <em>imħassar</em> waqt/qabel ma twaħħal. Kawża oħra possibbli hija li d-destinazzjoni ma tkunx miktuba. Ta 'min jiċċekkja l-attributi tal-oġġetti.
 

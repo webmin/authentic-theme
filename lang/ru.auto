@@ -258,7 +258,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Результаты н
 theme_xhred_filemanager_buffer_error=Не удалось вставить файлы в буфер - разрешение отклонено.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` уже существует в `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Не могу создать $3 `<strong><em>$1</em></strong>` в `<strong><tt>$2</tt></strong>` - в правах отказано.
+filemanager_create_object_denied=Не могу создать $3 `<strong><em>$1</em></strong>` в `<strong><tt>$2</tt></strong>` - в правах отказано : $4.
 
 theme_xhred_filemanager_paste_warning=Не удалось вставить цель (и). Вполне возможно, что запрошенные объекты могли быть <em>переименованы, перемещены</em> или <em>удалены</em> во время/перед вставкой. Другой возможной причиной является то, что место назначения не доступно для записи. Стоит проверить атрибуты объектов.
 

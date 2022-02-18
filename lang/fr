@@ -426,7 +426,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Aucun résultat trouvé
 theme_xhred_filemanager_buffer_error=Échec du collage des fichiers dans la mémoire tampon - autorisation refusée.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` existe déjà dans `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Impossible de créer $3 `<strong><em>$1</em></strong>` dans `<strong><tt>$2</tt></strong>` - permission refusée.
+filemanager_create_object_denied=Impossible de créer $3 `<strong><em>$1</em></strong>` dans `<strong><tt>$2</tt></strong>` - permission refusée : $4.
 
 theme_xhred_filemanager_paste_warning=Échec du collage de la ou des cibles. Il est possible que le ou les objets demandés aient été <em>renommés, déplacés</em> ou <em>supprimés</em> pendant/avant le collage. Une autre cause possible est que la destination n'est pas accessible en écriture. Cela vaut la peine de vérifier les attributs des objets.
 

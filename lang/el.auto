@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Δεν βρέθηκαν
 theme_xhred_filemanager_buffer_error=Αποτυχία επικόλλησης αρχείων στο buffer - απορρίφθηκε η άδεια.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` υπάρχει ήδη στο `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Δεν είναι δυνατή η δημιουργία $3 `<strong><em>$1</em></strong>` σε `<strong><tt>$2</tt></strong>` - απορρίφθηκε η άδεια.
+filemanager_create_object_denied=Δεν είναι δυνατή η δημιουργία $3 `<strong><em>$1</em></strong>` σε `<strong><tt>$2</tt></strong>` - απορρίφθηκε η άδεια : $4.
 
 theme_xhred_filemanager_paste_warning=Αποτυχία επικόλλησης στόχων. Είναι πιθανό ότι τα ζητούμενα αντικείμενα θα μπορούσαν να έχουν <em>μετονομαστεί, μετακινηθεί</em> ή <em>διαγραφούν</em> ενώ/πριν επικολληθούν. Μια άλλη πιθανή αιτία είναι ότι ο προορισμός δεν είναι εγγράψιμος. Αξίζει τον έλεγχο των χαρακτηριστικών των αντικειμένων.
 

@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Nema rezultata</span> <
 theme_xhred_filemanager_buffer_error=Nije uspjelo zalijepiti datoteke na međuspremnik - odbijeno je dopuštenje.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` već postoji u `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Ne mogu stvoriti $3 `<strong><em>$1</em></strong>` u `<strong><tt>$2</tt></strong>` - odbijeno odobrenje.
+filemanager_create_object_denied=Ne mogu stvoriti $3 `<strong><em>$1</em></strong>` u `<strong><tt>$2</tt></strong>` - odbijeno odobrenje : $4.
 
 theme_xhred_filemanager_paste_warning=Nije uspjelo zalijepiti ciljeve. Moguće je da su traženi objekti (i) bili preimenovani, premješteni </em>ili</em> izbrisani </em> tijekom/prije lijepljenja. Drugi mogući uzrok je to što odredište ne može biti zapisano. Vrijedno je provjeriti atribute objekata.
 

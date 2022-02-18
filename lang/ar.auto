@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">لم يتم العثو�
 theme_xhred_filemanager_buffer_error=فشل لصق الملفات في المخزن المؤقت - تم رفض الإذن.
 
 filemanager_create_object_exists=3 دولارات `<strong><em>$1</em></strong>` موجود بالفعل في `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=لا يمكن إنشاء $3 `<strong><em>$1</em></strong>` في `<strong><tt>$2</tt></strong>` - طلب الاذن مرفوض.
+filemanager_create_object_denied=لا يمكن إنشاء $3 `<strong><em>$1</em></strong>` في `<strong><tt>$2</tt></strong>` - طلب الاذن مرفوض : $4.
 
 theme_xhred_filemanager_paste_warning=فشل لصق الهدف (الأهداف). من الممكن أن تتم إعادة تسمية الكائن/الكائنات المطلوبة أو نقلها </em>أو<em> </em> أثناء/قبل اللصق. سبب آخر محتمل هو أن الوجهة غير قابلة للكتابة. يجدر التحقق من سمات الكائنات.
 

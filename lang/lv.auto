@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Rezultāti nav atrasti<
 theme_xhred_filemanager_buffer_error=Neizdevās ielīmēt failus buferī - atļauja ir liegta.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` jau pastāv `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Nevar izveidot $3 `<strong><em>$1</em></strong>` iekšā `<strong><tt>$2</tt></strong>` - atļauja liegta.
+filemanager_create_object_denied=Nevar izveidot $3 `<strong><em>$1</em></strong>` iekšā `<strong><tt>$2</tt></strong>` - atļauja liegta : $4.
 
 theme_xhred_filemanager_paste_warning=Neizdevās ielīmēt mērķi (-us). Iespējams, ka pieprasīto (-os) objektu (-us) varēja <em>pārdēvēt, pārvietot</em> vai <em>izdzēst</em>, kamēr/pirms ielīmēšanas. Vēl viens iespējamais iemesls ir tas, ka galamērķi nevar ierakstīt. Ir vērts pārbaudīt objektu atribūtus.
 

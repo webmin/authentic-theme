@@ -426,7 +426,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">查找没有结果</spa
 theme_xhred_filemanager_buffer_error=无法将文件粘贴到缓冲区 - 权限被拒绝。
 
 filemanager_create_object_exists=$3 “<strong><em>$1</em></strong>”由于“<strong><tt>$2</tt></strong>”已存在
-filemanager_create_object_denied=无法创建 $3 “<strong><em>$1</em></strong>” 于 “<strong><tt>$2</tt></strong>” - 拒绝访问。
+filemanager_create_object_denied=无法创建 $3 “<strong><em>$1</em></strong>” 于 “<strong><tt>$2</tt></strong>” - 拒绝访问 : $4。
 
 theme_xhred_filemanager_paste_warning=粘贴一个（或多个）对象失败。可能请求的对象在粘贴时已被<em>重命名，移除</em>或<em>删除</em>。另一个可能原因是，目标目录不可写。请检查对象的属性。
 

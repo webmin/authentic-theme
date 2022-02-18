@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Sonuç bulunamadı</spa
 theme_xhred_filemanager_buffer_error=Ara belleğe dosyalar yapıştırılamadı - izin reddedildi.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` zaten var `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 oluşturulamaz `<strong><em>$1</em></strong>` içinde `<strong><tt>$2</tt></strong>` - izin reddedildi.
+filemanager_create_object_denied=$3 oluşturulamaz `<strong><em>$1</em></strong>` içinde `<strong><tt>$2</tt></strong>` - izin reddedildi : $4.
 
 theme_xhred_filemanager_paste_warning=Hedef (ler) yapıştırılamadı. Yapıştırmadan önce/yapıştırılmadan önce istenen nesnelerin <em>yeniden adlandırılması, taşınması</em> veya <em>silinmesi</em> mümkündür. Başka bir olası neden, hedefin yazılabilir olmamasıdır. Nesnelerin niteliklerini kontrol etmeye değer.
 

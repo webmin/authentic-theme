@@ -425,7 +425,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ingen reultater funnet<
 theme_xhred_filemanager_buffer_error=Kunne ikke lime inn filer til bufferet - tilgang nektet.
 
 filemanager_create_object_exists=$3 `<samp><em>$1</em></samp>` finnes allerede i `<samp><tt>$2</tt></samp>`
-filemanager_create_object_denied=Kan ikke opprette $3 `<samp><em>$1</em></samp>` i `<samp><tt>$2</tt></samp>` - tilgang nektet.
+filemanager_create_object_denied=Kan ikke opprette $3 `<samp><em>$1</em></samp>` i `<samp><tt>$2</tt></samp>` - tilgang nektet : $4.
 
 theme_xhred_filemanager_paste_warning=Kunne ikke lime inn mål. Det er mulig at forespurte objekt(er) har blitt <em>omdøpt,flyttet</em> eller <em>slettet</em> mens/før de ble limt inn. En annen mulig årsak er at destinasjonen ikke er skrivbar. Du bør sjekke objektenes attributter.
 

@@ -39,7 +39,7 @@ if (-f "$cwd/$in{'name'}" || -d "$cwd/$in{'name'}") {
         print_error(
                     (
                      text('filemanager_create_object_denied', html_escape($in{'name'}),
-                          html_escape($path),                 $text{'theme_xhred_global_directory'}
+                          html_escape($path),                 $text{'theme_xhred_global_directory'}, $!
                      )
                     ));
     }

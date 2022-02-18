@@ -429,7 +429,7 @@ theme_xhred_datatable_no_search_results=<span class="h5">Nessun risultato trovat
 theme_xhred_filemanager_buffer_error=Impossibile incollare i file nel buffer - permesso negato.
 
 filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` esiste già in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Impossibile creare $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - permesso negato.
+filemanager_create_object_denied=Impossibile creare $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - permesso negato : $4.
 
 theme_xhred_filemanager_paste_warning=Impossibile incollare il/i bersaglio/i. È possibile che l'oggetto o gli oggetti richiesti possano essere stati <em>rinominati, spostati</em> o <em>eliminati</em> mentre/prima di incollare. Un'altra possibile causa è che la destinazione non sia scrivibile.  Vale la pena controllare gli attributi degli oggetti.
 
