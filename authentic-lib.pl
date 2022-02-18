@@ -2380,7 +2380,7 @@ sub get_autocomplete_shell
         my @strings =
           split /::::/, $string;
         ($cd, $string, $cmd, $cmd2) = @strings[0, 1, 2, 3];
-        $cd_cmd  = "cd $cd; ";
+        $cd_cmd  = "cd " . quotemeta($cd) . "; ";
         $command = '-o default';
     }
 
