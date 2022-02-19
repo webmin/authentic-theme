@@ -928,6 +928,9 @@ sub get_button_style
     } elsif (string_contains($keys, "login_disable")) {
         $class = "warning ";
         $icon  = " fa-1_15x fa2 fa2-key-minus";
+    } elsif (string_contains($keys, "rmfeatures")) {
+        $icon  = "question-circle";
+        $class = "warning ";
     } elsif (string_contains($keys, "save") ||
              string_contains($keys, "backup_ok2")    ||
              string_contains($keys, "sharedips_ok")  ||
