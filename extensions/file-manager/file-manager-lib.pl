@@ -45,7 +45,8 @@ sub chk_module
 {
     my ($module) = @_;
 
-    if ($module !~ /^file[m\-]/) {
+    if ($module !~ /^filemin$/ &&
+        $module !~ /^file-manager$/) {
         exit;
     }
 }
