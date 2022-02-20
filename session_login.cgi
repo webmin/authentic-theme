@@ -169,8 +169,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
                      "autocomplete"   => "off",
                      "autocorrect"    => "off",
                      "autocapitalize" => "none",
-                     "placeholder"    => $theme_text{'theme_xhred_login_user'}
-                   });
+                     "placeholder"    => $theme_text{'theme_xhred_login_user'} });
 
     print '</div>' . "\n";
     print '<div class="input-group form-group">' . "\n";
@@ -183,9 +182,10 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
 
     if (!$gconfig{'noremember'}) {
         print '<div class="input-group form-group">
-              <span class="awcheckbox awobject thick"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save"><span>'
+        <div class="wh-100p flex-wrapper flex-centered flex-start">
+              <span class="awcheckbox awobject solid primary"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save"><span>'
           . $theme_text{'login_save'} . '</span></label></span>
-           </div>' . "\n";
+        </div></div>' . "\n";
     }
     print '<div class="form-group form-signin-group">';
     print '<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;' .
