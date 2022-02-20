@@ -37,19 +37,10 @@ our $checked_path;
 our $module_path;
 
 our %request_uri = get_request_uri();
-chk_module($request_uri{'module'});
+$request_uri{'module'} = 'filemin';
+
 set_module($request_uri{'module'});
 get_libs($request_uri{'module'});
-
-sub chk_module
-{
-    my ($module) = @_;
-
-    if ($module !~ /^filemin$/ &&
-        $module !~ /^file-manager$/) {
-        exit;
-    }
-}
 
 sub set_module
 {
