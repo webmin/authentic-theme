@@ -37,8 +37,18 @@ our $checked_path;
 our $module_path;
 
 our %request_uri = get_request_uri();
+chk_module($request_uri{'module'});
 set_module($request_uri{'module'});
 get_libs($request_uri{'module'});
+
+sub chk_module
+{
+    my ($module) = @_;
+
+    if ($module !~ /^file[m\-]/) {
+        exit;
+    }
+}
 
 sub set_module
 {
@@ -46,8 +56,9 @@ sub set_module
 
     $module_path = get_env('document_root') . '/' . $module;
 
-    set_env('foreign_module_name',    $module);
-    set_env('foreign_root_directory', $module_path);
+    set_env('foreign_module_sec_check', $module);
+    set_env('foreign_module_name',      $module);
+    set_env('foreign_root_directory',   $module_path);
 }
 
 sub get_libs
