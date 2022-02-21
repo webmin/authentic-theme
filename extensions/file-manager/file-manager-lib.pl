@@ -39,8 +39,20 @@ our $module_path;
 our %request_uri = get_request_uri();
 $request_uri{'module'} = 'filemin';
 
+chk_module($request_uri{'module'});
 set_module($request_uri{'module'});
 get_libs($request_uri{'module'});
+
+sub chk_module
+{
+    my ($module) = @_;
+
+    if ($module !~ /^filemin$/ &&
+        $module !~ /^file-manager$/)
+    {
+        exit;
+    }
+}
 
 sub set_module
 {
@@ -957,17 +969,17 @@ sub print_content
             }
             if (!$is_gpg &&
                 ($type_archive =~ /application-zip/ ||
-                $type_archive =~ /application-x-7z-compressed/              ||
-                $type_archive =~ /application-x-rar|application-vnd\.rar/   ||
-                $type_archive =~ /application-x-rpm/                        ||
-                $type_archive =~ /application-x-deb|debian\.binary-package/ ||
-                $type_archive =~ /application-x-raw-disk-image/             ||
-                $type_archive =~ /application-x-cd-image/                   ||
-                $type_archive =~ /-compressed-tar/                          ||
-                $type_archive =~ /-x-tar/                                   ||
-                $type_archive =~ /-x-bzip/                                  ||
-                $type_archive =~ /-gzip/                                    ||
-                $type_archive =~ /-x-xz/))
+                    $type_archive =~ /application-x-7z-compressed/              ||
+                    $type_archive =~ /application-x-rar|application-vnd\.rar/   ||
+                    $type_archive =~ /application-x-rpm/                        ||
+                    $type_archive =~ /application-x-deb|debian\.binary-package/ ||
+                    $type_archive =~ /application-x-raw-disk-image/             ||
+                    $type_archive =~ /application-x-cd-image/                   ||
+                    $type_archive =~ /-compressed-tar/                          ||
+                    $type_archive =~ /-x-tar/                                   ||
+                    $type_archive =~ /-x-bzip/                                  ||
+                    $type_archive =~ /-gzip/                                    ||
+                    $type_archive =~ /-x-xz/))
             {
                 $is_archive = 1;
                 $actions =
