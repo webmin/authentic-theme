@@ -3310,13 +3310,17 @@ const mail = (function() {
                 },
                 plugin: {
                     tree: (source) => {
+
                         if (!$.fn.fancytree) {
                             setTimeout(() => {
                                 data.plugin.tree(source);
                             }, 4e2);
                             return;
                         }
-                        source = (source === 'get' ? 'getTree' :
+                        let sourceTreeF = source === 'get' ? 'getTree' : null,
+                            sourceActiveNodeF = source === 'node' ? 'getActiveNode' : null;
+                        source = (
+                            source === 'get' ? 'getTree' :
                             (source === 'node' ? 'getActiveNode' :
                                 Object.assign(data.options.tree, {
                                     source: source,
@@ -3333,7 +3337,11 @@ const mail = (function() {
                                     }
                                 })));
                         if ($(tree.container).length) {
-                            return $(tree.container).fancytree(source);
+                            return sourceTreeF ?
+                                $.ui.fancytree.getTree($(tree.container)) :
+                                sourceActiveNodeF ?
+                                $.ui.fancytree.getTree($(tree.container)).getActiveNode() :
+                                $(tree.container).fancytree(source);
                         }
                     }
                 },
