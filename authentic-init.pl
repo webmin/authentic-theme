@@ -944,6 +944,11 @@ sub get_button_style
     } elsif (string_contains($keys, "form_ok")) {
         $class = "success ";
         $icon  = "check-circle";
+    } elsif (string_contains($keys, "cluster")) {
+        $icon = " fa2 fa2-server-network";
+    } elsif (string_contains($keys, "unapply")) {
+        $class = "info ";
+        $icon  = "circle-o-notch";
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
