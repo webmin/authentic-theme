@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.85.1-RC2 (February 21, 2022)
+* Add improved security in File Manager
+* Add ability to display out of quota message using toast notification
+* Fix smoothness of toast notifications in File Manager
+* Fix login screen save session checkbox
+
 #### Version 19.85 (February 16, 2022)
 * Add improved focus state for elements to support navigation using keyboard with tab key
 * Add reworked toast notifications with better support for mobile devices
@@ -7,7 +13,6 @@
 * Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
 * Add ability to copy overall system information to clipboard from the dashboard [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
 * Add ability for submitting support tickets using the dashboard for Virtualmin Pro users
-* Add ability to explicitly tell if no space left on device with toast notification
 * Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
 * Add support to copy text from draggable by holding ⎇ key [webmin#1569/comment-1003734006](https://github.com/webmin/webmin/issues/1569#issuecomment-1003734006)
 * Add further multiple improvements to elements align across various browsers/platforms
@@ -29,7 +34,6 @@
 * Fix calculations of directory size in File Manager to be error resilient
 * Fix regression bug for spinner positioning in File Manager on retrieving directory size
 * Fix returning to module index after saving configuration in File Manager
-* Fix to defer post-action calls for smoother experience in File Manager
 * Fix various bugs for FTP Directory Restrictions submodule in Virtualmin
 * Fix table rendering upon submit for Backup Virtual Servers submodule in Virtualmin
 * Fiх false redirection after opening a link in HTTP Tunnel module [virtualmin/virtualmin-gpl#358](https://github.com/virtualmin/virtualmin-gpl/issues/358)
