@@ -129,7 +129,12 @@ sub xhr
         # Generate given file info
         if ($action eq 'stat') {
             my ($module, $sumtype, $jailed_user, $jailed_user_home, $cfile, $mime, $dir, $fzi, $fz, $ft, $s, $sz, $nz);
-            $module           = 'filemin'; # $in{'module'};
+            $module = 'filemin';    # $in{'module'};
+            if (!foreign_available($module)) {
+                $data{'module-access-denied'} = $module;
+                &$output(\%data);
+                exit;
+            }
             $cfile            = $in{'file'};
             $sumtype          = $in{'checksum'};
             $jailed_user      = get_fm_jailed_user($module, 1);
