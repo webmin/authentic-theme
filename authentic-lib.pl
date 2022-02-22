@@ -1807,7 +1807,7 @@ sub get_xhr_request
 
         # This should be split on next refactor to be used separately by modules (filemin/mailbox)
         elsif ($in{'xhr-get_size'} eq '1') {
-            set_user_level();
+            switch_to_remote_user_safe();
             my $nodir  = $in{'xhr-get_size_nodir'};
             my $path   = get_access_data('root') . $in{'xhr-get_size_path'};
             my $home   = get_user_home();
@@ -1860,10 +1860,10 @@ sub get_xhr_request
             my $jailed_user_home = get_fm_jailed_user($module);
             my $cfile            = $in{'xhr-encoding_convert_file'};
             if ($jailed_user) {
-                switch_to_unix_user_local($jailed_user);
+                switch_to_given_unix_user($jailed_user);
                 $cfile = $jailed_user_home . $cfile;
             } else {
-                set_user_level();
+                switch_to_remote_user_safe();
             }
             my $data = &ui_read_file_contents_limit(
                                                     { 'file',    $cfile, 'limit', $in{'xhr-encoding_convert_limit'},
@@ -1878,8 +1878,8 @@ sub get_xhr_request
             my $module = 'filemin';    # $in{'xhr-get_gpg_keys_cmodule'};
             exit if (!foreign_available($module));
             my $jailed_user = get_fm_jailed_user($module, 1);
-            switch_to_unix_user_local($jailed_user);
-            my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
+            my ($public, $secret, $gpgpath) =
+                get_user_allowed_gpg_keys($jailed_user, $in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;
             $keys{'secret'}  = $secret;
@@ -2053,7 +2053,7 @@ sub get_xhr_request
                   "warning_si"       => get_sysinfo_warning(\@info), };
             print convert_to_json(\@updated_info);
         } elsif ($in{'xhr-search-in-file'} eq '1') {
-            set_user_level();
+            switch_to_remote_user_safe();
             my @files = split(/,/, $in{'xhr-search-in-file-files'});
             my $match = trim($in{'xhr-search-in-file-string'});
             my @match;

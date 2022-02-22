@@ -222,11 +222,11 @@ sub theme_ui_checkbox_local
     $label = trim($label);
     my $bl = string_ends_with($label, '<br>') ? ' ds-bl-fs' : undef;
     return "<span class=\"awcheckbox awobject$bl$cls\"><input class=\"iawobject\" type=\"checkbox\" " .
-      "name=\"" . &quote_escape($name) .
-      "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") . ($dis ? " disabled=true" : "") .
-      " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" . ($tags ? " " . $tags : "") .
-      "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") . '">' .
-      (length $label ? "&nbsp;&nbsp;<span data-label-text>$label</span>&nbsp;" : '&nbsp;&nbsp;') . '</label></span>' . $after;
+      "name=\"" . &quote_escape($name) . "\" " . "value=\"" . &quote_escape($value) . "\" " . ($sel ? " checked" : "") .
+      ($dis  ? " disabled=true" : "") . " id=\"" . &quote_escape("${name}_${value}_${rand}") . "\"" .
+      ($tags ? " " . $tags      : "") . "> " . '<label class="lawobject" for="' . &quote_escape("${name}_${value}_${rand}") .
+      '">' . (length $label ? "&nbsp;&nbsp;<span data-label-text>$label</span>&nbsp;" : '&nbsp;&nbsp;') .
+      '</label></span>' . $after;
 }
 
 sub theme_make_date_local
@@ -348,15 +348,34 @@ sub get_theme_language
 
 }
 
-sub get_gpg_keys
+sub get_user_allowed_gpg_keys
 {
-    my $target = 'webmin';
+    my ($switch_to_user, $list_avoided_system_keys) = @_;
+
+    # Switch to remove user first
+    switch_to_given_unix_user($switch_to_user);
+
+    # GNUPG lib target
+    # For Usermin `gnupg` for Webmin `webmin`
+    my $target = foreign_available('gnupg') ? 'gnupg' : 'webmin';
+
+    # As we call it not from the module set it manually
+    # to bypass init_config() call leading to an error
+    # Although, the module itself must be available for
+    # the given user to work in Usermin
     $module_name = $target;
+
     my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
     if (-r $gpglib) {
         do($gpglib);
-        my %gpgconfig    = foreign_config($target);
-        my $gpgpath      = $gpgconfig{'gpg'} || "gpg";
+        my %gpgconfig = foreign_config($target);
+        my $gpgpath   = $gpgconfig{'gpg'} || "gpg";
+
+        # If this is Jamie's, Joe's or Ilia's machine, where also a private key
+        # may be available, it would be possible to list the keys on dropdown too,
+        # as those keys are distributed and should never be displayed to the users.
+        # If one of us needs the keys to be displayed on the dropdown we need to hold
+        # Alt key before clicking Encrypt/Decrypt entry on File Manager context menu
         my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');
         my @keys         = list_keys_sorted();
         my @keys_secret  = sort {lc($a->{'name'}->[0]) cmp lc($b->{'name'}->[0])} list_secret_keys();
@@ -367,7 +386,7 @@ sub get_gpg_keys
             my $key  = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
-            if ($_[0] || (!$_[0] && !grep(/^$key$/, @keys_avoided))) {
+            if ($list_avoided_system_keys || (!$list_avoided_system_keys && !grep(/^$key$/, @keys_avoided))) {
                 $keys_{ $k->{'key'} } = trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
             }
         }
@@ -375,7 +394,7 @@ sub get_gpg_keys
             my $key  = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
-            if ($_[0] || (!$_[0] && !grep(/^$k->{'key'}$/, @keys_avoided))) {
+            if ($list_avoided_system_keys || (!$list_avoided_system_keys && !grep(/^$k->{'key'}$/, @keys_avoided))) {
                 $keys_secret_{ $k->{'key'} } =
                   trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
             }
@@ -384,24 +403,58 @@ sub get_gpg_keys
     }
 }
 
-sub switch_to_unix_user_local
+sub get_user_level
 {
-    if (!supports_users()) {
-        return undef;
+    my ($level, $has_virtualmin, $has_cloudmin);
+    $has_cloudmin   = &foreign_available("server-manager");
+    $has_virtualmin = &foreign_available("virtual-server");
+    if ($has_cloudmin) {
+        &foreign_require("server-manager", "server-manager-lib.pl");
     }
-    my ($username) = @_;
+    if ($has_virtualmin) {
+        &foreign_require("virtual-server", "virtual-server-lib.pl");
+    }
+    if ($has_cloudmin) {
+        no warnings 'once';
+        $level = $server_manager::access{'owner'} ? 4 : 0;
+    } elsif ($has_virtualmin) {
+        $level =
+          &virtual_server::master_admin()   ? 0 :
+          &virtual_server::reseller_admin() ? 1 :
+          2;
+    } elsif (&get_product_name() eq "usermin") {
+        $level = 3;
+    } else {
+        $level = 0;
+    }
+    return ($level, $has_virtualmin, $has_cloudmin);
+}
+
+sub switch_to_given_unix_user
+{
+    return if (!supports_users());
+
+    my ($username)   = @_;
+    my ($user_level) = get_user_level();
+
+    my $username_params = $in{'username'} || $in{'switch_to_username'};
 
     # Fix to emphasise that only root user can supply a username as param
-    if (!$username && $get_user_level eq '0') {
-        $username = $in{'username'} || $in{'switch_to_username'};
-    } else {
-        $username = $remote_user;
-    }
-    my @uinfo = getpwnam($username);
-    if (@uinfo) {
-        switch_to_unix_user(\@uinfo);
-        $ENV{'USER'} = $ENV{'LOGNAME'} = $username;
-        $ENV{'HOME'} = $uinfo[7];
+    $username ||= $username_params
+      if (!$user_level);
+
+    # If username isn't set set it to remote user
+    $username ||= $remote_user
+      if ($user_level);
+
+    if ($username) {
+        my @uinfo = getpwnam($username);
+        if (@uinfo) {
+            switch_to_unix_user(\@uinfo)
+              if ($username ne $remote_user);
+            $ENV{'USER'} = $ENV{'LOGNAME'} = $username;
+            $ENV{'HOME'} = $uinfo[7];
+        }
     }
 }
 

@@ -140,10 +140,10 @@ sub xhr
             $jailed_user      = get_fm_jailed_user($module, 1);
             $jailed_user_home = get_fm_jailed_user($module);
             if ($jailed_user) {
-                switch_to_unix_user_local($jailed_user);
+                switch_to_given_unix_user($jailed_user);
                 $cfile = $jailed_user_home . $cfile;
             } else {
-                set_user_level();
+                switch_to_remote_user_safe();
             }
 
             my $get_file_checksum = sub {

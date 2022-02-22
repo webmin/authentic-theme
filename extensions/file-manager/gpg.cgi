@@ -23,6 +23,9 @@ my $safe_mode   = $config{'config_portable_module_filemanager_files_safe_mode'} 
 my $gpgpath = get_gpg_path();
 my $no_command;
 
+# Set user env and switch to remote user first
+switch_to_given_unix_user();
+
 foreach my $name (@entries_list) {
     my ($iname, $fname, $fext);
     my $gpg;

@@ -832,33 +832,6 @@ sub get_filters
       ') contrast(' . $theme_config{'settings_contrast_level_navigation'} . ')' . ';';
 }
 
-sub get_user_level
-{
-    my ($level, $has_virtualmin, $has_cloudmin);
-    $has_cloudmin   = &foreign_available("server-manager");
-    $has_virtualmin = &foreign_available("virtual-server");
-    if ($has_cloudmin) {
-        &foreign_require("server-manager", "server-manager-lib.pl");
-    }
-    if ($has_virtualmin) {
-        &foreign_require("virtual-server", "virtual-server-lib.pl");
-    }
-    if ($has_cloudmin) {
-        no warnings 'once';
-        $level = $server_manager::access{'owner'} ? 4 : 0;
-    } elsif ($has_virtualmin) {
-        $level =
-          &virtual_server::master_admin()   ? 0 :
-          &virtual_server::reseller_admin() ? 1 :
-          2;
-    } elsif (&get_product_name() eq "usermin") {
-        $level = 3;
-    } else {
-        $level = 0;
-    }
-    return ($level, $has_virtualmin, $has_cloudmin);
-}
-
 sub get_user_icon
 {
     my $user_icon = 'fa2-user-cog';
@@ -874,7 +847,7 @@ sub get_user_icon
     return $user_icon;
 }
 
-sub set_user_level
+sub switch_to_remote_user_safe
 {
     if ($get_user_level ne '0' && $get_user_level ne '1') {
         switch_to_remote_user();
