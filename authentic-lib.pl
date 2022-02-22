@@ -1849,7 +1849,6 @@ sub get_xhr_request
             my $jailed_user      = get_fm_jailed_user($module, 1);
             my $jailed_user_home = get_fm_jailed_user($module);
             my $cfile            = $in{'xhr-encoding_convert_file'};
-            die($remote_user);
             if ($jailed_user) {
                 switch_to_unix_user_local($jailed_user);
                 $cfile = $jailed_user_home . $cfile;
