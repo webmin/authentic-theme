@@ -389,8 +389,12 @@ sub switch_to_unix_user_local
         return undef;
     }
     my ($username) = @_;
-    if (!$username) {
+
+    # Fix to emphasise that only root user can supply a username as param
+    if (!$username && $get_user_level eq '0') {
         $username = $in{'username'} || $in{'switch_to_username'};
+    } else {
+        $username = $remote_user;
     }
     my @uinfo = getpwnam($username);
     if (@uinfo) {

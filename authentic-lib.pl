@@ -1805,7 +1805,7 @@ sub get_xhr_request
                 ]);
         } elsif ($in{'xhr-get_size'} eq '1') {
             set_user_level();
-            my $module      = $in{'xhr-get_size_cmodule'};
+            my $module      = 'filemin'; # $in{'xhr-get_size_cmodule'};
             my $jailed_user = get_fm_jailed_user($module);
             my $path        = ($jailed_user || get_access_data('root')) . $in{'xhr-get_size_path'};
             my $nodir       = $in{'xhr-get_size_nodir'};
@@ -1825,7 +1825,7 @@ sub get_xhr_request
         } elsif ($in{'xhr-get_list'} eq '1') {
 
             my $path   = "$in{'xhr-get_list_path'}";
-            my $module = $in{'xhr-get_list_cmodule'};
+            my $module = 'filemin'; # $in{'xhr-get_list_cmodule'};
             my @dirs;
 
             my $jailed_user = get_fm_jailed_user($module);
@@ -1845,10 +1845,11 @@ sub get_xhr_request
 
         } elsif ($in{'xhr-encoding_convert'} eq '1') {
 
-            my $module           = $in{'xhr-encoding_convert_cmodule'};
+            my $module           = 'filemin'; # $in{'xhr-encoding_convert_cmodule'};
             my $jailed_user      = get_fm_jailed_user($module, 1);
             my $jailed_user_home = get_fm_jailed_user($module);
             my $cfile            = $in{'xhr-encoding_convert_file'};
+            die($remote_user);
             if ($jailed_user) {
                 switch_to_unix_user_local($jailed_user);
                 $cfile = $jailed_user_home . $cfile;
@@ -1865,9 +1866,9 @@ sub get_xhr_request
             }
             print $data;
         } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
-            my $module      = $in{'xhr-get_gpg_keys_cmodule'};
+            my $module      = 'filemin'; # $in{'xhr-get_gpg_keys_cmodule'};
             my $jailed_user = get_fm_jailed_user($module, 1);
-            switch_to_unix_user_local($jailed_user || undef);
+            switch_to_unix_user_local($jailed_user);
             my ($public, $secret, $gpgpath) = get_gpg_keys($in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;
