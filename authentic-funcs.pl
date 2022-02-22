@@ -16,6 +16,7 @@ our (%in,
      $config_directory,
      $current_theme,
      $theme_webprefix,
+     $module_name,
      $remote_user,
      $get_user_level);
 
@@ -349,8 +350,8 @@ sub get_theme_language
 
 sub get_gpg_keys
 {
-    my $gnupg  = 'gnupg';
-    my $target = foreign_available($gnupg) ? $gnupg : get_product_name();
+    my $target = 'webmin';
+    $module_name = $target;
     my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
     if (-r $gpglib) {
         do($gpglib);
