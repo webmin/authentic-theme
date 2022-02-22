@@ -400,6 +400,8 @@ sub switch_to_unix_user_local
     my @uinfo = getpwnam($username);
     if (@uinfo) {
         switch_to_unix_user(\@uinfo);
+        $ENV{'USER'} = $ENV{'LOGNAME'} = $username;
+        $ENV{'HOME'} = $uinfo[7];
     }
 }
 
