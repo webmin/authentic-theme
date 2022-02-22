@@ -1,8 +1,9 @@
 ## Changelog
 
-#### Version 19.85.1-RC3 (February 22, 2022)
+#### Version 19.85.1 (February 22, 2022)
 * Add improved security in File Manager
 * Add ability to display out of quota message using toast notification
+* Fix GPG encryption/decryption functionality in File Manager
 * Fix smoothness of toast notifications in File Manager
 * Fix login screen save session checkbox
 
