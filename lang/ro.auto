@@ -257,3 +257,4 @@ theme_xhred_tooltip_support_ticket=Trimiteți biletul de asistență cu informa�
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forțați reîmprospătarea informațiilor de sistem
 theme_xhred_disk_quota_error_title=Din cotă
 theme_xhred_disk_quota_error_message=Nu a mai rămas spațiu pe dispozitiv
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utilizați cheia principală de administrator pentru decriptare

@@ -14,57 +14,77 @@ do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 my @entries_list = get_entries_list();
 my %errors;
 my $status;
-my $action      = $in{'action'};
-my $action_name = $action eq 'encrypt' ? 'encrypted' : 'decrypted';
-my $delete      = $in{'delete'};
-my $passphrase  = $in{'passphrase'};
-my $safe_mode   = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
+my $action     = $in{'action'};
+my $key        = quotemeta($in{'key'});
+my $delete     = $in{'delete'};
+my $passphrase = $in{'passphrase'};
+my $keyuser    = $in{'keyuser'};
+my $homeuser   = $in{'homeuser'};
+my $safe_mode  = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
 
 my $gpgpath = get_gpg_path();
 my $no_command;
 
+# Get user level
+my ($user_level) = get_user_level();
+
+# In case this is a master admin login,
+# and the key to encrypt data belonging
+# to /root, do not switch to the current
+# home directory user and use that instead
+my $forceuser;
+if (!$user_level && $keyuser) {
+    $forceuser = $keyuser;
+}
+
 # Set user env and switch to remote user first
-switch_to_given_unix_user();
+switch_to_given_unix_user($forceuser);
 
 foreach my $name (@entries_list) {
-    my ($iname, $fname, $fext);
+    my ($iname);
     my $gpg;
 
     $iname = $name;
+    $iname .= ($key ? ("_" . substr($key, 0, 6)) : '');
 
-    # Clean name when decrypting
+    # Clean extension name when decrypting
     if ($action eq "decrypt") {
-        $iname =~ s/\.(gpg|pgp)$//;
-        $iname =~ s/(?|(_encrypted\(\d+\))|(_encrypted))//;
+        $iname =~ s/(_[a-h0-9]+\.gpg|pgp)$//i;
     }
-    ($fname, $fext) = file_name_extension_splitter($iname);
-    $fext  = ".$fext" if ($fext);
-    $iname = $fname . "_" . $action_name;
+
     my $ffext;
     $ffext = ".gpg" if ($action eq "encrypt");
 
     # Check if file exist
-    if ($safe_mode && -e "$cwd/$iname$fext$ffext") {
-        my $__ = 1;
+    if ($safe_mode && -e "$cwd/$iname$ffext") {
+        my $__ = 0;
         for (;;) {
-            my $niname = "$iname(" . $__++ . ")";
-            if (!-e "$cwd/$niname$fext$ffext") {
-                $iname = "$niname$fext";
+            $__++;
+            my $niname = "$iname(" . $__ . ")";
+            if ($action eq 'decrypt') {
+                my ($fname, $fext) = file_name_extension_splitter($iname);
+                $niname = "$fname(" . $__ . ")" . ($fext ? ".$fext" : '');
+            }
+            if (!-e "$cwd/$niname$ffext") {
+                $iname = "$niname$ffext";
                 last;
             }
         }
     } else {
-        $iname .= $fext;
+        $iname = "$iname$ffext";
         unlink_file("$cwd/$iname$ffext") if (-e "$cwd/$iname$ffext");
     }
     $status = 0;
 
     if ($action eq "encrypt") {
-        my $key   = quotemeta($in{'key'});
         my $fpath = "$cwd/$name";
         $gpg =
-"cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($iname)]}.gpg --recipient $key @{[quotemeta($fpath)]}";
+"cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($iname)]} --recipient $key @{[quotemeta($fpath)]}";
         $status = system($gpg);
+
+        # Set file owner in case was encrypted usign master admin keys
+        system("chown --reference=" . quotemeta($cwd) . " " . quotemeta("$cwd/$iname"))
+          if (!$status && $homeuser && !$user_level);
 
     } elsif ($action eq "decrypt") {
         my $extra;
@@ -83,6 +103,10 @@ foreach my $name (@entries_list) {
         print $fh $passphrase;
         close $fh;
         $status = $?;
+
+        # Set file owner in case was decrypted usign master admin keys
+        system("chown --reference=" . quotemeta($cwd) . " " . quotemeta("$cwd/$iname"))
+          if (!$status && $homeuser && !$user_level);
     }
 
     if ($delete && $status == 0) {

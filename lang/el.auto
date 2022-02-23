@@ -1268,3 +1268,4 @@ theme_xhred_tooltip_support_ticket=Υποβάλετε δελτίο υποστή�
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Αναγκαστική ανανέωση πληροφοριών συστήματος
 theme_xhred_disk_quota_error_title=Εκτός ποσόστωσης
 theme_xhred_disk_quota_error_message=Δεν υπάρχει χώρος στην συσκευή
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Χρησιμοποιήστε το κύριο κλειδί διαχειριστή για αποκρυπτογράφηση

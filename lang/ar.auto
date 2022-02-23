@@ -1268,3 +1268,4 @@ theme_xhred_tooltip_support_ticket=إرسال تذكرة دعم مع معلوم�
 theme_xhred_tooltip_side_slider_refresh_sysinfo=القوة لتحديث معلومات النظام
 theme_xhred_disk_quota_error_title=خارج الحصة
 theme_xhred_disk_quota_error_message=لم يتبقى مساحة في الجهاز
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=استخدم مفتاح المسؤول الرئيسي لفك التشفير

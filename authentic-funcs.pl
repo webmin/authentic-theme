@@ -350,19 +350,27 @@ sub get_theme_language
 
 sub get_user_allowed_gpg_keys
 {
-    my ($switch_to_user, $list_avoided_system_keys) = @_;
+    my ($switch_to_user, $list_avoided_system_keys, $self) = @_;
+    my %keys_;
+
+    # Also get the keys for the root user, when operating on virtual server
+    # so the master admin will see all root keys, plus the keys from given
+    # virtual server
+    my ($user_level) = get_user_level();
+    if (!$user_level && !$self) {
+        my ($root_keys) = get_user_allowed_gpg_keys($remote_user, $list_avoided_system_keys, 'self');
+        %keys_ = %{$root_keys};
+    }
 
     # Switch to remove user first
-    switch_to_given_unix_user($switch_to_user);
+    my ($switched_user) = switch_to_given_unix_user($switch_to_user);
 
     # GNUPG lib target
     # For Usermin `gnupg` for Webmin `webmin`
-    my $target = foreign_available('gnupg') ? 'gnupg' : 'webmin';
+    my $target = foreign_exists('gnupg') ? 'gnupg' : 'webmin';
 
     # As we call it not from the module set it manually
     # to bypass init_config() call leading to an error
-    # Although, the module itself must be available for
-    # the given user to work in Usermin
     $module_name = $target;
 
     my $gpglib = $root_directory . "/$target/gnupg-lib.pl";
@@ -375,31 +383,21 @@ sub get_user_allowed_gpg_keys
         # may be available, it would be possible to list the keys on dropdown too,
         # as those keys are distributed and should never be displayed to the users.
         # If one of us needs the keys to be displayed on the dropdown we need to hold
-        # Alt key before clicking Encrypt/Decrypt entry on File Manager context menu
+        # Alt key before clicking Encrypt entry on File Manager context menu
         my @keys_avoided = ('11F63C51', 'F9232D77', 'D9C821AB');
         my @keys         = list_keys_sorted();
         my @keys_secret  = sort {lc($a->{'name'}->[0]) cmp lc($b->{'name'}->[0])} list_secret_keys();
-        my %keys_;
-        my %keys_secret_;
 
         foreach my $k (@keys) {
             my $key  = substr($k->{'key'}, -8, 8);
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
             if ($list_avoided_system_keys || (!$list_avoided_system_keys && !grep(/^$key$/, @keys_avoided))) {
-                $keys_{ $k->{'key'} } = trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
+                $keys_{ $k->{'key'} } =
+                  trim($name) . " ($k->{'email'}->[0] [$switched_user] [$key/$k->{'size'}, $k->{'date'}])";
             }
         }
-        foreach my $k (@keys_secret) {
-            my $key  = substr($k->{'key'}, -8, 8);
-            my $name = $k->{'name'}->[0];
-            $name =~ s/\(.*?\)//gs;
-            if ($list_avoided_system_keys || (!$list_avoided_system_keys && !grep(/^$k->{'key'}$/, @keys_avoided))) {
-                $keys_secret_{ $k->{'key'} } =
-                  trim($name) . " ($k->{'email'}->[0] [$key/$k->{'size'}, $k->{'date'}])";
-            }
-        }
-        return (\%keys_, \%keys_secret_, $gpgpath);
+        return (\%keys_, $gpgpath);
     }
 }
 
@@ -454,6 +452,7 @@ sub switch_to_given_unix_user
               if ($username ne $remote_user);
             $ENV{'USER'} = $ENV{'LOGNAME'} = $username;
             $ENV{'HOME'} = $uinfo[7];
+            return ($username, $uinfo[7]);
         }
     }
 }

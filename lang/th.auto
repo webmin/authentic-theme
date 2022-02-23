@@ -1268,3 +1268,4 @@ theme_xhred_tooltip_support_ticket=ส่งตั๋วสนับสนุน
 theme_xhred_tooltip_side_slider_refresh_sysinfo=บังคับให้รีเฟรชข้อมูลระบบ
 theme_xhred_disk_quota_error_title=หมดโควต้า
 theme_xhred_disk_quota_error_message=ไม่มีพื้นที่เหลือบนอุปกรณ์
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=ใช้คีย์ผู้ดูแลระบบหลักในการถอดรหัส

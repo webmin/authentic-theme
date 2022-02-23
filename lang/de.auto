@@ -167,3 +167,4 @@ theme_xhred_tooltip_support_ticket=Senden Sie ein Support-Ticket mit angehängte
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Erzwingen Sie die Aktualisierung der Systeminformationen
 theme_xhred_disk_quota_error_title=Außerhalb der Quote
 theme_xhred_disk_quota_error_message=Kein Speicherplatz auf Gerät
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Verwenden Sie den Hauptadministratorschlüssel für die Entschlüsselung

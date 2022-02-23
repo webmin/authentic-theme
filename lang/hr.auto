@@ -1268,3 +1268,4 @@ theme_xhred_tooltip_support_ticket=Pošaljite ulaznicu za podršku s priloženim
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Prisilno osvježavanje informacija o sustavu
 theme_xhred_disk_quota_error_title=Izvan kvote
 theme_xhred_disk_quota_error_message=Nema više mjesta na uređaju
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Za dešifriranje koristite glavni administratorski ključ

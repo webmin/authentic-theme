@@ -1878,11 +1878,10 @@ sub get_xhr_request
             my $module = 'filemin';    # $in{'xhr-get_gpg_keys_cmodule'};
             exit if (!foreign_available($module));
             my $jailed_user = get_fm_jailed_user($module, 1);
-            my ($public, $secret, $gpgpath) =
+            my ($public, $gpgpath) =
                 get_user_allowed_gpg_keys($jailed_user, $in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;
-            $keys{'secret'}  = $secret;
             $keys{'gpgpath'} = $gpgpath;
             print convert_to_json(\%keys);
         } elsif ($in{'xhr-get_user_level'} eq '1') {
