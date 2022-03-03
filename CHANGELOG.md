@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 19.90 (March 04, 2022)
+* Update contacts
+* Fix to sync theme version with Webmin version released
+
 #### Version 19.85.1 (February 24, 2022)
 * Add improved security in File Manager
 * Add various enhancements to GPG encryption/decryption functionality in File Manager
@@ -29,7 +33,7 @@
 * Add Virtualmin community link to the dashboard
 * Fix system monitors icons for System and Server Status module
 * Fix to avoid fetching navigation menu on simple domain selection on Virtualmin Virtual Servers page
-* Fiх upload tracker for safe user in File Manager [#1576](https://github.com/virtualmin/authentic-theme/issues/1576)
+* Fiх upload tracker for safe user in File Manager [#1576](https://github.com/authentic-theme/authentic-theme/issues/1576)
 * Fiх configuration page work in File Manager when opened in a separate tab [sourceforge.net#5539](https://sourceforge.net/p/webadmin/bugs/5539/)
 * Fix to display delete/move to trash button color conditionally based on option in File Manager
 * Fix calculations of directory size in File Manager to be error resilient
