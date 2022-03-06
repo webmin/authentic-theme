@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.90.1 (March 06, 2022)
+* Fix Usermin dependency check before installing a new update
+
 #### Version 19.90 (March 04, 2022)
 * Update contacts
 * Fix to sync theme version with Webmin version released
