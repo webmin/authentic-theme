@@ -24,6 +24,6 @@ config_portable_module_filemanager_hovered_toolbar=Activate toolbar dropdown on 
 config_portable_module_filemanager_remember_tabs=Restore previously used tabs on initial load,1,true-Yes,false-No
 config_portable_module_filemanager_calculate_size=Calculate size on spacebar,1,true-Yes,false-No
 config_portable_module_filemanager_force_tar=Force <code>tar</code> command&#44; even if <code>zip</code> is available&#44; when downloading as archive,1,true-Yes,false-No
-config_portable_module_filemanager_files_safe_mode=Do not overwrite existing files upon compress/extract and encode/decode,1,true-Yes,false-No
+config_portable_module_filemanager_files_safe_mode=Do not overwrite existing files upon operations,1,true-Yes,false-No
 config_portable_module_filemanager_switch_users=Automatically set owner and group equivalent to user home on file operations,1,true-Yes,false-No
 config_portable_module_filemanager_hide_actions=Hide column containing action icons,1,true-Yes,false-No
