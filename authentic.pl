@@ -1235,7 +1235,7 @@ sub theme_ui_hidden_table_start
 
 sub theme_ui_buttons_start
 {
-    return "<table width='100%' class='ui_buttons_table'>\n<tr><td>";
+    return "<table width='100%' class='ui_buttons_table'>\n<tbody>\n<tr>\n<td>\n";
 }
 
 sub theme_ui_buttons_row
@@ -1244,15 +1244,15 @@ sub theme_ui_buttons_row
     if (ref($hiddens)) {
         $hiddens = join("\n", map {&ui_hidden(@$_)} @$hiddens);
     }
-    return "<form action='$script' method='post' class='ui_buttons_form'>\n" .
+    return "<tr data-ui-buttons-row-form-container>\n<td>\n<form action='$script' method='post' class='ui_buttons_form'>\n" .
       $hiddens . "<table>" . "<tr class='ui_buttons_row'> " . "<td data-nowrap class=ui_buttons_label>" .
       ($before ? $before . " " : "") . &ui_submit($label) . ($after ? " " . $after : "") .
-      "</td>\n" . "<td class=ui_buttons_value><span>" . $desc . "</span></td></tr>\n" . "</table>\n" . "</form>\n";
+      "</td>\n" . "<td class=ui_buttons_value><span>" . $desc . "</span></td></tr>\n" . "</table>\n" . "</form>\n</td>\n</tr>\n";
 }
 
 sub theme_ui_buttons_end
 {
-    return "</td></tr></table>\n";
+    return "</td>\n</tr>\n</tbody>\n</table>\n";
 }
 
 sub theme_ui_radio_table
