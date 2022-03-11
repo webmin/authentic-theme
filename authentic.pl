@@ -548,7 +548,11 @@ sub theme_ui_links_row
             } elsif ($nopuncs == 2) {
                 return @$links ? join(" ", @$links) . "<br>\n" : "";
             } else {
-                return @$links ? join(", ", @$links) . ".<br>\n" : "";
+                my $dot = ".";
+                if (scalar(@$links) == 1) {
+                    $dot = "";
+                }
+                return @$links ? join(", ", @$links) . "$dot<br>\n" : "";
             }
         }
     }
