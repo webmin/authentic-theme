@@ -1009,8 +1009,10 @@ sub theme_ui_alert_box
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     }
 
-    if ($desc_to_title) {
-        $tmsg = $desc_to_title;
+    my $tmsg_space = " ";
+    if (defined($desc_to_title)) {
+        $tmsg       = $desc_to_title || '';
+        $tmsg_space = '' if (!$tmsg);
     }
 
     if ($desc_icon) {
@@ -1018,8 +1020,8 @@ sub theme_ui_alert_box
     }
 
     $rv .= '<div class="alert ' . $type . '" style=" ' . $style . '">' . "\n";
-    $rv .= '<i class="fa fa-fw ' . $fa . '"></i> <strong>' . $tmsg . '</strong>';
-    $rv .= ($new_line ? '<br>' : '&nbsp;') . "\n";
+    $rv .= '<i class="fa fa-fw ' . $fa . '"></i>' . $tmsg_space . '<strong>' . $tmsg . '</strong>';
+    $rv .= ($new_line ? '<br>' : ($tmsg_space ? '&nbsp;' : '')) . "\n";
     $msg =~ s/button class="btn/button class="btn btn-tiny/gm;
     $msg =~ s/input class="ui_submit/input class="ui_submit btn btn-default btn-xs/gm;
     $rv .= $msg . "\n";
@@ -1248,10 +1250,11 @@ sub theme_ui_buttons_row
     if (ref($hiddens)) {
         $hiddens = join("\n", map {&ui_hidden(@$_)} @$hiddens);
     }
-    return "<tr data-ui-buttons-row-form-container>\n<td>\n<form action='$script' method='post' class='ui_buttons_form'>\n" .
+    return
+      "<tr data-ui-buttons-row-form-container>\n<td>\n<form action='$script' method='post' class='ui_buttons_form'>\n" .
       $hiddens . "<table>" . "<tr class='ui_buttons_row'> " . "<td data-nowrap class=ui_buttons_label>" .
-      ($before ? $before . " " : "") . &ui_submit($label) . ($after ? " " . $after : "") .
-      "</td>\n" . "<td class=ui_buttons_value><span>" . $desc . "</span></td></tr>\n" . "</table>\n" . "</form>\n</td>\n</tr>\n";
+      ($before ? $before . " " : "") . &ui_submit($label) . ($after ? " " . $after : "") . "</td>\n" .
+      "<td class=ui_buttons_value><span>" . $desc . "</span></td></tr>\n" . "</table>\n" . "</form>\n</td>\n</tr>\n";
 }
 
 sub theme_ui_buttons_end
