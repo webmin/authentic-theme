@@ -1,7 +1,7 @@
 ## Changelog
 
-#### Version 19.91-beta1 (March 13, 2022)
-* Add significant contrast improvements to night mode
+#### Version 19.91-beta2 (March 14, 2022)
+* Add significant improvements to dark palette
 * Fix scrollbar visibility [#1584](https://github.com/authentic-theme/authentic-theme/issues/1584)
 * Fix help popover not being displayed if not inside of accordion
 * Fix display logic for backups virtual servers destination and format in Virtualmin
