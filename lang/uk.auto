@@ -1248,8 +1248,8 @@ body_cpufan=Вентилятор процесора
 filemanager_symlink_exists=Неможливо створити <tt>$1</tt> оскільки файл уже існує в <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Скопіюйте всю системну інформацію в буфер обміну; утримуйте клавішу Alt, щоб скопіювати звичайні текстові дані, а не уцінку
-theme_xhred_tooltip_side_slider_clipboard_account=Скопіюйте всю інформацію облікового запису в буфер обміну; утримуйте клавішу Alt, щоб скопіювати звичайні текстові дані, а не уцінку
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Скопіюйте всю системну інформацію в буфер обміну; утримуйте клавішу $1, щоб скопіювати звичайні текстові дані, а не уцінку
+theme_xhred_tooltip_side_slider_clipboard_account=Скопіюйте всю інформацію облікового запису в буфер обміну; утримуйте клавішу $1, щоб скопіювати звичайні текстові дані, а не уцінку
 tooltip_back_to_servers_index_master=Модуль індексування серверів Webmin на головній машині
 tooltip_list_other_servers=Список інших зареєстрованих серверів Webmin
 theme_xhred_status_module_mon_up=Вгору
@@ -1264,8 +1264,11 @@ settings_navigation_auto_fold_category=Автоматичне згортання
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Створення списку доступних для пошуку параметрів для шаблону
 theme_xhred_tooltip_virtualmin_templates_filter=Пошук у всіх параметрах шаблону
 theme_sysinfo_vmforum=Спільнота Virtualmin
-theme_xhred_tooltip_support_ticket=Подати заявку в службу підтримки з доданою системною інформацією; утримуйте клавішу Alt, щоб скопіювати посилання на підтримку в буфер обміну
+theme_xhred_tooltip_support_ticket=Подати заявку в службу підтримки з доданою системною інформацією; утримуйте клавішу $1, щоб скопіювати посилання на підтримку в буфер обміну
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Примусово оновити системну інформацію
 theme_xhred_disk_quota_error_title=Поза квоти
 theme_xhred_disk_quota_error_message=На пристрої не залишилося місця
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Використовуйте головний ключ адміністратора для розшифрування
+
+#19.90
+settings_hotkey_toggle_hold_modifier=Модифікатор утримання гарячих клавіш

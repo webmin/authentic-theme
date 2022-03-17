@@ -1248,8 +1248,8 @@ body_cpufan=CPU ventiliatorius
 filemanager_symlink_exists=Negalima sukurti <tt>$1</tt> nes failas jau yra <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Nukopijuokite visą sistemos informaciją į mainų sritį; laikykite nuspaudę klavišą Alt, kad nukopijuotumėte paprasto teksto duomenis, o ne žymėjimą
-theme_xhred_tooltip_side_slider_clipboard_account=Nukopijuokite visą paskyros informaciją į mainų sritį; laikykite nuspaudę klavišą Alt, kad nukopijuotumėte paprasto teksto duomenis, o ne žymėjimą
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Nukopijuokite visą sistemos informaciją į mainų sritį; laikykite nuspaudę $1 klavišą, norėdami nukopijuoti grynojo teksto duomenis, o ne žymėti
+theme_xhred_tooltip_side_slider_clipboard_account=Nukopijuokite visą paskyros informaciją į mainų sritį; laikykite nuspaudę $1 klavišą, norėdami nukopijuoti grynojo teksto duomenis, o ne žymėti
 tooltip_back_to_servers_index_master=Webmin serverių indekso modulis pagrindiniame kompiuteryje
 tooltip_list_other_servers=Kitų registruotų Webmin serverių sąrašas
 theme_xhred_status_module_mon_up=Aukštyn
@@ -1264,8 +1264,11 @@ settings_navigation_auto_fold_category=Automatiškai sulankstomos neaktyvios kat
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generuojamas šablono parinkčių sąrašas, kuriame galima ieškoti
 theme_xhred_tooltip_virtualmin_templates_filter=Ieškokite visose šablono parinktyse
 theme_sysinfo_vmforum=Virtualmin bendruomenė
-theme_xhred_tooltip_support_ticket=Pateikti palaikymo bilietą su pridedama sistemos informacija; laikykite nuspaudę klavišą Al, kad nukopijuotumėte palaikymo nuorodą į mainų sritį
+theme_xhred_tooltip_support_ticket=Pateikti palaikymo bilietą su pridedama sistemos informacija; palaikykite klavišą $1, kad nukopijuotumėte palaikymo nuorodą į mainų sritį
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Priversti atnaujinti sistemos informaciją
 theme_xhred_disk_quota_error_title=Kvota nepatenka
 theme_xhred_disk_quota_error_message=įrenginyje nebėra vietos
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Iššifravimui naudokite pagrindinį administratoriaus raktą
+
+#19.90
+settings_hotkey_toggle_hold_modifier=Spartųjų klavišų laikymo modifikatorius

@@ -1248,8 +1248,8 @@ body_cpufan=מאוורר מעבד
 filemanager_symlink_exists=לא ניתן ליצור <tt>$1</tt> מכיוון שהקובץ כבר קיים ב- <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=העתק את כל מידע המערכת ללוח; החזק את מקש Alt כדי להעתיק נתוני טקסט רגיל במקום סימון
-theme_xhred_tooltip_side_slider_clipboard_account=העתק את כל פרטי החשבון ללוח; החזק את מקש Alt כדי להעתיק נתוני טקסט רגיל במקום סימון
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=העתק את כל מידע המערכת ללוח; החזק את המקש $1 כדי להעתיק נתוני טקסט רגיל במקום סימון
+theme_xhred_tooltip_side_slider_clipboard_account=העתק את כל פרטי החשבון ללוח; החזק את המקש $1 כדי להעתיק נתוני טקסט רגיל במקום סימון
 tooltip_back_to_servers_index_master=מודול אינדקס שרתי Webmin במחשב הראשי
 tooltip_list_other_servers=רשימה של שרתי Webmin רשומים אחרים
 theme_xhred_status_module_mon_up=לְמַעלָה
@@ -1264,8 +1264,11 @@ settings_navigation_auto_fold_category=קיפול אוטומטי של קטגור
 theme_xhred_tooltip_virtualmin_templates_filter_generating=יצירת רשימה ניתנת לחיפוש של אפשרויות עבור התבנית
 theme_xhred_tooltip_virtualmin_templates_filter=חפש בכל האפשרויות של התבנית
 theme_sysinfo_vmforum=קהילת Virtualmin
-theme_xhred_tooltip_support_ticket=שלח כרטיס תמיכה עם מידע מערכת מצורף; החזק את מקש Alt כדי להעתיק את קישור התמיכה ללוח
+theme_xhred_tooltip_support_ticket=שלח כרטיס תמיכה עם מידע מערכת מצורף; החזק את מקש $1 כדי להעתיק קישור תמיכה ללוח
 theme_xhred_tooltip_side_slider_refresh_sysinfo=הכריח לרענן את מידע המערכת
 theme_xhred_disk_quota_error_title=מחוץ למכסה
 theme_xhred_disk_quota_error_message=אין עוד מקום במכשיר
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=השתמש במפתח מנהל ראשי לפענוח
+
+#19.90
+settings_hotkey_toggle_hold_modifier=משנה החזקת מקשי קיצור

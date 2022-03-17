@@ -1248,8 +1248,8 @@ body_cpufan=CPU haizagailua
 filemanager_symlink_exists=Ezin sortu <tt>$1</tt> fitxategia dagoeneko existitzen gisa <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiatu sistemaren informazio guztia arbelean; eutsi Alt tekla testu arrunteko datuak kopiatzeko, markatu beharrean
-theme_xhred_tooltip_side_slider_clipboard_account=Kopiatu kontuaren informazio guztia arbelean; eutsi Alt tekla testu arrunteko datuak kopiatzeko, markatu beharrean
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiatu sistemaren informazio guztia arbelean; eduki sakatuta $1 tekla testu arrunteko datuak kopiatzeko, markatu beharrean
+theme_xhred_tooltip_side_slider_clipboard_account=Kopiatu kontuaren informazio guztia arbelean; eduki sakatuta $1 tekla testu arrunteko datuak kopiatzeko, markatu beharrean
 tooltip_back_to_servers_index_master=Webmin zerbitzariak indexatzeko modulua makina nagusian
 tooltip_list_other_servers=Erregistratutako beste Webmin zerbitzarien zerrenda
 theme_xhred_status_module_mon_up=Gora
@@ -1264,8 +1264,11 @@ settings_navigation_auto_fold_category=Tolestu automatikoki kategoria inaktiboak
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Txantiloirako aukeren zerrenda bilagarria sortzea
 theme_xhred_tooltip_virtualmin_templates_filter=Bilatu txantiloiaren aukera guztietan
 theme_sysinfo_vmforum=Virtualmin Komunitatea
-theme_xhred_tooltip_support_ticket=Bidali laguntza-txartela erantsita sistemaren informazioarekin; eutsi Alt tekla euskarriaren esteka arbelean kopiatzeko
+theme_xhred_tooltip_support_ticket=Bidali laguntza-txartela erantsita sistemaren informazioarekin; eutsi $1 tekla laguntza-esteka arbelean kopiatzeko
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Behartu sistemaren informazioa freskatzera
 theme_xhred_disk_quota_error_title=Kupotik kanpo
 theme_xhred_disk_quota_error_message=Ez da lekurik geratzen gailuan
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Erabili administratzaile-gako nagusia deszifratzeko
+
+#19.90
+settings_hotkey_toggle_hold_modifier=Laster-tekla mantendu aldatzailea

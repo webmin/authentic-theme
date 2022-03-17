@@ -1090,8 +1090,8 @@ body_cpufan=ventilátor CPU
 filemanager_symlink_exists=<tt>$1</tt> nelze vytvořit, protože soubor již v <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Zkopírujte všechny systémové informace do schránky; podržením klávesy Alt zkopírujete data ve formátu prostého textu místo markdown
-theme_xhred_tooltip_side_slider_clipboard_account=Zkopírujte všechny informace o účtu do schránky; podržením klávesy Alt zkopírujete data ve formátu prostého textu místo markdown
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Zkopírujte všechny systémové informace do schránky; podržením klávesy $1 zkopírujete data ve formátu prostého textu místo markdown
+theme_xhred_tooltip_side_slider_clipboard_account=Zkopírujte všechny informace o účtu do schránky; podržením klávesy $1 zkopírujete data ve formátu prostého textu místo markdown
 tooltip_back_to_servers_index_master=Indexový modul serverů Webmin na hlavním počítači
 tooltip_list_other_servers=Seznam dalších registrovaných serverů Webmin
 theme_xhred_status_module_mon_up=Nahoru
@@ -1106,8 +1106,11 @@ settings_navigation_auto_fold_category=Automatické skládání neaktivních kat
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generování prohledávatelného seznamu možností pro šablonu
 theme_xhred_tooltip_virtualmin_templates_filter=Prohledávejte všechny možnosti šablony
 theme_sysinfo_vmforum=Komunita Virtualmin
-theme_xhred_tooltip_support_ticket=Odešlete lístek podpory s připojenými informacemi o systému; podržením klávesy Alt zkopírujete odkaz na podporu do schránky
+theme_xhred_tooltip_support_ticket=Odešlete lístek podpory s připojenými informacemi o systému; podržením klávesy $1 zkopírujete odkaz podpory do schránky
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Vynutit aktualizaci systémových informací
 theme_xhred_disk_quota_error_title=Mimo kvótu
 theme_xhred_disk_quota_error_message=Na zařízení nezbývá místo
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=K dešifrování použijte hlavní klíč správce
+
+#19.90
+settings_hotkey_toggle_hold_modifier=Modifikátor podržení klávesové zkratky

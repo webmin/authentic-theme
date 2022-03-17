@@ -65,6 +65,7 @@ var
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
+    settings_hotkey_toggle_hold_modifier = 'altKey',
     settings_hotkey_toggle_modifier = 'altKey',
     settings_hotkey_toggle_key_webmin = 'w',
     settings_hotkey_toggle_key_virtualmin = 'v',

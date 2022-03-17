@@ -403,9 +403,17 @@ sub print_sysstats_panel_start
     my ($info_ref) = @_;
 
     my $recollect;
+    my $event_hold_modifer_icon = sub {
+        return
+          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'ctrlKey'  ? '⌃' :
+          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'metaKey'  ? '⌘' :
+          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'shiftKey' ? '⇧' :
+          '⌥';
+    };
     if ($info_ref) {
         my @recollect = @{$info_ref};
         @recollect = grep {$_->{'id'} =~ /recollect/} @recollect;
+
         if (@recollect) {
             $recollect =
 '<span class="btn btn-transparent-link pull-right _sync_sysinfo_cnt"><i class="fa fa-fw fa fa-reload _sync_sysinfo_" '
@@ -417,16 +425,21 @@ sub print_sysstats_panel_start
         my ($type) = @_;
         return
 '<span class="btn btn-transparent-link pull-right _clipboard_sysinfo_cnt"><i class="fa2 fa-fw fa fa2-clipboard-markdown _clipboard_sysinfo_" '
-          . get_button_tooltip("theme_xhred_tooltip_side_slider_clipboard_$type", undef, 'auto right')
-          . '></i></span>';
+          .
+          get_button_tooltip(theme_text("theme_xhred_tooltip_side_slider_clipboard_$type", &$event_hold_modifer_icon()),
+                             undef, 'auto right') .
+          '></i></span>';
     };
     my $submit_support_ticket = sub {
         my $vs_license = check_pro_package('vm');
         return $vs_license ?
           (
 '<span class="btn btn-transparent-link pull-right _support_ticket_cnt"><i class="fa2 fa-fw fa fa2-life-ring _support_ticket_" '
-              . get_button_tooltip('theme_xhred_tooltip_support_ticket', undef, 'auto right')
-              . '></i></span>') :
+              .
+              get_button_tooltip(theme_text("theme_xhred_tooltip_support_ticket", &$event_hold_modifer_icon()),
+                                 undef, 'auto right') .
+              '></i></span>'
+          ) :
           undef;
     };
     my %virtualmin_config = foreign_config('virtual-server');
@@ -1879,7 +1892,7 @@ sub get_xhr_request
             exit if (!foreign_available($module));
             my $jailed_user = get_fm_jailed_user($module, 1);
             my ($public, $gpgpath) =
-                get_user_allowed_gpg_keys($jailed_user, $in{'xhr-get_gpg_keys_all'});
+              get_user_allowed_gpg_keys($jailed_user, $in{'xhr-get_gpg_keys_all'});
             my %keys;
             $keys{'public'}  = $public;
             $keys{'gpgpath'} = $gpgpath;

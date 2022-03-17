@@ -34,8 +34,7 @@ sub theme_settings_raw
                        'settings_cm_editor_palette',
                        'settings_global_palette_unauthenticated',
                        'settings_theme_config_admins_only_privileged',
-            ]
-         }
+            ] }
         ],
 
         [
@@ -52,8 +51,7 @@ sub theme_settings_raw
                        'settings_sysinfo_real_time_status_disk',
                        'settings_sysinfo_real_time_stored',
                        'settings_sysinfo_real_time_stored_length',
-            ]
-         }
+            ] }
         ],
 
         [
@@ -87,8 +85,7 @@ sub theme_settings_raw
                        'settings_leftmenu_user_html',
                        'settings_leftmenu_user_html_privileged',
                        'settings_leftmenu_custom_links',
-            ]
-         }
+            ] }
         ],
 
         [
@@ -100,8 +97,7 @@ sub theme_settings_raw
                        'settings_side_slider_sysinfo_enabled',
                        'settings_side_slider_notifications_enabled',
                        'settings_side_slider_favorites_enabled',
-            ]
-         }
+            ] }
         ],
 
         [
@@ -111,8 +107,7 @@ sub theme_settings_raw
                        'settings_right_table_links_type',
                        'settings_right_table_animate_icons',
                        'settings_right_table_grayscaled_icons',
-            ]
-         }
+            ] }
         ],
 
         [
@@ -120,6 +115,7 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_hotkey_options'),
             'data'  => [
                        'settings_hotkeys_active',
+                       'settings_hotkey_toggle_hold_modifier',
                        'settings_hotkey_toggle_modifier',
                        'settings_hotkey_toggle_key_webmin',
                        'settings_hotkey_toggle_key_virtualmin',
@@ -135,8 +131,7 @@ sub theme_settings_raw
                        'settings_hotkey_navigation',
                        'settings_hotkey_slider',
                        'settings_hotkey_toggle_key_night_mode',
-            ]
-         }
+            ] }
         ],
 
         [
@@ -153,16 +148,14 @@ sub theme_settings_raw
                        'settings_hotkey_custom_7_user',
                        'settings_hotkey_custom_8_user',
                        'settings_hotkey_custom_9_user',
-            ]
-         }
+            ] }
         ],
 
         [
          {  'id'    => 's8',
             'title' => &theme_text('settings_right_soft_updates_page_options'),
             'data'  =>
-              ['settings_sysinfo_theme_updates', 'settings_cache_interval', 'settings_sysinfo_theme_updates_for_usermin',]
-         }
+              ['settings_sysinfo_theme_updates', 'settings_cache_interval', 'settings_sysinfo_theme_updates_for_usermin',] }
         ]);
 }
 
@@ -440,6 +433,13 @@ sub theme_settings_format
           
 
                 </select>';
+    } elsif ($k eq 'settings_hotkey_toggle_hold_modifier') {
+        $v = '<select class="ui_select" name="' . $k . '">
+                    <option value="altKey"'
+          . ($v eq 'altKey' && ' selected') . '>Alt</option>
+                    <option value="ctrlKey"'
+          . ($v eq 'ctrlKey' && ' selected') . '>Ctrl</option>
+                </select>';
     } elsif ($k eq 'settings_hotkey_toggle_modifier') {
         $v = '<select class="ui_select" name="' . $k . '">
                     <option value="altKey"'
@@ -544,35 +544,35 @@ sub theme_settings_format
                        [0, $theme_text{'settings_right_table_links_type_0'}]
                       ]);
     }
-    my $description     = $theme_text{ $k . '_description' };
+    my $description = $theme_text{ $k . '_description' };
 
     # Return formatted
     return [
-            (
-             (
-              $description && (
-                             $k =~ /level_navigation|leftmenu_width/ ? undef :
-                             '<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-pointer tconfig-popover" data-html="true" data-toggle="popover" data-trigger="click" data-title="' . $theme_text{$k} . '" data-content="' . html_escape($description) . '"></sup>'
-              )
-             ) .
-               '<span data-text>' . $theme_text{$k} . '</span>'
-               .
-               (
-                 $description && ($k =~ /level_navigation|leftmenu_width/ ?
-                                  '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-                                  $k =~ /sysinfo_theme_updates/ &&
-                                  '<div class="smaller text-normal no-padding margined-left-1"></div>'
-                 )
-               )
-            ),
-            "<span>$v</span>"];
+        (
+         (
+          $description && (
+              $k =~ /level_navigation|leftmenu_width/ ? undef :
+'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-pointer tconfig-popover" data-html="true" data-toggle="popover" data-trigger="click" data-title="'
+              . $theme_text{$k}
+              . '" data-content="' . html_escape($description) . '"></sup>')
+         ) .
+           '<span data-text>' . $theme_text{$k} . '</span>'
+           .
+           (
+             $description && ($k =~ /level_navigation|leftmenu_width/ ?
+                              '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                              $k =~ /sysinfo_theme_updates/ &&
+                              '<div class="smaller text-normal no-padding margined-left-1"></div>'))
+        ),
+        "<span>$v</span>"];
 }
 
 sub theme_controls
 {
-    my ($section)                 = @_;
-    my $changelog_contents        = read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md");
-    my @changelog_stable_versions = ($changelog_contents =~ /####\s+Version\s+((?|\d+.\d+\s+|\d+.\d+.\d+\s+)\([\d\w\s,]+\))/g);
+    my ($section) = @_;
+    my $changelog_contents = read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md");
+    my @changelog_stable_versions =
+      ($changelog_contents =~ /####\s+Version\s+((?|\d+.\d+\s+|\d+.\d+.\d+\s+)\([\d\w\s,]+\))/g);
     my $stable_versions_dropdown_submenu;
     my $stable_versions_dropdown_submenu_content;
     if (@changelog_stable_versions) {

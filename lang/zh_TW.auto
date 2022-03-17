@@ -1248,8 +1248,8 @@ body_cpufan=CPU風扇
 filemanager_symlink_exists=無法創建<tt>$1</tt> <tt>$2</tt>已存在文件
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=將所有系統信息複製到剪貼板；按住 Alt 鍵複製純文本數據而不是降價
-theme_xhred_tooltip_side_slider_clipboard_account=將所有帳戶信息複製到剪貼板；按住 Alt 鍵複製純文本數據而不是降價
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=將所有系統信息複製到剪貼板；按住 $1 鍵複製純文本數據而不是降價
+theme_xhred_tooltip_side_slider_clipboard_account=將所有帳戶信息複製到剪貼板；按住 $1 鍵複製純文本數據而不是降價
 tooltip_back_to_servers_index_master=主機上的 Webmin 服務器索引模塊
 tooltip_list_other_servers=其他已註冊的 Webmin 服務器列表
 theme_xhred_status_module_mon_up=向上
@@ -1264,8 +1264,11 @@ settings_navigation_auto_fold_category=自動折疊非活動類別
 theme_xhred_tooltip_virtualmin_templates_filter_generating=為模板生成可搜索的選項列表
 theme_xhred_tooltip_virtualmin_templates_filter=搜索模板的所有選項
 theme_sysinfo_vmforum=Virtualmin 社區
-theme_xhred_tooltip_support_ticket=提交附有系統信息的支持票；按住 Alt 鍵將支持鏈接複製到剪貼板
+theme_xhred_tooltip_support_ticket=提交附有系統信息的支持票；按住 $1 鍵將支持鏈接複製到剪貼板
 theme_xhred_tooltip_side_slider_refresh_sysinfo=強制刷新系統信息
 theme_xhred_disk_quota_error_title=超出配額
 theme_xhred_disk_quota_error_message=設備上沒有剩餘空間
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=使用主管理員密鑰進行解密
+
+#19.90
+settings_hotkey_toggle_hold_modifier=熱鍵保持修飾符

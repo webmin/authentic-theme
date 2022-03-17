@@ -1248,8 +1248,8 @@ body_cpufan=ventilátor CPU
 filemanager_symlink_exists=Nie je možné vytvoriť <tt>$1</tt> pretože súbor už existuje v <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Skopírujte všetky systémové informácie do schránky; podržaním klávesu Alt skopírujete údaje vo formáte obyčajného textu namiesto označenia
-theme_xhred_tooltip_side_slider_clipboard_account=Skopírujte všetky informácie o účte do schránky; podržaním klávesu Alt skopírujete údaje vo formáte obyčajného textu namiesto označenia
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Skopírujte všetky systémové informácie do schránky; podržaním klávesu $1 skopírujete údaje vo formáte obyčajného textu namiesto označenia
+theme_xhred_tooltip_side_slider_clipboard_account=Skopírujte všetky informácie o účte do schránky; podržaním klávesu $1 skopírujete údaje vo formáte obyčajného textu namiesto označenia
 tooltip_back_to_servers_index_master=Indexový modul serverov Webmin na hlavnom počítači
 tooltip_list_other_servers=Zoznam ďalších registrovaných serverov Webmin
 theme_xhred_status_module_mon_up=Hore
@@ -1264,8 +1264,11 @@ settings_navigation_auto_fold_category=Automatické skladanie neaktívnych kateg
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generovanie prehľadateľného zoznamu možností pre šablónu
 theme_xhred_tooltip_virtualmin_templates_filter=Vyhľadávajte vo všetkých možnostiach šablóny
 theme_sysinfo_vmforum=Komunita Virtualmin
-theme_xhred_tooltip_support_ticket=Odoslať podporný lístok s pripojenými systémovými informáciami; Ak chcete skopírovať odkaz na podporu do schránky, podržte kláves Alt
+theme_xhred_tooltip_support_ticket=Odoslať podporný lístok s pripojenými systémovými informáciami; podržaním klávesu $1 skopírujete odkaz na podporu do schránky
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Vynútiť obnovenie systémových informácií
 theme_xhred_disk_quota_error_title=Mimo kvóty
 theme_xhred_disk_quota_error_message=Na zariadení nie je dostatok miesta
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Na dešifrovanie použite hlavný kľúč správcu
+
+#19.90
+settings_hotkey_toggle_hold_modifier=Modifikátor podržania klávesovej skratky
