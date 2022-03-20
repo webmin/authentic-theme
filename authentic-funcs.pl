@@ -390,11 +390,12 @@ sub get_user_allowed_gpg_keys
 
         foreach my $k (@keys) {
             my $key  = substr($k->{'key'}, -8, 8);
+            my $suser = $switched_user || $remote_user;
             my $name = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
             if ($list_avoided_system_keys || (!$list_avoided_system_keys && !grep(/^$key$/, @keys_avoided))) {
                 $keys_{ $k->{'key'} } =
-                  trim($name) . " ($k->{'email'}->[0] [$switched_user] [$key/$k->{'size'}, $k->{'date'}])";
+                  trim($name) . " ($k->{'email'}->[0] [$suser] [$key/$k->{'size'}, $k->{'date'}])";
             }
         }
         return (\%keys_, $gpgpath);
