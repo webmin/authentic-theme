@@ -1,10 +1,14 @@
 ## Changelog
 
-#### Version 19.91-beta2 (March 14, 2022)
+#### Version 19.91 (March 21, 2022)
 * Add significant improvements to dark palette
-* Fix scrollbar visibility [#1584](https://github.com/authentic-theme/authentic-theme/issues/1584)
+* Add an option to change hold modifier key [forum.virtualmin.com/t/114331](https://forum.virtualmin.com/t/change-remove-to-delete-not-with-alt-but-shift/114331/6)
+* Fiх scrollbar visibility [#1584/comment-1060766894](https://github.com/authentic-theme/authentic-theme/issues/1584#issuecomment-1060766894)
 * Fix help popover not being displayed if not inside of accordion
 * Fix display logic for backups virtual servers destination and format in Virtualmin
+* Fix opening correct link in a table cell with multiple links
+* Fix placeholder font size for textareas
+* Fix a bug preventing correctly opening file viewer on first call
 
 #### Version 19.90.1 (March 06, 2022)
 * Fix Usermin dependency check before installing a new update
