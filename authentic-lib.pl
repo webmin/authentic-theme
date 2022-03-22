@@ -1804,6 +1804,62 @@ sub get_xhr_request
             print get_available_modules('json');
         } elsif ($in{'xhr-get_theme_locale_languages'} eq '1') {
             my %__config = settings(get_tuconfig_file(), 'config_');
+            my @langs    = list_languages();
+
+            # Add additional locales
+            push(@langs,
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (Australia)',
+                    'lang'    => 'en-au',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (Belize)',
+                    'lang'    => 'en-bz',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (Canada)',
+                    'lang'    => 'en-ca',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (Ireland)',
+                    'lang'    => 'en-ie',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (Jamaica)',
+                    'lang'    => 'en-jm',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (New Zealand)',
+                    'lang'    => 'en-nz',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (South Africa)',
+                    'lang'    => 'en-za',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (Trinidad)',
+                    'lang'    => 'en-tt',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (United Kingdom)',
+                    'lang'    => 'en-gb',
+                    'titles'  => '1'
+                 },
+                 {  'charset' => 'utf-8',
+                    'desc'    => 'English (United States)',
+                    'lang'    => 'en-us',
+                    'titles'  => '1'
+                 });
+            @langs = sort {$a->{'lang'} cmp $b->{'lang'}} @langs;
+
             print ui_select(
                 "config_portable_theme_locale_languages",
                 ($__config{'config_portable_theme_locale_languages'} ? $__config{'config_portable_theme_locale_languages'} :
@@ -1814,7 +1870,7 @@ sub get_xhr_request
                      !string_contains(lc($_->{'lang'}), 'utf') ?
                        [get_before_delimiter(lc(replace('_', '-', $_->{'lang'})), '.'), $_->{'desc'}] :
                        ()
-                 } list_languages()
+                 } @langs
                 ]);
         }
 
