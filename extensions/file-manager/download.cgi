@@ -2,7 +2,7 @@
 
 #
 # Authentic Theme (https://github.com/authentic-theme/authentic-theme)
-# Copyright Ilia Ross <ilia@virtualmin.com>
+# Copyright Ilia Rostovtsev <ilia@virtualmin.com>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 
