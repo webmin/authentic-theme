@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=ใช้คีย�
 
 #19.90
 settings_hotkey_toggle_hold_modifier=ตัวแก้ไขการกดปุ่มลัด
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=มักจะถาม
+theme_xhred_filemanager_files_mode_ask_remember=จำไว้เป็นค่าเริ่มต้นในอนาคต
+theme_xhred_filemanager_files_mode_ask_title=เขียนทับที่มีอยู่
+theme_xhred_filemanager_files_mode_ask_title2=เขียนทับไฟล์ที่มีอยู่
+theme_xhred_filemanager_files_mode_ask_desc=คุณต้องการเขียนทับไฟล์ใด ๆ ที่มีอยู่ในการดำเนินการครั้งต่อไป
+theme_xhred_filemanager_files_mode_ask_title_yes=ใช่ เขียนทับ
+theme_xhred_filemanager_files_mode_ask_title_no=ไม่ ยังคงมีอยู่

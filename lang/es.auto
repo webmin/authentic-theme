@@ -1183,3 +1183,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Use la clave de adm
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Modificador de retención de teclas de acceso rápido
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Pregunta siempre
+theme_xhred_filemanager_files_mode_ask_remember=Recordar como futuro predeterminado
+theme_xhred_filemanager_files_mode_ask_title=Sobrescribir existentes
+theme_xhred_filemanager_files_mode_ask_title2=sobrescribir archivos existentes
+theme_xhred_filemanager_files_mode_ask_desc=¿Desea sobrescribir los archivos existentes en la próxima operación?
+theme_xhred_filemanager_files_mode_ask_title_yes=Sí, sobrescribir
+theme_xhred_filemanager_files_mode_ask_title_no=No, sigue existiendo

@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Şifre çözme içi
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Kısayol tuşu tutma değiştiricisi
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Her zaman sor
+theme_xhred_filemanager_files_mode_ask_remember=Gelecekteki varsayılan olarak hatırla
+theme_xhred_filemanager_files_mode_ask_title=Var olanın üzerine yaz
+theme_xhred_filemanager_files_mode_ask_title2=Mevcut dosyaların üzerine yaz
+theme_xhred_filemanager_files_mode_ask_desc=Bir sonraki işlemde mevcut dosyaların üzerine yazmak istiyor musunuz?
+theme_xhred_filemanager_files_mode_ask_title_yes=Evet, üzerine yaz
+theme_xhred_filemanager_files_mode_ask_title_no=Hayır, mevcut kal

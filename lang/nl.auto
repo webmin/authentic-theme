@@ -1159,3 +1159,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Gebruik de hoofdbeh
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Modifier voor sneltoets vasthouden
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Altijd vragen
+theme_xhred_filemanager_files_mode_ask_remember=Onthouden als toekomstige standaard
+theme_xhred_filemanager_files_mode_ask_title=Overschrijf bestaande
+theme_xhred_filemanager_files_mode_ask_title2=bestaande bestanden overschrijven
+theme_xhred_filemanager_files_mode_ask_desc=Wilt u bij de volgende bewerking bestaande bestanden overschrijven?
+theme_xhred_filemanager_files_mode_ask_title_yes=Ja, overschrijven
+theme_xhred_filemanager_files_mode_ask_title_no=Nee, blijf bestaan

@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Uża ċavetta tal-a
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Hotkey istiva modifikatur
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Dejjem staqsi
+theme_xhred_filemanager_files_mode_ask_remember=Ftakar bħala default fil-futur
+theme_xhred_filemanager_files_mode_ask_title=Ikteb mill-ġdid eżistenti
+theme_xhred_filemanager_files_mode_ask_title2=Ikteb fuq il-fajls eżistenti
+theme_xhred_filemanager_files_mode_ask_desc=Trid tikteb fuqu xi fajls eżistenti fuq l-operazzjoni li jmiss
+theme_xhred_filemanager_files_mode_ask_title_yes=Iva, ikteb fuqu
+theme_xhred_filemanager_files_mode_ask_title_no=Le, żomm eżistenti

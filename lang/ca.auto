@@ -587,3 +587,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utilitzeu la clau m
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Modificador de tecles d'accés ràpid
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Pregunta sempre
+theme_xhred_filemanager_files_mode_ask_remember=Recordeu com a predeterminat futur
+theme_xhred_filemanager_files_mode_ask_title=Sobreescriu l'existent
+theme_xhred_filemanager_files_mode_ask_title2=Sobreescriu els fitxers existents
+theme_xhred_filemanager_files_mode_ask_desc=Voleu sobreescriure els fitxers existents a la següent operació
+theme_xhred_filemanager_files_mode_ask_title_yes=Sí, sobreescriu
+theme_xhred_filemanager_files_mode_ask_title_no=No, segueix existint

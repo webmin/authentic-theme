@@ -20,7 +20,7 @@ my $delete     = $in{'delete'};
 my $passphrase = $in{'passphrase'};
 my $keyuser    = $in{'keyuser'};
 my $homeuser   = $in{'homeuser'};
-my $safe_mode  = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
+my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 
 my $gpgpath = get_gpg_path();
 my $no_command;

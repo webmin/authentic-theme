@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=使用主管理員�
 
 #19.90
 settings_hotkey_toggle_hold_modifier=熱鍵保持修飾符
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=總是問
+theme_xhred_filemanager_files_mode_ask_remember=記住作為未來的默認值
+theme_xhred_filemanager_files_mode_ask_title=覆蓋現有
+theme_xhred_filemanager_files_mode_ask_title2=覆蓋現有文件
+theme_xhred_filemanager_files_mode_ask_desc=是否要在下次操作時覆蓋任何現有文件
+theme_xhred_filemanager_files_mode_ask_title_yes=是的，覆蓋
+theme_xhred_filemanager_files_mode_ask_title_no=不，保持現有

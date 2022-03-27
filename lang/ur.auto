@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=ڈکرپشن کے �
 
 #19.90
 settings_hotkey_toggle_hold_modifier=ہاٹکی ہولڈ موڈیفائر
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=ہمیشہ پوچھو
+theme_xhred_filemanager_files_mode_ask_remember=مستقبل کے ڈیفالٹ کے طور پر یاد رکھیں
+theme_xhred_filemanager_files_mode_ask_title=موجودہ کو اوور رائٹ کریں۔
+theme_xhred_filemanager_files_mode_ask_title2=موجودہ فائلوں کو اوور رائٹ کریں۔
+theme_xhred_filemanager_files_mode_ask_desc=کیا آپ اگلے آپریشن پر کسی بھی موجودہ فائلوں کو اوور رائٹ کرنا چاہتے ہیں۔
+theme_xhred_filemanager_files_mode_ask_title_yes=ہاں، اوور رائٹ کریں۔
+theme_xhred_filemanager_files_mode_ask_title_no=نہیں، موجود رکھیں

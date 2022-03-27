@@ -18,7 +18,7 @@ my $pparam;
 my $password  = $in{'password'};
 my $delete    = $in{'delete'};
 my $ecwd      = $cwd;
-my $safe_mode = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
+my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 
 foreach my $name (@entries_list) {
     my $no_command;

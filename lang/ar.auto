@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=استخدم مفت
 
 #19.90
 settings_hotkey_toggle_hold_modifier=معدل تعليق مفتاح التشغيل السريع
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=اسال دائما
+theme_xhred_filemanager_files_mode_ask_remember=تذكر كما الافتراضي في المستقبل
+theme_xhred_filemanager_files_mode_ask_title=الكتابة الموجودة
+theme_xhred_filemanager_files_mode_ask_title2=الكتابة فوق الملفات الموجودة
+theme_xhred_filemanager_files_mode_ask_desc=هل تريد الكتابة فوق أي ملفات موجودة في العملية التالية
+theme_xhred_filemanager_files_mode_ask_title_yes=نعم ، الكتابة
+theme_xhred_filemanager_files_mode_ask_title_no=لا ، احتفظ بها

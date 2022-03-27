@@ -1114,3 +1114,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=K dešifrování po
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Modifikátor podržení klávesové zkratky
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Vždy se ptej
+theme_xhred_filemanager_files_mode_ask_remember=Zapamatovat jako budoucí výchozí
+theme_xhred_filemanager_files_mode_ask_title=Přepsat existující
+theme_xhred_filemanager_files_mode_ask_title2=Přepsat existující soubory
+theme_xhred_filemanager_files_mode_ask_desc=Chcete při další operaci přepsat všechny existující soubory?
+theme_xhred_filemanager_files_mode_ask_title_yes=Ano, přepsat
+theme_xhred_filemanager_files_mode_ask_title_no=Ne, zůstaň existovat

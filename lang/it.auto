@@ -68,3 +68,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utilizzare la chiav
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Modificatore di blocco dei tasti di scelta rapida
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Chiedi sempre
+theme_xhred_filemanager_files_mode_ask_remember=Ricorda come predefinito futuro
+theme_xhred_filemanager_files_mode_ask_title=Sovrascrivi esistente
+theme_xhred_filemanager_files_mode_ask_title2=Sovrascrivi i file esistenti
+theme_xhred_filemanager_files_mode_ask_desc=Vuoi sovrascrivere tutti i file esistenti alla prossima operazione
+theme_xhred_filemanager_files_mode_ask_title_yes=Sì, sovrascrivi
+theme_xhred_filemanager_files_mode_ask_title_no=No, continua ad esistere

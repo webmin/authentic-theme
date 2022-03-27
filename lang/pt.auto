@@ -1189,3 +1189,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Use a chave mestra 
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Modificador de espera de tecla de atalho
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Sempre pergunte
+theme_xhred_filemanager_files_mode_ask_remember=Lembrar como padrão futuro
+theme_xhred_filemanager_files_mode_ask_title=Sobrescrever existente
+theme_xhred_filemanager_files_mode_ask_title2=Sobrescrever arquivos existentes
+theme_xhred_filemanager_files_mode_ask_desc=Deseja substituir quaisquer arquivos existentes na próxima operação
+theme_xhred_filemanager_files_mode_ask_title_yes=Sim, sobrescrever
+theme_xhred_filemanager_files_mode_ask_title_no=Não, continue existindo

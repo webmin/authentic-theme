@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=복호화에 마스
 
 #19.90
 settings_hotkey_toggle_hold_modifier=단축키 고정 수정자
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=항상 물어보다
+theme_xhred_filemanager_files_mode_ask_remember=향후 기본값으로 기억
+theme_xhred_filemanager_files_mode_ask_title=기존 덮어쓰기
+theme_xhred_filemanager_files_mode_ask_title2=기존 파일 덮어쓰기
+theme_xhred_filemanager_files_mode_ask_desc=다음 작업에서 기존 파일을 덮어쓰시겠습니까?
+theme_xhred_filemanager_files_mode_ask_title_yes=예, 덮어씁니다
+theme_xhred_filemanager_files_mode_ask_title_no=아니요, 기존 상태를 유지합니다

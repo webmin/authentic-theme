@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=השתמש במפת
 
 #19.90
 settings_hotkey_toggle_hold_modifier=משנה החזקת מקשי קיצור
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=תמיד תשאל
+theme_xhred_filemanager_files_mode_ask_remember=זכור כברירת מחדל עתידית
+theme_xhred_filemanager_files_mode_ask_title=החלף קיים
+theme_xhred_filemanager_files_mode_ask_title2=להחליף קבצים קיימים
+theme_xhred_filemanager_files_mode_ask_desc=האם ברצונך להחליף קבצים קיימים בפעולה הבאה
+theme_xhred_filemanager_files_mode_ask_title_yes=כן, תחליף
+theme_xhred_filemanager_files_mode_ask_title_no=לא, תמשיך להתקיים

@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Використо�
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Модифікатор утримання гарячих клавіш
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Завжди запитуйте
+theme_xhred_filemanager_files_mode_ask_remember=Запам'ятати як майбутнє за замовчуванням
+theme_xhred_filemanager_files_mode_ask_title=Перезаписати наявні
+theme_xhred_filemanager_files_mode_ask_title2=Перезапис існуючих файлів
+theme_xhred_filemanager_files_mode_ask_desc=Ви хочете перезаписати будь-які існуючі файли під час наступної операції
+theme_xhred_filemanager_files_mode_ask_title_yes=Так, перезаписати
+theme_xhred_filemanager_files_mode_ask_title_no=Ні, продовжуйте існувати

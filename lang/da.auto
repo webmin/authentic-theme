@@ -1184,3 +1184,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Brug hovedadministr
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Hotkey hold modifikator
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Spørg altid
+theme_xhred_filemanager_files_mode_ask_remember=Husk som fremtidig standard
+theme_xhred_filemanager_files_mode_ask_title=Overskriv eksisterende
+theme_xhred_filemanager_files_mode_ask_title2=Overskriv eksisterende filer
+theme_xhred_filemanager_files_mode_ask_desc=Ønsker du at overskrive eksisterende filer ved næste handling
+theme_xhred_filemanager_files_mode_ask_title_yes=Ja, overskriv
+theme_xhred_filemanager_files_mode_ask_title_no=Nej, fortsæt med at eksistere

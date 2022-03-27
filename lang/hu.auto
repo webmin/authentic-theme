@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Használja a fő re
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Gyorsbillentyű tartás módosító
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Mindig kérdez
+theme_xhred_filemanager_files_mode_ask_remember=Jövőbeni alapértelmezettként jegyezzük meg
+theme_xhred_filemanager_files_mode_ask_title=A meglévő felülírása
+theme_xhred_filemanager_files_mode_ask_title2=meglévő fájlok felülírása
+theme_xhred_filemanager_files_mode_ask_desc=Felül akar-e írni minden létező fájlt a következő műveletnél?
+theme_xhred_filemanager_files_mode_ask_title_yes=Igen, felülírom
+theme_xhred_filemanager_files_mode_ask_title_no=Nem, maradj tovább

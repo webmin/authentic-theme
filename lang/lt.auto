@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Iššifravimui naud
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Spartųjų klavišų laikymo modifikatorius
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Visada klausk
+theme_xhred_filemanager_files_mode_ask_remember=Prisiminti kaip būsimą numatytąjį
+theme_xhred_filemanager_files_mode_ask_title=Perrašyti esamą
+theme_xhred_filemanager_files_mode_ask_title2=Perrašyti esamus failus
+theme_xhred_filemanager_files_mode_ask_desc=Ar norite perrašyti visus esamus failus atlikdami kitą operaciją
+theme_xhred_filemanager_files_mode_ask_title_yes=Taip, perrašyti
+theme_xhred_filemanager_files_mode_ask_title_no=Ne, toliau egzistuoti

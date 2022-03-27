@@ -25,7 +25,7 @@ my $encrypt      = $in{'arcencr'} ? 1 : 0;
 my $password     = $in{'arcencr_val'};
 my $key_id       = quotemeta($in{'arkkey'});
 my $status;
-my $safe_mode = $config{'config_portable_module_filemanager_files_safe_mode'} ne 'false';
+my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 
 if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
     if ($in{'method'} eq 'tar') {

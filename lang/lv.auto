@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Atšifrēšanai izm
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Karsto taustiņu turēšanas modifikators
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Vienmēr jautājiet
+theme_xhred_filemanager_files_mode_ask_remember=Atcerēties kā turpmāko noklusējuma iestatījumu
+theme_xhred_filemanager_files_mode_ask_title=Pārrakstīt esošo
+theme_xhred_filemanager_files_mode_ask_title2=Pārrakstīt esošos failus
+theme_xhred_filemanager_files_mode_ask_desc=Vai nākamajā darbībā vēlaties pārrakstīt esošos failus
+theme_xhred_filemanager_files_mode_ask_title_yes=Jā, pārrakstīt
+theme_xhred_filemanager_files_mode_ask_title_no=Nē, turpini pastāvēt

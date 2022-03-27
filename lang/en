@@ -1307,6 +1307,7 @@ body_cpufan_rpm=RPM
 body_cpufan=CPU fan
 filemanager_symlink_exists=Cannot create <tt>$1</tt> as file already exists in <tt>$2</tt>
 
+
 #19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copy all system information to clipboard; hold $1 key to copy plain text data rather than markdown
 theme_xhred_tooltip_side_slider_clipboard_account=Copy all account information to clipboard; hold $1 key to copy plain text data rather than markdown
@@ -1330,5 +1331,16 @@ theme_xhred_disk_quota_error_title=Out of quota
 theme_xhred_disk_quota_error_message=No space left on device
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Use master administrator key for decryption
 
+
 #19.90
 settings_hotkey_toggle_hold_modifier=Hotkey hold modifier
+
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Always ask
+theme_xhred_filemanager_files_mode_ask_remember=Remember as future default
+theme_xhred_filemanager_files_mode_ask_title=Overwrite existing
+theme_xhred_filemanager_files_mode_ask_title2=Overwrite existing files
+theme_xhred_filemanager_files_mode_ask_desc=Do you want to overwrite any existing files on the next operation
+theme_xhred_filemanager_files_mode_ask_title_yes=Yes, overwrite
+theme_xhred_filemanager_files_mode_ask_title_no=No, keep existing

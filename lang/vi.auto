@@ -1272,3 +1272,12 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Sử dụng khóa q
 
 #19.90
 settings_hotkey_toggle_hold_modifier=Công cụ sửa đổi giữ phím nóng
+
+#19.91
+theme_xhred_filemanager_files_mode_ask=Luôn luôn hỏi
+theme_xhred_filemanager_files_mode_ask_remember=Ghi nhớ là mặc định trong tương lai
+theme_xhred_filemanager_files_mode_ask_title=Ghi đè hiện có
+theme_xhred_filemanager_files_mode_ask_title2=Ghi đè các tệp hiện có
+theme_xhred_filemanager_files_mode_ask_desc=Bạn có muốn ghi đè lên bất kỳ tệp hiện có nào trong thao tác tiếp theo không
+theme_xhred_filemanager_files_mode_ask_title_yes=Có, ghi đè
+theme_xhred_filemanager_files_mode_ask_title_no=Không, tiếp tục tồn tại
