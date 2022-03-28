@@ -21,10 +21,20 @@ if (!@entries_list) {
 foreach my $name (@entries_list) {
     my $name_ = $name;
     $name = simplify_path($name);
-    my $symlink = "$cwd/${name}_symlink";
+    my $symlink = "$cwd/${name}--symlink";
+
+    # If symlink exists add a numerable suffix
     if (-e $symlink) {
-        $symlink .= "_" . int(rand() * 10000);
+        my $__ = 1;
+        for (;;) {
+            my $necwd = "$symlink(" . $__++ . ")";
+            if (!-e $necwd) {
+                $symlink = $necwd;
+                last;
+            }
+        }
     }
+
     if (symlink_file("$cwd/$name", $symlink) == 0) {
         $error .= "<br>" if ($error);
         $error .= text('filemanager_symlink_exists', html_escape("${name_}_symlink"), html_escape($cwd));
