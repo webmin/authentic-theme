@@ -28,7 +28,11 @@ if ($trashall &&
     my @uaallulist = &useradmin::list_users();
     my @uaulist    = &useradmin::list_allowed_users(\%uaaccess, \@uaallulist);
     my @uahomeulist =
-      grep {$_->{'home'} =~ /^\Q$uaconfig{'home_base'}\E/ && $_->{'uid'} >= 1000 && $_->{'shell'} !~ /\/dev\/null/} @uaulist;
+      grep {
+        $_->{'home'} =~ /^\Q$uaconfig{'home_base'}\E/ &&
+          $_->{'uid'} >= $uaconfig{'base_uid'} &&
+          $_->{'shell'} !~ /(null|false|nologin)/
+      } @uaulist;
     foreach my $uhome (@uahomeulist) {
         my $tdir = "$uhome->{'home'}/$tdirname";
         &unlink_file($tdir) if (-w $tdir);
