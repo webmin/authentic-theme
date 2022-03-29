@@ -438,7 +438,8 @@ sub theme_ui_columns_start
     my ($rv, $i);
 
     $sortable = ' dtable-sortable' if ($sortable);
-    $rv .= "<table class=\"table table-striped table-hover table-condensed$sortable\">" . "\n";
+    $width = ' w-auto-force" ' if ($width eq 'auto');
+    $rv .= "<table class=\"table table-striped table-hover table-condensed$sortable$width\">" . "\n";
     if ($title) {
         $rv .= "<caption>$title</caption>\n";
     }
