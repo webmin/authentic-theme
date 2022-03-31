@@ -27,12 +27,9 @@ if ($trashall &&
     my %uaaccess   = %useradmin::access;
     my @uaallulist = &useradmin::list_users();
     my @uaulist    = &useradmin::list_allowed_users(\%uaaccess, \@uaallulist);
+    return if (!$uaconfig{'home_base'} || $uaconfig{'base_uid'} !~ /^\d+$/);
     my @uahomeulist =
-      grep {
-        $_->{'home'} =~ /^\Q$uaconfig{'home_base'}\E/ &&
-          $_->{'uid'} >= $uaconfig{'base_uid'} &&
-          $_->{'shell'} !~ /(null|false|nologin)/
-      } @uaulist;
+      grep {$_->{'home'} =~ /^\Q$uaconfig{'home_base'}\E/ && $_->{'uid'} >= $uaconfig{'base_uid'}} @uaulist;
     foreach my $uhome (@uahomeulist) {
         my $tdir = "$uhome->{'home'}/$tdirname";
         &unlink_file($tdir) if (-w $tdir);
