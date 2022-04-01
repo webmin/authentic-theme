@@ -1,10 +1,12 @@
 ## Changelog
 
-#### Version 19.91.1-RC1 (March 29, 2022)
+#### Version 19.91.1 (April 02, 2022)
 * Add ability to choose on the fly if files must be overwritten in File Manager [forum.virtualmin.com/t/114497](https://forum.virtualmin.com/t/114497/7)
 * Add support for purging all users trash directories in File Manager [#629/comment-1081220953](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-1081220953)
 * Add support for additional English locales for better control over date formats [#1587](https://github.com/authentic-theme/authentic-theme/issues/1587)
 * Fix symlink naming on duplicates in File Manager
+* Fix to allow interruption of progressive calls for certain pages (i.e. _Running Processes ⇾ Trace Process_)
+* Fix to prevent changing URL on going back when progressive page is loading
 
 #### Version 19.91 (March 21, 2022)
 * Add significant improvements to dark palette
