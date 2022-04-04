@@ -1248,7 +1248,7 @@ body_cpufan=CPU風扇
 filemanager_symlink_exists=無法創建<tt>$1</tt> <tt>$2</tt>已存在文件
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=將所有系統信息複製到剪貼板；按住 $1 鍵複製純文本數據而不是降價
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=將基本系統信息複製到剪貼板；按住 $1 鍵複製擴展；按住 $2 鍵複製純文本數據而不是降價
 theme_xhred_tooltip_side_slider_clipboard_account=將所有帳戶信息複製到剪貼板；按住 $1 鍵複製純文本數據而不是降價
 tooltip_back_to_servers_index_master=主機上的 Webmin 服務器索引模塊
 tooltip_list_other_servers=其他已註冊的 Webmin 服務器列表

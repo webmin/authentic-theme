@@ -426,8 +426,13 @@ sub print_sysstats_panel_start
         return
 '<span class="btn btn-transparent-link pull-right _clipboard_sysinfo_cnt"><i class="fa2 fa-fw fa fa2-clipboard-markdown _clipboard_sysinfo_" '
           .
-          get_button_tooltip(theme_text("theme_xhred_tooltip_side_slider_clipboard_$type", &$event_hold_modifer_icon()),
-                             undef, 'auto right') .
+          get_button_tooltip(
+                             theme_text("theme_xhred_tooltip_side_slider_clipboard_$type",
+                                        "⇧", &$event_hold_modifer_icon()
+                             ),
+                             undef,
+                             'auto right'
+          ) .
           '></i></span>';
     };
     my $submit_support_ticket = sub {

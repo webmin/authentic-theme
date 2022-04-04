@@ -147,7 +147,7 @@ body_cpufan=CPU-Lüfter
 filemanager_symlink_exists=<tt>$1</tt> kann nicht erstellt werden, da Datei bereits in <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopieren Sie alle Systeminformationen in die Zwischenablage; Halten Sie die $1-Taste gedrückt, um reine Textdaten anstelle von Abschriften zu kopieren
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopieren Sie grundlegende Systeminformationen in die Zwischenablage; Halten Sie die $1-Taste gedrückt, um erweitert zu kopieren; Halten Sie die Taste $2 gedrückt, um reine Textdaten anstelle von Abschriften zu kopieren
 theme_xhred_tooltip_side_slider_clipboard_account=Kopieren Sie alle Kontoinformationen in die Zwischenablage; Halten Sie die $1-Taste gedrückt, um reine Textdaten anstelle von Abschriften zu kopieren
 tooltip_back_to_servers_index_master=Indexmodul für Webmin-Server auf Master-Rechner
 tooltip_list_other_servers=Liste anderer registrierter Webmin-Server

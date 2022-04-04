@@ -1165,7 +1165,7 @@ body_cpufan=ventilador da CPU
 filemanager_symlink_exists=Não é possível criar <tt>$1</tt> porque o arquivo já existe em <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copie todas as informações do sistema para a área de transferência; segure a tecla $1 para copiar dados de texto simples em vez de remarcar
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copie as informações básicas do sistema para a área de transferência; segure a tecla $1 para copiar estendido; segure a tecla $2 para copiar dados de texto simples em vez de remarcar
 theme_xhred_tooltip_side_slider_clipboard_account=Copie todas as informações da conta para a área de transferência; segure a tecla $1 para copiar dados de texto simples em vez de remarcar
 tooltip_back_to_servers_index_master=Módulo de índice de servidores Webmin na máquina mestre
 tooltip_list_other_servers=Lista de outros servidores Webmin registrados

@@ -237,7 +237,7 @@ body_cpufan=ventilator CPU
 filemanager_symlink_exists=Nu se poate crea <tt>$1</tt> deoarece fișierul există deja în <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copiați toate informațiile de sistem în clipboard; Țineți apăsată tasta $1 pentru a copia datele text simplu, în loc de reducere
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copiați informațiile de bază ale sistemului în clipboard; țineți apăsată tasta $1 pentru a copia extins; Țineți apăsată tasta $2 pentru a copia datele text simplu, în loc de reducere
 theme_xhred_tooltip_side_slider_clipboard_account=Copiați toate informațiile despre cont în clipboard; Țineți apăsată tasta $1 pentru a copia datele text simplu, în loc de reducere
 tooltip_back_to_servers_index_master=Modulul de indexare a serverelor Webmin pe mașina principală
 tooltip_list_other_servers=Lista altor servere Webmin înregistrate

@@ -633,7 +633,7 @@ body_cpufan=kipas CPU
 filemanager_symlink_exists=Tidak boleh mencipta <tt>$1</tt> kerana fail sudah wujud dalam <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Salin semua maklumat sistem ke papan keratan; tahan kekunci $1 untuk menyalin data teks biasa dan bukannya penurunan harga
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Salin maklumat sistem asas ke papan keratan; tahan $1 kekunci untuk menyalin dilanjutkan; tahan kekunci $2 untuk menyalin data teks biasa dan bukannya turunkan
 theme_xhred_tooltip_side_slider_clipboard_account=Salin semua maklumat akaun ke papan keratan; tahan kekunci $1 untuk menyalin data teks biasa dan bukannya penurunan harga
 tooltip_back_to_servers_index_master=Modul indeks pelayan webmin pada mesin induk
 tooltip_list_other_servers=Senarai pelayan Webmin berdaftar lain

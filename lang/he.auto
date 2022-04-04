@@ -1248,7 +1248,7 @@ body_cpufan=מאוורר מעבד
 filemanager_symlink_exists=לא ניתן ליצור <tt>$1</tt> מכיוון שהקובץ כבר קיים ב- <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=העתק את כל מידע המערכת ללוח; החזק את המקש $1 כדי להעתיק נתוני טקסט רגיל במקום סימון
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=העתק מידע בסיסי על המערכת ללוח; החזק את המקש $1 כדי להעתיק מורחבת; החזק את המקש $2 כדי להעתיק נתוני טקסט רגיל במקום סימון
 theme_xhred_tooltip_side_slider_clipboard_account=העתק את כל פרטי החשבון ללוח; החזק את המקש $1 כדי להעתיק נתוני טקסט רגיל במקום סימון
 tooltip_back_to_servers_index_master=מודול אינדקס שרתי Webmin במחשב הראשי
 tooltip_list_other_servers=רשימה של שרתי Webmin רשומים אחרים

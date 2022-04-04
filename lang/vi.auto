@@ -1248,7 +1248,7 @@ body_cpufan=quạt làm mát bộ xứ lí trung tâm
 filemanager_symlink_exists=Không thể tạo <tt>$1</tt> vì tệp đã tồn tại trong <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Sao chép tất cả thông tin hệ thống vào khay nhớ tạm; giữ phím $1 để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Sao chép thông tin hệ thống cơ bản vào khay nhớ tạm; giữ phím $1 để sao chép mở rộng; giữ phím $2 để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
 theme_xhred_tooltip_side_slider_clipboard_account=Sao chép tất cả thông tin tài khoản vào khay nhớ tạm; giữ phím $1 để sao chép dữ liệu văn bản thuần túy thay vì đánh dấu xuống
 tooltip_back_to_servers_index_master=Mô-đun chỉ mục máy chủ Webmin trên máy chủ
 tooltip_list_other_servers=Danh sách các máy chủ Webmin đã đăng ký khác

@@ -1309,7 +1309,7 @@ filemanager_symlink_exists=Cannot create <tt>$1</tt> as file already exists in <
 
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copy all system information to clipboard; hold $1 key to copy plain text data rather than markdown
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copy basic system information to clipboard; hold $1 key to copy extended; hold $2 key to copy plain text data rather than markdown
 theme_xhred_tooltip_side_slider_clipboard_account=Copy all account information to clipboard; hold $1 key to copy plain text data rather than markdown
 tooltip_back_to_servers_index_master=Webmin servers index module on master machine
 tooltip_list_other_servers=List of other registered Webmin servers

@@ -1248,7 +1248,7 @@ body_cpufan=مروحة وحدة المعالجة المركزية
 filemanager_symlink_exists=لا يمكن إنشاء <tt>$1</tt> لأن الملف موجود بالفعل في <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=نسخ جميع معلومات النظام إلى الحافظة ؛ اضغط باستمرار على المفتاح$1 لنسخ بيانات النص العادي بدلاً من العلامة التجارية
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=نسخ معلومات النظام الأساسية إلى الحافظة ؛ اضغط باستمرار على مفتاح$1 للنسخ الموسع ؛ اضغط مع الاستمرار على مفتاح$2 لنسخ بيانات النص العادي بدلاً من العلامة التجارية
 theme_xhred_tooltip_side_slider_clipboard_account=نسخ جميع معلومات الحساب إلى الحافظة ؛ اضغط باستمرار على المفتاح$1 لنسخ بيانات النص العادي بدلاً من العلامة التجارية
 tooltip_back_to_servers_index_master=وحدة فهرس خوادم Webmin على الجهاز الرئيسي
 tooltip_list_other_servers=قائمة خوادم Webmin الأخرى المسجلة

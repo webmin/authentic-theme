@@ -1248,7 +1248,7 @@ body_cpufan=CPU ventilátor
 filemanager_symlink_exists=A(z) <tt>$1</tt> nem hozható létre, mivel a fájl már létezik a(z) <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Másolja az összes rendszerinformációt a vágólapra; Tartsa lenyomva a $1 billentyűt az egyszerű szöveges adatok másolásához, nem pedig a leértékeléshez
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Alapvető rendszerinformációk másolása a vágólapra; tartsa lenyomva a(z) $1 gombot a kiterjesztett másoláshoz; Tartsa lenyomva a $2 billentyűt az egyszerű szöveges adatok másolásához, nem pedig a leértékeléshez
 theme_xhred_tooltip_side_slider_clipboard_account=Másolja az összes fiókinformációt a vágólapra; Tartsa lenyomva a $1 billentyűt az egyszerű szöveges adatok másolásához, nem pedig a leértékeléshez
 tooltip_back_to_servers_index_master=Webmin szerverek indexmodulja a főgépen
 tooltip_list_other_servers=Egyéb regisztrált Webmin szerverek listája

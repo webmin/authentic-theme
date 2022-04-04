@@ -131,7 +131,7 @@ body_cpufan=CPU fläkt
 filemanager_symlink_exists=Det går inte att skapa <tt>$1</tt> eftersom filen redan finns i <tt>$2</tt>
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiera all systeminformation till urklipp; håll tangenten $1 nedtryckt för att kopiera oformaterad textdata istället för nedmärkning
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiera grundläggande systeminformation till urklipp; håll $1-tangenten för att kopiera utökad; håll tangenten $2 nedtryckt för att kopiera oformaterad textdata istället för nedmärkning
 theme_xhred_tooltip_side_slider_clipboard_account=Kopiera all kontoinformation till urklipp; håll tangenten $1 nedtryckt för att kopiera oformaterad textdata istället för nedmärkning
 tooltip_back_to_servers_index_master=Webmin-servrars indexmodul på huvudmaskinen
 tooltip_list_other_servers=Lista över andra registrerade Webmin-servrar

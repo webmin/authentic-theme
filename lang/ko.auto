@@ -1248,7 +1248,7 @@ body_cpufan=CPU 팬
 filemanager_symlink_exists=파일이 <tt>$2</tt> <tt>$1</tt> 를) 만들 수 없습니다
 
 #19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=모든 시스템 정보를 클립보드에 복사합니다. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 $1 키를 누르십시오
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=기본 시스템 정보를 클립보드에 복사합니다. 확장 복사하려면 $1 키를 누르십시오. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 $2 키를 누르십시오
 theme_xhred_tooltip_side_slider_clipboard_account=모든 계정 정보를 클립보드에 복사합니다. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 $1 키를 누르십시오
 tooltip_back_to_servers_index_master=마스터 시스템의 Webmin 서버 색인 모듈
 tooltip_list_other_servers=기타 등록된 Webmin 서버 목록
