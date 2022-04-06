@@ -133,7 +133,7 @@ foreach my $name (@entries_list) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'cpio');
         } else {
             my $dir  = fileparse("$cwd/$name", qr/\.[^.]*/);
-            my $path = quotemeta("$cwd/$dir");
+            my $path = quotemeta($safe_mode ? $ecwd : "$ecwd/$dir");
             system("mkdir $path");
             $status = system("($rpm2cpio_cmd " . quotemeta("$cwd/$name") . " | (cd " . $path . "; $cpio_cmd -idmv))");
         }
@@ -144,7 +144,7 @@ foreach my $name (@entries_list) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'dpkg');
         } else {
             my $dir  = fileparse("$cwd/$name", qr/\.[^.]*/);
-            my $path = quotemeta("$cwd/$dir");
+            my $path = quotemeta($safe_mode ? $ecwd : "$ecwd/$dir");
             system("mkdir $path");
             $status = system("$dpkg_cmd -x " . quotemeta("$cwd/$name") . " " . $path);
         }
