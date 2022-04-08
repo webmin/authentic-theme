@@ -1,8 +1,12 @@
 ## Changelog
 
+#### Version 19.91.2 (April 08, 2022)
+* Fiх MySQL/PostgreSQL bug preventing buttons from being used [sourceforge.net#55378](https://sourceforge.net/p/webadmin/discussion/55378/thread/6151d5478c/?limit=25#70f2)
+* Fiх copied markdown to be wrapped in accordion [forum.virtualmin.com/t/114662](https://forum.virtualmin.com/t/additional-copy-system-information-icon-on-dashboard/114662/6?u=ilia)
+
 #### Version 19.91.1 (April 02, 2022)
-* Add ability to choose on the fly if files must be overwritten in File Manager [forum.virtualmin.com/t/114497](https://forum.virtualmin.com/t/114497/7)
 * Add support for purging all users trash directories in File Manager [#629/comment-1081220953](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-1081220953)
+* Add ability to choose on the fly if files must be overwritten in File Manager [forum.virtualmin.com/t/114497](https://forum.virtualmin.com/t/114497/7)
 * Add support for additional English locales for better control over date formats [#1587](https://github.com/authentic-theme/authentic-theme/issues/1587)
 * Fix symlink naming on duplicates in File Manager
 * Fix to allow interruption of progressive calls for certain pages (i.e. _Running Processes ⇾ Trace Process_)
@@ -36,7 +40,7 @@
 * Add improved focus state for elements to support navigation using keyboard with tab key
 * Add reworked toast notifications with better support for mobile devices
 * Add basic theme API for module developers [authentic-theme/wiki/API](https://github.com/authentic-theme/authentic-theme/wiki/API)
-* Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#1a86e7bdc7](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
+* Add ability to switch between other remote Webmin servers from navigation menu [sourceforge.net#600155](https://sourceforge.net/p/webadmin/discussion/600155/thread/1a86e7bdc7/#cf22)
 * Add ability to copy overall system information to clipboard from the dashboard [webmin#1569/comment-1001784592](https://github.com/webmin/webmin/issues/1569#issuecomment-1001784592)
 * Add ability for submitting support tickets using the dashboard for Virtualmin Pro users
 * Add ability to optionally control existing file overwrite upon compress/decompress in File Manager
