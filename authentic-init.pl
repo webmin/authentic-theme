@@ -179,8 +179,8 @@ sub embed_header
 
     print "<!DOCTYPE html>\n";
     print '<html ' . header_html_data(undef, undef, @args) . '>', "\n";
-    print '<head>',                                           "\n";
-    print ' <meta name="color-scheme" content="only light">', "\n";
+    print '<head>',                                               "\n";
+    print ' <meta name="color-scheme" content="only light">',     "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
     embed_favicon() if (!http_x_request());
@@ -957,10 +957,10 @@ sub get_button_style
         $class = "danger ";
 
         $icon = "times-circle";
-    } elsif (string_contains($keys, "disable_ok")) {
+    } elsif (string_contains($keys, "disable_ok") || string_contains($keys, "jail_block")) {
         $class = "warning ";
         $icon  = "lock";
-    } elsif (string_contains($keys, "enable_ok")) {
+    } elsif (string_contains($keys, "enable_ok") || string_contains($keys, "jail_unblock")) {
         $class = "success ";
         $icon  = "unlock";
     } elsif (string_contains($keys, "twofactor_enable")) {
@@ -1181,14 +1181,14 @@ sub get_button_style
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     } elsif (
-        (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc"))
-        ||
-        (string_contains($keys, "create") &&
+         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc")
+         ) ||
+         (string_contains($keys, "create") &&
             !string_contains($keys, "user_priv_create_view")) ||
-        string_contains($keys, "index_crnow") ||
-        string_contains($keys, "view_new")    ||
-        string_contains($keys, "mass_ok")     ||
-        string_contains($keys, "rmass_ok"))
+         string_contains($keys, "index_crnow") ||
+         string_contains($keys, "view_new")    ||
+         string_contains($keys, "mass_ok")     ||
+         string_contains($keys, "rmass_ok"))
     {
         $class = "success ";
         $icon  = "plus-circle";
@@ -1391,25 +1391,56 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-redirect="' . get_theme_temp_data('redirected') .
-      '" data-host="' . get_env('http_host') . '" data-hostname="' . get_display_hostname() . '" data-title-initial="' .
-      format_document_title($args[0]) . '" data-debug="' . theme_debug_mode() . '" data-session="' .
-      ($remote_user ? '1' : '0') . '" data-script-name="' . ($module ? "/$module/" : get_env('script_name')) .
-      '"' . ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
-      '' .  ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
-      ' data-high-contrast="' .         ($theme_config{'settings_contrast_mode'} eq 'true'              ? '1' : '0') .
-      '" data-navigation-collapsed="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
-      '" data-slider-fixed="' .         ($theme_config{'settings_side_slider_fixed'} eq "true" &&
-                                 $get_user_level eq '0' &&
-                                 $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
+    return 'data-redirect="' .
+      get_theme_temp_data('redirected') .
+      '" data-host="' .
+      get_env('http_host') .
+      '" data-hostname="' .
+      get_display_hostname() .
+      '" data-title-initial="' .
+      format_document_title($args[0]) .
+      '" data-debug="' .
+      theme_debug_mode() .
+      '" data-session="' .
+      ($remote_user ? '1' : '0') .
+      '" data-script-name="' .
+      ($module ? "/$module/" : get_env('script_name')) .
+      '"' .
+      ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
+      '' .
+      ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
+      ' data-high-contrast="' .
+      ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
+      '" data-navigation-collapsed="' .
+      ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
+      '" data-slider-fixed="' .
+      ($theme_config{'settings_side_slider_fixed'} eq "true" &&
+        $get_user_level eq '0' &&
+        $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
       '" data-shell="' .
-      foreign_available("shell") . '" data-webmin="' . foreign_available("webmin") . '" data-usermin="' . $has_usermin .
-      '" data-navigation="' . ($args[3] eq '1' ? '0' : '1') . '" data-status="' . foreign_available("system-status") .
-      '" data-package-updates="' . foreign_available("package-updates") . '" data-csf="' . foreign_available("csf") . '"' .
+      foreign_available("shell") .
+      '" data-webmin="' .
+      foreign_available("webmin") .
+      '" data-usermin="' .
+      $has_usermin .
+      '" data-navigation="' .
+      ($args[3] eq '1' ? '0' : '1') .
+      '" data-status="' .
+      foreign_available("system-status") .
+      '" data-package-updates="' .
+      foreign_available("package-updates") .
+      '" data-csf="' .
+      foreign_available("csf") .
+      '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
-      . '' . ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-editor-palette="' . $theme_config{'settings_cm_editor_palette'} .
-      '" data-theme-version="' . theme_version(0) . '" data-theme-mversion="' . theme_version(0, 1) .
+      . '' .
+      ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
+      ' data-editor-palette="' .
+      $theme_config{'settings_cm_editor_palette'} .
+      '" data-theme-version="' .
+      theme_version(0) .
+      '" data-theme-mversion="' .
+      theme_version(0, 1) .
       '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
       '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
       '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() .
