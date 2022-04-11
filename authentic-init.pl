@@ -1289,6 +1289,9 @@ sub get_button_style
         $class = "info ";
     } elsif (string_contains($keys, "index_tree")) {
         $icon = "tree";
+    } elsif (string_contains($keys, "listrules")) {
+        $icon = " fa2 fa2-fire";
+        $class = "info ";
     }
 
     if ($icon) {
