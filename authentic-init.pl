@@ -922,6 +922,9 @@ sub get_button_style
     } elsif (string_contains($keys, "unapply")) {
         $class = "info ";
         $icon  = "circle-o-notch";
+    } elsif (string_contains($keys, "ifaces_apply")) {
+        $class = "transparent-force ";
+        $icon  = "toggle-switch  fa-1_05x";
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
