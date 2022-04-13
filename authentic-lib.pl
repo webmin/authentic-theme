@@ -649,7 +649,7 @@ sub get_sysinfo_vars
         #Webmin version
         $webmin_version =
           product_version_update(get_webmin_version(1), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
-          '"><a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1" data-container="body" title="' .
+          '"><a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
 '" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';
 
@@ -679,7 +679,7 @@ sub get_sysinfo_vars
                   '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
                   $theme_text{'theme_sysinfo_vmforum'} .
                   '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>'
-                  . '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1'
+                  . '<a class="btn btn-default btn-xxs margined-left--1'
                   . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
 '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>'
             );
@@ -710,7 +710,7 @@ sub get_sysinfo_vars
                           $theme_webprefix . '/server-manager/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
                           '</div>'
                       ) .
-                      '<a class="btn btn-default btn-xxs btn-hidden hidden margined-left--1' .
+                      '<a class="btn btn-default btn-xxs margined-left--1' .
                       $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
 '" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>'
                   ));
@@ -1785,7 +1785,7 @@ sub get_theme_user_link
       . '" class="btn btn-default btn-xxs' .
       ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' .
       ($theme_webprefix . $link) . '" data-href="' . ($theme_webprefix . $link) .
-      '" class="btn btn-default btn-xxs btn-hidden hidden' . $is_hidden . '" data-container="body" title="' .
+      '" class="btn btn-default btn-xxs' . $is_hidden . '" data-container="body" title="' .
       $theme_text{'settings_right_theme_left_configuration_title'} . '"><i class="fa2 fa-fw fa2-palette"></i></a></div>';
 }
 
