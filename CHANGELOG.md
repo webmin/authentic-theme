@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.91.3 (April 28, 2022)
+* Add improvements to login screen
+* Fix spinners inside of tiny buttons
+* Fiх buttons to be displayed unconditionally on the dashboard [#1591](https://github.com/authentic-theme/authentic-theme/issues/1591)
+* Fiх missing cancel upload button [#1589](https://github.com/authentic-theme/authentic-theme/issues/1589)
+
 #### Version 19.91.2 (April 08, 2022)
 * Fiх MySQL/PostgreSQL bug preventing buttons from being used [sourceforge.net#55378](https://sourceforge.net/p/webadmin/discussion/55378/thread/6151d5478c/?limit=25#70f2)
 * Fiх copied markdown to be wrapped in accordion [forum.virtualmin.com/t/114662](https://forum.virtualmin.com/t/additional-copy-system-information-icon-on-dashboard/114662/6?u=ilia)
@@ -24,6 +30,8 @@
 
 #### Version 19.90.1 (March 06, 2022)
 * Fix Usermin dependency check before installing a new update
+
+<!--- separator --->
 
 #### Version 19.90 (March 04, 2022)
 * Update contacts
@@ -69,8 +77,6 @@
 * Fiх false redirection after opening a link in HTTP Tunnel module [virtualmin/virtualmin-gpl#358](https://github.com/virtualmin/virtualmin-gpl/issues/358)
 * Fiх highlight syntax detection for Custom Commands module when editing a file [webmin#1591](https://github.com/webmin/webmin/issues/1591)
 * Fix Custom Commands module support in Usermin
-
-<!--- separator --->
 
 #### Version 19.84.7 (December 14, 2021)
 * Fix navigation detection with menu reload after progressive call end
