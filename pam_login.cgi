@@ -133,20 +133,20 @@ print '<p class="form-signin-paragraph">' .
   text($gconfig{'nohostname'} ? 'pam_mesg2' : 'pam_mesg', "<br><strong>$host</strong>") . "\n";
 if (!$in{'password'}) {
     print '<div class="input-group form-group">' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print
 '<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
       . &theme_text('theme_xhred_login_user')
       . '" ' . ' autofocus>' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print '</div>' . "\n";
 } else {
     print '<div class="input-group form-group">' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-' .
-      ($in{'question'} =~ /code/i ? 'qrcode' : 'lock') . '"></i></span>' . "\n";
     print '<input type="' . ($in{'question'} =~ /code/i ? 'text' : 'password') .
       '" class="form-control session_login pam_login" name="answer" autocomplete="off" autocorrect="off" placeholder="' .
       ($in{'question'} =~ /code/i ? theme_text('theme_xhred_login_passphrase') : theme_text('theme_xhred_login_pass')) .
       '" autofocus>' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-' .
+      ($in{'question'} =~ /code/i ? 'qrcode' : ' fa2 fa2-key') . '"></i></span>' . "\n";
     print '</div>' . "\n";
 }
 
