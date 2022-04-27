@@ -145,11 +145,11 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print &ui_hidden('save',                     $in{'failed_save'});
     print &ui_hidden('failed_twofactor_attempt', $in{'failed_twofactor_attempt'});
     print '<div class="input-group form-group">' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
     print
 '<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" autocorrect="off" placeholder="'
       . &theme_text('theme_xhred_login_token')
       . '" autofocus>' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
     print '</div>' . "\n";
     print '<div class="form-group form-signin-group">';
     print '<button class="btn btn-info" type="submit"><i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
@@ -160,8 +160,6 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
 } else {
     print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
     print '<div class="input-group form-group">' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-
     print ui_input(
                    { 'name'           => 'user',
                      'value'          => $in{"failed"},
@@ -171,17 +169,18 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
                      "autocapitalize" => "none",
                      "placeholder"    => $theme_text{'theme_xhred_login_user'} });
 
+    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print '</div>' . "\n";
     print '<div class="input-group form-group">' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>' . "\n";
     print
 '<input type="password" class="form-control session_login" name="pass" autocomplete="off" autocorrect="off" placeholder="'
       . &theme_text('theme_xhred_login_pass')
       . '"' . ($in{"failed"} ? ' autofocus' : '') . '>' . "\n";
+    print '<span class="input-group-addon"><i class="fa fa-fw fa2 fa2-key"></i></span>' . "\n";
     print '</div>' . "\n";
 
     if (!$gconfig{'noremember'}) {
-        print '<div class="input-group form-group">
+        print '<div class="input-group form-group form-group-remember">
         <div class="wh-100p flex-wrapper flex-centered flex-start">
               <span class="awcheckbox awobject solid primary"><input class="iawobject" name="save" value="1" id="save" type="checkbox"> <label class="lawobject" for="save"><span>'
           . $theme_text{'login_save'} . '</span></label></span>
