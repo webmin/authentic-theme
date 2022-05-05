@@ -147,7 +147,7 @@ if (-r $module_custom_config_file) {
     # Assign theme expected defaults if missing
     map {my $__ = ""; $newconfig{$_} eq $__ && ($newconfig{$_} = ($theme_config{$_} || $__))} keys %newconfig;
 
-    &generate_config(\%newconfig, $module_custom_config_file, $module, undef, undef, $in{'section'});
+    &generate_config(\%newconfig, "$root_directory/$current_theme/modules/$module/config.info", $module, undef, undef, $in{'section'});
     print &ui_table_end();
     print &ui_form_end(
                    [["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);

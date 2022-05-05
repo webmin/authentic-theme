@@ -172,7 +172,7 @@ if (-r "$module_dir/config_info.pl") {
 if (!$func) {
 
     # Use config.info to create config inputs
-    &generate_config(\%newconfig, $module_dir_conf_file, $module, undef, undef, $in{'section'});
+    &generate_config(\%newconfig, "$module_dir/config.info", $module, undef, undef, $in{'section'});
 }
 print &ui_table_end();
 print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
