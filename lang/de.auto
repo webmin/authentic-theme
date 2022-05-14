@@ -187,3 +187,4 @@ theme_xhred_filemanager_purge_trash_curr_start=$1-Verzeichnis wird gelöscht.
 theme_xhred_filemanager_purge_trash_all_start=Bereinigen der Papierkorbverzeichnisse aller anderen Benutzer.
 theme_xhred_filemanager_purge_trash_curr_end=Verzeichnis $1 erfolgreich geleert.
 theme_xhred_filemanager_purge_trash_all_end=Die Papierkorbverzeichnisse aller anderen Benutzer wurden erfolgreich geleert.
+theme_error_access_dir_not_allowed=Zugriff verweigert: Auf die Datei kann nicht zugegriffen werden

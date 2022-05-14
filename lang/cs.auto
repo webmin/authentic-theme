@@ -1130,3 +1130,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Čištění adresáře $1.
 theme_xhred_filemanager_purge_trash_all_start=Vymazání adresářů koše všech ostatních uživatelů.
 theme_xhred_filemanager_purge_trash_curr_end=Adresář $1 byl úspěšně vyčištěn.
 theme_xhred_filemanager_purge_trash_all_end=Adresáře koše všech ostatních uživatelů byly úspěšně vymazány.
+theme_error_access_dir_not_allowed=Přístup odepřen: Soubor není přístupný

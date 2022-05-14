@@ -154,3 +154,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Purge du répertoire $1.
 theme_xhred_filemanager_purge_trash_all_start=Purger tous les répertoires de la corbeille des autres utilisateurs.
 theme_xhred_filemanager_purge_trash_curr_end=Le répertoire $1 a été purgé avec succès.
 theme_xhred_filemanager_purge_trash_all_end=Purger avec succès tous les répertoires de la corbeille des autres utilisateurs.
+theme_error_access_dir_not_allowed=Accès refusé : le fichier n'est pas accessible

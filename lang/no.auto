@@ -154,3 +154,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Tømmer katalogen $1.
 theme_xhred_filemanager_purge_trash_all_start=Tømmer alle andre brukeres søppelkataloger.
 theme_xhred_filemanager_purge_trash_curr_end=Vellykket slettet $1-katalogen.
 theme_xhred_filemanager_purge_trash_all_end=Fjernet alle andre brukeres søppelkataloger.
+theme_error_access_dir_not_allowed=Tilgang nektet: Filen er ikke tilgjengelig

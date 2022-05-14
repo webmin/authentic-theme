@@ -11,7 +11,12 @@ our (%in, $theme_webprefix, $current_theme, $config_directory, $get_user_level, 
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
-$get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
+&webmin_user_is_admin() ||
+  &error($theme_text{'theme_error_access_not_root_user'});
+if ($in{'file'}) {
+  &is_under_directory("$config_directory/$current_theme", $in{'file'}) ||
+    &error($theme_text{'theme_error_access_dir_not_allowed'});
+}
 
 &ui_print_header(html_escape($in{'file'}), $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, undef, undef, undef, 1);
 

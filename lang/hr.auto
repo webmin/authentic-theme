@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Čišćenje $1 imenika.
 theme_xhred_filemanager_purge_trash_all_start=Čišćenje svih ostalih korisničkih imenika smeća.
 theme_xhred_filemanager_purge_trash_curr_end=Uspješno očišćen $1 direktorij.
 theme_xhred_filemanager_purge_trash_all_end=Uspješno su očišćeni direktoriji smeća svih ostalih korisnika.
+theme_error_access_dir_not_allowed=Pristup odbijen: Datoteka nije dostupna

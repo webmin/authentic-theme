@@ -11,7 +11,8 @@ our (%in, $current_theme, $config_directory, $get_user_level, %theme_text, $has_
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
-$get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
+&webmin_user_is_admin() ||
+  &error($theme_text{'theme_error_access_not_root_user'});
 
 theme_make_config_dir();
 

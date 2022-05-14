@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Limpando o diretório $1.
 theme_xhred_filemanager_purge_trash_all_start=Limpando todos os outros diretórios de lixo de usuários.
 theme_xhred_filemanager_purge_trash_curr_end=Diretório $1 limpo com sucesso.
 theme_xhred_filemanager_purge_trash_all_end=Todos os outros diretórios de lixo de usuários foram removidos com sucesso.
+theme_error_access_dir_not_allowed=Acesso negado: o arquivo não está acessível

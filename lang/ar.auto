@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=مسح دليل$1.
 theme_xhred_filemanager_purge_trash_all_start=تطهير كافة دلائل المهملات المستخدمين الآخرين.
 theme_xhred_filemanager_purge_trash_curr_end=تم حذف دليل$1 بنجاح.
 theme_xhred_filemanager_purge_trash_all_end=نجح في إزالة جميع أدلة سلة المهملات الخاصة بالمستخدمين الآخرين.
+theme_error_access_dir_not_allowed=الوصول مرفوض: الملف لا يمكن الوصول إليه

@@ -1200,3 +1200,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Sletter mappen $1.
 theme_xhred_filemanager_purge_trash_all_start=Sletning af alle andre brugeres papirkurv.
 theme_xhred_filemanager_purge_trash_curr_end=Udryddet mappen $1.
 theme_xhred_filemanager_purge_trash_all_end=Alle andre brugeres papirkurv er blevet slettet.
+theme_error_access_dir_not_allowed=Adgang nægtet: Filen er ikke tilgængelig

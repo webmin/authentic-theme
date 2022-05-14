@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Čistí sa adresár $1.
 theme_xhred_filemanager_purge_trash_all_start=Čistenie všetkých ostatných používateľských adresárov koša.
 theme_xhred_filemanager_purge_trash_curr_end=Adresár $1 bol úspešne vyčistený.
 theme_xhred_filemanager_purge_trash_all_end=Všetky ostatné používateľské adresáre koša boli úspešne vymazané.
+theme_error_access_dir_not_allowed=Prístup odmietnutý: Súbor nie je prístupný

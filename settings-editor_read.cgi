@@ -11,8 +11,12 @@ our (%in, $current_theme, $config_directory, $get_user_level, $remote_user, %the
 
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
-$get_user_level ne '0' && error($theme_text{'theme_error_access_not_root_user'});
-
+&webmin_user_is_admin() ||
+  &error($theme_text{'theme_error_access_not_root_user'});
+if ($in{'file'}) {
+  &is_under_directory("$config_directory/$current_theme", $in{'file'}) ||
+    &error($theme_text{'theme_error_access_dir_not_allowed'});
+}
 my @files = ($config_directory . "/$current_theme/styles.css",
              $config_directory . "/$current_theme/scripts.js",
              $config_directory . "/$current_theme/scripts.pl",

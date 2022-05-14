@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=$1 ڈائریکٹری کو صاف
 theme_xhred_filemanager_purge_trash_all_start=دیگر تمام صارفین کی کوڑے دان کی ڈائریکٹریوں کو صاف کرنا۔
 theme_xhred_filemanager_purge_trash_curr_end=$1 ڈائریکٹری کو کامیابی کے ساتھ صاف کیا گیا۔
 theme_xhred_filemanager_purge_trash_all_end=دیگر تمام صارفین کی کوڑے دان کی ڈائریکٹریوں کو کامیابی کے ساتھ صاف کر دیا گیا۔
+theme_error_access_dir_not_allowed=رسائی سے انکار: فائل قابل رسائی نہیں ہے۔

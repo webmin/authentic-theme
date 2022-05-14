@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Tiek iztīrīts $1 direktorijs.
 theme_xhred_filemanager_purge_trash_all_start=Visu pārējo lietotāju miskastes direktoriju tīrīšana.
 theme_xhred_filemanager_purge_trash_curr_end=Veiksmīgi iztīrīts $1 direktorijs.
 theme_xhred_filemanager_purge_trash_all_end=Visu pārējo lietotāju miskastes direktoriji ir veiksmīgi iztīrīti.
+theme_error_access_dir_not_allowed=Piekļuve liegta: fails nav pieejams

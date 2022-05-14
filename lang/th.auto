@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=กำลังล้างได
 theme_xhred_filemanager_purge_trash_all_start=การล้างไดเรกทอรีถังขยะของผู้ใช้รายอื่นทั้งหมด
 theme_xhred_filemanager_purge_trash_curr_end=ล้างไดเรกทอรี $1 สำเร็จแล้ว
 theme_xhred_filemanager_purge_trash_all_end=ล้างไดเรกทอรีถังขยะของผู้ใช้รายอื่นเรียบร้อยแล้ว
+theme_error_access_dir_not_allowed=การเข้าถึงถูกปฏิเสธ: ไฟล์ไม่สามารถเข้าถึงได้

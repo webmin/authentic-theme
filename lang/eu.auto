@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=$1 direktorioa garbitzen.
 theme_xhred_filemanager_purge_trash_all_start=Gainontzeko erabiltzaileen zaborrontzien direktorioak garbitzea.
 theme_xhred_filemanager_purge_trash_curr_end=Behar bezala garbitu da $1 direktorioa.
 theme_xhred_filemanager_purge_trash_all_end=Garbitu behar bezala gainontzeko erabiltzaileen zaborrontzien direktorio guztiak.
+theme_error_access_dir_not_allowed=Sarbidea ukatua: fitxategia ez da eskuragarri

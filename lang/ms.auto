@@ -673,3 +673,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Membersihkan $1 direktori.
 theme_xhred_filemanager_purge_trash_all_start=Membersihkan semua direktori sampah pengguna lain.
 theme_xhred_filemanager_purge_trash_curr_end=Berjaya membersihkan $1 direktori.
 theme_xhred_filemanager_purge_trash_all_end=Berjaya membersihkan semua direktori sampah pengguna lain.
+theme_error_access_dir_not_allowed=Akses dinafikan: Fail tidak boleh diakses

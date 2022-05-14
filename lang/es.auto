@@ -1199,3 +1199,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Purgando el directorio $1.
 theme_xhred_filemanager_purge_trash_all_start=Purgar todos los demás directorios de basura de los usuarios.
 theme_xhred_filemanager_purge_trash_curr_end=Se depuró correctamente el directorio $1.
 theme_xhred_filemanager_purge_trash_all_end=Purgó con éxito todos los demás directorios de basura de los usuarios.
+theme_error_access_dir_not_allowed=Acceso denegado: el archivo no es accesible

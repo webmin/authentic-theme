@@ -603,3 +603,4 @@ theme_xhred_filemanager_purge_trash_curr_start=S'està depurant el directori $1.
 theme_xhred_filemanager_purge_trash_all_start=Eliminació dels directoris de paperera de la resta d'usuaris.
 theme_xhred_filemanager_purge_trash_curr_end=S'ha purgat correctament el directori $1.
 theme_xhred_filemanager_purge_trash_all_end=S'han purgat correctament tots els directoris de paperera dels altres usuaris.
+theme_error_access_dir_not_allowed=Accés denegat: no es pot accedir al fitxer

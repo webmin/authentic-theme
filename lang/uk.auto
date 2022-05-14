@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Очищення каталогу
 theme_xhred_filemanager_purge_trash_all_start=Очищення каталогів сміття всіх інших користувачів.
 theme_xhred_filemanager_purge_trash_curr_end=Каталог $1 успішно очищено.
 theme_xhred_filemanager_purge_trash_all_end=Успішно очищено каталоги сміття інших користувачів.
+theme_error_access_dir_not_allowed=Доступ заборонено: файл недоступний

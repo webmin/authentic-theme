@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=$1 디렉토리를 제거하는 �
 theme_xhred_filemanager_purge_trash_all_start=다른 모든 사용자의 휴지통 디렉토리를 제거합니다.
 theme_xhred_filemanager_purge_trash_curr_end=$1 디렉터리를 성공적으로 제거했습니다.
 theme_xhred_filemanager_purge_trash_all_end=다른 모든 사용자의 휴지통 디렉토리를 성공적으로 제거했습니다.
+theme_error_access_dir_not_allowed=액세스 거부: 파일에 액세스할 수 없습니다

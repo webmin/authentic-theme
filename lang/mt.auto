@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Tnaddaf $1 direttorju.
 theme_xhred_filemanager_purge_trash_all_start=Tnaddaf tad-direttorji tat-trash ta 'l-utenti l-oħra kollha.
 theme_xhred_filemanager_purge_trash_curr_end=Imnaddaf b'suċċess $1 direttorju.
 theme_xhred_filemanager_purge_trash_all_end=Imnaddaf b'suċċess id-direttorji tat-trash tal-utenti l-oħra kollha.
+theme_error_access_dir_not_allowed=Aċċess miċħud: Il-fajl mhuwiex aċċessibbli

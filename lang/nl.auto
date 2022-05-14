@@ -1175,3 +1175,4 @@ theme_xhred_filemanager_purge_trash_curr_start=$1 map wissen.
 theme_xhred_filemanager_purge_trash_all_start=Alle prullenbakken van alle andere gebruikers opschonen.
 theme_xhred_filemanager_purge_trash_curr_end=$1 directory is gewist.
 theme_xhred_filemanager_purge_trash_all_end=Alle prullenbakken van alle andere gebruikers zijn verwijderd.
+theme_error_access_dir_not_allowed=Toegang geweigerd: bestand is niet toegankelijk

@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Maak $1 gids skoon.
 theme_xhred_filemanager_purge_trash_all_start=Maak alle ander gebruikers se asblik dopgehou.
 theme_xhred_filemanager_purge_trash_curr_end=$1-gids suksesvol skoongemaak.
 theme_xhred_filemanager_purge_trash_all_end=Alle ander gebruikers se asblik dopgehou is suksesvol skoongemaak.
+theme_error_access_dir_not_allowed=Toegang geweier: Lêer is nie toeganklik nie

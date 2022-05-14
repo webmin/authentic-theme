@@ -1288,3 +1288,4 @@ theme_xhred_filemanager_purge_trash_curr_start=正在清除 $1 目錄。
 theme_xhred_filemanager_purge_trash_all_start=清除所有其他用戶的垃圾目錄。
 theme_xhred_filemanager_purge_trash_curr_end=已成功清除 $1 目錄。
 theme_xhred_filemanager_purge_trash_all_end=已成功清除所有其他用戶的垃圾目錄。
+theme_error_access_dir_not_allowed=訪問被拒絕：文件不可訪問

@@ -171,3 +171,4 @@ theme_xhred_filemanager_purge_trash_curr_start=Rensar katalogen $1.
 theme_xhred_filemanager_purge_trash_all_start=Rensa alla andra användares papperskorgkataloger.
 theme_xhred_filemanager_purge_trash_curr_end=Katalogen $1 har rensats.
 theme_xhred_filemanager_purge_trash_all_end=Har rensat alla andra användares papperskorgkataloger.
+theme_error_access_dir_not_allowed=Åtkomst nekad: Filen är inte tillgänglig

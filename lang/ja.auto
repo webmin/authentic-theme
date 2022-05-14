@@ -196,3 +196,4 @@ theme_xhred_filemanager_purge_trash_curr_start=$1ディレクトリを削除し�
 theme_xhred_filemanager_purge_trash_all_start=他のすべてのユーザーのゴミ箱ディレクトリを削除します。
 theme_xhred_filemanager_purge_trash_curr_end=$1ディレクトリが正常にパージされました。
 theme_xhred_filemanager_purge_trash_all_end=他のすべてのユーザーのゴミ箱ディレクトリを正常に削除しました。
+theme_error_access_dir_not_allowed=アクセスが拒否されました：ファイルにアクセスできません
