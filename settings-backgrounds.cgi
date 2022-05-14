@@ -13,12 +13,8 @@ do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 &webmin_user_is_admin() ||
   &error($theme_text{'theme_error_access_not_root_user'});
-if ($in{'file'}) {
-  &is_under_directory("$config_directory/$current_theme", $in{'file'}) ||
-    &error($theme_text{'theme_error_access_dir_not_allowed'});
-}
 
-&ui_print_header(html_escape($in{'file'}), $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, undef, undef, undef, 1);
+&ui_print_header(undef, $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, undef, undef, undef, 1);
 
 my $bg_content = $config_directory . "/$current_theme/background_content.png";
 
