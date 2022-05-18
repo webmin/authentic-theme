@@ -75,7 +75,7 @@ sub settings_filter
 
 sub get_theme_color
 {
-    my %theme_colors = ('blue'   => '#0d5ab7',
+    my %theme_colors = ('blue'   => '#004dab',
                         'brown'  => '#5d4839',
                         'gold'   => '#917851',
                         'green'  => '#277b4c',
@@ -105,7 +105,7 @@ sub embed_favicon
     }
 
     my $theme_config_dir = "$config_directory/$current_theme";
-    my $theme_user_color = get_theme_color() || "#0d5ab7";
+    my $theme_user_color = get_theme_color() || "#004dab";
 
     my $favicon_path = $theme_webprefix . '/images/favicons/' . $product_name;
     my $ref_link     = 'data-link-ref';
