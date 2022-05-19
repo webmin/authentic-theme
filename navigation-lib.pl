@@ -722,7 +722,7 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-pencil"></i>';
                 } elsif ($link =~ /mailbox\/index\.cgi?id=/) {
                     $icon = '<i class="fa fa-fw fa-folder-o"></i>';
-                } elsif ($link =~ /demo_history\.cgi$/) {
+                } elsif ($link =~ /\/#demo_history$/) {
                     $icon           = '<i class="fa fa-fw fa-area-chart"></i>';
                     $rv_after_local = $link;
                 }
@@ -781,10 +781,9 @@ sub nav_list_combined_menu
                     } elsif ($link =~ /regen=1/) {
                         $icon = '<i class="fa fa-fw fa-retweet"></i>';
                     }
-                } elsif ($link =~ /^http:\/\// ||
-                         $link =~ /^https:\/\// ||
-                         $link =~ /^ftp:\/\//   ||
-                         $link =~ /^ftps:\/\//)
+                } elsif (
+                        ($link =~ /^http:\/\// || $link =~ /^https:\/\// || $link =~ /^ftp:\/\// || $link =~ /^ftps:\/\//) &&
+                        $link !~ /virtualmin\.com\/professional/)
                 {
                     $icon = '<i class="fa fa-fw fa-external-link"></i>';
                 } elsif ($link =~ /\.\.\/servers\/link\.cgi/) {
