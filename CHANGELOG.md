@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 19.92 (May 21, 2022)
+* Fiх to always check on passed file parameter [webmin#1635:CVE-2022-30708](https://github.com/webmin/webmin/issues/1635#issuecomment-1126801161)
+* Fiх module config to populate non-translated options with other languages [virtualmin/virtualmin-gpl#390](https://github.com/virtualmin/virtualmin-gpl/issues/390)
+* Fix contrast levels for links, labels and badges with dark palette [#1599](https://github.com/authentic-theme/authentic-theme/issues/1599)
+* Fix bandwidth graphs in Cloudmin [forum.virtualmin.com/t/114658](https://forum.virtualmin.com/t/cloudmin-kvm-clients-bandwith-graph-shows-nothing/114658/6)
+* Fiх tooltips for UI locale page [#1594](https://github.com/authentic-theme/authentic-theme/issues/1594)
+* Fix default main accent color for navigation menu
+* Fix select all and invert selection buttons to refer to the correct form
+* Fix missing refresh system information text in tooltip in right side slider
+
 #### Version 19.91.3 (April 28, 2022)
 * Add improvements to login screen
 * Fix spinners inside of tiny buttons
@@ -491,7 +501,7 @@
 * Fiх post reinstall issues for ConfigServer Security & Firewall [#1341](https://github.com/authentic-theme/authentic-theme/issues/1341)
 * Fiх pagination delimiter and other small issues in File Manager
 * Fiх to have more distinctive scrollbar in navigation menu and right side slider
-* Fiх various issues with right slider (white palette and night mode)
+* Fiх various issues with right side slider (white palette and night mode)
 * Fix missing link icons in some module (Cluster modules in particular)
 
 #### Version 19.33 (May 06, 2019)
