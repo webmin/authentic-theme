@@ -221,7 +221,7 @@ sub get_extended_sysinfo
                 }
             }
         }
-        if ($get_user_level eq '0' &&
+        if (&webmin_user_is_admin() &&
             $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
             $theme_config{'settings_sysinfo_real_time_stored'} ne 'false' &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
@@ -644,7 +644,7 @@ sub get_sysinfo_vars
             $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
         }
 
-        my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
+        my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
 
         #Webmin version
         $webmin_version =
@@ -717,7 +717,7 @@ sub get_sysinfo_vars
         }
 
         # Fetch theme version
-        if ($get_user_level eq '0') {
+        if (&webmin_user_is_admin()) {
 
             # Theme version/update
             my $authentic_remote_data                = theme_remote_version(1);
@@ -1084,7 +1084,7 @@ sub get_all_users_motd_data
                 # Skip message if cannot be displayed for the given user
                 if ($specific_user ||
                     ($motd->{'target'} eq 'all' ||
-                        ($get_user_level eq '0' && $motd->{'target'} eq 'adm') ||
+                        (&webmin_user_is_admin() && $motd->{'target'} eq 'adm') ||
                         ($get_user_level eq '1' && $motd->{'target'} eq 'res') ||
                         ($get_user_level eq '2' && $motd->{'target'} eq 'vm')  ||
                         ($get_user_level eq '3' && $motd->{'target'} eq 'um')  ||
@@ -1559,7 +1559,7 @@ sub theme_remote_version
     my $error;
     my $installed_version_devel = theme_version() =~ /alpha|beta|RC/;
 
-    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && $get_user_level eq '0' && $in =~ /xhr-/) {
+    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && $in =~ /xhr-/) {
         if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
             if (!$nocache) {
                 $remote_version = theme_cached('version-theme-development');
@@ -1774,7 +1774,7 @@ sub get_theme_user_link
     my $is_hidden = (!foreign_available("webmin") &&
                        $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true' ? ' hidden-force ' :
                        undef);
-    my $is_hidden_link = ($get_user_level ne '0' ? ' hidden-force ' : undef);
+    my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
     my $link           = '/tconfig.cgi';
 
     my $mversion = theme_version(1, 1);
@@ -1997,8 +1997,7 @@ sub get_xhr_request
                  (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
             print convert_to_json(\@current_versions);
         } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
-            my $is_root = $get_user_level eq '0';
-            clear_theme_cache($is_root);
+            clear_theme_cache(&webmin_user_is_admin());
         } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
@@ -2336,7 +2335,7 @@ sub theme_config_save
 
     # Master administrator must also save certain options to
     # global `settings.js` config file to affect all users
-    if ($get_user_level eq '0') {
+    if (&webmin_user_is_admin()) {
         delete @a{ grep(!/^settings_/, keys %a) };
 
         # Never save user-based options to global config
@@ -2376,7 +2375,7 @@ sub theme_config_restore
 {
     my $tuconfig_file = get_tuconfig_file();
     unlink_file($tuconfig_file);
-    if ($get_user_level eq '0') {
+    if (&webmin_user_is_admin()) {
         my $tgconfig_file = get_tgconfig_file();
         unlink_file($tgconfig_file);
         if ($has_usermin) {

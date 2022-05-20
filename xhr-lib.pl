@@ -114,7 +114,7 @@ sub xhr
 
             # Save current user motd file
             if ($subtype eq 'set' &&
-                $get_user_level eq '0')
+                &webmin_user_is_admin())
             {
                 my $data = convert_from_json($in{'data'});
                 put_user_motd($data);

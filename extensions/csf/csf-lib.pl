@@ -9,6 +9,8 @@ use Fcntl qw( :flock );
 
 our (%gconfig, %in, $get_user_level, $current_theme, $config_directory, $theme_webprefix, %theme_text, %theme_config);
 
+&webmin_user_is_admin() || &error($theme_text{'theme_error_access_dir_not_allowed'});
+
 my $csf_conf     = "/etc/csf";
 my $csf_lib      = "/var/lib/csf";
 my $header       = "csf.header";
@@ -47,7 +49,7 @@ sub csf_strings
 
     # Define CSF actual version if allowed
     if ($theme_config{'settings_sysinfo_csf_updates'} eq 'true' &&
-        $get_user_level eq '0' &&
+        &webmin_user_is_admin() &&
         $in{'xhr-info'} eq '1')
     {
         $csf_remote_version = theme_cached('version-csf-stable');

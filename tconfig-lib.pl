@@ -235,7 +235,7 @@ sub theme_settings_filter
     }
 
     # Limit to certain options for non privleged user
-    if ($get_user_level ne '0') {
+    if (!&webmin_user_is_admin()) {
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
              'settings_hotkey_slider',
@@ -588,7 +588,7 @@ sub theme_controls
     }
 
     my $update_dropdown = (
-        ($get_user_level eq '0' && $section eq $theme_text{'settings_right_soft_updates_page_options'}) ?
+        (&webmin_user_is_admin() && $section eq $theme_text{'settings_right_soft_updates_page_options'}) ?
           '                     <span id="force_update_menu_cnt" class="dropup"'
           .
           ( has_command('git') ?
@@ -627,7 +627,7 @@ sub theme_controls
             </a>
             $update_dropdown
         </div>",
-        ($get_user_level eq '0' ?
+        (&webmin_user_is_admin() ?
            "<div class=\"btn-group\">
             <a tabindex='1' class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-backgrounds.cgi\">
                 <i class=\"fa fa-fw fa-image\"></i><span>$theme_text{'theme_xhred_settings_right_theme_bgs'}</span>

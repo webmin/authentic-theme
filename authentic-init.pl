@@ -624,7 +624,7 @@ sub embed_port_shell
       <span class="-shell-port-prompt"><span class="-shell-port-type">['
           . $remote_user .
           '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
-          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . ($get_user_level eq '0' ? '#' : '$') .
+          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . (&webmin_user_is_admin() ? '#' : '$') .
 '</span></span><input type="text" data-command="true" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
     </div>
   </div>
@@ -849,7 +849,7 @@ sub get_user_icon
 
 sub switch_to_remote_user_safe
 {
-    if ($get_user_level ne '0' && $get_user_level ne '1') {
+    if (!&webmin_user_is_admin() && $get_user_level ne '1') {
         switch_to_remote_user();
     }
 }
@@ -858,7 +858,7 @@ sub get_initial_wizard
 {
     # Prevent running Virtualmin post installation wizard
     my $mod_vm = 'virtual-server';
-    if ($get_user_level eq '0' && foreign_exists($mod_vm)) {
+    if (&webmin_user_is_admin() && foreign_exists($mod_vm)) {
         my %virtualmin_config = foreign_config($mod_vm);
         return $virtualmin_config{'wizard_run'};
     }
@@ -1386,7 +1386,7 @@ sub theme_post_update
 {
     my $update = $root_directory . "/$current_theme/update";
 
-    if (-f $update && $get_user_level eq '0') {
+    if (-f $update && &webmin_user_is_admin()) {
         unlink $update;
         return '1';
     } else {
@@ -1421,7 +1421,7 @@ sub header_html_data
       ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '1' : '0') .
       '" data-slider-fixed="' .
       ($theme_config{'settings_side_slider_fixed'} eq "true" &&
-        $get_user_level eq '0' &&
+        &webmin_user_is_admin() &&
         $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
       '" data-shell="' .
       foreign_available("shell") .
@@ -1616,7 +1616,7 @@ sub get_fm_jailed_user
     }
     my $jailed_user = 0;
     my %fmaccess    = get_module_acl(undef, $_[0]);
-    if ($get_user_level eq '0' && %fmaccess && $fmaccess{'work_as_user'} && $fmaccess{'work_as_user'} ne $remote_user) {
+    if (&webmin_user_is_admin() && %fmaccess && $fmaccess{'work_as_user'} && $fmaccess{'work_as_user'} ne $remote_user) {
         my @user_info = getpwnam($fmaccess{'work_as_user'});
         $jailed_user = $_[1] ? $user_info[0] : $user_info[7];
     }
@@ -1740,7 +1740,7 @@ sub error_40x_handler
 sub lib_csf_control
 {
     my ($action) = @_;
-    if (foreign_check("csf") && foreign_available("csf") && has_command("csf") && $current_theme =~ /authentic-theme/) {
+    if (webmin_user_is_admin() && foreign_check("csf") && foreign_available("csf") && has_command("csf") && $current_theme =~ /authentic-theme/) {
         do("$root_directory/$current_theme/extensions/csf/csf-lib.pl");
         if ($action eq 'load') {
             csf_mod();

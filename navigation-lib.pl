@@ -25,7 +25,7 @@ sub nav_detector
     my $prod    = get_product_name();
     my $mod_def = $gconfig{'gotomodule'};
 
-    my $mod_rt_access = $get_user_level eq '0';
+    my $mod_rt_access = &webmin_user_is_admin();
 
     my $prd_cm           = "cloudmin";
     my $mod_cm           = "server-manager";
@@ -297,10 +297,10 @@ sub nav_webmin_menu
         }
     }
     if (!$extra_links++) {
-        if ($get_user_level eq '0' || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
+        if (&webmin_user_is_admin() || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
             $rv .= nav_cat_link("/tconfig.cgi", $theme_text{'settings_right_theme_left_configuration_title'}, 'hidden');
         }
-        if ($get_user_level eq '0') {
+        if (&webmin_user_is_admin()) {
             $rv .=
               nav_cat_link("/settings-editor_read.cgi", $theme_text{'settings_right_theme_left_extensions_title'}, 'hidden');
             $rv .= nav_cat_link("/settings-logos.cgi", $theme_text{'settings_right_theme_left_logo_title'}, 'hidden');
@@ -594,7 +594,7 @@ sub nav_link_sysinfo
 sub nav_link_sysstat
 {
     my $link;
-    if ($get_user_level eq '0') {
+    if (&webmin_user_is_admin()) {
         if (-d $root_directory . "/virtual-server/pro/timeplot") {
             $link = 'virtual-server/pro';
         } elsif (-d $root_directory . "/server-manager/timeplot") {
@@ -609,7 +609,7 @@ sub nav_link_sysstat
 sub nav_link_netdata
 {
     my $link;
-    if ($get_user_level eq '0') {
+    if (&webmin_user_is_admin()) {
         if (has_command('netdata') &&
             $theme_config{'settings_leftmenu_netdata'} ne 'false')
         {
@@ -703,7 +703,7 @@ sub nav_list_combined_menu
                 {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 } elsif ($link =~ /\/virtual-server\/edit_newvalidate\.cgi/ &&
-                         $get_user_level ne '0')
+                         !&webmin_user_is_admin())
                 {
                     $icon = '<i class="fa fa-fw fa-user-md"></i>';
                 } elsif ($link =~ /mailbox\/list_folders\.cgi/ ||
@@ -798,7 +798,7 @@ sub nav_list_combined_menu
                       $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
                       $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
                 };
-                if (($get_user_level eq '0' || $get_user_level eq '1') &&
+                if ((&webmin_user_is_admin() || $get_user_level eq '1') &&
                     $link =~ /\/virtual-server\/domain_form\.cgi/ &&
                     nav_virtualmin_domain_available_count())
                 {
@@ -855,7 +855,7 @@ sub nav_list_combined_menu
                 $rv .= $menu->{'before'};
 
                 if (($item->{'id'} eq 'global_setting' || $item->{'id'} eq 'global_settings') &&
-                    $get_user_level eq '0' &&
+                    &webmin_user_is_admin() &&
                     !$extra_links++)
                 {
                     $rv .=
@@ -879,7 +879,7 @@ sub nav_list_combined_menu
                         $rv .= nav_cat_link("/server-manager/licence.cgi", $theme_text{'right_slcheck'}, 1);
                     }
 
-                } elsif ($get_user_level ne '0' &&
+                } elsif (!&webmin_user_is_admin() &&
                          $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
                          !$extra_links++)
                 {
@@ -992,8 +992,8 @@ sub nav_links
     $rv .= '<span><i class="fa fa-fw fa-star"></i></span>';
     $rv .= '</li>';
 
-    if (($get_user_level eq '0' && $theme_config{'settings_theme_options_button'} ne 'false') ||
-        ($get_user_level ne '0' &&
+    if ((&webmin_user_is_admin() && $theme_config{'settings_theme_options_button'} ne 'false') ||
+        (!&webmin_user_is_admin() &&
             $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
             $theme_config{'settings_theme_options_button'} ne 'false'))
     {
@@ -1403,7 +1403,7 @@ sub nav_menu_html_snippet
     $html_snippet =~ s/(<(\/|\s*)(html|head|meta|link|title|body).*?>)//g;
 
     if ($html_snippet_limited ne 'true' ||
-        ($html_snippet_limited eq 'true' && $get_user_level eq '0'))
+        ($html_snippet_limited eq 'true' && &webmin_user_is_admin()))
     {
         $rv = '<li class="menu-container"><ul class="user-html"><li class="user-html-string">';
         $rv .= $html_snippet;

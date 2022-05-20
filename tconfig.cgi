@@ -12,7 +12,7 @@ our ($remote_user, %gconfig, %text, %in, %theme_config, %theme_text, $has_usermi
 do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 do("$ENV{'THEME_ROOT'}/tconfig-lib.pl");
 
-($get_user_level ne '0' && $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true') &&
+(!&webmin_user_is_admin() && $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true') &&
   error($theme_text{'settings_theme_config_admins_only_privileged_error'});
 
 ui_print_header(($theme_text{'settings_subtitle'} . ' <tt>' . $remote_user . '</tt>'),
