@@ -1,7 +1,10 @@
 ## Changelog
 
+#### Version 19.93 (May 22, 2022)
+* Fix broken colors for minified bundles (underlying compiler util issue)
+
 #### Version 19.92 (May 21, 2022)
-* Fiх to always check on passed file parameter [webmin#1635:CVE-2022-30708](https://github.com/webmin/webmin/issues/1635#issuecomment-1126801161)
+* Fiх to always check on passed file parameter [authentic-theme:CVE-2022-30708](https://github.com/webmin/webmin/issues/1635#issuecomment-1126801161)
 * Fiх module config to populate non-translated options with other languages [virtualmin/virtualmin-gpl#390](https://github.com/virtualmin/virtualmin-gpl/issues/390)
 * Fix contrast levels for links, labels and badges with dark palette [#1599](https://github.com/authentic-theme/authentic-theme/issues/1599)
 * Fix bandwidth graphs in Cloudmin [forum.virtualmin.com/t/114658](https://forum.virtualmin.com/t/cloudmin-kvm-clients-bandwith-graph-shows-nothing/114658/6)
