@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 19.93.1 (May 23, 2022)
+* Fix contrast in for non-default palettes
+
 #### Version 19.93 (May 22, 2022)
 * Fix broken colors for minified bundles (underlying compiler util issue)
 
