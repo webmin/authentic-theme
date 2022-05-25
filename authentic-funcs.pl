@@ -389,9 +389,9 @@ sub get_user_allowed_gpg_keys
         my @keys_secret  = sort {lc($a->{'name'}->[0]) cmp lc($b->{'name'}->[0])} list_secret_keys();
 
         foreach my $k (@keys) {
-            my $key  = substr($k->{'key'}, -8, 8);
+            my $key   = substr($k->{'key'}, -8, 8);
             my $suser = $switched_user || $remote_user;
-            my $name = $k->{'name'}->[0];
+            my $name  = $k->{'name'}->[0];
             $name =~ s/\(.*?\)//gs;
             if ($list_avoided_system_keys || (!$list_avoided_system_keys && !grep(/^$key$/, @keys_avoided))) {
                 $keys_{ $k->{'key'} } =
@@ -822,6 +822,23 @@ sub acl_system_status
     } else {
         return indexof($show, split(/\s+/, $access{'show'})) >= 0;
     }
+}
+
+sub get_default_module
+{
+    my $mod_def = $theme_config{'settings_webmin_default_module'};
+    if (!foreign_available($mod_def)) {
+        $mod_def = $gconfig{'gotomodule'};
+        if (!foreign_available($mod_def)) {
+            $mod_def = undef;
+        }
+    }
+    if ($mod_def &&
+        -r "$root_directory/$mod_def/index.cgi")
+    {
+        return $mod_def;
+    }
+    return undef;
 }
 
 1;

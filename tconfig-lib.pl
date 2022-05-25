@@ -264,7 +264,7 @@ sub theme_settings_filter
              'settings_cache_interval',
              'settings_sysinfo_theme_updates_for_usermin');
         if ($get_user_level eq '3') {
-            push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmin', 'settings_webmin_default_module');
+            push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmin');
         } elsif ($get_user_level eq '2' || $get_user_level eq '4') {
             push(@theme_settings_filter,
                  'settings_hotkey_toggle_key_webmin',
@@ -423,7 +423,10 @@ sub theme_settings_format
           '
                 </select>';
     } elsif ($k eq 'settings_webmin_default_module') {
-        $v = settings_get_select_default_module('goto_webmin_default_module', $gconfig{'gotomodule'});
+        if ($get_user_level eq '3') {
+            $k = 'settings_usermin_default_module';
+        }
+        $v = settings_get_select_default_module('goto_webmin_default_module', get_default_module());
     } elsif ($k eq 'settings_right_default_tab_usermin') {
         $v = '<select class="ui_select" name="' . $k . '">
                 <option value="/"'
@@ -731,6 +734,9 @@ sub settings_get_select_default_module
     my ($name, $value) = @_;
     my @modules = get_available_module_infos();
     @modules = grep {!$_->{'hidden'} && !$_->{'webmin_hidden'}} @modules;
+    if ($get_user_level eq '3') {
+        @modules = grep {$_->{'dir'} ne 'mailbox'} @modules;
+    }
     my $select = ui_select($name,
                            $value,
                            [["", $theme_text{'theme_xhred_titles_dashboard'}],

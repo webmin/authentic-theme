@@ -23,7 +23,7 @@ sub nav_detector
     }
 
     my $prod    = get_product_name();
-    my $mod_def = $gconfig{'gotomodule'};
+    my $mod_def = get_default_module();
 
     my $mod_rt_access = &webmin_user_is_admin();
 
