@@ -755,10 +755,15 @@ sub get_usermin_vars
 {
     my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
     eval {
-        if (&foreign_exists("usermin")) {
+        my %uminiserv;
+        # Load miniserv config based on login mode
+        if (get_product_name() eq 'usermin') {
+            get_miniserv_config(\%uminiserv);   
+        } elsif (&foreign_exists("usermin")) {
             &foreign_require("usermin");
-            my %uminiserv;
             &usermin::get_usermin_miniserv_config(\%uminiserv);
+        }
+        if (%uminiserv) {
 
             # Usermin config dir
             $has_usermin_conf_dir = $uminiserv{'env_WEBMIN_CONFIG'};
