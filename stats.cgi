@@ -20,6 +20,8 @@ do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
 init_config();
 ReadParse();
 
+print_json({}), exit if (!webmin_user_is_admin());
+
 # Load theme language and settings
 our %text = load_language($current_theme);
 my %settings = settings("$config_directory/$current_theme/settings.js", 'settings_');
