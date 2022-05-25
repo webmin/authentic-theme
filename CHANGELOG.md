@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.93.2 (May 25, 2022)
+* Fix to forbid unprivileged user to query and read system statistics
+* Fix regression bug when moving through user history (back/forward)
+* Fix scroll bar visibility inside drop-down list
+* Fix default module selection in Usermin
+
 #### Version 19.93.1 (May 23, 2022)
 * Fix contrast ratio for non-default palettes
 
