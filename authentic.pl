@@ -444,17 +444,17 @@ sub theme_ui_columns_start
     if ($title) {
         $rv .= "<caption>$title</caption>\n";
     }
-    $rv .= '<thead>' . "\n";
-    $rv .= '<tr>' . "\n";
-    if (ref($heads)) {
+    if (ref($heads) && scalar(@{$heads})) {
+        $rv .= '<thead>' . "\n";
+        $rv .= '<tr>' . "\n";
         for ($i = 0; $i < @$heads; $i++) {
             $rv .= "<th " . (ref($tdtags) ? $tdtags->[$i] : undef) . ">";
             $rv .= ($heads->[$i] eq '' ? '<br>' : $heads->[$i]);
             $rv .= '</th>' . "\n";
         }
+        $rv .= '</tr>' . "\n";
+        $rv .= '</thead>' . "\n";
     }
-    $rv .= '</tr>' . "\n";
-    $rv .= '</thead>' . "\n";
     $rv .= '<tbody>' . "\n";
 
     return $rv;
