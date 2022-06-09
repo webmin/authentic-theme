@@ -5,7 +5,7 @@ spa=1
 nomodcall=xnavigation=1
 version=19.93.2
 mversion=00
-bversion=07
+bversion=08
 webmin=1
 usermin=1
 depends=1.992 1.841
