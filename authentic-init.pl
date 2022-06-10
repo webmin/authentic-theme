@@ -892,6 +892,11 @@ sub get_button_style
     } elsif (string_contains($keys, "pass_ok")) {
         $icon  = " fa2 fa2-key";
         $class = "warning ";
+    } elsif (string_ends_with($keys, "_gnupg") ||
+             string_contains($keys, 'secret_setup') ||
+             string_contains($keys, 'index_sok2')) {
+        $icon  = " fa2 fa2-key";
+        $class = "success ";
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
     } elsif (string_contains($keys, "form_edit")) {
@@ -933,7 +938,9 @@ sub get_button_style
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
-    } elsif (string_contains($keys, "migrate_show") || string_contains($keys, "import_show")) {
+    } elsif (string_contains($keys, "migrate_show") ||
+             string_contains($keys, "import_show") ||
+             string_contains($keys, "keys_import")) {
         $class = "success ";
         $icon  = " fa2 fa2-import";
     } elsif (string_contains($keys, "update") ||
@@ -1104,7 +1111,10 @@ sub get_button_style
     } elsif (string_contains($keys, "ddrop_empty")) {
         $class = "warning ";
         $icon  = "times-circle-o";
-    } elsif (string_contains($keys, "start") || string_contains($keys, "index_run") || string_contains($keys, "form_exec")) {
+    } elsif (string_contains($keys, "start") ||
+             string_contains($keys, "index_run") ||
+             string_contains($keys, "edit_run") ||
+             string_contains($keys, "form_exec")) {
         $class = "success ";
         $icon  = "play";
     } elsif (string_contains($keys, "index_stop") ||
