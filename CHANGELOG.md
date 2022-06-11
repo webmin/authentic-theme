@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 19.94 (June 12, 2022)
+* Add support for a new log viewer module
+* Add support for a new proxy status icon on DNS records page in Virtualmin
+* Fix scrollbars inside of viewer and editor windows [#1601](https://github.com/authentic-theme/authentic-theme/issues/1601)
+* Fix dashboard draggables when interacting with its content
+
 #### Version 19.93.2 (May 25, 2022)
 * Fix to forbid unprivileged user to query and read system statistics
 * Fix regression bug when moving through user history (back/forward)
@@ -8,6 +14,8 @@
 
 #### Version 19.93.1 (May 23, 2022)
 * Fix contrast ratio for non-default palettes
+
+<!--- separator --->
 
 #### Version 19.93 (May 22, 2022)
 * Fix broken colors for minified bundles (underlying compiler util issue)
@@ -53,7 +61,6 @@
 #### Version 19.90.1 (March 06, 2022)
 * Fix Usermin dependency check before installing a new update
 
-<!--- separator --->
 
 #### Version 19.90 (March 04, 2022)
 * Update contacts
