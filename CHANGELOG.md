@@ -1,5 +1,18 @@
 ## Changelog
 
+#### Version 19.95 (June 23, 2022)
+* Fix pasting files on conflicting targets in File Manager
+* Fix failing on moving to and clearing trash in File Manager
+* Fix to display upload progress instantaneously in File Manager
+* Fix to unlock controls when simply closing target conflict modal in File Manager
+* Fix safe user breadcrumb navigation in File Manager
+* Fix to improve table header link buttons in mobile mode
+* Fix to improve a message about expired versions on the dashboard
+* Fix config highlight for Nginx
+* Fix text contrast inside of alert boxes
+* Fix to quicker dismiss connection error modal
+* Fix clock icon align for scheduled jobs in Virtualmin
+
 #### Version 19.94 (June 12, 2022)
 * Add support for a new log viewer module
 * Add support for a new proxy status icon on DNS records page in Virtualmin
