@@ -1202,7 +1202,7 @@ sub paster
         }
     };
 
-    if (!$r && -f $j ne -d $j) {
+    if (!$r && -e $j) {
         for (my $t = 1;; $t += 1) {
             my ($jn, $je) = file_name_extension_splitter($j);
             if (!-e ($jn . '(' . $t . ')' . ".$je") && (!-e ($j . '(' . $t . ')'))) {

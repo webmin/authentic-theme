@@ -30,26 +30,37 @@ my %errors;
 my $mv = ($act eq "copy"            ? 0 : 1);
 my $fr = (length $request_uri{'ua'} ? 1 : 0);
 my $fo = ($request_uri{'ua'} eq '1' ? 1 : 0);
+my $dr = 0;
 
-for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
-    chomp($arr[$i]);
-    $arr[$i] = simplify_path($arr[$i]);
-
-    my $out;
-    if ((-e "$cwd/$arr[$i]") && $cwd ne $from && !$fr) {
-        set_response('ep');
-    } else {
-        $out = paster("$cwd", "$arr[$i]", "$from/$arr[$i]", "$cwd/$arr[$i]", $fo, $mv, $in{'fownergroup'});
+# Dry run first to check if targets already exist
+if (!$fr) {
+    for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
+        chomp($arr[$i]);
+        $arr[$i] = simplify_path($arr[$i]);
+        if ((-e "$cwd/$arr[$i]") && $cwd ne $from) {
+            $dr++;
+            set_response('ep');
+            last;
+        }
     }
-    if ($out) {
-        $errors{"$arr[$i]"} = $out;
+}
+
+# Perform actual action
+if (!$dr) {
+    for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
+        chomp($arr[$i]);
+        $arr[$i] = simplify_path($arr[$i]);
+        my $err = paster("$cwd", "$arr[$i]", "$from/$arr[$i]", "$cwd/$arr[$i]", $fo, $mv, $in{'fownergroup'});
+        if ($err) {
+            $errors{"$arr[$i]"} = $err;
+        }
     }
 }
 
 if (%errors) {
     set_response('err');
-    redirect_local('list.cgi?path=' .
-                 urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+    redirect_local(
+           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
 } else {
     set_response_count(scalar(@arr) - 2);
     redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
