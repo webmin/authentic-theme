@@ -15,7 +15,7 @@ do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 my $path_urlized = urlize($path);
 
 if (!$in{'name'}) {
-    redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+    redirect_local(("list.cgi?path=$path_urlized&module=filemin" . extra_query()));
 }
 
 my $type;
@@ -35,7 +35,7 @@ if (-f "$cwd/$in{'name'}" || -d "$cwd/$in{'name'}") {
 } else {
     if (open my $fh, "> $cwd/$in{'name'}") {
         close($fh);
-        redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+        redirect_local(("list.cgi?path=$path_urlized&module=filemin" . extra_query()));
     } else {
         print_error(
                     (

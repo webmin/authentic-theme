@@ -16,7 +16,7 @@ my $path_urlized = urlize($path);
 my $error;
 
 if (!@entries_list) {
-    redirect_local(("list.cgi?path=$path_urlized&module=$in{'module'}" . extra_query()));
+    redirect_local(("list.cgi?path=$path_urlized&module=filemin" . extra_query()));
 }
 foreach my $name (@entries_list) {
     my $name_ = $name;
