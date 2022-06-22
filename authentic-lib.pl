@@ -2000,7 +2000,7 @@ sub get_xhr_request
             print convert_to_json(\@current_versions);
         } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
             clear_theme_cache(&webmin_user_is_admin());
-        } elsif ($in{'xhr-update'} eq '1' && foreign_available('webmin')) {
+        } elsif ($in{'xhr-update'} eq '1' && &webmin_user_is_admin()) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};
