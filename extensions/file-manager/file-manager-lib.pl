@@ -291,16 +291,16 @@ sub get_entries_list
 
 sub extra_query
 {
-    my $page       = $in{'page'};
-    my $query      = $in{'query'};
-    my $paginate   = $in{'paginate'};
-    my $follow     = $in{'follow'};
-    my $caseins    = $in{'caseins'};
-    my $grepstring = $in{'grepstring'};
-    my $fsid       = $in{'fsid'};
-    my $exclude    = $in{'exclude'};
-    my $regex      = $in{'regex'};
-    my $all_items  = $in{'all_items'};
+    my $page       = &urlize($in{'page'});
+    my $query      = &urlize($in{'query'});
+    my $paginate   = &urlize($in{'paginate'});
+    my $follow     = &urlize($in{'follow'});
+    my $caseins    = &urlize($in{'caseins'});
+    my $grepstring = &urlize($in{'grepstring'});
+    my $fsid       = &urlize($in{'fsid'});
+    my $exclude    = &urlize($in{'exclude'});
+    my $regex      = &urlize($in{'regex'});
+    my $all_items  = &urlize($in{'all_items'});
     return
 "&page=$page&query=$query&paginate=$paginate&follow=$follow&caseins=$caseins&grepstring=$grepstring&fsid=$fsid&exclude=$exclude&regex=$regex&all_items=$all_items";
 }
