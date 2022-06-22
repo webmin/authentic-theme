@@ -13,7 +13,7 @@ our (%in, %text, $cwd, $path);
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'name'}) {
-    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . extra_query());
 }
 
 $path = $path || "/";
@@ -35,7 +35,7 @@ if (-e "$cwd/$in{'name'}") {
 
     if (rename_file($cwd . '/' . $from, $cwd . '/' . $to)) {
         cache_search_rename($fsid, $from, $to) if ($fsid);
-        redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
+        redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . extra_query());
     } else {
         print_error(
                     (

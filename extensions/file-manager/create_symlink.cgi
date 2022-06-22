@@ -40,5 +40,5 @@ foreach my $name (@entries_list) {
         $error .= text('filemanager_symlink_exists', html_escape("${name_}_symlink"), html_escape($cwd));
     }
 }
-redirect_local('list.cgi?path=' . $path_urlized . '&module=' . $in{'module'} . '&error=' . $error . extra_query());
+redirect_local('list.cgi?path=' . $path_urlized . '&module=filemin' . '&error=' . $error . extra_query());
 

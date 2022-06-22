@@ -14,7 +14,7 @@ our (%in, %text, $cwd, $path);
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'link'}) {
-    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . extra_query());
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . extra_query());
     return;
 }
 
@@ -40,6 +40,6 @@ if (!$host) {
         set_ownership_permissions($st[4], $st[5], undef, $full);
         @st = stat($cwd);
         $success .= text('http_done', nice_size($st[7]), "<tt>" . html_escape($full) . "</tt>");
-        redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&success=' . $success . extra_query());
+        redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . '&success=' . $success . extra_query());
     }
 }

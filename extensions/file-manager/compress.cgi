@@ -12,7 +12,7 @@ our (%in, %text, %config, $cwd, $path);
 do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'arch'}) {
-    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin');
 }
 
 my %errors;
@@ -112,4 +112,4 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
 }
 
 redirect_local(
-           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+           'list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=' . get_errors(\%errors) . extra_query());

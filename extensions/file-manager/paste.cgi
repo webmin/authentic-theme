@@ -60,8 +60,8 @@ if (!$dr) {
 if (%errors) {
     set_response('err');
     redirect_local(
-           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+           'list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=' . get_errors(\%errors) . extra_query());
 } else {
     set_response_count(scalar(@arr) - 2);
-    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=1' . extra_query());
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=1' . extra_query());
 }

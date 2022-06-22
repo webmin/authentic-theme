@@ -43,4 +43,4 @@ elsif (-w $remote_user_info[7]) {
 }
 
 redirect_local(
-           'list.cgi?path=' . urlize($path) . '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . extra_query());
+           'list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=' . get_errors(\%errors) . extra_query());

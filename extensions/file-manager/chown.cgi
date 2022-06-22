@@ -16,7 +16,7 @@ my %errors;
 my $error_fatal;
 
 if (!$in{'owner'} || !$in{'group'} || !supports_users()) {
-    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin');
 }
 
 (my $login, my $pass, my $uid, my $gid) = getpwnam($in{'owner'});
@@ -51,4 +51,4 @@ if (!scalar %errors) {
 }
 
 redirect_local('list.cgi?path=' . urlize($path) .
-             '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());
+             '&module=filemin' . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());

@@ -22,7 +22,7 @@ if ($in{'recursive'} eq 'true') {
 }
 
 if (!$in{'label'}) {
-    redirect_local('list.cgi?path=' . urlize($path) . '&module=' . $in{'module'});
+    redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin');
 }
 
 my $label = quotemeta("$in{'label'}");
@@ -41,4 +41,4 @@ foreach my $file (@entries_list) {
 }
 
 redirect_local('list.cgi?path=' . urlize($path) .
-         '&module=' . $in{'module'} . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());
+         '&module=filemin' . '&error=' . get_errors(\%errors) . '&error_fatal=' . $error_fatal . extra_query());
