@@ -1907,6 +1907,7 @@ sub get_xhr_request
                 print nice_size($size, -1) . '|' . nice_number($size);
             }
         } elsif ($in{'xhr-get_list'} eq '1') {
+            switch_to_remote_user_safe();
             my $module = 'filemin';    # $in{'xhr-get_list_cmodule'};
             exit if (!foreign_available($module));
             my $path = "$in{'xhr-get_list_path'}";
