@@ -1914,7 +1914,8 @@ sub get_xhr_request
             my @dirs;
 
             my $jailed_user = get_fm_jailed_user($module);
-            if ($jailed_user || $get_user_level eq '2' || $get_user_level eq '4') {
+            if ($jailed_user || $get_user_level eq '2' ||
+                $get_user_level eq '4' || webmin_user_is('safe-user')) {
                 $path = ($jailed_user || get_user_home()) . $path;
             }
             opendir(my $dirs, $path);
