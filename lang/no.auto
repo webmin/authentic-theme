@@ -155,3 +155,6 @@ theme_xhred_filemanager_purge_trash_all_start=Tømmer alle andre brukeres søppe
 theme_xhred_filemanager_purge_trash_curr_end=Vellykket slettet $1-katalogen.
 theme_xhred_filemanager_purge_trash_all_end=Fjernet alle andre brukeres søppelkataloger.
 theme_error_access_dir_not_allowed=Tilgang nektet: Filen er ikke tilgjengelig
+
+#19.95
+theme_xhred_global_outdated_desc=Installert versjon av $1 er utdatert. Siste tilgjengelige versjon er $2. Vennligst oppgrader eller klikk for å få mer informasjon om nylig utgivelse.

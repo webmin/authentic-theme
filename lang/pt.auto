@@ -612,7 +612,6 @@ theme_xhred_global_click_here=Clique aqui
 theme_git_patch_incompatible_message=A instalação desta versão do $1 <em>$2</em> requer a versão mais recente e/ou possivelmente não lançada do $3 e $5 para funcionar corretamente.
 theme_git_patch_incompatible_message_s=A instalação desta versão do $1 <em>$2</em> requer que a versão mais recente e/ou possivelmente não lançada do $3 funcione corretamente.
 theme_git_patch_incompatible_message_desc=Pode haver alterações incompatíveis, que podem impedir o tema de funcionar conforme projetado. Não é possível continuar a operação de atualização usando a IU.
-theme_xhred_global_outdated=Esta versão está ultrapassada
 
 #19.10
 theme_xhred_filemanager_edit_html=Editar como HTML
@@ -1206,3 +1205,6 @@ theme_xhred_filemanager_purge_trash_all_start=Limpando todos os outros diretóri
 theme_xhred_filemanager_purge_trash_curr_end=Diretório $1 limpo com sucesso.
 theme_xhred_filemanager_purge_trash_all_end=Todos os outros diretórios de lixo de usuários foram removidos com sucesso.
 theme_error_access_dir_not_allowed=Acesso negado: o arquivo não está acessível
+
+#19.95
+theme_xhred_global_outdated_desc=A versão instalada de $1 está desatualizada. A última versão disponível é $2. Atualize ou clique para obter mais detalhes sobre o lançamento recente.

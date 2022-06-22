@@ -607,7 +607,6 @@ theme_xhred_global_click_here=Klik her
 theme_git_patch_incompatible_message=Installation af denne version af $1 <em>$2</em> kræver den nyeste og/eller muligvis ikke-udgivne version af $3 og $5 for at fungere korrekt.
 theme_git_patch_incompatible_message_s=Installation af denne version af $1 <em>$2</em> kræver den nyeste og/eller muligvis ikke-udgivne version af $3 for at fungere korrekt.
 theme_git_patch_incompatible_message_desc=Der kan være inkompatible ændringer, der kan forhindre temaet i at fungere som designet. Det er ikke muligt at fortsætte opgraderingen ved hjælp af brugergrænsefladen.
-theme_xhred_global_outdated=Denne version er forældet
 
 #19.10
 theme_xhred_filemanager_edit_html=Rediger som HTML
@@ -1201,3 +1200,6 @@ theme_xhred_filemanager_purge_trash_all_start=Sletning af alle andre brugeres pa
 theme_xhred_filemanager_purge_trash_curr_end=Udryddet mappen $1.
 theme_xhred_filemanager_purge_trash_all_end=Alle andre brugeres papirkurv er blevet slettet.
 theme_error_access_dir_not_allowed=Adgang nægtet: Filen er ikke tilgængelig
+
+#19.95
+theme_xhred_global_outdated_desc=Den installerede version af $1 er forældet. Seneste tilgængelige version er $2. Opgrader eller klik for at få flere detaljer om den seneste udgivelse.

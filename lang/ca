@@ -687,4 +687,3 @@ theme_xhred_global_empty=Buit
 theme_xhred_global_click_here=Prem amb el ratolí aquí
 theme_git_patch_incompatible_message=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 i $5 per tal de funcionar correctament.
 theme_git_patch_incompatible_message_s=La instal·lació d'aquesta versió de $1 <em>$2</em> necessita la última versió o una versió no alliberada de $3 per tal de funcionar correctament.
-theme_xhred_global_outdated=Aquesta versió no està actualizada

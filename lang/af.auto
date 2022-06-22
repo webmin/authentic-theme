@@ -695,7 +695,6 @@ theme_xhred_global_click_here=Klik hier
 theme_git_patch_incompatible_message=Om hierdie weergawe van $1 <em>$2</em> te installeer, is die nuutste en/of moontlik onuitgereikte weergawe van $3 en $5 korrek om te werk.
 theme_git_patch_incompatible_message_s=Om hierdie weergawe van $1 <em>$2</em> te installeer, is die nuutste en/of moontlik nie-vrygestelde weergawe van $3 nodig om korrek te werk.
 theme_git_patch_incompatible_message_desc=Daar kan onversoenbare veranderinge wees, wat kan keer dat die tema werk soos ontwerp. Dit is nie moontlik om voort te gaan met opgradering met UI nie.
-theme_xhred_global_outdated=Hierdie weergawe is verouderd
 
 #19.10
 theme_xhred_filemanager_edit_html=Wysig as HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Maak alle ander gebruikers se asbl
 theme_xhred_filemanager_purge_trash_curr_end=$1-gids suksesvol skoongemaak.
 theme_xhred_filemanager_purge_trash_all_end=Alle ander gebruikers se asblik dopgehou is suksesvol skoongemaak.
 theme_error_access_dir_not_allowed=Toegang geweier: Lêer is nie toeganklik nie
+
+#19.95
+theme_xhred_global_outdated_desc=Geïnstalleerde weergawe van $1 is verouderd. Nuutste beskikbare weergawe is $2. Gradeer asseblief op of klik om meer besonderhede oor onlangse vrystelling te kry.

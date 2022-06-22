@@ -695,7 +695,6 @@ theme_xhred_global_click_here=klikatu hemen
 theme_git_patch_incompatible_message=$1 <em>$2</em> bertsio hau instalatzeak behar bezala funtziona dezan $3 eta $5 bertsio berrienak eta/edo agian argitaratu gabeak behar ditu.
 theme_git_patch_incompatible_message_s=$1 <em>$2</em> bertsio hau instalatzeak behar bezala funtziona dezan $3 bertsio berriena eta/edo agian argitaratu gabekoa behar du.
 theme_git_patch_incompatible_message_desc=Aldaketa bateraezinak egon daitezke, gaiak diseinatu bezala funtzionatzeari utz diezaiokete. Ezin da bertsio berritze-eragiketa jarraitu UI erabiliz.
-theme_xhred_global_outdated=Bertsio hau zaharkituta dago
 
 #19.10
 theme_xhred_filemanager_edit_html=Editatu HTML gisa
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Gainontzeko erabiltzaileen zaborro
 theme_xhred_filemanager_purge_trash_curr_end=Behar bezala garbitu da $1 direktorioa.
 theme_xhred_filemanager_purge_trash_all_end=Garbitu behar bezala gainontzeko erabiltzaileen zaborrontzien direktorio guztiak.
 theme_error_access_dir_not_allowed=Sarbidea ukatua: fitxategia ez da eskuragarri
+
+#19.95
+theme_xhred_global_outdated_desc=$1 instalatutako bertsioa zaharkituta dago. Eskuragarri dagoen azken bertsioa $2 da. Mesedez, bertsio berritu edo egin klik azken bertsioari buruzko xehetasun gehiago lortzeko.

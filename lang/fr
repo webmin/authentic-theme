@@ -687,7 +687,6 @@ theme_xhred_global_empty=Vide
 theme_xhred_global_click_here=cliquez ici
 theme_git_patch_incompatible_message=L'installation de cette version de $1 <em>$2</em> nécessite la dernière version et/ou peut-être non publiée de $3 et $5 pour fonctionner correctement.
 theme_git_patch_incompatible_message_s=L'installation de cette version de $1 <em>$2</em> nécessite la dernière version et/ou peut-être non publiée de $3 pour fonctionner correctement.
-theme_xhred_global_outdated=Cette version n'est plus à jour
 
 #19.10
 theme_xhred_filemanager_edit_html=Modifier en HTML

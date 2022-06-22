@@ -695,7 +695,6 @@ theme_xhred_global_click_here=kliknite ovdje
 theme_git_patch_incompatible_message=Instaliranje ove verzije $1 <em>$2</em> zahtijeva da najnovija i/ili eventualno neobjavljena verzija $3 i $5 radi ispravnog rada.
 theme_git_patch_incompatible_message_s=Instaliranje ove verzije $1 <em>$2</em> zahtijeva da najnovija i/ili eventualno neobjavljena verzija $3 radi ispravno.
 theme_git_patch_incompatible_message_desc=Možda postoje nekompatibilne promjene koje bi mogle spriječiti rad teme kako je dizajniran. Nastavak operacije nadogradnje pomoću korisničkog sučelja nije moguć.
-theme_xhred_global_outdated=Ova verzija je zastarjela
 
 #19.10
 theme_xhred_filemanager_edit_html=Uredi kao HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Čišćenje svih ostalih korisnič
 theme_xhred_filemanager_purge_trash_curr_end=Uspješno očišćen $1 direktorij.
 theme_xhred_filemanager_purge_trash_all_end=Uspješno su očišćeni direktoriji smeća svih ostalih korisnika.
 theme_error_access_dir_not_allowed=Pristup odbijen: Datoteka nije dostupna
+
+#19.95
+theme_xhred_global_outdated_desc=Instalirana verzija $1 je zastarjela. Najnovija dostupna verzija je $2. Nadogradite ili kliknite da biste dobili više pojedinosti o nedavnom izdanju.

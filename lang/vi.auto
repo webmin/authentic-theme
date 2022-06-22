@@ -695,7 +695,6 @@ theme_xhred_global_click_here=bấm vào đây
 theme_git_patch_incompatible_message=Việc cài đặt phiên bản $1 <em>$2</em> này yêu cầu phiên bản mới nhất và/hoặc có thể chưa được phát hành của $3 và $5 để hoạt động chính xác.
 theme_git_patch_incompatible_message_s=Việc cài đặt phiên bản $1 <em>$2</em> này yêu cầu phiên bản mới nhất và/hoặc có thể chưa được phát hành của $3 để hoạt động chính xác.
 theme_git_patch_incompatible_message_desc=Có thể có những thay đổi không tương thích, có thể ngăn chủ đề hoạt động như được thiết kế. Không thể tiếp tục hoạt động nâng cấp bằng giao diện người dùng.
-theme_xhred_global_outdated=Phiên bản này là lỗi thời
 
 #19.10
 theme_xhred_filemanager_edit_html=Chỉnh sửa dưới dạng HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Dọn dẹp tất cả các thư m
 theme_xhred_filemanager_purge_trash_curr_end=Đã xóa thành công thư mục $1.
 theme_xhred_filemanager_purge_trash_all_end=Đã xóa thành công tất cả các thư mục rác của người dùng khác.
 theme_error_access_dir_not_allowed=Quyền truy cập bị từ chối: Không thể truy cập tệp
+
+#19.95
+theme_xhred_global_outdated_desc=Phiên bản $1 đã cài đặt đã lỗi thời. Phiên bản mới nhất hiện có là $2. Vui lòng nâng cấp hoặc nhấp để biết thêm chi tiết về bản phát hành gần đây.

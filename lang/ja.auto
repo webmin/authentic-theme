@@ -197,3 +197,6 @@ theme_xhred_filemanager_purge_trash_all_start=他のすべてのユーザーの�
 theme_xhred_filemanager_purge_trash_curr_end=$1ディレクトリが正常にパージされました。
 theme_xhred_filemanager_purge_trash_all_end=他のすべてのユーザーのゴミ箱ディレクトリを正常に削除しました。
 theme_error_access_dir_not_allowed=アクセスが拒否されました：ファイルにアクセスできません
+
+#19.95
+theme_xhred_global_outdated_desc=インストールされている $1のバージョンが古くなっています。利用可能な最新バージョンは $2です。最近のリリースの詳細については、アップグレードするかクリックしてください。

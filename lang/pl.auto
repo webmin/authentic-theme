@@ -613,7 +613,6 @@ theme_xhred_global_click_here=Kliknij tutaj
 theme_git_patch_incompatible_message=Instalacja tej wersji $1 <em>$2</em> wymaga najnowszej i/lub prawdopodobnie niepublikowanej wersji $3 i $5 do poprawnego działania.
 theme_git_patch_incompatible_message_s=Instalacja tej wersji $1 <em>$2</em> wymaga najnowszej i/lub prawdopodobnie niepublikowanej wersji $3 do poprawnego działania.
 theme_git_patch_incompatible_message_desc=Mogą wystąpić niekompatybilne zmiany, które mogą uniemożliwić działanie motywu zgodnie z założeniami. Kontynuowanie operacji aktualizacji za pomocą interfejsu użytkownika nie jest możliwe.
-theme_xhred_global_outdated=Ta wersja jest nieaktualna
 
 #19.10
 theme_xhred_filemanager_edit_html=Edytuj jako HTML
@@ -1207,3 +1206,6 @@ theme_xhred_filemanager_purge_trash_all_start=Oczyszczanie katalogów śmieci ws
 theme_xhred_filemanager_purge_trash_curr_end=Pomyślnie usunięto katalog $1.
 theme_xhred_filemanager_purge_trash_all_end=Pomyślnie wyczyszczono katalogi śmieci wszystkich innych użytkowników.
 theme_error_access_dir_not_allowed=Odmowa dostępu: plik jest niedostępny
+
+#19.95
+theme_xhred_global_outdated_desc=Zainstalowana wersja $1 jest nieaktualna. Najnowsza dostępna wersja to $2. Uaktualnij lub kliknij, aby uzyskać więcej informacji o ostatniej wersji.

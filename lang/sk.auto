@@ -695,7 +695,6 @@ theme_xhred_global_click_here=kliknite tu
 theme_git_patch_incompatible_message=Inštalácia tejto verzie $1 <em>$2</em> vyžaduje najnovšiu a/alebo pravdepodobne nevydanú verziu $3 a $5, aby správne fungovala.
 theme_git_patch_incompatible_message_s=Inštalácia tejto verzie $1 <em>$2</em> vyžaduje, aby najnovšia a/alebo pravdepodobne nevydaná verzia $3 fungovala správne.
 theme_git_patch_incompatible_message_desc=Môžu sa vyskytnúť nekompatibilné zmeny, ktoré by mohli zabrániť tomu, aby téma fungovala tak, ako bola navrhnutá. Pokračovanie v aktualizácii pomocou používateľského rozhrania nie je možné.
-theme_xhred_global_outdated=Táto verzia je zastaraná
 
 #19.10
 theme_xhred_filemanager_edit_html=Upraviť ako HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Čistenie všetkých ostatných po
 theme_xhred_filemanager_purge_trash_curr_end=Adresár $1 bol úspešne vyčistený.
 theme_xhred_filemanager_purge_trash_all_end=Všetky ostatné používateľské adresáre koša boli úspešne vymazané.
 theme_error_access_dir_not_allowed=Prístup odmietnutý: Súbor nie je prístupný
+
+#19.95
+theme_xhred_global_outdated_desc=Nainštalovaná verzia $1 je zastaraná. Najnovšia dostupná verzia je $2. Inovujte alebo kliknite a získajte ďalšie podrobnosti o nedávnom vydaní.

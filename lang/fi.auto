@@ -695,7 +695,6 @@ theme_xhred_global_click_here=Klikkaa tästä
 theme_git_patch_incompatible_message=Tämän $1 <em>$2</em> version asentaminen vaatii $3 ja $5 uusimman ja/tai mahdollisesti julkistamattoman version toimimaan oikein.
 theme_git_patch_incompatible_message_s=Tämän $1 <em>$2</em> version asentaminen vaatii $3 uusimman ja/tai mahdollisesti julkistamattoman version toimimaan oikein.
 theme_git_patch_incompatible_message_desc=Saattaa olla yhteensopimattomia muutoksia, jotka voivat estää teemaa toimimasta suunnitellusti. Päivityksen jatkaminen käyttöliittymän avulla ei ole mahdollista.
-theme_xhred_global_outdated=Tämä versio on vanhentunut
 
 #19.10
 theme_xhred_filemanager_edit_html=Muokkaa HTML-muodossa
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Kaikkien muiden käyttäjien roska
 theme_xhred_filemanager_purge_trash_curr_end=Hakemiston $1 tyhjennys onnistui.
 theme_xhred_filemanager_purge_trash_all_end=Kaikkien muiden käyttäjien roskakorihakemistot tyhjennettiin onnistuneesti.
 theme_error_access_dir_not_allowed=Pääsy kielletty: Tiedostoa ei voi käyttää
+
+#19.95
+theme_xhred_global_outdated_desc=$1:n asennettu versio on vanhentunut. Viimeisin saatavilla oleva versio on $2. Päivitä tai napsauta saadaksesi lisätietoja viimeisimmästä julkaisusta.

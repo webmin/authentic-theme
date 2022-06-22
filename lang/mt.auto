@@ -695,7 +695,6 @@ theme_xhred_global_click_here=għafas hawn
 theme_git_patch_incompatible_message=L-installazzjoni ta 'din il-verżjoni ta' $1 <em>$2</em> teħtieġ l-iktar verżjoni reċenti u/jew possibilment mhux rilaxxata ta '$3 u $5 biex taħdem sewwa.
 theme_git_patch_incompatible_message_s=L-installazzjoni ta 'din il-verżjoni ta' $1 <em>$2</em> teħtieġ l-iktar verżjoni reċenti u/jew possibbilment mhux rilaxxata ta '$3 biex taħdem sewwa.
 theme_git_patch_incompatible_message_desc=Jista 'jkun hemm bidliet inkompatibbli, li jistgħu jwaqqfu t-tema milli taħdem kif iddisinjat. It-tkomplija tal-operat tal-aġġornament bl-użu tal-UI mhix possibbli.
-theme_xhred_global_outdated=Din il-verżjoni hija skaduta
 
 #19.10
 theme_xhred_filemanager_edit_html=Edit bħala HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Tnaddaf tad-direttorji tat-trash t
 theme_xhred_filemanager_purge_trash_curr_end=Imnaddaf b'suċċess $1 direttorju.
 theme_xhred_filemanager_purge_trash_all_end=Imnaddaf b'suċċess id-direttorji tat-trash tal-utenti l-oħra kollha.
 theme_error_access_dir_not_allowed=Aċċess miċħud: Il-fajl mhuwiex aċċessibbli
+
+#19.95
+theme_xhred_global_outdated_desc=Verżjoni installata ta' $1 hija skaduta. L-aħħar verżjoni disponibbli hija $2. Jekk jogħġbok aġġorna jew ikklikkja biex tikseb aktar dettalji dwar ir-rilaxx riċenti.

@@ -278,3 +278,6 @@ theme_xhred_filemanager_purge_trash_all_start=Curățarea directoarelor de gunoi
 theme_xhred_filemanager_purge_trash_curr_end=S-a șters cu succes directorul $1.
 theme_xhred_filemanager_purge_trash_all_end=S-au curățat cu succes toate directoarele de gunoi ale celorlalți utilizatori.
 theme_error_access_dir_not_allowed=Acces refuzat: fișierul nu este accesibil
+
+#19.95
+theme_xhred_global_outdated_desc=Versiunea instalată a $1 este învechită. Cea mai recentă versiune disponibilă este $2. Vă rugăm să faceți upgrade sau faceți clic pentru a obține mai multe detalii despre lansarea recentă.

@@ -172,3 +172,6 @@ theme_xhred_filemanager_purge_trash_all_start=Rensa alla andra användares pappe
 theme_xhred_filemanager_purge_trash_curr_end=Katalogen $1 har rensats.
 theme_xhred_filemanager_purge_trash_all_end=Har rensat alla andra användares papperskorgkataloger.
 theme_error_access_dir_not_allowed=Åtkomst nekad: Filen är inte tillgänglig
+
+#19.95
+theme_xhred_global_outdated_desc=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2. Uppgradera eller klicka för att få mer information om den senaste versionen.

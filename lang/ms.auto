@@ -79,7 +79,6 @@ theme_xhred_global_click_here=tekan di sini
 theme_git_patch_incompatible_message=Memasang versi $1 <em>$2</em> ini memerlukan versi $3 dan $5 yang terkini dan/atau belum dirilis untuk berfungsi dengan baik.
 theme_git_patch_incompatible_message_s=Memasang versi $1 <em>$2</em> ini memerlukan versi $3 yang terkini dan/atau belum dirilis untuk berfungsi dengan baik.
 theme_git_patch_incompatible_message_desc=Mungkin terdapat perubahan yang tidak serasi, yang boleh menghalang tema daripada berfungsi seperti yang direka. Meneruskan operasi naik taraf menggunakan UI tidak boleh dilakukan.
-theme_xhred_global_outdated=Versi ini sudah usang
 
 #19.10
 theme_xhred_filemanager_edit_html=Edit sebagai HTML
@@ -674,3 +673,6 @@ theme_xhred_filemanager_purge_trash_all_start=Membersihkan semua direktori sampa
 theme_xhred_filemanager_purge_trash_curr_end=Berjaya membersihkan $1 direktori.
 theme_xhred_filemanager_purge_trash_all_end=Berjaya membersihkan semua direktori sampah pengguna lain.
 theme_error_access_dir_not_allowed=Akses dinafikan: Fail tidak boleh diakses
+
+#19.95
+theme_xhred_global_outdated_desc=Versi $1 yang dipasang sudah lapuk. Versi terkini yang tersedia ialah $2. Sila tingkatkan atau klik untuk mendapatkan butiran lanjut tentang keluaran terbaru.

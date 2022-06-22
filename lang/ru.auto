@@ -481,7 +481,6 @@ theme_xhred_global_click_here=кликните сюда
 theme_git_patch_incompatible_message=Для установки этой версии $1 <em>$2</em> требуется последняя и/или, возможно, неизданная версия $3 и $5.
 theme_git_patch_incompatible_message_s=Для установки этой версии $1 <em>$2</em> требуется последняя и/или, возможно, неизданная версия $3.
 theme_git_patch_incompatible_message_desc=Могут быть несовместимые изменения, которые могут помешать работе темы, как задумано. Продолжение операции обновления с использованием пользовательского интерфейса невозможно.
-theme_xhred_global_outdated=Эта версия устарела
 
 #19.10
 theme_xhred_filemanager_edit_html=Редактировать как HTML
@@ -1067,3 +1066,6 @@ theme_xhred_filemanager_purge_trash_all_start=Очистка всех други
 theme_xhred_filemanager_purge_trash_curr_end=Успешно очищен каталог $1.
 theme_xhred_filemanager_purge_trash_all_end=Успешно очищены каталоги мусора всех других пользователей.
 theme_error_access_dir_not_allowed=Доступ запрещен: файл недоступен
+
+#19.95
+theme_xhred_global_outdated_desc=Установленная версия $1 устарела. Последняя доступная версия: $2. Обновите или нажмите, чтобы получить более подробную информацию о последнем выпуске.

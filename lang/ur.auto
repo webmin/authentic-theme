@@ -695,7 +695,6 @@ theme_xhred_global_click_here=یہاں کلک کریں
 theme_git_patch_incompatible_message=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 and $5 to work properly.
 theme_git_patch_incompatible_message_s=Installing this version of $1 <em>$2</em> requires latest and/or possibly unreleased version of $3 to work properly.
 theme_git_patch_incompatible_message_desc=غیر موافق تبدیلیاں ہو سکتی ہیں، جو تھیم کو ڈیزائن کے مطابق کام کرنے سے روک سکتی ہیں۔ UI کا استعمال کرتے ہوئے اپ گریڈ آپریشن جاری رکھنا ممکن نہیں ہے۔
-theme_xhred_global_outdated=یہ ورژن پرانا ہے
 
 #19.10
 theme_xhred_filemanager_edit_html=HTML کے بطور ترمیم کریں
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=دیگر تمام صارفین ک�
 theme_xhred_filemanager_purge_trash_curr_end=$1 ڈائریکٹری کو کامیابی کے ساتھ صاف کیا گیا۔
 theme_xhred_filemanager_purge_trash_all_end=دیگر تمام صارفین کی کوڑے دان کی ڈائریکٹریوں کو کامیابی کے ساتھ صاف کر دیا گیا۔
 theme_error_access_dir_not_allowed=رسائی سے انکار: فائل قابل رسائی نہیں ہے۔
+
+#19.95
+theme_xhred_global_outdated_desc=$1 کا انسٹال شدہ ورژن پرانا ہے۔ تازہ ترین دستیاب ورژن $2 ہے۔ براہ کرم اپ گریڈ کریں یا حالیہ ریلیز کے بارے میں مزید تفصیلات حاصل کرنے کے لیے کلک کریں۔

@@ -695,7 +695,6 @@ theme_xhred_global_click_here=اینجا کلیک کنید
 theme_git_patch_incompatible_message=نصب این نسخه از $1 <em>$2</em> نیاز به جدیدترین و یا احتمالاً انتشار نشده $3 و $5 مناسب دارد.
 theme_git_patch_incompatible_message_s=نصب این نسخه از $1 <em>$2</em> نیاز به آخرین نسخه و یا احتمالاً انتشار نشده $3 به درستی دارد.
 theme_git_patch_incompatible_message_desc=ممکن است تغییرات ناسازگاری وجود داشته باشد که می‌تواند مانع از کارکرد طرح زمینه شود. ادامه عملیات ارتقاء با استفاده از رابط کاربری امکان پذیر نیست
-theme_xhred_global_outdated=این نسخه منسوخ شده است
 
 #19.10
 theme_xhred_filemanager_edit_html=به عنوان HTML ویرایش کنید
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=پاک کردن دایرکتوری
 theme_xhred_filemanager_purge_trash_curr_end=دایرکتوری $1 با موفقیت پاک شد.
 theme_xhred_filemanager_purge_trash_all_end=همه دایرکتوری های سطل زباله کاربران دیگر با موفقیت پاک شد.
 theme_error_access_dir_not_allowed=دسترسی ممنوع شد: فایل قابل دسترسی نیست
+
+#19.95
+theme_xhred_global_outdated_desc=نسخه نصب شده $1 قدیمی است. آخرین نسخه موجود $2 است. لطفاً برای دریافت جزئیات بیشتر درباره نسخه اخیر، آن را ارتقا دهید یا کلیک کنید.

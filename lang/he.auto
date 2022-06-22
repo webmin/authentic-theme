@@ -695,7 +695,6 @@ theme_xhred_global_click_here=לחץ כאן
 theme_git_patch_incompatible_message=התקנת גרסה זו של $1 <em>$2</em> מחייבת גרסה אחרונה ו/או אולי לא פורסמה של $3 ו- $5 כדי לעבוד כראוי.
 theme_git_patch_incompatible_message_s=התקנת גרסה זו של $1 <em>$2</em> מחייבת גרסה אחרונה ו/או אולי לא פורסמה של $3 כדי לעבוד כראוי.
 theme_git_patch_incompatible_message_desc=ייתכן שיהיו שינויים לא תואמים, שעלולים למנוע מהנושא לפעול כפי שתוכנן. המשך פעולת השדרוג באמצעות ממשק המשתמש אינו אפשרי.
-theme_xhred_global_outdated=גרסה זו אינה מיושנת
 
 #19.10
 theme_xhred_filemanager_edit_html=ערוך כ- HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=ניקוי כל ספריות הא�
 theme_xhred_filemanager_purge_trash_curr_end=נמחק בהצלחה את ספריית $1.
 theme_xhred_filemanager_purge_trash_all_end=ניקה בהצלחה את כל ספריות האשפה של המשתמשים האחרים.
 theme_error_access_dir_not_allowed=הגישה נדחתה: הקובץ אינו נגיש
+
+#19.95
+theme_xhred_global_outdated_desc=הגרסה המותקנת של $1 מיושנת. הגרסה האחרונה הזמינה היא $2. שדרג או לחץ כדי לקבל פרטים נוספים על הגרסה האחרונה.

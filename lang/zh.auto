@@ -455,3 +455,6 @@ theme_xhred_filemanager_purge_trash_all_start=清除所有其他用户的垃圾�
 theme_xhred_filemanager_purge_trash_curr_end=已成功清除 $1 目录。
 theme_xhred_filemanager_purge_trash_all_end=已成功清除所有其他用户的垃圾目录。
 theme_error_access_dir_not_allowed=访问被拒绝：文件不可访问
+
+#19.95
+theme_xhred_global_outdated_desc=已安装的 $1 版本已过时。最新可用版本是 $2。请升级或单击以获取有关最新版本的更多详细信息。

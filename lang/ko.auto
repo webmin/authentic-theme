@@ -695,7 +695,6 @@ theme_xhred_global_click_here=여기를 클릭하십시오
 theme_git_patch_incompatible_message=이 $1 <em>$2</em> 버전을 설치하려면 $3 및 $5의 최신 및/또는 미공개 버전이 제대로 작동해야합니다.
 theme_git_patch_incompatible_message_s=이 $1 <em>$2</em> 버전을 설치하려면 $3의 최신 및/또는 출시되지 않은 버전이 제대로 작동해야합니다.
 theme_git_patch_incompatible_message_desc=테마가 설계된 대로 작동하지 않을 수 있는 호환되지 않는 변경 사항이 있을 수 있습니다. UI를 사용하여 업그레이드 작업을 계속할 수 없습니다.
-theme_xhred_global_outdated=이 버전은 구식입니다
 
 #19.10
 theme_xhred_filemanager_edit_html=HTML로 편집
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=다른 모든 사용자의 휴지�
 theme_xhred_filemanager_purge_trash_curr_end=$1 디렉터리를 성공적으로 제거했습니다.
 theme_xhred_filemanager_purge_trash_all_end=다른 모든 사용자의 휴지통 디렉토리를 성공적으로 제거했습니다.
 theme_error_access_dir_not_allowed=액세스 거부: 파일에 액세스할 수 없습니다
+
+#19.95
+theme_xhred_global_outdated_desc=설치된 버전 $1이(가) 오래되었습니다. 사용 가능한 최신 버전은 $2입니다. 최신 릴리스에 대한 자세한 내용을 보려면 업그레이드하거나 클릭하십시오.

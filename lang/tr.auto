@@ -695,7 +695,6 @@ theme_xhred_global_click_here=buraya Tıkla
 theme_git_patch_incompatible_message=$1 <em>$2</em> sürümünün yüklenmesi için düzgün çalışması için $3 ve $5 'un en son ve/veya muhtemelen yayınlanmamış sürümü gerekir.
 theme_git_patch_incompatible_message_s=Bu $1 <em>$2</em> sürümünü yüklemek için düzgün çalışabilmek için $3 'un en son ve/veya muhtemelen yayınlanmamış sürümü gerekir.
 theme_git_patch_incompatible_message_desc=Temanın tasarlandığı gibi çalışmasını engelleyebilecek uyumsuz değişiklikler olabilir. UI kullanarak yükseltme işlemine devam etmek mümkün değildir.
-theme_xhred_global_outdated=Bu sürüm eski
 
 #19.10
 theme_xhred_filemanager_edit_html=HTML olarak düzenle
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=Diğer tüm kullanıcıların çö
 theme_xhred_filemanager_purge_trash_curr_end=$1 dizini başarıyla temizlendi.
 theme_xhred_filemanager_purge_trash_all_end=Diğer tüm kullanıcıların çöp dizinleri başarıyla temizlendi.
 theme_error_access_dir_not_allowed=Erişim reddedildi: Dosyaya erişilemiyor
+
+#19.95
+theme_xhred_global_outdated_desc=$1'in yüklü sürümü güncel değil. Kullanılabilir en son sürüm $2'dir. Lütfen güncelleyin veya son sürüm hakkında daha fazla bilgi almak için tıklayın.

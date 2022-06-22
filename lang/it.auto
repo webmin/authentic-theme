@@ -85,3 +85,6 @@ theme_xhred_filemanager_purge_trash_all_start=Eliminazione di tutte le directory
 theme_xhred_filemanager_purge_trash_curr_end=Directory $1 eliminata correttamente.
 theme_xhred_filemanager_purge_trash_all_end=Eliminazione riuscita di tutte le directory del cestino degli altri utenti.
 theme_error_access_dir_not_allowed=Accesso negato: il file non è accessibile
+
+#19.95
+theme_xhred_global_outdated_desc=La versione installata di $1 è obsoleta. L'ultima versione disponibile è $2. Si prega di aggiornare o fare clic per ottenere maggiori dettagli sulla versione recente.

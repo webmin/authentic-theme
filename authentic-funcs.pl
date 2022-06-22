@@ -589,7 +589,14 @@ sub product_version_update
                                     $software_versions_remote->{'usermin'},
                                     $software_versions_remote->{'virtual-server'},
                                     $software_versions_remote->{'server-manager'},
-                                    $software_versions_remote->{'csf'} || '14.11');
+                                    $software_versions_remote->{'csf'});
+    my $prodver =
+      $p eq "w" ? ["Webmin",                           $wv] :
+      $p eq "u" ? ["Usermin",                          $uv] :
+      $p eq "v" ? ["Virtualmin",                       $vv] :
+      $p eq "c" ? ["Cloudmin",                         $cv] :
+      $p eq "f" ? ["ConfigServer Security & Firewall", $fv] :
+      "";
 
     my $vc = $v;
     if ($vc && $vc =~ /(\.).*?(\.)/) {
@@ -601,9 +608,11 @@ sub product_version_update
         ($p eq "c" && $vc < $cv) ||
         ($p eq "f" && $vc < $fv))
     {
-        return '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
-          $theme_text{'theme_xhred_global_outdated'} .
-          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span>';
+        return '<a href="https://forum.virtualmin.com/search?q=' .
+          $prodver->[0] . '%20in%3Atitle%20%23news%20order%3Alatest" target="_blank">' .
+          '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
+          theme_text('theme_xhred_global_outdated_desc', $prodver->[0], $prodver->[1]) .
+          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span></a>';
     } else {
         return $v;
     }

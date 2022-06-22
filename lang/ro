@@ -686,7 +686,6 @@ theme_xhred_global_empty=Gol
 theme_xhred_global_click_here=clic aici
 theme_git_patch_incompatible_message=Instalarea acestei versiuni $1 <em>$2</em> necesită ultima și/sau o posibilă versiune nelansată $3 sau $5 pentru a funcţiona corect.
 theme_git_patch_incompatible_message_s=Instalarea acestei versiuni $1 <em>$2</em> necesită ultima și/sau o posibilă versiune nelansată $3 pentru a funcţiona corect.
-theme_xhred_global_outdated=Această versiune este învechită
 
 #19.10
 theme_xhred_filemanager_edit_html=Editează ca HTML

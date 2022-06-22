@@ -695,7 +695,6 @@ theme_xhred_global_click_here=點擊這裡
 theme_git_patch_incompatible_message=安裝此版本的$1 <em>$2</em>需要最新的和/或可能未發布的$3和$5版本才能正常工作。
 theme_git_patch_incompatible_message_s=安裝此版本的$1 <em>$2</em>需要最新的和/或可能未發布的$3版本才能正常工作。
 theme_git_patch_incompatible_message_desc=可能存在不兼容的更改，這可能會阻止主題按設計工作。無法使用 UI 繼續升級操作。
-theme_xhred_global_outdated=此版本已過時
 
 #19.10
 theme_xhred_filemanager_edit_html=編輯為HTML
@@ -1289,3 +1288,6 @@ theme_xhred_filemanager_purge_trash_all_start=清除所有其他用戶的垃圾�
 theme_xhred_filemanager_purge_trash_curr_end=已成功清除 $1 目錄。
 theme_xhred_filemanager_purge_trash_all_end=已成功清除所有其他用戶的垃圾目錄。
 theme_error_access_dir_not_allowed=訪問被拒絕：文件不可訪問
+
+#19.95
+theme_xhred_global_outdated_desc=已安裝的 $1 版本已過時。最新可用版本是 $2。請升級或單擊以獲取有關最新版本的更多詳細信息。
