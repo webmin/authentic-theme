@@ -6,6 +6,8 @@
 * Fix to display upload progress instantaneously in File Manager
 * Fix to unlock controls when simply closing target conflict modal in File Manager
 * Fix safe user breadcrumb navigation in File Manager
+* Fix to never log passwords and passphrases in File Manager
+* Fix to prevent showing successful alert on command failure in File Manager
 * Fix to improve table header link buttons in mobile mode
 * Fix to improve a message about expired versions on the dashboard
 * Fix config highlight for Nginx
