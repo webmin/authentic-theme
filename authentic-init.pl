@@ -656,10 +656,10 @@ sub embed_footer
 
 sub sysstats_available
 {
-    return ($http_x_url !~ /\/virtual-server\/pro\/history.cgi/ &&
-            $http_x_url !~ /\/server-manager\/bwgraph.cgi/ &&
-            $http_x_url !~ /\/server-manager\/history.cgi/ &&
-            $http_x_url !~ /\/server-manager\/one_history.cgi/) ?
+    return ($http_x_url !~ /\/virtual-server\/pro\/history\.cgi/ &&
+            $http_x_url !~ /\/server-manager\/bwgraph\.cgi/ &&
+            $http_x_url !~ /\/server-manager\/history\.cgi/ &&
+            $http_x_url !~ /\/server-manager\/one_history\.cgi/) ?
       1 :
       0;
 }
