@@ -515,12 +515,6 @@ sub embed_css_night_rider
     }
 }
 
-sub embed_js_timeplot
-{
-    print ' <script src="' . $theme_webprefix . '/unauthenticated/js/timeplot.' .
-      (theme_debug_mode() ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
-}
-
 sub embed_js_bundle
 {
     print ' <script src="' .
