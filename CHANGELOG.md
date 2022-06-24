@@ -1,13 +1,19 @@
 ## Changelog
 
+#### Version 19.95.1 (June 25, 2022)
+* Fix bandwidth graphs page in Cloudmin
+* Fix statuses in navigation menu in Cloudmin
+* Fix opening wrong target in Cloudmin
+* Fix correctly selecting active server/machine in navigation menu for Virtualmin and Cloudmin
+* Fix to never log passwords and passphrases in File Manager
+* Fix to prevent showing successful alert on command failure in File Manager
+
 #### Version 19.95 (June 23, 2022)
 * Fix pasting files on conflicting targets in File Manager
 * Fix failing on moving to and clearing trash in File Manager
 * Fix to display upload progress instantaneously in File Manager
 * Fix to unlock controls when simply closing target conflict modal in File Manager
 * Fix safe user breadcrumb navigation in File Manager
-* Fix to never log passwords and passphrases in File Manager
-* Fix to prevent showing successful alert on command failure in File Manager
 * Fix to improve table header link buttons in mobile mode
 * Fix to improve a message about expired versions on the dashboard
 * Fix config highlight for Nginx
@@ -27,10 +33,11 @@
 * Fix scroll bar visibility inside drop-down list
 * Fix default module selection in Usermin
 
+<!--- separator --->
+
 #### Version 19.93.1 (May 23, 2022)
 * Fix contrast ratio for non-default palettes
 
-<!--- separator --->
 
 #### Version 19.93 (May 22, 2022)
 * Fix broken colors for minified bundles (underlying compiler util issue)
