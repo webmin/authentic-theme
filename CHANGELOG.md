@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 19.95.2 (June 29, 2022)
+* Fix color palettes contrast ratio
+* Fix on hover color for active links in navigation menu
+* Fix to force full backup level with _zip_ compression format in Virtualmin
+
 #### Version 19.95.1 (June 25, 2022)
 * Fix bandwidth graphs page in Cloudmin
 * Fix statuses in navigation menu in Cloudmin
