@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=Sarbidea ukatua: fitxategia ez da eskuragarri
 
 #19.95
 theme_xhred_global_outdated_desc=$1 instalatutako bertsioa zaharkituta dago. Eskuragarri dagoen azken bertsioa $2 da. Mesedez, bertsio berritu edo egin klik azken bertsioari buruzko xehetasun gehiago lortzeko.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Mantendu <tt>kontrola</tt> tekla sakatuta hautatzerakoan
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Mantendu <tt>komandoa</tt> tekla sakatuta hautatzerakoan

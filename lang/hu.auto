@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=Hozzáférés megtagadva: A fájl nem érhet�
 
 #19.95
 theme_xhred_global_outdated_desc=A(z) $1 telepített verziója elavult. A legújabb elérhető verzió a $2. Kérjük, frissítsen, vagy kattintson a gombra, ha további részleteket szeretne megtudni a legutóbbi kiadásról.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Tartsa lenyomva a <tt>control</tt> gombot a kiválasztás során
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tartsa lenyomva a <tt>command</tt> gombot a kiválasztás során

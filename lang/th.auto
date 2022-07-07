@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=การเข้าถึงถูกปฏ
 
 #19.95
 theme_xhred_global_outdated_desc=เวอร์ชันที่ติดตั้งของ $1 ล้าสมัยแล้ว เวอร์ชันล่าสุดที่มีคือ $2 โปรดอัปเกรดหรือคลิกเพื่อดูรายละเอียดเพิ่มเติมเกี่ยวกับรุ่นล่าสุด
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=กดปุ่ม <tt>control</tt> ค้างไว้ระหว่างการเลือก
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=กดปุ่ม <tt>command</tt> ค้างไว้ระหว่างการเลือก

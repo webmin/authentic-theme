@@ -458,3 +458,5 @@ theme_error_access_dir_not_allowed=访问被拒绝：文件不可访问
 
 #19.95
 theme_xhred_global_outdated_desc=已安装的 $1 版本已过时。最新可用版本是 $2。请升级或单击以获取有关最新版本的更多详细信息。
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=在选择期间按住 <tt>control</tt> 键
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=在选择期间按住 <tt>command</tt> 键

@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=액세스 거부: 파일에 액세스할 수 
 
 #19.95
 theme_xhred_global_outdated_desc=설치된 버전 $1이(가) 오래되었습니다. 사용 가능한 최신 버전은 $2입니다. 최신 릴리스에 대한 자세한 내용을 보려면 업그레이드하거나 클릭하십시오.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=선택하는 동안 <tt>control</tt> 키를 누른 상태로 유지
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=선택하는 동안 <tt>command</tt> 키를 누른 상태로 유지

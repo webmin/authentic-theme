@@ -158,3 +158,5 @@ theme_error_access_dir_not_allowed=Tilgang nektet: Filen er ikke tilgjengelig
 
 #19.95
 theme_xhred_global_outdated_desc=Installert versjon av $1 er utdatert. Siste tilgjengelige versjon er $2. Vennligst oppgrader eller klikk for å få mer informasjon om nylig utgivelse.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hold <tt>kontroll</tt>-tasten nede under valget
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold <tt>kommando</tt>-tasten nede under valget

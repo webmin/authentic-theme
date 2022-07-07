@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=Aċċess miċħud: Il-fajl mhuwiex aċċessib
 
 #19.95
 theme_xhred_global_outdated_desc=Verżjoni installata ta' $1 hija skaduta. L-aħħar verżjoni disponibbli hija $2. Jekk jogħġbok aġġorna jew ikklikkja biex tikseb aktar dettalji dwar ir-rilaxx riċenti.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Żomm iċ-ċavetta <tt>kontroll</tt> ippressata waqt l-għażla
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Żomm it-tasti <tt>kmand</tt> ippressat waqt l-għażla

@@ -1133,3 +1133,5 @@ theme_error_access_dir_not_allowed=Přístup odepřen: Soubor není přístupný
 
 #19.95
 theme_xhred_global_outdated_desc=Nainstalovaná verze $1 je zastaralá. Poslední dostupná verze je $2. Upgradujte nebo klikněte a získejte další podrobnosti o nedávném vydání.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Během výběru podržte klávesu <tt>control</tt> stisknutou
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Během výběru podržte klávesu <tt>command</tt> stisknutou

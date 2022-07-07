@@ -281,3 +281,5 @@ theme_error_access_dir_not_allowed=Acces refuzat: fișierul nu este accesibil
 
 #19.95
 theme_xhred_global_outdated_desc=Versiunea instalată a $1 este învechită. Cea mai recentă versiune disponibilă este $2. Vă rugăm să faceți upgrade sau faceți clic pentru a obține mai multe detalii despre lansarea recentă.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Țineți apăsată tasta <tt>control</tt> în timpul selecției
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Țineți apăsată tasta <tt>comandă</tt> în timpul selecției

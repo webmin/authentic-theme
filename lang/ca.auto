@@ -607,3 +607,5 @@ theme_error_access_dir_not_allowed=Accés denegat: no es pot accedir al fitxer
 
 #19.95
 theme_xhred_global_outdated_desc=La versió instal·lada de $1 està obsoleta. L'última versió disponible és $2. Si us plau, actualitzeu o feu clic per obtenir més detalls sobre el llançament recent.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Mantingueu premuda la tecla <tt>control</tt> durant la selecció
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Mantingueu premuda la tecla <tt>ordre</tt> durant la selecció

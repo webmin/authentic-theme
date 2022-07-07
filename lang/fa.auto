@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=دسترسی ممنوع شد: فایل قاب
 
 #19.95
 theme_xhred_global_outdated_desc=نسخه نصب شده $1 قدیمی است. آخرین نسخه موجود $2 است. لطفاً برای دریافت جزئیات بیشتر درباره نسخه اخیر، آن را ارتقا دهید یا کلیک کنید.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=در حین انتخاب، کلید <tt>control</tt> را فشار دهید
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=در حین انتخاب، کلید <tt>command</tt> را فشار دهید

@@ -88,3 +88,5 @@ theme_error_access_dir_not_allowed=Accesso negato: il file non è accessibile
 
 #19.95
 theme_xhred_global_outdated_desc=La versione installata di $1 è obsoleta. L'ultima versione disponibile è $2. Si prega di aggiornare o fare clic per ottenere maggiori dettagli sulla versione recente.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Tenere premuto il tasto <tt>control</tt> durante la selezione
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tenere premuto il tasto <tt>comando</tt> durante la selezione

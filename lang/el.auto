@@ -1291,3 +1291,5 @@ theme_error_access_dir_not_allowed=Δεν επιτρέπεται η πρόσβα
 
 #19.95
 theme_xhred_global_outdated_desc=Η εγκατεστημένη έκδοση του $1 είναι ξεπερασμένη. Η τελευταία διαθέσιμη έκδοση είναι το $2. Κάντε αναβάθμιση ή κάντε κλικ για να λάβετε περισσότερες λεπτομέρειες σχετικά με την πρόσφατη κυκλοφορία.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Κρατήστε πατημένο το πλήκτρο <tt>control</tt> κατά την επιλογή
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Κρατήστε πατημένο το πλήκτρο <tt>εντολή</tt> κατά την επιλογή

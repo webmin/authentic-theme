@@ -1209,3 +1209,5 @@ theme_error_access_dir_not_allowed=Odmowa dostępu: plik jest niedostępny
 
 #19.95
 theme_xhred_global_outdated_desc=Zainstalowana wersja $1 jest nieaktualna. Najnowsza dostępna wersja to $2. Uaktualnij lub kliknij, aby uzyskać więcej informacji o ostatniej wersji.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Trzymaj wciśnięty klawisz <tt>control</tt> podczas zaznaczania
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Przytrzymaj klawisz <tt>polecenie</tt> podczas zaznaczania

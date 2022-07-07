@@ -191,3 +191,5 @@ theme_error_access_dir_not_allowed=Zugriff verweigert: Auf die Datei kann nicht 
 
 #19.95
 theme_xhred_global_outdated_desc=Die installierte Version von $1 ist veraltet. Die neueste verfügbare Version ist $2. Bitte führen Sie ein Upgrade durch oder klicken Sie hier, um weitere Informationen zur aktuellen Version zu erhalten.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Halten Sie während der Auswahl die <tt>Steuerung</tt>-Taste gedrückt
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Halten Sie während der Auswahl die <tt>Befehlstaste</tt> gedrückt

@@ -676,3 +676,5 @@ theme_error_access_dir_not_allowed=Akses dinafikan: Fail tidak boleh diakses
 
 #19.95
 theme_xhred_global_outdated_desc=Versi $1 yang dipasang sudah lapuk. Versi terkini yang tersedia ialah $2. Sila tingkatkan atau klik untuk mendapatkan butiran lanjut tentang keluaran terbaru.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Pastikan kekunci <tt>kawalan</tt> ditekan semasa pemilihan
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pastikan kekunci <tt>arahan</tt> ditekan semasa pemilihan
