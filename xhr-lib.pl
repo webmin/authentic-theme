@@ -31,20 +31,27 @@ sub xhr
             my $param  = $in{'param'};
             my @menu   = list_combined_webmin_menu(undef, \%in, $module);
 
-            # Returns a list of allowed domain related links
+            # Returns a list of allowed domain/server related links
             if ($subtype eq 'links') {
-                my @submenu = map {($_->{'link'} =~ /.*?$module.*\/(\w+\.cgi).*?$param=/)}
-                  array_flatten(grep {$_->[0]->{'link'}} map {$_->{'members'}} @menu);
+                my @submenu = map {
+                    $_->{'link'}   =~ /.*?$module.*\/(\w+\.cgi).*?$param=/,
+                      $_->{'link'} =~ /(\/.*log.*\/.*)/,
+                      $_->{'link'} =~ /(\/.*php.*\/.*)/,
+                      $_->{'link'} =~ /(\/.*spam.*\/.*)/,
+                      $_->{'link'} =~ /(\/.*apache.*\/.*)/,
+                      $_->{'link'} =~ /(\/.*virtualmin-.*\/.*)/
+                } array_flatten(grep {$_->[0]->{'link'}} map {$_->{'members'}} @menu);
+
+                my @fmmenu = map {$_->{'link'} =~ /(filemin.*)/} @menu;
                 @menu         = map {$_->{'link'} =~ /.*?$module.*\/(\w+\.cgi).*?$param=/} @menu;
-                @menu         = (@menu, @submenu);
+                @menu         = (@menu, @submenu, @fmmenu);
                 $data{'menu'} = \@menu;
             }
-
         }
 
         # Returns default goto if set
         if ($action eq 'goto') {
-            
+
             # Validate if default goto is allowed for the given user
             my $mod_def = get_default_module();
 
