@@ -420,7 +420,7 @@ theme_xhred_global_none=Tidak ada
 theme_xhred_global_yes=Ya
 theme_xhred_global_no=Tidak
 
-theme_xhred_filemanager_new_tab=Tambahkan Tab Baru (Ctrl+Space)
+theme_xhred_filemanager_new_tab=Tambahkan Tab Baru (Ctrl + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">Tidak menemukan hasil</span><br>Coba pencarian lain
 
 theme_xhred_filemanager_buffer_error=Gagal menyisipkan ke buffer - izin ditolak.
@@ -599,7 +599,7 @@ theme_xhred_encoding_manually_set=Atur encoding secara manual
 theme_xhred_filemanager_save_to_change_encoding=Berkas harus disimpan, agar encoding dapat diubah.
 
 #18.49
-theme_xhred_filemanager_user_switch=Beralih ke pengguna (Ctrl+M)
+theme_xhred_filemanager_user_switch=Beralih ke pengguna (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Dengan memilih nama pengguna yang tercantum di bawah ini, Anda akan beralih operasi lebih lanjut untuk dilakukan sebagai pengguna ini.
 theme_xhred_filemanager_user_switch_description_back=Untuk kembali ke mode default pilih opsi pertama yang dipilih.
 theme_xhred_filemanager_user_switch_current_user=Pengguna saat ini

@@ -423,7 +423,7 @@ theme_xhred_global_none=هیچ یک
 theme_xhred_global_yes=آره
 theme_xhred_global_no=نه
 
-theme_xhred_filemanager_new_tab=برگه جدید (Ctrl+Space) اضافه کنید
+theme_xhred_filemanager_new_tab=برگه جدید (Ctrl + Space) اضافه کنید
 theme_xhred_datatable_no_search_results=<span class="h5">نتیجه ای یافت نشد</span> <br> جستجوی متفاوتی را امتحان کنید
 
 theme_xhred_filemanager_buffer_error=چسباندن پرونده ها به بافر انجام نشد - اجازه رد شد.
@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=رمزگذاری را به صورت دستی �
 theme_xhred_filemanager_save_to_change_encoding=برای اینکه امکان تغییر رمزگذاری فراهم شود ، باید پرونده را ذخیره کنید.
 
 #18.49
-theme_xhred_filemanager_user_switch=تغییر به کاربر (Ctrl+M)
+theme_xhred_filemanager_user_switch=تغییر به کاربر (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=با انتخاب نام کاربری ذکر شده در زیر ، کارهای دیگری را انجام می دهید تا به عنوان این کاربر انجام شود.
 theme_xhred_filemanager_user_switch_description_back=برای بازگشت به حالت پیش فرض گزینه اول را انتخاب کنید.
 theme_xhred_filemanager_user_switch_current_user=کاربر فعلی
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=بزرگنمایی/بزرگنمایی
 theme_xhred_global_prev_arrow_left=قبلی (پیکان سمت چپ)
 theme_xhred_global_next_arrow_right=بعدی (فلش سمت راست)
 
-settings_reset_cache_tooltip=با کلیک کردن ، حافظه نهانگاه را از هر صفحه بازنشانی کنید <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> کلید اصلی
-settings_update_theme_tooltip=بروزرسانی موضوع را از هر صفحه اجرا کنید. با کلیک روی آخرین نسخه توسعه ، بروزرسانی کنید <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> کلید کلید؛ برای نصب جدیدترین پایدار ، از همان دسته کوچک موسیقی جاز بدون کلید متا استفاده کنید
 theme_xhred_clear_cache_initiated=پاک کردن حافظه پنهان و بارگیری مجدد.
 settings_document_title=قالب عنوان سند
 settings_document_title_option_3=مدول
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=ماژول پیش فرض
 
 #19.34
 theme_xhred_search_in_file_open_external=جدا کردن پرونده به ویرایشگر جدا
-theme_xhred_path_to_console=مسیر فعلی را در ترمینال <tt> (Alt+Shift+K) باز کنید
+theme_xhred_path_to_console=مسیر فعلی را در ترمینال <tt> (Alt + Shift + K) باز کنید
 theme_xhred_filemanager_editor_revert_content=برگرداندن پرونده
 theme_xhred_filemanager_editor_reverting_content=حذف تغییرات و بازگشت به محتوای اصلی فایل.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=احراز هویت دو عاملی برای ور�
 theme_xhred_global_verify=تأیید کنید
 settings_show_terminal_link2=دکمه پوسته فرمان را نشان دهید
 settings_hotkey_shell2=کلید میانبر برای پوسته فرمان
-theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt+Shift+K)</tt> باز کنید
+theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt + Shift + K)</tt> باز کنید
 theme_tooltip_terminal_link2=پوسته فرمان
 
 #19.70

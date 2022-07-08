@@ -599,7 +599,7 @@ theme_xhred_encoding_manually_set=Escriure directament el codi font
 theme_xhred_filemanager_save_to_change_encoding=L'arxiu s'ha de desar prèviament per tal de poder canviar el codi.
 
 #18.49
-theme_xhred_filemanager_user_switch=Canviar a l'usuari (Ctrl+M)
+theme_xhred_filemanager_user_switch=Canviar a l'usuari (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Selecciona un usuari de la llista per tal de treballar amb aquest usuari.
 theme_xhred_filemanager_user_switch_description_back=Per a canviar un altre cop al mode predeterminat selecciona la primera opció.
 theme_xhred_filemanager_user_switch_current_user=Usuari actual

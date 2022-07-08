@@ -598,7 +598,7 @@ theme_xhred_encoding_manually_set=Sett koding manuelt
 theme_xhred_filemanager_save_to_change_encoding=Filen må lagres før koding kan endres.
 
 #18.49
-theme_xhred_filemanager_user_switch=Bytt til bruker (Ctrl+M)
+theme_xhred_filemanager_user_switch=Bytt til bruker (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Ved å velge brukernavnet angitt nedenfor vil påfølgende handlinger/operasjoner bli utført som den brukeren.
 theme_xhred_filemanager_user_switch_description_back=For å bytte tilbake til standardmodus velger du det første alternativet i valglisten.
 theme_xhred_filemanager_user_switch_current_user=Gjeldende bruker
@@ -991,8 +991,6 @@ theme_xhred_global_zoom_in_out=Zoom inn/ut
 theme_xhred_global_prev_arrow_left=Forrige (venstre pil)
 theme_xhred_global_next_arrow_right=Neste (høyre pil)
 
-settings_reset_cache_tooltip=Tilbakestill temabufferen fra hvilken som helst side ved å klikke <br><code>Ctrl + Alt + Meta + ⇧ + R </code><br> hurtigtast
-settings_update_theme_tooltip=Kjør temaoppdatering fra hvilken som helst side. Oppdater til den siste utviklingsversjonen, ved å klikke <br><code>Ctrl + Alt + Meta + ⇧ + U</code><br> hurtigtast; for å installere siste stabile, bruk samme kombinasjon uten Meta-nøkkel
 theme_xhred_clear_cache_initiated=Tømmer cache og laster på nytt.
 settings_document_title=Dokument-tittel format
 settings_document_title_option_3=Modul
@@ -1018,7 +1016,7 @@ settings_usermin_default_module=Standard modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Frakoble filen til separate editor
-theme_xhred_path_to_console=Åpne gjeldende sti i terminal (Alt+Shift+K)
+theme_xhred_path_to_console=Åpne gjeldende sti i terminal (Alt + Shift + K)
 theme_xhred_filemanager_editor_revert_content=Tilbakestill fil
 theme_xhred_filemanager_editor_reverting_content=Dropper endringer og går tilbake til originalt filinnhold.
 
@@ -1133,5 +1131,5 @@ theme_xhred_login_message_2fa=To-faktor autentisering er aktivert for denne bruk
 theme_xhred_global_verify=Verifiser
 settings_show_terminal_link2=VIs knapp for kommandoskall
 settings_hotkey_shell2=Hurtigtast for kommandoskall
-theme_xhred_path_to_console2=Åpne gjeldende sti i kommando-skall <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Åpne gjeldende sti i kommando-skall <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Kommandoskall

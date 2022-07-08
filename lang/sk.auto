@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Manuálne nastavenie kódovania
 theme_xhred_filemanager_save_to_change_encoding=Aby bolo možné zmeniť kódovanie, musí byť súbor uložený.
 
 #18.49
-theme_xhred_filemanager_user_switch=Prepnúť na používateľa (Ctrl+M)
+theme_xhred_filemanager_user_switch=Prepnúť na používateľa (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Výberom nižšie uvedeného používateľského mena prepnete ďalšie operácie, ktoré sa majú vykonávať ako tento užívateľ.
 theme_xhred_filemanager_user_switch_description_back=Ak chcete prepnúť späť na predvolený režim, vyberte prvú možnosť vo výbere.
 theme_xhred_filemanager_user_switch_current_user=Súčasný užívateľ
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Priblíženie/oddialenie
 theme_xhred_global_prev_arrow_left=Predchádzajúci (šípka doľava)
 theme_xhred_global_next_arrow_right=Ďalej (šípka vpravo)
 
-settings_reset_cache_tooltip=Kliknutím na ikonu obnovíte vyrovnávaciu pamäť témy z ľubovoľnej stránky <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> klávesové skratky
-settings_update_theme_tooltip=Spustite aktualizáciu témy z ľubovoľnej stránky. Kliknutím na aktualizujte najnovšiu vývojovú verziu <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> klávesové skratky; Ak chcete nainštalovať najnovšiu stajňu, použite rovnaký zoznam bez kľúča Meta
 theme_xhred_clear_cache_initiated=Vymazanie vyrovnávacej pamäte a opätovné načítanie.
 settings_document_title=Formát názvu dokumentu
 settings_document_title_option_3=modul
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Predvolený modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Odpojte súbor do samostatného editora
-theme_xhred_path_to_console=Otvorte aktuálnu cestu v termináli <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Otvorte aktuálnu cestu v termináli <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Vrátiť súbor
 theme_xhred_filemanager_editor_reverting_content=Zrušenie zmien a návrat k pôvodnému obsahu súboru.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=Pre tohto používateľa bolo povolené dvojfaktor
 theme_xhred_global_verify=Overiť
 settings_show_terminal_link2=Zobraziť tlačidlo príkazového shellu
 settings_hotkey_shell2=Klávesová skratka pre príkazový shell
-theme_xhred_path_to_console2=Otvorte aktuálnu cestu v príkazovom shell <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Otvorte aktuálnu cestu v príkazovom shell <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Príkazová schránka
 
 #19.70

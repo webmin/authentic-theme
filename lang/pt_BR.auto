@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Definir codificação manualmente
 theme_xhred_filemanager_save_to_change_encoding=O arquivo deve ser salvo para permitir que a codificação seja alterada.
 
 #18.49
-theme_xhred_filemanager_user_switch=Mudar para usuário (Ctrl+M)
+theme_xhred_filemanager_user_switch=Mudar para usuário (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Ao selecionar o nome de usuário listado abaixo, você alternará outras operações a serem executadas como este usuário.
 theme_xhred_filemanager_user_switch_description_back=Para voltar ao modo padrão, escolha a primeira opção em Selecionar.
 theme_xhred_filemanager_user_switch_current_user=Usuário atual
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Mais/menos zoom
 theme_xhred_global_prev_arrow_left=Anterior (seta para a esquerda)
 theme_xhred_global_next_arrow_right=Avançar (seta para a direita)
 
-settings_reset_cache_tooltip=Redefina o cache do tema de qualquer página, clicando em <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> tecla de atalho
-settings_update_theme_tooltip=Execute a atualização do tema a partir de qualquer página. Atualize para a versão de desenvolvimento mais recente, clicando em <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> tecla de atalho; para instalar o último estável, use o mesmo combo sem a tecla Meta
 theme_xhred_clear_cache_initiated=Limpando o cache e recarregando.
 settings_document_title=Formato do título do documento
 settings_document_title_option_3=Módulo
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Módulo padrão
 
 #19.34
 theme_xhred_search_in_file_open_external=Desanexar arquivo para separar o editor
-theme_xhred_path_to_console=Abra o caminho atual no terminal <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Abra o caminho atual no terminal <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Reverter arquivo
 theme_xhred_filemanager_editor_reverting_content=Eliminando alterações e revertendo para o conteúdo original do arquivo.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=A autenticação de dois fatores foi habilitada pa
 theme_xhred_global_verify=Verificar
 settings_show_terminal_link2=Mostrar botão do shell de comando
 settings_hotkey_shell2=Atalho para shell de comando
-theme_xhred_path_to_console2=Abra o caminho atual no shell de comando <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Abra o caminho atual no shell de comando <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Shell de comando
 
 #19.70

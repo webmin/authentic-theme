@@ -435,7 +435,7 @@ theme_xhred_global_none=None
 theme_xhred_global_yes=Yes
 theme_xhred_global_no=No
 
-theme_xhred_filemanager_new_tab=Add new tab (Ctrl+Space)
+theme_xhred_filemanager_new_tab=Add new tab (Ctrl + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
 
 theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
@@ -626,7 +626,7 @@ theme_xhred_filemanager_save_to_change_encoding=File must be saved, in order to 
 
 
 #18.49
-theme_xhred_filemanager_user_switch=Switch to user (Ctrl+M)
+theme_xhred_filemanager_user_switch=Switch to user (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=By selecting the username listed below, you will switch further operations to be performed as this user.
 theme_xhred_filemanager_user_switch_description_back=To switch back to default mode choose the first option in select.
 theme_xhred_filemanager_user_switch_current_user=Current user
@@ -1039,8 +1039,6 @@ theme_xhred_global_zoom_in_out=Zoom in/out
 theme_xhred_global_prev_arrow_left=Previous (arrow left)
 theme_xhred_global_next_arrow_right=Next (arrow right)
 
-settings_reset_cache_tooltip=Reset theme's cache from any page, by clicking <br><code>Ctrl + Alt + Meta + ⇧ + R</code><br> hotkey
-settings_update_theme_tooltip=Run theme update from any page. Update to the latest development version, by clicking <br><code>Ctrl + Alt + Meta + ⇧ + U</code><br> hotkey; to install latest stable, use same combo without Meta key
 theme_xhred_clear_cache_initiated=Clearing cache and reloading.
 settings_document_title=Document title format
 settings_document_title_option_3=Module
@@ -1068,7 +1066,7 @@ settings_usermin_default_module=Default module
 
 #19.34
 theme_xhred_search_in_file_open_external=Detach file to separate editor
-theme_xhred_path_to_console=Open current path in terminal <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Open current path in terminal <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Revert File
 theme_xhred_filemanager_editor_reverting_content=Dropping changes and reverting to original file content.
 
@@ -1195,7 +1193,7 @@ theme_xhred_login_message_2fa=Two-factor authentication has been enabled for thi
 theme_xhred_global_verify=Verify
 settings_show_terminal_link2=Show command shell button
 settings_hotkey_shell2=Hotkey for command shell
-theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Command shell
 
 

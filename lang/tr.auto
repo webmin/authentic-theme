@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Kodlamayı manuel olarak ayarlama
 theme_xhred_filemanager_save_to_change_encoding=Kodlamanın değiştirilebilmesi için dosya kaydedilmelidir.
 
 #18.49
-theme_xhred_filemanager_user_switch=Kullanıcıya geç (Ctrl+M)
+theme_xhred_filemanager_user_switch=Kullanıcıya geç (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Aşağıda listelenen kullanıcı adını seçerek, bu kullanıcı olarak gerçekleştirilecek diğer işlemleri değiştireceksiniz.
 theme_xhred_filemanager_user_switch_description_back=Varsayılan moda geri dönmek için seçimdeki ilk seçeneği seçin.
 theme_xhred_filemanager_user_switch_current_user=Şu anki kullanıcı
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Yakınlaştırma/uzaklaştırma
 theme_xhred_global_prev_arrow_left=Önceki (sol ok)
 theme_xhred_global_next_arrow_right=Sonraki (sağ ok)
 
-settings_reset_cache_tooltip=Herhangi bir sayfadan temanın önbelleğini sıfırlayın <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> kısayol
-settings_update_theme_tooltip=Herhangi bir sayfadan tema güncellemesini çalıştırın. Öğesini tıklayarak en son geliştirme sürümüne güncelleyin <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> kısayol; son kararlı yüklemek için, Meta anahtar olmadan aynı combo kullanın
 theme_xhred_clear_cache_initiated=Önbelleği temizleme ve yeniden yükleme.
 settings_document_title=Belge başlığı biçimi
 settings_document_title_option_3=modül
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=Bu kullanıcının oturum açması için iki fakt�
 theme_xhred_global_verify=Doğrulayın
 settings_show_terminal_link2=Komut kabuğu düğmesini göster
 settings_hotkey_shell2=Komut kabuğu için kısayol tuşu
-theme_xhred_path_to_console2=Geçerli yolu komut kabuğunda açın <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Geçerli yolu komut kabuğunda açın <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Komut kabuğu
 
 #19.70

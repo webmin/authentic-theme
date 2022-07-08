@@ -423,7 +423,7 @@ theme_xhred_global_none=Κανένας
 theme_xhred_global_yes=Ναί
 theme_xhred_global_no=Οχι
 
-theme_xhred_filemanager_new_tab=Προσθήκη νέας καρτέλας (Ctrl+Space)
+theme_xhred_filemanager_new_tab=Προσθήκη νέας καρτέλας (Ctrl + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">Δεν βρέθηκαν αποτελέσματα</span> <br> Δοκιμάστε μια διαφορετική αναζήτηση
 
 theme_xhred_filemanager_buffer_error=Αποτυχία επικόλλησης αρχείων στο buffer - απορρίφθηκε η άδεια.
@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Μη αυτόματη ρύθμιση κωδι�
 theme_xhred_filemanager_save_to_change_encoding=Το αρχείο πρέπει να αποθηκευτεί, προκειμένου να είναι δυνατή η αλλαγή της κωδικοποίησης.
 
 #18.49
-theme_xhred_filemanager_user_switch=Εναλλαγή σε χρήστη (Ctrl+M)
+theme_xhred_filemanager_user_switch=Εναλλαγή σε χρήστη (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Επιλέγοντας το όνομα χρήστη που αναφέρεται παρακάτω, θα αλλάξετε περαιτέρω ενέργειες που θα εκτελεστούν ως αυτός ο χρήστης.
 theme_xhred_filemanager_user_switch_description_back=Για να επιστρέψετε στην προεπιλεγμένη λειτουργία, επιλέξτε την πρώτη επιλογή στο select.
 theme_xhred_filemanager_user_switch_current_user=Τρέχων χρήστης
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Μεγέθυνση/σμίκρυνση
 theme_xhred_global_prev_arrow_left=Προηγούμενο (αριστερό βέλος)
 theme_xhred_global_next_arrow_right=Επόμενο (βέλος δεξιά)
 
-settings_reset_cache_tooltip=Επαναφέρετε την προσωρινή μνήμη του θέματος από οποιαδήποτε σελίδα, κάνοντας κλικ <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> κλειδί
-settings_update_theme_tooltip=Εκτελέστε ενημέρωση θέματος από οποιαδήποτε σελίδα. Ενημερώστε την τελευταία έκδοση ανάπτυξης, κάνοντας κλικ <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> hotkey; για να εγκαταστήσετε το πιο πρόσφατο σταθερό, χρησιμοποιήστε το ίδιο σύνθετο χωρίς κλειδί Meta
 theme_xhred_clear_cache_initiated=Εκκαθάριση προσωρινής μνήμης και επαναφόρτωση.
 settings_document_title=Μορφή τίτλου εγγράφου
 settings_document_title_option_3=Μονάδα μέτρησης
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Προεπιλεγμένη ενότητα
 
 #19.34
 theme_xhred_search_in_file_open_external=Αποσύνδεση αρχείου σε ξεχωριστό πρόγραμμα επεξεργασίας
-theme_xhred_path_to_console=Ανοίξτε την τρέχουσα διαδρομή στο τερματικό <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Ανοίξτε την τρέχουσα διαδρομή στο τερματικό <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Επαναφορά αρχείου
 theme_xhred_filemanager_editor_reverting_content=Αποβολή αλλαγών και επαναφορά στο αρχικό περιεχόμενο του αρχείου.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=Ο έλεγχος ταυτότητας δύο πα
 theme_xhred_global_verify=Επαληθεύω
 settings_show_terminal_link2=Εμφάνιση κουμπιού κελύφους εντολών
 settings_hotkey_shell2=Hotkey για το κέλυφος εντολών
-theme_xhred_path_to_console2=Ανοίξτε την τρέχουσα διαδρομή στο κέλυφος εντολών <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Ανοίξτε την τρέχουσα διαδρομή στο κέλυφος εντολών <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Κέλυφος εντολών
 
 #19.70

@@ -423,7 +423,7 @@ theme_xhred_global_none=없음
 theme_xhred_global_yes=예
 theme_xhred_global_no=아니
 
-theme_xhred_filemanager_new_tab=새 탭 추가 (Ctrl+Space)
+theme_xhred_filemanager_new_tab=새 탭 추가 (Ctrl + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">결과가 없습니다</span> <br> 다른 검색을 시도하십시오
 
 theme_xhred_filemanager_buffer_error=파일을 버퍼에 붙여 넣지 못했습니다. 권한이 거부되었습니다.
@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=수동으로 인코딩 설정
 theme_xhred_filemanager_save_to_change_encoding=인코딩을 변경하려면 파일을 저장해야합니다.
 
 #18.49
-theme_xhred_filemanager_user_switch=사용자로 전환 (Ctrl+M)
+theme_xhred_filemanager_user_switch=사용자로 전환 (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=아래 나열된 사용자 이름을 선택하면이 사용자로 수행 할 추가 작업이 전환됩니다.
 theme_xhred_filemanager_user_switch_description_back=기본 모드로 다시 전환하려면 select의 첫 번째 옵션을 선택하십시오.
 theme_xhred_filemanager_user_switch_current_user=현재 사용자
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=확대/축소
 theme_xhred_global_prev_arrow_left=이전 (왼쪽 화살표)
 theme_xhred_global_next_arrow_right=다음 (오른쪽 화살표)
 
-settings_reset_cache_tooltip=클릭하여 모든 페이지에서 테마 캐시 재설정 <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> 핫키
-settings_update_theme_tooltip=모든 페이지에서 테마 업데이트를 실행하십시오. 클릭하여 최신 개발 버전으로 업데이트 <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> 핫키; 최신 안정을 설치하려면 메타 키없이 동일한 콤보를 사용하십시오.
 theme_xhred_clear_cache_initiated=캐시 지우기 및 다시로드
 settings_document_title=문서 제목 형식
 settings_document_title_option_3=구성 단위
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=기본 모듈
 
 #19.34
 theme_xhred_search_in_file_open_external=별도의 편집기로 파일 분리
-theme_xhred_path_to_console=터미널에서 현재 경로 열기 <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=터미널에서 현재 경로 열기 <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=파일 되돌리기
 theme_xhred_filemanager_editor_reverting_content=변경 사항을 삭제하고 원래 파일 내용으로 되돌립니다.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=이 사용자가 로그인 할 수 있도록 2 단
 theme_xhred_global_verify=검증
 settings_show_terminal_link2=명령 셸 버튼 표시
 settings_hotkey_shell2=명령 셸용 단축키
-theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=명령 셸
 
 #19.70

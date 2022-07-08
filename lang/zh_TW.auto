@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=放大/縮小
 theme_xhred_global_prev_arrow_left=上一個（向左箭頭）
 theme_xhred_global_next_arrow_right=下一個（向右箭頭）
 
-settings_reset_cache_tooltip=通過單擊從任何頁面重置主題的緩存<br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br>熱鍵
-settings_update_theme_tooltip=從任何頁面運行主題更新。通過單擊更新到最新的開發版本<br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br>熱鍵安裝最新的穩定版，使用不帶Meta鍵的相同組合
 theme_xhred_clear_cache_initiated=清除緩存並重新加載。
 settings_document_title=文件標題格式
 settings_document_title_option_3=模組

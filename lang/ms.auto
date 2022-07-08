@@ -384,8 +384,6 @@ theme_xhred_global_zoom_in_out=Zum masuk/keluar
 theme_xhred_global_prev_arrow_left=Sebelumnya (anak panah kiri)
 theme_xhred_global_next_arrow_right=Seterusnya (anak panah ke kanan)
 
-settings_reset_cache_tooltip=Tetapkan semula cache tema dari mana-mana halaman, dengan mengklik <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> hotkey
-settings_update_theme_tooltip=Jalankan kemas kini tema dari mana-mana halaman. Kemas kini ke versi pengembangan terkini, dengan mengklik <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> hotkey; untuk memasang kandang terbaru, gunakan kombo yang sama tanpa kekunci Meta
 theme_xhred_clear_cache_initiated=Mengosongkan cache dan memuatkan semula.
 settings_document_title=Format tajuk dokumen
 settings_document_title_option_3=Modul
@@ -411,7 +409,7 @@ settings_usermin_default_module=Modul lalai
 
 #19.34
 theme_xhred_search_in_file_open_external=Tanggalkan fail untuk memisahkan editor
-theme_xhred_path_to_console=Buka jalan semasa di terminal <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Buka jalan semasa di terminal <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Kembalikan Fail
 theme_xhred_filemanager_editor_reverting_content=Menjatuhkan perubahan dan kembali ke kandungan fail asal.
 
@@ -526,7 +524,7 @@ theme_xhred_login_message_2fa=Pengesahan dua faktor telah diaktifkan untuk pengg
 theme_xhred_global_verify=Sahkan
 settings_show_terminal_link2=Tunjukkan butang shell arahan
 settings_hotkey_shell2=Hotkey untuk shell arahan
-theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Cengkerang arahan
 
 #19.70

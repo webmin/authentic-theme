@@ -423,7 +423,7 @@ theme_xhred_global_none=Xejn
 theme_xhred_global_yes=Iva
 theme_xhred_global_no=Le
 
-theme_xhred_filemanager_new_tab=Żid tab ġdida (Ctrl+Space)
+theme_xhred_filemanager_new_tab=Żid tab ġdida (Ctrl + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">Ma nstab l-ebda riżultat</span> <br> Ipprova tfittxija differenti
 
 theme_xhred_filemanager_buffer_error=Naqset milli tippejstja l-fajls fil-bafer - permess miċħud.
@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Issettja kodifikazzjoni manwali
 theme_xhred_filemanager_save_to_change_encoding=Il-fajl irid jiġi ssejvjat sabiex il-kodifikazzjoni tinbidel.
 
 #18.49
-theme_xhred_filemanager_user_switch=Aqleb għall-utent (Ctrl+M)
+theme_xhred_filemanager_user_switch=Aqleb għall-utent (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Billi tagħżel il-username elenkat hawn taħt, int ser taqleb aktar operazzjonijiet biex titwettaq bħala dan l-utent.
 theme_xhred_filemanager_user_switch_description_back=Biex terġa 'lura għall-modalità default agħżel l-ewwel għażla f'li tagħżel.
 theme_xhred_filemanager_user_switch_current_user=Utent kurrenti
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Zoom in/out
 theme_xhred_global_prev_arrow_left=Preċedenti (vleġġa xellug)
 theme_xhred_global_next_arrow_right=Wara (vleġġa lemin)
 
-settings_reset_cache_tooltip=Irrisettja l-cache tat-tema minn kwalunkwe paġna, billi tikklikkja <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> hotkey
-settings_update_theme_tooltip=Ħaddem aġġornament tat-tema minn kwalunkwe paġna. Aġġorna għall-aħħar verżjoni tal-iżvilupp, billi tikklikkja <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> hotkey; biex tinstalla l-aħħar stabbli, uża l-istess Combo mingħajr ċavetta Meta
 theme_xhred_clear_cache_initiated=Ikklerjar tal-cache u tagħbija mill-ġdid.
 settings_document_title=Format tat-titlu tad-dokument
 settings_document_title_option_3=Modulu
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Modulu awtomatiku
 
 #19.34
 theme_xhred_search_in_file_open_external=Aqta fajl ma 'editur separat
-theme_xhred_path_to_console=Iftaħ il-passaġġ kurrenti fit-terminal <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Iftaħ il-passaġġ kurrenti fit-terminal <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Irritorna l-Fajl
 theme_xhred_filemanager_editor_reverting_content=Twaqqa 'bidliet u terġa' lura għall-kontenut tal-fajl oriġinali.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=L-awtentikazzjoni b'żewġ fatturi ġiet attivata 
 theme_xhred_global_verify=Ivverifika
 settings_show_terminal_link2=Uri l-buttuna tal-qoxra tal-kmand
 settings_hotkey_shell2=Hotkey għall-qoxra tal-kmand
-theme_xhred_path_to_console2=Iftaħ it-triq kurrenti fil-kmand shell <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Iftaħ it-triq kurrenti fil-kmand shell <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Qoxra tal-kmand
 
 #19.70

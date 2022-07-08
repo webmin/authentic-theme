@@ -446,7 +446,7 @@ theme_xhred_encoding_manually_set=Ručně nastavit kódování
 theme_xhred_filemanager_save_to_change_encoding=Aby bylo možné změnit kódování, musí být soubor uložen.
 
 #18.49
-theme_xhred_filemanager_user_switch=Přepnout na uživatele (Ctrl+M)
+theme_xhred_filemanager_user_switch=Přepnout na uživatele (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Výběrem níže uvedeného uživatelského jména přepnete další operace, které budou prováděny jako tento uživatel.
 theme_xhred_filemanager_user_switch_description_back=Chcete-li přepnout zpět do výchozího režimu, vyberte první možnost ve výběru.
 theme_xhred_filemanager_user_switch_current_user=Současný uživatel
@@ -842,8 +842,6 @@ theme_xhred_global_zoom_in_out=Přiblížení/oddálení
 theme_xhred_global_prev_arrow_left=Předchozí (šipka doleva)
 theme_xhred_global_next_arrow_right=Další (šipka vpravo)
 
-settings_reset_cache_tooltip=Obnovte mezipaměť motivu z libovolné stránky kliknutím na <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> hotkey
-settings_update_theme_tooltip=Spusťte aktualizaci motivu z libovolné stránky. Aktualizujte na nejnovější vývojovou verzi kliknutím <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> hotkey; Chcete-li nainstalovat nejnovější stabilní, použijte stejné kombinace bez klíče Meta
 theme_xhred_clear_cache_initiated=Vymazání mezipaměti a opětovné načtení.
 settings_document_title=Formát názvu dokumentu
 settings_document_title_option_3=Modul
@@ -869,7 +867,7 @@ settings_usermin_default_module=Výchozí modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Odpojte soubor do samostatného editoru
-theme_xhred_path_to_console=Otevřete aktuální cestu v terminálu <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Otevřete aktuální cestu v terminálu <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Vrátit soubor
 theme_xhred_filemanager_editor_reverting_content=Přetažení změn a návrat k původnímu obsahu souboru.
 
@@ -984,7 +982,7 @@ theme_xhred_login_message_2fa=Pro přihlášení tohoto uživatele bylo povoleno
 theme_xhred_global_verify=Ověřit
 settings_show_terminal_link2=Zobrazit tlačítko příkazového prostředí
 settings_hotkey_shell2=Klávesová zkratka pro příkazový shell
-theme_xhred_path_to_console2=Otevřete aktuální cestu v příkazovém prostředí <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Otevřete aktuální cestu v příkazovém prostředí <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Příkazový shell
 
 #19.70

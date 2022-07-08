@@ -491,7 +491,7 @@ theme_xhred_encoding_manually_set=Codering handmatig instellen
 theme_xhred_filemanager_save_to_change_encoding=Bestand moet worden opgeslagen om codering te kunnen wijzigen.
 
 #18.49
-theme_xhred_filemanager_user_switch=Overschakelen naar gebruiker (Ctrl+M)
+theme_xhred_filemanager_user_switch=Overschakelen naar gebruiker (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Door de onderstaande gebruikersnaam te selecteren, schakelt u over naar andere bewerkingen die als deze gebruiker moeten worden uitgevoerd.
 theme_xhred_filemanager_user_switch_description_back=Kies de eerste optie in selecteren om terug te schakelen naar de standaardmodus.
 theme_xhred_filemanager_user_switch_current_user=Huidige gebruiker
@@ -887,8 +887,6 @@ theme_xhred_global_zoom_in_out=Zoom in/uit
 theme_xhred_global_prev_arrow_left=Vorige (pijl links)
 theme_xhred_global_next_arrow_right=Volgende (pijl rechts)
 
-settings_reset_cache_tooltip=Reset de cache van het thema vanaf elke pagina door op te klikken <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> sneltoets
-settings_update_theme_tooltip=Voer thema-updates uit vanaf elke pagina. Update naar de nieuwste ontwikkelingsversie door op te klikken <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> sneltoets; gebruik dezelfde combo zonder Meta-toets om de nieuwste stabiele te installeren
 theme_xhred_clear_cache_initiated=Cache wissen en opnieuw laden.
 settings_document_title=Document titelformaat
 settings_document_title_option_3=Module
@@ -914,7 +912,7 @@ settings_usermin_default_module=Standaard module
 
 #19.34
 theme_xhred_search_in_file_open_external=Koppel het bestand los van de aparte editor
-theme_xhred_path_to_console=Open huidig pad in terminal <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Open huidig pad in terminal <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Bestand terugzetten
 theme_xhred_filemanager_editor_reverting_content=Wijzigingen laten vallen en terugkeren naar originele bestandsinhoud.
 
@@ -1029,7 +1027,7 @@ theme_xhred_login_message_2fa=Twee-factor authenticatie is ingeschakeld voor dez
 theme_xhred_global_verify=Verifiëren
 settings_show_terminal_link2=Toon opdrachtshell-knop
 settings_hotkey_shell2=Sneltoets voor opdrachtshell
-theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Commandoschaal
 
 #19.70

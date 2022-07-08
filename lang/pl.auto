@@ -522,7 +522,7 @@ theme_xhred_encoding_manually_set=Ręcznie ustaw kodowanie
 theme_xhred_filemanager_save_to_change_encoding=Plik musi zostać zapisany, aby umożliwić zmianę kodowania.
 
 #18.49
-theme_xhred_filemanager_user_switch=Przełącz na użytkownika (Ctrl+M)
+theme_xhred_filemanager_user_switch=Przełącz na użytkownika (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Wybierając nazwę użytkownika wymienioną poniżej, przełączysz dalsze operacje, które będą wykonywane jako ten użytkownik.
 theme_xhred_filemanager_user_switch_description_back=Aby wrócić do trybu domyślnego, wybierz pierwszą opcję w zaznaczeniu.
 theme_xhred_filemanager_user_switch_current_user=Aktualny użytkownik
@@ -918,8 +918,6 @@ theme_xhred_global_zoom_in_out=Powiększ/pomniejsz
 theme_xhred_global_prev_arrow_left=Poprzedni (strzałka w lewo)
 theme_xhred_global_next_arrow_right=Dalej (strzałka w prawo)
 
-settings_reset_cache_tooltip=Zresetuj pamięć podręczną motywu z dowolnej strony, klikając <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> Klawisz skrótu
-settings_update_theme_tooltip=Uruchom aktualizację motywu z dowolnej strony. Zaktualizuj do najnowszej wersji programistycznej, klikając <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> Klawisz skrótu; aby zainstalować najnowszą stabilną, użyj tej samej kombinacji bez klucza Meta
 theme_xhred_clear_cache_initiated=Czyszczenie pamięci podręcznej i ponowne ładowanie.
 settings_document_title=Format tytułu dokumentu
 settings_document_title_option_3=Moduł
@@ -945,7 +943,7 @@ settings_usermin_default_module=Domyślny moduł
 
 #19.34
 theme_xhred_search_in_file_open_external=Odłącz plik do osobnego edytora
-theme_xhred_path_to_console=Otwórz bieżącą ścieżkę w terminalu <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Otwórz bieżącą ścieżkę w terminalu <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Przywróć plik
 theme_xhred_filemanager_editor_reverting_content=Usuwanie zmian i przywracanie oryginalnej zawartości pliku.
 
@@ -1060,7 +1058,7 @@ theme_xhred_login_message_2fa=Dla tego użytkownika włączono uwierzytelnianie 
 theme_xhred_global_verify=Zweryfikować
 settings_show_terminal_link2=Pokaż przycisk powłoki poleceń
 settings_hotkey_shell2=Skrót klawiszowy do powłoki poleceń
-theme_xhred_path_to_console2=Otwórz bieżącą ścieżkę w powłoce poleceń <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Otwórz bieżącą ścieżkę w powłoce poleceń <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Powłoka poleceń
 
 #19.70

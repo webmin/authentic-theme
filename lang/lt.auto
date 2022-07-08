@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Rankiniu būdu nustatykite kodavimą
 theme_xhred_filemanager_save_to_change_encoding=Failas turi būti išsaugotas, kad būtų galima pakeisti kodavimą.
 
 #18.49
-theme_xhred_filemanager_user_switch=Perjungti į vartotoją (Ctrl+M)
+theme_xhred_filemanager_user_switch=Perjungti į vartotoją (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Pasirinkę žemiau pateiktą vartotojo vardą, pakeisite kitas operacijas, kurias turėsite atlikti kaip šis vartotojas.
 theme_xhred_filemanager_user_switch_description_back=Norėdami grįžti į numatytąjį režimą, pasirinkite pirmąją pasirinktį.
 theme_xhred_filemanager_user_switch_current_user=Dabartinis vartotojas
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Priartinimas/tolinimas
 theme_xhred_global_prev_arrow_left=Ankstesnis (rodyklė kairė)
 theme_xhred_global_next_arrow_right=Kitas (rodyklė į dešinę)
 
-settings_reset_cache_tooltip=Iš naujo nustatykite temos talpyklą bet kuriame puslapyje spustelėdami <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> klavišas
-settings_update_theme_tooltip=Paleiskite temos atnaujinimą iš bet kurio puslapio. Atnaujinkite į naujausią kūrimo versiją spustelėdami <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> greitasis klavišas; Norėdami įdiegti naujausią stabilų įrenginį, naudokite tą patį derinį be „Meta“ rakto
 theme_xhred_clear_cache_initiated=Talpyklos išvalymas ir perkrovimas.
 settings_document_title=Dokumento pavadinimo formatas
 settings_document_title_option_3=Modulis
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Numatytasis modulis
 
 #19.34
 theme_xhred_search_in_file_open_external=Atskirkite failą į atskirą redaktorių
-theme_xhred_path_to_console=Atidarykite dabartinį kelią terminale <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Atidarykite dabartinį kelią terminale <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Grąžinti failą
 theme_xhred_filemanager_editor_reverting_content=Pakeitimų atsisakymas ir grįžimas į pradinį failo turinį.
 

@@ -415,7 +415,7 @@ theme_xhred_global_none= なし
 theme_xhred_global_yes= はい
 theme_xhred_global_no= いいえ
 
-theme_xhred_filemanager_new_tab= 新しいタブを追加 (Ctrl+Space)
+theme_xhred_filemanager_new_tab= 新しいタブを追加 (Ctrl + Space)
 theme_xhred_datatable_no_search_results= <span class="h5">結果が見つかりませんでした。</span><br>別の検索を試してください
 
 theme_xhred_filemanager_buffer_error= ファイルをバッファに貼り付けることができませんでした - 許可が拒否されました。
@@ -594,7 +594,7 @@ theme_xhred_encoding_manually_set= 手動でエンコーディングを設定す
 theme_xhred_filemanager_save_to_change_encoding= エンコーディングを変更できるようにするには、ファイルを保存する必要があります。
 
 #18.49
-theme_xhred_filemanager_user_switch= ユーザーに切り替え (Ctrl+M)
+theme_xhred_filemanager_user_switch= ユーザーに切り替え (Ctrl + M)
 theme_xhred_filemanager_user_switch_description= 下記のユーザー名を選択することで、このユーザーとして実行される操作を切り替えることができます。
 theme_xhred_filemanager_user_switch_description_back= デフォルトモードに戻すには、selectの最初のオプションを選択します。
 theme_xhred_filemanager_user_switch_current_user= 現在の使用者
@@ -982,8 +982,6 @@ theme_xhred_global_zoom_in_out=ズームイン/ズームアウト
 theme_xhred_global_prev_arrow_left=前（左矢印）
 theme_xhred_global_next_arrow_right=次へ（右矢印）
 
-settings_reset_cache_tooltip=<br> <code> Ctrl + Alt +メタ+⇧+ R </code>をクリックして、任意のページからテーマのキャッシュをリセットします。<br> hotkey
-settings_update_theme_tooltip=任意のページからテーマの更新を実行します。 ホットキーをクリックして、最新の開発バージョンに更新します。<br> <code> Ctrl + Alt + Meta +⇧+ U </code> <br> 最新の安定版をインストールするには、Metaキーなしで同じコンボを使用します
 theme_xhred_clear_cache_initiated=キャッシュをクリアしてリロードします。
 settings_document_title=文書タイトルフォーマット
 settings_document_title_option_3=モジュール

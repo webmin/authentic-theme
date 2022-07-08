@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Ročno nastavljeno kodiranje
 theme_xhred_filemanager_save_to_change_encoding=Datoteka mora biti shranjena, da omogočite spreminjanje kodiranja.
 
 #18.49
-theme_xhred_filemanager_user_switch=Preklopite na uporabnika (Ctrl+M)
+theme_xhred_filemanager_user_switch=Preklopite na uporabnika (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Z izbiro spodaj navedenega uporabniškega imena boste preklopili na nadaljnje operacije, ki se bodo izvajale kot ta uporabnik.
 theme_xhred_filemanager_user_switch_description_back=Za vrnitev na privzeti način izberite prvo možnost v izbiri.
 theme_xhred_filemanager_user_switch_current_user=Trenutni uporabnik
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Povečevanje/pomanjšanje
 theme_xhred_global_prev_arrow_left=Prejšnja (puščica levo)
 theme_xhred_global_next_arrow_right=Naprej (puščica desno)
 
-settings_reset_cache_tooltip=Ponastavite predpomnilnik teme s katere koli strani s klikom <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> hitra tipka
-settings_update_theme_tooltip=Zaženite posodobitev teme s katere koli strani. Posodobite na najnovejšo razvojno različico s klikom <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> hitra tipka; Če želite namestiti najnovejši hlev, uporabite isto kombinacijo brez Meta tipke
 theme_xhred_clear_cache_initiated=Čiščenje predpomnilnika in ponovno nalaganje.
 settings_document_title=Oblika naslova dokumenta
 settings_document_title_option_3=Modul
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Privzeti modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Odstranite datoteko za ločen urejevalnik
-theme_xhred_path_to_console=Odprite trenutno pot v terminalu <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Odprite trenutno pot v terminalu <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Povrni datoteko
 theme_xhred_filemanager_editor_reverting_content=Spuščanje sprememb in vrnitev na prvotno vsebino datoteke.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=Dvofaktorska avtentikacija je omogočena temu upor
 theme_xhred_global_verify=Preverite
 settings_show_terminal_link2=Pokaži gumb ukazne lupine
 settings_hotkey_shell2=Bližnjična tipka za ukazno lupino
-theme_xhred_path_to_console2=Odprite trenutno pot v ukazni lupini <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Odprite trenutno pot v ukazni lupini <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Ukazna lupina
 
 #19.70

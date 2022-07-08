@@ -595,7 +595,7 @@ sub theme_controls
           '                     <span id="force_update_menu_cnt" class="dropup"'
           .
           ( has_command('git') ?
-              get_button_tooltip('settings_update_theme_tooltip', undef, undef, 1, 1, '#force_update_menu_cnt') :
+              '' :
               get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
           ) .
           '>
@@ -625,7 +625,7 @@ sub theme_controls
             <a tabindex='1' class=\"btn btn-default capitalize\" id=\"atrestore\">
                 <i class=\"fa fa-fw fa-history\"></i><span>$theme_text{'settings_right_restore_defaults'}</span>
             </a>
-            <a tabindex='1' class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\" @{[get_button_tooltip('settings_reset_cache_tooltip', undef, undef, 1, 1)]}>
+            <a tabindex='1' class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\">
                 <i class=\"fa fa-fw fa-hourglass-o\"></i><span>$theme_text{'settings_right_clear_local_cache'}</span>
             </a>
             $update_dropdown

@@ -423,7 +423,7 @@ theme_xhred_global_none=không ai
 theme_xhred_global_yes=Đúng
 theme_xhred_global_no=Không
 
-theme_xhred_filemanager_new_tab=Thêm tab mới (Ctrl+Space)
+theme_xhred_filemanager_new_tab=Thêm tab mới (Ctrl + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">Không tìm thấy kết quả</span> <br> Hãy thử một tìm kiếm khác
 
 theme_xhred_filemanager_buffer_error=Không thể dán tệp vào bộ đệm - quyền bị từ chối.
@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=Đặt mã hóa thủ công
 theme_xhred_filemanager_save_to_change_encoding=Tập tin phải được lưu, để cho phép thay đổi mã hóa.
 
 #18.49
-theme_xhred_filemanager_user_switch=Chuyển sang người dùng (Ctrl+M)
+theme_xhred_filemanager_user_switch=Chuyển sang người dùng (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Bằng cách chọn tên người dùng được liệt kê bên dưới, bạn sẽ chuyển các hoạt động tiếp theo được thực hiện như người dùng này.
 theme_xhred_filemanager_user_switch_description_back=Để chuyển về chế độ mặc định, chọn tùy chọn đầu tiên trong chọn.
 theme_xhred_filemanager_user_switch_current_user=Người dùng hiện tại
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Phóng to/thu nhỏ
 theme_xhred_global_prev_arrow_left=Trước đó (mũi tên trái)
 theme_xhred_global_next_arrow_right=Tiếp theo (mũi tên phải)
 
-settings_reset_cache_tooltip=Đặt lại bộ đệm của chủ đề từ bất kỳ trang nào, bằng cách nhấp vào <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> phím nóng
-settings_update_theme_tooltip=Chạy cập nhật chủ đề từ bất kỳ trang nào. Cập nhật lên phiên bản phát triển mới nhất, bằng cách nhấp vào <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> phím nóng; để cài đặt ổn định mới nhất, sử dụng cùng một kết hợp mà không cần khóa Meta
 theme_xhred_clear_cache_initiated=Xóa bộ nhớ cache và tải lại.
 settings_document_title=Định dạng tiêu đề tài liệu
 settings_document_title_option_3=Mô-đun
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Mô-đun mặc định
 
 #19.34
 theme_xhred_search_in_file_open_external=Tách tập tin để tách trình soạn thảo
-theme_xhred_path_to_console=Mở đường dẫn hiện tại trong thiết bị đầu cuối <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Mở đường dẫn hiện tại trong thiết bị đầu cuối <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Hoàn nguyên tập tin
 theme_xhred_filemanager_editor_reverting_content=Bỏ các thay đổi và trở lại nội dung tập tin gốc.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=Xác thực hai yếu tố đã được bật đ�
 theme_xhred_global_verify=Kiểm chứng
 settings_show_terminal_link2=Hiển thị nút trình bao lệnh
 settings_hotkey_shell2=Phím nóng cho trình bao lệnh
-theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Lệnh shell
 
 #19.70

@@ -604,7 +604,7 @@ theme_xhred_encoding_manually_set=A kódolás kézi beállítása
 theme_xhred_filemanager_save_to_change_encoding=A fájlt el kell menteni a kódolás megváltoztatásának lehetővé tétele érdekében.
 
 #18.49
-theme_xhred_filemanager_user_switch=Váltás a felhasználóra (Ctrl+M)
+theme_xhred_filemanager_user_switch=Váltás a felhasználóra (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Az alább felsorolt felhasználónév kiválasztásával átvált a további műveletekre, amelyeket ennek a felhasználónak kell végrehajtania.
 theme_xhred_filemanager_user_switch_description_back=Az alapértelmezett módba való visszatéréshez válassza a kiválasztott első lehetőséget.
 theme_xhred_filemanager_user_switch_current_user=Jelenlegi felhasználó
@@ -1000,8 +1000,6 @@ theme_xhred_global_zoom_in_out=Nagyítás/kicsinyítés
 theme_xhred_global_prev_arrow_left=Előző (balra nyíl)
 theme_xhred_global_next_arrow_right=Következő (jobbra nyíl)
 
-settings_reset_cache_tooltip=Visszaállíthatja a téma gyorsítótárát bármelyik oldalra kattintással <br><code>Ctrl + Alt + Meta + &#x21E7; + R</code><br> hotkey
-settings_update_theme_tooltip=Futtassa a témafrissítést bármely oldalról. Frissítés a legújabb fejlesztői verzióra kattintva <br><code>Ctrl + Alt + Meta + &#x21E7; + U</code><br> hotkey; A legújabb stabil telepítéséhez használd ugyanazt a kombót, Meta kulcs nélkül
 theme_xhred_clear_cache_initiated=Gyorsítótár ürítése és újratöltése.
 settings_document_title=A dokumentum címe formátuma
 settings_document_title_option_3=modul
@@ -1027,7 +1025,7 @@ settings_usermin_default_module=Alapértelmezett modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Vegye le a fájlt különálló szerkesztőre
-theme_xhred_path_to_console=Nyissa meg az aktuális utat a <tt>terminálon (Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Nyissa meg az aktuális utat a <tt>terminálon (Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Fájl visszaállítása
 theme_xhred_filemanager_editor_reverting_content=A változások visszavonása és az eredeti fájltartalomhoz való visszatérés.
 
@@ -1142,7 +1140,7 @@ theme_xhred_login_message_2fa=A kétfaktoros hitelesítést engedélyezték enne
 theme_xhred_global_verify=Ellenőrizze
 settings_show_terminal_link2=Parancshéj megjelenítése gomb
 settings_hotkey_shell2=Gyorsbillentyű a parancshéjhoz
-theme_xhred_path_to_console2=Nyissa meg az aktuális útvonalat a <tt>parancssorban (Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Nyissa meg az aktuális útvonalat a <tt>parancssorban (Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=Parancshéj
 
 #19.70

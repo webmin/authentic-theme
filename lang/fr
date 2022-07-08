@@ -599,7 +599,7 @@ theme_xhred_encoding_manually_set=Encodage défini manuellement
 theme_xhred_filemanager_save_to_change_encoding=Le fichier doit être enregistré pour permettre la modification du codage.
 
 #18.49
-theme_xhred_filemanager_user_switch=Passer à l'utilisateur (Ctrl+M)
+theme_xhred_filemanager_user_switch=Passer à l'utilisateur (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=En sélectionnant le nom d'utilisateur répertorié ci-dessous, vous commuterez d'autres opérations à effectuer en tant que cet utilisateur.
 theme_xhred_filemanager_user_switch_description_back=Pour revenir au mode par défaut, choisissez la première option de sélection.
 theme_xhred_filemanager_user_switch_current_user=Utilisateur actuel
@@ -992,8 +992,6 @@ theme_xhred_global_zoom_in_out=Zoom avant/arrière
 theme_xhred_global_prev_arrow_left=Précédent (flèche gauche)
 theme_xhred_global_next_arrow_right=Suivant (flèche droite)
 
-settings_reset_cache_tooltip=Réinitialisez le cache du thème à partir de n'importe quelle page, en cliquant sur <br><code>Ctrl + Alt + Meta + ⇧ + R</code><br> hotkey
-settings_update_theme_tooltip=Exécutez la mise à jour du thème à partir de n'importe quelle page. Mettez à jour vers la dernière version de développement en cliquant sur <br><code>Ctrl + Alt + Meta + ⇧ + U</code><br> hotkey; pour installer la dernière version stable, utilisez le même combo sans clé Meta
 theme_xhred_clear_cache_initiated=Effacement du cache et rechargement.
 settings_document_title=Format du titre du document
 settings_document_title_option_3=Module
@@ -1019,7 +1017,7 @@ settings_usermin_default_module=Module par défaut
 
 #19.34
 theme_xhred_search_in_file_open_external=Détacher le fichier dans l'éditeur séparé
-theme_xhred_path_to_console=Ouvrir le chemin actuel dans le terminal <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console=Ouvrir le chemin actuel dans le terminal <tt>(Alt + Shift + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Rétablir le fichier
 theme_xhred_filemanager_editor_reverting_content=Suppression des modifications et retour au contenu du fichier d'origine.
 
@@ -1134,5 +1132,5 @@ theme_xhred_login_message_2fa=L'authentification à deux facteurs a été activ�
 theme_xhred_global_verify=Vérifier
 settings_show_terminal_link2=Afficher le bouton du shell de commande
 settings_hotkey_shell2=Raccourci pour le shell de commande
-theme_xhred_path_to_console2=Ouvrir le chemin actuel dans le shell de commande <tt>(Alt+Shift+K)</tt>
+theme_xhred_path_to_console2=Ouvrir le chemin actuel dans le shell de commande <tt>(Alt + Shift + K)</tt>
 theme_tooltip_terminal_link2=CShell de commande
