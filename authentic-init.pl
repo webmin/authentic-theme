@@ -750,9 +750,10 @@ sub get_usermin_vars
     my ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
     eval {
         my %uminiserv;
+
         # Load miniserv config based on login mode
         if (get_product_name() eq 'usermin') {
-            get_miniserv_config(\%uminiserv);   
+            get_miniserv_config(\%uminiserv);
         } elsif (&foreign_exists("usermin")) {
             &foreign_require("usermin");
             &usermin::get_usermin_miniserv_config(\%uminiserv);
@@ -888,7 +889,8 @@ sub get_button_style
         $class = "warning ";
     } elsif (string_ends_with($keys, "_gnupg") ||
              string_contains($keys, 'secret_setup') ||
-             string_contains($keys, 'index_sok2')) {
+             string_contains($keys, 'index_sok2'))
+    {
         $icon  = " fa2 fa2-key";
         $class = "success ";
     } elsif (string_contains($keys, "newips")) {
@@ -934,7 +936,8 @@ sub get_button_style
         $icon  = "check-circle-o";
     } elsif (string_contains($keys, "migrate_show") ||
              string_contains($keys, "import_show") ||
-             string_contains($keys, "keys_import")) {
+             string_contains($keys, "keys_import"))
+    {
         $class = "success ";
         $icon  = " fa2 fa2-import";
     } elsif (string_contains($keys, "update") ||
@@ -1107,8 +1110,9 @@ sub get_button_style
         $icon  = "times-circle-o";
     } elsif (string_contains($keys, "start") ||
              string_contains($keys, "index_run") ||
-             string_contains($keys, "edit_run") ||
-             string_contains($keys, "form_exec")) {
+             string_contains($keys, "edit_run")  ||
+             string_contains($keys, "form_exec"))
+    {
         $class = "success ";
         $icon  = "play";
     } elsif (string_contains($keys, "index_stop") ||
@@ -1302,7 +1306,7 @@ sub get_button_style
     } elsif (string_contains($keys, "index_tree")) {
         $icon = "tree";
     } elsif (string_contains($keys, "listrules")) {
-        $icon = " fa2 fa2-fire";
+        $icon  = " fa2 fa2-fire";
         $class = "info ";
     }
 
@@ -1707,20 +1711,27 @@ sub get_button_tooltip
         my @tooltip_text = split(/\Q$br_label_on\E/, $tooltip_text, 2);
         $tooltip_text = join('<br>' . $br_label_on, @tooltip_text);
     }
-
-    return (
-           ' aria-label="' . strip_html($tooltip_text) . '" data-container="' . $container . '" data-placement="' .
-             $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
-             .
-             ($tooltip_text
-                .
-                (length $theme_config{'settings_hotkeys_active'} &&
-                   $theme_config{'settings_hotkeys_active'} ne 'false' &&
-                   $hot_key ?
-                   " (" . ($mod_key eq "altKey" ? "Alt" : $mod_key eq "ctrlKey" ? "Ctrl" : "Meta") . '+' . $hot_key . ")" :
-                   '')
-             ) .
-             '"');
+    my $alt_key  = 'Alt';
+    my $ctrl_key = 'Ctrl';
+    my $meta_key = 'Meta';
+    if (get_env('http_user_agent') =~ /macintosh/i) {
+        $alt_key  = '⌥';
+        $ctrl_key = '⌃';
+        $meta_key = '⌘';
+    }
+    return (' aria-label="' . strip_html($tooltip_text) . '" data-container="' . $container . '" data-placement="' .
+              $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
+              .
+              ($tooltip_text
+                 .
+                 (length $theme_config{'settings_hotkeys_active'} &&
+                    $theme_config{'settings_hotkeys_active'} ne 'false' &&
+                    $hot_key ?
+                    " (" . ($mod_key eq "altKey" ? $alt_key : $mod_key eq "ctrlKey" ? $ctrl_key : $meta_key) .
+                    '+' . $hot_key . ")" :
+                    '')
+              ) .
+              '"');
 }
 
 sub error_40x_handler
@@ -1749,7 +1760,12 @@ sub error_40x_handler
 sub lib_csf_control
 {
     my ($action) = @_;
-    if (webmin_user_is_admin() && foreign_check("csf") && foreign_available("csf") && has_command("csf") && $current_theme =~ /authentic-theme/) {
+    if (webmin_user_is_admin() &&
+        foreign_check("csf")     &&
+        foreign_available("csf") &&
+        has_command("csf")       &&
+        $current_theme =~ /authentic-theme/)
+    {
         do("$root_directory/$current_theme/extensions/csf/csf-lib.pl");
         if ($action eq 'load') {
             csf_mod();
