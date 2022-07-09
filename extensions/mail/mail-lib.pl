@@ -568,7 +568,7 @@ sub messages_list
 
         my @bcolumn;
         my $bcolumn;
-        my $subject = encode_guess(simplify_subject($m->{'header'}->{'subject'}), 'subject');
+        my $subject = simplify_subject($m->{'header'}->{'subject'});
         $bcolumn .= ui_span_row('mrow mrow-subject') . $flag_reply .
           ($subject ? $subject : $text{'extensions_mail_header_no_subject'}) . ui_span_row();
         my $preview;
