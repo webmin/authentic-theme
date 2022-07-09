@@ -766,7 +766,7 @@ const mail = (function() {
                  *
                  * @returns {string}
                  */
-                dropdown: function(classes, data, button, icon, tooltip) {
+                dropdown: function(classes, data, button, icon, tooltip, cbfunc) {
                     let dropdown = String();
                     classes = this._classes(classes);
                     dropdown += '<div class="btn-group ' + classes + '">';
@@ -792,6 +792,9 @@ const mail = (function() {
                     }
                     dropdown += '</ul>';
                     dropdown += '</div>';
+                    if (typeof cbfunc === 'function') {
+                        dropdown = cbfunc(dropdown);
+                    }
                     return (data[0].length ? dropdown : String());
                 },
 
@@ -3040,7 +3043,10 @@ const mail = (function() {
                                     data.list.sort.subject,
                                     data.list.sort.spam,
                                 ], 5
-                            ], data.list.sorted, 'sort', _.lang('global_sort')),
+                            ], data.list.sorted, 'sort', _.lang('global_sort'), function(dd) {
+                                if (dd && dd.match(/<li.*?<a/)) { return dd; }
+                                return String();
+                            }),
                             $$.create.dropdown('controls.search.dropdown', [
                                 [
                                     $$.create.$(0, {
