@@ -1701,8 +1701,12 @@ sub get_button_tooltip
 {
     my ($label, $key, $placement, $html, $force, $container, $br_label_on) = @_;
 
-    my $mod_key = $theme_config{'settings_hotkey_toggle_modifier'};
-    my $hot_key = ($key ? ucfirst($theme_config{$key}) : undef);
+    my $mod_key      = $theme_config{'settings_hotkey_toggle_modifier'};
+    my $hot_key      = ($key ? ucfirst($theme_config{$key}) : undef);
+    my $hot_keys_map = { 'dot' => '.', 'comma' => ',' };
+    $hot_key = "⇧ + $hot_keys_map->{$theme_config{$key}}"
+      if ($hot_keys_map->{$theme_config{$key}});
+
     if (!$container) {
         $container = '#content';
     }
@@ -1728,7 +1732,7 @@ sub get_button_tooltip
                     $theme_config{'settings_hotkeys_active'} ne 'false' &&
                     $hot_key ?
                     " (" . ($mod_key eq "altKey" ? $alt_key : $mod_key eq "ctrlKey" ? $ctrl_key : $meta_key) .
-                    '+' . $hot_key . ")" :
+                    ' + ' . $hot_key . ")" :
                     '')
               ) .
               '"');

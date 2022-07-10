@@ -997,7 +997,7 @@ sub nav_links
             $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
             $theme_config{'settings_theme_options_button'} ne 'false'))
     {
-        my $tooltip = get_button_tooltip('settings_title', undef, 'auto top');
+        my $tooltip = get_button_tooltip('settings_title', 'settings_hotkey_open_module_config_privileged', 'auto top');
         $rv .= "<li $tooltip data-linked class=\"user-link theme-options cursor-pointer\">";
         $rv .= '<a class="menu-exclude-link" href="' . $theme_webprefix .
           '/tconfig.cgi" data-href="' . $theme_webprefix . '/tconfig.cgi"><i class="fa2 fa-fw fa2-palette"></i></a>';

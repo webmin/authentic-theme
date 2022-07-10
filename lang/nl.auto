@@ -912,7 +912,7 @@ settings_usermin_default_module=Standaard module
 
 #19.34
 theme_xhred_search_in_file_open_external=Koppel het bestand los van de aparte editor
-theme_xhred_path_to_console=Open huidig pad in terminal <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Open huidig pad in terminal <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Bestand terugzetten
 theme_xhred_filemanager_editor_reverting_content=Wijzigingen laten vallen en terugkeren naar originele bestandsinhoud.
 
@@ -1027,7 +1027,7 @@ theme_xhred_login_message_2fa=Twee-factor authenticatie is ingeschakeld voor dez
 theme_xhred_global_verify=Verifiëren
 settings_show_terminal_link2=Toon opdrachtshell-knop
 settings_hotkey_shell2=Sneltoets voor opdrachtshell
-theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Commandoschaal
 
 #19.70

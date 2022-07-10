@@ -943,7 +943,7 @@ settings_usermin_default_module=Domyślny moduł
 
 #19.34
 theme_xhred_search_in_file_open_external=Odłącz plik do osobnego edytora
-theme_xhred_path_to_console=Otwórz bieżącą ścieżkę w terminalu <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Otwórz bieżącą ścieżkę w terminalu <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Przywróć plik
 theme_xhred_filemanager_editor_reverting_content=Usuwanie zmian i przywracanie oryginalnej zawartości pliku.
 
@@ -1058,7 +1058,7 @@ theme_xhred_login_message_2fa=Dla tego użytkownika włączono uwierzytelnianie 
 theme_xhred_global_verify=Zweryfikować
 settings_show_terminal_link2=Pokaż przycisk powłoki poleceń
 settings_hotkey_shell2=Skrót klawiszowy do powłoki poleceń
-theme_xhred_path_to_console2=Otwórz bieżącą ścieżkę w powłoce poleceń <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Otwórz bieżącą ścieżkę w powłoce poleceń <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Powłoka poleceń
 
 #19.70

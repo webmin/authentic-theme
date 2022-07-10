@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Модуль па змаўчанні
 
 #19.34
 theme_xhred_search_in_file_open_external=Адлучыце файл у асобны рэдактар
-theme_xhred_path_to_console=Адкрыйце бягучы шлях у тэрмінале <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Адкрыйце бягучы шлях у тэрмінале <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Вярнуць файл
 theme_xhred_filemanager_editor_reverting_content=Адмена зменаў і вяртанне да зыходнага змесціва файла.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Двухфактарная аўтэнтыфіка�
 theme_xhred_global_verify=Праверце
 settings_show_terminal_link2=Паказаць кнопку каманднай абалонкі
 settings_hotkey_shell2=Гарачая клавіша для каманднай абалонкі
-theme_xhred_path_to_console2=Адкрыць бягучы шлях у каманднай абалонцы <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Адкрыць бягучы шлях у каманднай абалонцы <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Камандная абалонка
 
 #19.70

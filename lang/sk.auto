@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Predvolený modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Odpojte súbor do samostatného editora
-theme_xhred_path_to_console=Otvorte aktuálnu cestu v termináli <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Otvorte aktuálnu cestu v termináli <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Vrátiť súbor
 theme_xhred_filemanager_editor_reverting_content=Zrušenie zmien a návrat k pôvodnému obsahu súboru.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Pre tohto používateľa bolo povolené dvojfaktor
 theme_xhred_global_verify=Overiť
 settings_show_terminal_link2=Zobraziť tlačidlo príkazového shellu
 settings_hotkey_shell2=Klávesová skratka pre príkazový shell
-theme_xhred_path_to_console2=Otvorte aktuálnu cestu v príkazovom shell <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Otvorte aktuálnu cestu v príkazovom shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Príkazová schránka
 
 #19.70

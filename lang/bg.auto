@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Модул по подразбиране
 
 #19.34
 theme_xhred_search_in_file_open_external=Откачете файл за отделен редактор
-theme_xhred_path_to_console=Отваряне на текущия път в терминал <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Отваряне на текущия път в терминал <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Възстановяване на файл
 theme_xhred_filemanager_editor_reverting_content=Пускане на промените и връщане към оригиналното съдържание на файлове.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=За този потребител е разреш
 theme_xhred_global_verify=Проверете
 settings_show_terminal_link2=Показване на командния бутон
 settings_hotkey_shell2=Бърз клавиш за командна обвивка
-theme_xhred_path_to_console2=Отворете текущия път в командната обвивка <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Отворете текущия път в командната обвивка <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Командна обвивка
 
 #19.70

@@ -1012,7 +1012,7 @@ settings_usermin_default_module=Standard Modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Bearbeite Datei in externem Editor
-theme_xhred_path_to_console=Öffne aktuellen Pfad in Kommandozeile. (Alt + Shift + K)
+theme_xhred_path_to_console=Öffne aktuellen Pfad in Kommandozeile. (Alt + ⇧ + K)
 theme_xhred_filemanager_editor_revert_content=Datei zurücksetzen
 theme_xhred_filemanager_editor_reverting_content=Änderungen rückgängig machen und originalen Dateiinhalt wiederherstellen.
 

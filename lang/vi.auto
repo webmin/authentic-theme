@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Mô-đun mặc định
 
 #19.34
 theme_xhred_search_in_file_open_external=Tách tập tin để tách trình soạn thảo
-theme_xhred_path_to_console=Mở đường dẫn hiện tại trong thiết bị đầu cuối <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Mở đường dẫn hiện tại trong thiết bị đầu cuối <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Hoàn nguyên tập tin
 theme_xhred_filemanager_editor_reverting_content=Bỏ các thay đổi và trở lại nội dung tập tin gốc.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Xác thực hai yếu tố đã được bật đ�
 theme_xhred_global_verify=Kiểm chứng
 settings_show_terminal_link2=Hiển thị nút trình bao lệnh
 settings_hotkey_shell2=Phím nóng cho trình bao lệnh
-theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Mở đường dẫn hiện tại trong lệnh shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Lệnh shell
 
 #19.70

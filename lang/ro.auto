@@ -131,7 +131,7 @@ theme_xhred_login_message_2fa=Autentificarea cu doi factori a fost activată pen
 theme_xhred_global_verify=Verifica
 settings_show_terminal_link2=Afișați butonul shell al comenzii
 settings_hotkey_shell2=Tastă rapidă pentru comanda shell
-theme_xhred_path_to_console2=Deschideți calea curentă în comanda shell <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Deschideți calea curentă în comanda shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Shell de comandă
 
 #19.70

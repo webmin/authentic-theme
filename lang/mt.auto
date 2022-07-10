@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Modulu awtomatiku
 
 #19.34
 theme_xhred_search_in_file_open_external=Aqta fajl ma 'editur separat
-theme_xhred_path_to_console=Iftaħ il-passaġġ kurrenti fit-terminal <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Iftaħ il-passaġġ kurrenti fit-terminal <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Irritorna l-Fajl
 theme_xhred_filemanager_editor_reverting_content=Twaqqa 'bidliet u terġa' lura għall-kontenut tal-fajl oriġinali.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=L-awtentikazzjoni b'żewġ fatturi ġiet attivata 
 theme_xhred_global_verify=Ivverifika
 settings_show_terminal_link2=Uri l-buttuna tal-qoxra tal-kmand
 settings_hotkey_shell2=Hotkey għall-qoxra tal-kmand
-theme_xhred_path_to_console2=Iftaħ it-triq kurrenti fil-kmand shell <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Iftaħ it-triq kurrenti fil-kmand shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Qoxra tal-kmand
 
 #19.70

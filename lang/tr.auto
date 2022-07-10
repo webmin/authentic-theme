@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Bu kullanıcının oturum açması için iki fakt�
 theme_xhred_global_verify=Doğrulayın
 settings_show_terminal_link2=Komut kabuğu düğmesini göster
 settings_hotkey_shell2=Komut kabuğu için kısayol tuşu
-theme_xhred_path_to_console2=Geçerli yolu komut kabuğunda açın <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Geçerli yolu komut kabuğunda açın <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Komut kabuğu
 
 #19.70

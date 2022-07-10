@@ -1016,7 +1016,7 @@ settings_usermin_default_module=Standard modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Frakoble filen til separate editor
-theme_xhred_path_to_console=Åpne gjeldende sti i terminal (Alt + Shift + K)
+theme_xhred_path_to_console=Åpne gjeldende sti i terminal (Alt + ⇧ + K)
 theme_xhred_filemanager_editor_revert_content=Tilbakestill fil
 theme_xhred_filemanager_editor_reverting_content=Dropper endringer og går tilbake til originalt filinnhold.
 
@@ -1131,5 +1131,5 @@ theme_xhred_login_message_2fa=To-faktor autentisering er aktivert for denne bruk
 theme_xhred_global_verify=Verifiser
 settings_show_terminal_link2=VIs knapp for kommandoskall
 settings_hotkey_shell2=Hurtigtast for kommandoskall
-theme_xhred_path_to_console2=Åpne gjeldende sti i kommando-skall <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Åpne gjeldende sti i kommando-skall <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Kommandoskall

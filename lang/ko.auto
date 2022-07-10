@@ -1025,7 +1025,7 @@ settings_usermin_default_module=기본 모듈
 
 #19.34
 theme_xhred_search_in_file_open_external=별도의 편집기로 파일 분리
-theme_xhred_path_to_console=터미널에서 현재 경로 열기 <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=터미널에서 현재 경로 열기 <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=파일 되돌리기
 theme_xhred_filemanager_editor_reverting_content=변경 사항을 삭제하고 원래 파일 내용으로 되돌립니다.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=이 사용자가 로그인 할 수 있도록 2 단
 theme_xhred_global_verify=검증
 settings_show_terminal_link2=명령 셸 버튼 표시
 settings_hotkey_shell2=명령 셸용 단축키
-theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=명령 셸
 
 #19.70

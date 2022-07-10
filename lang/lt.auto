@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Numatytasis modulis
 
 #19.34
 theme_xhred_search_in_file_open_external=Atskirkite failą į atskirą redaktorių
-theme_xhred_path_to_console=Atidarykite dabartinį kelią terminale <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Atidarykite dabartinį kelią terminale <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Grąžinti failą
 theme_xhred_filemanager_editor_reverting_content=Pakeitimų atsisakymas ir grįžimas į pradinį failo turinį.
 

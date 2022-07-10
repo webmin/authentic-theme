@@ -1017,7 +1017,7 @@ settings_usermin_default_module=Module par défaut
 
 #19.34
 theme_xhred_search_in_file_open_external=Détacher le fichier dans l'éditeur séparé
-theme_xhred_path_to_console=Ouvrir le chemin actuel dans le terminal <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Ouvrir le chemin actuel dans le terminal <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Rétablir le fichier
 theme_xhred_filemanager_editor_reverting_content=Suppression des modifications et retour au contenu du fichier d'origine.
 
@@ -1132,5 +1132,5 @@ theme_xhred_login_message_2fa=L'authentification à deux facteurs a été activ�
 theme_xhred_global_verify=Vérifier
 settings_show_terminal_link2=Afficher le bouton du shell de commande
 settings_hotkey_shell2=Raccourci pour le shell de commande
-theme_xhred_path_to_console2=Ouvrir le chemin actuel dans le shell de commande <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Ouvrir le chemin actuel dans le shell de commande <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=CShell de commande

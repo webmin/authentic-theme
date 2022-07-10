@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Bi faktoreko autentifikazioa gaitu da erabiltzaile
 theme_xhred_global_verify=Egiaztatu
 settings_show_terminal_link2=Erakutsi komando shell botoia
 settings_hotkey_shell2=Komando shellaren laster tekla
-theme_xhred_path_to_console2=Ireki uneko bidea komando shellean <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Ireki uneko bidea komando shellean <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Agindu shell
 
 #19.70

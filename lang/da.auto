@@ -1052,7 +1052,7 @@ theme_xhred_login_message_2fa=To-faktor-godkendelse er blevet aktiveret for denn
 theme_xhred_global_verify=Verificere
 settings_show_terminal_link2=Vis kommandoskal-knap
 settings_hotkey_shell2=Genvejstast til kommandoskal
-theme_xhred_path_to_console2=Åbn den aktuelle sti i kommandoskallen <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Åbn den aktuelle sti i kommandoskallen <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Kommandoskal
 
 #19.70

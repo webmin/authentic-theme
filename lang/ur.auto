@@ -1025,7 +1025,7 @@ settings_usermin_default_module=پہلے سے طے شدہ ماڈیول
 
 #19.34
 theme_xhred_search_in_file_open_external=علیحدہ ایڈیٹر کے لئے فائل کو الگ کریں
-theme_xhred_path_to_console=Open current path in terminal <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Open current path in terminal <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=فائل کو لوٹائیں
 theme_xhred_filemanager_editor_reverting_content=تبدیلیوں کو چھوڑنا اور اصل فائل کے مواد میں پلٹنا۔
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=اس صارف کو لاگ ان کرنے کیلئے
 theme_xhred_global_verify=تصدیق کریں
 settings_show_terminal_link2=کمانڈ شیل بٹن دکھائیں
 settings_hotkey_shell2=کمانڈ شیل کے لئے ہاٹکی
-theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=کمانڈ شیل
 
 #19.70

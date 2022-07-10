@@ -1025,7 +1025,7 @@ settings_usermin_default_module=الوحدة الافتراضية
 
 #19.34
 theme_xhred_search_in_file_open_external=فصل الملف لفصل المحرر
-theme_xhred_path_to_console=افتح المسار الحالي في النهاية الطرفية <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=افتح المسار الحالي في النهاية الطرفية <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=إعادة الملف
 theme_xhred_filemanager_editor_reverting_content=إسقاط التغييرات والعودة إلى محتوى الملف الأصلي.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=تم تمكين المصادقة الثنائية 
 theme_xhred_global_verify=تحقق
 settings_show_terminal_link2=إظهار زر قذيفة الأمر
 settings_hotkey_shell2=مفتاح التشغيل السريع لقذيفة الأوامر
-theme_xhred_path_to_console2=افتح المسار الحالي في غلاف الأمر <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=افتح المسار الحالي في غلاف الأمر <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=قذيفة القيادة
 
 #19.70

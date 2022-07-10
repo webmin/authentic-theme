@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Noklusējuma modulis
 
 #19.34
 theme_xhred_search_in_file_open_external=Atdaliet failu atsevišķam redaktoram
-theme_xhred_path_to_console=Atvērt pašreizējo ceļu terminālī <tt (Alt + Shift + K) </tt>
+theme_xhred_path_to_console=Atvērt pašreizējo ceļu terminālī <tt (Alt + ⇧ + K) </tt>
 theme_xhred_filemanager_editor_revert_content=Atjaunot failu
 theme_xhred_filemanager_editor_reverting_content=Izmaiņu pārtraukšana un atgriešanās pie sākotnējā faila satura.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Šim lietotājam ir iespējota divu faktoru autent
 theme_xhred_global_verify=Pārbaudiet
 settings_show_terminal_link2=Rādīt komandas čaulas pogu
 settings_hotkey_shell2=Karsto taustiņu komandu čaulai
-theme_xhred_path_to_console2=Atveriet pašreizējo ceļu komandu apvalkā <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Atveriet pašreizējo ceļu komandu apvalkā <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Komandas apvalks
 
 #19.70

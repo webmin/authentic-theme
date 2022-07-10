@@ -409,7 +409,7 @@ settings_usermin_default_module=Modul lalai
 
 #19.34
 theme_xhred_search_in_file_open_external=Tanggalkan fail untuk memisahkan editor
-theme_xhred_path_to_console=Buka jalan semasa di terminal <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Buka jalan semasa di terminal <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Kembalikan Fail
 theme_xhred_filemanager_editor_reverting_content=Menjatuhkan perubahan dan kembali ke kandungan fail asal.
 
@@ -524,7 +524,7 @@ theme_xhred_login_message_2fa=Pengesahan dua faktor telah diaktifkan untuk pengg
 theme_xhred_global_verify=Sahkan
 settings_show_terminal_link2=Tunjukkan butang shell arahan
 settings_hotkey_shell2=Hotkey untuk shell arahan
-theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Cengkerang arahan
 
 #19.70

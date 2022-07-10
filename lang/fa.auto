@@ -1025,7 +1025,7 @@ settings_usermin_default_module=ماژول پیش فرض
 
 #19.34
 theme_xhred_search_in_file_open_external=جدا کردن پرونده به ویرایشگر جدا
-theme_xhred_path_to_console=مسیر فعلی را در ترمینال <tt> (Alt + Shift + K) باز کنید
+theme_xhred_path_to_console=مسیر فعلی را در ترمینال <tt> (Alt + ⇧ + K) باز کنید
 theme_xhred_filemanager_editor_revert_content=برگرداندن پرونده
 theme_xhred_filemanager_editor_reverting_content=حذف تغییرات و بازگشت به محتوای اصلی فایل.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=احراز هویت دو عاملی برای ور�
 theme_xhred_global_verify=تأیید کنید
 settings_show_terminal_link2=دکمه پوسته فرمان را نشان دهید
 settings_hotkey_shell2=کلید میانبر برای پوسته فرمان
-theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt + Shift + K)</tt> باز کنید
+theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt + ⇧ + K)</tt> باز کنید
 theme_tooltip_terminal_link2=پوسته فرمان
 
 #19.70

@@ -802,7 +802,7 @@ settings_usermin_default_module=Модуль по умолчанию
 
 #19.34
 theme_xhred_search_in_file_open_external=Отсоединить файл в отдельный редактор
-theme_xhred_path_to_console=Открыть текущий путь в терминале <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Открыть текущий путь в терминале <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Восстановить файл
 theme_xhred_filemanager_editor_reverting_content=Удаление изменений и возврат к исходному содержимому файла.
 
@@ -917,7 +917,7 @@ theme_xhred_login_message_2fa=Для этого пользователя вкл�
 theme_xhred_global_verify=Проверить
 settings_show_terminal_link2=Показать кнопку командной оболочки
 settings_hotkey_shell2=Горячая клавиша для командной оболочки
-theme_xhred_path_to_console2=Открыть текущий путь в командной оболочке <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Открыть текущий путь в командной оболочке <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Командная оболочка
 
 #19.70

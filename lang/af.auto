@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Standaardmodule
 
 #19.34
 theme_xhred_search_in_file_open_external=Maak lêer los om die redakteur te skei
-theme_xhred_path_to_console=Open huidige pad in terminale <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Open huidige pad in terminale <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Stel lêer terug
 theme_xhred_filemanager_editor_reverting_content=Verander die veranderinge en keer terug na die oorspronklike lêerinhoud.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Tweefaktor-verifikasie is geaktiveer vir hierdie g
 theme_xhred_global_verify=Verifieer
 settings_show_terminal_link2=Wys opdragskakelknoppie
 settings_hotkey_shell2=Sneltoets vir opdragskaal
-theme_xhred_path_to_console2=Open die huidige pad in die opdragskal <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Open die huidige pad in die opdragskal <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Opdragskulp
 
 #19.70

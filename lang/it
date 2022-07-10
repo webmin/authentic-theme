@@ -1023,7 +1023,7 @@ settings_usermin_default_module=Modulo predefinito
 
 #19.34
 theme_xhred_search_in_file_open_external=Scollegare il file per separare l'editor
-theme_xhred_path_to_console=Percorso attualmente aperto nel terminale (Alt + Shift + K)
+theme_xhred_path_to_console=Percorso attualmente aperto nel terminale (Alt + ⇧ + K)
 theme_xhred_filemanager_editor_revert_content=Inverti file
 theme_xhred_filemanager_editor_reverting_content=Eliminare le modifiche e tornare al contenuto del file originale.
 
@@ -1138,7 +1138,7 @@ theme_xhred_login_message_2fa=L'autenticazione a due fattori è stata abilitata 
 theme_xhred_global_verify=Verifica
 settings_show_terminal_link2=Mostra il pulsante della shell di comando
 settings_hotkey_shell2=Tasto di scelta rapida per la shell di comando
-theme_xhred_path_to_console2=Aprire il percorso corrente nella shell di comando <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Aprire il percorso corrente nella shell di comando <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Shell di comando
 
 #19.70

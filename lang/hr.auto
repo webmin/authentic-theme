@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Zadani modul
 
 #19.34
 theme_xhred_search_in_file_open_external=Odvojite datoteku u zasebni uređivač
-theme_xhred_path_to_console=Otvorite trenutni put u terminalu <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Otvorite trenutni put u terminalu <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Vrati datoteku
 theme_xhred_filemanager_editor_reverting_content=Ispuštanje promjena i vraćanje na izvorni sadržaj datoteke.
 
@@ -1140,7 +1140,7 @@ theme_xhred_login_message_2fa=Ovom korisniku je omogućena dvofaktorska autentif
 theme_xhred_global_verify=Potvrdite
 settings_show_terminal_link2=Prikaži gumb naredbene ljuske
 settings_hotkey_shell2=Prečac za naredbenu ljusku
-theme_xhred_path_to_console2=Otvorite trenutnu stazu u naredbenoj ljusci <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console2=Otvorite trenutnu stazu u naredbenoj ljusci <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Naredbena ljuska
 
 #19.70

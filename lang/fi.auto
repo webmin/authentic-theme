@@ -1025,7 +1025,7 @@ settings_usermin_default_module=Oletusmoduuli
 
 #19.34
 theme_xhred_search_in_file_open_external=Irrota tiedosto erilliseen editoriin
-theme_xhred_path_to_console=Avaa nykyinen polku terminaalissa <tt>(Alt + Shift + K)</tt>
+theme_xhred_path_to_console=Avaa nykyinen polku terminaalissa <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Palauta tiedosto
 theme_xhred_filemanager_editor_reverting_content=Muutosten hylkääminen ja palaaminen alkuperäiseen tiedostoon.
 
