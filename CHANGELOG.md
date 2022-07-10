@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 19.97 (July 10, 2022)
+* Add ability to store user column sorting on table basis when listing in File Manager
+* Add better support for hotkeys management on Mac in File Manager [#1604](https://github.com/authentic-theme/authentic-theme/issues/1604#issuecomment-1179342479)
+* Add support for fetching same content page with all links as switching domains in Virtualmin
+* Add hotkeys for opening module and theme config
+* Fix main module title and subtitle positioning
+* Fix parsing response text on server error [#1606](https://github.com/authentic-theme/authentic-theme/issues/1606)
+* Fix table header link buttons text overflow in mobile mode
+* Fix subject encoding issue when listing mail in Usermin [usermin#80](https://github.com/webmin/usermin/issues/80)
+* Fix not to display copy system information button in Usermin
+
 #### Version 19.95.2 (June 29, 2022)
 * Fix color palettes contrast ratio
 * Fix on hover color for active links in navigation menu
