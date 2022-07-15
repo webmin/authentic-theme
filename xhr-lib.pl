@@ -23,6 +23,19 @@ sub xhr
         print_json($data);
     };
 
+    if ($type eq "cmd") {
+        if ($action eq "restart") {
+            if (webmin_user_is_admin()) {
+                my $systemd = has_command('systemctl');
+                if ($systemd) {
+                    system("$systemd kill -s SIGTERM webmin");
+                } else {
+                    restart_miniserv();
+                }
+            }
+        }
+    }
+
     if ($type eq 'nav') {
 
         # Returns navigation menu available for requested domain/server
@@ -118,7 +131,7 @@ sub xhr
 
             # Save current user motd file
             if ($subtype eq 'set' &&
-                &webmin_user_is_admin())
+                webmin_user_is_admin())
             {
                 my $data = convert_from_json($in{'data'});
                 put_user_motd($data);

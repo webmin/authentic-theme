@@ -1291,3 +1291,8 @@ theme_error_access_dir_not_allowed=Prieiga uždrausta: failas nepasiekiamas
 theme_xhred_global_outdated_desc=Įdiegta $1 versija yra pasenusi. Naujausia galima versija yra $2. Atnaujinkite arba spustelėkite, kad gautumėte daugiau informacijos apie naujausią leidimą.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Pasirinkimo metu laikykite nuspaustą <tt>control</tt> klavišą
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pasirinkimo metu laikykite nuspaustą klavišą <tt>command</tt>
+
+#19.97
+theme_xhred_webmin_requires_restart=Aptikta, kad Webmin žiniatinklio serverio demonas nebuvo tinkamai paleistas iš naujo paskutinio paketo atnaujinimo metu. Tai būtina norint iš naujo paleisti žiniatinklio serverį rankiniu būdu, iškviečiant komandą <tt>$1</tt>.
+theme_xhred_webmin_requires_restart_yes=Taip, pabandykite iš naujo paleisti
+theme_xhred_webmin_requires_restart_no=Ne, aš paleisiu iš naujo rankiniu būdu

@@ -177,3 +177,8 @@ theme_error_access_dir_not_allowed=Åtkomst nekad: Filen är inte tillgänglig
 theme_xhred_global_outdated_desc=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2. Uppgradera eller klicka för att få mer information om den senaste versionen.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Håll <tt>control</tt>-tangenten nedtryckt under valet
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Håll <tt>kommando</tt> nedtryckt under valet
+
+#19.97
+theme_xhred_webmin_requires_restart=Det har upptäckts att Webmin-webserverdemonen inte startades om korrekt vid den senaste paketuppgraderingen. Detta är nödvändigt för att starta om webbservern manuellt genom att anropa kommandot <tt>$1</tt>.
+theme_xhred_webmin_requires_restart_yes=Ja, försök starta om den
+theme_xhred_webmin_requires_restart_no=Nej, jag startar om den manuellt

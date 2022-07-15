@@ -869,7 +869,7 @@ sub init_prefail
         !defined(&webmin_user_is_admin))
     {
         do("$ENV{'THEME_ROOT'}/authentic-prefail-lib.pl");
-        setvar('needs-restart', 1);
+        setvar('needs-restart', has_command('systemctl') || $config_directory);
     }
 }
 

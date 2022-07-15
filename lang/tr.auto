@@ -1291,3 +1291,8 @@ theme_error_access_dir_not_allowed=Erişim reddedildi: Dosyaya erişilemiyor
 theme_xhred_global_outdated_desc=$1'in yüklü sürümü güncel değil. Kullanılabilir en son sürüm $2'dir. Lütfen güncelleyin veya son sürüm hakkında daha fazla bilgi almak için tıklayın.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Seçim sırasında <tt>kontrol</tt> tuşunu basılı tutun
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Seçim sırasında <tt>komut</tt> tuşunu basılı tutun
+
+#19.97
+theme_xhred_webmin_requires_restart=Webmin web sunucusu arka plan programının son paket yükseltmesinde doğru şekilde yeniden başlatılmadığı algılandı. Bu, <tt>$1</tt> komutunu çağırarak web sunucusunu manuel olarak yeniden başlatmak için gereklidir.
+theme_xhred_webmin_requires_restart_yes=Evet, yeniden başlatmayı deneyin
+theme_xhred_webmin_requires_restart_no=Hayır, manuel olarak yeniden başlatacağım

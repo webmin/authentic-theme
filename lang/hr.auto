@@ -1291,3 +1291,8 @@ theme_error_access_dir_not_allowed=Pristup odbijen: Datoteka nije dostupna
 theme_xhred_global_outdated_desc=Instalirana verzija $1 je zastarjela. Najnovija dostupna verzija je $2. Nadogradite ili kliknite da biste dobili više pojedinosti o nedavnom izdanju.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Tijekom odabira držite tipku <tt>control</tt> pritisnutom
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tijekom odabira držite tipku <tt>command</tt> pritisnutom
+
+#19.97
+theme_xhred_webmin_requires_restart=Otkriveno je da demon web-poslužitelja Webmin nije ispravno ponovno pokrenut pri zadnjoj nadogradnji paketa. Ovo je potrebno za ručno ponovno pokretanje web-poslužitelja pozivanjem naredbe <tt>$1</tt>.
+theme_xhred_webmin_requires_restart_yes=Da, pokušajte ga ponovno pokrenuti
+theme_xhred_webmin_requires_restart_no=Ne, ponovno ću ga pokrenuti ručno

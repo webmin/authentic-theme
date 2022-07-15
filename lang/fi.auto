@@ -1291,3 +1291,8 @@ theme_error_access_dir_not_allowed=Pääsy kielletty: Tiedostoa ei voi käyttä�
 theme_xhred_global_outdated_desc=$1:n asennettu versio on vanhentunut. Viimeisin saatavilla oleva versio on $2. Päivitä tai napsauta saadaksesi lisätietoja viimeisimmästä julkaisusta.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Pidä <tt>control</tt>-näppäintä painettuna valinnan aikana
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pidä <tt>komento</tt>-näppäintä painettuna valinnan aikana
+
+#19.97
+theme_xhred_webmin_requires_restart=On havaittu, että Webmin-verkkopalvelindaemonia ei käynnistetty uudelleen oikein viimeisimmän paketin päivityksen yhteydessä. Tämä on tarpeen verkkopalvelimen käynnistämiseksi uudelleen manuaalisesti komennolla <tt>$1</tt>.
+theme_xhred_webmin_requires_restart_yes=Kyllä, yritä käynnistää se uudelleen
+theme_xhred_webmin_requires_restart_no=Ei, käynnistän sen uudelleen manuaalisesti
