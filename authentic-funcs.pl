@@ -850,4 +850,27 @@ sub get_default_module
     return undef;
 }
 
+# If "WebminCore" basic functions are not
+# reachable throw UI warning to restart
+# Webmin manually. Inner ref.: CXX1010000
+sub init_prefail
+{
+    if (
+        # Affects upgrades before 1.974
+        !defined(&get_buffer_size) ||
+
+        # Affects upgrades before 1.982
+        !defined(&get_webprefix) ||
+
+        # Affects upgrades from before 1.990
+        !defined(&setvar) ||
+
+        # Affects upgrades from before 1.995
+        !defined(&webmin_user_is_admin))
+    {
+        do("$ENV{'THEME_ROOT'}/authentic-prefail-lib.pl");
+        setvar('needs-restart', 1);
+    }
+}
+
 1;

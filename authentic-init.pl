@@ -38,7 +38,7 @@ our (@theme_bundle_css,
      $title);
 
 do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
-
+init_prefail();
 init_vars();
 
 sub settings_filter
@@ -1412,6 +1412,9 @@ sub header_html_data
     my ($module, $skip, @args) = @_;
     return 'data-redirect="' .
       get_theme_temp_data('redirected') .
+      # ref.: CXX1010000
+      '" data-needs-restart="' .
+      getvar('needs-restart') .
       '" data-host="' .
       get_env('http_host') .
       '" data-hostname="' .
