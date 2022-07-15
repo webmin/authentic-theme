@@ -868,7 +868,7 @@ sub init_prefail
         # Affects upgrades from before 1.995
         !defined(&webmin_user_is_admin))
     {
-        do("$ENV{'THEME_ROOT'}/authentic-prefail-lib.pl");
+        do("$root_directory/web-lib-funcs.pl");
         setvar('needs-restart', has_command('systemctl') || $config_directory);
     }
 }
