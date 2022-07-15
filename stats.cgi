@@ -20,6 +20,7 @@ do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
 init_config();
 ReadParse();
 
+init_prefail();
 print_json({}), exit if (!webmin_user_is_admin());
 
 # Load theme language and settings
