@@ -721,7 +721,7 @@ sub get_sysinfo_vars
 
             # Theme version/update
             my $authentic_remote_data                = theme_remote_version(1);
-            my $authentic_installed_version          = theme_version();
+            my $authentic_installed_version          = theme_version('version');
             my ($authentic_installed_version_parsed) = $authentic_installed_version =~ /([0-9\.]+)/;
             my $authentic_installed_version_devel    = $authentic_installed_version =~ /alpha|beta|RC/;
             my $incompatible                         = theme_update_incompatible($authentic_remote_data);
@@ -1367,7 +1367,7 @@ sub embed_login_head
 
     } else {
         print '<link href="' .
-          $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+          $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
 
         print
 '<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
@@ -1557,7 +1557,7 @@ sub theme_remote_version
     my $remote_version = 0;
     my $remote_release;
     my $error;
-    my $installed_version_devel = theme_version() =~ /alpha|beta|RC/;
+    my $installed_version_devel = theme_version('version') =~ /alpha|beta|RC/;
 
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && $in =~ /xhr-/) {
         if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
@@ -1777,9 +1777,7 @@ sub get_theme_user_link
     my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
     my $link           = '/tconfig.cgi';
 
-    my $mversion = theme_version(1, 1);
-
-    return '' . theme_version() . $mversion .
+    return '' . theme_version('versionfull') .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
       . '" class="btn btn-default btn-xxs' .
@@ -2044,9 +2042,7 @@ sub get_xhr_request
                     $usermin_root =~ s/webmin/usermin/;
                     backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart");
                 }
-                my $tversion = theme_version();
-                my $mversion = theme_version(1, 1);
-                $tversion = $tversion . $mversion;
+                my $tversion = theme_version('versionfull', 'no-cache');
 
                 @update_rs = {
                                "success" => ($usermin ? theme_text('theme_git_patch_update_success_message2', $tversion) :

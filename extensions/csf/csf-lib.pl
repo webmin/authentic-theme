@@ -136,17 +136,17 @@ sub csf_mod
     open(my $fh, '>', $csf_header_mod) or die $!;
 
     print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' .
-      (theme_version(1)) . '" rel="shortcut icon" href="' . $theme_webprefix . '/images/favicons/webmin/favicon.ico">' . "\n";
+      (theme_version('timestamped')) . '" rel="shortcut icon" href="' . $theme_webprefix . '/images/favicons/webmin/favicon.ico">' . "\n";
     print $fh '<link href="' .
-      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
     print $fh '<link href="' . $theme_webprefix .
-      '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
 
     print $fh '<link href="' . $theme_webprefix .
-      '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
     
     # Print default options
-    print $fh " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
+    print $fh " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version('timestamped') . "\"></script>\n";
 
     # Print object with language strings
     print $fh ' <script>';
@@ -159,12 +159,12 @@ sub csf_mod
     print $fh "</script>\n";
 
     print $fh '<script src="' .
-      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
+      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version('timestamped') . '"></script>' . "\n";
 
     print $fh '<link href="' .
-      $theme_webprefix . '/extensions/csf/csf.' . $ext . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      $theme_webprefix . '/extensions/csf/csf.' . $ext . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
     print $fh '<script src="' .
-      $theme_webprefix . '/extensions/csf/csf.' . $ext . '.js?' . theme_version(1) . '"></script>' . "\n";
+      $theme_webprefix . '/extensions/csf/csf.' . $ext . '.js?' . theme_version('timestamped') . '"></script>' . "\n";
 
     close $fh;
 

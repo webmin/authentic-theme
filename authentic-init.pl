@@ -201,7 +201,7 @@ sub embed_header
     }
 
     # Print default options
-    print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version(1) . "\"></script>\n";
+    print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version('timestamped') . "\"></script>\n";
     print ' <script>';
     print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
     print "</script>\n";
@@ -274,7 +274,7 @@ sub embed_header
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
                 print ' <link href="' . $theme_webprefix .
-                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
         } else {
@@ -295,7 +295,7 @@ sub embed_header
                 }
 
                 print ' <script src="' .
-                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
+                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -304,7 +304,7 @@ sub embed_header
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
                 print ' <link href="' . $theme_webprefix .
-                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
         } else {
@@ -318,7 +318,7 @@ sub embed_header
         {
             print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -335,7 +335,7 @@ sub embed_header
                 }
 
                 print ' <script src="' .
-                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version(1) . '"></script>' . "\n";
+                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -497,13 +497,13 @@ sub embed_pm_scripts
 sub embed_css_fonts
 {
     print ' <link href="' . $theme_webprefix . '/unauthenticated/css/fonts-roboto.' .
-      (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
 }
 
 sub embed_css_bundle
 {
     print ' <link href="' .
-      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version(1) . '" rel="stylesheet">' . "\n";
+      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
 
@@ -511,14 +511,14 @@ sub embed_css_night_rider
 {
     if (theme_night_mode_login() || theme_night_mode()) {
         print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/nightrider.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version(1) . '" rel="stylesheet" data-palette>' . "\n";
+          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
 sub embed_js_bundle
 {
     print ' <script src="' .
-      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version(1) . '"></script>' . "\n";
+      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version('timestamped') . '"></script>' . "\n";
 }
 
 sub embed_js_scripts
@@ -640,7 +640,7 @@ sub embed_footer
             get_module_name() =~ /postgresql/)
         {
             print ' <script src="' . $theme_webprefix . '/extensions/sql.' .
-              ($args[0] ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
+              ($args[0] ? 'src' : 'min') . '.js?' . theme_version('timestamped') . '"></script>' . "\n";
         }
 
         # Load `File Manager` specific scripts
@@ -648,7 +648,7 @@ sub embed_footer
             get_module_name() =~ /filemin/)
         {
             print ' <script src="' . $theme_webprefix . '/extensions/file-manager/file-manager.' .
-              ($args[0] ? 'src' : 'min') . '.js?' . theme_version(1) . '"></script>' . "\n";
+              ($args[0] ? 'src' : 'min') . '.js?' . theme_version('timestamped') . '"></script>' . "\n";
         }
 
     }
@@ -1337,53 +1337,51 @@ sub theme_night_mode_login
 
 sub theme_version
 {
-    my ($string, $minor) = @_;
-    my %tinfo        = get_theme_info($current_theme);
-    my $version      = $tinfo{'version'};
-    my $mversion     = $tinfo{'mversion'};
-    my $is_alpha     = string_contains($version, 'alpha');
-    my $is_beta      = string_contains($version, 'beta');
-    my $is_rc        = string_contains($version, 'RC');
-    my $is_devel_ver = $is_alpha || $is_beta || $is_rc;
+    my ($version_type, $nocache) = @_;
+    my $tversions = getvar('tversion_cached');
 
-    # XXX refactor target - this sub should do only one thing not multiple
-    my $version_suf = $version;
-    my ($version_sim) = $version_suf =~ /([\d]+\.[\d]+)/;
-    if ($version_suf =~ /[\d]+\.[\d]+\.([\d]+)/) {
-        $version_suf = $1;
-        if ($version_suf <= 9) {
-            $version_suf = "0$version_suf";
-        }
-    } else {
-        $version_suf = "00";
+    if (!$tversions || $nocache) {
+        my %tinfo    = get_theme_info($current_theme);
+        my $version  = $tinfo{'version'};
+        my $mversion = $tinfo{'mversion'};
+        my $bversion = $tinfo{'bversion'};
+
+        my $is_alpha          = string_contains($version, 'alpha');
+        my $is_beta           = string_contains($version, 'beta');
+        my $is_rc             = string_contains($version, 'RC');
+        my $is_devel_ver      = $is_alpha || $is_beta || $is_rc || theme_debug_mode();
+        my ($ver_dot_one)     = $version =~ /\d+\.([\d]+)/;
+        my ($ver_dot_two_pre) = $version =~ /\.\d+\.([\d]+)$/;
+        my $ver_dot_two       = $ver_dot_two_pre ? $ver_dot_two_pre : 0;
+        my $ver_dot_one_str   = (int($ver_dot_one) < 10 ? ("0" + $ver_dot_one) : $ver_dot_one);
+        my $ver_dot_two_str   = (int($ver_dot_two) < 10 ? ("0" + $ver_dot_two) : $ver_dot_two);
+        my $theme_full_version_str =
+          (int($version) . "" . $ver_dot_one_str . "" . $ver_dot_two_str . "" . $mversion . "$bversion");
+        my $theme_full_version_with_minor_str =
+          ($version . (int($mversion) > 1 ? "-" . int($mversion) : "") . (int($bversion) > 1 ? ":" . int($bversion) : ""));
+        $tversions->{'timestamped'}  = ($theme_full_version_str . "" . ($is_devel_ver ? time() : '9999999999'));
+        $tversions->{'version'}      = $version;
+        $tversions->{'versionfull'} = $theme_full_version_with_minor_str;
+        setvar('tversion_cached', $tversions);
     }
 
-    # Return minor version only
-    if ($minor) {
+    if ($version_type) {
 
-        # Format minor version suffix
-        if ($string) {
-            $mversion = int($mversion);
-            if ($mversion > 1) {
-                $mversion = "-$mversion";
-            } else {
-                $mversion = undef;
-            }
+        # Return all versions in stringified object
+        if ($version_type eq 'json') {
+            return convert_to_json($tversions);
         }
-        return $mversion;
-    }
 
-    # Return theme version as timestamp
-    if ($string) {
-        $version = $version_sim;
-        $version =~ s/(alpha|beta|RC)\d*|\.|-//ig;
-        if (theme_debug_mode() || $is_devel_ver) {
-            $version .= $version_suf . ("9" . time() . "$mversion");
-        } else {
-            $version .= $version_suf . ('99999999999' . $mversion);
+        # Return a string
+        else {
+            return $tversions->{$version_type};
         }
     }
-    return $version;
+
+    # Return all versions in hash ref
+    else {
+        return $tversions;
+    }
 }
 
 sub theme_debug_mode
@@ -1410,8 +1408,8 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-redirect="' .
-      get_theme_temp_data('redirected') .
+    return 'data-redirect="' . get_theme_temp_data('redirected') .
+
       # ref.: CXX1010000
       '" data-needs-restart="' .
       getvar('needs-restart') .
@@ -1460,9 +1458,7 @@ sub header_html_data
       ' data-editor-palette="' .
       $theme_config{'settings_cm_editor_palette'} .
       '" data-theme-version="' .
-      theme_version(0) .
-      '" data-theme-mversion="' .
-      theme_version(0, 1) .
+      urlize(theme_version('json')) .
       '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
       '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
       '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() .
@@ -1708,7 +1704,7 @@ sub get_button_tooltip
     my $hot_key      = ($key ? ucfirst($theme_config{$key}) : undef);
     my $hot_keys_map = { 'dot' => '.', 'comma' => ',' };
     $hot_key = "⇧ + $hot_keys_map->{$theme_config{$key}}"
-      if ($hot_keys_map->{$theme_config{$key}});
+      if ($hot_keys_map->{ $theme_config{$key} });
 
     if (!$container) {
         $container = '#content';
