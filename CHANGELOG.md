@@ -4,7 +4,7 @@
 * Add ability to notify user if restarting Webmin failed upon upgrade
 * Fix regression with missing install Usermin panel as Chrome application
 * Fix regression with missing notification when theme upgraded in background
-* Fix added to favorites server name in Virtualmin and Cloudmin
+* Fix server name when added to favorites in Virtualmin and Cloudmin
 * Fix buttons icon row bottom margin in Cluster modules
 * Fix progressive output text padding for older pages
 
