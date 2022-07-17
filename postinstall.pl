@@ -9,7 +9,6 @@ sub module_install
 {
     foreach my $f (
         "manifest-cloudmin.json",
-        "manifest-usermin.json",
         "manifest-webmin.json",
         "manifest-virtualmin.json")
     {
