@@ -1,4 +1,4 @@
-#!/usr/bin/env perl -w
+#!/usr/local/bin/perl -w
 
 package File::Grep;
 
