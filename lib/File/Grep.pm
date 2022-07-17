@@ -1,5 +1,3 @@
-#!/usr/local/bin/perl -w
-
 package File::Grep;
 
 use strict;
