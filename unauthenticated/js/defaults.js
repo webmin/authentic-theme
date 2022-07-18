@@ -216,6 +216,7 @@ var
                     ['edit_newmysqls', 'MySQL MariaDB'],
                     ['dkim', 'DKIM, opendkim'],
                     ['edit_domdkim', 'DKIM', 'opendkim'],
+                    ['smtpclouds', 'Amazon SES'],
                     ['dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS'],
                     ['list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze'],
                     ['edit_newvalidate', 'fix reset'],
