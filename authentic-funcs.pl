@@ -866,6 +866,7 @@ sub init_prefail
         !defined(&setvar) ||
 
         # Affects upgrades from before 1.995
+        !defined(&webmin_user_can_rpc) ||
         !defined(&webmin_user_is_admin))
     {
         do("$root_directory/web-lib-funcs.pl");
