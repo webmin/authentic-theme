@@ -165,6 +165,7 @@ directory. This is strongly \e[3mnot advised\e[0m for any production system!"
       # Checking for possible errors
       if [ $? -eq 0 ] && [ -f "$DIR/.~authentic-theme/theme.info" ]; then
         # Post successful commands
+        cp -P "$DIR/authentic-theme/manifest"-* "$DIR/.~authentic-theme/"
         rm -rf "$DIR/authentic-theme"/*
         mv "$DIR/.~authentic-theme"/* "$DIR/authentic-theme/"
         rm -rf "$DIR/.~authentic-theme"
