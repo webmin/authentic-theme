@@ -48,14 +48,15 @@ sub xhr
             if ($subtype eq 'links') {
                 my @submenu = map {
                     $_->{'link'}   =~ /.*?$module.*\/(\w+\.cgi).*?$param=/,
-                      $_->{'link'} =~ /(\/.*log.*\/.*)/,
-                      $_->{'link'} =~ /(\/.*php.*\/.*)/,
-                      $_->{'link'} =~ /(\/.*spam.*\/.*)/,
-                      $_->{'link'} =~ /(\/.*apache.*\/.*)/,
-                      $_->{'link'} =~ /(\/.*virtualmin-.*\/.*)/
+                      $_->{'link'} =~ /(\/.*?_log\.cgi\?.*)/,
+                      $_->{'link'} =~ /(.*?\/webminlog\/.*?\.cgi.*)/,
+                      $_->{'link'} =~ /(.*?\/phpini\/.*?\.cgi.*)/,
+                      $_->{'link'} =~ /(.*?\/spam\/.*?\.cgi.*)/,
+                      $_->{'link'} =~ /(.*?\/apache\/.*?\.cgi.*)/,
+                      $_->{'link'} =~ /(.*?\/virtualmin-.*?\/.*?\.cgi.*)/,
                 } array_flatten(grep {$_->[0]->{'link'}} map {$_->{'members'}} @menu);
 
-                my @fmmenu = map {$_->{'link'} =~ /(filemin.*)/} @menu;
+                my @fmmenu = map {$_->{'link'} =~ /(filemin\/.*?\.cgi.*)/} @menu;
                 @menu         = map {$_->{'link'} =~ /.*?$module.*\/(\w+\.cgi).*?$param=/} @menu;
                 @menu         = (@menu, @submenu, @fmmenu);
                 $data{'menu'} = \@menu;
