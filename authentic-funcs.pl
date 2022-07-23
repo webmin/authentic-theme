@@ -863,6 +863,7 @@ sub init_prefail
         !defined(&get_webprefix) ||
 
         # Affects upgrades from before 1.990
+        !defined(&getvar) ||
         !defined(&setvar) ||
 
         # Affects upgrades from before 1.995
