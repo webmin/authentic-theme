@@ -1,15 +1,23 @@
 ## Changelog
 
-#### Version 19.98-RC1 (July 17, 2022)
+#### Version 19.98 (July 24, 2022)
 * Add ability to notify user if restarting Webmin failed upon upgrade
-* Fix regression with missing install Usermin panel as Chrome application
-* Fix regression with missing notification when theme upgraded in background
+* Fix regression for missing install Usermin panel as Chrome application
+* Fix regression for missing notification when theme upgraded in background
 * Fix server name when added to favorites in Virtualmin and Cloudmin
-* Fix buttons icon row bottom margin in Cluster modules
+* Fix algorithm for fetching same content page when switching domains in Virtualmin
+* Fix password meter to be displayed on field focus as well
+* Fix to preserve manifest links upon manual upgrade
+* Fix to better balance tables with four cells in row
 * Fix progressive output text padding for older pages
+* Fix tiny buttons generation for PHP and AWStats modules
+* Fix buttons icon row bottom margin in Cluster modules
+* Fix graphs display in Partitions on Local Disks module
+* Fix display of scheduled backups page and its destinations section in Virtualmin
+* Fix to refrain from displaying connection error popup during progressive calls and initial setup
 
 #### Version 19.97 (July 10, 2022)
-* Add ability to store user column sorting on table basis when listing in File Manager
+* Add ability to store user column sorting per table basis when listing in File Manager
 * Add better support for hotkeys management on Mac in File Manager [#1604](https://github.com/authentic-theme/authentic-theme/issues/1604#issuecomment-1179342479)
 * Add support for fetching same content page with all links as switching domains in Virtualmin
 * Add hotkeys for opening module and theme config
