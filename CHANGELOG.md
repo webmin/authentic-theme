@@ -4,8 +4,8 @@
 * Add ability to notify user if restarting Webmin failed upon upgrade
 * Fix regression for missing install Usermin panel as Chrome application
 * Fix regression for missing notification when theme upgraded in background
-* Fix server name when added to favorites in Virtualmin and Cloudmin
 * Fix algorithm for fetching same content page when switching domains in Virtualmin
+* Fix server name when added to favorites in Virtualmin and Cloudmin
 * Fix password meter to be displayed on field focus as well
 * Fix to preserve manifest links upon manual upgrade
 * Fix to better balance tables with four cells in row
