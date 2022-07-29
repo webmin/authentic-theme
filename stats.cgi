@@ -21,6 +21,7 @@ init_config();
 ReadParse();
 
 init_prefail();
+print_json({}), exit if (!defined(&webmin_user_is_admin));
 print_json({}), exit if (!webmin_user_is_admin());
 
 # Load theme language and settings
