@@ -404,11 +404,19 @@ sub print_sysstats_panel_start
 
     my $recollect;
     my $event_hold_modifer_icon = sub {
+        my $alt_key  = 'Alt';
+        my $ctrl_key = 'Ctrl';
+        my $meta_key = 'Meta';
+        if (get_env('http_user_agent') =~ /macintosh/i) {
+            $alt_key  = '⌥';
+            $ctrl_key = '⌃';
+            $meta_key = '⌘';
+        }
         return
-          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'ctrlKey'  ? '⌃' :
-          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'metaKey'  ? '⌘' :
+          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'ctrlKey'  ? $ctrl_key :
+          $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'metaKey'  ? $meta_key :
           $theme_config{'settings_hotkey_toggle_hold_modifier'} eq 'shiftKey' ? '⇧' :
-          '⌥';
+          $alt_key;
     };
     if ($info_ref) {
         my @recollect = @{$info_ref};
