@@ -870,6 +870,7 @@ sub init_prefail
         !defined(&webmin_user_can_rpc) ||
         !defined(&webmin_user_is_admin))
     {
+        load_theme_library();
         do("$root_directory/web-lib-funcs.pl");
         setvar('needs-restart', has_command('systemctl') || $config_directory);
     }
