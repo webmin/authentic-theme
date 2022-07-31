@@ -207,3 +207,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=選択中は<tt>コマ�
 theme_xhred_webmin_requires_restart=前回のパッケージアップグレードで、WebminWebサーバーデーモンが正しく再起動されなかったことが検出されました。これは、<tt>$1</tt>コマンドを呼び出してWebサーバーを手動で再起動するために必要です。
 theme_xhred_webmin_requires_restart_yes=はい、再起動してみてください
 theme_xhred_webmin_requires_restart_no=いいえ、手動で再起動します
+
+#19.99
+theme_xhred_filemanager_path_manual=パスを手動で入力します（Ctrl + L）

@@ -681,3 +681,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pastikan kekunci <tt>ar
 theme_xhred_webmin_requires_restart=Ia dikesan bahawa daemon pelayan web Webmin tidak dimulakan semula dengan betul pada peningkatan pakej terakhir. Ini adalah perlu untuk memulakan semula pelayan web secara manual dengan memanggil perintah <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ya, cuba mulakan semula
 theme_xhred_webmin_requires_restart_no=Tidak, saya akan memulakan semula secara manual
+
+#19.99
+theme_xhred_filemanager_path_manual=Masukkan laluan secara manual (Ctrl + L)

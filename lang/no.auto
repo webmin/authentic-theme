@@ -165,3 +165,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold <tt>kommando</tt>-
 theme_xhred_webmin_requires_restart=Det oppdages at Webmin-webserverdemonen ikke ble restartet på riktig måte ved siste pakkeoppgradering. Dette er nødvendig for å starte nettserveren på nytt manuelt ved å ringe kommandoen <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ja, prøv å starte den på nytt
 theme_xhred_webmin_requires_restart_no=Nei, jeg starter den på nytt manuelt
+
+#19.99
+theme_xhred_filemanager_path_manual=Skriv inn banen manuelt (Ctrl + L)

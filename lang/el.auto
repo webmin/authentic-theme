@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Κρατήστε πατ
 theme_xhred_webmin_requires_restart=Εντοπίστηκε ότι ο δαίμονας του διακομιστή Web Webmin δεν επανεκκινήθηκε σωστά κατά την τελευταία αναβάθμιση του πακέτου. Αυτό είναι απαραίτητο για μη αυτόματη επανεκκίνηση του διακομιστή ιστού καλώντας την εντολή <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ναι, δοκιμάστε να το επανεκκινήσετε
 theme_xhred_webmin_requires_restart_no=Όχι, θα το επανεκκινήσω χειροκίνητα
+
+#19.99
+theme_xhred_filemanager_path_manual=Εισαγάγετε τη διαδρομή χειροκίνητα (Ctrl + L)

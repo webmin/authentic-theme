@@ -1214,3 +1214,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Przytrzymaj klawisz <tt
 theme_xhred_webmin_requires_restart=Wykryto, że demon serwera WWW Webmin nie został poprawnie zrestartowany podczas ostatniej aktualizacji pakietu. Jest to konieczne, aby ręcznie zrestartować serwer WWW, wywołując polecenie <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Tak, spróbuj go ponownie uruchomić
 theme_xhred_webmin_requires_restart_no=Nie, zrestartuję go ręcznie
+
+#19.99
+theme_xhred_filemanager_path_manual=Wprowadź ścieżkę ręcznie (Ctrl + L)

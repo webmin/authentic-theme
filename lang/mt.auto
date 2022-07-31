@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Żomm it-tasti <tt>kman
 theme_xhred_webmin_requires_restart=Jinstab li d-daemon tas-server tal-web Webmin ma reġax inbeda b'mod korrett fl-aħħar aġġornament tal-pakkett. Dan huwa meħtieġ biex terġa' tibda l-web-server manwalment billi ċċempel kmand <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Iva, ipprova ibda mill-ġdid
 theme_xhred_webmin_requires_restart_no=Le, se nibda mill-ġdid manwalment
+
+#19.99
+theme_xhred_filemanager_path_manual=Daħħal il-passaġġ manwalment (Ctrl + L)

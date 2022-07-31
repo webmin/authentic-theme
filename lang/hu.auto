@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tartsa lenyomva a <tt>c
 theme_xhred_webmin_requires_restart=A rendszer azt észlelte, hogy a Webmin webszerver démon nem indult újra megfelelően a legutóbbi csomagfrissítéskor. Ez szükséges a webszerver manuális újraindításához a <tt>$1</tt> parancs meghívásával.
 theme_xhred_webmin_requires_restart_yes=Igen, próbáld meg újraindítani
 theme_xhred_webmin_requires_restart_no=Nem, manuálisan újraindítom
+
+#19.99
+theme_xhred_filemanager_path_manual=Írja be az elérési utat kézzel (Ctrl + L)

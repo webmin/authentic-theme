@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Задръжте кла
 theme_xhred_webmin_requires_restart=Установено е, че демонът на уеб сървъра Webmin не е рестартиран правилно при последното надграждане на пакета. Това е необходимо за ръчно рестартиране на уеб сървъра чрез извикване на командата <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Да, опитайте да го рестартирате
 theme_xhred_webmin_requires_restart_no=Не, ще го рестартирам ръчно
+
+#19.99
+theme_xhred_filemanager_path_manual=Въведете пътя ръчно (Ctrl + L)

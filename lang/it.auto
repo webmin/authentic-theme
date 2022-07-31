@@ -95,3 +95,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tenere premuto il tasto
 theme_xhred_webmin_requires_restart=Viene rilevato che il daemon del server Web Webmin non è stato riavviato correttamente durante l'ultimo aggiornamento del pacchetto. Ciò è necessario per riavviare manualmente il server web chiamando il comando <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Sì, prova a riavviarlo
 theme_xhred_webmin_requires_restart_no=No, lo riavvierò manualmente
+
+#19.99
+theme_xhred_filemanager_path_manual=Inserisci il percorso manualmente (Ctrl + L)

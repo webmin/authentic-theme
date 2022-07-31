@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Počas výberu držte s
 theme_xhred_webmin_requires_restart=Zistilo sa, že démon webového servera Webmin nebol správne reštartovaný pri poslednej aktualizácii balíka. Toto je potrebné na manuálne reštartovanie webového servera zavolaním príkazu <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Áno, skúste to reštartovať
 theme_xhred_webmin_requires_restart_no=Nie, reštartujem ho ručne
+
+#19.99
+theme_xhred_filemanager_path_manual=Zadajte cestu manuálne (Ctrl + L)

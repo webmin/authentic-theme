@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hou die <tt>command</tt
 theme_xhred_webmin_requires_restart=Daar word bespeur dat die Webmin-webbediener daemon nie korrek herbegin is met die laaste pakketopgradering nie. Dit is nodig om webbediener handmatig te herbegin deur <tt>$1</tt> opdrag te roep.
 theme_xhred_webmin_requires_restart_yes=Ja, probeer om dit weer te begin
 theme_xhred_webmin_requires_restart_no=Nee, ek sal dit handmatig herbegin
+
+#19.99
+theme_xhred_filemanager_path_manual=Voer pad handmatig in (Ctrl + L)

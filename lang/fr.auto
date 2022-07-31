@@ -165,3 +165,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Maintenez la touche <tt
 theme_xhred_webmin_requires_restart=Il est détecté que le démon du serveur Web Webmin n'a pas été redémarré correctement lors de la dernière mise à niveau du package. Ceci est nécessaire pour redémarrer manuellement le serveur Web en appelant la commande <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Oui, essayez de le redémarrer
 theme_xhred_webmin_requires_restart_no=Non, je vais le redémarrer manuellement
+
+#19.99
+theme_xhred_filemanager_path_manual=Entrez le chemin manuellement (Ctrl + L)

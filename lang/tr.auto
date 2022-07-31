@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Seçim sırasında <tt>
 theme_xhred_webmin_requires_restart=Webmin web sunucusu arka plan programının son paket yükseltmesinde doğru şekilde yeniden başlatılmadığı algılandı. Bu, <tt>$1</tt> komutunu çağırarak web sunucusunu manuel olarak yeniden başlatmak için gereklidir.
 theme_xhred_webmin_requires_restart_yes=Evet, yeniden başlatmayı deneyin
 theme_xhred_webmin_requires_restart_no=Hayır, manuel olarak yeniden başlatacağım
+
+#19.99
+theme_xhred_filemanager_path_manual=Yolu manuel olarak girin (Ctrl + L)

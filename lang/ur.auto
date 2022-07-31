@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Keep the <tt>command</t
 theme_xhred_webmin_requires_restart=It is detected that the Webmin web-server daemon was not restarted correctly on the last package upgrade. This is necessary to restart web-server manually by calling <tt>$1</tt> command.
 theme_xhred_webmin_requires_restart_yes=ہاں، اسے دوبارہ شروع کرنے کی کوشش کریں۔
 theme_xhred_webmin_requires_restart_no=نہیں، میں اسے دستی طور پر دوبارہ شروع کروں گا۔
+
+#19.99
+theme_xhred_filemanager_path_manual=دستی طور پر راستہ درج کریں (Ctrl + L)

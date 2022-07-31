@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Mantendu <tt>komandoa</
 theme_xhred_webmin_requires_restart=Detektatu da Webmin web-zerbitzariaren deabrua ez dela behar bezala berrabiarazi azken paketearen bertsio berritzean. Hau beharrezkoa da web-zerbitzaria eskuz berrabiarazteko <tt>$1</tt> komandoa deituz.
 theme_xhred_webmin_requires_restart_yes=Bai, saiatu berrabiarazi
 theme_xhred_webmin_requires_restart_no=Ez, eskuz berrabiaraziko dut
+
+#19.99
+theme_xhred_filemanager_path_manual=Sartu bidea eskuz (Ktrl + L)

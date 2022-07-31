@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=กดปุ่ม <tt>
 theme_xhred_webmin_requires_restart=ตรวจพบว่า Webmin web-server daemon ไม่ได้รีสตาร์ทอย่างถูกต้องในการอัพเกรดแพ็คเกจครั้งล่าสุด จำเป็นต้องรีสตาร์ทเว็บเซิร์ฟเวอร์ด้วยตนเองโดยเรียกใช้คำสั่ง <tt>$1</tt>
 theme_xhred_webmin_requires_restart_yes=ใช่ ลองเริ่มต้นใหม่อีกครั้ง
 theme_xhred_webmin_requires_restart_no=ไม่ ฉันจะรีสตาร์ทเอง
+
+#19.99
+theme_xhred_filemanager_path_manual=ป้อนเส้นทางด้วยตนเอง (Ctrl + L)

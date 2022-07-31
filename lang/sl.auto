@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Med izbiranjem držite 
 theme_xhred_webmin_requires_restart=Zaznano je, da se demon spletnega strežnika Webmin ob zadnji nadgradnji paketa ni pravilno znova zagnal. To je potrebno za ročni ponovni zagon spletnega strežnika s klicem ukaza <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Da, poskusite znova zagnati
 theme_xhred_webmin_requires_restart_no=Ne, znova ga bom zagnal ročno
+
+#19.99
+theme_xhred_filemanager_path_manual=Vnesite pot ročno (Ctrl + L)

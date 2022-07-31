@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=השאר את מקש <t
 theme_xhred_webmin_requires_restart=זוהה שדמון שרת האינטרנט של Webmin לא הופעל מחדש כהלכה בשדרוג החבילה האחרון. זה הכרחי כדי להפעיל מחדש את שרת האינטרנט באופן ידני על ידי קריאה לפקודה <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=כן, נסה להפעיל אותו מחדש
 theme_xhred_webmin_requires_restart_no=לא, אני אתחיל אותו מחדש באופן ידני
+
+#19.99
+theme_xhred_filemanager_path_manual=הזן נתיב באופן ידני (Ctrl + L)

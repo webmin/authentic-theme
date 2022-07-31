@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Giữ phím <tt>lệnh<
 theme_xhred_webmin_requires_restart=Nó được phát hiện rằng daemon máy chủ web Webmin không được khởi động lại đúng cách trong lần nâng cấp gói cuối cùng. Điều này là cần thiết để khởi động lại máy chủ web theo cách thủ công bằng cách gọi lệnh <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Có, hãy thử khởi động lại nó
 theme_xhred_webmin_requires_restart_no=Không, tôi sẽ khởi động lại nó theo cách thủ công
+
+#19.99
+theme_xhred_filemanager_path_manual=Nhập đường dẫn theo cách thủ công (Ctrl + L)

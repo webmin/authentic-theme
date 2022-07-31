@@ -1207,3 +1207,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Mantenga pulsada la tec
 theme_xhred_webmin_requires_restart=Se detecta que el demonio del servidor web de Webmin no se reinició correctamente en la última actualización del paquete. Esto es necesario para reiniciar el servidor web manualmente llamando al comando <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Sí, prueba a reiniciarlo
 theme_xhred_webmin_requires_restart_no=No, lo reiniciaré manualmente
+
+#19.99
+theme_xhred_filemanager_path_manual=Ingrese la ruta manualmente (Ctrl + L)

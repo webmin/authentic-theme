@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Утримуйте кл
 theme_xhred_webmin_requires_restart=Виявлено, що демон веб-сервера Webmin не було перезапущено належним чином під час останнього оновлення пакета. Це необхідно, щоб перезапустити веб-сервер вручну, викликавши команду <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Так, спробуйте перезапустити його
 theme_xhred_webmin_requires_restart_no=Ні, я перезапущу його вручну
+
+#19.99
+theme_xhred_filemanager_path_manual=Введіть шлях вручну (Ctrl + L)

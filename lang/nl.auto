@@ -1183,3 +1183,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Houd de <tt>opdracht</t
 theme_xhred_webmin_requires_restart=Er is gedetecteerd dat de Webmin-webserverdaemon niet correct opnieuw is opgestart bij de laatste pakketupgrade. Dit is nodig om de webserver handmatig te herstarten door de opdracht <tt>$1</tt> aan te roepen.
 theme_xhred_webmin_requires_restart_yes=Ja, probeer het opnieuw op te starten
 theme_xhred_webmin_requires_restart_no=Nee, ik zal het handmatig opnieuw opstarten
+
+#19.99
+theme_xhred_filemanager_path_manual=Pad handmatig invoeren (Ctrl + L)

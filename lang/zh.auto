@@ -463,3 +463,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=在选择期间按住 <
 theme_xhred_webmin_requires_restart=检测到 Webmin web-server 守护程序在上次软件包升级时未正确重新启动。这是通过调用 <tt>$1</tt> 命令手动重新启动网络服务器所必需的。
 theme_xhred_webmin_requires_restart_yes=是的，尝试重新启动它
 theme_xhred_webmin_requires_restart_no=不，我会手动重启
+
+#19.99
+theme_xhred_filemanager_path_manual=手动输入路径（Ctrl + L）

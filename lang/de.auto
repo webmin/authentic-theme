@@ -198,3 +198,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Halten Sie während der
 theme_xhred_webmin_requires_restart=Es wurde festgestellt, dass der Webmin-Webserver-Daemon beim letzten Paket-Upgrade nicht korrekt neu gestartet wurde. Dies ist erforderlich, um den Webserver manuell neu zu starten, indem Sie den Befehl <tt>$1</tt> aufrufen.
 theme_xhred_webmin_requires_restart_yes=Ja, versuchen Sie es neu zu starten
 theme_xhred_webmin_requires_restart_no=Nein, ich werde es manuell neu starten
+
+#19.99
+theme_xhred_filemanager_path_manual=Pfad manuell eingeben (Strg + L)

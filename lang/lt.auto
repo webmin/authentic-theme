@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pasirinkimo metu laikyk
 theme_xhred_webmin_requires_restart=Aptikta, kad Webmin žiniatinklio serverio demonas nebuvo tinkamai paleistas iš naujo paskutinio paketo atnaujinimo metu. Tai būtina norint iš naujo paleisti žiniatinklio serverį rankiniu būdu, iškviečiant komandą <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Taip, pabandykite iš naujo paleisti
 theme_xhred_webmin_requires_restart_no=Ne, aš paleisiu iš naujo rankiniu būdu
+
+#19.99
+theme_xhred_filemanager_path_manual=Įveskite kelią rankiniu būdu (Ctrl + L)

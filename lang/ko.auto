@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=선택하는 동안 <tt
 theme_xhred_webmin_requires_restart=Webmin 웹 서버 데몬이 마지막 패키지 업그레이드에서 올바르게 다시 시작되지 않은 것으로 감지되었습니다. <tt>$1</tt> 명령을 호출하여 웹 서버를 수동으로 다시 시작하기 위해 필요합니다.
 theme_xhred_webmin_requires_restart_yes=예, 다시 시작해 보세요
 theme_xhred_webmin_requires_restart_no=아니요, 수동으로 다시 시작하겠습니다
+
+#19.99
+theme_xhred_filemanager_path_manual=수동으로 경로 입력(Ctrl + L)

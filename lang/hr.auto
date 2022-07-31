@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tijekom odabira držite
 theme_xhred_webmin_requires_restart=Otkriveno je da demon web-poslužitelja Webmin nije ispravno ponovno pokrenut pri zadnjoj nadogradnji paketa. Ovo je potrebno za ručno ponovno pokretanje web-poslužitelja pozivanjem naredbe <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Da, pokušajte ga ponovno pokrenuti
 theme_xhred_webmin_requires_restart_no=Ne, ponovno ću ga pokrenuti ručno
+
+#19.99
+theme_xhred_filemanager_path_manual=Unesite put ručno (Ctrl + L)

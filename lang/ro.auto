@@ -288,3 +288,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Țineți apăsată tast
 theme_xhred_webmin_requires_restart=Sa detectat că demonul web-server Webmin nu a fost repornit corect la ultima actualizare a pachetului. Acest lucru este necesar pentru a reporni manual serverul web apelând comanda <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Da, încercați să-l reporniți
 theme_xhred_webmin_requires_restart_no=Nu, îl voi reporni manual
+
+#19.99
+theme_xhred_filemanager_path_manual=Introduceți calea manual (Ctrl + L)

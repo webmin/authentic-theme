@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pidä <tt>komento</tt>-
 theme_xhred_webmin_requires_restart=On havaittu, että Webmin-verkkopalvelindaemonia ei käynnistetty uudelleen oikein viimeisimmän paketin päivityksen yhteydessä. Tämä on tarpeen verkkopalvelimen käynnistämiseksi uudelleen manuaalisesti komennolla <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Kyllä, yritä käynnistää se uudelleen
 theme_xhred_webmin_requires_restart_no=Ei, käynnistän sen uudelleen manuaalisesti
+
+#19.99
+theme_xhred_filemanager_path_manual=Kirjoita polku manuaalisesti (Ctrl + L)

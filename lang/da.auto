@@ -1208,3 +1208,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold <tt>kommando</tt>-
 theme_xhred_webmin_requires_restart=Det er registreret, at Webmin-webserver-dæmonen ikke blev genstartet korrekt ved den sidste pakkeopgradering. Dette er nødvendigt for at genstarte webserveren manuelt ved at kalde kommandoen <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ja, prøv at genstarte den
 theme_xhred_webmin_requires_restart_no=Nej, jeg genstarter den manuelt
+
+#19.99
+theme_xhred_filemanager_path_manual=Indtast stien manuelt (Ctrl + L)

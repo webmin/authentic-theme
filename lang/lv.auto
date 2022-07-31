@@ -1296,3 +1296,6 @@ theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Atlases laikā turiet n
 theme_xhred_webmin_requires_restart=Ir konstatēts, ka Webmin tīmekļa servera dēmons netika pareizi restartēts pēdējā pakotnes jaunināšanas laikā. Tas ir nepieciešams, lai manuāli restartētu tīmekļa serveri, izsaucot komandu <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Jā, mēģiniet to restartēt
 theme_xhred_webmin_requires_restart_no=Nē, es to restartēšu manuāli
+
+#19.99
+theme_xhred_filemanager_path_manual=Ievadiet ceļu manuāli (Ctrl + L)
