@@ -565,7 +565,7 @@ sub theme_settings_format
              $description && ($k =~ /level_navigation|leftmenu_width/ ?
                               '<div class="smaller text-normal no-padding">' . $description . '</div>' :
                               $k =~ /sysinfo_theme_updates/ &&
-                              '<div class="smaller text-normal no-padding margined-left-1"></div>'))
+                              '<div class="smaller text-normal no-padding margined-left-1 theme-version-installed-vs-remote"></div>'))
         ),
         "<span>$v</span>"];
 }
