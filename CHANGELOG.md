@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 19.99-RC2 (August 2, 2022)
+* Add a separate button for opening path manually in File Manager [#1611](https://github.com/authentic-theme/authentic-theme/issues/1611)
+* Fix to unlock inbuilt command shell input even if command fails
+* Fix to flip modifier hotkey in mac OS when reverse searching in inbuilt command shell
+* Fix form submissions on pressing enter doubling payload
+* Fix to submit post-installation wizard page on pressing enter
+* Fix to display modifier keys names correctly depending on the platform [#1610](https://github.com/authentic-theme/authentic-theme/issues/1610)
+* Fix to always preload theme library in fail mode
+* Fix banner text contrast in dark palette on login screen
+
 #### Version 19.98 (July 24, 2022)
 * Add ability to notify user if restarting Webmin failed upon upgrade
 * Fix regression for missing install Usermin panel as Chrome application
