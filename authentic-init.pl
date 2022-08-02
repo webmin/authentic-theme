@@ -1458,6 +1458,8 @@ sub header_html_data
       ' data-editor-palette="' .
       $theme_config{'settings_cm_editor_palette'} .
       '" data-theme-version="' .
+      theme_version('version') .
+      '" data-theme-version-data="' .
       urlize(theme_version('json')) .
       '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
       '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
