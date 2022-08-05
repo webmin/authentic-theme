@@ -872,7 +872,8 @@ sub init_prefail
     {
         load_theme_library();
         do("$root_directory/web-lib-funcs.pl");
-        setvar('needs-restart', has_command('systemctl') || $config_directory);
+        setvar('needs-restart', has_command('systemctl') || $config_directory)
+            if (defined(&setvar));
     }
 }
 
