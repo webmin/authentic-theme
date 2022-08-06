@@ -24,11 +24,20 @@ sub xhr
     };
 
     if ($type eq "cmd") {
+        # Fail state restart
         if ($action eq "restart") {
             if (webmin_user_is_admin()) {
                 my $systemd = has_command('systemctl');
                 if ($systemd) {
-                    system("$systemd kill -s SIGTERM webmin");
+
+                    # We need to force kill a potentially stuck process without pid
+                    my %miniserv;
+                    get_miniserv_config(\%miniserv);
+
+                    my $force_restart =
+                      -r $miniserv{'pidfile'} ? "${systemd} kill -s SIGTERM webmin" :
+                      "/etc/webmin/stop ; /etc/webmin/start ; /etc/webmin/.stop-init --kill";
+                    system($force_restart);
                 } else {
                     restart_miniserv();
                 }
