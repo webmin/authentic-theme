@@ -654,9 +654,12 @@ sub get_sysinfo_vars
 
         my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
 
-        #Webmin version
+        # Webmin version
+        my $wmv = get_webmin_version(1);
+        my $wmvrel = get_webmin_version_release();
+        $wmv .= "-".$wmvrel if ($wmvrel && $wmvrel > 1);
         $webmin_version =
-          product_version_update(get_webmin_version(1), 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
+          product_version_update($wmv, 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
           '"><a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
 '" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';

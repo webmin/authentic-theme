@@ -769,6 +769,13 @@ sub get_usermin_vars
             # Usermin root dir
             $has_usermin_root_dir = $uminiserv{'root'};
 
+            # Usermin minor version
+            my $get_usermin_version_release = sub {
+                my $usermin_version_release = read_file_contents("$has_usermin_root_dir/release") || "";
+                $usermin_version_release =~ s/\r|\n//g;
+                return $usermin_version_release > 1 ? $usermin_version_release : undef;
+            };
+
             # Usermin version
             $has_usermin_version = $uminiserv{'server'};
             $has_usermin_version =~ /\/([\d\.]+)/;
@@ -778,6 +785,12 @@ sub get_usermin_vars
                   substr($has_usermin_version, 0, 5) . "." .
                   substr($has_usermin_version, 5, 5 - 1) . "." .
                   substr($has_usermin_version, 5 * 2 - 1);
+            }
+
+            if ($has_usermin_version) {
+                my $has_usermin_version_release = &$get_usermin_version_release;
+                $has_usermin_version .= "-" . $has_usermin_version_release
+                  if ($has_usermin_version_release);
             }
 
             # Usermin installed
