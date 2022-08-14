@@ -546,7 +546,7 @@ sub replace_meta
 sub product_version_update_remote
 {
     my ($latest_known_versions_remote, $latest_known_versions_remote_error, %versions_remote);
-    my $software_latest_cache       = theme_cached('software-latest');
+    my $software_latest_cache       = theme_cached('software+latest');
     my $software_latest_cache_extra = sub {
         my ($software_latest_cache_original) = @_;
         my $software_latest_cache_extra_csf  = theme_cached('version-csf-stable');
@@ -566,7 +566,7 @@ sub product_version_update_remote
     if ($software_latest_cache) {
         return &$software_latest_cache_extra($software_latest_cache);
     } else {
-        http_download("virtualmin.com", 443, '/software-latest',
+        http_download("virtualmin.com", 443, '/software+latest',
                       \$latest_known_versions_remote,
                       \$latest_known_versions_remote_error,
                       undef, 1, undef, undef, 5);
@@ -575,7 +575,7 @@ sub product_version_update_remote
         {
             %versions_remote = map {split /=/, $_} (split(/\n/, $latest_known_versions_remote));
         }
-        theme_cached('software-latest', \%versions_remote, $latest_known_versions_remote_error);
+        theme_cached('software+latest', \%versions_remote, $latest_known_versions_remote_error);
         return &$software_latest_cache_extra(\%versions_remote);
     }
 
@@ -583,38 +583,39 @@ sub product_version_update_remote
 
 sub product_version_update
 {
-    my ($v, $p) = @_;
+    my ($product_local_version, $product_local_name) = @_;
     my $software_versions_remote = product_version_update_remote();
-    my ($wv, $uv, $vv, $cv, $fv) = ($software_versions_remote->{'webmin'},
-                                    $software_versions_remote->{'usermin'},
-                                    $software_versions_remote->{'virtual-server'},
-                                    $software_versions_remote->{'server-manager'},
-                                    $software_versions_remote->{'csf'});
-    my $prodver =
-      $p eq "w" ? ["Webmin",                           $wv] :
-      $p eq "u" ? ["Usermin",                          $uv] :
-      $p eq "v" ? ["Virtualmin",                       $vv] :
-      $p eq "c" ? ["Cloudmin",                         $cv] :
-      $p eq "f" ? ["ConfigServer Security & Firewall", $fv] :
+
+    # Remote versions
+    my $product_remote_version =
+      $product_local_name eq "w" ? ["Webmin",                           $software_versions_remote->{'webmin'}] :
+      $product_local_name eq "u" ? ["Usermin",                          $software_versions_remote->{'usermin'}] :
+      $product_local_name eq "v" ? ["Virtualmin",                       $software_versions_remote->{'virtual-server'}] :
+      $product_local_name eq "c" ? ["Cloudmin",                         $software_versions_remote->{'server-manager'}] :
+      $product_local_name eq "f" ? ["ConfigServer Security & Firewall", $software_versions_remote->{'csf'}] :
       "";
 
-    my $vc = $v;
-    if ($vc && $vc =~ /(\.).*?(\.)/) {
-        substr($vc, 1 + index($vc, '.')) =~ s[\.][]g;
-    }
-    if (($p eq "w" && $vc < $wv) ||
-        ($p eq "u" && $vc < $uv) ||
-        ($p eq "v" && $vc < $vv) ||
-        ($p eq "c" && $vc < $cv) ||
-        ($p eq "f" && $vc < $fv))
+    # Compare versions
+    if (
+        ($product_local_name eq "w" &&
+         &compare_version_numbers($product_local_version, $software_versions_remote->{'webmin'}) < 0
+        ) ||
+        ($product_local_name eq "u" &&
+            &compare_version_numbers($product_local_version, $software_versions_remote->{'usermin'}) < 0) ||
+        ($product_local_name eq "v" &&
+            &compare_version_numbers($product_local_version, $software_versions_remote->{'virtual-server'}) < 0) ||
+        ($product_local_name eq "c" &&
+            &compare_version_numbers($product_local_version, $software_versions_remote->{'server-manager'}) < 0) ||
+        ($product_local_name eq "f" &&
+            &compare_version_numbers($product_local_version, $software_versions_remote->{'csf'}) < 0))
     {
         return '<a href="https://forum.virtualmin.com/search?q=' .
-          $prodver->[0] . '%20in%3Atitle%20%23news%20order%3Alatest" target="_blank">' .
+          $product_remote_version->[0] . '%20in%3Atitle%20%23news%20order%3Alatest" target="_blank">' .
           '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
-          theme_text('theme_xhred_global_outdated_desc', $prodver->[0], $prodver->[1]) .
-          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $v . '</span></a>';
+          theme_text('theme_xhred_global_outdated_desc', $product_remote_version->[0], $product_remote_version->[1]) .
+          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $product_local_version . '</span></a>';
     } else {
-        return $v;
+        return $product_local_version;
     }
 }
 
