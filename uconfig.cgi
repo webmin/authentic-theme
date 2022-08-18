@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, $user_config_directory, %theme_text, $current_lang);
+our (%text, %in, $root_directory, $config_directory, $current_lang, $default_lang, $user_config_directory, %theme_text);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
@@ -28,6 +28,7 @@ my (%access,
     $section,
     $module,
     $module_dir,
+    $module_dir_conf_file,
     %moduletext);
 
 $module = $in{'module'} || $ARGV[0];
@@ -43,13 +44,17 @@ if (-r &help_file($module, "config_intro")) {
 }
 &ui_print_header(&text('config_dir', $module_info{'desc'}), $text{'config_title'}, "", $help, 0, 1);
 $module_dir = &module_root_directory($module);
+$module_dir           = &module_root_directory($module);
+$module_dir_conf_file = "$module_dir/uconfig.info";
+if ($current_lang && $default_lang &&
+    $current_lang ne $default_lang &&
+    -r "$module_dir_conf_file.$current_lang")
+{
+    $module_dir_conf_file .= ".$current_lang";
+}
 
 # Read the uconfig.info file to find sections
-if (-r "$module_dir/uconfig.info.$current_lang") {
-        &read_file("$module_dir/uconfig.info.$current_lang", \%info, \@info_order);
-} else {
-        &read_file("$module_dir/uconfig.info", \%info, \@info_order);
-}
+&read_file($module_dir_conf_file, \%info, \@info_order);
 my @config_quick_access;
 my $config_quick_access_section;
 my $config_quick_access_category;
