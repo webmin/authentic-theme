@@ -1570,7 +1570,7 @@ sub theme_remote_version
     my $error;
     my $installed_version_devel = theme_version('version') =~ /alpha|beta|RC/;
 
-    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && $in =~ /xhr-/) {
+    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && post_has('xhr-')) {
         if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
             if (!$nocache) {
                 $remote_version = theme_cached('version-theme-development');
@@ -1802,7 +1802,7 @@ sub get_theme_user_link
 sub get_xhr_request
 {
 
-    if ($in =~ /xhr-/) {
+    if (post_has('xhr-')) {
         head();
 
         if ($in{'xhr-settings'} eq '1') {
