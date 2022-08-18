@@ -1326,7 +1326,7 @@ sub theme_redirect
     if ($remote_server_webprefix) {
         ($link) = $arg2 =~ /:\d+(.*)/;
         $url = "$remote_server_webprefix$link"
-          if ($url !~ /^$remote_server_webprefix/ || !$remote_server_linked);
+          if ($url !~ /^$remote_server_webprefix/);
     } elsif ((string_starts_with($arg1, 'http') && ($arg1 !~ /$origin/ || $referer !~ /$arg1/))) {
         print "Location: $arg1\n\n";
         return;
