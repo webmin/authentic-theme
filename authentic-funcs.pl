@@ -566,10 +566,11 @@ sub product_version_update_remote
     if ($software_latest_cache) {
         return &$software_latest_cache_extra($software_latest_cache);
     } else {
+        return { 'no-cache' => 1 } if (!post_has('xhr-'));
         http_download("virtualmin.com", 443, '/software+latest',
                       \$latest_known_versions_remote,
                       \$latest_known_versions_remote_error,
-                      undef, 1, undef, undef, 5);
+                      undef, 1, undef, undef, 10);
         if ($latest_known_versions_remote &&
             !$latest_known_versions_remote_error)
         {
@@ -587,6 +588,8 @@ sub product_version_update
     return $product_local_version
       if ($theme_config{'settings_check_remote_updates'} eq 'false');
     my $software_versions_remote = product_version_update_remote();
+    return $product_local_version
+      if ($software_versions_remote->{'no-cache'});
 
     # Remote versions
     my $product_remote_version =
@@ -878,6 +881,17 @@ sub init_prefail
         setvar('needs-restart', has_command('systemctl') || $config_directory)
             if (defined(&setvar));
     }
+}
+
+sub post_has
+{
+    my ($key) = @_;
+    if (%in) {
+        if (grep {$_ =~ /\Q$key\E/} keys %in) {
+            return 1;
+        }
+    }
+    return 0;
 }
 
 1;
