@@ -156,6 +156,7 @@ var
     settings_sysinfo_query_timeout = 1000,
     settings_sysinfo_cpu_fans_base_rpm = 1000,
     settings_sysinfo_cpu_and_fans_side_slider_always_show = false,
+    settings_check_remote_updates = true,
 
     // Open module config hotkey
     settings_hotkey_open_module_config_privileged = 'comma',
