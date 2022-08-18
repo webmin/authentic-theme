@@ -1,4 +1,2 @@
-#github: [rostovtsev]
-#patreon: authentic_theme
-custom: https://virtualmin.com/shop
-
+#github: [iliajie]
+custom: ["virtualmin.com/shop", "https://github.com/webmin/authentic-theme#donate"]
