@@ -1,12 +1,14 @@
 ## Changelog
 
-#### Version 20.00-RC1 (August 16, 2022)
+#### Version 20.00 (August 18, 2022)
 * Add ability to re-open last active directory in File Manager [#1613](https://github.com/authentic-theme/authentic-theme/issues/1613)
 * Fix custom path popover to hide on click in File Manager [#1611](https://github.com/authentic-theme/authentic-theme/issues/1611)
 * Fix to understand Webmin and Usermin minor (release) versions
 * Fix remote product comparison to support minor (release) versions
-* Fix Servers Index module logout link
+* Fix Servers Index module logout link [sourceforge.net#5576](https://sourceforge.net/p/webadmin/bugs/5576/#a52f)
 * Fix ability to open servers to a new tab in Servers Index module
+
+<!--- separator --->
 
 #### Version 19.99 (August 2, 2022)
 * Add a separate button for opening path manually in File Manager [#1611](https://github.com/authentic-theme/authentic-theme/issues/1611)
@@ -82,8 +84,6 @@
 * Fix regression bug when moving through user history (back/forward)
 * Fix scroll bar visibility inside drop-down list
 * Fix default module selection in Usermin
-
-<!--- separator --->
 
 #### Version 19.93.1 (May 23, 2022)
 * Fix contrast ratio for non-default palettes
