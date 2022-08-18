@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 
-our (%text, %in, $root_directory, $config_directory, $user_config_directory, %theme_text);
+our (%text, %in, $root_directory, $config_directory, $user_config_directory, %theme_text, $current_lang);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
@@ -45,7 +45,11 @@ if (-r &help_file($module, "config_intro")) {
 $module_dir = &module_root_directory($module);
 
 # Read the uconfig.info file to find sections
-&read_file("$module_dir/uconfig.info", \%info, \@info_order);
+if (-r "$module_dir/uconfig.info.$current_lang") {
+        &read_file("$module_dir/uconfig.info.$current_lang", \%info, \@info_order);
+} else {
+        &read_file("$module_dir/uconfig.info", \%info, \@info_order);
+}
 my @config_quick_access;
 my $config_quick_access_section;
 my $config_quick_access_category;
