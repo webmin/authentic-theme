@@ -146,7 +146,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print &ui_hidden('failed_twofactor_attempt', $in{'failed_twofactor_attempt'});
     print '<div class="input-group form-group">' . "\n";
     print
-'<input type="text" class="form-control session_login" name="twofactor" autocomplete="off" autocorrect="off" placeholder="'
+'<input type="text" class="form-control session_login" name="twofactor" autocomplete="one-time-code" autocorrect="off" placeholder="'
       . &theme_text('theme_xhred_login_token')
       . '" autofocus>' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
