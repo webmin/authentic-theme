@@ -545,7 +545,7 @@ sub replace_meta
 
 sub product_version_update_remote
 {
-    my ($latest_known_versions_remote, $latest_known_versions_remote_error, %versions_remote);
+    my ($latest_known_versions_remote, $latest_known_versions_remote_error, %versions_available);
     my $software_latest_cache       = theme_cached('software+latest');
     my $software_latest_cache_extra = sub {
         my ($software_latest_cache_original) = @_;
@@ -566,18 +566,30 @@ sub product_version_update_remote
     if ($software_latest_cache) {
         return &$software_latest_cache_extra($software_latest_cache);
     } else {
-        return { 'no-cache' => 1 } if (!post_has('xhr-'));
-        http_download("virtualmin.com", 443, '/software+latest',
-                      \$latest_known_versions_remote,
-                      \$latest_known_versions_remote_error,
-                      undef, 1, undef, undef, 10);
-        if ($latest_known_versions_remote &&
-            !$latest_known_versions_remote_error)
-        {
-            %versions_remote = map {split /=/, $_} (split(/\n/, $latest_known_versions_remote));
+        my $packages_updates_mod = 'package-updates';
+        my $packages_updates     = &foreign_available($packages_updates_mod);
+        return { 'no-cache' => 1 }
+          if (!post_has('xhr-') ||
+              !$packages_updates);
+        if ($packages_updates) {
+            &foreign_require($packages_updates_mod);
+            my @packages_updates_current = &package_updates::list_for_mode('updates', 0);
+            if (@packages_updates_current) {
+                foreach my $package_current (@packages_updates_current) {
+                    my ($package, $version) = ($package_current->{'name'}, $package_current->{'version'});
+                    if ($package &&
+                        $version &&
+                        $package =~ /^(wbm|wbt|ust|webmin|usermin)/)
+                    {
+                        $package =~ s/^(wbm|wbt|ust|webmin|usermin)\-//;
+                        $versions_available{$package} = $version;
+                    }
+
+                }
+            }
         }
-        theme_cached('software+latest', \%versions_remote, $latest_known_versions_remote_error);
-        return &$software_latest_cache_extra(\%versions_remote);
+        theme_cached('software+latest', \%versions_available);
+        return &$software_latest_cache_extra(\%versions_available);
     }
 
 }
@@ -614,11 +626,17 @@ sub product_version_update
         ($product_local_name eq "f" &&
             &compare_version_numbers($product_local_version, $software_versions_remote->{'csf'}) < 0))
     {
-        return '<a href="https://forum.virtualmin.com/search?q=' .
-          $product_remote_version->[0] . '%20in%3Atitle%20%23news%20order%3Alatest" target="_blank">' .
-          '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
-          theme_text('theme_xhred_global_outdated_desc', $product_remote_version->[0], $product_remote_version->[1]) .
-          '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $product_local_version . '</span></a>';
+        if (&foreign_available("virtual-server")) {
+            return '<a href="https://forum.virtualmin.com/search?q=' .
+              $product_remote_version->[0] . '%20in%3Atitle%20%23news%20order%3Alatest" target="_blank">' .
+              '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
+              theme_text('theme_xhred_global_outdated_desc', $product_remote_version->[0], $product_remote_version->[1]) .
+              '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $product_local_version . '</span></a>';
+        } else {
+            return '<span data-toggle="tooltip" data-placement="auto top" data-title="' .
+              theme_text('theme_xhred_global_outdated_desc2', $product_remote_version->[0], $product_remote_version->[1]) .
+              '" class="bg-danger text-danger pd-lf-2 pd-rt-2 br-2">' . $product_local_version . '</span>';
+        }
     } else {
         return $product_local_version;
     }

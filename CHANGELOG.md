@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 20.01-beta1
+* Fix to use package manager as the source of truth about available packages
+
 #### Version 20.00 (August 18, 2022)
 * Add ability to re-open last active directory in File Manager [#1613](https://github.com/authentic-theme/authentic-theme/issues/1613)
 * Fix custom path popover to hide on click in File Manager [#1611](https://github.com/authentic-theme/authentic-theme/issues/1611)
@@ -7,6 +10,7 @@
 * Fix remote product comparison to support minor (release) versions
 * Fix Servers Index module logout link [sourceforge.net#5576](https://sourceforge.net/p/webadmin/bugs/5576/#a52f)
 * Fix ability to open servers to a new tab in Servers Index module
+* Fix redirects on page reload in proxy mode (doubled webprefix)
 
 <!--- separator --->
 
