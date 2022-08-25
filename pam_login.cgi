@@ -128,15 +128,14 @@ if ($gconfig{'realname'}) {
     $host =~ s/:\d+//g;
     $host = &html_escape($host);
 }
-
+my $autocompleteuser = $gconfig{'noremember'} ? "autocomplete=off" : "autocomplete=username";
 print '<p class="form-signin-paragraph">' .
   text($gconfig{'nohostname'} ? 'pam_mesg2' : 'pam_mesg', "<br><strong>$host</strong>") . "\n";
 if (!$in{'password'}) {
     print '<div class="input-group form-group">' . "\n";
-    print
-'<input type="text" class="form-control session_login pam_login" name="answer" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="'
-      . &theme_text('theme_xhred_login_user')
-      . '" ' . ' autofocus>' . "\n";
+    print '<input type="text" class="form-control session_login pam_login" name="answer" ' .
+      $autocompleteuser . ' autocorrect="off" autocapitalize="none" placeholder="' .
+      &theme_text('theme_xhred_login_user') . '" ' . ' autofocus>' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print '</div>' . "\n";
 } else {
