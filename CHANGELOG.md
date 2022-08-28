@@ -1,10 +1,11 @@
 ## Changelog
 
-#### Version 20.01-RC2
+#### Version 20.01-RC3
 * Fix to unset last used directory if removed outside of File Manager
 * Fix to support configurable jailkit root path in File Manager
 * Fix to preserve tabs order on re-opening File Manager
 * Fix automated assistance filling for login page
+* Fix to improve elements positioning on edit manually pages
 * Fix intermittent disappearance of user and password icons on login page
 * Fix to use package manager as the source of truth about available packages
 * Fix to clear known cached data on manual system information refresh on the dashboard
