@@ -1,13 +1,13 @@
 ## Changelog
 
 #### Version 20.01-RC2
-* Fix to use package manager as the source of truth about available packages
-* Fix to unset removed last visited directory in File Manager
+* Fix to unset last used directory if removed outside of File Manager
 * Fix to support configurable jailkit root path in File Manager
 * Fix to preserve tabs order on re-opening File Manager
-* Fix to clear known cached data on manual system information refresh on the dashboard
 * Fix automated assistance filling for login page
 * Fix intermittent disappearance of user and password icons on login page
+* Fix to use package manager as the source of truth about available packages
+* Fix to clear known cached data on manual system information refresh on the dashboard
 
 #### Version 20.00 (August 18, 2022)
 * Add ability to re-open last active directory in File Manager [#1613](https://github.com/authentic-theme/authentic-theme/issues/1613)
