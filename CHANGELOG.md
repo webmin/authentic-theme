@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 20.01-RC3
+#### Version 20.01 (September 2, 2022)
 * Fix to unset last used directory if removed outside of File Manager
 * Fix to support configurable jailkit root path in File Manager
 * Fix to preserve tabs order on re-opening File Manager
