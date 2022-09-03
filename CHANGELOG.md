@@ -119,11 +119,11 @@
 * Fiх buttons to be displayed unconditionally on the dashboard [#1591](https://github.com/authentic-theme/authentic-theme/issues/1591)
 * Fiх missing cancel upload button [#1589](https://github.com/authentic-theme/authentic-theme/issues/1589)
 
-#### Version 19.91.2 (April 08, 2022)
+#### Version 19.91.2 (April 8, 2022)
 * Fiх MySQL/PostgreSQL bug preventing buttons from being used [sourceforge.net#55378](https://sourceforge.net/p/webadmin/discussion/55378/thread/6151d5478c/?limit=25#70f2)
 * Fiх copied markdown to be wrapped in accordion [forum.virtualmin.com/t/114662](https://forum.virtualmin.com/t/additional-copy-system-information-icon-on-dashboard/114662/6?u=ilia)
 
-#### Version 19.91.1 (April 02, 2022)
+#### Version 19.91.1 (April 2, 2022)
 * Add support for purging all users trash directories in File Manager [#629/comment-1081220953](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-1081220953)
 * Add ability to choose on the fly if files must be overwritten in File Manager [forum.virtualmin.com/t/114497](https://forum.virtualmin.com/t/114497/7)
 * Add support for additional English locales for better control over date formats [#1587](https://github.com/authentic-theme/authentic-theme/issues/1587)
@@ -141,11 +141,11 @@
 * Fix placeholder font size for textareas
 * Fix a bug preventing correctly opening file viewer on first call
 
-#### Version 19.90.1 (March 06, 2022)
+#### Version 19.90.1 (March 6, 2022)
 * Fix Usermin dependency check before installing a new update
 
 
-#### Version 19.90 (March 04, 2022)
+#### Version 19.90 (March 4, 2022)
 * Update contacts
 * Fix to sync theme version with Webmin version released
 
@@ -199,7 +199,7 @@
 * Fix various align issues for teletype text
 * Fix Custom Commands module support in Usermin
 
-#### Version 19.84.6 (December 04, 2021)
+#### Version 19.84.6 (December 4, 2021)
 * Fix to make initial load resilient to errors
 * Fiх connection flooding for server owners and mail users with disabled status collection [sourceforge.net#492](https://sourceforge.net/p/webadmin/usermin-bugs/492/)
 * Fiх regression preventing password complexity meter shown for some pages [#1568](https://github.com/authentic-theme/authentic-theme/issues/1568)
@@ -286,7 +286,7 @@
 * Fix accessibility contrast for navigation menu and side slider
 * Fix file tree-view with sub-directories in multiple allowed paths in File Manager
 
-#### Version 19.74 (April 04, 2021)
+#### Version 19.74 (April 4, 2021)
 * Add branding splash screen on initial loading [#639/comment-805378509](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-805378509)
 * Add ability to setup custom company branding and favicons [#639/comment-801339035](https://github.com/authentic-theme/authentic-theme/issues/639#issuecomment-801339035)
 * Add navigation menu code refactoring, improving speed and stability
@@ -302,7 +302,7 @@
 * Fix to align checkboxes and labels correctly when displaying Virtualmin features
 
 
-#### Version 19.73 (March 04, 2021)
+#### Version 19.73 (March 4, 2021)
 * Add cut/paste operation to actually move files (instead of copy and delete) in File Manager
 * Fiх to prevent deleting files (data loss) on error when pasting in File Manager [sourceforge.net#5458](https://sourceforge.net/p/webadmin/bugs/5458/)
 * Fiх _tar_ command to add files starting with a dash in File Manager [sourceforge.net#5457](https://sourceforge.net/p/webadmin/bugs/5457/)
@@ -340,7 +340,7 @@
 * Add better support for native form validation (HTML5)
 
 
-#### Version 19.62 (November 08, 2020)
+#### Version 19.62 (November 8, 2020)
 * Add better menu icons, fix alignment and size
 * Fix bugs
 
@@ -352,7 +352,7 @@
 * Fix directory tree listing in File Manager for safe user
 * Fix other bugs
 
-#### Version 19.60 (October 04, 2020)
+#### Version 19.60 (October 4, 2020)
 * Add to display module config by section with search capability
 * Add better font contrast and greater overall consistency
 * Add better styling for a new apply config changes button [webmin/webmin@2d95efa](https://github.com/webmin/webmin/commit/2d95efa30e587a40642288c9274930f40b2b13fb#commitcomment-41816394)
@@ -392,7 +392,7 @@
 * Fiх to improve user interactions with notification popups [@d69ccdf](https://github.com/authentic-theme/authentic-theme/commit/d69ccdfb32bbcdaf07a52e4d8db2571834a09202)
 * Fiх to properly handle changed IMAP/POP3 login credentials update [usermin/usermin@c763233](https://github.com/webmin/usermin/commit/c763233916938468f12c2b439664e5ab8e1b59e2)
 
-#### Version 19.52 (July 06, 2020)
+#### Version 19.52 (July 6, 2020)
 * Add better display of catched errors upon setting up virtual server in Virtualmin
 * Fix a bug when removing bookmarks in File Manager
 * Fix top buttons positioning in context menu for File Manager
@@ -429,7 +429,7 @@
 * Fix interruption of standard call by progressive call, without breaking page
 
 
-#### Version 19.47 (April 06, 2020)
+#### Version 19.47 (April 6, 2020)
 * Add ability to recognize downloads in submitted form
 * Add new date/time display format type in mail listing in Usermin
 * Add better protection against re-submitting modifier pages on reload
@@ -457,7 +457,7 @@
 * Fiх reloading and redirects when webprefix is used [webmin/webmin#1195](https://github.com/webmin/webmin/issues/1195)
 * Fix displaying password meter while typing
 
-#### Version 19.46 (February 04, 2020)
+#### Version 19.46 (February 4, 2020)
 * Set royal blue color palette as default
 * Add recipient (from address book) autocomplete for new mail composer in Usermin
 * Add significant even though tiny CSS enhancements
@@ -506,7 +506,7 @@
 * Fix horizontal scroll for tree-view in File Manager
 * Fix progressive page detection/separation (AWstats, Webalizer, and many other)
 
-#### Version 19.43 (December 07, 2019)
+#### Version 19.43 (December 7, 2019)
 * Set saddle brown color palette as default
 * Add various UI improvements
 * Add ability to automatically focus rows in post-actions in File Manager [@8317851](https://github.com/authentic-theme/authentic-theme/commit/83178518c3218ad01ee13a8e0368a02143e9c110)
@@ -529,7 +529,7 @@
 * Add many small, while important visual improvements
 * Fix toning issues for color palettes
 
-#### Version 19.41 (November 08, 2019)
+#### Version 19.41 (November 8, 2019)
 * Add improvements to dark theme and color palettes
 * Add better scrollbars styling across browsers
 * Add better support for horizontally long tables
@@ -578,7 +578,7 @@
 * Fix to have greater accuracy when rendering iconed rows
 * Fix bugs
 
-#### Version 19.36 (July 03, 2019)
+#### Version 19.36 (July 3, 2019)
 * Fix bugs
 
 #### Version 19.35 (June 23, 2019)
@@ -587,7 +587,7 @@
 * Fix downloads for Virtualmin backup virtual servers, MySQL backup database, and other modules
 * Fix multiple bugs and made various UI improvements
 
-#### Version 19.34 (June 01, 2019)
+#### Version 19.34 (June 1, 2019)
 * Add ability to detach file to separate editor when editing configs manually
 * Add ability to pass currently opened path in File Manager to console [#1359](https://github.com/authentic-theme/authentic-theme/issues/1359)
 * Add ability to remember and return to previous page when going back directory up in File Manager
@@ -606,7 +606,7 @@
 * Fiх various issues with right side slider (white palette and night mode)
 * Fix missing link icons in some module (Cluster modules in particular)
 
-#### Version 19.33 (May 06, 2019)
+#### Version 19.33 (May 6, 2019)
 * Add to let user use regex as filename mask in File Manager when searching [@066e11b](https://github.com/authentic-theme/authentic-theme/commit/066e11b54a17c30d6d85b7648ce32b09644e8bf2)
 * Add to use regex in find results in File Manager when searching/replacing [@ee71b71](https://github.com/authentic-theme/authentic-theme/commit/ee71b71d1413bd25794fdd3726b29484250b318a)
 * Add drag and drop with progress, for file uploads in Upload and Download module [#1334](https://github.com/authentic-theme/authentic-theme/issues/1334)
@@ -792,7 +792,7 @@
 * Fix numerous of other issues and made dozens of improvements
 
 
-#### Version 19.12 (April 01, 2018)
+#### Version 19.12 (April 1, 2018)
 * Add ability to pin right side slider; add tooltips on its buttons [#968](https://github.com/authentic-theme/authentic-theme/issues/968)
 * Add an option to always display vertical scrollbar [#1092](https://github.com/authentic-theme/authentic-theme/issues/1092)
 * Fix side slider being stuck on unsaved configuration [#1093](https://github.com/authentic-theme/authentic-theme/issues/1093)
@@ -848,7 +848,7 @@
 * Fix to re-enable accurate security notifications for ConfigServer Security & Firewall
 * Fix numerous of other small issues
 
-#### Version 19.09 (February 06, 2018)
+#### Version 19.09 (February 6, 2018)
 * Add better highlights for Apache and Nginx configuration files [#981](https://github.com/authentic-theme/authentic-theme/issues/981)
 * Add support for detecting encoding using special comment in file's content [#987](https://github.com/authentic-theme/authentic-theme/issues/987)
 * Add Webmin/Usermin version check, before installing development version of the theme using UI [#966](https://github.com/authentic-theme/authentic-theme/issues/966)
@@ -869,7 +869,7 @@
 * Fix to set mail tab to be default in Usermin
 * Fix scores of other unreported bugs
 
-#### Version 19.08 (January 08, 2018)
+#### Version 19.08 (January 8, 2018)
 * Add drag and drop file uploads to File Manager [#979](https://github.com/authentic-theme/authentic-theme/issues/979#issuecomment-355857544)
 * Fix not to log XHR requests [webmin/webmin#740](https://github.com/webmin/webmin/issues/740)
 * Fix HTML editor mode for mail [#977](https://github.com/authentic-theme/authentic-theme/issues/977)
@@ -895,7 +895,7 @@
 * Fix multiple crucial issues
 * Fixed bugs [#824](https://github.com/authentic-theme/authentic-theme/issues/824) [#923](https://github.com/authentic-theme/authentic-theme/issues/923) [#925](https://github.com/authentic-theme/authentic-theme/issues/925) [#927](https://github.com/authentic-theme/authentic-theme/issues/927) [#928](https://github.com/authentic-theme/authentic-theme/issues/928) [#933](https://github.com/authentic-theme/authentic-theme/issues/933)
 
-#### Version 19.04 (December 04, 2017)
+#### Version 19.04 (December 4, 2017)
 * Add real-time monitoring [#896](https://github.com/authentic-theme/authentic-theme/issues/896)
 * Fixed bugs [#898](https://github.com/authentic-theme/authentic-theme/issues/898) [#900](https://github.com/authentic-theme/authentic-theme/issues/900) [#902](https://github.com/authentic-theme/authentic-theme/issues/902) [#905](https://github.com/authentic-theme/authentic-theme/issues/905) [#906](https://github.com/authentic-theme/authentic-theme/issues/906) [#912](https://github.com/authentic-theme/authentic-theme/issues/912) [#913](https://github.com/authentic-theme/authentic-theme/issues/913) [webmin/webmin#711](https://github.com/webmin/webmin/pull/711) [virtualmin.com/54475](https://www.virtualmin.com/node/54475) [virtualmin.com/54476](https://www.virtualmin.com/node/54476)
 
