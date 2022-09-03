@@ -891,16 +891,16 @@ sub init_prefail
         !defined(&setvar) ||
 
         # Affects upgrades from before 1.995
-        !defined(&webmin_user_can_rpc) ||
+        !defined(&webmin_user_can_rpc)  ||
         !defined(&webmin_user_is_admin) ||
 
         # Affects upgrades from before 2.000
-        !defined(&get_webmin_full_version))
+        (get_webmin_version() >= 2 && !defined(&get_webmin_full_version)))
     {
         load_theme_library();
         do("$root_directory/web-lib-funcs.pl");
         setvar('needs-restart', has_command('systemctl') || $config_directory)
-            if (defined(&setvar));
+          if (defined(&setvar));
     }
 }
 
