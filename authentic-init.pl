@@ -201,7 +201,8 @@ sub embed_header
     }
 
     # Print default options
-    print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version('timestamped') . "\"></script>\n";
+    print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" .
+      theme_version('timestamped') . "\"></script>\n";
     print ' <script>';
     print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
     print "</script>\n";
@@ -294,8 +295,8 @@ sub embed_header
                     next;
                 }
 
-                print ' <script src="' .
-                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
+                print ' <script src="' . $theme_webprefix .
+                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -317,8 +318,9 @@ sub embed_header
             theme_night_mode())
         {
             print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
-              (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
-              ($args[2]           ? 'src' : 'min') . '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
+              (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) .
+              '.' . ($args[2] ? 'src' : 'min') .
+              '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -334,8 +336,8 @@ sub embed_header
                     next;
                 }
 
-                print ' <script src="' .
-                  $theme_webprefix . '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
+                print ' <script src="' . $theme_webprefix .
+                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -502,16 +504,17 @@ sub embed_css_fonts
 
 sub embed_css_bundle
 {
-    print ' <link href="' .
-      $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+    print ' <link href="' . $theme_webprefix .
+      '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
 
 sub embed_css_night_rider
 {
     if (theme_night_mode_login() || theme_night_mode()) {
-        print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/nightrider.' .
-          (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
+        print ' <link href="' .
+          $theme_webprefix . '/unauthenticated/css/palettes/nightrider.' . (theme_debug_mode() ? 'src' : 'min') .
+          '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
@@ -1115,7 +1118,10 @@ sub get_button_style
     {
         $class = "warning ";
         $icon  = " fa2 fa2-transfer";
-    } elsif (string_contains($keys, "restart") || string_contains($keys, "edit_kill")) {
+    } elsif (string_contains($keys, "restart") ||
+             string_contains($keys, "edit_kill") ||
+             string_contains($keys, "licence_recheck"))
+    {
         $class = "warning ";
         $icon  = "refresh";
     } elsif (string_contains($keys, "ddrop_empty")) {
@@ -1372,8 +1378,8 @@ sub theme_version
           (int($version) . "" . $ver_dot_one_str . "" . $ver_dot_two_str . "" . $mversion . "$bversion");
         my $theme_full_version_with_minor_str =
           ($version . (int($mversion) > 1 ? "-" . int($mversion) : "") . (int($bversion) > 1 ? ":" . int($bversion) : ""));
-        $tversions->{'timestamped'}  = ($theme_full_version_str . "" . ($is_devel_ver ? time() : '9999999999'));
-        $tversions->{'version'}      = $version;
+        $tversions->{'timestamped'} = ($theme_full_version_str . "" . ($is_devel_ver ? time() : '9999999999'));
+        $tversions->{'version'}     = $version;
         $tversions->{'versionfull'} = $theme_full_version_with_minor_str;
         setvar('tversion_cached', $tversions);
     }
