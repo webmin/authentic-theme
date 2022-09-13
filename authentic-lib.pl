@@ -8,7 +8,7 @@ use strict;
 use lib ("$ENV{'THEME_ROOT'}/lib");
 
 use File::Grep qw( fgrep fmap fdo );
-use Encode qw( encode decode );
+use Encode     qw( encode decode );
 use Time::Local;
 use File::Find;
 
@@ -655,12 +655,12 @@ sub get_sysinfo_vars
         my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
 
         # Webmin version
-        my $wmv = get_webmin_version(1);
+        my $wmv    = get_webmin_version(1);
         my $wmvrel = get_webmin_version_release();
-        $wmv .= "-".$wmvrel if ($wmvrel && $wmvrel > 1);
+        $wmv .= "-" . $wmvrel if ($wmvrel && $wmvrel > 1);
         $webmin_version =
-          product_version_update($wmv, 'w') . ' <div class="btn-group margined-left-4' . $is_hidden_link .
-          '"><a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
+          product_version_update($wmv, 'w') . ' <div class="btn-group margined-left-4' .
+          $is_hidden_link . '"><a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
           $theme_text{'theme_sysinfo_wmdocs'} .
 '" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';
 
@@ -1096,10 +1096,10 @@ sub get_all_users_motd_data
                 if ($specific_user ||
                     ($motd->{'target'} eq 'all' ||
                         (&webmin_user_is_admin() && $motd->{'target'} eq 'adm') ||
-                        ($get_user_level eq '1' && $motd->{'target'} eq 'res') ||
-                        ($get_user_level eq '2' && $motd->{'target'} eq 'vm')  ||
-                        ($get_user_level eq '3' && $motd->{'target'} eq 'um')  ||
-                        ($get_user_level eq '4' && $motd->{'target'} eq 'cm')))
+                        ($get_user_level eq '1'  && $motd->{'target'} eq 'res') ||
+                        ($get_user_level eq '2'  && $motd->{'target'} eq 'vm')  ||
+                        ($get_user_level eq '3'  && $motd->{'target'} eq 'um')  ||
+                        ($get_user_level eq '4'  && $motd->{'target'} eq 'cm')))
                 {
                     # Remove any script tag
                     $motd->{'msg'} =~ s/<script.+?>//g;
@@ -1377,8 +1377,8 @@ sub embed_login_head
         print '</style>';
 
     } else {
-        print '<link href="' .
-          $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+        print '<link href="' . $theme_webprefix .
+          '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
 
         print
 '<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
@@ -1570,7 +1570,8 @@ sub theme_remote_version
     my $error;
     my $installed_version_devel = theme_version('version') =~ /alpha|beta|RC/;
 
-    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && post_has('xhr-')) {
+    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && post_has('xhr-'))
+    {
         if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
             if (!$nocache) {
                 $remote_version = theme_cached('version-theme-development');
@@ -1792,10 +1793,9 @@ sub get_theme_user_link
     return '' . theme_version('versionfull') .
 ' <div class="btn-group margined-left-4"><a data-href="#theme-info" onclick="theme_update_notice(this);this.classList.add(\'disabled\')" data-container="body" title="'
       . $theme_text{'theme_update_notice'}
-      . '" class="btn btn-default btn-xxs' .
-      ($is_hidden . $is_hidden_link) . '"><i class="fa fa-info-circle"></i></a><a href="' .
-      ($theme_webprefix . $link) . '" data-href="' . ($theme_webprefix . $link) .
-      '" class="btn btn-default btn-xxs' . $is_hidden . '" data-container="body" title="' .
+      . '" class="btn btn-default btn-xxs' . ($is_hidden . $is_hidden_link) .
+      '"><i class="fa fa-info-circle"></i></a><a href="' . ($theme_webprefix . $link) . '" data-href="' .
+      ($theme_webprefix . $link) . '" class="btn btn-default btn-xxs' . $is_hidden . '" data-container="body" title="' .
       $theme_text{'settings_right_theme_left_configuration_title'} . '"><i class="fa2 fa-fw fa2-palette"></i></a></div>';
 }
 
@@ -1924,8 +1924,11 @@ sub get_xhr_request
             my @dirs;
 
             my $jailed_user = get_fm_jailed_user($module);
-            if ($jailed_user || $get_user_level eq '2' ||
-                $get_user_level eq '4' || webmin_user_is('safe-user')) {
+            if ($jailed_user ||
+                $get_user_level eq '2' ||
+                $get_user_level eq '4' ||
+                webmin_user_is('safe-user'))
+            {
                 $path = ($jailed_user || get_user_home()) . $path;
             }
             opendir(my $dirs, $path);
@@ -2063,6 +2066,12 @@ sub get_xhr_request
                 print convert_to_json(\@update_rs);
             }
         } elsif ($in{'xhr-info'} eq '1') {
+            if (&foreign_available('virtual-server')) {
+                &foreign_require("virtual-server");
+
+                # Refresh regularly collected info on status of services
+                &virtual_server::refresh_startstop_status();
+            }
             my @info = theme_list_combined_system_info();
             our ($cpu_percent,
                  $mem_percent,
