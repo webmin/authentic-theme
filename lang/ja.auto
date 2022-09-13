@@ -201,8 +201,8 @@ theme_error_access_dir_not_allowed=アクセスが拒否されました：ファ
 #19.95
 theme_xhred_global_outdated_desc=インストールされている $1 のバージョンは古くなっています。利用可能な最新バージョンは $2 です。アップグレードするか、クリックして最近のリリースの詳細を確認してください。
 theme_xhred_global_outdated_desc2=インストールされている $1 のバージョンは古くなっています。利用可能な最新バージョンは $2 です。
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=選択中は<tt>control</tt>キーを押したままにします
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=選択中は<tt>コマンド</tt>キーを押したままにします
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=選択中に <tt>Ctrl</tt> キーを押したままにする
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=選択中に <tt>Command</tt> キーを押したままにする
 
 #19.97
 theme_xhred_webmin_requires_restart=前回のパッケージアップグレードで、WebminWebサーバーデーモンが正しく再起動されなかったことが検出されました。これは、<tt>$1</tt>コマンドを呼び出してWebサーバーを手動で再起動するために必要です。

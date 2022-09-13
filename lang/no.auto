@@ -159,8 +159,8 @@ theme_error_access_dir_not_allowed=Tilgang nektet: Filen er ikke tilgjengelig
 #19.95
 theme_xhred_global_outdated_desc=Installert versjon av $1 er utdatert. Siste tilgjengelige versjon er $2. Oppgrader eller klikk for å få mer informasjon om nylig utgivelse.
 theme_xhred_global_outdated_desc2=Installert versjon av $1 er utdatert. Siste tilgjengelige versjon er $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hold <tt>kontroll</tt>-tasten nede under valget
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold <tt>kommando</tt>-tasten nede under valget
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hold nede <tt>Ctrl</tt>-tasten under valget
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold nede <tt>Kommando</tt>-tasten under valget
 
 #19.97
 theme_xhred_webmin_requires_restart=Det oppdages at Webmin-webserverdemonen ikke ble restartet på riktig måte ved siste pakkeoppgradering. Dette er nødvendig for å starte nettserveren på nytt manuelt ved å ringe kommandoen <tt>$1</tt>.
