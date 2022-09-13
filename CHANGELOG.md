@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 20.01.1 (September 14, 2022)
+* Fix to update servers status on dashboard in background [#1574](https://github.com/authentic-theme/authentic-theme/issues/1574)
+* Fix hidden accordions multiple select input event [#1617](https://github.com/authentic-theme/authentic-theme/issues/1617)
+* Fix refreshing page button not working in some cases
+* Fix to display an icon for refresh license button
+
 #### Version 20.01 (September 2, 2022)
 * Fix to unset last used directory if removed outside of File Manager
 * Fix to support configurable jailkit root path in File Manager
