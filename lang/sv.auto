@@ -1,6 +1,6 @@
 settings_right_hotkey_options=Snabbtangenter
 
-settings_right_reload=Ladda standardsidan på flikomkopplaren
+settings_right_reload=Ladda standardsidan vid flikbyte
 
 #18.48
 theme_force_upgrade=Uppdatera tema
@@ -15,7 +15,7 @@ theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar
 settings_global_palette_unauthenticated=Inloggningssidan färgpalett
 
 #19.60
-settings_config_save_and_next=Spara och Nästa
+settings_config_save_and_next=Spara och nästa
 settings_config_configuration_category=Konfigurationskategori
 config_search_options_all=Sök igenom alla modulkonfigurationsalternativ
 theme_xhred_editing_config_file=Redigerar konfigurationsfil
@@ -23,14 +23,14 @@ theme_xhred_editing_config_file=Redigerar konfigurationsfil
 #19.61
 theme_xhred_login_message_2fa=Tvåfaktorautentisering har aktiverats för den här användaren att logga in
 theme_xhred_global_verify=Kontrollera
-settings_show_terminal_link2=Visa kommandoskal-knappen
+settings_show_terminal_link2=Visa knapp för kommandoskal
 settings_hotkey_shell2=Snabbtangent för kommandoskal
 theme_xhred_path_to_console2=Öppna aktuell sökväg i kommandoskal <tt>(Alt+Skift+K)</tt>
 theme_tooltip_terminal_link2=Kommandoskal
 
 #19.70
-theme_xhred_filemanager_context_view=Se
-theme_xhred_file_viewer=File Viewer
+theme_xhred_filemanager_context_view=Visa
+theme_xhred_file_viewer=Filvisare
 theme_xhred_global_done=Gjort.
 theme_xhred_filemanager_file_save_err=Fel vid sparar fil.
 theme_xhred_filemanager_view_head=Huvudfilutmatning
@@ -47,7 +47,7 @@ theme_xhred_filemanager_search_limit_size=Filstorlek
 theme_xhred_filemanager_search_limit_size_desc=t.ex. <2K eller >3M-<5M
 
 theme_xhred_filemanager_context_move_to_trash=Flytta till papperskorgen
-theme_xhred_filemanager_context_permanently_delete=Radera permanent
+theme_xhred_filemanager_context_permanently_delete=Ta bort permanent
 theme_xhred_global_remove=Avlägsna
 theme_xhred_filemanager_settings_deletion_mode=Ta bort filer säkert genom att flytta till papperskorgen
 theme_xhred_filemanager_successful_removal=Borttagning till papperskorgen <tt>$1</tt> lyckades.
@@ -57,8 +57,8 @@ theme_xhred_filemanager_remove_warning=Borttagningen är klar men inte för alla
 theme_xhred_connection_error_details_ssl=Kontrollera <a>självsignerat SSL-certifikat</a>
 
 #19.71
-settings_sysinfo_hidden_panels_user=Dolda dragspel
-theme_xhred_tooltip_dashboard_panels_disable=Dölj $1 -panelen
+settings_sysinfo_hidden_panels_user=Dolda menyrader
+theme_xhred_tooltip_dashboard_panels_disable=Dölj panelen $1
 theme_xhred_dashboard_panels_disabled_explain=Dold panel kan aktiveras igen med hjälp av temakonfigurationssidan.
 settings_right_sysinfo_page_options=Instrumentpanel och realtidsövervakning
 settings_right_navigation_menu_options=Navigeringsmeny
@@ -89,7 +89,7 @@ settings_right_page_keep_description=Det här alternativet försöker ladda samm
 
 #19.76
 theme_xhred_global_show_all=Visa allt
-theme_xhred_filemanager_context_prop_show_all=Visa alla fastigheter
+theme_xhred_filemanager_context_prop_show_all=Visa alla egenskaper
 
 #19.84
 settings_right_table_links_type=Tabellänkar visar typ
@@ -118,7 +118,7 @@ theme_xhred_modal_motd_select_adm=Master administratörer
 theme_xhred_modal_motd_select_res=Återförsäljare
 theme_xhred_modal_motd_select_vm=Serverägare
 theme_xhred_modal_motd_select_cm=Maskinägare
-theme_xhred_modal_motd_select_um=Mailanvändare
+theme_xhred_modal_motd_select_um=Brevanvändare
 theme_xhred_modal_motd_btn_add=Lägg till nytt meddelande
 theme_xhred_modal_motd_btn_save=Spara och sänd aktuell uppsättning meddelanden
 theme_xhred_modal_motd_btn_rm=Ta bort aktuellt meddelande
@@ -154,7 +154,7 @@ theme_xhred_disk_quota_error_message=Inget utrymme kvar på enheten
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Använd huvudadministratörsnyckeln för dekryptering
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey hold modifierare
+settings_hotkey_toggle_hold_modifier=Snabbtangentmodifierare
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Fråga alltid
@@ -163,7 +163,7 @@ theme_xhred_filemanager_files_mode_ask_title=Skriv över befintliga
 theme_xhred_filemanager_files_mode_ask_title2=Skriv över existerande filer
 theme_xhred_filemanager_files_mode_ask_desc=Vill du skriva över befintliga filer vid nästa operation
 theme_xhred_filemanager_files_mode_ask_title_yes=Ja, skriv över
-theme_xhred_filemanager_files_mode_ask_title_no=Nej, fortsätt att existera
+theme_xhred_filemanager_files_mode_ask_title_no=Nej, behåll nuvarande
 theme_xhred_filemanager_trash_empty_curr_user_single=Töm papperskorgen
 theme_xhred_filemanager_trash_empty_curr_user=Töm den aktuella användarens papperskorg
 theme_xhred_filemanager_trash_empty_all_users=Töm alla andra användares papperskorgen
@@ -176,8 +176,8 @@ theme_error_access_dir_not_allowed=Åtkomst nekad: Filen är inte tillgänglig
 #19.95
 theme_xhred_global_outdated_desc=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2. Uppgradera eller klicka för att få mer information om den senaste versionen.
 theme_xhred_global_outdated_desc2=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Håll ned <tt>Ctrl</tt> under valet
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Håll <tt>Kommando</tt> nedtryckt under valet
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Håll <tt>Ctrl</tt>-tangenten nedtryckt under valet
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Håll <tt>Kommando</tt>-tangenten nedtryckt under valet
 
 #19.97
 theme_xhred_webmin_requires_restart=Det har upptäckts att Webmin-webserverdemonen inte startades om korrekt vid den senaste paketuppgraderingen. Detta är nödvändigt för att starta om webbservern manuellt genom att anropa kommandot <tt>$1</tt>.
