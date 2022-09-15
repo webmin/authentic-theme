@@ -110,6 +110,8 @@ settings_right_theme_left_extensions_title=Tilläggsredigerare för Authentic Th
 settings_right_theme_left_logo_title=Logotypkontroll av Authentic Theme
 settings_right_theme_configurable_options_title=Konfigurerbara alternativ för Authentic Theme
 
+settings_right_hotkey_options=Snabbtangenter
+
 settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>/apache/</code>. Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
 settings_hotkey_custom_1_user=Egen länk <code>1</code>
 settings_hotkey_custom_2_user=Egen länk <code>2</code>
@@ -124,6 +126,7 @@ settings_hotkey_custom_9_user=Egen länk <code>9</code>
 settings_navigation_color=Color palette
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
+settings_right_reload=Ladda standardsidan vid flikbyte
 
 settings_leftmenu_section_hide_refresh_modules=Dölj uppdateringslänk
 settings_leftmenu_section_hide_unused_modules=Dölj oanvända moduler
@@ -592,9 +595,11 @@ theme_xhred_global_committed_on=Upplagd den
 theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
 
 #18.48
+theme_force_upgrade=Uppdatera tema
 theme_xhred_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
 theme_xhred_force_upgrade_stable=Installera senaste versionen (stabil)
 theme_xhred_source_encoding=Källkodning
+theme_update_footer=Var snäll och rapportera buggar till $1-förrådet. Gå med i vår $2-kanal för att få de senaste nyheterna.
 theme_xhred_encoding_manually_set=Ange kodning manuellt
 theme_xhred_filemanager_save_to_change_encoding=Filen måste sparas innan kodningen ändras.
 
@@ -625,6 +630,8 @@ theme_xhred_sysinfo_update_failed=Det gick inte att samla in systeminformationen
 theme_xhred_global_development_version=Utvecklingsversion
 
 right_vm_server_summary=Sammanfattning av virtuell server
+
+settings_webmin_default_module=Standardsida för Webmin
 
 theme_xhred_global_unbeforeunload_title=Ändringar du gjort kanske inte sparas
 theme_xhred_global_unbeforeunload_message=Om du fortsätter, kan ändringar du gjort på denna sidan gå förlorade.
@@ -687,6 +694,7 @@ theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=klicka här
 theme_git_patch_incompatible_message=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 och $5 för att fungera korrekt.
 theme_git_patch_incompatible_message_s=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 för att fungera korrekt.
+theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar som kan hindra temat från att fungera som det är tänkt. Det är inte möjligt att fortsätta uppgraderingen med UI.
 
 #19.10
 theme_xhred_filemanager_edit_html=Redigera som HTML
@@ -1118,19 +1126,6 @@ theme_xhred_global_alias=Alias
 theme_xhred_mail_composer_real_name=Ditt namn
 theme_xhred_mail_composer_username=Användarnamn
 
-settings_right_hotkey_options=Snabbtangenter
-
-settings_right_reload=Ladda standardsidan vid flikbyte
-
-#18.48
-theme_force_upgrade=Uppdatera tema
-theme_update_footer=Var snäll och rapportera buggar till $1-förrådet. Gå med i vår $2-kanal för att få de senaste nyheterna.
-
-settings_webmin_default_module=Standardsida för Webmin
-
-#19.09
-theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar som kan hindra temat från att fungera som det är tänkt. Det är inte möjligt att fortsätta uppgraderingen med UI.
-
 #19.53
 settings_global_palette_unauthenticated=Inloggningssidan färgpalett
 
@@ -1203,7 +1198,6 @@ theme_xhred_global_module_preferences=Modulinställningar
 settings_sysinfo_real_time_status_forced=Ja, tvingad
 settings_sysinfo_real_time_status_forced_warn=Aktivera realtidsövervakning i kraftläge avskräckas eftersom bakgrundssamling kommer att utföras även när webbläsarfliken inte är fokuserad, vilket kan orsaka serveröverbelastning med flera flikar öppnade
 theme_xhred_theme_update_available=En ny version av Authentic Theme är installerad
-
 settings_right_page_keep=Ladda samma sida på domänbytaren
 settings_right_page_keep_description=Det här alternativet försöker ladda samma sida när domänen väljs, när den ändras från rullgardinsmenyn för navigeringsmenyn
 
