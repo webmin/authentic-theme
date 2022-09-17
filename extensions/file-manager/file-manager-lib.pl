@@ -277,11 +277,13 @@ sub get_entries_list
                 {
                    wanted => sub {
                        my $found = $File::Find::name;
-                       push(@entries_list, $_);
+                       $found =~ s/^\Q$cwd\/\E//g;
+                       if ($_ ne '.' && $_ ne '..' && $found !~ /\//) {
+                           push(@entries_list, $found);
+                       }
                    },
                 },
                 $cwd);
-            @entries_list = grep {$_ ne '.' && $_ ne '..'} @entries_list;
         }
     } else {
         @entries_list = split(/\0/, $in{'name'});
