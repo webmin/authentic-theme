@@ -26,6 +26,8 @@ extensions_mail_flag_tls_on=標準暗号化（TLS）
 extensions_mail_flag_tls_off=暗号化されていないメール
 extensions_mail_flag_tls_none=暗号化ステータスが不明です
 
+theme_xhred_filemanager_mass_selected_for_delete=%1 ディレクトリ内のすべてのアイテム
+
 #19.47
 theme_xhred_textarea_to_clipboard=選択したテキストエリアのコンテンツがクリップボードに正常にコピーされました
 

@@ -946,7 +946,6 @@ theme_xhred_filemanager_search_follow_symlinks=Följ symbolisk länk
 theme_xhred_filemanager_mass_select=Markera alla %1 objekten över %2 sidor?
 theme_xhred_filemanager_mass_selected=Alla %1 objekten är markerade i aktuell katalog
 theme_xhred_filemanager_mass_select_clear=Rensa markerade
-theme_xhred_filemanager_mass_selected_for_delete=Markerat %1 objekt i %2 katalog
 theme_xhred_filemanager_mass_selected_no_zip=<tt>zip</tt>-kommandot stöds inte när det körs mot alla objekt i en katalog
 filemanager_global_search_results=Sökresultat
 filemanager_global_paginated_results=Sidnumrering 

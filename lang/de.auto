@@ -18,6 +18,8 @@ extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
 
+theme_xhred_filemanager_mass_selected_for_delete=Alle Elemente im Verzeichnis %1
+
 #19.47
 theme_xhred_textarea_to_clipboard=Ausgewählte Textbereichsinhalte wurden erfolgreich in die Zwischenablage kopiert
 

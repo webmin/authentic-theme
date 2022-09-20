@@ -20,6 +20,8 @@ extensions_mail_flag_tls_on=Criptare standard (TLS)
 extensions_mail_flag_tls_off=E-mail necriptat
 extensions_mail_flag_tls_none=Nu se cunoaște starea de criptare
 
+theme_xhred_filemanager_mass_selected_for_delete=Toate articolele din directorul %1
+
 #19.37
 theme_xhred_filemanager_exclude_dirs=Excludeți intrările
 theme_xhred_filemanager_exclude_dirs_desc=Lista de fișiere sau subdirectoare separate de punct și virgulă
