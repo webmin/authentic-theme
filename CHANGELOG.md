@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 20.02 (September 21, 2022)
+* Fix file and directory creation by root capable user inside jailed user homes in File Manager
+* Fix mass deletion when a directory contains sub-directories in File Manager [forum.virtualmin.com/t/116925](https://forum.virtualmin.com/t/i-found-a-bug-in-the-file-system-from-virtualmin/116925)
+* Fix navigation menu in mobile mode to stay visible as opening servers index popover
+
 #### Version 20.01.1 (September 14, 2022)
 * Fix to update servers status on dashboard in background [#1574](https://github.com/authentic-theme/authentic-theme/issues/1574)
 * Fix hidden accordions multiple select input event [#1617](https://github.com/authentic-theme/authentic-theme/issues/1617)
