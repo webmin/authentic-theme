@@ -1148,6 +1148,7 @@ sub get_button_style
     } elsif (string_contains($keys, "index_refsel") ||
              string_contains($keys, "index_reset") ||
              string_contains($keys, "index_regen") ||
+             string_contains($keys, "index_drefresh") ||
              string_contains($keys, "index_reload"))
     {
         $class = "warning ";
