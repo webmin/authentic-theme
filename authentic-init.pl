@@ -909,6 +909,9 @@ sub get_button_style
     {
         $icon  = " fa2 fa2-key";
         $class = "success ";
+    } elsif (string_contains($keys, "check_updatenow")) {
+        $class = "warning ";
+        $icon  = "refresh";
     } elsif (string_contains($keys, "newips")) {
         $icon = "pencil-square-o";
     } elsif (string_contains($keys, "form_edit")) {
