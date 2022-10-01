@@ -56,7 +56,7 @@ if (!$custom_config) {
 
 # Call any post-config save function
 if (&foreign_require($module) &&
-    &foreign_func_exists($module, 'config_post_save')) {
+    &foreign_defined($module, 'config_post_save')) {
     &foreign_call($module, "config_post_save", \%newconfig, \%oldconfig);
 }
 
