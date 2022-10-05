@@ -1149,8 +1149,8 @@ sub get_button_style
         $class = "grey ";
         $icon  = "toggle-switch-off fa-1_25x";
     } elsif (string_contains($keys, "index_refsel") ||
-             string_contains($keys, "index_reset") ||
-             string_contains($keys, "index_regen") ||
+             string_contains($keys, "index_reset")    ||
+             string_contains($keys, "index_regen")    ||
              string_contains($keys, "index_drefresh") ||
              string_contains($keys, "index_reload"))
     {
@@ -1240,6 +1240,9 @@ sub get_button_style
         $icon = "export";
     } elsif (string_contains($keys, "restore")) {
         $icon = "restore fa-1_25x";
+        if (string_contains($keys, "restore_now2")) {
+            $class = "success ";
+        }
     } elsif (string_contains($keys, "backup_title") ||
              string_contains($keys, "dbase_backup") ||
              string_contains($keys, "index_dump")   ||
