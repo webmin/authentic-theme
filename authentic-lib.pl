@@ -2237,7 +2237,7 @@ sub content
     print '<div id="content" class="__page' .
       ($theme_config{'settings_right_page_hide_persistent_vscroll'} eq 'false' ? ' fvscroll' : undef) . '">' . "\n";
 
-    print ' <div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1"></div>' . "\n";
+    print ' <div class="container-fluid col-md-12" data-dcontainer="1"></div>' . "\n";
 }
 
 sub update_notice
