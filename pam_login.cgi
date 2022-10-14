@@ -85,6 +85,13 @@ print '<body class="session_login pam_login" ' . $tconfig{'inbody'} . '>' . "\n"
 embed_overlay_prebody();
 print '<div class="container session_login pam_login" data-dcontainer="1">' . "\n";
 
+if ($miniserv::defcert) {
+    print '<div class="alert alert-warning" data-defcert>' . "\n";
+    print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $theme_text{'login_warning'} .
+      '</strong><br /><span>' . &text('defcert_error', ucfirst(&get_product_name()), $miniserv{'keyfile'}) . "</span>\n";
+    print '</div>' . "\n";
+}
+
 if (defined($in{'failed'})) {
 
     print '<div class="alert alert-warning">' . "\n";
