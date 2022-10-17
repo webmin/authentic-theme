@@ -895,7 +895,10 @@ sub init_prefail
         !defined(&webmin_user_is_admin) ||
 
         # Affects upgrades from before 2.000
-        (get_webmin_version() >= 2 && !defined(&get_webmin_full_version)))
+        !defined(&get_webmin_full_version) ||
+
+        # Affects upgrades from before 2.002
+        !defined(&miniserv_using_default_cert))
     {
         load_theme_library();
         do("$root_directory/web-lib-funcs.pl");
