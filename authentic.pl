@@ -1458,7 +1458,7 @@ sub theme_post_save_domain
 sub theme_post_save_domains
 {
     print '<script>';
-    print 'theme_post_save=0', "\n";
+    print 'theme_post_save=-1', "\n";
     print "</script>\n";
 }
 
