@@ -1300,3 +1300,9 @@ theme_xhred_webmin_requires_restart_no=Ne, znova ga bom zagnal ročno
 
 #19.99
 theme_xhred_filemanager_path_manual=Vnesite pot ročno (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=Napaka povezave WebSocket
+theme_xhred_socket_conn_lost_title=Povezava izgubljena
+theme_xhred_socket_conn_lost_reconnect=Ponovno vzpostavite povezavo
+theme_xhred_socket_conn_lost_try=Poskusi ponovno

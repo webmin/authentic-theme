@@ -1300,3 +1300,9 @@ theme_xhred_webmin_requires_restart_no=Ne, ponovno ću ga pokrenuti ručno
 
 #19.99
 theme_xhred_filemanager_path_manual=Unesite put ručno (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=Pogreška WebSocket veze
+theme_xhred_socket_conn_lost_title=Izgubljena veza
+theme_xhred_socket_conn_lost_reconnect=Ponovno se spojite
+theme_xhred_socket_conn_lost_try=Pokušajte ponovno

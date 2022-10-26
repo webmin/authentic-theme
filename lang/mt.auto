@@ -1300,3 +1300,9 @@ theme_xhred_webmin_requires_restart_no=Le, se nibda mill-ġdid manwalment
 
 #19.99
 theme_xhred_filemanager_path_manual=Daħħal il-passaġġ manwalment (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=Żball fil-konnessjoni tal-WebSocket
+theme_xhred_socket_conn_lost_title=Konnessjoni mitlufa
+theme_xhred_socket_conn_lost_reconnect=Erġa' qabbad
+theme_xhred_socket_conn_lost_try=Erġa 'pprova

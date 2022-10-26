@@ -213,3 +213,9 @@ theme_xhred_webmin_requires_restart_no=いいえ、手動で再起動します
 
 #19.99
 theme_xhred_filemanager_path_manual=パスを手動で入力します（Ctrl + L）
+
+#20.02
+theme_xhred_socket_conn_error_title=WebSocket 接続エラー
+theme_xhred_socket_conn_lost_title=接続切断
+theme_xhred_socket_conn_lost_reconnect=再接続
+theme_xhred_socket_conn_lost_try=再試行

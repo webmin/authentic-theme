@@ -1300,3 +1300,9 @@ theme_xhred_webmin_requires_restart_no=아니요, 수동으로 다시 시작하�
 
 #19.99
 theme_xhred_filemanager_path_manual=수동으로 경로 입력(Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=WebSocket 연결 오류
+theme_xhred_socket_conn_lost_title=연결 끊김
+theme_xhred_socket_conn_lost_reconnect=다시 연결
+theme_xhred_socket_conn_lost_try=다시 시도하십시오

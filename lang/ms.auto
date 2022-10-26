@@ -685,3 +685,9 @@ theme_xhred_webmin_requires_restart_no=Tidak, saya akan memulakan semula secara 
 
 #19.99
 theme_xhred_filemanager_path_manual=Masukkan laluan secara manual (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=Ralat sambungan WebSocket
+theme_xhred_socket_conn_lost_title=Sambungan terputus
+theme_xhred_socket_conn_lost_reconnect=Sambung semula
+theme_xhred_socket_conn_lost_try=Cuba lagi

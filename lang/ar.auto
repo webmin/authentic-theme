@@ -1300,3 +1300,9 @@ theme_xhred_webmin_requires_restart_no=لا ، سأعيد تشغيله يدوي�
 
 #19.99
 theme_xhred_filemanager_path_manual=أدخل المسار يدويًا (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=خطأ اتصال WebSocket
+theme_xhred_socket_conn_lost_title=انقطع الاتصال
+theme_xhred_socket_conn_lost_reconnect=أعد الاتصال
+theme_xhred_socket_conn_lost_try=حاول مرة أخرى

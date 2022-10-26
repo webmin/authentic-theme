@@ -1300,3 +1300,9 @@ theme_xhred_webmin_requires_restart_no=Hayır, manuel olarak yeniden başlataca�
 
 #19.99
 theme_xhred_filemanager_path_manual=Yolu manuel olarak girin (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_error_title=WebSocket bağlantı hatası
+theme_xhred_socket_conn_lost_title=Bağlantı koptu
+theme_xhred_socket_conn_lost_reconnect=yeniden bağlan
+theme_xhred_socket_conn_lost_try=Tekrar deneyin
