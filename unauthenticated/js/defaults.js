@@ -72,6 +72,7 @@ var
     settings_hotkey_toggle_key_cloudmin = 'c',
     settings_hotkey_toggle_key_usermin = 'u',
     settings_hotkey_toggle_key_webmail = 'm',
+    settings_hotkey_shell = 'k',
     settings_hotkey_shell2 = 'k',
     settings_hotkey_sysinfo = 'i',
     settings_hotkey_toggle_slider = 'n',

@@ -977,9 +977,12 @@ sub nav_links
     $rv .= '</li>';
 
     if ($theme_config{'settings_show_terminal_link2'} ne 'false' &&
-        foreign_available("shell"))
+        (foreign_available("shell") || foreign_available("xterm")))
     {
-        $rv .= '<li data-linked' . get_button_tooltip('theme_tooltip_terminal_link2', 'settings_hotkey_shell2', 'auto top') .
+        my $t = foreign_available("xterm") ? undef : '2';
+        $rv .=
+          '<li data-linked' .
+          get_button_tooltip('theme_tooltip_terminal_link' . $t . '', 'settings_hotkey_shell' . $t . '', 'auto top') .
           ' class="user-link ported-console cursor-pointer">';
         $rv .= '<span><i class="fa fa-fw fa-terminal"></i></span>';
         $rv .= '</li>';
@@ -992,7 +995,7 @@ sub nav_links
     $rv .= '<span><i class="fa fa-fw fa-star"></i></span>';
     $rv .= '</li>';
 
-    if ((&webmin_user_is_admin() && $theme_config{'settings_theme_options_button'} ne 'false') ||
+    if ((&webmin_user_is_admin()  && $theme_config{'settings_theme_options_button'} ne 'false') ||
         (!&webmin_user_is_admin() &&
             $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
             $theme_config{'settings_theme_options_button'} ne 'false'))

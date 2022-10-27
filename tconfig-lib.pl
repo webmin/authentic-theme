@@ -75,6 +75,7 @@ sub theme_settings_raw
                        'settings_collapse_navigation_link',
                        'settings_sysinfo_link_mini',
                        'settings_show_night_mode_link',
+                       'settings_show_terminal_link',
                        'settings_show_terminal_link2',
                        'settings_favorites',
                        'settings_theme_options_button',
@@ -122,6 +123,7 @@ sub theme_settings_raw
                        'settings_hotkey_toggle_key_cloudmin',
                        'settings_hotkey_toggle_key_usermin',
                        'settings_hotkey_toggle_key_webmail',
+                       'settings_hotkey_shell',
                        'settings_hotkey_shell2',
                        'settings_hotkey_sysinfo',
                        'settings_hotkey_toggle_slider',
@@ -229,9 +231,14 @@ sub theme_settings_filter
         push(@theme_settings_filter, 'settings_leftmenu_netdata', 'settings_leftmenu_netdata_link');
     }
 
-    # Exclude Command Shell button if not available
-    if (!foreign_available("shell")) {
+    # Exclude Command Shell button if not available or if Terminal is available
+    if (!foreign_available("shell") || foreign_available("xterm")) {
         push(@theme_settings_filter, 'settings_show_terminal_link2', 'settings_hotkey_shell2');
+    }
+
+    # Exclude Terminal button if not available
+    if (!foreign_available("xterm")) {
+        push(@theme_settings_filter, 'settings_show_terminal_link', 'settings_hotkey_shell');
     }
 
     # Limit to certain options for non privleged user
@@ -330,6 +337,7 @@ sub theme_settings_format
              $k eq 'settings_hotkey_slider'        ||
              $k eq 'settings_hotkey_toggle_slider' ||
              $k eq 'settings_hotkey_reload'        ||
+             $k eq 'settings_hotkey_shell'         ||
              $k eq 'settings_hotkey_shell2'        ||
              $k eq 'settings_hotkey_sysinfo'       ||
              $k eq 'settings_hotkey_favorites')
