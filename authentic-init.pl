@@ -1461,6 +1461,8 @@ sub header_html_data
       ($theme_config{'settings_side_slider_fixed'} eq "true" &&
         &webmin_user_is_admin() &&
         $theme_config{'settings_side_slider_enabled'} ne "false" ? '1' : '0') .
+      '" data-terminal="' .
+      foreign_available("xterm") .
       '" data-shell="' .
       foreign_available("shell") .
       '" data-webmin="' .
