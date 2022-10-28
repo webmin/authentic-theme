@@ -68,7 +68,7 @@ const mail = (function() {
                 }
             },
             load: load,
-            sdata: get_server_data,
+            sdata: session.server.data,
             mavailable: core.moduleAvailable,
             lang: theme_language,
             notification: {
