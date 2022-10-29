@@ -611,11 +611,12 @@ sub embed_port_shell
         my $prefix;
         my $hostname = ($prefix) = split(/\./, get_display_hostname());
         my $host     = ($prefix ? $prefix : get_display_hostname());
+        my $xterm    = foreign_available('xterm') ? ' hidden' : '';
         print '<div data-autocomplete="' . (has_command('bash') ? 1 : 0) . '" class="-shell-port-">
   <div class="-shell-port-container">
     <div aria-label="' . $theme_text{'theme_xhred_global_close'} . '" class="-shell-port-close"></div>
     <div data-output="true"><pre data-xconsole></pre></div>
-    <div class="-shell-port-cmd">
+    <div class="-shell-port-cmd' . $xterm . '">
       <span class="-shell-port-prompt"><span class="-shell-port-type">['
           . $remote_user .
           '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
