@@ -764,7 +764,7 @@ sub nav_list_combined_menu
                 } elsif ($link =~ /\/filemin\/index\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-file-manager scaled2"></i>';
 
-                } elsif ($link =~ /\/xterm\/index\.cgi/) {
+                } elsif ($link =~ /\/xterm\/index\.cgi\?user/) {
                     $icon = '<i class="fa fa2 fa-fw fa2-terminal fa-1_10x margined-right--2"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/edit_html\.cgi/) {
