@@ -979,8 +979,8 @@ sub nav_links
     $rv .= '<span><i class="fa fa-fw ' . (theme_night_mode() ? 'fa-sun' : 'fa-moon') . '"></i></span>';
     $rv .= '</li>';
 
-    if ($theme_config{'settings_show_terminal_link2'} ne 'false' &&
-        (foreign_available("shell") || foreign_available("xterm")))
+    if ((foreign_available("xterm") && $theme_config{'settings_show_terminal_link'} ne 'false') ||
+        (!foreign_available("xterm") && foreign_available("shell") && $theme_config{'settings_show_terminal_link2'} ne 'false'))
     {
         my $t = foreign_available("xterm") ? undef : '2';
         $rv .=
@@ -1043,11 +1043,12 @@ sub nav_links
     my $menu_lnk_colla     = $theme_config{'settings_collapse_navigation_link'} eq 'true';
     my $menu_lnk_dashb     = $theme_config{'settings_sysinfo_link_mini'} eq 'true';
     my $menu_lnk_night     = $theme_config{'settings_show_night_mode_link'} eq 'true';
-    my $menu_lnk_term      = $theme_config{'settings_show_terminal_link2'} eq 'true';
     my $menu_lnk_favor     = $theme_config{'settings_favorites'} eq 'true';
     my $menu_lnk_themeconf = $theme_config{'settings_theme_options_button'} eq 'true';
     my $menu_lnk_lang      = $theme_config{'settings_leftmenu_button_language'} eq 'true';
     my $menu_lnk_refresh   = $theme_config{'settings_leftmenu_button_refresh'} eq 'true';
+    my $menu_lnk_term      = $theme_config{'settings_show_terminal_link'} eq 'true' ||
+      $theme_config{'settings_show_terminal_link2'} eq 'true';
 
     # Link buttons widths
     my $menu_width_needed = 0;
