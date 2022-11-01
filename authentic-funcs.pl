@@ -612,6 +612,17 @@ sub product_version_update
       $product_local_name eq "f" ? ["ConfigServer Security & Firewall", $software_versions_remote->{'csf'}] :
       "";
 
+    # A work-around to fix inconsistency returned by `module.info` (i.e. 7.3.gpl)
+    # and what package manager provides (i.e. 7.3.gpl-1).
+    if ($product_local_name =~ /^(v|c)$/) {
+        $product_local_version =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
+          if ($product_local_version);
+        $software_versions_remote->{'virtual-server'} =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
+          if ($software_versions_remote->{'virtual-server'});
+        $software_versions_remote->{'server-manager'} =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
+          if ($software_versions_remote->{'server-manager'});
+    }
+
     # Compare versions
     if (
         ($product_local_name eq "w" &&
