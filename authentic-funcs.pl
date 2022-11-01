@@ -614,9 +614,13 @@ sub product_version_update
 
     # A work-around to fix inconsistency returned by `module.info` (i.e. 7.3.gpl)
     # and what package manager provides (i.e. 7.3.gpl-1).
-    if ($product_local_name =~ /^(v|c)$/) {
+    if ($product_local_name =~ /^(w|u|v|c)$/) {
         $product_local_version =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
           if ($product_local_version);
+        $software_versions_remote->{'webmin'} =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
+          if ($software_versions_remote->{'webmin'});
+        $software_versions_remote->{'usermin'} =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
+          if ($software_versions_remote->{'usermin'});
         $software_versions_remote->{'virtual-server'} =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
           if ($software_versions_remote->{'virtual-server'});
         $software_versions_remote->{'server-manager'} =~ s/(\d+\.\d+\.\d+|\d+\.\d+)(.*)/$1/
@@ -626,17 +630,20 @@ sub product_version_update
     # Compare versions
     if (
         ($product_local_name eq "w" &&
-         &compare_version_numbers($product_local_version, $software_versions_remote->{'webmin'}) < 0
-        ) ||
+         $product_local_version &&
+         &compare_version_numbers($product_local_version, $software_versions_remote->{'webmin'}) < 0) ||
         ($product_local_name eq "u" &&
+            $product_local_version &&
             &compare_version_numbers($product_local_version, $software_versions_remote->{'usermin'}) < 0) ||
         ($product_local_name eq "v" &&
+            $product_local_version &&
             &compare_version_numbers($product_local_version, $software_versions_remote->{'virtual-server'}) < 0) ||
         ($product_local_name eq "c" &&
+            $product_local_version &&
             &compare_version_numbers($product_local_version, $software_versions_remote->{'server-manager'}) < 0) ||
         ($product_local_name eq "f" &&
-            &compare_version_numbers($product_local_version, $software_versions_remote->{'csf'}) < 0))
-    {
+            $product_local_version &&
+            &compare_version_numbers($product_local_version, $software_versions_remote->{'csf'}) < 0)) {
         if (&foreign_available("virtual-server")) {
             return '<a href="https://forum.virtualmin.com/search?q=' .
               $product_remote_version->[0] . '%20in%3Atitle%20%23news%20order%3Alatest" target="_blank">' .
