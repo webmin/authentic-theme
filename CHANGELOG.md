@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 20.10-RC1 (November 05, 2022)
+* Add full support for a new Terminal module
+* Fix further line heights issues with various progressive outputs
+
 #### Version 20.02 (September 21, 2022)
 * Fix file and directory creation by root capable user inside jailed user homes in File Manager
 * Fix mass deletion when a directory contains sub-directories in File Manager [forum.virtualmin.com/t/116925](https://forum.virtualmin.com/t/i-found-a-bug-in-the-file-system-from-virtualmin/116925)
