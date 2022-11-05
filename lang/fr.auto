@@ -173,7 +173,9 @@ theme_xhred_webmin_requires_restart_no=Non, je vais le redémarrer manuellement
 theme_xhred_filemanager_path_manual=Entrez le chemin manuellement (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Erreur de connexion WebSocket
 theme_xhred_socket_conn_lost_title=Connexion perdue
 theme_xhred_socket_conn_lost_reconnect=Se reconnecter
+theme_xhred_socket_conn_lost_connecting=Connexion ..
 theme_xhred_socket_conn_lost_try=Réessayer
+theme_xhred_socket_conn_parse_error=Échec du chargement du terminal : impossible d'analyser l'objet de réponse du serveur
+theme_xhred_socket_conn_sock_error=Échec du chargement du terminal : erreur de connexion WebSocket

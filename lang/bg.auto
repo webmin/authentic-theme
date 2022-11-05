@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Не, ще го рестартирам р
 theme_xhred_filemanager_path_manual=Въведете пътя ръчно (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Грешка при свързване с WebSocket
 theme_xhred_socket_conn_lost_title=Връзката е прекъсната
 theme_xhred_socket_conn_lost_reconnect=Свържете се отново
+theme_xhred_socket_conn_lost_connecting=Свързване ..
 theme_xhred_socket_conn_lost_try=Опитай пак
+theme_xhred_socket_conn_parse_error=Неуспешно зареждане на терминала: Не може да се анализира обект на отговор от сървъра
+theme_xhred_socket_conn_sock_error=Неуспешно зареждане на терминала: Грешка при свързване с WebSocket

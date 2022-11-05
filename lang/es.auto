@@ -1213,7 +1213,9 @@ theme_xhred_webmin_requires_restart_no=No, lo reiniciaré manualmente
 theme_xhred_filemanager_path_manual=Ingrese la ruta manualmente (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Error de conexión WebSocket
 theme_xhred_socket_conn_lost_title=Conexión perdida
 theme_xhred_socket_conn_lost_reconnect=reconectar
+theme_xhred_socket_conn_lost_connecting=Conectando ..
 theme_xhred_socket_conn_lost_try=Intentar otra vez
+theme_xhred_socket_conn_parse_error=Terminal de carga fallida: no se puede analizar el objeto de respuesta del servidor
+theme_xhred_socket_conn_sock_error=Terminal de carga fallida: error de conexión WebSocket

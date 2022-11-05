@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=לא, אני אתחיל אותו מחדש
 theme_xhred_filemanager_path_manual=הזן נתיב באופן ידני (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=שגיאת חיבור WebSocket
 theme_xhred_socket_conn_lost_title=החיבור אבד
 theme_xhred_socket_conn_lost_reconnect=התחבר מחדש
+theme_xhred_socket_conn_lost_connecting=מתחבר ..
 theme_xhred_socket_conn_lost_try=נסה שוב
+theme_xhred_socket_conn_parse_error=טעינת מסוף נכשלה: לא ניתן לנתח אובייקט תגובה מהשרת
+theme_xhred_socket_conn_sock_error=טעינת מסוף נכשלה: שגיאת חיבור WebSocket

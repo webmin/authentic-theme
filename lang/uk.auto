@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Ні, я перезапущу його в
 theme_xhred_filemanager_path_manual=Введіть шлях вручну (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Помилка підключення WebSocket
 theme_xhred_socket_conn_lost_title=Зв'язок втрачено
 theme_xhred_socket_conn_lost_reconnect=Повторне підключення
+theme_xhred_socket_conn_lost_connecting=Підключення ..
 theme_xhred_socket_conn_lost_try=Спробуйте знову
+theme_xhred_socket_conn_parse_error=Не вдалося завантажити термінал: неможливо проаналізувати об’єкт відповіді з сервера
+theme_xhred_socket_conn_sock_error=Не вдалося завантажити термінал: помилка підключення WebSocket

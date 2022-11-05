@@ -469,7 +469,9 @@ theme_xhred_webmin_requires_restart_no=不，我会手动重启
 theme_xhred_filemanager_path_manual=手动输入路径（Ctrl + L）
 
 #20.02
-theme_xhred_socket_conn_error_title=WebSocket 连接错误
 theme_xhred_socket_conn_lost_title=连接丢失
 theme_xhred_socket_conn_lost_reconnect=重新连接
+theme_xhred_socket_conn_lost_connecting=连接 ..
 theme_xhred_socket_conn_lost_try=再试一次
+theme_xhred_socket_conn_parse_error=加载终端失败：无法解析来自服务器的响应对象
+theme_xhred_socket_conn_sock_error=加载终端失败：WebSocket 连接错误

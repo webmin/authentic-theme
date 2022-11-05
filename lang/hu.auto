@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Nem, manuálisan újraindítom
 theme_xhred_filemanager_path_manual=Írja be az elérési utat kézzel (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=WebSocket csatlakozási hiba
 theme_xhred_socket_conn_lost_title=A kapcsolat megszakadt
 theme_xhred_socket_conn_lost_reconnect=Csatlakozzon újra
+theme_xhred_socket_conn_lost_connecting=Csatlakozás ..
 theme_xhred_socket_conn_lost_try=Próbáld újra
+theme_xhred_socket_conn_parse_error=Nem sikerült betölteni a terminált: Nem sikerült elemezni a válaszobjektumot a szerverről
+theme_xhred_socket_conn_sock_error=Nem sikerült betölteni a terminált: WebSocket csatlakozási hiba

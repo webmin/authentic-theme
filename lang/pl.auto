@@ -1220,7 +1220,9 @@ theme_xhred_webmin_requires_restart_no=Nie, zrestartuję go ręcznie
 theme_xhred_filemanager_path_manual=Wprowadź ścieżkę ręcznie (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Błąd połączenia WebSocket
 theme_xhred_socket_conn_lost_title=Utracono połączenie
 theme_xhred_socket_conn_lost_reconnect=Na nowo połączyć
+theme_xhred_socket_conn_lost_connecting=Podłączanie ..
 theme_xhred_socket_conn_lost_try=Spróbuj ponownie
+theme_xhred_socket_conn_parse_error=Nieudane ładowanie terminala: nie można przeanalizować obiektu odpowiedzi z serwera
+theme_xhred_socket_conn_sock_error=Nieudane ładowanie terminala: błąd połączenia WebSocket

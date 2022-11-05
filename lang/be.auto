@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Не, я перазапущу яго ўр
 theme_xhred_filemanager_path_manual=Увядзіце шлях уручную (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Памылка злучэння WebSocket
 theme_xhred_socket_conn_lost_title=Злучэнне страчана
 theme_xhred_socket_conn_lost_reconnect=Зноў падключыцеся
+theme_xhred_socket_conn_lost_connecting=Падключэнне ..
 theme_xhred_socket_conn_lost_try=Паспрабуй яшчэ
+theme_xhred_socket_conn_parse_error=Збой загрузкі тэрмінала: Немагчыма разабраць аб'ект адказу з сервера
+theme_xhred_socket_conn_sock_error=Не атрымалася загрузіць тэрмінал: памылка злучэння WebSocket

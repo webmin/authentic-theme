@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Ez, eskuz berrabiaraziko dut
 theme_xhred_filemanager_path_manual=Sartu bidea eskuz (Ktrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=WebSocket konexio-errorea
 theme_xhred_socket_conn_lost_title=Konexioa galdu da
 theme_xhred_socket_conn_lost_reconnect=Berriro konektatu
+theme_xhred_socket_conn_lost_connecting=Konektatzen ..
 theme_xhred_socket_conn_lost_try=Saiatu berriro
+theme_xhred_socket_conn_parse_error=Huts egin du terminala kargatzean: ezin da zerbitzaritik erantzun objektua analizatu
+theme_xhred_socket_conn_sock_error=Huts egin du terminala kargatzean: WebSocket konexio-errorea

@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=نه، من آن را به صورت دس�
 theme_xhred_filemanager_path_manual=مسیر را به صورت دستی وارد کنید (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=خطای اتصال WebSocket
 theme_xhred_socket_conn_lost_title=اتصال قطع شد
 theme_xhred_socket_conn_lost_reconnect=دوباره وصل شوید
+theme_xhred_socket_conn_lost_connecting=برقراری ارتباط ..
 theme_xhred_socket_conn_lost_try=دوباره امتحان کنید
+theme_xhred_socket_conn_parse_error=پایانه بارگیری ناموفق: نمی توان شی پاسخ را از سرور تجزیه کرد
+theme_xhred_socket_conn_sock_error=ترمینال بارگیری نشد: خطای اتصال WebSocket

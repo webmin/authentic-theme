@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Ne, ponovno ću ga pokrenuti ručno
 theme_xhred_filemanager_path_manual=Unesite put ručno (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Pogreška WebSocket veze
 theme_xhred_socket_conn_lost_title=Izgubljena veza
 theme_xhred_socket_conn_lost_reconnect=Ponovno se spojite
+theme_xhred_socket_conn_lost_connecting=Povezivanje ..
 theme_xhred_socket_conn_lost_try=Pokušajte ponovno
+theme_xhred_socket_conn_parse_error=Neuspješno učitavanje terminala: Ne mogu analizirati objekt odgovora s poslužitelja
+theme_xhred_socket_conn_sock_error=Neuspješno učitavanje terminala: pogreška veze s WebSocketom

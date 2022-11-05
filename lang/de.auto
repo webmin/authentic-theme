@@ -206,7 +206,9 @@ theme_xhred_webmin_requires_restart_no=Nein, ich werde es manuell neu starten
 theme_xhred_filemanager_path_manual=Pfad manuell eingeben (Strg + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=WebSocket-Verbindungsfehler
 theme_xhred_socket_conn_lost_title=Verbindung unterbrochen
 theme_xhred_socket_conn_lost_reconnect=Verbinden Sie sich erneut
+theme_xhred_socket_conn_lost_connecting=Verbinden ..
 theme_xhred_socket_conn_lost_try=Versuchen Sie es nochmal
+theme_xhred_socket_conn_parse_error=Laden des Terminals fehlgeschlagen: Das Antwortobjekt vom Server kann nicht geparst werden
+theme_xhred_socket_conn_sock_error=Fehler beim Laden des Terminals: WebSocket-Verbindungsfehler

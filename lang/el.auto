@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Όχι, θα το επανεκκινήσ�
 theme_xhred_filemanager_path_manual=Εισαγάγετε τη διαδρομή χειροκίνητα (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=Σφάλμα σύνδεσης WebSocket
 theme_xhred_socket_conn_lost_title=Η σύνδεση χάθηκε
 theme_xhred_socket_conn_lost_reconnect=Επανασυνδέστε
+theme_xhred_socket_conn_lost_connecting=Σύνδεση ..
 theme_xhred_socket_conn_lost_try=Προσπάθησε ξανά
+theme_xhred_socket_conn_parse_error=Αποτυχία φόρτωσης τερματικού : Δεν είναι δυνατή η ανάλυση του αντικειμένου απόκρισης από τον διακομιστή
+theme_xhred_socket_conn_sock_error=Αποτυχία φόρτωσης τερματικού : Σφάλμα σύνδεσης WebSocket

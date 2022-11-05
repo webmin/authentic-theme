@@ -1302,7 +1302,9 @@ theme_xhred_webmin_requires_restart_no=Nē, es to restartēšu manuāli
 theme_xhred_filemanager_path_manual=Ievadiet ceļu manuāli (Ctrl + L)
 
 #20.02
-theme_xhred_socket_conn_error_title=WebSocket savienojuma kļūda
 theme_xhred_socket_conn_lost_title=Savienojums pazudis
 theme_xhred_socket_conn_lost_reconnect=Atkārtoti izveidojiet savienojumu
+theme_xhred_socket_conn_lost_connecting=Notiek savienojuma izveide. ..
 theme_xhred_socket_conn_lost_try=Mēģini vēlreiz
+theme_xhred_socket_conn_parse_error=Neizdevās ielādēt termināli: nevar parsēt atbildes objektu no servera
+theme_xhred_socket_conn_sock_error=Neizdevās ielādēt termināli: WebSocket savienojuma kļūda
