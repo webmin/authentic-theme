@@ -1,7 +1,8 @@
 ## Changelog
 
-#### Version 20.10-RC1 (November 05, 2022)
+#### Version 20.10-RC2 (November 06, 2022)
 * Add full support for a new Terminal module
+* Add autocomplete helper when entering domain names in Virtualmin
 * Fix further line heights issues with various progressive outputs
 
 #### Version 20.02 (September 21, 2022)
