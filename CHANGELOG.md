@@ -1,8 +1,8 @@
 ## Changelog
 
-#### Version 20.10-RC3 (November 14, 2022)
+#### Version 20.10-RC4 (November 18, 2022)
 * Add full support for a new Terminal module
-* Add autocomplete helper when entering domain names in Virtualmin
+* Add autocomplete helper when typing domain names in Virtualmin
 * Fix further line heights issues with various progressive outputs
 * Fix to prevent form changing state on autofill with initial page load
 
