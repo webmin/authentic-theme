@@ -26,7 +26,7 @@ our (%in,
 
 $trust_unknown_referers = 1;
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do($ENV{'THEME_ROOT'} . "/authentic-lib.pl");
 
 header($title, 'stripped');
 

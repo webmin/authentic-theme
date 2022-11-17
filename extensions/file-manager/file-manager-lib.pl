@@ -5,9 +5,9 @@
 #
 use strict;
 
-use lib ("$ENV{'THEME_ROOT'}/lib");
+use lib ($ENV{'PERLLIB'} . "/vendor_perl");
 
-do("$ENV{'THEME_ROOT'}/authentic-funcs.pl");
+do($ENV{'THEME_ROOT'} . "/authentic-funcs.pl");
 
 use Cwd 'abs_path';
 use Encode qw(decode encode);

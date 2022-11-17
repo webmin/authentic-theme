@@ -9,7 +9,7 @@ use strict;
 
 our (%text, %in, %userconfig, %config, $special_folder_id);
 
-do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
+do($ENV{'THEME_ROOT'} . "/extensions/mail/mail-lib.pl");
 
 my %mails;
 

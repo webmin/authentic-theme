@@ -9,8 +9,8 @@ use strict;
 
 our (%in, $current_theme, $config_directory, $get_user_level, $remote_user, %theme_text);
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
-do("$ENV{'THEME_ROOT'}/settings-lib.pl");
+do($ENV{'THEME_ROOT'} . "/authentic-lib.pl");
+do($ENV{'THEME_ROOT'} . "/settings-lib.pl");
 
 my @files = get_settings_editor_files();
 

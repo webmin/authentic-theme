@@ -7,11 +7,11 @@
 #
 use strict;
 
-use lib ("$ENV{'THEME_ROOT'}/lib");
+use lib ($ENV{'PERLLIB'} . "/vendor_perl");
 
 our (%in);
 
-do("$ENV{'THEME_ROOT'}/extensions/mail/mail-lib.pl");
+do($ENV{'THEME_ROOT'} . "/extensions/mail/mail-lib.pl");
 
 my %temporary;
 my @folders_data = list_folders_sorted();

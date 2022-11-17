@@ -9,7 +9,7 @@ use strict;
 
 our (%in, $theme_webprefix, $current_theme, $config_directory, $get_user_level, %theme_text);
 
-do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+do($ENV{'THEME_ROOT'} . "/authentic-lib.pl");
 
 &webmin_user_is_admin() ||
   &error($theme_text{'theme_error_access_not_root_user'});

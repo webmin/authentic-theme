@@ -8,14 +8,14 @@
 #
 use strict;
 
-use lib ("$ENV{'THEME_ROOT'}/lib");
+use lib ($ENV{'PERLLIB'} . "/vendor_perl");
 
 use File::Copy;
 use File::Path;
 
 our (%in, %text, $cwd, $path);
 
-do("$ENV{'THEME_ROOT'}/extensions/file-manager/file-manager-lib.pl");
+do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my %errors;
 my @deleted_entries;

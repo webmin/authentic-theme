@@ -5,7 +5,7 @@
 #
 use strict;
 
-use lib ("$ENV{'THEME_ROOT'}/lib");
+use lib ($ENV{'PERLLIB'} . "/vendor_perl");
 
 use File::Grep qw( fgrep fmap fdo );
 use Encode     qw( encode decode );
@@ -26,7 +26,7 @@ our (
 
 init_type();
 init_config();
-do("$ENV{'THEME_ROOT'}/authentic-init.pl");
+do($ENV{'THEME_ROOT'} . "/authentic-init.pl");
 
 sub authentic
 {
@@ -2216,7 +2216,7 @@ sub content
     print '</div>' . "\n";
 
     # Navigation
-    do("$ENV{'THEME_ROOT'}/navigation-lib.pl");
+    do($ENV{'THEME_ROOT'} . "/navigation-lib.pl");
     print '<aside style="' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
     print_switch();
     print "<ul class=\"navigation\">\n";
