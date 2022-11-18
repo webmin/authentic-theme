@@ -1,10 +1,12 @@
 ## Changelog
 
-#### Version 20.10-RC4 (November 18, 2022)
+#### Version 20.10 (November 18, 2022)
 * Add full support for a new Terminal module
 * Add autocomplete helper when typing domain names in Virtualmin
 * Fix further line heights issues with various progressive outputs
-* Fix to prevent form changing state on autofill with initial page load
+* Fix to prevent changing forms state on autofill in initial page load
+
+<!--- separator --->
 
 #### Version 20.02 (September 21, 2022)
 * Fix file and directory creation by root capable user inside jailed user homes in File Manager
@@ -35,8 +37,6 @@
 * Fix Servers Index module logout link [sourceforge.net#5576](https://sourceforge.net/p/webadmin/bugs/5576/#a52f)
 * Fix ability to open servers to a new tab in Servers Index module
 * Fix redirects on page reload in proxy mode (doubled webprefix)
-
-<!--- separator --->
 
 #### Version 19.99 (August 2, 2022)
 * Add a separate button for opening path manually in File Manager [#1611](https://github.com/authentic-theme/authentic-theme/issues/1611)
