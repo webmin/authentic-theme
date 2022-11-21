@@ -715,9 +715,11 @@ sub init_vars
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
 
-    setvar('theme-goto', get_theme_temp_data('goto', 'keep'));
-    $server_x_goto = get_theme_temp_data('goto')
-      if (!http_x_request());
+    my $server_x_goto_ = get_theme_temp_data('goto');
+    if ($server_x_goto_) {
+        $server_x_goto = $server_x_goto_;
+        setvar('theme-goto', $server_x_goto);
+    }
 
 }
 
