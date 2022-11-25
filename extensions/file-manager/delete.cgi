@@ -13,7 +13,7 @@ use lib ($ENV{'PERLLIB'} . "/vendor_perl");
 use File::Copy;
 use File::Path;
 
-our (%in, %text, $cwd, $path);
+our (%in, %text, $cwd, $path, @allowed_paths);
 
 do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
@@ -41,7 +41,14 @@ foreach my $name (@entries_list) {
             push(@deleted_entries, $name);
         }
     } elsif ($in{'trash'}) {
-        my $tdir    = "$in{'home'}/$tdirname/$cwd";
+        my $jdir = $in{'home'};
+        $jdir = "$+{jhdir}"
+          if ($jdir =~ /\/.(?<jhdir>\/.*?)$/);
+        my $hdir =
+          (-d $jdir             && -w $jdir)             ? $jdir :
+          (-d $allowed_paths[0] && -w $allowed_paths[0]) ? $allowed_paths[0] :
+          undef;
+        my $tdir    = "$hdir/$tdirname/$cwd";
         my %mkpopts = { owner => int($in{'uid'}), group => int($in{'guid'}) };
         my $mkpathr = &$mkpath_($tdir);
         my $tfile;
@@ -69,5 +76,4 @@ if ($fsid) {
     cache_search_delete($fsid, \@deleted_entries);
 }
 
-redirect_local(
-           'list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=' . get_errors(\%errors) . extra_query());
+redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=' . get_errors(\%errors) . extra_query());
