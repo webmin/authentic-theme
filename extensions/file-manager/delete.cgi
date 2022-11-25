@@ -29,6 +29,7 @@ my $mkpath_      = sub {
     my $rs = mkpath($dir, { owner => int($in{'uid'}), group => int($in{'guid'}) });
     return $rs;
 };
+my $etrashed = 0;
 
 foreach my $name (@entries_list) {
     my $name_ = $name;
@@ -59,7 +60,21 @@ foreach my $name (@entries_list) {
             &$mkpath_($tdir);
         }
         if (!move("$cwd/$name", $tfile || "$tdir/$name")) {
-            $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));
+
+            # Do not throw an error when moving .Trash inside the .Trash
+            if (&is_under_directory("$cwd/$name", $tfile || "$tdir/$name")) {
+                # If .Trash the only one in list, delete it
+                if (scalar(@entries_list) == 1) {
+                    if (!&unlink_file("$cwd/$name")) {
+                        $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));
+                    } else {
+                        $etrashed = 1;
+                        push(@deleted_entries, $name);
+                    }
+                }
+            } else {
+                $errors{$name_} = lc($text{'error_delete'} . lc(" - $!"));
+            }
         } else {
             push(@deleted_entries, $name);
         }
@@ -76,4 +91,5 @@ if ($fsid) {
     cache_search_delete($fsid, \@deleted_entries);
 }
 
-redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . '&error=' . get_errors(\%errors) . extra_query());
+redirect_local('list.cgi?path=' .
+            urlize($path) . '&module=filemin' . '&etrashed=' . $etrashed . '&error=' . get_errors(\%errors) . extra_query());

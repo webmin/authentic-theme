@@ -1008,8 +1008,7 @@ sub print_content
         if ($userconfig{'columns'} =~ /size/) {
             my $size = &theme_nice_size_local($list[$count - 1][8]);
             push @row_data,
-              (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
+              ( "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'theme_xhred_filemanager_global_size_in_bytes'}<br>@{[nice_number($list[$count - 1][8])]}\">"
                   . $size . "</span>");
             push(@td_tags, 'data-order="' . ($is_link ? 0 : $is_file ? $list[$count - 1][8] : -1) . '" class="col-size"');
         }
@@ -1026,8 +1025,7 @@ sub print_content
                 $group = $list[$count - 1][6];
             }
             push @row_data,
-              (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_user_group_id'}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
+              ( "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_user_group_id'}<br>$list[$count - 1][5]:$list[$count - 1][6]\">"
                   . $user . ':' . $group . "</span>");
             push(@td_tags, 'class="col-ownership"');
         }
@@ -1057,8 +1055,7 @@ sub print_content
             my $mod_time    = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][10]));
             my $change_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][11]));
             push @row_data,
-              (
-"<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
+              ( "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
                   . $mod_time . "</span>");
             push(@td_tags, 'data-order="' . ($list[$count - 1][10]) . '" class="col-time"');
         }
@@ -1076,6 +1073,7 @@ sub print_content
     $list_data{'pagination_requested'} = $in{'paginate'};
     $list_data{'totals'}               = $totals;
     $list_data{'searched'}             = $query                 ? 1 : 0;
+    $list_data{'etrashed'}             = $in{'etrashed'}        ? 1 : 0;
     $list_data{'flush'}                = test_all_items_query() ? 1 : 0;
     $list_data{'flush_reset'}          = $in{'flush_reset'}     ? 1 : 0;
     $list_data{'udata'} = { user          => $remote_user_info[0],
