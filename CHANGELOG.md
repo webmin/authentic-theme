@@ -1,8 +1,10 @@
 ## Changelog
 
-#### Version 20.10 (November 18, 2022)
+#### Version 20.10 (November 26, 2022)
 * Add full support for a new Terminal module
 * Add autocomplete helper when typing domain names in Virtualmin
+* Fix context menu positioning to keep in viewport in File Manager
+* Fix deleting to trash for jailed virtual servers in File Manager
 * Fix further line heights issues with various progressive outputs
 * Fix to prevent changing forms state on autofill in initial page load
 
