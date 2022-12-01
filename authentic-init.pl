@@ -1035,6 +1035,9 @@ sub get_button_style
     } elsif (string_contains($keys, "cert_copyall")) {
         $class = "info ";
         $icon  = " fa2 fa2-certificate-add";
+    } elsif (string_contains($keys, "notif_upgradeok")) {
+        $class = "warning ";
+        $icon  = "update";
     } elsif (string_contains($keys, "upgrade") ||
              string_contains($keys, "massg_ok") ||
              string_contains($keys, "massscript_ok"))
