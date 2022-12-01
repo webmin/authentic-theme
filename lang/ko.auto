@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=연결 중 ..
 theme_xhred_socket_conn_lost_try=다시 시도하십시오
 theme_xhred_socket_conn_parse_error=터미널 로드 실패: 서버에서 응답 개체를 구문 분석할 수 없습니다
 theme_xhred_socket_conn_sock_error=터미널 로드 실패: WebSocket 연결 오류
+
+#20.10
+theme_xhred_global_open=열려 있는
+theme_xhred_xterm_error_title=연결할 수 없습니다
+theme_xhred_xterm_error=자세한 내용은 터미널 모듈로 이동

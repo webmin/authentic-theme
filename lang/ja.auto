@@ -221,3 +221,8 @@ theme_xhred_socket_conn_lost_connecting=接続中 ..
 theme_xhred_socket_conn_lost_try=再試行
 theme_xhred_socket_conn_parse_error=ターミナルの読み込みに失敗しました: サーバーからの応答オブジェクトを解析できません
 theme_xhred_socket_conn_sock_error=端末の読み込みに失敗しました: WebSocket 接続エラー
+
+#20.10
+theme_xhred_global_open=開ける
+theme_xhred_xterm_error_title=接続できません
+theme_xhred_xterm_error=詳細については、端末モジュールに移動してください

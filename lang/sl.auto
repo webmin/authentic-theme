@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=Povezovanje ..
 theme_xhred_socket_conn_lost_try=Poskusi ponovno
 theme_xhred_socket_conn_parse_error=Nalaganje terminala ni uspelo: ni mogoče razčleniti odgovornega objekta s strežnika
 theme_xhred_socket_conn_sock_error=Neuspešno nalaganje terminala: napaka povezave WebSocket
+
+#20.10
+theme_xhred_global_open=Odprto
+theme_xhred_xterm_error_title=Ni mogoče vzpostaviti povezave
+theme_xhred_xterm_error=Za nadaljnje podrobnosti pojdite na terminalski modul

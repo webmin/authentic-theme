@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=Pripája sa ..
 theme_xhred_socket_conn_lost_try=Skúste to znova
 theme_xhred_socket_conn_parse_error=Zlyhalo načítanie terminálu: Nie je možné analyzovať objekt odpovede zo servera
 theme_xhred_socket_conn_sock_error=Načítanie terminálu zlyhalo: Chyba pripojenia WebSocket
+
+#20.10
+theme_xhred_global_open=OTVORENÉ
+theme_xhred_xterm_error_title=Nemôže sa pripojiť
+theme_xhred_xterm_error=Ďalšie podrobnosti nájdete v module Terminál

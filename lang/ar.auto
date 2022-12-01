@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=توصيل ..
 theme_xhred_socket_conn_lost_try=حاول مرة أخرى
 theme_xhred_socket_conn_parse_error=فشل تحميل محطة: لا يمكن تحليل كائن الاستجابة من الخادم
 theme_xhred_socket_conn_sock_error=فشل تحميل محطة: خطأ اتصال WebSocket
+
+#20.10
+theme_xhred_global_open=فتح
+theme_xhred_xterm_error_title=لا يمكن الاتصال
+theme_xhred_xterm_error=انتقل إلى الوحدة الطرفية لمزيد من التفاصيل

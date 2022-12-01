@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=Свързване ..
 theme_xhred_socket_conn_lost_try=Опитай пак
 theme_xhred_socket_conn_parse_error=Неуспешно зареждане на терминала: Не може да се анализира обект на отговор от сървъра
 theme_xhred_socket_conn_sock_error=Неуспешно зареждане на терминала: Грешка при свързване с WebSocket
+
+#20.10
+theme_xhred_global_open=Отворете
+theme_xhred_xterm_error_title=Не мога да се свържа
+theme_xhred_xterm_error=Отидете на Терминален модул за повече подробности

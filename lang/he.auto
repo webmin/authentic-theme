@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=מתחבר ..
 theme_xhred_socket_conn_lost_try=נסה שוב
 theme_xhred_socket_conn_parse_error=טעינת מסוף נכשלה: לא ניתן לנתח אובייקט תגובה מהשרת
 theme_xhred_socket_conn_sock_error=טעינת מסוף נכשלה: שגיאת חיבור WebSocket
+
+#20.10
+theme_xhred_global_open=לִפְתוֹחַ
+theme_xhred_xterm_error_title=לא יכול להתחבר
+theme_xhred_xterm_error=עבור למודול טרמינל לפרטים נוספים

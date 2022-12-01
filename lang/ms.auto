@@ -693,3 +693,8 @@ theme_xhred_socket_conn_lost_connecting=Menyambung ..
 theme_xhred_socket_conn_lost_try=Cuba lagi
 theme_xhred_socket_conn_parse_error=Gagal memuatkan terminal : Tidak dapat menghuraikan objek tindak balas daripada pelayan
 theme_xhred_socket_conn_sock_error=Gagal memuatkan terminal : Ralat sambungan WebSocket
+
+#20.10
+theme_xhred_global_open=Buka
+theme_xhred_xterm_error_title=Tidak boleh disambungkan
+theme_xhred_xterm_error=Pergi ke modul Terminal untuk butiran lanjut

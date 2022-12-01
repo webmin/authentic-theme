@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=Bağlanıyor ..
 theme_xhred_socket_conn_lost_try=Tekrar deneyin
 theme_xhred_socket_conn_parse_error=Terminal yüklenemedi: Sunucudan yanıt nesnesi ayrıştırılamıyor
 theme_xhred_socket_conn_sock_error=Başarısız yükleme terminali: WebSocket bağlantı hatası
+
+#20.10
+theme_xhred_global_open=Açık
+theme_xhred_xterm_error_title=Bağlanamıyor
+theme_xhred_xterm_error=Daha fazla ayrıntı için Terminal modülüne gidin

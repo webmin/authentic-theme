@@ -475,3 +475,8 @@ theme_xhred_socket_conn_lost_connecting=连接 ..
 theme_xhred_socket_conn_lost_try=再试一次
 theme_xhred_socket_conn_parse_error=加载终端失败：无法解析来自服务器的响应对象
 theme_xhred_socket_conn_sock_error=加载终端失败：WebSocket 连接错误
+
+#20.10
+theme_xhred_global_open=打开
+theme_xhred_xterm_error_title=无法连接
+theme_xhred_xterm_error=转到终端模块以获取更多详细信息

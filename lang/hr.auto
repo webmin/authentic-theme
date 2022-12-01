@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=Povezivanje ..
 theme_xhred_socket_conn_lost_try=Pokušajte ponovno
 theme_xhred_socket_conn_parse_error=Neuspješno učitavanje terminala: Ne mogu analizirati objekt odgovora s poslužitelja
 theme_xhred_socket_conn_sock_error=Neuspješno učitavanje terminala: pogreška veze s WebSocketom
+
+#20.10
+theme_xhred_global_open=Otvorena
+theme_xhred_xterm_error_title=Ne mogu se povezati
+theme_xhred_xterm_error=Idite na Terminal modul za više detalja

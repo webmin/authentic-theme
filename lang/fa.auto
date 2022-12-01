@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=برقراری ارتباط ..
 theme_xhred_socket_conn_lost_try=دوباره امتحان کنید
 theme_xhred_socket_conn_parse_error=پایانه بارگیری ناموفق: نمی توان شی پاسخ را از سرور تجزیه کرد
 theme_xhred_socket_conn_sock_error=ترمینال بارگیری نشد: خطای اتصال WebSocket
+
+#20.10
+theme_xhred_global_open=باز کن
+theme_xhred_xterm_error_title=نمی تواند وصل شود
+theme_xhred_xterm_error=برای جزئیات بیشتر به ماژول ترمینال بروید

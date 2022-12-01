@@ -179,3 +179,8 @@ theme_xhred_socket_conn_lost_connecting=Kobler til ..
 theme_xhred_socket_conn_lost_try=Prøv igjen
 theme_xhred_socket_conn_parse_error=Kunne ikke laste inn terminal: Kan ikke analysere svarobjekt fra serveren
 theme_xhred_socket_conn_sock_error=Feil ved lasting av terminal: WebSocket-tilkoblingsfeil
+
+#20.10
+theme_xhred_global_open=Åpen
+theme_xhred_xterm_error_title=Kan ikke koble til
+theme_xhred_xterm_error=Gå til Terminalmodul for ytterligere detaljer

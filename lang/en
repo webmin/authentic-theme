@@ -1375,3 +1375,9 @@ theme_xhred_socket_conn_lost_connecting=Connecting ..
 theme_xhred_socket_conn_lost_try=Try again
 theme_xhred_socket_conn_parse_error=Failed loading terminal : Cannot parse response object from the server
 theme_xhred_socket_conn_sock_error=Failed loading terminal : WebSocket connection error
+
+
+#20.10
+theme_xhred_global_open=Open
+theme_xhred_xterm_error_title=Cannot connect
+theme_xhred_xterm_error=Go to Terminal module for further details

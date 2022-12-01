@@ -1308,3 +1308,8 @@ theme_xhred_socket_conn_lost_connecting=جڑ رہا ہے ..
 theme_xhred_socket_conn_lost_try=دوبارہ کوشش کریں
 theme_xhred_socket_conn_parse_error=ناکام لوڈنگ ٹرمینل : سرور سے رسپانس آبجیکٹ کو پارس نہیں کیا جا سکتا
 theme_xhred_socket_conn_sock_error=ٹرمینل لوڈ کرنے میں ناکام: WebSocket کنکشن کی خرابی۔
+
+#20.10
+theme_xhred_global_open=کھولیں۔
+theme_xhred_xterm_error_title=رابطہ قائم نہیں ہو سکتا
+theme_xhred_xterm_error=مزید تفصیلات کے لیے ٹرمینل ماڈیول پر جائیں۔
