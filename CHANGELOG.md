@@ -1,11 +1,12 @@
 ## Changelog
 
-#### Version 20.11-RC1 (December 1, 2022)
+#### Version 20.11 (December 4, 2022)
 * Add connection error pop-up for in-built Terminal [webmin#1798](https://github.com/webmin/webmin/issues/1798)
 * Add better support for older browsers
 * Fix not to scroll Terminal page on desktops
+* Fix to improve color contrast for in-built file editor
+* Fix automatic height adjustment for in-built file editor
 * Fix upgrade Webmin button color and icon in the dashboard
-
 
 #### Version 20.10 (November 27, 2022)
 * Add full support for a new Terminal module
