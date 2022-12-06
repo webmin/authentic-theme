@@ -983,11 +983,12 @@ sub nav_links
         (!foreign_available("xterm") && foreign_available("shell") && $theme_config{'settings_show_terminal_link2'} ne 'false'))
     {
         my $t = foreign_available("xterm") ? undef : '2';
+        my $t_icons = !$t ? 'fa2 fa2-terminal' : 'fa fa-terminal';
         $rv .=
           '<li data-linked' .
           get_button_tooltip('theme_tooltip_terminal_link' . $t . '', 'settings_hotkey_shell' . $t . '', 'auto top') .
           ' class="user-link ported-console cursor-pointer">';
-        $rv .= '<span><i class="fa fa-fw fa-terminal"></i></span>';
+        $rv .= "<span><i class=\"$t_icons fa-fw\"></i></span>";
         $rv .= '</li>';
     }
 
