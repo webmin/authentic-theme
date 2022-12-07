@@ -5,7 +5,7 @@
 #
 use strict;
 
-use lib ($ENV{'PERLLIB'} . "/vendor_perl");
+use lib ($ENV{'LIBROOT'} . "/vendor_perl");
 
 do($ENV{'THEME_ROOT'} . "/authentic-funcs.pl");
 

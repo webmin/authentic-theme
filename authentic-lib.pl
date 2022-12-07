@@ -5,7 +5,7 @@
 #
 use strict;
 
-use lib ($ENV{'PERLLIB'} . "/vendor_perl");
+use lib ($ENV{'LIBROOT'} . "/vendor_perl");
 
 use File::Grep qw( fgrep fmap fdo );
 use Encode     qw( encode decode );

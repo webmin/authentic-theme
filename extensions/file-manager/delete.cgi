@@ -8,7 +8,7 @@
 #
 use strict;
 
-use lib ($ENV{'PERLLIB'} . "/vendor_perl");
+use lib ($ENV{'LIBROOT'} . "/vendor_perl");
 
 use File::Copy;
 use File::Path;

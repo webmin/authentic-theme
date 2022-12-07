@@ -8,7 +8,7 @@
 use strict;
 no warnings 'uninitialized';
 
-use lib ($ENV{'PERLLIB'} . "/vendor_perl");
+use lib ($ENV{'LIBROOT'} . "/vendor_perl");
 use Async;
 
 BEGIN {push(@INC, "..");}
