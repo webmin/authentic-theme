@@ -221,7 +221,7 @@ var
                     ['edit_domdkim', 'DKIM', 'opendkim'],
                     ['smtpclouds', 'Amazon SES'],
                     ['dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS'],
-                    ['list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze'],
+                    ['list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze Azure Blob Storage'],
                     ['edit_newvalidate', 'fix reset'],
                     ['list_scripts', 'wordpress roundcube whmcs phpmyadmin'],
                     ['list_users', 'new add password realname fullname email database permissions quota mail forwarding shell thunderbird outlook geary'],
