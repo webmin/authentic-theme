@@ -918,6 +918,25 @@ sub get_button_style
     } elsif (string_contains($keys, "form_edit")) {
         $icon  = "pencil-square-o";
         $class = "success ";
+    } elsif (string_contains($keys, "fdelete_delete") || string_contains($keys, "delete_ok")) {
+        $class = "danger ";
+        $icon = "times-circle";
+    } elsif (string_contains($keys, "mail_delete")) {
+        $icon  = "times-circle";
+        $class = "danger ";
+    } elsif (string_contains($keys, "mail_forward")) {
+        $icon  = "forward";
+    } elsif (string_contains($keys, "view_quick_all")) {
+        $icon  = "reply-all";
+    } elsif (string_contains($keys, "view_reply")) {
+        $icon  = "reply";
+        $class = "info ";
+    } elsif (string_contains($keys, "mail_compose")) {
+        $icon  = "plus";
+        $class = "success ";
+    } elsif (string_contains($keys, "view_razor")) {
+        $icon  = "spam";
+        $class = "warning ";
     } elsif (string_contains($keys, "reply_save")) {
         $icon  = "pencil-square-o";
         $class = "info ";
