@@ -918,6 +918,9 @@ sub get_button_style
     } elsif (string_contains($keys, "form_edit")) {
         $icon  = "pencil-square-o";
         $class = "success ";
+    } elsif (string_contains($keys, "reply_save")) {
+        $icon  = "pencil-square-o";
+        $class = "info ";
     } elsif (string_contains($keys, "docker_reg")) {
         $class = "success ";
         $icon  = "server-add";
