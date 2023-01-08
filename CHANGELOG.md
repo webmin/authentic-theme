@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 20.11.1 (January 8, 2023)
+* Fix to auto-orient autocomplete dropdown and not auto-scroll navigation menu
+* Fix multiple bugs for Read User Mail module (for both Webmin and Usermin)
+* Fix to clearly distinct icons used for terminal and command shell
+* Fix stand alone terminal container height and fit on initial load
+* Fix to escape current path passed to terminal in File Manager
+* Fix to set the dashboard to be default page for Virtualmin
+* Fix text visibility of search label in file editor and viewer
+* Fix support for Azure Storage provider when searching
+
 #### Version 20.11 (December 4, 2022)
 * Add connection error pop-up for in-built Terminal [webmin#1798](https://github.com/webmin/webmin/issues/1798)
 * Add better support for older browsers
