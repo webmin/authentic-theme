@@ -230,6 +230,7 @@ var
                     ['edit_newupgrade', 'support donate patron pay money buy shop license licence serial'],
                     ['migrate_form', 'cpanel ensim plesk lxadmin directadmin'],
                     ['cert_form', 'lets encrypt let\'s encrypt'],
+                    ['edit_newdynip', 'DynDNS'],
                 ]
             }
         ]
