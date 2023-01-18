@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 20.12 (January 18, 2023)
+* Fix menu scroll inertia [#1640](https://github.com/authentic-theme/authentic-theme/issues/1640)
+* Fix to style fatal errors properly
+* Fix not to hide errors when collecting system status
+* Fix Firefox wrongly opening inner link on dropdown change in checked row
+
 #### Version 20.11.1 (January 8, 2023)
 * Fix to auto-orient autocomplete dropdown and not auto-scroll navigation menu
 * Fix multiple bugs for Read User Mail module (for both Webmin and Usermin)
