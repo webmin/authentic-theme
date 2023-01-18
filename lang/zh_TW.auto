@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=加載終端失敗：WebSocket 連接錯誤
 theme_xhred_global_open=打開
 theme_xhred_xterm_error_title=無法連接
 theme_xhred_xterm_error=轉到終端模塊以獲取更多詳細信息
+
+#20.11
+theme_xhred_global_error_fatal=致命錯誤

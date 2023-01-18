@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Не атрымалася загрузіць 
 theme_xhred_global_open=Адкрыты
 theme_xhred_xterm_error_title=Немагчыма падключыцца
 theme_xhred_xterm_error=Перайдзіце ў модуль тэрмінала для атрымання дадатковай інфармацыі
+
+#20.11
+theme_xhred_global_error_fatal=Фатальная памылка

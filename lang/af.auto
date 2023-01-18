@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Kon nie terminaal laai nie: WebSocket-verbind
 theme_xhred_global_open=Maak oop
 theme_xhred_xterm_error_title=Kan nie koppel nie
 theme_xhred_xterm_error=Gaan na Terminale module vir verdere besonderhede
+
+#20.11
+theme_xhred_global_error_fatal=Noodlottige fout

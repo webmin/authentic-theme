@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=فشل تحميل محطة: خطأ اتصال
 theme_xhred_global_open=فتح
 theme_xhred_xterm_error_title=لا يمكن الاتصال
 theme_xhred_xterm_error=انتقل إلى الوحدة الطرفية لمزيد من التفاصيل
+
+#20.11
+theme_xhred_global_error_fatal=خطأ فادح

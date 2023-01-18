@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Başarısız yükleme terminali: WebSocket ba
 theme_xhred_global_open=Açık
 theme_xhred_xterm_error_title=Bağlanamıyor
 theme_xhred_xterm_error=Daha fazla ayrıntı için Terminal modülüne gidin
+
+#20.11
+theme_xhred_global_error_fatal=Ölümcül hata

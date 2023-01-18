@@ -1231,3 +1231,6 @@ theme_xhred_socket_conn_sock_error=Nieudane ładowanie terminala: błąd połąc
 theme_xhred_global_open=otwarty
 theme_xhred_xterm_error_title=Nie można połączyć
 theme_xhred_xterm_error=Przejdź do modułu Terminal, aby uzyskać więcej informacji
+
+#20.11
+theme_xhred_global_error_fatal=Błąd krytyczny

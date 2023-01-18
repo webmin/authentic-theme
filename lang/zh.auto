@@ -480,3 +480,6 @@ theme_xhred_socket_conn_sock_error=加载终端失败：WebSocket 连接错误
 theme_xhred_global_open=打开
 theme_xhred_xterm_error_title=无法连接
 theme_xhred_xterm_error=转到终端模块以获取更多详细信息
+
+#20.11
+theme_xhred_global_error_fatal=致命错误

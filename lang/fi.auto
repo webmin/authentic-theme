@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Päätteen lataus epäonnistui: WebSocket-yht
 theme_xhred_global_open=Avata
 theme_xhred_xterm_error_title=Ei pysty yhdistämään
 theme_xhred_xterm_error=Siirry päätemoduuliin saadaksesi lisätietoja
+
+#20.11
+theme_xhred_global_error_fatal=Kohtalokas virhe

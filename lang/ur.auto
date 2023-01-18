@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=ٹرمینل لوڈ کرنے میں ناکا�
 theme_xhred_global_open=کھولیں۔
 theme_xhred_xterm_error_title=رابطہ قائم نہیں ہو سکتا
 theme_xhred_xterm_error=مزید تفصیلات کے لیے ٹرمینل ماڈیول پر جائیں۔
+
+#20.11
+theme_xhred_global_error_fatal=مہلک غلطی

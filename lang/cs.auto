@@ -1155,3 +1155,6 @@ theme_xhred_socket_conn_sock_error=Načítání terminálu se nezdařilo: Chyba 
 theme_xhred_global_open=OTEVŘENO
 theme_xhred_xterm_error_title=Nelze spojit
 theme_xhred_xterm_error=Další podrobnosti najdete v modulu Terminál
+
+#20.11
+theme_xhred_global_error_fatal=Fatální chyba

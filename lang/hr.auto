@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Neuspješno učitavanje terminala: pogreška 
 theme_xhred_global_open=Otvorena
 theme_xhred_xterm_error_title=Ne mogu se povezati
 theme_xhred_xterm_error=Idite na Terminal modul za više detalja
+
+#20.11
+theme_xhred_global_error_fatal=Fatalna greška

@@ -1381,3 +1381,7 @@ theme_xhred_socket_conn_sock_error=Failed loading terminal : WebSocket connectio
 theme_xhred_global_open=Open
 theme_xhred_xterm_error_title=Cannot connect
 theme_xhred_xterm_error=Go to Terminal module for further details
+
+
+#20.11
+theme_xhred_global_error_fatal=Fatal Error

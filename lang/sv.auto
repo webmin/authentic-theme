@@ -12,3 +12,6 @@ theme_xhred_socket_conn_sock_error=Det gick inte att ladda terminal: WebSocket-a
 theme_xhred_global_open=Öppna
 theme_xhred_xterm_error_title=Kan inte ansluta
 theme_xhred_xterm_error=Gå till Terminalmodul för mer information
+
+#20.11
+theme_xhred_global_error_fatal=Allvarligt fel

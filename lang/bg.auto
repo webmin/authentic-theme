@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Неуспешно зареждане на т
 theme_xhred_global_open=Отворете
 theme_xhred_xterm_error_title=Не мога да се свържа
 theme_xhred_xterm_error=Отидете на Терминален модул за повече подробности
+
+#20.11
+theme_xhred_global_error_fatal=Фатална грешка

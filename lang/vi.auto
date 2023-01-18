@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Không tải được thiết bị đầu cu�
 theme_xhred_global_open=Mở
 theme_xhred_xterm_error_title=Không thể kết nối
 theme_xhred_xterm_error=Chuyển đến mô-đun Terminal để biết thêm chi tiết
+
+#20.11
+theme_xhred_global_error_fatal=Lỗi nghiêm trọng

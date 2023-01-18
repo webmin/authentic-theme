@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=ترمینال بارگیری نشد: خطا�
 theme_xhred_global_open=باز کن
 theme_xhred_xterm_error_title=نمی تواند وصل شود
 theme_xhred_xterm_error=برای جزئیات بیشتر به ماژول ترمینال بروید
+
+#20.11
+theme_xhred_global_error_fatal=خطای مرگبار

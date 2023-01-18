@@ -1225,3 +1225,6 @@ theme_xhred_socket_conn_sock_error=Fejl ved indlæsning af terminal: WebSocket-f
 theme_xhred_global_open=Åben
 theme_xhred_xterm_error_title=Kan ikke oprette forbindelse
 theme_xhred_xterm_error=Gå til Terminalmodul for yderligere detaljer
+
+#20.11
+theme_xhred_global_error_fatal=Fatal fejl

@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Neizdevās ielādēt termināli: WebSocket sa
 theme_xhred_global_open=Atvērt
 theme_xhred_xterm_error_title=Nevar izveidot savienojumu
 theme_xhred_xterm_error=Lai iegūtu sīkāku informāciju, dodieties uz termināļa moduli
+
+#20.11
+theme_xhred_global_error_fatal=Fatāla kļūda

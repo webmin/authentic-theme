@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Huts egin du terminala kargatzean: WebSocket 
 theme_xhred_global_open=Ireki
 theme_xhred_xterm_error_title=Ezin da konektatu
 theme_xhred_xterm_error=Joan Terminal modulura xehetasun gehiago lortzeko
+
+#20.11
+theme_xhred_global_error_fatal=Akats larria

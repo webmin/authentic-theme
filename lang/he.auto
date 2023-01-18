@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=טעינת מסוף נכשלה: שגיאת ח
 theme_xhred_global_open=לִפְתוֹחַ
 theme_xhred_xterm_error_title=לא יכול להתחבר
 theme_xhred_xterm_error=עבור למודול טרמינל לפרטים נוספים
+
+#20.11
+theme_xhred_global_error_fatal=שגיאה קטלנית

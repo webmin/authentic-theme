@@ -114,3 +114,6 @@ theme_xhred_socket_conn_sock_error=Terminale di caricamento non riuscito: errore
 theme_xhred_global_open=Aprire
 theme_xhred_xterm_error_title=Non riesce a connettersi
 theme_xhred_xterm_error=Vai al modulo Terminale per ulteriori dettagli
+
+#20.11
+theme_xhred_global_error_fatal=Errore fatale

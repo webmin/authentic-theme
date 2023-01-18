@@ -307,3 +307,6 @@ theme_xhred_socket_conn_sock_error=Încărcarea terminalului eșuată: eroare de
 theme_xhred_global_open=Deschis
 theme_xhred_xterm_error_title=Nu se poate conecta
 theme_xhred_xterm_error=Accesați modulul Terminal pentru mai multe detalii
+
+#20.11
+theme_xhred_global_error_fatal=Eroare fatala

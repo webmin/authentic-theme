@@ -698,3 +698,6 @@ theme_xhred_socket_conn_sock_error=Gagal memuatkan terminal : Ralat sambungan We
 theme_xhred_global_open=Buka
 theme_xhred_xterm_error_title=Tidak boleh disambungkan
 theme_xhred_xterm_error=Pergi ke modul Terminal untuk butiran lanjut
+
+#20.11
+theme_xhred_global_error_fatal=Ralat Maut

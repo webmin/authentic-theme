@@ -226,3 +226,6 @@ theme_xhred_socket_conn_sock_error=端末の読み込みに失敗しました: W
 theme_xhred_global_open=開ける
 theme_xhred_xterm_error_title=接続できません
 theme_xhred_xterm_error=詳細については、端末モジュールに移動してください
+
+#20.11
+theme_xhred_global_error_fatal=致命的な誤り

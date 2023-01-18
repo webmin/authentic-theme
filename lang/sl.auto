@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Neuspešno nalaganje terminala: napaka poveza
 theme_xhred_global_open=Odprto
 theme_xhred_xterm_error_title=Ni mogoče vzpostaviti povezave
 theme_xhred_xterm_error=Za nadaljnje podrobnosti pojdite na terminalski modul
+
+#20.11
+theme_xhred_global_error_fatal=Usodna napaka

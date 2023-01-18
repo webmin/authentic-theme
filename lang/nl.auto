@@ -1200,3 +1200,6 @@ theme_xhred_socket_conn_sock_error=Laden van terminal mislukt: WebSocket-verbind
 theme_xhred_global_open=Open
 theme_xhred_xterm_error_title=Kan niet verbinden
 theme_xhred_xterm_error=Ga naar Terminalmodule voor meer details
+
+#20.11
+theme_xhred_global_error_fatal=Fatale fout

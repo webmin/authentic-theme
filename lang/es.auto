@@ -1224,3 +1224,6 @@ theme_xhred_socket_conn_sock_error=Terminal de carga fallida: error de conexión
 theme_xhred_global_open=Abierto
 theme_xhred_xterm_error_title=No se puede conectar
 theme_xhred_xterm_error=Vaya a Módulo de terminales para más detalles
+
+#20.11
+theme_xhred_global_error_fatal=Error fatal

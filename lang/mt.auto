@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=It-terminal tat-tagħbija fallut : Żball fil
 theme_xhred_global_open=Miftuħa
 theme_xhred_xterm_error_title=Ma tistax tikkonnettja
 theme_xhred_xterm_error=Mur fil-modulu Terminal għal aktar dettalji
+
+#20.11
+theme_xhred_global_error_fatal=Żball fatali

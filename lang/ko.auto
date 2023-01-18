@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=터미널 로드 실패: WebSocket 연결 오
 theme_xhred_global_open=열려 있는
 theme_xhred_xterm_error_title=연결할 수 없습니다
 theme_xhred_xterm_error=자세한 내용은 터미널 모듈로 이동
+
+#20.11
+theme_xhred_global_error_fatal=치명적 오류

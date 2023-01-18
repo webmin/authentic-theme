@@ -184,3 +184,6 @@ theme_xhred_socket_conn_sock_error=Échec du chargement du terminal : erreur de
 theme_xhred_global_open=Ouvert
 theme_xhred_xterm_error_title=Peut pas se connecter
 theme_xhred_xterm_error=Aller au module Terminal pour plus de détails
+
+#20.11
+theme_xhred_global_error_fatal=Erreur fatale

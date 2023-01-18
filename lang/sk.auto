@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Načítanie terminálu zlyhalo: Chyba pripoje
 theme_xhred_global_open=OTVORENÉ
 theme_xhred_xterm_error_title=Nemôže sa pripojiť
 theme_xhred_xterm_error=Ďalšie podrobnosti nájdete v module Terminál
+
+#20.11
+theme_xhred_global_error_fatal=Fatálna chyba

@@ -629,3 +629,6 @@ theme_xhred_socket_conn_sock_error=No s'ha pogut carregar el terminal: error de 
 theme_xhred_global_open=Obert
 theme_xhred_xterm_error_title=No es pot connectar
 theme_xhred_xterm_error=Aneu al mòdul Terminal per obtenir més detalls
+
+#20.11
+theme_xhred_global_error_fatal=Error fatal

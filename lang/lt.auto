@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Nepavyko įkelti terminalo: „WebSocket“ r
 theme_xhred_global_open=Atviras
 theme_xhred_xterm_error_title=Negalima prisijungti
 theme_xhred_xterm_error=Norėdami gauti daugiau informacijos, eikite į terminalo modulį
+
+#20.11
+theme_xhred_global_error_fatal=Lemtinga klaida

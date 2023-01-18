@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=Nem sikerült betölteni a terminált: WebSoc
 theme_xhred_global_open=Nyisd ki
 theme_xhred_xterm_error_title=Nem tud csatlakozni
 theme_xhred_xterm_error=További részletekért lépjen a Terminál modulhoz
+
+#20.11
+theme_xhred_global_error_fatal=Fatális hiba

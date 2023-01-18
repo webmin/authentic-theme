@@ -184,3 +184,6 @@ theme_xhred_socket_conn_sock_error=Feil ved lasting av terminal: WebSocket-tilko
 theme_xhred_global_open=Åpen
 theme_xhred_xterm_error_title=Kan ikke koble til
 theme_xhred_xterm_error=Gå til Terminalmodul for ytterligere detaljer
+
+#20.11
+theme_xhred_global_error_fatal=Fatal feil

@@ -1313,3 +1313,6 @@ theme_xhred_socket_conn_sock_error=ไม่สามารถโหลดเท
 theme_xhred_global_open=เปิด
 theme_xhred_xterm_error_title=ไม่สามารถเชื่อมต่อ
 theme_xhred_xterm_error=ไปที่โมดูลเทอร์มินัลเพื่อดูรายละเอียดเพิ่มเติม
+
+#20.11
+theme_xhred_global_error_fatal=ข้อผิดพลาดร้ายแรง
