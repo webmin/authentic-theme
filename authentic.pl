@@ -1009,6 +1009,8 @@ sub theme_ui_alert_box
           $fa = 'fa2 fa2-warning fa-1_15x margined-left--2';
     } elsif ($class eq "danger") {
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
+    } elsif ($class eq "danger-fatal") {
+        $type = 'alert-danger-fatal', $tmsg = ($theme_text{'theme_xhred_global_error_fatal'} . '!'), $fa = 'fa-exclamation-triangle';
     }
 
     my $tmsg_space = " ";
@@ -1504,6 +1506,13 @@ sub theme_ui_text_color
     my ($text, $type) = @_;
     $type = "warning" if ($type eq "warn");
     return "<span class=\"ui_text_color text_type_$type text-$type\">$text</span>\n";
+}
+
+sub theme_error {
+    my $error_what = ($main::whatfailed ? "$main::whatfailed : " : "");
+    my $error_message = join(", ", @_);
+    my $error = html_escape(html_strip(($error_what . $error_message)));
+    print ui_alert_box("<tt class='font-size-90pf'>$error</tt>", 'danger-fatal', undef, 1);
 }
 
 $main::cloudmin_no_create_links = 1;
