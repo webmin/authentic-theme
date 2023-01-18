@@ -1010,7 +1010,8 @@ sub theme_ui_alert_box
     } elsif ($class eq "danger") {
         $type = 'alert-danger', $tmsg = ($theme_text{'theme_xhred_global_error'} . '!'), $fa = 'fa-bolt';
     } elsif ($class eq "danger-fatal") {
-        $type = 'alert-danger-fatal', $tmsg = ($theme_text{'theme_xhred_global_error_fatal'} . '!'), $fa = 'fa-exclamation-triangle';
+        $type = 'alert-danger-fatal', $tmsg = ($theme_text{'theme_xhred_global_error_fatal'} . '!'),
+          $fa = 'fa-exclamation-triangle';
     }
 
     my $tmsg_space = " ";
@@ -1333,18 +1334,20 @@ sub theme_redirect
         print "Location: $arg1\n\n";
         return;
     } elsif (string_contains($arg1, '../')) {
-        $main::ignore_errors = 1;
-        set_theme_temp_data('redirected', $arg1) if ($arg1 !~ /switch\.cgi/);
-        $main::ignore_errors = 0;
+        eval {
+            $main::error_must_die = 1;
+            set_theme_temp_data('redirected', $arg1) if ($arg1 !~ /switch\.cgi/);
+        };
         print "Location: $arg1\n\n";
         return;
     }
 
     if (!theme_redirect_download($url)) {
-        $main::ignore_errors = 1;
-        set_theme_temp_data('redirected', $url)
-          if (!theme_set_redirect_forbidden($url));
-        $main::ignore_errors = 0;
+        eval {
+            $main::error_must_die = 1;
+            set_theme_temp_data('redirected', $url)
+              if (!theme_set_redirect_forbidden($url));
+        };
         print "Location: $url\n\n";
     }
 }
@@ -1508,10 +1511,11 @@ sub theme_ui_text_color
     return "<span class=\"ui_text_color text_type_$type text-$type\">$text</span>\n";
 }
 
-sub theme_error {
-    my $error_what = ($main::whatfailed ? "$main::whatfailed : " : "");
+sub theme_error
+{
+    my $error_what    = ($main::whatfailed ? "$main::whatfailed : " : "");
     my $error_message = join(", ", @_);
-    my $error = html_escape(html_strip(($error_what . $error_message)));
+    my $error         = html_escape(html_strip(($error_what . $error_message)));
     print ui_alert_box("<tt class='font-size-90pf'>$error</tt>", 'danger-fatal', undef, 1);
 }
 
