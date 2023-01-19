@@ -1,8 +1,13 @@
 ## Changelog
 
+#### Version 20.13 (January 19, 2023)
+* Fix error handling issue
+* Fix domain autocomplete helper issue on page scroll
+* Fix to properly dismiss domain autocomplete helper on history actions
+
 #### Version 20.12 (January 18, 2023)
+* Add to style fatal errors properly
 * Fix menu scroll inertia [#1640](https://github.com/authentic-theme/authentic-theme/issues/1640)
-* Fix to style fatal errors properly
 * Fix not to hide errors when collecting system status
 * Fix Firefox wrongly opening inner link on dropdown change in checked row
 
