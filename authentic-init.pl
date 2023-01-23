@@ -907,10 +907,14 @@ sub get_button_style
         $class = "warning ";
     } elsif (string_ends_with($keys, "_gnupg") ||
              string_contains($keys, 'secret_setup') ||
+             string_contains($keys, 'ssl_gen') ||
              string_contains($keys, 'index_sok2'))
     {
         $icon  = " fa2 fa2-key";
         $class = "success ";
+        if (string_contains($keys, 'ssl_gen')) {
+            $class = "grey ";
+        }
     } elsif (string_contains($keys, "check_updatenow")) {
         $class = "warning ";
         $icon  = "refresh";
