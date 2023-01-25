@@ -1139,6 +1139,11 @@ sub theme_ui_opt_textbox
       . "\" " . "size=$size value=\"" .
       &quote_escape($value) . "\"" . ($dis ? " disabled=true" : "") . ($max ? " maxlength=$max" : "") .
       ($tags ? " " . $tags : "") . "></span>";
+
+    # Optional (extra) elements must also be disabled (or enabled) on load
+    if (defined($extra)) {
+        $rv .= "<script>\$('#content form input[name=\"${name}_def\"]:checked').click();</script>";
+    }
     return $rv;
 }
 
