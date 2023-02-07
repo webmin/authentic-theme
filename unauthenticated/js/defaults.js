@@ -128,12 +128,10 @@ var
     config_portable_module_filemanager_move_to_trash = false,
 
     // Locale defaults
-    config_portable_theme_locale_language = false,
     config_portable_theme_locale_format_full = 'LLLL',
     config_portable_theme_locale_format_long = 'LL',
     config_portable_theme_locale_format_short = 'L',
     config_portable_theme_locale_format_time = 'LTS',
-    config_portable_theme_locale_languages = null,
 
     // MySQL/PostgreSQL injectable module option
     config_portable_module_xsql_fit_content_screen_height = false,

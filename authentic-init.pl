@@ -164,7 +164,8 @@ sub embed_favicon
         $manifest_contents =~ s/\%color\%/$theme_user_color/;
         eval {
             $main::error_must_die = 1;
-            write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents) if (-w $theme_config_dir);
+            write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents)
+              if (-w $theme_config_dir);
         };
 
         print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
@@ -204,9 +205,6 @@ sub embed_header
     # Print default options
     print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" .
       theme_version('timestamped') . "\"></script>\n";
-    print ' <script>';
-    print 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
-    print "</script>\n";
 
     #
     # Server statuses to JavaScript. Start.
@@ -814,29 +812,25 @@ sub get_usermin_vars
     return ($has_usermin, $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
 }
 
-sub get_current_user_language
+sub get_current_user_locale
 {
-    my ($full) = @_;
-    my $language;
-    my @languages;
-    my $language_browser = $gconfig{'acceptlang'};
+    my $language = $gconfig{ 'locale_' . $remote_user } ||
+      &parse_accepted_language(\%gconfig) ||
+      $gconfig{'locale'} ||
+      &get_default_system_locale();
 
-    if ($language_browser) {
-        $language = $ENV{'HTTP_ACCEPT_LANGUAGE'};
-        $language =~ s/;.*//;
-        @languages = split /,/, $language;
-        $language  = $languages[0];
-    }
-
-    if (($language_browser && !$language) || !$language_browser) {
-        $language = $gconfig{ 'lang' . '_' . $remote_user };
-        $language = ($language ? $language : $gconfig{'lang'});
-    }
-
-    $language = substr($language, 0, ($full ? 5 : 2));
     $language =~ s/\..*//;
     $language =~ s/_/-/;
-    return lc($language);
+    return $language;
+}
+
+sub get_current_user_language
+{
+    my $language = $gconfig{ 'lang_' . $remote_user } ||
+      &parse_accepted_language(\%gconfig) ||
+      $gconfig{'lang'} ||
+      &get_default_system_locale();
+    return lc(substr($language, 0, 2));
 }
 
 sub get_filters
@@ -907,7 +901,7 @@ sub get_button_style
         $class = "warning ";
     } elsif (string_ends_with($keys, "_gnupg") ||
              string_contains($keys, 'secret_setup') ||
-             string_contains($keys, 'ssl_gen') ||
+             string_contains($keys, 'ssl_gen')      ||
              string_contains($keys, 'index_sok2'))
     {
         $icon  = " fa2 fa2-key";
@@ -925,14 +919,14 @@ sub get_button_style
         $class = "success ";
     } elsif (string_contains($keys, "fdelete_delete") || string_contains($keys, "delete_ok")) {
         $class = "danger ";
-        $icon = "times-circle";
+        $icon  = "times-circle";
     } elsif (string_contains($keys, "mail_delete")) {
         $icon  = "times-circle";
         $class = "danger ";
     } elsif (string_contains($keys, "mail_forward")) {
-        $icon  = "forward";
+        $icon = "forward";
     } elsif (string_contains($keys, "view_quick_all")) {
-        $icon  = "reply-all";
+        $icon = "reply-all";
     } elsif (string_contains($keys, "view_reply")) {
         $icon  = "reply";
         $class = "info ";
@@ -1522,7 +1516,7 @@ sub header_html_data
       urlize(theme_version('json')) .
       '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
       '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
-      '" data-language-full="' . get_current_user_language(1) . '" data-charset="' . get_charset() .
+      '" data-locale="' . get_current_user_locale() . '" data-charset="' . get_charset() .
       '" data-notice="' . theme_post_update() . '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' .
       $theme_webprefix . '" data-current-product="' . get_product_name() . '" data-pro-vm="' . check_pro_package('vm') .
       '"  data-pro-cm="' . check_pro_package('cm') . '" data-module="' . ($module ? "$module" : get_module_name()) .

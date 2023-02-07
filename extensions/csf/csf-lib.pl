@@ -153,11 +153,6 @@ sub csf_mod
     print $fh 'var v___theme_language = ' . get_theme_language();
     print $fh "</script>\n";
 
-    # Print default options
-    print $fh '<script>';
-    print $fh 'config_portable_theme_locale_languages="' . get_current_user_language(1) . '";';
-    print $fh "</script>\n";
-
     print $fh '<script src="' .
       $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version('timestamped') . '"></script>' . "\n";
 
