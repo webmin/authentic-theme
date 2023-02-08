@@ -103,7 +103,7 @@ const mail = (function() {
                 preloader: {
                     hide: page.handle.content.preloader.hide,
                 },
-                moment: moment,
+                dayjs: dayjs,
 
                 select: (data, size = '34') => {
                     if (Array.isArray(data)) {
@@ -921,7 +921,7 @@ const mail = (function() {
                         let $form = $(rs).find(`[action*="${xtarget.send}"]`),
                             generate = {
                                 timestamp: () => {
-                                    return _.plugin.moment().valueOf() * 1e2
+                                    return _.plugin.dayjs().valueOf() * 1e2
                                 },
                                 random: () => {
                                     return Math.floor(Math.random() * 9e14);
@@ -1332,7 +1332,7 @@ const mail = (function() {
                                                                 pd = l.date.getDate(),
                                                                 date = l.dates[0],
                                                                 date_ = py + '-' + pm + '-' + pd,
-                                                                date_formatted = moment(date).format(_.variable.locale.short);
+                                                                date_formatted = dayjs(date).format(_.variable.locale.short);
 
                                                             this.dataset.value = date_;
 

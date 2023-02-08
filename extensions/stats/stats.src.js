@@ -31,7 +31,7 @@ const stats = {
                 size: Convert.nice_size
             },
             chart: Chartist,
-            moment: moment,
+            dayjs: dayjs,
             locale: {
                 time: config_portable_theme_locale_format_time,
                 offset: () => {
@@ -258,7 +258,7 @@ const stats = {
                                     type: this.extend.chart.FixedScaleAxis,
                                     divisor: 12,
                                     labelInterpolationFnc: (value) => {
-                                        return this.extend.moment(value * 1000).utcOffset(this.extend.locale.offset()).format(this.extend.locale.time);
+                                        return this.extend.dayjs(value * 1000).utcOffset(this.extend.locale.offset()).format(this.extend.locale.time);
                                     }
                                 },
                                 height: options.chart.height,

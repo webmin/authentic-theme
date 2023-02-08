@@ -131,7 +131,7 @@ var
     config_portable_theme_locale_format_full = 'LLLL',
     config_portable_theme_locale_format_long = 'LL',
     config_portable_theme_locale_format_short = 'L',
-    config_portable_theme_locale_format_time = 'LTS',
+    config_portable_theme_locale_format_time = 'LT',
 
     // MySQL/PostgreSQL injectable module option
     config_portable_module_xsql_fit_content_screen_height = false,
