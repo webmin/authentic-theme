@@ -37,7 +37,7 @@ if (-r $module_custom_config_file) {
     # Redirect
     if ($in{'save_next'}) {
 
-        # Used to return to the current section if needed W00900XXX
+        # Used to return to the current section if needed
         my $section_next = $in{'section_curr'} || $in{'section_next'};
         &redirect("mconfig.cgi?module=$module&section=$section_next");
     } else {
