@@ -104,7 +104,8 @@ var
     settings_sysinfo_panels_order = '{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'F\',\'quota\':\'G\',\'bw\':\'I\',\'sysinfo\':\'H\',\'updates\':\'I\',\'ftypes\':\'J\',\'serial\':\'K\'}',
 
     // File Manager injectable options defaults
-    config_portable_module_filemanager_records_per_page = 30,
+    config_portable_module_filemanager_records_per_page = 20,
+    config_portable_module_filemanager_auto_per_page = true,
     config_portable_module_filemanager_records_for_server_pagination = 1000,
     config_portable_module_filemanager_default_sort = 0,
     config_portable_module_filemanager_hide_tree_view = false,
