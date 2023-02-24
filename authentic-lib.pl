@@ -636,9 +636,8 @@ sub get_sysinfo_vars
     if (show_sysinfo_section('host')) {
 
         # Operation system
-        my $ip =
-          $info->{'ips'} ? $info->{'ips'}->[0]->[0] :
-          &to_ipaddress(get_system_hostname());
+        my $ip = &to_ipaddress(get_system_hostname()) ||
+          ($info->{'ips'} ? $info->{'ips'}->[0]->[0] : "");
         $ip   = " ($ip)" if ($ip);
         $host = &get_display_hostname() . $ip;
         if (&foreign_available("net")) {
