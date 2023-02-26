@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Щоб дізнатися більше, перейдіт
 
 #20.11
 theme_xhred_global_error_fatal=Фатальна помилка
+
+#20.20
+theme_xhred_global_automatic=Автоматичний
+theme_xhred_filemanager_context_acls=Змінити список контролю доступу
+theme_xhred_filemanager_changing_acls=Зміна списку контролю доступу.
+theme_xhred_filemanager_successful_acls_with_errors=Список контролю доступу змінено не для всіх об’єктів:
+theme_xhred_filemanager_successful_acls=Список контролю доступу успішно змінено.

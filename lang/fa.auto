@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=برای جزئیات بیشتر به ماژول ترم�
 
 #20.11
 theme_xhred_global_error_fatal=خطای مرگبار
+
+#20.20
+theme_xhred_global_automatic=خودکار
+theme_xhred_filemanager_context_acls=تغییر لیست کنترل دسترسی
+theme_xhred_filemanager_changing_acls=تغییر لیست کنترل دسترسی
+theme_xhred_filemanager_successful_acls_with_errors=لیست کنترل دسترسی برای همه اشیا با موفقیت تغییر نکرده است:
+theme_xhred_filemanager_successful_acls=لیست کنترل دسترسی با موفقیت تغییر کرده است.

@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=مزید تفصیلات کے لیے ٹرمینل ماڈ�
 
 #20.11
 theme_xhred_global_error_fatal=مہلک غلطی
+
+#20.20
+theme_xhred_global_automatic=خودکار
+theme_xhred_filemanager_context_acls=رسائی کنٹرول لسٹ کو تبدیل کریں۔
+theme_xhred_filemanager_changing_acls=رسائی کنٹرول لسٹ کو تبدیل کرنا۔
+theme_xhred_filemanager_successful_acls_with_errors=تمام اشیاء کے لیے رسائی کنٹرول لسٹ کو کامیابی کے ساتھ تبدیل نہیں کیا گیا ہے۔
+theme_xhred_filemanager_successful_acls=رسائی کنٹرول لسٹ کو کامیابی کے ساتھ تبدیل کر دیا گیا ہے۔

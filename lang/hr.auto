@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Idite na Terminal modul za više detalja
 
 #20.11
 theme_xhred_global_error_fatal=Fatalna greška
+
+#20.20
+theme_xhred_global_automatic=Automatski
+theme_xhred_filemanager_context_acls=Promjena liste kontrole pristupa
+theme_xhred_filemanager_changing_acls=Promjena liste kontrole pristupa.
+theme_xhred_filemanager_successful_acls_with_errors=Popis kontrole pristupa nije uspješno promijenjen za sve objekte:
+theme_xhred_filemanager_successful_acls=Popis kontrole pristupa je uspješno promijenjen.

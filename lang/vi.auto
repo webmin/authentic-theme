@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Chuyển đến mô-đun Terminal để biết thêm chi
 
 #20.11
 theme_xhred_global_error_fatal=Lỗi nghiêm trọng
+
+#20.20
+theme_xhred_global_automatic=Tự động
+theme_xhred_filemanager_context_acls=Thay đổi danh sách kiểm soát truy cập
+theme_xhred_filemanager_changing_acls=Thay đổi danh sách kiểm soát truy cập.
+theme_xhred_filemanager_successful_acls_with_errors=Danh sách kiểm soát truy cập chưa được thay đổi thành công cho tất cả các đối tượng:
+theme_xhred_filemanager_successful_acls=Danh sách kiểm soát truy cập đã được thay đổi thành công.

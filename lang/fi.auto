@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Siirry päätemoduuliin saadaksesi lisätietoja
 
 #20.11
 theme_xhred_global_error_fatal=Kohtalokas virhe
+
+#20.20
+theme_xhred_global_automatic=Automaattinen
+theme_xhred_filemanager_context_acls=Muuta pääsynhallintaluetteloa
+theme_xhred_filemanager_changing_acls=Kulunvalvontaluettelon muuttaminen.
+theme_xhred_filemanager_successful_acls_with_errors=Kaikkien objektien käyttöoikeusluetteloa ei ole muutettu onnistuneesti:
+theme_xhred_filemanager_successful_acls=Kulunvalvontaluettelon muuttaminen onnistui.

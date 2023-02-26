@@ -187,3 +187,10 @@ theme_xhred_xterm_error=Gå til Terminalmodul for ytterligere detaljer
 
 #20.11
 theme_xhred_global_error_fatal=Fatal feil
+
+#20.20
+theme_xhred_global_automatic=Automatisk
+theme_xhred_filemanager_context_acls=Endre tilgangskontrollliste
+theme_xhred_filemanager_changing_acls=Endring av tilgangskontrollliste.
+theme_xhred_filemanager_successful_acls_with_errors=Tilgangskontrolllisten er ikke endret for alle objekter:
+theme_xhred_filemanager_successful_acls=Tilgangskontrolllisten er endret.

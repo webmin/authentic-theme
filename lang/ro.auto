@@ -310,3 +310,10 @@ theme_xhred_xterm_error=Accesați modulul Terminal pentru mai multe detalii
 
 #20.11
 theme_xhred_global_error_fatal=Eroare fatala
+
+#20.20
+theme_xhred_global_automatic=Automat
+theme_xhred_filemanager_context_acls=Schimbați lista de control acces
+theme_xhred_filemanager_changing_acls=Schimbarea listei de control acces.
+theme_xhred_filemanager_successful_acls_with_errors=Lista de control al accesului nu a fost modificată cu succes pentru toate obiectele:
+theme_xhred_filemanager_successful_acls=Lista de control acces a fost schimbată cu succes.

@@ -692,3 +692,10 @@ theme_xhred_xterm_error=Pergi ke modul Terminal untuk butiran lanjut
 
 #20.11
 theme_xhred_global_error_fatal=Ralat Maut
+
+#20.20
+theme_xhred_global_automatic=Automatik
+theme_xhred_filemanager_context_acls=Tukar senarai kawalan akses
+theme_xhred_filemanager_changing_acls=Menukar senarai kawalan akses.
+theme_xhred_filemanager_successful_acls_with_errors=Senarai kawalan akses tidak berjaya ditukar untuk semua objek:
+theme_xhred_filemanager_successful_acls=Senarai kawalan akses telah berjaya ditukar.

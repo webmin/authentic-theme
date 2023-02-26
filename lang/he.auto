@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=עבור למודול טרמינל לפרטים נוספ
 
 #20.11
 theme_xhred_global_error_fatal=שגיאה קטלנית
+
+#20.20
+theme_xhred_global_automatic=אוֹטוֹמָטִי
+theme_xhred_filemanager_context_acls=שנה רשימת בקרת גישה
+theme_xhred_filemanager_changing_acls=שינוי רשימת בקרת גישה.
+theme_xhred_filemanager_successful_acls_with_errors=רשימת בקרת הגישה לא שונתה בהצלחה עבור כל האובייקטים:
+theme_xhred_filemanager_successful_acls=רשימת בקרת הגישה שונתה בהצלחה.

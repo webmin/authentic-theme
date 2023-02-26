@@ -483,3 +483,10 @@ theme_xhred_xterm_error=转到终端模块以获取更多详细信息
 
 #20.11
 theme_xhred_global_error_fatal=致命错误
+
+#20.20
+theme_xhred_global_automatic=自动的
+theme_xhred_filemanager_context_acls=更改访问控制列表
+theme_xhred_filemanager_changing_acls=更改访问控制列表。
+theme_xhred_filemanager_successful_acls_with_errors=尚未为所有对象成功更改访问控制列表：
+theme_xhred_filemanager_successful_acls=访问控制列表已成功更改。

@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Ďalšie podrobnosti nájdete v module Terminál
 
 #20.11
 theme_xhred_global_error_fatal=Fatálna chyba
+
+#20.20
+theme_xhred_global_automatic=Automaticky
+theme_xhred_filemanager_context_acls=Zmeniť zoznam riadenia prístupu
+theme_xhred_filemanager_changing_acls=Zmena zoznamu riadenia prístupu.
+theme_xhred_filemanager_successful_acls_with_errors=Zoznam riadenia prístupu nebol úspešne zmenený pre všetky objekty:
+theme_xhred_filemanager_successful_acls=Zoznam riadenia prístupu bol úspešne zmenený.

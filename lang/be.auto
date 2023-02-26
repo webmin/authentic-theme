@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Перайдзіце ў модуль тэрмінала 
 
 #20.11
 theme_xhred_global_error_fatal=Фатальная памылка
+
+#20.20
+theme_xhred_global_automatic=Аўтаматычны
+theme_xhred_filemanager_context_acls=Змяніць спіс кантролю доступу
+theme_xhred_filemanager_changing_acls=Змена спісу кантролю доступу.
+theme_xhred_filemanager_successful_acls_with_errors=Спіс кантролю доступу не быў паспяхова зменены для ўсіх аб'ектаў:
+theme_xhred_filemanager_successful_acls=Спіс кантролю доступу быў паспяхова зменены.

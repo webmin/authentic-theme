@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Za nadaljnje podrobnosti pojdite na terminalski modul
 
 #20.11
 theme_xhred_global_error_fatal=Usodna napaka
+
+#20.20
+theme_xhred_global_automatic=Samodejno
+theme_xhred_filemanager_context_acls=Spremenite seznam za nadzor dostopa
+theme_xhred_filemanager_changing_acls=Spreminjanje seznama za nadzor dostopa.
+theme_xhred_filemanager_successful_acls_with_errors=Seznam nadzora dostopa ni bil uspešno spremenjen za vse objekte:
+theme_xhred_filemanager_successful_acls=Seznam za nadzor dostopa je bil uspešno spremenjen.

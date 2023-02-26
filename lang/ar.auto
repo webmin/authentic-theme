@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=انتقل إلى الوحدة الطرفية لمزيد
 
 #20.11
 theme_xhred_global_error_fatal=خطأ فادح
+
+#20.20
+theme_xhred_global_automatic=تلقائي
+theme_xhred_filemanager_context_acls=تغيير قائمة التحكم في الوصول
+theme_xhred_filemanager_changing_acls=تغيير قائمة التحكم في الوصول.
+theme_xhred_filemanager_successful_acls_with_errors=لم يتم تغيير قائمة التحكم في الوصول بنجاح لجميع الكائنات:
+theme_xhred_filemanager_successful_acls=تم تغيير قائمة التحكم في الوصول بنجاح.

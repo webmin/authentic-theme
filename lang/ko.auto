@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=자세한 내용은 터미널 모듈로 이동
 
 #20.11
 theme_xhred_global_error_fatal=치명적 오류
+
+#20.20
+theme_xhred_global_automatic=자동적 인
+theme_xhred_filemanager_context_acls=액세스 제어 목록 변경
+theme_xhred_filemanager_changing_acls=액세스 제어 목록 변경.
+theme_xhred_filemanager_successful_acls_with_errors=모든 개체에 대해 액세스 제어 목록이 성공적으로 변경되지 않았습니다
+theme_xhred_filemanager_successful_acls=액세스 제어 목록이 성공적으로 변경되었습니다.

@@ -1225,3 +1225,10 @@ theme_xhred_xterm_error=Przejdź do modułu Terminal, aby uzyskać więcej infor
 
 #20.11
 theme_xhred_global_error_fatal=Błąd krytyczny
+
+#20.20
+theme_xhred_global_automatic=Automatyczny
+theme_xhred_filemanager_context_acls=Zmień listę kontroli dostępu
+theme_xhred_filemanager_changing_acls=Zmiana listy kontroli dostępu.
+theme_xhred_filemanager_successful_acls_with_errors=Lista kontroli dostępu nie została pomyślnie zmieniona dla wszystkich obiektów:
+theme_xhred_filemanager_successful_acls=Lista kontroli dostępu została pomyślnie zmieniona.

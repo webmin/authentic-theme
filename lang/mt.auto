@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Mur fil-modulu Terminal għal aktar dettalji
 
 #20.11
 theme_xhred_global_error_fatal=Żball fatali
+
+#20.20
+theme_xhred_global_automatic=Awtomatiku
+theme_xhred_filemanager_context_acls=Ibdel il-lista tal-kontroll tal-aċċess
+theme_xhred_filemanager_changing_acls=Nibdlu lista ta 'kontroll ta' aċċess.
+theme_xhred_filemanager_successful_acls_with_errors=Il-lista tal-kontroll tal-aċċess ma nbidlitx b'suċċess għall-oġġetti kollha:
+theme_xhred_filemanager_successful_acls=Lista ta 'kontroll ta' aċċess ġiet mibdula b'suċċess.

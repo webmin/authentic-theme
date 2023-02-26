@@ -229,3 +229,10 @@ theme_xhred_xterm_error=詳細については、端末モジュールに移動�
 
 #20.11
 theme_xhred_global_error_fatal=致命的な誤り
+
+#20.20
+theme_xhred_global_automatic=自動
+theme_xhred_filemanager_context_acls=アクセス制御リストの変更
+theme_xhred_filemanager_changing_acls=アクセス制御リストの変更。
+theme_xhred_filemanager_successful_acls_with_errors=すべてのオブジェクトのアクセス制御リストが正常に変更されていません:
+theme_xhred_filemanager_successful_acls=アクセス制御リストが正常に変更されました。

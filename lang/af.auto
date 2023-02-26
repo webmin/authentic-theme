@@ -1307,3 +1307,10 @@ theme_xhred_xterm_error=Gaan na Terminale module vir verdere besonderhede
 
 #20.11
 theme_xhred_global_error_fatal=Noodlottige fout
+
+#20.20
+theme_xhred_global_automatic=Outomatiese
+theme_xhred_filemanager_context_acls=Verander toegangsbeheerlys
+theme_xhred_filemanager_changing_acls=Verander toegangsbeheerlys.
+theme_xhred_filemanager_successful_acls_with_errors=Toegangsbeheerlys is nie suksesvol vir alle voorwerpe verander nie:
+theme_xhred_filemanager_successful_acls=Toegangsbeheerlys is suksesvol verander.
