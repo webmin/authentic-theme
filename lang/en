@@ -1380,3 +1380,7 @@ theme_xhred_global_error_fatal=Fatal Error
 
 #20.20
 theme_xhred_global_automatic=Automatic
+theme_xhred_filemanager_context_acls=Change access control list
+theme_xhred_filemanager_changing_acls=Changing access control list.
+theme_xhred_filemanager_successful_acls_with_errors=Access control list has not been changed successfully for all objects:
+theme_xhred_filemanager_successful_acls=Access control list has been changed successfully.
