@@ -636,8 +636,15 @@ sub get_sysinfo_vars
     if (show_sysinfo_section('host')) {
 
         # Operation system
-        my $ip = &to_ipaddress(get_system_hostname()) ||
-          ($info->{'ips'} ? $info->{'ips'}->[0]->[0] : "");
+        my @ips_all = &to_ipaddress(get_system_hostname());
+        my (@ips_noloop, @ips_noloc, $ip_detect);
+        if (@ips_all) {
+            @ips_noloop = grep { $_ !~ /^127\./} @ips_all;
+            @ips_noloc = grep { $_ !~ /^(10\.|192\.168\.)/} @ips_noloop;
+            $ip_detect = @ips_noloc ? $ips_noloc[0] :
+                  @ips_noloop ? $ips_noloop[0] : $ips_all[0];
+        }
+        my $ip = $info && $info->{'ips'} ? $info->{'ips'}->[0]->[0] : $ip_detect;
         $ip   = " ($ip)" if ($ip);
         $host = &get_display_hostname() . $ip;
         if (&foreign_available("net")) {
