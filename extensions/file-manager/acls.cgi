@@ -75,15 +75,15 @@ if (!$cmd) {
     $args = &trim($args);
 
     foreach my $file (@files) {
-        my $qfile = quotemeta("$path/$file");
-        next if (!-r "$path/$file");
+        my $qfile = quotemeta("$cwd/$file");
+        next if (!-r "$cwd/$file");
         my $fullcmd = "$cmd $args $qfile";
         my $out     = &backquote_logged("$fullcmd 2>&1 >/dev/null </dev/null");
         if ($?) {
             $out =~ s/\s+Usage:\ssetfacl.*//g;
             $out =~ s/\s+Try\s`.*//g;
             $out =~ s/.*setfacl.*?:\s+//g;
-            $errors{$file} = "\[tt\]$cmd $args $path/$file\[/tt\] : $out";
+            $errors{$file} = "\[tt\]$cmd $args $cwd/$file\[/tt\] : $out";
         }
     }
 }
