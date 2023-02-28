@@ -1,5 +1,19 @@
 ## Changelog
 
+#### Version 20.20-RC1 (March 1, 2023)
+* Add ability to automatically adjust the number of visible rows in File Manager
+* Add color and icon to the new enable SSL button in MySQL module
+* Add support for a new set ACLs feature in File Manager
+* Add support for the new locale feature
+* Fix not to wrap domain suggestions autocomplete dropdown in Virtualmin
+* Fix to improve text visibility of disabled switch in navigation menu [#1644](https://github.com/authentic-theme/authentic-theme/issues/1644)
+* Fix page progress work when migrating virtual server in Virtualmin
+* Fix consequent page load after saving File Manager config page
+* Fix to properly create and submit download forms
+* Update dependencies
+
+<!--- separator --->
+
 #### Version 20.13 (January 19, 2023)
 * Fix error handling issue
 * Fix domain autocomplete helper issue on page scroll
@@ -36,8 +50,6 @@
 * Fix deleting to trash for jailed virtual servers in File Manager
 * Fix further line heights issues with various progressive outputs
 * Fix to prevent changing forms state on autofill in initial page load
-
-<!--- separator --->
 
 #### Version 20.02 (September 21, 2022)
 * Fix file and directory creation by root capable user inside jailed user homes in File Manager
