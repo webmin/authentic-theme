@@ -9,6 +9,7 @@
 * Fix to improve text visibility of disabled switch in navigation menu [#1644](https://github.com/authentic-theme/authentic-theme/issues/1644)
 * Fix page progress work when migrating virtual server in Virtualmin
 * Fix consequent page load after saving File Manager config page
+* Fix to make sure that status collection never runs twice
 * Fix to properly create and submit download forms
 * Update dependencies
 
