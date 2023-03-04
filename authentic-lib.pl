@@ -534,7 +534,7 @@ sub theme_list_combined_system_info
 {
     my $skipmods;
     if (!post_has('xhr-info')) {
-        $skipmods = ['package-updates', 'webmin'];
+        $skipmods = ['package-updates', 'webmin', 'cpuio'];
     }
     return &list_combined_system_info({ 'qshow' => 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} }, undef, $skipmods);
 }
