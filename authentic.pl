@@ -922,6 +922,18 @@ sub theme_ui_button
     return $rv;
 }
 
+sub theme_ui_date_input
+{
+    my ($day, $month, $year, $dayname, $monthname, $yearname, $dis) = @_;
+    my $rv;
+    $rv .= "<span class='ui_data ui_date_input'>";
+    $rv .= &ui_textbox($dayname, $day, 3, $dis);
+    $rv .= &ui_select($monthname, $month, [map {[$_, $text{"smonth_$_"}]} (1 .. 12)], 1, 0, 0, $dis);
+    $rv .= &ui_textbox($yearname, $year, 5, $dis);
+    $rv .= "</span>";
+    return $rv;
+}
+
 sub theme_ui_pre_footer
 {
     my $rv;
@@ -1521,17 +1533,19 @@ sub theme_error
     my $main_header  = $main::done_webmin_header;
     my $main_capture = $miniserv::page_capture ? " captured" : "";
     &header($text{'error'}, "") if (!$main_header);
-    my $error_what        = ($main::whatfailed ? "$main::whatfailed : " : "");
-    my $error_message     = join(", ", @_);
-    my $error             = html_escape(html_strip(($error_what . $error_message)));
+    my $error_what      = ($main::whatfailed ? "$main::whatfailed : " : "");
+    my $error_message   = join(", ", @_);
+    my $error           = html_escape(html_strip(($error_what . $error_message)));
     my $get_error_stack = sub {
+
         # Show call stack
         my $error_stack = "";
         if ($gconfig{'error_stack'}) {
             my $cls_err_caption = " class=\"err-head$main_capture\"";
             my $cls_err_td      = $main_capture ? " class=\"@{[&trim($main_capture)]}\"" : "";
             $error_stack .= "<hr>\n" if ($main_capture);
-            $error_stack .= "<table class=\"err-stack$main_capture\"><caption$cls_err_caption>$text{'error_stack'}</caption>\n";
+            $error_stack .=
+              "<table class=\"err-stack$main_capture\"><caption$cls_err_caption>$text{'error_stack'}</caption>\n";
             $error_stack .= "<tr> <td$cls_err_td><b>$text{'error_file'}</b></td> ",
               "<td$cls_err_td><b>$text{'error_line'}</b></td> ",
               "<td$cls_err_td><b>$text{'error_sub'}</b></td> </tr>\n";
