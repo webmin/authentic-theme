@@ -1,8 +1,7 @@
 ## Changelog
 
-#### Version 20.20-RC1 (March 1, 2023)
+#### Version 20.20 (March 5, 2023)
 * Add ability to automatically adjust the number of visible rows in File Manager
-* Add color and icon to the new enable SSL button in MySQL module
 * Add support for a new set ACLs feature in File Manager
 * Add support for the new locale feature
 * Fix not to wrap domain suggestions autocomplete dropdown in Virtualmin
