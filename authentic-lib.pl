@@ -535,7 +535,7 @@ sub theme_list_combined_system_info
     my $skipmods;
     my $bgcall = post_has('xhr-info');
     my $is_webmin = get_product_name() eq 'webmin';
-    my @opts   = ("combined-system-info-$remote_user", $theme_config{'settings_sysinfo_real_time_stored_length'}, 1);
+    my @opts   = ("combined-system-info-$remote_user", $theme_config{'settings_sysinfo_cache_timeout'}, 1);
     if (!$bgcall && $is_webmin) {
         $skipmods = ['package-updates', 'webmin', 'cpuio'];
         my $combined_system_info_cache = theme_cached($opts[0], undef, undef, $opts[1]);
