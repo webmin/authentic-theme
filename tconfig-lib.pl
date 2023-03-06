@@ -157,7 +157,7 @@ sub theme_settings_raw
          {  'id'    => 's8',
             'title' => &theme_text('settings_right_soft_updates_page_options'),
             'data'  =>
-              ['settings_sysinfo_theme_updates', 'settings_cache_interval', 'settings_sysinfo_theme_updates_for_usermin',] }
+              ['settings_sysinfo_theme_updates', 'settings_sysinfo_theme_updates_for_usermin', 'settings_cache_interval'] }
         ]);
 }
 
@@ -268,8 +268,8 @@ sub theme_settings_filter
              'settings_side_slider_notifications_enabled',
              'settings_side_slider_favorites_enabled',
              'settings_sysinfo_theme_updates',
-             'settings_cache_interval',
-             'settings_sysinfo_theme_updates_for_usermin');
+             'settings_sysinfo_theme_updates_for_usermin',
+             'settings_cache_interval');
         if ($get_user_level eq '3') {
             push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmin');
         } elsif ($get_user_level eq '2' || $get_user_level eq '4') {

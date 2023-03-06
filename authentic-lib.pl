@@ -533,10 +533,26 @@ sub print_easypie_chart
 sub theme_list_combined_system_info
 {
     my $skipmods;
-    if (!post_has('xhr-info')) {
+    my $bgcall = post_has('xhr-info');
+    my $is_webmin = get_product_name() eq 'webmin';
+    my @opts   = ("combined-system-info-$remote_user", $theme_config{'settings_sysinfo_real_time_stored_length'}, 1);
+    if (!$bgcall && $is_webmin) {
         $skipmods = ['package-updates', 'webmin', 'cpuio'];
+        my $combined_system_info_cache = theme_cached($opts[0], undef, undef, $opts[1]);
+        return @{$combined_system_info_cache}
+          if ($combined_system_info_cache);
     }
-    return &list_combined_system_info({ 'qshow' => 1, 'max' => $theme_config{'settings_sysinfo_max_servers'} }, undef, $skipmods);
+    my @combined_system_info =
+      &list_combined_system_info(
+                                 {  'qshow' => 1,
+                                    'max'   => $theme_config{'settings_sysinfo_max_servers'}
+                                 },
+                                 undef,
+                                 $skipmods);
+    if ($bgcall && $is_webmin) {
+        theme_cached($opts[0], \@combined_system_info, undef, $opts[2]);
+    }
+    return @combined_system_info;
 }
 
 sub show_sysinfo_section
@@ -1628,15 +1644,21 @@ sub theme_remote_version
 
 sub theme_cached
 {
-    my ($id, $cvalue, $error) = @_;
+    my ($id, $cvalue, $error, $cache_interval_option) = @_;
     $id || die "Can't use undefined as cache filename";
 
-    my ($theme_var_dir) = theme_var_dir();
-    my $fcached         = "$theme_var_dir/$id";
-    my @cached          = stat($fcached);
-    my $ctime           = $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
-    my $cache           = read_file_contents($fcached);
-    my $cdata           = $cache ? unserialise_variable($cache) : undef;
+    my $theme_var_dir;
+    if (&webmin_user_is_admin()) {
+        ($theme_var_dir) = theme_var_dir();
+    } else {
+        $theme_var_dir = get_user_home() . "/tmp";
+        $theme_var_dir = tempname_dir() if (!-d $theme_var_dir);
+    }
+    my $fcached = "$theme_var_dir/$id";
+    my @cached  = stat($fcached);
+    my $ctime   = $cache_interval_option || $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
+    my $cache   = read_file_contents($fcached);
+    my $cdata   = $cache ? unserialise_variable($cache) : undef;
     my @data;
 
     if (@cached && $cached[9] > time() - $ctime) {
@@ -1703,10 +1725,12 @@ sub clear_theme_cache
     my ($root)  = @_;
     my $salt    = substr(encode_base64($main::session_id), 0, 6);
     my $tmp_dir = tempname_dir();
+    my $home_tmp_dir = get_user_home() . "/tmp";
     my ($theme_var_dir, $product_var) = theme_var_dir();
 
     # Clear cached files
     if ($root) {
+        unlink_file("$theme_var_dir/combined-system-info-$remote_user");
         unlink_file("$theme_var_dir/version-theme-stable");
         unlink_file("$theme_var_dir/version-theme-development");
         unlink_file("$theme_var_dir/version-csf-stable");
@@ -1718,6 +1742,10 @@ sub clear_theme_cache
         kill_byname("$current_theme/stats.cgi", 9);
 
     }
+
+    # Clear user cached collected info
+    unlink_file("$tmp_dir/combined-system-info-$remote_user");
+    unlink_file("$home_tmp_dir/combined-system-info-$remote_user");
 
     # Remove cached downloads
     unlink_file("$product_var/cache");
