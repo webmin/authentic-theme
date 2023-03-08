@@ -533,10 +533,10 @@ sub print_easypie_chart
 sub theme_list_combined_system_info
 {
     my $skipmods;
-    my $bgcall = post_has('xhr-info');
+    my $nocache = post_has('xhr-info') || post_has('no-cache') || string_contains(get_env('query_string'), 'no-cache');
     my $is_webmin = get_product_name() eq 'webmin';
     my @opts   = ("combined-system-info-$remote_user", $theme_config{'settings_sysinfo_cache_timeout'}, 1);
-    if (!$bgcall && $is_webmin) {
+    if (!$nocache && $is_webmin) {
         $skipmods = ['package-updates', 'webmin', 'cpuio'];
         my $combined_system_info_cache = theme_cached($opts[0], undef, undef, $opts[1]);
         return @{$combined_system_info_cache}
@@ -549,7 +549,7 @@ sub theme_list_combined_system_info
                                  },
                                  undef,
                                  $skipmods);
-    if ($bgcall && $is_webmin) {
+    if ($nocache && $is_webmin) {
         theme_cached($opts[0], \@combined_system_info, undef, $opts[2]);
     }
     return @combined_system_info;
