@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 20.20.1 (March 8, 2023)
+* Add significant improvements to performance of the dashboard
+
 #### Version 20.20 (March 5, 2023)
 * Add ability to automatically adjust the number of visible rows in File Manager
 * Add support for a new set ACLs feature in File Manager
