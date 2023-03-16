@@ -1664,7 +1664,11 @@ sub theme_cached
     if (@cached && $cached[9] > time() - $ctime) {
 
         # Use cache for now
-        @data = @$cdata;
+        if ($cdata) {
+            @data = @$cdata;
+        } else {
+            return undef;
+        }
     } else {
 
         # Error when catching remote data
