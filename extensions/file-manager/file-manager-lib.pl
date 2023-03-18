@@ -952,8 +952,8 @@ sub print_content
                   "href='index.cgi?path=" . &urlize($fpath) . "' " . "title='$text{'goto_folder'}'>$goto_icon</a>";
             }
             my $ltype = $type;
-            if (-l "$fpath$link") {
-                my $flink = &resolve_links("$fpath$link");
+            if (-l "$list[$count - 1][0]") {
+                my $flink = &resolve_links("$list[$count - 1][0]");
                 if ($flink) {
                     $ltype = mimetype($flink);
                     $ltype =~ s/\//\-/g;
