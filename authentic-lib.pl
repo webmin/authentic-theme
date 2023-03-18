@@ -1776,8 +1776,14 @@ sub clear_theme_cache
     if (&foreign_available('virtual-server')) {
         &foreign_require("virtual-server");
 
-        # Clear menu links cache
-        &virtual_server::clear_links_cache();
+        # Clear links cache
+        if (webmin_user_is_admin()) {
+            my $vm_links_cache_global = "$virtual_server::links_cache_dir/global";
+            if (-r $vm_links_cache_global) {
+                unlink_file($vm_links_cache_global);
+            }
+        }
+        &virtual_server::clear_links_cache($remote_user);
 
         # Clear license status cache
         my $licence_status = &virtual_server::cache_file_path("licence-status");
