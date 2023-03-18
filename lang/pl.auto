@@ -1232,3 +1232,4 @@ theme_xhred_filemanager_context_acls=Zmień listę kontroli dostępu
 theme_xhred_filemanager_changing_acls=Zmiana listy kontroli dostępu.
 theme_xhred_filemanager_successful_acls_with_errors=Lista kontroli dostępu nie została pomyślnie zmieniona dla wszystkich obiektów:
 theme_xhred_filemanager_successful_acls=Lista kontroli dostępu została pomyślnie zmieniona.
+theme_download_error=Błąd podczas pobierania pliku, ponieważ znajduje się on poza dozwolonym katalogiem : $1

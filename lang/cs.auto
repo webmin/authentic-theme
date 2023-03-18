@@ -1156,3 +1156,4 @@ theme_xhred_filemanager_context_acls=Změnit seznam řízení přístupu
 theme_xhred_filemanager_changing_acls=Změna seznamu řízení přístupu.
 theme_xhred_filemanager_successful_acls_with_errors=Seznam řízení přístupu nebyl úspěšně změněn pro všechny objekty:
 theme_xhred_filemanager_successful_acls=Seznam řízení přístupu byl úspěšně změněn.
+theme_download_error=Chyba při stahování souboru, protože se nachází mimo povolený adresář : $1

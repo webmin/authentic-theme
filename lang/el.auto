@@ -1314,3 +1314,4 @@ theme_xhred_filemanager_context_acls=Αλλαγή λίστας ελέγχου π
 theme_xhred_filemanager_changing_acls=Αλλαγή λίστας ελέγχου πρόσβασης.
 theme_xhred_filemanager_successful_acls_with_errors=Η λίστα ελέγχου πρόσβασης δεν έχει αλλάξει με επιτυχία για όλα τα αντικείμενα:
 theme_xhred_filemanager_successful_acls=Η λίστα ελέγχου πρόσβασης άλλαξε με επιτυχία.
+theme_download_error=Σφάλμα κατά τη λήψη του αρχείου επειδή βρίσκεται εκτός του επιτρεπόμενου καταλόγου  : $1

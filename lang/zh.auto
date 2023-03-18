@@ -490,3 +490,4 @@ theme_xhred_filemanager_context_acls=更改访问控制列表
 theme_xhred_filemanager_changing_acls=更改访问控制列表。
 theme_xhred_filemanager_successful_acls_with_errors=尚未为所有对象成功更改访问控制列表：
 theme_xhred_filemanager_successful_acls=访问控制列表已成功更改。
+theme_download_error=下载文件时出错，因为它在允许的目录之外：$1

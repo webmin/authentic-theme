@@ -1226,3 +1226,4 @@ theme_xhred_filemanager_context_acls=Skift adgangskontrolliste
 theme_xhred_filemanager_changing_acls=Ændring af adgangskontrolliste.
 theme_xhred_filemanager_successful_acls_with_errors=Adgangskontrollisten er ikke blevet ændret for alle objekter:
 theme_xhred_filemanager_successful_acls=Adgangskontrollisten er blevet ændret.
+theme_download_error=Fejl ved download af filen, fordi den er uden for den tilladte mappe : $1

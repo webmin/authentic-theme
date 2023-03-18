@@ -1314,3 +1314,4 @@ theme_xhred_filemanager_context_acls=Spremenite seznam za nadzor dostopa
 theme_xhred_filemanager_changing_acls=Spreminjanje seznama za nadzor dostopa.
 theme_xhred_filemanager_successful_acls_with_errors=Seznam nadzora dostopa ni bil uspešno spremenjen za vse objekte:
 theme_xhred_filemanager_successful_acls=Seznam za nadzor dostopa je bil uspešno spremenjen.
+theme_download_error=Napaka pri prenosu datoteke, ker je zunaj dovoljenega imenika : $1

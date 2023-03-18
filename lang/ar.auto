@@ -1314,3 +1314,4 @@ theme_xhred_filemanager_context_acls=تغيير قائمة التحكم في ا�
 theme_xhred_filemanager_changing_acls=تغيير قائمة التحكم في الوصول.
 theme_xhred_filemanager_successful_acls_with_errors=لم يتم تغيير قائمة التحكم في الوصول بنجاح لجميع الكائنات:
 theme_xhred_filemanager_successful_acls=تم تغيير قائمة التحكم في الوصول بنجاح.
+theme_download_error=خطأ في تنزيل الملف لأنه خارج الدليل المسموح به :$1

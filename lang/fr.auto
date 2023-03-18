@@ -194,3 +194,4 @@ theme_xhred_filemanager_context_acls=Modifier la liste de contrôle d'accès
 theme_xhred_filemanager_changing_acls=Modification de la liste de contrôle d'accès.
 theme_xhred_filemanager_successful_acls_with_errors=La liste de contrôle d'accès n'a pas été modifiée avec succès pour tous les objets :
 theme_xhred_filemanager_successful_acls=La liste de contrôle d'accès a été modifiée avec succès.
+theme_download_error=Erreur lors du téléchargement du fichier car il se trouve en dehors du répertoire autorisé  : $1

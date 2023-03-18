@@ -1314,3 +1314,4 @@ theme_xhred_filemanager_context_acls=Mainīt piekļuves kontroles sarakstu
 theme_xhred_filemanager_changing_acls=Piekļuves kontroles saraksta maiņa.
 theme_xhred_filemanager_successful_acls_with_errors=Piekļuves kontroles saraksts nav veiksmīgi mainīts visiem objektiem:
 theme_xhred_filemanager_successful_acls=Piekļuves kontroles saraksts ir veiksmīgi mainīts.
+theme_download_error=Lejupielādējot failu, radās kļūda, jo tas atrodas ārpus atļautā direktorija : $1

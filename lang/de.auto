@@ -227,3 +227,4 @@ theme_xhred_filemanager_context_acls=Zugriffskontrollliste ändern
 theme_xhred_filemanager_changing_acls=Ändern der Zugriffskontrollliste.
 theme_xhred_filemanager_successful_acls_with_errors=Die Zugriffskontrollliste wurde nicht für alle Objekte erfolgreich geändert:
 theme_xhred_filemanager_successful_acls=Die Zugriffskontrollliste wurde erfolgreich geändert.
+theme_download_error=Fehler beim Herunterladen der Datei, da sie sich außerhalb des zulässigen Verzeichnisses befindet : $1

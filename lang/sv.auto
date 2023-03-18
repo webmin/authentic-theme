@@ -22,3 +22,4 @@ theme_xhred_filemanager_context_acls=Ändra åtkomstkontrolllista
 theme_xhred_filemanager_changing_acls=Ändra åtkomstkontrolllista.
 theme_xhred_filemanager_successful_acls_with_errors=Åtkomstkontrolllistan har inte ändrats för alla objekt:
 theme_xhred_filemanager_successful_acls=Åtkomstkontrolllistan har ändrats.
+theme_download_error=Fel vid nedladdning av filen eftersom den ligger utanför den tillåtna katalogen : $1

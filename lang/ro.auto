@@ -317,3 +317,4 @@ theme_xhred_filemanager_context_acls=Schimbați lista de control acces
 theme_xhred_filemanager_changing_acls=Schimbarea listei de control acces.
 theme_xhred_filemanager_successful_acls_with_errors=Lista de control al accesului nu a fost modificată cu succes pentru toate obiectele:
 theme_xhred_filemanager_successful_acls=Lista de control acces a fost schimbată cu succes.
+theme_download_error=Eroare la descărcarea fișierului deoarece se află în afara directorului permis : $1

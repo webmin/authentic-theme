@@ -1314,3 +1314,4 @@ theme_xhred_filemanager_context_acls=Promjena liste kontrole pristupa
 theme_xhred_filemanager_changing_acls=Promjena liste kontrole pristupa.
 theme_xhred_filemanager_successful_acls_with_errors=Popis kontrole pristupa nije uspješno promijenjen za sve objekte:
 theme_xhred_filemanager_successful_acls=Popis kontrole pristupa je uspješno promijenjen.
+theme_download_error=Pogreška pri preuzimanju datoteke jer je izvan dopuštenog direktorija : $1
