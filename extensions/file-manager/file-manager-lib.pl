@@ -951,9 +951,17 @@ sub print_content
                   "$actions<a class='action-link' " .
                   "href='index.cgi?path=" . &urlize($fpath) . "' " . "title='$text{'goto_folder'}'>$goto_icon</a>";
             }
-            if ($type =~ /text-/ ||
-                $type =~ /svg\+xml/ ||
-                exists($allowed_for_edit{$type}))
+            my $ltype = $type;
+            if (-l "$fpath$link") {
+                my $flink = &resolve_links("$fpath$link");
+                if ($flink) {
+                    $ltype = mimetype($flink);
+                    $ltype =~ s/\//\-/g;
+                }
+            }
+            if ($ltype =~ /text-/ ||
+                $ltype =~ /svg\+xml/ ||
+                exists($allowed_for_edit{$ltype}))
             {
                 $actions =
                   "$actions<a class='action-link' href='edit_file.cgi?file=" . &urlize($link) .
