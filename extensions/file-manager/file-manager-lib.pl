@@ -1116,13 +1116,14 @@ sub get_tree
 
     my $wanted = sub {
         my $td = $File::Find::name;
-        if (-d $td && !-l $td) {
+        my $ltd = -l $td;
+        if (-d $td) {
             my $push_label = sub {
                 my ($td, $afic) = @_;
                 my ($pd, $cd)   = $td =~ m|^ (.+) / ([^/]+) \z|x;
                 my $pp = ($fu && $afic ne '/') ? $afic : undef;
                 my $c  = $r{$td} =
-                  { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)) };
+                  { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)), link => $ltd };
                 defined $pd ? (push @{ $r{$pd}{'children'} }, $c) : (push @r, $c);
             };
 
