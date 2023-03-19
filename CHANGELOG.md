@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 20.21 (March 19, 2023)
+* Add support for displaying symlinked folders in file tree-view in File Manager
+* Fix insecure downloads by symlink in File Manager
+* Fix to make symlinks editable if file type allows in File Manager
+* Fix to properly clear navigation menu links cache
+
 #### Version 20.20.1 (March 8, 2023)
 * Add significant improvements to performance of the dashboard
 
