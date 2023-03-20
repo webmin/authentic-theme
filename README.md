@@ -10,9 +10,14 @@
 ## About
 **Authentic Theme** is modern, ultrafast single-page application for [Webmin/](https://github.com/webmin/webmin)[Usermin](https://github.com/webmin/usermin) that is made with _love_. Managing servers, operating systems and applications has never been so easy.
 
-<a href="https://webmin.com/screenshots">![](https://user-images.githubusercontent.com/4426533/226430611-6eaee19c-57f6-4c8c-8bc8-3dd6029c649c.png)</a>
-![114394315-bc88f980-9ba3-11eb-8025-ccac774ea460](https://user-images.githubusercontent.com/4426533/226433433-cba222da-1a5d-43c6-a75c-a001c69280c9.jpg)
-
+<p align="center">
+  <a href="https://webmin.com/screenshots/#gh-light-mode-only" target="_blank">
+    <img width="1440" alt="Dashboard screenshot" src="https://user-images.githubusercontent.com/4426533/218264253-c08fb45a-8d75-44bf-93b3-37a2ecae3d20.png">
+  </a>
+  <a href="https://webmin.com/screenshots/#gh-dark-mode-only" target="_blank">
+    <img width="1440" alt="Dashboard screenshot" src="https://user-images.githubusercontent.com/4426533/218265232-31140aa6-ada1-4019-bd75-04240aeabc83.png">
+  </a>
+</p>
 
 ### Features
 * Configurable theme options using _Webmin_/_Usermin_ UI, with ability to embed user logos and custom styles
