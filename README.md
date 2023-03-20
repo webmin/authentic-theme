@@ -10,22 +10,20 @@
 ## About
 **Authentic Theme** is modern, ultrafast single-page application for [Webmin/](https://github.com/webmin/webmin)[Usermin](https://github.com/webmin/usermin) that is made with _love_. Managing servers, operating systems and applications has never been so easy.
 
-[![Quick UI overview 2021](https://user-images.githubusercontent.com/4426533/114315375-61a1c480-9b07-11eb-9aaf-4aa949a39ab7.png)](https://www.youtube.com/watch?v=daYG6O4AsEw&feature=emb_logo)
-![](https://user-images.githubusercontent.com/4426533/114394315-bc88f980-9ba3-11eb-8025-ccac774ea460.png)
+<a href="https://webmin.com/screenshots">![](https://user-images.githubusercontent.com/4426533/226430611-6eaee19c-57f6-4c8c-8bc8-3dd6029c649c.png)</a>
+![114394315-bc88f980-9ba3-11eb-8025-ccac774ea460](https://user-images.githubusercontent.com/4426533/226433433-cba222da-1a5d-43c6-a75c-a001c69280c9.jpg)
+
 
 ### Features
 * Configurable theme options using _Webmin_/_Usermin_ UI, with ability to embed user logos and custom styles
-* Code highlight when viewing and editing files
-* Drop-down terminal interface for _Command Shell_ module
 * Hotkeys and favorites for quicker access
 * Notification slider for instant access to pushed system messages
 * Extended support for _File Manager_ and _ConfigServer Security & Firewall_ modules
+* Code highlight when viewing and editing files
+* Drop-down interface for both _Terminal_ and _Command Shell_ module
 
 ### Requirements
-* Webmin _1.995+_ (required), Usermin _1.855+_ (optional), Virtualmin _7.0+_ (optional), Cloudmin _9.6+_ (optional)
-
-### Recommended modules
-* Installed _Net::SSLeay_ module, to make automatic update notifications work
+* Webmin _2.020+_ (required), Usermin _1.861+_ (optional), Virtualmin _7.5+_ (optional), Cloudmin _9.7+_ (optional)
 
 ## FAQ
 
@@ -42,8 +40,7 @@ Go to theme configuration folder under Webmin, create/find _config_ file, open i
 Theme has configurable options. There, as well, you can upload custom _logos_ and code custom _styles.css_, _scripts.js_ and _scripts.pl_.
 
 ### How do I execute shell command using search field?
-Type `!` in search, followed by your command. Example: `!ls /root`. It's required to have _Command Shell_ module available.
-
+Type `!` in search, followed by your command. Example: `!ls /root`. It's required to have _Terminal_ or _Command Shell_ module available.
 
 ## Extended support for bundled/third-party modules
 
@@ -55,7 +52,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 
 ## Development
 ### Lead developer
-* [Ilia Rostovtsev](https://authentic-theme.com)  [![](https://authentic-theme.com/media/icons/stackoverflow-18x17.jpg)](https://stackoverflow.com/users/1455661/ilia)
+* [Ilia Rostovtsev](https://github.com/iliajie)
 
 ### Contributions
 
@@ -84,18 +81,15 @@ Theme only re-renders this module and adds support for code highlight, when edit
 ## Donate
  It takes countless hours to develop and maintain this project. Donations show appreciation. Your donation would help me to pay my bills and _excite future development_.
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=pay%40ilia%2eengineer&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](http://authentic-theme.com/media/icons/paypal-175x45.png)</a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=pay%40ilia%2eengineer&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](https://user-images.githubusercontent.com/4426533/226430276-086c5d38-597c-46b0-85d9-4b431e571086.png)</a>
 
-![](https://authentic-theme.com/media/icons/bitcoin-175-207.png)
-<br>
+### Bitcoin
 *bc1q5jk7wf6urdj4w9hm9de52xvf8strzc0unyt3cu*
 
-![](https://authentic-theme.com/media/icons/ethereum-175-42.png)
-<br>
+### Ethereum
 *0x598d0549aF24aD80e5b868297D44C479Cc2Dab6F*
 
-![](https://authentic-theme.com/media/icons/litecoin-175-42.png)
-<br>
+### Litecoin
 *ltc1qdc5x5ucah9u6x6rl9ttw29wcejtt0h62rx2t2z*
 
 ## License
