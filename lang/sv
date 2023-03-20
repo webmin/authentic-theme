@@ -937,6 +937,7 @@ theme_xhred_filemanager_search_follow_symlinks=Följ symbolisk länk
 theme_xhred_filemanager_mass_select=Markera alla %1 objekten över %2 sidor?
 theme_xhred_filemanager_mass_selected=Alla %1 objekten är markerade i aktuell katalog
 theme_xhred_filemanager_mass_select_clear=Rensa markerade
+theme_xhred_filemanager_mass_selected_for_delete=Alla objekt i katalogen %1
 theme_xhred_filemanager_mass_selected_no_zip=<tt>zip</tt>-kommandot stöds inte när det körs mot alla objekt i en katalog
 filemanager_global_search_results=Sökresultat
 filemanager_global_paginated_results=Sidnumrering 
@@ -1290,3 +1291,27 @@ theme_xhred_webmin_requires_restart_no=Nej, jag startar om den manuellt
 
 #19.99
 theme_xhred_filemanager_path_manual=Ange sökväg manuellt (Ctrl + L)
+
+#20.02
+theme_xhred_socket_conn_lost_title=Anslutning förlorad
+theme_xhred_socket_conn_lost_reconnect=Återanslut
+theme_xhred_socket_conn_lost_connecting=Ansluter ..
+theme_xhred_socket_conn_lost_try=Försök igen
+theme_xhred_socket_conn_parse_error=Det gick inte att ladda terminalen : Det går inte att analysera svarsobjekt från servern
+theme_xhred_socket_conn_sock_error=Det gick inte att ladda terminalen : WebSocket-anslutningsfel
+
+#20.10
+theme_xhred_global_open=Öppna
+theme_xhred_xterm_error_title=Kan inte ansluta
+theme_xhred_xterm_error=Gå till terminalmodulen för mer information
+
+#20.11
+theme_xhred_global_error_fatal=Allvarligt fel
+
+#20.20
+theme_xhred_global_automatic=Automatiskt
+theme_xhred_filemanager_context_acls=Ändra åtkomstkontrolllista
+theme_xhred_filemanager_changing_acls=Ändrar åtkomstkontrolllista.
+theme_xhred_filemanager_successful_acls_with_errors=Åtkomstkontrolllistan har inte ändrats för alla objekt:
+theme_xhred_filemanager_successful_acls=Åtkomstkontrolllistan har ändrats.
+theme_download_error=Det gick inte att ladda ner filen eftersom den ligger utanför den tillåtna katalogen : $1
