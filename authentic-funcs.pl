@@ -898,6 +898,10 @@ sub get_default_module
 sub init_prefail
 {
     if (
+        # Affects upgrades before 2.020
+        !defined(&parse_accepted_language) ||
+        !defined(&get_default_system_locale) ||
+
         # Affects upgrades before 1.974
         !defined(&get_buffer_size) ||
 
