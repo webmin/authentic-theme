@@ -643,14 +643,20 @@ sub nav_theme_links
                         $target = " target=\"$target\"";
                     }
                     if ($e->{"port"}) {
-                        my $host = get_env('http_host');
-                        $host =~ s/:(\d+)$/:$e->{'port'}/;
-                        $e->{"link"} = "//$host$e->{'link'}";
+                        my $host = $e->{"host"};
+                        if (!$host) {
+                            $host = get_env('http_host');
+                            $host =~ s/:(\d+)$/:$e->{'port'}/;
+                        } else {
+                            $host .= ":$e->{'port'}";
+                        }
+                        my $proto = $e->{'protocol'} ? "$e->{'protocol'}://" : "//";
+                        $e->{"link"} = "$proto$host$e->{'link'}";
                     }
                     my $type       = string_contains($e->{'link'}, '&#47;&#47') ? '' : 'data-linked';
                     my $type_class = $type ? "navigation_module_trigger"             : "navigation_external_link";
                     $rv .= '<li ' . $type . ' data-after><a ' . $target . ' href="' .
-                      $e->{"link"} . '" class="' . $type_class . '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>';
+                      quote_escape($e->{"link"}, '"') . '" class="' . $type_class . '"><i class="fa fa-fw fa-' . $e->{"icon"} . '"></i> <span>';
                     utf8::encode($e->{'title'});
                     $rv .= $e->{'title'};
                     $rv .= '</span></a></li>';
