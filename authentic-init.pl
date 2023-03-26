@@ -1117,10 +1117,13 @@ sub get_button_style
         $icon = "files-o";
     } elsif (string_contains($keys, "reboot") ||
              string_contains($keys, "view_refresh") ||
+             string_contains($keys, "refresh_title") ||
              string_contains($keys, "refreshmods")  ||
              string_contains($keys, "index_buttinit"))
     {
-        if (string_contains($keys, "refreshmods")) {
+        if (string_contains($keys, "refresh_title")) {
+            $class = "success ";
+        } elsif (string_contains($keys, "refreshmods")) {
             $class = "primary ";
         } elsif (!string_contains($keys, "reboot_ok") && !string_contains($keys, "index_reboot") ||
                  string_contains($keys, "index_buttinit"))
