@@ -312,9 +312,9 @@ sub message_details
              [$text{'extensions_mail_header_signed_by'} . ":",
               ui_italic(($dkim_signature ? $dkim_signature : $fail), 'light')
              ]
-        ) if ($dkim_signature);
+        );
         push(@tcontent, [$text{'extensions_mail_header_dkim'} . ":", ui_italic(($dkim ? $success : $fail), 'light')])
-          if ($dkim_signature && $dkim || (!$dkim_signature && !$dkim));
+          if ($dkim_signature && $dkim);
         push(@tcontent, [$text{'extensions_mail_header_spf'} . ":", ui_italic(($spf ? $success : $fail), 'light')]);
         push(@tcontent,
              [$text{'extensions_mail_header_encrypted'} . ":",
