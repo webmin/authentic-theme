@@ -1099,7 +1099,7 @@ sub theme_ui_table_end
 
 sub theme_ui_table_row
 {
-    my ($label, $value, $cols, $tds) = @_;
+    my ($label, $value, $cols, $tds, $trs) = @_;
     $cols ||= 1;
     $tds  ||= $main::ui_table_default_tds;
     my $rv;
@@ -1109,7 +1109,9 @@ sub theme_ui_table_row
         $rv .= "</tr>\n";
         $main::ui_table_pos = 0;
     }
-    $rv .= "<tr>\n"
+    my $trtags_attrs = ref($trs) eq 'ARRAY' && $trs->[0] ? " $trs->[0]" : "";
+    my $trtags_class = ref($trs) eq 'ARRAY' && $trs->[1] ? " class='$trs->[1]'" : "";
+    $rv .= "<tr$trtags_class$trtags_attrs>\n"
       if ($main::ui_table_pos % $main::ui_table_cols == 0);
     $rv .= "<td class='col_label'><b>$label</b></td>\n"
       if (defined($label));
