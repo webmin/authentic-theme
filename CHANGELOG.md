@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 20.22 (April 09, 2023)
+* Add to allow setting host and protocol in custom links [#904#issuecomment-1482540434](https://github.com/webmin/authentic-theme/issues/904#issuecomment-1482540434)
+* Fix to interrupt previous call when getting navigation menu content
+* Fix issues when opening navigation menu on iOS devices [#1652](https://github.com/authentic-theme/authentic-theme/issues/1652)
+* Fix custom selects when loaded from cache
+* Fix labels wrapping in File Manager
+
 #### Version 20.21 (March 19, 2023)
 * Add support for displaying symlinked folders in file tree-view in File Manager
 * Fix insecure downloads by symlink in File Manager
