@@ -117,29 +117,61 @@ sub embed_favicon
     # Embed standard favicons using a direct link
     if (!-r $favicon_cpath) {
         print ' <link ' .
-          $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="' . $favicon_path . '/apple-touch-icon.png">' . "\n";
+          $ref_link .
+          ' rel="apple-touch-icon" sizes="180x180" href="' .
+          $favicon_path .
+          '/apple-touch-icon.png">' . "\n";
         print ' <link ' .
-          $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="' . $favicon_path . '/favicon-32x32.png">' . "\n";
-        print ' <link ' . $ref_link .
-          ' rel="icon" type="image/png" sizes="192x192" href="' . $favicon_path . '/android-chrome-192x192.png">' . "\n";
+          $ref_link .
+          ' rel="icon" type="image/png" sizes="32x32" href="' .
+          $favicon_path .
+          '/favicon-32x32.png">' . "\n";
         print ' <link ' .
-          $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="' . $favicon_path . '/favicon-16x16.png">' . "\n";
-        print ' <link ' . $ref_link .
-          ' rel="mask-icon" href="' . $favicon_path . '/safari-pinned-tab.svg" color="' . $theme_user_color . '">' . "\n";
+          $ref_link .
+          ' rel="icon" type="image/png" sizes="192x192" href="' .
+          $favicon_path .
+          '/android-chrome-192x192.png">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' rel="icon" type="image/png" sizes="16x16" href="' .
+          $favicon_path .
+          '/favicon-16x16.png">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' rel="mask-icon" href="' .
+          $favicon_path .
+          '/safari-pinned-tab.svg" color="' .
+          $theme_user_color .
+          '">' . "\n";
         print ' <meta ' .
-          $ref_link . ' name="msapplication-TileImage" content="' . $favicon_path . '/mstile-150x150.png">' . "\n";
+          $ref_link .
+          ' name="msapplication-TileImage" content="' .
+          $favicon_path .
+          '/mstile-150x150.png">' . "\n";
     }
 
     # Embed custom favicons using base64 encoding
     else {
-        print ' <link ' . $ref_link . ' rel="apple-touch-icon" sizes="180x180" href="data:text/css;base64,' .
-          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/apple-touch-icon.png')))) . '">' . "\n";
-        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="32x32" href="data:text/css;base64,' .
-          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-32x32.png')))) . '">' . "\n";
-        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="192x192" href="data:text/css;base64,' .
-          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png')))) . '">' . "\n";
-        print ' <link ' . $ref_link . ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
-          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png')))) . '">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' rel="apple-touch-icon" sizes="180x180" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/apple-touch-icon.png')))) .
+          '">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' rel="icon" type="image/png" sizes="32x32" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-32x32.png')))) .
+          '">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' rel="icon" type="image/png" sizes="192x192" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/android-chrome-192x192.png')))) .
+          '">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' rel="icon" type="image/png" sizes="16x16" href="data:text/css;base64,' .
+          trim_lines(trim(encode_base64(read_file_contents($favicon_spath . '/favicon-16x16.png')))) .
+          '">' . "\n";
     }
     print ' <meta name="msapplication-TileColor" content="' . $theme_user_color . '">' . "\n";
     print ' <meta name="theme-color" content="' . $theme_user_color . '">' . "\n";
@@ -169,8 +201,13 @@ sub embed_favicon
         };
 
         print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
-        print ' <link ' . $ref_link . ' crossorigin="use-credentials" rel="manifest" href="' .
-          $theme_webprefix . '/manifest-' . $product_name . '.json">' . "\n";
+        print ' <link ' .
+          $ref_link .
+          ' crossorigin="use-credentials" rel="manifest" href="' .
+          $theme_webprefix .
+          '/manifest-' .
+          $product_name .
+          '.json">' . "\n";
     }
 }
 
@@ -273,8 +310,13 @@ sub embed_header
 
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
-                print ' <link href="' . $theme_webprefix .
-                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+                print ' <link href="' .
+                  $theme_webprefix .
+                  '/unauthenticated/css/' .
+                  $css .
+                  '.src.css?' .
+                  theme_version('timestamped') .
+                  '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
         } else {
@@ -294,8 +336,13 @@ sub embed_header
                     next;
                 }
 
-                print ' <script src="' . $theme_webprefix .
-                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
+                print ' <script src="' .
+                  $theme_webprefix .
+                  '/unauthenticated/js/' .
+                  $js .
+                  '.src.js?' .
+                  theme_version('timestamped') .
+                  '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -303,8 +350,13 @@ sub embed_header
     } else {
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
-                print ' <link href="' . $theme_webprefix .
-                  '/unauthenticated/css/' . $css . '.src.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+                print ' <link href="' .
+                  $theme_webprefix .
+                  '/unauthenticated/css/' .
+                  $css .
+                  '.src.css?' .
+                  theme_version('timestamped') .
+                  '" rel="stylesheet">' . "\n";
             }
             embed_css_fonts();
         } else {
@@ -316,10 +368,13 @@ sub embed_header
         if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
         {
-            print ' <link href="' . $theme_webprefix . '/unauthenticated/css/palettes/' .
-              (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) .
-              '.' . ($args[2] ? 'src' : 'min') .
-              '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
+            print ' <link href="' .
+              $theme_webprefix .
+              '/unauthenticated/css/palettes/' .
+              (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
+              ($args[2]           ? 'src'      : 'min') . '.css?' .
+              theme_version('timestamped') .
+              '" rel="stylesheet" data-palette>' . "\n";
 
         }
 
@@ -335,8 +390,13 @@ sub embed_header
                     next;
                 }
 
-                print ' <script src="' . $theme_webprefix .
-                  '/unauthenticated/js/' . $js . '.src.js?' . theme_version('timestamped') . '"></script>' . "\n";
+                print ' <script src="' .
+                  $theme_webprefix .
+                  '/unauthenticated/js/' .
+                  $js .
+                  '.src.js?' .
+                  theme_version('timestamped') .
+                  '"></script>' . "\n";
             }
         } else {
             embed_js_bundle();
@@ -439,8 +499,11 @@ sub embed_styles
 {
     if ($theme_config{'settings_contrast_mode'} eq 'true') {
         print ' <link href="' .
-          $theme_webprefix . '/unauthenticated/css/high-contrast.' . (theme_debug_mode() ? 'src' : 'min') . '.css?' .
-          time() . '" rel="stylesheet" data-high-contrast>' . "\n";
+          $theme_webprefix .
+          '/unauthenticated/css/high-contrast.' .
+          (theme_debug_mode() ? 'src' : 'min') . '.css?' .
+          time() .
+          '" rel="stylesheet" data-high-contrast>' . "\n";
     }
 
     my $css = $config_directory . "/$current_theme/styles.css";
@@ -497,14 +560,21 @@ sub embed_pm_scripts
 
 sub embed_css_fonts
 {
-    print ' <link href="' . $theme_webprefix . '/unauthenticated/css/fonts-roboto.' .
-      (theme_debug_mode() ? 'src' : 'min') . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+    print ' <link href="' .
+      $theme_webprefix .
+      '/unauthenticated/css/fonts-roboto.' .
+      (theme_debug_mode() ? 'src' : 'min') . '.css?' .
+      theme_version('timestamped') .
+      '" rel="stylesheet">' . "\n";
 }
 
 sub embed_css_bundle
 {
-    print ' <link href="' . $theme_webprefix .
-      '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+    print ' <link href="' .
+      $theme_webprefix .
+      '/unauthenticated/css/bundle.min.css?' .
+      theme_version('timestamped') .
+      '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
 
@@ -512,15 +582,21 @@ sub embed_css_night_rider
 {
     if (theme_night_mode_login() || theme_night_mode()) {
         print ' <link href="' .
-          $theme_webprefix . '/unauthenticated/css/palettes/nightrider.' . (theme_debug_mode() ? 'src' : 'min') .
-          '.css?' . theme_version('timestamped') . '" rel="stylesheet" data-palette>' . "\n";
+          $theme_webprefix .
+          '/unauthenticated/css/palettes/nightrider.' .
+          (theme_debug_mode() ? 'src' : 'min') . '.css?' .
+          theme_version('timestamped') .
+          '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
 sub embed_js_bundle
 {
     print ' <script src="' .
-      $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version('timestamped') . '"></script>' . "\n";
+      $theme_webprefix .
+      '/unauthenticated/js/bundle.min.js?' .
+      theme_version('timestamped') .
+      '"></script>' . "\n";
 }
 
 sub embed_js_scripts
@@ -618,8 +694,15 @@ sub embed_port_shell
     <div class="-shell-port-cmd' . $xterm . '">
       <span class="-shell-port-prompt"><span class="-shell-port-type">['
           . $remote_user .
-          '@<span data-shell-host="' . $host . '">' . $host . '</span> <span class="-shell-port-pwd" data-home="' .
-          get_user_home() . '" data-pwd="' . get_user_home() . '">~</span>]' . (&webmin_user_is_admin() ? '#' : '$') .
+          '@<span data-shell-host="' .
+          $host . '">' .
+          $host .
+          '</span> <span class="-shell-port-pwd" data-home="' .
+          get_user_home() .
+          '" data-pwd="' .
+          get_user_home() .
+          '">~</span>]' .
+          (&webmin_user_is_admin() ? '#' : '$') .
 '</span></span><input type="text" data-command="true" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"><span class="-shell-port-cursor">&nbsp;</span>
     </div>
   </div>
@@ -640,16 +723,24 @@ sub embed_footer
         if (get_module_name() =~ /mysql/ ||
             get_module_name() =~ /postgresql/)
         {
-            print ' <script src="' . $theme_webprefix . '/extensions/sql.' .
-              ($args[0] ? 'src' : 'min') . '.js?' . theme_version('timestamped') . '"></script>' . "\n";
+            print ' <script src="' .
+              $theme_webprefix .
+              '/extensions/sql.' .
+              ($args[0] ? 'src' : 'min') . '.js?' .
+              theme_version('timestamped') .
+              '"></script>' . "\n";
         }
 
         # Load `File Manager` specific scripts
         if (get_module_name() =~ /file-manager/ ||
             get_module_name() =~ /filemin/)
         {
-            print ' <script src="' . $theme_webprefix . '/extensions/file-manager/file-manager.' .
-              ($args[0] ? 'src' : 'min') . '.js?' . theme_version('timestamped') . '"></script>' . "\n";
+            print ' <script src="' .
+              $theme_webprefix .
+              '/extensions/file-manager/file-manager.' .
+              ($args[0] ? 'src' : 'min') . '.js?' .
+              theme_version('timestamped') .
+              '"></script>' . "\n";
         }
 
     }
@@ -815,8 +906,8 @@ sub get_usermin_vars
 sub get_current_user_locale
 {
     my $language = $gconfig{ 'locale_' . $remote_user } ||
-      &parse_accepted_language(\%gconfig) ||
-      $gconfig{'locale'} ||
+      &parse_accepted_language(\%gconfig)               ||
+      $gconfig{'locale'}                                ||
       &get_default_system_locale();
 
     $language =~ s/\..*//;
@@ -827,21 +918,29 @@ sub get_current_user_locale
 sub get_current_user_language
 {
     my $language = $gconfig{ 'lang_' . $remote_user } ||
-      &parse_accepted_language(\%gconfig) ||
-      $gconfig{'lang'} ||
+      &parse_accepted_language(\%gconfig)             ||
+      $gconfig{'lang'}                                ||
       &get_default_system_locale();
     return lc(substr($language, 0, 2));
 }
 
 sub get_filters
 {
-    return 'filter: grayscale(' . $theme_config{'settings_grayscale_level_navigation'} .
-      ') ' . 'sepia(' . $theme_config{'settings_sepia_level_navigation'} .
-      ')' . ' saturate(' . $theme_config{'settings_saturation_level_navigation'} .
-      ') hue-rotate(' . $theme_config{'settings_hue_level_navigation'} .
-      'deg)' . ' invert(' . $theme_config{'settings_invert_level_navigation'} .
-      ') brightness(' . $theme_config{'settings_brightness_level_navigation'} .
-      ') contrast(' . $theme_config{'settings_contrast_level_navigation'} . ')' . ';';
+    return 'filter: grayscale(' .
+      $theme_config{'settings_grayscale_level_navigation'} . ') ' .
+      'sepia(' .
+      $theme_config{'settings_sepia_level_navigation'} . ')' .
+      ' saturate(' .
+      $theme_config{'settings_saturation_level_navigation'} .
+      ') hue-rotate(' .
+      $theme_config{'settings_hue_level_navigation'} . 'deg)' .
+      ' invert(' .
+      $theme_config{'settings_invert_level_navigation'} .
+      ') brightness(' .
+      $theme_config{'settings_brightness_level_navigation'} .
+      ') contrast(' .
+      $theme_config{'settings_contrast_level_navigation'} .
+      ')' . ';';
 }
 
 sub get_user_icon
@@ -1116,9 +1215,9 @@ sub get_button_style
     } elsif (string_contains($keys, "edit_open") || string_contains($keys, "edit_list")) {
         $icon = "files-o";
     } elsif (string_contains($keys, "reboot") ||
-             string_contains($keys, "view_refresh") ||
+             string_contains($keys, "view_refresh")  ||
              string_contains($keys, "refresh_title") ||
-             string_contains($keys, "refreshmods")  ||
+             string_contains($keys, "refreshmods")   ||
              string_contains($keys, "index_buttinit"))
     {
         if (string_contains($keys, "refresh_title")) {
@@ -1478,11 +1577,9 @@ sub header_html_data
       '" data-session="' .
       ($remote_user ? '1' : '0') .
       '" data-script-name="' .
-      ($module ? "/$module/" : get_env('script_name')) .
-      '"' .
-      ($skip ? '' : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') .
-      '' .
-      ($skip ? '' : ' data-night-mode="' . theme_night_mode() . '"') .
+      ($module ? "/$module/" : get_env('script_name')) . '"' .
+      ($skip   ? ''          : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') . '' .
+      ($skip   ? ''          : ' data-night-mode="' . theme_night_mode() . '"') .
       ' data-high-contrast="' .
       ($theme_config{'settings_contrast_mode'} eq 'true' ? '1' : '0') .
       '" data-navigation-collapsed="' .
@@ -1506,8 +1603,7 @@ sub header_html_data
       '" data-package-updates="' .
       foreign_available("package-updates") .
       '" data-csf="' .
-      foreign_available("csf") .
-      '"' .
+      foreign_available("csf") . '"' .
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' .
       ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
@@ -1517,25 +1613,61 @@ sub header_html_data
       theme_version('version') .
       '" data-theme-version-data="' .
       urlize(theme_version('json')) .
-      '"  data-level="' . $get_user_level . '" data-user-home="' . get_user_home() . '" data-user-id="' . get_user_id() .
-      '" data-user="' . $remote_user . '" data-ltr="' . get_text_ltr() . '" data-language="' . get_current_user_language() .
-      '" data-locale="' . get_current_user_locale() . '" data-charset="' . get_charset() .
-      '" data-notice="' . theme_post_update() . '" data-initial-wizard="' . get_initial_wizard() . '" data-webprefix="' .
-      $theme_webprefix . '" data-current-product="' . get_product_name() . '" data-pro-vm="' . check_pro_package('vm') .
-      '"  data-pro-cm="' . check_pro_package('cm') . '" data-module="' . ($module ? "$module" : get_module_name()) .
-      '" data-uri="' .      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
-      '" data-progress="' . ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') . '" data-product="' .
-      get_product_name() . '" data-access-level="' . $get_user_level . '" data-time-offset="' . get_time_offset() . '"';
+      '"  data-level="' .
+      $get_user_level .
+      '" data-user-home="' .
+      get_user_home() .
+      '" data-user-id="' .
+      get_user_id() .
+      '" data-user="' .
+      $remote_user .
+      '" data-ltr="' .
+      get_text_ltr() .
+      '" data-language="' .
+      get_current_user_language() .
+      '" data-locale="' .
+      get_current_user_locale() .
+      '" data-charset="' .
+      get_charset() .
+      '" data-notice="' .
+      theme_post_update() .
+      '" data-initial-wizard="' .
+      get_initial_wizard() .
+      '" data-webprefix="' .
+      $theme_webprefix .
+      '" data-webprefix-proxy="' .
+      $theme_server_webprefix .
+      '" data-current-product="' .
+      get_product_name() .
+      '" data-pro-vm="' .
+      check_pro_package('vm') .
+      '"  data-pro-cm="' .
+      check_pro_package('cm') .
+      '" data-module="' .
+      ($module ? "$module" : get_module_name()) .
+      '" data-uri="' .
+      ($module ? "/$module/" : html_escape(un_urlize(get_env('request_uri'), 1))) .
+      '" data-progress="' .
+      ($theme_config{'settings_hide_top_loader'} ne 'true' ? '1' : '0') .
+      '" data-product="' .
+      get_product_name() .
+      '" data-access-level="' .
+      $get_user_level .
+      '" data-time-offset="' .
+      get_time_offset() . '"';
 }
 
 sub header_body_data
 {
     my ($module) = @_;
-    return 'data-uri="' . ($module ? "/$module/" : html_escape(get_env('request_uri'))) . '"'
+    return 'data-uri="' .
+      ($module ? "/$module/" : html_escape(get_env('request_uri'))) . '"'
       .
       ( (get_module_name() || $module) ?
           ' class="' .
-          ($module ? $module : get_module_name()) . '" data-module="' . ($module ? $module : get_module_name()) . '"' :
+          ($module ? $module : get_module_name()) .
+          '" data-module="' .
+          ($module ? $module : get_module_name()) . '"' :
           undef
       ) .
       '' .
@@ -1582,7 +1714,9 @@ sub get_version_link
         return "<span class=\"versionSeparator\">" . get_version_full($version, 1) . "</span>";
     } else {
         return '<a href="https://github.com/authentic-theme/authentic-theme/releases/tag/' .
-          get_version_full($version) . '" class="versionSeparator">' . get_version_full($version, 1) . '</a>';
+          get_version_full($version) .
+          '" class="versionSeparator">' .
+          get_version_full($version, 1) . '</a>';
     }
 
 }
@@ -1780,16 +1914,24 @@ sub get_button_tooltip
         $ctrl_key = '⌃';
         $meta_key = '⌘';
     }
-    return (' aria-label="' . strip_html($tooltip_text) . '" data-container="' . $container . '" data-placement="' .
-              $placement . '" data-toggle="tooltip" data-html="' . ($html ? 'true' : 'false') . '" data-title="'
+    return (' aria-label="' .
+              strip_html($tooltip_text) .
+              '" data-container="' .
+              $container .
+              '" data-placement="' .
+              $placement .
+              '" data-toggle="tooltip" data-html="' .
+              ($html ? 'true' : 'false') .
+              '" data-title="'
               .
               ($tooltip_text
                  .
                  (length $theme_config{'settings_hotkeys_active'} &&
                     $theme_config{'settings_hotkeys_active'} ne 'false' &&
                     $hot_key ?
-                    " (" . ($mod_key eq "altKey" ? $alt_key : $mod_key eq "ctrlKey" ? $ctrl_key : $meta_key) .
-                    ' + ' . $hot_key . ")" :
+                    " (" .
+                    ($mod_key eq "altKey" ? $alt_key : $mod_key eq "ctrlKey" ? $ctrl_key : $meta_key) . ' + ' .
+                    $hot_key . ")" :
                     '')
               ) .
               '"');
