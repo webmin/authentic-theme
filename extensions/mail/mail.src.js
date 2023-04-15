@@ -3473,7 +3473,8 @@ const mail = (function() {
             }
 
             if (typeof tree === 'object' && typeof tree.activateKey === 'function') {
-                tree.activateKey(key)
+                tree.activateKey(false);
+                tree.activateKey(key);
             } else {
                 setTimeout(() => {
                     this.set(key);
