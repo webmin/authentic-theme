@@ -1268,6 +1268,7 @@ sub get_button_style
         $class = "success ";
         $icon  = "play";
     } elsif (string_contains($keys, "index_stop") ||
+             string_contains($keys, "running_stop") ||
              string_contains($keys, "edit_stopnow"))
     {
         $class = "danger ";
