@@ -2150,7 +2150,7 @@ const mail = (function() {
                                     position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
                                     panel = $.jsPanel({
                                         position: position,
-                                        theme: "dimgrey",
+                                        theme: "#f3f3f3",
                                         onwindowresize: true,
                                         panelSize: {
                                             width: (small_window ? window_width + 4 * ioffset : 600),
