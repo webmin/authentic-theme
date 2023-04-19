@@ -897,7 +897,12 @@ sub get_default_module
 # Webmin manually. Inner ref.: CXX1010000
 sub init_prefail
 {
+    return if (get_product_name() eq 'usermin');
+    my $pversion = get_webmin_version();
     if (
+        # Affects upgrades 2.022 and up
+        (!defined(&create_wrapper) && $pversion >= 2.022) ||
+
         # Affects upgrades before 2.020
         !defined(&parse_accepted_language) ||
         !defined(&get_default_system_locale) ||
