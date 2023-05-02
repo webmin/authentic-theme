@@ -135,16 +135,6 @@ settings_theme_options_button=Mostrar el botó de la configuració del tema
 
 settings_hotkeys_active=Habilita les dreceres
 settings_hotkey_toggle_modifier=Opció de drecera
-settings_hotkey_toggle_key_webmin=Drecera per Webmin
-settings_hotkey_toggle_key_virtualmin=Drecera per Virtualmin
-settings_hotkey_toggle_key_cloudmin=Drecera per Cloudmin
-settings_hotkey_toggle_key_usermin=Drecera per Usermin
-settings_hotkey_toggle_key_webmail=Drecera pel Correu
-settings_hotkey_sysinfo=Drecera del tauler
-settings_hotkey_shell=Drecera pel terminal
-settings_hotkey_favorites=Drecera pels favorits
-settings_hotkey_focus_search=Drecera per cerques
-settings_hotkey_reload=Drecera per recarregar pàgina
 
 settings_sysinfo_easypie_charts=Mostrar les gràfiques
 settings_sysinfo_theme_updates=Comprova actualitzacions del tema
@@ -159,7 +149,6 @@ settings_right_cloudmin_default=Pàgina per defecte de Cloudmin
 
 settings_right_clear_local_cache=Neteja la memòria cau
 settings_side_slider_fixed=Mantenir sempre visible
-settings_hotkey_toggle_slider=Dreceres del panell dret
 
 settings_side_slider_enabled=Habilitar el panell dret
 settings_leftmenu_user_html=Mostrar retall HTML
@@ -181,9 +170,6 @@ theme_global_success=CORRECTE
 theme_global_info=INFORMACIÓ
 sysinfo_system_status_warning=Per mostrar la <strong>Informació del sistema</strong> has d'habilitar el mòdul <em>Estat del sistema</em>.
 settings_leftmenu_user_html_privileged=Mostrar el retall HTML només als administradors
-theme_sysinfo_wmdocs=Documentació de Webmin
-theme_sysinfo_vmdocs=Documentació de Virtualmin
-theme_sysinfo_cmdocs=Documentació de Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -546,7 +532,6 @@ theme_xhred_move_down=Moure a baix
 theme_xhred_add_after=Afegir després
 theme_xhred_add_before=Afegir abans
 settings_show_night_mode_link=Show day/night mode button
-settings_hotkey_toggle_key_night_mode=Drecera per canviar entre el modes clar i fosc
 settings_title=Configuració del tema
 settings_subtitle=Per a l'usuari
 

@@ -138,16 +138,16 @@ settings_theme_options_button=دکمه تنظیمات نمایش نمایش
 
 settings_hotkeys_active=استفاده از کلیدهای میانبر را فعال کنید
 settings_hotkey_toggle_modifier=اصلاح کلیدهای میانبر
-settings_hotkey_toggle_key_webmin=کلید کلید برای وبمین
-settings_hotkey_toggle_key_virtualmin=کلید فوری برای Virtualmin
-settings_hotkey_toggle_key_cloudmin=کلید فوری برای Cloudmin
-settings_hotkey_toggle_key_usermin=کلید اصلی برای Usermin
-settings_hotkey_toggle_key_webmail=کلید فوری برای ایمیل
-settings_hotkey_sysinfo=کلید فوری برای داشبورد
-settings_hotkey_shell=کلید فوری برای ترمینال
-settings_hotkey_favorites=کلید فوری برای موارد دلخواه
-settings_hotkey_focus_search=کلید کلید برای جستجو
-settings_hotkey_reload=کلید فوری برای بارگذاری مجدد صفحه
+settings_hotkey_toggle_key_webmin=کلید میانبر برای بارگیری منوی وبمین
+settings_hotkey_toggle_key_virtualmin=کلید میانبر برای بارگیری منوی Virtualmin
+settings_hotkey_toggle_key_cloudmin=کلید میانبر برای بارگیری منوی Cloudmin
+settings_hotkey_toggle_key_usermin=کلید میانبر برای بارگیری منوی Usermin
+settings_hotkey_toggle_key_webmail=کلید میانبر برای بارگیری منوی ایمیل
+settings_hotkey_sysinfo=کلید میانبر برای باز کردن داشبورد
+settings_hotkey_shell=کلید میانبر برای باز کردن ترمینال کشویی
+settings_hotkey_favorites=کلید میانبر برای باز کردن موارد دلخواه
+settings_hotkey_focus_search=کلید فوری برای تمرکز بر روی قسمت جستجو
+settings_hotkey_reload=کلید میانبر برای بازخوانی صفحه فعلی
 
 settings_sysinfo_easypie_charts=نمایش نمودارها
 settings_sysinfo_theme_updates=به روزرسانی های موضوع معتبر را بررسی کنید
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=صفحه پیش فرض برای Cloudmin
 
 settings_right_clear_local_cache=پاک کردن حافظه پنهان
 settings_side_slider_fixed=همیشه قابل مشاهده باشید
-settings_hotkey_toggle_slider=کلید کلید برای کشویی جانبی
+settings_hotkey_toggle_slider=کلید میانبر برای تغییر وضعیت دید لغزنده جانبی
 
 settings_side_slider_enabled=کشویی را فعال کنید
 settings_leftmenu_user_html=نمایش قطعه HTML
@@ -184,9 +184,9 @@ theme_global_success=موفقیت
 theme_global_info=اطلاعات
 sysinfo_system_status_warning=برای نمایش <strong>اطلاعات سیستم</strong> ، باید تنظیمات <em>وضعیت سیستم</em> را در تنظیمات کاربر فعال کنید.
 settings_leftmenu_user_html_privileged=نمایش قطعه HTML فقط برای سرپرستان
-theme_sysinfo_wmdocs=مستندات وبمین
-theme_sysinfo_vmdocs=مستندات مجازی
-theme_sysinfo_cmdocs=اسناد Cloudmin
+theme_xhred_sysinfo_wmdocs=مستندات وبمین
+theme_xhred_sysinfo_vmdocs=مستندات Virtualmin
+theme_xhred_sysinfo_cmdocs=مستندات Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=جاوا اسکریپت
@@ -549,7 +549,7 @@ theme_xhred_move_down=حرکت به پایین
 theme_xhred_add_after=اضافه کردن بعد از
 theme_xhred_add_before=قبل اضافه کنید
 settings_show_night_mode_link=دکمه نمایش حالت روز/شب
-settings_hotkey_toggle_key_night_mode=کلید کلید برای جابجایی پالت تاریک/روشن
+settings_hotkey_toggle_key_night_mode=کلید میانبر برای تغییر رنگ پالت رنگ
 settings_title=پیکربندی تم
 settings_subtitle=برای کاربر
 
@@ -868,7 +868,7 @@ settings_mail_ui=UI نامه جدید را فعال کنید
 settings_theme_config_admins_only_privileged_error=دسترسی رد شد: سرپرست دسترسی به تنظیمات کاربر را مسدود کرده است
 
 theme_xhred_tooltip_navigation_pinned=منوی پیمایش/غیرفعال کردن پین
-settings_hotkey_navigation=کلید فوری برای منوی ناوبری ضامن
+settings_hotkey_navigation=کلید میانبر برای تغییر وضعیت منوی پیمایش
 
 theme_xhred_search_in_webmin=جستجو در وبمین
 theme_xhred_search_in_usermin=جستجو در Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=جستجوی Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=انتخاب را در کلیپ بورد کپی کنید
 
-settings_hotkey_slider=کلید فوری برای کشویی سمت کشویی
+settings_hotkey_slider=کلید میانبر برای تغییر وضعیت نوار لغزنده جانبی
 
 theme_git_update_locked=به دلیل عدم اتصال به GitHub یا بیش از حد مجاز API ، بروزرسانی تم قابل تکمیل نیست. در مورد درخواستهای غیرمجاز دوم ، حداکثر میزان مجاز حداکثر 60 درخواست در ساعت است. بعداً دوباره امتحان کنید یا از کنسول استفاده کنید تا این کار را از طریق اسکریپت به روزرسانی انجام دهید.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=برای دستور اجرا ش�
 settings_navigation_auto_fold_category=Ø¯Ø³ØªÙ‌ÙØ§Û ØºÛØ±ÙØ¹Ø§Ù ØªØ§Ø´Ù Ø®ÙØ¯Ú©Ø§Ø±
 theme_xhred_tooltip_virtualmin_templates_filter_generating=ایجاد لیست قابل جستجو از گزینه ها برای الگو
 theme_xhred_tooltip_virtualmin_templates_filter=در تمام گزینه های قالب جستجو کنید
-theme_sysinfo_vmforum=انجمن Virtualmin
+theme_xhred_sysinfo_vmforum=انجمن Virtualmin
 theme_xhred_tooltip_support_ticket=ارسال تیکت پشتیبانی با اطلاعات سیستم پیوست شده؛ کلید $1 را برای کپی کردن پیوند پشتیبانی در کلیپ بورد نگه دارید
 theme_xhred_tooltip_side_slider_refresh_sysinfo=اجباری برای تازه کردن اطلاعات سیستم
 theme_xhred_disk_quota_error_title=خارج از سهمیه
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=تغییر لیست کنترل دسترس�
 theme_xhred_filemanager_successful_acls_with_errors=لیست کنترل دسترسی برای همه اشیا با موفقیت تغییر نکرده است:
 theme_xhred_filemanager_successful_acls=لیست کنترل دسترسی با موفقیت تغییر کرده است.
 theme_download_error=خطا در دانلود فایل زیرا خارج از فهرست مجاز است : $1 
+
+#20.22
+theme_xhred_hotkeys_help=راهنما (F1)
+theme_xhred_hotkeys_help_title=میانبرهای صفحه کلید
+theme_xhred_hotkeys_help_title_docs=مستندات
+theme_xhred_hotkeys_help_title_global=میانبرهای جهانی
+theme_xhred_hotkeys_help_title_module=میانبرهای خاص ماژول
+theme_xhred_hotkeys_help_title_fm=میانبرهای مدیریت فایل
+theme_xhred_hotkeys_help_title_edit=میانبرهای ویرایشگر
+theme_xhred_global_community=انجمن
+theme_xhred_hotkeys_server_error=نمی توان فایل راهنما را بازیابی کرد
+theme_xhred_hotkeys_custom_to_opens=باز می شود
+theme_xhred_hotkeys_custom_not_set=تنظیم نشده
+theme_xhred_hotkey_open_module_config_privileged=کلید میانبر برای باز کردن پیکربندی ماژول
+theme_xhred_hotkey_open_theme_config=کلید میانبر برای باز کردن پیکربندی تم
+theme_xhred_hotkey_clear_cache=کش را پاک کنید و دوباره بارگذاری کنید
+theme_xhred_hotkey_open_new=به یک برگه جدید کپی کنید

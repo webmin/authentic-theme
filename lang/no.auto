@@ -2,6 +2,26 @@ settings_right_hotkey_options=Hurtigtaster
 
 settings_right_reload=Last inn standardsiden på fanebryteren
 
+settings_hotkey_toggle_key_webmin=Hurtigtast for å laste Webmin-menyen
+settings_hotkey_toggle_key_virtualmin=Hurtigtast for å laste Virtualmin-menyen
+settings_hotkey_toggle_key_cloudmin=Hurtigtast for å laste Cloudmin-menyen
+settings_hotkey_toggle_key_usermin=Hurtigtast for å laste Usermin-menyen
+settings_hotkey_toggle_key_webmail=Hurtigtast for å laste Mail-menyen
+settings_hotkey_sysinfo=Hurtigtast for å åpne dashbordet
+settings_hotkey_shell=Hurtigtast for å åpne rullegardinterminal
+settings_hotkey_favorites=Hurtigtast for å åpne favoritter
+settings_hotkey_focus_search=Hurtigtast for å fokusere på søkefeltet
+settings_hotkey_reload=Hurtigtast for å oppdatere gjeldende side
+
+settings_hotkey_toggle_slider=Hurtigtast for å bytte sideskyvesynlighet
+
+theme_xhred_sysinfo_wmdocs=Webmin dokumentasjon
+theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon
+theme_xhred_sysinfo_cmdocs=Cloudmin dokumentasjon
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Hurtigtast for å veksle mellom fargepalett
+
 #18.48
 theme_force_upgrade=Oppdater tema
 theme_update_footer=Vær så snill å rapportere feil til $1-depotet. Bli med på $2-kanalen vår for å få de siste nyhetene.
@@ -10,6 +30,10 @@ settings_webmin_default_module=Standardside for Webmin
 
 #19.09
 theme_git_patch_incompatible_message_desc=Det kan være inkompatible endringer som kan stoppe temaet fra å fungere som det er designet. Det er ikke mulig å fortsette oppgraderingen med brukergrensesnittet.
+
+settings_hotkey_navigation=Hurtigtast for å bytte navigasjonsmenystatus
+
+settings_hotkey_slider=Hurtigtast for å bytte sideskyvetilstand
 
 theme_xhred_filemanager_mass_selected_for_delete=Alle elementer i katalogen %1
 
@@ -131,7 +155,7 @@ theme_xhred_webminlog_module_no_command_escapes=Veksle omvendt skråstrek for ut
 settings_navigation_auto_fold_category=Automatisk fold inaktive kategorier
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererer søkbar liste over alternativer for malen
 theme_xhred_tooltip_virtualmin_templates_filter=Søk gjennom alle alternativene i malen
-theme_sysinfo_vmforum=Virtualmin-fellesskap
+theme_xhred_sysinfo_vmforum=Virtualmin-fellesskap
 theme_xhred_tooltip_support_ticket=Send inn støttebillett med vedlagt systeminformasjon; hold $1-tasten for å kopiere støttekoblingen til utklippstavlen
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Tving til å oppdatere systeminformasjon
 theme_xhred_disk_quota_error_title=Utenfor kvote
@@ -195,3 +219,20 @@ theme_xhred_filemanager_changing_acls=Endring av tilgangskontrollliste.
 theme_xhred_filemanager_successful_acls_with_errors=Tilgangskontrolllisten er ikke endret for alle objekter:
 theme_xhred_filemanager_successful_acls=Tilgangskontrolllisten er endret.
 theme_download_error=Feil ved nedlasting av filen fordi den er utenfor tillatt katalog : $1
+
+#20.22
+theme_xhred_hotkeys_help=Hjelp (F1)
+theme_xhred_hotkeys_help_title=Tastatursnarveier
+theme_xhred_hotkeys_help_title_docs=Dokumentasjon
+theme_xhred_hotkeys_help_title_global=Globale snarveier
+theme_xhred_hotkeys_help_title_module=Modulspesifikke snarveier
+theme_xhred_hotkeys_help_title_fm=Snarveier for filbehandling
+theme_xhred_hotkeys_help_title_edit=Redaktørsnarveier
+theme_xhred_global_community=Samfunnet
+theme_xhred_hotkeys_server_error=Kan ikke hente hjelpefilen
+theme_xhred_hotkeys_custom_to_opens=åpnes
+theme_xhred_hotkeys_custom_not_set=ikke satt
+theme_xhred_hotkey_open_module_config_privileged=Hurtigtast for å åpne modulkonfig
+theme_xhred_hotkey_open_theme_config=Hurtigtast for å åpne temakonfigurasjon
+theme_xhred_hotkey_clear_cache=Tøm hurtigbufferen og last inn på nytt
+theme_xhred_hotkey_open_new=Dupliser til en ny fane

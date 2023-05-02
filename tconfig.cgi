@@ -20,48 +20,11 @@ ui_print_header(($theme_text{'settings_subtitle'} . ' <tt>' . $remote_user . '</
                 undef, undef, undef, 1);
 
 # Define all available options
-my @excluded_options = theme_settings_filter();
-my @settings         = theme_settings_raw();
-my @sections;
-my @config_quick_access;
-
-# Format options for display and build quick access filter
-foreach my $sections (0 .. $#settings) {
-    foreach my $section ($settings[$sections]) {
-        for (my $i = 0; $i < scalar(@{ $section->[0]->{'data'} }); $i++) {
-            my @key_value_formated =
-              theme_settings_format(@{ $section->[0]->{'data'} }[$i],
-                                    $theme_config{ @{ $section->[0]->{'data'} }[$i] },
-                                    \@excluded_options);
-            if (!$key_value_formated[0][0]) {
-                delete $section->[0]->{'data'}[$i];
-                next;
-            }
-            $section->[0]->{'data'}[$i] = [$key_value_formated[0][0], $key_value_formated[0][1]];
-            $key_value_formated[0][0] =~ s/<div.*?>.*?<\/div>//gm;
-            $key_value_formated[0][0] =~ s/<span\s+data-text.*?>(.*?)<\/span>/$1/gm;
-            $key_value_formated[0][0] =~ s/<span.*?>.*?<\/span>//gm;
-            $key_value_formated[0][0] =~ s/<sup.*?>.*?<\/sup>//gm;
-            $key_value_formated[0][0] =~ s/<code>(.*?)<\/code>.*/$1/;
-            $key_value_formated[0][0] = entities_to_ascii($key_value_formated[0][0]);
-            push(@config_quick_access,
-                 {  'value'   => $key_value_formated[0][0],
-                    'section' => $section->[0]->{'id'},
-                    'data'    => { category => $section->[0]->{'title'} }
-                 });
-        }
-
-        # Remove undefined values which where previously discarded
-        @{ $section->[0]->{'data'} } = grep(defined, @{ $section->[0]->{'data'} });
-
-        # If section happened to be empty, remove it as well
-        if (!scalar(@{ $section->[0]->{'data'} })) {
-            delete $settings[$sections];
-        } else {
-            push(@sections, [$section->[0]->{'id'}, $section->[0]->{'title'}]);
-        }
-    }
-}
+my $settings_data       = theme_settings_data();
+my @settings            = @{ $settings_data->{'settings'} };
+my @excluded_options    = @{ $settings_data->{'excluded_options'} };
+my @sections            = @{ $settings_data->{'sections'} };
+my @config_quick_access = @{ $settings_data->{'config_quick_access'} };
 
 my ($section, $sid, $sname);
 if (@sections > 1) {
@@ -92,8 +55,7 @@ if (@sections > 1) {
                                                         'container-class' => 'elm-rel-z config-search',
                                                         'button-class'    => 'btn-default elm-rel-z heighter-28 pd-lr-8',
                                                         'ul-class'        => 'pd-tb-0',
-                                                     }
-                                    )
+                                                     })
                                     .
                                     &ui_submit($theme_text{'extensions_mail_pagination_left'},
                                                "nprev", undef, undef,
@@ -102,8 +64,7 @@ if (@sections > 1) {
                                     .
                                     &ui_submit($theme_text{'extensions_mail_pagination_right'},
                                                "nnext", undef, undef, "fa fa-fw fa-arrow-circle-o-right",
-                                               "heighter-28"
-                                    )
+                                               "heighter-28")
                                  ),
                                  'end_submits');
     print &ui_form_end();

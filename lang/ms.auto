@@ -2,6 +2,26 @@ settings_right_hotkey_options=Kekunci panas
 
 settings_right_reload=Muatkan halaman lalai pada suis tab
 
+settings_hotkey_toggle_key_webmin=Hotkey untuk memuatkan menu Webmin
+settings_hotkey_toggle_key_virtualmin=Hotkey untuk memuatkan menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Hotkey untuk memuatkan menu Cloudmin
+settings_hotkey_toggle_key_usermin=Hotkey untuk memuatkan menu Usermin
+settings_hotkey_toggle_key_webmail=Hotkey untuk memuatkan menu Mel
+settings_hotkey_sysinfo=Hotkey untuk membuka papan pemuka
+settings_hotkey_shell=Hotkey untuk membuka terminal lungsur turun
+settings_hotkey_favorites=Hotkey untuk membuka kegemaran
+settings_hotkey_focus_search=Hotkey untuk memfokus pada medan carian
+settings_hotkey_reload=Hotkey untuk memuat semula halaman semasa
+
+settings_hotkey_toggle_slider=Kekunci cepat untuk menogol keterlihatan peluncur sisi
+
+theme_xhred_sysinfo_wmdocs=Dokumentasi webmin
+theme_xhred_sysinfo_vmdocs=dokumentasi Virtualmin
+theme_xhred_sysinfo_cmdocs=Dokumentasi Cloudmin
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Hotkey untuk menogol palet warna
+
 #18.48
 theme_force_upgrade=Kemas kini tema
 theme_update_footer=Sila berbaik hati melaporkan pepijat kepada $1 repositori. Sertai saluran $2 kami untuk mendapatkan berita terkini.
@@ -252,7 +272,7 @@ settings_mail_ui=Dayakan UI mel baru
 settings_theme_config_admins_only_privileged_error=Akses ditolak: Pentadbir telah menyekat akses ke penyesuaian pengguna
 
 theme_xhred_tooltip_navigation_pinned=Sematkan/lepaskan menu navigasi
-settings_hotkey_navigation=Hotkey untuk menukar menu navigasi
+settings_hotkey_navigation=Kekunci pintas untuk menogol keadaan menu navigasi
 
 theme_xhred_search_in_webmin=Cari Webmin
 theme_xhred_search_in_usermin=Cari Usermin
@@ -261,7 +281,7 @@ theme_xhred_search_in_servermanager=Cari Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Salin pilihan ke papan keratan
 
-settings_hotkey_slider=Kekunci panas untuk menukar slaid sisi
+settings_hotkey_slider=Kekunci cepat untuk menogol keadaan gelangsar sisi
 
 theme_git_update_locked=Kemas kini tema tidak dapat diselesaikan kerana tidak ada sambungan ke GitHub atau kelebihan had API. Untuk permintaan terakhir, tanpa pengesahan, had kadar membenarkan hingga 60 permintaan per jam. Cuba lagi kemudian atau gunakan konsol untuk melakukannya secara manual melalui skrip kemas kini.
 
@@ -636,7 +656,7 @@ theme_xhred_webminlog_module_no_command_escapes=Togol garis miring ke belakang u
 settings_navigation_auto_fold_category=Autolipat kategori tidak aktif
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Menjana senarai pilihan yang boleh dicari untuk templat
 theme_xhred_tooltip_virtualmin_templates_filter=Cari di seluruh semua pilihan templat
-theme_sysinfo_vmforum=Komuniti Virtualmin
+theme_xhred_sysinfo_vmforum=Komuniti Virtualmin
 theme_xhred_tooltip_support_ticket=Serahkan tiket sokongan dengan maklumat sistem yang dilampirkan; tahan kekunci $1 untuk menyalin pautan sokongan ke papan keratan
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Paksa untuk memuat semula maklumat sistem
 theme_xhred_disk_quota_error_title=Habis kuota
@@ -700,3 +720,20 @@ theme_xhred_filemanager_changing_acls=Menukar senarai kawalan akses.
 theme_xhred_filemanager_successful_acls_with_errors=Senarai kawalan akses tidak berjaya ditukar untuk semua objek:
 theme_xhred_filemanager_successful_acls=Senarai kawalan akses telah berjaya ditukar.
 theme_download_error=Ralat memuat turun fail kerana ia berada di luar direktori yang dibenarkan  : $1 
+
+#20.22
+theme_xhred_hotkeys_help=Bantuan (F1)
+theme_xhred_hotkeys_help_title=Pintasan Papan Kekunci
+theme_xhred_hotkeys_help_title_docs=Dokumentasi
+theme_xhred_hotkeys_help_title_global=Pintasan Global
+theme_xhred_hotkeys_help_title_module=Pintasan Khusus Modul
+theme_xhred_hotkeys_help_title_fm=Pintasan Pengurus Fail
+theme_xhred_hotkeys_help_title_edit=Pintasan Editor
+theme_xhred_global_community=Komuniti
+theme_xhred_hotkeys_server_error=Tidak boleh mendapatkan semula fail bantuan
+theme_xhred_hotkeys_custom_to_opens=dibuka
+theme_xhred_hotkeys_custom_not_set=tidak ditetapkan
+theme_xhred_hotkey_open_module_config_privileged=Hotkey untuk membuka konfigurasi modul
+theme_xhred_hotkey_open_theme_config=Hotkey untuk membuka konfigurasi tema
+theme_xhred_hotkey_clear_cache=Kosongkan cache dan muat semula
+theme_xhred_hotkey_open_new=Salin ke tab baharu

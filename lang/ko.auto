@@ -138,16 +138,16 @@ settings_theme_options_button=테마 설정 표시 버튼
 
 settings_hotkeys_active=단축키 사용
 settings_hotkey_toggle_modifier=단축키 수정 자
-settings_hotkey_toggle_key_webmin=Webmin 단축키
-settings_hotkey_toggle_key_virtualmin=Virtualmin을위한 핫키
-settings_hotkey_toggle_key_cloudmin=Cloudmin 단축키
-settings_hotkey_toggle_key_usermin=Usermin 단축키
-settings_hotkey_toggle_key_webmail=메일 단축키
-settings_hotkey_sysinfo=대시 보드 단축키
-settings_hotkey_shell=터미널 단축키
-settings_hotkey_favorites=즐겨 찾기 단축키
-settings_hotkey_focus_search=검색 필드의 단축키
-settings_hotkey_reload=페이지 새로 고침을위한 단축키
+settings_hotkey_toggle_key_webmin=Webmin 메뉴를 로드하는 단축키
+settings_hotkey_toggle_key_virtualmin=Virtualmin 메뉴를 불러오는 단축키
+settings_hotkey_toggle_key_cloudmin=Cloudmin 메뉴를 불러오는 단축키
+settings_hotkey_toggle_key_usermin=Usermin 메뉴를 불러오는 단축키
+settings_hotkey_toggle_key_webmail=메일 메뉴를 불러오는 단축키
+settings_hotkey_sysinfo=대시보드를 여는 단축키
+settings_hotkey_shell=드롭다운 터미널을 여는 단축키
+settings_hotkey_favorites=즐겨찾기 열기 단축키
+settings_hotkey_focus_search=검색 필드에 집중하는 단축키
+settings_hotkey_reload=현재 페이지 새로고침 단축키
 
 settings_sysinfo_easypie_charts=차트 표시
 settings_sysinfo_theme_updates=정통 테마 업데이트 확인
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Cloudmin의 기본 페이지
 
 settings_right_clear_local_cache=캐시 지우기
 settings_side_slider_fixed=항상 보이게
-settings_hotkey_toggle_slider=사이드 슬라이더 단축키
+settings_hotkey_toggle_slider=측면 슬라이더 가시성을 전환하는 단축키
 
 settings_side_slider_enabled=슬라이더 사용
 settings_leftmenu_user_html=HTML 스 니펫 표시
@@ -184,9 +184,9 @@ theme_global_success=성공
 theme_global_info=정보
 sysinfo_system_status_warning=<strong>시스템 정보</strong>를 표시하려면 사용자 설정에서 <em>시스템 상태</em> 모듈을 활성화해야합니다.
 settings_leftmenu_user_html_privileged=관리자에게만 HTML 스 니펫 표시
-theme_sysinfo_wmdocs=Webmin 설명서
-theme_sysinfo_vmdocs=Virtualmin 설명서
-theme_sysinfo_cmdocs=Cloudmin 설명서
+theme_xhred_sysinfo_wmdocs=Webmin 설명서
+theme_xhred_sysinfo_vmdocs=버추얼민 문서
+theme_xhred_sysinfo_cmdocs=클라우드민 문서
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=자바 스크립트
@@ -549,7 +549,7 @@ theme_xhred_move_down=아래로 이동
 theme_xhred_add_after=이후에 추가
 theme_xhred_add_before=전에 추가
 settings_show_night_mode_link=주야간 모드 버튼 표시
-settings_hotkey_toggle_key_night_mode=어두운/밝은 팔레트를 전환하기위한 단축키
+settings_hotkey_toggle_key_night_mode=색상 팔레트 전환 단축키
 settings_title=테마 구성
 settings_subtitle=사용자
 
@@ -868,7 +868,7 @@ settings_mail_ui=새 메일 UI 사용
 settings_theme_config_admins_only_privileged_error=액세스 거부 : 관리자가 사용자 정의에 대한 액세스를 차단했습니다
 
 theme_xhred_tooltip_navigation_pinned=탐색 메뉴 핀/핀 해제
-settings_hotkey_navigation=탐색 메뉴 전환을위한 단축키
+settings_hotkey_navigation=탐색 메뉴 상태를 전환하는 단축키
 
 theme_xhred_search_in_webmin=Webmin 검색
 theme_xhred_search_in_usermin=Usermin 검색
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Cloudmin 검색
 
 theme_xhred_filemanager_context_clipboard_selection=선택 물을 클립 보드에 복사
 
-settings_hotkey_slider=사이드 슬라이더 전환을위한 단축키
+settings_hotkey_slider=측면 슬라이더 상태를 전환하는 단축키
 
 theme_git_update_locked=GitHub에 연결되지 않았거나 API 속도 제한을 초과하여 테마 업데이트를 완료 할 수 없습니다. 후자의 인증되지 않은 요청의 경우 속도 제한은 시간당 최대 60 개의 요청을 허용합니다. 나중에 다시 시도하거나 콘솔을 사용하여 업데이트 스크립트를 통해 수동으로 수행하십시오.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=실행된 명령에 대한 백�
 settings_navigation_auto_fold_category=자동 접기 비활성 카테고리
 theme_xhred_tooltip_virtualmin_templates_filter_generating=템플릿에 대한 검색 가능한 옵션 목록 생성
 theme_xhred_tooltip_virtualmin_templates_filter=템플릿의 모든 옵션에서 검색
-theme_sysinfo_vmforum=Virtualmin 커뮤니티
+theme_xhred_sysinfo_vmforum=버추얼민 커뮤니티
 theme_xhred_tooltip_support_ticket=첨부된 시스템 정보와 함께 지원 티켓을 제출하십시오. 지원 링크를 클립보드에 복사하려면 $1 키를 누르고 계십시오
 theme_xhred_tooltip_side_slider_refresh_sysinfo=시스템 정보를 강제로 새로 고침
 theme_xhred_disk_quota_error_title=할당량 부족
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=액세스 제어 목록 변경.
 theme_xhred_filemanager_successful_acls_with_errors=모든 개체에 대해 액세스 제어 목록이 성공적으로 변경되지 않았습니다
 theme_xhred_filemanager_successful_acls=액세스 제어 목록이 성공적으로 변경되었습니다.
 theme_download_error=파일이 허용된 디렉터리 외부에 있기 때문에 파일을 다운로드하는 중 오류 발생 : $1
+
+#20.22
+theme_xhred_hotkeys_help=도움말(F1)
+theme_xhred_hotkeys_help_title=키보드 단축키
+theme_xhred_hotkeys_help_title_docs=선적 서류 비치
+theme_xhred_hotkeys_help_title_global=전역 바로 가기
+theme_xhred_hotkeys_help_title_module=모듈별 바로 가기
+theme_xhred_hotkeys_help_title_fm=파일 관리자 바로 가기
+theme_xhred_hotkeys_help_title_edit=편집기 바로 가기
+theme_xhred_global_community=지역 사회
+theme_xhred_hotkeys_server_error=도움말 파일을 검색할 수 없습니다
+theme_xhred_hotkeys_custom_to_opens=열린다
+theme_xhred_hotkeys_custom_not_set=설정되지 않음
+theme_xhred_hotkey_open_module_config_privileged=모듈 구성을 여는 단축키
+theme_xhred_hotkey_open_theme_config=테마 구성을 여는 단축키
+theme_xhred_hotkey_clear_cache=캐시 지우기 및 다시 로드
+theme_xhred_hotkey_open_new=새 탭에 복제

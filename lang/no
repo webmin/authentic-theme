@@ -135,16 +135,6 @@ settings_theme_options_button=Vis knapp for tema innstillinger
 
 settings_hotkeys_active=Aktiver bruk av hurtigtaster
 settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hurtigtast for Webmin
-settings_hotkey_toggle_key_virtualmin=Hurtigtast for Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hurtigtast for Cloudmin
-settings_hotkey_toggle_key_usermin=Hurtigtast for Usermin
-settings_hotkey_toggle_key_webmail=Hurtigtast for E-post
-settings_hotkey_sysinfo=Hurtigtast for Instrumentpanel
-settings_hotkey_shell=Hurtigtast for skall
-settings_hotkey_favorites=Hurtigtast for Favoritter
-settings_hotkey_focus_search=Hurtigtast for søkefelt
-settings_hotkey_reload=Hurtigtast for omlasting av side
 
 settings_sysinfo_easypie_charts=Vis diagrammer
 settings_sysinfo_theme_updates=Se etter oppdateringer til Authentic Tema
@@ -159,7 +149,6 @@ settings_right_cloudmin_default=Standard side for Cloudmin
 
 settings_right_clear_local_cache=Nullstill cache
 settings_side_slider_fixed=Hold glidebryter alltid synlig
-settings_hotkey_toggle_slider=Hurtigtast for Notification Slider
 
 settings_side_slider_enabled=Aktiver slider
 settings_leftmenu_user_html=Vis HTML snippet
@@ -181,9 +170,6 @@ theme_global_success=Suksess
 theme_global_info=Informasjon
 sysinfo_system_status_warning=For å ha vise <strong>Systeminformasjon</strong> må du aktivere <em>System Status</em> modulen i brukerinnstillingene.
 settings_leftmenu_user_html_privileged=Vis HTML snippet bare til administratorer
-theme_sysinfo_wmdocs=Webmin dokumentasjon
-theme_sysinfo_vmdocs=Virtualmin dokumentasjon
-theme_sysinfo_cmdocs=Cloudmin dokumentasjon
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -545,7 +531,6 @@ theme_xhred_move_down=Flytt ned
 theme_xhred_add_after=Legg til etter
 theme_xhred_add_before=Legg til før
 settings_show_night_mode_link=Vis knapp for dag/natt-modus
-settings_hotkey_toggle_key_night_mode=Hurtigtast for veksling mellom mørk og lys palett
 settings_title=Tema konfigurasjon
 settings_subtitle=For bruker
 
@@ -859,7 +844,6 @@ settings_mail_ui=Aktiver nytt e-post UI
 settings_theme_config_admins_only_privileged_error=Tilgang nektet: Administrator has blokkert tilgang til brukertilpasninger
 
 theme_xhred_tooltip_navigation_pinned=Fest/løsne navigasjonsmenyen
-settings_hotkey_navigation=Hurtigtast for veksling av navigasjonsmeny
 
 theme_xhred_search_in_webmin=Søk i Webmin
 theme_xhred_search_in_usermin=Søk i Usermin
@@ -867,8 +851,6 @@ theme_xhred_search_in_virtualserver=Søk i Virtualmin
 theme_xhred_search_in_servermanager=Søk i Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopier utvalg til uklippstavle
-
-settings_hotkey_slider=Hurtigtast for veksling av side glidebryter
 
 theme_git_update_locked=Temaoppdatering kan ikke fullføres på grunn av manglende tilkobling til GitHub eller overskridelse av API-begrensing. For sistnevnte er begrensingen for uautentiserte forespørsler opptil 60 per time. Prøv igjen senere, eller bruk konsollet til å gjøre det manuelt via oppdateringsskript.
 

@@ -2,6 +2,26 @@ settings_right_hotkey_options=Tecles d'accés directe
 
 settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
 
+settings_hotkey_toggle_key_webmin=Tecla d'accés directe per carregar el menú Webmin
+settings_hotkey_toggle_key_virtualmin=Tecla d'accés ràpid per carregar el menú de Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tecla d'accés ràpid per carregar el menú de Cloudmin
+settings_hotkey_toggle_key_usermin=Tecla d'accés directe per carregar el menú Usermin
+settings_hotkey_toggle_key_webmail=Tecla d'accés ràpid per carregar el menú de correu
+settings_hotkey_sysinfo=Tecla d'accés ràpid per obrir el tauler
+settings_hotkey_shell=Tecla d'accés ràpid per obrir el terminal desplegable
+settings_hotkey_favorites=Tecla d'accés ràpid per obrir els preferits
+settings_hotkey_focus_search=Tecla d'accés ràpid per centrar-se en el camp de cerca
+settings_hotkey_reload=Tecla d'accés ràpid per actualitzar la pàgina actual
+
+settings_hotkey_toggle_slider=Tecla d'accés ràpid per canviar la visibilitat del control lliscant lateral
+
+theme_xhred_sysinfo_wmdocs=Documentació de Webmin
+theme_xhred_sysinfo_vmdocs=Documentació de Virtualmin
+theme_xhred_sysinfo_cmdocs=Documentació de Cloudmin
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Tecla d'accés ràpid per canviar la paleta de colors
+
 #18.48
 theme_force_upgrade=Actualitza el tema
 theme_update_footer=Si us plau, informeu d'errors al repositori $1. Uneix-te al nostre canal $2 per rebre les últimes notícies.
@@ -183,7 +203,7 @@ settings_mail_ui=Activa la nova interfície de correu electrònic
 settings_theme_config_admins_only_privileged_error=Accés denegat: l'administrador ha bloquejat l'accés a les personalitzacions dels usuaris
 
 theme_xhred_tooltip_navigation_pinned=Menú de fixació/fixació del menú
-settings_hotkey_navigation=Tecla directa per canviar el menú de navegació
+settings_hotkey_navigation=Tecla d'accés ràpid per canviar l'estat del menú de navegació
 
 theme_xhred_search_in_webmin=Cerca al Webmin
 theme_xhred_search_in_usermin=Cerca Usermin
@@ -192,7 +212,7 @@ theme_xhred_search_in_servermanager=Cerca a Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copia la selecció al porta-retalls
 
-settings_hotkey_slider=Tecla de comandament per desplaçar el control lliscant lateral
+settings_hotkey_slider=Tecla d'accés ràpid per canviar l'estat del control lliscant lateral
 
 theme_git_update_locked=L'actualització del tema no es pot completar perquè no hi ha cap connexió a GitHub o el seu excés de límit de la API. Per a les darreres peticions no autenticades, el límit de tarifa permet fins a 60 sol·licituds per hora. Torneu-ho a provar més tard o utilitzeu la consola per fer-ho manualment mitjançant un script d'actualització.
 
@@ -567,7 +587,7 @@ theme_xhred_webminlog_module_no_command_escapes=Commuta les barres invertides pe
 settings_navigation_auto_fold_category=Plega automàticament les categories inactives
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generació d'una llista d'opcions cercables per a la plantilla
 theme_xhred_tooltip_virtualmin_templates_filter=Cerca a totes les opcions de la plantilla
-theme_sysinfo_vmforum=Comunitat Virtualmin
+theme_xhred_sysinfo_vmforum=Comunitat Virtualmin
 theme_xhred_tooltip_support_ticket=Envieu el bitllet de suport amb la informació del sistema adjunta; manteniu premuda la tecla $1 per copiar l'enllaç de suport al porta-retalls
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Força per actualitzar la informació del sistema
 theme_xhred_disk_quota_error_title=Fora de quota
@@ -631,3 +651,20 @@ theme_xhred_filemanager_changing_acls=Canvi de la llista de control d'accés.
 theme_xhred_filemanager_successful_acls_with_errors=La llista de control d'accés no s'ha canviat correctament per a tots els objectes:
 theme_xhred_filemanager_successful_acls=La llista de control d'accés s'ha canviat correctament.
 theme_download_error=S'ha produït un error en baixar el fitxer perquè està fora del directori permès : $1
+
+#20.22
+theme_xhred_hotkeys_help=Ajuda (F1)
+theme_xhred_hotkeys_help_title=Dreceres de teclat
+theme_xhred_hotkeys_help_title_docs=Documentació
+theme_xhred_hotkeys_help_title_global=Dreceres globals
+theme_xhred_hotkeys_help_title_module=Dreceres específiques del mòdul
+theme_xhred_hotkeys_help_title_fm=Dreceres del gestor de fitxers
+theme_xhred_hotkeys_help_title_edit=Dreceres de l'editor
+theme_xhred_global_community=Comunitat
+theme_xhred_hotkeys_server_error=No es pot recuperar el fitxer d'ajuda
+theme_xhred_hotkeys_custom_to_opens=s'obre
+theme_xhred_hotkeys_custom_not_set=no establert
+theme_xhred_hotkey_open_module_config_privileged=Tecla d'accés ràpid per obrir la configuració del mòdul
+theme_xhred_hotkey_open_theme_config=Tecla d'accés ràpid per obrir la configuració del tema
+theme_xhred_hotkey_clear_cache=Esborra la memòria cau i torna a carregar
+theme_xhred_hotkey_open_new=Duplica a una pestanya nova

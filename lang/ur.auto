@@ -138,16 +138,16 @@ settings_theme_options_button=تھیم کی ترتیبات کا بٹن دکھا�
 
 settings_hotkeys_active=ہاٹکیز کے استعمال کو فعال کریں
 settings_hotkey_toggle_modifier=ہاٹکیز ترمیم کنندہ
-settings_hotkey_toggle_key_webmin=ہاٹکی برائے ویبمین
-settings_hotkey_toggle_key_virtualmin=ورچوئل مین کے لئے ہاٹکی
-settings_hotkey_toggle_key_cloudmin=کلاڈ مین کے لئے ہاٹکی
-settings_hotkey_toggle_key_usermin=ہاٹکی برائے صارفیت
-settings_hotkey_toggle_key_webmail=ہاٹکی برائے میل
-settings_hotkey_sysinfo=ڈیش بورڈ کیلئے ہاٹکی
-settings_hotkey_shell=ٹرمینل کے لئے ہاٹکی
-settings_hotkey_favorites=پسندیدہ کے لئے ہاٹکی
-settings_hotkey_focus_search=ہاٹکی تلاش کے میدان کے لئے
-settings_hotkey_reload=صفحہ دوبارہ لوڈ کے لئے ہاٹکی
+settings_hotkey_toggle_key_webmin=ویب مین مینو کو لوڈ کرنے کے لیے ہاٹکی
+settings_hotkey_toggle_key_virtualmin=ورچوئل مین مینو لوڈ کرنے کے لیے ہاٹکی
+settings_hotkey_toggle_key_cloudmin=Cloudmin مینو کو لوڈ کرنے کے لیے ہاٹکی
+settings_hotkey_toggle_key_usermin=یوزر مین مینو کو لوڈ کرنے کے لیے ہاٹکی
+settings_hotkey_toggle_key_webmail=میل مینو لوڈ کرنے کے لیے ہاٹکی
+settings_hotkey_sysinfo=ڈیش بورڈ کھولنے کے لیے ہاٹکی
+settings_hotkey_shell=ڈراپ ڈاؤن ٹرمینل کھولنے کے لیے ہاٹکی
+settings_hotkey_favorites=پسندیدہ کھولنے کے لیے ہاٹکی
+settings_hotkey_focus_search=تلاش کے میدان پر توجہ مرکوز کرنے کے لیے ہاٹکی
+settings_hotkey_reload=موجودہ صفحہ کو تازہ کرنے کے لیے ہاٹکی
 
 settings_sysinfo_easypie_charts=چارٹ دکھائیں
 settings_sysinfo_theme_updates=مستند تھیم کی تازہ کاریوں کو چیک کریں
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=کلاؤڈمن کے لئے پہلے سے طے ش
 
 settings_right_clear_local_cache=کیشے صاف کریں
 settings_side_slider_fixed=ہمیشہ دکھائے رکھیں
-settings_hotkey_toggle_slider=سائڈ سلائیڈر کے لئے ہاٹکی
+settings_hotkey_toggle_slider=سائیڈ سلائیڈر کی مرئیت کو ٹوگل کرنے کے لیے ہاٹکی
 
 settings_side_slider_enabled=سلائیڈر کو فعال کریں
 settings_leftmenu_user_html=HTML کا ٹکڑا دکھائیں
@@ -184,9 +184,9 @@ theme_global_success=کامیابی
 theme_global_info=معلومات
 sysinfo_system_status_warning=In order to have <strong>System Information</strong> displayed you will need to enable <em>System Status</em> module in user settings.
 settings_leftmenu_user_html_privileged=صرف منتظمین کے لئے HTML کا ٹکڑا دکھائیں
-theme_sysinfo_wmdocs=ویبمین دستاویزات
-theme_sysinfo_vmdocs=ورچوئل مین دستاویزات
-theme_sysinfo_cmdocs=کلاؤڈ مائن دستاویزات
+theme_xhred_sysinfo_wmdocs=ویب من دستاویزات
+theme_xhred_sysinfo_vmdocs=ورچوئل مین دستاویزات
+theme_xhred_sysinfo_cmdocs=Cloudmin دستاویزات
 theme_fileformat_css=سی ایس ایس
 theme_fileformat_json=JSON
 theme_fileformat_js=جاوا اسکرپٹ
@@ -549,7 +549,7 @@ theme_xhred_move_down=نیچے منتقل
 theme_xhred_add_after=کے بعد شامل کریں
 theme_xhred_add_before=پہلے شامل کریں
 settings_show_night_mode_link=ڈے/نائٹ موڈ بٹن دکھائیں
-settings_hotkey_toggle_key_night_mode=تاریک/لائٹ پیلیٹ ٹوگل کرنے کیلئے ہاٹکی
+settings_hotkey_toggle_key_night_mode=رنگ پیلیٹ ٹوگل کرنے کے لیے ہاٹکی
 settings_title=تھیم کنفیگریشن
 settings_subtitle=صارف کے لئے
 
@@ -868,7 +868,7 @@ settings_mail_ui=نیا میل UI فعال کریں
 settings_theme_config_admins_only_privileged_error=رسائی سے انکار: ایڈمنسٹریٹر نے صارف کی تخصیص تک رسائی کو مسدود کردیا ہے
 
 theme_xhred_tooltip_navigation_pinned=نیویگیشن مینو کو پن/ان پین کھولیں
-settings_hotkey_navigation=ٹوگلنگ نیویگیشن مینو کیلئے ہاٹکی
+settings_hotkey_navigation=نیویگیشن مینو کی حالت کو ٹوگل کرنے کے لیے ہاٹکی
 
 theme_xhred_search_in_webmin=ویبمین تلاش کریں
 theme_xhred_search_in_usermin=یوزر مین تلاش کریں
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=کلاؤڈ مین تلاش کریں
 
 theme_xhred_filemanager_context_clipboard_selection=کلیک بورڈ میں سلیکشن کاپی کریں
 
-settings_hotkey_slider=ٹوگلنگ سائڈ سلائیڈر کیلئے ہاٹکی
+settings_hotkey_slider=سائیڈ سلائیڈر حالت کو ٹوگل کرنے کے لیے ہاٹکی
 
 theme_git_update_locked=تھیم اپ ڈیٹ GitHub یا اس کی API کی حد کی حد سے زیادہ تعلق نہ ہونے کی وجہ سے مکمل نہیں ہوسکتا ہے۔ مؤخر الذکر ، غیر تصدیق شدہ درخواستوں کے لئے ، شرح کی حد فی گھنٹہ 60 درخواستوں کی اجازت دیتی ہے۔ بعد میں دوبارہ کوشش کریں یا اپ ڈیٹ اسکرپٹ کے ذریعہ دستی طور پر کرنے کیلئے کنسول استعمال کریں۔
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=ایگزیکیٹڈ کمانڈ ک
 settings_navigation_auto_fold_category=آٹو فولڈ غیر فعال زمرے
 theme_xhred_tooltip_virtualmin_templates_filter_generating=ٹیمپلیٹ کے لیے اختیارات کی تلاش کے قابل فہرست تیار کرنا
 theme_xhred_tooltip_virtualmin_templates_filter=ٹیمپلیٹ کے تمام اختیارات میں تلاش کریں۔
-theme_sysinfo_vmforum=ورچوئل مین کمیونٹی
+theme_xhred_sysinfo_vmforum=ورچوئل مین کمیونٹی
 theme_xhred_tooltip_support_ticket=منسلک نظام کی معلومات کے ساتھ سپورٹ ٹکٹ جمع کروائیں؛ سپورٹ لنک کو کلپ بورڈ پر کاپی کرنے کے لیے $1 کلید کو پکڑیں۔
 theme_xhred_tooltip_side_slider_refresh_sysinfo=سسٹم کی معلومات کو ریفریش کرنے پر مجبور کریں۔
 theme_xhred_disk_quota_error_title=کوٹے سے باہر
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=رسائی کنٹرول لسٹ کو تبد
 theme_xhred_filemanager_successful_acls_with_errors=تمام اشیاء کے لیے رسائی کنٹرول لسٹ کو کامیابی کے ساتھ تبدیل نہیں کیا گیا ہے۔
 theme_xhred_filemanager_successful_acls=رسائی کنٹرول لسٹ کو کامیابی کے ساتھ تبدیل کر دیا گیا ہے۔
 theme_download_error=فائل کو ڈاؤن لوڈ کرنے میں خرابی کیونکہ یہ اجازت شدہ ڈائریکٹری سے باہر ہے : $1
+
+#20.22
+theme_xhred_hotkeys_help=مدد (F1)
+theme_xhred_hotkeys_help_title=کی بورڈ شارٹ کٹس
+theme_xhred_hotkeys_help_title_docs=دستاویزی
+theme_xhred_hotkeys_help_title_global=عالمی شارٹ کٹس
+theme_xhred_hotkeys_help_title_module=ماڈیول مخصوص شارٹ کٹس
+theme_xhred_hotkeys_help_title_fm=فائل مینیجر شارٹ کٹس
+theme_xhred_hotkeys_help_title_edit=ایڈیٹر شارٹ کٹس
+theme_xhred_global_community=برادری
+theme_xhred_hotkeys_server_error=مدد کی فائل بازیافت نہیں کی جا سکتی
+theme_xhred_hotkeys_custom_to_opens=کھولتا ہے
+theme_xhred_hotkeys_custom_not_set=سیٹ نہیں ہے
+theme_xhred_hotkey_open_module_config_privileged=ماڈیول تشکیل کھولنے کے لیے ہاٹکی
+theme_xhred_hotkey_open_theme_config=تھیم کی تشکیل کو کھولنے کے لیے ہاٹکی
+theme_xhred_hotkey_clear_cache=کیشے صاف کریں اور دوبارہ لوڈ کریں۔
+theme_xhred_hotkey_open_new=ایک نئے ٹیب پر ڈپلیکیٹ کریں۔

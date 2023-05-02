@@ -160,8 +160,12 @@ var
     settings_sysinfo_cpu_and_fans_side_slider_always_show = false,
     settings_check_remote_updates = true,
 
-    // Open module config hotkey
+    // Hotkeys related
+    settings_hotkey_theme_help_keycode = 112,
     settings_hotkey_open_module_config_privileged = 'comma',
+
+    // Open module config hotkey
+    settings_hotkey_duplicate_window_privileged = 'd',
 
     // Notifications related
     config_portable_notifications_self = true,

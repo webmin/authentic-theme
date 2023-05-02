@@ -138,16 +138,16 @@ settings_theme_options_button=Prikaži gumb postavki teme
 
 settings_hotkeys_active=Omogući upotrebu brzih tipki
 settings_hotkey_toggle_modifier=Modifikator hitnih tipki
-settings_hotkey_toggle_key_webmin=Hotkey za Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey za Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey za Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey za Usermin
-settings_hotkey_toggle_key_webmail=Hotkey za poštu
-settings_hotkey_sysinfo=Hotkey za nadzornu ploču
-settings_hotkey_shell=Hotkey za terminal
-settings_hotkey_favorites=Hotkey za favorite
-settings_hotkey_focus_search=Hotkey za polje pretraživanja
-settings_hotkey_reload=Hotkey za ponovno učitavanje stranica
+settings_hotkey_toggle_key_webmin=Prečac za učitavanje izbornika Webmin
+settings_hotkey_toggle_key_virtualmin=Prečac za učitavanje izbornika Virtualmin
+settings_hotkey_toggle_key_cloudmin=Prečac za učitavanje Cloudmin izbornika
+settings_hotkey_toggle_key_usermin=Prečac za učitavanje izbornika Usermin
+settings_hotkey_toggle_key_webmail=Prečac za učitavanje izbornika pošte
+settings_hotkey_sysinfo=Prečac za otvaranje nadzorne ploče
+settings_hotkey_shell=Prečac za otvaranje padajućeg terminala
+settings_hotkey_favorites=Prečac za otvaranje favorita
+settings_hotkey_focus_search=Prečac za fokusiranje na polje za pretraživanje
+settings_hotkey_reload=Prečac za osvježavanje trenutne stranice
 
 settings_sysinfo_easypie_charts=Prikaži grafikone
 settings_sysinfo_theme_updates=Provjerite autentična ažuriranja teme
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Zadana stranica za Cloudmin
 
 settings_right_clear_local_cache=Očisti predmemoriju
 settings_side_slider_fixed=Budite uvijek vidljivi
-settings_hotkey_toggle_slider=Hotkey za bočni klizač
+settings_hotkey_toggle_slider=Prečac za promjenu vidljivosti bočnog klizača
 
 settings_side_slider_enabled=Omogući klizač
 settings_leftmenu_user_html=Pokažite HTML isječak
@@ -184,9 +184,9 @@ theme_global_success=Uspjeh
 theme_global_info=Informacija
 sysinfo_system_status_warning=Da bi se prikazale </strong>informacije o sustavu</strong>, morat ćete omogućiti <em>status sustava</em> u korisničkim postavkama.
 settings_leftmenu_user_html_privileged=Prikaži isječak HTML samo za administratore
-theme_sysinfo_wmdocs=Dokumentacija Webmin-a
-theme_sysinfo_vmdocs=Virtualmin dokumentacija
-theme_sysinfo_cmdocs=Cloudmin dokumentacija
+theme_xhred_sysinfo_wmdocs=Webmin dokumentacija
+theme_xhred_sysinfo_vmdocs=Virtualmin dokumentacija
+theme_xhred_sysinfo_cmdocs=Cloudmin dokumentacija
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +549,7 @@ theme_xhred_move_down=Pomicati prema dolje
 theme_xhred_add_after=Dodaj poslije
 theme_xhred_add_before=Dodaj prije
 settings_show_night_mode_link=Prikaži gumb načina rada dan/noć
-settings_hotkey_toggle_key_night_mode=Tipka za prebacivanje palete tamno/svijetlo
+settings_hotkey_toggle_key_night_mode=Prečac za prebacivanje palete boja
 settings_title=Konfiguracija teme
 settings_subtitle=Za korisnika
 
@@ -868,7 +868,7 @@ settings_mail_ui=Omogući novo korisničko sučelje e-pošte
 settings_theme_config_admins_only_privileged_error=Pristup odbijen: Administrator je blokirao pristup korisničkim prilagodbama
 
 theme_xhred_tooltip_navigation_pinned=Prikvači/ukloni navigacijski izbornik
-settings_hotkey_navigation=Tipka za preklapanje navigacijskog izbornika
+settings_hotkey_navigation=Prečac za promjenu stanja navigacijskog izbornika
 
 theme_xhred_search_in_webmin=Pretražite Webmin
 theme_xhred_search_in_usermin=Pretražite Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Pretražite Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopirajte izbor u međuspremnik
 
-settings_hotkey_slider=Tipka za prebacivanje bočnog klizača
+settings_hotkey_slider=Prečac za promjenu stanja bočnog klizača
 
 theme_git_update_locked=Ažuriranje teme ne može se dovršiti jer nema veze s GitHub-om ili prekoračenja ograničenja stope API-ja. Za potonje, neovlaštene zahtjeve, ograničenje stope dopušta do 60 zahtjeva na sat. Pokušajte ponovo kasnije ili upotrijebite konzolu da biste to učinili ručno putem skripte za ažuriranje.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=Prebacite obrnute kose crte za i
 settings_navigation_auto_fold_category=Automatsko preklapanje neaktivnih kategorija
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generiranje pretraživog popisa opcija za predložak
 theme_xhred_tooltip_virtualmin_templates_filter=Pretražite sve opcije predloška
-theme_sysinfo_vmforum=Virtualmin zajednica
+theme_xhred_sysinfo_vmforum=Virtualmin zajednica
 theme_xhred_tooltip_support_ticket=Pošaljite ulaznicu za podršku s priloženim informacijama o sustavu; držite tipku $1 za kopiranje veze za podršku u međuspremnik
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Prisilno osvježavanje informacija o sustavu
 theme_xhred_disk_quota_error_title=Izvan kvote
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=Promjena liste kontrole pristupa.
 theme_xhred_filemanager_successful_acls_with_errors=Popis kontrole pristupa nije uspješno promijenjen za sve objekte:
 theme_xhred_filemanager_successful_acls=Popis kontrole pristupa je uspješno promijenjen.
 theme_download_error=Pogreška pri preuzimanju datoteke jer je izvan dopuštenog direktorija : $1
+
+#20.22
+theme_xhred_hotkeys_help=Pomoć (F1)
+theme_xhred_hotkeys_help_title=Tipkovnički prečaci
+theme_xhred_hotkeys_help_title_docs=Dokumentacija
+theme_xhred_hotkeys_help_title_global=Globalni prečaci
+theme_xhred_hotkeys_help_title_module=Prečaci specifični za modul
+theme_xhred_hotkeys_help_title_fm=Prečaci upravitelja datoteka
+theme_xhred_hotkeys_help_title_edit=Prečaci uređivača
+theme_xhred_global_community=Zajednica
+theme_xhred_hotkeys_server_error=Nije moguće dohvatiti datoteku pomoći
+theme_xhred_hotkeys_custom_to_opens=otvara
+theme_xhred_hotkeys_custom_not_set=nespreman
+theme_xhred_hotkey_open_module_config_privileged=Prečac za otvaranje konfiguracije modula
+theme_xhred_hotkey_open_theme_config=Prečac za otvaranje konfiguracije teme
+theme_xhred_hotkey_clear_cache=Očistite predmemoriju i ponovno učitajte
+theme_xhred_hotkey_open_new=Dupliciraj na novu karticu

@@ -2,6 +2,26 @@ settings_right_hotkey_options=热键
 
 settings_right_reload=在选项卡开关上加载默认页面
 
+settings_hotkey_toggle_key_webmin=加载 Webmin 菜单的热键
+settings_hotkey_toggle_key_virtualmin=加载 Virtualmin 菜单的热键
+settings_hotkey_toggle_key_cloudmin=加载 Cloudmin 菜单的热键
+settings_hotkey_toggle_key_usermin=加载 Usermin 菜单的热键
+settings_hotkey_toggle_key_webmail=加载邮件菜单的热键
+settings_hotkey_sysinfo=打开仪表板的热键
+settings_hotkey_shell=打开下拉终端的热键
+settings_hotkey_favorites=打开收藏夹的热键
+settings_hotkey_focus_search=专注于搜索字段的热键
+settings_hotkey_reload=刷新当前页面的热键
+
+settings_hotkey_toggle_slider=切换侧滑块可见性的热键
+
+theme_xhred_sysinfo_wmdocs=Webmin 文档
+theme_xhred_sysinfo_vmdocs=虚拟文档
+theme_xhred_sysinfo_cmdocs=Cloudmin 文档
+
+#18.40
+settings_hotkey_toggle_key_night_mode=用于切换调色板的热键
+
 #18.48
 theme_force_upgrade=更新主题
 theme_update_footer=请向 $1 存储库报告错误。加入我们的 $2 频道以获取最新消息。
@@ -43,7 +63,7 @@ settings_mail_ui=启用新邮件界面
 settings_theme_config_admins_only_privileged_error=访问被拒绝：管理员阻止了对用户定制的访问
 
 theme_xhred_tooltip_navigation_pinned=固定/取消固定导航菜单
-settings_hotkey_navigation=切换导航菜单的热键
+settings_hotkey_navigation=切换导航菜单状态的热键
 
 theme_xhred_search_in_webmin=搜索Webmin
 theme_xhred_search_in_usermin=搜索Usermin
@@ -52,7 +72,7 @@ theme_xhred_search_in_servermanager=搜索Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=将选择内容复制到剪贴板
 
-settings_hotkey_slider=切换侧滑块的热键
+settings_hotkey_slider=切换侧滑块状态的热键
 
 theme_git_update_locked=由于没有与GitHub的连接或其API速率限制过高，无法完成主题更新。对于后面未经身份验证的请求，速率限制允许每小时最多60个请求。稍后再试，或使用控制台通过更新脚本手动完成。
 
@@ -427,7 +447,7 @@ theme_xhred_webminlog_module_no_command_escapes=为执行的命令切换反斜�
 settings_navigation_auto_fold_category=自动折叠非活动类别
 theme_xhred_tooltip_virtualmin_templates_filter_generating=为模板生成可搜索的选项列表
 theme_xhred_tooltip_virtualmin_templates_filter=搜索模板的所有选项
-theme_sysinfo_vmforum=Virtualmin 社区
+theme_xhred_sysinfo_vmforum=虚拟社区
 theme_xhred_tooltip_support_ticket=提交附有系统信息的支持票；按住 $1 键将支持链接复制到剪贴板
 theme_xhred_tooltip_side_slider_refresh_sysinfo=强制刷新系统信息
 theme_xhred_disk_quota_error_title=超出配额
@@ -491,3 +511,20 @@ theme_xhred_filemanager_changing_acls=更改访问控制列表。
 theme_xhred_filemanager_successful_acls_with_errors=尚未为所有对象成功更改访问控制列表：
 theme_xhred_filemanager_successful_acls=访问控制列表已成功更改。
 theme_download_error=下载文件时出错，因为它在允许的目录之外：$1
+
+#20.22
+theme_xhred_hotkeys_help=帮助 (F1)
+theme_xhred_hotkeys_help_title=键盘快捷键
+theme_xhred_hotkeys_help_title_docs=文档
+theme_xhred_hotkeys_help_title_global=全局快捷方式
+theme_xhred_hotkeys_help_title_module=模块特定的快捷方式
+theme_xhred_hotkeys_help_title_fm=文件管理器快捷方式
+theme_xhred_hotkeys_help_title_edit=编辑器快捷方式
+theme_xhred_global_community=社区
+theme_xhred_hotkeys_server_error=无法检索帮助文件
+theme_xhred_hotkeys_custom_to_opens=打开
+theme_xhred_hotkeys_custom_not_set=没有设置
+theme_xhred_hotkey_open_module_config_privileged=打开模块配置的热键
+theme_xhred_hotkey_open_theme_config=打开主题配置的热键
+theme_xhred_hotkey_clear_cache=清除缓存并重新加载
+theme_xhred_hotkey_open_new=复制到新标签

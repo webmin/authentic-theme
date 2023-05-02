@@ -2,6 +2,26 @@ settings_right_hotkey_options=Hotkeys
 
 settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
 
+settings_hotkey_toggle_key_webmin=Hotkey zum Laden des Webmin-Menüs
+settings_hotkey_toggle_key_virtualmin=Hotkey zum Laden des Virtualmin-Menüs
+settings_hotkey_toggle_key_cloudmin=Hotkey zum Laden des Cloudmin-Menüs
+settings_hotkey_toggle_key_usermin=Hotkey zum Laden des Usermin-Menüs
+settings_hotkey_toggle_key_webmail=Hotkey zum Laden des Mail-Menüs
+settings_hotkey_sysinfo=Hotkey zum Öffnen des Dashboards
+settings_hotkey_shell=Hotkey zum Öffnen des Dropdown-Terminals
+settings_hotkey_favorites=Hotkey zum Öffnen von Favoriten
+settings_hotkey_focus_search=Hotkey zum Fokussieren auf das Suchfeld
+settings_hotkey_reload=Hotkey zum Aktualisieren der aktuellen Seite
+
+settings_hotkey_toggle_slider=Hotkey zum Umschalten der Sichtbarkeit des seitlichen Schiebereglers
+
+theme_xhred_sysinfo_wmdocs=Webmin-Dokumentation
+theme_xhred_sysinfo_vmdocs=Virtualmin-Dokumentation
+theme_xhred_sysinfo_cmdocs=Cloudmin-Dokumentation
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Hotkey zum Umschalten der Farbpalette
+
 #18.48
 theme_force_upgrade=Thema aktualisieren
 theme_update_footer=Bitte melden Sie Fehler an das $1-Repository. Treten Sie unserem $2-Kanal bei, um die neuesten Nachrichten zu erhalten.
@@ -17,6 +37,10 @@ extensions_mail_flag_spam_status_data=$1 von $2
 extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
+
+settings_hotkey_navigation=Hotkey zum Umschalten des Status des Navigationsmenüs
+
+settings_hotkey_slider=Hotkey zum Umschalten des Status des seitlichen Schiebereglers
 
 theme_xhred_filemanager_mass_selected_for_delete=Alle Elemente im Verzeichnis %1
 
@@ -164,7 +188,7 @@ theme_xhred_webminlog_module_no_command_escapes=Backslashes für ausgeführten B
 settings_navigation_auto_fold_category=Inaktive Kategorien automatisch falten
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generieren einer durchsuchbaren Liste mit Optionen für die Vorlage
 theme_xhred_tooltip_virtualmin_templates_filter=Durchsuchen Sie alle Optionen der Vorlage
-theme_sysinfo_vmforum=Virtualmin-Community
+theme_xhred_sysinfo_vmforum=Virtualmin-Community
 theme_xhred_tooltip_support_ticket=Senden Sie ein Support-Ticket mit angehängten Systeminformationen; Halten Sie die $1-Taste gedrückt, um den Support-Link in die Zwischenablage zu kopieren
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Erzwingen Sie die Aktualisierung der Systeminformationen
 theme_xhred_disk_quota_error_title=Außerhalb der Quote
@@ -228,3 +252,20 @@ theme_xhred_filemanager_changing_acls=Ändern der Zugriffskontrollliste.
 theme_xhred_filemanager_successful_acls_with_errors=Die Zugriffskontrollliste wurde nicht für alle Objekte erfolgreich geändert:
 theme_xhred_filemanager_successful_acls=Die Zugriffskontrollliste wurde erfolgreich geändert.
 theme_download_error=Fehler beim Herunterladen der Datei, da sie sich außerhalb des zulässigen Verzeichnisses befindet : $1
+
+#20.22
+theme_xhred_hotkeys_help=Hilfe (F1)
+theme_xhred_hotkeys_help_title=Tastatürkürzel
+theme_xhred_hotkeys_help_title_docs=Dokumentation
+theme_xhred_hotkeys_help_title_global=Globale Verknüpfungen
+theme_xhred_hotkeys_help_title_module=Modulspezifische Shortcuts
+theme_xhred_hotkeys_help_title_fm=Dateimanager-Verknüpfungen
+theme_xhred_hotkeys_help_title_edit=Editor-Shortcuts
+theme_xhred_global_community=Gemeinschaft
+theme_xhred_hotkeys_server_error=Hilfedatei kann nicht abgerufen werden
+theme_xhred_hotkeys_custom_to_opens=öffnet
+theme_xhred_hotkeys_custom_not_set=nicht eingestellt
+theme_xhred_hotkey_open_module_config_privileged=Hotkey zum Öffnen der Modulkonfiguration
+theme_xhred_hotkey_open_theme_config=Hotkey zum Öffnen der Theme-Konfiguration
+theme_xhred_hotkey_clear_cache=Cache leeren und neu laden
+theme_xhred_hotkey_open_new=Auf einen neuen Tab duplizieren

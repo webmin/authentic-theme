@@ -467,7 +467,10 @@ sub print_sysstats_panel_start
           ( $get_user_level eq '3' ? (&$copy_to_clipboard('account') . $theme_text{'body_header1'}) :
               (&$copy_to_clipboard('sysinfo') . $theme_text{'body_header0'})
           ) .
-          (1 == 1 ? &$submit_support_ticket() : undef))
+          (1 == 1 ? &$submit_support_ticket() : undef) .
+          '<span class="btn btn-transparent-link pull-right _theme_help_cnt"><i onclick="theme.help.show()" class="fa fa-fw fa2 fa2-question-circle _theme_help" '
+              . get_button_tooltip('theme_xhred_hotkeys_help', undef, 'auto right', undef, undef, undef, '(')
+              . '></i></span>')
       .
       ( $cloudmin_config{'docs_link'} &&
           foreign_available("server-manager") ?
@@ -687,8 +690,8 @@ sub get_sysinfo_vars
         $webmin_version =
           product_version_update($wmv, 'w') . ' <div class="btn-group margined-left-4' .
           $is_hidden_link . '"><a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
-          $theme_text{'theme_sysinfo_wmdocs'} .
-'" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a></div>';
+          $theme_text{'theme_xhred_sysinfo_wmdocs'} .
+'" href="http://doxfer.webmin.com" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a></div>';
 
         # Virtualmin version
         if ($has_virtualmin) {
@@ -714,11 +717,11 @@ sub get_sysinfo_vars
                   ) .
                   ($vs_license eq '1' ? '' : '&nbsp;') .
                   '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
-                  $theme_text{'theme_sysinfo_vmforum'} .
+                  $theme_text{'theme_xhred_sysinfo_vmforum'} .
                   '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>'
                   . '<a class="btn btn-default btn-xxs margined-left--1'
-                  . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_vmdocs'} .
-'" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>'
+                  . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_xhred_sysinfo_vmdocs'} .
+'" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a>'
             );
         }
 
@@ -748,8 +751,8 @@ sub get_sysinfo_vars
                           '</div>'
                       ) .
                       '<a class="btn btn-default btn-xxs margined-left--1' .
-                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_sysinfo_cmdocs'} .
-'" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa2 fa2-documentation fa2-smallerified"></i></a>'
+                      $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_xhred_sysinfo_cmdocs'} .
+'" href="http://www.virtualmin.com/documentation/cloudmin" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a>'
                   ));
         }
 

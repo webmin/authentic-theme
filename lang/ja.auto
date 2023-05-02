@@ -10,6 +10,26 @@ settings_right_reload=タブスイッチにデフォルトページをロード
 
 settings_favorites=お気に入りボタンを表示
 
+settings_hotkey_toggle_key_webmin=Webminメニューをロードするホットキー
+settings_hotkey_toggle_key_virtualmin=Virtualminメニューをロードするためのホットキー
+settings_hotkey_toggle_key_cloudmin=Cloudminメニューをロードするホットキー
+settings_hotkey_toggle_key_usermin=Userminメニューをロードするためのホットキー
+settings_hotkey_toggle_key_webmail=メールメニューをロードするためのホットキー
+settings_hotkey_sysinfo=ダッシュボードを開くホットキー
+settings_hotkey_shell=ドロップダウン ターミナルを開くためのホットキー
+settings_hotkey_favorites=お気に入りを開くためのホットキー
+settings_hotkey_focus_search=検索フィールドにフォーカスするためのホットキー
+settings_hotkey_reload=現在のページを更新するためのホットキー
+
+settings_hotkey_toggle_slider=サイド スライダーの表示を切り替えるホットキー
+
+theme_xhred_sysinfo_wmdocs=Webmin ドキュメント
+theme_xhred_sysinfo_vmdocs=Virtualmin のドキュメント
+theme_xhred_sysinfo_cmdocs=クラウドミンのドキュメント
+
+#18.40
+settings_hotkey_toggle_key_night_mode=カラー パレットを切り替えるためのホットキー
+
 #18.48
 theme_force_upgrade=テーマを更新
 theme_update_footer=バグを $1リポジトリに報告してください。最新のニュースを入手するには、 $2チャネルに参加してください。
@@ -25,6 +45,10 @@ extensions_mail_flag_spam_status_data=$2のうち$1
 extensions_mail_flag_tls_on=標準暗号化（TLS）
 extensions_mail_flag_tls_off=暗号化されていないメール
 extensions_mail_flag_tls_none=暗号化ステータスが不明です
+
+settings_hotkey_navigation=ナビゲーション メニューの状態を切り替えるホットキー
+
+settings_hotkey_slider=サイドスライダーの状態を切り替えるホットキー
 
 theme_xhred_filemanager_mass_selected_for_delete=%1 ディレクトリ内のすべてのアイテム
 
@@ -173,7 +197,7 @@ theme_xhred_webminlog_module_no_command_escapes=実行されたコマンドの�
 settings_navigation_auto_fold_category=非アクティブなカテゴリを自動折りたたみ
 theme_xhred_tooltip_virtualmin_templates_filter_generating=テンプレートのオプションの検索可能なリストを生成する
 theme_xhred_tooltip_virtualmin_templates_filter=テンプレートのすべてのオプションを検索
-theme_sysinfo_vmforum=Virtualminコミュニティ
+theme_xhred_sysinfo_vmforum=Virtualmin コミュニティ
 theme_xhred_tooltip_support_ticket=システム情報を添付したサポートチケットを送信します。 $1キーを押したままにして、サポートリンクをクリップボードにコピーします
 theme_xhred_tooltip_side_slider_refresh_sysinfo=システム情報を強制的に更新する
 theme_xhred_disk_quota_error_title=クォータを超えています
@@ -237,3 +261,20 @@ theme_xhred_filemanager_changing_acls=アクセス制御リストの変更。
 theme_xhred_filemanager_successful_acls_with_errors=すべてのオブジェクトのアクセス制御リストが正常に変更されていません:
 theme_xhred_filemanager_successful_acls=アクセス制御リストが正常に変更されました。
 theme_download_error=許可されたディレクトリの外にあるため、ファイルのダウンロード中にエラーが発生しました : $1
+
+#20.22
+theme_xhred_hotkeys_help=ヘルプ (F1)
+theme_xhred_hotkeys_help_title=キーボードショートカット
+theme_xhred_hotkeys_help_title_docs=ドキュメンテーション
+theme_xhred_hotkeys_help_title_global=グローバル ショートカット
+theme_xhred_hotkeys_help_title_module=モジュール固有のショートカット
+theme_xhred_hotkeys_help_title_fm=ファイル マネージャーのショートカット
+theme_xhred_hotkeys_help_title_edit=エディターのショートカット
+theme_xhred_global_community=コミュニティ
+theme_xhred_hotkeys_server_error=ヘルプ ファイルを取得できません
+theme_xhred_hotkeys_custom_to_opens=開く
+theme_xhred_hotkeys_custom_not_set=設定されていません
+theme_xhred_hotkey_open_module_config_privileged=モジュール構成を開くためのホットキー
+theme_xhred_hotkey_open_theme_config=テーマ設定を開くホットキー
+theme_xhred_hotkey_clear_cache=キャッシュをクリアしてリロード
+theme_xhred_hotkey_open_new=新しいタブに複製

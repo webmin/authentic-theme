@@ -1,8 +1,32 @@
+settings_hotkey_toggle_key_webmin=Tasto di scelta rapida per caricare il menu Webmin
+settings_hotkey_toggle_key_virtualmin=Tasto di scelta rapida per caricare il menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tasto di scelta rapida per caricare il menu Cloudmin
+settings_hotkey_toggle_key_usermin=Tasto di scelta rapida per caricare il menu Usermin
+settings_hotkey_toggle_key_webmail=Tasto di scelta rapida per caricare il menu Posta
+settings_hotkey_sysinfo=Tasto di scelta rapida per aprire la dashboard
+settings_hotkey_shell=Tasto di scelta rapida per aprire il terminale a discesa
+settings_hotkey_favorites=Tasto di scelta rapida per aprire i preferiti
+settings_hotkey_focus_search=Tasto di scelta rapida per concentrarsi sul campo di ricerca
+settings_hotkey_reload=Tasto di scelta rapida per aggiornare la pagina corrente
+
+settings_hotkey_toggle_slider=Tasto di scelta rapida per attivare/disattivare la visibilità del cursore laterale
+
+theme_xhred_sysinfo_wmdocs=Documentazione webmin
+theme_xhred_sysinfo_vmdocs=Documentazione Virtualmin
+theme_xhred_sysinfo_cmdocs=Documentazione Cloudmin
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Tasto di scelta rapida per alternare la tavolozza dei colori
+
 #18.48
 theme_update_footer=Si prega di essere gentili nel segnalare bug al repository $1. Unisciti al nostro canale $2 per ricevere le ultime notizie.
 
 #19.09
 theme_git_patch_incompatible_message_desc=Potrebbero esserci modifiche incompatibili, che potrebbero impedire al tema di funzionare come previsto. Non è possibile continuare l'operazione di aggiornamento utilizzando l'interfaccia utente.
+
+settings_hotkey_navigation=Tasto di scelta rapida per alternare lo stato del menu di navigazione
+
+settings_hotkey_slider=Tasto di scelta rapida per attivare/disattivare lo stato del cursore laterale
 
 theme_xhred_filemanager_mass_selected_for_delete=Tutti gli elementi nella directory %1
 
@@ -61,7 +85,7 @@ theme_xhred_webminlog_module_no_command_escapes=Attiva/disattiva le barre rovesc
 settings_navigation_auto_fold_category=Ripiega automaticamente le categorie inattive
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generazione di un elenco ricercabile di opzioni per il modello
 theme_xhred_tooltip_virtualmin_templates_filter=Cerca in tutte le opzioni del modello
-theme_sysinfo_vmforum=Comunità Virtualmin
+theme_xhred_sysinfo_vmforum=Comunità virtuale
 theme_xhred_tooltip_support_ticket=Invia un ticket di supporto con le informazioni di sistema allegate; tieni premuto il tasto $1 per copiare il collegamento di supporto negli appunti
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forza l'aggiornamento delle informazioni di sistema
 theme_xhred_disk_quota_error_title=Fuori quota
@@ -125,3 +149,20 @@ theme_xhred_filemanager_changing_acls=Modifica dell'elenco di controllo degli ac
 theme_xhred_filemanager_successful_acls_with_errors=L'elenco di controllo degli accessi non è stato modificato correttamente per tutti gli oggetti:
 theme_xhred_filemanager_successful_acls=L'elenco di controllo degli accessi è stato modificato correttamente.
 theme_download_error=Errore durante il download del file perché è al di fuori della directory consentita : $1
+
+#20.22
+theme_xhred_hotkeys_help=Aiuto (F1)
+theme_xhred_hotkeys_help_title=Tasti rapidi
+theme_xhred_hotkeys_help_title_docs=Documentazione
+theme_xhred_hotkeys_help_title_global=Scorciatoie globali
+theme_xhred_hotkeys_help_title_module=Scorciatoie specifiche del modulo
+theme_xhred_hotkeys_help_title_fm=Scorciatoie del file manager
+theme_xhred_hotkeys_help_title_edit=Scorciatoie dell'editor
+theme_xhred_global_community=Comunità
+theme_xhred_hotkeys_server_error=Impossibile recuperare il file della guida
+theme_xhred_hotkeys_custom_to_opens=si apre
+theme_xhred_hotkeys_custom_not_set=non impostato
+theme_xhred_hotkey_open_module_config_privileged=Tasto di scelta rapida per aprire la configurazione del modulo
+theme_xhred_hotkey_open_theme_config=Tasto di scelta rapida per aprire la configurazione del tema
+theme_xhred_hotkey_clear_cache=Svuota la cache e ricarica
+theme_xhred_hotkey_open_new=Duplica in una nuova scheda

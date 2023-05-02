@@ -96,16 +96,6 @@ settings_theme_options_button=Показывать кнопку настройк
 
 settings_hotkeys_active=Включить использование горячих клавиш
 settings_hotkey_toggle_modifier=Первая горячая клавиша
-settings_hotkey_toggle_key_webmin=Горячая клавиша для Webmin
-settings_hotkey_toggle_key_virtualmin=Горячая клавиша для Virtualmin
-settings_hotkey_toggle_key_cloudmin=Горячая клавиша для Cloudmin
-settings_hotkey_toggle_key_usermin=Горячая клавиша для Usermin
-settings_hotkey_toggle_key_webmail=Горячая клавиша для Mail
-settings_hotkey_sysinfo=Горячая клавиша для перехода к станице системной информации
-settings_hotkey_shell=Горячая клавиша для терминала
-settings_hotkey_favorites=Горячая клавиша для избранного
-settings_hotkey_focus_search=Горячая клавиша для поля поиска
-settings_hotkey_reload=Горячая клавиша для перезагрузки страницы
 
 settings_side_slider_enabled=Включить боковую панель
 

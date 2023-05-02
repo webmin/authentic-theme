@@ -135,16 +135,6 @@ settings_theme_options_button=显示主题设置按钮
 
 settings_hotkeys_active=启用快捷键
 settings_hotkey_toggle_modifier=快捷键更改
-settings_hotkey_toggle_key_webmin=Webmin 快捷键
-settings_hotkey_toggle_key_virtualmin=Virtualmin 快捷键
-settings_hotkey_toggle_key_cloudmin=Cloudmin 快捷键
-settings_hotkey_toggle_key_usermin=Usermin 快捷键
-settings_hotkey_toggle_key_webmail=邮件快捷键
-settings_hotkey_sysinfo=仪表板快捷键
-settings_hotkey_shell=终端快捷键
-settings_hotkey_favorites=收藏夹快捷键
-settings_hotkey_focus_search=搜索快捷键
-settings_hotkey_reload=页面重载快捷键
 
 settings_sysinfo_easypie_charts=显示图表
 settings_sysinfo_theme_updates=检查 Authentic 主题更新
@@ -159,7 +149,6 @@ settings_right_cloudmin_default=Cloudmin 默认页
 
 settings_right_clear_local_cache=清除缓存
 settings_side_slider_fixed=始终可见
-settings_hotkey_toggle_slider=滑块快捷键
 
 settings_side_slider_enabled=启用滑块
 settings_leftmenu_user_html=显示 HTML 片段
@@ -181,9 +170,6 @@ theme_global_success=成功
 theme_global_info=信息
 sysinfo_system_status_warning=为了显示<strong>系统信息</strong>，您需要在用户设置中启用<em>系统状态</em>模块。
 settings_leftmenu_user_html_privileged=仅为管理员显示 HTML 代码段
-theme_sysinfo_wmdocs=Webmin 文档
-theme_sysinfo_vmdocs=Virtualmin 文档
-theme_sysinfo_cmdocs=Cloudmin 文档
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -546,7 +532,6 @@ theme_xhred_move_down=向下移动
 theme_xhred_add_after=在內容后添加
 theme_xhred_add_before=在內容前添加
 settings_show_night_mode_link=显示调色板切换
-settings_hotkey_toggle_key_night_mode=切换暗/亮调色板快捷键
 settings_title=主题配置
 settings_subtitle=对于用户
 

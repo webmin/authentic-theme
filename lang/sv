@@ -138,16 +138,6 @@ settings_theme_options_button=Visa inställningsknapp för temat
 
 settings_hotkeys_active=Aktivera användning av snabbtangenter
 settings_hotkey_toggle_modifier=Kombinationstangent
-settings_hotkey_toggle_key_webmin=Snabbtangent för Webmin
-settings_hotkey_toggle_key_virtualmin=Snabbtangent för Virtualmin
-settings_hotkey_toggle_key_cloudmin=Snabbtangent för Cloudmin
-settings_hotkey_toggle_key_usermin=Snabbtangent för Usermin
-settings_hotkey_toggle_key_webmail=Snabbtangent för E-post
-settings_hotkey_sysinfo=Snabbtangent för Översikt
-settings_hotkey_shell=Snabbtangent för skal
-settings_hotkey_favorites=Snabbtangent för favoriter
-settings_hotkey_focus_search=Snabbtangent för sökfält
-settings_hotkey_reload=Snabbtangent för siduppdatering
 
 settings_sysinfo_easypie_charts=Visa diagram
 settings_sysinfo_theme_updates=Se om det finns uppdateringar till Authentic Theme
@@ -162,7 +152,6 @@ settings_right_cloudmin_default=Standardsida för Cloudmin
 
 settings_right_clear_local_cache=Rensa buffert
 settings_side_slider_fixed=Visa alltid sidomeny
-settings_hotkey_toggle_slider=Snabbtangent för sidomeny
 
 settings_side_slider_enabled=Aktivera sidomeny
 settings_leftmenu_user_html=Visa HTML-utdrag
@@ -184,9 +173,6 @@ theme_global_success=Lyckades
 theme_global_info=Information
 sysinfo_system_status_warning=För att visa <strong>Systeminformation</strong> måste du aktivera modulen <em>Systemstatus</em> i användarinställningar.
 settings_leftmenu_user_html_privileged=Visa HTML-utdrag endast för administratörer
-theme_sysinfo_wmdocs=Webmin-dokumentation
-theme_sysinfo_vmdocs=Virtualmin-dokumentation
-theme_sysinfo_cmdocs=Cloudmin-dokumentation
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +535,6 @@ theme_xhred_move_down=Flytta neråt
 theme_xhred_add_after=Lägg till efter
 theme_xhred_add_before=Lägg till före
 settings_show_night_mode_link=Visa knapp för dag-/nattläge
-settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla mellan mörk/ljus palett
 settings_title=Temakonfiguration
 settings_subtitle=För användaren
 
@@ -868,7 +853,6 @@ settings_mail_ui=Aktivera nytt e-postanvändargränssnitt
 settings_theme_config_admins_only_privileged_error=Åtkomst nekad: Administratören har blockerat åtkomst till användaranpassningar
 
 theme_xhred_tooltip_navigation_pinned=Fäst/ta bort navigeringsmeny
-settings_hotkey_navigation=Snabbtangent för att växla navigeringsmenyn
 
 theme_xhred_search_in_webmin=Sök Webmin
 theme_xhred_search_in_usermin=Sök Usermin
@@ -876,8 +860,6 @@ theme_xhred_search_in_virtualserver=Sök Virtualmin
 theme_xhred_search_in_servermanager=Sök Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopiera markerat till urklippet
-
-settings_hotkey_slider=Snabbtangent för att växla sidomenyn
 
 theme_git_update_locked=Uppdatering av temat kan inte slutföras på grund av att det finns inte anslutning till GitHub eller så har gränsvärdet för API:t överskridits. Oautentiserade förfrågningar tillåter endast upp till 60 förfrågningar per timme. Prova igen senare eller använd konsolen och gör en manuell uppdatering via uppdateringsskriptet.
 
@@ -1251,7 +1233,6 @@ theme_xhred_webminlog_module_no_command_escapes=Växla omvänt snedstreck för k
 settings_navigation_auto_fold_category=Vik inaktiva kategorier automatiskt
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Genererar sökbar lista med alternativ för mallen
 theme_xhred_tooltip_virtualmin_templates_filter=Sök igenom alla alternativ i mallen
-theme_sysinfo_vmforum=Virtualmin-gemenskapen
 theme_xhred_tooltip_support_ticket=Skicka in supportärende med bifogad systeminformation; håll tangenten $1 nedtryckt för att kopiera supportlänken till urklipp
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Tvinga att uppdatera systeminformationen
 theme_xhred_disk_quota_error_title=Utom kvot

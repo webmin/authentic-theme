@@ -26,16 +26,16 @@ settings_theme_options_button=Knop voor thema-instellingen weergeven
 
 settings_hotkeys_active=Gebruik van sneltoetsen inschakelen
 settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Sneltoets voor Webmin
-settings_hotkey_toggle_key_virtualmin=Sneltoets voor Virtualmin
-settings_hotkey_toggle_key_cloudmin=Sneltoets voor Cloudmin
-settings_hotkey_toggle_key_usermin=Sneltoets voor Usermin
-settings_hotkey_toggle_key_webmail=Sneltoets voor e-mail
-settings_hotkey_sysinfo=Sneltoets voor dashboard
-settings_hotkey_shell=Sneltoets voor terminal
-settings_hotkey_favorites=Sneltoets voor favorieten
-settings_hotkey_focus_search=Sneltoets voor zoekveld
-settings_hotkey_reload=Sneltoets voor het opnieuw laden van pagina's
+settings_hotkey_toggle_key_webmin=Sneltoets om het Webmin-menu te laden
+settings_hotkey_toggle_key_virtualmin=Sneltoets om het Virtualmin-menu te laden
+settings_hotkey_toggle_key_cloudmin=Sneltoets om het Cloudmin-menu te laden
+settings_hotkey_toggle_key_usermin=Sneltoets om het Usermin-menu te laden
+settings_hotkey_toggle_key_webmail=Sneltoets om het Mail-menu te laden
+settings_hotkey_sysinfo=Sneltoets om dashboard te openen
+settings_hotkey_shell=Sneltoets om de dropdown-terminal te openen
+settings_hotkey_favorites=Sneltoets om favorieten te openen
+settings_hotkey_focus_search=Sneltoets om te focussen op zoekveld
+settings_hotkey_reload=Sneltoets om de huidige pagina te vernieuwen
 
 settings_sysinfo_easypie_charts=Toon grafieken
 settings_sysinfo_theme_updates=Controleer op authentieke thema-updates
@@ -50,7 +50,7 @@ settings_right_cloudmin_default=Standaardpagina voor Cloudmin
 
 settings_right_clear_local_cache=Cache wissen
 settings_side_slider_fixed=Altijd zichtbaar houden
-settings_hotkey_toggle_slider=Sneltoets voor zijschuif
+settings_hotkey_toggle_slider=Sneltoets om de zichtbaarheid van de schuifregelaar aan de zijkant in te schakelen
 
 settings_side_slider_enabled=Schuifregelaar inschakelen
 settings_leftmenu_user_html=HTML-fragment weergeven
@@ -72,9 +72,9 @@ theme_global_success=Succes
 theme_global_info=Informatie
 sysinfo_system_status_warning=Om <sterke>Systeeminformatie</strong> weer te geven, moet u de module <em>Systeemstatus</em> inschakelen in de gebruikersinstellingen.
 settings_leftmenu_user_html_privileged=HTML-fragment alleen voor beheerders weergeven
-theme_sysinfo_wmdocs=Webmin-documentatie
-theme_sysinfo_vmdocs=Virtualmin-documentatie
-theme_sysinfo_cmdocs=Cloudmin-documentatie
+theme_xhred_sysinfo_wmdocs=Webmin-documentatie
+theme_xhred_sysinfo_vmdocs=Virtualmin-documentatie
+theme_xhred_sysinfo_cmdocs=Cloudmin-documentatie
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -436,7 +436,7 @@ theme_xhred_move_down=Naar beneden verplaatsen
 theme_xhred_add_after=Voeg daarna toe
 theme_xhred_add_before=Voeg toe voor
 settings_show_night_mode_link=Knop voor dag-/nachtmodus weergeven
-settings_hotkey_toggle_key_night_mode=Sneltoets voor het wisselen tussen donker/licht palet
+settings_hotkey_toggle_key_night_mode=Sneltoets voor schakelen tussen kleurenpalet
 settings_title=Thema-configuratie
 settings_subtitle=Voor gebruiker
 
@@ -755,7 +755,7 @@ settings_mail_ui=Schakel nieuwe e-mailgebruikersinterface in
 settings_theme_config_admins_only_privileged_error=Toegang geweigerd: de beheerder heeft de toegang tot gebruikersaanpassingen geblokkeerd
 
 theme_xhred_tooltip_navigation_pinned=Navigatiemenu vastmaken/losmaken
-settings_hotkey_navigation=Sneltoets voor het wisselen van navigatiemenu
+settings_hotkey_navigation=Sneltoets om de status van het navigatiemenu te wijzigen
 
 theme_xhred_search_in_webmin=Zoek Webmin
 theme_xhred_search_in_usermin=Zoeken in Usermin
@@ -764,7 +764,7 @@ theme_xhred_search_in_servermanager=Zoek Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopieer selectie naar klembord
 
-settings_hotkey_slider=Sneltoets voor het wisselen van de zijschuif
+settings_hotkey_slider=Sneltoets om de status van de schuifregelaar aan de zijkant te wijzigen
 
 theme_git_update_locked=Thema-update kan niet worden voltooid omdat er geen verbinding is met GitHub of het overschrijden van de API-limiet. Voor laatstgenoemde, niet-geverifieerde verzoeken, staat de tarieflimiet maximaal 60 verzoeken per uur toe. Probeer het later opnieuw of gebruik de console om het handmatig te doen via het updatescript.
 
@@ -1138,7 +1138,7 @@ theme_xhred_webminlog_module_no_command_escapes=Schakel backslashes in voor uitg
 settings_navigation_auto_fold_category=Inactieve categorieën automatisch vouwen
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Doorzoekbare lijst met opties voor de sjabloon genereren
 theme_xhred_tooltip_virtualmin_templates_filter=Doorzoek alle opties van de sjabloon
-theme_sysinfo_vmforum=Virtualmin-gemeenschap
+theme_xhred_sysinfo_vmforum=Virtualmin-gemeenschap
 theme_xhred_tooltip_support_ticket=Dien een ondersteuningsticket in met bijgevoegde systeeminformatie; houd de $1-toets ingedrukt om de ondersteuningslink naar het klembord te kopiëren
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forceer om systeeminformatie te vernieuwen
 theme_xhred_disk_quota_error_title=Buiten quotum
@@ -1202,3 +1202,20 @@ theme_xhred_filemanager_changing_acls=Toegangscontrolelijst wijzigen.
 theme_xhred_filemanager_successful_acls_with_errors=Toegangscontrolelijst is niet succesvol gewijzigd voor alle objecten:
 theme_xhred_filemanager_successful_acls=De toegangscontrolelijst is met succes gewijzigd.
 theme_download_error=Fout bij het downloaden van het bestand omdat het zich buiten de toegestane map bevindt : $1
+
+#20.22
+theme_xhred_hotkeys_help=Hulp (F1)
+theme_xhred_hotkeys_help_title=Toetsenbord sneltoetsen
+theme_xhred_hotkeys_help_title_docs=Documentatie
+theme_xhred_hotkeys_help_title_global=Wereldwijde snelkoppelingen
+theme_xhred_hotkeys_help_title_module=Modulespecifieke snelkoppelingen
+theme_xhred_hotkeys_help_title_fm=Snelkoppelingen voor bestandsbeheer
+theme_xhred_hotkeys_help_title_edit=Editor-snelkoppelingen
+theme_xhred_global_community=Gemeenschap
+theme_xhred_hotkeys_server_error=Kan het helpbestand niet ophalen
+theme_xhred_hotkeys_custom_to_opens=opent
+theme_xhred_hotkeys_custom_not_set=niet ingesteld
+theme_xhred_hotkey_open_module_config_privileged=Sneltoets om moduleconfiguratie te openen
+theme_xhred_hotkey_open_theme_config=Sneltoets om themaconfiguratie te openen
+theme_xhred_hotkey_clear_cache=Cache wissen en opnieuw laden
+theme_xhred_hotkey_open_new=Dupliceren naar een nieuw tabblad

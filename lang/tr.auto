@@ -138,16 +138,16 @@ settings_theme_options_button=Tema ayarlarını göster düğmesi
 
 settings_hotkeys_active=Kısayol tuşu kullanımını etkinleştir
 settings_hotkey_toggle_modifier=Kısayol tuşları değiştiricisi
-settings_hotkey_toggle_key_webmin=Webmin için kısayol tuşu
-settings_hotkey_toggle_key_virtualmin=Virtualmin için kısayol tuşu
-settings_hotkey_toggle_key_cloudmin=Cloudmin için kısayol tuşu
-settings_hotkey_toggle_key_usermin=Usermin için kısayol tuşu
-settings_hotkey_toggle_key_webmail=Posta için Kısayol tuşu
-settings_hotkey_sysinfo=Gösterge tablosu için kısayol tuşu
-settings_hotkey_shell=Terminal kısayol tuşu
-settings_hotkey_favorites=Sık kullanılanlar için kısayol tuşu
-settings_hotkey_focus_search=Arama alanı için kısayol tuşu
-settings_hotkey_reload=Sayfayı yeniden yüklemek için kısayol tuşu
+settings_hotkey_toggle_key_webmin=Webmin menüsünü yüklemek için kısayol tuşu
+settings_hotkey_toggle_key_virtualmin=Virtualmin menüsünü yüklemek için kısayol tuşu
+settings_hotkey_toggle_key_cloudmin=Cloudmin menüsünü yüklemek için kısayol tuşu
+settings_hotkey_toggle_key_usermin=Usermin menüsünü yüklemek için kısayol tuşu
+settings_hotkey_toggle_key_webmail=Posta menüsünü yüklemek için kısayol tuşu
+settings_hotkey_sysinfo=Kontrol panelini açmak için kısayol tuşu
+settings_hotkey_shell=Açılır terminali açmak için kısayol tuşu
+settings_hotkey_favorites=Favorileri açmak için kısayol tuşu
+settings_hotkey_focus_search=Arama alanına odaklanmak için kısayol tuşu
+settings_hotkey_reload=Geçerli sayfayı yenilemek için kısayol tuşu
 
 settings_sysinfo_easypie_charts=Grafikleri göster
 settings_sysinfo_theme_updates=Otantik Tema güncellemelerini kontrol etme
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Cloudmin için varsayılan sayfa
 
 settings_right_clear_local_cache=Önbelleği temizle
 settings_side_slider_fixed=Her zaman görünür tutun
-settings_hotkey_toggle_slider=Yan kaydırıcı için kısayol tuşu
+settings_hotkey_toggle_slider=Yan kaydırıcı görünürlüğünü değiştirmek için kısayol tuşu
 
 settings_side_slider_enabled=Kaydırıcıyı etkinleştir
 settings_leftmenu_user_html=HTML snippet'ini göster
@@ -184,9 +184,9 @@ theme_global_success=başarı
 theme_global_info=Bilgi
 sysinfo_system_status_warning=<Strong>Sistem Bilgileri</strong> 'nin görüntülenmesi için kullanıcı ayarlarında <em>Sistem Durumu</em> modülünü etkinleştirmeniz gerekir.
 settings_leftmenu_user_html_privileged=HTML snippet'ini yalnızca yöneticiler için göster
-theme_sysinfo_wmdocs=Webmin belgeleri
-theme_sysinfo_vmdocs=Virtualmin belgeleri
-theme_sysinfo_cmdocs=Cloudmin belgeleri
+theme_xhred_sysinfo_wmdocs=Webmin belgeleri
+theme_xhred_sysinfo_vmdocs=Virtualmin belgeleri
+theme_xhred_sysinfo_cmdocs=Cloudmin belgeleri
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +549,7 @@ theme_xhred_move_down=Aşağı inmek
 theme_xhred_add_after=Sonra Ekle
 theme_xhred_add_before=Önce ekle
 settings_show_night_mode_link=Gündüz/gece modu düğmesini göster
-settings_hotkey_toggle_key_night_mode=Koyu/açık paleti değiştirmek için kısayol tuşu
+settings_hotkey_toggle_key_night_mode=Renk paletini değiştirmek için kısayol tuşu
 settings_title=Tema Yapılandırması
 settings_subtitle=Kullanıcı için
 
@@ -868,7 +868,7 @@ settings_mail_ui=Yeni posta kullanıcı arayüzünü etkinleştir
 settings_theme_config_admins_only_privileged_error=Erişim reddedildi: Yönetici, kullanıcı özelleştirmelerine erişimi engelledi
 
 theme_xhred_tooltip_navigation_pinned=Gezinme menüsünü sabitle/sabitlemeyi kaldır
-settings_hotkey_navigation=Gezinme menüsünü değiştirmek için kısayol tuşu
+settings_hotkey_navigation=Gezinme menüsü durumunu değiştirmek için kısayol tuşu
 
 theme_xhred_search_in_webmin=Webmin'de Ara
 theme_xhred_search_in_usermin=Usermin'de Ara
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Cloudmin'de Ara
 
 theme_xhred_filemanager_context_clipboard_selection=Seçimi panoya kopyala
 
-settings_hotkey_slider=Yan kaydırıcıyı değiştirmek için kısayol tuşu
+settings_hotkey_slider=Yan kaydırıcı durumunu değiştirmek için kısayol tuşu
 
 theme_git_update_locked=Tema güncellemesi, GitHub'a herhangi bir bağlantı veya API hız sınırı aşımı nedeniyle tamamlanamıyor. İkinci ve kimliği doğrulanmamış istekler için ücret sınırı, saatte 60 isteğe kadar izin verir. Daha sonra tekrar deneyin veya güncelleme komut dosyası aracılığıyla manuel olarak yapmak için konsolu kullanın.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=Yürütülen komut için ters e�
 settings_navigation_auto_fold_category=Etkin olmayan kategorileri otomatik katla
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Şablon için aranabilir seçenekler listesi oluşturma
 theme_xhred_tooltip_virtualmin_templates_filter=Şablonun tüm seçeneklerinde arama yapın
-theme_sysinfo_vmforum=Virtualmin Topluluğu
+theme_xhred_sysinfo_vmforum=Virtualmin Topluluğu
 theme_xhred_tooltip_support_ticket=Ekli sistem bilgileriyle destek bileti gönderin; destek bağlantısını panoya kopyalamak için $1 tuşunu basılı tutun
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Sistem bilgilerini yenilemeye zorla
 theme_xhred_disk_quota_error_title=kota dışında
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=Erişim kontrol listesi değiştiriliyor.
 theme_xhred_filemanager_successful_acls_with_errors=Erişim kontrol listesi tüm nesneler için başarıyla değiştirilmedi:
 theme_xhred_filemanager_successful_acls=Erişim kontrol listesi başarıyla değiştirildi.
 theme_download_error=İzin verilen dizinin dışında olduğu için dosya indirilirken hata oluştu  : $1
+
+#20.22
+theme_xhred_hotkeys_help=Yardım (F1)
+theme_xhred_hotkeys_help_title=Klavye kısayolları
+theme_xhred_hotkeys_help_title_docs=Belgeler
+theme_xhred_hotkeys_help_title_global=Küresel Kısayollar
+theme_xhred_hotkeys_help_title_module=Modüle Özel Kısayollar
+theme_xhred_hotkeys_help_title_fm=Dosya Yöneticisi Kısayolları
+theme_xhred_hotkeys_help_title_edit=Editör Kısayolları
+theme_xhred_global_community=Toplum
+theme_xhred_hotkeys_server_error=Yardım dosyası alınamıyor
+theme_xhred_hotkeys_custom_to_opens=açılır
+theme_xhred_hotkeys_custom_not_set=ayarlanmadı
+theme_xhred_hotkey_open_module_config_privileged=Modül yapılandırmasını açmak için kısayol tuşu
+theme_xhred_hotkey_open_theme_config=Tema yapılandırmasını açmak için kısayol tuşu
+theme_xhred_hotkey_clear_cache=Önbelleği temizle ve yeniden yükle
+theme_xhred_hotkey_open_new=Yeni bir sekmeye kopyala

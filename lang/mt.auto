@@ -138,16 +138,16 @@ settings_theme_options_button=Uri l-buttuna tas-settings tat-tema
 
 settings_hotkeys_active=Jippermettu l-użu tal-hotkeys
 settings_hotkey_toggle_modifier=Modifikatur tal-hotkeys
-settings_hotkey_toggle_key_webmin=Hotkey għall-Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey għal Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hotkey għal Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey għal Usermin
-settings_hotkey_toggle_key_webmail=Hotkey għall-Mail
-settings_hotkey_sysinfo=Hotkey għad-dashboard
-settings_hotkey_shell=Hotkey għat-terminal
-settings_hotkey_favorites=Hotkey għall-favoriti
-settings_hotkey_focus_search=Hotkey għall-qasam tat-tiftix
-settings_hotkey_reload=Hotkey għal tagħbija mill-ġdid tal-paġna
+settings_hotkey_toggle_key_webmin=Hotkey biex tagħbija menu Webmin
+settings_hotkey_toggle_key_virtualmin=Hotkey biex tagħbija menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Hotkey biex tagħbija menu Cloudmin
+settings_hotkey_toggle_key_usermin=Hotkey biex tagħbija menu Usermin
+settings_hotkey_toggle_key_webmail=Hotkey biex tagħbija menu Mail
+settings_hotkey_sysinfo=Hotkey biex tiftaħ dashboard
+settings_hotkey_shell=Hotkey biex tiftaħ terminali dropdown
+settings_hotkey_favorites=Hotkey biex tiftaħ il-favoriti
+settings_hotkey_focus_search=Hotkey biex tiffoka fuq il-qasam tat-tfittxija
+settings_hotkey_reload=Hotkey biex jġedded il-paġna kurrenti
 
 settings_sysinfo_easypie_charts=Uri ċ-ċarts
 settings_sysinfo_theme_updates=Iċċekkja għal aġġornamenti tat-Tema Awtentika
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Paġna awtomatika għal Cloudmin
 
 settings_right_clear_local_cache=Ċara l-cache
 settings_side_slider_fixed=Żomm dejjem viżibbli
-settings_hotkey_toggle_slider=Hotkey għal slider tal-ġenb
+settings_hotkey_toggle_slider=Hotkey biex taqleb il-viżibilità tas-slider tal-ġenb
 
 settings_side_slider_enabled=Jippermetti slider
 settings_leftmenu_user_html=Uri snippet HTML
@@ -184,9 +184,9 @@ theme_global_success=Suċċess
 theme_global_info=Informazzjoni
 sysinfo_system_status_warning=Sabiex ikollok </strong>Informazzjoni dwar is-Sistema</strong> murija ser ikollok bżonn tippermetti <em>Sistema Istat</em> modulu fl-issettjar tal-utent.
 settings_leftmenu_user_html_privileged=Uri snippet HTML għall-amministraturi biss
-theme_sysinfo_wmdocs=Dokumentazzjoni Webmin
-theme_sysinfo_vmdocs=Dokumentazzjoni Virtualmin
-theme_sysinfo_cmdocs=Dokumentazzjoni Cloudmin
+theme_xhred_sysinfo_wmdocs=Dokumentazzjoni tal-Webmin
+theme_xhred_sysinfo_vmdocs=Dokumentazzjoni Virtualmin
+theme_xhred_sysinfo_cmdocs=Dokumentazzjoni Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +549,7 @@ theme_xhred_move_down=Imxi l-isfel
 theme_xhred_add_after=Żid wara
 theme_xhred_add_before=Żid qabel
 settings_show_night_mode_link=Uri l-buttuna tal-modalità bil-lejl/jum
-settings_hotkey_toggle_key_night_mode=Hotkey għall-bidla ta 'paletta skura/ħafifa
+settings_hotkey_toggle_key_night_mode=Hotkey għall-toggling paletta tal-kulur
 settings_title=Konfigurazzjoni tat-Tema
 settings_subtitle=Għall-utent
 
@@ -868,7 +868,7 @@ settings_mail_ui=Agħti UI tal-posta l-ġdida
 settings_theme_config_admins_only_privileged_error=Aċċess miċħud: L-amministratur jibblokka l-aċċess għall-customisations tal-utenti
 
 theme_xhred_tooltip_navigation_pinned=Pin/unpin menu navigazzjoni
-settings_hotkey_navigation=Hotkey għal navigazzjoni fil-menu ta 'navigazzjoni
+settings_hotkey_navigation=Hotkey biex taqleb l-istat tal-menu tan-navigazzjoni
 
 theme_xhred_search_in_webmin=Fittex fil-Webmin
 theme_xhred_search_in_usermin=Fittex Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Fittex Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Ikkopja l-għażla fil-clipboard
 
-settings_hotkey_slider=Hotkey għall-iswiċċ tal-ġenb
+settings_hotkey_slider=Hotkey biex taqleb l-istat tas-slajder tal-ġenb
 
 theme_git_update_locked=L-aġġornament tat-tema ma jistax jitlesta minħabba l-ebda konnessjoni ma 'GitHub jew l-eċċess ta' limitu ta 'rata ta' API. Għal talbiet tal-aħħar, mhux awtentikati, il-limitu tar-rata jippermetti sa 60 talba fis-siegħa. Erġa 'ipprova aktar tard jew uża console biex tagħmel dan manwalment permezz ta' skritt ta 'aġġornament.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=Toggle backslashes għall-kmand 
 settings_navigation_auto_fold_category=Jintewa awtomatikament kategoriji inattivi
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Tiġġenera lista ta' għażliet li tista' titfittex għall-mudell
 theme_xhred_tooltip_virtualmin_templates_filter=Fittex fl-għażliet kollha tal-mudell
-theme_sysinfo_vmforum=Komunità Virtualmin
+theme_xhred_sysinfo_vmforum=Komunità Virtualmin
 theme_xhred_tooltip_support_ticket=Ibgħat biljett ta' appoġġ b'informazzjoni tas-sistema mehmuża; żomm $1 ċavetta biex tikkopja l-link ta' appoġġ mal-clipboard
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Imġiegħel li jġedded l-informazzjoni tas-sistema
 theme_xhred_disk_quota_error_title=Barra mill-kwota
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=Nibdlu lista ta 'kontroll ta' aċċess.
 theme_xhred_filemanager_successful_acls_with_errors=Il-lista tal-kontroll tal-aċċess ma nbidlitx b'suċċess għall-oġġetti kollha:
 theme_xhred_filemanager_successful_acls=Lista ta 'kontroll ta' aċċess ġiet mibdula b'suċċess.
 theme_download_error=Żball fit-tniżżil tal-fajl minħabba li huwa barra mid-direttorju permess : $1
+
+#20.22
+theme_xhred_hotkeys_help=Għajnuna (F1)
+theme_xhred_hotkeys_help_title=Shortcuts tat-Tastiera
+theme_xhred_hotkeys_help_title_docs=Dokumentazzjoni
+theme_xhred_hotkeys_help_title_global=Shortcuts Globali
+theme_xhred_hotkeys_help_title_module=Shortcuts Speċifiċi tal-Modulu
+theme_xhred_hotkeys_help_title_fm=File Manager Shortcuts
+theme_xhred_hotkeys_help_title_edit=Editur Shortcuts
+theme_xhred_global_community=Komunità
+theme_xhred_hotkeys_server_error=Ma tistax tirkupra l-fajl tal-għajnuna
+theme_xhred_hotkeys_custom_to_opens=jiftaħ
+theme_xhred_hotkeys_custom_not_set=mhux issettjat
+theme_xhred_hotkey_open_module_config_privileged=Hotkey biex tiftaħ il-konfigurazzjoni tal-modulu
+theme_xhred_hotkey_open_theme_config=Hotkey biex tiftaħ il-konfigurazzjoni tat-tema
+theme_xhred_hotkey_clear_cache=Ċar il-cache u reload
+theme_xhred_hotkey_open_new=Idduplika għal tab ġdida

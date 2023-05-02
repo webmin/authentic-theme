@@ -138,16 +138,16 @@ settings_theme_options_button=Erakutsi gaiaren ezarpenen botoia
 
 settings_hotkeys_active=Gaitu lasterbideen erabilera
 settings_hotkey_toggle_modifier=Zuzenbide teklak aldatzea
-settings_hotkey_toggle_key_webmin=Webminentzako laster-tekla
-settings_hotkey_toggle_key_virtualmin=Virtualminentzako laster-tekla
-settings_hotkey_toggle_key_cloudmin=Hotminak Cloudmin-erako
-settings_hotkey_toggle_key_usermin=Erabiltzaileentzako laster-tekla
-settings_hotkey_toggle_key_webmail=Posta tekla
-settings_hotkey_sysinfo=Arbel-teklaren lasterketa
-settings_hotkey_shell=Terminalerako laster-tekla
-settings_hotkey_favorites=Gogokoentzako laster-tekla
-settings_hotkey_focus_search=Bilaketa-eremurako laster-tekla
-settings_hotkey_reload=Orrialdea berriz kargatzeko laster-tekla
+settings_hotkey_toggle_key_webmin=Webmin menua kargatzeko laster-tekla
+settings_hotkey_toggle_key_virtualmin=Laster-tekla Virtualmin menua kargatzeko
+settings_hotkey_toggle_key_cloudmin=Laster-tekla Cloudmin menua kargatzeko
+settings_hotkey_toggle_key_usermin=Laster-tekla Usermin menua kargatzeko
+settings_hotkey_toggle_key_webmail=Laster-tekla Posta menua kargatzeko
+settings_hotkey_sysinfo=Laster-tekla panela irekitzeko
+settings_hotkey_shell=Laster-tekla goitibeherako terminala irekitzeko
+settings_hotkey_favorites=Laster-tekla gogokoak irekitzeko
+settings_hotkey_focus_search=Laster-tekla bilaketa-eremuan zentratzeko
+settings_hotkey_reload=Laster-tekla uneko orria freskatzeko
 
 settings_sysinfo_easypie_charts=Erakutsi diagramak
 settings_sysinfo_theme_updates=Egiaztatu benetako gaiaren eguneratzeak
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Lehenetsitako orria Cloudminen
 
 settings_right_clear_local_cache=Garbitu cachea
 settings_side_slider_fixed=Jarrai beti ikusgai
-settings_hotkey_toggle_slider=Alboko graduatzailearentzako laster-tekla
+settings_hotkey_toggle_slider=Laster-tekla alboko graduatzailearen ikusgarritasuna aldatzeko
 
 settings_side_slider_enabled=Gaitu graduatzailea
 settings_leftmenu_user_html=Erakutsi HTML fragmentua
@@ -184,9 +184,9 @@ theme_global_success=Arrakasta
 theme_global_info=informazioa
 sysinfo_system_status_warning=Sistema </strong>ri buruzko informazioa</strong> bistaratzeko, beharrezkoa da <em>Sistemaren egoera</em> modulua erabiltzailearen ezarpenetan.
 settings_leftmenu_user_html_privileged=Erakutsi HTML fragmentoa administratzaileentzat bakarrik
-theme_sysinfo_wmdocs=Webmin dokumentazioa
-theme_sysinfo_vmdocs=Virtualmin dokumentazioa
-theme_sysinfo_cmdocs=Cloudmin dokumentazioa
+theme_xhred_sysinfo_wmdocs=Webmin dokumentazioa
+theme_xhred_sysinfo_vmdocs=Virtualmin dokumentazioa
+theme_xhred_sysinfo_cmdocs=Cloudmin dokumentazioa
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
@@ -549,7 +549,7 @@ theme_xhred_move_down=Jaitsi
 theme_xhred_add_after=Gehitu ondoren
 theme_xhred_add_before=Gehitu aurretik
 settings_show_night_mode_link=Erakutsi eguna/gaua modua botoia
-settings_hotkey_toggle_key_night_mode=Paleta iluna/argia txertatzeko tekla
+settings_hotkey_toggle_key_night_mode=Laster-tekla kolore-paleta aldatzeko
 settings_title=Gaiaren konfigurazioa
 settings_subtitle=Erabiltzailearentzat
 
@@ -868,7 +868,7 @@ settings_mail_ui=Gaitu posta-interfaze berria
 settings_theme_config_admins_only_privileged_error=Sarbide ukatua: administratzaileak erabiltzaileen pertsonalizazioetarako sarbidea blokeatu du
 
 theme_xhred_tooltip_navigation_pinned=Pinatu/desblokeatu nabigazio menua
-settings_hotkey_navigation=Nabigazio menua aldatzeko laster-tekla
+settings_hotkey_navigation=Laster-tekla nabigazio menuaren egoera aldatzeko
 
 theme_xhred_search_in_webmin=Bilatu webmin
 theme_xhred_search_in_usermin=Bilatu Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Bilatu Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopiatu hautapena arbelean
 
-settings_hotkey_slider=Alboko graduatzailea aldatzeko laster-tekla
+settings_hotkey_slider=Laster-tekla alboko graduatzailearen egoera aldatzeko
 
 theme_git_update_locked=Gaiaren eguneratzea ezin da GitHub-ekin konexioarengatik edo API-aren muga gehiegizkoarekin loturarik izan. Azken hauetarako, baimendu gabeko eskaeretarako, tarifaren mugak orduko 60 eskaera ahalbidetzen ditu. Saiatu berriro geroago edo erabili kontsola eskuz egiteko eguneratze script bidez.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=Aldatu atzerako barrak exekutatu
 settings_navigation_auto_fold_category=Tolestu automatikoki kategoria inaktiboak
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Txantiloirako aukeren zerrenda bilagarria sortzea
 theme_xhred_tooltip_virtualmin_templates_filter=Bilatu txantiloiaren aukera guztietan
-theme_sysinfo_vmforum=Virtualmin Komunitatea
+theme_xhred_sysinfo_vmforum=Virtualmin Komunitatea
 theme_xhred_tooltip_support_ticket=Bidali laguntza-txartela erantsita sistemaren informazioarekin; eutsi $1 tekla laguntza-esteka arbelean kopiatzeko
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Behartu sistemaren informazioa freskatzera
 theme_xhred_disk_quota_error_title=Kupotik kanpo
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=Sarbide-kontrolen zerrenda aldatzea.
 theme_xhred_filemanager_successful_acls_with_errors=Sarbide-kontrolaren zerrenda ez da behar bezala aldatu objektu guztientzat:
 theme_xhred_filemanager_successful_acls=Sarbide-kontrolen zerrenda behar bezala aldatu da.
 theme_download_error=Errore bat gertatu da fitxategia deskargatzean baimendutako direktoriotik kanpo dagoelako : $1
+
+#20.22
+theme_xhred_hotkeys_help=Laguntza (F1)
+theme_xhred_hotkeys_help_title=Teklatuko lasterbideak
+theme_xhred_hotkeys_help_title_docs=Dokumentazioa
+theme_xhred_hotkeys_help_title_global=Lasterbide orokorrak
+theme_xhred_hotkeys_help_title_module=Moduluko lasterbide espezifikoak
+theme_xhred_hotkeys_help_title_fm=Fitxategi-kudeatzailearen lasterbideak
+theme_xhred_hotkeys_help_title_edit=Editorearen lasterbideak
+theme_xhred_global_community=Komunitatea
+theme_xhred_hotkeys_server_error=Ezin da laguntza fitxategia berreskuratu
+theme_xhred_hotkeys_custom_to_opens=irekitzen da
+theme_xhred_hotkeys_custom_not_set=ezarri gabe
+theme_xhred_hotkey_open_module_config_privileged=Moduluaren konfigurazioa irekitzeko laster-tekla
+theme_xhred_hotkey_open_theme_config=Laster tekla gaiaren konfigurazioa irekitzeko
+theme_xhred_hotkey_clear_cache=Garbitu cachea eta kargatu berriro
+theme_xhred_hotkey_open_new=Bikoiztu fitxa berri batera

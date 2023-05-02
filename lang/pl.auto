@@ -57,16 +57,16 @@ settings_theme_options_button=Pokaż przycisk ustawień motywu
 
 settings_hotkeys_active=Włącz korzystanie ze skrótów klawiszowych
 settings_hotkey_toggle_modifier=Modyfikator skrótów klawiszowych
-settings_hotkey_toggle_key_webmin=Skrót dla Webmina
-settings_hotkey_toggle_key_virtualmin=Skrót dla Virtualmin
-settings_hotkey_toggle_key_cloudmin=Skrót dla Cloudmin
-settings_hotkey_toggle_key_usermin=Skrót dla Usermin
-settings_hotkey_toggle_key_webmail=Skrót do poczty
-settings_hotkey_sysinfo=Skrót do pulpitu nawigacyjnego
-settings_hotkey_shell=Skrót do terminala
-settings_hotkey_favorites=Skrót dla ulubionych
-settings_hotkey_focus_search=Skrót do pola wyszukiwania
-settings_hotkey_reload=Skrót do przeładowania strony
+settings_hotkey_toggle_key_webmin=Klawisz skrótu do ładowania menu Webmina
+settings_hotkey_toggle_key_virtualmin=Skrót klawiszowy do załadowania menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Klawisz skrótu do ładowania menu Cloudmin
+settings_hotkey_toggle_key_usermin=Klawisz skrótu do ładowania menu Usermin
+settings_hotkey_toggle_key_webmail=Klawisz skrótu do ładowania menu poczty
+settings_hotkey_sysinfo=Klawisz skrótu do otwierania pulpitu nawigacyjnego
+settings_hotkey_shell=Klawisz skrótu, aby otworzyć rozwijany terminal
+settings_hotkey_favorites=Klawisz skrótu do otwierania ulubionych
+settings_hotkey_focus_search=Klawisz skrótu, aby skupić się na polu wyszukiwania
+settings_hotkey_reload=Skrót do odświeżenia bieżącej strony
 
 settings_sysinfo_easypie_charts=Pokaż wykresy
 settings_sysinfo_theme_updates=Sprawdź, czy są dostępne autentyczne motywy
@@ -81,7 +81,7 @@ settings_right_cloudmin_default=Domyślna strona dla Cloudmin
 
 settings_right_clear_local_cache=Wyczyść pamięć podręczną
 settings_side_slider_fixed=Bądź zawsze widoczny
-settings_hotkey_toggle_slider=Skrót dla bocznego suwaka
+settings_hotkey_toggle_slider=Klawisz skrótu do przełączania widoczności bocznego suwaka
 
 settings_side_slider_enabled=Włącz suwak
 settings_leftmenu_user_html=Pokaż fragment kodu HTML
@@ -103,9 +103,9 @@ theme_global_success=Sukces
 theme_global_info=Informacja
 sysinfo_system_status_warning=Aby wyświetlić <strong>Informacje o systemie</strong>, musisz włączyć moduł <em>Status systemu</em> w ustawieniach użytkownika.
 settings_leftmenu_user_html_privileged=Pokaż fragment kodu HTML tylko dla administratorów
-theme_sysinfo_wmdocs=Dokumentacja Webmina
-theme_sysinfo_vmdocs=Dokumentacja Virtualmin
-theme_sysinfo_cmdocs=Dokumentacja Cloudmin
+theme_xhred_sysinfo_wmdocs=Dokumentacja Webmina
+theme_xhred_sysinfo_vmdocs=Dokumentacja Virtualmina
+theme_xhred_sysinfo_cmdocs=Dokumentacja Cloudmina
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -467,7 +467,7 @@ theme_xhred_move_down=Padnij
 theme_xhred_add_after=Dodaj po
 theme_xhred_add_before=Dodaj przed
 settings_show_night_mode_link=Pokaż przycisk trybu dziennego/nocnego
-settings_hotkey_toggle_key_night_mode=Skrót do przełączania ciemnej/jasnej palety
+settings_hotkey_toggle_key_night_mode=Klawisz skrótu do przełączania palety kolorów
 settings_title=Konfiguracja motywu
 settings_subtitle=Dla użytkownika
 
@@ -786,7 +786,7 @@ settings_mail_ui=Włącz interfejs nowej poczty
 settings_theme_config_admins_only_privileged_error=Odmowa dostępu: Administrator zablokował dostęp do ustawień użytkownika
 
 theme_xhred_tooltip_navigation_pinned=Przypnij/odpnij menu nawigacyjne
-settings_hotkey_navigation=Skrót do przełączania menu nawigacji
+settings_hotkey_navigation=Klawisz skrótu do przełączania stanu menu nawigacji
 
 theme_xhred_search_in_webmin=Wyszukaj Webmin
 theme_xhred_search_in_usermin=Wyszukaj Usermin
@@ -795,7 +795,7 @@ theme_xhred_search_in_servermanager=Wyszukaj Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Skopiuj zaznaczenie do schowka
 
-settings_hotkey_slider=Skrót do przełączania bocznego suwaka
+settings_hotkey_slider=Klawisz skrótu do przełączania stanu bocznego suwaka
 
 theme_git_update_locked=Aktualizacja motywu nie może zostać zakończona z powodu braku połączenia z GitHub lub przekroczeniem limitu szybkości API. W przypadku ostatnich nieuwierzytelnionych żądań limit prędkości pozwala na maksymalnie 60 żądań na godzinę. Spróbuj ponownie później lub użyj konsoli, aby zrobić to ręcznie za pomocą skryptu aktualizacji.
 
@@ -1169,7 +1169,7 @@ theme_xhred_webminlog_module_no_command_escapes=Przełącz ukośniki odwrotne dl
 settings_navigation_auto_fold_category=Automatyczne składanie nieaktywnych kategorii
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generowanie przeszukiwalnej listy opcji szablonu
 theme_xhred_tooltip_virtualmin_templates_filter=Przeszukuj wszystkie opcje szablonu
-theme_sysinfo_vmforum=Społeczność Virtualmin
+theme_xhred_sysinfo_vmforum=Społeczność Virtualmin
 theme_xhred_tooltip_support_ticket=Prześlij zgłoszenie pomocy technicznej z dołączonymi informacjami o systemie; przytrzymaj klawisz $1, aby skopiować link pomocy do schowka
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Wymuś odświeżenie informacji o systemie
 theme_xhred_disk_quota_error_title=Poza limitem
@@ -1233,3 +1233,20 @@ theme_xhred_filemanager_changing_acls=Zmiana listy kontroli dostępu.
 theme_xhred_filemanager_successful_acls_with_errors=Lista kontroli dostępu nie została pomyślnie zmieniona dla wszystkich obiektów:
 theme_xhred_filemanager_successful_acls=Lista kontroli dostępu została pomyślnie zmieniona.
 theme_download_error=Błąd podczas pobierania pliku, ponieważ znajduje się on poza dozwolonym katalogiem : $1
+
+#20.22
+theme_xhred_hotkeys_help=Pomoc (F1)
+theme_xhred_hotkeys_help_title=Skróty klawiszowe
+theme_xhred_hotkeys_help_title_docs=Dokumentacja
+theme_xhred_hotkeys_help_title_global=Globalne skróty
+theme_xhred_hotkeys_help_title_module=Skróty specyficzne dla modułu
+theme_xhred_hotkeys_help_title_fm=Skróty menedżera plików
+theme_xhred_hotkeys_help_title_edit=Skróty edytora
+theme_xhred_global_community=Wspólnota
+theme_xhred_hotkeys_server_error=Nie można pobrać pliku pomocy
+theme_xhred_hotkeys_custom_to_opens=otwiera się
+theme_xhred_hotkeys_custom_not_set=nie ustawiony
+theme_xhred_hotkey_open_module_config_privileged=Klawisz skrótu, aby otworzyć konfigurację modułu
+theme_xhred_hotkey_open_theme_config=Klawisz skrótu, aby otworzyć konfigurację motywu
+theme_xhred_hotkey_clear_cache=Wyczyść pamięć podręczną i załaduj ponownie
+theme_xhred_hotkey_open_new=Zduplikuj do nowej karty

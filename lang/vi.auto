@@ -138,16 +138,16 @@ settings_theme_options_button=Hiển thị nút cài đặt chủ đề
 
 settings_hotkeys_active=Cho phép sử dụng phím nóng
 settings_hotkey_toggle_modifier=Sửa đổi phím nóng
-settings_hotkey_toggle_key_webmin=Phím nóng cho Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey cho Virtualmin
-settings_hotkey_toggle_key_cloudmin=Phím nóng cho Cloudmin
-settings_hotkey_toggle_key_usermin=Hotkey cho Usermin
-settings_hotkey_toggle_key_webmail=Phím nóng cho thư
-settings_hotkey_sysinfo=Hotkey cho bảng điều khiển
-settings_hotkey_shell=Hotkey cho thiết bị đầu cuối
-settings_hotkey_favorites=Hotkey cho mục yêu thích
-settings_hotkey_focus_search=Phím nóng cho trường tìm kiếm
-settings_hotkey_reload=Hotkey để tải lại trang
+settings_hotkey_toggle_key_webmin=Phím nóng để tải menu Webmin
+settings_hotkey_toggle_key_virtualmin=Phím nóng để tải menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Phím nóng để tải menu Cloudmin
+settings_hotkey_toggle_key_usermin=Phím nóng để tải menu Usermin
+settings_hotkey_toggle_key_webmail=Phím nóng để tải menu Thư
+settings_hotkey_sysinfo=Phím nóng để mở bảng điều khiển
+settings_hotkey_shell=Phím nóng để mở thiết bị đầu cuối thả xuống
+settings_hotkey_favorites=Phím nóng để mở mục yêu thích
+settings_hotkey_focus_search=Phím nóng để tập trung vào trường tìm kiếm
+settings_hotkey_reload=Phím nóng để làm mới trang hiện tại
 
 settings_sysinfo_easypie_charts=Hiển thị biểu đồ
 settings_sysinfo_theme_updates=Kiểm tra cập nhật Theme xác thực
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Trang mặc định cho Cloudmin
 
 settings_right_clear_local_cache=Xóa bộ nhớ cache
 settings_side_slider_fixed=Luôn luôn nhìn thấy
-settings_hotkey_toggle_slider=Phím nóng cho thanh trượt bên
+settings_hotkey_toggle_slider=Phím nóng để chuyển đổi khả năng hiển thị của thanh trượt bên
 
 settings_side_slider_enabled=Kích hoạt thanh trượt
 settings_leftmenu_user_html=Hiển thị đoạn mã HTML
@@ -184,9 +184,9 @@ theme_global_success=Sự thành công
 theme_global_info=Thông tin
 sysinfo_system_status_warning=Để hiển thị <strong>Thông tin hệ thống</strong>, bạn sẽ cần bật mô-đun <em>Trạng thái hệ thống</em> trong cài đặt người dùng.
 settings_leftmenu_user_html_privileged=Chỉ hiển thị đoạn mã HTML cho quản trị viên
-theme_sysinfo_wmdocs=Tài liệu về Webmin
-theme_sysinfo_vmdocs=Tài liệu Virtualmin
-theme_sysinfo_cmdocs=Tài liệu của Cloudmin
+theme_xhred_sysinfo_wmdocs=tài liệu webmin
+theme_xhred_sysinfo_vmdocs=Tài liệu ảo
+theme_xhred_sysinfo_cmdocs=tài liệu đám mây
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +549,7 @@ theme_xhred_move_down=Đi xuống
 theme_xhred_add_after=Thêm vào sau
 theme_xhred_add_before=Thêm trước
 settings_show_night_mode_link=Hiển thị nút chế độ ngày/đêm
-settings_hotkey_toggle_key_night_mode=Hotkey để chuyển đổi bảng màu tối/sáng
+settings_hotkey_toggle_key_night_mode=Phím nóng để chuyển đổi bảng màu
 settings_title=Cấu hình chủ đề
 settings_subtitle=Dành cho người dùng
 
@@ -868,7 +868,7 @@ settings_mail_ui=Kích hoạt giao diện người dùng thư mới
 settings_theme_config_admins_only_privileged_error=Truy cập bị từ chối: Quản trị viên đã chặn quyền truy cập vào các tùy chỉnh của người dùng
 
 theme_xhred_tooltip_navigation_pinned=Menu điều hướng ghim/bỏ ghim
-settings_hotkey_navigation=Hotkey để chuyển đổi menu điều hướng
+settings_hotkey_navigation=Phím nóng để chuyển đổi trạng thái menu điều hướng
 
 theme_xhred_search_in_webmin=Tìm kiếm trên Webmin
 theme_xhred_search_in_usermin=Tìm kiếm Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Tìm kiếm trên Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Sao chép lựa chọn vào clipboard
 
-settings_hotkey_slider=Hotkey cho thanh trượt bên
+settings_hotkey_slider=Phím nóng để chuyển đổi trạng thái thanh trượt bên
 
 theme_git_update_locked=Không thể hoàn thành cập nhật chủ đề do không có kết nối với GitHub hoặc vượt quá giới hạn tốc độ API của nó. Đối với sau này, các yêu cầu không được xác thực, giới hạn tốc độ cho phép tối đa 60 yêu cầu mỗi giờ. Thử lại sau hoặc sử dụng bàn điều khiển để thực hiện thủ công thông qua tập lệnh cập nhật.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=Chuyển đổi dấu gạch ch�
 settings_navigation_auto_fold_category=Tự động gấp các danh mục không hoạt động
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Tạo danh sách các tùy chọn có thể tìm kiếm cho mẫu
 theme_xhred_tooltip_virtualmin_templates_filter=Tìm kiếm trong tất cả các tùy chọn của mẫu
-theme_sysinfo_vmforum=Cộng đồng Virtualmin
+theme_xhred_sysinfo_vmforum=Cộng đồng ảo
 theme_xhred_tooltip_support_ticket=Gửi phiếu hỗ trợ với thông tin hệ thống đính kèm; giữ phím $1 để sao chép liên kết hỗ trợ vào khay nhớ tạm
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Buộc làm mới thông tin hệ thống
 theme_xhred_disk_quota_error_title=Hết hạn ngạch
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=Thay đổi danh sách kiểm soát truy c
 theme_xhred_filemanager_successful_acls_with_errors=Danh sách kiểm soát truy cập chưa được thay đổi thành công cho tất cả các đối tượng:
 theme_xhred_filemanager_successful_acls=Danh sách kiểm soát truy cập đã được thay đổi thành công.
 theme_download_error=Lỗi khi tải xuống tệp vì nó nằm ngoài thư mục được phép  : $1
+
+#20.22
+theme_xhred_hotkeys_help=Trợ giúp (F1)
+theme_xhred_hotkeys_help_title=Các phím tắt bàn phím
+theme_xhred_hotkeys_help_title_docs=Tài liệu
+theme_xhred_hotkeys_help_title_global=Phím tắt toàn cầu
+theme_xhred_hotkeys_help_title_module=Các phím tắt cụ thể của mô-đun
+theme_xhred_hotkeys_help_title_fm=Phím tắt quản lý tệp
+theme_xhred_hotkeys_help_title_edit=Phím tắt trình chỉnh sửa
+theme_xhred_global_community=Cộng đồng
+theme_xhred_hotkeys_server_error=Không thể truy xuất tệp trợ giúp
+theme_xhred_hotkeys_custom_to_opens=mở ra
+theme_xhred_hotkeys_custom_not_set=không được thiết lập
+theme_xhred_hotkey_open_module_config_privileged=Phím nóng để mở cấu hình mô-đun
+theme_xhred_hotkey_open_theme_config=Phím nóng để mở cấu hình chủ đề
+theme_xhred_hotkey_clear_cache=Xóa bộ nhớ cache và tải lại
+theme_xhred_hotkey_open_new=Sao chép vào một tab mới

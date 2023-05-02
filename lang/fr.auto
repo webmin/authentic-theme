@@ -2,6 +2,26 @@ settings_right_hotkey_options=Raccourcis clavier
 
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
 
+settings_hotkey_toggle_key_webmin=Touche de raccourci pour charger le menu Webmin
+settings_hotkey_toggle_key_virtualmin=Touche de raccourci pour charger le menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Touche de raccourci pour charger le menu Cloudmin
+settings_hotkey_toggle_key_usermin=Touche de raccourci pour charger le menu Usermin
+settings_hotkey_toggle_key_webmail=Touche de raccourci pour charger le menu Mail
+settings_hotkey_sysinfo=Touche de raccourci pour ouvrir le tableau de bord
+settings_hotkey_shell=Touche de raccourci pour ouvrir le terminal déroulant
+settings_hotkey_favorites=Touche de raccourci pour ouvrir les favoris
+settings_hotkey_focus_search=Touche de raccourci pour se concentrer sur le champ de recherche
+settings_hotkey_reload=Touche de raccourci pour actualiser la page actuelle
+
+settings_hotkey_toggle_slider=Touche de raccourci pour basculer la visibilité du curseur latéral
+
+theme_xhred_sysinfo_wmdocs=Documentation Webmin
+theme_xhred_sysinfo_vmdocs=Documentation Virtualmin
+theme_xhred_sysinfo_cmdocs=Documentation Cloudmin
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Touche de raccourci pour basculer la palette de couleurs
+
 #18.48
 theme_force_upgrade=Mettre à jour le thème
 theme_update_footer=Merci de bien vouloir signaler les bogues au référentiel $1. Rejoignez notre chaîne $2 pour obtenir les dernières nouvelles.
@@ -10,6 +30,10 @@ settings_webmin_default_module=Page par défaut pour Webmin
 
 #19.09
 theme_git_patch_incompatible_message_desc=Il pourrait y avoir des changements incompatibles, qui pourraient empêcher le thème de fonctionner comme prévu. Il n'est pas possible de poursuivre l'opération de mise à niveau à l'aide de l'interface utilisateur.
+
+settings_hotkey_navigation=Touche de raccourci pour basculer l'état du menu de navigation
+
+settings_hotkey_slider=Touche de raccourci pour basculer l'état du curseur latéral
 
 theme_xhred_filemanager_mass_selected_for_delete=Tous les éléments du répertoire %1
 
@@ -131,7 +155,7 @@ theme_xhred_webminlog_module_no_command_escapes=Basculer les barres obliques inv
 settings_navigation_auto_fold_category=Plier automatiquement les catégories inactives
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Génération d'une liste consultable d'options pour le modèle
 theme_xhred_tooltip_virtualmin_templates_filter=Rechercher dans toutes les options du modèle
-theme_sysinfo_vmforum=Communauté Virtualmin
+theme_xhred_sysinfo_vmforum=Communauté Virtualmin
 theme_xhred_tooltip_support_ticket=Soumettre un ticket d'assistance avec les informations système jointes ; maintenez la touche $1 enfoncée pour copier le lien de support dans le presse-papiers
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forcer à actualiser les informations système
 theme_xhred_disk_quota_error_title=Hors quota
@@ -195,3 +219,20 @@ theme_xhred_filemanager_changing_acls=Modification de la liste de contrôle d'ac
 theme_xhred_filemanager_successful_acls_with_errors=La liste de contrôle d'accès n'a pas été modifiée avec succès pour tous les objets :
 theme_xhred_filemanager_successful_acls=La liste de contrôle d'accès a été modifiée avec succès.
 theme_download_error=Erreur lors du téléchargement du fichier car il se trouve en dehors du répertoire autorisé  : $1
+
+#20.22
+theme_xhred_hotkeys_help=Aide (F1)
+theme_xhred_hotkeys_help_title=Raccourcis clavier
+theme_xhred_hotkeys_help_title_docs=Documentation
+theme_xhred_hotkeys_help_title_global=Raccourcis globaux
+theme_xhred_hotkeys_help_title_module=Raccourcis spécifiques au module
+theme_xhred_hotkeys_help_title_fm=Raccourcis du gestionnaire de fichiers
+theme_xhred_hotkeys_help_title_edit=Raccourcis de l'éditeur
+theme_xhred_global_community=Communauté
+theme_xhred_hotkeys_server_error=Impossible de récupérer le fichier d'aide
+theme_xhred_hotkeys_custom_to_opens=s'ouvre
+theme_xhred_hotkeys_custom_not_set=pas encore défini
+theme_xhred_hotkey_open_module_config_privileged=Raccourci clavier pour ouvrir la configuration du module
+theme_xhred_hotkey_open_theme_config=Raccourci clavier pour ouvrir la configuration du thème
+theme_xhred_hotkey_clear_cache=Vider le cache et recharger
+theme_xhred_hotkey_open_new=Dupliquer dans un nouvel onglet

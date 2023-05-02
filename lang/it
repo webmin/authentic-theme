@@ -138,16 +138,6 @@ settings_theme_options_button=Mostra pulsante Impostazioni del tema
 
 settings_hotkeys_active=Attiva utilizzo dei tasti di scelta rapida
 settings_hotkey_toggle_modifier=Modificatore tasti di scelta rapida
-settings_hotkey_toggle_key_webmin=Tasto di scelta rapida per Webmin
-settings_hotkey_toggle_key_virtualmin=Tasto di scelta rapida per Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tasto di scelta rapida per Cloudmin
-settings_hotkey_toggle_key_usermin=Tasto di scelta rapida per Usermin
-settings_hotkey_toggle_key_webmail=Tasto di scelta rapida per Mail
-settings_hotkey_sysinfo=Tasto di scelta rapida per Dashboard
-settings_hotkey_shell=Tasto di scelta rapida per Terminale
-settings_hotkey_favorites=Tasto di scelta rapida per Preferiti
-settings_hotkey_focus_search=Tasto di scelta rapida per Campo ricerca
-settings_hotkey_reload=Tasto di scelta rapida per Ricaricamento pagina
 
 settings_sysinfo_easypie_charts=Mostra grafici
 settings_sysinfo_theme_updates=Controlla aggiornamenti di Authentic Theme
@@ -162,7 +152,6 @@ settings_right_cloudmin_default=Pagina predefinita per Cloudmin
 
 settings_right_clear_local_cache=Pulisci cache
 settings_side_slider_fixed=Mantieni sempre visibile
-settings_hotkey_toggle_slider=Tasto di scelta rapida per slider laterale
 
 settings_side_slider_enabled=Attiva slider
 settings_leftmenu_user_html=Mostra codice HTML
@@ -184,9 +173,6 @@ theme_global_success=Successo
 theme_global_info=Informazione
 sysinfo_system_status_warning=Per visualizzare le <strong>Informazioni sul sistema</strong> è necessario attivare il modulo <em>Stato del sistema</em> nelle impostazioni utente.
 settings_leftmenu_user_html_privileged=Visualizza codice HTML solo per amministratori
-theme_sysinfo_wmdocs=Documentazione Webmin
-theme_sysinfo_vmdocs=Documentazione Virtualmin
-theme_sysinfo_cmdocs=Documentazione Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +535,6 @@ theme_xhred_move_down=Muovi giu
 theme_xhred_add_after=Aggiungi dopo
 theme_xhred_add_before=Aggiungi prima
 settings_show_night_mode_link=Mostra pulsante modalità giorno/notte
-settings_hotkey_toggle_key_night_mode=Tasto di scelta rapida per passare tra la modalità giorno/notte
 settings_title=Configurazione tema
 settings_subtitle=Per utente
 
@@ -866,7 +851,6 @@ settings_mail_ui=Attiva nuova UI per le email
 settings_theme_config_admins_only_privileged_error=Accesso negato: L'amministratore ha bloccato l'accesso alle personalizzazioni dell'utente
 
 theme_xhred_tooltip_navigation_pinned=Fissa/Non fissare menu di navigazione
-settings_hotkey_navigation=Tasto di scelta rapida per attivare o disattivare il menu di navigazione
 
 theme_xhred_search_in_webmin=Cerca in Webmin
 theme_xhred_search_in_usermin=Cerca in Usermin
@@ -874,8 +858,6 @@ theme_xhred_search_in_virtualserver=Cerca in Virtualmin
 theme_xhred_search_in_servermanager=Cerca in Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copia la selezione negli appunti
-
-settings_hotkey_slider=Tasto di scelta rapida per attivare o disattivare la slide laterale
 
 theme_git_update_locked=L'aggiornamento del tema non può essere completato a causa di nessuna connessione a GitHub o del suo eccesso del limite della tariffa API. Per queste ultime, richieste non autenticate, il limite tariffario consente fino a 60 richieste all'ora. Riprovare più tardi o usare la console per farlo manualmente tramite script di aggiornamento.
 

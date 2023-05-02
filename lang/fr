@@ -135,16 +135,6 @@ settings_theme_options_button=Afficher le bouton des paramètres du thème
 
 settings_hotkeys_active=Activer l'utilisation des raccourcis clavier
 settings_hotkey_toggle_modifier=Modificateur de raccourcis clavier
-settings_hotkey_toggle_key_webmin=Raccourci pour Webmin
-settings_hotkey_toggle_key_virtualmin=Raccourci pour Virtualmin
-settings_hotkey_toggle_key_cloudmin=Raccourci pour Cloudmin
-settings_hotkey_toggle_key_usermin=Raccourci pour Usermin
-settings_hotkey_toggle_key_webmail=Raccourci pour le courrier
-settings_hotkey_sysinfo=Raccourci pour le tableau de bord
-settings_hotkey_shell=Raccourci pour le terminal
-settings_hotkey_favorites=Raccourci pour les favoris
-settings_hotkey_focus_search=Raccourci pour le champ de recherche
-settings_hotkey_reload=Raccourci pour le rechargement de la page
 
 settings_sysinfo_easypie_charts=Afficher les graphiques
 settings_sysinfo_theme_updates=Rechercher les mises à jour du thème authentique
@@ -159,7 +149,6 @@ settings_right_cloudmin_default=Page par défaut pour Cloudmin
 
 settings_right_clear_local_cache=Vider le cache
 settings_side_slider_fixed=Gardez toujours visible
-settings_hotkey_toggle_slider=Touche de raccourci pour le curseur latéral
 
 settings_side_slider_enabled=Activer le curseur
 settings_leftmenu_user_html=Afficher l'extrait de code HTML
@@ -181,9 +170,6 @@ theme_global_success=Succès
 theme_global_info=Information
 sysinfo_system_status_warning=Pour afficher les <strong>Informations système</strong>, vous devez activer le module <em>État du système</em> dans les paramètres utilisateur.
 settings_leftmenu_user_html_privileged=Afficher l'extrait de code HTML pour les administrateurs uniquement
-theme_sysinfo_wmdocs=Documentation Webmin
-theme_sysinfo_vmdocs=Documentation Virtualmin
-theme_sysinfo_cmdocs=Documentation Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -546,7 +532,6 @@ theme_xhred_move_down=Descendre
 theme_xhred_add_after=Ajouter après
 theme_xhred_add_before=Ajouter avant
 settings_show_night_mode_link=Afficher le bouton de mode jour/nuit
-settings_hotkey_toggle_key_night_mode=Raccourci pour basculer entre la palette sombre/clair
 settings_title=Configuration du thème
 settings_subtitle=Pour l'utilisateur
 
@@ -860,7 +845,6 @@ settings_mail_ui=Activer la nouvelle interface utilisateur de messagerie
 settings_theme_config_admins_only_privileged_error=Accès refusé: l'administrateur a bloqué l'accès aux personnalisations utilisateur
 
 theme_xhred_tooltip_navigation_pinned=Menu de navigation Épingler/détacher
-settings_hotkey_navigation=Raccourci pour basculer le menu de navigation
 
 theme_xhred_search_in_webmin=Rechercher sur Webmin
 theme_xhred_search_in_usermin=Rechercher Usermin
@@ -868,8 +852,6 @@ theme_xhred_search_in_virtualserver=Rechercher Virtualmin
 theme_xhred_search_in_servermanager=Rechercher Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copier la sélection dans le presse-papiers
-
-settings_hotkey_slider=Raccourci pour basculer le curseur latéral
 
 theme_git_update_locked=La mise à jour du thème ne peut pas être effectuée en raison de l'absence de connexion à GitHub ou du dépassement de la limite de débit de l'API. Pour les dernières demandes non authentifiées, la limite de débit autorise jusqu'à 60 demandes par heure. Réessayez plus tard ou utilisez la console pour le faire manuellement via un script de mise à jour.
 

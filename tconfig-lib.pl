@@ -126,12 +126,11 @@ sub theme_settings_raw
                        'settings_hotkey_shell',
                        'settings_hotkey_shell2',
                        'settings_hotkey_sysinfo',
-                       'settings_hotkey_toggle_slider',
+                       'settings_hotkey_navigation',
+                       'settings_hotkey_slider',
                        'settings_hotkey_favorites',
                        'settings_hotkey_focus_search',
                        'settings_hotkey_reload',
-                       'settings_hotkey_navigation',
-                       'settings_hotkey_slider',
                        'settings_hotkey_toggle_key_night_mode',
             ] }
         ],
@@ -246,7 +245,6 @@ sub theme_settings_filter
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
              'settings_hotkey_slider',
-             'settings_hotkey_toggle_slider',
              'settings_global_palette_unauthenticated',
              'settings_sysinfo_easypie_charts',
              'settings_sysinfo_easypie_charts_size',
@@ -335,7 +333,6 @@ sub theme_settings_format
              $k eq 'settings_hotkey_focus_search'  ||
              $k eq 'settings_hotkey_navigation'    ||
              $k eq 'settings_hotkey_slider'        ||
-             $k eq 'settings_hotkey_toggle_slider' ||
              $k eq 'settings_hotkey_reload'        ||
              $k eq 'settings_hotkey_shell'         ||
              $k eq 'settings_hotkey_shell2'        ||
@@ -391,8 +388,17 @@ sub theme_settings_format
         }
         $v = '
                 <input style="display: inline; width: ' .
-          $iwidth . '%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="' .
-          $range_min . '" max="' . $range_max . '" step="' . $range_step . '" name="' . $k . '" value="' . $v . '">
+          $iwidth .
+          '%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="' .
+          $range_min .
+          '" max="' .
+          $range_max .
+          '" step="' .
+          $range_step .
+          '" name="' .
+          $k .
+          '" value="' .
+          $v . '">
             ';
 
     } elsif ($k eq 'settings_leftmenu_custom_links') {
@@ -410,8 +416,11 @@ sub theme_settings_format
         $v =~ s/(<(\/|\s*)(html|head|meta|link|title|body).*?>)//g;
         $v = '
                 <input style="display: inline;'
-          . $width . 'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' .
-          $k . '" value="' . $v . '">
+          . $width .
+          'height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="text" name="' .
+          $k .
+          '" value="' .
+          $v . '">
             ';
     } elsif ($k eq 'settings_right_default_tab_webmin') {
         $v = '<select class="ui_select" name="' . $k . '">
@@ -421,13 +430,17 @@ sub theme_settings_format
                 '
           . (&foreign_available("virtual-server") &&
              ' <option value="virtualmin"' .
-             ($v eq 'virtualmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_vm'} . '</option> ') .
+             ($v eq 'virtualmin' && ' selected') . '>' .
+             $theme_text{'theme_xhred_titles_vm'} .
+             '</option> ') .
           '
 
                '
           . (&foreign_available("server-manager") &&
              ' <option value="cloudmin"' .
-             ($v eq 'cloudmin' && ' selected') . '>' . $theme_text{'theme_xhred_titles_cm'} . '</option>') .
+             ($v eq 'cloudmin' && ' selected') . '>' .
+             $theme_text{'theme_xhred_titles_cm'} .
+             '</option>') .
           '
                 </select>';
     } elsif ($k eq 'settings_webmin_default_module') {
@@ -440,7 +453,9 @@ sub theme_settings_format
                 <option value="/"'
           . ($v eq '/' && ' selected') . '>' . $theme_text{'theme_xhred_titles_um'} . '</option>       
                 <option value="webmail"' .
-          ($v eq 'webmail' && ' selected') . '>' . $theme_text{'theme_xhred_titles_mail'} . '</option>
+          ($v eq 'webmail' && ' selected') . '>' .
+          $theme_text{'theme_xhred_titles_mail'} .
+          '</option>
           
 
                 </select>';
@@ -463,23 +478,41 @@ sub theme_settings_format
     } elsif ($k eq 'settings_cache_interval') {
         $v = '<select class="ui_select" name="' . $k . '">
                     <option value="3600"' .
-          ($v eq '3600' && ' selected') . '>' . $theme_text{'settings_cache_interval_1h'} . '</option>
+          ($v eq '3600' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_1h'} .
+          '</option>
                     <option value="43200"' .
-          ($v eq '43200' && ' selected') . '>' . $theme_text{'settings_cache_interval_12h'} . '</option>
+          ($v eq '43200' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_12h'} .
+          '</option>
                     <option value="86400"' .
-          ($v eq '86400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1d'} . '</option>
+          ($v eq '86400' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_1d'} .
+          '</option>
                     <option value="604800"' .
-          ($v eq '604800' && ' selected') . '>' . $theme_text{'settings_cache_interval_7d'} . '</option>
+          ($v eq '604800' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_7d'} .
+          '</option>
                     <option value="1209600"' .
-          ($v eq '1209600' && ' selected') . '>' . $theme_text{'settings_cache_interval_14d'} . '</option>
+          ($v eq '1209600' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_14d'} .
+          '</option>
                     <option value="2419200"' .
-          ($v eq '2419200' && ' selected') . '>' . $theme_text{'settings_cache_interval_1m'} . '</option>
+          ($v eq '2419200' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_1m'} .
+          '</option>
                     <option value="7257600"' .
-          ($v eq '7257600' && ' selected') . '>' . $theme_text{'settings_cache_interval_3m'} . '</option>
+          ($v eq '7257600' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_3m'} .
+          '</option>
                     <option value="14515200"' .
-          ($v eq '14515200' && ' selected') . '>' . $theme_text{'settings_cache_interval_6m'} . '</option>
+          ($v eq '14515200' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_6m'} .
+          '</option>
                     <option value="29030400"' .
-          ($v eq '29030400' && ' selected') . '>' . $theme_text{'settings_cache_interval_1y'} . '</option>
+          ($v eq '29030400' && ' selected') . '>' .
+          $theme_text{'settings_cache_interval_1y'} .
+          '</option>
                 </select>';
     } elsif ($k eq 'settings_right_virtualmin_default') {
         if (foreign_available('virtual-server')) {
@@ -567,13 +600,17 @@ sub theme_settings_format
               . $theme_text{$k}
               . '" data-content="' . html_escape($description) . '"></sup>')
          ) .
-           '<span data-text>' . $theme_text{$k} . '</span>'
+           '<span data-text>' .
+           $theme_text{$k} .
+           '</span>'
            .
            (
-             $description && ($k =~ /level_navigation|leftmenu_width/ ?
-                              '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-                              $k =~ /sysinfo_theme_updates/ &&
-                              '<div class="smaller text-normal no-padding margined-left-1 theme-version-installed-vs-remote"></div>'))
+             $description && (
+                       $k =~ /level_navigation|leftmenu_width/ ?
+                       '<div class="smaller text-normal no-padding">' . $description . '</div>' :
+                       $k =~ /sysinfo_theme_updates/ &&
+                       '<div class="smaller text-normal no-padding margined-left-1 theme-version-installed-vs-remote"></div>'
+             ))
         ),
         "<span>$v</span>"];
 }
@@ -593,7 +630,10 @@ sub theme_controls
             my ($ver_str) = ($ver =~ /^(?|(\d+.\d+)\s+|(\d+.\d+.\d+)\s+)/);
             $stable_versions_dropdown_submenu_content .=
               '<li><a tabindex="-1" href="javascript:;" data-git="1" data-stable="1" data-version="' .
-              $ver_str . '" class="authentic_update">&nbsp;' . $ver . '</a></li>';
+              $ver_str .
+              '" class="authentic_update">&nbsp;' .
+              $ver .
+              '</a></li>';
         }
         $stable_versions_dropdown_submenu_content .= '</ul>';
     }
@@ -602,8 +642,7 @@ sub theme_controls
         (&webmin_user_is_admin() && $section eq $theme_text{'settings_right_soft_updates_page_options'}) ?
           '                     <span id="force_update_menu_cnt" class="dropup"'
           .
-          ( has_command('git') ?
-              '' :
+          ( has_command('git') ? '' :
               get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
           ) .
           '>
@@ -615,10 +654,12 @@ sub theme_controls
                                          <span class="caret"></span>
                                        </button>
                                        <ul class="dropdown-menu" aria-labelledby="force_update_menu">
-                                         <li' . $stable_versions_dropdown_submenu .
+                                         <li' .
+          $stable_versions_dropdown_submenu .
 '><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa2 fa2-release-tagged fa-0_90x"></i>'
           . $theme_text{'theme_xhred_force_upgrade_stable'}
-          . '</a>' . $stable_versions_dropdown_submenu_content . '</li>
+          . '</a>' .
+          $stable_versions_dropdown_submenu_content . '</li>
                                          <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa2 fa2-release-master"></i>'
           . $theme_text{'theme_xhred_force_upgrade_beta'} . '</a></li>
                                        </ul>
@@ -719,8 +760,10 @@ sub settings_get_select_document_title
       <option value="7"'
       . ($v eq '7' && ' selected') . '>' . theme_text('settings_document_title_option_7', ucfirst($prod_name)) . '</option>
       <option value="1"'
-      . ($v eq '1' && ' selected') . '>' . theme_text('settings_document_title_option_1', ucfirst($prod_name)) .
-      ' (' . $theme_text{'theme_xhred_global_default'} . ')</option>
+      . ($v eq '1' && ' selected') . '>' .
+      theme_text('settings_document_title_option_1', ucfirst($prod_name)) . ' (' .
+      $theme_text{'theme_xhred_global_default'} .
+      ')</option>
       <option value="2"'
       . ($v eq '2' && ' selected') . '>' . theme_text('settings_document_title_option_2', ucfirst($prod_name)) . '</option>
       <option value="4"'
@@ -752,6 +795,58 @@ sub settings_get_select_default_module
                               sort {$a->{'desc'} cmp $b->{'desc'}} @modules
                            ]);
     return $select;
+}
+
+sub theme_settings_data
+{
+    my @settings         = theme_settings_raw();
+    my @excluded_options = theme_settings_filter();
+    my @sections;
+    my @config_quick_access;
+
+    # Format options for display and build quick access filter
+    foreach my $sections (0 .. $#settings) {
+        foreach my $section ($settings[$sections]) {
+            for (my $i = 0; $i < scalar(@{ $section->[0]->{'data'} }); $i++) {
+                my $key_value = @{ $section->[0]->{'data'} }[$i];
+                my @key_value_formated =
+                  theme_settings_format(@{ $section->[0]->{'data'} }[$i],
+                                        $theme_config{ @{ $section->[0]->{'data'} }[$i] },
+                                        \@excluded_options);
+                if (!$key_value_formated[0][0]) {
+                    delete $section->[0]->{'data'}[$i];
+                    next;
+                }
+                $section->[0]->{'data'}[$i] = [$key_value_formated[0][0], $key_value_formated[0][1]];
+                $key_value_formated[0][0] =~ s/<div.*?>.*?<\/div>//gm;
+                $key_value_formated[0][0] =~ s/<span\s+data-text.*?>(.*?)<\/span>/$1/gm;
+                $key_value_formated[0][0] =~ s/<span.*?>.*?<\/span>//gm;
+                $key_value_formated[0][0] =~ s/<sup.*?>.*?<\/sup>//gm;
+                $key_value_formated[0][0] =~ s/<code>(.*?)<\/code>.*/$1/;
+                $key_value_formated[0][0] = entities_to_ascii($key_value_formated[0][0]);
+                push(@config_quick_access,
+                     {  'value'   => $key_value_formated[0][0],
+                        'key'     => $key_value,
+                        'section' => $section->[0]->{'id'},
+                        'data'    => { category => $section->[0]->{'title'} }
+                     });
+            }
+
+            # Remove undefined values which where previously discarded
+            @{ $section->[0]->{'data'} } = grep(defined, @{ $section->[0]->{'data'} });
+
+            # If section happened to be empty, remove it as well
+            if (!scalar(@{ $section->[0]->{'data'} })) {
+                delete $settings[$sections];
+            } else {
+                push(@sections, [$section->[0]->{'id'}, $section->[0]->{'title'}]);
+            }
+        }
+    }
+    return { 'sections'            => \@sections,
+             'config_quick_access' => \@config_quick_access,
+             'settings'            => \@settings,
+             'excluded_options'    => \@excluded_options };
 }
 
 1;

@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%in, %gconfig, $root_directory, $remote_user, $get_user_level);
+our (%in, %gconfig, $root_directory, $remote_user, $get_user_level, %theme_config, %theme_text);
 
 sub xhr
 {
@@ -23,7 +23,34 @@ sub xhr
         print_json($data);
     };
 
+    if ($type eq "data") {
+        if ($subtype eq "theme") {
+            if ($action eq "list-hotkeys") {
+                do("$ENV{'THEME_ROOT'}/tconfig-lib.pl");
+                my @hotkeys_labels =
+                  ($theme_text{'settings_right_hotkey_options'}, $theme_text{'settings_right_hotkey_custom_options'});
+                my $settings_data       = theme_settings_data();
+                my @config_quick_access = @{ $settings_data->{'config_quick_access'} };
+                my @hotkeys_data;
+                foreach my $opt (@config_quick_access) {
+                    next if (&indexof($opt->{'data'}->{'category'}, @hotkeys_labels) < 0);
+                    next
+                      if (
+                          &indexof($opt->{'key'},
+                                   ('settings_hotkeys_active',
+                                    'settings_hotkey_toggle_hold_modifier',
+                                    'settings_hotkey_toggle_modifier',
+                                   )
+                          ) >= 0);
+                    push(@hotkeys_data, { key => $opt->{'key'}, title => $opt->{'value'}, section => $opt->{'section'} });
+                }
+                $data{'hotkeys-list'} = \@hotkeys_data;
+            }
+        }
+    }
+
     if ($type eq "cmd") {
+
         # Fail state restart
         if ($action eq "restart") {
             if (webmin_user_is_admin()) {

@@ -3,9 +3,20 @@ settings_right_hotkey_options=Klávesové zkratky
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
 settings_right_reload=Načíst výchozí stránku na přepínač kartě
 
+settings_hotkey_toggle_key_webmin=Klávesová zkratka pro načtení nabídky Webmin
+settings_hotkey_toggle_key_virtualmin=Klávesová zkratka pro načtení nabídky Virtualmin
+settings_hotkey_toggle_key_cloudmin=Klávesová zkratka pro načtení nabídky Cloudmin
+settings_hotkey_toggle_key_usermin=Klávesová zkratka pro načtení nabídky Usermin
+settings_hotkey_toggle_key_webmail=Klávesová zkratka pro načtení menu Mail
+settings_hotkey_sysinfo=Klávesová zkratka pro otevření řídicího panelu
+settings_hotkey_shell=Klávesová zkratka pro otevření rozevíracího terminálu
+settings_hotkey_favorites=Klávesová zkratka pro otevření oblíbených položek
+settings_hotkey_focus_search=Klávesová zkratka pro zaměření na vyhledávací pole
+settings_hotkey_reload=Klávesová zkratka pro obnovení aktuální stránky
+
 settings_right_clear_local_cache=Vyčistit mezipaměť
 settings_side_slider_fixed=Udržujte vždy viditelné
-settings_hotkey_toggle_slider=Klávesová zkratka pro postranní jezdec
+settings_hotkey_toggle_slider=Klávesová zkratka pro přepínání viditelnosti bočního posuvníku
 
 settings_side_slider_enabled=Povolit posuvník
 settings_leftmenu_user_html=Zobrazit úryvek HTML
@@ -27,9 +38,9 @@ theme_global_success=Úspěch
 theme_global_info=Informace
 sysinfo_system_status_warning=Chcete-li zobrazit <strong>System Information</strong>, budete muset v uživatelských nastaveních povolit modul <em>System Status</em>.
 settings_leftmenu_user_html_privileged=Zobrazit úryvek HTML pouze pro správce
-theme_sysinfo_wmdocs=Webmin dokumentace
-theme_sysinfo_vmdocs=Virtuální dokumentace
-theme_sysinfo_cmdocs=Cloudmin dokumentace
+theme_xhred_sysinfo_wmdocs=Dokumentace Webmin
+theme_xhred_sysinfo_vmdocs=Dokumentace Virtualmin
+theme_xhred_sysinfo_cmdocs=Dokumentace Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -391,7 +402,7 @@ theme_xhred_move_down=Posunout dolů
 theme_xhred_add_after=Přidat po
 theme_xhred_add_before=Přidat dříve
 settings_show_night_mode_link=Tlačítko režimu den/noc
-settings_hotkey_toggle_key_night_mode=Klávesová zkratka pro přepínání tmavé/světlé palety
+settings_hotkey_toggle_key_night_mode=Klávesová zkratka pro přepínání palety barev
 settings_title=Konfigurace motivu
 settings_subtitle=Pro uživatele
 
@@ -710,7 +721,7 @@ settings_mail_ui=Povolit nové uživatelské rozhraní pro poštu
 settings_theme_config_admins_only_privileged_error=Přístup byl odepřen: Správce zablokoval přístup k uživatelským přizpůsobením
 
 theme_xhred_tooltip_navigation_pinned=Přepnout/odepnout navigační nabídku
-settings_hotkey_navigation=Klávesová zkratka pro přepínání navigační nabídky
+settings_hotkey_navigation=Klávesová zkratka pro přepínání stavu navigační nabídky
 
 theme_xhred_search_in_webmin=Prohledat webmin
 theme_xhred_search_in_usermin=Hledat Usermin
@@ -719,7 +730,7 @@ theme_xhred_search_in_servermanager=Hledat Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Zkopírujte výběr do schránky
 
-settings_hotkey_slider=Klávesová zkratka pro přepínání bočního posuvníku
+settings_hotkey_slider=Klávesová zkratka pro přepínání stavu bočního posuvníku
 
 theme_git_update_locked=Aktualizace motivu nelze dokončit z důvodu neexistence připojení k GitHubu nebo překročení limitu rychlosti API. U posledně neověřených žádostí umožňuje sazební limit až 60 žádostí za hodinu. Zkuste to znovu později nebo pomocí konzoly to proveďte ručně pomocí aktualizačního skriptu.
 
@@ -1093,7 +1104,7 @@ theme_xhred_webminlog_module_no_command_escapes=Přepnout zpětná lomítka pro 
 settings_navigation_auto_fold_category=Automatické skládání neaktivních kategorií
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Generování prohledávatelného seznamu možností pro šablonu
 theme_xhred_tooltip_virtualmin_templates_filter=Prohledávejte všechny možnosti šablony
-theme_sysinfo_vmforum=Komunita Virtualmin
+theme_xhred_sysinfo_vmforum=Komunita Virtualmin
 theme_xhred_tooltip_support_ticket=Odešlete lístek podpory s připojenými informacemi o systému; podržením klávesy $1 zkopírujete odkaz podpory do schránky
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Vynutit aktualizaci systémových informací
 theme_xhred_disk_quota_error_title=Mimo kvótu
@@ -1157,3 +1168,20 @@ theme_xhred_filemanager_changing_acls=Změna seznamu řízení přístupu.
 theme_xhred_filemanager_successful_acls_with_errors=Seznam řízení přístupu nebyl úspěšně změněn pro všechny objekty:
 theme_xhred_filemanager_successful_acls=Seznam řízení přístupu byl úspěšně změněn.
 theme_download_error=Chyba při stahování souboru, protože se nachází mimo povolený adresář : $1
+
+#20.22
+theme_xhred_hotkeys_help=Nápověda (F1)
+theme_xhred_hotkeys_help_title=Klávesové zkratky
+theme_xhred_hotkeys_help_title_docs=Dokumentace
+theme_xhred_hotkeys_help_title_global=Globální zkratky
+theme_xhred_hotkeys_help_title_module=Zkratky specifické pro modul
+theme_xhred_hotkeys_help_title_fm=Zkratky správce souborů
+theme_xhred_hotkeys_help_title_edit=Zkratky editoru
+theme_xhred_global_community=Společenství
+theme_xhred_hotkeys_server_error=Nelze načíst soubor nápovědy
+theme_xhred_hotkeys_custom_to_opens=otevře
+theme_xhred_hotkeys_custom_not_set=Nenastaveno
+theme_xhred_hotkey_open_module_config_privileged=Klávesová zkratka pro otevření konfigurace modulu
+theme_xhred_hotkey_open_theme_config=Klávesová zkratka pro otevření konfigurace motivu
+theme_xhred_hotkey_clear_cache=Vymažte mezipaměť a znovu načtěte
+theme_xhred_hotkey_open_new=Duplikovat na novou kartu

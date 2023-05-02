@@ -134,16 +134,6 @@ settings_theme_options_button=Arată butonul setări de temă
 
 settings_hotkeys_active=Activează utilizarea Taste Rapide
 settings_hotkey_toggle_modifier=Modificator de Taste Rapide
-settings_hotkey_toggle_key_webmin=Tastă Rapidă pentru Webmin
-settings_hotkey_toggle_key_virtualmin=Tastă Rapidă pentru Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tastă Rapidă pentru Cloudmin
-settings_hotkey_toggle_key_usermin=Tastă Rapidă pentru Usermin
-settings_hotkey_toggle_key_webmail=Tastă Rapidă pentru Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Tastă Rapidă pentru Favorite
-settings_hotkey_focus_search=Tastă Rapidă pentru câmpul de căutare
-settings_hotkey_reload=Tastă Rapidă pentru reîncărcarea paginii
 
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme
@@ -158,7 +148,6 @@ settings_right_cloudmin_default=Paginia implicită pentru Cloudmin
 
 settings_right_clear_local_cache=Eliberează Cache-ul
 settings_side_slider_fixed=Menține întotdeauna sliderul vizibil
-settings_hotkey_toggle_slider=Hotkey for side slider
 
 settings_side_slider_enabled=Activează slider
 settings_leftmenu_user_html=Arată fragmente HTML
@@ -180,9 +169,6 @@ theme_global_success=Succes
 theme_global_info=Informație
 sysinfo_system_status_warning=Pentru a avea afișat <strong>Informații despre Sistem</strong> va trebui să activezi modulul <em>Statistici Sistem</em> în configurațiile utilizatorului.
 settings_leftmenu_user_html_privileged=Arată fragmente HTML numia pentru administratori
-theme_sysinfo_wmdocs=Documentație Webmin
-theme_sysinfo_vmdocs=Documentație Virtualmin
-theme_sysinfo_cmdocs=Documentație Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -545,7 +531,6 @@ theme_xhred_move_down=Mută jos
 theme_xhred_add_after=Adaugă după
 theme_xhred_add_before=Adaugă înaintea
 settings_show_night_mode_link=Show day/night mode button
-settings_hotkey_toggle_key_night_mode=Tastă rapidă pentru comutare întunecat/luminos
 settings_title=Configurare Temă
 settings_subtitle=Pentru utilizator
 
@@ -854,7 +839,6 @@ settings_mail_ui=Activeaza noul UI pentru e-mail
 settings_theme_config_admins_only_privileged_error=Acces restricționat: Administratorul a blocat accesul personalizările utilizatorului
 
 theme_xhred_tooltip_navigation_pinned=Fixează/Defixează meniul de navigare
-settings_hotkey_navigation=Taste rapide pentru comutarea meniului de navigare
 
 theme_xhred_search_in_webmin=Caută în Webmin
 theme_xhred_search_in_usermin=Caută în Usermin
@@ -862,8 +846,6 @@ theme_xhred_search_in_virtualserver=Caută în Virtualmin
 theme_xhred_search_in_servermanager=Caută în Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copiază selecția în clipboard
-
-settings_hotkey_slider=Taste rapide pentru a comuta slider-ul lateral
 
 theme_git_update_locked=Actualizarea temei nu poate fi finalizată din cauza lipsei unei conexiuni cu GitHub sau cu depășirea limitei ratei API. Pentru cele din urmă, solicitări neautorizate, limita de rată permite până la 60 de solicitări pe oră. Încearcă din nou mai târziu sau folosește consola pentru a face manual prin scriptul de actualizare.
 

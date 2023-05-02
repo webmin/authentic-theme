@@ -134,16 +134,6 @@ settings_theme_options_button=Zobrazit tlačítko konfigurace tématu
 
 settings_hotkeys_active=Povolit klávesové zkratky
 settings_hotkey_toggle_modifier=Přepínač klávesových zkratek
-settings_hotkey_toggle_key_webmin=Klávesová zkratka pro Webmin
-settings_hotkey_toggle_key_virtualmin=Klávesová zkratka pro Virtualmin
-settings_hotkey_toggle_key_cloudmin=Klávesová zkratka pro Cloudmin
-settings_hotkey_toggle_key_usermin=Klávesová zkratka pro Usermin
-settings_hotkey_toggle_key_webmail=Klávesová zkratka pro Mail
-settings_hotkey_sysinfo=Hotkey for dashboard
-settings_hotkey_shell=Hotkey for terminal
-settings_hotkey_favorites=Hotkey for favorites
-settings_hotkey_focus_search=Klávesová zkratka pro hledání
-settings_hotkey_reload=Klávesová zkratka pro opetovné načtení stránky
 
 settings_sysinfo_easypie_charts=Zobrazit grafy
 settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu

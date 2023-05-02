@@ -4,6 +4,26 @@ settings_right_hotkey_options=Taste rapide
 
 settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
 
+settings_hotkey_toggle_key_webmin=Tasta rapidă pentru a încărca meniul Webmin
+settings_hotkey_toggle_key_virtualmin=Tasta rapidă pentru a încărca meniul Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tasta rapidă pentru a încărca meniul Cloudmin
+settings_hotkey_toggle_key_usermin=Tasta rapidă pentru a încărca meniul Usermin
+settings_hotkey_toggle_key_webmail=Tasta rapidă pentru a încărca meniul Mail
+settings_hotkey_sysinfo=Tasta rapidă pentru a deschide tabloul de bord
+settings_hotkey_shell=Tasta rapidă pentru a deschide terminalul drop-down
+settings_hotkey_favorites=Tasta rapidă pentru a deschide favorite
+settings_hotkey_focus_search=Tasta rapidă pentru a se concentra pe câmpul de căutare
+settings_hotkey_reload=Tastă rapidă pentru a reîmprospăta pagina curentă
+
+settings_hotkey_toggle_slider=Tastă rapidă pentru a comuta vizibilitatea cursorului lateral
+
+theme_xhred_sysinfo_wmdocs=Documentație Webmin
+theme_xhred_sysinfo_vmdocs=Documentația Virtualmin
+theme_xhred_sysinfo_cmdocs=Documentația Cloudmin
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Tasta rapidă pentru comutarea paletei de culori
+
 #18.48
 theme_force_upgrade=Actualizați tema
 theme_update_footer=Vă rugăm să raportați erorile către depozitul $1. Alăturați-vă canalului nostru $2 pentru a primi cele mai recente știri.
@@ -19,6 +39,10 @@ extensions_mail_flag_spam_status_data=$1 din $2
 extensions_mail_flag_tls_on=Criptare standard (TLS)
 extensions_mail_flag_tls_off=E-mail necriptat
 extensions_mail_flag_tls_none=Nu se cunoaște starea de criptare
+
+settings_hotkey_navigation=Tasta rapidă pentru a comuta starea meniului de navigare
+
+settings_hotkey_slider=Tasta rapidă pentru a comuta starea glisorului lateral
 
 theme_xhred_filemanager_mass_selected_for_delete=Toate articolele din directorul %1
 
@@ -254,7 +278,7 @@ theme_xhred_webminlog_module_no_command_escapes=Comutați barele oblice inverse 
 settings_navigation_auto_fold_category=Pliază automat categoriile inactive
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Se generează o listă de opțiuni care poate fi căutată pentru șablon
 theme_xhred_tooltip_virtualmin_templates_filter=Căutați în toate opțiunile șablonului
-theme_sysinfo_vmforum=Comunitatea Virtualmin
+theme_xhred_sysinfo_vmforum=Comunitatea Virtualmin
 theme_xhred_tooltip_support_ticket=Trimiteți biletul de asistență cu informații despre sistem atașate; țineți apăsată tasta $1 pentru a copia linkul de asistență în clipboard
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forțați reîmprospătarea informațiilor de sistem
 theme_xhred_disk_quota_error_title=Din cotă
@@ -318,3 +342,20 @@ theme_xhred_filemanager_changing_acls=Schimbarea listei de control acces.
 theme_xhred_filemanager_successful_acls_with_errors=Lista de control al accesului nu a fost modificată cu succes pentru toate obiectele:
 theme_xhred_filemanager_successful_acls=Lista de control acces a fost schimbată cu succes.
 theme_download_error=Eroare la descărcarea fișierului deoarece se află în afara directorului permis : $1
+
+#20.22
+theme_xhred_hotkeys_help=Ajutor (F1)
+theme_xhred_hotkeys_help_title=Comenzi rapide de la tastatură
+theme_xhred_hotkeys_help_title_docs=Documentație
+theme_xhred_hotkeys_help_title_global=Comenzi rapide globale
+theme_xhred_hotkeys_help_title_module=Comenzi rapide specifice modulului
+theme_xhred_hotkeys_help_title_fm=Comenzi rapide pentru Managerul de fișiere
+theme_xhred_hotkeys_help_title_edit=Comenzi rapide pentru editor
+theme_xhred_global_community=Comunitate
+theme_xhred_hotkeys_server_error=Nu se poate prelua fișierul de ajutor
+theme_xhred_hotkeys_custom_to_opens=se deschide
+theme_xhred_hotkeys_custom_not_set=nu setat
+theme_xhred_hotkey_open_module_config_privileged=Tasta rapidă pentru a deschide configurația modulului
+theme_xhred_hotkey_open_theme_config=Tasta rapidă pentru a deschide configurația temei
+theme_xhred_hotkey_clear_cache=Goliți memoria cache și reîncărcați
+theme_xhred_hotkey_open_new=Duplicați într-o filă nouă

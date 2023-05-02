@@ -1,0 +1,43 @@
+settings_hotkey_toggle_key_webmin=Snabbtangent för att ladda Webmin-menyn
+settings_hotkey_toggle_key_virtualmin=Snabbtangent för att ladda Virtualmin-menyn
+settings_hotkey_toggle_key_cloudmin=Snabbtangent för att ladda Cloudmin-menyn
+settings_hotkey_toggle_key_usermin=Snabbtangent för att ladda Usermin-menyn
+settings_hotkey_toggle_key_webmail=Snabbtangent för att ladda Mail-menyn
+settings_hotkey_sysinfo=Snabbtangent för att öppna instrumentpanelen
+settings_hotkey_shell=Snabbtangent för att öppna dropdown-terminalen
+settings_hotkey_favorites=Snabbknapp för att öppna favoriter
+settings_hotkey_focus_search=Snabbtangent för att fokusera på sökfältet
+settings_hotkey_reload=Snabbtangent för att uppdatera aktuell sida
+
+settings_hotkey_toggle_slider=Snabbtangent för att växla sidoreglagets synlighet
+
+theme_xhred_sysinfo_wmdocs=Webmin dokumentation
+theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation
+theme_xhred_sysinfo_cmdocs=Cloudmin dokumentation
+
+#18.40
+settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla färgpalett
+
+settings_hotkey_navigation=Snabbtangent för att växla tillstånd för navigeringsmenyn
+
+settings_hotkey_slider=Snabbtangent för att växla tillstånd för sidoreglaget
+
+#19.85
+theme_xhred_sysinfo_vmforum=Virtualmin Community
+
+#20.22
+theme_xhred_hotkeys_help=Hjälp (F1)
+theme_xhred_hotkeys_help_title=Tangentbordsgenvägar
+theme_xhred_hotkeys_help_title_docs=Dokumentation
+theme_xhred_hotkeys_help_title_global=Globala genvägar
+theme_xhred_hotkeys_help_title_module=Modulspecifika genvägar
+theme_xhred_hotkeys_help_title_fm=Genvägar för filhanteraren
+theme_xhred_hotkeys_help_title_edit=Redaktörsgenvägar
+theme_xhred_global_community=gemenskap
+theme_xhred_hotkeys_server_error=Kan inte hämta hjälpfilen
+theme_xhred_hotkeys_custom_to_opens=öppnas
+theme_xhred_hotkeys_custom_not_set=inte inställd
+theme_xhred_hotkey_open_module_config_privileged=Snabbtangent för att öppna modulkonfiguration
+theme_xhred_hotkey_open_theme_config=Snabbtangent för att öppna temakonfiguration
+theme_xhred_hotkey_clear_cache=Rensa cache och ladda om
+theme_xhred_hotkey_open_new=Duplicera till en ny flik

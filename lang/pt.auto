@@ -56,16 +56,16 @@ settings_theme_options_button=Mostrar botão de configurações de tema
 
 settings_hotkeys_active=Ativar uso de teclas de atalho
 settings_hotkey_toggle_modifier=Modificador de teclas de atalho
-settings_hotkey_toggle_key_webmin=Tecla de atalho para Webmin
-settings_hotkey_toggle_key_virtualmin=Tecla de atalho para Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tecla de atalho para Cloudmin
-settings_hotkey_toggle_key_usermin=Tecla de atalho para Usermin
-settings_hotkey_toggle_key_webmail=Tecla de atalho para o Mail
-settings_hotkey_sysinfo=Tecla de atalho para painel
-settings_hotkey_shell=Tecla de atalho para o terminal
-settings_hotkey_favorites=Tecla de atalho para favoritos
-settings_hotkey_focus_search=Tecla de atalho para o campo de pesquisa
-settings_hotkey_reload=Atalho para recarregar a página
+settings_hotkey_toggle_key_webmin=Tecla de atalho para carregar o menu do Webmin
+settings_hotkey_toggle_key_virtualmin=Tecla de atalho para carregar o menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tecla de atalho para carregar o menu Cloudmin
+settings_hotkey_toggle_key_usermin=Tecla de atalho para carregar o menu Usermin
+settings_hotkey_toggle_key_webmail=Tecla de atalho para carregar o menu Mail
+settings_hotkey_sysinfo=Tecla de atalho para abrir o painel
+settings_hotkey_shell=Tecla de atalho para abrir o terminal suspenso
+settings_hotkey_favorites=Tecla de atalho para abrir favoritos
+settings_hotkey_focus_search=Tecla de atalho para focar no campo de pesquisa
+settings_hotkey_reload=Tecla de atalho para atualizar a página atual
 
 settings_sysinfo_easypie_charts=Mostrar gráficos
 settings_sysinfo_theme_updates=Verifique se há atualizações de temas autênticos
@@ -80,7 +80,7 @@ settings_right_cloudmin_default=Página padrão para Cloudmin
 
 settings_right_clear_local_cache=Limpar cache
 settings_side_slider_fixed=Mantenha sempre visível
-settings_hotkey_toggle_slider=Tecla de atalho para o controle deslizante lateral
+settings_hotkey_toggle_slider=Tecla de atalho para alternar a visibilidade do controle deslizante lateral
 
 settings_side_slider_enabled=Ativar controle deslizante
 settings_leftmenu_user_html=Mostrar snippet HTML
@@ -102,9 +102,9 @@ theme_global_success=Sucesso
 theme_global_info=Em formação
 sysinfo_system_status_warning=Para exibir <strong>System Information</strong>, você precisará ativar o módulo <em>System Status</em> nas configurações do usuário.
 settings_leftmenu_user_html_privileged=Mostrar snippet HTML apenas para administradores
-theme_sysinfo_wmdocs=Documentação Webmin
-theme_sysinfo_vmdocs=Documentação do Virtualmin
-theme_sysinfo_cmdocs=Documentação Cloudmin
+theme_xhred_sysinfo_wmdocs=Documentação do Webmin
+theme_xhred_sysinfo_vmdocs=Documentação do Virtualmin
+theme_xhred_sysinfo_cmdocs=Documentação do Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=Javascript
@@ -466,7 +466,7 @@ theme_xhred_move_down=Mover para baixo
 theme_xhred_add_after=Adicionar depois
 theme_xhred_add_before=acrescentar antes
 settings_show_night_mode_link=Mostrar botão de modo dia/noite
-settings_hotkey_toggle_key_night_mode=Tecla de atalho para alternar entre paleta escuro/claro
+settings_hotkey_toggle_key_night_mode=Tecla de atalho para alternar a paleta de cores
 settings_title=Configuração do Tema
 settings_subtitle=Para usuário
 
@@ -785,7 +785,7 @@ settings_mail_ui=Ativar nova interface de usuário de email
 settings_theme_config_admins_only_privileged_error=Acesso negado: o administrador bloqueou o acesso às personalizações do usuário
 
 theme_xhred_tooltip_navigation_pinned=Fixar/desafixar o menu de navegação
-settings_hotkey_navigation=Tecla de atalho para alternar entre o menu de navegação
+settings_hotkey_navigation=Tecla de atalho para alternar o estado do menu de navegação
 
 theme_xhred_search_in_webmin=Pesquisar Webmin
 theme_xhred_search_in_usermin=Pesquisar Usermin
@@ -794,7 +794,7 @@ theme_xhred_search_in_servermanager=Pesquisar Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copiar seleção para a área de transferência
 
-settings_hotkey_slider=Tecla de atalho para alternar o controle deslizante lateral
+settings_hotkey_slider=Tecla de atalho para alternar o estado do controle deslizante lateral
 
 theme_git_update_locked=A atualização do tema não pode ser concluída devido a nenhuma conexão com o GitHub ou seu excesso de limite de taxa de API. Para as últimas solicitações não autenticadas, o limite de taxa permite até 60 solicitações por hora. Tente novamente mais tarde ou use o console para fazê-lo manualmente via script de atualização.
 
@@ -1168,7 +1168,7 @@ theme_xhred_webminlog_module_no_command_escapes=Alterne as barras invertidas par
 settings_navigation_auto_fold_category=Dobrar automaticamente categorias inativas
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Gerando uma lista pesquisável de opções para o modelo
 theme_xhred_tooltip_virtualmin_templates_filter=Pesquise em todas as opções do modelo
-theme_sysinfo_vmforum=Comunidade Virtualmin
+theme_xhred_sysinfo_vmforum=Comunidade Virtualmin
 theme_xhred_tooltip_support_ticket=Enviar ticket de suporte com informações do sistema anexadas; segure a tecla $1 para copiar o link de suporte para a área de transferência
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Forçar a atualização das informações do sistema
 theme_xhred_disk_quota_error_title=Fora da cota
@@ -1232,3 +1232,20 @@ theme_xhred_filemanager_changing_acls=Alterando a lista de controle de acesso.
 theme_xhred_filemanager_successful_acls_with_errors=A lista de controle de acesso não foi alterada com sucesso para todos os objetos:
 theme_xhred_filemanager_successful_acls=A lista de controle de acesso foi alterada com sucesso.
 theme_download_error=Erro ao baixar o arquivo porque está fora do diretório permitido : $1
+
+#20.22
+theme_xhred_hotkeys_help=Ajuda (F1)
+theme_xhred_hotkeys_help_title=Atalhos do teclado
+theme_xhred_hotkeys_help_title_docs=Documentação
+theme_xhred_hotkeys_help_title_global=Atalhos globais
+theme_xhred_hotkeys_help_title_module=Atalhos específicos do módulo
+theme_xhred_hotkeys_help_title_fm=Atalhos do gerenciador de arquivos
+theme_xhred_hotkeys_help_title_edit=Atalhos do editor
+theme_xhred_global_community=Comunidade
+theme_xhred_hotkeys_server_error=Não é possível recuperar o arquivo de ajuda
+theme_xhred_hotkeys_custom_to_opens=abre
+theme_xhred_hotkeys_custom_not_set=não configurado
+theme_xhred_hotkey_open_module_config_privileged=Tecla de atalho para abrir a configuração do módulo
+theme_xhred_hotkey_open_theme_config=Tecla de atalho para abrir a configuração do tema
+theme_xhred_hotkey_clear_cache=Limpe o cache e recarregue
+theme_xhred_hotkey_open_new=Duplicar para uma nova guia

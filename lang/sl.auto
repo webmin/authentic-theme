@@ -138,16 +138,16 @@ settings_theme_options_button=Pokaži gumb za nastavitev teme
 
 settings_hotkeys_active=Omogoči uporabo hitrih tipk
 settings_hotkey_toggle_modifier=Modifikator hitrih tipk
-settings_hotkey_toggle_key_webmin=Hitra tipka za Webmin
-settings_hotkey_toggle_key_virtualmin=Hitra tipka za Virtualmin
-settings_hotkey_toggle_key_cloudmin=Hitra tipka za Cloudmin
-settings_hotkey_toggle_key_usermin=Hitra tipka za Usermin
-settings_hotkey_toggle_key_webmail=Hitra tipka za pošto
-settings_hotkey_sysinfo=Hitra tipka za nadzorno ploščo
-settings_hotkey_shell=Hitra tipka za terminal
-settings_hotkey_favorites=Hitra tipka za priljubljene
-settings_hotkey_focus_search=Hitra tipka za iskalno polje
-settings_hotkey_reload=Hitra tipka za ponovno nalaganje strani
+settings_hotkey_toggle_key_webmin=Bližnjica za nalaganje menija Webmin
+settings_hotkey_toggle_key_virtualmin=Bližnjica za nalaganje menija Virtualmin
+settings_hotkey_toggle_key_cloudmin=Bližnjica za nalaganje menija Cloudmin
+settings_hotkey_toggle_key_usermin=Bližnjica za nalaganje uporabniškega menija
+settings_hotkey_toggle_key_webmail=Bližnjica za nalaganje menija Pošta
+settings_hotkey_sysinfo=Bližnjica za odpiranje nadzorne plošče
+settings_hotkey_shell=Bližnjica za odpiranje spustnega terminala
+settings_hotkey_favorites=Bližnjica za odpiranje priljubljenih
+settings_hotkey_focus_search=Bližnjica za fokus na iskalno polje
+settings_hotkey_reload=Bližnjica za osvežitev trenutne strani
 
 settings_sysinfo_easypie_charts=Pokaži grafikone
 settings_sysinfo_theme_updates=Preverite pristnosti posodobitev teme
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Privzeta stran za Cloudmin
 
 settings_right_clear_local_cache=Počisti predpomnilnik
 settings_side_slider_fixed=Vedno vidni
-settings_hotkey_toggle_slider=Hitra tipka za stranski drsnik
+settings_hotkey_toggle_slider=Bližnjica za preklop vidnosti stranskega drsnika
 
 settings_side_slider_enabled=Omogoči drsnik
 settings_leftmenu_user_html=Pokažite delček HTML
@@ -184,9 +184,9 @@ theme_global_success=Uspeh
 theme_global_info=Informacije
 sysinfo_system_status_warning=Če želite prikazati </strong>sistemske podatke</strong>, morate v uporabniških nastavitvah omogočiti modul <em>Status sistema</em>.
 settings_leftmenu_user_html_privileged=Pokaži delček HTML samo za skrbnike
-theme_sysinfo_wmdocs=Dokumentacija Webmin
-theme_sysinfo_vmdocs=Virtualmin dokumentacija
-theme_sysinfo_cmdocs=Cloudmin dokumentacija
+theme_xhred_sysinfo_wmdocs=Dokumentacija Webmin
+theme_xhred_sysinfo_vmdocs=Virtualmin dokumentacija
+theme_xhred_sysinfo_cmdocs=Dokumentacija Cloudmin
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -549,7 +549,7 @@ theme_xhred_move_down=Premik navzdol
 theme_xhred_add_after=Dodaj po
 theme_xhred_add_before=Dodaj pred
 settings_show_night_mode_link=Prikaži gumb za dan/noč
-settings_hotkey_toggle_key_night_mode=Hitra tipka za preklapljanje temne/svetle palete
+settings_hotkey_toggle_key_night_mode=Bližnjica za preklapljanje barvne palete
 settings_title=Konfiguracija teme
 settings_subtitle=Za uporabnika
 
@@ -868,7 +868,7 @@ settings_mail_ui=Omogoči nov uporabniški vmesnik e-pošte
 settings_theme_config_admins_only_privileged_error=Dostop zavrnjen: Skrbnik je blokiral dostop do prilagoditev uporabnikov
 
 theme_xhred_tooltip_navigation_pinned=Pripni/odveči navigacijski meni
-settings_hotkey_navigation=Hitra tipka za preklop menija za krmarjenje
+settings_hotkey_navigation=Bližnjica za preklop med stanjem navigacijskega menija
 
 theme_xhred_search_in_webmin=Poiščite Webmin
 theme_xhred_search_in_usermin=Poiščite Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Iskanje Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopiranje izbire v odložišče
 
-settings_hotkey_slider=Hitra tipka za preklop stranskega drsnika
+settings_hotkey_slider=Bližnjica za preklop stanja stranskega drsnika
 
 theme_git_update_locked=Posodobitve teme ni mogoče dokončati zaradi povezave z GitHubom ali prekoračitvijo omejitve hitrosti API-ja. Omejitev hitrosti za slednje, ki niso overjene zahteve, omogoča do 60 zahtev na uro. Poskusite pozneje ali uporabite ukazno mizo, da to storite ročno prek posodobitvenega skripta.
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=Preklopite poševnice nazaj za i
 settings_navigation_auto_fold_category=Samodejno prepogibanje neaktivnih kategorij
 theme_xhred_tooltip_virtualmin_templates_filter_generating=Ustvarjanje seznama možnosti iskanja za predlogo
 theme_xhred_tooltip_virtualmin_templates_filter=Iščite po vseh možnostih predloge
-theme_sysinfo_vmforum=Virtualmin skupnost
+theme_xhred_sysinfo_vmforum=Skupnost Virtualmin
 theme_xhred_tooltip_support_ticket=Predložite vozovnico za podporo s priloženimi sistemskimi informacijami; držite tipko $1, da kopirate povezavo za podporo v odložišče
 theme_xhred_tooltip_side_slider_refresh_sysinfo=Prisilite osvežitev sistemskih informacij
 theme_xhred_disk_quota_error_title=Izven kvote
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=Spreminjanje seznama za nadzor dostopa.
 theme_xhred_filemanager_successful_acls_with_errors=Seznam nadzora dostopa ni bil uspešno spremenjen za vse objekte:
 theme_xhred_filemanager_successful_acls=Seznam za nadzor dostopa je bil uspešno spremenjen.
 theme_download_error=Napaka pri prenosu datoteke, ker je zunaj dovoljenega imenika : $1
+
+#20.22
+theme_xhred_hotkeys_help=Pomoč (F1)
+theme_xhred_hotkeys_help_title=Bližnjice na tipkovnici
+theme_xhred_hotkeys_help_title_docs=Dokumentacija
+theme_xhred_hotkeys_help_title_global=Globalne bližnjice
+theme_xhred_hotkeys_help_title_module=Bližnjice, specifične za modul
+theme_xhred_hotkeys_help_title_fm=Bližnjice upravitelja datotek
+theme_xhred_hotkeys_help_title_edit=Bližnjice urejevalnika
+theme_xhred_global_community=Skupnost
+theme_xhred_hotkeys_server_error=Datoteke s pomočjo ni mogoče pridobiti
+theme_xhred_hotkeys_custom_to_opens=odpre
+theme_xhred_hotkeys_custom_not_set=ni nastavljeno
+theme_xhred_hotkey_open_module_config_privileged=Bližnjica za odpiranje konfiguracije modula
+theme_xhred_hotkey_open_theme_config=Bližnjica za odpiranje konfiguracije teme
+theme_xhred_hotkey_clear_cache=Počisti predpomnilnik in znova naloži
+theme_xhred_hotkey_open_new=Podvoji na nov zavihek

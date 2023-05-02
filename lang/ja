@@ -130,16 +130,6 @@ settings_theme_options_button=[テーマの設定を表示] ボタン
 
 settings_hotkeys_active=ホットキーの使用を有効にする
 settings_hotkey_toggle_modifier=ホットキー修飾子
-settings_hotkey_toggle_key_webmin=Webmin のホットキー
-settings_hotkey_toggle_key_virtualmin=でのホットキー
-settings_hotkey_toggle_key_cloudmin=Cloudmin のホットキー
-settings_hotkey_toggle_key_usermin=Usermin のホットキー
-settings_hotkey_toggle_key_webmail=メールのホットキー
-settings_hotkey_sysinfo=ダッシュボードのホットキー
-settings_hotkey_shell=ターミナル用ホットキー
-settings_hotkey_favorites=お気に入りのホットキー
-settings_hotkey_focus_search=検索フィールドのホットキー
-settings_hotkey_reload=ページのリロードのためのホットキー
 
 settings_sysinfo_easypie_charts=グラフの表示
 settings_sysinfo_theme_updates=Authentic Themaの更新をチェック
@@ -154,7 +144,6 @@ settings_right_cloudmin_default=Cloudmin の既定のページ
 
 settings_right_clear_local_cache=キャッシュのクリア
 settings_side_slider_fixed=常に表示しておく
-settings_hotkey_toggle_slider=スライダのホットキー
 
 settings_side_slider_enabled=スライダを有効にする
 settings_leftmenu_user_html=HTML スニペットの表示
@@ -176,9 +165,6 @@ theme_global_success=成功
 theme_global_info=情報
 sysinfo_system_status_warning=[<strong>システム情報</strong>] が表示されるようにするには、[ユーザー設定] で [<em>システムステータス</em>] モジュールを有効にする必要があります。
 settings_leftmenu_user_html_privileged=管理者のみの HTML スニペットを表示する
-theme_sysinfo_wmdocs=Webmin ドキュメント
-theme_sysinfo_vmdocs=Virtualmin ドキュメント
-theme_sysinfo_cmdocs=Cloudmin ドキュメント
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
@@ -541,7 +527,6 @@ theme_xhred_move_down= 下に移動
 theme_xhred_add_after= 後に追加
 theme_xhred_add_before= 前に追加
 settings_show_night_mode_link= ライト/ダークモード切り替え
-settings_hotkey_toggle_key_night_mode= ダーク/ライトパレットを切り替えるためのホットキー
 settings_title= テーマ構成
 settings_subtitle= ユーザーの場合
 
@@ -850,7 +835,6 @@ settings_mail_ui= 新しいメールUIを有効にする
 settings_theme_config_admins_only_privileged_error= アクセスが拒否されました:管理者がユーザーのカスタム設定へのアクセスをブロックしました
 
 theme_xhred_tooltip_navigation_pinned= ピン固定/ピン固定解除メニュー
-settings_hotkey_navigation= ナビゲーションメニューを切り替えるホットキー
 
 theme_xhred_search_in_webmin= Webminを検索
 theme_xhred_search_in_usermin= Userminを検索
@@ -858,8 +842,6 @@ theme_xhred_search_in_virtualserver= Virtualminを検索
 theme_xhred_search_in_servermanager= 検索Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection= 選択をクリップボードにコピーする
-
-settings_hotkey_slider= サイドスライダをトグルするためのホットキー
 
 theme_git_update_locked= テーマの更新は、GitHubに接続していないか、またはそのAPIの制限を超えているため、完了できません。後者の認証されていない要求の場合、レート制限により1時間に最大60個の要求が許可されます。後で再試行するか、コンソールを使用して手動で更新スクリプトを実行してください。
 

@@ -138,16 +138,16 @@ settings_theme_options_button=顯示主題設置按鈕
 
 settings_hotkeys_active=啟用熱鍵用法
 settings_hotkey_toggle_modifier=熱鍵修改器
-settings_hotkey_toggle_key_webmin=Webmin熱鍵
-settings_hotkey_toggle_key_virtualmin=Virtualmin熱鍵
-settings_hotkey_toggle_key_cloudmin=Cloudmin熱鍵
-settings_hotkey_toggle_key_usermin=Usermin熱鍵
-settings_hotkey_toggle_key_webmail=郵件熱鍵
-settings_hotkey_sysinfo=儀表板熱鍵
-settings_hotkey_shell=終端熱鍵
-settings_hotkey_favorites=收藏夾熱鍵
-settings_hotkey_focus_search=搜索字段熱鍵
-settings_hotkey_reload=頁面刷新熱鍵
+settings_hotkey_toggle_key_webmin=加載 Webmin 菜單的熱鍵
+settings_hotkey_toggle_key_virtualmin=加載 Virtualmin 菜單的熱鍵
+settings_hotkey_toggle_key_cloudmin=加載 Cloudmin 菜單的熱鍵
+settings_hotkey_toggle_key_usermin=加載 Usermin 菜單的熱鍵
+settings_hotkey_toggle_key_webmail=加載郵件菜單的熱鍵
+settings_hotkey_sysinfo=打開儀表板的熱鍵
+settings_hotkey_shell=打開下拉終端的熱鍵
+settings_hotkey_favorites=打開收藏夾的熱鍵
+settings_hotkey_focus_search=專注於搜索字段的熱鍵
+settings_hotkey_reload=刷新當前頁面的熱鍵
 
 settings_sysinfo_easypie_charts=顯示圖表
 settings_sysinfo_theme_updates=檢查真實主題更新
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Cloudmin的默認頁面
 
 settings_right_clear_local_cache=清除緩存
 settings_side_slider_fixed=始終保持可見
-settings_hotkey_toggle_slider=側滑塊熱鍵
+settings_hotkey_toggle_slider=切換側滑塊可見性的熱鍵
 
 settings_side_slider_enabled=啟用滑桿
 settings_leftmenu_user_html=顯示HTML代碼段
@@ -184,9 +184,9 @@ theme_global_success=成功
 theme_global_info=信息
 sysinfo_system_status_warning=為了顯示<strong>系統信息</strong>，您需要在用戶設置中啟用<em>系統狀態</em>模塊。
 settings_leftmenu_user_html_privileged=僅顯示管理員的HTML代碼段
-theme_sysinfo_wmdocs=Webmin文檔
-theme_sysinfo_vmdocs=Virtualmin文檔
-theme_sysinfo_cmdocs=Cloudmin文檔
+theme_xhred_sysinfo_wmdocs=Webmin 文檔
+theme_xhred_sysinfo_vmdocs=虛擬文檔
+theme_xhred_sysinfo_cmdocs=Cloudmin 文檔
 theme_fileformat_css=的CSS
 theme_fileformat_json=JSON格式
 theme_fileformat_js=的JavaScript
@@ -549,7 +549,7 @@ theme_xhred_move_down=下移
 theme_xhred_add_after=加入後
 theme_xhred_add_before=加入之前
 settings_show_night_mode_link=顯示白天/夜晚模式按鈕
-settings_hotkey_toggle_key_night_mode=切換暗/淺調色板的熱鍵
+settings_hotkey_toggle_key_night_mode=用於切換調色板的熱鍵
 settings_title=主題配置
 settings_subtitle=對於用戶
 
@@ -868,7 +868,7 @@ settings_mail_ui=啟用新郵件界面
 settings_theme_config_admins_only_privileged_error=訪問被拒絕：管理員阻止了對用戶定制的訪問
 
 theme_xhred_tooltip_navigation_pinned=固定/取消固定導航菜單
-settings_hotkey_navigation=切換導航菜單的熱鍵
+settings_hotkey_navigation=切換導航菜單狀態的熱鍵
 
 theme_xhred_search_in_webmin=搜索Webmin
 theme_xhred_search_in_usermin=搜索Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=搜索Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=將選擇內容複製到剪貼板
 
-settings_hotkey_slider=切換側滑塊的熱鍵
+settings_hotkey_slider=切換側滑塊狀態的熱鍵
 
 theme_git_update_locked=由於沒有與GitHub的連接或其API速率限製過高，無法完成主題更新。對於後面未經身份驗證的請求，速率限制允許每小時最多60個請求。稍後再試，或使用控制台通過更新腳本手動完成。
 
@@ -1251,7 +1251,7 @@ theme_xhred_webminlog_module_no_command_escapes=切換執行命令的反斜杠
 settings_navigation_auto_fold_category=自動折疊非活動類別
 theme_xhred_tooltip_virtualmin_templates_filter_generating=為模板生成可搜索的選項列表
 theme_xhred_tooltip_virtualmin_templates_filter=搜索模板的所有選項
-theme_sysinfo_vmforum=Virtualmin 社區
+theme_xhred_sysinfo_vmforum=虛擬社區
 theme_xhred_tooltip_support_ticket=提交附有系統信息的支持票；按住 $1 鍵將支持鏈接複製到剪貼板
 theme_xhred_tooltip_side_slider_refresh_sysinfo=強制刷新系統信息
 theme_xhred_disk_quota_error_title=超出配額
@@ -1315,3 +1315,20 @@ theme_xhred_filemanager_changing_acls=更改訪問控制列表。
 theme_xhred_filemanager_successful_acls_with_errors=尚未為所有對象成功更改訪問控制列表：
 theme_xhred_filemanager_successful_acls=訪問控制列表已成功更改。
 theme_download_error=下載文件時出錯，因為它在允許的目錄之外：$1
+
+#20.22
+theme_xhred_hotkeys_help=幫助 (F1)
+theme_xhred_hotkeys_help_title=鍵盤快捷鍵
+theme_xhred_hotkeys_help_title_docs=文檔
+theme_xhred_hotkeys_help_title_global=全局快捷方式
+theme_xhred_hotkeys_help_title_module=模塊特定的快捷方式
+theme_xhred_hotkeys_help_title_fm=文件管理器快捷方式
+theme_xhred_hotkeys_help_title_edit=編輯器快捷方式
+theme_xhred_global_community=社區
+theme_xhred_hotkeys_server_error=無法檢索幫助文件
+theme_xhred_hotkeys_custom_to_opens=打開
+theme_xhred_hotkeys_custom_not_set=沒有設置
+theme_xhred_hotkey_open_module_config_privileged=打開模塊配置的熱鍵
+theme_xhred_hotkey_open_theme_config=打開主題配置的熱鍵
+theme_xhred_hotkey_clear_cache=清除緩存並重新加載
+theme_xhred_hotkey_open_new=複製到新標籤
