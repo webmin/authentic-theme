@@ -138,16 +138,16 @@ settings_theme_options_button=Wys tema-instellingsknoppie
 
 settings_hotkeys_active=Aktiveer die gebruik van die sleutelbord
 settings_hotkey_toggle_modifier=Sneltoets-wysiger
-settings_hotkey_toggle_key_webmin=Sneltoets om Webmin-kieslys te laai
-settings_hotkey_toggle_key_virtualmin=Sneltoets om Virtualmin-kieslys te laai
-settings_hotkey_toggle_key_cloudmin=Sneltoets om Cloudmin-kieslys te laai
-settings_hotkey_toggle_key_usermin=Sneltoets om Usermin-kieslys te laai
-settings_hotkey_toggle_key_webmail=Sneltoets om Mail-kieslys te laai
-settings_hotkey_sysinfo=Sneltoets om dashboard oop te maak
-settings_hotkey_shell=Sneltoets om aftrekterminaal oop te maak
-settings_hotkey_favorites=Sneltoets om gunstelinge oop te maak
-settings_hotkey_focus_search=Sneltoets om op soekveld te fokus
-settings_hotkey_reload=Sneltoets om huidige bladsy te verfris
+settings_hotkey_toggle_key_webmin=Laai Webmin-kieslys
+settings_hotkey_toggle_key_virtualmin=Laai Virtualmin-kieslys
+settings_hotkey_toggle_key_cloudmin=Laai Cloudmin-kieslys
+settings_hotkey_toggle_key_usermin=Laai Usermin-kieslys
+settings_hotkey_toggle_key_webmail=Laai Mail-kieslys
+settings_hotkey_sysinfo=Maak dashboard oop
+settings_hotkey_shell=Maak aftrekterminaal oop
+settings_hotkey_favorites=Maak gunstelinge oop
+settings_hotkey_focus_search=Fokus op soekveld
+settings_hotkey_reload=Herlaai huidige bladsy
 
 settings_sysinfo_easypie_charts=Wys kaarte
 settings_sysinfo_theme_updates=Kyk vir outentieke tema-opdaterings
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Verstek bladsy vir Cloudmin
 
 settings_right_clear_local_cache=Maak kas skoon
 settings_side_slider_fixed=Hou altyd sigbaar
-settings_hotkey_toggle_slider=Sneltoets om sy-skuif-sigbaarheid te wissel
+settings_hotkey_toggle_slider=Wissel kantskuif-sigbaarheid
 
 settings_side_slider_enabled=Aktiveer skuifbalk
 settings_leftmenu_user_html=Toon HTML-stuk
@@ -868,7 +868,7 @@ settings_mail_ui=Aktiveer nuwe e-pos-UI
 settings_theme_config_admins_only_privileged_error=Toegang geweier: Administrateur het toegang tot gebruiker-aanpassings geblokkeer
 
 theme_xhred_tooltip_navigation_pinned=Speld/ontklee navigasiekieslys
-settings_hotkey_navigation=Sneltoets om navigasiekieslysstatus te wissel
+settings_hotkey_navigation=Wissel navigasiekieslysstatus
 
 theme_xhred_search_in_webmin=Soek op Webmin
 theme_xhred_search_in_usermin=Soek Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Soek Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopieer die keuse na die knipbord
 
-settings_hotkey_slider=Sneltoets om sy-skuif-status te wissel
+settings_hotkey_slider=Wissel kantskuif-status
 
 theme_git_update_locked=Tema-opdatering kan nie voltooi word nie omdat daar geen verbinding met GitHub is nie, of omdat die API-tariefbeperking oortollig is. By laasgenoemde, nie-geverifieerde versoeke, is die tarieflimiet moontlik vir tot 60 versoeke per uur. Probeer later weer of gebruik konsole om dit handmatig te doen via opdateringsskrip.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=Gemeenskap
 theme_xhred_hotkeys_server_error=Kan nie hulplêer ophaal nie
 theme_xhred_hotkeys_custom_to_opens=maak oop
 theme_xhred_hotkeys_custom_not_set=nie gestel nie
-theme_xhred_hotkey_open_module_config_privileged=Sneltoets om module konfigurasie oop te maak
-theme_xhred_hotkey_open_theme_config=Sneltoets om temakonfigurasie oop te maak
+theme_xhred_hotkey_open_module_config_privileged=Maak module konfigurasie oop
+theme_xhred_hotkey_open_theme_config=Maak tema konfigurasie oop
 theme_xhred_hotkey_clear_cache=Maak kas skoon en herlaai
 theme_xhred_hotkey_open_new=Dupliseer na 'n nuwe oortjie
 theme_xhred_global_success=Sukses

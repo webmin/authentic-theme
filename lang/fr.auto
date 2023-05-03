@@ -2,18 +2,18 @@ settings_right_hotkey_options=Raccourcis clavier
 
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
 
-settings_hotkey_toggle_key_webmin=Touche de raccourci pour charger le menu Webmin
-settings_hotkey_toggle_key_virtualmin=Touche de raccourci pour charger le menu Virtualmin
-settings_hotkey_toggle_key_cloudmin=Touche de raccourci pour charger le menu Cloudmin
-settings_hotkey_toggle_key_usermin=Touche de raccourci pour charger le menu Usermin
-settings_hotkey_toggle_key_webmail=Touche de raccourci pour charger le menu Mail
-settings_hotkey_sysinfo=Touche de raccourci pour ouvrir le tableau de bord
-settings_hotkey_shell=Touche de raccourci pour ouvrir le terminal déroulant
-settings_hotkey_favorites=Touche de raccourci pour ouvrir les favoris
-settings_hotkey_focus_search=Touche de raccourci pour se concentrer sur le champ de recherche
-settings_hotkey_reload=Touche de raccourci pour actualiser la page actuelle
+settings_hotkey_toggle_key_webmin=Charger le menu Webmin
+settings_hotkey_toggle_key_virtualmin=Charger le menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Charger le menu Cloudmin
+settings_hotkey_toggle_key_usermin=Charger le menu Usermin
+settings_hotkey_toggle_key_webmail=Menu Charger le courrier
+settings_hotkey_sysinfo=Ouvrir le tableau de bord
+settings_hotkey_shell=Ouvrir le terminal déroulant
+settings_hotkey_favorites=Ouvrir les favoris
+settings_hotkey_focus_search=Focus sur le champ de recherche
+settings_hotkey_reload=Actualiser la page actuelle
 
-settings_hotkey_toggle_slider=Touche de raccourci pour basculer la visibilité du curseur latéral
+settings_hotkey_toggle_slider=Basculer la visibilité du curseur latéral
 
 theme_xhred_sysinfo_wmdocs=Documentation Webmin
 theme_xhred_sysinfo_vmdocs=Documentation Virtualmin
@@ -31,9 +31,9 @@ settings_webmin_default_module=Page par défaut pour Webmin
 #19.09
 theme_git_patch_incompatible_message_desc=Il pourrait y avoir des changements incompatibles, qui pourraient empêcher le thème de fonctionner comme prévu. Il n'est pas possible de poursuivre l'opération de mise à niveau à l'aide de l'interface utilisateur.
 
-settings_hotkey_navigation=Touche de raccourci pour basculer l'état du menu de navigation
+settings_hotkey_navigation=Basculer l'état du menu de navigation
 
-settings_hotkey_slider=Touche de raccourci pour basculer l'état du curseur latéral
+settings_hotkey_slider=Basculer l'état du curseur latéral
 
 theme_xhred_filemanager_mass_selected_for_delete=Tous les éléments du répertoire %1
 
@@ -232,8 +232,8 @@ theme_xhred_global_community=Communauté
 theme_xhred_hotkeys_server_error=Impossible de récupérer le fichier d'aide
 theme_xhred_hotkeys_custom_to_opens=s'ouvre
 theme_xhred_hotkeys_custom_not_set=pas encore défini
-theme_xhred_hotkey_open_module_config_privileged=Raccourci clavier pour ouvrir la configuration du module
-theme_xhred_hotkey_open_theme_config=Raccourci clavier pour ouvrir la configuration du thème
+theme_xhred_hotkey_open_module_config_privileged=Ouvrir la configuration du module
+theme_xhred_hotkey_open_theme_config=Ouvrir la configuration du thème
 theme_xhred_hotkey_clear_cache=Vider le cache et recharger
 theme_xhred_hotkey_open_new=Dupliquer dans un nouvel onglet
 theme_xhred_global_success=Succès

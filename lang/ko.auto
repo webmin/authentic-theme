@@ -138,16 +138,16 @@ settings_theme_options_button=테마 설정 표시 버튼
 
 settings_hotkeys_active=단축키 사용
 settings_hotkey_toggle_modifier=단축키 수정 자
-settings_hotkey_toggle_key_webmin=Webmin 메뉴를 로드하는 단축키
-settings_hotkey_toggle_key_virtualmin=Virtualmin 메뉴를 불러오는 단축키
-settings_hotkey_toggle_key_cloudmin=Cloudmin 메뉴를 불러오는 단축키
-settings_hotkey_toggle_key_usermin=Usermin 메뉴를 불러오는 단축키
-settings_hotkey_toggle_key_webmail=메일 메뉴를 불러오는 단축키
-settings_hotkey_sysinfo=대시보드를 여는 단축키
-settings_hotkey_shell=드롭다운 터미널을 여는 단축키
-settings_hotkey_favorites=즐겨찾기 열기 단축키
-settings_hotkey_focus_search=검색 필드에 집중하는 단축키
-settings_hotkey_reload=현재 페이지 새로고침 단축키
+settings_hotkey_toggle_key_webmin=Webmin 메뉴 불러오기
+settings_hotkey_toggle_key_virtualmin=Virtualmin 메뉴 로드
+settings_hotkey_toggle_key_cloudmin=Cloudmin 메뉴 불러오기
+settings_hotkey_toggle_key_usermin=Usermin 메뉴 불러오기
+settings_hotkey_toggle_key_webmail=메일 로드 메뉴
+settings_hotkey_sysinfo=대시보드 열기
+settings_hotkey_shell=드롭다운 터미널 열기
+settings_hotkey_favorites=즐겨찾기 열기
+settings_hotkey_focus_search=검색 필드에 집중
+settings_hotkey_reload=현재 페이지 새로 고침
 
 settings_sysinfo_easypie_charts=차트 표시
 settings_sysinfo_theme_updates=정통 테마 업데이트 확인
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Cloudmin의 기본 페이지
 
 settings_right_clear_local_cache=캐시 지우기
 settings_side_slider_fixed=항상 보이게
-settings_hotkey_toggle_slider=측면 슬라이더 가시성을 전환하는 단축키
+settings_hotkey_toggle_slider=측면 슬라이더 가시성 전환
 
 settings_side_slider_enabled=슬라이더 사용
 settings_leftmenu_user_html=HTML 스 니펫 표시
@@ -868,7 +868,7 @@ settings_mail_ui=새 메일 UI 사용
 settings_theme_config_admins_only_privileged_error=액세스 거부 : 관리자가 사용자 정의에 대한 액세스를 차단했습니다
 
 theme_xhred_tooltip_navigation_pinned=탐색 메뉴 핀/핀 해제
-settings_hotkey_navigation=탐색 메뉴 상태를 전환하는 단축키
+settings_hotkey_navigation=탐색 메뉴 상태 전환
 
 theme_xhred_search_in_webmin=Webmin 검색
 theme_xhred_search_in_usermin=Usermin 검색
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Cloudmin 검색
 
 theme_xhred_filemanager_context_clipboard_selection=선택 물을 클립 보드에 복사
 
-settings_hotkey_slider=측면 슬라이더 상태를 전환하는 단축키
+settings_hotkey_slider=측면 슬라이더 상태 전환
 
 theme_git_update_locked=GitHub에 연결되지 않았거나 API 속도 제한을 초과하여 테마 업데이트를 완료 할 수 없습니다. 후자의 인증되지 않은 요청의 경우 속도 제한은 시간당 최대 60 개의 요청을 허용합니다. 나중에 다시 시도하거나 콘솔을 사용하여 업데이트 스크립트를 통해 수동으로 수행하십시오.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=지역 사회
 theme_xhred_hotkeys_server_error=도움말 파일을 검색할 수 없습니다
 theme_xhred_hotkeys_custom_to_opens=열린다
 theme_xhred_hotkeys_custom_not_set=설정되지 않음
-theme_xhred_hotkey_open_module_config_privileged=모듈 구성을 여는 단축키
-theme_xhred_hotkey_open_theme_config=테마 구성을 여는 단축키
+theme_xhred_hotkey_open_module_config_privileged=모듈 구성 열기
+theme_xhred_hotkey_open_theme_config=테마 구성 열기
 theme_xhred_hotkey_clear_cache=캐시 지우기 및 다시 로드
 theme_xhred_hotkey_open_new=새 탭에 복제
 theme_xhred_global_success=성공

@@ -138,16 +138,16 @@ settings_theme_options_button=إظهار زر إعدادات السمة
 
 settings_hotkeys_active=تمكين استخدام مفاتيح الاختصار
 settings_hotkey_toggle_modifier=تعديل مفاتيح الاختصار
-settings_hotkey_toggle_key_webmin=مفتاح التشغيل السريع لتحميل قائمة Webmin
-settings_hotkey_toggle_key_virtualmin=مفتاح التشغيل السريع لتحميل قائمة Virtualmin
-settings_hotkey_toggle_key_cloudmin=مفتاح التشغيل السريع لتحميل قائمة Cloudmin
-settings_hotkey_toggle_key_usermin=مفتاح التشغيل السريع لتحميل قائمة المستخدم
-settings_hotkey_toggle_key_webmail=مفتاح التشغيل السريع لتحميل قائمة البريد
-settings_hotkey_sysinfo=مفتاح التشغيل السريع لفتح لوحة القيادة
-settings_hotkey_shell=مفتاح التشغيل السريع لفتح المحطة المنسدلة
-settings_hotkey_favorites=مفتاح التشغيل السريع لفتح المفضلة
-settings_hotkey_focus_search=مفتاح التشغيل السريع للتركيز على مجال البحث
-settings_hotkey_reload=مفتاح التشغيل السريع لتحديث الصفحة الحالية
+settings_hotkey_toggle_key_webmin=تحميل قائمة Webmin
+settings_hotkey_toggle_key_virtualmin=قم بتحميل قائمة Virtualmin
+settings_hotkey_toggle_key_cloudmin=قم بتحميل قائمة Cloudmin
+settings_hotkey_toggle_key_usermin=تحميل قائمة Usermin
+settings_hotkey_toggle_key_webmail=تحميل قائمة البريد
+settings_hotkey_sysinfo=افتح لوحة القيادة
+settings_hotkey_shell=افتح محطة القائمة المنسدلة
+settings_hotkey_favorites=افتح المفضلة
+settings_hotkey_focus_search=ركز على مجال البحث
+settings_hotkey_reload=قم بتحديث الصفحة الحالية
 
 settings_sysinfo_easypie_charts=إظهار الرسوم البيانية
 settings_sysinfo_theme_updates=تحقق من تحديثات السمة الأصلية
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=الصفحة الافتراضية لـ Cloudmin
 
 settings_right_clear_local_cache=مسح ذاكرة التخزين المؤقت
 settings_side_slider_fixed=ابق مرئيًا دائمًا
-settings_hotkey_toggle_slider=مفتاح التشغيل السريع لتبديل رؤية شريط التمرير الجانبي
+settings_hotkey_toggle_slider=تبديل رؤية الجانب المنزلق
 
 settings_side_slider_enabled=تمكين شريط التمرير
 settings_leftmenu_user_html=إظهار مقتطف HTML
@@ -868,7 +868,7 @@ settings_mail_ui=تمكين واجهة مستخدم البريد الجديدة
 settings_theme_config_admins_only_privileged_error=تم رفض الوصول: منع المسؤول الوصول إلى تخصيصات المستخدم
 
 theme_xhred_tooltip_navigation_pinned=تثبيت/إلغاء تثبيت قائمة التنقل
-settings_hotkey_navigation=مفتاح التشغيل السريع لتبديل حالة قائمة التنقل
+settings_hotkey_navigation=تبديل حالة قائمة التنقل
 
 theme_xhred_search_in_webmin=بحث Webmin
 theme_xhred_search_in_usermin=بحث Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=بحث Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=نسخ التحديد إلى الحافظة
 
-settings_hotkey_slider=مفتاح التشغيل السريع لتبديل حالة شريط التمرير الجانبي
+settings_hotkey_slider=تبديل حالة شريط التمرير الجانبي
 
 theme_git_update_locked=لا يمكن استكمال تحديث السمة نظرًا لعدم وجود اتصال بـ GitHub أو تجاوز حد معدل API الخاص به. بالنسبة للطلبات الأخيرة غير المصادق عليها ، يسمح حد السعر بما يصل إلى 60 طلبًا في الساعة. حاول مرة أخرى لاحقًا أو استخدم وحدة التحكم للقيام بذلك يدويًا عبر برنامج نصي للتحديث.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=مجتمع
 theme_xhred_hotkeys_server_error=لا يمكن استرداد ملف التعليمات
 theme_xhred_hotkeys_custom_to_opens=يفتح
 theme_xhred_hotkeys_custom_not_set=غير مضبوط
-theme_xhred_hotkey_open_module_config_privileged=مفتاح التشغيل السريع لفتح وحدة التكوين
-theme_xhred_hotkey_open_theme_config=مفتاح التشغيل السريع لفتح تهيئة السمة
+theme_xhred_hotkey_open_module_config_privileged=فتح وحدة التكوين
+theme_xhred_hotkey_open_theme_config=افتح تهيئة السمة
 theme_xhred_hotkey_clear_cache=امسح ذاكرة التخزين المؤقت وأعد التحميل
 theme_xhred_hotkey_open_new=تكرار لعلامة تبويب جديدة
 theme_xhred_global_success=نجاح

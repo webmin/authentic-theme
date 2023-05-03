@@ -2,18 +2,18 @@ settings_right_hotkey_options=热键
 
 settings_right_reload=在选项卡开关上加载默认页面
 
-settings_hotkey_toggle_key_webmin=加载 Webmin 菜单的热键
-settings_hotkey_toggle_key_virtualmin=加载 Virtualmin 菜单的热键
-settings_hotkey_toggle_key_cloudmin=加载 Cloudmin 菜单的热键
-settings_hotkey_toggle_key_usermin=加载 Usermin 菜单的热键
-settings_hotkey_toggle_key_webmail=加载邮件菜单的热键
-settings_hotkey_sysinfo=打开仪表板的热键
-settings_hotkey_shell=打开下拉终端的热键
-settings_hotkey_favorites=打开收藏夹的热键
-settings_hotkey_focus_search=专注于搜索字段的热键
-settings_hotkey_reload=刷新当前页面的热键
+settings_hotkey_toggle_key_webmin=加载 Webmin 菜单
+settings_hotkey_toggle_key_virtualmin=加载 Virtualmin 菜单
+settings_hotkey_toggle_key_cloudmin=加载 Cloudmin 菜单
+settings_hotkey_toggle_key_usermin=加载用户菜单
+settings_hotkey_toggle_key_webmail=加载邮件菜单
+settings_hotkey_sysinfo=打开仪表板
+settings_hotkey_shell=打开下拉终端
+settings_hotkey_favorites=打开收藏夹
+settings_hotkey_focus_search=专注于搜索领域
+settings_hotkey_reload=刷新当前页面
 
-settings_hotkey_toggle_slider=切换侧滑块可见性的热键
+settings_hotkey_toggle_slider=切换侧滑块可见性
 
 theme_xhred_sysinfo_wmdocs=Webmin 文档
 theme_xhred_sysinfo_vmdocs=虚拟文档
@@ -63,7 +63,7 @@ settings_mail_ui=启用新邮件界面
 settings_theme_config_admins_only_privileged_error=访问被拒绝：管理员阻止了对用户定制的访问
 
 theme_xhred_tooltip_navigation_pinned=固定/取消固定导航菜单
-settings_hotkey_navigation=切换导航菜单状态的热键
+settings_hotkey_navigation=切换导航菜单状态
 
 theme_xhred_search_in_webmin=搜索Webmin
 theme_xhred_search_in_usermin=搜索Usermin
@@ -72,7 +72,7 @@ theme_xhred_search_in_servermanager=搜索Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=将选择内容复制到剪贴板
 
-settings_hotkey_slider=切换侧滑块状态的热键
+settings_hotkey_slider=切换侧滑块状态
 
 theme_git_update_locked=由于没有与GitHub的连接或其API速率限制过高，无法完成主题更新。对于后面未经身份验证的请求，速率限制允许每小时最多60个请求。稍后再试，或使用控制台通过更新脚本手动完成。
 
@@ -524,8 +524,8 @@ theme_xhred_global_community=社区
 theme_xhred_hotkeys_server_error=无法检索帮助文件
 theme_xhred_hotkeys_custom_to_opens=打开
 theme_xhred_hotkeys_custom_not_set=没有设置
-theme_xhred_hotkey_open_module_config_privileged=打开模块配置的热键
-theme_xhred_hotkey_open_theme_config=打开主题配置的热键
+theme_xhred_hotkey_open_module_config_privileged=打开模块配置
+theme_xhred_hotkey_open_theme_config=打开主题配置
 theme_xhred_hotkey_clear_cache=清除缓存并重新加载
 theme_xhred_hotkey_open_new=复制到新标签
 theme_xhred_global_success=成功

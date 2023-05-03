@@ -138,16 +138,16 @@ settings_theme_options_button=Tlačidlo Zobraziť nastavenie témy
 
 settings_hotkeys_active=Povoliť používanie klávesových skratiek
 settings_hotkey_toggle_modifier=Modifikátor klávesových skratiek
-settings_hotkey_toggle_key_webmin=Klávesová skratka na načítanie ponuky Webmin
-settings_hotkey_toggle_key_virtualmin=Klávesová skratka na načítanie ponuky Virtualmin
-settings_hotkey_toggle_key_cloudmin=Klávesová skratka na načítanie ponuky Cloudmin
-settings_hotkey_toggle_key_usermin=Klávesová skratka na načítanie ponuky Usermin
-settings_hotkey_toggle_key_webmail=Klávesová skratka na načítanie ponuky Mail
-settings_hotkey_sysinfo=Klávesová skratka na otvorenie dashboardu
-settings_hotkey_shell=Klávesová skratka na otvorenie rozbaľovacieho terminálu
-settings_hotkey_favorites=Klávesová skratka na otvorenie obľúbených položiek
-settings_hotkey_focus_search=Klávesová skratka zameraná na pole vyhľadávania
-settings_hotkey_reload=Klávesová skratka na obnovenie aktuálnej stránky
+settings_hotkey_toggle_key_webmin=Načítať menu Webmin
+settings_hotkey_toggle_key_virtualmin=Načítať ponuku Virtualmin
+settings_hotkey_toggle_key_cloudmin=Načítať ponuku Cloudmin
+settings_hotkey_toggle_key_usermin=Načítať ponuku Usermin
+settings_hotkey_toggle_key_webmail=Ponuka Načítať poštu
+settings_hotkey_sysinfo=Otvorte palubnú dosku
+settings_hotkey_shell=Otvorte rozbaľovací terminál
+settings_hotkey_favorites=Otvoriť obľúbené položky
+settings_hotkey_focus_search=Zamerajte sa na vyhľadávacie pole
+settings_hotkey_reload=Obnoviť aktuálnu stránku
 
 settings_sysinfo_easypie_charts=Zobraziť grafy
 settings_sysinfo_theme_updates=Skontrolujte aktualizácie autentických tém
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Predvolená stránka pre Cloudmin
 
 settings_right_clear_local_cache=Vymazať vyrovnávaciu pamäť
 settings_side_slider_fixed=Udržujte vždy viditeľné
-settings_hotkey_toggle_slider=Klávesová skratka na prepnutie viditeľnosti bočného posúvača
+settings_hotkey_toggle_slider=Prepnúť viditeľnosť bočného posúvača
 
 settings_side_slider_enabled=Povoliť posúvač
 settings_leftmenu_user_html=Zobraziť útržok HTML
@@ -868,7 +868,7 @@ settings_mail_ui=Povoliť nové používateľské rozhranie pošty
 settings_theme_config_admins_only_privileged_error=Prístup odmietnutý: Správca zablokoval prístup k prispôsobeniam používateľov
 
 theme_xhred_tooltip_navigation_pinned=Pripnúť/odblokovať navigačnú ponuku
-settings_hotkey_navigation=Klávesová skratka na prepnutie stavu navigačnej ponuky
+settings_hotkey_navigation=Prepnúť stav navigačnej ponuky
 
 theme_xhred_search_in_webmin=Hľadať na webmin
 theme_xhred_search_in_usermin=Hľadať Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Hľadať Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Skopírujte výber do schránky
 
-settings_hotkey_slider=Klávesová skratka na prepnutie stavu bočného posúvača
+settings_hotkey_slider=Prepnúť stav bočného posúvača
 
 theme_git_update_locked=Aktualizáciu motívu nie je možné dokončiť z dôvodu neexistencie pripojenia k službe GitHub alebo prekročenia limitu sadzby API. V prípade neoverených žiadostí umožňuje sadzba limit až 60 žiadostí za hodinu. Skúste to znova neskôr alebo pomocou konzoly to urobte manuálne pomocou aktualizačného skriptu.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=Spoločenstva
 theme_xhred_hotkeys_server_error=Nie je možné načítať súbor pomocníka
 theme_xhred_hotkeys_custom_to_opens=otvára
 theme_xhred_hotkeys_custom_not_set=nie je nastavené
-theme_xhred_hotkey_open_module_config_privileged=Klávesová skratka na otvorenie konfigurácie modulu
-theme_xhred_hotkey_open_theme_config=Klávesová skratka na otvorenie konfigurácie témy
+theme_xhred_hotkey_open_module_config_privileged=Otvorte konfiguráciu modulu
+theme_xhred_hotkey_open_theme_config=Otvorte konfiguráciu témy
 theme_xhred_hotkey_clear_cache=Vymažte vyrovnávaciu pamäť a znova načítajte
 theme_xhred_hotkey_open_new=Duplikovať na novú kartu
 theme_xhred_global_success=Úspech

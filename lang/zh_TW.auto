@@ -138,16 +138,16 @@ settings_theme_options_button=顯示主題設置按鈕
 
 settings_hotkeys_active=啟用熱鍵用法
 settings_hotkey_toggle_modifier=熱鍵修改器
-settings_hotkey_toggle_key_webmin=加載 Webmin 菜單的熱鍵
-settings_hotkey_toggle_key_virtualmin=加載 Virtualmin 菜單的熱鍵
-settings_hotkey_toggle_key_cloudmin=加載 Cloudmin 菜單的熱鍵
-settings_hotkey_toggle_key_usermin=加載 Usermin 菜單的熱鍵
-settings_hotkey_toggle_key_webmail=加載郵件菜單的熱鍵
-settings_hotkey_sysinfo=打開儀表板的熱鍵
-settings_hotkey_shell=打開下拉終端的熱鍵
-settings_hotkey_favorites=打開收藏夾的熱鍵
-settings_hotkey_focus_search=專注於搜索字段的熱鍵
-settings_hotkey_reload=刷新當前頁面的熱鍵
+settings_hotkey_toggle_key_webmin=加載 Webmin 菜單
+settings_hotkey_toggle_key_virtualmin=加載 Virtualmin 菜單
+settings_hotkey_toggle_key_cloudmin=加載 Cloudmin 菜單
+settings_hotkey_toggle_key_usermin=加載用戶菜單
+settings_hotkey_toggle_key_webmail=加載郵件菜單
+settings_hotkey_sysinfo=打開儀表板
+settings_hotkey_shell=打開下拉終端
+settings_hotkey_favorites=打開收藏夾
+settings_hotkey_focus_search=專注於搜索領域
+settings_hotkey_reload=刷新當前頁面
 
 settings_sysinfo_easypie_charts=顯示圖表
 settings_sysinfo_theme_updates=檢查真實主題更新
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Cloudmin的默認頁面
 
 settings_right_clear_local_cache=清除緩存
 settings_side_slider_fixed=始終保持可見
-settings_hotkey_toggle_slider=切換側滑塊可見性的熱鍵
+settings_hotkey_toggle_slider=切換側滑塊可見性
 
 settings_side_slider_enabled=啟用滑桿
 settings_leftmenu_user_html=顯示HTML代碼段
@@ -868,7 +868,7 @@ settings_mail_ui=啟用新郵件界面
 settings_theme_config_admins_only_privileged_error=訪問被拒絕：管理員阻止了對用戶定制的訪問
 
 theme_xhred_tooltip_navigation_pinned=固定/取消固定導航菜單
-settings_hotkey_navigation=切換導航菜單狀態的熱鍵
+settings_hotkey_navigation=切換導航菜單狀態
 
 theme_xhred_search_in_webmin=搜索Webmin
 theme_xhred_search_in_usermin=搜索Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=搜索Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=將選擇內容複製到剪貼板
 
-settings_hotkey_slider=切換側滑塊狀態的熱鍵
+settings_hotkey_slider=切換側滑塊狀態
 
 theme_git_update_locked=由於沒有與GitHub的連接或其API速率限製過高，無法完成主題更新。對於後面未經身份驗證的請求，速率限制允許每小時最多60個請求。稍後再試，或使用控制台通過更新腳本手動完成。
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=社區
 theme_xhred_hotkeys_server_error=無法檢索幫助文件
 theme_xhred_hotkeys_custom_to_opens=打開
 theme_xhred_hotkeys_custom_not_set=沒有設置
-theme_xhred_hotkey_open_module_config_privileged=打開模塊配置的熱鍵
-theme_xhred_hotkey_open_theme_config=打開主題配置的熱鍵
+theme_xhred_hotkey_open_module_config_privileged=打開模塊配置
+theme_xhred_hotkey_open_theme_config=打開主題配置
 theme_xhred_hotkey_clear_cache=清除緩存並重新加載
 theme_xhred_hotkey_open_new=複製到新標籤
 theme_xhred_global_success=成功

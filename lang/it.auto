@@ -1,15 +1,15 @@
-settings_hotkey_toggle_key_webmin=Tasto di scelta rapida per caricare il menu Webmin
-settings_hotkey_toggle_key_virtualmin=Tasto di scelta rapida per caricare il menu Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tasto di scelta rapida per caricare il menu Cloudmin
-settings_hotkey_toggle_key_usermin=Tasto di scelta rapida per caricare il menu Usermin
-settings_hotkey_toggle_key_webmail=Tasto di scelta rapida per caricare il menu Posta
-settings_hotkey_sysinfo=Tasto di scelta rapida per aprire la dashboard
-settings_hotkey_shell=Tasto di scelta rapida per aprire il terminale a discesa
-settings_hotkey_favorites=Tasto di scelta rapida per aprire i preferiti
-settings_hotkey_focus_search=Tasto di scelta rapida per concentrarsi sul campo di ricerca
-settings_hotkey_reload=Tasto di scelta rapida per aggiornare la pagina corrente
+settings_hotkey_toggle_key_webmin=Carica il menu Webmin
+settings_hotkey_toggle_key_virtualmin=Carica il menu di Virtualmin
+settings_hotkey_toggle_key_cloudmin=Carica il menu di Cloudmin
+settings_hotkey_toggle_key_usermin=Carica il menu Usermin
+settings_hotkey_toggle_key_webmail=Menu Carica posta
+settings_hotkey_sysinfo=Cruscotto aperto
+settings_hotkey_shell=Apri il terminale a tendina
+settings_hotkey_favorites=Apri i preferiti
+settings_hotkey_focus_search=Concentrati sul campo di ricerca
+settings_hotkey_reload=Aggiorna la pagina corrente
 
-settings_hotkey_toggle_slider=Tasto di scelta rapida per attivare/disattivare la visibilità del cursore laterale
+settings_hotkey_toggle_slider=Attiva/disattiva la visibilità del cursore laterale
 
 theme_xhred_sysinfo_wmdocs=Documentazione webmin
 theme_xhred_sysinfo_vmdocs=Documentazione Virtualmin
@@ -24,9 +24,9 @@ theme_update_footer=Si prega di essere gentili nel segnalare bug al repository $
 #19.09
 theme_git_patch_incompatible_message_desc=Potrebbero esserci modifiche incompatibili, che potrebbero impedire al tema di funzionare come previsto. Non è possibile continuare l'operazione di aggiornamento utilizzando l'interfaccia utente.
 
-settings_hotkey_navigation=Tasto di scelta rapida per alternare lo stato del menu di navigazione
+settings_hotkey_navigation=Attiva/disattiva lo stato del menu di navigazione
 
-settings_hotkey_slider=Tasto di scelta rapida per attivare/disattivare lo stato del cursore laterale
+settings_hotkey_slider=Attiva/disattiva lo stato del cursore laterale
 
 theme_xhred_filemanager_mass_selected_for_delete=Tutti gli elementi nella directory %1
 
@@ -162,8 +162,8 @@ theme_xhred_global_community=Comunità
 theme_xhred_hotkeys_server_error=Impossibile recuperare il file della guida
 theme_xhred_hotkeys_custom_to_opens=si apre
 theme_xhred_hotkeys_custom_not_set=non impostato
-theme_xhred_hotkey_open_module_config_privileged=Tasto di scelta rapida per aprire la configurazione del modulo
-theme_xhred_hotkey_open_theme_config=Tasto di scelta rapida per aprire la configurazione del tema
+theme_xhred_hotkey_open_module_config_privileged=Apri la configurazione del modulo
+theme_xhred_hotkey_open_theme_config=Apri la configurazione del tema
 theme_xhred_hotkey_clear_cache=Svuota la cache e ricarica
 theme_xhred_hotkey_open_new=Duplica in una nuova scheda
 theme_xhred_global_success=Successo

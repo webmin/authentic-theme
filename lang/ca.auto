@@ -2,18 +2,18 @@ settings_right_hotkey_options=Tecles d'accés directe
 
 settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
 
-settings_hotkey_toggle_key_webmin=Tecla d'accés directe per carregar el menú Webmin
-settings_hotkey_toggle_key_virtualmin=Tecla d'accés ràpid per carregar el menú de Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tecla d'accés ràpid per carregar el menú de Cloudmin
-settings_hotkey_toggle_key_usermin=Tecla d'accés directe per carregar el menú Usermin
-settings_hotkey_toggle_key_webmail=Tecla d'accés ràpid per carregar el menú de correu
-settings_hotkey_sysinfo=Tecla d'accés ràpid per obrir el tauler
-settings_hotkey_shell=Tecla d'accés ràpid per obrir el terminal desplegable
-settings_hotkey_favorites=Tecla d'accés ràpid per obrir els preferits
-settings_hotkey_focus_search=Tecla d'accés ràpid per centrar-se en el camp de cerca
-settings_hotkey_reload=Tecla d'accés ràpid per actualitzar la pàgina actual
+settings_hotkey_toggle_key_webmin=Carregueu el menú Webmin
+settings_hotkey_toggle_key_virtualmin=Carregueu el menú de Virtualmin
+settings_hotkey_toggle_key_cloudmin=Carregueu el menú de Cloudmin
+settings_hotkey_toggle_key_usermin=Carregueu el menú Usermin
+settings_hotkey_toggle_key_webmail=Menú Carrega correu
+settings_hotkey_sysinfo=Obre el tauler de control
+settings_hotkey_shell=Obre el terminal desplegable
+settings_hotkey_favorites=Obre els preferits
+settings_hotkey_focus_search=Centra't en el camp de cerca
+settings_hotkey_reload=Actualitza la pàgina actual
 
-settings_hotkey_toggle_slider=Tecla d'accés ràpid per canviar la visibilitat del control lliscant lateral
+settings_hotkey_toggle_slider=Commuta la visibilitat del control lliscant lateral
 
 theme_xhred_sysinfo_wmdocs=Documentació de Webmin
 theme_xhred_sysinfo_vmdocs=Documentació de Virtualmin
@@ -203,7 +203,7 @@ settings_mail_ui=Activa la nova interfície de correu electrònic
 settings_theme_config_admins_only_privileged_error=Accés denegat: l'administrador ha bloquejat l'accés a les personalitzacions dels usuaris
 
 theme_xhred_tooltip_navigation_pinned=Menú de fixació/fixació del menú
-settings_hotkey_navigation=Tecla d'accés ràpid per canviar l'estat del menú de navegació
+settings_hotkey_navigation=Canvia l'estat del menú de navegació
 
 theme_xhred_search_in_webmin=Cerca al Webmin
 theme_xhred_search_in_usermin=Cerca Usermin
@@ -212,7 +212,7 @@ theme_xhred_search_in_servermanager=Cerca a Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copia la selecció al porta-retalls
 
-settings_hotkey_slider=Tecla d'accés ràpid per canviar l'estat del control lliscant lateral
+settings_hotkey_slider=Canvia l'estat del control lliscant lateral
 
 theme_git_update_locked=L'actualització del tema no es pot completar perquè no hi ha cap connexió a GitHub o el seu excés de límit de la API. Per a les darreres peticions no autenticades, el límit de tarifa permet fins a 60 sol·licituds per hora. Torneu-ho a provar més tard o utilitzeu la consola per fer-ho manualment mitjançant un script d'actualització.
 
@@ -664,8 +664,8 @@ theme_xhred_global_community=Comunitat
 theme_xhred_hotkeys_server_error=No es pot recuperar el fitxer d'ajuda
 theme_xhred_hotkeys_custom_to_opens=s'obre
 theme_xhred_hotkeys_custom_not_set=no establert
-theme_xhred_hotkey_open_module_config_privileged=Tecla d'accés ràpid per obrir la configuració del mòdul
-theme_xhred_hotkey_open_theme_config=Tecla d'accés ràpid per obrir la configuració del tema
+theme_xhred_hotkey_open_module_config_privileged=Obriu la configuració del mòdul
+theme_xhred_hotkey_open_theme_config=Obriu la configuració del tema
 theme_xhred_hotkey_clear_cache=Esborra la memòria cau i torna a carregar
 theme_xhred_hotkey_open_new=Duplica a una pestanya nova
 theme_xhred_global_success=Èxit

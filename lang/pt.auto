@@ -56,16 +56,16 @@ settings_theme_options_button=Mostrar botão de configurações de tema
 
 settings_hotkeys_active=Ativar uso de teclas de atalho
 settings_hotkey_toggle_modifier=Modificador de teclas de atalho
-settings_hotkey_toggle_key_webmin=Tecla de atalho para carregar o menu do Webmin
-settings_hotkey_toggle_key_virtualmin=Tecla de atalho para carregar o menu Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tecla de atalho para carregar o menu Cloudmin
-settings_hotkey_toggle_key_usermin=Tecla de atalho para carregar o menu Usermin
-settings_hotkey_toggle_key_webmail=Tecla de atalho para carregar o menu Mail
-settings_hotkey_sysinfo=Tecla de atalho para abrir o painel
-settings_hotkey_shell=Tecla de atalho para abrir o terminal suspenso
-settings_hotkey_favorites=Tecla de atalho para abrir favoritos
-settings_hotkey_focus_search=Tecla de atalho para focar no campo de pesquisa
-settings_hotkey_reload=Tecla de atalho para atualizar a página atual
+settings_hotkey_toggle_key_webmin=Carregar menu Webmin
+settings_hotkey_toggle_key_virtualmin=Carregar menu do Virtualmin
+settings_hotkey_toggle_key_cloudmin=Carregar menu Cloudmin
+settings_hotkey_toggle_key_usermin=Carregar menu Usermin
+settings_hotkey_toggle_key_webmail=Carregar menu de correio
+settings_hotkey_sysinfo=Abra o painel
+settings_hotkey_shell=Abra o terminal suspenso
+settings_hotkey_favorites=Abrir favoritos
+settings_hotkey_focus_search=Concentre-se no campo de pesquisa
+settings_hotkey_reload=Atualizar página atual
 
 settings_sysinfo_easypie_charts=Mostrar gráficos
 settings_sysinfo_theme_updates=Verifique se há atualizações de temas autênticos
@@ -80,7 +80,7 @@ settings_right_cloudmin_default=Página padrão para Cloudmin
 
 settings_right_clear_local_cache=Limpar cache
 settings_side_slider_fixed=Mantenha sempre visível
-settings_hotkey_toggle_slider=Tecla de atalho para alternar a visibilidade do controle deslizante lateral
+settings_hotkey_toggle_slider=Alternar a visibilidade do controle deslizante lateral
 
 settings_side_slider_enabled=Ativar controle deslizante
 settings_leftmenu_user_html=Mostrar snippet HTML
@@ -785,7 +785,7 @@ settings_mail_ui=Ativar nova interface de usuário de email
 settings_theme_config_admins_only_privileged_error=Acesso negado: o administrador bloqueou o acesso às personalizações do usuário
 
 theme_xhred_tooltip_navigation_pinned=Fixar/desafixar o menu de navegação
-settings_hotkey_navigation=Tecla de atalho para alternar o estado do menu de navegação
+settings_hotkey_navigation=Alternar o estado do menu de navegação
 
 theme_xhred_search_in_webmin=Pesquisar Webmin
 theme_xhred_search_in_usermin=Pesquisar Usermin
@@ -794,7 +794,7 @@ theme_xhred_search_in_servermanager=Pesquisar Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copiar seleção para a área de transferência
 
-settings_hotkey_slider=Tecla de atalho para alternar o estado do controle deslizante lateral
+settings_hotkey_slider=Alternar o estado do controle deslizante lateral
 
 theme_git_update_locked=A atualização do tema não pode ser concluída devido a nenhuma conexão com o GitHub ou seu excesso de limite de taxa de API. Para as últimas solicitações não autenticadas, o limite de taxa permite até 60 solicitações por hora. Tente novamente mais tarde ou use o console para fazê-lo manualmente via script de atualização.
 
@@ -1245,8 +1245,8 @@ theme_xhred_global_community=Comunidade
 theme_xhred_hotkeys_server_error=Não é possível recuperar o arquivo de ajuda
 theme_xhred_hotkeys_custom_to_opens=abre
 theme_xhred_hotkeys_custom_not_set=não configurado
-theme_xhred_hotkey_open_module_config_privileged=Tecla de atalho para abrir a configuração do módulo
-theme_xhred_hotkey_open_theme_config=Tecla de atalho para abrir a configuração do tema
+theme_xhred_hotkey_open_module_config_privileged=Abra a configuração do módulo
+theme_xhred_hotkey_open_theme_config=Abra a configuração do tema
 theme_xhred_hotkey_clear_cache=Limpe o cache e recarregue
 theme_xhred_hotkey_open_new=Duplicar para uma nova guia
 theme_xhred_global_success=Sucesso

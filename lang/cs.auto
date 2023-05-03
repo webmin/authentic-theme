@@ -3,20 +3,20 @@ settings_right_hotkey_options=Klávesové zkratky
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
 settings_right_reload=Načíst výchozí stránku na přepínač kartě
 
-settings_hotkey_toggle_key_webmin=Klávesová zkratka pro načtení nabídky Webmin
-settings_hotkey_toggle_key_virtualmin=Klávesová zkratka pro načtení nabídky Virtualmin
-settings_hotkey_toggle_key_cloudmin=Klávesová zkratka pro načtení nabídky Cloudmin
-settings_hotkey_toggle_key_usermin=Klávesová zkratka pro načtení nabídky Usermin
-settings_hotkey_toggle_key_webmail=Klávesová zkratka pro načtení menu Mail
-settings_hotkey_sysinfo=Klávesová zkratka pro otevření řídicího panelu
-settings_hotkey_shell=Klávesová zkratka pro otevření rozevíracího terminálu
-settings_hotkey_favorites=Klávesová zkratka pro otevření oblíbených položek
-settings_hotkey_focus_search=Klávesová zkratka pro zaměření na vyhledávací pole
-settings_hotkey_reload=Klávesová zkratka pro obnovení aktuální stránky
+settings_hotkey_toggle_key_webmin=Načíst menu Webmin
+settings_hotkey_toggle_key_virtualmin=Načíst nabídku Virtualmin
+settings_hotkey_toggle_key_cloudmin=Načíst nabídku Cloudmin
+settings_hotkey_toggle_key_usermin=Načíst menu Usermin
+settings_hotkey_toggle_key_webmail=Nabídka Načíst poštu
+settings_hotkey_sysinfo=Otevřete palubní desku
+settings_hotkey_shell=Otevřete rozevírací terminál
+settings_hotkey_favorites=Otevřít oblíbené položky
+settings_hotkey_focus_search=Zaměřte se na vyhledávací pole
+settings_hotkey_reload=Obnovit aktuální stránku
 
 settings_right_clear_local_cache=Vyčistit mezipaměť
 settings_side_slider_fixed=Udržujte vždy viditelné
-settings_hotkey_toggle_slider=Klávesová zkratka pro přepínání viditelnosti bočního posuvníku
+settings_hotkey_toggle_slider=Přepnout viditelnost bočního posuvníku
 
 settings_side_slider_enabled=Povolit posuvník
 settings_leftmenu_user_html=Zobrazit úryvek HTML
@@ -721,7 +721,7 @@ settings_mail_ui=Povolit nové uživatelské rozhraní pro poštu
 settings_theme_config_admins_only_privileged_error=Přístup byl odepřen: Správce zablokoval přístup k uživatelským přizpůsobením
 
 theme_xhred_tooltip_navigation_pinned=Přepnout/odepnout navigační nabídku
-settings_hotkey_navigation=Klávesová zkratka pro přepínání stavu navigační nabídky
+settings_hotkey_navigation=Přepnout stav navigační nabídky
 
 theme_xhred_search_in_webmin=Prohledat webmin
 theme_xhred_search_in_usermin=Hledat Usermin
@@ -730,7 +730,7 @@ theme_xhred_search_in_servermanager=Hledat Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Zkopírujte výběr do schránky
 
-settings_hotkey_slider=Klávesová zkratka pro přepínání stavu bočního posuvníku
+settings_hotkey_slider=Přepnout stav bočního posuvníku
 
 theme_git_update_locked=Aktualizace motivu nelze dokončit z důvodu neexistence připojení k GitHubu nebo překročení limitu rychlosti API. U posledně neověřených žádostí umožňuje sazební limit až 60 žádostí za hodinu. Zkuste to znovu později nebo pomocí konzoly to proveďte ručně pomocí aktualizačního skriptu.
 
@@ -1181,8 +1181,8 @@ theme_xhred_global_community=Společenství
 theme_xhred_hotkeys_server_error=Nelze načíst soubor nápovědy
 theme_xhred_hotkeys_custom_to_opens=otevře
 theme_xhred_hotkeys_custom_not_set=Nenastaveno
-theme_xhred_hotkey_open_module_config_privileged=Klávesová zkratka pro otevření konfigurace modulu
-theme_xhred_hotkey_open_theme_config=Klávesová zkratka pro otevření konfigurace motivu
+theme_xhred_hotkey_open_module_config_privileged=Otevřete konfiguraci modulu
+theme_xhred_hotkey_open_theme_config=Otevřete konfiguraci motivu
 theme_xhred_hotkey_clear_cache=Vymažte mezipaměť a znovu načtěte
 theme_xhred_hotkey_open_new=Duplikovat na novou kartu
 theme_xhred_global_success=Úspěch

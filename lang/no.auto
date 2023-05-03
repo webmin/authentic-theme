@@ -2,18 +2,18 @@ settings_right_hotkey_options=Hurtigtaster
 
 settings_right_reload=Last inn standardsiden på fanebryteren
 
-settings_hotkey_toggle_key_webmin=Hurtigtast for å laste Webmin-menyen
-settings_hotkey_toggle_key_virtualmin=Hurtigtast for å laste Virtualmin-menyen
-settings_hotkey_toggle_key_cloudmin=Hurtigtast for å laste Cloudmin-menyen
-settings_hotkey_toggle_key_usermin=Hurtigtast for å laste Usermin-menyen
-settings_hotkey_toggle_key_webmail=Hurtigtast for å laste Mail-menyen
-settings_hotkey_sysinfo=Hurtigtast for å åpne dashbordet
-settings_hotkey_shell=Hurtigtast for å åpne rullegardinterminal
-settings_hotkey_favorites=Hurtigtast for å åpne favoritter
-settings_hotkey_focus_search=Hurtigtast for å fokusere på søkefeltet
-settings_hotkey_reload=Hurtigtast for å oppdatere gjeldende side
+settings_hotkey_toggle_key_webmin=Last inn Webmin-menyen
+settings_hotkey_toggle_key_virtualmin=Last Virtualmin-menyen
+settings_hotkey_toggle_key_cloudmin=Last ned Cloudmin-menyen
+settings_hotkey_toggle_key_usermin=Last inn brukermin-menyen
+settings_hotkey_toggle_key_webmail=Last inn Mail-menyen
+settings_hotkey_sysinfo=Åpne dashbordet
+settings_hotkey_shell=Åpne rullegardinterminal
+settings_hotkey_favorites=Åpne favoritter
+settings_hotkey_focus_search=Fokus på søkefeltet
+settings_hotkey_reload=Oppdater gjeldende side
 
-settings_hotkey_toggle_slider=Hurtigtast for å bytte sideskyvesynlighet
+settings_hotkey_toggle_slider=Slå sideglidebryterens synlighet
 
 theme_xhred_sysinfo_wmdocs=Webmin dokumentasjon
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon
@@ -31,9 +31,9 @@ settings_webmin_default_module=Standardside for Webmin
 #19.09
 theme_git_patch_incompatible_message_desc=Det kan være inkompatible endringer som kan stoppe temaet fra å fungere som det er designet. Det er ikke mulig å fortsette oppgraderingen med brukergrensesnittet.
 
-settings_hotkey_navigation=Hurtigtast for å bytte navigasjonsmenystatus
+settings_hotkey_navigation=Veksle navigasjonsmenystatus
 
-settings_hotkey_slider=Hurtigtast for å bytte sideskyvetilstand
+settings_hotkey_slider=Veksle på sideskyvetilstand
 
 theme_xhred_filemanager_mass_selected_for_delete=Alle elementer i katalogen %1
 
@@ -232,8 +232,8 @@ theme_xhred_global_community=Samfunnet
 theme_xhred_hotkeys_server_error=Kan ikke hente hjelpefilen
 theme_xhred_hotkeys_custom_to_opens=åpnes
 theme_xhred_hotkeys_custom_not_set=ikke satt
-theme_xhred_hotkey_open_module_config_privileged=Hurtigtast for å åpne modulkonfig
-theme_xhred_hotkey_open_theme_config=Hurtigtast for å åpne temakonfigurasjon
+theme_xhred_hotkey_open_module_config_privileged=Åpne modulkonfig
+theme_xhred_hotkey_open_theme_config=Åpne temakonfigurasjon
 theme_xhred_hotkey_clear_cache=Tøm hurtigbufferen og last inn på nytt
 theme_xhred_hotkey_open_new=Dupliser til en ny fane
 theme_xhred_global_success=Suksess

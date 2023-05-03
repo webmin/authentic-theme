@@ -147,16 +147,16 @@ settings_theme_options_button=Show theme settings button
 
 settings_hotkeys_active=Enable hotkeys usage
 settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Hotkey to load Webmin menu
-settings_hotkey_toggle_key_virtualmin=Hotkey to load Virtualmin menu
-settings_hotkey_toggle_key_cloudmin=Hotkey to load Cloudmin  menu
-settings_hotkey_toggle_key_usermin=Hotkey to load Usermin menu
-settings_hotkey_toggle_key_webmail=Hotkey to load Mail menu
-settings_hotkey_sysinfo=Hotkey to open dashboard
-settings_hotkey_shell=Hotkey to open dropdown terminal
-settings_hotkey_favorites=Hotkey to open favorites
-settings_hotkey_focus_search=Hotkey to focus on search field
-settings_hotkey_reload=Hotkey to refresh current page
+settings_hotkey_toggle_key_webmin=Load Webmin menu
+settings_hotkey_toggle_key_virtualmin=Load Virtualmin menu
+settings_hotkey_toggle_key_cloudmin=Load Cloudmin  menu
+settings_hotkey_toggle_key_usermin=Load Usermin menu
+settings_hotkey_toggle_key_webmail=Load Mail menu
+settings_hotkey_sysinfo=Open dashboard
+settings_hotkey_shell=Open dropdown terminal
+settings_hotkey_favorites=Open favorites
+settings_hotkey_focus_search=Focus on search field
+settings_hotkey_reload=Refresh current page
 
 settings_sysinfo_easypie_charts=Show charts
 settings_sysinfo_theme_updates=Check for Authentic Theme updates
@@ -171,7 +171,7 @@ settings_right_cloudmin_default=Default page for Cloudmin
 
 settings_right_clear_local_cache=Clear cache
 settings_side_slider_fixed=Keep always visible
-settings_hotkey_toggle_slider=Hotkey to toggle side slider visibility
+settings_hotkey_toggle_slider=Toggle side slider visibility
 
 settings_side_slider_enabled=Enable slider
 settings_leftmenu_user_html=Show HTML snippet
@@ -904,7 +904,7 @@ settings_mail_ui=Enable new mail UI
 settings_theme_config_admins_only_privileged_error=Access denied: Administrator has blocked access to user customization
 
 theme_xhred_tooltip_navigation_pinned=Pin/unpin navigation menu
-settings_hotkey_navigation=Hotkey to toggle navigation menu state
+settings_hotkey_navigation=Toggle navigation menu state
 
 theme_xhred_search_in_webmin=Search Webmin
 theme_xhred_search_in_usermin=Search Usermin
@@ -913,7 +913,7 @@ theme_xhred_search_in_servermanager=Search Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copy selection to clipboard
 
-settings_hotkey_slider=Hotkey to toggle side slider state
+settings_hotkey_slider=Toggle side slider state
 
 theme_git_update_locked=Theme update cannot be completed due to no connection to GitHub or its API rate limit excess. For latter, unauthenticated requests, the rate limit allows for up to 60 requests per hour. Try again later or use console to do it manually via update script.
 
@@ -1399,8 +1399,8 @@ theme_xhred_global_community=Community
 theme_xhred_hotkeys_server_error=Cannot retrieve help file
 theme_xhred_hotkeys_custom_to_opens=opens
 theme_xhred_hotkeys_custom_not_set=not set
-theme_xhred_hotkey_open_module_config_privileged=Hotkey to open module config
-theme_xhred_hotkey_open_theme_config=Hotkey to open theme config
+theme_xhred_hotkey_open_module_config_privileged=Open module config
+theme_xhred_hotkey_open_theme_config=Open theme config
 theme_xhred_hotkey_clear_cache=Clear cache and reload
 theme_xhred_hotkey_open_new=Duplicate to a new tab
 theme_xhred_global_success=Success

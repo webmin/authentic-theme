@@ -2,18 +2,18 @@ settings_right_hotkey_options=Hotkeys
 
 settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
 
-settings_hotkey_toggle_key_webmin=Hotkey zum Laden des Webmin-Menüs
-settings_hotkey_toggle_key_virtualmin=Hotkey zum Laden des Virtualmin-Menüs
-settings_hotkey_toggle_key_cloudmin=Hotkey zum Laden des Cloudmin-Menüs
-settings_hotkey_toggle_key_usermin=Hotkey zum Laden des Usermin-Menüs
-settings_hotkey_toggle_key_webmail=Hotkey zum Laden des Mail-Menüs
-settings_hotkey_sysinfo=Hotkey zum Öffnen des Dashboards
-settings_hotkey_shell=Hotkey zum Öffnen des Dropdown-Terminals
-settings_hotkey_favorites=Hotkey zum Öffnen von Favoriten
-settings_hotkey_focus_search=Hotkey zum Fokussieren auf das Suchfeld
-settings_hotkey_reload=Hotkey zum Aktualisieren der aktuellen Seite
+settings_hotkey_toggle_key_webmin=Laden Sie das Webmin-Menü
+settings_hotkey_toggle_key_virtualmin=Laden Sie das Virtualmin-Menü
+settings_hotkey_toggle_key_cloudmin=Laden Sie das Cloudmin-Menü
+settings_hotkey_toggle_key_usermin=Usermin-Menü laden
+settings_hotkey_toggle_key_webmail=Mail-Menü laden
+settings_hotkey_sysinfo=Dashboard öffnen
+settings_hotkey_shell=Öffnen Sie das Dropdown-Terminal
+settings_hotkey_favorites=Favoriten öffnen
+settings_hotkey_focus_search=Konzentrieren Sie sich auf das Suchfeld
+settings_hotkey_reload=Aktuelle Seite aktualisieren
 
-settings_hotkey_toggle_slider=Hotkey zum Umschalten der Sichtbarkeit des seitlichen Schiebereglers
+settings_hotkey_toggle_slider=Sichtbarkeit des seitlichen Schiebereglers umschalten
 
 theme_xhred_sysinfo_wmdocs=Webmin-Dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin-Dokumentation
@@ -38,9 +38,9 @@ extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
 
-settings_hotkey_navigation=Hotkey zum Umschalten des Status des Navigationsmenüs
+settings_hotkey_navigation=Status des Navigationsmenüs umschalten
 
-settings_hotkey_slider=Hotkey zum Umschalten des Status des seitlichen Schiebereglers
+settings_hotkey_slider=Status des seitlichen Schiebereglers umschalten
 
 theme_xhred_filemanager_mass_selected_for_delete=Alle Elemente im Verzeichnis %1
 
@@ -265,8 +265,8 @@ theme_xhred_global_community=Gemeinschaft
 theme_xhred_hotkeys_server_error=Hilfedatei kann nicht abgerufen werden
 theme_xhred_hotkeys_custom_to_opens=öffnet
 theme_xhred_hotkeys_custom_not_set=nicht eingestellt
-theme_xhred_hotkey_open_module_config_privileged=Hotkey zum Öffnen der Modulkonfiguration
-theme_xhred_hotkey_open_theme_config=Hotkey zum Öffnen der Theme-Konfiguration
+theme_xhred_hotkey_open_module_config_privileged=Modulkonfiguration öffnen
+theme_xhred_hotkey_open_theme_config=Theme-Konfiguration öffnen
 theme_xhred_hotkey_clear_cache=Cache leeren und neu laden
 theme_xhred_hotkey_open_new=Auf einen neuen Tab duplizieren
 theme_xhred_global_success=Erfolg

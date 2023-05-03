@@ -138,16 +138,16 @@ settings_theme_options_button=Паказаць кнопку налад тэмы
 
 settings_hotkeys_active=Уключыць выкарыстанне хуткасных клавіш
 settings_hotkey_toggle_modifier=Мадыфікатар гарачых клавіш
-settings_hotkey_toggle_key_webmin=Гарачая клавіша для загрузкі меню Webmin
-settings_hotkey_toggle_key_virtualmin=Гарачая клавіша для загрузкі меню Virtualmin
-settings_hotkey_toggle_key_cloudmin=Гарачая клавіша для загрузкі меню Cloudmin
-settings_hotkey_toggle_key_usermin=Гарачая клавіша для загрузкі меню Usermin
-settings_hotkey_toggle_key_webmail=Гарачая клавіша для загрузкі меню пошты
-settings_hotkey_sysinfo=Гарачая клавіша для адкрыцця прыборнай панэлі
-settings_hotkey_shell=Гарачая клавіша для адкрыцця выпадальнага тэрмінала
-settings_hotkey_favorites=Гарачая клавіша, каб адкрыць абранае
-settings_hotkey_focus_search=Гарачая клавіша, каб засяродзіцца на полі пошуку
-settings_hotkey_reload=Гарачая клавіша для абнаўлення бягучай старонкі
+settings_hotkey_toggle_key_webmin=Загрузіць меню Webmin
+settings_hotkey_toggle_key_virtualmin=Загрузіць меню Virtualmin
+settings_hotkey_toggle_key_cloudmin=Загрузіце меню Cloudmin
+settings_hotkey_toggle_key_usermin=Загрузіць меню Usermin
+settings_hotkey_toggle_key_webmail=Меню загрузкі пошты
+settings_hotkey_sysinfo=Адкрыць прыборную панэль
+settings_hotkey_shell=Адкрыйце выпадальны тэрмінал
+settings_hotkey_favorites=Адкрыць абранае
+settings_hotkey_focus_search=Засяродзьцеся на полі пошуку
+settings_hotkey_reload=Абнавіць бягучую старонку
 
 settings_sysinfo_easypie_charts=Паказаць дыяграмы
 settings_sysinfo_theme_updates=Праверце сапраўдныя абнаўлення тэмы
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Старонка Cloudmin па змаўчанн�
 
 settings_right_clear_local_cache=Ачысціць кэш
 settings_side_slider_fixed=Захоўваць заўсёды бачным
-settings_hotkey_toggle_slider=Гарачая клавіша для пераключэння бачнасці бакавога паўзунка
+settings_hotkey_toggle_slider=Пераключыць бачнасць бакавога паўзунка
 
 settings_side_slider_enabled=Уключыць паўзунок
 settings_leftmenu_user_html=Пакажыце фрагмент HTML
@@ -868,7 +868,7 @@ settings_mail_ui=Уключыць новы карыстацкі інтэрфей
 settings_theme_config_admins_only_privileged_error=Доступ забаронены: адміністратар заблакаваў доступ да налад карыстальнікаў
 
 theme_xhred_tooltip_navigation_pinned=Звязаць/адкруціць меню навігацыі
-settings_hotkey_navigation=Гарачая клавіша для пераключэння стану меню навігацыі
+settings_hotkey_navigation=Пераключыць стан меню навігацыі
 
 theme_xhred_search_in_webmin=Пошук у Webmin
 theme_xhred_search_in_usermin=Пошук у Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Пошук Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Скапіруйце выбар у буфер абмену
 
-settings_hotkey_slider=Гарачая клавіша для пераключэння стану бакавога паўзунка
+settings_hotkey_slider=Пераключыць стан бакавога паўзунка
 
 theme_git_update_locked=Абнаўленне тэмы не можа быць завершана з-за адсутнасці падлучэння да GitHub або перавышэння лімітавай хуткасці API. Для апошніх, неатэнтыфікаваных запытаў, ліміт хуткасці прадугледжвае да 60 запытаў у гадзіну. Паспрабуйце пазней альбо выкарыстоўвайце кансоль, каб зрабіць гэта ўручную з дапамогай сцэнарыя абнаўлення.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=Супольнасць
 theme_xhred_hotkeys_server_error=Немагчыма атрымаць файл даведкі
 theme_xhred_hotkeys_custom_to_opens=адкрываецца
 theme_xhred_hotkeys_custom_not_set=не ўстаноўлена
-theme_xhred_hotkey_open_module_config_privileged=Гарачая клавіша для адкрыцця канфігурацыі модуля
-theme_xhred_hotkey_open_theme_config=Гарачая клавіша, каб адкрыць канфігурацыю тэмы
+theme_xhred_hotkey_open_module_config_privileged=Адкрыць канфігурацыю модуля
+theme_xhred_hotkey_open_theme_config=Адкрыць канфігурацыю тэмы
 theme_xhred_hotkey_clear_cache=Ачысціць кэш і перазагрузіць
 theme_xhred_hotkey_open_new=Дубліраваць у новую ўкладку
 theme_xhred_global_success=Поспех

@@ -138,16 +138,16 @@ settings_theme_options_button=Prikaži gumb postavki teme
 
 settings_hotkeys_active=Omogući upotrebu brzih tipki
 settings_hotkey_toggle_modifier=Modifikator hitnih tipki
-settings_hotkey_toggle_key_webmin=Prečac za učitavanje izbornika Webmin
-settings_hotkey_toggle_key_virtualmin=Prečac za učitavanje izbornika Virtualmin
-settings_hotkey_toggle_key_cloudmin=Prečac za učitavanje Cloudmin izbornika
-settings_hotkey_toggle_key_usermin=Prečac za učitavanje izbornika Usermin
-settings_hotkey_toggle_key_webmail=Prečac za učitavanje izbornika pošte
-settings_hotkey_sysinfo=Prečac za otvaranje nadzorne ploče
-settings_hotkey_shell=Prečac za otvaranje padajućeg terminala
-settings_hotkey_favorites=Prečac za otvaranje favorita
-settings_hotkey_focus_search=Prečac za fokusiranje na polje za pretraživanje
-settings_hotkey_reload=Prečac za osvježavanje trenutne stranice
+settings_hotkey_toggle_key_webmin=Učitaj Webmin izbornik
+settings_hotkey_toggle_key_virtualmin=Učitaj Virtualmin izbornik
+settings_hotkey_toggle_key_cloudmin=Učitaj Cloudmin izbornik
+settings_hotkey_toggle_key_usermin=Učitaj korisnički izbornik
+settings_hotkey_toggle_key_webmail=Izbornik Učitaj poštu
+settings_hotkey_sysinfo=Otvori nadzornu ploču
+settings_hotkey_shell=Otvorite padajući terminal
+settings_hotkey_favorites=Otvori favorite
+settings_hotkey_focus_search=Fokus na polje za pretraživanje
+settings_hotkey_reload=Osvježi trenutnu stranicu
 
 settings_sysinfo_easypie_charts=Prikaži grafikone
 settings_sysinfo_theme_updates=Provjerite autentična ažuriranja teme
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Zadana stranica za Cloudmin
 
 settings_right_clear_local_cache=Očisti predmemoriju
 settings_side_slider_fixed=Budite uvijek vidljivi
-settings_hotkey_toggle_slider=Prečac za promjenu vidljivosti bočnog klizača
+settings_hotkey_toggle_slider=Uključi/isključi vidljivost bočnog klizača
 
 settings_side_slider_enabled=Omogući klizač
 settings_leftmenu_user_html=Pokažite HTML isječak
@@ -868,7 +868,7 @@ settings_mail_ui=Omogući novo korisničko sučelje e-pošte
 settings_theme_config_admins_only_privileged_error=Pristup odbijen: Administrator je blokirao pristup korisničkim prilagodbama
 
 theme_xhred_tooltip_navigation_pinned=Prikvači/ukloni navigacijski izbornik
-settings_hotkey_navigation=Prečac za promjenu stanja navigacijskog izbornika
+settings_hotkey_navigation=Promjena stanja navigacijskog izbornika
 
 theme_xhred_search_in_webmin=Pretražite Webmin
 theme_xhred_search_in_usermin=Pretražite Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Pretražite Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopirajte izbor u međuspremnik
 
-settings_hotkey_slider=Prečac za promjenu stanja bočnog klizača
+settings_hotkey_slider=Promjena stanja bočnog klizača
 
 theme_git_update_locked=Ažuriranje teme ne može se dovršiti jer nema veze s GitHub-om ili prekoračenja ograničenja stope API-ja. Za potonje, neovlaštene zahtjeve, ograničenje stope dopušta do 60 zahtjeva na sat. Pokušajte ponovo kasnije ili upotrijebite konzolu da biste to učinili ručno putem skripte za ažuriranje.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=Zajednica
 theme_xhred_hotkeys_server_error=Nije moguće dohvatiti datoteku pomoći
 theme_xhred_hotkeys_custom_to_opens=otvara
 theme_xhred_hotkeys_custom_not_set=nespreman
-theme_xhred_hotkey_open_module_config_privileged=Prečac za otvaranje konfiguracije modula
-theme_xhred_hotkey_open_theme_config=Prečac za otvaranje konfiguracije teme
+theme_xhred_hotkey_open_module_config_privileged=Otvori konfiguraciju modula
+theme_xhred_hotkey_open_theme_config=Otvorite konfiguraciju teme
 theme_xhred_hotkey_clear_cache=Očistite predmemoriju i ponovno učitajte
 theme_xhred_hotkey_open_new=Dupliciraj na novu karticu
 theme_xhred_global_success=Uspjeh

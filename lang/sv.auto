@@ -1,15 +1,15 @@
-settings_hotkey_toggle_key_webmin=Snabbtangent för att ladda Webmin-menyn
-settings_hotkey_toggle_key_virtualmin=Snabbtangent för att ladda Virtualmin-menyn
-settings_hotkey_toggle_key_cloudmin=Snabbtangent för att ladda Cloudmin-menyn
-settings_hotkey_toggle_key_usermin=Snabbtangent för att ladda Usermin-menyn
-settings_hotkey_toggle_key_webmail=Snabbtangent för att ladda Mail-menyn
-settings_hotkey_sysinfo=Snabbtangent för att öppna instrumentpanelen
-settings_hotkey_shell=Snabbtangent för att öppna dropdown-terminalen
-settings_hotkey_favorites=Snabbknapp för att öppna favoriter
-settings_hotkey_focus_search=Snabbtangent för att fokusera på sökfältet
-settings_hotkey_reload=Snabbtangent för att uppdatera aktuell sida
+settings_hotkey_toggle_key_webmin=Ladda Webmin-menyn
+settings_hotkey_toggle_key_virtualmin=Ladda Virtualmin-menyn
+settings_hotkey_toggle_key_cloudmin=Ladda Cloudmin-menyn
+settings_hotkey_toggle_key_usermin=Ladda Usermin-menyn
+settings_hotkey_toggle_key_webmail=Ladda Mail-menyn
+settings_hotkey_sysinfo=Öppna instrumentpanelen
+settings_hotkey_shell=Öppna rullgardinsmenyn
+settings_hotkey_favorites=Öppna favoriter
+settings_hotkey_focus_search=Fokusera på sökfältet
+settings_hotkey_reload=Uppdatera aktuell sida
 
-settings_hotkey_toggle_slider=Snabbtangent för att växla sidoreglagets synlighet
+settings_hotkey_toggle_slider=Växla sidoreglagets synlighet
 
 theme_xhred_sysinfo_wmdocs=Webmin dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation
@@ -18,9 +18,9 @@ theme_xhred_sysinfo_cmdocs=Cloudmin dokumentation
 #18.40
 settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla färgpalett
 
-settings_hotkey_navigation=Snabbtangent för att växla tillstånd för navigeringsmenyn
+settings_hotkey_navigation=Växla tillstånd för navigeringsmeny
 
-settings_hotkey_slider=Snabbtangent för att växla tillstånd för sidoreglaget
+settings_hotkey_slider=Växla sidoreglagets tillstånd
 
 #19.85
 theme_xhred_sysinfo_vmforum=Virtualmin Community
@@ -37,8 +37,8 @@ theme_xhred_global_community=gemenskap
 theme_xhred_hotkeys_server_error=Kan inte hämta hjälpfilen
 theme_xhred_hotkeys_custom_to_opens=öppnas
 theme_xhred_hotkeys_custom_not_set=inte inställd
-theme_xhred_hotkey_open_module_config_privileged=Snabbtangent för att öppna modulkonfiguration
-theme_xhred_hotkey_open_theme_config=Snabbtangent för att öppna temakonfiguration
+theme_xhred_hotkey_open_module_config_privileged=Öppna modulkonfiguration
+theme_xhred_hotkey_open_theme_config=Öppna temakonfiguration
 theme_xhred_hotkey_clear_cache=Rensa cache och ladda om
 theme_xhred_hotkey_open_new=Duplicera till en ny flik
 theme_xhred_global_success=Framgång

@@ -138,16 +138,16 @@ settings_theme_options_button=הצג לחצן הגדרות נושא
 
 settings_hotkeys_active=אפשר שימוש במקשי מקשים חמים
 settings_hotkey_toggle_modifier=שינוי מקשי קיצור
-settings_hotkey_toggle_key_webmin=מקש קיצור לטעינת תפריט Webmin
-settings_hotkey_toggle_key_virtualmin=מקש קיצור לטעינת תפריט Virtualmin
-settings_hotkey_toggle_key_cloudmin=מקש קיצור לטעינת תפריט Cloudmin
-settings_hotkey_toggle_key_usermin=מקש קיצור לטעינת תפריט Usermin
-settings_hotkey_toggle_key_webmail=מקש קיצור לטעינת תפריט דואר
-settings_hotkey_sysinfo=מקש קיצור לפתיחת לוח המחוונים
-settings_hotkey_shell=מקש קיצור לפתיחת המסוף הנפתח
-settings_hotkey_favorites=מקש קיצור לפתיחת מועדפים
-settings_hotkey_focus_search=מקש קיצור להתמקד בשדה החיפוש
-settings_hotkey_reload=מקש קיצור לרענון הדף הנוכחי
+settings_hotkey_toggle_key_webmin=טען תפריט Webmin
+settings_hotkey_toggle_key_virtualmin=טען את תפריט Virtualmin
+settings_hotkey_toggle_key_cloudmin=טען את תפריט Cloudmin
+settings_hotkey_toggle_key_usermin=טען את תפריט Usermin
+settings_hotkey_toggle_key_webmail=טען תפריט דואר
+settings_hotkey_sysinfo=פתח את לוח המחוונים
+settings_hotkey_shell=פתח את המסוף הנפתח
+settings_hotkey_favorites=פתח מועדפים
+settings_hotkey_focus_search=התמקד בשדה החיפוש
+settings_hotkey_reload=רענן את הדף הנוכחי
 
 settings_sysinfo_easypie_charts=הצג תרשימים
 settings_sysinfo_theme_updates=בדוק אם קיימים עדכונים בנושא נושא אותנטי
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=עמוד ברירת מחדל עבור Cloudmin
 
 settings_right_clear_local_cache=נקה מטמון
 settings_side_slider_fixed=שמור תמיד גלוי
-settings_hotkey_toggle_slider=מקש קיצור כדי לשנות את נראות המחוון הצדדי
+settings_hotkey_toggle_slider=החלף את נראות המחוון הצידי
 
 settings_side_slider_enabled=הפעל את המחוון
 settings_leftmenu_user_html=הצג קטע HTML
@@ -868,7 +868,7 @@ settings_mail_ui=הפעל ממשק משתמש של דואר חדש
 settings_theme_config_admins_only_privileged_error=הגישה נדחתה: מנהל המערכת חסם גישה להתאמות אישיות של משתמשים
 
 theme_xhred_tooltip_navigation_pinned=הצמד/ביטול הצמדת תפריט ניווט
-settings_hotkey_navigation=מקש קיצור למעבר למצב תפריט הניווט
+settings_hotkey_navigation=החלף מצב תפריט הניווט
 
 theme_xhred_search_in_webmin=חפש ב- Webmin
 theme_xhred_search_in_usermin=חיפוש ב- Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=חפש ב- Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=העתק את הבחירה ללוח
 
-settings_hotkey_slider=מקש קיצור כדי להחליף מצב מחוון צד
+settings_hotkey_slider=החלף מצב מחוון צד
 
 theme_git_update_locked=לא ניתן להשלים את עדכון הנושא בגלל שום חיבור ל- GitHub או הגבלת שיעורי ה- API שלו. עבור בקשות אחרונות ולא מאומתות, מגבלת התעריף מאפשרת עד 60 בקשות לשעה. נסה שוב מאוחר יותר או השתמש במסוף כדי לעשות זאת ידנית באמצעות סקריפט העדכון.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=קהילה
 theme_xhred_hotkeys_server_error=לא ניתן לאחזר קובץ עזרה
 theme_xhred_hotkeys_custom_to_opens=נפתח
 theme_xhred_hotkeys_custom_not_set=לא מוכן
-theme_xhred_hotkey_open_module_config_privileged=מקש קיצור לפתיחת תצורת המודול
-theme_xhred_hotkey_open_theme_config=מקש קיצור לפתיחת תצורת ערכת הנושא
+theme_xhred_hotkey_open_module_config_privileged=פתח את תצורת המודול
+theme_xhred_hotkey_open_theme_config=פתח את תצורת העיצוב
 theme_xhred_hotkey_clear_cache=נקה את המטמון וטען מחדש
 theme_xhred_hotkey_open_new=שכפול לכרטיסייה חדשה
 theme_xhred_global_success=הַצלָחָה

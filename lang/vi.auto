@@ -138,16 +138,16 @@ settings_theme_options_button=Hiển thị nút cài đặt chủ đề
 
 settings_hotkeys_active=Cho phép sử dụng phím nóng
 settings_hotkey_toggle_modifier=Sửa đổi phím nóng
-settings_hotkey_toggle_key_webmin=Phím nóng để tải menu Webmin
-settings_hotkey_toggle_key_virtualmin=Phím nóng để tải menu Virtualmin
-settings_hotkey_toggle_key_cloudmin=Phím nóng để tải menu Cloudmin
-settings_hotkey_toggle_key_usermin=Phím nóng để tải menu Usermin
-settings_hotkey_toggle_key_webmail=Phím nóng để tải menu Thư
-settings_hotkey_sysinfo=Phím nóng để mở bảng điều khiển
-settings_hotkey_shell=Phím nóng để mở thiết bị đầu cuối thả xuống
-settings_hotkey_favorites=Phím nóng để mở mục yêu thích
-settings_hotkey_focus_search=Phím nóng để tập trung vào trường tìm kiếm
-settings_hotkey_reload=Phím nóng để làm mới trang hiện tại
+settings_hotkey_toggle_key_webmin=Tải menu Webmin
+settings_hotkey_toggle_key_virtualmin=Tải menu Virtualmin
+settings_hotkey_toggle_key_cloudmin=Tải menu Cloudmin
+settings_hotkey_toggle_key_usermin=Tải menu Usermin
+settings_hotkey_toggle_key_webmail=Tải menu Thư
+settings_hotkey_sysinfo=Mở bảng điều khiển
+settings_hotkey_shell=Mở thiết bị đầu cuối thả xuống
+settings_hotkey_favorites=mở mục yêu thích
+settings_hotkey_focus_search=Tập trung vào trường tìm kiếm
+settings_hotkey_reload=Làm mới trang hiện tại
 
 settings_sysinfo_easypie_charts=Hiển thị biểu đồ
 settings_sysinfo_theme_updates=Kiểm tra cập nhật Theme xác thực
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Trang mặc định cho Cloudmin
 
 settings_right_clear_local_cache=Xóa bộ nhớ cache
 settings_side_slider_fixed=Luôn luôn nhìn thấy
-settings_hotkey_toggle_slider=Phím nóng để chuyển đổi khả năng hiển thị của thanh trượt bên
+settings_hotkey_toggle_slider=Chuyển đổi khả năng hiển thị của thanh trượt bên
 
 settings_side_slider_enabled=Kích hoạt thanh trượt
 settings_leftmenu_user_html=Hiển thị đoạn mã HTML
@@ -868,7 +868,7 @@ settings_mail_ui=Kích hoạt giao diện người dùng thư mới
 settings_theme_config_admins_only_privileged_error=Truy cập bị từ chối: Quản trị viên đã chặn quyền truy cập vào các tùy chỉnh của người dùng
 
 theme_xhred_tooltip_navigation_pinned=Menu điều hướng ghim/bỏ ghim
-settings_hotkey_navigation=Phím nóng để chuyển đổi trạng thái menu điều hướng
+settings_hotkey_navigation=Chuyển đổi trạng thái menu điều hướng
 
 theme_xhred_search_in_webmin=Tìm kiếm trên Webmin
 theme_xhred_search_in_usermin=Tìm kiếm Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Tìm kiếm trên Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Sao chép lựa chọn vào clipboard
 
-settings_hotkey_slider=Phím nóng để chuyển đổi trạng thái thanh trượt bên
+settings_hotkey_slider=Chuyển đổi trạng thái thanh trượt bên
 
 theme_git_update_locked=Không thể hoàn thành cập nhật chủ đề do không có kết nối với GitHub hoặc vượt quá giới hạn tốc độ API của nó. Đối với sau này, các yêu cầu không được xác thực, giới hạn tốc độ cho phép tối đa 60 yêu cầu mỗi giờ. Thử lại sau hoặc sử dụng bàn điều khiển để thực hiện thủ công thông qua tập lệnh cập nhật.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=Cộng đồng
 theme_xhred_hotkeys_server_error=Không thể truy xuất tệp trợ giúp
 theme_xhred_hotkeys_custom_to_opens=mở ra
 theme_xhred_hotkeys_custom_not_set=không được thiết lập
-theme_xhred_hotkey_open_module_config_privileged=Phím nóng để mở cấu hình mô-đun
-theme_xhred_hotkey_open_theme_config=Phím nóng để mở cấu hình chủ đề
+theme_xhred_hotkey_open_module_config_privileged=Mở cấu hình mô-đun
+theme_xhred_hotkey_open_theme_config=Mở cấu hình chủ đề
 theme_xhred_hotkey_clear_cache=Xóa bộ nhớ cache và tải lại
 theme_xhred_hotkey_open_new=Sao chép vào một tab mới
 theme_xhred_global_success=Thành công

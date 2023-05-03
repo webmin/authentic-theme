@@ -4,18 +4,18 @@ settings_right_hotkey_options=Taste rapide
 
 settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
 
-settings_hotkey_toggle_key_webmin=Tasta rapidă pentru a încărca meniul Webmin
-settings_hotkey_toggle_key_virtualmin=Tasta rapidă pentru a încărca meniul Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tasta rapidă pentru a încărca meniul Cloudmin
-settings_hotkey_toggle_key_usermin=Tasta rapidă pentru a încărca meniul Usermin
-settings_hotkey_toggle_key_webmail=Tasta rapidă pentru a încărca meniul Mail
-settings_hotkey_sysinfo=Tasta rapidă pentru a deschide tabloul de bord
-settings_hotkey_shell=Tasta rapidă pentru a deschide terminalul drop-down
-settings_hotkey_favorites=Tasta rapidă pentru a deschide favorite
-settings_hotkey_focus_search=Tasta rapidă pentru a se concentra pe câmpul de căutare
-settings_hotkey_reload=Tastă rapidă pentru a reîmprospăta pagina curentă
+settings_hotkey_toggle_key_webmin=Încărcați meniul Webmin
+settings_hotkey_toggle_key_virtualmin=Încărcați meniul Virtualmin
+settings_hotkey_toggle_key_cloudmin=Încărcați meniul Cloudmin
+settings_hotkey_toggle_key_usermin=Încărcați meniul Usermin
+settings_hotkey_toggle_key_webmail=Meniul Încărcare e-mail
+settings_hotkey_sysinfo=Deschide tabloul de bord
+settings_hotkey_shell=Deschideți terminalul drop-down
+settings_hotkey_favorites=Deschide favorite
+settings_hotkey_focus_search=Concentrați-vă pe câmpul de căutare
+settings_hotkey_reload=Actualizați pagina curentă
 
-settings_hotkey_toggle_slider=Tastă rapidă pentru a comuta vizibilitatea cursorului lateral
+settings_hotkey_toggle_slider=Comutați vizibilitatea cursorului lateral
 
 theme_xhred_sysinfo_wmdocs=Documentație Webmin
 theme_xhred_sysinfo_vmdocs=Documentația Virtualmin
@@ -40,9 +40,9 @@ extensions_mail_flag_tls_on=Criptare standard (TLS)
 extensions_mail_flag_tls_off=E-mail necriptat
 extensions_mail_flag_tls_none=Nu se cunoaște starea de criptare
 
-settings_hotkey_navigation=Tasta rapidă pentru a comuta starea meniului de navigare
+settings_hotkey_navigation=Comutați starea meniului de navigare
 
-settings_hotkey_slider=Tasta rapidă pentru a comuta starea glisorului lateral
+settings_hotkey_slider=Comutați starea glisorului lateral
 
 theme_xhred_filemanager_mass_selected_for_delete=Toate articolele din directorul %1
 
@@ -355,8 +355,8 @@ theme_xhred_global_community=Comunitate
 theme_xhred_hotkeys_server_error=Nu se poate prelua fișierul de ajutor
 theme_xhred_hotkeys_custom_to_opens=se deschide
 theme_xhred_hotkeys_custom_not_set=nu setat
-theme_xhred_hotkey_open_module_config_privileged=Tasta rapidă pentru a deschide configurația modulului
-theme_xhred_hotkey_open_theme_config=Tasta rapidă pentru a deschide configurația temei
+theme_xhred_hotkey_open_module_config_privileged=Deschideți configurația modulului
+theme_xhred_hotkey_open_theme_config=Deschideți configurația temei
 theme_xhred_hotkey_clear_cache=Goliți memoria cache și reîncărcați
 theme_xhred_hotkey_open_new=Duplicați într-o filă nouă
 theme_xhred_global_success=Succes

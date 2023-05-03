@@ -51,16 +51,16 @@ settings_theme_options_button=Mostrar el botón de configuración del tema
 
 settings_hotkeys_active=Habilitar el uso de teclas de acceso rápido
 settings_hotkey_toggle_modifier=Modificador de teclas de acceso rápido
-settings_hotkey_toggle_key_webmin=Hotkey para cargar el menú de Webmin
-settings_hotkey_toggle_key_virtualmin=Hotkey para cargar el menú de Virtualmin
-settings_hotkey_toggle_key_cloudmin=Tecla de acceso rápido para cargar el menú de Cloudmin
-settings_hotkey_toggle_key_usermin=Tecla de acceso rápido para cargar el menú Usermin
-settings_hotkey_toggle_key_webmail=Tecla de acceso rápido para cargar el menú de correo
-settings_hotkey_sysinfo=Tecla de acceso rápido para abrir el tablero
-settings_hotkey_shell=Tecla de acceso directo para abrir terminal desplegable
-settings_hotkey_favorites=Tecla de acceso rápido para abrir favoritos
-settings_hotkey_focus_search=Tecla de acceso rápido para centrarse en el campo de búsqueda
-settings_hotkey_reload=Tecla de acceso rápido para actualizar la página actual
+settings_hotkey_toggle_key_webmin=Cargar menú de Webmin
+settings_hotkey_toggle_key_virtualmin=Cargar menú Virtualmin
+settings_hotkey_toggle_key_cloudmin=Cargar el menú de Cloudmin
+settings_hotkey_toggle_key_usermin=Cargar menú Usermin
+settings_hotkey_toggle_key_webmail=Cargar menú de correo
+settings_hotkey_sysinfo=Abrir panel
+settings_hotkey_shell=Abrir terminal desplegable
+settings_hotkey_favorites=Abrir favoritos
+settings_hotkey_focus_search=Centrarse en el campo de búsqueda
+settings_hotkey_reload=Actualizar página actual
 
 settings_sysinfo_easypie_charts=Mostrar gráficos
 settings_sysinfo_theme_updates=Compruebe si hay actualizaciones auténticas de temas
@@ -75,7 +75,7 @@ settings_right_cloudmin_default=Página predeterminada para Cloudmin
 
 settings_right_clear_local_cache=Limpiar cache
 settings_side_slider_fixed=Mantener siempre visible
-settings_hotkey_toggle_slider=Tecla de acceso rápido para alternar la visibilidad del control deslizante lateral
+settings_hotkey_toggle_slider=Alternar la visibilidad del control deslizante lateral
 
 settings_side_slider_enabled=Habilitar control deslizante
 settings_leftmenu_user_html=Mostrar fragmento de HTML
@@ -780,7 +780,7 @@ settings_mail_ui=Habilitar nueva interfaz de usuario de correo
 settings_theme_config_admins_only_privileged_error=Acceso denegado: el administrador ha bloqueado el acceso a las personalizaciones de los usuarios
 
 theme_xhred_tooltip_navigation_pinned=Anclar/desanclar menú de navegación
-settings_hotkey_navigation=Tecla de acceso rápido para alternar el estado del menú de navegación
+settings_hotkey_navigation=Alternar el estado del menú de navegación
 
 theme_xhred_search_in_webmin=Buscar en Webmin
 theme_xhred_search_in_usermin=Buscar Usermin
@@ -789,7 +789,7 @@ theme_xhred_search_in_servermanager=Buscar Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Copiar selección al portapapeles
 
-settings_hotkey_slider=Tecla de acceso rápido para alternar el estado del control deslizante lateral
+settings_hotkey_slider=Alternar el estado del control deslizante lateral
 
 theme_git_update_locked=La actualización del tema no se puede completar debido a que no hay conexión con GitHub o su exceso de límite de velocidad API. Para las últimas solicitudes no autenticadas, el límite de velocidad permite hasta 60 solicitudes por hora. Vuelva a intentarlo más tarde o use la consola para hacerlo manualmente a través del script de actualización.
 
@@ -1239,8 +1239,8 @@ theme_xhred_global_community=Comunidad
 theme_xhred_hotkeys_server_error=No se puede recuperar el archivo de ayuda
 theme_xhred_hotkeys_custom_to_opens=abre
 theme_xhred_hotkeys_custom_not_set=no establecido
-theme_xhred_hotkey_open_module_config_privileged=Tecla de acceso rápido para abrir la configuración del módulo
-theme_xhred_hotkey_open_theme_config=Tecla de acceso rápido para abrir la configuración del tema
+theme_xhred_hotkey_open_module_config_privileged=Configuración del módulo abierto
+theme_xhred_hotkey_open_theme_config=Abrir configuración de tema
 theme_xhred_hotkey_clear_cache=Borrar caché y recargar
 theme_xhred_hotkey_open_new=Duplicar en una nueva pestaña
 theme_xhred_global_success=Éxito

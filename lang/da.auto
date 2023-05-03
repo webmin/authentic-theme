@@ -51,16 +51,16 @@ settings_theme_options_button=Vis knap til temaindstillinger
 
 settings_hotkeys_active=Aktivér brug af genvejstaster
 settings_hotkey_toggle_modifier=Hotkeys-modifikator
-settings_hotkey_toggle_key_webmin=Genvejstast for at indlæse Webmin-menuen
-settings_hotkey_toggle_key_virtualmin=Genvejstast for at indlæse Virtualmin-menuen
-settings_hotkey_toggle_key_cloudmin=Genvejstast for at indlæse Cloudmin-menuen
-settings_hotkey_toggle_key_usermin=Genvejstast for at indlæse Usermin-menuen
-settings_hotkey_toggle_key_webmail=Genvejstast for at indlæse Mail-menuen
-settings_hotkey_sysinfo=Genvejstast for at åbne dashboard
-settings_hotkey_shell=Genvejstast for at åbne dropdown-terminal
-settings_hotkey_favorites=Genvejstast for at åbne favoritter
-settings_hotkey_focus_search=Genvejstast for at fokusere på søgefeltet
-settings_hotkey_reload=Genvejstast for at opdatere den aktuelle side
+settings_hotkey_toggle_key_webmin=Indlæs Webmin-menuen
+settings_hotkey_toggle_key_virtualmin=Indlæs Virtualmin-menuen
+settings_hotkey_toggle_key_cloudmin=Indlæs Cloudmin-menuen
+settings_hotkey_toggle_key_usermin=Indlæs brugermin menu
+settings_hotkey_toggle_key_webmail=Indlæs Mail-menu
+settings_hotkey_sysinfo=Åbn dashboard
+settings_hotkey_shell=Åbn dropdown-terminal
+settings_hotkey_favorites=Åbn favoritter
+settings_hotkey_focus_search=Fokus på søgefeltet
+settings_hotkey_reload=Opdater den aktuelle side
 
 settings_sysinfo_easypie_charts=Vis diagrammer
 settings_sysinfo_theme_updates=Kontroller, om der er opdateringer til autentisk tema
@@ -75,7 +75,7 @@ settings_right_cloudmin_default=Standardside for Cloudmin
 
 settings_right_clear_local_cache=Ryd cache
 settings_side_slider_fixed=Hold altid synlig
-settings_hotkey_toggle_slider=Genvejstast til at skifte sideskydersynlighed
+settings_hotkey_toggle_slider=Skift sideskydersynlighed
 
 settings_side_slider_enabled=Aktivér skyderen
 settings_leftmenu_user_html=Vis HTML-kodestykke
@@ -780,7 +780,7 @@ settings_mail_ui=Aktivér ny mail-brugergrænseflade
 settings_theme_config_admins_only_privileged_error=Adgang nægtet: Administrator har blokeret adgang til brugertilpasninger
 
 theme_xhred_tooltip_navigation_pinned=Fastgør/fjern pin-menuen
-settings_hotkey_navigation=Genvejstast for at skifte navigationsmenutilstand
+settings_hotkey_navigation=Skift navigationsmenutilstand
 
 theme_xhred_search_in_webmin=Søg i Webmin
 theme_xhred_search_in_usermin=Søg i Usermin
@@ -789,7 +789,7 @@ theme_xhred_search_in_servermanager=Søg i Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopier valg til udklipsholder
 
-settings_hotkey_slider=Genvejstast for at skifte sideskydertilstand
+settings_hotkey_slider=Skift sideskydertilstand
 
 theme_git_update_locked=Temaopdatering kan ikke afsluttes på grund af, at der ikke er forbindelse til GitHub eller dens API-hastighedsgrænse. For sidstnævnte, ikke-godkendte anmodninger tillader takstgrænsen op til 60 anmodninger i timen. Prøv igen senere eller brug konsol til at gøre det manuelt via opdateringsscript.
 
@@ -1240,8 +1240,8 @@ theme_xhred_global_community=Fællesskab
 theme_xhred_hotkeys_server_error=Kan ikke hente hjælpefilen
 theme_xhred_hotkeys_custom_to_opens=åbner
 theme_xhred_hotkeys_custom_not_set=ikke indstillet
-theme_xhred_hotkey_open_module_config_privileged=Genvejstast for at åbne modulopsætning
-theme_xhred_hotkey_open_theme_config=Genvejstast for at åbne temakonfiguration
+theme_xhred_hotkey_open_module_config_privileged=Åbn modulkonfiguration
+theme_xhred_hotkey_open_theme_config=Åbn temakonfiguration
 theme_xhred_hotkey_clear_cache=Ryd cache og genindlæs
 theme_xhred_hotkey_open_new=Dupliker til en ny fane
 theme_xhred_global_success=Succes

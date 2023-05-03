@@ -138,16 +138,16 @@ settings_theme_options_button=دکمه تنظیمات نمایش نمایش
 
 settings_hotkeys_active=استفاده از کلیدهای میانبر را فعال کنید
 settings_hotkey_toggle_modifier=اصلاح کلیدهای میانبر
-settings_hotkey_toggle_key_webmin=کلید میانبر برای بارگیری منوی وبمین
-settings_hotkey_toggle_key_virtualmin=کلید میانبر برای بارگیری منوی Virtualmin
-settings_hotkey_toggle_key_cloudmin=کلید میانبر برای بارگیری منوی Cloudmin
-settings_hotkey_toggle_key_usermin=کلید میانبر برای بارگیری منوی Usermin
-settings_hotkey_toggle_key_webmail=کلید میانبر برای بارگیری منوی ایمیل
-settings_hotkey_sysinfo=کلید میانبر برای باز کردن داشبورد
-settings_hotkey_shell=کلید میانبر برای باز کردن ترمینال کشویی
-settings_hotkey_favorites=کلید میانبر برای باز کردن موارد دلخواه
-settings_hotkey_focus_search=کلید فوری برای تمرکز بر روی قسمت جستجو
-settings_hotkey_reload=کلید میانبر برای بازخوانی صفحه فعلی
+settings_hotkey_toggle_key_webmin=منوی وبمین را بارگیری کنید
+settings_hotkey_toggle_key_virtualmin=منوی Virtualmin را بارگیری کنید
+settings_hotkey_toggle_key_cloudmin=منوی Cloudmin را بارگیری کنید
+settings_hotkey_toggle_key_usermin=منوی Usermin را بارگیری کنید
+settings_hotkey_toggle_key_webmail=منوی نامه را بارگیری کنید
+settings_hotkey_sysinfo=داشبورد را باز کنید
+settings_hotkey_shell=ترمینال کشویی را باز کنید
+settings_hotkey_favorites=موارد دلخواه را باز کنید
+settings_hotkey_focus_search=روی قسمت جستجو تمرکز کنید
+settings_hotkey_reload=صفحه فعلی را بازخوانی کنید
 
 settings_sysinfo_easypie_charts=نمایش نمودارها
 settings_sysinfo_theme_updates=به روزرسانی های موضوع معتبر را بررسی کنید
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=صفحه پیش فرض برای Cloudmin
 
 settings_right_clear_local_cache=پاک کردن حافظه پنهان
 settings_side_slider_fixed=همیشه قابل مشاهده باشید
-settings_hotkey_toggle_slider=کلید میانبر برای تغییر وضعیت دید لغزنده جانبی
+settings_hotkey_toggle_slider=قابلیت مشاهده لغزنده جانبی را تغییر دهید
 
 settings_side_slider_enabled=کشویی را فعال کنید
 settings_leftmenu_user_html=نمایش قطعه HTML
@@ -868,7 +868,7 @@ settings_mail_ui=UI نامه جدید را فعال کنید
 settings_theme_config_admins_only_privileged_error=دسترسی رد شد: سرپرست دسترسی به تنظیمات کاربر را مسدود کرده است
 
 theme_xhred_tooltip_navigation_pinned=منوی پیمایش/غیرفعال کردن پین
-settings_hotkey_navigation=کلید میانبر برای تغییر وضعیت منوی پیمایش
+settings_hotkey_navigation=وضعیت منوی پیمایش را تغییر دهید
 
 theme_xhred_search_in_webmin=جستجو در وبمین
 theme_xhred_search_in_usermin=جستجو در Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=جستجوی Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=انتخاب را در کلیپ بورد کپی کنید
 
-settings_hotkey_slider=کلید میانبر برای تغییر وضعیت نوار لغزنده جانبی
+settings_hotkey_slider=وضعیت لغزنده جانبی را تغییر دهید
 
 theme_git_update_locked=به دلیل عدم اتصال به GitHub یا بیش از حد مجاز API ، بروزرسانی تم قابل تکمیل نیست. در مورد درخواستهای غیرمجاز دوم ، حداکثر میزان مجاز حداکثر 60 درخواست در ساعت است. بعداً دوباره امتحان کنید یا از کنسول استفاده کنید تا این کار را از طریق اسکریپت به روزرسانی انجام دهید.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=انجمن
 theme_xhred_hotkeys_server_error=نمی توان فایل راهنما را بازیابی کرد
 theme_xhred_hotkeys_custom_to_opens=باز می شود
 theme_xhred_hotkeys_custom_not_set=تنظیم نشده
-theme_xhred_hotkey_open_module_config_privileged=کلید میانبر برای باز کردن پیکربندی ماژول
-theme_xhred_hotkey_open_theme_config=کلید میانبر برای باز کردن پیکربندی تم
+theme_xhred_hotkey_open_module_config_privileged=پیکربندی ماژول را باز کنید
+theme_xhred_hotkey_open_theme_config=پیکربندی تم را باز کنید
 theme_xhred_hotkey_clear_cache=کش را پاک کنید و دوباره بارگذاری کنید
 theme_xhred_hotkey_open_new=به یک برگه جدید کپی کنید
 theme_xhred_global_success=موفقیت

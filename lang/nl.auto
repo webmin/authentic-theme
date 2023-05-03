@@ -26,16 +26,16 @@ settings_theme_options_button=Knop voor thema-instellingen weergeven
 
 settings_hotkeys_active=Gebruik van sneltoetsen inschakelen
 settings_hotkey_toggle_modifier=Hotkeys modifier
-settings_hotkey_toggle_key_webmin=Sneltoets om het Webmin-menu te laden
-settings_hotkey_toggle_key_virtualmin=Sneltoets om het Virtualmin-menu te laden
-settings_hotkey_toggle_key_cloudmin=Sneltoets om het Cloudmin-menu te laden
-settings_hotkey_toggle_key_usermin=Sneltoets om het Usermin-menu te laden
-settings_hotkey_toggle_key_webmail=Sneltoets om het Mail-menu te laden
-settings_hotkey_sysinfo=Sneltoets om dashboard te openen
-settings_hotkey_shell=Sneltoets om de dropdown-terminal te openen
-settings_hotkey_favorites=Sneltoets om favorieten te openen
-settings_hotkey_focus_search=Sneltoets om te focussen op zoekveld
-settings_hotkey_reload=Sneltoets om de huidige pagina te vernieuwen
+settings_hotkey_toggle_key_webmin=Laad het Webmin-menu
+settings_hotkey_toggle_key_virtualmin=Laad het Virtualmin-menu
+settings_hotkey_toggle_key_cloudmin=Laad het Cloudmin-menu
+settings_hotkey_toggle_key_usermin=Laad Usermin-menu
+settings_hotkey_toggle_key_webmail=Laad het e-mailmenu
+settings_hotkey_sysinfo=Dashboard openen
+settings_hotkey_shell=Open dropdown-terminal
+settings_hotkey_favorites=Favorieten openen
+settings_hotkey_focus_search=Focus op zoekveld
+settings_hotkey_reload=Ververs de huidige pagina
 
 settings_sysinfo_easypie_charts=Toon grafieken
 settings_sysinfo_theme_updates=Controleer op authentieke thema-updates
@@ -50,7 +50,7 @@ settings_right_cloudmin_default=Standaardpagina voor Cloudmin
 
 settings_right_clear_local_cache=Cache wissen
 settings_side_slider_fixed=Altijd zichtbaar houden
-settings_hotkey_toggle_slider=Sneltoets om de zichtbaarheid van de schuifregelaar aan de zijkant in te schakelen
+settings_hotkey_toggle_slider=Schakel de zichtbaarheid van de schuifregelaar aan de zijkant in
 
 settings_side_slider_enabled=Schuifregelaar inschakelen
 settings_leftmenu_user_html=HTML-fragment weergeven
@@ -755,7 +755,7 @@ settings_mail_ui=Schakel nieuwe e-mailgebruikersinterface in
 settings_theme_config_admins_only_privileged_error=Toegang geweigerd: de beheerder heeft de toegang tot gebruikersaanpassingen geblokkeerd
 
 theme_xhred_tooltip_navigation_pinned=Navigatiemenu vastmaken/losmaken
-settings_hotkey_navigation=Sneltoets om de status van het navigatiemenu te wijzigen
+settings_hotkey_navigation=Schakel de status van het navigatiemenu in
 
 theme_xhred_search_in_webmin=Zoek Webmin
 theme_xhred_search_in_usermin=Zoeken in Usermin
@@ -764,7 +764,7 @@ theme_xhred_search_in_servermanager=Zoek Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopieer selectie naar klembord
 
-settings_hotkey_slider=Sneltoets om de status van de schuifregelaar aan de zijkant te wijzigen
+settings_hotkey_slider=Schakel de status van de schuifregelaar aan de zijkant in
 
 theme_git_update_locked=Thema-update kan niet worden voltooid omdat er geen verbinding is met GitHub of het overschrijden van de API-limiet. Voor laatstgenoemde, niet-geverifieerde verzoeken, staat de tarieflimiet maximaal 60 verzoeken per uur toe. Probeer het later opnieuw of gebruik de console om het handmatig te doen via het updatescript.
 
@@ -1215,8 +1215,8 @@ theme_xhred_global_community=Gemeenschap
 theme_xhred_hotkeys_server_error=Kan het helpbestand niet ophalen
 theme_xhred_hotkeys_custom_to_opens=opent
 theme_xhred_hotkeys_custom_not_set=niet ingesteld
-theme_xhred_hotkey_open_module_config_privileged=Sneltoets om moduleconfiguratie te openen
-theme_xhred_hotkey_open_theme_config=Sneltoets om themaconfiguratie te openen
+theme_xhred_hotkey_open_module_config_privileged=Moduleconfiguratie openen
+theme_xhred_hotkey_open_theme_config=Open themaconfiguratie
 theme_xhred_hotkey_clear_cache=Cache wissen en opnieuw laden
 theme_xhred_hotkey_open_new=Dupliceren naar een nieuw tabblad
 theme_xhred_global_success=Succes

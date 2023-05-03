@@ -138,16 +138,16 @@ settings_theme_options_button=Rādīt motīva iestatījumu pogu
 
 settings_hotkeys_active=Iespējot karsto taustiņu izmantošanu
 settings_hotkey_toggle_modifier=Karsto taustiņu modifikators
-settings_hotkey_toggle_key_webmin=Karstais taustiņš, lai ielādētu Webmin izvēlni
-settings_hotkey_toggle_key_virtualmin=Karstais taustiņš, lai ielādētu Virtualmin izvēlni
-settings_hotkey_toggle_key_cloudmin=Karstais taustiņš, lai ielādētu Cloudmin izvēlni
-settings_hotkey_toggle_key_usermin=Karstais taustiņš, lai ielādētu Usermin izvēlni
-settings_hotkey_toggle_key_webmail=Karstais taustiņš, lai ielādētu izvēlni Pasts
-settings_hotkey_sysinfo=Karstais taustiņš, lai atvērtu informācijas paneli
-settings_hotkey_shell=Karstais taustiņš, lai atvērtu nolaižamo termināli
-settings_hotkey_favorites=Karstais taustiņš izlases atvēršanai
-settings_hotkey_focus_search=Karstais taustiņš, lai koncentrētos uz meklēšanas lauku
-settings_hotkey_reload=Karstais taustiņš, lai atsvaidzinātu pašreizējo lapu
+settings_hotkey_toggle_key_webmin=Ielādēt Webmin izvēlni
+settings_hotkey_toggle_key_virtualmin=Ielādējiet Virtualmin izvēlni
+settings_hotkey_toggle_key_cloudmin=Ielādēt Cloudmin izvēlni
+settings_hotkey_toggle_key_usermin=Ielādēt Usermin izvēlni
+settings_hotkey_toggle_key_webmail=Ielādēt izvēlni Pasts
+settings_hotkey_sysinfo=Atveriet informācijas paneli
+settings_hotkey_shell=Atveriet nolaižamo termināli
+settings_hotkey_favorites=Atvērt izlasi
+settings_hotkey_focus_search=Koncentrējieties uz meklēšanas lauku
+settings_hotkey_reload=Atsvaidzināt pašreizējo lapu
 
 settings_sysinfo_easypie_charts=Rādīt diagrammas
 settings_sysinfo_theme_updates=Pārbaudiet, vai nav atjaunināti autentiski motīvi
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Noklusējuma lapa Cloudmin
 
 settings_right_clear_local_cache=Iztīrīt kešatmiņu
 settings_side_slider_fixed=Esiet vienmēr redzams
-settings_hotkey_toggle_slider=Karstais taustiņš, lai pārslēgtu sānu slīdņa redzamību
+settings_hotkey_toggle_slider=Pārslēgt sānu slīdņa redzamību
 
 settings_side_slider_enabled=Iespējot slīdni
 settings_leftmenu_user_html=Rādīt HTML fragmentu
@@ -868,7 +868,7 @@ settings_mail_ui=Iespējot jaunu pasta saskarni
 settings_theme_config_admins_only_privileged_error=Piekļuve liegta: administrators ir bloķējis piekļuvi lietotāju pielāgojumiem
 
 theme_xhred_tooltip_navigation_pinned=Piespraust/atvienot navigācijas izvēlni
-settings_hotkey_navigation=Karstais taustiņš, lai pārslēgtu navigācijas izvēlnes stāvokli
+settings_hotkey_navigation=Pārslēgt navigācijas izvēlnes stāvokli
 
 theme_xhred_search_in_webmin=Meklēt Webmin
 theme_xhred_search_in_usermin=Meklēt Usermin
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Meklēt Cloudmin
 
 theme_xhred_filemanager_context_clipboard_selection=Kopēt atlasi starpliktuvē
 
-settings_hotkey_slider=Karstais taustiņš, lai pārslēgtu sānu slīdņa stāvokli
+settings_hotkey_slider=Pārslēgt sānu slīdņa stāvokli
 
 theme_git_update_locked=Motīva atjaunināšanu nevar pabeigt, jo nav izveidots savienojums ar GitHub vai tā API ātruma ierobežojumu. Pēdējiem neautentificētajiem pieprasījumiem likmes ierobežojums ļauj veikt līdz 60 pieprasījumiem stundā. Mēģiniet vēlāk vēlreiz vai izmantojiet konsoli, lai to izdarītu manuāli, izmantojot atjaunināšanas skriptu.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=kopiena
 theme_xhred_hotkeys_server_error=Nevar izgūt palīdzības failu
 theme_xhred_hotkeys_custom_to_opens=atveras
 theme_xhred_hotkeys_custom_not_set=nav uzstādīts
-theme_xhred_hotkey_open_module_config_privileged=Karstais taustiņš, lai atvērtu moduļa konfigurāciju
-theme_xhred_hotkey_open_theme_config=Karstais taustiņš, lai atvērtu motīva konfigurāciju
+theme_xhred_hotkey_open_module_config_privileged=Atveriet moduļa konfigurāciju
+theme_xhred_hotkey_open_theme_config=Atveriet motīva konfigurāciju
 theme_xhred_hotkey_clear_cache=Notīriet kešatmiņu un atkārtoti ielādējiet
 theme_xhred_hotkey_open_new=Dublēt uz jaunu cilni
 theme_xhred_global_success=Panākumi

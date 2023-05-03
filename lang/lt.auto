@@ -138,16 +138,16 @@ settings_theme_options_button=Rodyti temos nustatymų mygtuką
 
 settings_hotkeys_active=Įgalinti sparčiųjų klavišų naudojimą
 settings_hotkey_toggle_modifier=Spartiųjų klavišų modifikatorius
-settings_hotkey_toggle_key_webmin=Spartusis klavišas įkelti Webmin meniu
-settings_hotkey_toggle_key_virtualmin=Spartusis klavišas įkelti Virtualmin meniu
-settings_hotkey_toggle_key_cloudmin=Spartusis klavišas įkelti Cloudmin meniu
-settings_hotkey_toggle_key_usermin=Spartusis klavišas įkelti Usermin meniu
-settings_hotkey_toggle_key_webmail=Spartusis klavišas, skirtas įkelti pašto meniu
-settings_hotkey_sysinfo=Spartusis klavišas, skirtas atidaryti prietaisų skydelį
-settings_hotkey_shell=Spartusis klavišas atidaryti išskleidžiamąjį terminalą
-settings_hotkey_favorites=Spartusis klavišas, skirtas atidaryti mėgstamiausius
-settings_hotkey_focus_search=Spartusis klavišas, skirtas sutelkti dėmesį į paieškos lauką
-settings_hotkey_reload=Spartusis klavišas, skirtas atnaujinti dabartinį puslapį
+settings_hotkey_toggle_key_webmin=Įkelti Webmin meniu
+settings_hotkey_toggle_key_virtualmin=Įkelti Virtualmin meniu
+settings_hotkey_toggle_key_cloudmin=Įkelti Cloudmin meniu
+settings_hotkey_toggle_key_usermin=Įkelti Usermin meniu
+settings_hotkey_toggle_key_webmail=Įkelti pašto meniu
+settings_hotkey_sysinfo=Atidaryti prietaisų skydelį
+settings_hotkey_shell=Atidarykite išskleidžiamąjį terminalą
+settings_hotkey_favorites=Atidaryti mėgstamiausius
+settings_hotkey_focus_search=Sutelkite dėmesį į paieškos lauką
+settings_hotkey_reload=Atnaujinti dabartinį puslapį
 
 settings_sysinfo_easypie_charts=Rodyti diagramas
 settings_sysinfo_theme_updates=Patikrinkite, ar nėra autentiškų temų atnaujinimų
@@ -162,7 +162,7 @@ settings_right_cloudmin_default=Numatytasis „Cloudmin“ puslapis
 
 settings_right_clear_local_cache=Išvalyti talpyklą
 settings_side_slider_fixed=Laikykitės visada matomų
-settings_hotkey_toggle_slider=Spartusis klavišas šoninio slankiklio matomumui perjungti
+settings_hotkey_toggle_slider=Perjungti šoninio slankiklio matomumą
 
 settings_side_slider_enabled=Įgalinti slankiklį
 settings_leftmenu_user_html=Rodyti HTML fragmentą
@@ -868,7 +868,7 @@ settings_mail_ui=Įgalinti naujo pašto vartotojo sąsają
 settings_theme_config_admins_only_privileged_error=Prieiga atmesta: administratorius užblokavo prieigą prie vartotojo pritaikymų
 
 theme_xhred_tooltip_navigation_pinned=Prisegti/atsegti naršymo meniu
-settings_hotkey_navigation=Spartusis klavišas naršymo meniu būsenai perjungti
+settings_hotkey_navigation=Perjungti naršymo meniu būseną
 
 theme_xhred_search_in_webmin=Ieškoti „Webmin“
 theme_xhred_search_in_usermin=Ieškoti „Usermin“
@@ -877,7 +877,7 @@ theme_xhred_search_in_servermanager=Paieška „Cloudmin“
 
 theme_xhred_filemanager_context_clipboard_selection=Kopijuoti pasirinkimą į mainų sritį
 
-settings_hotkey_slider=Spartusis klavišas šoninio slankiklio būsenai perjungti
+settings_hotkey_slider=Perjungti šoninio slankiklio būseną
 
 theme_git_update_locked=Temos atnaujinimas negali būti baigtas, nes nėra ryšio su „GitHub“ ar jos API greičio limito viršijimo. Pastarosioms, neautentifikuotoms užklausoms, tarifo riba leidžia atlikti iki 60 užklausų per valandą. Bandykite dar kartą vėliau arba naudokite konsolę, jei norite tai padaryti rankiniu būdu naudodami atnaujinimo scenarijų.
 
@@ -1328,8 +1328,8 @@ theme_xhred_global_community=bendruomenė
 theme_xhred_hotkeys_server_error=Nepavyko gauti pagalbos failo
 theme_xhred_hotkeys_custom_to_opens=atsidaro
 theme_xhred_hotkeys_custom_not_set=nenustatyta
-theme_xhred_hotkey_open_module_config_privileged=Spartusis klavišas atidaryti modulio konfigūraciją
-theme_xhred_hotkey_open_theme_config=Spartusis klavišas atidaryti temos konfigūraciją
+theme_xhred_hotkey_open_module_config_privileged=Atidarykite modulio konfigūraciją
+theme_xhred_hotkey_open_theme_config=Atidarykite temos konfigūraciją
 theme_xhred_hotkey_clear_cache=Išvalykite talpyklą ir įkelkite iš naujo
 theme_xhred_hotkey_open_new=Kopijuoti į naują skirtuką
 theme_xhred_global_success=Sėkmė
