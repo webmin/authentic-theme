@@ -1332,3 +1332,4 @@ theme_xhred_hotkey_open_module_config_privileged=Gyorsbillentyű a modul konfigu
 theme_xhred_hotkey_open_theme_config=Gyorsbillentyű a téma konfigurációjának megnyitásához
 theme_xhred_hotkey_clear_cache=Törölje a gyorsítótárat és töltse be újra
 theme_xhred_hotkey_open_new=Másolás új lapra
+theme_xhred_global_success=Siker

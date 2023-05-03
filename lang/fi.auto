@@ -1332,3 +1332,4 @@ theme_xhred_hotkey_open_module_config_privileged=Pikanäppäin avaa moduulin ase
 theme_xhred_hotkey_open_theme_config=Pikanäppäin teeman konfiguroinnin avaamiseen
 theme_xhred_hotkey_clear_cache=Tyhjennä välimuisti ja lataa uudelleen
 theme_xhred_hotkey_open_new=Kopioi uuteen välilehteen
+theme_xhred_global_success=Menestys

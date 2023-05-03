@@ -1243,3 +1243,4 @@ theme_xhred_hotkey_open_module_config_privileged=Tecla de acceso rápido para ab
 theme_xhred_hotkey_open_theme_config=Tecla de acceso rápido para abrir la configuración del tema
 theme_xhred_hotkey_clear_cache=Borrar caché y recargar
 theme_xhred_hotkey_open_new=Duplicar en una nueva pestaña
+theme_xhred_global_success=Éxito

@@ -1332,3 +1332,4 @@ theme_xhred_hotkey_open_module_config_privileged=ปุ่มลัดเพื�
 theme_xhred_hotkey_open_theme_config=ปุ่มลัดเพื่อเปิดการกำหนดค่าธีม
 theme_xhred_hotkey_clear_cache=ล้างแคชและโหลดใหม่
 theme_xhred_hotkey_open_new=ทำซ้ำไปยังแท็บใหม่
+theme_xhred_global_success=ความสำเร็จ

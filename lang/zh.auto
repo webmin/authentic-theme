@@ -528,3 +528,4 @@ theme_xhred_hotkey_open_module_config_privileged=打开模块配置的热键
 theme_xhred_hotkey_open_theme_config=打开主题配置的热键
 theme_xhred_hotkey_clear_cache=清除缓存并重新加载
 theme_xhred_hotkey_open_new=复制到新标签
+theme_xhred_global_success=成功

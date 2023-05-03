@@ -1121,3 +1121,4 @@ theme_xhred_hotkey_open_module_config_privileged=Горячая клавиша �
 theme_xhred_hotkey_open_theme_config=Горячая клавиша для открытия конфигурации темы
 theme_xhred_hotkey_clear_cache=Очистить кеш и перезагрузить
 theme_xhred_hotkey_open_new=Дублировать на новую вкладку
+theme_xhred_global_success=Успех

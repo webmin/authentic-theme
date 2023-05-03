@@ -668,3 +668,4 @@ theme_xhred_hotkey_open_module_config_privileged=Tecla d'accés ràpid per obrir
 theme_xhred_hotkey_open_theme_config=Tecla d'accés ràpid per obrir la configuració del tema
 theme_xhred_hotkey_clear_cache=Esborra la memòria cau i torna a carregar
 theme_xhred_hotkey_open_new=Duplica a una pestanya nova
+theme_xhred_global_success=Èxit

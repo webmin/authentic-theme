@@ -1249,3 +1249,4 @@ theme_xhred_hotkey_open_module_config_privileged=Tecla de atalho para abrir a co
 theme_xhred_hotkey_open_theme_config=Tecla de atalho para abrir a configuração do tema
 theme_xhred_hotkey_clear_cache=Limpe o cache e recarregue
 theme_xhred_hotkey_open_new=Duplicar para uma nova guia
+theme_xhred_global_success=Sucesso

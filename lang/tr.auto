@@ -1332,3 +1332,4 @@ theme_xhred_hotkey_open_module_config_privileged=Modül yapılandırmasını aç
 theme_xhred_hotkey_open_theme_config=Tema yapılandırmasını açmak için kısayol tuşu
 theme_xhred_hotkey_clear_cache=Önbelleği temizle ve yeniden yükle
 theme_xhred_hotkey_open_new=Yeni bir sekmeye kopyala
+theme_xhred_global_success=Başarı

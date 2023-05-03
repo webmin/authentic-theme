@@ -1332,3 +1332,4 @@ theme_xhred_hotkey_open_module_config_privileged=Moduluaren konfigurazioa irekit
 theme_xhred_hotkey_open_theme_config=Laster tekla gaiaren konfigurazioa irekitzeko
 theme_xhred_hotkey_clear_cache=Garbitu cachea eta kargatu berriro
 theme_xhred_hotkey_open_new=Bikoiztu fitxa berri batera
+theme_xhred_global_success=Arrakasta

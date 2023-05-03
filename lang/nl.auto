@@ -1219,3 +1219,4 @@ theme_xhred_hotkey_open_module_config_privileged=Sneltoets om moduleconfiguratie
 theme_xhred_hotkey_open_theme_config=Sneltoets om themaconfiguratie te openen
 theme_xhred_hotkey_clear_cache=Cache wissen en opnieuw laden
 theme_xhred_hotkey_open_new=Dupliceren naar een nieuw tabblad
+theme_xhred_global_success=Succes

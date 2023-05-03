@@ -278,3 +278,4 @@ theme_xhred_hotkey_open_module_config_privileged=モジュール構成を開く�
 theme_xhred_hotkey_open_theme_config=テーマ設定を開くホットキー
 theme_xhred_hotkey_clear_cache=キャッシュをクリアしてリロード
 theme_xhred_hotkey_open_new=新しいタブに複製
+theme_xhred_global_success=成功

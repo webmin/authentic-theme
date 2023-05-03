@@ -236,3 +236,4 @@ theme_xhred_hotkey_open_module_config_privileged=Raccourci clavier pour ouvrir l
 theme_xhred_hotkey_open_theme_config=Raccourci clavier pour ouvrir la configuration du thème
 theme_xhred_hotkey_clear_cache=Vider le cache et recharger
 theme_xhred_hotkey_open_new=Dupliquer dans un nouvel onglet
+theme_xhred_global_success=Succès
