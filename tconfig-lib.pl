@@ -116,8 +116,8 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_hotkey_options'),
             'data'  => [
                        'settings_hotkeys_active',
-                       'settings_hotkey_toggle_hold_modifier',
                        'settings_hotkey_toggle_modifier',
+                       'settings_hotkey_toggle_hold_modifier',
                        'settings_hotkey_toggle_key_webmin',
                        'settings_hotkey_toggle_key_virtualmin',
                        'settings_hotkey_toggle_key_cloudmin',
@@ -126,12 +126,12 @@ sub theme_settings_raw
                        'settings_hotkey_shell',
                        'settings_hotkey_shell2',
                        'settings_hotkey_sysinfo',
+                       'settings_hotkey_favorites',
                        'settings_hotkey_navigation',
                        'settings_hotkey_slider',
-                       'settings_hotkey_favorites',
+                       'settings_hotkey_toggle_key_night_mode',
                        'settings_hotkey_focus_search',
                        'settings_hotkey_reload',
-                       'settings_hotkey_toggle_key_night_mode',
             ] }
         ],
 
