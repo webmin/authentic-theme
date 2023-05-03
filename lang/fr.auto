@@ -1,7 +1,11 @@
 settings_right_hotkey_options=Raccourcis clavier
 
+settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser des chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à n'importe quelle <code>URL de panneau valide.</code> L'<code>URL</code> peut être extrait de la page actuellement ouverte. Par exemple, pour basculer rapidement vers le module Apache, définissez <code>apache</code> sur le champ <code>Lien personnalisé 1</code>. Si la touche de modification par défaut est définie sur <code>Alt,</code> en cliquant sur <code>Alt + 1</code>, vous ouvrirez le module Apache.
+
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
 
+settings_hotkeys_active=Activer
+settings_hotkey_toggle_modifier=Touche de modification
 settings_hotkey_toggle_key_webmin=Charger le menu Webmin
 settings_hotkey_toggle_key_virtualmin=Charger le menu Virtualmin
 settings_hotkey_toggle_key_cloudmin=Charger le menu Cloudmin
@@ -20,7 +24,7 @@ theme_xhred_sysinfo_vmdocs=Documentation Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentation Cloudmin
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Touche de raccourci pour basculer la palette de couleurs
+settings_hotkey_toggle_key_night_mode=Basculer la palette de couleurs
 
 #18.48
 theme_force_upgrade=Mettre à jour le thème
@@ -36,6 +40,9 @@ settings_hotkey_navigation=Basculer l'état du menu de navigation
 settings_hotkey_slider=Basculer l'état du curseur latéral
 
 theme_xhred_filemanager_mass_selected_for_delete=Tous les éléments du répertoire %1
+
+#19.61
+settings_hotkey_shell2=Ouvrir le shell de commande
 
 #19.70
 theme_xhred_filemanager_context_view=Vue
@@ -163,7 +170,7 @@ theme_xhred_disk_quota_error_message=Pas d'espace disponible sur le périphériq
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utiliser la clé d'administrateur principal pour le déchiffrement
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modificateur de raccourci clavier
+settings_hotkey_toggle_hold_modifier=Maintenir la touche de modification
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Demandez toujours

@@ -1,3 +1,7 @@
+settings_right_hotkey_custom_options_description=Anpassade länkar gör att du kan använda siffror från <code>1</code> till <code>9</code> för att snabbt komma åt alla giltiga <code>URL-adresser</code> <code>URL</code>. code> kan extraheras från den för närvarande öppnade sidan. Till exempel, för att snabbt växla till Apache-modul, ställ in <code>apache</code> till <code>Anpassad länk 1</code>-fält. Om standardnyckeln är inställd på <code>Alt,</code> öppnas din Apache-modul genom att klicka på <code>Alt + 1</code>.
+
+settings_hotkeys_active=Gör det möjligt
+settings_hotkey_toggle_modifier=Modifieringsknapp
 settings_hotkey_toggle_key_webmin=Ladda Webmin-menyn
 settings_hotkey_toggle_key_virtualmin=Ladda Virtualmin-menyn
 settings_hotkey_toggle_key_cloudmin=Ladda Cloudmin-menyn
@@ -16,14 +20,20 @@ theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation
 theme_xhred_sysinfo_cmdocs=Cloudmin dokumentation
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Snabbtangent för att växla färgpalett
+settings_hotkey_toggle_key_night_mode=Växla färgpalett
 
 settings_hotkey_navigation=Växla tillstånd för navigeringsmeny
 
 settings_hotkey_slider=Växla sidoreglagets tillstånd
 
+#19.61
+settings_hotkey_shell2=Öppna kommandoskalet
+
 #19.85
 theme_xhred_sysinfo_vmforum=Virtualmin Community
+
+#19.90
+settings_hotkey_toggle_hold_modifier=Håll ned modifieringsknappen
 
 #20.22
 theme_xhred_hotkeys_help=Hjälp (F1)

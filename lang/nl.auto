@@ -1,6 +1,6 @@
 settings_right_hotkey_options=Sneltoetsen
 
-settings_right_hotkey_custom_options_description=Met aangepaste links kunt u cijfers van <code>1</code> tot <code>9</code> om snel toegang te krijgen tot een geldige Webmin/Usermin/Virtualmin/Cloudmin- <code>URL.</code> De <code>URL</code> kan worden opgehaald uit de momenteel geopende inhoudspagina van het rechterkader door de bron te lezen. Het is belangrijk dat <code>URL</code> aan het begin geen schuine streep heeft en geen voorvoegsels gebruikt. Als u bijvoorbeeld snel wilt overschakelen naar Apache, stelt u <code>custom link 1</code> field <code>/apache/</code>. Als de standaard sneltoetsmodifier die is ingesteld op <code>Alt,</code> klikt u op <code>Alt+1</code> om uw Apache-module te openen
+settings_right_hotkey_custom_options_description=Met aangepaste koppelingen kunt u cijfers van <code>1</code> tot <code>9</code> gebruiken om snel toegang te krijgen tot elke geldige paneel-<code>URL.</code> De <code>URL</code> code> kan worden geëxtraheerd uit de momenteel geopende pagina. Als u bijvoorbeeld snel wilt overschakelen naar de Apache-module, stelt u <code>apache</code> in op het veld <code>Aangepaste koppeling 1</code>. Als de standaard wijzigingstoets is ingesteld op <code>Alt,</code> zal klikken op <code>Alt + 1</code> uw Apache-module openen.
 settings_hotkey_custom_1_user=Aangepaste link <code>1</code>
 settings_hotkey_custom_2_user=Aangepaste link <code>2</code>
 settings_hotkey_custom_3_user=Aangepaste link <code>3</code>
@@ -24,8 +24,8 @@ settings_leftmenu_button_refresh=Knop Vernieuwen weergeven
 
 settings_theme_options_button=Knop voor thema-instellingen weergeven
 
-settings_hotkeys_active=Gebruik van sneltoetsen inschakelen
-settings_hotkey_toggle_modifier=Hotkeys modifier
+settings_hotkeys_active=Inschakelen
+settings_hotkey_toggle_modifier=Wijzigingstoets
 settings_hotkey_toggle_key_webmin=Laad het Webmin-menu
 settings_hotkey_toggle_key_virtualmin=Laad het Virtualmin-menu
 settings_hotkey_toggle_key_cloudmin=Laad het Cloudmin-menu
@@ -436,7 +436,7 @@ theme_xhred_move_down=Naar beneden verplaatsen
 theme_xhred_add_after=Voeg daarna toe
 theme_xhred_add_before=Voeg toe voor
 settings_show_night_mode_link=Knop voor dag-/nachtmodus weergeven
-settings_hotkey_toggle_key_night_mode=Sneltoets voor schakelen tussen kleurenpalet
+settings_hotkey_toggle_key_night_mode=Schakel kleurenpalet in
 settings_title=Thema-configuratie
 settings_subtitle=Voor gebruiker
 
@@ -1017,7 +1017,7 @@ theme_xhred_editing_config_file=Bewerken van configuratiebestand
 theme_xhred_login_message_2fa=Twee-factor authenticatie is ingeschakeld voor deze gebruiker om in te loggen
 theme_xhred_global_verify=Verifiëren
 settings_show_terminal_link2=Toon opdrachtshell-knop
-settings_hotkey_shell2=Sneltoets voor opdrachtshell
+settings_hotkey_shell2=Open de opdrachtshell
 theme_xhred_path_to_console2=Open het huidige pad in de opdrachtshell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Commandoschaal
 
@@ -1146,7 +1146,7 @@ theme_xhred_disk_quota_error_message=Geen ruimte meer op het apparaat
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Gebruik de hoofdbeheerderssleutel voor decodering
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modifier voor sneltoets vasthouden
+settings_hotkey_toggle_hold_modifier=Houd de wijzigingstoets ingedrukt
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Altijd vragen

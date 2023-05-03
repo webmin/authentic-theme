@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Konfiguroitavat vaihtoehdot aute
 
 settings_right_hotkey_options=Pikanäppäimet
 
-settings_right_hotkey_custom_options_description=Custom linkkien avulla voit käyttää numerot <code>1</code> ja <code>9</code>, jotta pikanäppäin-mitään pätevää Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> voidaan poimia tällä hetkellä avatusta oikean kehyksen sisältösivulta lukemalla sen lähde. On tärkeää, että <code>URL</code> osoitteen alussa ei ole kaltevuutta ja että siinä ei käytetä etuliitteitä. Esimerkiksi siirtyäksesi nopeasti Apacheen asettamalla <code>custom link 1</code> kenttä <code>/apache/</code>. Jos oletuspikanäppäinmuokkaajaksi on asetettu <code>Alt,</code> napsauttamalla <code>Alt+1</code>, avaat sinulle Apache-moduulin
+settings_right_hotkey_custom_options_description=Mukautettujen linkkien avulla voit käyttää numeroita välillä <code>1</code> - <code>9</code>, jotta voit nopeasti käyttää mitä tahansa kelvollista paneelin <code>URL-osoitetta.</code> <code>URL</code> code> voidaan poimia parhaillaan avatulta sivulta. Jos esimerkiksi haluat vaihtaa nopeasti Apache-moduuliin, aseta <code>apache</code>-kenttään <code>Muokattu linkki 1</code>. Jos oletusmuokkausnäppäin on <code>Alt</code>, napsauta <code>Alt + 1</code>, jolloin Apache-moduuli avautuu.
 settings_hotkey_custom_1_user=Muokattu linkki <code>1</code>
 settings_hotkey_custom_2_user=Muokattu linkki <code>2</code>
 settings_hotkey_custom_3_user=Muokattu linkki <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Näytä päivityspainike
 
 settings_theme_options_button=Näytä teema-asetukset -painike
 
-settings_hotkeys_active=Ota pikanäppäinten käyttö käyttöön
-settings_hotkey_toggle_modifier=Pikanäppäinten muokkain
+settings_hotkeys_active=ota käyttöön
+settings_hotkey_toggle_modifier=Muokkausnäppäin
 settings_hotkey_toggle_key_webmin=Lataa Webmin-valikko
 settings_hotkey_toggle_key_virtualmin=Lataa Virtualmin-valikko
 settings_hotkey_toggle_key_cloudmin=Lataa Cloudmin-valikko
@@ -549,7 +549,7 @@ theme_xhred_move_down=Siirry alas
 theme_xhred_add_after=Lisää jälkeen
 theme_xhred_add_before=Lisää ennen
 settings_show_night_mode_link=Näytä päivä-/yötilan painike
-settings_hotkey_toggle_key_night_mode=Pikanäppäin väripaletin vaihtamiseen
+settings_hotkey_toggle_key_night_mode=Vaihda väripalettia
 settings_title=Teeman kokoonpano
 settings_subtitle=Käyttäjälle
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Muokataan määritystiedostoa
 theme_xhred_login_message_2fa=Kaksivaiheinen todennus on sallittu tämän käyttäjän kirjautumisessa
 theme_xhred_global_verify=Vahvista
 settings_show_terminal_link2=Näytä komentotulkin painike
-settings_hotkey_shell2=Komennon kuoren pikanäppäin
+settings_hotkey_shell2=Avaa komentotulkki
 theme_xhred_path_to_console2=Avaa komentorivin nykyinen polku <tt>(Alt+Vaihto+K)</tt>
 theme_tooltip_terminal_link2=Komennon kuori
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=laitteessa ei ole tilaa jäljellä
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Käytä pääjärjestelmänvalvojan avainta salauksen purkamiseen
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Pikanäppäimen pitomuunnin
+settings_hotkey_toggle_hold_modifier=Pidä muokkausnäppäintä painettuna
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Kysy aina

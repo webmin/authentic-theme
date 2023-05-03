@@ -110,7 +110,6 @@ settings_right_theme_left_extensions_title=Theme Extensions Editor
 settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
-settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser les chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à toute URL Webmin/Usermin /Virtualmin/Cloudmin <code>valide.</code> Le L'<code>URL</code> peut être extraite de la page de contenu du cadre droit actuellement ouverte, en lisant sa source. Il est important que <code>URL</code> n'ait pas de barre oblique au début et n'utilise pas de préfixes. Par exemple, pour passer rapidement à Apache, définissez le champ <code>lien personnalisé 1</code> <code>/apache/</code>. Si le modificateur de raccourcis clavier par défaut est défini sur <code>Alt,</code> cliquer sur <code>Alt+1</code>, vous ouvrira le module Apache
 settings_hotkey_custom_1_user=Lien personnalisé <code>1</code>
 settings_hotkey_custom_2_user=Lien personnalisé <code>2</code>
 settings_hotkey_custom_3_user=Lien personnalisé <code>3</code>
@@ -132,9 +131,6 @@ settings_leftmenu_button_language=Afficher le bouton de langue
 settings_leftmenu_button_refresh=Afficher le bouton d'actualisation
 
 settings_theme_options_button=Afficher le bouton des paramètres du thème
-
-settings_hotkeys_active=Activer l'utilisation des raccourcis clavier
-settings_hotkey_toggle_modifier=Modificateur de raccourcis clavier
 
 settings_sysinfo_easypie_charts=Afficher les graphiques
 settings_sysinfo_theme_updates=Rechercher les mises à jour du thème authentique
@@ -1103,6 +1099,5 @@ theme_xhred_editing_config_file=Modification du fichier de configuration
 theme_xhred_login_message_2fa=L'authentification à deux facteurs a été activée pour que cet utilisateur puisse se connecter
 theme_xhred_global_verify=Vérifier
 settings_show_terminal_link2=Afficher le bouton du shell de commande
-settings_hotkey_shell2=Raccourci pour le shell de commande
 theme_xhred_path_to_console2=Ouvrir le chemin actuel dans le shell de commande <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=CShell de commande

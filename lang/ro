@@ -109,7 +109,6 @@ settings_right_theme_left_extensions_title=Editor de Extensii Authentic Theme
 settings_right_theme_left_logo_title=Administrare Logo Authentic Theme
 settings_right_theme_configurable_options_title=Opțiuni configurabile pentru Authentic Theme
 
-settings_right_hotkey_custom_options_description=Legăturile personalizate îți dă voie sa folosești cifre de la <code>1</code> la <code>9</code> pentru a accesa orice <code>URL</code> valid Webmin/Usermin/Virtualmin/Cloudmin. <code>URL</code>-ul poate fi extras din cardul din dreapta al paginii curente, citindu-i sursa. Este important ca <code>URL</code>-ul să nu aibă slash-uri la început și să nu folosească prefixe. Ca exemplu, pentru a trece rapid la Apache, configurează câmpul <code>legătură personalizată 1</code> <code>/apache/</code>. Dacă tasta pentru hotkey este implicit <code>Alt,</code> făcând click <code>Alt+1</code>, va deschide modulul Apache.
 settings_hotkey_custom_1_user=Legătură personalizată <code>1</code>
 settings_hotkey_custom_2_user=Legătură personalizată <code>2</code>
 settings_hotkey_custom_3_user=Legătură personalizată <code>3</code>
@@ -131,9 +130,6 @@ settings_leftmenu_button_language=Atată butonul limbi
 settings_leftmenu_button_refresh=Arată butonul reîmprospătare
 
 settings_theme_options_button=Arată butonul setări de temă
-
-settings_hotkeys_active=Activează utilizarea Taste Rapide
-settings_hotkey_toggle_modifier=Modificator de Taste Rapide
 
 settings_sysinfo_easypie_charts=Afișează diagrame
 settings_sysinfo_theme_updates=Verifică actualizări pentru Authentic Theme

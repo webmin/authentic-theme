@@ -2,8 +2,12 @@ theme_xhred_session_failed=Autentificare esuata. Vă rugăm să încercați din 
 
 settings_right_hotkey_options=Taste rapide
 
+settings_right_hotkey_custom_options_description=Linkurile personalizate vă permit să utilizați cifre de la <code>1</code> la <code>9</code> pentru a accesa rapid orice <code>URL valid din panou.</code> <code>URL</code>. code> poate fi extras din pagina deschisă curent. De exemplu, pentru a comuta rapid la modulul Apache, setați câmpul <code>apache</code> la <code>Legătură personalizată 1</code>. Dacă tasta modificatoare implicită este setată la <code>Alt</code>, făcând clic pe <code>Alt + 1</code>, se va deschide modulul Apache.
+
 settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
 
+settings_hotkeys_active=Permite
+settings_hotkey_toggle_modifier=Tasta modificatoare
 settings_hotkey_toggle_key_webmin=Încărcați meniul Webmin
 settings_hotkey_toggle_key_virtualmin=Încărcați meniul Virtualmin
 settings_hotkey_toggle_key_cloudmin=Încărcați meniul Cloudmin
@@ -22,7 +26,7 @@ theme_xhred_sysinfo_vmdocs=Documentația Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentația Cloudmin
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Tasta rapidă pentru comutarea paletei de culori
+settings_hotkey_toggle_key_night_mode=Comutați paleta de culori
 
 #18.48
 theme_force_upgrade=Actualizați tema
@@ -156,7 +160,7 @@ theme_xhred_editing_config_file=Editarea fișierului de configurare
 theme_xhred_login_message_2fa=Autentificarea cu doi factori a fost activată pentru ca acest utilizator să se conecteze
 theme_xhred_global_verify=Verifica
 settings_show_terminal_link2=Afișați butonul shell al comenzii
-settings_hotkey_shell2=Tastă rapidă pentru comanda shell
+settings_hotkey_shell2=Deschideți shell-ul de comandă
 theme_xhred_path_to_console2=Deschideți calea curentă în comanda shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Shell de comandă
 
@@ -286,7 +290,7 @@ theme_xhred_disk_quota_error_message=Nu a mai rămas spațiu pe dispozitiv
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utilizați cheia principală de administrator pentru decriptare
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modificatorul de menținere a tastei rapide
+settings_hotkey_toggle_hold_modifier=Țineți apăsată tasta modificatoare
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Intreaba mereu

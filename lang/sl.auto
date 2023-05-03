@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Nastavljive možnosti za avtenti
 
 settings_right_hotkey_options=Bližnjice
 
-settings_right_hotkey_custom_options_description=Povezave po meri omogočajo uporabo številk od <code>1</code> do <code>9</code> za hiter dostop do katerega koli veljavnega <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> lahko izvlečete s trenutno odprte desne strani z vsebino okvira z branjem njegovega vira. Pomembno je, da <code>URL</code> na začetku nima poševnice in ne uporablja predpone. Če želite na primer hitro preklopiti na Apache, nastavite na polje <code>custom link 1</code> <code>/apache/</code>. Če je privzeti modifikator hitrih tipk nastavljen na <code>Alt,</code> klikom na <code>Alt+1</code> se vam odpre modul Apache
+settings_right_hotkey_custom_options_description=Povezave po meri vam omogočajo uporabo števk od <code>1</code> do <code>9</code> za hiter dostop do katerega koli veljavnega <code>URL-ja plošče.</code> <code>URL</code> lahko izvlečete iz trenutno odprte strani. Če želite na primer hitro preklopiti na modul Apache, nastavite <code>apache</code> na polje <code>Povezava po meri 1</code>. Če je privzeta modifikacijska tipka nastavljena na <code>Alt</code>, boste s klikom na <code>Alt + 1</code> odprli modul Apache.
 settings_hotkey_custom_1_user=Povezava po meri <code>1</code>
 settings_hotkey_custom_2_user=Povezava <code>2</code> po meri
 settings_hotkey_custom_3_user=Povezava po meri <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Pokaži gumb za osvežitev
 
 settings_theme_options_button=Pokaži gumb za nastavitev teme
 
-settings_hotkeys_active=Omogoči uporabo hitrih tipk
-settings_hotkey_toggle_modifier=Modifikator hitrih tipk
+settings_hotkeys_active=Omogoči
+settings_hotkey_toggle_modifier=Tipka za spreminjanje
 settings_hotkey_toggle_key_webmin=Naloži meni Webmin
 settings_hotkey_toggle_key_virtualmin=Naloži meni Virtualmin
 settings_hotkey_toggle_key_cloudmin=Naloži meni Cloudmin
@@ -549,7 +549,7 @@ theme_xhred_move_down=Premik navzdol
 theme_xhred_add_after=Dodaj po
 theme_xhred_add_before=Dodaj pred
 settings_show_night_mode_link=Prikaži gumb za dan/noč
-settings_hotkey_toggle_key_night_mode=Bližnjica za preklapljanje barvne palete
+settings_hotkey_toggle_key_night_mode=Preklop barvne palete
 settings_title=Konfiguracija teme
 settings_subtitle=Za uporabnika
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Urejanje konfiguracijske datoteke
 theme_xhred_login_message_2fa=Dvofaktorska avtentikacija je omogočena temu uporabniku za prijavo
 theme_xhred_global_verify=Preverite
 settings_show_terminal_link2=Pokaži gumb ukazne lupine
-settings_hotkey_shell2=Bližnjična tipka za ukazno lupino
+settings_hotkey_shell2=Odpri ukazno lupino
 theme_xhred_path_to_console2=Odprite trenutno pot v ukazni lupini <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Ukazna lupina
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Na napravi ni več prostora
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Za dešifriranje uporabite glavni skrbniški ključ
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modifikator zadrževanja bližnjic
+settings_hotkey_toggle_hold_modifier=Držite modifikacijsko tipko
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Vedno vprašaj

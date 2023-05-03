@@ -110,7 +110,6 @@ settings_right_theme_left_extensions_title=Authentic Design Erweiterungs Editor
 settings_right_theme_left_logo_title=Authentic Design Logo Einstellungen
 settings_right_theme_configurable_options_title=Konfigurierbare Einstellungen für Authentic Design
 
-settings_right_hotkey_custom_options_description=Benutzerdefinierte Links erlauben es die Ziffertasten <code>1</code> bis <code>9</code> als Schnellzugriffs Tasten für beliebige Webmin/Usermin/Virtualmin/Cloudmin <code>URLs</code> einzurichten. Die <code>URL</code> erhält man wenn man sich nur den rechten Frame anzeigen lä&szligt, z.B. mit einem rechtsklick auf die rechte Inhalts Seite und der Auswahl "Nur diesem Frame anzeigen". Wichtig: Es darf nur das letzte Teilstück der <code>URL</code> verwendet werden! Zum Aufrufen der Apache Configuration muss der Eintrag in Benuterzdefinierter Link 1 <code>/apache/</code> sein, ohne fürende oder folgende Schrägstiche (/).
 settings_hotkey_custom_1_user=Benutzerdefinierter Link <code>1</code>
 settings_hotkey_custom_2_user=Benutzerdefinierter Link <code>2</code>
 settings_hotkey_custom_3_user=Benutzerdefinierter Link <code>3</code>
@@ -132,9 +131,6 @@ settings_leftmenu_button_language=Knopf Sprachen anzeigen
 settings_leftmenu_button_refresh=Knopf Neu Laden anzeigen
 
 settings_theme_options_button=Knopf Design Einstellungen anzeigen
-
-settings_hotkeys_active=Schalte Schnellzugriffs Tasten ein
-settings_hotkey_toggle_modifier=Schnellzugriffs Taste
 
 settings_sysinfo_easypie_charts=Diagramm anzeigen
 settings_sysinfo_theme_updates=Prüfe auf Update für Authentic Design

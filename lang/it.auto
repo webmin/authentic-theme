@@ -1,3 +1,7 @@
+settings_right_hotkey_custom_options_description=I collegamenti personalizzati ti consentono di utilizzare le cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> del pannello valido. L'<code>URL</code> code> può essere estratto dalla pagina attualmente aperta. Ad esempio, per passare rapidamente al modulo Apache, imposta <code>apache</code> nel campo <code>Link personalizzato 1</code>. Se il tasto modificatore predefinito è impostato su <code>Alt,</code> facendo clic su <code>Alt + 1</code>, si aprirà il modulo Apache.
+
+settings_hotkeys_active=Abilitare
+settings_hotkey_toggle_modifier=Tasto modificatore
 settings_hotkey_toggle_key_webmin=Carica il menu Webmin
 settings_hotkey_toggle_key_virtualmin=Carica il menu di Virtualmin
 settings_hotkey_toggle_key_cloudmin=Carica il menu di Cloudmin
@@ -16,7 +20,7 @@ theme_xhred_sysinfo_vmdocs=Documentazione Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentazione Cloudmin
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Tasto di scelta rapida per alternare la tavolozza dei colori
+settings_hotkey_toggle_key_night_mode=Attiva/disattiva la tavolozza dei colori
 
 #18.48
 theme_update_footer=Si prega di essere gentili nel segnalare bug al repository $1. Unisciti al nostro canale $2 per ricevere le ultime notizie.
@@ -29,6 +33,9 @@ settings_hotkey_navigation=Attiva/disattiva lo stato del menu di navigazione
 settings_hotkey_slider=Attiva/disattiva lo stato del cursore laterale
 
 theme_xhred_filemanager_mass_selected_for_delete=Tutti gli elementi nella directory %1
+
+#19.61
+settings_hotkey_shell2=Apri la shell dei comandi
 
 #19.84
 settings_right_table_links_type=Tipo di visualizzazione dei collegamenti alle tabelle
@@ -93,7 +100,7 @@ theme_xhred_disk_quota_error_message=Nessuno spazio rimasto sul dispositivo
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utilizzare la chiave dell'amministratore principale per la decrittografia
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modificatore di blocco dei tasti di scelta rapida
+settings_hotkey_toggle_hold_modifier=Tieni premuto il tasto modificatore
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Chiedi sempre

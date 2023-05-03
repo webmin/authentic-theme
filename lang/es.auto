@@ -25,7 +25,7 @@ settings_right_theme_configurable_options_title=Opciones configurables para tema
 
 settings_right_hotkey_options=Teclas de acceso rápido
 
-settings_right_hotkey_custom_options_description=Los enlaces personalizados le permiten usar dígitos del <code>1</code> al <code>9</code> para acceder rápidamente a cualquier <code>URL.</code> válida de Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> La <code>URL</code> se puede extraer de la página de contenido del marco derecho abierto actualmente, leyendo su fuente. Es importante que la <code>URL</code> no tenga barra al principio y no use prefijos. Por ejemplo, para cambiar rápidamente a Apache, configure <code>custom link 1</code> campo <code>/apache/</code>. Si el modificador de teclas rápidas predeterminado establecido en <code>Alt,</code> hacer clic en <code>Alt+1</code>, se abrirá su módulo Apache
+settings_right_hotkey_custom_options_description=Los enlaces personalizados le permiten usar dígitos del <code>1</code> al <code>9</code> para acceder rápidamente a cualquier <code>URL</code> del panel válido.</code>El <code>URL</code> se puede extraer de la página abierta actualmente. Por ejemplo, para cambiar rápidamente al módulo Apache, establezca <code>apache</code> en el campo <code>Custom link 1</code>. Si la tecla modificadora predeterminada se establece en <code>Alt,</code> al hacer clic en <code>Alt + 1</code>, se abrirá el módulo de Apache.
 settings_hotkey_custom_1_user=Enlace personalizado <code>1</code>
 settings_hotkey_custom_2_user=Enlace personalizado <code>2</code>
 settings_hotkey_custom_3_user=Enlace personalizado <code>3</code>
@@ -49,8 +49,8 @@ settings_leftmenu_button_refresh=Mostrar botón de actualización
 
 settings_theme_options_button=Mostrar el botón de configuración del tema
 
-settings_hotkeys_active=Habilitar el uso de teclas de acceso rápido
-settings_hotkey_toggle_modifier=Modificador de teclas de acceso rápido
+settings_hotkeys_active=Permitir
+settings_hotkey_toggle_modifier=tecla modificadora
 settings_hotkey_toggle_key_webmin=Cargar menú de Webmin
 settings_hotkey_toggle_key_virtualmin=Cargar menú Virtualmin
 settings_hotkey_toggle_key_cloudmin=Cargar el menú de Cloudmin
@@ -461,7 +461,7 @@ theme_xhred_move_down=Mover hacia abajo
 theme_xhred_add_after=Agregar después
 theme_xhred_add_before=Agregar antes
 settings_show_night_mode_link=Mostrar botón de modo día/noche
-settings_hotkey_toggle_key_night_mode=Tecla de acceso rápido para alternar la paleta de colores
+settings_hotkey_toggle_key_night_mode=Alternar paleta de colores
 settings_title=Configuración del tema
 settings_subtitle=Para el usuario
 
@@ -1041,7 +1041,7 @@ theme_xhred_editing_config_file=Editando archivo de configuración
 theme_xhred_login_message_2fa=Se ha habilitado la autenticación de dos factores para que este usuario inicie sesión
 theme_xhred_global_verify=Verificar
 settings_show_terminal_link2=Mostrar botón de shell de comando
-settings_hotkey_shell2=Tecla de acceso rápido para el shell de comandos
+settings_hotkey_shell2=Abrir shell de comandos
 theme_xhred_path_to_console2=Abrir la ruta actual en el shell de comandos <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Shell de comando
 
@@ -1170,7 +1170,7 @@ theme_xhred_disk_quota_error_message=no queda espacio en el dispositivo
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Use la clave de administrador maestro para el descifrado
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modificador de retención de teclas de acceso rápido
+settings_hotkey_toggle_hold_modifier=Mantenga presionada la tecla modificadora
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Pregunta siempre

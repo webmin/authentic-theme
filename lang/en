@@ -121,7 +121,7 @@ settings_right_theme_configurable_options_title=Configurable options for Authent
 
 settings_right_hotkey_options=Hotkey options
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid panel <code>URL.</code> The <code>URL</code> can be extracted from the currently opened page. For example, to quick-switch to Apache module, set <code>apache</code> to <code>Custom link 1</code> field. If the default modifier key is set to <code>Alt,</code> clicking <code>Alt + 1</code>, will open you Apache module.
 settings_hotkey_custom_1_user=Custom link <code>1</code>
 settings_hotkey_custom_2_user=Custom link <code>2</code>
 settings_hotkey_custom_3_user=Custom link <code>3</code>
@@ -145,8 +145,8 @@ settings_leftmenu_button_refresh=Show refresh button
 
 settings_theme_options_button=Show theme settings button
 
-settings_hotkeys_active=Enable hotkeys usage
-settings_hotkey_toggle_modifier=Hotkeys modifier
+settings_hotkeys_active=Enable
+settings_hotkey_toggle_modifier=Modifier key
 settings_hotkey_toggle_key_webmin=Load Webmin menu
 settings_hotkey_toggle_key_virtualmin=Load Virtualmin menu
 settings_hotkey_toggle_key_cloudmin=Load Cloudmin  menu
@@ -566,7 +566,7 @@ theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
 settings_show_night_mode_link=Show day/night mode button
-settings_hotkey_toggle_key_night_mode=Hotkey for toggling color palette
+settings_hotkey_toggle_key_night_mode=Toggle color palette
 settings_title=Theme Configuration
 settings_subtitle=For user
 
@@ -1183,7 +1183,7 @@ theme_xhred_editing_config_file=Editing config file
 theme_xhred_login_message_2fa=Two-factor authentication has been enabled for this user to login
 theme_xhred_global_verify=Verify
 settings_show_terminal_link2=Show command shell button
-settings_hotkey_shell2=Hotkey for command shell
+settings_hotkey_shell2=Open command shell
 theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Command shell
 
@@ -1321,7 +1321,7 @@ theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Use master administ
 
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey hold modifier
+settings_hotkey_toggle_hold_modifier=Hold modifier key
 
 
 #19.91

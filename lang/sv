@@ -112,7 +112,6 @@ settings_right_theme_configurable_options_title=Konfigurerbara alternativ för A
 
 settings_right_hotkey_options=Snabbtangenter
 
-settings_right_hotkey_custom_options_description=Egna länkar låter dig använda siffror från <code>1</code> till <code>9</code> för att du snabbt ska få tillgång till en giltig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL:en</code> kan du få ut från den öppnade högra innehållssidan, genom att läsa dess källa. Det är viktigt att <code>URL:en</code> inte har ett snedstreck i början och att den inte använder prefix. Till exempel, att snabbväxla till Apache, ange i fältet <code>Egen länk 1</code> <code>/apache/</code>. Om kombinationstangenten är satt till <code>Alt,</code> trycker du på <code>Alt+1</code> och modulen Apache kommer att öppnas
 settings_hotkey_custom_1_user=Egen länk <code>1</code>
 settings_hotkey_custom_2_user=Egen länk <code>2</code>
 settings_hotkey_custom_3_user=Egen länk <code>3</code>
@@ -135,9 +134,6 @@ settings_leftmenu_button_language=Visa språkknapp
 settings_leftmenu_button_refresh=Visa uppdateringsknapp
 
 settings_theme_options_button=Visa inställningsknapp för temat
-
-settings_hotkeys_active=Aktivera användning av snabbtangenter
-settings_hotkey_toggle_modifier=Kombinationstangent
 
 settings_sysinfo_easypie_charts=Visa diagram
 settings_sysinfo_theme_updates=Se om det finns uppdateringar till Authentic Theme
@@ -1112,7 +1108,6 @@ theme_xhred_editing_config_file=Redigerar konfigurationsfil
 theme_xhred_login_message_2fa=Tvåfaktorautentisering har aktiverats för den här användaren att logga in
 theme_xhred_global_verify=Kontrollera
 settings_show_terminal_link2=Visa knapp för kommandoskal
-settings_hotkey_shell2=Snabbtangent för kommandoskal
 theme_xhred_path_to_console2=Öppna aktuell sökväg i kommandoskal <tt>(Alt+Skift+K)</tt>
 theme_tooltip_terminal_link2=Kommandoskal
 
@@ -1238,9 +1233,6 @@ theme_xhred_tooltip_side_slider_refresh_sysinfo=Tvinga att uppdatera systeminfor
 theme_xhred_disk_quota_error_title=Utom kvot
 theme_xhred_disk_quota_error_message=Inget utrymme kvar på enheten
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Använd huvudadministratörsnyckeln för dekryptering
-
-#19.90
-settings_hotkey_toggle_hold_modifier=Snabbtangentmodifierare
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Fråga alltid

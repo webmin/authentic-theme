@@ -110,7 +110,6 @@ settings_right_theme_left_extensions_title=Authentic 主题扩展编辑器
 settings_right_theme_left_logo_title=Authentic 主题 Logo 控制
 settings_right_theme_configurable_options_title=Authentic 主题的可配置选项
 
-settings_right_hotkey_custom_options_description=自定义链接使您可以使用 <code>1</code> 到 <code>9</code> 的数字，以便快速访问任何有效的 Webmin/Usermin/Virtualmin/Cloudmin <code>URL。</code>可以通过读取其源来从当前打开的右框架内容页面中提取 <code>URL</code>。重要的是 <code>URL</code> 在开头没有斜杠，不使用前缀。例如，要快速切换到 Apache，请设置 <code>自定义链接 1</code> 字段为 <code>/apache/</code>。如果默认快捷键修改器设置为 <code>Alt,</code>则单击 <code>Alt+1</code> 将打开 Apache 模块
 settings_hotkey_custom_1_user=自定义链接 <code>1</code>
 settings_hotkey_custom_2_user=自定义链接 <code>2</code>
 settings_hotkey_custom_3_user=自定义链接 <code>3</code>
@@ -132,9 +131,6 @@ settings_leftmenu_button_language=显示语言按钮
 settings_leftmenu_button_refresh=显示重载按钮
 
 settings_theme_options_button=显示主题设置按钮
-
-settings_hotkeys_active=启用快捷键
-settings_hotkey_toggle_modifier=快捷键更改
 
 settings_sysinfo_easypie_charts=显示图表
 settings_sysinfo_theme_updates=检查 Authentic 主题更新

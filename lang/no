@@ -110,7 +110,6 @@ settings_right_theme_left_extensions_title=Authentic tema utvidelses-editor
 settings_right_theme_left_logo_title=Authentic tema logokontroll
 settings_right_theme_configurable_options_title=Konfigurerbare innstillinger for Authentic tema
 
-settings_right_hotkey_custom_options_description=Tilpassede koblinger gjør at du kan bruke tallene fra <code>1</code> til <code>9</code> for rask tilgang til en hvilken som helst gyldig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</Code> <code>URL</code>en kan hentes ut fra den gjeldende innholdssiden i høyre ramme ved å lese kilden. Det er viktig at <code>URL</code>en ikke har noen skråstrek i begynnelsen og ikke bruke prefikser. For eksempel, for å hurtigskifte til Apache, sett <code>tilpasset kobling 1</code> felt til <code>/apache/</code>. Hvis standard hurtigtaster-tast er satt til <code>Alt</code> vil <code>Alt + 1</code> åpne Apache-modulen
 settings_hotkey_custom_1_user=Egendefinert lenke <code>1</code>
 settings_hotkey_custom_2_user=Egendefinert lenke <code>2</code>
 settings_hotkey_custom_3_user=Egendefinert lenke <code>3</code>
@@ -132,9 +131,6 @@ settings_leftmenu_button_language=Vis språk-knapp
 settings_leftmenu_button_refresh=Vis oppfriskings-knapp
 
 settings_theme_options_button=Vis knapp for tema innstillinger
-
-settings_hotkeys_active=Aktiver bruk av hurtigtaster
-settings_hotkey_toggle_modifier=Hotkeys modifier
 
 settings_sysinfo_easypie_charts=Vis diagrammer
 settings_sysinfo_theme_updates=Se etter oppdateringer til Authentic Tema
@@ -1102,6 +1098,5 @@ theme_xhred_editing_config_file=Redigerer konfig-fil
 theme_xhred_login_message_2fa=To-faktor autentisering er aktivert for denne brukerens innlogging
 theme_xhred_global_verify=Verifiser
 settings_show_terminal_link2=VIs knapp for kommandoskall
-settings_hotkey_shell2=Hurtigtast for kommandoskall
 theme_xhred_path_to_console2=Åpne gjeldende sti i kommando-skall <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Kommandoskall

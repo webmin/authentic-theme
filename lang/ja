@@ -106,7 +106,6 @@ settings_right_theme_left_extensions_title=Theme 拡張エディタ
 settings_right_theme_left_logo_title= Authentic Theme のロゴコントロール
 settings_right_theme_configurable_options_title= Authentic Theme のための設定可能なオプション
 
-settings_right_hotkey_custom_options_description=カスタムリンクを使用すると、有効な Webmin/Usermin/Cloudminの<code>URL</code> を素早くアクセスするために、 <code>1</code> から <code>9</code> までの数字を使うことができます <code>URL</code> は、そのソースを読み取ることによって、現在開いている右フレームのコンテンツページから抽出することができる。<code>URL</code>は先頭にスラッシュがなく、プレフィックスを使用しないことが重要です。たとえば、Apache に素早く切り替えるには、 <code>custom link 1</code> フィールド <code>/apache/</code> に設定します。デフォルトのホットキー修飾子が <code>Alt+1</code> をクリックする <code>Alt,</code> に設定されている場合は、Apache モジュールを開きます
 settings_hotkey_custom_1_user=カスタムリンク <code>1</code>
 settings_hotkey_custom_2_user=カスタムリンク <code>2</code>
 settings_hotkey_custom_3_user=カスタムリンク <code>3</code>
@@ -127,9 +126,6 @@ settings_leftmenu_button_language=表示言語ボタン
 settings_leftmenu_button_refresh=[更新の表示] ボタン
 
 settings_theme_options_button=[テーマの設定を表示] ボタン
-
-settings_hotkeys_active=ホットキーの使用を有効にする
-settings_hotkey_toggle_modifier=ホットキー修飾子
 
 settings_sysinfo_easypie_charts=グラフの表示
 settings_sysinfo_theme_updates=Authentic Themaの更新をチェック

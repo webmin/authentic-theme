@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Konfigurovateľné možnosti pre
 
 settings_right_hotkey_options=Klávesové skratky
 
-settings_right_hotkey_custom_options_description=Vlastné odkazy vám umožňujú používať číslice od <code>1</code> do <code>9</code> aby ste mali rýchly prístup k akejkoľvek platnej webovej <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> možno získať z aktuálne otvorenej stránky s obsahom pravého rámu prečítaním jej zdroja. Je dôležité, aby <code>URL</code> na začiatku neobsahovala lomku a nepoužívala predpony. Napríklad, ak chcete rýchlo prepnúť na Apache, nastavte na <code>custom link 1</code> pole <code>custom link 1</code> pole <code>/apache/</code>. Ak je predvolený modifikátor klávesových skratiek nastavený na <code>Alt,</code> kliknutím na <code>Alt+1</code> sa otvorí modul Apache
+settings_right_hotkey_custom_options_description=Vlastné odkazy vám umožňujú používať číslice od <code>1</code> do <code>9</code> na rýchly prístup k akejkoľvek platnej <code>URL na paneli.</code> <code>URL</code> kód> možno extrahovať z aktuálne otvorenej stránky. Ak chcete napríklad rýchlo prepnúť na modul Apache, nastavte <code>apache</code> na pole <code>Vlastný odkaz 1</code>. Ak je predvolený modifikačný kláves nastavený na <code>Alt</code>, kliknutím na <code>Alt + 1</code> sa vám otvorí modul Apache.
 settings_hotkey_custom_1_user=Vlastný odkaz <code>1</code>
 settings_hotkey_custom_2_user=Vlastný odkaz <code>2</code>
 settings_hotkey_custom_3_user=Vlastný odkaz <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Zobraziť tlačidlo obnovenia
 
 settings_theme_options_button=Tlačidlo Zobraziť nastavenie témy
 
-settings_hotkeys_active=Povoliť používanie klávesových skratiek
-settings_hotkey_toggle_modifier=Modifikátor klávesových skratiek
+settings_hotkeys_active=Povoliť
+settings_hotkey_toggle_modifier=Modifikačný kľúč
 settings_hotkey_toggle_key_webmin=Načítať menu Webmin
 settings_hotkey_toggle_key_virtualmin=Načítať ponuku Virtualmin
 settings_hotkey_toggle_key_cloudmin=Načítať ponuku Cloudmin
@@ -549,7 +549,7 @@ theme_xhred_move_down=Posunúť nadol
 theme_xhred_add_after=Pridať po
 theme_xhred_add_before=Pridať skôr
 settings_show_night_mode_link=Zobraziť tlačidlo režimu deň/noc
-settings_hotkey_toggle_key_night_mode=Klávesová skratka na prepínanie farebnej palety
+settings_hotkey_toggle_key_night_mode=Prepnúť farebnú paletu
 settings_title=Konfigurácia motívu
 settings_subtitle=Pre používateľa
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Úpravy konfiguračného súboru
 theme_xhred_login_message_2fa=Pre tohto používateľa bolo povolené dvojfaktorové overenie na prihlásenie
 theme_xhred_global_verify=Overiť
 settings_show_terminal_link2=Zobraziť tlačidlo príkazového shellu
-settings_hotkey_shell2=Klávesová skratka pre príkazový shell
+settings_hotkey_shell2=Otvorte príkazový shell
 theme_xhred_path_to_console2=Otvorte aktuálnu cestu v príkazovom shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Príkazová schránka
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Na zariadení nie je dostatok miesta
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Na dešifrovanie použite hlavný kľúč správcu
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modifikátor podržania klávesovej skratky
+settings_hotkey_toggle_hold_modifier=Podržte modifikačný kláves
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Vždy sa pýtaj

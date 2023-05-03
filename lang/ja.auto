@@ -6,10 +6,14 @@ theme_xhred_session_failed=ログインに失敗しました。もう一度お�
 
 settings_right_hotkey_options=ホットキー
 
+settings_right_hotkey_custom_options_description=カスタム リンクを使用すると、<code>1</code> から <code>9</code> までの数字を使用して、有効なパネルの <code>URL</code> にすばやくアクセスできます。<code>URL</code> は、現在開いているページから抽出できます。たとえば、Apache モジュールにすばやく切り替えるには、<code>apache</code> を <code>Custom link 1</code> フィールドに設定します。デフォルトの修飾キーが <code>Alt</code> に設定されている場合、<code>Alt + 1</code> をクリックすると、Apache モジュールが開きます。
+
 settings_right_reload=タブスイッチにデフォルトページをロード
 
 settings_favorites=お気に入りボタンを表示
 
+settings_hotkeys_active=有効
+settings_hotkey_toggle_modifier=修飾キー
 settings_hotkey_toggle_key_webmin=Webminメニューをロード
 settings_hotkey_toggle_key_virtualmin=Virtualmin メニューの読み込み
 settings_hotkey_toggle_key_cloudmin=Cloudminメニューをロード
@@ -28,7 +32,7 @@ theme_xhred_sysinfo_vmdocs=Virtualmin のドキュメント
 theme_xhred_sysinfo_cmdocs=クラウドミンのドキュメント
 
 #18.40
-settings_hotkey_toggle_key_night_mode=カラー パレットを切り替えるためのホットキー
+settings_hotkey_toggle_key_night_mode=カラー パレットの切り替え
 
 #18.48
 theme_force_upgrade=テーマを更新
@@ -75,7 +79,7 @@ theme_xhred_editing_config_file=設定ファイルの編集
 theme_xhred_login_message_2fa=このユーザーがログインできるように、2要素認証が有効になっています
 theme_xhred_global_verify=確認
 settings_show_terminal_link2=コマンドシェルボタンを表示
-settings_hotkey_shell2=コマンドシェルのホットキー
+settings_hotkey_shell2=コマンド シェルを開く
 theme_xhred_path_to_console2=コマンドシェルで現在のパスを開く<tt>（Alt+Shift+K）</tt>
 theme_tooltip_terminal_link2=コマンドシェル
 
@@ -205,7 +209,7 @@ theme_xhred_disk_quota_error_message=デバイスにスペースが残ってい�
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=復号化にマスター管理者キーを使用する
 
 #19.90
-settings_hotkey_toggle_hold_modifier=ホットキーホールド修飾子
+settings_hotkey_toggle_hold_modifier=修飾キーを押し続ける
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=常に尋ねる

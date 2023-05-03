@@ -31,7 +31,7 @@ settings_right_theme_configurable_options_title=Konfigurowalne opcje dla motywu 
 
 settings_right_hotkey_options=Skróty klawiszowe
 
-settings_right_hotkey_custom_options_description=Niestandardowe linki umożliwiają korzystanie z cyfr od <code>1</code> do <code>9</code> w celu szybkiego dostępu do dowolnego poprawnego <code>URL.</code> Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> można wyodrębnić z aktualnie otwartej strony zawartości prawej ramki, czytając jego źródło. Ważne jest, aby <code>URL</code> nie zawierał ukośnika na początku i nie używał przedrostków. Na przykład, aby szybko przełączyć się na Apache, ustaw <code>custom link 1</code> pole <code>custom link 1</code> <code>/apache/</code>. Jeśli domyślny modyfikator klawiszy skrótu ustawiony na <code>Alt,</code> kliknięcie <code>Alt+1</code> otworzy moduł Apache
+settings_right_hotkey_custom_options_description=Linki niestandardowe umożliwiają użycie cyfr od <code>1</code> do <code>9</code> w celu szybkiego dostępu do dowolnego ważnego <code>URL panelu.</code> <code>URL</code> code> można wyodrębnić z aktualnie otwartej strony. Na przykład, aby szybko przełączyć się na moduł Apache, ustaw <code>apache</code> na pole <code>Custom link 1</code>. Jeśli domyślny klawisz modyfikujący jest ustawiony na <code>Alt</code>, kliknięcie <code>Alt + 1</code> otworzy moduł Apache.
 settings_hotkey_custom_1_user=Niestandardowy link <code>1</code>
 settings_hotkey_custom_2_user=Niestandardowy link <code>2</code>
 settings_hotkey_custom_3_user=Niestandardowy link <code>3</code>
@@ -55,8 +55,8 @@ settings_leftmenu_button_refresh=Pokaż przycisk odświeżania
 
 settings_theme_options_button=Pokaż przycisk ustawień motywu
 
-settings_hotkeys_active=Włącz korzystanie ze skrótów klawiszowych
-settings_hotkey_toggle_modifier=Modyfikator skrótów klawiszowych
+settings_hotkeys_active=Włączać
+settings_hotkey_toggle_modifier=Klawisz modyfikujący
 settings_hotkey_toggle_key_webmin=Załaduj menu Webmina
 settings_hotkey_toggle_key_virtualmin=Załaduj menu Virtualmin
 settings_hotkey_toggle_key_cloudmin=Załaduj menu Cloudmin
@@ -467,7 +467,7 @@ theme_xhred_move_down=Padnij
 theme_xhred_add_after=Dodaj po
 theme_xhred_add_before=Dodaj przed
 settings_show_night_mode_link=Pokaż przycisk trybu dziennego/nocnego
-settings_hotkey_toggle_key_night_mode=Klawisz skrótu do przełączania palety kolorów
+settings_hotkey_toggle_key_night_mode=Przełącz paletę kolorów
 settings_title=Konfiguracja motywu
 settings_subtitle=Dla użytkownika
 
@@ -1048,7 +1048,7 @@ theme_xhred_editing_config_file=Edycja pliku konfiguracyjnego
 theme_xhred_login_message_2fa=Dla tego użytkownika włączono uwierzytelnianie dwuskładnikowe
 theme_xhred_global_verify=Zweryfikować
 settings_show_terminal_link2=Pokaż przycisk powłoki poleceń
-settings_hotkey_shell2=Skrót klawiszowy do powłoki poleceń
+settings_hotkey_shell2=Otwórz powłokę poleceń
 theme_xhred_path_to_console2=Otwórz bieżącą ścieżkę w powłoce poleceń <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Powłoka poleceń
 
@@ -1177,7 +1177,7 @@ theme_xhred_disk_quota_error_message=Brak miejsca w urządzeniu
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Użyj głównego klucza administratora do odszyfrowania
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modyfikator skrótu klawiszowego
+settings_hotkey_toggle_hold_modifier=Przytrzymaj klawisz modyfikujący
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Zawsze pytaj

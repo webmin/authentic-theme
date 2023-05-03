@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=گزینه های قابل تن�
 
 settings_right_hotkey_options=کلیدهای میانبر
 
-settings_right_hotkey_custom_options_description=پیوندهای سفارشی شما را قادر می سازد از <code>1</code> تا <code>9</code> تا سریعاً به هر <code>URL.</code> معتبر Webmin/Usermin/Virtualmin/Cloudmin دسترسی پیدا <code>URL.</code> <code>URL</code> می توان با خواندن منبع آن ، از صفحه محتوای قاب راست باز شده در حال حاضر استخراج کرد. مهم است که <code>URL</code> در ابتدا هیچ برشی ندارد و از پیشوندها استفاده نمی کند. به عنوان مثال ، برای جابجایی سریع به Apache ، روی <code>custom link 1</code> زمینه <code>/apache/</code>. اگر تنظیم کننده کلید پیش فرض پیش فرض روی <code>Alt,</code> تنظیم شود <code>Alt,</code> کلیک روی <code>Alt+1</code> ، ماژول Apache را برای شما باز می کنیم
+settings_right_hotkey_custom_options_description=Ù¾ÛÙÙØ¯ÙØ§Û Ø³ÙØ§Ø±Ø´Û Ø¨Ù Ø´ÙØ§ Ø§ÙÚ©Ø§Ù ÙÛ Ø¯ÙÙØ¯ Ø§Ø² Ø§Ø±ÙØ§Ù <code>1</code> ØªØ§ <code>9</code> Ø¨Ø±Ø§Û Ø¯Ø³ØªØ±Ø³Û Ø³Ø±ÛØ¹ Ø¨Ù ÙØ± Ù¾Ø§ÙÙ ÙØ¹ØªØ¨Ø± <code>URL</code> Ø§Ø³ØªÙØ§Ø¯Ù Ú©ÙÛØ¯. <code>URL</code> code> Ø±Ø§ ÙÛ ØªÙØ§Ù Ø§Ø² ØµÙØ­Ù Ø¨Ø§Ø² Ø´Ø¯Ù ÙØ¹ÙÛ Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ú©Ø±Ø¯. Ø¨Ù Ø¹ÙÙØ§Ù ÙØ«Ø§ÙØ Ø¨Ø±Ø§Û ØªØºÛÛØ± Ø³Ø±ÛØ¹ Ø¨Ù ÙØ§ÚÙÙ ApacheØ ÙØ³ÙØª <code>apache</code> Ø±Ø§ Ø±ÙÛ ÙØ³ÙØª <code>Custom link 1</code> ØªÙØ¸ÛÙ Ú©ÙÛØ¯. Ø§Ú¯Ø± Ú©ÙÛØ¯ Ø§ØµÙØ§Ø­ Ú©ÙÙØ¯Ù Ù¾ÛØ´‌ÙØ±Ø¶ Ø±ÙÛ <code>Alt</code> ØªÙØ¸ÛÙ Ø´Ø¯Ù Ø¨Ø§Ø´Ø¯Ø Ø¨Ø§ Ú©ÙÛÚ© Ø±ÙÛ <code>Alt + 1</code>Ø ÙØ§ÚÙÙ Ø¢Ù¾Ø§ÚÛ Ø´ÙØ§ Ø±Ø§ Ø¨Ø§Ø² ÙÛ‌Ú©ÙØ¯.
 settings_hotkey_custom_1_user=پیوند سفارشی <code>1</code>
 settings_hotkey_custom_2_user=پیوند سفارشی <code>2</code>
 settings_hotkey_custom_3_user=پیوند سفارشی <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=دکمه تازه کردن
 
 settings_theme_options_button=دکمه تنظیمات نمایش نمایش
 
-settings_hotkeys_active=استفاده از کلیدهای میانبر را فعال کنید
-settings_hotkey_toggle_modifier=اصلاح کلیدهای میانبر
+settings_hotkeys_active=فعال کردن
+settings_hotkey_toggle_modifier=کلید اصلاح کننده
 settings_hotkey_toggle_key_webmin=منوی وبمین را بارگیری کنید
 settings_hotkey_toggle_key_virtualmin=منوی Virtualmin را بارگیری کنید
 settings_hotkey_toggle_key_cloudmin=منوی Cloudmin را بارگیری کنید
@@ -549,7 +549,7 @@ theme_xhred_move_down=حرکت به پایین
 theme_xhred_add_after=اضافه کردن بعد از
 theme_xhred_add_before=قبل اضافه کنید
 settings_show_night_mode_link=دکمه نمایش حالت روز/شب
-settings_hotkey_toggle_key_night_mode=کلید میانبر برای تغییر رنگ پالت رنگ
+settings_hotkey_toggle_key_night_mode=پالت رنگ را تغییر دهید
 settings_title=پیکربندی تم
 settings_subtitle=برای کاربر
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=در حال ویرایش فایل پیکربند
 theme_xhred_login_message_2fa=احراز هویت دو عاملی برای ورود به سیستم این کاربر فعال شده است
 theme_xhred_global_verify=تأیید کنید
 settings_show_terminal_link2=دکمه پوسته فرمان را نشان دهید
-settings_hotkey_shell2=کلید میانبر برای پوسته فرمان
+settings_hotkey_shell2=پوسته فرمان را باز کنید
 theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt + ⇧ + K)</tt> باز کنید
 theme_tooltip_terminal_link2=پوسته فرمان
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=هیچ فضایی در دستگاه باق�
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=برای رمزگشایی از کلید مدیر اصلی استفاده کنید
 
 #19.90
-settings_hotkey_toggle_hold_modifier=تعدیل کننده Hotkey Hold
+settings_hotkey_toggle_hold_modifier=کلید اصلاح کننده را نگه دارید
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=همیشه بپرس

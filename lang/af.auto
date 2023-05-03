@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Opstelbare opsies vir outentieke
 
 settings_right_hotkey_options=Sneltoetse
 
-settings_right_hotkey_custom_options_description=Met persoonlike skakels kan u syfers van <code>1</code> tot <code>9</code> gebruik om vinnig toegang tot enige geldige Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> Die <code>URL</code> kan onttrek word vanaf die huidige bladsy met die regte raamraamwerk deur die bron te lees. Dit is belangrik dat <code>URL</code> aan die begin geen streep het nie en nie voorvoegsels gebruik nie. Byvoorbeeld, om vinnig oor te skakel na Apache, stel u in op die <code>custom link 1</code> veld <code>/apache/</code>. As die standaard-sneltoets-wysiger op <code>Alt,</code> klik op <code>Alt+1</code>, en dan word u Apache-module oopgemaak
+settings_right_hotkey_custom_options_description=Gepasmaakte skakels stel jou in staat om syfers van <code>1</code> tot <code>9</code> te gebruik om vinnig toegang tot enige geldige paneel <code>URL</code> te verkry. Die <code>URL</code> kode> kan uit die tans oopgemaakte bladsy onttrek word. Byvoorbeeld, om vinnig oor te skakel na Apache-module, stel <code>apache</code> na <code>Gepasmaakte skakel 1</code>-veld. As die verstek wysiger sleutel gestel is op <code>Alt,</code>, klik op <code>Alt + 1</code>, sal jou Apache-module oopmaak.
 settings_hotkey_custom_1_user=Pasgemaakte skakel <code>1</code>
 settings_hotkey_custom_2_user=Pasgemaakte skakel <code>2</code>
 settings_hotkey_custom_3_user=Pasgemaakte skakel <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Wys verfris-knoppie
 
 settings_theme_options_button=Wys tema-instellingsknoppie
 
-settings_hotkeys_active=Aktiveer die gebruik van die sleutelbord
-settings_hotkey_toggle_modifier=Sneltoets-wysiger
+settings_hotkeys_active=Aktiveer
+settings_hotkey_toggle_modifier=Wysigingssleutel
 settings_hotkey_toggle_key_webmin=Laai Webmin-kieslys
 settings_hotkey_toggle_key_virtualmin=Laai Virtualmin-kieslys
 settings_hotkey_toggle_key_cloudmin=Laai Cloudmin-kieslys
@@ -549,7 +549,7 @@ theme_xhred_move_down=Af beweeg
 theme_xhred_add_after=Voeg daarna by
 theme_xhred_add_before=Voeg voor
 settings_show_night_mode_link=Wys die dag-/nagmodusknoppie
-settings_hotkey_toggle_key_night_mode=Sneltoets om kleurpalet te wissel
+settings_hotkey_toggle_key_night_mode=Wissel kleurpalet
 settings_title=Tema-opstelling
 settings_subtitle=Vir gebruiker
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Wysig tans konfigurasielêer
 theme_xhred_login_message_2fa=Tweefaktor-verifikasie is geaktiveer vir hierdie gebruiker om aan te meld
 theme_xhred_global_verify=Verifieer
 settings_show_terminal_link2=Wys opdragskakelknoppie
-settings_hotkey_shell2=Sneltoets vir opdragskaal
+settings_hotkey_shell2=Maak opdragdop oop
 theme_xhred_path_to_console2=Open die huidige pad in die opdragskal <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Opdragskulp
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=geen spasie oor op die toestel nie
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Gebruik hoofadministrateursleutel vir dekripsie
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey hou wysiger
+settings_hotkey_toggle_hold_modifier=Hou wysigingssleutel in
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Vra altyd

@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=אפשרויות הניתנות 
 
 settings_right_hotkey_options=מקשי קיצור
 
-settings_right_hotkey_custom_options_description=קישורים מותאמים אישית מאפשרים לך להשתמש בספרות מ <code>1</code> עד <code>9</code> מנת לגשת במהירות לכל <code>URL.</code> תקינה של Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> ניתן לשלוף את <code>URL</code> מדף תוכן המסגרת הימני שנפתח כעת, על ידי קריאת המקור שלה. חשוב <code>URL</code> לא תהיה נטויה בתחילת הדרך והיא לא תשתמש בקידומות. לדוגמה, למעבר מהיר לאפאצ'י, קבע לשדה <code>custom link 1</code> <code>/apache/</code> <code>custom link 1</code>. אם שינוי מקשי המקשים המהווים ברירת מחדל מוגדר כ- <code>Alt,</code> לחיצה על <code>Alt+1</code>, תפתח בפניך את מודול Apache
+settings_right_hotkey_custom_options_description=קישורים מותאמים אישית מאפשרים לך להשתמש בספרות מ-<code>1</code> עד <code>9</code> כדי לקבל גישה מהירה לכל <code>URL</code> של חלונית חוקית. ה<code>URL</code> קוד> ניתן לחלץ מהדף שנפתח כעת. לדוגמה, כדי לעבור במהירות למודול Apache, הגדר את <code>apache</code> לשדה <code>קישור מותאם אישית 1</code>. אם מפתח השינוי המוגדר כברירת מחדל מוגדר ל-<code>Alt,</code> לחיצה על <code>Alt + 1</code> תפתח את מודול ה-Apache שלך.
 settings_hotkey_custom_1_user=קישור מותאם אישית <code>1</code>
 settings_hotkey_custom_2_user=קישור מותאם אישית <code>2</code>
 settings_hotkey_custom_3_user=קישור מותאם אישית <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=הצג כפתור רענון
 
 settings_theme_options_button=הצג לחצן הגדרות נושא
 
-settings_hotkeys_active=אפשר שימוש במקשי מקשים חמים
-settings_hotkey_toggle_modifier=שינוי מקשי קיצור
+settings_hotkeys_active=לְאַפשֵׁר
+settings_hotkey_toggle_modifier=מפתח שינוי
 settings_hotkey_toggle_key_webmin=טען תפריט Webmin
 settings_hotkey_toggle_key_virtualmin=טען את תפריט Virtualmin
 settings_hotkey_toggle_key_cloudmin=טען את תפריט Cloudmin
@@ -549,7 +549,7 @@ theme_xhred_move_down=לרדת
 theme_xhred_add_after=הוסף אחרי
 theme_xhred_add_before=תוסיף לפני
 settings_show_night_mode_link=הצג כפתור מצב יום/לילה
-settings_hotkey_toggle_key_night_mode=מקש קיצור להחלפת לוח צבעים
+settings_hotkey_toggle_key_night_mode=החלף את לוח הצבעים
 settings_title=תצורת נושא
 settings_subtitle=למשתמש
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=עריכת קובץ תצורה
 theme_xhred_login_message_2fa=אימות דו-גורמי הופעל עבור משתמש זה בכניסה
 theme_xhred_global_verify=תאשר
 settings_show_terminal_link2=הצג לחצן מעטפת פקודה
-settings_hotkey_shell2=מקש מקשים לקליפת פקודה
+settings_hotkey_shell2=פתח את מעטפת הפקודה
 theme_xhred_path_to_console2=פתח נתיב נוכחי במעטפת הפקודה <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=פגז פיקוד
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=אין עוד מקום במכשיר
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=השתמש במפתח מנהל ראשי לפענוח
 
 #19.90
-settings_hotkey_toggle_hold_modifier=משנה החזקת מקשי קיצור
+settings_hotkey_toggle_hold_modifier=החזק את מקש השינוי
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=תמיד תשאל

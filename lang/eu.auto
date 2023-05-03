@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Aukera konfiguragarriak Benetako
 
 settings_right_hotkey_options=Tekla lasterrak
 
-settings_right_hotkey_custom_options_description=Lotura pertsonalizatuak <code>1</code> <code>9</code> arteko zenbakiak erabiltzeko aukera ematen dizu edozein Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> baliozkoak sartzeko <code>URL.</code> Unean irekitako eskuineko markoaren edukiaren orrialdetik <code>URL</code> sor daiteke, bere jatorria irakurriz. Garrantzitsua da <code>URL</code> hasieran ez duela zirrikiturik eta ez erabiltzea aurrizkiak. Adibidez, Apachera azkar aldatzeko, ezarri <code>custom link 1</code> <code>/apache/</code> eremu <code>custom link 1</code>. Teklatuko lasterbideen lehenetsia <code>Alt,</code> ezarrita badago <code>Alt,</code> <code>Alt+1</code> sakatzean Apache modulua irekiko zaizu
+settings_right_hotkey_custom_options_description=Esteka pertsonalizatuek <code>1</code>tik <code>9</code> bitarteko zenbakiak erabiltzeko aukera ematen dute, edozein panel baliozko <code>URL</code> azkar sartzeko. <code>URLa</code> kodea> unean irekita dagoen orrialdetik atera daiteke. Adibidez, Apache modulura azkar aldatzeko, ezarri <code>apache</code> <code>Esteka pertsonalizatua 1</code> eremuan. Tekla modifikatzaile lehenetsia <code>Alt</code> gisa ezarrita badago, <code>Alt + 1</code> sakatuz gero, Apache modulua irekiko da.
 settings_hotkey_custom_1_user=<code>1</code> lotura pertsonalizatua
 settings_hotkey_custom_2_user=<code>2</code> lotura pertsonalizatua
 settings_hotkey_custom_3_user=<code>3</code> lotura pertsonalizatua
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Erakutsi freskatzeko botoia
 
 settings_theme_options_button=Erakutsi gaiaren ezarpenen botoia
 
-settings_hotkeys_active=Gaitu lasterbideen erabilera
-settings_hotkey_toggle_modifier=Zuzenbide teklak aldatzea
+settings_hotkeys_active=Gaitu
+settings_hotkey_toggle_modifier=Tekla aldatzailea
 settings_hotkey_toggle_key_webmin=Kargatu Webmin menua
 settings_hotkey_toggle_key_virtualmin=Kargatu Virtualmin menua
 settings_hotkey_toggle_key_cloudmin=Kargatu Cloudmin menua
@@ -549,7 +549,7 @@ theme_xhred_move_down=Jaitsi
 theme_xhred_add_after=Gehitu ondoren
 theme_xhred_add_before=Gehitu aurretik
 settings_show_night_mode_link=Erakutsi eguna/gaua modua botoia
-settings_hotkey_toggle_key_night_mode=Laster-tekla kolore-paleta aldatzeko
+settings_hotkey_toggle_key_night_mode=Aldatu kolore-paleta
 settings_title=Gaiaren konfigurazioa
 settings_subtitle=Erabiltzailearentzat
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Konfigurazio fitxategia editatzen
 theme_xhred_login_message_2fa=Bi faktoreko autentifikazioa gaitu da erabiltzaile honek saioa hasteko
 theme_xhred_global_verify=Egiaztatu
 settings_show_terminal_link2=Erakutsi komando shell botoia
-settings_hotkey_shell2=Komando shellaren laster tekla
+settings_hotkey_shell2=Ireki komandoen shell
 theme_xhred_path_to_console2=Ireki uneko bidea komando shellean <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Agindu shell
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Ez da lekurik geratzen gailuan
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Erabili administratzaile-gako nagusia deszifratzeko
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Laster-tekla mantendu aldatzailea
+settings_hotkey_toggle_hold_modifier=Eutsi sakatuta tekla aldatzailea
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Beti galdetu

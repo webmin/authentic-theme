@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Konfigūruojamos autentiškos te
 
 settings_right_hotkey_options=Spartieji klavišai
 
-settings_right_hotkey_custom_options_description=Pasirinktinės nuorodos leidžia naudoti skaitmenis nuo <code>1</code> iki <code>9</code>, kad būtų galima greitai pasiekti galiojantį „Webmin“/„Usermin“/„Virtualmin“/„Cloudmin“ <code>URL.</code> <code>URL</code> galima išgauti iš šiuo metu atidaryto dešiniojo kadro turinio puslapio, perskaičius jo šaltinį. Svarbu, kad <code>URL</code> pradžioje nebūtų brūkšnio ir nenaudojami priešdėliai. Pvz., Norėdami greitai perjungti į „Apache“, nustatykite <code>custom link 1</code> lauką <code>/apache/</code>. Jei numatytasis sparčiųjų klavišų keitiklis bus nustatytas į <code>Alt,</code> spustelėję <code>Alt+1</code>, atidarysite „Apache“ modulį
+settings_right_hotkey_custom_options_description=Naudodami tinkintas nuorodas galite naudoti skaitmenis nuo <code>1</code> iki <code>9</code>, kad galėtumėte greitai pasiekti bet kurį tinkamą skydelio <code>URL.</code> <code>URL</code> code> galima ištraukti iš šiuo metu atidaryto puslapio. Pavyzdžiui, norėdami greitai perjungti į Apache modulį, nustatykite lauką <code>apache</code> į <code>Custom link 1</code>. Jei numatytasis modifikatoriaus klavišas nustatytas į <code>Alt</code>, spustelėjus <code>Alt + 1</code> bus atidarytas Apache modulis.
 settings_hotkey_custom_1_user=<code>1</code> pasirinktinė nuoroda
 settings_hotkey_custom_2_user=<code>2</code> pasirinktinė nuoroda
 settings_hotkey_custom_3_user=<code>3</code> pasirinktinė nuoroda
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Rodyti atnaujinimo mygtuką
 
 settings_theme_options_button=Rodyti temos nustatymų mygtuką
 
-settings_hotkeys_active=Įgalinti sparčiųjų klavišų naudojimą
-settings_hotkey_toggle_modifier=Spartiųjų klavišų modifikatorius
+settings_hotkeys_active=Įgalinti
+settings_hotkey_toggle_modifier=Modifikatoriaus raktas
 settings_hotkey_toggle_key_webmin=Įkelti Webmin meniu
 settings_hotkey_toggle_key_virtualmin=Įkelti Virtualmin meniu
 settings_hotkey_toggle_key_cloudmin=Įkelti Cloudmin meniu
@@ -549,7 +549,7 @@ theme_xhred_move_down=Judėk žemyn
 theme_xhred_add_after=Pridėti po
 theme_xhred_add_before=Pridėti prieš tai
 settings_show_night_mode_link=Rodyti dienos/nakties režimo mygtuką
-settings_hotkey_toggle_key_night_mode=Spalvų paletės perjungimo spartusis klavišas
+settings_hotkey_toggle_key_night_mode=Perjungti spalvų paletę
 settings_title=Temos konfigūracija
 settings_subtitle=Vartotojui
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Redaguojamas konfigūracijos failas
 theme_xhred_login_message_2fa=Šiam vartotojui buvo įjungtas dviejų veiksnių autentifikavimas
 theme_xhred_global_verify=Patikrinkite
 settings_show_terminal_link2=Rodyti komandos apvalkalo mygtuką
-settings_hotkey_shell2=Spartusis klavišas komandų apvalkalui
+settings_hotkey_shell2=Atidarykite komandų apvalkalą
 theme_xhred_path_to_console2=Atidarykite dabartinį kelią komandų apvalkale <tt>(„Alt“+„Shift“+K)</tt>
 theme_tooltip_terminal_link2=Komandos apvalkalas
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=įrenginyje nebėra vietos
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Iššifravimui naudokite pagrindinį administratoriaus raktą
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Spartųjų klavišų laikymo modifikatorius
+settings_hotkey_toggle_hold_modifier=Laikykite modifikatoriaus klavišą
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Visada klausk

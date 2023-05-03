@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=真實主題的可配置選項
 
 settings_right_hotkey_options=熱鍵
 
-settings_right_hotkey_custom_options_description=自定義鏈接使您可以使用<code>1</code>到<code>9</code>數字，以便快速訪問任何有效的Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code>可以通過閱讀<code>URL</code>從當前打開的右框架內容頁面中提取<code>URL</code> 。重要的是， <code>URL</code>開頭必須沒有斜杠並且不使用前綴。例如，要快速切換到Apache，請設置為<code>custom link 1</code>字段<code>/apache/</code> 。如果默認的熱鍵修改器設置為<code>Alt,</code>單擊<code>Alt+1</code> ，將打開您的Apache模塊。
+settings_right_hotkey_custom_options_description=自定義鏈接使您能夠使用從 <code>1</code> 到 <code>9</code> 的數字來快速訪問任何有效的面板 <code>URL。</code> <code>URL</code> 可以從當前打開的頁面中提取出來。例如，要快速切換到 Apache 模塊，請將 <code>apache</code> 設置為 <code>Custom link 1</code> 字段。如果默認修改鍵設置為 <code>Alt，</code> 單擊 <code>Alt + 1</code>，將打開 Apache 模塊。
 settings_hotkey_custom_1_user=自訂連結<code>1</code>
 settings_hotkey_custom_2_user=自定義鏈接<code>2</code>
 settings_hotkey_custom_3_user=自訂連結<code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=顯示刷新按鈕
 
 settings_theme_options_button=顯示主題設置按鈕
 
-settings_hotkeys_active=啟用熱鍵用法
-settings_hotkey_toggle_modifier=熱鍵修改器
+settings_hotkeys_active=使能夠
+settings_hotkey_toggle_modifier=修改鍵
 settings_hotkey_toggle_key_webmin=加載 Webmin 菜單
 settings_hotkey_toggle_key_virtualmin=加載 Virtualmin 菜單
 settings_hotkey_toggle_key_cloudmin=加載 Cloudmin 菜單
@@ -549,7 +549,7 @@ theme_xhred_move_down=下移
 theme_xhred_add_after=加入後
 theme_xhred_add_before=加入之前
 settings_show_night_mode_link=顯示白天/夜晚模式按鈕
-settings_hotkey_toggle_key_night_mode=用於切換調色板的熱鍵
+settings_hotkey_toggle_key_night_mode=切換調色板
 settings_title=主題配置
 settings_subtitle=對於用戶
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=編輯配置文件
 theme_xhred_login_message_2fa=已啟用此用戶的兩因素身份驗證登錄
 theme_xhred_global_verify=校驗
 settings_show_terminal_link2=顯示命令外殼按鈕
-settings_hotkey_shell2=命令外殼熱鍵
+settings_hotkey_shell2=打開命令外殼
 theme_xhred_path_to_console2=在命令外殼<tt>（Alt+Shift+K）</tt>中打開當前路徑
 theme_tooltip_terminal_link2=命令外殼
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=設備上沒有剩餘空間
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=使用主管理員密鑰進行解密
 
 #19.90
-settings_hotkey_toggle_hold_modifier=熱鍵保持修飾符
+settings_hotkey_toggle_hold_modifier=按住修改鍵
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=總是問

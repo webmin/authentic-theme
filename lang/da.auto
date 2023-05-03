@@ -25,7 +25,7 @@ settings_right_theme_configurable_options_title=Konfigurerbare indstillinger til
 
 settings_right_hotkey_options=Genvejstaster
 
-settings_right_hotkey_custom_options_description=Brugertilpassede links giver dig mulighed for at bruge cifre fra <code>1</code> til <code>9</code> for hurtigt at få adgang til enhver gyldig Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> kan udvindes fra den aktuelt åbne side med højre rammeindhold ved at læse dens kilde. Det er vigtigt, at <code>URL</code> har nogen skråstreg i begyndelsen og ikke bruger præfikser. For eksempel for at skifte hurtigt til Apache skal du indstille til <code>custom link 1</code> felt <code>/apache/</code>. Hvis standard hotkeys-modifikatoren er indstillet til <code>Alt,</code> klikke på <code>Alt+1</code>, åbner du Apache-modul
+settings_right_hotkey_custom_options_description=Brugerdefinerede links giver dig mulighed for at bruge cifrene fra <code>1</code> til <code>9</code> for at få hurtig adgang til enhver gyldig panel-<code>URL.</code> <code>URL</code> kan udtrækkes fra den aktuelt åbnede side. For at hurtigt skifte til Apache-modulet skal du f.eks. indstille <code>apache</code> til feltet <code>Brugerdefineret link 1</code>. Hvis standardmodifikatornøglen er indstillet til <code>Alt,</code> vil klik på <code>Alt + 1</code> åbne dit Apache-modul.
 settings_hotkey_custom_1_user=Brugerdefineret link <code>1</code>
 settings_hotkey_custom_2_user=Brugerdefineret link <code>2</code>
 settings_hotkey_custom_3_user=Brugerdefineret link <code>3</code>
@@ -49,8 +49,8 @@ settings_leftmenu_button_refresh=Vis opdateringsknap
 
 settings_theme_options_button=Vis knap til temaindstillinger
 
-settings_hotkeys_active=Aktivér brug af genvejstaster
-settings_hotkey_toggle_modifier=Hotkeys-modifikator
+settings_hotkeys_active=Aktiver
+settings_hotkey_toggle_modifier=Modifikationstast
 settings_hotkey_toggle_key_webmin=Indlæs Webmin-menuen
 settings_hotkey_toggle_key_virtualmin=Indlæs Virtualmin-menuen
 settings_hotkey_toggle_key_cloudmin=Indlæs Cloudmin-menuen
@@ -461,7 +461,7 @@ theme_xhred_move_down=Flyt ned
 theme_xhred_add_after=Tilføj efter
 theme_xhred_add_before=Tilføj før
 settings_show_night_mode_link=Vis dag/nat-tilstandsknap
-settings_hotkey_toggle_key_night_mode=Genvejstast til at skifte farvepalet
+settings_hotkey_toggle_key_night_mode=Skift farvepalet
 settings_title=Tema Konfiguration
 settings_subtitle=Til bruger
 
@@ -1042,7 +1042,7 @@ theme_xhred_editing_config_file=Redigering af konfigurationsfil
 theme_xhred_login_message_2fa=To-faktor-godkendelse er blevet aktiveret for denne bruger til at logge på
 theme_xhred_global_verify=Verificere
 settings_show_terminal_link2=Vis kommandoskal-knap
-settings_hotkey_shell2=Genvejstast til kommandoskal
+settings_hotkey_shell2=Åbn kommandoskal
 theme_xhred_path_to_console2=Åbn den aktuelle sti i kommandoskallen <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Kommandoskal
 
@@ -1171,7 +1171,7 @@ theme_xhred_disk_quota_error_message=Ikke mere plads på enheden
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Brug hovedadministratornøgle til dekryptering
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey hold modifikator
+settings_hotkey_toggle_hold_modifier=Hold modifikationstasten nede
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Spørg altid

@@ -1,8 +1,12 @@
 settings_right_hotkey_options=Klávesové zkratky
 
+settings_right_hotkey_custom_options_description=Vlastní odkazy vám umožňují používat číslice od <code>1</code> do <code>9</code> za účelem rychlého přístupu k libovolné platné <code>URL panelu</code> <code>URL</code> kód> lze extrahovat z aktuálně otevřené stránky. Chcete-li například rychle přepnout na modul Apache, nastavte <code>apache</code> na pole <code>Vlastní odkaz 1</code>. Pokud je výchozí modifikační klíč nastaven na <code>Alt</code>, kliknutím na <code>Alt + 1</code> se otevře modul Apache.
+
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
 settings_right_reload=Načíst výchozí stránku na přepínač kartě
 
+settings_hotkeys_active=Umožnit
+settings_hotkey_toggle_modifier=Modifikační klíč
 settings_hotkey_toggle_key_webmin=Načíst menu Webmin
 settings_hotkey_toggle_key_virtualmin=Načíst nabídku Virtualmin
 settings_hotkey_toggle_key_cloudmin=Načíst nabídku Cloudmin
@@ -402,7 +406,7 @@ theme_xhred_move_down=Posunout dolů
 theme_xhred_add_after=Přidat po
 theme_xhred_add_before=Přidat dříve
 settings_show_night_mode_link=Tlačítko režimu den/noc
-settings_hotkey_toggle_key_night_mode=Klávesová zkratka pro přepínání palety barev
+settings_hotkey_toggle_key_night_mode=Přepnout paletu barev
 settings_title=Konfigurace motivu
 settings_subtitle=Pro uživatele
 
@@ -983,7 +987,7 @@ theme_xhred_editing_config_file=Úpravy konfiguračního souboru
 theme_xhred_login_message_2fa=Pro přihlášení tohoto uživatele bylo povoleno dvoufaktorové ověřování
 theme_xhred_global_verify=Ověřit
 settings_show_terminal_link2=Zobrazit tlačítko příkazového prostředí
-settings_hotkey_shell2=Klávesová zkratka pro příkazový shell
+settings_hotkey_shell2=Otevřete příkazový shell
 theme_xhred_path_to_console2=Otevřete aktuální cestu v příkazovém prostředí <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Příkazový shell
 
@@ -1112,7 +1116,7 @@ theme_xhred_disk_quota_error_message=Na zařízení nezbývá místo
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=K dešifrování použijte hlavní klíč správce
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modifikátor podržení klávesové zkratky
+settings_hotkey_toggle_hold_modifier=Podržte modifikační klávesu
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Vždy se ptej

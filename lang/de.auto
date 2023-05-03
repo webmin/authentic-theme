@@ -1,7 +1,11 @@
 settings_right_hotkey_options=Hotkeys
 
+settings_right_hotkey_custom_options_description=Mit benutzerdefinierten Links können Sie Ziffern von <code>1</code> bis <code>9</code> verwenden, um schnell auf jede gültige Panel-<code>URL</code> zuzugreifen. Die <code>URL</code> code> kann aus der aktuell geöffneten Seite extrahiert werden. Um beispielsweise schnell zum Apache-Modul zu wechseln, setzen Sie <code>apache</code> auf das Feld <code>Benutzerdefinierter Link 1</code>. Wenn die Standard-Zusatztaste auf <code>Alt</code> eingestellt ist, wird durch Klicken auf <code>Alt + 1</code> Ihr Apache-Modul geöffnet.
+
 settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
 
+settings_hotkeys_active=Ermöglichen
+settings_hotkey_toggle_modifier=Modifikatortaste
 settings_hotkey_toggle_key_webmin=Laden Sie das Webmin-Menü
 settings_hotkey_toggle_key_virtualmin=Laden Sie das Virtualmin-Menü
 settings_hotkey_toggle_key_cloudmin=Laden Sie das Cloudmin-Menü
@@ -20,7 +24,7 @@ theme_xhred_sysinfo_vmdocs=Virtualmin-Dokumentation
 theme_xhred_sysinfo_cmdocs=Cloudmin-Dokumentation
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Hotkey zum Umschalten der Farbpalette
+settings_hotkey_toggle_key_night_mode=Farbpalette umschalten
 
 #18.48
 theme_force_upgrade=Thema aktualisieren
@@ -67,7 +71,7 @@ theme_xhred_editing_config_file=Konfigurationsdatei bearbeiten
 theme_xhred_login_message_2fa=Die Zwei-Faktor-Authentifizierung wurde aktiviert, damit sich dieser Benutzer anmelden kann
 theme_xhred_global_verify=Überprüfen
 settings_show_terminal_link2=Befehls-Shell-Schaltfläche anzeigen
-settings_hotkey_shell2=Hotkey für die Befehlsshell
+settings_hotkey_shell2=Kommando-Shell öffnen
 theme_xhred_path_to_console2=Öffnen Sie den aktuellen Pfad in der Befehlsshell <tt>(Alt+Umschalt+K)</tt>
 theme_tooltip_terminal_link2=Befehlsshell
 
@@ -196,7 +200,7 @@ theme_xhred_disk_quota_error_message=Kein Speicherplatz auf Gerät
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Verwenden Sie den Hauptadministratorschlüssel für die Entschlüsselung
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey-Hold-Modifikator
+settings_hotkey_toggle_hold_modifier=Modifikatortaste gedrückt halten
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Immer fragen

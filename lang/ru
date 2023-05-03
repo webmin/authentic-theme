@@ -94,9 +94,6 @@ settings_leftmenu_button_refresh=Показывать кнопку обнови�
 
 settings_theme_options_button=Показывать кнопку настройки темы
 
-settings_hotkeys_active=Включить использование горячих клавиш
-settings_hotkey_toggle_modifier=Первая горячая клавиша
-
 settings_side_slider_enabled=Включить боковую панель
 
 theme_changelog=Список изменений

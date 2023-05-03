@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Otantik Tema için yapılandır�
 
 settings_right_hotkey_options=Kısayol tuşları
 
-settings_right_hotkey_custom_options_description=Özel bağlantılar, geçerli bir Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> hızlı bir şekilde erişmek için <code>1</code> <code>9</code> olan rakamları kullanmanızı sağlar <code>URL.</code> <code>URL</code>, kaynağı okunarak şu anda açık olan sağ çerçeve içerik sayfasından çıkarılabilir. <code>URL</code> başında eğik çizgi olmaması ve önek kullanmaması önemlidir. Örneğin, Apache'ye hızlı geçiş yapmak için <code>custom link 1</code> alanı <code>/apache/</code>. Varsayılan kısayol tuşu değiştiricisi <code>Alt,</code> ayarlanmışsa <code>Alt,</code> <code>Alt+1</code> tıklattığınızda Apache modülü açılır
+settings_right_hotkey_custom_options_description=Özel bağlantılar, herhangi bir geçerli panel <code>URL'sine</code> hızlı erişim sağlamak için <code>1</code> ile <code>9</code> arasındaki rakamları kullanmanıza olanak tanır. <code>URL</code> şu anda açık olan sayfadan çıkarılabilir. Örneğin, Apache modülüne hızlı geçiş yapmak için <code>Apache</code> öğesini <code>Custom link 1</code> alanına ayarlayın. Varsayılan değiştirici anahtar <code>Alt</code> olarak ayarlanmışsa, <code>Alt + 1</code> tıklandığında Apache modülü açılır.
 settings_hotkey_custom_1_user=Özel bağlantı <code>1</code>
 settings_hotkey_custom_2_user=Özel bağlantı <code>2</code>
 settings_hotkey_custom_3_user=Özel bağlantı <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Yenile düğmesini göster
 
 settings_theme_options_button=Tema ayarlarını göster düğmesi
 
-settings_hotkeys_active=Kısayol tuşu kullanımını etkinleştir
-settings_hotkey_toggle_modifier=Kısayol tuşları değiştiricisi
+settings_hotkeys_active=Olanak vermek
+settings_hotkey_toggle_modifier=Değiştirici tuş
 settings_hotkey_toggle_key_webmin=Webmin menüsünü yükle
 settings_hotkey_toggle_key_virtualmin=Virtualmin menüsünü yükle
 settings_hotkey_toggle_key_cloudmin=Cloudmin menüsünü yükle
@@ -549,7 +549,7 @@ theme_xhred_move_down=Aşağı inmek
 theme_xhred_add_after=Sonra Ekle
 theme_xhred_add_before=Önce ekle
 settings_show_night_mode_link=Gündüz/gece modu düğmesini göster
-settings_hotkey_toggle_key_night_mode=Renk paletini değiştirmek için kısayol tuşu
+settings_hotkey_toggle_key_night_mode=Renk paletini değiştir
 settings_title=Tema Yapılandırması
 settings_subtitle=Kullanıcı için
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Yapılandırma dosyasını düzenleme
 theme_xhred_login_message_2fa=Bu kullanıcının oturum açması için iki faktörlü kimlik doğrulama etkinleştirildi
 theme_xhred_global_verify=Doğrulayın
 settings_show_terminal_link2=Komut kabuğu düğmesini göster
-settings_hotkey_shell2=Komut kabuğu için kısayol tuşu
+settings_hotkey_shell2=Komut kabuğunu aç
 theme_xhred_path_to_console2=Geçerli yolu komut kabuğunda açın <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Komut kabuğu
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Cihazda boş alan kalmadı
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Şifre çözme için ana yönetici anahtarını kullanın
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Kısayol tuşu tutma değiştiricisi
+settings_hotkey_toggle_hold_modifier=değiştirici tuşu basılı tutun
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Her zaman sor

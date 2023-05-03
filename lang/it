@@ -112,7 +112,6 @@ settings_right_theme_configurable_options_title=Opzioni impostabili per Authenti
 
 settings_right_hotkey_options=Tasti di scelta rapida
 
-settings_right_hotkey_custom_options_description=I link personalizzati ti permettono di utilizzare cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> Webmin/Usermin/Virtualmin/Cloudmin. L'<code>URL</code> può essere estratto dal riquadro destro del contenuto della pagina attualmente aperta, leggendone l'origine. E' importante che l'<code>URL</code> non abbia una barra all'inizio e non utilizzi prefissi. Per esempio, per passare rapidamente ad Apache, impostare il campo<code>Link personalizzato 1</code> a <code>/apache/</code>. Se il modificatore predefinito dei tasti di scelta rapida è impostato a <code>Alt,</code> premendo <code>Alt+1</code>, si aprirà il modulo Apache.
 settings_hotkey_custom_1_user=Link personalizzato <code>1</code>
 settings_hotkey_custom_2_user=Link personalizzato <code>2</code>
 settings_hotkey_custom_3_user=Link personalizzato <code>3</code>
@@ -135,9 +134,6 @@ settings_leftmenu_button_language=Mostra pulsante Lingua
 settings_leftmenu_button_refresh=Mostra pulsante Ricarica
 
 settings_theme_options_button=Mostra pulsante Impostazioni del tema
-
-settings_hotkeys_active=Attiva utilizzo dei tasti di scelta rapida
-settings_hotkey_toggle_modifier=Modificatore tasti di scelta rapida
 
 settings_sysinfo_easypie_charts=Mostra grafici
 settings_sysinfo_theme_updates=Controlla aggiornamenti di Authentic Theme
@@ -1109,7 +1105,6 @@ theme_xhred_editing_config_file=Stai modificando un file di configurazione
 theme_xhred_login_message_2fa=L'autenticazione a due fattori è stata abilitata per questo utente per effettuare il login
 theme_xhred_global_verify=Verifica
 settings_show_terminal_link2=Mostra il pulsante della shell di comando
-settings_hotkey_shell2=Tasto di scelta rapida per la shell di comando
 theme_xhred_path_to_console2=Aprire il percorso corrente nella shell di comando <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Shell di comando
 

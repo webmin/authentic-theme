@@ -1,7 +1,11 @@
 settings_right_hotkey_options=Kekunci panas
 
+settings_right_hotkey_custom_options_description=Pautan tersuai membolehkan anda menggunakan digit daripada <code>1</code> hingga <code>9</code> untuk mengakses pantas mana-mana panel <code>URL yang sah.</code> <code>URL</code> boleh diekstrak dari halaman yang sedang dibuka. Contohnya, untuk beralih pantas kepada modul Apache, tetapkan <code>apache</code> kepada medan <code>Pautan tersuai 1</code>. Jika kunci pengubah suai lalai ditetapkan kepada <code>Alt,</code> mengklik <code>Alt + 1</code>, akan membuka modul Apache anda.
+
 settings_right_reload=Muatkan halaman lalai pada suis tab
 
+settings_hotkeys_active=Dayakan
+settings_hotkey_toggle_modifier=Kunci pengubah suai
 settings_hotkey_toggle_key_webmin=Muatkan menu Webmin
 settings_hotkey_toggle_key_virtualmin=Muatkan menu Virtualmin
 settings_hotkey_toggle_key_cloudmin=Muatkan menu Cloudmin
@@ -20,7 +24,7 @@ theme_xhred_sysinfo_vmdocs=dokumentasi Virtualmin
 theme_xhred_sysinfo_cmdocs=Dokumentasi Cloudmin
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Hotkey untuk menogol palet warna
+settings_hotkey_toggle_key_night_mode=Togol palet warna
 
 #18.48
 theme_force_upgrade=Kemas kini tema
@@ -534,7 +538,7 @@ theme_xhred_editing_config_file=Mengedit fail konfigurasi
 theme_xhred_login_message_2fa=Pengesahan dua faktor telah diaktifkan untuk pengguna ini log masuk
 theme_xhred_global_verify=Sahkan
 settings_show_terminal_link2=Tunjukkan butang shell arahan
-settings_hotkey_shell2=Hotkey untuk shell arahan
+settings_hotkey_shell2=Buka shell arahan
 theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Cengkerang arahan
 
@@ -664,7 +668,7 @@ theme_xhred_disk_quota_error_message=Tiada lagi ruang di dalam peranti
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Gunakan kunci pentadbir induk untuk penyahsulitan
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Pengubah suai tahan kekunci pintas
+settings_hotkey_toggle_hold_modifier=Pegang kekunci pengubah suai
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Selalu bertanya

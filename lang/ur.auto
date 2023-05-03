@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=مستند تھیم کے لئے 
 
 settings_right_hotkey_options=ہاٹکیز
 
-settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> The <code>URL</code> can be extracted from the currently opened right frame content page, by reading its source. It's important that <code>URL</code> has no slash at the beginning and doesn't use prefixes. For example, to quick-switch to Apache, set to <code>custom link 1</code> field <code>/apache/</code>. If the default hotkeys modifier set to <code>Alt,</code> clicking <code>Alt+1</code>, will open you Apache module
+settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid panel <code>URL.</code> The <code>URL</code> can be extracted from the currently opened page. For example, to quick-switch to Apache module, set <code>apache</code> to <code>Custom link 1</code> field. If the default modifier key is set to <code>Alt,</code> clicking <code>Alt + 1</code>, will open you Apache module.
 settings_hotkey_custom_1_user=Custom link <code>1</code>
 settings_hotkey_custom_2_user=Custom link <code>2</code>
 settings_hotkey_custom_3_user=Custom link <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=ریفریش بٹن دکھائیں
 
 settings_theme_options_button=تھیم کی ترتیبات کا بٹن دکھائیں
 
-settings_hotkeys_active=ہاٹکیز کے استعمال کو فعال کریں
-settings_hotkey_toggle_modifier=ہاٹکیز ترمیم کنندہ
+settings_hotkeys_active=فعال
+settings_hotkey_toggle_modifier=ترمیم کنندہ کلید
 settings_hotkey_toggle_key_webmin=Webmin مینو لوڈ کریں۔
 settings_hotkey_toggle_key_virtualmin=ورچوئل مین مینو لوڈ کریں۔
 settings_hotkey_toggle_key_cloudmin=Cloudmin مینو لوڈ کریں۔
@@ -549,7 +549,7 @@ theme_xhred_move_down=نیچے منتقل
 theme_xhred_add_after=کے بعد شامل کریں
 theme_xhred_add_before=پہلے شامل کریں
 settings_show_night_mode_link=ڈے/نائٹ موڈ بٹن دکھائیں
-settings_hotkey_toggle_key_night_mode=رنگ پیلیٹ ٹوگل کرنے کے لیے ہاٹکی
+settings_hotkey_toggle_key_night_mode=رنگ پیلیٹ ٹوگل کریں۔
 settings_title=تھیم کنفیگریشن
 settings_subtitle=صارف کے لئے
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=ترمیم شدہ فائل فائل
 theme_xhred_login_message_2fa=اس صارف کو لاگ ان کرنے کیلئے دو عنصر کی توثیق کو فعال کردیا گیا ہے
 theme_xhred_global_verify=تصدیق کریں
 settings_show_terminal_link2=کمانڈ شیل بٹن دکھائیں
-settings_hotkey_shell2=کمانڈ شیل کے لئے ہاٹکی
+settings_hotkey_shell2=کمانڈ شیل کھولیں۔
 theme_xhred_path_to_console2=Open current path in command shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=کمانڈ شیل
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=آلے میں کوئی جگہ نہیں بچ
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=ڈکرپشن کے لیے ماسٹر ایڈمنسٹریٹر کلید استعمال کریں۔
 
 #19.90
-settings_hotkey_toggle_hold_modifier=ہاٹکی ہولڈ موڈیفائر
+settings_hotkey_toggle_hold_modifier=موڈیفائر کلید کو دبائے رکھیں
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=ہمیشہ پوچھو

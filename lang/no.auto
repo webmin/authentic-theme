@@ -1,7 +1,11 @@
 settings_right_hotkey_options=Hurtigtaster
 
+settings_right_hotkey_custom_options_description=Egendefinerte lenker lar deg bruke sifre fra <code>1</code> til <code>9</code> for å få rask tilgang til alle gyldige panel-<code>URL.</code> <code>URL</code> kode> kan trekkes ut fra siden som er åpnet. For å raskt bytte til Apache-modul, sett for eksempel <code>apache</code> til <code>Egendefinert lenke 1</code>-feltet. Hvis standard modifikasjonsnøkkel er satt til <code>Alt,</code>, åpnes Apache-modulen ved å klikke <code>Alt + 1</code>.
+
 settings_right_reload=Last inn standardsiden på fanebryteren
 
+settings_hotkeys_active=Muliggjøre
+settings_hotkey_toggle_modifier=Modifikatortast
 settings_hotkey_toggle_key_webmin=Last inn Webmin-menyen
 settings_hotkey_toggle_key_virtualmin=Last Virtualmin-menyen
 settings_hotkey_toggle_key_cloudmin=Last ned Cloudmin-menyen
@@ -20,7 +24,7 @@ theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon
 theme_xhred_sysinfo_cmdocs=Cloudmin dokumentasjon
 
 #18.40
-settings_hotkey_toggle_key_night_mode=Hurtigtast for å veksle mellom fargepalett
+settings_hotkey_toggle_key_night_mode=Bytt fargepalett
 
 #18.48
 theme_force_upgrade=Oppdater tema
@@ -36,6 +40,9 @@ settings_hotkey_navigation=Veksle navigasjonsmenystatus
 settings_hotkey_slider=Veksle på sideskyvetilstand
 
 theme_xhred_filemanager_mass_selected_for_delete=Alle elementer i katalogen %1
+
+#19.61
+settings_hotkey_shell2=Åpne kommandoskall
 
 #19.70
 theme_xhred_filemanager_context_view=Utsikt
@@ -163,7 +170,7 @@ theme_xhred_disk_quota_error_message=Ikke mer lagringskapasitet igjen på enhete
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Bruk hovedadministratornøkkel for dekryptering
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey hold modifikator
+settings_hotkey_toggle_hold_modifier=Hold nede modifikasjonstasten
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Spør alltid

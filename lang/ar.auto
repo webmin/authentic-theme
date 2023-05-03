@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=خيارات قابلة للتك
 
 settings_right_hotkey_options=مفاتيح التشغيل السريع
 
-settings_right_hotkey_custom_options_description=تتيح لك الروابط المخصصة استخدام الأرقام من <code>1</code> إلى <code>9</code> للوصول السريع إلى أي <code>URL.</code> صالح لـ Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> يمكن استخراج <code>URL</code> من صفحة محتوى الإطار الأيمن المفتوحة حاليًا بقراءة مصدره. من المهم ألا يحتوي <code>URL</code> على شرطة مائلة في البداية ولا يستخدم البادئات. على سبيل المثال ، للتبديل السريع إلى Apache ، اضبط على الحقل <code>custom link 1</code> <code>/apache/</code>. إذا تم ضبط مفتاح التشغيل السريع الافتراضي على <code>Alt,</code> النقر فوق <code>Alt+1</code> ، سيفتح لك وحدة Apache
+settings_right_hotkey_custom_options_description=تمكّنك الروابط المخصصة من استخدام الأرقام من <code>1</code> إلى <code>9</code> للوصول السريع إلى أي عنوان URL صالح للوحة <code>.</code> عنوان URL <code></code> يمكن استخراجه من الصفحة المفتوحة حاليا. على سبيل المثال ، للتبديل السريع إلى وحدة Apache ، اضبط الحقل <code>apache</code> على الحقل <code>الرابط المخصص 1</code>. إذا تم تعيين مفتاح التعديل الافتراضي على <code>Alt ،</code> النقر فوق <code>Alt + 1</code> ، سيفتح لك وحدة Apache.
 settings_hotkey_custom_1_user=رابط مخصص <code>1</code>
 settings_hotkey_custom_2_user=رابط مخصص <code>2</code>
 settings_hotkey_custom_3_user=رابط مخصص <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=إظهار زر التحديث
 
 settings_theme_options_button=إظهار زر إعدادات السمة
 
-settings_hotkeys_active=تمكين استخدام مفاتيح الاختصار
-settings_hotkey_toggle_modifier=تعديل مفاتيح الاختصار
+settings_hotkeys_active=يُمكَِن
+settings_hotkey_toggle_modifier=مفتاح التعديل
 settings_hotkey_toggle_key_webmin=تحميل قائمة Webmin
 settings_hotkey_toggle_key_virtualmin=قم بتحميل قائمة Virtualmin
 settings_hotkey_toggle_key_cloudmin=قم بتحميل قائمة Cloudmin
@@ -549,7 +549,7 @@ theme_xhred_move_down=تحرك لأسفل
 theme_xhred_add_after=إضافة بعد
 theme_xhred_add_before=إضافة قبل
 settings_show_night_mode_link=إظهار زر وضع النهار/الليل
-settings_hotkey_toggle_key_night_mode=مفتاح التشغيل السريع لتبديل لوحة الألوان
+settings_hotkey_toggle_key_night_mode=تبديل لوحة الألوان
 settings_title=تكوين السمة
 settings_subtitle=للمستخدم
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=تحرير ملف التكوين
 theme_xhred_login_message_2fa=تم تمكين المصادقة الثنائية لهذا المستخدم لتسجيل الدخول
 theme_xhred_global_verify=تحقق
 settings_show_terminal_link2=إظهار زر قذيفة الأمر
-settings_hotkey_shell2=مفتاح التشغيل السريع لقذيفة الأوامر
+settings_hotkey_shell2=افتح قذيفة الأمر
 theme_xhred_path_to_console2=افتح المسار الحالي في غلاف الأمر <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=قذيفة القيادة
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=لم يتبقى مساحة في الجها�
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=استخدم مفتاح المسؤول الرئيسي لفك التشفير
 
 #19.90
-settings_hotkey_toggle_hold_modifier=معدل تعليق مفتاح التشغيل السريع
+settings_hotkey_toggle_hold_modifier=عقد مفتاح التعديل
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=اسال دائما

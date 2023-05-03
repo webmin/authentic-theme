@@ -110,7 +110,6 @@ settings_right_theme_left_extensions_title=Editor de Complements
 settings_right_theme_left_logo_title=Gestió del logotip
 settings_right_theme_configurable_options_title=Opcions de configuració
 
-settings_right_hotkey_custom_options_description=Les dreceres personalitzades permeten utilitzar els dígits del 1 fins al 9 per tal d'accedir de forma ràpida a qualsevol element. La URL es pot obtenir mirant el seu orígen. És important que la URL no tingui la barra inclinada ni utilitzi cap prefixe.</br>Per exemple, per accedir ràpidament al mòdul Apache cal definir al camp "Drecera 1", el paràmetre <code>/apache/</code>. Si la opció de drecera està configurat a ALT, prement "Alt+1" s'obrirà el mòdul d'apache.
 settings_hotkey_custom_1_user=Drecera <code>1</code>
 settings_hotkey_custom_2_user=Drecera <code>2</code>
 settings_hotkey_custom_3_user=Drecera <code>3</code>
@@ -132,9 +131,6 @@ settings_leftmenu_button_language=Mostrar el botó de l'idioma
 settings_leftmenu_button_refresh=Mostrar el botó d'actualització dels mòduls
 
 settings_theme_options_button=Mostrar el botó de la configuració del tema
-
-settings_hotkeys_active=Habilita les dreceres
-settings_hotkey_toggle_modifier=Opció de drecera
 
 settings_sysinfo_easypie_charts=Mostrar les gràfiques
 settings_sysinfo_theme_updates=Comprova actualitzacions del tema

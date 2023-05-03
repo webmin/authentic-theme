@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Għażliet konfigurabbli għal T
 
 settings_right_hotkey_options=Hotkeys
 
-settings_right_hotkey_custom_options_description=Rabtiet personalizzati jippermettulek tuża numri minn <code>1</code> sa <code>9</code> sabiex taċċessa malajr kwalunkwe URL validu Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> L- <code>URL</code> tista 'tiġi estratta mill-paġna tal-kontenut tal-qafas tal-lemin miftuħa bħalissa, billi taqra s-sors tagħha. Huwa importanti li l- <code>URL</code> ma jkollu l-ebda mmejla fil-bidu u ma jużax prefissi. Pereżempju, biex taqleb malajr għal Apache, issettja r <code>custom link 1</code> qasam <code>/apache/</code>. Jekk il-modifikatur tal-hotkeys default issettjat għal <code>Alt,</code> tikklikkja <code>Alt+1</code>, se tiftaħek il-modulu Apache
+settings_right_hotkey_custom_options_description=Links personalizzati jippermettulek tuża ċifri minn <code>1</code> sa <code>9</code> sabiex taċċessa malajr kwalunkwe panel validu <code>URL.</code> Il-<code>URL</code> kodiċi> jistgħu jiġu estratti mill-paġna miftuħa bħalissa. Pereżempju, biex taqleb malajr għall-modulu Apache, issettja l-qasam <code>apache</code> għal <code>Link personalizzat 1</code>. Jekk iċ-ċavetta modifikatur default hija ssettjata għal <code>Alt,</code> meta tikklikkja <code>Alt + 1</code>, tiftaħlek il-modulu Apache.
 settings_hotkey_custom_1_user=Link personalizzat <code>1</code>
 settings_hotkey_custom_2_user=Link personalizzat <code>2</code>
 settings_hotkey_custom_3_user=Rabta apposta <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Uri l-buttuna li tiffriska
 
 settings_theme_options_button=Uri l-buttuna tas-settings tat-tema
 
-settings_hotkeys_active=Jippermettu l-użu tal-hotkeys
-settings_hotkey_toggle_modifier=Modifikatur tal-hotkeys
+settings_hotkeys_active=Ippermettiet
+settings_hotkey_toggle_modifier=Ċavetta modifikatur
 settings_hotkey_toggle_key_webmin=Tagħbija Webmin menu
 settings_hotkey_toggle_key_virtualmin=Tagħbija l-menu Virtualmin
 settings_hotkey_toggle_key_cloudmin=Tagħbija l-menu ta' Cloudmin
@@ -549,7 +549,7 @@ theme_xhred_move_down=Imxi l-isfel
 theme_xhred_add_after=Żid wara
 theme_xhred_add_before=Żid qabel
 settings_show_night_mode_link=Uri l-buttuna tal-modalità bil-lejl/jum
-settings_hotkey_toggle_key_night_mode=Hotkey għall-toggling paletta tal-kulur
+settings_hotkey_toggle_key_night_mode=Toggle paletta tal-kulur
 settings_title=Konfigurazzjoni tat-Tema
 settings_subtitle=Għall-utent
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Editjar tal-fajl tal-konfigurazzjoni
 theme_xhred_login_message_2fa=L-awtentikazzjoni b'żewġ fatturi ġiet attivata għal dan l-utent biex jidħol
 theme_xhred_global_verify=Ivverifika
 settings_show_terminal_link2=Uri l-buttuna tal-qoxra tal-kmand
-settings_hotkey_shell2=Hotkey għall-qoxra tal-kmand
+settings_hotkey_shell2=Iftaħ il-qoxra tal-kmand
 theme_xhred_path_to_console2=Iftaħ it-triq kurrenti fil-kmand shell <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Qoxra tal-kmand
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Ma fadalx spazju fuq it-tagħmir
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Uża ċavetta tal-amministratur prinċipali għad-deċifrar
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Hotkey istiva modifikatur
+settings_hotkey_toggle_hold_modifier=Żomm iċ-ċavetta tal-modifikatur
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Dejjem staqsi

@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Podesive opcije za autentičnu t
 
 settings_right_hotkey_options=Prečaci
 
-settings_right_hotkey_custom_options_description=Prilagođene veze omogućuju vam upotrebu cifara od <code>1</code> do <code>9</code> da biste brzo pristupili bilo kojem važećem <code>URL.</code> -u Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> se može izdvojiti sa trenutno otvorene stranice desnog okvira sadržaja čitanjem izvora. Važno je da <code>URL</code> na početku nema poševinu i da ne koristi prefikse. Na primjer, za brzi prijelaz na Apache postavite na <code>custom link 1</code> polje <code>custom link 1</code> <code>/apache/</code>. Ako je zadani modifikator hitnih tipki postavljen na <code>Alt,</code> klikanjem <code>Alt+1</code> otvorit će vam se Apache modul
+settings_right_hotkey_custom_options_description=Prilagođene veze omogućuju vam korištenje znamenki od <code>1</code> do <code>9</code> kako biste brzo pristupili bilo kojem važećem <code>URL-u ploče.</code> <code>URL</code> može se izdvojiti iz trenutno otvorene stranice. Na primjer, za brzo prebacivanje na Apache modul, postavite <code>apache</code> na polje <code>Prilagođena veza 1</code>. Ako je zadana modifikacijska tipka postavljena na <code>Alt</code>, klikom na <code>Alt + 1</code> otvorit će se vaš Apache modul.
 settings_hotkey_custom_1_user=Prilagođena veza <code>1</code>
 settings_hotkey_custom_2_user=Prilagođena veza <code>2</code>
 settings_hotkey_custom_3_user=Prilagođena veza <code>3</code>
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Prikaži gumb za osvježavanje
 
 settings_theme_options_button=Prikaži gumb postavki teme
 
-settings_hotkeys_active=Omogući upotrebu brzih tipki
-settings_hotkey_toggle_modifier=Modifikator hitnih tipki
+settings_hotkeys_active=Omogućiti
+settings_hotkey_toggle_modifier=Tipka modifikatora
 settings_hotkey_toggle_key_webmin=Učitaj Webmin izbornik
 settings_hotkey_toggle_key_virtualmin=Učitaj Virtualmin izbornik
 settings_hotkey_toggle_key_cloudmin=Učitaj Cloudmin izbornik
@@ -549,7 +549,7 @@ theme_xhred_move_down=Pomicati prema dolje
 theme_xhred_add_after=Dodaj poslije
 theme_xhred_add_before=Dodaj prije
 settings_show_night_mode_link=Prikaži gumb načina rada dan/noć
-settings_hotkey_toggle_key_night_mode=Prečac za prebacivanje palete boja
+settings_hotkey_toggle_key_night_mode=Uključi/isključi paletu boja
 settings_title=Konfiguracija teme
 settings_subtitle=Za korisnika
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Uređivanje konfiguracijske datoteke
 theme_xhred_login_message_2fa=Ovom korisniku je omogućena dvofaktorska autentifikacija za prijavu
 theme_xhred_global_verify=Potvrdite
 settings_show_terminal_link2=Prikaži gumb naredbene ljuske
-settings_hotkey_shell2=Prečac za naredbenu ljusku
+settings_hotkey_shell2=Otvorite naredbenu ljusku
 theme_xhred_path_to_console2=Otvorite trenutnu stazu u naredbenoj ljusci <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Naredbena ljuska
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Nema više mjesta na uređaju
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Za dešifriranje koristite glavni administratorski ključ
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Modifikator zadržavanja prečaca
+settings_hotkey_toggle_hold_modifier=Držite modifikatorsku tipku
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Uvijek pitaj

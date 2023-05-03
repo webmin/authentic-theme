@@ -112,7 +112,7 @@ settings_right_theme_configurable_options_title=Konfigurējamas opcijas autentis
 
 settings_right_hotkey_options=Karstie taustiņi
 
-settings_right_hotkey_custom_options_description=Pielāgotas saites ļauj izmantot ciparus no <code>1</code> līdz <code>9</code>, lai ātri piekļūtu jebkuram derīgam Webmin/Usermin/Virtualmin/Cloudmin <code>URL.</code> <code>URL</code> var iegūt no pašlaik atvērtās labās puses ietvara satura lapas, nolasot tā avotu. Ir svarīgi, lai <code>URL</code> sākumā nebūtu slīpsvītra un nebūtu izmantoti prefiksi. Piemēram, lai ātri pārslēgtos uz Apache, iestatiet uz <code>custom link 1</code> lauku <code>/apache/</code>. Ja noklusējuma karsto taustiņu modifikators ir iestatīts uz <code>Alt,</code> noklikšķinot uz <code>Alt+1</code>, tiks atvērts Apache modulis
+settings_right_hotkey_custom_options_description=Pielāgotas saites ļauj izmantot ciparus no <code>1</code> līdz <code>9</code>, lai ātri piekļūtu jebkuram derīgam paneļa <code>URL.</code> <code>URL</code> kods> var iegūt no pašlaik atvērtās lapas. Piemēram, lai ātri pārslēgtos uz Apache moduli, iestatiet lauku <code>apache</code> uz <code>Custom link 1</code>. Ja noklusējuma pārveidotāja atslēga ir iestatīta uz <code>Alt</code>, noklikšķinot uz <code>Alt +1</code>, tiks atvērts Apache modulis.
 settings_hotkey_custom_1_user=Pielāgota saite <code>1</code>
 settings_hotkey_custom_2_user=Pielāgota saite <code>2</code>
 settings_hotkey_custom_3_user=<code>3</code> pielāgotā saite
@@ -136,8 +136,8 @@ settings_leftmenu_button_refresh=Rādīt atsvaidzināšanas pogu
 
 settings_theme_options_button=Rādīt motīva iestatījumu pogu
 
-settings_hotkeys_active=Iespējot karsto taustiņu izmantošanu
-settings_hotkey_toggle_modifier=Karsto taustiņu modifikators
+settings_hotkeys_active=Iespējot
+settings_hotkey_toggle_modifier=Modifikatora atslēga
 settings_hotkey_toggle_key_webmin=Ielādēt Webmin izvēlni
 settings_hotkey_toggle_key_virtualmin=Ielādējiet Virtualmin izvēlni
 settings_hotkey_toggle_key_cloudmin=Ielādēt Cloudmin izvēlni
@@ -549,7 +549,7 @@ theme_xhred_move_down=Pārvietot uz leju
 theme_xhred_add_after=Pievienot pēc
 theme_xhred_add_before=Pievienojiet pirms tam
 settings_show_night_mode_link=Rādīt dienas/nakts režīma pogu
-settings_hotkey_toggle_key_night_mode=Karstais taustiņš krāsu paletes pārslēgšanai
+settings_hotkey_toggle_key_night_mode=Pārslēgt krāsu paleti
 settings_title=Tēmas konfigurācija
 settings_subtitle=Lietotājam
 
@@ -1130,7 +1130,7 @@ theme_xhred_editing_config_file=Rediģē konfigurācijas failu
 theme_xhred_login_message_2fa=Šim lietotājam ir iespējota divu faktoru autentifikācija, lai pieteiktos
 theme_xhred_global_verify=Pārbaudiet
 settings_show_terminal_link2=Rādīt komandas čaulas pogu
-settings_hotkey_shell2=Karsto taustiņu komandu čaulai
+settings_hotkey_shell2=Atveriet komandu apvalku
 theme_xhred_path_to_console2=Atveriet pašreizējo ceļu komandu apvalkā <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Komandas apvalks
 
@@ -1259,7 +1259,7 @@ theme_xhred_disk_quota_error_message=Ierīcē vairs nav vietas
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Atšifrēšanai izmantojiet galveno administratora atslēgu
 
 #19.90
-settings_hotkey_toggle_hold_modifier=Karsto taustiņu turēšanas modifikators
+settings_hotkey_toggle_hold_modifier=Turiet modifikācijas taustiņu
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=Vienmēr jautājiet

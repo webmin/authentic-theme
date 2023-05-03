@@ -1,7 +1,11 @@
 settings_right_hotkey_options=热键
 
+settings_right_hotkey_custom_options_description=自定义链接使您能够使用从 <code>1</code> 到 <code>9</code> 的数字来快速访问任何有效的面板 <code>URL。</code> <code>URL</code> 可以从当前打开的页面中提取出来。例如，要快速切换到 Apache 模块，请将 <code>apache</code> 设置为 <code>Custom link 1</code> 字段。如果默认修改键设置为 <code>Alt，</code> 单击 <code>Alt + 1</code>，将打开 Apache 模块。
+
 settings_right_reload=在选项卡开关上加载默认页面
 
+settings_hotkeys_active=使能够
+settings_hotkey_toggle_modifier=修改键
 settings_hotkey_toggle_key_webmin=加载 Webmin 菜单
 settings_hotkey_toggle_key_virtualmin=加载 Virtualmin 菜单
 settings_hotkey_toggle_key_cloudmin=加载 Cloudmin 菜单
@@ -20,7 +24,7 @@ theme_xhred_sysinfo_vmdocs=虚拟文档
 theme_xhred_sysinfo_cmdocs=Cloudmin 文档
 
 #18.40
-settings_hotkey_toggle_key_night_mode=用于切换调色板的热键
+settings_hotkey_toggle_key_night_mode=切换调色板
 
 #18.48
 theme_force_upgrade=更新主题
@@ -325,7 +329,7 @@ theme_xhred_editing_config_file=编辑配置文件
 theme_xhred_login_message_2fa=已启用此用户的两因素身份验证登录
 theme_xhred_global_verify=校验
 settings_show_terminal_link2=显示命令外壳按钮
-settings_hotkey_shell2=命令外壳热键
+settings_hotkey_shell2=打开命令外壳
 theme_xhred_path_to_console2=在命令外壳<tt>（Alt+Shift+K）</tt>中打开当前路径
 theme_tooltip_terminal_link2=命令外壳
 
@@ -455,7 +459,7 @@ theme_xhred_disk_quota_error_message=设备上没有剩余空间
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=使用主管理员密钥进行解密
 
 #19.90
-settings_hotkey_toggle_hold_modifier=热键保持修饰符
+settings_hotkey_toggle_hold_modifier=按住修改键
 
 #19.91
 theme_xhred_filemanager_files_mode_ask=总是问

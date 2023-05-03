@@ -110,7 +110,6 @@ settings_right_theme_left_extensions_title=Theme Extensions Editor
 settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Dostupná nastavení pro Authentic Theme
 
-settings_right_hotkey_custom_options_description=Vlastní odkazy umožňují použít čísla od <code>1</code> do <code>9</code> pro rychlý přístup k jakékoliv Webmin/Usermin/Virtualmin/Cloudmin <code>URL adrese.</code> <code>URL adresu</code> je možné získat z aktuálně otevřeného pravého rámce po zhlédnutí jeho zdrojového kódu. Je důležité, aby <code>URL adresa</code> neobsahovala žádné lomítko na začátku a neobsahovala žádný prefix. Například tedy k rychlému přístupu k Apache, nastavte hodnotu pole pro <code>vlastní link 1</code> jako <code>/apache/</code>. Pokud je přepínač klávesových zkratek nastavený na <code>Alt,</code> pak se klávesovou zkratkou <code>Alt+1</code>, dostanete na stránku Apache.
 settings_hotkey_custom_1_user=Vlastní odkaz <code>1</code>
 settings_hotkey_custom_2_user=Vlastní odkaz <code>2</code>
 settings_hotkey_custom_3_user=Vlastní odkaz <code>3</code>
@@ -131,9 +130,6 @@ settings_leftmenu_button_language=Zobrazit tlačítko pro nastavení jazyka
 settings_leftmenu_button_refresh=Zobrazit tlačítko pro obnovení
 
 settings_theme_options_button=Zobrazit tlačítko konfigurace tématu
-
-settings_hotkeys_active=Povolit klávesové zkratky
-settings_hotkey_toggle_modifier=Přepínač klávesových zkratek
 
 settings_sysinfo_easypie_charts=Zobrazit grafy
 settings_sysinfo_theme_updates=Zkontrolovat aktualizace Authentic Theme tématu
