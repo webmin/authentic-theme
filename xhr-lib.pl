@@ -5,7 +5,7 @@
 #
 use strict;
 
-our (%in, %gconfig, $root_directory, $remote_user, $get_user_level, %theme_config, %theme_text);
+our (%in, %gconfig, $root_directory, $remote_user, $get_user_level, %theme_config, %theme_text, $current_theme);
 
 sub xhr
 {
@@ -31,7 +31,9 @@ sub xhr
                   ($theme_text{'settings_right_hotkey_options'}, $theme_text{'settings_right_hotkey_custom_options'});
                 my $settings_data       = theme_settings_data();
                 my @config_quick_access = @{ $settings_data->{'config_quick_access'} };
-                my @hotkeys_data;
+                my @hotkeys_global;
+
+                # Theme hotkeys
                 foreach my $opt (@config_quick_access) {
                     next if (&indexof($opt->{'data'}->{'category'}, @hotkeys_labels) < 0);
                     next
@@ -42,9 +44,33 @@ sub xhr
                                     'settings_hotkey_toggle_modifier',
                                    )
                           ) >= 0);
-                    push(@hotkeys_data, { key => $opt->{'key'}, title => $opt->{'value'}, section => $opt->{'section'} });
+                    push(@hotkeys_global, { key => $opt->{'key'}, title => $opt->{'value'}, section => $opt->{'section'} });
                 }
-                $data{'hotkeys-list'} = \@hotkeys_data;
+                $data{'hotkeys-global'} = \@hotkeys_global;
+
+                # File Manager hotkeys
+                my $file_manager                = read_file_contents(help_file($current_theme, 'file-manager'));
+                my @file_manager_hotkeys_labels = $file_manager =~ /<tr.*?<td.*?>(.*?)<\//gms;
+                my @file_manager_hotkeys_values = $file_manager =~ /<tr.*?<td.*?<td.*?h[\d]>(.*?)<\//gms;
+                my %file_manager_hotkeys_map;
+                @file_manager_hotkeys_map{ (@file_manager_hotkeys_values) } = (@file_manager_hotkeys_labels);
+                my @hotkeys_file_manager;
+                foreach my $value (@file_manager_hotkeys_values) {
+                    push(@hotkeys_file_manager, { key => $file_manager_hotkeys_map{$value}, title => $value });
+                }
+                $data{'hotkeys-file-manager'} = \@hotkeys_file_manager;
+
+                my @hotkeys_editor;
+                my $editor = read_file_contents(help_file($current_theme, 'editor'));
+                my @editor_hotkeys_labels = $editor =~ /<tr.*?<td.*?>(.*?)<\//gms;
+                my @editor_hotkeys_values = $editor =~ /<tr.*?<td.*?<td.*?>(.*?)<\//gms;
+                my %editor_hotkeys_map;
+                @editor_hotkeys_map{(@editor_hotkeys_values)} = (@editor_hotkeys_labels);
+                my @hotkeys_editor;
+                foreach my $value (@editor_hotkeys_values) {
+                    push(@hotkeys_editor, { key => $editor_hotkeys_map{$value}, title => $value });
+                }
+                $data{'hotkeys-editor'} = \@hotkeys_editor;
             }
         }
     }
