@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Nyissa meg a modul konfiguráci
 theme_xhred_hotkey_open_theme_config=Nyissa meg a téma konfigurációját
 theme_xhred_hotkey_clear_cache=Törölje a gyorsítótárat és töltse be újra
 theme_xhred_hotkey_open_new=Másolás új lapra
+theme_xhred_hotkey_copy_to_clipboard=Elemadatok másolása a vágólapra
+theme_xhred_hotkey_copy_to_clipboard_click=bal klikk
 theme_xhred_global_success=Siker

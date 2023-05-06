@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Otvorte konfiguráciu modulu
 theme_xhred_hotkey_open_theme_config=Otvorte konfiguráciu témy
 theme_xhred_hotkey_clear_cache=Vymažte vyrovnávaciu pamäť a znova načítajte
 theme_xhred_hotkey_open_new=Duplikovať na novú kartu
+theme_xhred_hotkey_copy_to_clipboard=Skopírujte údaje prvku do schránky
+theme_xhred_hotkey_copy_to_clipboard_click=ľavý klik
 theme_xhred_global_success=Úspech

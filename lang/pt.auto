@@ -1249,4 +1249,6 @@ theme_xhred_hotkey_open_module_config_privileged=Abra a configuração do módul
 theme_xhred_hotkey_open_theme_config=Abra a configuração do tema
 theme_xhred_hotkey_clear_cache=Limpe o cache e recarregue
 theme_xhred_hotkey_open_new=Duplicar para uma nova guia
+theme_xhred_hotkey_copy_to_clipboard=Copiar dados do elemento para a área de transferência
+theme_xhred_hotkey_copy_to_clipboard_click=Clique esquerdo
 theme_xhred_global_success=Sucesso

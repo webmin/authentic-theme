@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Maak module konfigurasie oop
 theme_xhred_hotkey_open_theme_config=Maak tema konfigurasie oop
 theme_xhred_hotkey_clear_cache=Maak kas skoon en herlaai
 theme_xhred_hotkey_open_new=Dupliseer na 'n nuwe oortjie
+theme_xhred_hotkey_copy_to_clipboard=Kopieer elementdata na knipbord
+theme_xhred_hotkey_copy_to_clipboard_click=links-kliek
 theme_xhred_global_success=Sukses

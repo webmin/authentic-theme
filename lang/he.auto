@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=פתח את תצורת המוד
 theme_xhred_hotkey_open_theme_config=פתח את תצורת העיצוב
 theme_xhred_hotkey_clear_cache=נקה את המטמון וטען מחדש
 theme_xhred_hotkey_open_new=שכפול לכרטיסייה חדשה
+theme_xhred_hotkey_copy_to_clipboard=העתק נתוני אלמנטים ללוח
+theme_xhred_hotkey_copy_to_clipboard_click=לחיצה שמאלית
 theme_xhred_global_success=הַצלָחָה

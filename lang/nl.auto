@@ -1219,4 +1219,6 @@ theme_xhred_hotkey_open_module_config_privileged=Moduleconfiguratie openen
 theme_xhred_hotkey_open_theme_config=Open themaconfiguratie
 theme_xhred_hotkey_clear_cache=Cache wissen en opnieuw laden
 theme_xhred_hotkey_open_new=Dupliceren naar een nieuw tabblad
+theme_xhred_hotkey_copy_to_clipboard=Kopieer elementgegevens naar het klembord
+theme_xhred_hotkey_copy_to_clipboard_click=links klikken
 theme_xhred_global_success=Succes

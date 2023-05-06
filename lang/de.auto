@@ -273,4 +273,6 @@ theme_xhred_hotkey_open_module_config_privileged=Modulkonfiguration öffnen
 theme_xhred_hotkey_open_theme_config=Theme-Konfiguration öffnen
 theme_xhred_hotkey_clear_cache=Cache leeren und neu laden
 theme_xhred_hotkey_open_new=Auf einen neuen Tab duplizieren
+theme_xhred_hotkey_copy_to_clipboard=Elementdaten in die Zwischenablage kopieren
+theme_xhred_hotkey_copy_to_clipboard_click=links Klick
 theme_xhred_global_success=Erfolg

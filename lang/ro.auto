@@ -363,4 +363,6 @@ theme_xhred_hotkey_open_module_config_privileged=Deschideți configurația modul
 theme_xhred_hotkey_open_theme_config=Deschideți configurația temei
 theme_xhred_hotkey_clear_cache=Goliți memoria cache și reîncărcați
 theme_xhred_hotkey_open_new=Duplicați într-o filă nouă
+theme_xhred_hotkey_copy_to_clipboard=Copiați datele elementului în clipboard
+theme_xhred_hotkey_copy_to_clipboard_click=clic stânga
 theme_xhred_global_success=Succes

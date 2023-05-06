@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Відкрийте конфіг
 theme_xhred_hotkey_open_theme_config=Відкрийте конфігурацію теми
 theme_xhred_hotkey_clear_cache=Очистити кеш і перезавантажити
 theme_xhred_hotkey_open_new=Дублювати на нову вкладку
+theme_xhred_hotkey_copy_to_clipboard=Копіювати дані елемента в буфер обміну
+theme_xhred_hotkey_copy_to_clipboard_click=лівою кнопкою миші
 theme_xhred_global_success=Успіх

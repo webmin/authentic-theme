@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Ανοίξτε τη διαμό�
 theme_xhred_hotkey_open_theme_config=Ανοίξτε τη διαμόρφωση θέματος
 theme_xhred_hotkey_clear_cache=Εκκαθάριση προσωρινής μνήμης και επαναφόρτωση
 theme_xhred_hotkey_open_new=Διπλότυπο σε νέα καρτέλα
+theme_xhred_hotkey_copy_to_clipboard=Αντιγραφή δεδομένων στοιχείων στο πρόχειρο
+theme_xhred_hotkey_copy_to_clipboard_click=αριστερό κλικ
 theme_xhred_global_success=Επιτυχία

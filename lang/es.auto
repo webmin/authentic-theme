@@ -1243,4 +1243,6 @@ theme_xhred_hotkey_open_module_config_privileged=Configuración del módulo abie
 theme_xhred_hotkey_open_theme_config=Abrir configuración de tema
 theme_xhred_hotkey_clear_cache=Borrar caché y recargar
 theme_xhred_hotkey_open_new=Duplicar en una nueva pestaña
+theme_xhred_hotkey_copy_to_clipboard=Copiar datos de elementos al portapapeles
+theme_xhred_hotkey_copy_to_clipboard_click=click izquierdo
 theme_xhred_global_success=Éxito

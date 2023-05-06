@@ -672,4 +672,6 @@ theme_xhred_hotkey_open_module_config_privileged=Obriu la configuració del mòd
 theme_xhred_hotkey_open_theme_config=Obriu la configuració del tema
 theme_xhred_hotkey_clear_cache=Esborra la memòria cau i torna a carregar
 theme_xhred_hotkey_open_new=Duplica a una pestanya nova
+theme_xhred_hotkey_copy_to_clipboard=Copieu les dades de l'element al porta-retalls
+theme_xhred_hotkey_copy_to_clipboard_click=clic esquerre
 theme_xhred_global_success=Èxit

@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=เปิดการกำห�
 theme_xhred_hotkey_open_theme_config=เปิดการกำหนดค่าธีม
 theme_xhred_hotkey_clear_cache=ล้างแคชและโหลดใหม่
 theme_xhred_hotkey_open_new=ทำซ้ำไปยังแท็บใหม่
+theme_xhred_hotkey_copy_to_clipboard=คัดลอกข้อมูลองค์ประกอบไปยังคลิปบอร์ด
+theme_xhred_hotkey_copy_to_clipboard_click=คลิกซ้าย
 theme_xhred_global_success=ความสำเร็จ

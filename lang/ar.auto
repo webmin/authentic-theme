@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=فتح وحدة التكوين
 theme_xhred_hotkey_open_theme_config=افتح تهيئة السمة
 theme_xhred_hotkey_clear_cache=امسح ذاكرة التخزين المؤقت وأعد التحميل
 theme_xhred_hotkey_open_new=تكرار لعلامة تبويب جديدة
+theme_xhred_hotkey_copy_to_clipboard=نسخ بيانات العنصر إلى الحافظة
+theme_xhred_hotkey_copy_to_clipboard_click=الزر الأيسر
 theme_xhred_global_success=نجاح

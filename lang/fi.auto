@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Avaa moduulin konfiguraatio
 theme_xhred_hotkey_open_theme_config=Avaa teeman asetukset
 theme_xhred_hotkey_clear_cache=Tyhjennä välimuisti ja lataa uudelleen
 theme_xhred_hotkey_open_new=Kopioi uuteen välilehteen
+theme_xhred_hotkey_copy_to_clipboard=Kopioi elementin tiedot leikepöydälle
+theme_xhred_hotkey_copy_to_clipboard_click=vasen painallus
 theme_xhred_global_success=Menestys

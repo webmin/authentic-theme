@@ -1250,4 +1250,6 @@ theme_xhred_hotkey_open_module_config_privileged=Otwórz konfigurację modułu
 theme_xhred_hotkey_open_theme_config=Otwórz konfigurację motywu
 theme_xhred_hotkey_clear_cache=Wyczyść pamięć podręczną i załaduj ponownie
 theme_xhred_hotkey_open_new=Zduplikuj do nowej karty
+theme_xhred_hotkey_copy_to_clipboard=Skopiuj dane elementu do schowka
+theme_xhred_hotkey_copy_to_clipboard_click=lewy przycisk myszy
 theme_xhred_global_success=Powodzenie

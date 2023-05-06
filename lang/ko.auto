@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=모듈 구성 열기
 theme_xhred_hotkey_open_theme_config=테마 구성 열기
 theme_xhred_hotkey_clear_cache=캐시 지우기 및 다시 로드
 theme_xhred_hotkey_open_new=새 탭에 복제
+theme_xhred_hotkey_copy_to_clipboard=요소 데이터를 클립보드에 복사
+theme_xhred_hotkey_copy_to_clipboard_click=왼쪽 클릭
 theme_xhred_global_success=성공

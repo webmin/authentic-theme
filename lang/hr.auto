@@ -1332,4 +1332,6 @@ theme_xhred_hotkey_open_module_config_privileged=Otvori konfiguraciju modula
 theme_xhred_hotkey_open_theme_config=Otvorite konfiguraciju teme
 theme_xhred_hotkey_clear_cache=Očistite predmemoriju i ponovno učitajte
 theme_xhred_hotkey_open_new=Dupliciraj na novu karticu
+theme_xhred_hotkey_copy_to_clipboard=Kopiraj podatke elementa u međuspremnik
+theme_xhred_hotkey_copy_to_clipboard_click=lijevi klik
 theme_xhred_global_success=Uspjeh

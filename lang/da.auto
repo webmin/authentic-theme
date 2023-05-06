@@ -1244,4 +1244,6 @@ theme_xhred_hotkey_open_module_config_privileged=Åbn modulkonfiguration
 theme_xhred_hotkey_open_theme_config=Åbn temakonfiguration
 theme_xhred_hotkey_clear_cache=Ryd cache og genindlæs
 theme_xhred_hotkey_open_new=Dupliker til en ny fane
+theme_xhred_hotkey_copy_to_clipboard=Kopier elementdata til udklipsholder
+theme_xhred_hotkey_copy_to_clipboard_click=venstre klik
 theme_xhred_global_success=Succes

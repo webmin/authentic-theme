@@ -243,4 +243,6 @@ theme_xhred_hotkey_open_module_config_privileged=Åpne modulkonfig
 theme_xhred_hotkey_open_theme_config=Åpne temakonfigurasjon
 theme_xhred_hotkey_clear_cache=Tøm hurtigbufferen og last inn på nytt
 theme_xhred_hotkey_open_new=Dupliser til en ny fane
+theme_xhred_hotkey_copy_to_clipboard=Kopier elementdata til utklippstavlen
+theme_xhred_hotkey_copy_to_clipboard_click=venstre klikk
 theme_xhred_global_success=Suksess

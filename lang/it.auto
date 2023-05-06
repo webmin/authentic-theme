@@ -173,4 +173,6 @@ theme_xhred_hotkey_open_module_config_privileged=Apri la configurazione del modu
 theme_xhred_hotkey_open_theme_config=Apri la configurazione del tema
 theme_xhred_hotkey_clear_cache=Svuota la cache e ricarica
 theme_xhred_hotkey_open_new=Duplica in una nuova scheda
+theme_xhred_hotkey_copy_to_clipboard=Copia i dati dell'elemento negli appunti
+theme_xhred_hotkey_copy_to_clipboard_click=clic sinistro
 theme_xhred_global_success=Successo
