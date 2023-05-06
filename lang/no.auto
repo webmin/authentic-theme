@@ -245,4 +245,5 @@ theme_xhred_hotkey_clear_cache=Tøm hurtigbufferen og last inn på nytt
 theme_xhred_hotkey_open_new=Dupliser til en ny fane
 theme_xhred_hotkey_copy_to_clipboard=Kopier elementdata til utklippstavlen
 theme_xhred_hotkey_copy_to_clipboard_click=venstre klikk
+theme_xhred_hotkey_print_title=Webmin hurtigtaster med autentisk tema
 theme_xhred_global_success=Suksess

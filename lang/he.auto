@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=נקה את המטמון וטען מחדש
 theme_xhred_hotkey_open_new=שכפול לכרטיסייה חדשה
 theme_xhred_hotkey_copy_to_clipboard=העתק נתוני אלמנטים ללוח
 theme_xhred_hotkey_copy_to_clipboard_click=לחיצה שמאלית
+theme_xhred_hotkey_print_title=מקשי קיצור של Webmin עם ערכת נושא אותנטי
 theme_xhred_global_success=הַצלָחָה

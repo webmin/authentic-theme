@@ -1251,4 +1251,5 @@ theme_xhred_hotkey_clear_cache=Limpe o cache e recarregue
 theme_xhred_hotkey_open_new=Duplicar para uma nova guia
 theme_xhred_hotkey_copy_to_clipboard=Copiar dados do elemento para a área de transferência
 theme_xhred_hotkey_copy_to_clipboard_click=Clique esquerdo
+theme_xhred_hotkey_print_title=Teclas de atalho do Webmin com tema autêntico
 theme_xhred_global_success=Sucesso

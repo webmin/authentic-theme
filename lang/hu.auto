@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Törölje a gyorsítótárat és töltse be újra
 theme_xhred_hotkey_open_new=Másolás új lapra
 theme_xhred_hotkey_copy_to_clipboard=Elemadatok másolása a vágólapra
 theme_xhred_hotkey_copy_to_clipboard_click=bal klikk
+theme_xhred_hotkey_print_title=Webmin gyorsbillentyűk hiteles témával
 theme_xhred_global_success=Siker

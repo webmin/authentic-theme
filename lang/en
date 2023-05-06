@@ -1405,4 +1405,5 @@ theme_xhred_hotkey_clear_cache=Clear cache and reload
 theme_xhred_hotkey_open_new=Duplicate to a new tab
 theme_xhred_hotkey_copy_to_clipboard=Copy element data to clipboard
 theme_xhred_hotkey_copy_to_clipboard_click=left-click
+theme_xhred_hotkey_print_title=Webmin hotkeys with Authentic Theme
 theme_xhred_global_success=Success

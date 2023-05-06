@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Ċar il-cache u reload
 theme_xhred_hotkey_open_new=Idduplika għal tab ġdida
 theme_xhred_hotkey_copy_to_clipboard=Ikkopja dejta tal-element fil-clipboard
 theme_xhred_hotkey_copy_to_clipboard_click=ikklikkja xellug
+theme_xhred_hotkey_print_title=Hotkeys Webmin b'Tema Awtentika
 theme_xhred_global_success=Suċċess

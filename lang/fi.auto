@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Tyhjennä välimuisti ja lataa uudelleen
 theme_xhred_hotkey_open_new=Kopioi uuteen välilehteen
 theme_xhred_hotkey_copy_to_clipboard=Kopioi elementin tiedot leikepöydälle
 theme_xhred_hotkey_copy_to_clipboard_click=vasen painallus
+theme_xhred_hotkey_print_title=Webmin-pikanäppäimet autenttisella teemalla
 theme_xhred_global_success=Menestys

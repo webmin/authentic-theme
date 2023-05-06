@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=امسح ذاكرة التخزين المؤقت �
 theme_xhred_hotkey_open_new=تكرار لعلامة تبويب جديدة
 theme_xhred_hotkey_copy_to_clipboard=نسخ بيانات العنصر إلى الحافظة
 theme_xhred_hotkey_copy_to_clipboard_click=الزر الأيسر
+theme_xhred_hotkey_print_title=مفاتيح الاختصار Webmin مع موضوع أصيل
 theme_xhred_global_success=نجاح

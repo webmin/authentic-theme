@@ -1252,4 +1252,5 @@ theme_xhred_hotkey_clear_cache=Wyczyść pamięć podręczną i załaduj ponowni
 theme_xhred_hotkey_open_new=Zduplikuj do nowej karty
 theme_xhred_hotkey_copy_to_clipboard=Skopiuj dane elementu do schowka
 theme_xhred_hotkey_copy_to_clipboard_click=lewy przycisk myszy
+theme_xhred_hotkey_print_title=Skróty klawiszowe Webmina z autentycznym motywem
 theme_xhred_global_success=Powodzenie

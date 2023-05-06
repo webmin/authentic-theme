@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=캐시 지우기 및 다시 로드
 theme_xhred_hotkey_open_new=새 탭에 복제
 theme_xhred_hotkey_copy_to_clipboard=요소 데이터를 클립보드에 복사
 theme_xhred_hotkey_copy_to_clipboard_click=왼쪽 클릭
+theme_xhred_hotkey_print_title=정통 테마의 Webmin 단축키
 theme_xhred_global_success=성공

@@ -1191,4 +1191,5 @@ theme_xhred_hotkey_clear_cache=Vymažte mezipaměť a znovu načtěte
 theme_xhred_hotkey_open_new=Duplikovat na novou kartu
 theme_xhred_hotkey_copy_to_clipboard=Zkopírujte data prvku do schránky
 theme_xhred_hotkey_copy_to_clipboard_click=levé kliknutí
+theme_xhred_hotkey_print_title=Klávesové zkratky Webmin s autentickým motivem
 theme_xhred_global_success=Úspěch

@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Önbelleği temizle ve yeniden yükle
 theme_xhred_hotkey_open_new=Yeni bir sekmeye kopyala
 theme_xhred_hotkey_copy_to_clipboard=Öğe verilerini panoya kopyala
 theme_xhred_hotkey_copy_to_clipboard_click=sol tık
+theme_xhred_hotkey_print_title=Otantik Temalı Webmin kısayol tuşları
 theme_xhred_global_success=Başarı

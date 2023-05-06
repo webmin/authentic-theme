@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Ачысціць кэш і перазагрузі
 theme_xhred_hotkey_open_new=Дубліраваць у новую ўкладку
 theme_xhred_hotkey_copy_to_clipboard=Скапіруйце даныя элемента ў буфер абмену
 theme_xhred_hotkey_copy_to_clipboard_click=пстрыкніце левай кнопкай мышы
+theme_xhred_hotkey_print_title=Гарачыя клавішы Webmin з аўтэнтычнай тэмай
 theme_xhred_global_success=Поспех

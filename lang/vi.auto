@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Xóa bộ nhớ cache và tải lại
 theme_xhred_hotkey_open_new=Sao chép vào một tab mới
 theme_xhred_hotkey_copy_to_clipboard=Sao chép dữ liệu phần tử vào khay nhớ tạm
 theme_xhred_hotkey_copy_to_clipboard_click=ấn chuột trái
+theme_xhred_hotkey_print_title=Phím nóng webmin với Chủ đề xác thực
 theme_xhred_global_success=Thành công

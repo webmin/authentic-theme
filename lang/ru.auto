@@ -1125,4 +1125,5 @@ theme_xhred_hotkey_clear_cache=Очистить кеш и перезагрузи
 theme_xhred_hotkey_open_new=Дублировать на новую вкладку
 theme_xhred_hotkey_copy_to_clipboard=Скопировать данные элемента в буфер обмена
 theme_xhred_hotkey_copy_to_clipboard_click=щелчок левой кнопкой мыши
+theme_xhred_hotkey_print_title=Горячие клавиши Webmin с аутентичной темой
 theme_xhred_global_success=Успех

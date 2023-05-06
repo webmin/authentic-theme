@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Изчистете кеша и презареде
 theme_xhred_hotkey_open_new=Дублиране в нов раздел
 theme_xhred_hotkey_copy_to_clipboard=Копирайте данните на елемента в клипборда
 theme_xhred_hotkey_copy_to_clipboard_click=ляв клик
+theme_xhred_hotkey_print_title=Бързи клавиши на Webmin с автентична тема
 theme_xhred_global_success=Успех

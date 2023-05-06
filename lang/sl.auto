@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Počisti predpomnilnik in znova naloži
 theme_xhred_hotkey_open_new=Podvoji na nov zavihek
 theme_xhred_hotkey_copy_to_clipboard=Kopiraj podatke elementa v odložišče
 theme_xhred_hotkey_copy_to_clipboard_click=levi klik
+theme_xhred_hotkey_print_title=Bližnjice Webmin z Authentic Theme
 theme_xhred_global_success=Uspeh

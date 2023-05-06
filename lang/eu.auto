@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Garbitu cachea eta kargatu berriro
 theme_xhred_hotkey_open_new=Bikoiztu fitxa berri batera
 theme_xhred_hotkey_copy_to_clipboard=Kopiatu elementuen datuak arbelean
 theme_xhred_hotkey_copy_to_clipboard_click=egin klik ezkerreko botoiarekin
+theme_xhred_hotkey_print_title=Webmin laster teklak benetako gaiarekin
 theme_xhred_global_success=Arrakasta

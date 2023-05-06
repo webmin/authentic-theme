@@ -53,4 +53,5 @@ theme_xhred_hotkey_clear_cache=Rensa cache och ladda om
 theme_xhred_hotkey_open_new=Duplicera till en ny flik
 theme_xhred_hotkey_copy_to_clipboard=Kopiera elementdata till urklipp
 theme_xhred_hotkey_copy_to_clipboard_click=vänster klick
+theme_xhred_hotkey_print_title=Webmin snabbtangenter med autentiskt tema
 theme_xhred_global_success=Framgång

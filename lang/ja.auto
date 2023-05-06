@@ -284,4 +284,5 @@ theme_xhred_hotkey_clear_cache=キャッシュをクリアしてリロード
 theme_xhred_hotkey_open_new=新しいタブに複製
 theme_xhred_hotkey_copy_to_clipboard=要素データをクリップボードにコピー
 theme_xhred_hotkey_copy_to_clipboard_click=左クリック
+theme_xhred_hotkey_print_title=Authentic テーマの Webmin ホットキー
 theme_xhred_global_success=成功

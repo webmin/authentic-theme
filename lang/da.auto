@@ -1246,4 +1246,5 @@ theme_xhred_hotkey_clear_cache=Ryd cache og genindlæs
 theme_xhred_hotkey_open_new=Dupliker til en ny fane
 theme_xhred_hotkey_copy_to_clipboard=Kopier elementdata til udklipsholder
 theme_xhred_hotkey_copy_to_clipboard_click=venstre klik
+theme_xhred_hotkey_print_title=Webmin-genvejstaster med autentisk tema
 theme_xhred_global_success=Succes

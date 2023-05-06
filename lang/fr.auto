@@ -245,4 +245,5 @@ theme_xhred_hotkey_clear_cache=Vider le cache et recharger
 theme_xhred_hotkey_open_new=Dupliquer dans un nouvel onglet
 theme_xhred_hotkey_copy_to_clipboard=Copier les données de l'élément dans le presse-papiers
 theme_xhred_hotkey_copy_to_clipboard_click=click gauche
+theme_xhred_hotkey_print_title=Raccourcis clavier Webmin avec thème authentique
 theme_xhred_global_success=Succès

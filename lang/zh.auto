@@ -534,4 +534,5 @@ theme_xhred_hotkey_clear_cache=清除缓存并重新加载
 theme_xhred_hotkey_open_new=复制到新标签
 theme_xhred_hotkey_copy_to_clipboard=将元素数据复制到剪贴板
 theme_xhred_hotkey_copy_to_clipboard_click=左击
+theme_xhred_hotkey_print_title=具有真实主题的 Webmin 热键
 theme_xhred_global_success=成功

@@ -1334,4 +1334,5 @@ theme_xhred_hotkey_clear_cache=Vymažte vyrovnávaciu pamäť a znova načítajt
 theme_xhred_hotkey_open_new=Duplikovať na novú kartu
 theme_xhred_hotkey_copy_to_clipboard=Skopírujte údaje prvku do schránky
 theme_xhred_hotkey_copy_to_clipboard_click=ľavý klik
+theme_xhred_hotkey_print_title=Klávesové skratky Webmin s autentickou témou
 theme_xhred_global_success=Úspech
