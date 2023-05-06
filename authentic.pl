@@ -1587,6 +1587,12 @@ sub theme_error
     }
 }
 
+sub theme_ui_page_refresh
+{
+return "page_refresh()";
+}
+
+
 $main::cloudmin_no_create_links = 1;
 $main::cloudmin_no_edit_buttons = 1;
 $main::cloudmin_no_global_links = 1;
