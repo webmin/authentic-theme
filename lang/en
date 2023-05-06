@@ -1403,4 +1403,6 @@ theme_xhred_hotkey_open_module_config_privileged=Open module config
 theme_xhred_hotkey_open_theme_config=Open theme config
 theme_xhred_hotkey_clear_cache=Clear cache and reload
 theme_xhred_hotkey_open_new=Duplicate to a new tab
+theme_xhred_hotkey_copy_to_clipboard=Copy element data to clipboard
+theme_xhred_hotkey_copy_to_clipboard_click=left-click
 theme_xhred_global_success=Success
