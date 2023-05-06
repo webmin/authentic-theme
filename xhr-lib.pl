@@ -49,7 +49,7 @@ sub xhr
                 $data{'hotkeys-global'} = \@hotkeys_global;
 
                 # File Manager hotkeys
-                my $file_manager                = read_file_contents(help_file($current_theme, 'file-manager'));
+                my $file_manager                = read_help_file($current_theme, 'file-manager');
                 my @file_manager_hotkeys_labels = $file_manager =~ /<tr.*?<td.*?>(.*?)<\//gms;
                 my @file_manager_hotkeys_values = $file_manager =~ /<tr.*?<td.*?<td.*?h[\d]>(.*?)<\//gms;
                 my %file_manager_hotkeys_map;
@@ -61,7 +61,7 @@ sub xhr
                 $data{'hotkeys-file-manager'} = \@hotkeys_file_manager;
 
                 my @hotkeys_editor;
-                my $editor = read_file_contents(help_file($current_theme, 'editor'));
+                my $editor = read_help_file($current_theme, 'editor');
                 my @editor_hotkeys_labels = $editor =~ /<tr.*?<td.*?>(.*?)<\//gms;
                 my @editor_hotkeys_values = $editor =~ /<tr.*?<td.*?<td.*?>(.*?)<\//gms;
                 my %editor_hotkeys_map;
