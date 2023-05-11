@@ -531,17 +531,20 @@ sub theme_ui_link
     return (
           "<a class='ui_link" . ($class ? " " . $class : "") . "' href='$href'" . ($tags ? " " . $tags : "") . ">$text</a>");
 }
-
 sub theme_ui_links_row
 {
 
     my ($links, $nopuncs) = @_;
-    my $link = "<a";
+    my $link          = "<a";
+    my $targetblocked = "pagination_search";
     if (ref($links)) {
         if (string_contains("@$links", $link)) {
             @$links =
-              map {string_contains($_, $link) ? $_ : "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"}
-              @$links;
+              map {
+                string_contains($_, $link)            ? $_ :
+                  string_contains($_, $targetblocked) ? "<span class='ui_form_element_wrapper ui_link_empty'>$_</span>" :
+                  "<span class=\"btn btn-success ui_link ui_link_empty\">$_</span>"
+              } @$links;
             return @$links ? "<div class=\"btn-group ui_links_row\" role=\"group\">" . join("", @$links) . "</div><br>\n" :
               "";
         } else {
