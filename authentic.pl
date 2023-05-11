@@ -1200,9 +1200,11 @@ sub theme_ui_hidden
     my $ids;
     $ids = "_h_$main::ui_hidden_tcalled" if ($main::ui_hidden_tcalled++);
 
-    my ($name, $value) = @_;
-    return "<input class='ui_hidden' type='hidden' " . "name=\"" . &quote_escape($name) .
-      "\" " . "id=\"" . &quote_escape($name . $ids) . "\" " . "value=\"" . &quote_escape($value) . "\">\n";
+    my ($name, $value, $formid) = @_;
+    return "<input class='ui_hidden' type='hidden' " . "name=\"" . &quote_escape($name) . "\" " . 
+    "id=\"" . &quote_escape($name . $ids) . "\" " . 
+    "value=\"" . &quote_escape($value) . "\"" .
+    ($formid ? " form=\"$formid\"" : "") . ">\n";
 
 }
 
