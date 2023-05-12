@@ -469,7 +469,7 @@ sub print_sysstats_panel_start
           ) .
           (1 == 1 ? &$submit_support_ticket() : undef) .
           '<span class="btn btn-transparent-link pull-right _theme_help_cnt"><i onclick="theme.help.show()" class="fa fa-fw fa2 fa2-question-circle _theme_help" '
-              . get_button_tooltip('theme_xhred_hotkeys_help', undef, 'auto right', undef, undef, undef, '(')
+              . get_button_tooltip($theme_config{'settings_hotkeys_active'} eq 'false' ? 'theme_xhred_global_help' : 'theme_xhred_hotkeys_help', undef, 'auto right', undef, undef, undef, '(')
               . '></i></span>')
       .
       ( $cloudmin_config{'docs_link'} &&
