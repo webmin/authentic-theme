@@ -1,11 +1,27 @@
 ## Changelog
 
+#### Version 20.23-RC1 (May 12, 2023)
+* Add list of theme hotkeys in single help screen (F1)
+* Add complete support for the new `ui_paginations` API
+* Add support to copy any element name and value to clipboard using hotkey
+* Add better support for latest iOS versions
+* Fix to correctly flip hardcoded hotkeys for Mac
+* Fix VNC display and positioning in Cloudmin
+* Fix a popup error happening in Cloudmin when changing servers
+* Fix mailbox selection in navigation menu in Usermin [usermin#84](https://github.com/webmin/usermin/issues/84#issuecomment-1494041564)
+* Fix choosers work in proxy mode [forum.virtualmin.com/t/112248](https://forum.virtualmin.com/t/system-logs-file-manager-lists-main-server-file-list-instead-of-guest-when-using-cloudmin-link/112248)
+* Fix exclude from calling delete domain page on full page reload
+* Fix not to display splash screen when changing expired password
+* Fix elements positioning in password reset form
+
 #### Version 20.22 (April 09, 2023)
 * Add to allow setting host and protocol in custom links [#904#issuecomment-1482540434](https://github.com/webmin/authentic-theme/issues/904#issuecomment-1482540434)
 * Fix to interrupt previous call when getting navigation menu content
 * Fix issues when opening navigation menu on iOS devices [#1652](https://github.com/authentic-theme/authentic-theme/issues/1652)
 * Fix custom selects when loaded from cache
 * Fix labels wrapping in File Manager
+
+<!--- separator --->
 
 #### Version 20.21 (March 19, 2023)
 * Add support for displaying symlinked folders in file tree-view in File Manager
@@ -27,8 +43,6 @@
 * Fix to make sure that status collection never runs twice
 * Fix to properly create and submit download forms
 * Update dependencies
-
-<!--- separator --->
 
 #### Version 20.13 (January 19, 2023)
 * Fix error handling issue
