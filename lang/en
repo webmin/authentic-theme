@@ -1401,6 +1401,7 @@ theme_xhred_hotkeys_custom_to_opens=opens
 theme_xhred_hotkeys_custom_not_set=not set
 theme_xhred_hotkey_open_module_config_privileged=Open module config
 theme_xhred_hotkey_open_theme_config=Open theme config
+theme_xhred_hotkey_list_table=List paginated table
 theme_xhred_hotkey_clear_cache=Clear cache and reload
 theme_xhred_hotkey_open_new=Duplicate to a new tab
 theme_xhred_hotkey_copy_to_clipboard=Copy element data to clipboard
