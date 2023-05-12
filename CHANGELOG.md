@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 20.23-RC1 (May 12, 2023)
+#### Version 20.30-RC1 (May 12, 2023)
 * Add list of theme hotkeys in single help screen (F1)
 * Add complete support for the new `ui_paginations` API
 * Add support to copy any element name and value to clipboard using special hotkey
