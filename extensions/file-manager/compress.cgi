@@ -90,7 +90,8 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
                 }
             }
         }
-        $command = "cd " . quotemeta($cwd) . " && zip $pparam -r " . quotemeta($zipped_file) . ' -@'. " < $list";
+        my $not_follow_symlinks = $follow_symlinks ? '' : ' -y';
+        $command = "cd " . quotemeta($cwd) . " && zip$not_follow_symlinks $pparam -r " . quotemeta($zipped_file) . ' -@'. " < $list";
         $status = system($command);
     }
 
