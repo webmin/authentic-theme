@@ -26,16 +26,18 @@ my $password     = $in{'arcencr_val'};
 my $key_id       = quotemeta($in{'arkkey'});
 my $status;
 my $safe_mode = $in{'overwrite_efiles'} ne 'true';
+my $follow_symlinks = $in{'follow_symlinks'} eq 'true';
 
 if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
+    my $list = transname();
+    open my $fh, ">", $list or die $!;
+    print $fh "$_\n" for @entries_list;
+    close $fh;
+
     if ($in{'method'} eq 'tar') {
         if (!has_command('tar')) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         }
-        my $list = transname();
-        open my $fh, ">", $list or die $!;
-        print $fh "$_\n" for @entries_list;
-        close $fh;
 
         my $file = "$cwd/$in{'arch'}.tar.gz";
         if (-e $file && $safe_mode) {
@@ -50,7 +52,8 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
         }
         my $fileq         = quotemeta($file);
         my $gnu_tar_param = get_tar_verbatim();
-        $command = "tar czf " . $fileq . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
+        my $follow_symlinks = $follow_symlinks ? 'h' : '';
+        $command = "tar czf$follow_symlinks " . $fileq . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
         $status  = system($command);
 
         if ($encrypt && $key_id) {
@@ -87,14 +90,7 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
                 }
             }
         }
-        $command = "cd " . quotemeta($cwd) . " && zip $pparam -r " . quotemeta($zipped_file);
-        foreach my $name (@entries_list) {
-            $command .= " " . quotemeta($name);
-
-            if (!-e ($cwd . '/' . $name)) {
-                $errors{$name} = lc($text{'theme_xhred_global_no_target'});
-            }
-        }
+        $command = "cd " . quotemeta($cwd) . " && zip $pparam -r " . quotemeta($zipped_file) . ' -@'. " < $list";
         $status = system($command);
     }
 
