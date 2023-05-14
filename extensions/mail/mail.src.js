@@ -85,6 +85,7 @@ const mail = (function() {
             update_mdata: core.updateModuleData,
             uri_param: uri_parse_param,
             error: connection_error,
+            error_quota: theme_error_disk_quota_exceeded,
             event: {
                 generate: event_generate
             },
@@ -1944,7 +1945,9 @@ const mail = (function() {
 
                                                                 // Send error notification
                                                                 error = error_container.innerHTML.replace(/\s:/, ':&nbsp;');
-                                                                _.notification.post([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
+                                                                if (!_.error_quota(error_container.innerHTML)) {
+                                                                    _.notification.post([$$.$.notification.danger, error], 10, "error", 0, 1, ['bottom', 'center']);
+                                                                }
 
                                                                 // Reset progress
                                                                 _.button.progress(this, 0);
@@ -1976,7 +1979,9 @@ const mail = (function() {
                                                     // Display error message
                                                     _.error({
                                                         responseText: e.target.responseText,
-                                                        status: xhr.status
+                                                        status: xhr.status,
+                                                        readyState: xhr.readyState,
+                                                        _errConnectionReset: xhr.status === 0 ? true : false,
                                                     }, 1);
                                                 }
                                                 xhr.send(form_data);

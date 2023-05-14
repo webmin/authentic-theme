@@ -1410,3 +1410,5 @@ theme_xhred_hotkey_print_title=Webmin hotkeys with Authentic Theme
 theme_xhred_global_success=Success
 theme_xhred_search_content=Search content
 theme_xhred_global_disabled=Disabled
+theme_xhred_connection_reset_title=Connection reset
+theme_xhred_connection_reset_message=Cannot establish a connection to the remote server
