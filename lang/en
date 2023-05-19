@@ -1412,3 +1412,4 @@ theme_xhred_search_content=Search content
 theme_xhred_global_disabled=Disabled
 theme_xhred_connection_reset_title=Connection reset
 theme_xhred_connection_reset_message=Cannot establish a connection to the remote server
+right_file_is_being_prepared=Your file is being prepared. Please wait..

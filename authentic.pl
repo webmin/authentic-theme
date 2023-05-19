@@ -1453,8 +1453,10 @@ sub theme_redirect_download
         if ($delay) {
             $message = $theme_text{'theme_xhred_download_is_being_prepared'};
         }
-        if (!$delay && !$show) {
+        elsif (!$delay && !$show) {
             $message = $theme_text{'right_download_is_ready'};
+        } else {
+            $message = $theme_text{'right_file_is_being_prepared'};
         }
 
         theme_header_redirect_download($_[0], $delay, $message);
