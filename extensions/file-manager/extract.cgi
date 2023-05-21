@@ -124,7 +124,7 @@ foreach my $name (@entries_list) {
                 $status = system("$unrar_cmd $pparam x -r -y -o+ " . quotemeta("$cwd/$name") . " " . quotemeta($ecwd));
             }
         }
-    } elsif ($archive_type =~ /\/x-rpm/) {
+    } elsif ($archive_type =~ /\/(x-rpm|x-source-rpm)/) {
         my $rpm2cpio_cmd = has_command('rpm2cpio');
         my $cpio_cmd     = has_command('cpio');
         if (!$rpm2cpio_cmd) {
