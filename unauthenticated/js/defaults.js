@@ -219,6 +219,7 @@ var
             { 'csf': 'csf' },
             {
                 'virtual-server': [
+                    ['edit_newautoconfig', 'outlook thunderbird mailspring k-9 k9 mailclient autoconfig autodiscover'],
                     ['edit_limits', 'jail chroot allowed acl shell'],
                     ['rename_form', 'rename alter'],
                     ['edit_newmysqls', 'MySQL MariaDB'],
