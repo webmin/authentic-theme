@@ -897,10 +897,12 @@ sub get_default_module
 # Webmin manually. Inner ref.: CXX1010000
 sub init_prefail
 {
+    # Usermin is always fully restarted
     return if (get_product_name() eq 'usermin');
     my $pversion = get_webmin_version();
     if (
         # Affects upgrades 2.022 and up
+        (!defined(&get_http_redirect) && $pversion >= 2.022) ||
         (!defined(&create_wrapper) && $pversion >= 2.022) ||
 
         # Affects upgrades before 2.020
