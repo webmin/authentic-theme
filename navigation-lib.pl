@@ -850,8 +850,10 @@ sub nav_list_combined_menu
                 }
 
             } elsif ($item->{'type'} eq 'html') {
-                $rv .= '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
-                  $item->{'html'} . '</span></li>';
+                if (trim(html_strip($item->{'html'}))) {
+                    $rv .= '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
+                      $item->{'html'} . '</span></li>';
+                }
             } elsif ($item->{'type'} eq 'text' && $item->{'desc'}) {
                 if ($login_mode++ == 1) {
                     $login_mode =
