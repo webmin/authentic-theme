@@ -1,3 +1,60 @@
+body.nightRider {
+    background-color: #292b31;
+    color: rgba(170, 175, 180, 0.92);
+}
+
+body.nightRider .cke_hidpi .cke_button__italic_icon {
+    filter: brightness(0.7) contrast(1.4);
+}
+
+body.nightRider .cke_panel_grouptitle {
+    color: #a9a9a9;
+    border-bottom: 1px solid #37393f;
+    background: #1d1e23;
+}
+
+body.nightRider .cke_panel_listItem.cke_selected a,
+body.nightRider .cke_panel_listItem a:hover,
+body.nightRider .cke_panel_listItem a:focus,
+body.nightRider .cke_panel_listItem a:active {
+    background-color: #233669;
+}
+
+body.nightRider .cke_panel_listItem a:focus,
+body.nightRider .cke_menubutton:hover,
+body.nightRider .cke_menubutton:focus,
+body.nightRider .cke_menubutton:active {
+    outline: 1px dotted #37393f
+}
+
+body.nightRider a.cke_colorauto,
+body.nightRider a.cke_colormore {
+    color: #a9a9a9;
+    border: 1px solid #37393f;
+    background-color: transparent;
+}
+
+body.nightRider a.cke_colorauto:hover,
+body.nightRider a.cke_colormore:hover {
+    background-color: #37393f;
+    border: 1px solid #4a4d55;
+}
+
+body.nightRider hr {
+    border-top-width: 0.75px;
+    border-color: #000;
+}
+
+body {
+    margin: 4px;
+}
+
+body p {
+    margin-block-end: 4px;
+    margin-block-start: 4px
+}
+
 a.cke_colorauto {
     padding-left: 4px !important;
 }
+
