@@ -8,7 +8,7 @@
 
 use strict;
 
-our (%in, $cwd, @allowed_paths, @remote_user_info);
+our (%in, $cwd, @allowed_paths);
 
 do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
@@ -18,8 +18,6 @@ my $has_tar    = has_command('tar');
 my $do_zip     = ($in{'do_zip'} eq '1'                             ? 1     : 0);
 my $extension  = (($has_zip && $do_zip && !test_all_items_query()) ? "zip" : "tar.gz");
 my $filename   = $in{'filename'};
-var_dump(\%in, 'user_info');
-var_dump(\@remote_user_info, 'in');
 my $target_dir = tempname("$filename");
 my $target     = "$target_dir/$filename.$extension";
 
