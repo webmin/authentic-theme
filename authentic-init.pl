@@ -1565,7 +1565,9 @@ sub theme_post_update
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    return 'data-redirect="' . get_theme_temp_data('redirected') .
+    my $redirect = get_theme_temp_data('redirected');
+    $redirect = "" if ($redirect eq "/");
+    return 'data-redirect="' . $redirect .
 
       # ref.: CXX1010000
       '" data-needs-restart="' .
