@@ -1114,6 +1114,12 @@ const mail = (function() {
                                                         formula: false,
                                                         syntax: false,
                                                         imageDrop: true,
+                                                        imageResize: {
+                                                            modules: [
+                                                                    'DisplaySize',
+                                                                    'Resize',
+                                                                ],
+                                                        },
                                                         toolbar: target.querySelector(`#tb-${id}`),
                                                     },
                                                     bounds: target,
