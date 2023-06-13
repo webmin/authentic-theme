@@ -52,7 +52,7 @@ sub theme_header
                   (@_ > 1 ? '1' : '0'),
                   ($tref  ? 1   : 0)));
     my $body_initial = !http_x_request() ? ' data-load-initial="1"' : undef;
-    print '<body ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
+    print '<body data-initial-load="1" ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!http_x_request());
 
     # Embed branding
