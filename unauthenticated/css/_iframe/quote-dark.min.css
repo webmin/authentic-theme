@@ -1,0 +1,6 @@
+body.dark blockquote:not([style*="border-left"]) {
+    border-left-color: rgb(255, 255, 255, 0.15);
+}
+body.dark:not([style*="color"]) {
+    color: rgba(190, 195, 200, 0.9);
+}
