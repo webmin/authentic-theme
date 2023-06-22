@@ -1,6 +1,1 @@
-body.dark blockquote:not([style*="border-left"]) {
-    border-left-color: rgb(255, 255, 255, 0.15);
-}
-body.dark:not([style*="color"]) {
-    color: rgba(190, 195, 200, 0.9);
-}
+blockquote:not([style*=border-left]){border-left:1px solid #ccc;margin-left:6px;margin-top:0;margin-bottom:0;padding-left:12px}body.dark blockquote:not([style*=border-left]){border-left-color:rgb(255,255,255,.15)}body.dark:not([style*=color]){color:rgba(190,195,200,.9)}
