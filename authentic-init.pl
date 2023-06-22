@@ -1474,6 +1474,68 @@ sub get_button_style
     return ($keys, $class, $icon);
 }
 
+sub embed_login_head
+{
+    my ($inline) = @_;
+    my $ext = (theme_debug_mode() ? 'src' : 'min');
+
+    # Define page title
+    my $title = $text{'session_header'};
+
+    print '<head>',                                           "\n";
+    print ' <meta name="color-scheme" content="only light">', "\n";
+    embed_noscript();
+    print '<meta charset="utf-8">', "\n";
+    embed_favicon('login-page');
+    print '<title>', $title, '</title>', "\n";
+    print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+
+    if ($inline) {
+        my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/bundle.min.css");
+        print '<style>';
+        print $file_contents;
+        print '</style>';
+
+        if (theme_night_mode_login()) {
+            my $file_contents =
+              read_file_contents("$root_directory/$current_theme/unauthenticated/css/palettes/nightrider.min.css");
+            print '<style>';
+            print $file_contents;
+            print '</style>';
+        }
+        my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/fonts-roboto.min.css");
+        print '<style>';
+        print $file_contents;
+        print '</style>';
+
+    } else {
+        print '<link href="' . $theme_webprefix .
+          '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+
+        print
+'<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
+for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i].offsetHeight?1:0;b.classList.add("input_warning_caps");b.setAttribute("title","Caps Lock");d&&b.classList.add("large");a[i].classList.add("use_input_warning_caps");a[i].parentNode.insertBefore(b,a[i].nextSibling);a[i].addEventListener("blur",function(){this.nextSibling.classList.remove("visible")});a[i].addEventListener("keydown",function(c){"function"===typeof c.getModifierState&&((state=20===c.keyCode?!c.getModifierState("CapsLock"):
+c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'button i.fa-sign-in:not(.invisible)\') || document.querySelector(\'button i.fa-qrcode:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}setTimeout(function(){if(navigator&&navigator.oscpu){var t=navigator.oscpu,i=document.querySelector("html"),e="data-platform";t.indexOf("Linux")>-1?i.setAttribute(e,"linux"):t.indexOf("Windows")>-1&&i.setAttribute(e,"windows")}});</script>';
+
+        embed_css_night_rider();
+        embed_css_fonts();
+    }
+
+    embed_background();
+    embed_styles();
+    embed_overlay_head();
+    if (get_env('script_name') =~ /password_change\.cgi$/) {
+        print '<script>';
+        print 'document.addEventListener("DOMContentLoaded", function() {';
+        my $palette = theme_night_mode_login() ? 'nightRider' : 'gainsboro';
+            print 'document.querySelector("html").setAttribute("data-bgs", "' . $palette . '");';
+            print 'document.querySelector("body").classList.add("container", "session_login");';
+        print '});';
+        print '</script>';
+    }
+    print '</head>', "\n";
+}
+
 sub theme_night_mode
 {
     if ($theme_config{'settings_force_night_mode'} eq '1') {

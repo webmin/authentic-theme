@@ -44,6 +44,11 @@ sub theme_header
 {
 
     return if (fetch_content());
+    if (get_env('script_name') =~ /password_change\.cgi$/) {
+        embed_login_head();
+        print "<body>";
+        return;
+    }
     my $tref   = ref($_[0]) eq 'ARRAY';
     my $ttitle = $tref ? $_[0]->[0] : $_[0];
     embed_header(
@@ -150,6 +155,10 @@ sub theme_header
 sub theme_footer
 {
     return if (fetch_content());
+    if (get_env('script_name') =~ /password_change\.cgi$/) {
+        print "</body>";
+        return;
+    }
     ((!$miniserv::theme_header_captured && !$miniserv::page_capture) && return);
     my %this_module_info = &get_module_info(&get_module_name());
     for (my $i = 0; $i + 1 < @_; $i += 2) {

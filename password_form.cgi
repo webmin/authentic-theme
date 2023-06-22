@@ -18,7 +18,12 @@ my $charset = &get_charset();
 &PrintHeader($charset);
 
 print '<!DOCTYPE HTML>', "\n";
-print '<html data-bgs="gainsboro" class="session_login">', "\n";
+print '<html data-bgs="'
+      .
+      ( theme_night_mode_login() ? 'nightRider' :
+          'gainsboro'
+      ) .
+      '" class="session_login">', "\n";
 embed_login_head();
 print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";
@@ -63,30 +68,30 @@ if ($gconfig{'realname'}) {
 }
 
 print '<p class="form-signin-paragraph">' .
-  theme_text('theme_new_password_header') . ' <em><strong>' . $in{'user'} . '</strong></em></p>' . "\n";
+  theme_text('theme_new_password_header') . ' <em><strong>' . html_escape($in{'user'}) . '</strong></em></p>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
-print '<span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>' . "\n";
 print
   '<input type="password" class="form-control session_login" name="old" autocomplete="off" autocorrect="off" placeholder="'
   . theme_text('password_old')
   . '">' . "\n";
+print '<span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>' . "\n";
 print '</div>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
-print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
 print
   '<input type="password" class="form-control session_login" name="new1" autocomplete="off" autocorrect="off" placeholder="'
   . theme_text('password_new1')
   . '">' . "\n";
+print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
 print '</div>' . "\n";
 
 print '<div class="input-group form-group">' . "\n";
-print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
 print
   '<input type="password" class="form-control session_login" name="new2" autocomplete="off" autocorrect="off" placeholder="'
   . theme_text('password_new2')
   . '">' . "\n";
+print '<span class="input-group-addon"><i class="fa fa-fw fa-key-plus"></i></span>' . "\n";
 print '</div>' . "\n";
 
 print '<div class="form-group form-signin-group">';
