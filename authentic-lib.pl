@@ -1936,8 +1936,23 @@ sub get_xhr_request
             print convert_to_json(\@data);
         } elsif ($in{'xhr-theme_latest_version'} eq '1') {
             my @current_versions;
+            my @remote_version = theme_remote_version(1, 0, 1);
+            my ($remote_version_number) = "@remote_version" =~ /^version=(.*)/m;
+            my ($remote_mversion_number) = "@remote_version" =~ /^mversion=(.*)/m;
+            if ($remote_mversion_number <= 1) {
+                $remote_mversion_number = "";
+            } else {
+                $remote_mversion_number = "-$remote_mversion_number";
+            }
+            my ($remote_bversion_number) = "@remote_version" =~ /^bversion=(.*)/m;
+            if ($remote_bversion_number <= 1) {
+                $remote_bversion_number = "";
+            } else {
+                $remote_bversion_number = ":$remote_bversion_number";
+            }
             push(@current_versions,
-                 (theme_remote_version(1, 1) =~ /^version=(.*)/m), (theme_remote_version(1, 0, 1) =~ /^version=(.*)/m));
+                 (theme_remote_version(1, 1) =~ /^version=(.*)/m),
+                 "$remote_version_number$remote_mversion_number$remote_bversion_number");
             print convert_to_json(\@current_versions);
         } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
             clear_theme_cache(&webmin_user_is_admin());
