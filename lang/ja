@@ -989,21 +989,6 @@ theme_global_user_mode=ユーザーモード
 
 #19.40
 theme_xhred_global_attachments=添付ファイル
-theme_xhred_editor_tb_font=フォント
-theme_xhred_editor_tb_size=サイズ
-theme_xhred_editor_tb_bold=太字 (%cmd+B)
-theme_xhred_editor_tb_italic=イタリック体(%cmd+I)
-theme_xhred_editor_tb_underline=下線 (%cmd+U)
-theme_xhred_editor_tb_color=テキストの色
-theme_xhred_editor_tb_background=テキストの背景
-theme_xhred_editor_tb_align=整列
-theme_xhred_editor_tb_list_ordered=番号付きリスト
-theme_xhred_editor_tb_list_bullet=箇条書きリスト
-theme_xhred_editor_tb_strike=取り消し線
-theme_xhred_editor_tb_blockquote=引用
-theme_xhred_editor_tb_code-block=コードを挿入
-theme_xhred_editor_tb_link=リンクを挿入 (%cmd+K)
-theme_xhred_editor_tb_clean=フォーマットを削除
 theme_xhred_mail_composer_send=送信
 theme_xhred_mail_composer_schedule=スケジュール送信
 theme_xhred_mail_composer_attach=添付ファイル

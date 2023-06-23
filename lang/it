@@ -1005,21 +1005,6 @@ theme_global_user_mode=Modalità utente
 
 #19.40
 theme_xhred_global_attachments=Allegati
-theme_xhred_editor_tb_font=Carattere
-theme_xhred_editor_tb_size=Dimensione
-theme_xhred_editor_tb_bold=Grassetto (%cmd+B)
-theme_xhred_editor_tb_italic=Corsivo (%cmd+I)
-theme_xhred_editor_tb_underline=Sottolineato (%cmd+U)
-theme_xhred_editor_tb_color=Colore del testo
-theme_xhred_editor_tb_background=Sfondo del testo
-theme_xhred_editor_tb_align=Allinea
-theme_xhred_editor_tb_list_ordered=Elenco numerato
-theme_xhred_editor_tb_list_bullet=Elenco puntato
-theme_xhred_editor_tb_strike=Barrato
-theme_xhred_editor_tb_blockquote=Cita
-theme_xhred_editor_tb_code-block=Inserisci codice
-theme_xhred_editor_tb_link=Inserisci link (%cmd+K)
-theme_xhred_editor_tb_clean=Rimuovi formattazione
 theme_xhred_mail_composer_send=Invia
 theme_xhred_mail_composer_schedule=Programma
 theme_xhred_mail_composer_attach=Allega file

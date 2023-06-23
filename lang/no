@@ -998,21 +998,6 @@ theme_global_user_mode=Brukermodus
 
 #19.40
 theme_xhred_global_attachments=Vedlegg
-theme_xhred_editor_tb_font=Font
-theme_xhred_editor_tb_size=Størrelse
-theme_xhred_editor_tb_bold=Uthevet (%cmd+B)
-theme_xhred_editor_tb_italic=Kursiv (%cmd+I)
-theme_xhred_editor_tb_underline=Understreket (%cmd+U)
-theme_xhred_editor_tb_color=Tekstfarge
-theme_xhred_editor_tb_background=Tekst bakgrunn
-theme_xhred_editor_tb_align=Juster
-theme_xhred_editor_tb_list_ordered=Nummerert liste
-theme_xhred_editor_tb_list_bullet=Punktmerket liste
-theme_xhred_editor_tb_strike=Gjennomstreket
-theme_xhred_editor_tb_blockquote=Siter
-theme_xhred_editor_tb_code-block=Sett inn kode
-theme_xhred_editor_tb_link=Sett inn lenke (%cmd+K)
-theme_xhred_editor_tb_clean=Fjern formattering
 theme_xhred_mail_composer_send=Send
 theme_xhred_mail_composer_schedule=Tidsplan
 theme_xhred_mail_composer_attach=Legg ved fil(er)

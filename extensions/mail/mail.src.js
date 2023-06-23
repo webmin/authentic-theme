@@ -99,6 +99,7 @@ const mail = (function() {
                 html_escape: Convert.htmlEscape,
                 html_strip: Convert.htmlStrip,
                 quote_escape: Convert.quoteEscape,
+                arr_prepend: Convert.arrPrepend,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
                 preloader: {
@@ -415,6 +416,149 @@ const mail = (function() {
                             value.del === null) {
                             status.menu.options = hidden
                         }
+
+                        // Toolbar type depending on the mode
+                        let toolbar;
+                        if (data.toolbar_mode === 'basic') {
+                            toolbar = `
+                                <span class="ql-formats">
+                                  <button class="ql-bold"></button>
+                                  <button class="ql-italic"></button>
+                                </span>
+                                <span class="ql-formats">
+                                  <select class="ql-color"></select>
+                                </span>
+                                <span class="ql-formats">
+                                  <button class="ql-blockquote"></button>
+                                </span>
+                                <span class="ql-formats ${data.class.hidden}">
+                                    <button class="ql-link"></button>
+                                    <button class="ql-image"></button>
+                                </span>
+                            `;
+                        } else if (data.toolbar_mode === 'advanced') {
+                            toolbar = `
+                                <span class="ql-formats">
+                                    <select class="ql-font">
+                                      <option value="initial" selected>${data.language._default}</option>
+                                      <option value="monospace">Monospace</option>
+                                    </select>
+                                    <select class="ql-size">
+                                        <option value="0.75em">${data.language._font_size.small}</option>
+                                        <option selected>${data.language._font_size.normal}</option>
+                                        <option value="1.15em">${data.language._font_size.medium}</option>
+                                        <option value="1.3em">${data.language._font_size.large}</option>
+                                    </select>
+                                    <select class="ql-header ql-paragraph">
+                                        <option value="1">${data.language._heading} 1</option>
+                                        <option value="2">${data.language._heading} 2</option>
+                                        <option value="3">${data.language._heading} 3</option>
+                                        <option value="4">${data.language._heading} 4</option>
+                                        <option value="5">${data.language._heading} 5</option>
+                                        <option value="6">${data.language._heading} 6</option>
+                                        <option selected>${data.language._paragraph}</option>
+                                    </select>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold"></button>
+                                    <button class="ql-italic"></button>
+                                    <button class="ql-underline"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <select class="ql-color"></select>
+                                    <select class="ql-background"></select>
+                                </span>
+                                <span class="ql-formats">
+                                    <select class="ql-align"></select>
+                                </span>
+                                <span class="ql-formats">
+                                    <span class="dropup">
+                                        <button class="btn btn-default dropdown-toggle pd-0" type="button" id="extra-${data.id}" data-toggle="dropdown" aria-expanded="true">
+                                          <span class="fa fa-lg fa-menu"></span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="extra-${data.id}">
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-strike"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-blockquote"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-script" value="sub"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-script" value="super"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-list" value="ordered"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-list" value="bullet"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-indent" value="-1"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-indent" value="+1"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-code"></button>
+                                          </li>
+                                          <li role="presentation" class="${data.class.hidden}">
+                                            <button role="menuitem" tabindex="-1" class="ql-link"></button>
+                                          </li>
+                                          <li role="presentation" class="${data.class.hidden}">
+                                            <button role="menuitem" tabindex="-1" class="ql-image"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-direction" value="rtl"></button>
+                                          </li>
+                                          <li role="presentation">
+                                            <button role="menuitem" tabindex="-1" class="ql-clean"></button>
+                                          </li>
+                                        </ul>
+                                    </span>
+                                </span>
+                            `;
+                        } else {
+                            toolbar = `
+                                <span class="ql-formats">
+                                    <select class="ql-font">
+                                        <option value="initial" selected>${data.language._default}</option>
+                                        <option value="monospace">Monospace</option>
+                                    </select>
+                                    <select class="ql-size">
+                                        <option value="0.75em">${data.language._font_size.small}</option>
+                                        <option selected>${data.language._font_size.normal}</option>
+                                        <option value="1.15em">${data.language._font_size.medium}</option>
+                                        <option value="1.3em">${data.language._font_size.large}</option>
+                                    </select>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold"></button>
+                                    <button class="ql-italic"></button>
+                                    <button class="ql-underline"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <select class="ql-color"></select>
+                                    <select class="ql-background"></select>
+                                </span>
+                                <span class="ql-formats">
+                                    <select class="ql-align"></select>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-blockquote"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-clean"></button>
+                                </span>
+                                <span class="ql-formats ${data.class.hidden}">
+                                    <button class="ql-link"></button>
+                                    <button class="ql-image"></button>
+                                </span>
+                            `;
+                        }
+
                         return `
                             <form class="compose" data-pjax="no" action="${data.prefix}/${data.target.send}?id=${data.id}" method="post" enctype="multipart/form-data" accept-charset="${data.charset}">
                                 <div class="form-e">
@@ -498,52 +642,7 @@ const mail = (function() {
                                         <div class="ql-compose-container">
                                           <textarea data-signature="${data.signature}" class="${data.status.text}" ${data.class.editor.composer}="text">\n\n\n${data.signature}</textarea>
                                           <div ${data.class.editor.composer}="html" class="ql-compose ql-container-toolbar-bottom ${data.status.html}">${data.body}</div>
-                                          <div id="tb-${data.id}">
-                                            <span class="ql-formats">
-                                              <select class="ql-font">
-                                                <option value="initial" selected>${data.language._default}</option>
-                                                <option value="sans-serif">Sans Serif</option>
-                                                <option value="serif">Serif</option>
-                                                <option value="monospace">Monospace</option>
-                                              </select>
-                                              <select class="ql-size">
-                                                  <option value="0.75em">${data.language._font_size.small}</option>
-                                                  <option selected>${data.language._font_size.normal}</option>
-                                                  <option value="1.2em">${data.language._font_size.medium}</option>
-                                                  <option value="1.5em">${data.language._font_size.large}</option>
-                                                  <option value="2.5em">${data.language._font_size.huge}</option>
-                                              </select>
-                                            </span>
-                                            <span class="ql-formats">
-                                              <button class="ql-bold"></button>
-                                              <button class="ql-italic"></button>
-                                              <button class="ql-underline"></button>
-                                              <select class="ql-color"></select>
-                                              <select class="ql-background"></select>
-                                            </span>
-                                            <span class="ql-formats">
-                                              <select class="ql-align"></select>
-                                            </span>
-                                            <span class="ql-formats">
-                                              <button class="ql-list" value="ordered"></button>
-                                              <button class="ql-list" value="bullet"></button>
-                                            </span>
-                                            <span class="ql-formats">
-                                                <span class="dropup">
-                                                    <button class="btn btn-default dropdown-toggle pd-0" type="button" id="extra-${data.id}" data-toggle="dropdown" aria-expanded="true">
-                                                      <span class="fa fa-lg fa-menu"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="extra-${data.id}">
-                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-strike"></button></li>
-                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-blockquote"></button></li>
-                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-code-block"></button></li>
-                                                      <li role="presentation" class="${data.class.hidden}"><button role="menuitem" tabindex="-1" class="ql-link"></button></li>
-                                                      <li role="presentation" class="${data.class.hidden}"><button role="menuitem" tabindex="-1" class="ql-image"></button></li>
-                                                      <li role="presentation"><button role="menuitem" tabindex="-1" class="ql-clean"></button></li>
-                                                    </ul>
-                                                </span>
-                                            </span>
-                                          </div>
+                                          <div id="tb-${data.id}" data-mode="${data.toolbar_mode}">${toolbar}</div>
                                         </div>
                                         <div class="btn-group ${data.class.editor.controls.compose}">
                                           <button type="submit" class="btn btn-primary btn-progress">
@@ -864,6 +963,24 @@ const mail = (function() {
         },
 
         /**
+         * Load dependencies
+         */
+        bundles = {
+            loaded: false,
+            get: function(config) {
+                if (typeof config !== 'object' ||
+                    (typeof config === 'object' && config.d && !config.d.u)) {
+                    return
+                }
+                this.loaded = true;
+                let bundles = ['jquery.jspanel', 'quill:min'];
+                ((config.d.u.html_edit_mode === 'advanced') &&
+                    (bundles = _.plugin.arr_prepend('highlight/highlight:min', bundles)));
+                _.load.bundle(bundles, 1);
+            }
+        },
+
+        /**
          * Compose object sub-module ;;
          *
          * @since 19.40
@@ -875,8 +992,8 @@ const mail = (function() {
             xtarget.send = 'send_mail.cgi';
             xtarget.reply = 'reply_mail.cgi';
 
-            // Load dependencies
-            _.load.bundle(['jquery.jspanel', 'quill'], 1);
+            // Loading bundles
+            !bundles.loaded && bundles.get(config);
 
             /**
              * Creates new compose message dialog
@@ -933,7 +1050,9 @@ const mail = (function() {
                                 return this.name
                             }).get(),
                             form_data = $form.serialize(),
-                            signature = $.trim(_.plugin.quote_escape(_.plugin.html_strip($(rs).find('textarea[name="body"]').text())));
+                            $form_textare = $(rs).find('textarea[name="body"]'),
+                            toolbar_mode = $form_textare.data('html-mode'),
+                            signature = $.trim(_.plugin.quote_escape(_.plugin.html_strip($form_textare.text())));
 
                         if (form_data) {
                             form_data = _.plugin.serialized_to_json(form_data);
@@ -1094,14 +1213,13 @@ const mail = (function() {
                                             qf = Quill.import('attributors/style/font');
 
                                         // Quill: assign font-size and font-family, rather than using classes
-                                        qs.whitelist = ["0.75em", "1.2em", "1.5em", "2.5em"];
-                                        qf.whitelist = ["initial", "sans-serif", "serif", "monospace"];
+                                        qs.whitelist = ["0.75em", "1.15em", "1.3em"];
                                         Quill.register(qs, true);
+                                        qf.whitelist = ["monospace"];
                                         Quill.register(qf, true);
 
                                         // Redefine the actual target
                                         target = target[0];
-
 
                                         let asb = target.querySelector(`.${classes.form.header}`),
                                             ccs = target.querySelectorAll(`.${classes.editor.controls.compose}`),
@@ -1111,14 +1229,16 @@ const mail = (function() {
                                             editor = {
                                                 this: new Quill(qtg, {
                                                     modules: {
-                                                        formula: false,
-                                                        syntax: false,
+                                                        syntax: typeof hljs === 'object',
                                                         imageDrop: true,
                                                         imageResize: {
                                                             modules: [
-                                                                    'DisplaySize',
-                                                                    'Resize',
-                                                                ],
+                                                                'DisplaySize',
+                                                                'Resize',
+                                                            ],
+                                                        },
+                                                        clipboard: {
+                                                            matchVisual: false
                                                         },
                                                         toolbar: target.querySelector(`#tb-${id}`),
                                                     },
@@ -1469,6 +1589,25 @@ const mail = (function() {
                                                     }
                                                 };
 
+                                            // Editor Google Mail like keybind for quoting
+                                            editor.this.keyboard.addBinding({
+                                                key: '9',
+                                                shiftKey: true,
+                                                ctrlKey: !_.platform.mac,
+                                                metaKey: _.platform.mac,
+                                                format: ['blockquote'],
+                                            }, function(range, context) {
+                                                this.quill.format('blockquote', false);
+                                            });
+                                            editor.this.keyboard.addBinding({
+                                                key: '9',
+                                                shiftKey: true,
+                                                ctrlKey: !_.platform.mac,
+                                                metaKey: _.platform.mac,
+                                            }, function(range, context) {
+                                                this.quill.format('blockquote', true);
+                                            });
+
                                             // Event for external insert link to editor button
                                             ctl_lnk.addEventListener('click', () => {
                                                 tb.querySelector(`.${classes.editor.tb_link}`).dispatchEvent(new Event('click'));
@@ -1529,7 +1668,6 @@ const mail = (function() {
 
                                             // Events to manage more options menu
                                             $more_options.find('.dropdown-menu').on("click.bs.dropdown", function(event) {
-
                                                 let type = this.dataset.type,
                                                     etarget = event.target,
                                                     action = etarget.dataset.value;
@@ -1612,18 +1750,24 @@ const mail = (function() {
                                             let editor_controls = [
                                                 'font',
                                                 'size',
+                                                'paragraph',
                                                 'bold',
                                                 'italic',
                                                 'underline',
+                                                'strike',
+                                                { 'script': 'sub' },
+                                                { 'script': 'super' },
                                                 'color',
                                                 'background',
                                                 'align',
                                                 { 'list': 'ordered' },
                                                 { 'list': 'bullet' },
-                                                'strike',
+                                                { 'indent': '+1' },
+                                                { 'indent': '-1' },
                                                 'blockquote',
-                                                'code-block',
+                                                'code',
                                                 'link',
+                                                'direction',
                                                 'clean',
                                             ]
                                             editor_controls.forEach((v) => {
@@ -1641,9 +1785,10 @@ const mail = (function() {
                                                     language += `_${v}`;
                                                 }
 
-                                                button = tb.querySelector(`.ql-${value}`)
-                                                button.dataset.title = adjust.modifier(_.lang(language));
-                                                _.plugin.tooltip($(button))
+                                                button = tb.querySelector(`.ql-${value}`);
+                                                button &&
+                                                    (button.dataset.title = adjust.modifier(_.lang(language)),
+                                                        _.plugin.tooltip($(button)));
                                             })
 
                                             // Event to handle change in header
@@ -1669,14 +1814,14 @@ const mail = (function() {
 
                                                 // Save the draft
                                                 draft.save();
-                                            })
+                                            });
 
                                             // Event to handle content change in text body
                                             tcm.addEventListener('input', function() {
 
                                                 // Save the draft
                                                 draft.save();
-                                            })
+                                            });
 
                                             // Scheduled mail events
                                             scheduled.events();
@@ -2065,12 +2210,13 @@ const mail = (function() {
                             language._default = _.lang('global_default');
                             language._name = _.lang('mail_composer_real_name');
                             language._username = _.lang('mail_composer_username');
+                            language._paragraph = _.lang('global_paragraph');
+                            language._heading = _.lang('global_heading');
                             language._font_size = {
                                 small: _.lang('global_small'),
                                 normal: _.lang('global_normal'),
                                 medium: _.lang('global_medium'),
                                 large: _.lang('global_large'),
-                                huge: _.lang('global_huge'),
                             };
 
                             // Check if we have composable from email address 
@@ -2141,7 +2287,8 @@ const mail = (function() {
                                 subject: element.input('subject', data.visible),
                                 attachments: element.input(classes.form.name.tattach, data.visible, false, true),
                                 body: data.visible.body,
-                                signature: signature
+                                signature: signature,
+                                toolbar_mode: toolbar_mode
                             })
 
                             if (inline) {
@@ -2161,7 +2308,7 @@ const mail = (function() {
                                     position = small_window ? {} : { my: "right-bottom", at: "right-bottom", offsetX: offset, offsetY: offset },
                                     panel = $.jsPanel({
                                         position: position,
-                                        theme: "#f3f3f3",
+                                        theme: "#eaeaea",
                                         onwindowresize: true,
                                         panelSize: {
                                             width: (small_window ? window_width + 4 * ioffset : 600),
@@ -2263,6 +2410,9 @@ const mail = (function() {
                         config.set(data[0].config);
 
                         fetching.initial = false;
+
+                        // Loading bundles
+                        !bundles.loaded && bundles.get(config);
                     });
             },
 

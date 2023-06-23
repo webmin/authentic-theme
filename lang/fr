@@ -999,21 +999,6 @@ theme_global_user_mode=Mode utilisateur
 
 #19.40
 theme_xhred_global_attachments=Pièces jointes
-theme_xhred_editor_tb_font=Police de caractère
-theme_xhred_editor_tb_size=Taille
-theme_xhred_editor_tb_bold=Gras (%cmd+B)
-theme_xhred_editor_tb_italic=Italic (%cmd+I)
-theme_xhred_editor_tb_underline=Souligner (%cmd+U)
-theme_xhred_editor_tb_color=Couleur du texte
-theme_xhred_editor_tb_background=Arrière-plan du texte
-theme_xhred_editor_tb_align=Aligner
-theme_xhred_editor_tb_list_ordered=Liste numérotée
-theme_xhred_editor_tb_list_bullet=Liste à puces
-theme_xhred_editor_tb_strike=Barré
-theme_xhred_editor_tb_blockquote=Citation
-theme_xhred_editor_tb_code-block=Insérer le code
-theme_xhred_editor_tb_link=Insérer un lien (%cmd+K)
-theme_xhred_editor_tb_clean=Supprimer la mise en forme
 theme_xhred_mail_composer_send=Envoyer
 theme_xhred_mail_composer_schedule=Programme
 theme_xhred_mail_composer_attach=Pièce jointe

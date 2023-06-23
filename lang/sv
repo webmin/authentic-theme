@@ -1008,21 +1008,6 @@ theme_global_user_mode=Användarläge
 
 #19.40
 theme_xhred_global_attachments=Bilagor
-theme_xhred_editor_tb_font=Typsnitt
-theme_xhred_editor_tb_size=Storlek
-theme_xhred_editor_tb_bold=Fetstil (%cmd+B)
-theme_xhred_editor_tb_italic=Kursiv (%cmd+I)
-theme_xhred_editor_tb_underline=Understrykning (%cmd+U)
-theme_xhred_editor_tb_color=Textfär
-theme_xhred_editor_tb_background=Textbakgrund
-theme_xhred_editor_tb_align=Justera
-theme_xhred_editor_tb_list_ordered=Numrerad lista
-theme_xhred_editor_tb_list_bullet=Punktlista
-theme_xhred_editor_tb_strike=Strykning
-theme_xhred_editor_tb_blockquote=Citat
-theme_xhred_editor_tb_code-block=Infoga kod
-theme_xhred_editor_tb_link=Infoga länk (%cmd+K)
-theme_xhred_editor_tb_clean=Ta bort formatering
 theme_xhred_mail_composer_send=Skicka
 theme_xhred_mail_composer_schedule=Schedule
 theme_xhred_mail_composer_attach=Bifoga fil(er)
