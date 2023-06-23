@@ -997,7 +997,6 @@ theme_xhred_global_attachments=Anhänge
 theme_xhred_mail_composer_send=Senden
 theme_xhred_mail_composer_schedule=Planen
 theme_xhred_mail_composer_attach=Datei(en) anhägen
-theme_xhred_mail_composer_insert_picture=Bild einfügen
 theme_xhred_mail_composer_toggle=Umschalten HTML/Text Modus
 theme_xhred_mail_composer_discard=Entwurf verwerfen
 theme_xhred_mail_composer_server_attach=Datei von Server anhägen

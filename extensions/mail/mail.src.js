@@ -100,6 +100,8 @@ const mail = (function() {
                 html_strip: Convert.htmlStrip,
                 quote_escape: Convert.quoteEscape,
                 arr_prepend: Convert.arrPrepend,
+                quill_toolip: quill_toolbar_tooltip,
+                setup_modifier: theme_modifiers_replace_for_mac,
                 timestamp: snippets.datetime.locale,
                 offset_adjust: page.handle.content.offset,
                 preloader: {
@@ -1148,11 +1150,6 @@ const mail = (function() {
                                             height = `${container - top_block - offset}px`;
                                         editor.style.height = height;
                                     },
-
-                                    // Define modifier key
-                                    modifier: (str) => {
-                                        return str.replace(/%cmd/, _.platform.mac ? 'Cmd' : 'Ctrl');
-                                    }
                                 },
                                 check = {
                                     field: (field, object) => {
@@ -1747,49 +1744,7 @@ const mail = (function() {
                                             );
 
                                             // Create tooltip for editor controls
-                                            let editor_controls = [
-                                                'font',
-                                                'size',
-                                                'paragraph',
-                                                'bold',
-                                                'italic',
-                                                'underline',
-                                                'strike',
-                                                { 'script': 'sub' },
-                                                { 'script': 'super' },
-                                                'color',
-                                                'background',
-                                                'align',
-                                                { 'list': 'ordered' },
-                                                { 'list': 'bullet' },
-                                                { 'indent': '+1' },
-                                                { 'indent': '-1' },
-                                                'blockquote',
-                                                'code',
-                                                'link',
-                                                'direction',
-                                                'clean',
-                                            ]
-                                            editor_controls.forEach((v) => {
-                                                let button,
-                                                    key,
-                                                    value,
-                                                    language = 'editor_tb';
-
-                                                if (typeof v === 'object') {
-                                                    key = Object.keys(v)[0];
-                                                    value = `${key}[value="${v[key]}"]`;
-                                                    language += `_${key}_${v[key]}`;
-                                                } else {
-                                                    value = v;
-                                                    language += `_${v}`;
-                                                }
-
-                                                button = tb.querySelector(`.ql-${value}`);
-                                                button &&
-                                                    (button.dataset.title = adjust.modifier(_.lang(language)),
-                                                        _.plugin.tooltip($(button)));
-                                            })
+                                            _.plugin.quill_toolip($(editor.this.root).parent().parent()[0]);
 
                                             // Event to handle change in header
                                             asb.addEventListener('input', function() {
@@ -2196,8 +2151,10 @@ const mail = (function() {
                                 .replace(/%1/, `<span data-i>${element.type.date()}<span data-t>${_.lang('global_today').toLowerCase()}</span></span>`)
                                 .replace(/%2/, element.type.time());
                             language._attach = _.lang('mail_composer_attach');
-                            language._insert_link = adjust.modifier(_.lang('editor_tb_link'));
-                            language._insert_picture = _.lang('mail_composer_insert_picture');
+                            language._insert_link =
+                                _.plugin.setup_modifier(_.lang('editor_tb_link')
+                                    .replace('%cmd', _.platform.mac ? 'Meta' : 'Ctrl'));
+                            language._insert_picture = _.lang('editor_tb_image');
                             language._toggle = _.lang('mail_composer_toggle');
                             language._discard = _.lang('mail_composer_discard');
                             language._server_attach = _.lang('mail_composer_server_attach');

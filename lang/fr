@@ -1002,7 +1002,6 @@ theme_xhred_global_attachments=Pièces jointes
 theme_xhred_mail_composer_send=Envoyer
 theme_xhred_mail_composer_schedule=Programme
 theme_xhred_mail_composer_attach=Pièce jointe
-theme_xhred_mail_composer_insert_picture=Insérer des images en ligne
 theme_xhred_mail_composer_toggle=Basculer en mode HTML/texte brut
 theme_xhred_mail_composer_discard=Supprimer le brouillon
 theme_xhred_mail_composer_server_attach=Joindre un fichier depuis le serveur

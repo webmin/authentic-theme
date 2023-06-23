@@ -1001,7 +1001,6 @@ theme_xhred_global_attachments=Vedlegg
 theme_xhred_mail_composer_send=Send
 theme_xhred_mail_composer_schedule=Tidsplan
 theme_xhred_mail_composer_attach=Legg ved fil(er)
-theme_xhred_mail_composer_insert_picture=Sett inn bilder inline
 theme_xhred_mail_composer_toggle=Veksle HTML/vanlig tekst modus
 theme_xhred_mail_composer_discard=Forkast kladd
 theme_xhred_mail_composer_server_attach=Legg ved fil fra server

@@ -1008,7 +1008,6 @@ theme_xhred_global_attachments=Allegati
 theme_xhred_mail_composer_send=Invia
 theme_xhred_mail_composer_schedule=Programma
 theme_xhred_mail_composer_attach=Allega file
-theme_xhred_mail_composer_insert_picture=Inserisci immagini in linea
 theme_xhred_mail_composer_toggle=Attivare la modalità HTML/testo normale
 theme_xhred_mail_composer_discard=Scartare la bozza
 theme_xhred_mail_composer_server_attach=Allega file dal server
