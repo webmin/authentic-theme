@@ -854,6 +854,9 @@ sub nav_list_combined_menu
                     $rv .= '<li class="menu-container menu-status"><span class="badge"><i class="fa2 fa-fw fa2-pulsate"></i>' .
                       $item->{'html'} . '</span></li>';
                 }
+            } elsif ($item->{'type'} eq 'text' && $item->{'json'}) {
+                    $login_mode =
+"<span><strong>$theme_text{'theme_global_access_level'}</strong>:&nbsp;&nbsp;<em>@{[html_escape($item->{'json'}->{'level'})]}</em></span>";
             } elsif ($item->{'type'} eq 'text' && $item->{'desc'}) {
                 if ($login_mode++ == 1) {
                     $login_mode =
