@@ -185,6 +185,9 @@ var
     // Embed default/custom favicons
     settings_embed_favicon_privileged = true,
 
+    // Tables related
+    settings_right_table_wrap_inside_scrolled_container = false,
+
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',
 
