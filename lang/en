@@ -1371,7 +1371,7 @@ theme_xhred_filemanager_successful_acls=Access control list has been changed suc
 theme_download_error=Error downloading the file because it is outside of allowed directory : $1
 
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Help (F1)
 theme_xhred_hotkeys_help_title=Keyboard Shortcuts
 theme_xhred_hotkeys_help_title_docs=Documentation
@@ -1424,3 +1424,5 @@ theme_xhred_editor_tb_indent_-1=Decrease indent
 theme_xhred_editor_tb_code=Code block
 theme_xhred_editor_tb_code-block=Code block
 theme_xhred_editor_tb_direction=Text direction
+
+settings_right_table_rows_to_columns=Show label above the field
