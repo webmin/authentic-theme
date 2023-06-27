@@ -1087,6 +1087,7 @@ sub theme_ui_table_start
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
+    $rv .= "<tbody data-tbody-type='ui-table' data-table-cols='$main::ui_table_cols'>\n";
     return $rv;
 }
 
@@ -1106,7 +1107,7 @@ sub theme_ui_table_end
         $main::ui_table_pos         = undef;
         $main::ui_table_default_tds = undef;
     }
-    $rv .= "</table></td></tr></tbody></table></div>\n";
+    $rv .= "</tbody></table></td></tr></tbody></table></div>\n";
     return $rv;
 }
 
@@ -1123,7 +1124,7 @@ sub theme_ui_table_row
         $main::ui_table_pos = 0;
     }
     my $trtags_attrs = ref($trs) eq 'ARRAY' && $trs->[0] ? " $trs->[0]" : "";
-    $trtags_attrs .= " data-row-type='ui-table'";
+    $trtags_attrs .= " data-row-type='ui-table' data-cell-colspan='$cols'";
     my $trtags_class = ref($trs) eq 'ARRAY' && $trs->[1] ? " class='$trs->[1]'" : "";
     $rv .= "<tr$trtags_class$trtags_attrs>\n"
       if ($main::ui_table_pos % $main::ui_table_cols == 0);
@@ -1276,7 +1277,13 @@ sub theme_ui_hidden_table_start
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
+    $rv .= "<tbody data-tbody-type='ui-table' data-table-cols='$main::ui_table_cols'>\n";
     return $rv;
+}
+
+sub ui_hidden_table_row_end
+{
+    return "</tbody></table></div><table width='100%'>\n";
 }
 
 sub theme_ui_buttons_start
