@@ -1069,7 +1069,8 @@ sub theme_ui_table_start
     }
     my $colspan = 1;
     my $rv;
-    $rv .= "<div class='table-responsive'><table class='table table-striped table-condensed table-subtable' $tabletags>\n";
+    $rv .= "<div class='table-responsive'>" .
+      "<table data-table-type='ui-table' class='table table-striped table-condensed table-subtable' $tabletags>\n";
     if (defined($heading) || defined($rightheading)) {
         $rv .= "<thead><tr>";
         if (defined($heading)) {
@@ -1081,7 +1082,8 @@ sub theme_ui_table_start
         }
         $rv .= "</tr></thead>\n";
     }
-    $rv .= "<tbody> <tr><td>" . "<table class='sub_table_container' width=100%>\n";
+    $rv .= "<tbody> <tr><td>" .
+      "<table class='sub_table_container' width=100%>\n";
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
@@ -1121,6 +1123,7 @@ sub theme_ui_table_row
         $main::ui_table_pos = 0;
     }
     my $trtags_attrs = ref($trs) eq 'ARRAY' && $trs->[0] ? " $trs->[0]" : "";
+    $trtags_attrs .= " data-row-type='ui-table'";
     my $trtags_class = ref($trs) eq 'ARRAY' && $trs->[1] ? " class='$trs->[1]'" : "";
     $rv .= "<tr$trtags_class$trtags_attrs>\n"
       if ($main::ui_table_pos % $main::ui_table_cols == 0);
