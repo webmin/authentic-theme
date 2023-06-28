@@ -666,7 +666,7 @@ sub theme_ui_textbox
     $ids = "_i_$main::ui_textbox_tcalled" if ($main::ui_textbox_tcalled++);
 
     $rv .=
-'<input style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
+'<input style="display: inline; width: auto; max-width: 100%; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
     $rv .= 'id="' . &quote_escape($name . $ids) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
