@@ -108,7 +108,7 @@ sub theme_settings_raw
                        'settings_right_table_links_type',
                        'settings_right_table_animate_icons',
                        'settings_right_table_grayscaled_icons',
-                       'settings_right_table_rows_to_columns',
+                       'settings_right_table_layout_control',
             ] }
         ],
 

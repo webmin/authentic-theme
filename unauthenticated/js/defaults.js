@@ -63,7 +63,7 @@ var
     settings_right_table_links_type = 2,
     settings_right_table_animate_icons = false,
     settings_right_table_grayscaled_icons = true,
-    settings_right_table_rows_to_columns = true,
+    settings_right_table_layout_control = true,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
@@ -191,6 +191,10 @@ var
 
     // Tables related
     settings_right_table_wrap_inside_scrolled_container = false,
+    config_portable_table_rows_to_columns = true,
+    config_portable_table_rows_to_columns_number = 2,
+    config_portable_table_rows_to_columns_width = 400,
+
 
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',
