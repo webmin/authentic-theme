@@ -194,7 +194,7 @@ var
     config_portable_table_rows_to_columns = true,
     config_portable_table_rows_to_columns_number = 2,
     config_portable_table_rows_to_columns_width = 520,
-
+    config_portable_table_rows_to_columns_break = true,
 
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',
