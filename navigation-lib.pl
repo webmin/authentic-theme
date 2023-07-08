@@ -538,6 +538,7 @@ sub nav_cat
                       'global_gce'        => 'fa-google',
                       'global_ec2'        => 'fa2 fa2-amazon scaled1_5',
                       'global_hosts'      => 'fa-globe',
+                      'global_docker'     => 'fa2 fa2-docker margined-left--1 margined-right-1',
                       'global_virtualmin' => 'fa-virtualmin scaled1_5',
                       'global_owners'     => 'fa-users',
                       'global_monitor'    => 'fa2 fa2-system',
