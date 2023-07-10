@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Prieigos kontrolės sąraša
 theme_xhred_filemanager_successful_acls=Prieigos kontrolės sąrašas sėkmingai pakeistas.
 theme_download_error=Atsisiunčiant failą įvyko klaida, nes jis nepatenka į leistiną katalogą : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Pagalba (F1)
 theme_xhred_hotkeys_help_title=Klaviatūros nuorodos
 theme_xhred_hotkeys_help_title_docs=Dokumentacija
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Sumažinti įtrauką
 theme_xhred_editor_tb_code=Kodo blokas
 theme_xhred_editor_tb_code-block=Kodo blokas
 theme_xhred_editor_tb_direction=Teksto kryptis
+
+settings_right_table_layout_control=Rodyti turinio išdėstymo valdiklį
+theme_xhred_tooltip_columns_layout=Turinio išdėstymo valdymas
+theme_xhred_columns_layout_title=Turinio išdėstymas
+theme_xhred_columns_layout_variation=Išdėstymo variacija
+theme_xhred_global_vertical=Vertikalus
+theme_xhred_global_horizontal=Horizontalus
+theme_xhred_columns_layout_vertical_opts=Vertikalaus išdėstymo parinktys
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimalus stulpelių skaičius
+theme_xhred_columns_layout_vertical_opts_max_width=Minimalus stulpelio plotis
+theme_xhred_columns_layout_vertical_opts_break_title=Stulpelio perpildymo veiksmas
+theme_xhred_columns_layout_vertical_opts_break_new=Pertrauka
+theme_xhred_columns_layout_vertical_opts_break_scroll=Slinkite
+
+theme_xhred_columns_layout_remove=Slėpti šį valdiklį
+theme_xhred_columns_layout_remove_button=Išsaugoti ir Slėpti
+theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalus išdėstymas negali būti naudojamas mobiliuoju režimu, ypač kai ekrano plotis yra mažesnis nei 992 pikseliai

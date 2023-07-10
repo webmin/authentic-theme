@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Il-lista tal-kontroll tal-a�
 theme_xhred_filemanager_successful_acls=Lista ta 'kontroll ta' aċċess ġiet mibdula b'suċċess.
 theme_download_error=Żball fit-tniżżil tal-fajl minħabba li huwa barra mid-direttorju permess : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Għajnuna (F1)
 theme_xhred_hotkeys_help_title=Shortcuts tat-Tastiera
 theme_xhred_hotkeys_help_title_docs=Dokumentazzjoni
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Naqqas l-inċiż
 theme_xhred_editor_tb_code=Blokk tal-kodiċi
 theme_xhred_editor_tb_code-block=Blokk tal-kodiċi
 theme_xhred_editor_tb_direction=Direzzjoni tat-test
+
+settings_right_table_layout_control=Uri l-kontroll tat-tqassim tal-kontenut
+theme_xhred_tooltip_columns_layout=Kontroll tat-tqassim tal-kontenut
+theme_xhred_columns_layout_title=Tqassim tal-kontenut
+theme_xhred_columns_layout_variation=Varjazzjoni tat-tqassim
+theme_xhred_global_vertical=Vertikali
+theme_xhred_global_horizontal=Orizzontali
+theme_xhred_columns_layout_vertical_opts=Għażliet ta 'tqassim vertikali
+theme_xhred_columns_layout_vertical_opts_max_columns=Kolonni massimi
+theme_xhred_columns_layout_vertical_opts_max_width=Wisa' minimu tal-kolonna
+theme_xhred_columns_layout_vertical_opts_break_title=Azzjoni ta 'overflow tal-kolonna
+theme_xhred_columns_layout_vertical_opts_break_new=Break
+theme_xhred_columns_layout_vertical_opts_break_scroll=Skrollja
+
+theme_xhred_columns_layout_remove=Aħbi Dan Widget
+theme_xhred_columns_layout_remove_button=Ħlief u Aħbi
+theme_xhred_columns_layout_variation_cannot_horizontal=It-tqassim orizzontali ma jistax jintuża fil-modalità mobbli, speċifikament meta l-wisa 'tal-iskrin tkun inqas minn 992px

@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Toegangsbeheerlys is nie suk
 theme_xhred_filemanager_successful_acls=Toegangsbeheerlys is suksesvol verander.
 theme_download_error=Kon nie die lêer aflaai nie omdat dit buite die toegelate gids is : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Hulp (F1)
 theme_xhred_hotkeys_help_title=Sleutelbord kortpaaie
 theme_xhred_hotkeys_help_title_docs=Dokumentasie
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Verminder inkeping
 theme_xhred_editor_tb_code=Kode blok
 theme_xhred_editor_tb_code-block=Kode blok
 theme_xhred_editor_tb_direction=Teks rigting
+
+settings_right_table_layout_control=Wys inhouduitlegbeheer
+theme_xhred_tooltip_columns_layout=Inhouduitlegbeheer
+theme_xhred_columns_layout_title=Inhoud uitleg
+theme_xhred_columns_layout_variation=Uitleg variasie
+theme_xhred_global_vertical=Vertikaal
+theme_xhred_global_horizontal=Horisontaal
+theme_xhred_columns_layout_vertical_opts=Vertikale uitleg opsies
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimum kolomme
+theme_xhred_columns_layout_vertical_opts_max_width=Minimum kolom breedte
+theme_xhred_columns_layout_vertical_opts_break_title=Kolom oorloop aksie
+theme_xhred_columns_layout_vertical_opts_break_new=Breek
+theme_xhred_columns_layout_vertical_opts_break_scroll=Blaai
+
+theme_xhred_columns_layout_remove=Versteek hierdie legstuk
+theme_xhred_columns_layout_remove_button=Stoor en versteek
+theme_xhred_columns_layout_variation_cannot_horizontal=Horisontale uitleg kan nie in die mobiele modus gebruik word nie, spesifiek wanneer die skermwydte minder as 992px is

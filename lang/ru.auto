@@ -1091,7 +1091,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Список контрол�
 theme_xhred_filemanager_successful_acls=Список контроля доступа успешно изменен.
 theme_download_error=Ошибка загрузки файла, так как он находится за пределами разрешенного каталога : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Справка (F1)
 theme_xhred_hotkeys_help_title=Горячие клавиши
 theme_xhred_hotkeys_help_title_docs=Документация
@@ -1144,3 +1144,20 @@ theme_xhred_editor_tb_indent_-1=Уменьшить отступ
 theme_xhred_editor_tb_code=Кодовый блок
 theme_xhred_editor_tb_code-block=Кодовый блок
 theme_xhred_editor_tb_direction=Направление текста
+
+settings_right_table_layout_control=Показать элемент управления макетом содержимого
+theme_xhred_tooltip_columns_layout=Управление макетом контента
+theme_xhred_columns_layout_title=Макет контента
+theme_xhred_columns_layout_variation=Вариант макета
+theme_xhred_global_vertical=Вертикальный
+theme_xhred_global_horizontal=Горизонтальный
+theme_xhred_columns_layout_vertical_opts=Варианты вертикальной компоновки
+theme_xhred_columns_layout_vertical_opts_max_columns=Максимальное количество столбцов
+theme_xhred_columns_layout_vertical_opts_max_width=Минимальная ширина столбца
+theme_xhred_columns_layout_vertical_opts_break_title=Действие переполнения столбца
+theme_xhred_columns_layout_vertical_opts_break_new=Перерыв
+theme_xhred_columns_layout_vertical_opts_break_scroll=Прокрутить
+
+theme_xhred_columns_layout_remove=Скрыть этот виджет
+theme_xhred_columns_layout_remove_button=Сохранить и скрыть
+theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальную верстку нельзя использовать в мобильном режиме, особенно когда ширина экрана меньше 992 пикселей

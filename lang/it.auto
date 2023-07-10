@@ -157,7 +157,7 @@ theme_xhred_filemanager_successful_acls_with_errors=L'elenco di controllo degli 
 theme_xhred_filemanager_successful_acls=L'elenco di controllo degli accessi è stato modificato correttamente.
 theme_download_error=Errore durante il download del file perché è al di fuori della directory consentita : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Aiuto (F1)
 theme_xhred_hotkeys_help_title=Tasti rapidi
 theme_xhred_hotkeys_help_title_docs=Documentazione
@@ -210,3 +210,20 @@ theme_xhred_editor_tb_indent_-1=Diminuisci rientro
 theme_xhred_editor_tb_code=Blocco di codice
 theme_xhred_editor_tb_code-block=Blocco di codice
 theme_xhred_editor_tb_direction=Direzione del testo
+
+settings_right_table_layout_control=Mostra il controllo del layout del contenuto
+theme_xhred_tooltip_columns_layout=Controllo della disposizione dei contenuti
+theme_xhred_columns_layout_title=Disposizione dei contenuti
+theme_xhred_columns_layout_variation=Variazione del layout
+theme_xhred_global_vertical=Verticale
+theme_xhred_global_horizontal=Orizzontale
+theme_xhred_columns_layout_vertical_opts=Opzioni di layout verticale
+theme_xhred_columns_layout_vertical_opts_max_columns=Colonne massime
+theme_xhred_columns_layout_vertical_opts_max_width=Larghezza minima della colonna
+theme_xhred_columns_layout_vertical_opts_break_title=Azione di overflow della colonna
+theme_xhred_columns_layout_vertical_opts_break_new=Rottura
+theme_xhred_columns_layout_vertical_opts_break_scroll=Scorrere
+
+theme_xhred_columns_layout_remove=Nascondi questo widget
+theme_xhred_columns_layout_remove_button=Salva e nascondi
+theme_xhred_columns_layout_variation_cannot_horizontal=Il layout orizzontale non può essere utilizzato in modalità mobile, in particolare quando la larghezza dello schermo è inferiore a 992 px

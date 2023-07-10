@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=เปลี่ยนรา�
 theme_xhred_filemanager_successful_acls=เปลี่ยนรายการควบคุมการเข้าถึงสำเร็จแล้ว
 theme_download_error=เกิดข้อผิดพลาดในการดาวน์โหลดไฟล์เนื่องจากอยู่นอกไดเรกทอรีที่อนุญาต  : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=ความช่วยเหลือ (F1)
 theme_xhred_hotkeys_help_title=แป้นพิมพ์ลัด
 theme_xhred_hotkeys_help_title_docs=เอกสาร
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=ลดการเยื้อง
 theme_xhred_editor_tb_code=รหัสบล็อก
 theme_xhred_editor_tb_code-block=รหัสบล็อก
 theme_xhred_editor_tb_direction=ทิศทางข้อความ
+
+settings_right_table_layout_control=แสดงการควบคุมเค้าโครงเนื้อหา
+theme_xhred_tooltip_columns_layout=การควบคุมเค้าโครงเนื้อหา
+theme_xhred_columns_layout_title=เค้าโครงเนื้อหา
+theme_xhred_columns_layout_variation=รูปแบบเค้าโครง
+theme_xhred_global_vertical=แนวตั้ง
+theme_xhred_global_horizontal=แนวนอน
+theme_xhred_columns_layout_vertical_opts=ตัวเลือกเค้าโครงแนวตั้ง
+theme_xhred_columns_layout_vertical_opts_max_columns=คอลัมน์สูงสุด
+theme_xhred_columns_layout_vertical_opts_max_width=ความกว้างของคอลัมน์ขั้นต่ำ
+theme_xhred_columns_layout_vertical_opts_break_title=การดำเนินการล้นคอลัมน์
+theme_xhred_columns_layout_vertical_opts_break_new=หยุดพัก
+theme_xhred_columns_layout_vertical_opts_break_scroll=เลื่อน
+
+theme_xhred_columns_layout_remove=ซ่อนวิดเจ็ตนี้
+theme_xhred_columns_layout_remove_button=บันทึกและซ่อน
+theme_xhred_columns_layout_variation_cannot_horizontal=ไม่สามารถใช้เค้าโครงแนวนอนในโหมดมือถือ โดยเฉพาะเมื่อความกว้างหน้าจอน้อยกว่า 992px

@@ -1211,7 +1211,7 @@ theme_xhred_filemanager_successful_acls_with_errors=La lista de control de acces
 theme_xhred_filemanager_successful_acls=La lista de control de acceso se ha cambiado correctamente.
 theme_download_error=Error al descargar el archivo porque está fuera del directorio permitido : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Ayuda (F1)
 theme_xhred_hotkeys_help_title=Atajos de teclado
 theme_xhred_hotkeys_help_title_docs=Documentación
@@ -1264,3 +1264,20 @@ theme_xhred_editor_tb_indent_-1=Disminuir sangría
 theme_xhred_editor_tb_code=Bloque de código
 theme_xhred_editor_tb_code-block=Bloque de código
 theme_xhred_editor_tb_direction=Dirección del texto
+
+settings_right_table_layout_control=Mostrar control de diseño de contenido
+theme_xhred_tooltip_columns_layout=Control de diseño de contenido
+theme_xhred_columns_layout_title=Diseño de contenido
+theme_xhred_columns_layout_variation=Variación de diseño
+theme_xhred_global_vertical=Vertical
+theme_xhred_global_horizontal=Horizontal
+theme_xhred_columns_layout_vertical_opts=Opciones de diseño vertical
+theme_xhred_columns_layout_vertical_opts_max_columns=Máximo de columnas
+theme_xhred_columns_layout_vertical_opts_max_width=Ancho de columna mínimo
+theme_xhred_columns_layout_vertical_opts_break_title=Acción de desbordamiento de columna
+theme_xhred_columns_layout_vertical_opts_break_new=Romper
+theme_xhred_columns_layout_vertical_opts_break_scroll=Desplazarse
+
+theme_xhred_columns_layout_remove=Ocultar este widget
+theme_xhred_columns_layout_remove_button=Guardar y ocultar
+theme_xhred_columns_layout_variation_cannot_horizontal=El diseño horizontal no se puede usar en el modo móvil, específicamente cuando el ancho de la pantalla es inferior a 992px

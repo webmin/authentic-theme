@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=A hozzáférés-vezérlési 
 theme_xhred_filemanager_successful_acls=A hozzáférés-vezérlési lista sikeresen módosult.
 theme_download_error=Hiba történt a fájl letöltése során, mert kívül esik az engedélyezett könyvtáron : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Súgó (F1)
 theme_xhred_hotkeys_help_title=Gyorsbillentyűket
 theme_xhred_hotkeys_help_title_docs=Dokumentáció
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Behúzás csökkentése
 theme_xhred_editor_tb_code=Kódblokk
 theme_xhred_editor_tb_code-block=Kódblokk
 theme_xhred_editor_tb_direction=Szöveg iránya
+
+settings_right_table_layout_control=Tartalomelrendezés-vezérlő megjelenítése
+theme_xhred_tooltip_columns_layout=Tartalomelrendezés vezérlése
+theme_xhred_columns_layout_title=Tartalom elrendezése
+theme_xhred_columns_layout_variation=Elrendezés variáció
+theme_xhred_global_vertical=Függőleges
+theme_xhred_global_horizontal=Vízszintes
+theme_xhred_columns_layout_vertical_opts=Függőleges elrendezési lehetőségek
+theme_xhred_columns_layout_vertical_opts_max_columns=Maximum oszlopok
+theme_xhred_columns_layout_vertical_opts_max_width=Minimális oszlopszélesség
+theme_xhred_columns_layout_vertical_opts_break_title=Oszloptúlcsordulási művelet
+theme_xhred_columns_layout_vertical_opts_break_new=Szünet
+theme_xhred_columns_layout_vertical_opts_break_scroll=Tekercs
+
+theme_xhred_columns_layout_remove=A widget elrejtése
+theme_xhred_columns_layout_remove_button=Mentés és elrejtés
+theme_xhred_columns_layout_variation_cannot_horizontal=A vízszintes elrendezés nem használható mobil módban, különösen akkor, ha a képernyő szélessége kisebb, mint 992 képpont

@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=تمام اشیاء کے ل�
 theme_xhred_filemanager_successful_acls=رسائی کنٹرول لسٹ کو کامیابی کے ساتھ تبدیل کر دیا گیا ہے۔
 theme_download_error=فائل کو ڈاؤن لوڈ کرنے میں خرابی کیونکہ یہ اجازت شدہ ڈائریکٹری سے باہر ہے : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=مدد (F1)
 theme_xhred_hotkeys_help_title=کی بورڈ شارٹ کٹس
 theme_xhred_hotkeys_help_title_docs=دستاویزی
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=انڈینٹ کو کم کریں۔
 theme_xhred_editor_tb_code=کوڈ بلاک
 theme_xhred_editor_tb_code-block=کوڈ بلاک
 theme_xhred_editor_tb_direction=متن کی سمت
+
+settings_right_table_layout_control=مواد لے آؤٹ کنٹرول دکھائیں۔
+theme_xhred_tooltip_columns_layout=مواد لے آؤٹ کنٹرول
+theme_xhred_columns_layout_title=مواد کی ترتیب
+theme_xhred_columns_layout_variation=لے آؤٹ تغیر
+theme_xhred_global_vertical=عمودی
+theme_xhred_global_horizontal=افقی
+theme_xhred_columns_layout_vertical_opts=عمودی ترتیب کے اختیارات
+theme_xhred_columns_layout_vertical_opts_max_columns=زیادہ سے زیادہ کالم
+theme_xhred_columns_layout_vertical_opts_max_width=کالم کی کم از کم چوڑائی
+theme_xhred_columns_layout_vertical_opts_break_title=کالم اوور فلو ایکشن
+theme_xhred_columns_layout_vertical_opts_break_new=توڑنا
+theme_xhred_columns_layout_vertical_opts_break_scroll=سکرول
+
+theme_xhred_columns_layout_remove=اس ویجیٹ کو چھپائیں۔
+theme_xhred_columns_layout_remove_button=محفوظ کریں اور چھپائیں۔
+theme_xhred_columns_layout_variation_cannot_horizontal=افقی لے آؤٹ کو موبائل موڈ میں استعمال نہیں کیا جا سکتا، خاص طور پر جب اسکرین کی چوڑائی 992px سے کم ہو۔

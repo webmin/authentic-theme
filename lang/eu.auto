@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Sarbide-kontrolaren zerrenda
 theme_xhred_filemanager_successful_acls=Sarbide-kontrolen zerrenda behar bezala aldatu da.
 theme_download_error=Errore bat gertatu da fitxategia deskargatzean baimendutako direktoriotik kanpo dagoelako : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Laguntza (F1)
 theme_xhred_hotkeys_help_title=Teklatuko lasterbideak
 theme_xhred_hotkeys_help_title_docs=Dokumentazioa
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Gutxitu koska
 theme_xhred_editor_tb_code=Kode blokea
 theme_xhred_editor_tb_code-block=Kode blokea
 theme_xhred_editor_tb_direction=Testuaren norabidea
+
+settings_right_table_layout_control=Erakutsi edukiaren diseinuaren kontrola
+theme_xhred_tooltip_columns_layout=Edukien diseinuaren kontrola
+theme_xhred_columns_layout_title=Edukien diseinua
+theme_xhred_columns_layout_variation=Diseinuaren aldakuntza
+theme_xhred_global_vertical=Bertikala
+theme_xhred_global_horizontal=Horizontala
+theme_xhred_columns_layout_vertical_opts=Diseinu bertikaleko aukerak
+theme_xhred_columns_layout_vertical_opts_max_columns=Gehienezko zutabeak
+theme_xhred_columns_layout_vertical_opts_max_width=Zutabeen gutxieneko zabalera
+theme_xhred_columns_layout_vertical_opts_break_title=Zutabeak gainezkatzeko ekintza
+theme_xhred_columns_layout_vertical_opts_break_new=Atsedenaldia
+theme_xhred_columns_layout_vertical_opts_break_scroll=Korritu
+
+theme_xhred_columns_layout_remove=Ezkutatu widget hau
+theme_xhred_columns_layout_remove_button=Gorde eta Ezkutatu
+theme_xhred_columns_layout_variation_cannot_horizontal=Diseinu horizontala ezin da erabili mugikor moduan, bereziki pantailaren zabalera 992 px baino txikiagoa denean

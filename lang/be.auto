@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Спіс кантролю д
 theme_xhred_filemanager_successful_acls=Спіс кантролю доступу быў паспяхова зменены.
 theme_download_error=Памылка загрузкі файла, бо ён знаходзіцца па-за межамі дазволенага каталога : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Даведка (F1)
 theme_xhred_hotkeys_help_title=Спалучэнні клавіш
 theme_xhred_hotkeys_help_title_docs=Дакументацыя
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Паменшыць водступ
 theme_xhred_editor_tb_code=Блок кодаў
 theme_xhred_editor_tb_code-block=Блок кодаў
 theme_xhred_editor_tb_direction=Кірунак тэксту
+
+settings_right_table_layout_control=Паказаць элемент кіравання макетам змесціва
+theme_xhred_tooltip_columns_layout=Кантроль макета кантэнту
+theme_xhred_columns_layout_title=Макет зместу
+theme_xhred_columns_layout_variation=Варыяцыя кампаноўкі
+theme_xhred_global_vertical=Вертыкальны
+theme_xhred_global_horizontal=Гарызантальны
+theme_xhred_columns_layout_vertical_opts=Варыянты вертыкальнай планіроўкі
+theme_xhred_columns_layout_vertical_opts_max_columns=Максімум слупкоў
+theme_xhred_columns_layout_vertical_opts_max_width=Мінімальная шырыня слупка
+theme_xhred_columns_layout_vertical_opts_break_title=Дзеянне перапаўнення слупка
+theme_xhred_columns_layout_vertical_opts_break_new=Перапынак
+theme_xhred_columns_layout_vertical_opts_break_scroll=Скрутак
+
+theme_xhred_columns_layout_remove=Схаваць гэты віджэт
+theme_xhred_columns_layout_remove_button=Захаваць і схаваць
+theme_xhred_columns_layout_variation_cannot_horizontal=Гарызантальны макет нельга выкарыстоўваць у мабільным рэжыме, у прыватнасці, калі шырыня экрана меншая за 992 пікселя

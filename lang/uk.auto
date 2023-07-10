@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Список контрол�
 theme_xhred_filemanager_successful_acls=Список контролю доступу успішно змінено.
 theme_download_error=Помилка завантаження файлу, оскільки він знаходиться за межами дозволеного каталогу : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Довідка (F1)
 theme_xhred_hotkeys_help_title=Гарячі клавіши
 theme_xhred_hotkeys_help_title_docs=Документація
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Зменшити відступ
 theme_xhred_editor_tb_code=Кодовий блок
 theme_xhred_editor_tb_code-block=Кодовий блок
 theme_xhred_editor_tb_direction=Напрямок тексту
+
+settings_right_table_layout_control=Показати елемент керування макетом вмісту
+theme_xhred_tooltip_columns_layout=Контроль оформлення вмісту
+theme_xhred_columns_layout_title=Розмітка вмісту
+theme_xhred_columns_layout_variation=Варіація макета
+theme_xhred_global_vertical=Вертикальний
+theme_xhred_global_horizontal=Горизонтальний
+theme_xhred_columns_layout_vertical_opts=Варіанти вертикального розташування
+theme_xhred_columns_layout_vertical_opts_max_columns=Максимальна кількість стовпців
+theme_xhred_columns_layout_vertical_opts_max_width=Мінімальна ширина стовпця
+theme_xhred_columns_layout_vertical_opts_break_title=Дія переповнення стовпців
+theme_xhred_columns_layout_vertical_opts_break_new=Перерва
+theme_xhred_columns_layout_vertical_opts_break_scroll=Прокрутка
+
+theme_xhred_columns_layout_remove=Приховати цей віджет
+theme_xhred_columns_layout_remove_button=Зберегти та приховати
+theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальний макет не можна використовувати в мобільному режимі, зокрема, коли ширина екрана менше 992 пікселів

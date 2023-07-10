@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Η λίστα ελέγχου
 theme_xhred_filemanager_successful_acls=Η λίστα ελέγχου πρόσβασης άλλαξε με επιτυχία.
 theme_download_error=Σφάλμα κατά τη λήψη του αρχείου επειδή βρίσκεται εκτός του επιτρεπόμενου καταλόγου  : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Βοήθεια (F1)
 theme_xhred_hotkeys_help_title=Συντομεύσεις πληκτρολογίου
 theme_xhred_hotkeys_help_title_docs=Τεκμηρίωση
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Μείωση εσοχής
 theme_xhred_editor_tb_code=Μπλοκ κωδικών
 theme_xhred_editor_tb_code-block=Μπλοκ κωδικών
 theme_xhred_editor_tb_direction=Διεύθυνση κειμένου
+
+settings_right_table_layout_control=Εμφάνιση ελέγχου διάταξης περιεχομένου
+theme_xhred_tooltip_columns_layout=Έλεγχος διάταξης περιεχομένου
+theme_xhred_columns_layout_title=Διάταξη περιεχομένου
+theme_xhred_columns_layout_variation=Παραλλαγή διάταξης
+theme_xhred_global_vertical=Κατακόρυφος
+theme_xhred_global_horizontal=Οριζόντιος
+theme_xhred_columns_layout_vertical_opts=Επιλογές κάθετης διάταξης
+theme_xhred_columns_layout_vertical_opts_max_columns=Μέγιστες στήλες
+theme_xhred_columns_layout_vertical_opts_max_width=Ελάχιστο πλάτος στήλης
+theme_xhred_columns_layout_vertical_opts_break_title=Ενέργεια υπερχείλισης στήλης
+theme_xhred_columns_layout_vertical_opts_break_new=Διακοπή
+theme_xhred_columns_layout_vertical_opts_break_scroll=Πάπυρος
+
+theme_xhred_columns_layout_remove=Απόκρυψη αυτού του γραφικού στοιχείου
+theme_xhred_columns_layout_remove_button=Αποθήκευση και Απόκρυψη
+theme_xhred_columns_layout_variation_cannot_horizontal=Η οριζόντια διάταξη δεν μπορεί να χρησιμοποιηθεί στη λειτουργία κινητής τηλεφωνίας, ειδικά όταν το πλάτος της οθόνης είναι μικρότερο από 992 px

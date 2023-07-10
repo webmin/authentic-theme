@@ -227,7 +227,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Tilgangskontrolllisten er ik
 theme_xhred_filemanager_successful_acls=Tilgangskontrolllisten er endret.
 theme_download_error=Feil ved nedlasting av filen fordi den er utenfor tillatt katalog : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Hjelp (F1)
 theme_xhred_hotkeys_help_title=Tastatursnarveier
 theme_xhred_hotkeys_help_title_docs=Dokumentasjon
@@ -280,3 +280,20 @@ theme_xhred_editor_tb_indent_-1=Reduser innrykk
 theme_xhred_editor_tb_code=Kodeblokk
 theme_xhred_editor_tb_code-block=Kodeblokk
 theme_xhred_editor_tb_direction=Tekstretning
+
+settings_right_table_layout_control=Vis innholdslayoutkontroll
+theme_xhred_tooltip_columns_layout=Innholdslayoutkontroll
+theme_xhred_columns_layout_title=Innholdslayout
+theme_xhred_columns_layout_variation=Variasjon i layout
+theme_xhred_global_vertical=Vertikal
+theme_xhred_global_horizontal=Horisontal
+theme_xhred_columns_layout_vertical_opts=Vertikale layoutalternativer
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimalt antall kolonner
+theme_xhred_columns_layout_vertical_opts_max_width=Minimum kolonnebredde
+theme_xhred_columns_layout_vertical_opts_break_title=Kolonneoverløpshandling
+theme_xhred_columns_layout_vertical_opts_break_new=Gå i stykker
+theme_xhred_columns_layout_vertical_opts_break_scroll=Rull
+
+theme_xhred_columns_layout_remove=Skjul denne widgeten
+theme_xhred_columns_layout_remove_button=Lagre og skjul
+theme_xhred_columns_layout_variation_cannot_horizontal=Horisontal layout kan ikke brukes i mobilmodus, spesielt når skjermbredden er mindre enn 992px

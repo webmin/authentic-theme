@@ -500,7 +500,7 @@ theme_xhred_filemanager_successful_acls_with_errors=尚未为所有对象成功�
 theme_xhred_filemanager_successful_acls=访问控制列表已成功更改。
 theme_download_error=下载文件时出错，因为它在允许的目录之外：$1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=帮助 (F1)
 theme_xhred_hotkeys_help_title=键盘快捷键
 theme_xhred_hotkeys_help_title_docs=文档
@@ -553,3 +553,20 @@ theme_xhred_editor_tb_indent_-1=减少缩进
 theme_xhred_editor_tb_code=代码块
 theme_xhred_editor_tb_code-block=代码块
 theme_xhred_editor_tb_direction=文字方向
+
+settings_right_table_layout_control=显示内容布局控制
+theme_xhred_tooltip_columns_layout=内容布局控制
+theme_xhred_columns_layout_title=内容布局
+theme_xhred_columns_layout_variation=布局变化
+theme_xhred_global_vertical=垂直的
+theme_xhred_global_horizontal=水平的
+theme_xhred_columns_layout_vertical_opts=垂直布局选项
+theme_xhred_columns_layout_vertical_opts_max_columns=最大列数
+theme_xhred_columns_layout_vertical_opts_max_width=最小列宽
+theme_xhred_columns_layout_vertical_opts_break_title=列溢出动作
+theme_xhred_columns_layout_vertical_opts_break_new=休息
+theme_xhred_columns_layout_vertical_opts_break_scroll=滚动
+
+theme_xhred_columns_layout_remove=隐藏此小部件
+theme_xhred_columns_layout_remove_button=保存并隐藏
+theme_xhred_columns_layout_variation_cannot_horizontal=移动模式下不能使用水平布局，特别是当屏幕宽度小于992px时

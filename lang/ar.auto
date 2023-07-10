@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=لم يتم تغيير قا�
 theme_xhred_filemanager_successful_acls=تم تغيير قائمة التحكم في الوصول بنجاح.
 theme_download_error=خطأ في تنزيل الملف لأنه خارج الدليل المسموح به :$1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=تعليمات (F1)
 theme_xhred_hotkeys_help_title=اختصارات لوحة المفاتيح
 theme_xhred_hotkeys_help_title_docs=توثيق
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=انخفاض المسافة البادئة
 theme_xhred_editor_tb_code=كتلة التعليمات البرمجية
 theme_xhred_editor_tb_code-block=كتلة التعليمات البرمجية
 theme_xhred_editor_tb_direction=اتجاه النص
+
+settings_right_table_layout_control=إظهار عنصر تحكم تخطيط المحتوى
+theme_xhred_tooltip_columns_layout=التحكم في تخطيط المحتوى
+theme_xhred_columns_layout_title=تخطيط المحتوى
+theme_xhred_columns_layout_variation=تباين التخطيط
+theme_xhred_global_vertical=رَأسِيّ
+theme_xhred_global_horizontal=أفقي
+theme_xhred_columns_layout_vertical_opts=خيارات التخطيط العمودي
+theme_xhred_columns_layout_vertical_opts_max_columns=الحد الأقصى من الأعمدة
+theme_xhred_columns_layout_vertical_opts_max_width=عرض العمود الأدنى
+theme_xhred_columns_layout_vertical_opts_break_title=عمل تجاوز العمود
+theme_xhred_columns_layout_vertical_opts_break_new=استراحة
+theme_xhred_columns_layout_vertical_opts_break_scroll=انتقل
+
+theme_xhred_columns_layout_remove=إخفاء هذه القطعة
+theme_xhred_columns_layout_remove_button=حفظ وإخفاء
+theme_xhred_columns_layout_variation_cannot_horizontal=لا يمكن استخدام التخطيط الأفقي في وضع الهاتف المحمول ، خاصة عندما يكون عرض الشاشة أقل من 992 بكسل

@@ -1218,7 +1218,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Lista kontroli dostępu nie 
 theme_xhred_filemanager_successful_acls=Lista kontroli dostępu została pomyślnie zmieniona.
 theme_download_error=Błąd podczas pobierania pliku, ponieważ znajduje się on poza dozwolonym katalogiem : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Pomoc (F1)
 theme_xhred_hotkeys_help_title=Skróty klawiszowe
 theme_xhred_hotkeys_help_title_docs=Dokumentacja
@@ -1271,3 +1271,20 @@ theme_xhred_editor_tb_indent_-1=Zmniejsz wcięcie
 theme_xhred_editor_tb_code=Blok kodu
 theme_xhred_editor_tb_code-block=Blok kodu
 theme_xhred_editor_tb_direction=Kierunek tekstu
+
+settings_right_table_layout_control=Pokaż kontrolę układu zawartości
+theme_xhred_tooltip_columns_layout=Kontrola układu treści
+theme_xhred_columns_layout_title=Układ treści
+theme_xhred_columns_layout_variation=Odmiana układu
+theme_xhred_global_vertical=Pionowy
+theme_xhred_global_horizontal=Poziomy
+theme_xhred_columns_layout_vertical_opts=Opcje układu pionowego
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksymalna liczba kolumn
+theme_xhred_columns_layout_vertical_opts_max_width=Minimalna szerokość kolumny
+theme_xhred_columns_layout_vertical_opts_break_title=Akcja przepełnienia kolumny
+theme_xhred_columns_layout_vertical_opts_break_new=Przerwa
+theme_xhred_columns_layout_vertical_opts_break_scroll=Zwój
+
+theme_xhred_columns_layout_remove=Ukryj ten widżet
+theme_xhred_columns_layout_remove_button=Zapisz i ukryj
+theme_xhred_columns_layout_variation_cannot_horizontal=Układu poziomego nie można używać w trybie mobilnym, szczególnie gdy szerokość ekranu jest mniejsza niż 992px

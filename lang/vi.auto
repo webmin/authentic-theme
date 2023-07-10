@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Danh sách kiểm soát truy
 theme_xhred_filemanager_successful_acls=Danh sách kiểm soát truy cập đã được thay đổi thành công.
 theme_download_error=Lỗi khi tải xuống tệp vì nó nằm ngoài thư mục được phép  : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Trợ giúp (F1)
 theme_xhred_hotkeys_help_title=Các phím tắt bàn phím
 theme_xhred_hotkeys_help_title_docs=Tài liệu
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Giảm thụt lề
 theme_xhred_editor_tb_code=khối mã
 theme_xhred_editor_tb_code-block=khối mã
 theme_xhred_editor_tb_direction=Văn bản chỉ đạo
+
+settings_right_table_layout_control=Hiển thị kiểm soát bố cục nội dung
+theme_xhred_tooltip_columns_layout=Kiểm soát bố cục nội dung
+theme_xhred_columns_layout_title=bố cục nội dung
+theme_xhred_columns_layout_variation=biến thể bố cục
+theme_xhred_global_vertical=Thẳng đứng
+theme_xhred_global_horizontal=Nằm ngang
+theme_xhred_columns_layout_vertical_opts=Tùy chọn bố cục dọc
+theme_xhred_columns_layout_vertical_opts_max_columns=Cột tối đa
+theme_xhred_columns_layout_vertical_opts_max_width=Chiều rộng cột tối thiểu
+theme_xhred_columns_layout_vertical_opts_break_title=Hành động tràn cột
+theme_xhred_columns_layout_vertical_opts_break_new=Phá vỡ
+theme_xhred_columns_layout_vertical_opts_break_scroll=cuộn
+
+theme_xhred_columns_layout_remove=Ẩn tiện ích này
+theme_xhred_columns_layout_remove_button=Lưu và Ẩn
+theme_xhred_columns_layout_variation_cannot_horizontal=Không thể sử dụng bố cục ngang ở chế độ di động, đặc biệt khi chiều rộng màn hình nhỏ hơn 992px

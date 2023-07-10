@@ -331,7 +331,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Lista de control al accesulu
 theme_xhred_filemanager_successful_acls=Lista de control acces a fost schimbată cu succes.
 theme_download_error=Eroare la descărcarea fișierului deoarece se află în afara directorului permis : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Ajutor (F1)
 theme_xhred_hotkeys_help_title=Comenzi rapide de la tastatură
 theme_xhred_hotkeys_help_title_docs=Documentație
@@ -384,3 +384,20 @@ theme_xhred_editor_tb_indent_-1=Reduceți indentarea
 theme_xhred_editor_tb_code=Bloc de cod
 theme_xhred_editor_tb_code-block=Bloc de cod
 theme_xhred_editor_tb_direction=Direcția textului
+
+settings_right_table_layout_control=Afișați controlul aspectului conținutului
+theme_xhred_tooltip_columns_layout=Controlul aspectului conținutului
+theme_xhred_columns_layout_title=Aspect de conținut
+theme_xhred_columns_layout_variation=Variație de aspect
+theme_xhred_global_vertical=Vertical
+theme_xhred_global_horizontal=Orizontală
+theme_xhred_columns_layout_vertical_opts=Opțiuni de aspect vertical
+theme_xhred_columns_layout_vertical_opts_max_columns=Numărul maxim de coloane
+theme_xhred_columns_layout_vertical_opts_max_width=Lățimea minimă a coloanei
+theme_xhred_columns_layout_vertical_opts_break_title=Acțiunea de depășire a coloanei
+theme_xhred_columns_layout_vertical_opts_break_new=Pauză
+theme_xhred_columns_layout_vertical_opts_break_scroll=Sul
+
+theme_xhred_columns_layout_remove=Ascunde acest widget
+theme_xhred_columns_layout_remove_button=Salvați și ascundeți
+theme_xhred_columns_layout_variation_cannot_horizontal=Aspectul orizontal nu poate fi utilizat în modul mobil, în special atunci când lățimea ecranului este mai mică de 992 px

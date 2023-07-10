@@ -227,7 +227,7 @@ theme_xhred_filemanager_successful_acls_with_errors=La liste de contrôle d'acc�
 theme_xhred_filemanager_successful_acls=La liste de contrôle d'accès a été modifiée avec succès.
 theme_download_error=Erreur lors du téléchargement du fichier car il se trouve en dehors du répertoire autorisé  : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Aide (F1)
 theme_xhred_hotkeys_help_title=Raccourcis clavier
 theme_xhred_hotkeys_help_title_docs=Documentation
@@ -280,3 +280,20 @@ theme_xhred_editor_tb_indent_-1=Diminuer le retrait
 theme_xhred_editor_tb_code=Bloc de code
 theme_xhred_editor_tb_code-block=Bloc de code
 theme_xhred_editor_tb_direction=Sens du texte
+
+settings_right_table_layout_control=Afficher le contrôle de la mise en page du contenu
+theme_xhred_tooltip_columns_layout=Contrôle de la mise en page du contenu
+theme_xhred_columns_layout_title=Mise en page du contenu
+theme_xhred_columns_layout_variation=Variante de mise en page
+theme_xhred_global_vertical=Vertical
+theme_xhred_global_horizontal=Horizontal
+theme_xhred_columns_layout_vertical_opts=Options de disposition verticale
+theme_xhred_columns_layout_vertical_opts_max_columns=Colonnes maximales
+theme_xhred_columns_layout_vertical_opts_max_width=Largeur de colonne minimale
+theme_xhred_columns_layout_vertical_opts_break_title=Action de dépassement de colonne
+theme_xhred_columns_layout_vertical_opts_break_new=Casser
+theme_xhred_columns_layout_vertical_opts_break_scroll=Faire défiler
+
+theme_xhred_columns_layout_remove=Masquer ce widget
+theme_xhred_columns_layout_remove_button=Enregistrer et masquer
+theme_xhred_columns_layout_variation_cannot_horizontal=La disposition horizontale ne peut pas être utilisée en mode mobile, en particulier lorsque la largeur de l'écran est inférieure à 992px

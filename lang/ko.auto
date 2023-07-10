@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=모든 개체에 대해 액�
 theme_xhred_filemanager_successful_acls=액세스 제어 목록이 성공적으로 변경되었습니다.
 theme_download_error=파일이 허용된 디렉터리 외부에 있기 때문에 파일을 다운로드하는 중 오류 발생 : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=도움말(F1)
 theme_xhred_hotkeys_help_title=키보드 단축키
 theme_xhred_hotkeys_help_title_docs=선적 서류 비치
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=들여쓰기 줄이기
 theme_xhred_editor_tb_code=코드 블록
 theme_xhred_editor_tb_code-block=코드 블록
 theme_xhred_editor_tb_direction=텍스트 방향
+
+settings_right_table_layout_control=콘텐츠 레이아웃 컨트롤 표시
+theme_xhred_tooltip_columns_layout=콘텐츠 레이아웃 제어
+theme_xhred_columns_layout_title=콘텐츠 레이아웃
+theme_xhred_columns_layout_variation=레이아웃 변형
+theme_xhred_global_vertical=수직의
+theme_xhred_global_horizontal=수평의
+theme_xhred_columns_layout_vertical_opts=수직 레이아웃 옵션
+theme_xhred_columns_layout_vertical_opts_max_columns=최대 열
+theme_xhred_columns_layout_vertical_opts_max_width=최소 열 너비
+theme_xhred_columns_layout_vertical_opts_break_title=열 오버플로 작업
+theme_xhred_columns_layout_vertical_opts_break_new=부서지다
+theme_xhred_columns_layout_vertical_opts_break_scroll=스크롤
+
+theme_xhred_columns_layout_remove=이 위젯 숨기기
+theme_xhred_columns_layout_remove_button=저장 및 숨기기
+theme_xhred_columns_layout_variation_cannot_horizontal=모바일 모드, 특히 화면 너비가 992px 미만인 경우 가로 레이아웃을 사용할 수 없습니다

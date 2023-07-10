@@ -709,7 +709,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Senarai kawalan akses tidak 
 theme_xhred_filemanager_successful_acls=Senarai kawalan akses telah berjaya ditukar.
 theme_download_error=Ralat memuat turun fail kerana ia berada di luar direktori yang dibenarkan  : $1 
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Bantuan (F1)
 theme_xhred_hotkeys_help_title=Pintasan Papan Kekunci
 theme_xhred_hotkeys_help_title_docs=Dokumentasi
@@ -762,3 +762,20 @@ theme_xhred_editor_tb_indent_-1=Kurangkan inden
 theme_xhred_editor_tb_code=Blok kod
 theme_xhred_editor_tb_code-block=Blok kod
 theme_xhred_editor_tb_direction=Arah teks
+
+settings_right_table_layout_control=Tunjukkan kawalan susun atur kandungan
+theme_xhred_tooltip_columns_layout=Kawalan susun atur kandungan
+theme_xhred_columns_layout_title=Susun atur kandungan
+theme_xhred_columns_layout_variation=Variasi reka letak
+theme_xhred_global_vertical=Menegak
+theme_xhred_global_horizontal=Mendatar
+theme_xhred_columns_layout_vertical_opts=Pilihan susun atur menegak
+theme_xhred_columns_layout_vertical_opts_max_columns=Lajur maksimum
+theme_xhred_columns_layout_vertical_opts_max_width=Lebar lajur minimum
+theme_xhred_columns_layout_vertical_opts_break_title=Tindakan limpahan lajur
+theme_xhred_columns_layout_vertical_opts_break_new=Rehat
+theme_xhred_columns_layout_vertical_opts_break_scroll=Tatal
+
+theme_xhred_columns_layout_remove=Sembunyikan Widget Ini
+theme_xhred_columns_layout_remove_button=Simpan dan Sembunyikan
+theme_xhred_columns_layout_variation_cannot_horizontal=Reka letak mendatar tidak boleh digunakan dalam mod mudah alih, khususnya apabila lebar skrin kurang daripada 992px

@@ -1212,7 +1212,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Adgangskontrollisten er ikke
 theme_xhred_filemanager_successful_acls=Adgangskontrollisten er blevet ændret.
 theme_download_error=Fejl ved download af filen, fordi den er uden for den tilladte mappe : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Hjælp (F1)
 theme_xhred_hotkeys_help_title=Tastaturgenveje
 theme_xhred_hotkeys_help_title_docs=Dokumentation
@@ -1265,3 +1265,20 @@ theme_xhred_editor_tb_indent_-1=Formindsk indrykning
 theme_xhred_editor_tb_code=Kodeblok
 theme_xhred_editor_tb_code-block=Kodeblok
 theme_xhred_editor_tb_direction=Tekst retning
+
+settings_right_table_layout_control=Vis indholdslayoutkontrol
+theme_xhred_tooltip_columns_layout=Indholdslayoutkontrol
+theme_xhred_columns_layout_title=Indholdslayout
+theme_xhred_columns_layout_variation=Layout variation
+theme_xhred_global_vertical=Lodret
+theme_xhred_global_horizontal=Vandret
+theme_xhred_columns_layout_vertical_opts=Lodret layout muligheder
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimalt antal kolonner
+theme_xhred_columns_layout_vertical_opts_max_width=Minimum søjlebredde
+theme_xhred_columns_layout_vertical_opts_break_title=Kolonneoverløbshandling
+theme_xhred_columns_layout_vertical_opts_break_new=Pause
+theme_xhred_columns_layout_vertical_opts_break_scroll=Rul
+
+theme_xhred_columns_layout_remove=Skjul denne widget
+theme_xhred_columns_layout_remove_button=Gem og skjul
+theme_xhred_columns_layout_variation_cannot_horizontal=Vandret layout kan ikke bruges i mobiltilstand, specielt når skærmbredden er mindre end 992px

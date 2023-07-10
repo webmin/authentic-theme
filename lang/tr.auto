@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Erişim kontrol listesi tüm
 theme_xhred_filemanager_successful_acls=Erişim kontrol listesi başarıyla değiştirildi.
 theme_download_error=İzin verilen dizinin dışında olduğu için dosya indirilirken hata oluştu  : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Yardım (F1)
 theme_xhred_hotkeys_help_title=Klavye kısayolları
 theme_xhred_hotkeys_help_title_docs=Belgeler
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Girintiyi azalt
 theme_xhred_editor_tb_code=kod bloğu
 theme_xhred_editor_tb_code-block=kod bloğu
 theme_xhred_editor_tb_direction=Metin yönü
+
+settings_right_table_layout_control=İçerik düzeni kontrolünü göster
+theme_xhred_tooltip_columns_layout=İçerik düzeni kontrolü
+theme_xhred_columns_layout_title=içerik düzeni
+theme_xhred_columns_layout_variation=Düzen varyasyonu
+theme_xhred_global_vertical=Dikey
+theme_xhred_global_horizontal=Yatay
+theme_xhred_columns_layout_vertical_opts=Dikey düzen seçenekleri
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimum sütunlar
+theme_xhred_columns_layout_vertical_opts_max_width=Minimum sütun genişliği
+theme_xhred_columns_layout_vertical_opts_break_title=Sütun taşma işlemi
+theme_xhred_columns_layout_vertical_opts_break_new=Kırmak
+theme_xhred_columns_layout_vertical_opts_break_scroll=Taslak
+
+theme_xhred_columns_layout_remove=Bu Widget'ı Gizle
+theme_xhred_columns_layout_remove_button=Kaydet ve Gizle
+theme_xhred_columns_layout_variation_cannot_horizontal=Mobil modda, özellikle ekran genişliği 992 pikselden az olduğunda yatay düzen kullanılamaz

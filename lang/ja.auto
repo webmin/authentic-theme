@@ -266,7 +266,7 @@ theme_xhred_filemanager_successful_acls_with_errors=すべてのオブジェク�
 theme_xhred_filemanager_successful_acls=アクセス制御リストが正常に変更されました。
 theme_download_error=許可されたディレクトリの外にあるため、ファイルのダウンロード中にエラーが発生しました : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=ヘルプ (F1)
 theme_xhred_hotkeys_help_title=キーボードショートカット
 theme_xhred_hotkeys_help_title_docs=ドキュメンテーション
@@ -319,3 +319,20 @@ theme_xhred_editor_tb_indent_-1=インデントを減らす
 theme_xhred_editor_tb_code=コードブロック
 theme_xhred_editor_tb_code-block=コードブロック
 theme_xhred_editor_tb_direction=テキストの方向
+
+settings_right_table_layout_control=コンテンツレイアウトコントロールを表示
+theme_xhred_tooltip_columns_layout=コンテンツのレイアウト制御
+theme_xhred_columns_layout_title=コンテンツのレイアウト
+theme_xhred_columns_layout_variation=レイアウトバリエーション
+theme_xhred_global_vertical=垂直
+theme_xhred_global_horizontal=水平
+theme_xhred_columns_layout_vertical_opts=垂直レイアウトのオプション
+theme_xhred_columns_layout_vertical_opts_max_columns=最大列数
+theme_xhred_columns_layout_vertical_opts_max_width=最小列幅
+theme_xhred_columns_layout_vertical_opts_break_title=列オーバーフローアクション
+theme_xhred_columns_layout_vertical_opts_break_new=壊す
+theme_xhred_columns_layout_vertical_opts_break_scroll=スクロール
+
+theme_xhred_columns_layout_remove=このウィジェットを非表示にする
+theme_xhred_columns_layout_remove_button=保存して非表示にする
+theme_xhred_columns_layout_variation_cannot_horizontal=モバイルモード、特に画面幅が992px未満の場合、横型レイアウトは使用できません。

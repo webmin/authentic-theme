@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=لیست کنترل دستر
 theme_xhred_filemanager_successful_acls=لیست کنترل دسترسی با موفقیت تغییر کرده است.
 theme_download_error=خطا در دانلود فایل زیرا خارج از فهرست مجاز است : $1 
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=راهنما (F1)
 theme_xhred_hotkeys_help_title=میانبرهای صفحه کلید
 theme_xhred_hotkeys_help_title_docs=مستندات
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=کاهش تورفتگی
 theme_xhred_editor_tb_code=بلوک کد
 theme_xhred_editor_tb_code-block=بلوک کد
 theme_xhred_editor_tb_direction=جهت متن
+
+settings_right_table_layout_control=نمایش کنترل طرح بندی محتوا
+theme_xhred_tooltip_columns_layout=کنترل چیدمان محتوا
+theme_xhred_columns_layout_title=چیدمان محتوا
+theme_xhred_columns_layout_variation=تنوع چیدمان
+theme_xhred_global_vertical=عمودی
+theme_xhred_global_horizontal=افقی
+theme_xhred_columns_layout_vertical_opts=گزینه های طرح بندی عمودی
+theme_xhred_columns_layout_vertical_opts_max_columns=حداکثر ستون ها
+theme_xhred_columns_layout_vertical_opts_max_width=حداقل عرض ستون
+theme_xhred_columns_layout_vertical_opts_break_title=عمل سرریز ستون
+theme_xhred_columns_layout_vertical_opts_break_new=زنگ تفريح
+theme_xhred_columns_layout_vertical_opts_break_scroll=طومار
+
+theme_xhred_columns_layout_remove=پنهان کردن این ویجت
+theme_xhred_columns_layout_remove_button=ذخیره و پنهان کردن
+theme_xhred_columns_layout_variation_cannot_horizontal=طرح افقی را نمی توان در حالت موبایل استفاده کرد، به ویژه زمانی که عرض صفحه کمتر از 992 پیکسل باشد

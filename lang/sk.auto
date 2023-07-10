@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Zoznam riadenia prístupu ne
 theme_xhred_filemanager_successful_acls=Zoznam riadenia prístupu bol úspešne zmenený.
 theme_download_error=Chyba pri sťahovaní súboru, pretože sa nachádza mimo povoleného adresára : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Pomocník (F1)
 theme_xhred_hotkeys_help_title=Klávesové skratky
 theme_xhred_hotkeys_help_title_docs=Dokumentácia
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Zmenšiť zarážku
 theme_xhred_editor_tb_code=Blok kódu
 theme_xhred_editor_tb_code-block=Blok kódu
 theme_xhred_editor_tb_direction=Smer textu
+
+settings_right_table_layout_control=Zobraziť ovládací prvok rozloženia obsahu
+theme_xhred_tooltip_columns_layout=Ovládanie rozloženia obsahu
+theme_xhred_columns_layout_title=Rozloženie obsahu
+theme_xhred_columns_layout_variation=Variácia rozloženia
+theme_xhred_global_vertical=Vertikálne
+theme_xhred_global_horizontal=Horizontálne
+theme_xhred_columns_layout_vertical_opts=Možnosti vertikálneho rozloženia
+theme_xhred_columns_layout_vertical_opts_max_columns=Maximálny počet stĺpcov
+theme_xhred_columns_layout_vertical_opts_max_width=Minimálna šírka stĺpca
+theme_xhred_columns_layout_vertical_opts_break_title=Akcia pretečenia stĺpca
+theme_xhred_columns_layout_vertical_opts_break_new=Prestávka
+theme_xhred_columns_layout_vertical_opts_break_scroll=Posúvajte sa
+
+theme_xhred_columns_layout_remove=Skryť tento widget
+theme_xhred_columns_layout_remove_button=Uložiť a skryť
+theme_xhred_columns_layout_variation_cannot_horizontal=Horizontálne rozloženie nie je možné použiť v mobilnom režime, konkrétne keď je šírka obrazovky menšia ako 992 pixelov

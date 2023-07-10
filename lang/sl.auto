@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Seznam nadzora dostopa ni bi
 theme_xhred_filemanager_successful_acls=Seznam za nadzor dostopa je bil uspešno spremenjen.
 theme_download_error=Napaka pri prenosu datoteke, ker je zunaj dovoljenega imenika : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Pomoč (F1)
 theme_xhred_hotkeys_help_title=Bližnjice na tipkovnici
 theme_xhred_hotkeys_help_title_docs=Dokumentacija
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Zmanjšaj zamik
 theme_xhred_editor_tb_code=Kodni blok
 theme_xhred_editor_tb_code-block=Kodni blok
 theme_xhred_editor_tb_direction=Smer besedila
+
+settings_right_table_layout_control=Prikaži nadzor postavitve vsebine
+theme_xhred_tooltip_columns_layout=Nadzor postavitve vsebine
+theme_xhred_columns_layout_title=Postavitev vsebine
+theme_xhred_columns_layout_variation=Različica postavitve
+theme_xhred_global_vertical=Navpično
+theme_xhred_global_horizontal=Vodoravno
+theme_xhred_columns_layout_vertical_opts=Možnosti navpične postavitve
+theme_xhred_columns_layout_vertical_opts_max_columns=Največje število stolpcev
+theme_xhred_columns_layout_vertical_opts_max_width=Najmanjša širina stolpca
+theme_xhred_columns_layout_vertical_opts_break_title=Dejanje prelivanja stolpca
+theme_xhred_columns_layout_vertical_opts_break_new=Zlom
+theme_xhred_columns_layout_vertical_opts_break_scroll=Pomikanje
+
+theme_xhred_columns_layout_remove=Skrij ta pripomoček
+theme_xhred_columns_layout_remove_button=Shrani in skrij
+theme_xhred_columns_layout_variation_cannot_horizontal=Vodoravne postavitve ni mogoče uporabiti v mobilnem načinu, zlasti če je širina zaslona manjša od 992 slikovnih pik

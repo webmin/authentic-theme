@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Popis kontrole pristupa nije
 theme_xhred_filemanager_successful_acls=Popis kontrole pristupa je uspješno promijenjen.
 theme_download_error=Pogreška pri preuzimanju datoteke jer je izvan dopuštenog direktorija : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Pomoć (F1)
 theme_xhred_hotkeys_help_title=Tipkovnički prečaci
 theme_xhred_hotkeys_help_title_docs=Dokumentacija
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Smanji uvlaku
 theme_xhred_editor_tb_code=Blok koda
 theme_xhred_editor_tb_code-block=Blok koda
 theme_xhred_editor_tb_direction=Smjer teksta
+
+settings_right_table_layout_control=Prikaži kontrolu izgleda sadržaja
+theme_xhred_tooltip_columns_layout=Kontrola izgleda sadržaja
+theme_xhred_columns_layout_title=Izgled sadržaja
+theme_xhred_columns_layout_variation=Varijacija rasporeda
+theme_xhred_global_vertical=Okomito
+theme_xhred_global_horizontal=Horizontalno
+theme_xhred_columns_layout_vertical_opts=Mogućnosti okomitog izgleda
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimalni broj stupaca
+theme_xhred_columns_layout_vertical_opts_max_width=Minimalna širina stupca
+theme_xhred_columns_layout_vertical_opts_break_title=Radnja prelijevanja stupca
+theme_xhred_columns_layout_vertical_opts_break_new=Pauza
+theme_xhred_columns_layout_vertical_opts_break_scroll=Svitak
+
+theme_xhred_columns_layout_remove=Sakrij ovaj widget
+theme_xhred_columns_layout_remove_button=Spremi i sakrij
+theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalni raspored ne može se koristiti u mobilnom načinu rada, posebno kada je širina zaslona manja od 992 px

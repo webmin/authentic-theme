@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Списъкът за кон
 theme_xhred_filemanager_successful_acls=Списъкът за контрол на достъпа е променен успешно.
 theme_download_error=Грешка при изтеглянето на файла, защото е извън разрешената директория : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Помощ (F1)
 theme_xhred_hotkeys_help_title=Комбинация от клавиши
 theme_xhred_hotkeys_help_title_docs=Документация
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Намаляване на отстъпа
 theme_xhred_editor_tb_code=Кодов блок
 theme_xhred_editor_tb_code-block=Кодов блок
 theme_xhred_editor_tb_direction=Посока на текста
+
+settings_right_table_layout_control=Показване на контрола за оформлението на съдържанието
+theme_xhred_tooltip_columns_layout=Контрол на оформлението на съдържанието
+theme_xhred_columns_layout_title=Оформление на съдържанието
+theme_xhred_columns_layout_variation=Вариация на оформлението
+theme_xhred_global_vertical=Вертикална
+theme_xhred_global_horizontal=Хоризонтална
+theme_xhred_columns_layout_vertical_opts=Опции за вертикално оформление
+theme_xhred_columns_layout_vertical_opts_max_columns=Максимален брой колони
+theme_xhred_columns_layout_vertical_opts_max_width=Минимална ширина на колоната
+theme_xhred_columns_layout_vertical_opts_break_title=Действие за преливане на колона
+theme_xhred_columns_layout_vertical_opts_break_new=почивка
+theme_xhred_columns_layout_vertical_opts_break_scroll=Превъртете
+
+theme_xhred_columns_layout_remove=Скриване на тази джаджа
+theme_xhred_columns_layout_remove_button=Запазване и скриване
+theme_xhred_columns_layout_variation_cannot_horizontal=Хоризонталното оформление не може да се използва в мобилен режим, особено когато ширината на екрана е по-малка от 992px

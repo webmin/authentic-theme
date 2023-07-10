@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=רשימת בקרת הגיש
 theme_xhred_filemanager_successful_acls=רשימת בקרת הגישה שונתה בהצלחה.
 theme_download_error=שגיאה בהורדת הקובץ מכיוון שהוא מחוץ לספרייה המותרת : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=עזרה (F1)
 theme_xhred_hotkeys_help_title=קיצורי דרך במקלדת
 theme_xhred_hotkeys_help_title_docs=תיעוד
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=הקטנת הכניסה
 theme_xhred_editor_tb_code=בלוק קוד
 theme_xhred_editor_tb_code-block=בלוק קוד
 theme_xhred_editor_tb_direction=כיוון טקסט
+
+settings_right_table_layout_control=הצג בקרת פריסת תוכן
+theme_xhred_tooltip_columns_layout=בקרת פריסת תוכן
+theme_xhred_columns_layout_title=פריסת תוכן
+theme_xhred_columns_layout_variation=וריאציה של פריסה
+theme_xhred_global_vertical=אֲנָכִי
+theme_xhred_global_horizontal=אופקי
+theme_xhred_columns_layout_vertical_opts=אפשרויות פריסה אנכית
+theme_xhred_columns_layout_vertical_opts_max_columns=מקסימום עמודות
+theme_xhred_columns_layout_vertical_opts_max_width=רוחב עמודה מינימלי
+theme_xhred_columns_layout_vertical_opts_break_title=פעולת הצפת עמודות
+theme_xhred_columns_layout_vertical_opts_break_new=לשבור
+theme_xhred_columns_layout_vertical_opts_break_scroll=גְלִילָה
+
+theme_xhred_columns_layout_remove=הסתר יישומון זה
+theme_xhred_columns_layout_remove_button=שמור והסתיר
+theme_xhred_columns_layout_variation_cannot_horizontal=לא ניתן להשתמש בפריסה אופקית במצב נייד, במיוחד כאשר רוחב המסך קטן מ-992 פיקסלים

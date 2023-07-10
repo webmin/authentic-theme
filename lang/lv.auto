@@ -1300,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Piekļuves kontroles sarakst
 theme_xhred_filemanager_successful_acls=Piekļuves kontroles saraksts ir veiksmīgi mainīts.
 theme_download_error=Lejupielādējot failu, radās kļūda, jo tas atrodas ārpus atļautā direktorija : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Palīdzība (F1)
 theme_xhred_hotkeys_help_title=Tastatūras īsinājumtaustiņi
 theme_xhred_hotkeys_help_title_docs=Dokumentācija
@@ -1353,3 +1353,20 @@ theme_xhred_editor_tb_indent_-1=Samazināt atkāpi
 theme_xhred_editor_tb_code=Koda bloks
 theme_xhred_editor_tb_code-block=Koda bloks
 theme_xhred_editor_tb_direction=Teksta virziens
+
+settings_right_table_layout_control=Rādīt satura izkārtojuma vadību
+theme_xhred_tooltip_columns_layout=Satura izkārtojuma kontrole
+theme_xhred_columns_layout_title=Satura izkārtojums
+theme_xhred_columns_layout_variation=Izkārtojuma variācija
+theme_xhred_global_vertical=Vertikāli
+theme_xhred_global_horizontal=Horizontāli
+theme_xhred_columns_layout_vertical_opts=Vertikālā izkārtojuma iespējas
+theme_xhred_columns_layout_vertical_opts_max_columns=Maksimālais kolonnu skaits
+theme_xhred_columns_layout_vertical_opts_max_width=Minimālais kolonnas platums
+theme_xhred_columns_layout_vertical_opts_break_title=Kolonnas pārpildes darbība
+theme_xhred_columns_layout_vertical_opts_break_new=Pārtraukums
+theme_xhred_columns_layout_vertical_opts_break_scroll=Ritiniet
+
+theme_xhred_columns_layout_remove=Slēpt šo logrīku
+theme_xhred_columns_layout_remove_button=Saglabāt un paslēpt
+theme_xhred_columns_layout_variation_cannot_horizontal=Horizontālo izkārtojumu nevar izmantot mobilajā režīmā, jo īpaši, ja ekrāna platums ir mazāks par 992 pikseļiem

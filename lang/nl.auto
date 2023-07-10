@@ -1187,7 +1187,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Toegangscontrolelijst is nie
 theme_xhred_filemanager_successful_acls=De toegangscontrolelijst is met succes gewijzigd.
 theme_download_error=Fout bij het downloaden van het bestand omdat het zich buiten de toegestane map bevindt : $1
 
-#20.22
+#20.30
 theme_xhred_hotkeys_help=Hulp (F1)
 theme_xhred_hotkeys_help_title=Toetsenbord sneltoetsen
 theme_xhred_hotkeys_help_title_docs=Documentatie
@@ -1240,3 +1240,20 @@ theme_xhred_editor_tb_indent_-1=Inspringing verkleinen
 theme_xhred_editor_tb_code=Code blok
 theme_xhred_editor_tb_code-block=Code blok
 theme_xhred_editor_tb_direction=Tekstrichting
+
+settings_right_table_layout_control=Beheer van inhoudslay-out weergeven
+theme_xhred_tooltip_columns_layout=Beheer van inhoudslay-out
+theme_xhred_columns_layout_title=Inhoud lay-out
+theme_xhred_columns_layout_variation=Lay-out variatie
+theme_xhred_global_vertical=Verticaal
+theme_xhred_global_horizontal=Horizontaal
+theme_xhred_columns_layout_vertical_opts=Verticale lay-outopties
+theme_xhred_columns_layout_vertical_opts_max_columns=Maximale kolommen
+theme_xhred_columns_layout_vertical_opts_max_width=Minimale kolombreedte
+theme_xhred_columns_layout_vertical_opts_break_title=Kolomoverloopactie
+theme_xhred_columns_layout_vertical_opts_break_new=Pauze
+theme_xhred_columns_layout_vertical_opts_break_scroll=Rol
+
+theme_xhred_columns_layout_remove=Verberg deze widget
+theme_xhred_columns_layout_remove_button=Opslaan en verbergen
+theme_xhred_columns_layout_variation_cannot_horizontal=Horizontale lay-out kan niet worden gebruikt in de mobiele modus, met name wanneer de schermbreedte minder is dan 992px
