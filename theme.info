@@ -9,4 +9,4 @@ bversion=00
 webmin=1
 usermin=1
 depends=2.100 2.000
-depends_reason=https://github.com/webmin/webmin/pull/1917 https://github.com/webmin/webmin/pull/1915
+depends_reason=https://github.com/webmin/webmin/pull/1917 https://github.com/webmin/webmin/pull/1915 https://github.com/webmin/webmin/pull/1951

@@ -1570,30 +1570,34 @@ sub theme_ui_text_color
 
 sub theme_error
 {
+    my ($iref) = @_;
+    my @err_msg = @{$iref->{'err'}};
+    my @err_stack = @{$iref->{'stack'}};
+    my $err_caller = $iref->{'err_caller'};
     my $main_header  = $main::done_webmin_header;
     my $main_capture = $miniserv::page_capture ? " captured" : "";
     &header($text{'error'}, "") if (!$main_header);
     my $error_what      = ($main::whatfailed ? "$main::whatfailed : " : "");
-    my $error_message   = join(", ", @_);
+    my $error_message   = join(", ", @err_msg);
     my $error           = html_escape(html_strip(($error_what . $error_message)));
     my $get_error_stack = sub {
-
         # Show call stack
         my $error_stack = "";
         if ($gconfig{'error_stack'}) {
+            $error_stack = "<br>" if ($main_header);
             my $cls_err_caption = " class=\"err-head$main_capture\"";
             my $cls_err_td      = $main_capture ? " class=\"@{[&trim($main_capture)]}\"" : "";
             $error_stack .= "<hr>\n" if ($main_capture);
             $error_stack .=
               "<table class=\"err-stack$main_capture\"><caption$cls_err_caption>$text{'error_stack'}</caption>\n";
-            $error_stack .= "<tr> <td$cls_err_td><b>$text{'error_file'}</b></td> ",
-              "<td$cls_err_td><b>$text{'error_line'}</b></td> ",
-              "<td$cls_err_td><b>$text{'error_sub'}</b></td> </tr>\n";
-            for (my $i = 0; my @stack = caller($i); $i++) {
+            $error_stack .= "<tr><td$cls_err_td><b>$text{'error_file'}</b></td> ";
+            $error_stack .= "<td$cls_err_td><b>$text{'error_line'}</b></td>";
+            $error_stack .= "<td$cls_err_td><b>$text{'error_sub'}</b></td></tr>\n";
+            foreach my $stack (@err_stack) {
                 $error_stack .= "<tr>\n";
-                $error_stack .= "<td$cls_err_td>$stack[1]</td>\n";
-                $error_stack .= "<td$cls_err_td>$stack[2]</td>\n";
-                $error_stack .= "<td$cls_err_td>$stack[3]</td>\n";
+                $error_stack .= "<td$cls_err_td>$stack->[1]</td>\n";
+                $error_stack .= "<td$cls_err_td>$stack->[2]</td>\n";
+                $error_stack .= "<td$cls_err_td>$stack->[3]</td>\n";
                 $error_stack .= "</tr>\n";
             }
             $error_stack .= "</table>\n";
@@ -1609,7 +1613,7 @@ sub theme_error
             &footer("javascript:history.back()", $text{'error_previous'});
         }
     } else {
-        print ui_alert_box("<tt class='font-size-90pf'>$error</tt>", 'danger-fatal', undef, 1);
+        print ui_alert_box("<tt class='font-size-90pf'>$error</tt>@{[&$get_error_stack()]}", 'danger-fatal', undef, 1);
     }
 }
 
