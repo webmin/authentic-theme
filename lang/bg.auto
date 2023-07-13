@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Превъртете
 theme_xhred_columns_layout_remove=Скриване на тази джаджа
 theme_xhred_columns_layout_remove_button=Запазване и скриване
 theme_xhred_columns_layout_variation_cannot_horizontal=Хоризонталното оформление не може да се използва в мобилен режим, особено когато ширината на екрана е по-малка от 992px
+
+settings_auto_open_left_right=Автоматично отваряне на затворени панели при близост

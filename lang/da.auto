@@ -1282,3 +1282,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Rul
 theme_xhred_columns_layout_remove=Skjul denne widget
 theme_xhred_columns_layout_remove_button=Gem og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Vandret layout kan ikke bruges i mobiltilstand, specielt når skærmbredden er mindre end 992px
+
+settings_auto_open_left_right=Åbn automatisk lukkede paneler i nærheden

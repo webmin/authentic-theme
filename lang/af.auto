@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Blaai
 theme_xhred_columns_layout_remove=Versteek hierdie legstuk
 theme_xhred_columns_layout_remove_button=Stoor en versteek
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontale uitleg kan nie in die mobiele modus gebruik word nie, spesifiek wanneer die skermwydte minder as 992px is
+
+settings_auto_open_left_right=Maak geslote panele outomaties oop in die buurt

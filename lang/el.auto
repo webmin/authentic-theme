@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Πάπυρος
 theme_xhred_columns_layout_remove=Απόκρυψη αυτού του γραφικού στοιχείου
 theme_xhred_columns_layout_remove_button=Αποθήκευση και Απόκρυψη
 theme_xhred_columns_layout_variation_cannot_horizontal=Η οριζόντια διάταξη δεν μπορεί να χρησιμοποιηθεί στη λειτουργία κινητής τηλεφωνίας, ειδικά όταν το πλάτος της οθόνης είναι μικρότερο από 992 px
+
+settings_auto_open_left_right=Αυτόματο άνοιγμα κλειστών πάνελ σε κοντινή απόσταση

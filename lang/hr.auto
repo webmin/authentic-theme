@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Svitak
 theme_xhred_columns_layout_remove=Sakrij ovaj widget
 theme_xhred_columns_layout_remove_button=Spremi i sakrij
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalni raspored ne može se koristiti u mobilnom načinu rada, posebno kada je širina zaslona manja od 992 px
+
+settings_auto_open_left_right=Automatski otvara zatvorene ploče na blizinu

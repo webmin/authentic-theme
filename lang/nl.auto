@@ -1257,3 +1257,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Rol
 theme_xhred_columns_layout_remove=Verberg deze widget
 theme_xhred_columns_layout_remove_button=Opslaan en verbergen
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontale lay-out kan niet worden gebruikt in de mobiele modus, met name wanneer de schermbreedte minder is dan 992px
+
+settings_auto_open_left_right=Open automatisch gesloten panelen bij nabijheid

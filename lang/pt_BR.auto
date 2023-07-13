@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Rolagem
 theme_xhred_columns_layout_remove=Ocultar este widget
 theme_xhred_columns_layout_remove_button=Salvar e ocultar
 theme_xhred_columns_layout_variation_cannot_horizontal=O layout horizontal não pode ser usado no modo móvel, especificamente quando a largura da tela for menor que 992px
+
+settings_auto_open_left_right=Painéis fechados de abertura automática na proximidade

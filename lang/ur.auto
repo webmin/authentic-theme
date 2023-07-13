@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=سکرول
 theme_xhred_columns_layout_remove=اس ویجیٹ کو چھپائیں۔
 theme_xhred_columns_layout_remove_button=محفوظ کریں اور چھپائیں۔
 theme_xhred_columns_layout_variation_cannot_horizontal=افقی لے آؤٹ کو موبائل موڈ میں استعمال نہیں کیا جا سکتا، خاص طور پر جب اسکرین کی چوڑائی 992px سے کم ہو۔
+
+settings_auto_open_left_right=قربت پر بند پینل خود بخود کھولیں۔

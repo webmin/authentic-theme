@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=גְלִילָה
 theme_xhred_columns_layout_remove=הסתר יישומון זה
 theme_xhred_columns_layout_remove_button=שמור והסתיר
 theme_xhred_columns_layout_variation_cannot_horizontal=לא ניתן להשתמש בפריסה אופקית במצב נייד, במיוחד כאשר רוחב המסך קטן מ-992 פיקסלים
+
+settings_auto_open_left_right=פתיחה אוטומטית של פאנלים סגורים בקירבה

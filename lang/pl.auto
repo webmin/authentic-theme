@@ -1288,3 +1288,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Zwój
 theme_xhred_columns_layout_remove=Ukryj ten widżet
 theme_xhred_columns_layout_remove_button=Zapisz i ukryj
 theme_xhred_columns_layout_variation_cannot_horizontal=Układu poziomego nie można używać w trybie mobilnym, szczególnie gdy szerokość ekranu jest mniejsza niż 992px
+
+settings_auto_open_left_right=Automatyczne otwieranie zamkniętych paneli w pobliżu

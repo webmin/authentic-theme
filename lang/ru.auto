@@ -1161,3 +1161,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Прокрутить
 theme_xhred_columns_layout_remove=Скрыть этот виджет
 theme_xhred_columns_layout_remove_button=Сохранить и скрыть
 theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальную верстку нельзя использовать в мобильном режиме, особенно когда ширина экрана меньше 992 пикселей
+
+settings_auto_open_left_right=Автоматическое открытие закрытых панелей при приближении

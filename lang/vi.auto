@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=cuộn
 theme_xhred_columns_layout_remove=Ẩn tiện ích này
 theme_xhred_columns_layout_remove_button=Lưu và Ẩn
 theme_xhred_columns_layout_variation_cannot_horizontal=Không thể sử dụng bố cục ngang ở chế độ di động, đặc biệt khi chiều rộng màn hình nhỏ hơn 992px
+
+settings_auto_open_left_right=Tự động mở các tấm đã đóng khi ở gần

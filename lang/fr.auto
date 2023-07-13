@@ -297,3 +297,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Faire défiler
 theme_xhred_columns_layout_remove=Masquer ce widget
 theme_xhred_columns_layout_remove_button=Enregistrer et masquer
 theme_xhred_columns_layout_variation_cannot_horizontal=La disposition horizontale ne peut pas être utilisée en mode mobile, en particulier lorsque la largeur de l'écran est inférieure à 992px
+
+settings_auto_open_left_right=Ouverture automatique des panneaux fermés à proximité

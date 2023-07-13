@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Скрутак
 theme_xhred_columns_layout_remove=Схаваць гэты віджэт
 theme_xhred_columns_layout_remove_button=Захаваць і схаваць
 theme_xhred_columns_layout_variation_cannot_horizontal=Гарызантальны макет нельга выкарыстоўваць у мабільным рэжыме, у прыватнасці, калі шырыня экрана меншая за 992 пікселя
+
+settings_auto_open_left_right=Аўтаматычнае адкрыццё закрытых панэляў на блізкасці

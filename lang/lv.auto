@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Ritiniet
 theme_xhred_columns_layout_remove=Slēpt šo logrīku
 theme_xhred_columns_layout_remove_button=Saglabāt un paslēpt
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontālo izkārtojumu nevar izmantot mobilajā režīmā, jo īpaši, ja ekrāna platums ir mazāks par 992 pikseļiem
+
+settings_auto_open_left_right=Automātiski atver slēgtos paneļus tuvumā

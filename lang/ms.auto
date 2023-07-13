@@ -779,3 +779,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Tatal
 theme_xhred_columns_layout_remove=Sembunyikan Widget Ini
 theme_xhred_columns_layout_remove_button=Simpan dan Sembunyikan
 theme_xhred_columns_layout_variation_cannot_horizontal=Reka letak mendatar tidak boleh digunakan dalam mod mudah alih, khususnya apabila lebar skrin kurang daripada 992px
+
+settings_auto_open_left_right=Auto buka panel tertutup pada jarak dekat

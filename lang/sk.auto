@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Posúvajte sa
 theme_xhred_columns_layout_remove=Skryť tento widget
 theme_xhred_columns_layout_remove_button=Uložiť a skryť
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontálne rozloženie nie je možné použiť v mobilnom režime, konkrétne keď je šírka obrazovky menšia ako 992 pixelov
+
+settings_auto_open_left_right=Automatické otváranie uzavretých panelov pri blízkosti

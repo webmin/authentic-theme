@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Slinkite
 theme_xhred_columns_layout_remove=Slėpti šį valdiklį
 theme_xhred_columns_layout_remove_button=Išsaugoti ir Slėpti
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalus išdėstymas negali būti naudojamas mobiliuoju režimu, ypač kai ekrano plotis yra mažesnis nei 992 pikseliai
+
+settings_auto_open_left_right=Automatiškai atidarykite uždaras plokštes arti

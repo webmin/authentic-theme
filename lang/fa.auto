@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=طومار
 theme_xhred_columns_layout_remove=پنهان کردن این ویجت
 theme_xhred_columns_layout_remove_button=ذخیره و پنهان کردن
 theme_xhred_columns_layout_variation_cannot_horizontal=طرح افقی را نمی توان در حالت موبایل استفاده کرد، به ویژه زمانی که عرض صفحه کمتر از 992 پیکسل باشد
+
+settings_auto_open_left_right=باز کردن خودکار پانل های بسته در مجاورت

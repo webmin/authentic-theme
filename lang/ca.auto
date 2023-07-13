@@ -710,3 +710,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Desplaçament
 theme_xhred_columns_layout_remove=Amaga aquest widget
 theme_xhred_columns_layout_remove_button=Desa i amaga
 theme_xhred_columns_layout_variation_cannot_horizontal=El disseny horitzontal no es pot utilitzar en el mode mòbil, concretament quan l'amplada de la pantalla és inferior a 992 píxels
+
+settings_auto_open_left_right=Panells tancats oberts automàticament a proximitat

@@ -1370,3 +1370,5 @@ theme_xhred_columns_layout_vertical_opts_break_scroll=Korritu
 theme_xhred_columns_layout_remove=Ezkutatu widget hau
 theme_xhred_columns_layout_remove_button=Gorde eta Ezkutatu
 theme_xhred_columns_layout_variation_cannot_horizontal=Diseinu horizontala ezin da erabili mugikor moduan, bereziki pantailaren zabalera 992 px baino txikiagoa denean
+
+settings_auto_open_left_right=Hurbiltasunean automatikoki irekitzen diren panel itxiak
