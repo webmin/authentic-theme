@@ -1579,7 +1579,9 @@ sub theme_error
     &header($text{'error'}, "") if (!$main_header);
     my $error_what      = ($main::whatfailed ? "$main::whatfailed : " : "");
     my $error_message   = join(", ", @err_msg);
-    my $error           = html_escape(html_strip(($error_what . $error_message)));
+	$err_caller = " " . &ui_help($err_caller)
+        if ($err_caller);
+    my $error           = html_escape(html_strip(($error_what . $error_message))) . $err_caller;
     my $get_error_stack = sub {
         # Show call stack
         my $error_stack = "";
