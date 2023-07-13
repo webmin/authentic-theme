@@ -35,6 +35,7 @@ var
     settings_contrast_level_navigation = '1',
     settings_navigation_always_collapse = false,
     settings_leftmenu_width = 260,
+    settings_auto_open_panels_on_proximity = false,
     settings_switch_rdisplay = false,
     settings_leftmenu_section_hide_refresh_modules = false,
     settings_leftmenu_section_hide_unused_modules = false,

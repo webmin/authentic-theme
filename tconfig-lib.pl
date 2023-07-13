@@ -68,6 +68,7 @@ sub theme_settings_raw
                        'settings_contrast_level_navigation',
                        'settings_navigation_always_collapse',
                        'settings_leftmenu_width',
+                       'settings_auto_open_panels_on_proximity',
                        'settings_switch_rdisplay',
                        'settings_navigation_auto_fold_category',
                        'settings_leftmenu_section_hide_refresh_modules',
