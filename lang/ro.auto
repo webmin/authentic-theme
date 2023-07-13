@@ -402,4 +402,4 @@ theme_xhred_columns_layout_remove=Ascunde acest widget
 theme_xhred_columns_layout_remove_button=Salvați și ascundeți
 theme_xhred_columns_layout_variation_cannot_horizontal=Aspectul orizontal nu poate fi utilizat în modul mobil, în special atunci când lățimea ecranului este mai mică de 992 px
 
-settings_auto_open_left_right=Panouri închise cu deschidere automată în apropiere
+settings_auto_open_panels_on_proximity=Panouri închise cu deschidere automată în apropiere

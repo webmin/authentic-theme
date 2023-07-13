@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=Bu Widget'ı Gizle
 theme_xhred_columns_layout_remove_button=Kaydet ve Gizle
 theme_xhred_columns_layout_variation_cannot_horizontal=Mobil modda, özellikle ekran genişliği 992 pikselden az olduğunda yatay düzen kullanılamaz
 
-settings_auto_open_left_right=Yakınlıkta kapalı panelleri otomatik aç
+settings_auto_open_panels_on_proximity=Yakınlıkta kapalı panelleri otomatik aç

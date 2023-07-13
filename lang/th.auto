@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=ซ่อนวิดเจ็ตนี้
 theme_xhred_columns_layout_remove_button=บันทึกและซ่อน
 theme_xhred_columns_layout_variation_cannot_horizontal=ไม่สามารถใช้เค้าโครงแนวนอนในโหมดมือถือ โดยเฉพาะเมื่อความกว้างหน้าจอน้อยกว่า 992px
 
-settings_auto_open_left_right=เปิดแผงปิดอัตโนมัติในบริเวณใกล้เคียง
+settings_auto_open_panels_on_proximity=เปิดแผงปิดอัตโนมัติในบริเวณใกล้เคียง

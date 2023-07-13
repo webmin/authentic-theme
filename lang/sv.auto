@@ -106,4 +106,4 @@ theme_xhred_columns_layout_remove=Dölj den här widgeten
 theme_xhred_columns_layout_remove_button=Spara och dölj
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontell layout kan inte användas i mobilläget, speciellt när skärmbredden är mindre än 992px
 
-settings_auto_open_left_right=Öppna stängda paneler automatiskt i närheten
+settings_auto_open_panels_on_proximity=Öppna stängda paneler automatiskt i närheten

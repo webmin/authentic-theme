@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=이 위젯 숨기기
 theme_xhred_columns_layout_remove_button=저장 및 숨기기
 theme_xhred_columns_layout_variation_cannot_horizontal=모바일 모드, 특히 화면 너비가 992px 미만인 경우 가로 레이아웃을 사용할 수 없습니다
 
-settings_auto_open_left_right=근접 시 닫힌 패널 자동 열기
+settings_auto_open_panels_on_proximity=근접 시 닫힌 패널 자동 열기

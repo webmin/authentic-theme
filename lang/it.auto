@@ -228,4 +228,4 @@ theme_xhred_columns_layout_remove=Nascondi questo widget
 theme_xhred_columns_layout_remove_button=Salva e nascondi
 theme_xhred_columns_layout_variation_cannot_horizontal=Il layout orizzontale non può essere utilizzato in modalità mobile, in particolare quando la larghezza dello schermo è inferiore a 992 px
 
-settings_auto_open_left_right=Apertura automatica dei pannelli chiusi in prossimità
+settings_auto_open_panels_on_proximity=Apertura automatica dei pannelli chiusi in prossimità

@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=إخفاء هذه القطعة
 theme_xhred_columns_layout_remove_button=حفظ وإخفاء
 theme_xhred_columns_layout_variation_cannot_horizontal=لا يمكن استخدام التخطيط الأفقي في وضع الهاتف المحمول ، خاصة عندما يكون عرض الشاشة أقل من 992 بكسل
 
-settings_auto_open_left_right=فتح لوحات مغلقة تلقائيًا على مقربة
+settings_auto_open_panels_on_proximity=فتح لوحات مغلقة تلقائيًا على مقربة

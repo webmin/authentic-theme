@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=Skrij ta pripomoček
 theme_xhred_columns_layout_remove_button=Shrani in skrij
 theme_xhred_columns_layout_variation_cannot_horizontal=Vodoravne postavitve ni mogoče uporabiti v mobilnem načinu, zlasti če je širina zaslona manjša od 992 slikovnih pik
 
-settings_auto_open_left_right=Samodejno odpiranje zaprtih plošč v bližini
+settings_auto_open_panels_on_proximity=Samodejno odpiranje zaprtih plošč v bližini

@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=Piilota tämä widget
 theme_xhred_columns_layout_remove_button=Tallenna ja piilota
 theme_xhred_columns_layout_variation_cannot_horizontal=Vaakasuuntaista asettelua ei voi käyttää mobiilitilassa, varsinkin kun näytön leveys on alle 992 pikseliä
 
-settings_auto_open_left_right=Avaa automaattisesti suljetut paneelit lähellä
+settings_auto_open_panels_on_proximity=Avaa automaattisesti suljetut paneelit lähellä

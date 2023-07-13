@@ -328,4 +328,4 @@ theme_xhred_columns_layout_remove=Dieses Widget ausblenden
 theme_xhred_columns_layout_remove_button=Speichern und ausblenden
 theme_xhred_columns_layout_variation_cannot_horizontal=Das horizontale Layout kann im mobilen Modus nicht verwendet werden, insbesondere wenn die Bildschirmbreite weniger als 992 Pixel beträgt
 
-settings_auto_open_left_right=Automatisches Öffnen geschlossener Paneele bei Annäherung
+settings_auto_open_panels_on_proximity=Automatisches Öffnen geschlossener Paneele bei Annäherung

@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=Приховати цей віджет
 theme_xhred_columns_layout_remove_button=Зберегти та приховати
 theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальний макет не можна використовувати в мобільному режимі, зокрема, коли ширина екрана менше 992 пікселів
 
-settings_auto_open_left_right=Автоматичне відкриття закритих панелей на близькості
+settings_auto_open_panels_on_proximity=Автоматичне відкриття закритих панелей на близькості

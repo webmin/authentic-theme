@@ -1371,4 +1371,4 @@ theme_xhred_columns_layout_remove=A widget elrejtése
 theme_xhred_columns_layout_remove_button=Mentés és elrejtés
 theme_xhred_columns_layout_variation_cannot_horizontal=A vízszintes elrendezés nem használható mobil módban, különösen akkor, ha a képernyő szélessége kisebb, mint 992 képpont
 
-settings_auto_open_left_right=A zárt panelek automatikus nyitása a közelben
+settings_auto_open_panels_on_proximity=A zárt panelek automatikus nyitása a közelben

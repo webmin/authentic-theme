@@ -1228,4 +1228,4 @@ theme_xhred_columns_layout_remove=Skrýt tento widget
 theme_xhred_columns_layout_remove_button=Uložit a skrýt
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontální rozložení nelze použít v mobilním režimu, konkrétně když je šířka obrazovky menší než 992 pixelů
 
-settings_auto_open_left_right=Automatické otevírání uzavřených panelů při blízkosti
+settings_auto_open_panels_on_proximity=Automatické otevírání uzavřených panelů při blízkosti
