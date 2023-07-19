@@ -182,6 +182,7 @@ var
 
     // Terminal related custom options
     config_portable_module_xterm_options = '{}',
+    config_portable_module_xterm_render_addon = true,
 
     // Control min and max time for branding to show in seconds
     settings_product_branding_show_time_min_privileged = 1,
