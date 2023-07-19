@@ -443,7 +443,7 @@ const mail = (function() {
                                 <span class="ql-formats">
                                     <select class="ql-font">
                                       <option value="initial" selected>${data.language._default}</option>
-                                      <option value="monospace">Monospace</option>
+                                      <option value="monospace">${data.language._fixed_width}</option>
                                     </select>
                                     <select class="ql-size">
                                         <option value="0.75em">${data.language._font_size.small}</option>
@@ -527,7 +527,7 @@ const mail = (function() {
                                 <span class="ql-formats">
                                     <select class="ql-font">
                                         <option value="initial" selected>${data.language._default}</option>
-                                        <option value="monospace">Monospace</option>
+                                        <option value="monospace">${data.language._fixed_width}</option>
                                     </select>
                                     <select class="ql-size">
                                         <option value="0.75em">${data.language._font_size.small}</option>
@@ -2165,6 +2165,7 @@ const mail = (function() {
                             language._options = _.lang('global_options');
                             language._addrecipients = _.lang('mail_composer_addrecipients');
                             language._default = _.lang('global_default');
+                            language._fixed_width = _.lang('editor_tb_font_fixed_width');
                             language._name = _.lang('mail_composer_real_name');
                             language._username = _.lang('mail_composer_username');
                             language._paragraph = _.lang('global_paragraph');

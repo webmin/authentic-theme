@@ -1401,6 +1401,7 @@ right_file_is_being_prepared=Your file is being prepared. Please wait..
 theme_xhred_global_paragraph=Paragraph
 theme_xhred_global_heading=Heading
 theme_xhred_editor_tb_font=Font name
+theme_xhred_editor_tb_font_fixed_width=Fixed Width
 theme_xhred_editor_tb_size=Font size
 theme_xhred_editor_tb_paragraph=Paragraph style
 theme_xhred_editor_tb_header=Paragraph style
