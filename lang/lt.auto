@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Jūsų failas ruošiamas. Prašau palauk..
 theme_xhred_global_paragraph=Pastraipa
 theme_xhred_global_heading=Antraštė
 theme_xhred_editor_tb_font=Šrifto pavadinimas
+theme_xhred_editor_tb_font_fixed_width=Fiksuotas plotis
 theme_xhred_editor_tb_size=Šrifto dydis
 theme_xhred_editor_tb_paragraph=Pastraipos stilius
 theme_xhred_editor_tb_header=Pastraipos stilius

@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Ваш файл готується. Будь лас
 theme_xhred_global_paragraph=Абзац
 theme_xhred_global_heading=Заголовок
 theme_xhred_editor_tb_font=Назва шрифту
+theme_xhred_editor_tb_font_fixed_width=Фіксована ширина
 theme_xhred_editor_tb_size=Розмір шрифту
 theme_xhred_editor_tb_paragraph=Стиль абзацу
 theme_xhred_editor_tb_header=Стиль абзацу

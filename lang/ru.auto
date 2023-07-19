@@ -1121,6 +1121,7 @@ right_file_is_being_prepared=Ваш файл готовится. Пожалуй�
 theme_xhred_global_paragraph=Параграф
 theme_xhred_global_heading=Заголовок
 theme_xhred_editor_tb_font=Название шрифта
+theme_xhred_editor_tb_font_fixed_width=Фиксированная ширина
 theme_xhred_editor_tb_size=Размер шрифта
 theme_xhred_editor_tb_paragraph=Стиль абзаца
 theme_xhred_editor_tb_header=Стиль абзаца

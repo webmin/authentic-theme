@@ -670,6 +670,7 @@ right_file_is_being_prepared=El vostre fitxer s'està preparant. Si us plau, esp
 theme_xhred_global_paragraph=Paràgraf
 theme_xhred_global_heading=Encapçalament
 theme_xhred_editor_tb_font=Nom de la font
+theme_xhred_editor_tb_font_fixed_width=Amplada fixa
 theme_xhred_editor_tb_size=Mida de la font
 theme_xhred_editor_tb_paragraph=Estil de paràgraf
 theme_xhred_editor_tb_header=Estil de paràgraf

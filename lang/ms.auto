@@ -739,6 +739,7 @@ right_file_is_being_prepared=Fail anda sedang disediakan. Sila tunggu..
 theme_xhred_global_paragraph=Perenggan
 theme_xhred_global_heading=Tajuk
 theme_xhred_editor_tb_font=Nama fon
+theme_xhred_editor_tb_font_fixed_width=Lebar Tetap
 theme_xhred_editor_tb_size=Saiz huruf
 theme_xhred_editor_tb_paragraph=Gaya perenggan
 theme_xhred_editor_tb_header=Gaya perenggan

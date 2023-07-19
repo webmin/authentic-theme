@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Вашият файл се подготвя. Мол
 theme_xhred_global_paragraph=Параграф
 theme_xhred_global_heading=Заглавие
 theme_xhred_editor_tb_font=Име на шрифта
+theme_xhred_editor_tb_font_fixed_width=Фиксирана ширина
 theme_xhred_editor_tb_size=Размер на шрифта
 theme_xhred_editor_tb_paragraph=Стил на абзац
 theme_xhred_editor_tb_header=Стил на абзац

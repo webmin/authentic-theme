@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=ملفك قيد التحضير. انتظر من ف�
 theme_xhred_global_paragraph=فقرة
 theme_xhred_global_heading=عنوان
 theme_xhred_editor_tb_font=اسم الخط
+theme_xhred_editor_tb_font_fixed_width=عرض ثابت
 theme_xhred_editor_tb_size=حجم الخط
 theme_xhred_editor_tb_paragraph=نمط الفقرة
 theme_xhred_editor_tb_header=نمط الفقرة

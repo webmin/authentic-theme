@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=آپ کی فائل تیار کی جا رہی ہے۔
 theme_xhred_global_paragraph=پیراگراف
 theme_xhred_global_heading=سرخی
 theme_xhred_editor_tb_font=فونٹ کا نام
+theme_xhred_editor_tb_font_fixed_width=فکسڈ چوڑائی
 theme_xhred_editor_tb_size=حرف کا سائز
 theme_xhred_editor_tb_paragraph=پیراگراف کا انداز
 theme_xhred_editor_tb_header=پیراگراف کا انداز

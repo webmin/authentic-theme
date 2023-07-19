@@ -361,6 +361,7 @@ right_file_is_being_prepared=Fișierul dvs. este în curs de pregătire. Va ruga
 theme_xhred_global_paragraph=Paragraf
 theme_xhred_global_heading=Titlu
 theme_xhred_editor_tb_font=Numele fontului
+theme_xhred_editor_tb_font_fixed_width=Lățime fixă
 theme_xhred_editor_tb_size=Marimea fontului
 theme_xhred_editor_tb_paragraph=Stilul de paragraf
 theme_xhred_editor_tb_header=Stilul de paragraf

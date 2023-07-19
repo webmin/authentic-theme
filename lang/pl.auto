@@ -1248,6 +1248,7 @@ right_file_is_being_prepared=Twój plik jest przygotowywany. Proszę czekać..
 theme_xhred_global_paragraph=Ustęp
 theme_xhred_global_heading=Nagłówek
 theme_xhred_editor_tb_font=Nazwa czcionki
+theme_xhred_editor_tb_font_fixed_width=Stała szerokość
 theme_xhred_editor_tb_size=Rozmiar czcionki
 theme_xhred_editor_tb_paragraph=Styl akapitu
 theme_xhred_editor_tb_header=Styl akapitu

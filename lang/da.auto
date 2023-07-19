@@ -1242,6 +1242,7 @@ right_file_is_being_prepared=Din fil er ved at blive klargjort. Vent venligst..
 theme_xhred_global_paragraph=Afsnit
 theme_xhred_global_heading=Overskrift
 theme_xhred_editor_tb_font=Skrifttypenavn
+theme_xhred_editor_tb_font_fixed_width=Fast bredde
 theme_xhred_editor_tb_size=Skriftstørrelse
 theme_xhred_editor_tb_paragraph=Afsnitsstil
 theme_xhred_editor_tb_header=Afsnitsstil

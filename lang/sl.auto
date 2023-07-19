@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Vaša datoteka je v pripravi. Prosim počakaj..
 theme_xhred_global_paragraph=odstavek
 theme_xhred_global_heading=Naslov
 theme_xhred_editor_tb_font=Ime pisave
+theme_xhred_editor_tb_font_fixed_width=Fiksna širina
 theme_xhred_editor_tb_size=Velikost pisave
 theme_xhred_editor_tb_paragraph=Slog odstavka
 theme_xhred_editor_tb_header=Slog odstavka

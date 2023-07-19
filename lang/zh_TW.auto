@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=正在準備您的文件。請稍等..
 theme_xhred_global_paragraph=段落
 theme_xhred_global_heading=標題
 theme_xhred_editor_tb_font=字體名稱
+theme_xhred_editor_tb_font_fixed_width=固定寬度
 theme_xhred_editor_tb_size=字體大小
 theme_xhred_editor_tb_paragraph=段落樣式
 theme_xhred_editor_tb_header=段落樣式

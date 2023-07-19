@@ -187,6 +187,7 @@ right_file_is_being_prepared=Il tuo file è in fase di preparazione. Attendere p
 theme_xhred_global_paragraph=Paragrafo
 theme_xhred_global_heading=Intestazione
 theme_xhred_editor_tb_font=Nome del carattere
+theme_xhred_editor_tb_font_fixed_width=Larghezza fissa
 theme_xhred_editor_tb_size=Dimensione del font
 theme_xhred_editor_tb_paragraph=Stile paragrafo
 theme_xhred_editor_tb_header=Stile paragrafo

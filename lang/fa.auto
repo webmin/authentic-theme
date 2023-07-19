@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=فایل شما در حال آماده شدن اس�
 theme_xhred_global_paragraph=پاراگراف
 theme_xhred_global_heading=سرفصل
 theme_xhred_editor_tb_font=نام فونت
+theme_xhred_editor_tb_font_fixed_width=عرض ثابت
 theme_xhred_editor_tb_size=اندازه فونت
 theme_xhred_editor_tb_paragraph=سبک پاراگراف
 theme_xhred_editor_tb_header=سبک پاراگراف

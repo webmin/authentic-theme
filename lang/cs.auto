@@ -1187,6 +1187,7 @@ right_file_is_being_prepared=Váš soubor se připravuje. Prosím, čekejte..
 theme_xhred_global_paragraph=Odstavec
 theme_xhred_global_heading=Nadpis
 theme_xhred_editor_tb_font=Název písma
+theme_xhred_editor_tb_font_fixed_width=Pevná šířka
 theme_xhred_editor_tb_size=Velikost písma
 theme_xhred_editor_tb_paragraph=Styl odstavce
 theme_xhred_editor_tb_header=Styl odstavce

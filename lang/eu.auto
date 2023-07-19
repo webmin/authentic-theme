@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Zure fitxategia prestatzen ari da. Itxaron mesedez.
 theme_xhred_global_paragraph=Paragrafoa
 theme_xhred_global_heading=Goiburua
 theme_xhred_editor_tb_font=Letra-tipoaren izena
+theme_xhred_editor_tb_font_fixed_width=Zabalera finkoa
 theme_xhred_editor_tb_size=Letra-tamaina
 theme_xhred_editor_tb_paragraph=Paragrafo estiloa
 theme_xhred_editor_tb_header=Paragrafo estiloa

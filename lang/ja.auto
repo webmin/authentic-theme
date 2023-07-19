@@ -296,6 +296,7 @@ right_file_is_being_prepared=ファイルは準備中です。お待ちくださ
 theme_xhred_global_paragraph=段落
 theme_xhred_global_heading=見出し
 theme_xhred_editor_tb_font=フォント名
+theme_xhred_editor_tb_font_fixed_width=固定幅
 theme_xhred_editor_tb_size=フォントサイズ
 theme_xhred_editor_tb_paragraph=段落スタイル
 theme_xhred_editor_tb_header=段落スタイル

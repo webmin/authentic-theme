@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Hồ sơ của bạn đang được chuẩn bị. V
 theme_xhred_global_paragraph=Đoạn văn
 theme_xhred_global_heading=Phần mở đầu
 theme_xhred_editor_tb_font=Tên phông chữ
+theme_xhred_editor_tb_font_fixed_width=Chiều rộng cố định
 theme_xhred_editor_tb_size=Cỡ chữ
 theme_xhred_editor_tb_paragraph=Kiểu đoạn văn
 theme_xhred_editor_tb_header=Kiểu đoạn văn

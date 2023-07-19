@@ -1217,6 +1217,7 @@ right_file_is_being_prepared=Uw dossier wordt voorbereid. Even geduld aub..
 theme_xhred_global_paragraph=Paragraaf
 theme_xhred_global_heading=Rubriek
 theme_xhred_editor_tb_font=Lettertype naam
+theme_xhred_editor_tb_font_fixed_width=Vaste Breedte
 theme_xhred_editor_tb_size=Lettertypegrootte
 theme_xhred_editor_tb_paragraph=Alinea stijl
 theme_xhred_editor_tb_header=Paragraaf stijl

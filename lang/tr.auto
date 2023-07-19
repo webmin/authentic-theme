@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Dosyanız hazırlanıyor. Lütfen bekleyin..
 theme_xhred_global_paragraph=Paragraf
 theme_xhred_global_heading=Başlık
 theme_xhred_editor_tb_font=Yazı tipi adı
+theme_xhred_editor_tb_font_fixed_width=Sabit genişlik
 theme_xhred_editor_tb_size=Yazı Boyutu
 theme_xhred_editor_tb_paragraph=paragraf stili
 theme_xhred_editor_tb_header=paragraf stili

@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Jou lêer word voorberei. Wag asseblief..
 theme_xhred_global_paragraph=Paragraaf
 theme_xhred_global_heading=Opskrif
 theme_xhred_editor_tb_font=Lettertipe naam
+theme_xhred_editor_tb_font_fixed_width=Vaste breedte
 theme_xhred_editor_tb_size=Skrifgrootte
 theme_xhred_editor_tb_paragraph=Paragraafstyl
 theme_xhred_editor_tb_header=Paragraafstyl

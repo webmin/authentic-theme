@@ -287,6 +287,7 @@ right_file_is_being_prepared=Ihre Datei wird vorbereitet. Warten Sie mal..
 theme_xhred_global_paragraph=Absatz
 theme_xhred_global_heading=Überschrift
 theme_xhred_editor_tb_font=Schriftartenname
+theme_xhred_editor_tb_font_fixed_width=Feste Breite
 theme_xhred_editor_tb_size=Schriftgröße
 theme_xhred_editor_tb_paragraph=Absatzstil
 theme_xhred_editor_tb_header=Absatzstil

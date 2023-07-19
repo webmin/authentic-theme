@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Il-fajl tiegħek qed jitħejja. Stenna..
 theme_xhred_global_paragraph=Paragrafu
 theme_xhred_global_heading=Intestatura
 theme_xhred_editor_tb_font=Isem tat-tipa
+theme_xhred_editor_tb_font_fixed_width=Wisa' Fiss
 theme_xhred_editor_tb_size=Daqs tat-tipa
 theme_xhred_editor_tb_paragraph=Stil tal-paragrafu
 theme_xhred_editor_tb_header=Stil tal-paragrafu

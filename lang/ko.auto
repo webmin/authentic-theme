@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=파일을 준비 중입니다. 기다리세요..
 theme_xhred_global_paragraph=절
 theme_xhred_global_heading=표제
 theme_xhred_editor_tb_font=글꼴 이름
+theme_xhred_editor_tb_font_fixed_width=고정 폭
 theme_xhred_editor_tb_size=글꼴 크기
 theme_xhred_editor_tb_paragraph=단락 스타일
 theme_xhred_editor_tb_header=단락 스타일

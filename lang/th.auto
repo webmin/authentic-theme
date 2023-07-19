@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=กำลังเตรียมไฟล์ขอ
 theme_xhred_global_paragraph=ย่อหน้า
 theme_xhred_global_heading=หัวเรื่อง
 theme_xhred_editor_tb_font=ชื่อฟอนต์
+theme_xhred_editor_tb_font_fixed_width=ความกว้างคงที่
 theme_xhred_editor_tb_size=ขนาดตัวอักษร
 theme_xhred_editor_tb_paragraph=ลักษณะย่อหน้า
 theme_xhred_editor_tb_header=ลักษณะย่อหน้า

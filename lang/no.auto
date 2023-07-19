@@ -257,6 +257,7 @@ right_file_is_being_prepared=Filen din forberedes. Vennligst vent..
 theme_xhred_global_paragraph=Avsnitt
 theme_xhred_global_heading=Overskrift
 theme_xhred_editor_tb_font=Skriftnavn
+theme_xhred_editor_tb_font_fixed_width=Fast bredde
 theme_xhred_editor_tb_size=Skriftstørrelse
 theme_xhred_editor_tb_paragraph=Avsnittsstil
 theme_xhred_editor_tb_header=Avsnittsstil

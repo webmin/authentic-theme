@@ -1330,6 +1330,7 @@ right_file_is_being_prepared=Tiedostoasi valmistellaan. Odota..
 theme_xhred_global_paragraph=Kohta
 theme_xhred_global_heading=Otsikko
 theme_xhred_editor_tb_font=Fontin nimi
+theme_xhred_editor_tb_font_fixed_width=Kiinteä leveys
 theme_xhred_editor_tb_size=Fonttikoko
 theme_xhred_editor_tb_paragraph=Kappaleen tyyli
 theme_xhred_editor_tb_header=Kappaleen tyyli

@@ -1241,6 +1241,7 @@ right_file_is_being_prepared=Se está preparando su expediente. Espere por favor
 theme_xhred_global_paragraph=Párrafo
 theme_xhred_global_heading=Título
 theme_xhred_editor_tb_font=Nombre de la fuente
+theme_xhred_editor_tb_font_fixed_width=Ancho fijo
 theme_xhred_editor_tb_size=Tamaño de fuente
 theme_xhred_editor_tb_paragraph=Estilo de párrafo
 theme_xhred_editor_tb_header=Estilo de párrafo

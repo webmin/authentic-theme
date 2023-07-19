@@ -65,6 +65,7 @@ right_file_is_being_prepared=Din fil förbereds. Vänta..
 theme_xhred_global_paragraph=Paragraf
 theme_xhred_global_heading=Rubrik
 theme_xhred_editor_tb_font=Teckensnittsnamn
+theme_xhred_editor_tb_font_fixed_width=Fast bredd
 theme_xhred_editor_tb_size=Textstorlek
 theme_xhred_editor_tb_paragraph=Styckestil
 theme_xhred_editor_tb_header=Styckestil
