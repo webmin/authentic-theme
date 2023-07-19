@@ -225,7 +225,7 @@ var
             { 'firewall': 'iptables' },
             { 'firewall6': 'iptables' },
             { 'fail2ban': 'jail brute-force bruteforce firewall iptables' },
-            { 'net': 'routing gateways hostname dns /etc/hosts' },
+            { 'net': 'routing gateways hostname dns /etc/hosts ip addr netplan networkmanager' },
             { 'fdisk': 'fdisk' },
             { 'lvm': 'lvm' },
             { 'csf': 'csf' },
