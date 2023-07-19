@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 21.01 (July 19, 2023)
+* Add optional feature to open collapsed panels on cursor proximity [virtualmin/virtualmin-gpl#590](https://github.com/virtualmin/virtualmin-gpl/issues/590)
+* Add support for mouse middle click to open links in new tab [virtualmin/virtualmin-gpl#588](https://github.com/virtualmin/virtualmin-gpl/issues/588)
+* Add support for screen reader mode in Terminal module
+
 #### Version 21.00 (July 09, 2023)
 * Add new column layout mode with variations
 * Add list of theme hotkeys in single help screen (F1)
