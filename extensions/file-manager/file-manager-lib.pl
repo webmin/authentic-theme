@@ -111,11 +111,11 @@ sub get_errors
 sub get_request_uri
 {
     (my $uri = get_env('request_uri')) =~ s/\?/&/;
-    my @r = split /&/, $uri;
+    my @r = split("&", $uri);
     my %c;
 
     foreach (@r) {
-        my ($k, $v) = split /=/, $_;
+        my ($k, $v) = split("=", $_);
         $c{$k} = $v;
     }
 
@@ -127,7 +127,8 @@ sub get_user_config
     my ($k) = @_;
 
     my %t;
-    read_file("$config_directory/$current_theme/settings-$remote_user", \%t);
+    my $oconfig = "$config_directory/$current_theme/settings-$remote_user";
+    read_file((-r $oconfig ? $oconfig : "$oconfig.js"), \%t);
 
     if ($k) {
         my $v = $t{$k};
@@ -712,7 +713,8 @@ sub print_content
     my $pagelimit = 4294967295;
     my $pages     = 0;
 
-    my $max_allowed = int($userconfig{'max_allowed'});
+    my $tuconfig_per_paginate = get_user_config('config_portable_module_filemanager_records_for_server_pagination');
+    my $max_allowed = int($tuconfig_per_paginate) || int($userconfig{'max_allowed'});
     if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 10000) {
         $max_allowed = 1000;
     }
