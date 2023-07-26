@@ -817,14 +817,8 @@ sub check_pro_package
 {
     my ($id) = @_;
     if (&foreign_available("virtual-server") && $id eq "vm") {
-        my %virtualmin = &get_module_info("virtual-server");
-        if ($virtualmin{'version'} =~ /pro/is) {
-            return 1;
-        } elsif ($virtualmin{'version'} =~ /gpl/is) {
-            return 0;
-        } else {
-            return 1;
-        }
+        &foreign_require("virtual-server");
+        return $virtual_server::virtualmin_pro ? 1 : 0;
     } elsif (&foreign_available("server-manager") && $id eq "cm") {
         my %cloudmin = &get_module_info("server-manager");
         if ($cloudmin{'version'} =~ /pro/is || $cloudmin{'version'} =~ /real/is) {

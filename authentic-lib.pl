@@ -695,13 +695,11 @@ sub get_sysinfo_vars
 
         # Virtualmin version
         if ($has_virtualmin) {
+            &foreign_require("virtual-server");
+            my ($major, $minor, $build) = &virtual_server::get_module_version_and_type(1);
             my ($vs_license, $__virtual_server_version);
-
             $vs_license               = check_pro_package('vm');
-            $__virtual_server_version = (defined(@$info_arr[2]) ? @$info_arr[2]->{'vm_version'} : undef);
-            $__virtual_server_version =~ s/.gpl//igs;
-            $__virtual_server_version =~ s/.pro//igs;
-
+            $__virtual_server_version = ("$major.$minor".(defined($build) ? ".$build" : '')."");
             $virtualmin_version = (
                 product_version_update($__virtual_server_version, 'v') . " " . (
                     $vs_license eq '0' ? '' :
