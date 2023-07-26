@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 21.02 (July 27, 2023)
+* Fix module version detection for Virtualmin [virtualmin/virtualmin-gpl#597](https://github.com/virtualmin/virtualmin-gpl/issues/597)
+* Fix locales processed by browser [#1663](https://github.com/authentic-theme/authentic-theme/issues/1663)
+* Fix to disable column layout for suggested DNS records page in Virtualmin
+* Fix not working maximum pagination option in File Manager [webmin#1958](https://github.com/webmin/webmin/issues/1958)
+
 #### Version 21.01 (July 19, 2023)
 * Add optional feature to open collapsed panels on cursor proximity [virtualmin/virtualmin-gpl#590](https://github.com/virtualmin/virtualmin-gpl/issues/590)
 * Add support for mouse middle click to open links in new tab [virtualmin/virtualmin-gpl#588](https://github.com/virtualmin/virtualmin-gpl/issues/588)
