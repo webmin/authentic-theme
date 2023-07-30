@@ -946,8 +946,8 @@ sub get_sysinfo_vars
                         $uptime_text =~ s/es/e/;
                     }
                 }
-                $uptime = '<a href=\'' . $theme_webprefix . '/init/\'>' . $uptime_text . '</a>';
-
+                $uptime = !$uptime_text ? undef : 
+                  (foreign_available("init") ? '<a href=\'' . $theme_webprefix . '/init/\'>' . $uptime_text . '</a>' : $uptime_text);
             }
 
             # Running processes
