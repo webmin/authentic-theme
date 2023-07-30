@@ -868,12 +868,6 @@ sub get_usermin_vars
             $has_usermin_version = $uminiserv{'server'};
             $has_usermin_version =~ /\/([\d\.]+)/;
             $has_usermin_version = "$1";
-            if (length($has_usermin_version) > 6) {
-                $has_usermin_version =
-                  substr($has_usermin_version, 0, 5) . "." .
-                  substr($has_usermin_version, 5, 5 - 1) . "." .
-                  substr($has_usermin_version, 5 * 2 - 1);
-            }
 
             if ($has_usermin_version) {
                 my $has_usermin_version_release = &$get_usermin_version_release;
