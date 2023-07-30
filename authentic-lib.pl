@@ -923,7 +923,7 @@ sub get_sysinfo_vars
             foreign_require("proc");
 
             my @system_uptime = defined(&proc::get_system_uptime) ? proc::get_system_uptime() : ();
-            if (@system_uptime) {
+            if (scalar(@system_uptime)) {
                 my ($day, $hour, $minute) = @system_uptime;
                 my $uptime_text;
                 if ($day) {
