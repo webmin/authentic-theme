@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 21.03 (July 31, 2023)
+* Fix to check if system uptime is set before displaying it in the dashboard [#1664](https://github.com/authentic-theme/authentic-theme/issues/1664)
+* Fix to support displaying correctly Usermin development version in the dashboard
+
 #### Version 21.02 (July 29, 2023)
 * Fix module version detection for Virtualmin [virtualmin/virtualmin-gpl#597](https://github.com/virtualmin/virtualmin-gpl/issues/597)
 * Fix locales processed by browser [#1663](https://github.com/authentic-theme/authentic-theme/issues/1663)
