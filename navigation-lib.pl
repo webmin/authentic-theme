@@ -479,7 +479,7 @@ sub nav_cat_link
     $link = "/$link" if (!$external_link && $link !~ /^\//);
     $rv   = '<li data-linked' . ($hidden && ' class="hidden"') . '>' . "\n";
     $rv .= '<a' . ($hidden && ' data-parent-hidden') . ' href="' .
-      ($external_link ? $link : "$theme_webprefix$link") . '"> ' . $label . '</a>' . "\n";
+      ($external_link ? $link : "$theme_webprefix$link") . '"> ' . &filter_javascript($label) . '</a>' . "\n";
     $rv .= "</li>\n";
     return $rv;
 }
@@ -558,7 +558,7 @@ sub nav_cat
         # Show link to close or open catgory
         $rv = "<li class=\"has-sub\">\n";
         $rv .= "<a data-has-sub-link href=\"#$c\">";
-        $rv .= "<i class=\"fa $icon fa-fw\"></i> <span>$label</span></a>\n";
+        $rv .= "<i class=\"fa $icon fa-fw\"></i> <span>@{[&filter_javascript($label)]}</span></a>\n";
         $rv .= '</li>' . "\n";
         return $rv;
     }
