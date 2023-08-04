@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 21.04 (August 04, 2023)
+* Add better filtering unsafe content to prevent possible XSS attacks
+* Fix print email functionality for Read User Mail module (for both Webmin and Usermin)
+* Fix checkbox positioning for Webmin Users module
+
 #### Version 21.03 (July 31, 2023)
 * Fix to check if system uptime is set before displaying it in the dashboard [#1664](https://github.com/authentic-theme/authentic-theme/issues/1664)
 * Fix to support displaying correctly Usermin development version in the dashboard
