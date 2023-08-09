@@ -119,8 +119,6 @@ settings_right_theme_left_extensions_title=Theme Extensions Editor
 settings_right_theme_left_logo_title=Theme Logo Control
 settings_right_theme_configurable_options_title=Configurable options for Authentic Theme
 
-settings_right_hotkey_options=Hotkey options
-
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid panel <code>URL.</code> The <code>URL</code> can be extracted from the currently opened page. For example, to quick-switch to Apache module, set <code>apache</code> to <code>Custom link 1</code> field. If the default modifier key is set to <code>Alt,</code> clicking <code>Alt + 1</code>, will open you Apache module.
 settings_hotkey_custom_1_user=Custom link <code>1</code>
 settings_hotkey_custom_2_user=Custom link <code>2</code>
@@ -1209,6 +1207,7 @@ settings_right_sysinfo_page_options=Dashboard and real-time monitoring
 settings_right_navigation_menu_options=Navigation menu
 settings_right_notification_slider_options=Side slider
 settings_right_table_options=Table display
+settings_right_hotkey_options=Hotkeys
 settings_right_hotkey_custom_options=Custom links hotkeys
 settings_right_soft_updates_page_options=Theme updates
 settings_global_general_options_title=General defaults
