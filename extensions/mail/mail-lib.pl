@@ -140,7 +140,7 @@ sub folders_select
             $offset++;
         } else {
             utf8::decode($f->{'name'}); utf8::encode($f->{'name'});
-            push(@opts, [$id, $f->{'name'}]);
+            push(@opts, [$id, html_escape($f->{'name'})]);
         }
     }
     return ui_select(undef, undef, \@opts);
