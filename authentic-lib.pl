@@ -1693,14 +1693,18 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/stats-$remote_user.json");
         kill_byname("$current_theme/stats.cgi", 9);
 
+        # Remove cached downloads
+        unlink_file("$product_var/cache");
+
+        # Remove cached OS info
+        unlink_file("$product_var/modules/webmin/announce-cache");
+        unlink_file("$product_var/modules/webmin/oscache");
+        unlink_file("$product_var/modules/webmin/realos-cache");
     }
 
     # Clear user cached collected info
     unlink_file("$tmp_dir/combined-system-info-$remote_user");
     unlink_file("$home_tmp_dir/combined-system-info-$remote_user");
-
-    # Remove cached downloads
-    unlink_file("$product_var/cache");
 
     # Remove and regenerate OS cache
     if (&foreign_available('webmin')) {
