@@ -1700,6 +1700,10 @@ sub clear_theme_cache
         unlink_file("$product_var/modules/webmin/announce-cache");
         unlink_file("$product_var/modules/webmin/oscache");
         unlink_file("$product_var/modules/webmin/realos-cache");
+
+        # Remove package updates cache
+        unlink_file("$product_var/modules/package-updates/current.cache");
+        unlink_file("$product_var/modules/package-updates/updates.cache");
     }
 
     # Clear user cached collected info
