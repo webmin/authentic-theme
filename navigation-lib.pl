@@ -935,7 +935,7 @@ sub nav_list_combined_menu
                                  "title=\"" . virtual_server::show_domain_name($_) . "\""]
                               }
                               grep {virtual_server::can_edit_domain($_)}
-                              sort {$a->{'dom'} cmp $b->{'dom'}} virtual_server::list_domains()];
+                              sort {$a->{'dom'} cmp $b->{'dom'}} virtual_server::list_visible_domains()];
                     }
                     my $data_title =
                       $item->{'module'} eq 'virtual-server' ? $theme_text{'right_fdoms'} : $theme_text{'right_fvm2'};

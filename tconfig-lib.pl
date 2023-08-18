@@ -524,7 +524,7 @@ sub theme_settings_format
                              ['index.cgi', $theme_text{'theme_config_virtualmin'}],
                              map    {[$_->{'id'}, &virtual_server::show_domain_name($_)]}
                                grep {&virtual_server::can_edit_domain($_)}
-                               sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_domains()
+                               sort {$a->{'dom'} cmp $b->{'dom'}} &virtual_server::list_visible_domains()
                             ]);
         }
     } elsif ($k eq 'settings_right_cloudmin_default') {
