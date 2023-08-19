@@ -184,6 +184,9 @@ var
     config_portable_module_xterm_options = '{}',
     config_portable_module_xterm_render_addon = true,
 
+    // Custom password generator options
+    config_portable_funcs_password_complexity_meter = '{}',
+
     // Control min and max time for branding to show in seconds
     settings_product_branding_show_time_min_privileged = 1,
     settings_product_branding_show_time_max_privileged = 6,
