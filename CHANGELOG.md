@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 21.05 (August 23, 2023)
+* Add ability to store password visibility state [#1669](https://github.com/authentic-theme/authentic-theme/issues/1669)
+* Fix focus issue in Terminal module on initial load [#1667](https://github.com/authentic-theme/authentic-theme/issues/1667)
+* Fix font rendering issues in Terminal module with Firefox
+* Fix tiny alignment issues for various pages using column layout
+
 #### Version 21.04 (August 04, 2023)
 * Add better filtering unsafe content to prevent possible XSS attacks
 * Fix print email functionality for Read User Mail module (for both Webmin and Usermin)
