@@ -2597,20 +2597,26 @@ const mail = (function() {
                     },
                     checkbox = $($$.$.controls.select.checkbox),
                     checkboxes = $$.$.messages.checkbox,
-                    flags = $$.selector('messages.flag');
+                    flags = $$.selector('messages.flag'),
+                    evt = {
+                        click: 'click',
+                        change: 'change',
+                        keyup: 'keyup',
+                        shown_bs_drpd: 'shown.bs.dropdown',
+                    };
 
                 /**
                  * Event listeners for selecting all messages
                  *
                  * @returns {void}
                  */
-                checkbox.on('change', function() {
+                checkbox.off(evt.change).on(evt.change, function() {
                     let $this = $(this),
                         state = $this.is(':checked');
-                    $(checkboxes).prop('checked', state).trigger('change');
-                }).parent().parent().on('click', function(event) {
+                    $(checkboxes).prop('checked', state).trigger(evt.change);
+                }).parent().parent().off(evt.click).on(evt.click, function(event) {
                     let $input = $(this).find('input');
-                    !$(event.target).is($input) && $input.prop('checked', !$input.is(':checked')).trigger('change');
+                    !$(event.target).is($input) && $input.prop('checked', !$input.is(':checked')).trigger(evt.change);
                 })
 
                 /**
@@ -2618,7 +2624,7 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                $(flags).on('click', function(event) {
+                $(flags).off(evt.click).on(evt.click, function(event) {
                     event.stopPropagation()
                 })
 
@@ -2628,10 +2634,10 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                $(dropdown.select).find($$.$.controls.select.menus).on('click', function(event) {
+                $(dropdown.select).find($$.$.controls.select.menus).off(evt.click).on(evt.click, function(event) {
                     let _$ = $(event.target).data('type'),
                         $_ = $(checkboxes),
-                        $__ = 'change',
+                        $__ = evt.change,
                         __$ = 'checked';
 
                     // Select all/none
@@ -2665,7 +2671,7 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                $(checkboxes).on('change', function() {
+                $(checkboxes).off(evt.change).on(evt.change, function() {
                     let $this = $(this),
                         $row = $this.parents('td').parent('tr'),
                         state = $this.is(':checked'),
@@ -2682,7 +2688,7 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                button.delete.on('click', function() {
+                button.delete.off(evt.click).on(evt.click, function() {
                     submit(data, {
                         'delete': 1
                     }, storage.get(), 1, 1)
@@ -2698,12 +2704,12 @@ const mail = (function() {
                     o.value <= -1 && o.remove()
                 })
                 _.plugin.select($dropdown_move_select);
-                $dropdown_move_select.on('change', function() {
+                $dropdown_move_select.on(evt.change, function() {
                     setTimeout(() => {
                         $($$.$.controls.move.submit).toggleClass('disabled', !this.value).trigger('focus');
                     });
                 })
-                dropdown.move.find('li').on('click', function(event) {
+                dropdown.move.find('li').off(evt.click).on(evt.click, function(event) {
                     event.stopPropagation();
                     let $target = $(event.target),
                         $submit = $($$.$.controls.move.submit),
@@ -2726,7 +2732,7 @@ const mail = (function() {
                         dropdown.move.removeClass('open')
                     }
                 })
-                dropdown.move.on('shown.bs.dropdown', function() {
+                dropdown.move.off(evt.shown_bs_drpd).on(evt.shown_bs_drpd, function() {
                     _.plugin.select([$dropdown_move_select, 'open']);
                 })
 
@@ -2735,9 +2741,14 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                button.forward.on('click', function() {
-                    // Produce notification (temporary)
-                    _.notification.post([$$.$.notification.danger, 'Forward functionality is no yet implemented. Expect it in the future beta pre-release.'], 10, "info", 0, 1, ['bottom', 'center'])
+                button.forward.off(evt.click).on(evt.click, function() {
+                    const messages_ids = storage.get().map(function (message_id) {
+                            return encodeURIComponent(message_id);
+                        }),
+                        messages_link = `&mailforward=${messages_ids.join("&mailforward=")}`,
+                        reply = _.path.origin + _.path.prefix + "/mailbox/reply_mail.cgi?folder=",
+                        data = JSON.parse(fetching.state.responseText)[0];
+                    _.pjax.fetch(reply + data.folder_index + messages_link);
                 });
 
                 /**
@@ -2756,8 +2767,7 @@ const mail = (function() {
 
                 // Initialize folders select
                 _.plugin.select($dropdown_search_select);
-
-                button.search.find('li').on('click keyup', function(event) {
+                button.search.find('li').off(evt.click + ' ' + evt.keyup).on(evt.click + ' ' + evt.keyup, function(event) {
                     event.stopPropagation();
                     let $target = $(event.target),
                         $advanced_form = dropdown.search.find('[' + $$.$.controls.search.data.form.advanced + ']'),
@@ -2878,7 +2888,7 @@ const mail = (function() {
                     }
                 });
 
-                dropdown.search.on('shown.bs.dropdown', function() {
+                dropdown.search.off(evt.shown_bs_drpd).on(evt.shown_bs_drpd, function() {
                     $dropdown_search_simple.trigger('focus');
                 })
 
@@ -2887,7 +2897,7 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                button.refresh.on('click', function() {
+                button.refresh.off(evt.click).on(evt.click, function() {
                     $$.element('tree.active').click()
                 })
 
@@ -2896,7 +2906,7 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                $(button.special.star).on('click', function(event) {
+                $(button.special.star).off(evt.click).on(evt.click, function(event) {
                     event.stopImmediatePropagation();
                     let $this = $(this),
                         $row = $(event.target).parents('td').parent('tr'),
@@ -2929,7 +2939,8 @@ const mail = (function() {
                  */
                 dropdown.mark.read
                     .add(dropdown.mark.unread)
-                    .on('click', function() {
+                    .off(evt.click)
+                    .on(evt.click, function() {
                         let action = $(this).data('form-action'),
                             messages = storage.get();
 
@@ -2949,7 +2960,8 @@ const mail = (function() {
                     .add(dropdown.mark.ham)
                     .add(dropdown.mark.black)
                     .add(dropdown.mark.white)
-                    .on('click', function() {
+                    .off(evt.click)
+                    .on(evt.click, function() {
                         let action = $(this).data('form-action'),
                             messages = storage.get(),
                             refetch = /razor|black/.test(action);
@@ -2964,7 +2976,7 @@ const mail = (function() {
                  *
                  * @returns {void}
                  */
-                $($$.$.controls.search.link).on('click', function() {
+                $($$.$.controls.search.link).off(evt.click).on(evt.click, function() {
                     let link = this.getAttribute('data-href');
                     fetch(link, _.fetch.options)
                         .then(function(response) {
@@ -2981,8 +2993,8 @@ const mail = (function() {
                  * @returns {void}
                  */
                 $(folders.data.selector.navigation)
-                    .off('click', button.compose)
-                    .on('click', button.compose, function() {
+                    .off(evt.click, button.compose)
+                    .on(evt.click, button.compose, function() {
                         compose.message();
                     })
             },
