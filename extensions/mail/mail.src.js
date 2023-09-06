@@ -718,6 +718,11 @@ const mail = (function() {
                                 </div>
                             </form>
                         `;
+                    },
+                    html: {
+                        tags: {
+                            br: '<br>',
+                        }
                     }
                 }
 
@@ -1052,10 +1057,14 @@ const mail = (function() {
                                 return this.name
                             }).get(),
                             form_data = $form.serialize(),
-                            $form_textare = $(rs).find('textarea[name="body"]'),
-                            toolbar_mode = $form_textare.data('html-mode'),
-                            signature = $.trim(_.plugin.quote_escape(_.plugin.html_strip($form_textare.text())));
+                            $form_textarea = $(rs).find('textarea[name="body"]'),
+                            toolbar_mode = $form_textarea.data('html-mode'),
+                            signature = $.trim(_.plugin.quote_escape(_.plugin.html_strip($form_textarea.text())));
 
+                        if  (config.d.u.html_edit == 2 && signature) {
+                            signature = `${$$.$.template.html.tags.br.repeat(2) + signature}`;
+                        }
+                            
                         if (form_data) {
                             form_data = _.plugin.serialized_to_json(form_data);
 
@@ -2244,7 +2253,7 @@ const mail = (function() {
                                 bcc: element.input('bcc', data.visible),
                                 subject: element.input('subject', data.visible),
                                 attachments: element.input(classes.form.name.tattach, data.visible, false, true),
-                                body: data.visible.body,
+                                body: types.new == 1 ? signature : data.visible.body,
                                 signature: signature,
                                 toolbar_mode: toolbar_mode
                             })
