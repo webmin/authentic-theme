@@ -1442,3 +1442,5 @@ theme_xhred_columns_layout_remove_button=Save and Hide
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontal layout cannot be used in the mobile mode, specifically when the screen width is less than 992px
 
 settings_auto_open_panels_on_proximity=Auto open closed panels on proximity
+
+theme_xhred_config_portable_module_xterm_render_addon=Enable WebGL rendering addon
