@@ -1,5 +1,12 @@
 ## Changelog
 
+#### Version 21.06 (September 06, 2023)
+* Add support for disabling WebGL rendering addon in Terminal module [#1674](https://github.com/authentic-theme/authentic-theme/issues/1674)
+* Add support for mail forward in Usermin [#431](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-1703615018)
+* Fix to correctly save theme config when changing column layout [#1671](https://github.com/authentic-theme/authentic-theme/issues/1671)
+* Fix configuration check page in Postfix module [forum.virtualmin.com/t/122130](https://forum.virtualmin.com/t/observations-on-the-new-version-of-the-new-dark-theme/122130)
+* Fix missing signature in pop-up mail composer in Usermin
+
 #### Version 21.05 (August 23, 2023)
 * Add ability to store password visibility state [#1669](https://github.com/authentic-theme/authentic-theme/issues/1669)
 * Fix focus issue in Terminal module on initial load [#1667](https://github.com/authentic-theme/authentic-theme/issues/1667)
@@ -166,7 +173,7 @@
 * Fix buttons icon row bottom margin in Cluster modules
 * Fix graphs display in Partitions on Local Disks module
 * Fix display of scheduled backups page and its destinations section in Virtualmin
-* Fix to refrain from displaying connection error popup during progressive calls and initial setup
+* Fix to refrain from displaying connection error pop-up during progressive calls and initial setup
 
 #### Version 19.97 (July 10, 2022)
 * Add ability to store user column sorting per table basis when listing in File Manager
@@ -395,7 +402,7 @@
 
 #### Version 19.80 (June 10, 2021)
 * Add improvements to various aspects of the UI [forum.virtualmin.com/t/111034](https://forum.virtualmin.com/t/authentic-theme-19-80-release-overview/111034)
-* Add new properties popup for File Manager to display overall file details [#629/comment-851638537](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-851638537)
+* Add new properties modal for File Manager to display overall file details [#629/comment-851638537](https://github.com/authentic-theme/authentic-theme/issues/629#issuecomment-851638537)
 * Add ability to fully revert theme settings to existing when page is not saved [#1538](https://github.com/authentic-theme/authentic-theme/issues/1538)
 * Fiх file tree-view issues when used with various allowed paths in File Manager [webmin/webmin#1487](https://github.com/webmin/webmin/issues/1487)
 * Fix progressive output content extraction and loader premature dismissal issue
@@ -510,7 +517,7 @@
 * Fix to slightly enhance initial saturation value for navigation
 * Fix loaders positioning in File Manager
 * Fiх upload button functionality and alignment [#1483](https://github.com/authentic-theme/authentic-theme/issues/1483)
-* Fiх to improve user interactions with notification popups [@d69ccdf](https://github.com/authentic-theme/authentic-theme/commit/d69ccdfb32bbcdaf07a52e4d8db2571834a09202)
+* Fiх to improve user interactions with notification pop-ups [@d69ccdf](https://github.com/authentic-theme/authentic-theme/commit/d69ccdfb32bbcdaf07a52e4d8db2571834a09202)
 * Fiх to properly handle changed IMAP/POP3 login credentials update [usermin/usermin@c763233](https://github.com/webmin/usermin/commit/c763233916938468f12c2b439664e5ab8e1b59e2)
 
 #### Version 19.52 (July 6, 2020)
