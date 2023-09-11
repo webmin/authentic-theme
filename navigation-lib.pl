@@ -1102,7 +1102,7 @@ sub nav_links
     } else {
         $rv .=
           '<a class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' .
-          get_user_icon() . '"></i>&nbsp;<span class="pointer-events-none">' . $remote_user . '</span></a>';
+          get_user_icon() . '"></i>&nbsp;<span>' . $remote_user . '</span></a>';
     }
     $rv .= '</li>';
 
