@@ -1581,7 +1581,9 @@ sub theme_error
     my $error_message   = join(", ", @err_msg);
 	$err_caller = " " . &ui_help($err_caller)
         if ($err_caller);
-    my $error           = html_escape(html_strip(($error_what . $error_message))) . $err_caller;
+    my $error           = $error_what . $error_message . $err_caller;
+    $error              = html_escape(html_strip(($error_what . $error_message))) . $err_caller
+         if ($main::webmin_script_type ne 'web');
     my $get_error_stack = sub {
         # Show call stack
         my $error_stack = "";
