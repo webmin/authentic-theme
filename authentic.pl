@@ -1579,11 +1579,11 @@ sub theme_error
     &header($text{'error'}, "") if (!$main_header);
     my $error_what      = ($main::whatfailed ? "$main::whatfailed : " : "");
     my $error_message   = join(", ", @err_msg);
+    my $main_web        = $main::webmin_script_type eq 'web';
 	$err_caller = " " . &ui_help($err_caller)
-        if ($err_caller);
+        if ($err_caller && $main_web);
     my $error           = $error_what . $error_message . $err_caller;
-    $error              = html_escape(html_strip(($error_what . $error_message))) . $err_caller
-         if ($main::webmin_script_type ne 'web');
+    $error              = &html_strip($error_what . $error_message . $err_caller) if (!$main_web);
     my $get_error_stack = sub {
         # Show call stack
         my $error_stack = "";
