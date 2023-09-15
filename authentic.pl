@@ -1576,12 +1576,24 @@ sub theme_error
     my $err_caller = $iref->{'err_caller'};
     my $main_header  = $main::done_webmin_header;
     my $main_capture = $miniserv::page_capture ? " captured" : "";
+    my $err_last_eval  = $main::error_last_eval;
+    $err_last_eval =~ s/\n$// if ($err_last_eval);
     &header($text{'error'}, "") if (!$main_header);
     my $error_what      = ($main::whatfailed ? "$main::whatfailed : " : "");
     my $error_message   = join(", ", @err_msg);
     my $main_web        = $main::webmin_script_type eq 'web';
-	$err_caller = " " . &ui_help($err_caller)
-        if ($err_caller && $main_web);
+    my $err_caller_msg_esc  =
+        &quote_escape(($err_last_eval ? "$err_last_eval : $err_caller" : $err_caller), '"');
+    if ($err_caller && $main_web) {
+        if ($err_last_eval) {
+            $err_caller = &ui_details({
+                'title' => $text{'main_error_details'},
+                'content' => $err_caller_msg_esc,
+                'class' =>'error'}, 1);
+        } else {
+            $err_caller = &ui_help(&html_strip($err_caller_msg_esc)) if ($err_caller);
+        }
+    }
     my $error           = $error_what . $error_message . $err_caller;
     $error              = &html_strip($error_what . $error_message . $err_caller) if (!$main_web);
     my $get_error_stack = sub {
