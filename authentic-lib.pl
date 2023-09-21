@@ -696,31 +696,35 @@ sub get_sysinfo_vars
         # Virtualmin version
         if ($has_virtualmin) {
             &foreign_require("virtual-server");
-            my ($major, $minor, $build) = &virtual_server::get_module_version_and_type(1);
-            my ($vs_license, $__virtual_server_version);
-            $vs_license               = check_pro_package('vm');
-            $__virtual_server_version = ("$major.$minor".(defined($build) ? ".$build" : '')."");
-            $virtualmin_version = (
-                product_version_update($__virtual_server_version, 'v') . " " . (
-                    $vs_license eq '0' ? '' :
-                      ''
+            if (defined(&virtual_server::get_module_version_and_type)) {
+                my ($major, $minor, $build) = &virtual_server::get_module_version_and_type(1);
+                my ($vs_license, $__virtual_server_version);
+                $vs_license               = check_pro_package('vm');
+                $__virtual_server_version = ("$major.$minor".(defined($build) ? ".$build" : '')."");
+                $virtualmin_version = (
+                    product_version_update($__virtual_server_version, 'v') . " " . (
+                        $vs_license eq '0' ? '' :
+                        ''
 
-                      . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
-                      .
-                      ( ($vs_license eq '1') ?
-                          ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
-                          $theme_text{'right_vlcheck'} . '" href=\'' .
-                          $theme_webprefix . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
-                          '</div>')
-                  ) .
-                  ($vs_license eq '1' ? '' : '&nbsp;') .
-                  '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
-                  $theme_text{'theme_xhred_sysinfo_vmforum'} .
-                  '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>'
-                  . '<a class="btn btn-default btn-xxs margined-left--1'
-                  . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_xhred_sysinfo_vmdocs'} .
-'" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a>'
-            );
+                        . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
+                        .
+                        ( ($vs_license eq '1') ?
+                            ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
+                            $theme_text{'right_vlcheck'} . '" href=\'' .
+                            $theme_webprefix . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
+                            '</div>')
+                    ) .
+                    ($vs_license eq '1' ? '' : '&nbsp;') .
+                    '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
+                    $theme_text{'theme_xhred_sysinfo_vmforum'} .
+                    '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>'
+                    . '<a class="btn btn-default btn-xxs margined-left--1'
+                    . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_xhred_sysinfo_vmdocs'} .
+    '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a>'
+                );
+            } else {
+                $virtualmin_version = $virtual_server::module_info{'version'};
+            }
         }
 
         # Cloudmin version
