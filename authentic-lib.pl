@@ -183,7 +183,7 @@ sub get_extended_sysinfo
 
                         foreach my $t (@{ $info->{'table'} }) {
                             my $__checkmark = '<i class="fa fa-fw fa-lg fa-check text-success"></i>';
-                            my $__stop      = '<i class="fa fa-fw fa-lg fa-times-circle text-danger"></i>';
+                            my $__stop      = '<i class="fa fa-fw fa-lg fa-times-circle text-warning text-warning-brighter"></i>';
                             my $__down      = '<i class="fa fa-fw fa-lg fa-minus-circle text-danger"></i>';
                             my $__start     = '<i class="fa fa-fw fa-lg fa-play text-success"></i>';
                             my $__restart   = '<i class="fa fa-fw fa-lg fa-refresh text-info"></i>';
