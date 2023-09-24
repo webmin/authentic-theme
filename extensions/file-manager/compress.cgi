@@ -17,7 +17,6 @@ if (!$in{'arch'}) {
 
 my %errors;
 my $command;
-my $extension;
 
 my @entries_list = get_entries_list();
 my $delete       = $in{'arcmove'} ? 1 : 0;
@@ -28,22 +27,41 @@ my $status;
 my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 my $follow_symlinks = $in{'follow_symlinks'} eq 'true';
 
-if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
+if ($in{'method'} =~ /tar/ || $in{'method'} eq 'zip') {
     my $list = transname();
     open my $fh, ">", $list or die $!;
     print $fh "$_\n" for @entries_list;
     close $fh;
 
-    if ($in{'method'} eq 'tar') {
+    if ($in{'method'} =~ /tar/) {
         if (!has_command('tar')) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         }
+        if (!has_command('xz') && $in{'method'} eq 'xz-tar') {
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'xz');
+        }
+        if (!has_command('zstd') && $in{'method'} eq 'zstd-tar') {
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'zstd');
+        }
 
-        my $file = "$cwd/$in{'arch'}.tar.gz";
+        my $tarcmd = 'tar cz';  # gzip is default
+        my $extension = 'tar.gz';
+        if ($in{'method'} eq 'xz-tar') {
+            $tarcmd = 'tar cJ'; # xz
+            $extension = 'tar.xz';
+        } elsif ($in{'method'} eq 'zstd-tar') {
+            $tarcmd = 'ZSTD_CLEVEL=19 tar --zstd -c';   # zstd
+            $extension = 'zst';
+        } elsif ($in{'method'} eq 'plain-tar') {
+            $tarcmd = 'tar c';  # tar, with no compression
+            $extension = 'tar';
+        }
+
+        my $file = "$cwd/$in{'arch'}.$extension";
         if (-e $file && $safe_mode) {
             my $__ = 1;
             for (;;) {
-                my $new_file = "$cwd/$in{'arch'}(" . $__++ . ").tar.gz";
+                my $new_file = "$cwd/$in{'arch'}(" . $__++ . ").$extension";
                 if (!-e $new_file) {
                     $file = $new_file;
                     last;
@@ -53,7 +71,7 @@ if ($in{'method'} eq 'tar' || $in{'method'} eq 'zip') {
         my $fileq         = quotemeta($file);
         my $gnu_tar_param = get_tar_verbatim();
         my $follow_symlinks = $follow_symlinks ? 'h' : '';
-        $command = "tar czf$follow_symlinks " . $fileq . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
+        $command = "${tarcmd}f$follow_symlinks " . $fileq . " -C " . quotemeta($cwd) . "$gnu_tar_param -T " . $list;
         $status  = system($command);
 
         if ($encrypt && $key_id) {

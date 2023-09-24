@@ -988,6 +988,7 @@ sub print_content
                     $type_archive =~ /application-x-deb|debian\.binary-package/ ||
                     $type_archive =~ /application-x-raw-disk-image/             ||
                     $type_archive =~ /application-x-cd-image/                   ||
+                    $type_archive =~ /zstd/                                     ||
                     $type_archive =~ /-compressed-tar/                          ||
                     $type_archive =~ /-x-tar/                                   ||
                     $type_archive =~ /-x-bzip/                                  ||
