@@ -867,7 +867,7 @@ sub theme_ui_textarea
     return "<textarea style='display: inline; width:100%;' class='form-control ui_textarea' " .
       "name=\"" . &quote_escape($name) . "\" " . "id=\"" . &quote_escape($name . $ids) .
       "\" " . "rows='$rows' cols='$cols'" . ($wrap ? " wrap=$wrap" : "") . ($dis ? " disabled=true" : "") .
-      ($tags ? " $tags" : "") . ">" . &html_escape($value, 1) . "</textarea>";
+      ($tags ? " $tags" : "") . ">" . &html_escape($value) . "</textarea>";
 }
 
 sub theme_ui_submit
