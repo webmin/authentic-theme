@@ -338,8 +338,8 @@ sub nav_virtualmin_menu
     $rv .= nav_theme_links();
     $rv .= nav_links($menu->{'mode'});
     $rv .= nav_menu_html_snippet();
-    $rv .= nav_detect_page($page);
-    $rv .= nav_detect_script();
+    $rv .= nav_detect_page($page, 1);
+    $rv .= nav_detect_script(1);
     return $rv;
 }
 
@@ -427,14 +427,27 @@ sub nav_get_server_id
     return $default;
 }
 
+sub nav_set_last_id
+{
+    my ($link) = @_;
+    if ($link && $link =~ /(id|dom)=(\d+)/) {
+        return "vars.navigation.select.last='$2';";
+    }
+    return undef;
+}
+
 sub nav_detect_page
 {
-    my ($page) = @_;
+    my ($page, $set_last) = @_;
     my $rv;
     if ($page) {
         $page = quote_escape($page);
         $page =~ s/&amp;/&/g;
-        $rv .= "<li data-goto=\"$page\" class=\"hidden\"></li>\n";
+        my $last_id = $set_last ? nav_set_last_id($page) : undef;
+        if ($last_id) {
+            $last_id = "<script>$last_id</script>";
+        }
+        $rv .= "<li data-goto=\"$page\" class=\"hidden\">$last_id</li>\n";
     }
     return $rv;
 }
@@ -442,12 +455,14 @@ sub nav_detect_page
 sub nav_detect_script
 {
     # Get goto hidden li element
+    my ($set_last) = @_;
     my $rv;
     if ($server_x_goto) {
         my $link = quote_escape($server_x_goto);
         $link =~ s/&amp;/&/g;
+        my $last_id = $set_last ? nav_set_last_id($link) : undef;
         $rv =
-"<li data-script-goto><script>plugins.navigation.detect(\"$link\");plugins.navigation.detect(\"$link\", 1);\$(\"li[data-script-goto]\").remove();</script></li>\n";
+"<li data-script-goto><script>plugins.navigation.detect(\"$link\");plugins.navigation.detect(\"$link\", 1);\$(\"li[data-script-goto]\").remove();${last_id}</script></li>\n";
     }
     return $rv;
 }
