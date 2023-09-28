@@ -142,7 +142,8 @@ sub get_user_config
 
 sub get_user_config_showhiddenfiles
 {
-    return get_user_config('config_portable_module_filemanager_show_dot_files') ne 'false';
+    return $userconfig{'config_portable_module_filemanager_show_dot_files'} ne 'false' &&
+           get_user_config('config_portable_module_filemanager_show_dot_files') ne 'false';
 }
 
 sub kill_previous
