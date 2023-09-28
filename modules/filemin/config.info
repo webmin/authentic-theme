@@ -27,3 +27,4 @@ config_portable_module_filemanager_force_tar=Force <code>tar</code> command&#44;
 config_portable_module_filemanager_files_safe_mode=Do not overwrite existing files upon operations,1,true-Yes,false-No
 config_portable_module_filemanager_switch_users=Automatically set owner and group equivalent to user home on file operations,1,true-Yes,false-No
 config_portable_module_filemanager_hide_actions=Hide column containing action icons,1,true-Yes,false-No
+config_portable_module_filemanager_show_dot_files=Show all hidden files,1,true-Yes,false-No

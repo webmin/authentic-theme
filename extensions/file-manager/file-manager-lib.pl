@@ -140,6 +140,11 @@ sub get_user_config
     }
 }
 
+sub get_user_config_showhiddenfiles
+{
+    return get_user_config('config_portable_module_filemanager_show_dot_files') ne 'false';
+}
+
 sub kill_previous
 {
     my $pid = tokenize($_[0]);
@@ -270,6 +275,7 @@ sub test_all_items_query
 sub get_entries_list
 {
     my @entries_list;
+    my $show_dot_files = get_user_config_showhiddenfiles();
     if (test_all_items_query()) {
         if ($in{'query'}) {
             @entries_list = exec_search('list');
@@ -279,7 +285,7 @@ sub get_entries_list
                    wanted => sub {
                        my $found = $File::Find::name;
                        $found =~ s/^\Q$cwd\/\E//g;
-                       if ($_ ne '.' && $_ ne '..' && $found !~ /\//) {
+                       if ($_ ne '.' && $_ ne '..' && $found !~ /\// && ($show_dot_files || ($_ !~ /^\./ && $found !~ /\/\./))) {
                            push(@entries_list, $found);
                        }
                    },
@@ -443,6 +449,8 @@ sub exec_search
     my @results;
     my @excludes;
 
+    my $show_dot_files = get_user_config_showhiddenfiles();
+    
     my @results_cached = cache_search($fsid);
     if (@results_cached) {
         return @results_cached;
@@ -606,7 +614,9 @@ sub exec_search
                                }
                            }
                            if (!$extra_exclude && (!$exclude || (@excludes && !$excluded))) {
-                               push(@results, $found);
+                                if ($show_dot_files || ($_ !~ /^\./ && $found !~ /\/\./)) {
+                                    push(@results, $found);
+                                }
                            }
                        }
                    }
@@ -676,6 +686,8 @@ sub print_content
         $path =~ s/[\/]+/\//g;
         return $path;
     };
+    
+    my $show_dot_files = get_user_config_showhiddenfiles();
 
     # In case of search trim the list accordingly
     if ($query) {
@@ -685,7 +697,8 @@ sub print_content
             print_error("$text{'theme_xhred_global_error'}: [tt]`$cwd`[/tt]- $!.");
             exit;
         }
-        @list = grep {$_ ne '.' && $_ ne '..'} readdir(DIR);
+
+        @list = grep {$_ ne '.' && $_ ne '..' && ($show_dot_files || ($_ !~ /^\./ && $_ !~ /\/\./))} readdir(DIR);
         closedir(DIR);
     }
 
@@ -1113,6 +1126,8 @@ sub get_tree
     my @af = length($p) ? ($p) : @ap;
     my $fu = scalar(@af) == 1;
 
+    my $show_dot_files = get_user_config_showhiddenfiles();
+
     # Check the queried path is allowed in the first place
     if (length($p)) {
         return \@r if (grep {$_ =~ /^\Q$p\E/} @ap);
@@ -1128,7 +1143,9 @@ sub get_tree
                 my $pp = ($fu && $afic ne '/') ? $afic : undef;
                 my $c  = $r{$td} =
                   { key => html_escape("$pp/$td"), title => (defined($cd) ? html_escape($cd) : html_escape($td)), link => $ltd };
-                defined $pd ? (push @{ $r{$pd}{'children'} }, $c) : (push @r, $c);
+                if ($show_dot_files || ($td !~/^\./ && $td !~/\/\./ && $cd !~/^\./ && $cd !~/\/\./)) {
+                    defined $pd ? (push @{ $r{$pd}{'children'} }, $c) : (push @r, $c);
+                }
             };
 
             my $dc = $td =~ tr[/][];
