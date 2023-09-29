@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 21.07 (September 29, 2023)
+* Add ability to hide dotfiles in File Manager [#1578](https://github.com/authentic-theme/authentic-theme/issues/1578)
+* Add `xz`, `zstd` and plain `tar` support when creating archives in File Manager [webmin#2009](https://github.com/webmin/webmin/issues/2009)
+* Add support to reopen last visited server in Virtualmin on navigation [forum.virtualmin.com/t/122757](https://forum.virtualmin.com/t/dashboard-defaults-to-alpha-domain/122757/17)
+* Add support for English (United States) (military time) locale
+* Fix styling issues in System and Server Status module
+* Fix to make teletype texts easily grabbable for better copy/paste experience
+* Fix scroll bar track and thumb colors for better visibility
+* Fix check to determine if the Virtualmin package contains the necessary function [#1675](https://github.com/webmin/authentic-theme/discussions/1675)
+* Fix inconsistent buttons size in Command Shell module
+
 #### Version 21.06 (September 06, 2023)
 * Add support for disabling WebGL rendering addon in Terminal module [#1674](https://github.com/authentic-theme/authentic-theme/issues/1674)
 * Add support for mail forward in Usermin [#431](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-1703615018)
