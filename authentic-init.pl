@@ -408,7 +408,11 @@ sub embed_header
 
     # Head theme overlay
     embed_overlay_head();
-
+    
+    # Embed theme switcher
+    print &ui_switch_theme_javascript()
+        if (defined(&ui_switch_theme_javascript));
+    
     print '</head>', "\n";
 }
 
