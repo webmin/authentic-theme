@@ -23,8 +23,6 @@ settings_right_theme_left_extensions_title=Editor de extensiones de temas
 settings_right_theme_left_logo_title=Control de logotipo de tema
 settings_right_theme_configurable_options_title=Opciones configurables para tema auténtico
 
-settings_right_hotkey_options=Teclas de acceso rápido
-
 settings_right_hotkey_custom_options_description=Los enlaces personalizados le permiten usar dígitos del <code>1</code> al <code>9</code> para acceder rápidamente a cualquier <code>URL</code> del panel válido.</code>El <code>URL</code> se puede extraer de la página abierta actualmente. Por ejemplo, para cambiar rápidamente al módulo Apache, establezca <code>apache</code> en el campo <code>Custom link 1</code>. Si la tecla modificadora predeterminada se establece en <code>Alt,</code> al hacer clic en <code>Alt + 1</code>, se abrirá el módulo de Apache.
 settings_hotkey_custom_1_user=Enlace personalizado <code>1</code>
 settings_hotkey_custom_2_user=Enlace personalizado <code>2</code>
@@ -1065,6 +1063,7 @@ settings_right_sysinfo_page_options=Panel de control y monitoreo en tiempo real
 settings_right_navigation_menu_options=Menú de Navegación
 settings_right_notification_slider_options=Deslizador lateral
 settings_right_table_options=Pantalla de mesa
+settings_right_hotkey_options=Teclas de acceso rápido
 settings_right_hotkey_custom_options=Teclas de acceso rápido de enlaces personalizados
 settings_right_soft_updates_page_options=Actualizaciones de temas
 settings_global_general_options_title=Valores predeterminados generales
@@ -1251,8 +1250,8 @@ theme_xhred_editor_tb_underline=Subrayado (%cmd+U)
 theme_xhred_editor_tb_color=Color de texto
 theme_xhred_editor_tb_background=Fondo de texto
 theme_xhred_editor_tb_align=Alinear
-theme_xhred_editor_tb_list_ordered=lista numerada
-theme_xhred_editor_tb_list_bullet=Lista con viñetas
+theme_xhred_editor_tb_list_ordered=Lista numerada (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Lista con viñetas (%cmd+Mayús+8)
 theme_xhred_editor_tb_strike=tachado
 theme_xhred_editor_tb_blockquote=Citar (%cmd+Mayús+9)
 theme_xhred_editor_tb_link=Insertar enlace (%cmd+K)
@@ -1284,3 +1283,5 @@ theme_xhred_columns_layout_remove_button=Guardar y ocultar
 theme_xhred_columns_layout_variation_cannot_horizontal=El diseño horizontal no se puede usar en el modo móvil, específicamente cuando el ancho de la pantalla es inferior a 992px
 
 settings_auto_open_panels_on_proximity=Paneles cerrados de apertura automática en proximidad
+
+theme_xhred_config_portable_module_xterm_render_addon=Habilitar el complemento de renderizado WebGL

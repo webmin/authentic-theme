@@ -1,5 +1,3 @@
-settings_right_hotkey_options=Hurtigtaster
-
 settings_right_hotkey_custom_options_description=Egendefinerte lenker lar deg bruke sifre fra <code>1</code> til <code>9</code> for å få rask tilgang til alle gyldige panel-<code>URL.</code> <code>URL</code> kode> kan trekkes ut fra siden som er åpnet. For å raskt bytte til Apache-modul, sett for eksempel <code>apache</code> til <code>Egendefinert lenke 1</code>-feltet. Hvis standard modifikasjonsnøkkel er satt til <code>Alt,</code>, åpnes Apache-modulen ved å klikke <code>Alt + 1</code>.
 
 settings_right_reload=Last inn standardsiden på fanebryteren
@@ -80,6 +78,7 @@ settings_right_sysinfo_page_options=Dashbord og sanntidsovervåking
 settings_right_navigation_menu_options=Navigasjonsmeny
 settings_right_notification_slider_options=Sideskyve
 settings_right_table_options=Tabellvisning
+settings_right_hotkey_options=Hurtigtaster
 settings_right_hotkey_custom_options=Egendefinerte lenker hurtigtaster
 settings_right_soft_updates_page_options=Temaoppdateringer
 settings_global_general_options_title=Generelle standardinnstillinger
@@ -267,8 +266,8 @@ theme_xhred_editor_tb_underline=Understreking (%cmd+U)
 theme_xhred_editor_tb_color=Tekstfarge
 theme_xhred_editor_tb_background=Tekstbakgrunn
 theme_xhred_editor_tb_align=Tilpasse
-theme_xhred_editor_tb_list_ordered=Nummerert liste
-theme_xhred_editor_tb_list_bullet=Punktliste
+theme_xhred_editor_tb_list_ordered=Nummerert liste (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Punktliste (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Gjennomstreking
 theme_xhred_editor_tb_blockquote=Sitat (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Sett inn lenke (%cmd+K)
@@ -300,3 +299,5 @@ theme_xhred_columns_layout_remove_button=Lagre og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontal layout kan ikke brukes i mobilmodus, spesielt når skjermbredden er mindre enn 992px
 
 settings_auto_open_panels_on_proximity=Automatisk åpne lukkede paneler i nærheten
+
+theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gjengivelsestillegg

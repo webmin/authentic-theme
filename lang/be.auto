@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Рэдактар тэмы пашыр�
 settings_right_theme_left_logo_title=Тэма кіравання лагатыпам
 settings_right_theme_configurable_options_title=Параметры, якія можна наладзіць для аўтэнтычнай тэмы
 
-settings_right_hotkey_options=Гарачыя клавішы
-
 settings_right_hotkey_custom_options_description=Карыстальніцкія спасылкі дазваляюць выкарыстоўваць лічбы ад <code>1</code> да <code>9</code> для хуткага доступу да любой дзейнай панэлі <code>URL.</code> <code>URL</code> можна атрымаць з адкрытай у цяперашні час старонкі. Напрыклад, каб хутка пераключыцца на модуль Apache, усталюйце для <code>apache</code> поле <code>Custom link 1</code>. Калі стандартная клавіша-мадыфікатар усталявана на <code>Alt</code>, націск <code>Alt + 1</code> адкрые ваш модуль Apache.
 settings_hotkey_custom_1_user=Карыстальніцкая спасылка <code>1</code>
 settings_hotkey_custom_2_user=Карыстальніцкая спасылка <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Прыборная панэль і мані�
 settings_right_navigation_menu_options=Меню навігацыі
 settings_right_notification_slider_options=Бакавы паўзунок
 settings_right_table_options=Дысплей табліцы
+settings_right_hotkey_options=Гарачыя клавішы
 settings_right_hotkey_custom_options=Гарачыя клавішы спецыяльных спасылак
 settings_right_soft_updates_page_options=Абнаўленне тэмы
 settings_global_general_options_title=Агульныя дэфолты
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Падкрэсліванне (%cmd+U)
 theme_xhred_editor_tb_color=Колер тэксту
 theme_xhred_editor_tb_background=Фон тэксту
 theme_xhred_editor_tb_align=Выраўнаваць
-theme_xhred_editor_tb_list_ordered=Нумараваны спіс
-theme_xhred_editor_tb_list_bullet=Маркіраваны спіс
+theme_xhred_editor_tb_list_ordered=Нумараваны спіс (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Маркіраваны спіс (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Закрэсліванне
 theme_xhred_editor_tb_blockquote=Цытата (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Уставіць спасылку (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Захаваць і схаваць
 theme_xhred_columns_layout_variation_cannot_horizontal=Гарызантальны макет нельга выкарыстоўваць у мабільным рэжыме, у прыватнасці, калі шырыня экрана меншая за 992 пікселя
 
 settings_auto_open_panels_on_proximity=Аўтаматычнае адкрыццё закрытых панэляў на блізкасці
+
+theme_xhred_config_portable_module_xterm_render_addon=Уключыць аддон візуалізацыі WebGL

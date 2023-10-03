@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Motīvu paplašinājumu redaktors
 settings_right_theme_left_logo_title=Motīva logotipa vadība
 settings_right_theme_configurable_options_title=Konfigurējamas opcijas autentiskai tēmai
 
-settings_right_hotkey_options=Karstie taustiņi
-
 settings_right_hotkey_custom_options_description=Pielāgotas saites ļauj izmantot ciparus no <code>1</code> līdz <code>9</code>, lai ātri piekļūtu jebkuram derīgam paneļa <code>URL.</code> <code>URL</code> kods> var iegūt no pašlaik atvērtās lapas. Piemēram, lai ātri pārslēgtos uz Apache moduli, iestatiet lauku <code>apache</code> uz <code>Custom link 1</code>. Ja noklusējuma pārveidotāja atslēga ir iestatīta uz <code>Alt</code>, noklikšķinot uz <code>Alt +1</code>, tiks atvērts Apache modulis.
 settings_hotkey_custom_1_user=Pielāgota saite <code>1</code>
 settings_hotkey_custom_2_user=Pielāgota saite <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Vadības panelis un reāllaika uzraudzība
 settings_right_navigation_menu_options=Navigācijas izvēlne
 settings_right_notification_slider_options=Sānu slīdnis
 settings_right_table_options=Galda displejs
+settings_right_hotkey_options=Karstie taustiņi
 settings_right_hotkey_custom_options=Pielāgoto saišu karstie taustiņi
 settings_right_soft_updates_page_options=Motīvu atjauninājumi
 settings_global_general_options_title=Vispārīgi noklusējumi
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Pasvītrojums (%cmd+U)
 theme_xhred_editor_tb_color=Teksta krāsa
 theme_xhred_editor_tb_background=Teksta fons
 theme_xhred_editor_tb_align=Izlīdzināt
-theme_xhred_editor_tb_list_ordered=Numurēts saraksts
-theme_xhred_editor_tb_list_bullet=Saraksts ar aizzīmēm
+theme_xhred_editor_tb_list_ordered=Numurēts saraksts (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Saraksts ar aizzīmēm (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Pārsvītrots
 theme_xhred_editor_tb_blockquote=Citāts (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Ievietot saiti (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Saglabāt un paslēpt
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontālo izkārtojumu nevar izmantot mobilajā režīmā, jo īpaši, ja ekrāna platums ir mazāks par 992 pikseļiem
 
 settings_auto_open_panels_on_proximity=Automātiski atver slēgtos paneļus tuvumā
+
+theme_xhred_config_portable_module_xterm_render_addon=Iespējot WebGL renderēšanas papildinājumu

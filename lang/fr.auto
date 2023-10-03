@@ -1,5 +1,3 @@
-settings_right_hotkey_options=Raccourcis clavier
-
 settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser des chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à n'importe quelle <code>URL de panneau valide.</code> L'<code>URL</code> peut être extrait de la page actuellement ouverte. Par exemple, pour basculer rapidement vers le module Apache, définissez <code>apache</code> sur le champ <code>Lien personnalisé 1</code>. Si la touche de modification par défaut est définie sur <code>Alt,</code> en cliquant sur <code>Alt + 1</code>, vous ouvrirez le module Apache.
 
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
@@ -80,6 +78,7 @@ settings_right_sysinfo_page_options=Tableau de bord et surveillance en temps ré
 settings_right_navigation_menu_options=Le menu de navigation
 settings_right_notification_slider_options=Curseur latéral
 settings_right_table_options=Affichage de la table
+settings_right_hotkey_options=Raccourcis clavier
 settings_right_hotkey_custom_options=Raccourcis clavier personnalisés
 settings_right_soft_updates_page_options=Mises à jour du thème
 settings_global_general_options_title=Valeurs générales par défaut
@@ -267,8 +266,8 @@ theme_xhred_editor_tb_underline=Souligné (%cmd+U)
 theme_xhred_editor_tb_color=Couleur du texte
 theme_xhred_editor_tb_background=Arrière-plan du texte
 theme_xhred_editor_tb_align=Aligner
-theme_xhred_editor_tb_list_ordered=Liste numérotée
-theme_xhred_editor_tb_list_bullet=Liste à puces
+theme_xhred_editor_tb_list_ordered=Liste numérotée (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Liste à puces (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Barré
 theme_xhred_editor_tb_blockquote=Citation (%cmd+Maj+9)
 theme_xhred_editor_tb_link=Insérer un lien (%cmd+K)
@@ -300,3 +299,5 @@ theme_xhred_columns_layout_remove_button=Enregistrer et masquer
 theme_xhred_columns_layout_variation_cannot_horizontal=La disposition horizontale ne peut pas être utilisée en mode mobile, en particulier lorsque la largeur de l'écran est inférieure à 992px
 
 settings_auto_open_panels_on_proximity=Ouverture automatique des panneaux fermés à proximité
+
+theme_xhred_config_portable_module_xterm_render_addon=Activer le module complémentaire de rendu WebGL

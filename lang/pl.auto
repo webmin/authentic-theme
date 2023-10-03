@@ -29,8 +29,6 @@ settings_right_theme_left_extensions_title=Edytor rozszerzeń motywów
 settings_right_theme_left_logo_title=Kontrola logo motywu
 settings_right_theme_configurable_options_title=Konfigurowalne opcje dla motywu autentycznego
 
-settings_right_hotkey_options=Skróty klawiszowe
-
 settings_right_hotkey_custom_options_description=Linki niestandardowe umożliwiają użycie cyfr od <code>1</code> do <code>9</code> w celu szybkiego dostępu do dowolnego ważnego <code>URL panelu.</code> <code>URL</code> code> można wyodrębnić z aktualnie otwartej strony. Na przykład, aby szybko przełączyć się na moduł Apache, ustaw <code>apache</code> na pole <code>Custom link 1</code>. Jeśli domyślny klawisz modyfikujący jest ustawiony na <code>Alt</code>, kliknięcie <code>Alt + 1</code> otworzy moduł Apache.
 settings_hotkey_custom_1_user=Niestandardowy link <code>1</code>
 settings_hotkey_custom_2_user=Niestandardowy link <code>2</code>
@@ -1072,6 +1070,7 @@ settings_right_sysinfo_page_options=Pulpit nawigacyjny i monitorowanie w czasie 
 settings_right_navigation_menu_options=Menu nawigacji
 settings_right_notification_slider_options=Boczny suwak
 settings_right_table_options=Wyświetlacz stołowy
+settings_right_hotkey_options=Skróty klawiszowe
 settings_right_hotkey_custom_options=Skróty klawiszowe niestandardowych łączy
 settings_right_soft_updates_page_options=Aktualizacje motywów
 settings_global_general_options_title=Ogólne ustawienia domyślne
@@ -1258,8 +1257,8 @@ theme_xhred_editor_tb_underline=Podkreślenie (%cmd+U)
 theme_xhred_editor_tb_color=Kolor tekstu
 theme_xhred_editor_tb_background=Tło tekstu
 theme_xhred_editor_tb_align=Wyrównywać
-theme_xhred_editor_tb_list_ordered=Lista numerowana
-theme_xhred_editor_tb_list_bullet=Lista wypunktowana
+theme_xhred_editor_tb_list_ordered=Lista numerowana (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Lista punktowana (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Przekreślenie
 theme_xhred_editor_tb_blockquote=Cytat (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Wstaw link (%cmd+K)
@@ -1291,3 +1290,5 @@ theme_xhred_columns_layout_remove_button=Zapisz i ukryj
 theme_xhred_columns_layout_variation_cannot_horizontal=Układu poziomego nie można używać w trybie mobilnym, szczególnie gdy szerokość ekranu jest mniejsza niż 992px
 
 settings_auto_open_panels_on_proximity=Automatyczne otwieranie zamkniętych paneli w pobliżu
+
+theme_xhred_config_portable_module_xterm_render_addon=Włącz dodatek renderujący WebGL

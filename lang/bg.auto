@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Тема Разширяване ре�
 settings_right_theme_left_logo_title=Контрол на логото на темата
 settings_right_theme_configurable_options_title=Конфигурируеми опции за автентична тема
 
-settings_right_hotkey_options=Бързи клавиши
-
 settings_right_hotkey_custom_options_description=Персонализираните връзки ви позволяват да използвате цифри от <code>1</code> до <code>9</code>, за да получите бърз достъп до всеки валиден панел <code>URL.</code> <code>URL</code> код> могат да бъдат извлечени от текущо отворената страница. Например, за бързо превключване към модул Apache, задайте <code>apache</code> на полето <code>Персонализирана връзка 1</code>. Ако модифициращият ключ по подразбиране е зададен на <code>Alt</code>, щракването върху <code>Alt + 1</code> ще отвори вашия Apache модул.
 settings_hotkey_custom_1_user=Персонализирана връзка <code>1</code>
 settings_hotkey_custom_2_user=Персонализирана връзка <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Табло за управление и на
 settings_right_navigation_menu_options=Меню за навигация
 settings_right_notification_slider_options=Страничен плъзгач
 settings_right_table_options=Дисплей на маса
+settings_right_hotkey_options=Бързи клавиши
 settings_right_hotkey_custom_options=Бързи клавиши за персонализирани връзки
 settings_right_soft_updates_page_options=Актуализации на темата
 settings_global_general_options_title=Общи настройки по подразбиране
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Подчертано (%cmd+U)
 theme_xhred_editor_tb_color=Цвят на текста
 theme_xhred_editor_tb_background=Текстов фон
 theme_xhred_editor_tb_align=Подравнете
-theme_xhred_editor_tb_list_ordered=Номериран списък
-theme_xhred_editor_tb_list_bullet=Списък с водещи символи
+theme_xhred_editor_tb_list_ordered=Номериран списък (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Списък с водещи символи (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Зачертано
 theme_xhred_editor_tb_blockquote=Цитат (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Вмъкване на връзка (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Запазване и скриване
 theme_xhred_columns_layout_variation_cannot_horizontal=Хоризонталното оформление не може да се използва в мобилен режим, особено когато ширината на екрана е по-малка от 992px
 
 settings_auto_open_panels_on_proximity=Автоматично отваряне на затворени панели при близост
+
+theme_xhred_config_portable_module_xterm_render_addon=Активирайте добавката за изобразяване на WebGL

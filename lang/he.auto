@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=עורך הרחבות נושא
 settings_right_theme_left_logo_title=בקרת לוגו של נושא
 settings_right_theme_configurable_options_title=אפשרויות הניתנות להגדרה עבור נושא אותנטי
 
-settings_right_hotkey_options=מקשי קיצור
-
 settings_right_hotkey_custom_options_description=קישורים מותאמים אישית מאפשרים לך להשתמש בספרות מ-<code>1</code> עד <code>9</code> כדי לקבל גישה מהירה לכל <code>URL</code> של חלונית חוקית. ה<code>URL</code> קוד> ניתן לחלץ מהדף שנפתח כעת. לדוגמה, כדי לעבור במהירות למודול Apache, הגדר את <code>apache</code> לשדה <code>קישור מותאם אישית 1</code>. אם מפתח השינוי המוגדר כברירת מחדל מוגדר ל-<code>Alt,</code> לחיצה על <code>Alt + 1</code> תפתח את מודול ה-Apache שלך.
 settings_hotkey_custom_1_user=קישור מותאם אישית <code>1</code>
 settings_hotkey_custom_2_user=קישור מותאם אישית <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=לוח מחוונים וניטור בזמן 
 settings_right_navigation_menu_options=תפריט ניווט
 settings_right_notification_slider_options=מחוון צד
 settings_right_table_options=תצוגת שולחן
+settings_right_hotkey_options=מקשי קיצור
 settings_right_hotkey_custom_options=מקשים חמים של קישורים מותאמים אישית
 settings_right_soft_updates_page_options=עדכוני נושא
 settings_global_general_options_title=ברירות מחדל כלליות
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=קו תחתון (%cmd+U)
 theme_xhred_editor_tb_color=צבע טקסט
 theme_xhred_editor_tb_background=רקע טקסט
 theme_xhred_editor_tb_align=יישר
-theme_xhred_editor_tb_list_ordered=רשימה ממוספרת
-theme_xhred_editor_tb_list_bullet=רשימת תבליטים
+theme_xhred_editor_tb_list_ordered=רשימה ממוספרת (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=רשימת תבליטים (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=חוצה
 theme_xhred_editor_tb_blockquote=ציטוט (%cmd+Shift+9)
 theme_xhred_editor_tb_link=הוסף קישור (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=שמור והסתיר
 theme_xhred_columns_layout_variation_cannot_horizontal=לא ניתן להשתמש בפריסה אופקית במצב נייד, במיוחד כאשר רוחב המסך קטן מ-992 פיקסלים
 
 settings_auto_open_panels_on_proximity=פתיחה אוטומטית של פאנלים סגורים בקירבה
+
+theme_xhred_config_portable_module_xterm_render_addon=הפעל תוסף עיבוד WebGL

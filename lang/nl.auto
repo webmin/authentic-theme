@@ -1,5 +1,3 @@
-settings_right_hotkey_options=Sneltoetsen
-
 settings_right_hotkey_custom_options_description=Met aangepaste koppelingen kunt u cijfers van <code>1</code> tot <code>9</code> gebruiken om snel toegang te krijgen tot elke geldige paneel-<code>URL.</code> De <code>URL</code> code> kan worden geëxtraheerd uit de momenteel geopende pagina. Als u bijvoorbeeld snel wilt overschakelen naar de Apache-module, stelt u <code>apache</code> in op het veld <code>Aangepaste koppeling 1</code>. Als de standaard wijzigingstoets is ingesteld op <code>Alt,</code> zal klikken op <code>Alt + 1</code> uw Apache-module openen.
 settings_hotkey_custom_1_user=Aangepaste link <code>1</code>
 settings_hotkey_custom_2_user=Aangepaste link <code>2</code>
@@ -1041,6 +1039,7 @@ settings_right_sysinfo_page_options=Dashboard en realtime monitoring
 settings_right_navigation_menu_options=Navigatie menu
 settings_right_notification_slider_options=Schuifregelaar aan de zijkant
 settings_right_table_options=Tafel display
+settings_right_hotkey_options=Sneltoetsen
 settings_right_hotkey_custom_options=Aangepaste koppelingen sneltoetsen
 settings_right_soft_updates_page_options=Thema-updates
 settings_global_general_options_title=Algemene standaardinstellingen
@@ -1227,8 +1226,8 @@ theme_xhred_editor_tb_underline=Onderstrepen (%cmd+U)
 theme_xhred_editor_tb_color=Tekst kleur
 theme_xhred_editor_tb_background=Tekst achtergrond
 theme_xhred_editor_tb_align=Uitlijnen
-theme_xhred_editor_tb_list_ordered=Genummerde lijst
-theme_xhred_editor_tb_list_bullet=Lijst met opsommingstekens
+theme_xhred_editor_tb_list_ordered=Genummerde lijst (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Lijst met opsommingstekens (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Doorhalen
 theme_xhred_editor_tb_blockquote=Citaat (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Koppeling invoegen (%cmd+K)
@@ -1260,3 +1259,5 @@ theme_xhred_columns_layout_remove_button=Opslaan en verbergen
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontale lay-out kan niet worden gebruikt in de mobiele modus, met name wanneer de schermbreedte minder is dan 992px
 
 settings_auto_open_panels_on_proximity=Open automatisch gesloten panelen bij nabijheid
+
+theme_xhred_config_portable_module_xterm_render_addon=Schakel de WebGL-rendering-add-on in

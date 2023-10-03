@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Tema Uzantıları Editörü
 settings_right_theme_left_logo_title=Tema Logo Kontrolü
 settings_right_theme_configurable_options_title=Otantik Tema için yapılandırılabilir seçenekler
 
-settings_right_hotkey_options=Kısayol tuşları
-
 settings_right_hotkey_custom_options_description=Özel bağlantılar, herhangi bir geçerli panel <code>URL'sine</code> hızlı erişim sağlamak için <code>1</code> ile <code>9</code> arasındaki rakamları kullanmanıza olanak tanır. <code>URL</code> şu anda açık olan sayfadan çıkarılabilir. Örneğin, Apache modülüne hızlı geçiş yapmak için <code>Apache</code> öğesini <code>Custom link 1</code> alanına ayarlayın. Varsayılan değiştirici anahtar <code>Alt</code> olarak ayarlanmışsa, <code>Alt + 1</code> tıklandığında Apache modülü açılır.
 settings_hotkey_custom_1_user=Özel bağlantı <code>1</code>
 settings_hotkey_custom_2_user=Özel bağlantı <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Kontrol paneli ve gerçek zamanlı izleme
 settings_right_navigation_menu_options=Navigasyon menüsü
 settings_right_notification_slider_options=Yan kaydırıcı
 settings_right_table_options=Tablo ekranı
+settings_right_hotkey_options=Kısayol tuşları
 settings_right_hotkey_custom_options=Özel bağlantılar kısayol tuşları
 settings_right_soft_updates_page_options=Tema güncellemeleri
 settings_global_general_options_title=Genel varsayılanlar
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Altı çizili (%cmd+U)
 theme_xhred_editor_tb_color=metin rengi
 theme_xhred_editor_tb_background=metin arka planı
 theme_xhred_editor_tb_align=Hizala
-theme_xhred_editor_tb_list_ordered=Numaralı liste
-theme_xhred_editor_tb_list_bullet=Maddeli liste
+theme_xhred_editor_tb_list_ordered=Numaralandırılmış liste (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Madde işaretli liste (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Üstü çizili
 theme_xhred_editor_tb_blockquote=Alıntı (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Bağlantı ekle (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Kaydet ve Gizle
 theme_xhred_columns_layout_variation_cannot_horizontal=Mobil modda, özellikle ekran genişliği 992 pikselden az olduğunda yatay düzen kullanılamaz
 
 settings_auto_open_panels_on_proximity=Yakınlıkta kapalı panelleri otomatik aç
+
+theme_xhred_config_portable_module_xterm_render_addon=WebGL oluşturma eklentisini etkinleştir

@@ -1,5 +1,3 @@
-settings_right_hotkey_options=Tecles d'accés directe
-
 settings_right_hotkey_custom_options_description=Els enllaços personalitzats us permeten utilitzar els dígits de <code>1</code> a <code>9</code> per accedir ràpidament a qualsevol <code>URL del panell vàlid.</code> L'<code>URL</code> codi> es pot extreure de la pàgina oberta actualment. Per exemple, per canviar ràpidament al mòdul Apache, configureu <code>apache</code> al camp <code>Enllaç personalitzat 1</code>. Si la tecla modificadora predeterminada s'estableix en <code>Alt</code>, fent clic a <code>Alt + 1</code>, s'obrirà el mòdul Apache.
 
 settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
@@ -493,6 +491,7 @@ settings_right_sysinfo_page_options=Tauler de control i monitorització en temps
 settings_right_navigation_menu_options=Menú de navegació
 settings_right_notification_slider_options=Lliscador lateral
 settings_right_table_options=Exhibició de taula
+settings_right_hotkey_options=Tecles d'accés directe
 settings_right_hotkey_custom_options=Tecles d'accés directe d'enllaços personalitzats
 settings_right_soft_updates_page_options=Actualitzacions del tema
 settings_global_general_options_title=Valors predeterminats generals
@@ -680,8 +679,8 @@ theme_xhred_editor_tb_underline=Subratllat (%cmd+U)
 theme_xhred_editor_tb_color=Color del text
 theme_xhred_editor_tb_background=Fons de text
 theme_xhred_editor_tb_align=Alinear
-theme_xhred_editor_tb_list_ordered=Llista numerada
-theme_xhred_editor_tb_list_bullet=Llista amb pics
+theme_xhred_editor_tb_list_ordered=Llista numerada (%cmd+Maj+7)
+theme_xhred_editor_tb_list_bullet=Llista amb vinyetes (%cmd+Maj+8)
 theme_xhred_editor_tb_strike=Tallat
 theme_xhred_editor_tb_blockquote=Cita (%cmd+Maj+9)
 theme_xhred_editor_tb_link=Insereix l'enllaç (%cmd+K)
@@ -713,3 +712,5 @@ theme_xhred_columns_layout_remove_button=Desa i amaga
 theme_xhred_columns_layout_variation_cannot_horizontal=El disseny horitzontal no es pot utilitzar en el mode mòbil, concretament quan l'amplada de la pantalla és inferior a 992 píxels
 
 settings_auto_open_panels_on_proximity=Panells tancats oberts automàticament a proximitat
+
+theme_xhred_config_portable_module_xterm_render_addon=Activa el complement de representació de WebGL

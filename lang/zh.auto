@@ -1,5 +1,3 @@
-settings_right_hotkey_options=热键
-
 settings_right_hotkey_custom_options_description=自定义链接使您能够使用从 <code>1</code> 到 <code>9</code> 的数字来快速访问任何有效的面板 <code>URL。</code> <code>URL</code> 可以从当前打开的页面中提取出来。例如，要快速切换到 Apache 模块，请将 <code>apache</code> 设置为 <code>Custom link 1</code> 字段。如果默认修改键设置为 <code>Alt，</code> 单击 <code>Alt + 1</code>，将打开 Apache 模块。
 
 settings_right_reload=在选项卡开关上加载默认页面
@@ -353,6 +351,7 @@ settings_right_sysinfo_page_options=仪表板和实时监控
 settings_right_navigation_menu_options=导航菜单
 settings_right_notification_slider_options=侧滑杆
 settings_right_table_options=表显示
+settings_right_hotkey_options=热键
 settings_right_hotkey_custom_options=自定义链接热键
 settings_right_soft_updates_page_options=主题更新
 settings_global_general_options_title=通用默认值
@@ -540,8 +539,8 @@ theme_xhred_editor_tb_underline=下划线 (%cmd+U)
 theme_xhred_editor_tb_color=文字颜色
 theme_xhred_editor_tb_background=文字背景
 theme_xhred_editor_tb_align=对齐
-theme_xhred_editor_tb_list_ordered=编号列表
-theme_xhred_editor_tb_list_bullet=项目符号列表
+theme_xhred_editor_tb_list_ordered=编号列表 (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=项目符号列表 (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=删除线
 theme_xhred_editor_tb_blockquote=引号 (%cmd+Shift+9)
 theme_xhred_editor_tb_link=插入链接（%cmd+K）
@@ -573,3 +572,5 @@ theme_xhred_columns_layout_remove_button=保存并隐藏
 theme_xhred_columns_layout_variation_cannot_horizontal=移动模式下不能使用水平布局，特别是当屏幕宽度小于992px时
 
 settings_auto_open_panels_on_proximity=接近时自动打开关闭的面板
+
+theme_xhred_config_portable_module_xterm_render_addon=启用 WebGL 渲染插件

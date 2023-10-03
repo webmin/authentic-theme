@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Editor estensioni tema
 settings_right_theme_left_logo_title=Controllo logo del tema
 settings_right_theme_configurable_options_title=Opzioni impostabili per Authentic Theme
 
-settings_right_hotkey_options=Tasti di scelta rapida
-
 settings_hotkey_custom_1_user=Link personalizzato <code>1</code>
 settings_hotkey_custom_2_user=Link personalizzato <code>2</code>
 settings_hotkey_custom_3_user=Link personalizzato <code>3</code>
@@ -1128,6 +1126,7 @@ settings_right_sysinfo_page_options=Dashboard e monitoraggio in tempo reale
 settings_right_navigation_menu_options=Menu di navigazione
 settings_right_notification_slider_options=Slider laterale
 settings_right_table_options=Display da tavolo
+settings_right_hotkey_options=Tasti di scelta rapida
 settings_right_hotkey_custom_options=Tasti di scelta rapida dei collegamenti personalizzati
 settings_right_soft_updates_page_options=Aggiornamenti del tema
 settings_global_general_options_title=Impostazioni predefinite generali

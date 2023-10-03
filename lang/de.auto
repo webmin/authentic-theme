@@ -1,5 +1,3 @@
-settings_right_hotkey_options=Hotkeys
-
 settings_right_hotkey_custom_options_description=Mit benutzerdefinierten Links können Sie Ziffern von <code>1</code> bis <code>9</code> verwenden, um schnell auf jede gültige Panel-<code>URL</code> zuzugreifen. Die <code>URL</code> code> kann aus der aktuell geöffneten Seite extrahiert werden. Um beispielsweise schnell zum Apache-Modul zu wechseln, setzen Sie <code>apache</code> auf das Feld <code>Benutzerdefinierter Link 1</code>. Wenn die Standard-Zusatztaste auf <code>Alt</code> eingestellt ist, wird durch Klicken auf <code>Alt + 1</code> Ihr Apache-Modul geöffnet.
 
 settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
@@ -110,6 +108,7 @@ settings_right_sysinfo_page_options=Dashboard und Echtzeitüberwachung
 settings_right_navigation_menu_options=Navigationsmenü
 settings_right_notification_slider_options=Seitenschieber
 settings_right_table_options=Tabellenanzeige
+settings_right_hotkey_options=Hotkeys
 settings_right_hotkey_custom_options=Hotkeys für benutzerdefinierte Links
 settings_right_soft_updates_page_options=Themenaktualisierungen
 settings_global_general_options_title=Allgemeine Standardeinstellungen
@@ -297,8 +296,8 @@ theme_xhred_editor_tb_underline=Unterstreichen (%cmd+U)
 theme_xhred_editor_tb_color=Textfarbe
 theme_xhred_editor_tb_background=Texthintergrund
 theme_xhred_editor_tb_align=Ausrichten
-theme_xhred_editor_tb_list_ordered=Nummerierte Liste
-theme_xhred_editor_tb_list_bullet=Liste mit Aufzählungszeichen
+theme_xhred_editor_tb_list_ordered=Nummerierte Liste (%cmd+Umschalt+7)
+theme_xhred_editor_tb_list_bullet=Liste mit Aufzählungszeichen (%cmd+Umschalt+8)
 theme_xhred_editor_tb_strike=Durchgestrichen
 theme_xhred_editor_tb_blockquote=Zitat (%cmd+Umschalt+9)
 theme_xhred_editor_tb_link=Link einfügen (%cmd+K)
@@ -330,3 +329,5 @@ theme_xhred_columns_layout_remove_button=Speichern und ausblenden
 theme_xhred_columns_layout_variation_cannot_horizontal=Das horizontale Layout kann im mobilen Modus nicht verwendet werden, insbesondere wenn die Bildschirmbreite weniger als 992 Pixel beträgt
 
 settings_auto_open_panels_on_proximity=Automatisches Öffnen geschlossener Paneele bei Annäherung
+
+theme_xhred_config_portable_module_xterm_render_addon=Aktivieren Sie das WebGL-Rendering-Add-on

@@ -23,8 +23,6 @@ settings_right_theme_left_extensions_title=Temaudvidelser Editor
 settings_right_theme_left_logo_title=Tema Logo Control
 settings_right_theme_configurable_options_title=Konfigurerbare indstillinger til autentisk tema
 
-settings_right_hotkey_options=Genvejstaster
-
 settings_right_hotkey_custom_options_description=Brugerdefinerede links giver dig mulighed for at bruge cifrene fra <code>1</code> til <code>9</code> for at få hurtig adgang til enhver gyldig panel-<code>URL.</code> <code>URL</code> kan udtrækkes fra den aktuelt åbnede side. For at hurtigt skifte til Apache-modulet skal du f.eks. indstille <code>apache</code> til feltet <code>Brugerdefineret link 1</code>. Hvis standardmodifikatornøglen er indstillet til <code>Alt,</code> vil klik på <code>Alt + 1</code> åbne dit Apache-modul.
 settings_hotkey_custom_1_user=Brugerdefineret link <code>1</code>
 settings_hotkey_custom_2_user=Brugerdefineret link <code>2</code>
@@ -1066,6 +1064,7 @@ settings_right_sysinfo_page_options=Dashboard og overvågning i realtid
 settings_right_navigation_menu_options=Navigationsmenu
 settings_right_notification_slider_options=Sideskyder
 settings_right_table_options=Tabelvisning
+settings_right_hotkey_options=Genvejstaster
 settings_right_hotkey_custom_options=Tilpassede links genvejstaster
 settings_right_soft_updates_page_options=Temaopdateringer
 settings_global_general_options_title=Generelle standardindstillinger
@@ -1252,8 +1251,8 @@ theme_xhred_editor_tb_underline=Understregning (%cmd+U)
 theme_xhred_editor_tb_color=Tekstfarve
 theme_xhred_editor_tb_background=Tekst baggrund
 theme_xhred_editor_tb_align=Juster
-theme_xhred_editor_tb_list_ordered=Nummereret liste
-theme_xhred_editor_tb_list_bullet=Punktliste
+theme_xhred_editor_tb_list_ordered=Nummereret liste (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Punktliste (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Gennemstregning
 theme_xhred_editor_tb_blockquote=Citat (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Indsæt link (%cmd+K)
@@ -1285,3 +1284,5 @@ theme_xhred_columns_layout_remove_button=Gem og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Vandret layout kan ikke bruges i mobiltilstand, specielt når skærmbredden er mindre end 992px
 
 settings_auto_open_panels_on_proximity=Åbn automatisk lukkede paneler i nærheden
+
+theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gengivelsestilføjelse

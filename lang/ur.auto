@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=تھیم ایکسٹینشن ایڈی�
 settings_right_theme_left_logo_title=تھیم لوگو کنٹرول
 settings_right_theme_configurable_options_title=مستند تھیم کے لئے قابل ترتیب اختیارات
 
-settings_right_hotkey_options=ہاٹکیز
-
 settings_right_hotkey_custom_options_description=Custom links enable you to use digits from <code>1</code> to <code>9</code> in order to quick-access any valid panel <code>URL.</code> The <code>URL</code> can be extracted from the currently opened page. For example, to quick-switch to Apache module, set <code>apache</code> to <code>Custom link 1</code> field. If the default modifier key is set to <code>Alt,</code> clicking <code>Alt + 1</code>, will open you Apache module.
 settings_hotkey_custom_1_user=Custom link <code>1</code>
 settings_hotkey_custom_2_user=Custom link <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=ڈیش بورڈ اور اصل وقت کی ن
 settings_right_navigation_menu_options=نیویگیشن مینو
 settings_right_notification_slider_options=سائیڈ سلائیڈر
 settings_right_table_options=ٹیبل ڈسپلے
+settings_right_hotkey_options=ہاٹکیز
 settings_right_hotkey_custom_options=کسٹم لنکس ہاٹکیز
 settings_right_soft_updates_page_options=تھیم اپ ڈیٹ
 settings_global_general_options_title=جنرل ڈیفالٹس
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=انڈر لائن (%cmd+U)
 theme_xhred_editor_tb_color=متن کا رنگ
 theme_xhred_editor_tb_background=متن کا پس منظر
 theme_xhred_editor_tb_align=سیدھ میں لانا
-theme_xhred_editor_tb_list_ordered=نمبر والی فہرست
-theme_xhred_editor_tb_list_bullet=گولیوں والی فہرست
+theme_xhred_editor_tb_list_ordered=نمبر والی فہرست (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=گولیوں والی فہرست (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=سٹرائیک تھرو
 theme_xhred_editor_tb_blockquote=اقتباس (%cmd+Shift+9)
 theme_xhred_editor_tb_link=لنک داخل کریں (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=محفوظ کریں اور چھپائی
 theme_xhred_columns_layout_variation_cannot_horizontal=افقی لے آؤٹ کو موبائل موڈ میں استعمال نہیں کیا جا سکتا، خاص طور پر جب اسکرین کی چوڑائی 992px سے کم ہو۔
 
 settings_auto_open_panels_on_proximity=قربت پر بند پینل خود بخود کھولیں۔
+
+theme_xhred_config_portable_module_xterm_render_addon=WebGL رینڈرنگ ایڈون کو فعال کریں۔

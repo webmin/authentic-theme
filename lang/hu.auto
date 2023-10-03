@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Témabővítmények szerkesztő
 settings_right_theme_left_logo_title=Téma logó vezérlés
 settings_right_theme_configurable_options_title=Konfigurálható beállítások az Authentic téma számára
 
-settings_right_hotkey_options=Gyorsbillentyűk
-
 settings_right_hotkey_custom_options_description=Az egyéni hivatkozások lehetővé teszik az <code>1</code> és <code>9</code> közötti számjegyek használatát bármely érvényes panel <code>URL-címének</code> gyors eléréséhez. Az <code>URL</code> code> az éppen megnyitott oldalról kinyerhető. Például az Apache modulra való gyors váltáshoz állítsa az <code>apache</code> mezőt <code>Custom link 1</code> mezőre. Ha az alapértelmezett módosító kulcs az <code>Alt</code>, az <code>Alt + 1</code> gomb megnyomásával megnyílik az Apache modul.
 settings_hotkey_custom_1_user=<code>1</code> egyéni link
 settings_hotkey_custom_2_user=<code>2</code> egyéni link
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Irányítópult és valós idejű figyelés
 settings_right_navigation_menu_options=Navigációs menü
 settings_right_notification_slider_options=Oldalsó csúszka
 settings_right_table_options=Táblázat megjelenítése
+settings_right_hotkey_options=Gyorsbillentyűk
 settings_right_hotkey_custom_options=Egyéni linkek gyorsbillentyűk
 settings_right_soft_updates_page_options=Téma frissítések
 settings_global_general_options_title=Általános alapértelmezések
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Aláhúzás (%cmd+U)
 theme_xhred_editor_tb_color=Szöveg szín
 theme_xhred_editor_tb_background=Szöveg háttér
 theme_xhred_editor_tb_align=Igazítsa
-theme_xhred_editor_tb_list_ordered=Számozott lista
-theme_xhred_editor_tb_list_bullet=Felsorolásos lista
+theme_xhred_editor_tb_list_ordered=Számozott lista (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Felsorolásjeles lista (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Áthúzott
 theme_xhred_editor_tb_blockquote=Idézet (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Hivatkozás beszúrása (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Mentés és elrejtés
 theme_xhred_columns_layout_variation_cannot_horizontal=A vízszintes elrendezés nem használható mobil módban, különösen akkor, ha a képernyő szélessége kisebb, mint 992 képpont
 
 settings_auto_open_panels_on_proximity=A zárt panelek automatikus nyitása a közelben
+
+theme_xhred_config_portable_module_xterm_render_addon=WebGL-megjelenítési bővítmény engedélyezése

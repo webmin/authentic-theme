@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Teemalaajennusten toimittaja
 settings_right_theme_left_logo_title=Teeman logon hallinta
 settings_right_theme_configurable_options_title=Konfiguroitavat vaihtoehdot autenttiseen teemaan
 
-settings_right_hotkey_options=Pikanäppäimet
-
 settings_right_hotkey_custom_options_description=Mukautettujen linkkien avulla voit käyttää numeroita välillä <code>1</code> - <code>9</code>, jotta voit nopeasti käyttää mitä tahansa kelvollista paneelin <code>URL-osoitetta.</code> <code>URL</code> code> voidaan poimia parhaillaan avatulta sivulta. Jos esimerkiksi haluat vaihtaa nopeasti Apache-moduuliin, aseta <code>apache</code>-kenttään <code>Muokattu linkki 1</code>. Jos oletusmuokkausnäppäin on <code>Alt</code>, napsauta <code>Alt + 1</code>, jolloin Apache-moduuli avautuu.
 settings_hotkey_custom_1_user=Muokattu linkki <code>1</code>
 settings_hotkey_custom_2_user=Muokattu linkki <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Kojelauta ja reaaliaikainen seuranta
 settings_right_navigation_menu_options=Navigointivalikko
 settings_right_notification_slider_options=Sivuliukusäädin
 settings_right_table_options=Taulukon näyttö
+settings_right_hotkey_options=Pikanäppäimet
 settings_right_hotkey_custom_options=Mukautettujen linkkien pikanäppäimet
 settings_right_soft_updates_page_options=Teeman päivitykset
 settings_global_general_options_title=Yleiset oletukset
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Alleviivaus (%cmd+U)
 theme_xhred_editor_tb_color=Tekstin väri
 theme_xhred_editor_tb_background=Teksti tausta
 theme_xhred_editor_tb_align=Kohdistaa
-theme_xhred_editor_tb_list_ordered=Numeroitu luettelo
-theme_xhred_editor_tb_list_bullet=Ranskalaiset viivat
+theme_xhred_editor_tb_list_ordered=Numeroitu luettelo (%cmd+Vaihto+7)
+theme_xhred_editor_tb_list_bullet=Luettelomerkitty luettelo (%cmd+Vaihto+8)
 theme_xhred_editor_tb_strike=Yliviivattu
 theme_xhred_editor_tb_blockquote=Lainaus (%cmd+Vaihto+9)
 theme_xhred_editor_tb_link=Lisää linkki (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Tallenna ja piilota
 theme_xhred_columns_layout_variation_cannot_horizontal=Vaakasuuntaista asettelua ei voi käyttää mobiilitilassa, varsinkin kun näytön leveys on alle 992 pikseliä
 
 settings_auto_open_panels_on_proximity=Avaa automaattisesti suljetut paneelit lähellä
+
+theme_xhred_config_portable_module_xterm_render_addon=Ota WebGL-renderöintilisäosa käyttöön

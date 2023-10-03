@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=主題擴展編輯器
 settings_right_theme_left_logo_title=主題徽標控件
 settings_right_theme_configurable_options_title=真實主題的可配置選項
 
-settings_right_hotkey_options=熱鍵
-
 settings_right_hotkey_custom_options_description=自定義鏈接使您能夠使用從 <code>1</code> 到 <code>9</code> 的數字來快速訪問任何有效的面板 <code>URL。</code> <code>URL</code> 可以從當前打開的頁面中提取出來。例如，要快速切換到 Apache 模塊，請將 <code>apache</code> 設置為 <code>Custom link 1</code> 字段。如果默認修改鍵設置為 <code>Alt，</code> 單擊 <code>Alt + 1</code>，將打開 Apache 模塊。
 settings_hotkey_custom_1_user=自訂連結<code>1</code>
 settings_hotkey_custom_2_user=自定義鏈接<code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=儀表板和實時監控
 settings_right_navigation_menu_options=導航菜單
 settings_right_notification_slider_options=側滑桿
 settings_right_table_options=表顯示
+settings_right_hotkey_options=熱鍵
 settings_right_hotkey_custom_options=自定義鏈接熱鍵
 settings_right_soft_updates_page_options=主題更新
 settings_global_general_options_title=通用默認值
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=下劃線 (%cmd+U)
 theme_xhred_editor_tb_color=文字顏色
 theme_xhred_editor_tb_background=文字背景
 theme_xhred_editor_tb_align=對齊
-theme_xhred_editor_tb_list_ordered=編號列表
-theme_xhred_editor_tb_list_bullet=項目符號列表
+theme_xhred_editor_tb_list_ordered=編號清單 (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=項目符號清單 (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=刪除線
 theme_xhred_editor_tb_blockquote=引號 (%cmd+Shift+9)
 theme_xhred_editor_tb_link=插入鏈接（%cmd+K）
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=保存並隱藏
 theme_xhred_columns_layout_variation_cannot_horizontal=移動模式下不能使用水平佈局，特別是當屏幕寬度小於992px時
 
 settings_auto_open_panels_on_proximity=接近時自動打開關閉的面板
+
+theme_xhred_config_portable_module_xterm_render_addon=啟用 WebGL 渲染插件

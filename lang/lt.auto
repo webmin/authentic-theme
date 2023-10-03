@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Temų plėtinių redaktorius
 settings_right_theme_left_logo_title=Temos logotipo valdymas
 settings_right_theme_configurable_options_title=Konfigūruojamos autentiškos temos parinktys
 
-settings_right_hotkey_options=Spartieji klavišai
-
 settings_right_hotkey_custom_options_description=Naudodami tinkintas nuorodas galite naudoti skaitmenis nuo <code>1</code> iki <code>9</code>, kad galėtumėte greitai pasiekti bet kurį tinkamą skydelio <code>URL.</code> <code>URL</code> code> galima ištraukti iš šiuo metu atidaryto puslapio. Pavyzdžiui, norėdami greitai perjungti į Apache modulį, nustatykite lauką <code>apache</code> į <code>Custom link 1</code>. Jei numatytasis modifikatoriaus klavišas nustatytas į <code>Alt</code>, spustelėjus <code>Alt + 1</code> bus atidarytas Apache modulis.
 settings_hotkey_custom_1_user=<code>1</code> pasirinktinė nuoroda
 settings_hotkey_custom_2_user=<code>2</code> pasirinktinė nuoroda
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Informacijos suvestinė ir stebėjimas reali
 settings_right_navigation_menu_options=Naršymo meniu
 settings_right_notification_slider_options=Šoninis slankiklis
 settings_right_table_options=Stalo rodymas
+settings_right_hotkey_options=Spartieji klavišai
 settings_right_hotkey_custom_options=Tinkintų nuorodų spartieji klavišai
 settings_right_soft_updates_page_options=Temos atnaujinimai
 settings_global_general_options_title=Bendrieji nutylėjimai
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Pabraukimas (%cmd+U)
 theme_xhred_editor_tb_color=Teksto spalva
 theme_xhred_editor_tb_background=Teksto fonas
 theme_xhred_editor_tb_align=Lygiuoti
-theme_xhred_editor_tb_list_ordered=Sunumeruotas sąrašas
-theme_xhred_editor_tb_list_bullet=Sąrašas su ženkleliais
+theme_xhred_editor_tb_list_ordered=Sunumeruotas sąrašas (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Sąrašas su ženkleliais (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Perbraukta
 theme_xhred_editor_tb_blockquote=Citata (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Įterpti nuorodą (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Išsaugoti ir Slėpti
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalus išdėstymas negali būti naudojamas mobiliuoju režimu, ypač kai ekrano plotis yra mažesnis nei 992 pikseliai
 
 settings_auto_open_panels_on_proximity=Automatiškai atidarykite uždaras plokštes arti
+
+theme_xhred_config_portable_module_xterm_render_addon=Įgalinti „WebGL“ atvaizdavimo priedą

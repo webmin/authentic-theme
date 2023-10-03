@@ -1595,25 +1595,51 @@ const mail = (function() {
                                                     }
                                                 };
 
-                                            // Editor Google Mail like keybind for quoting
+                                            // Editor Google Mail like key bind for creating numbered list
                                             editor.this.keyboard.addBinding({
-                                                key: '9',
+                                                key: '7',
                                                 shiftKey: true,
                                                 ctrlKey: !_.platform.mac,
                                                 metaKey: _.platform.mac,
-                                                format: ['blockquote'],
                                             }, function(range, context) {
-                                                this.quill.format('blockquote', false);
+                                                const currentFormat = this.quill.getFormat(range.index);
+                                                if (currentFormat.list === 'ordered') {
+                                                    this.quill.format('list', false);
+                                                } else {
+                                                    this.quill.format('list', 'ordered');
+                                                }
                                             });
+                                            
+                                            // Editor Google Mail like key bind for creating bullet list
                                             editor.this.keyboard.addBinding({
-                                                key: '9',
+                                                key: '8',
                                                 shiftKey: true,
                                                 ctrlKey: !_.platform.mac,
                                                 metaKey: _.platform.mac,
                                             }, function(range, context) {
-                                                this.quill.format('blockquote', true);
+                                                const currentFormat = this.quill.getFormat(range.index);
+                                                if (currentFormat.list === 'bullet') {
+                                                    this.quill.format('list', false);
+                                                } else {
+                                                    this.quill.format('list', 'bullet');
+                                                }
                                             });
 
+                                            // Editor Google Mail like key bind for quoting
+                                            editor.this.keyboard.addBinding({
+                                                key: '9',
+                                                shiftKey: true,
+                                                ctrlKey: !_.platform.mac,
+                                                metaKey: _.platform.mac,
+                                            }, function(range, context) {
+                                                const currentFormat = this.quill.getFormat(range.index);
+                                                if (currentFormat.blockquote) {
+                                                    this.quill.format('blockquote', false);
+                                                } else {
+                                                    this.quill.format('blockquote', true);
+                                                }
+                                            });
+                                            
                                             // Event for external insert link to editor button
                                             ctl_lnk.addEventListener('click', () => {
                                                 tb.querySelector(`.${classes.editor.tb_link}`).dispatchEvent(new Event('click'));

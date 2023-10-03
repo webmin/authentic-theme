@@ -1,5 +1,3 @@
-settings_right_hotkey_options=Kekunci panas
-
 settings_right_hotkey_custom_options_description=Pautan tersuai membolehkan anda menggunakan digit daripada <code>1</code> hingga <code>9</code> untuk mengakses pantas mana-mana panel <code>URL yang sah.</code> <code>URL</code> boleh diekstrak dari halaman yang sedang dibuka. Contohnya, untuk beralih pantas kepada modul Apache, tetapkan <code>apache</code> kepada medan <code>Pautan tersuai 1</code>. Jika kunci pengubah suai lalai ditetapkan kepada <code>Alt,</code> mengklik <code>Alt + 1</code>, akan membuka modul Apache anda.
 
 settings_right_reload=Muatkan halaman lalai pada suis tab
@@ -562,6 +560,7 @@ settings_right_sysinfo_page_options=Papan pemuka dan pemantauan masa nyata
 settings_right_navigation_menu_options=Menu navigasi
 settings_right_notification_slider_options=Gelangsar sisi
 settings_right_table_options=Paparan meja
+settings_right_hotkey_options=Kekunci panas
 settings_right_hotkey_custom_options=Hotkeys pautan tersuai
 settings_right_soft_updates_page_options=Kemas kini tema
 settings_global_general_options_title=Lalai umum
@@ -749,8 +748,8 @@ theme_xhred_editor_tb_underline=Garis bawah (%cmd+U)
 theme_xhred_editor_tb_color=Warna teks
 theme_xhred_editor_tb_background=Latar belakang teks
 theme_xhred_editor_tb_align=Selaraskan
-theme_xhred_editor_tb_list_ordered=Senarai bernombor
-theme_xhred_editor_tb_list_bullet=Senarai berbulet
+theme_xhred_editor_tb_list_ordered=Senarai bernombor (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Senarai bertitik tumpu mata (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Strikethrough
 theme_xhred_editor_tb_blockquote=Petikan (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Sisipkan pautan (%cmd+K)
@@ -782,3 +781,5 @@ theme_xhred_columns_layout_remove_button=Simpan dan Sembunyikan
 theme_xhred_columns_layout_variation_cannot_horizontal=Reka letak mendatar tidak boleh digunakan dalam mod mudah alih, khususnya apabila lebar skrin kurang daripada 992px
 
 settings_auto_open_panels_on_proximity=Auto buka panel tertutup pada jarak dekat
+
+theme_xhred_config_portable_module_xterm_render_addon=Dayakan tambahan pemaparan WebGL

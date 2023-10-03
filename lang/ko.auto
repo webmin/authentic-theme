@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=테마 확장 편집기
 settings_right_theme_left_logo_title=테마 로고 컨트롤
 settings_right_theme_configurable_options_title=인증 테마에 대해 구성 가능한 옵션
 
-settings_right_hotkey_options=단축키
-
 settings_right_hotkey_custom_options_description=사용자 정의 링크를 사용하면 유효한 패널 <code>URL</code>에 빠르게 액세스하기 위해 <code>1</code>에서 <code>9</code>까지의 숫자를 사용할 수 있습니다. <code>URL</code> code>는 현재 열려 있는 페이지에서 추출할 수 있습니다. 예를 들어 Apache 모듈로 빠르게 전환하려면 <code>apache</code>를 <code>Custom link 1</code> 필드로 설정합니다. 기본 수정자 키가 <code>Alt</code>로 설정된 경우 <code>Alt + 1</code>을 클릭하면 Apache 모듈이 열립니다.
 settings_hotkey_custom_1_user=맞춤 링크 <code>1</code>
 settings_hotkey_custom_2_user=맞춤 링크 <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=대시 보드 및 실시간 모니터링
 settings_right_navigation_menu_options=탐색 메뉴
 settings_right_notification_slider_options=사이드 슬라이더
 settings_right_table_options=테이블 디스플레이
+settings_right_hotkey_options=단축키
 settings_right_hotkey_custom_options=사용자 정의 링크 단축키
 settings_right_soft_updates_page_options=테마 업데이트
 settings_global_general_options_title=일반 기본값
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=밑줄(%cmd+U)
 theme_xhred_editor_tb_color=텍스트 색상
 theme_xhred_editor_tb_background=텍스트 배경
 theme_xhred_editor_tb_align=맞추다
-theme_xhred_editor_tb_list_ordered=번호 매기기 목록
-theme_xhred_editor_tb_list_bullet=글머리 기호 목록
+theme_xhred_editor_tb_list_ordered=번호가 매겨진 목록(%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=글머리 기호 목록(%cmd+Shift+8)
 theme_xhred_editor_tb_strike=취소선
 theme_xhred_editor_tb_blockquote=견적(%cmd+Shift+9)
 theme_xhred_editor_tb_link=링크 삽입(%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=저장 및 숨기기
 theme_xhred_columns_layout_variation_cannot_horizontal=모바일 모드, 특히 화면 너비가 992px 미만인 경우 가로 레이아웃을 사용할 수 없습니다
 
 settings_auto_open_panels_on_proximity=근접 시 닫힌 패널 자동 열기
+
+theme_xhred_config_portable_module_xterm_render_addon=WebGL 렌더링 애드온 활성화

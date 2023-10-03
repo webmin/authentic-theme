@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Trình chỉnh sửa mở rộng ch�
 settings_right_theme_left_logo_title=Kiểm soát logo chủ đề
 settings_right_theme_configurable_options_title=Tùy chọn cấu hình cho Theme xác thực
 
-settings_right_hotkey_options=Phím nóng
-
 settings_right_hotkey_custom_options_description=Liên kết tùy chỉnh cho phép bạn sử dụng các chữ số từ <code>1</code> đến <code>9</code> để truy cập nhanh bất kỳ <code>URL hợp lệ nào của bảng điều khiển.</code> <code>URL</code> có thể được trích xuất từ trang hiện đang mở. Ví dụ: để chuyển nhanh sang mô-đun Apache, hãy đặt <code>Apache</code> thành trường <code>Liên kết tùy chỉnh 1</code>. Nếu khóa bổ trợ mặc định được đặt thành <code>Alt,</code> nhấp vào <code>Alt + 1</code>, sẽ mở mô-đun Apache của bạn.
 settings_hotkey_custom_1_user=Liên kết tùy chỉnh <code>1</code>
 settings_hotkey_custom_2_user=Liên kết tùy chỉnh <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Bảng điều khiển và giám sát thời
 settings_right_navigation_menu_options=Chức năng điều hướng
 settings_right_notification_slider_options=Thanh trượt bên
 settings_right_table_options=Bảng hiển thị
+settings_right_hotkey_options=Phím nóng
 settings_right_hotkey_custom_options=Các phím nóng liên kết tùy chỉnh
 settings_right_soft_updates_page_options=Cập nhật chủ đề
 settings_global_general_options_title=Mặc định chung
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Gạch chân (%cmd+U)
 theme_xhred_editor_tb_color=Văn bản màu
 theme_xhred_editor_tb_background=Nền văn bản
 theme_xhred_editor_tb_align=Căn chỉnh
-theme_xhred_editor_tb_list_ordered=danh sách được đánh số
-theme_xhred_editor_tb_list_bullet=danh sách gạch đầu dòng
+theme_xhred_editor_tb_list_ordered=Danh sách được đánh số (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Danh sách có dấu đầu dòng (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=gạch ngang
 theme_xhred_editor_tb_blockquote=Báo giá (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Chèn liên kết (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Lưu và Ẩn
 theme_xhred_columns_layout_variation_cannot_horizontal=Không thể sử dụng bố cục ngang ở chế độ di động, đặc biệt khi chiều rộng màn hình nhỏ hơn 992px
 
 settings_auto_open_panels_on_proximity=Tự động mở các tấm đã đóng khi ở gần
+
+theme_xhred_config_portable_module_xterm_render_addon=Bật tiện ích kết xuất WebGL

@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=محرر ملحقات السمة
 settings_right_theme_left_logo_title=التحكم في شعار السمة
 settings_right_theme_configurable_options_title=خيارات قابلة للتكوين لـ Authentic Theme
 
-settings_right_hotkey_options=مفاتيح التشغيل السريع
-
 settings_right_hotkey_custom_options_description=تمكّنك الروابط المخصصة من استخدام الأرقام من <code>1</code> إلى <code>9</code> للوصول السريع إلى أي عنوان URL صالح للوحة <code>.</code> عنوان URL <code></code> يمكن استخراجه من الصفحة المفتوحة حاليا. على سبيل المثال ، للتبديل السريع إلى وحدة Apache ، اضبط الحقل <code>apache</code> على الحقل <code>الرابط المخصص 1</code>. إذا تم تعيين مفتاح التعديل الافتراضي على <code>Alt ،</code> النقر فوق <code>Alt + 1</code> ، سيفتح لك وحدة Apache.
 settings_hotkey_custom_1_user=رابط مخصص <code>1</code>
 settings_hotkey_custom_2_user=رابط مخصص <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=لوحة القيادة والمراقبة �
 settings_right_navigation_menu_options=قائمة الإبحار
 settings_right_notification_slider_options=المنزلق الجانبي
 settings_right_table_options=عرض الجدول
+settings_right_hotkey_options=مفاتيح التشغيل السريع
 settings_right_hotkey_custom_options=مفاتيح التشغيل السريع للروابط المخصصة
 settings_right_soft_updates_page_options=تحديثات الموضوع
 settings_global_general_options_title=الافتراضات العامة
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=تسطير (٪ cmd+U)
 theme_xhred_editor_tb_color=لون الخط
 theme_xhred_editor_tb_background=خلفية النص
 theme_xhred_editor_tb_align=محاذاة
-theme_xhred_editor_tb_list_ordered=قائمة مرقمة
-theme_xhred_editor_tb_list_bullet=قائمة نقطية
+theme_xhred_editor_tb_list_ordered=قائمة مرقمة (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=قائمة ذات تعداد نقطي (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=يتوسطه خط
 theme_xhred_editor_tb_blockquote=اقتباس (٪ cmd+Shift+9)
 theme_xhred_editor_tb_link=إدراج ارتباط (٪ cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=حفظ وإخفاء
 theme_xhred_columns_layout_variation_cannot_horizontal=لا يمكن استخدام التخطيط الأفقي في وضع الهاتف المحمول ، خاصة عندما يكون عرض الشاشة أقل من 992 بكسل
 
 settings_auto_open_panels_on_proximity=فتح لوحات مغلقة تلقائيًا على مقربة
+
+theme_xhred_config_portable_module_xterm_render_addon=تمكين ملحق عرض WebGL

@@ -4,8 +4,6 @@ theme_xhred_login_user=ユーザー名
 
 theme_xhred_session_failed=ログインに失敗しました。もう一度お試しください。
 
-settings_right_hotkey_options=ホットキー
-
 settings_right_hotkey_custom_options_description=カスタム リンクを使用すると、<code>1</code> から <code>9</code> までの数字を使用して、有効なパネルの <code>URL</code> にすばやくアクセスできます。<code>URL</code> は、現在開いているページから抽出できます。たとえば、Apache モジュールにすばやく切り替えるには、<code>apache</code> を <code>Custom link 1</code> フィールドに設定します。デフォルトの修飾キーが <code>Alt</code> に設定されている場合、<code>Alt + 1</code> をクリックすると、Apache モジュールが開きます。
 
 settings_right_reload=タブスイッチにデフォルトページをロード
@@ -119,6 +117,7 @@ settings_right_sysinfo_page_options=ダッシュボードとリアルタイム�
 settings_right_navigation_menu_options=ナビゲーションメニュー
 settings_right_notification_slider_options=サイドスライダー
 settings_right_table_options=テーブル表示
+settings_right_hotkey_options=ホットキー
 settings_right_hotkey_custom_options=カスタムリンクのホットキー
 settings_right_soft_updates_page_options=テーマの更新
 settings_global_general_options_title=一般的なデフォルト
@@ -306,8 +305,8 @@ theme_xhred_editor_tb_underline=下線 (%cmd+U)
 theme_xhred_editor_tb_color=テキストの色
 theme_xhred_editor_tb_background=テキストの背景
 theme_xhred_editor_tb_align=整列
-theme_xhred_editor_tb_list_ordered=番号付きリスト
-theme_xhred_editor_tb_list_bullet=箇条書きリスト
+theme_xhred_editor_tb_list_ordered=番号付きリスト (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=箇条書きリスト (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=取り消し線
 theme_xhred_editor_tb_blockquote=引用符 (%cmd+Shift+9)
 theme_xhred_editor_tb_link=リンクを挿入 (%cmd+K)
@@ -339,3 +338,5 @@ theme_xhred_columns_layout_remove_button=保存して非表示にする
 theme_xhred_columns_layout_variation_cannot_horizontal=モバイルモード、特に画面幅が992px未満の場合、横型レイアウトは使用できません。
 
 settings_auto_open_panels_on_proximity=閉じたパネルが近づくと自動的に開きます
+
+theme_xhred_config_portable_module_xterm_render_addon=WebGL レンダリング アドオンを有効にする

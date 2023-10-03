@@ -75,8 +75,8 @@ theme_xhred_editor_tb_underline=Understrykning (%cmd+U)
 theme_xhred_editor_tb_color=Text färg
 theme_xhred_editor_tb_background=Textbakgrund
 theme_xhred_editor_tb_align=Justera
-theme_xhred_editor_tb_list_ordered=Numrerad lista
-theme_xhred_editor_tb_list_bullet=Punktlista
+theme_xhred_editor_tb_list_ordered=Numrerad lista (%cmd+Skift+7)
+theme_xhred_editor_tb_list_bullet=Punktlista (%cmd+Skift+8)
 theme_xhred_editor_tb_strike=Genomstruken
 theme_xhred_editor_tb_blockquote=Citat (%cmd+Skift+9)
 theme_xhred_editor_tb_link=Infoga länk (%cmd+K)
@@ -108,3 +108,5 @@ theme_xhred_columns_layout_remove_button=Spara och dölj
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontell layout kan inte användas i mobilläget, speciellt när skärmbredden är mindre än 992px
 
 settings_auto_open_panels_on_proximity=Öppna stängda paneler automatiskt i närheten
+
+theme_xhred_config_portable_module_xterm_render_addon=Aktivera WebGL-renderingstillägg

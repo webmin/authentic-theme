@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Urejevalnik tematskih razširitev
 settings_right_theme_left_logo_title=Nadzor logotipa teme
 settings_right_theme_configurable_options_title=Nastavljive možnosti za avtentično temo
 
-settings_right_hotkey_options=Bližnjice
-
 settings_right_hotkey_custom_options_description=Povezave po meri vam omogočajo uporabo števk od <code>1</code> do <code>9</code> za hiter dostop do katerega koli veljavnega <code>URL-ja plošče.</code> <code>URL</code> lahko izvlečete iz trenutno odprte strani. Če želite na primer hitro preklopiti na modul Apache, nastavite <code>apache</code> na polje <code>Povezava po meri 1</code>. Če je privzeta modifikacijska tipka nastavljena na <code>Alt</code>, boste s klikom na <code>Alt + 1</code> odprli modul Apache.
 settings_hotkey_custom_1_user=Povezava po meri <code>1</code>
 settings_hotkey_custom_2_user=Povezava <code>2</code> po meri
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Nadzorna plošča in nadzor v realnem času
 settings_right_navigation_menu_options=Navigacijski meni
 settings_right_notification_slider_options=Stranski drsnik
 settings_right_table_options=Prikaz tabele
+settings_right_hotkey_options=Bližnjice
 settings_right_hotkey_custom_options=Bližnjične tipke za povezave po meri
 settings_right_soft_updates_page_options=Posodobitve teme
 settings_global_general_options_title=Splošne privzete vrednosti
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Podčrtano (%cmd+U)
 theme_xhred_editor_tb_color=Barva besedila
 theme_xhred_editor_tb_background=Ozadje besedila
 theme_xhred_editor_tb_align=Poravnaj
-theme_xhred_editor_tb_list_ordered=Oštevilčen seznam
-theme_xhred_editor_tb_list_bullet=Seznam z oznakami
+theme_xhred_editor_tb_list_ordered=Oštevilčen seznam (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Seznam z oznakami (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Prečrtano
 theme_xhred_editor_tb_blockquote=Citat (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Vstavi povezavo (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Shrani in skrij
 theme_xhred_columns_layout_variation_cannot_horizontal=Vodoravne postavitve ni mogoče uporabiti v mobilnem načinu, zlasti če je širina zaslona manjša od 992 slikovnih pik
 
 settings_auto_open_panels_on_proximity=Samodejno odpiranje zaprtih plošč v bližini
+
+theme_xhred_config_portable_module_xterm_render_addon=Omogoči dodatek za upodabljanje WebGL

@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=ویرایشگر برنامه تم
 settings_right_theme_left_logo_title=کنترل آرم تم
 settings_right_theme_configurable_options_title=گزینه های قابل تنظیم برای موضوع معتبر
 
-settings_right_hotkey_options=کلیدهای میانبر
-
 settings_right_hotkey_custom_options_description=Ù¾ÛÙÙØ¯ÙØ§Û Ø³ÙØ§Ø±Ø´Û Ø¨Ù Ø´ÙØ§ Ø§ÙÚ©Ø§Ù ÙÛ Ø¯ÙÙØ¯ Ø§Ø² Ø§Ø±ÙØ§Ù <code>1</code> ØªØ§ <code>9</code> Ø¨Ø±Ø§Û Ø¯Ø³ØªØ±Ø³Û Ø³Ø±ÛØ¹ Ø¨Ù ÙØ± Ù¾Ø§ÙÙ ÙØ¹ØªØ¨Ø± <code>URL</code> Ø§Ø³ØªÙØ§Ø¯Ù Ú©ÙÛØ¯. <code>URL</code> code> Ø±Ø§ ÙÛ ØªÙØ§Ù Ø§Ø² ØµÙØ­Ù Ø¨Ø§Ø² Ø´Ø¯Ù ÙØ¹ÙÛ Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ú©Ø±Ø¯. Ø¨Ù Ø¹ÙÙØ§Ù ÙØ«Ø§ÙØ Ø¨Ø±Ø§Û ØªØºÛÛØ± Ø³Ø±ÛØ¹ Ø¨Ù ÙØ§ÚÙÙ ApacheØ ÙØ³ÙØª <code>apache</code> Ø±Ø§ Ø±ÙÛ ÙØ³ÙØª <code>Custom link 1</code> ØªÙØ¸ÛÙ Ú©ÙÛØ¯. Ø§Ú¯Ø± Ú©ÙÛØ¯ Ø§ØµÙØ§Ø­ Ú©ÙÙØ¯Ù Ù¾ÛØ´‌ÙØ±Ø¶ Ø±ÙÛ <code>Alt</code> ØªÙØ¸ÛÙ Ø´Ø¯Ù Ø¨Ø§Ø´Ø¯Ø Ø¨Ø§ Ú©ÙÛÚ© Ø±ÙÛ <code>Alt + 1</code>Ø ÙØ§ÚÙÙ Ø¢Ù¾Ø§ÚÛ Ø´ÙØ§ Ø±Ø§ Ø¨Ø§Ø² ÙÛ‌Ú©ÙØ¯.
 settings_hotkey_custom_1_user=پیوند سفارشی <code>1</code>
 settings_hotkey_custom_2_user=پیوند سفارشی <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=داشبورد و نظارت بر زمان �
 settings_right_navigation_menu_options=منوی پیمایش
 settings_right_notification_slider_options=کشویی کناری
 settings_right_table_options=نمایش میز
+settings_right_hotkey_options=کلیدهای میانبر
 settings_right_hotkey_custom_options=کلیدهای میانبر را به صورت سفارشی پیوند دهید
 settings_right_soft_updates_page_options=به روز رسانی تم
 settings_global_general_options_title=پیش فرض های کلی
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=زیر خط (%cmd+U)
 theme_xhred_editor_tb_color=رنگ متن
 theme_xhred_editor_tb_background=پس زمینه متن
 theme_xhred_editor_tb_align=تراز کردن
-theme_xhred_editor_tb_list_ordered=لیست شماره گذاری شده
-theme_xhred_editor_tb_list_bullet=لیست گلوله شده
+theme_xhred_editor_tb_list_ordered=لیست شماره گذاری شده (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=ÙÛØ³Øª Ú¯ÙÙÙÙ‌Ø´Ø¯Ù (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=ضربه زدن
 theme_xhred_editor_tb_blockquote=نقل قول (%cmd+Shift+9)
 theme_xhred_editor_tb_link=درج پیوند (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=ذخیره و پنهان کردن
 theme_xhred_columns_layout_variation_cannot_horizontal=طرح افقی را نمی توان در حالت موبایل استفاده کرد، به ویژه زمانی که عرض صفحه کمتر از 992 پیکسل باشد
 
 settings_auto_open_panels_on_proximity=باز کردن خودکار پانل های بسته در مجاورت
+
+theme_xhred_config_portable_module_xterm_render_addon=افزونه رندر WebGL را فعال کنید

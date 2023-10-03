@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Editur Estensjonijiet Tema
 settings_right_theme_left_logo_title=Kontroll tal-Logo tat-Tema
 settings_right_theme_configurable_options_title=Għażliet konfigurabbli għal Tema Awtentika
 
-settings_right_hotkey_options=Hotkeys
-
 settings_right_hotkey_custom_options_description=Links personalizzati jippermettulek tuża ċifri minn <code>1</code> sa <code>9</code> sabiex taċċessa malajr kwalunkwe panel validu <code>URL.</code> Il-<code>URL</code> kodiċi> jistgħu jiġu estratti mill-paġna miftuħa bħalissa. Pereżempju, biex taqleb malajr għall-modulu Apache, issettja l-qasam <code>apache</code> għal <code>Link personalizzat 1</code>. Jekk iċ-ċavetta modifikatur default hija ssettjata għal <code>Alt,</code> meta tikklikkja <code>Alt + 1</code>, tiftaħlek il-modulu Apache.
 settings_hotkey_custom_1_user=Link personalizzat <code>1</code>
 settings_hotkey_custom_2_user=Link personalizzat <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Dashboard u monitoraġġ f'ħin reali
 settings_right_navigation_menu_options=Menu tan-navigazzjoni
 settings_right_notification_slider_options=Slider tal-ġenb
 settings_right_table_options=Wirja tal-mejda
+settings_right_hotkey_options=Hotkeys
 settings_right_hotkey_custom_options=Hotkeys ta 'links personalizzati
 settings_right_soft_updates_page_options=Aġġornamenti tat-tema
 settings_global_general_options_title=Nuqqasijiet ġenerali
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Issottolinja (%cmd+U)
 theme_xhred_editor_tb_color=Kulur tat-test
 theme_xhred_editor_tb_background=Sfond tat-test
 theme_xhred_editor_tb_align=Allinja
-theme_xhred_editor_tb_list_ordered=Lista numerata
-theme_xhred_editor_tb_list_bullet=Lista bil-bulli
+theme_xhred_editor_tb_list_ordered=Lista numerata (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Lista bil-bulli (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Strikethrough
 theme_xhred_editor_tb_blockquote=Kwotazzjoni (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Daħħal link (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Ħlief u Aħbi
 theme_xhred_columns_layout_variation_cannot_horizontal=It-tqassim orizzontali ma jistax jintuża fil-modalità mobbli, speċifikament meta l-wisa 'tal-iskrin tkun inqas minn 992px
 
 settings_auto_open_panels_on_proximity=Pannelli magħluqa miftuħa awtomatikament fuq il-prossimità
+
+theme_xhred_config_portable_module_xterm_render_addon=Ippermetti l-addon tar-rendi tal-WebGL

@@ -25,8 +25,6 @@ settings_right_theme_left_extensions_title=Редактор тем расшир�
 settings_right_theme_left_logo_title=Логотип темы
 settings_right_theme_configurable_options_title=Настраиваемые параметры для Authentic Theme
 
-settings_right_hotkey_options=Горячие клавиши
-
 settings_right_hotkey_custom_options_description=Пользовательские ссылки позволяют использовать цифры от <code>1</code> до <code>9</code> для быстрого доступа к любой допустимой панели <code>URL</code> <code>URL</code> можно извлечь из текущей открытой страницы. Например, чтобы быстро переключиться на модуль Apache, установите <code>apache</code> в поле <code>Пользовательская ссылка 1</code>. Если для клавиши-модификатора по умолчанию установлено значение <code>Alt</code>, нажатие <code>Alt + 1</code> откроет модуль Apache.
 settings_hotkey_custom_1_user=Пользовательская ссылка <code>1</code>
 settings_hotkey_custom_2_user=Пользовательская ссылка <code>2</code>
@@ -944,6 +942,7 @@ settings_right_sysinfo_page_options=Панель управления и мон�
 settings_right_navigation_menu_options=Меню навигации
 settings_right_notification_slider_options=Боковой слайдер
 settings_right_table_options=Табличный дисплей
+settings_right_hotkey_options=Горячие клавиши
 settings_right_hotkey_custom_options=Горячие клавиши для пользовательских ссылок
 settings_right_soft_updates_page_options=Обновления темы
 settings_global_general_options_title=Общие настройки по умолчанию
@@ -1131,8 +1130,8 @@ theme_xhred_editor_tb_underline=Подчеркивание (%cmd+U)
 theme_xhred_editor_tb_color=Цвет текста
 theme_xhred_editor_tb_background=Текстовый фон
 theme_xhred_editor_tb_align=Выровнять
-theme_xhred_editor_tb_list_ordered=Нумерованный список
-theme_xhred_editor_tb_list_bullet=Маркированный список
+theme_xhred_editor_tb_list_ordered=Нумерованный список (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Маркированный список (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Зачеркнутый
 theme_xhred_editor_tb_blockquote=Цитата (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Вставить ссылку (%cmd+K)
@@ -1164,3 +1163,5 @@ theme_xhred_columns_layout_remove_button=Сохранить и скрыть
 theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальную верстку нельзя использовать в мобильном режиме, особенно когда ширина экрана меньше 992 пикселей
 
 settings_auto_open_panels_on_proximity=Автоматическое открытие закрытых панелей при приближении
+
+theme_xhred_config_portable_module_xterm_render_addon=Включить надстройку рендеринга WebGL

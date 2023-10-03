@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Editor rozšírení motívov
 settings_right_theme_left_logo_title=Ovládanie loga témy
 settings_right_theme_configurable_options_title=Konfigurovateľné možnosti pre autentickú tému
 
-settings_right_hotkey_options=Klávesové skratky
-
 settings_right_hotkey_custom_options_description=Vlastné odkazy vám umožňujú používať číslice od <code>1</code> do <code>9</code> na rýchly prístup k akejkoľvek platnej <code>URL na paneli.</code> <code>URL</code> kód> možno extrahovať z aktuálne otvorenej stránky. Ak chcete napríklad rýchlo prepnúť na modul Apache, nastavte <code>apache</code> na pole <code>Vlastný odkaz 1</code>. Ak je predvolený modifikačný kláves nastavený na <code>Alt</code>, kliknutím na <code>Alt + 1</code> sa vám otvorí modul Apache.
 settings_hotkey_custom_1_user=Vlastný odkaz <code>1</code>
 settings_hotkey_custom_2_user=Vlastný odkaz <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Dashboard a monitorovanie v reálnom čase
 settings_right_navigation_menu_options=Navigačné menu
 settings_right_notification_slider_options=Bočný posúvač
 settings_right_table_options=Stolový displej
+settings_right_hotkey_options=Klávesové skratky
 settings_right_hotkey_custom_options=Klávesové skratky s vlastnými odkazmi
 settings_right_soft_updates_page_options=Aktualizácie tém
 settings_global_general_options_title=Všeobecné predvolené hodnoty
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Podčiarknuť (%cmd+U)
 theme_xhred_editor_tb_color=Farba textu
 theme_xhred_editor_tb_background=Textové pozadie
 theme_xhred_editor_tb_align=Zarovnať
-theme_xhred_editor_tb_list_ordered=Číslovaný zoznam
-theme_xhred_editor_tb_list_bullet=Zoznam s odrážkami
+theme_xhred_editor_tb_list_ordered=Číslovaný zoznam (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Zoznam s odrážkami (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Prečiarknuté
 theme_xhred_editor_tb_blockquote=Citácia (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Vložiť odkaz (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Uložiť a skryť
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontálne rozloženie nie je možné použiť v mobilnom režime, konkrétne keď je šírka obrazovky menšia ako 992 pixelov
 
 settings_auto_open_panels_on_proximity=Automatické otváranie uzavretých panelov pri blízkosti
+
+theme_xhred_config_portable_module_xterm_render_addon=Povoliť doplnok vykresľovania WebGL

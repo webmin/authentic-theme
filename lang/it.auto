@@ -197,8 +197,8 @@ theme_xhred_editor_tb_underline=Sottolineato (%cmd+U)
 theme_xhred_editor_tb_color=Colore del testo
 theme_xhred_editor_tb_background=Sfondo del testo
 theme_xhred_editor_tb_align=Allineare
-theme_xhred_editor_tb_list_ordered=Elenco numerato
-theme_xhred_editor_tb_list_bullet=Elenco puntato
+theme_xhred_editor_tb_list_ordered=Elenco numerato (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Elenco puntato (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Barrato
 theme_xhred_editor_tb_blockquote=Citazione (%cmd+Maiusc+9)
 theme_xhred_editor_tb_link=Inserisci link (%cmd+K)
@@ -230,3 +230,5 @@ theme_xhred_columns_layout_remove_button=Salva e nascondi
 theme_xhred_columns_layout_variation_cannot_horizontal=Il layout orizzontale non può essere utilizzato in modalità mobile, in particolare quando la larghezza dello schermo è inferiore a 992 px
 
 settings_auto_open_panels_on_proximity=Apertura automatica dei pannelli chiusi in prossimità
+
+theme_xhred_config_portable_module_xterm_render_addon=Abilita il componente aggiuntivo di rendering WebGL

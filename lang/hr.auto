@@ -110,8 +110,6 @@ settings_right_theme_left_extensions_title=Uređivač tema za proširenja
 settings_right_theme_left_logo_title=Kontrola logotipa teme
 settings_right_theme_configurable_options_title=Podesive opcije za autentičnu temu
 
-settings_right_hotkey_options=Prečaci
-
 settings_right_hotkey_custom_options_description=Prilagođene veze omogućuju vam korištenje znamenki od <code>1</code> do <code>9</code> kako biste brzo pristupili bilo kojem važećem <code>URL-u ploče.</code> <code>URL</code> može se izdvojiti iz trenutno otvorene stranice. Na primjer, za brzo prebacivanje na Apache modul, postavite <code>apache</code> na polje <code>Prilagođena veza 1</code>. Ako je zadana modifikacijska tipka postavljena na <code>Alt</code>, klikom na <code>Alt + 1</code> otvorit će se vaš Apache modul.
 settings_hotkey_custom_1_user=Prilagođena veza <code>1</code>
 settings_hotkey_custom_2_user=Prilagođena veza <code>2</code>
@@ -1154,6 +1152,7 @@ settings_right_sysinfo_page_options=Nadzorna ploča i nadzor u stvarnom vremenu
 settings_right_navigation_menu_options=Navigacijski izbornik
 settings_right_notification_slider_options=Klizač sa strane
 settings_right_table_options=Prikaz tablice
+settings_right_hotkey_options=Prečaci
 settings_right_hotkey_custom_options=Hitne tipke za prilagođene veze
 settings_right_soft_updates_page_options=Ažuriranja teme
 settings_global_general_options_title=Opće zadane vrijednosti
@@ -1340,8 +1339,8 @@ theme_xhred_editor_tb_underline=Podcrtano (%cmd+U)
 theme_xhred_editor_tb_color=Boja teksta
 theme_xhred_editor_tb_background=Pozadina teksta
 theme_xhred_editor_tb_align=Uskladiti
-theme_xhred_editor_tb_list_ordered=Numerirani popis
-theme_xhred_editor_tb_list_bullet=Popis s grafičkim oznakama
+theme_xhred_editor_tb_list_ordered=Numerirani popis (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=Popis s grafičkim oznakama (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=Precrtano
 theme_xhred_editor_tb_blockquote=Citat (%cmd+Shift+9)
 theme_xhred_editor_tb_link=Umetni vezu (%cmd+K)
@@ -1373,3 +1372,5 @@ theme_xhred_columns_layout_remove_button=Spremi i sakrij
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalni raspored ne može se koristiti u mobilnom načinu rada, posebno kada je širina zaslona manja od 992 px
 
 settings_auto_open_panels_on_proximity=Automatski otvara zatvorene ploče na blizinu
+
+theme_xhred_config_portable_module_xterm_render_addon=Omogući dodatak WebGL renderiranja
