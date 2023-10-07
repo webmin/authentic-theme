@@ -207,6 +207,9 @@ var
 
     // This option can be set to `nav`, `gray` or `white`
     settings_side_slider_palette = 'nav',
+    
+    // Multiselect on click
+    settings_multiselect_on_click = false,
 
     // Show splash screen upon login
     settings_embed_product_branding_privileged = true,
