@@ -901,6 +901,9 @@ sub init_prefail
     return if (get_product_name() eq 'usermin');
     my $pversion = get_webmin_version();
     if (
+        # Affects upgrades 2.103 and up
+        (!defined(&ui_switch_theme_javascript) && $pversion >= 2.103) ||
+        
         # Affects upgrades 2.022 and up
         (!defined(&get_http_redirect) && $pversion >= 2.022) ||
         (!defined(&create_wrapper) && $pversion >= 2.022) ||
