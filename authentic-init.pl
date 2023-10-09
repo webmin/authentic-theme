@@ -2062,7 +2062,6 @@ sub embed_product_branding
         $cm_available);
 
     # Set brand directory
-    $brand_name;
     $brand_dir_default = "$root_directory/$current_theme/images/brand";
     $brand_dir_custom  = "$config_directory/$current_theme/brand";
     $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
