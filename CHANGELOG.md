@@ -1,9 +1,9 @@
 ## Changelog
 
-#### Version 21.08 (October 12, 2023)
+#### Version 21.08 (October 13, 2023)
 * Add support for numbered and bulleted lists in mail HTML editor
 * Fix Webmin version display in the dashboard
-* Fix not to enable multiselect react on click by default
+* Fix multiselect react on double-click, rather than single-click [webmin#2019](https://github.com/webmin/webmin/issues/2019)
 
 #### Version 21.07 (September 29, 2023)
 * Add ability to hide dotfiles in File Manager [#1578](https://github.com/authentic-theme/authentic-theme/issues/1578)
