@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 21.09 (October 15, 2023)
+* Fix to correctly handle hotkeys in Gecko browsers
+* Fix to keep correct navigation menu on full page reload
+
 #### Version 21.08 (October 13, 2023)
 * Add support for numbered and bulleted lists in mail HTML editor
 * Fix Webmin version display in the dashboard
