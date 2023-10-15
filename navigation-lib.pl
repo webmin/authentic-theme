@@ -262,6 +262,10 @@ sub nav_detector
     # Temporary patch to address older, existing user configuration
     $nav_def_tab = $prd_mb if ($nav_def_tab eq 'mail');
 
+    # If Dashboard mode is set
+    $nav_def_tab = $1 == $mod_vm ? $prd_vm : $prd_cm
+        if ($page =~ /$page_sysinfo\?[\w]{3}\=($mod_vm|$mod_cm)/);
+
     # Return detected tab and page
     $tab  = $nav_def_tab;
     $page = $page;
@@ -331,7 +335,7 @@ sub nav_virtualmin_menu
     my @menu   = list_combined_webmin_menu({ 'dom' => "$def" }, \%in, $mod);
     my $menu   = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     my $rv     = $menu->{'before'};
-    $rv .= nav_link_sysinfo();
+    $rv .= nav_link_sysinfo(undef, $mod);
     $rv .= nav_link_sysstat();
     $rv .= $menu->{'after'}
       if ($menu->{'after'});
@@ -351,7 +355,7 @@ sub nav_cloudmin_menu
     my @menu   = list_combined_webmin_menu({ 'server' => "$def" }, \%in, $mod);
     my $menu   = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     my $rv     = $menu->{'before'};
-    $rv .= nav_link_sysinfo();
+    $rv .= nav_link_sysinfo(undef, $mod);
     $rv .= nav_theme_links();
     $rv .= nav_links($menu->{'mode'});
     $rv .= nav_menu_html_snippet();
@@ -597,9 +601,10 @@ sub nav_search
 
 sub nav_link_sysinfo
 {
-    my ($user) = @_;
+    my ($user, $mod) = @_;
+    $mod = "?mod=$mod" if ($mod);
     return
-      nav_menu_link('/sysinfo.cgi',
+      nav_menu_link("/sysinfo.cgi$mod",
                     $user ? $theme_text{'body_header1'} : $theme_text{'theme_xhred_titles_dashboard'},
                     ($user ? 'fa-user-circle' : 'fa-dashboard'),
                     $theme_config{'settings_sysinfo_link_mini'} eq 'true', 1)

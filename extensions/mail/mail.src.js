@@ -60,7 +60,7 @@ const mail = (function() {
                 mac: window.navigator.platform === 'MacIntel',
             },
             pjax: {
-                fetch: get_pjax_content,
+                fetch: plugins.pjax.page.link.get,
             },
             fetch: {
                 options: {

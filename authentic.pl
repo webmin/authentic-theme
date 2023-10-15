@@ -1504,7 +1504,7 @@ sub theme_js_redirect
         }
     }
     return
-"$theme_text{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ get_pjax_content('"
+"$theme_text{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ plugins.pjax.page.link.get('"
       . quote_escape($url)
       . "');}, 3000);</script>\n";
 }
