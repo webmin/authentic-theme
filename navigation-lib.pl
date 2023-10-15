@@ -263,7 +263,7 @@ sub nav_detector
     $nav_def_tab = $prd_mb if ($nav_def_tab eq 'mail');
 
     # If Dashboard mode is set
-    $nav_def_tab = $1 == $mod_vm ? $prd_vm : $prd_cm
+    $nav_def_tab = "$1" eq $mod_vm ? $prd_vm : $prd_cm
         if ($page =~ /$page_sysinfo\?[\w]{3}\=($mod_vm|$mod_cm)/);
 
     # Return detected tab and page
