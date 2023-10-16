@@ -1009,9 +1009,15 @@ sub get_button_style
     } elsif (string_contains($keys, "form_edit")) {
         $icon  = "pencil-square-o";
         $class = "success ";
-    } elsif (string_contains($keys, "fdelete_delete") || string_contains($keys, "delete_ok")) {
+    } elsif (string_contains($keys, "fdelete_delete") ||
+             string_contains($keys, "lock_term") ||
+             string_contains($keys, "delete_ok")) {
         $class = "danger ";
         $icon  = "times-circle";
+    } elsif (string_contains($keys, "lock_kill"))
+    {
+        $class = "warning ";
+        $icon  = "stop";
     } elsif (string_contains($keys, "mail_delete")) {
         $icon  = "times-circle";
         $class = "danger ";
