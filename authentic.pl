@@ -1492,9 +1492,9 @@ sub theme_js_redirect
     my ($url, $window) = @_;
     $window ||= "window";
     if ($url =~ /^\//) {
-	    # If the URL is like /foo , add webprefix
-	    $url = &get_webprefix().$url;
-	}
+        # If the URL is like /foo , add webprefix
+        $url = &get_webprefix().$url;
+    }
     return
 "<span class=\"loading-dots\"></span><script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ location.href = '"
       . quote_escape($url)
