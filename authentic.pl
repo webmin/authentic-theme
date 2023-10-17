@@ -1492,21 +1492,13 @@ sub theme_js_redirect
     my ($url, $window) = @_;
     $window ||= "window";
     if ($url =~ /^\//) {
-        $url = $theme_webprefix . $url;
-    }
-    if ($url eq "/" || $url eq "$theme_webprefix/") {
-        eval "use File::Basename";
-        my $module = dirname(get_env('script_name'));
-        if ($module ne '/') {
-            $url = "$theme_webprefix$module";
-        } else {
-            $url = "$theme_webprefix/sysinfo.cgi";
-        }
-    }
+	    # If the URL is like /foo , add webprefix
+	    $url = &get_webprefix().$url;
+	}
     return
-"$theme_text{'theme_xhred_global_redirecting'} <span class=\"loading-dots\"></span> <script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ plugins.pjax.page.link.get('"
+"<span class=\"loading-dots\"></span><script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ location.href = '"
       . quote_escape($url)
-      . "');}, 3000);</script>\n";
+      . "';}, 2000);</script>\n";
 }
 
 sub theme_post_save_domain
