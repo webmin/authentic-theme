@@ -783,8 +783,6 @@ sub nav_list_combined_menu
 
                 } elsif ($link =~ /\/virtual-server\/list_users\.cgi/) {
                     $icon = '<i class="fa fa-fw fa2 fa2-users-cog"></i>';
-                } elsif ($link =~ /\/virtual-server\/list_aliases\.cgi/) {
-                    $icon = '<i class="fa fa-fw fa2 fa2-maillist"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_databases\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-database"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_scripts\.cgi/ ||
