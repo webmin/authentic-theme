@@ -552,6 +552,7 @@ sub nav_cat
                       'global_services'   => 'fa-puzzle-piece',
                       'cat_services'      => 'fa-puzzle-piece',
                       'cat_dns'           => 'fa2 fa2-dns scaled1_5',
+                      'cat_dnsreg'        => 'fa2 fa2-domain scaled1_5',
                       'cat_mail'          => 'fa2 fa2-email-open scaled1_5',
                       'cat_web'           => 'fa2 fa2-web scaled1_5',
                       'create_new'        => 'fa-plus',
