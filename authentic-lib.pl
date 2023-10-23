@@ -173,6 +173,29 @@ sub get_extended_sysinfo
                     if ($info->{'type'} ne 'html') {
                         $returned_sysinfo .= '<table class="table table-striped"><tbody>';
                     }
+                    my $status_icons_tpl = {
+                        _fa => 'fa fa-fw fa',
+                        _fa2 => 'fa2 fa-fw fa2',
+                        _fa115x => 'fa-1_15x',
+                        _falg => 'fa-lg',
+                        _text_succ => 'text-success',
+                        _text_warn => 'text-warning text-warning-brighter',
+                        _text_dang => 'text-danger',
+                        _vert_algn_md => 'vertical-align-middle',
+                    };
+                    my $status_icons = {
+                        up     => "<i class=\"$status_icons_tpl->{'_fa'}-check $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_succ'}\"></i>",
+                        stop   => "<i class=\"$status_icons_tpl->{'_fa'}-times-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_warn'}\"></i>",
+                        down   => "<i class=\"$status_icons_tpl->{'_fa'}-minus-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_dang'}\"></i>",
+                        start  => "<i class=\"$status_icons_tpl->{'_fa'}-play text-success $status_icons_tpl->{'_falg'}\"></i>",
+                        reload => "<i class=\"$status_icons_tpl->{'_fa'}-refresh text-info $status_icons_tpl->{'_falg'}\"></i>",
+                        quest  => "<i class=\"$status_icons_tpl->{'_fa'}-question-circle $status_icons_tpl->{'_fa115x'}\"></i>",
+                        not    => "<i class=\"$status_icons_tpl->{'_fa2'}-not-interested $status_icons_tpl->{'_fa115x'}\"></i>",
+                        skip   => "<i class=\"$status_icons_tpl->{'_fa2'}-minus $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'}\"></i>",
+                    };
+                    if ($info->{'id'} eq 'status_services') {
+                        $info->{"html"} =~ s/<img src=.*?\/status\/images\/(\S+).gif.*?>/$status_icons->{$1}/g;
+                    }
 
                     if ($info->{'type'} eq 'table' &&
                         (   $info->{'module'} ne 'system-status' &&
@@ -180,20 +203,8 @@ sub get_extended_sysinfo
 
                         ))
                     {
-
                         foreach my $t (@{ $info->{'table'} }) {
-                            my $__checkmark = '<i class="fa fa-fw fa-lg fa-check text-success"></i>';
-                            my $__stop      = '<i class="fa fa-fw fa-lg fa-times-circle text-warning text-warning-brighter"></i>';
-                            my $__down      = '<i class="fa fa-fw fa-lg fa-minus-circle text-danger"></i>';
-                            my $__start     = '<i class="fa fa-fw fa-lg fa-play text-success"></i>';
-                            my $__restart   = '<i class="fa fa-fw fa-lg fa-refresh text-info"></i>';
-
-                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/up.gif'.*?>/$__checkmark/g;
-                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/stop.png'.*?>/$__stop/g;
-                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/down.gif'.*?>/$__down/g;
-                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/start.png'.*?>/$__start/g;
-                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/reload.png'.*?>/$__restart/g;
-
+                            $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/(\S+).(png|gif)'.*?>/$status_icons->{$1}/g;
                             $returned_sysinfo .= '<tr>
                                 <td>' . $t->{"desc"} . '</td>
                                 <td>' . $t->{"value"} . '</td>
