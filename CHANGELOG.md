@@ -1,5 +1,16 @@
 ## Changelog
 
+#### Version 21.09.1 (October 26, 2023)
+* Add full support for new categories in the Virtualmin navigation menu
+* Add native support for standard accordions using basic HTML
+* Fix status collection module icons display in the dashboard
+* Fix to correctly set error container height in progressive output
+* Fix not to column wrap elements containing single preformatted text tag
+* Fix password preview and generate buttons to act as buttons rather than as submits
+* Fix the positioning consistency for help bubbles
+* Drop usage of data tables in the dashboard
+* Update German translations
+
 #### Version 21.09 (October 15, 2023)
 * Fix to correctly handle hotkeys in Gecko browsers
 * Fix to keep correct navigation menu on full page reload
@@ -33,6 +44,8 @@
 * Fix focus issue in Terminal module on initial load [#1667](https://github.com/authentic-theme/authentic-theme/issues/1667)
 * Fix font rendering issues in Terminal module with Firefox
 * Fix tiny alignment issues for various pages using column layout
+
+<!--- separator --->
 
 #### Version 21.04 (August 04, 2023)
 * Add better filtering unsafe content to prevent possible XSS attacks
@@ -71,8 +84,6 @@
 * Fix not to display splash screen when changing expired password
 * Fix elements positioning in password reset form
 * Fix plenty of other bugs and add various improvements
-
-<!--- separator --->
 
 #### Version 20.22 (April 09, 2023)
 * Add to allow setting host and protocol in custom links [#904#issuecomment-1482540434](https://github.com/webmin/authentic-theme/issues/904#issuecomment-1482540434)
