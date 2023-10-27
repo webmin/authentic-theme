@@ -1126,16 +1126,17 @@ sub theme_ui_table_row
     }
     # Only allow data-* attributes as other,
     # like width, can have negative effects
-    $tds->[0] = undef if ($tds->[0] !~ /^data-/);
-    $tds->[1] = undef if ($tds->[1] !~ /^data-/);
+    my ($tds1, $tds2);
+    $tds1 = $tds->[0] if (ref($tds) && $tds->[0] =~ /^data-/);
+    $tds2 = $tds->[1] if (ref($tds) && $tds->[1] =~ /^data-/);
     my $trtags_attrs = ref($trs) eq 'ARRAY' && $trs->[0] ? " $trs->[0]" : "";
     $trtags_attrs .= " data-row-type='ui-table' data-cell-colspan='$cols'";
     my $trtags_class = ref($trs) eq 'ARRAY' && $trs->[1] ? " class='$trs->[1]'" : "";
     $rv .= "<tr$trtags_class$trtags_attrs>\n"
       if ($main::ui_table_pos % $main::ui_table_cols == 0);
-    $rv .= "<td $tds->[0] class='col_label'><b>$label</b></td>\n"
+    $rv .= "<td $tds1 class='col_label'><b>$label</b></td>\n"
       if (defined($label));
-    $rv .= '<td ' . $tds->[1] . ' colspan="' . $cols . '" class="col_value' . (!length($label) && ' col_header') . '">' . $value . '</td>';
+    $rv .= '<td ' . $tds2 . ' colspan="' . $cols . '" class="col_value' . (!length($label) && ' col_header') . '">' . $value . '</td>';
     $main::ui_table_pos += $cols + (defined($label) ? 1 : 0);
     if ($main::ui_table_pos % $main::ui_table_cols == 0) {
         $rv .= "</tr>\n";
