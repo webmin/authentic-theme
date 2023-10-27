@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 21.09.2 (October 27, 2023)
+* Fix "strict refs" fatal error [forum.virtualmin.com/t/123233](https://forum.virtualmin.com/t/dashboard-defaults-to-alpha-domain/123233)
+
 #### Version 21.09.1 (October 26, 2023)
 * Add full support for new categories in the Virtualmin navigation menu
 * Add native support for standard accordions using basic HTML
