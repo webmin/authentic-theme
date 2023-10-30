@@ -64,7 +64,7 @@ var
     settings_right_table_links_type = 2,
     settings_right_table_animate_icons = false,
     settings_right_table_grayscaled_icons = true,
-    settings_right_table_layout_control = true,
+    settings_right_table_layout_control = false,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
