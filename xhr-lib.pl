@@ -208,7 +208,7 @@ sub xhr
 
         # Generate given file info
         if ($action eq 'stat') {
-            my ($module, $sumtype, $jailed_user, $jailed_user_home, $cfile, $mime, $dir, $fzi, $fz, $ft, $s, $sz, $nz);
+            my ($module, $sumtype, $jailed_user, $jailed_user_home, $cfile, $mime, $dir, $fzi, $fz, $fzx, $ft, $s, $sz, $nz);
             $module = 'filemin';    # $in{'module'};
             if (!foreign_available($module)) {
                 $data{'module-access-denied'} = $module;
@@ -257,6 +257,7 @@ sub xhr
             $dir = -d $cfile;
             $fz  = $fzi;
             $fz  = nice_size($fz, -1);
+            $fzx = ($fz =~ /$theme_text{'nice_size_b'}/);
             $ft  = backquote_command("file -b " . quotemeta($cfile) . " 2>/dev/null");
             $s   = backquote_command("stat " . quotemeta($cfile) . " 2>/dev/null");
             $ft  = trim($ft);
@@ -265,7 +266,8 @@ sub xhr
             $nz = length($fz);
             $sz -= $nz;
             $sz = " " x ($sz + 2);
-            $s =~ s/(Size:)(\s+)(\d+)(\s+)/$1$2$fz ($3 $theme_text{'nice_size_b'})$sz/;
+            $s =~ s/(Size:)(\s+)(\d+)(\s+)/$fzx ? "$1$2$fz$sz" : "$1$2$fz ($3 $theme_text{'nice_size_b'})$sz"/e;
+
 
             if (!$dir) {
                 $mime = guess_mime_type($cfile, -1);
