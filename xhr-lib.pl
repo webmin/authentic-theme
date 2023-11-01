@@ -265,7 +265,7 @@ sub xhr
             $nz = length($fz);
             $sz -= $nz;
             $sz = " " x ($sz + 2);
-            $s =~ s/(Size:)(\s+)(\d+)(\s+)/$1$2$fz$sz/;
+            $s =~ s/(Size:)(\s+)(\d+)(\s+)/$1$2$fz ($3 $theme_text{'nice_size_b'})$sz/;
 
             if (!$dir) {
                 $mime = guess_mime_type($cfile, -1);
