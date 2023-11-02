@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 21.09.4 (November 03, 2023)
+* Add CSV export functionality for table data
+* Fix spinners from appearing on top of other content in File Manager
+* Fix to show original size in bytes in file properties in File Manager
+
 #### Version 21.09.3 (October 30, 2023)
 * Fix PHP options page to correctly handle mode-related content in Virtualmin
 * Fix Virtualmin AWStats module configuration page display bugs
