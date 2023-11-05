@@ -219,6 +219,7 @@ sub theme_ui_checkbox_local
         $label = $1;
         $after = $2;
     }
+    $after = "<span class=\"awobject-after\">$after</span>" if ($after && $after !~ /^\s*<a/);
     $label = trim($label);
     my $bl = string_ends_with($label, '<br>') ? ' ds-bl-fs' : undef;
     return "<span class=\"awcheckbox awobject$bl$cls\"><input class=\"iawobject\" type=\"checkbox\" " .
