@@ -172,7 +172,7 @@ sub theme_footer
                 $url = "/" . &get_module_name() . "/$url";
             }
             $url = "$theme_webprefix$url" if ($url =~ /^\//);
-            $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/);
+            $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/ && $url !~ /[&?]/);
             print
 "&nbsp;<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> <span>",
               &text('main_return', $_[$i + 1]), "</span></a>\n";
@@ -1353,24 +1353,26 @@ sub theme_get_webprefix
 
 sub theme_redirect
 {
-    if ($ENV{'REQUEST_URI'} =~ /noredirect=1/) {
+    my $request_uri = navigation_link_clean($ENV{'REQUEST_URI'});
+    if ($request_uri =~ /noredirect=1/) {
         head();
         return;
     }
 
     my $origin   = $ENV{'HTTP_ORIGIN'};
-    my $referer  = $ENV{'HTTP_REFERER'};
+    my $referer  = navigation_link_clean($ENV{'HTTP_REFERER'});
     my $prefix   = $theme_webprefix;
     my $noredir  = $gconfig{'webprefixnoredir'};
     my $relredir = $gconfig{'relative_redir'};
-    my ($arg1, $arg2) = ($_[0], $_[1]);
+    my ($arg1, $arg2) = (navigation_link_clean($_[0]),
+                         navigation_link_clean($_[1]));
 
     # Clean redirected links query string if requested
-    if ($ENV{'REQUEST_URI'} =~ /no-query=string/) {
+    if ($request_uri =~ /no-query=string/) {
         my $nocache = "no-cache=1";
         $arg1 =~ s/\.cgi.*/.cgi/;
         $arg2 =~ s/\.cgi.*/.cgi/;
-        if ($ENV{'REQUEST_URI'} =~ /\Q$nocache\E/) {
+        if ($request_uri =~ /\Q$nocache\E/) {
             $arg1 .= "?" . $nocache;
             $arg2 .= "?" . $nocache;
         }

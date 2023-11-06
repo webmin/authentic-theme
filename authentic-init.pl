@@ -2105,4 +2105,14 @@ sub embed_product_branding
     print $brand;
 }
 
+sub navigation_link_clean
+{
+    my ($link) = @_;
+    if ($link) {
+        $link =~ s/\?$xnav&/?/g;
+        $link =~ s/[?|&]$xnav//g;
+    }
+    return $link;
+}
+
 1;
