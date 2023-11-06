@@ -55,7 +55,7 @@ foreach my $name (@entries_list) {
         my $tfile;
         if (!$mkpathr && -f "$tdir/$name" && -r "$tdir/$name") {
             $tfile = "$tdir/$name-$time";
-        } elsif (!$mkpathr && glob("$tdir/$name/*")) {
+        } elsif (!$mkpathr && glob("\Q$tdir/$name\E/*")) {
             $tfile = "$tdir/$name-$time";
             &$mkpath_($tdir);
         }
