@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 21.09.5 (November 07, 2023)
+* Fix match highlight in file viewer and editor
+* Fix checkbox after content alignment
+
 #### Version 21.09.4 (November 03, 2023)
 * Add CSV export functionality for table data
 * Fix spinners from appearing on top of other content in File Manager
