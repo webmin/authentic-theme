@@ -101,6 +101,7 @@ if (@sections > 1) {
     # We have some sections .. show a menu to select
     print &ui_form_start("config.cgi");
     print &ui_hidden("module", $module), "\n";
+    print &hidden_config_cparams(\%in);
     print &ui_span_local($theme_text{'settings_config_configuration_category'} . ":", 'row-block-label') . "\n";
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
     print &ui_button_group_local(
@@ -134,6 +135,7 @@ $sname = $theme_text{'theme_xhred_config_configurable_options'} if (!$sname);
 print &ui_form_start("config_save.cgi", "post");
 print &ui_hidden("module", $module), "\n";
 print &ui_hidden("section", $in{'section'}), "\n";
+print &hidden_config_cparams(\%in);
 if ($section) {
 
     # Find next section
@@ -178,4 +180,4 @@ print &ui_table_end();
 print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_text{'settings_config_save_and_next'}]) : ()]);
 
 %moduletext = &load_language($module);
-&ui_print_footer("/$module/", $moduletext{'index_return'} || $text{'index'});
+&ui_print_footer(navigation_link_clean(&link_config_cparams($module, \%in)), $moduletext{'index_return'} || $text{'index'});

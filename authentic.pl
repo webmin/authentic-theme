@@ -13,6 +13,7 @@ our ($get_user_level,
      %gconfig,
      %tconfig,
      %text,
+     $scriptname,
      $basic_virtualmin_domain,
      $basic_virtualmin_menu,
      $cb,
@@ -120,7 +121,17 @@ sub theme_header
                 my $cprog =
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
-                print "<a href=\"$theme_webprefix/$cprog?", &get_module_name() . "\">", $text{'header_config'}, "</a><br>\n";
+                my $params = "";
+                my %in;
+                &ReadParse(\%in);
+                foreach my $k (keys %in) {
+                    foreach my $v (split(/\0/, $in{$k})) {
+                        $params .= "&_cparam_".
+                        &urlize($k)."=".&urlize($v);
+                    }
+                }
+                $params .= "&_cscript=".&urlize($scriptname);
+                print "<a href=\"$theme_webprefix/$cprog?module=", &get_module_name().$params . "\">", $text{'header_config'}, "</a><br>\n";
             }
         }
         print "</div>\n";
