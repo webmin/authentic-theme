@@ -1719,6 +1719,12 @@ sub clear_theme_cache
         # Remove package updates cache
         unlink_file("$product_var/modules/package-updates/current.cache");
         unlink_file("$product_var/modules/package-updates/updates.cache");
+
+        # Remove cached package updates
+        if (&foreign_available('package-updates')) {
+            &foreign_require("package-updates");
+            &package_updates::flush_package_caches();
+        }
     }
 
     # Clear user cached collected info
