@@ -1154,6 +1154,9 @@ sub get_button_style
     } elsif (string_contains($keys, "cert_copyall2")) {
         $class = "info ";
         $icon  = " fa2 fa2-certificate-global";
+    } elsif (string_contains($keys, "newtmpl_setdef") ||
+             string_contains($keys, "plans_setdefault")) {
+        $icon  = " fa2 fa-0_85x fa2-check-double";
     } elsif (string_contains($keys, "cert_copyall")) {
         $class = "info ";
         $icon  = " fa2 fa2-certificate-add";
