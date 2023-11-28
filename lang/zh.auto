@@ -1,3 +1,5 @@
+body_cputype1=$5、$8 核心
+
 settings_right_hotkey_custom_options_description=自定义链接使您能够使用从 <code>1</code> 到 <code>9</code> 的数字来快速访问任何有效的面板 <code>URL。</code> <code>URL</code> 可以从当前打开的页面中提取出来。例如，要快速切换到 Apache 模块，请将 <code>apache</code> 设置为 <code>Custom link 1</code> 字段。如果默认修改键设置为 <code>Alt，</code> 单击 <code>Alt + 1</code>，将打开 Apache 模块。
 
 settings_right_reload=在选项卡开关上加载默认页面
@@ -574,3 +576,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=移动模式下不能使�
 settings_auto_open_panels_on_proximity=接近时自动打开关闭的面板
 
 theme_xhred_config_portable_module_xterm_render_addon=启用 WebGL 渲染插件
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=过滤和导出内容

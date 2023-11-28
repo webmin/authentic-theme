@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 nucli
+
 settings_right_hotkey_custom_options_description=Els enllaços personalitzats us permeten utilitzar els dígits de <code>1</code> a <code>9</code> per accedir ràpidament a qualsevol <code>URL del panell vàlid.</code> L'<code>URL</code> codi> es pot extreure de la pàgina oberta actualment. Per exemple, per canviar ràpidament al mòdul Apache, configureu <code>apache</code> al camp <code>Enllaç personalitzat 1</code>. Si la tecla modificadora predeterminada s'estableix en <code>Alt</code>, fent clic a <code>Alt + 1</code>, s'obrirà el mòdul Apache.
 
 settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
@@ -714,3 +716,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=El disseny horitzontal no
 settings_auto_open_panels_on_proximity=Panells tancats oberts automàticament a proximitat
 
 theme_xhred_config_portable_module_xterm_render_addon=Activa el complement de representació de WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrar i exportar contingut

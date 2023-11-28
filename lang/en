@@ -3,6 +3,7 @@ body_cpu=CPU load averages
 body_cpuinfo=Processor information
 body_cputemps=CPU temperatures
 body_cputype=$5, $8 cores
+body_cputype1=$5, $8 core
 body_disk=Local disk space
 body_driveerr=$1 errors!
 body_drivefailed=SMART check failed!

@@ -3,6 +3,7 @@ body_cpu=CPU terhelés átlagai
 body_cpuinfo=Processzor információk
 body_cputemps=CPU hőmérsékletek
 body_cputype=$5, $8 magok
+body_cputype1=$5, $8 mag
 body_disk=Helyi lemezterület
 body_driveerr=$1 hibák!
 body_drivefailed=A SMART ellenőrzés sikertelen!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=A vízszintes elrendezés
 settings_auto_open_panels_on_proximity=A zárt panelek automatikus nyitása a közelben
 
 theme_xhred_config_portable_module_xterm_render_addon=WebGL-megjelenítési bővítmény engedélyezése
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Tartalom szűrése és exportálása

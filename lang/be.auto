@@ -3,6 +3,7 @@ body_cpu=Сярэдняя нагрузка на працэсар
 body_cpuinfo=Інфармацыя пра працэсар
 body_cputemps=Тэмпература працэсара
 body_cputype=$5, $8 ядраў
+body_cputype1=$5, $8 ядро
 body_disk=Лакальная дыскавая прастора
 body_driveerr=$1 памылкі!
 body_drivefailed=Праверка SMART атрымалася!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Гарызантальн�
 settings_auto_open_panels_on_proximity=Аўтаматычнае адкрыццё закрытых панэляў на блізкасці
 
 theme_xhred_config_portable_module_xterm_render_addon=Уключыць аддон візуалізацыі WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Фільтраваць і экспартаваць кантэнт

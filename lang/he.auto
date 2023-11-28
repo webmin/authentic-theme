@@ -3,6 +3,7 @@ body_cpu=ממוצעי עומס מעבד
 body_cpuinfo=מידע על מעבד
 body_cputemps=טמפרטורות מעבד
 body_cputype=5 ליבות, $8
+body_cputype1=$5, $8 ליבה
 body_disk=שטח דיסק מקומי
 body_driveerr=שגיאות של $1!
 body_drivefailed=הסימון החכם נכשל!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=לא ניתן להשתמ�
 settings_auto_open_panels_on_proximity=פתיחה אוטומטית של פאנלים סגורים בקירבה
 
 theme_xhred_config_portable_module_xterm_render_addon=הפעל תוסף עיבוד WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=סינון ויצוא תוכן

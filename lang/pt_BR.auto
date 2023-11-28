@@ -3,6 +3,7 @@ body_cpu=Médias de carga da CPU
 body_cpuinfo=Informações do processador
 body_cputemps=Temperaturas da CPU
 body_cputype=$5, $8 núcleos
+body_cputype1=$5, $8 núcleo
 body_disk=Espaço em disco local
 body_driveerr=$1 erros!
 body_drivefailed=A verificação SMART falhou!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=O layout horizontal não 
 settings_auto_open_panels_on_proximity=Painéis fechados de abertura automática na proximidade
 
 theme_xhred_config_portable_module_xterm_render_addon=Habilitar complemento de renderização WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrar e exportar conteúdo

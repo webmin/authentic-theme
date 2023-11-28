@@ -3,6 +3,7 @@ body_cpu=Priemer zaťaženia procesora
 body_cpuinfo=Informácie o procesore
 body_cputemps=Teplota procesora
 body_cputype=$5, $8 jadier
+body_cputype1=$5, $8 jadro
 body_disk=Miesto na disku
 body_driveerr=$1 chyby!
 body_drivefailed=SMART kontrola zlyhala!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Horizontálne rozloženie
 settings_auto_open_panels_on_proximity=Automatické otváranie uzavretých panelov pri blízkosti
 
 theme_xhred_config_portable_module_xterm_render_addon=Povoliť doplnok vykresľovania WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrujte a exportujte obsah

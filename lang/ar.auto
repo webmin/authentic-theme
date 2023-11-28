@@ -3,6 +3,7 @@ body_cpu=متوسطات حمل وحدة المعالجة المركزية
 body_cpuinfo=معلومات المعالج
 body_cputemps=درجات حرارة وحدة المعالجة المركزية
 body_cputype=$5 دولارات ، $8 دولارات
+body_cputype1=$5، $8 نواة
 body_disk=مساحة القرص المحلية
 body_driveerr=أخطاء $1!
 body_drivefailed=فشل فحص SMART!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=لا يمكن استخد�
 settings_auto_open_panels_on_proximity=فتح لوحات مغلقة تلقائيًا على مقربة
 
 theme_xhred_config_portable_module_xterm_render_addon=تمكين ملحق عرض WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=تصفية وتصدير المحتوى

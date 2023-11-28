@@ -3,6 +3,7 @@ body_cpu=CPU apkrovos vidurkiai
 body_cpuinfo=Informacija apie procesorių
 body_cputemps=CPU temperatūra
 body_cputype=$5, $8 šerdys
+body_cputype1=$5, $8 branduolys
 body_disk=Vietinė disko vieta
 body_driveerr=$1 klaidų!
 body_drivefailed=SMART patikra nepavyko!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalus išdėstymas
 settings_auto_open_panels_on_proximity=Automatiškai atidarykite uždaras plokštes arti
 
 theme_xhred_config_portable_module_xterm_render_addon=Įgalinti „WebGL“ atvaizdavimo priedą
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtruokite ir eksportuokite turinį

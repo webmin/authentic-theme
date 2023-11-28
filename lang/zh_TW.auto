@@ -3,6 +3,7 @@ body_cpu=平均CPU負載
 body_cpuinfo=處理器信息
 body_cputemps=CPU溫度
 body_cputype=$5，$8內核
+body_cputype1=$5、$8 核心
 body_disk=本地磁盤空間
 body_driveerr=$1個錯誤！
 body_drivefailed=SMART檢查失敗！
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=移動模式下不能使�
 settings_auto_open_panels_on_proximity=接近時自動打開關閉的面板
 
 theme_xhred_config_portable_module_xterm_render_addon=啟用 WebGL 渲染插件
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=過濾和匯出內容

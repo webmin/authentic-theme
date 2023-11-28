@@ -3,6 +3,7 @@ body_cpu=Prosessorin kuorman keskiarvot
 body_cpuinfo=Prosessorin tiedot
 body_cputemps=Prosessorin lämpötilat
 body_cputype=$5, $8 ytimet
+body_cputype1=$5, $8 ydin
 body_disk=Paikallinen levytila
 body_driveerr=$1 virheet!
 body_drivefailed=SMART-tarkistus epäonnistui!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Vaakasuuntaista asettelua
 settings_auto_open_panels_on_proximity=Avaa automaattisesti suljetut paneelit lähellä
 
 theme_xhred_config_portable_module_xterm_render_addon=Ota WebGL-renderöintilisäosa käyttöön
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Suodata ja vie sisältöä

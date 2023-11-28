@@ -3,6 +3,7 @@ body_cpu=Μέσος όρος φόρτωσης CPU
 body_cpuinfo=Πληροφορίες επεξεργαστή
 body_cputemps=Θερμοκρασίες CPU
 body_cputype=$5, $8 πυρήνες
+body_cputype1=$5, $8 πυρήνας
 body_disk=Τοπικός χώρος στο δίσκο
 body_driveerr=Σφάλματα $1!
 body_drivefailed=Ο έλεγχος SMART απέτυχε!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Η οριζόντια δ�
 settings_auto_open_panels_on_proximity=Αυτόματο άνοιγμα κλειστών πάνελ σε κοντινή απόσταση
 
 theme_xhred_config_portable_module_xterm_render_addon=Ενεργοποίηση πρόσθετου απόδοσης WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Φιλτράρισμα και εξαγωγή περιεχομένου

@@ -3,6 +3,7 @@ body_cpu=CPU로드 평균
 body_cpuinfo=프로세서 정보
 body_cputemps=CPU 온도
 body_cputype=$5, $8 코어
+body_cputype1=$5, $8 코어
 body_disk=로컬 디스크 공간
 body_driveerr=1 달러 오류!
 body_drivefailed=스마트 검사에 실패했습니다!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=모바일 모드, 특히 
 settings_auto_open_panels_on_proximity=근접 시 닫힌 패널 자동 열기
 
 theme_xhred_config_portable_module_xterm_render_addon=WebGL 렌더링 애드온 활성화
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=콘텐츠 필터링 및 내보내기

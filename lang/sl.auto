@@ -3,6 +3,7 @@ body_cpu=CPU naloži povprečje
 body_cpuinfo=Informacije o procesorju
 body_cputemps=Temperature CPU-ja
 body_cputype=$5, $8 jeder
+body_cputype1=$5, $8 jedro
 body_disk=Lokalni prostor na disku
 body_driveerr=$1 napake!
 body_drivefailed=SMART preverjanje ni uspelo!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Vodoravne postavitve ni m
 settings_auto_open_panels_on_proximity=Samodejno odpiranje zaprtih plošč v bližini
 
 theme_xhred_config_portable_module_xterm_render_addon=Omogoči dodatek za upodabljanje WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrirajte in izvozite vsebino

@@ -3,6 +3,7 @@ body_cpu=Medji tat-tagħbija tas-CPU
 body_cpuinfo=Informazzjoni dwar il-proċessur
 body_cputemps=Temperaturi tas-CPU
 body_cputype=$5, $8 qlub
+body_cputype1=$5, $8 qalba
 body_disk=Ispazju tad-diska lokali
 body_driveerr=$1 żbalji!
 body_drivefailed=Iċċekkja l-SMART fallut!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=It-tqassim orizzontali ma
 settings_auto_open_panels_on_proximity=Pannelli magħluqa miftuħa awtomatikament fuq il-prossimità
 
 theme_xhred_config_portable_module_xterm_render_addon=Ippermetti l-addon tar-rendi tal-WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Iffiltra u esportazzjoni kontenut

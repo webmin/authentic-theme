@@ -3,6 +3,7 @@ body_cpu=PUZaren karga-batez bestekoak
 body_cpuinfo=Prozesadoreari buruzko informazioa
 body_cputemps=CPU tenperaturak
 body_cputype=$5, $8 nukleoak
+body_cputype1=$5, $8 core
 body_disk=Tokian tokiko diskoa
 body_driveerr=$1 akatsak!
 body_drivefailed=SMART egiaztapenak huts egin du!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Diseinu horizontala ezin 
 settings_auto_open_panels_on_proximity=Hurbiltasunean automatikoki irekitzen diren panel itxiak
 
 theme_xhred_config_portable_module_xterm_render_addon=Gaitu WebGL errendatze gehigarria
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Iragazi eta esportatu edukia

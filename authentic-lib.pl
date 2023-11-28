@@ -875,7 +875,7 @@ sub get_sysinfo_vars
         if ($info->{'load'}) {
             @c = @{ $info->{'load'} };
             if (@c > 3) {
-                $cpu_type = &theme_text('body_cputype', @c);
+                $cpu_type = &theme_text($c[7] == 1 ? 'body_cputype1' : 'body_cputype', @c);
             }
         }
     }

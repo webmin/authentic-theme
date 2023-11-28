@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 kerne
+
 settings_right_options=Muligheder
 settings_right_restore_defaults=Gendanne standardindstillingerne
 settings_right_restored=Restaureret
@@ -1286,3 +1288,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Vandret layout kan ikke b
 settings_auto_open_panels_on_proximity=Åbn automatisk lukkede paneler i nærheden
 
 theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gengivelsestilføjelse
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrer og eksporter indhold

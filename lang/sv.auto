@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 kärna
+
 settings_right_hotkey_custom_options_description=Anpassade länkar gör att du kan använda siffror från <code>1</code> till <code>9</code> för att snabbt komma åt alla giltiga <code>URL-adresser</code> <code>URL</code>. code> kan extraheras från den för närvarande öppnade sidan. Till exempel, för att snabbt växla till Apache-modul, ställ in <code>apache</code> till <code>Anpassad länk 1</code>-fält. Om standardnyckeln är inställd på <code>Alt,</code> öppnas din Apache-modul genom att klicka på <code>Alt + 1</code>.
 
 settings_hotkeys_active=Gör det möjligt
@@ -110,3 +112,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Horisontell layout kan in
 settings_auto_open_panels_on_proximity=Öppna stängda paneler automatiskt i närheten
 
 theme_xhred_config_portable_module_xterm_render_addon=Aktivera WebGL-renderingstillägg
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrera och exportera innehåll

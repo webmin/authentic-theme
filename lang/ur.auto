@@ -3,6 +3,7 @@ body_cpu=اوسطا CPU
 body_cpuinfo=پروسیسر کی معلومات
 body_cputemps=سی پی یو درجہ حرارت
 body_cputype=$5 ، $8 کور
+body_cputype1=$5، $8 کور
 body_disk=مقامی ڈسک کی جگہ
 body_driveerr=errors 1 غلطیاں!
 body_drivefailed=اسمارٹ چیک ناکام!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=افقی لے آؤٹ کو
 settings_auto_open_panels_on_proximity=قربت پر بند پینل خود بخود کھولیں۔
 
 theme_xhred_config_portable_module_xterm_render_addon=WebGL رینڈرنگ ایڈون کو فعال کریں۔
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=مواد کو فلٹر اور ایکسپورٹ کریں۔

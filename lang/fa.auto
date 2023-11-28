@@ -3,6 +3,7 @@ body_cpu=به طور متوسط بار CPU
 body_cpuinfo=اطلاعات پردازنده
 body_cputemps=دمای CPU
 body_cputype=$5 ، هسته $8
+body_cputype1=$5 ، $8 هسته
 body_disk=فضای دیسک محلی
 body_driveerr=1 دلار خطا!
 body_drivefailed=بررسی SMART انجام نشد!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=طرح افقی را نم
 settings_auto_open_panels_on_proximity=باز کردن خودکار پانل های بسته در مجاورت
 
 theme_xhred_config_portable_module_xterm_render_addon=افزونه رندر WebGL را فعال کنید
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=فیلتر کردن و صادرات محتوا

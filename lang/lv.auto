@@ -3,6 +3,7 @@ body_cpu=CPU slodzes vidējie rādītāji
 body_cpuinfo=Informācija par procesoru
 body_cputemps=CPU temperatūras
 body_cputype=$5, $8 serdeņi
+body_cputype1=$5, $8 kodols
 body_disk=Vietējā diska vieta
 body_driveerr=$1 kļūdas!
 body_drivefailed=SMART pārbaude neizdevās!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Horizontālo izkārtojumu
 settings_auto_open_panels_on_proximity=Automātiski atver slēgtos paneļus tuvumā
 
 theme_xhred_config_portable_module_xterm_render_addon=Iespējot WebGL renderēšanas papildinājumu
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrējiet un eksportējiet saturu

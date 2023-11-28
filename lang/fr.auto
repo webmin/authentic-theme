@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 cœur
+
 settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser des chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à n'importe quelle <code>URL de panneau valide.</code> L'<code>URL</code> peut être extrait de la page actuellement ouverte. Par exemple, pour basculer rapidement vers le module Apache, définissez <code>apache</code> sur le champ <code>Lien personnalisé 1</code>. Si la touche de modification par défaut est définie sur <code>Alt,</code> en cliquant sur <code>Alt + 1</code>, vous ouvrirez le module Apache.
 
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
@@ -301,3 +303,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=La disposition horizontal
 settings_auto_open_panels_on_proximity=Ouverture automatique des panneaux fermés à proximité
 
 theme_xhred_config_portable_module_xterm_render_addon=Activer le module complémentaire de rendu WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrer et exporter du contenu

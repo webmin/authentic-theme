@@ -3,6 +3,7 @@ body_cpu=CPU učitava prosjeke
 body_cpuinfo=Informacije o procesoru
 body_cputemps=CPU temperature
 body_cputype=5 jezgri $8
+body_cputype1=$5, $8 jezgra
 body_disk=Lokalni prostor na disku
 body_driveerr=$1 pogreške!
 body_drivefailed=SMART provjera nije uspjela!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalni raspored ne 
 settings_auto_open_panels_on_proximity=Automatski otvara zatvorene ploče na blizinu
 
 theme_xhred_config_portable_module_xterm_render_addon=Omogući dodatak WebGL renderiranja
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrirajte i izvezite sadržaj

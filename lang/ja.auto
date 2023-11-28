@@ -1,3 +1,5 @@
+body_cputype1=$5、$8コア
+
 theme_xhred_login_pass=パスワード
 theme_xhred_login_token=トークン
 theme_xhred_login_user=ユーザー名
@@ -340,3 +342,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=モバイルモード、�
 settings_auto_open_panels_on_proximity=閉じたパネルが近づくと自動的に開きます
 
 theme_xhred_config_portable_module_xterm_render_addon=WebGL レンダリング アドオンを有効にする
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=コンテンツのフィルタリングとエクスポート

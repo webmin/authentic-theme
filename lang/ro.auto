@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 miez
+
 theme_xhred_session_failed=Autentificare esuata. Vă rugăm să încercați din nou.
 
 settings_right_hotkey_custom_options_description=Linkurile personalizate vă permit să utilizați cifre de la <code>1</code> la <code>9</code> pentru a accesa rapid orice <code>URL valid din panou.</code> <code>URL</code>. code> poate fi extras din pagina deschisă curent. De exemplu, pentru a comuta rapid la modulul Apache, setați câmpul <code>apache</code> la <code>Legătură personalizată 1</code>. Dacă tasta modificatoare implicită este setată la <code>Alt</code>, făcând clic pe <code>Alt + 1</code>, se va deschide modulul Apache.
@@ -405,3 +407,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Aspectul orizontal nu poa
 settings_auto_open_panels_on_proximity=Panouri închise cu deschidere automată în apropiere
 
 theme_xhred_config_portable_module_xterm_render_addon=Activați suplimentul de redare WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrați și exportați conținutul

@@ -1,3 +1,4 @@
+body_cputype1=$5,$8 rdzeń
 body_upsec1=Dostępne są aktualizacje pakietu za $1, z czego $2 to aktualizacja zabezpieczeń
 body_upsec2=Dostępna jest aktualizacja pakietu za $1, z czego $2 to aktualizacje zabezpieczeń
 body_upsec3=Dostępna jest aktualizacja pakietu za $1, z czego $2 to aktualizacja zabezpieczeń
@@ -1292,3 +1293,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Układu poziomego nie mo�
 settings_auto_open_panels_on_proximity=Automatyczne otwieranie zamkniętych paneli w pobliżu
 
 theme_xhred_config_portable_module_xterm_render_addon=Włącz dodatek renderujący WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtruj i eksportuj zawartość

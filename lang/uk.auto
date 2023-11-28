@@ -3,6 +3,7 @@ body_cpu=Середнє завантаження процесора
 body_cpuinfo=Інформація про процесор
 body_cputemps=Температура процесора
 body_cputype=$5, $8 ядер
+body_cputype1=$5, $8 ядро
 body_disk=Місцевий простір на диску
 body_driveerr=$1 помилки!
 body_drivefailed=Не вдалося перевірити SMART!
@@ -1374,3 +1375,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальн�
 settings_auto_open_panels_on_proximity=Автоматичне відкриття закритих панелей на близькості
 
 theme_xhred_config_portable_module_xterm_render_addon=Увімкнути аддон візуалізації WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Фільтрувати та експортувати вміст

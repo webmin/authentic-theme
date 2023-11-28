@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 teras
+
 settings_right_hotkey_custom_options_description=Pautan tersuai membolehkan anda menggunakan digit daripada <code>1</code> hingga <code>9</code> untuk mengakses pantas mana-mana panel <code>URL yang sah.</code> <code>URL</code> boleh diekstrak dari halaman yang sedang dibuka. Contohnya, untuk beralih pantas kepada modul Apache, tetapkan <code>apache</code> kepada medan <code>Pautan tersuai 1</code>. Jika kunci pengubah suai lalai ditetapkan kepada <code>Alt,</code> mengklik <code>Alt + 1</code>, akan membuka modul Apache anda.
 
 settings_right_reload=Muatkan halaman lalai pada suis tab
@@ -783,3 +785,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=Reka letak mendatar tidak
 settings_auto_open_panels_on_proximity=Auto buka panel tertutup pada jarak dekat
 
 theme_xhred_config_portable_module_xterm_render_addon=Dayakan tambahan pemaparan WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Tapis dan eksport kandungan

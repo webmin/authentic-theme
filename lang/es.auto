@@ -1,3 +1,5 @@
+body_cputype1=$5, $8 núcleo
+
 settings_right_options=Opciones
 settings_right_restore_defaults=Restaurar los valores predeterminados
 settings_right_restored=Restaurado
@@ -1285,3 +1287,6 @@ theme_xhred_columns_layout_variation_cannot_horizontal=El diseño horizontal no 
 settings_auto_open_panels_on_proximity=Paneles cerrados de apertura automática en proximidad
 
 theme_xhred_config_portable_module_xterm_render_addon=Habilitar el complemento de renderizado WebGL
+
+#21.09.04
+theme_xhred_datatable_filter_and_export=Filtrar y exportar contenido
