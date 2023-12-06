@@ -1142,6 +1142,8 @@ sub theme_ui_table_row
     $tds2 = $tds->[1] if (ref($tds) && $tds->[1] =~ /^data-/);
     my $trtags_attrs = ref($trs) eq 'ARRAY' && $trs->[0] ? " $trs->[0]" : "";
     $trtags_attrs .= " data-row-type='ui-table' data-cell-colspan='$cols'";
+    $trtags_attrs .= ' data-column-span="all" data-column-locked="1"'
+      if ($cols == 2 && !length($label));
     my $trtags_class = ref($trs) eq 'ARRAY' && $trs->[1] ? " class='$trs->[1]'" : "";
     $rv .= "<tr$trtags_class$trtags_attrs>\n"
       if ($main::ui_table_pos % $main::ui_table_cols == 0);
