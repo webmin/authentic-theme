@@ -3603,10 +3603,9 @@ const mail = (function() {
             key = key ? ('?key=' + key.replace(/&/g, '%26')) : String();
             $.post(_.path.extensions + '/mail/folders.cgi' + key + '', function(source) {
                 if (!!key) {
-                    tree.reload(source)
+                    tree.reload(source);
                 } else {
-                    tree.init(source)
-                    mail.messages.events()
+                    tree.init(source);
                 }
             });
         }
