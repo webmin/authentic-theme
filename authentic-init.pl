@@ -176,40 +176,38 @@ sub embed_favicon
     }
     print ' <meta name="msapplication-TileColor" content="' . $theme_user_color . '">' . "\n";
     print ' <meta name="theme-color" content="' . $theme_user_color . '">' . "\n";
-    if (!$is_login_page) {
 
-        # Generate manifest file from template
-        my $display_hostname         = get_display_hostname();
-        my $manifest_product_name_uc = ucfirst($product_name);
-        my $manifest_product_name_uc_with_hostname =
-          $manifest_product_name_uc . ($display_hostname ? " on " . $display_hostname : "");
-        my %manifest_prod_descs = ('webmin'     => 'Powerful and flexible web-based server management control panel',
-                                   'usermin'    => 'Powerful and flexible web-based user management interface',
-                                   'virtualmin' => 'Powerful and flexible web hosting control panel',
-                                   'cloudmin'   => 'Powerful and flexible cloud computing platform');
-        my $manifest_desc     = $manifest_prod_descs{$product_name};
-        my $manifest_file     = "$root_directory/$current_theme/manifest.template";
-        my $manifest_contents = read_file_contents($manifest_file);
-        $manifest_contents =~ s/\%name\%/$manifest_product_name_uc_with_hostname/;
-        $manifest_contents =~ s/\%name_short\%/$manifest_product_name_uc/;
-        $manifest_contents =~ s/\%desc\%/$manifest_desc/;
-        $manifest_contents =~ s/\%prod\%/$product_name/g;
-        $manifest_contents =~ s/\%color\%/$theme_user_color/;
-        eval {
-            $main::error_must_die = 1;
-            write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents)
-              if (-w $theme_config_dir);
-        };
+    # Generate manifest file from template
+    my $display_hostname         = get_display_hostname();
+    my $manifest_product_name_uc = ucfirst($product_name);
+    my $manifest_product_name_uc_with_hostname =
+        $manifest_product_name_uc . ($display_hostname ? " on " . $display_hostname : "");
+    my %manifest_prod_descs = ('webmin'     => 'Powerful and flexible web-based server management control panel',
+                                'usermin'    => 'Powerful and flexible web-based user management interface',
+                                'virtualmin' => 'Powerful and flexible web hosting control panel',
+                                'cloudmin'   => 'Powerful and flexible cloud computing platform');
+    my $manifest_desc     = $manifest_prod_descs{$product_name};
+    my $manifest_file     = "$root_directory/$current_theme/manifest.template";
+    my $manifest_contents = read_file_contents($manifest_file);
+    $manifest_contents =~ s/\%name\%/$manifest_product_name_uc_with_hostname/;
+    $manifest_contents =~ s/\%name_short\%/$manifest_product_name_uc/;
+    $manifest_contents =~ s/\%desc\%/$manifest_desc/;
+    $manifest_contents =~ s/\%prod\%/$product_name/g;
+    $manifest_contents =~ s/\%color\%/$theme_user_color/;
+    eval {
+        $main::error_must_die = 1;
+        write_file_contents("$theme_config_dir/manifest-$product_name.json", $manifest_contents)
+            if (-w $theme_config_dir);
+    };
 
-        print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
-        print ' <link ' .
-          $ref_link .
-          ' crossorigin="use-credentials" rel="manifest" href="' .
-          $theme_webprefix .
-          '/manifest-' .
-          $product_name .
-          '.json">' . "\n";
-    }
+    print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
+    print ' <link ' .
+        $ref_link .
+        ' crossorigin="use-credentials" rel="manifest" href="' .
+        $theme_webprefix .
+        '/manifest-' .
+        $product_name .
+        '.json">' . "\n";
 }
 
 sub embed_header
