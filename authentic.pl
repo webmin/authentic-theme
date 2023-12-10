@@ -1395,7 +1395,7 @@ sub theme_redirect
     my ($url)  = $arg2;
 
     if (!$relredir) {
-        ($url) = $arg2 =~ /\/\/\S+?(\/\S*)/;
+        ($url) = $arg2 =~ /\/\/\S+?(\/.*)/;
     }
     $url = "$prefix$url" if ($url && $noredir);
     theme_redirect_url_alterer(\$url);
