@@ -1444,6 +1444,8 @@ sub nav_menu_html_snippet
     my $rv;
     my $html_snippet         = $theme_config{'settings_leftmenu_user_html'};
     my $html_snippet_limited = $theme_config{'settings_leftmenu_user_html_privileged'};
+    $html_snippet = "<i class='fa2 fa-2x-force fa2-bug opacity-0_2'></i>"
+        if (!$html_snippet && theme_debug_mode());
     $html_snippet =~ s/(<(\/|\s*)(html|head|meta|link|title|body).*?>)//g;
 
     if ($html_snippet_limited ne 'true' ||

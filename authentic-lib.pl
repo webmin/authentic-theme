@@ -471,6 +471,7 @@ sub print_sysstats_panel_start
 
     print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
     print '<div class="panel-heading">' . "\n";
+    my $debug_mode = theme_debug_mode() ? '&nbsp;&nbsp;<i class="fa2 fa2-bug fa-0_75x opacity-0_2"></i>' : "";
     print '<h3 class="panel-title">'
       .
       ( $recollect . ''
@@ -496,7 +497,7 @@ sub print_sysstats_panel_start
            '<a class="btn btn-default pull-right extra_documentation_links" href="' . $virtualmin_config{'docs_link'} .
            '"target="_blank"><i class="fa fa-book"> </i> ' . $virtualmin_config{'docs_text'} . '</a>' :
            undef
-      ) .
+      ) . $debug_mode .
       '
     </h3>' . "\n";
 
