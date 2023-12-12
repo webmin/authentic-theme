@@ -1605,9 +1605,13 @@ sub theme_version
 
 sub theme_debug_mode
 {
+    my $mode_cache = getvar('theme-debug-mode');
+    return $mode_cache if (defined($mode_cache));
     if (-r "$ENV{'THEME_ROOT'}/dependencies.pl") {
+        setvar('theme-debug-mode', 1);
         return 1;
     } else {
+        setvar('theme-debug-mode', 0);
         return 0;
     }
 }
