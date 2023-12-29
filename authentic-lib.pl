@@ -1744,6 +1744,14 @@ sub clear_theme_cache
         &bind8::flush_zone_names();
     }
 
+    # Clear potentially stuck Postfix version file
+    if (&foreign_available('postfix')) {
+        &foreign_require("postfix");
+        my $postfix_version_file = $postfix::version_file;
+        unlink_file($postfix_version_file)
+            if (-f $postfix_version_file);
+    }
+
     # Clear potentially stuck Apache cache
     if (&foreign_available('apache')) {
         &foreign_require("apache", "postinstall.pl");
