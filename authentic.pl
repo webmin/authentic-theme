@@ -1165,7 +1165,7 @@ sub theme_ui_table_hr
         $rv .= "</tr>\n";
         $main::ui_table_pos = 0;
     }
-    $rv .= "<tr> " . "<td colspan=$main::ui_table_cols class='no-border'><hr></td></tr>\n";
+    $rv .= "<tr> " . "<td colspan=$main::ui_table_cols class='no-border'><hr data-row-separator></td></tr>\n";
     return $rv;
 }
 
