@@ -165,11 +165,18 @@ sub theme_header
 
 sub theme_footer
 {
-    return if (fetch_content());
-    if (get_env('script_name') =~ /password_change\.cgi$/) {
-        print "</body>";
-        return;
+    my $script_name = $ENV{'SCRIPT_NAME'};
+    if (index($script_name, 'session_login.cgi') != -1 ||
+        index($script_name, 'pam_login.cgi') != -1 ||
+        index($script_name, 'password_change.cgi') != -1)
+    {
+        print "</div>\n";
+        embed_js_scripts();
+        print "</body>\n";
+        print "</html>\n";
     }
+
+    return if (fetch_content());
     ((!$miniserv::theme_header_captured && !$miniserv::page_capture) && return);
     my %this_module_info = &get_module_info(&get_module_name());
     for (my $i = 0; $i + 1 < @_; $i += 2) {
@@ -208,12 +215,6 @@ sub theme_footer
                  $_[0]
     ) if (!http_x_request());
     embed_pm_scripts();
-
-    if (get_env('script_name') eq '/session_login.cgi' ||
-        get_env('script_name') eq '/pam_login.cgi')
-    {
-        embed_js_scripts();
-    }
 
     if ($theme_config{'settings_hide_top_loader'} ne 'true' &&
         get_env('script_name') ne '/session_login.cgi' &&
