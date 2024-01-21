@@ -999,6 +999,9 @@ sub get_button_style
         if (string_contains($keys, 'ssl_gen')) {
             $class = "grey ";
         }
+    } elsif (string_contains($keys, "user_createover")) {
+        $class = "warning ";
+        $icon  = "user-switch fa-1_10x";
     } elsif (string_contains($keys, "check_updatenow")) {
         $class = "warning ";
         $icon  = "refresh";
