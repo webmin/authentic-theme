@@ -1189,7 +1189,9 @@ sub get_button_style
         $class = "warning ";
     } elsif (string_contains($keys, "docker_reg") || string_contains($keys, "wizard_finish")) {
         $icon = "check-circle-o";
-    } elsif (string_contains($keys, "tmpl_nprev") || string_contains($keys, "wizard_prev")) {
+    } elsif (string_contains($keys, "goback") ||
+             string_contains($keys, "tmpl_nprev") ||
+             string_contains($keys, "wizard_prev")) {
         $icon = "arrow-circle-o-left";
     } elsif (string_contains($keys, "tmpl_nnext") ||
              string_contains($keys, "wizard_next") ||
