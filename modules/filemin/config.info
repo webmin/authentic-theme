@@ -28,3 +28,4 @@ config_portable_module_filemanager_files_safe_mode=Do not overwrite existing fil
 config_portable_module_filemanager_switch_users=Automatically set owner and group equivalent to user home on file operations,1,true-Yes,false-No
 config_portable_module_filemanager_hide_actions=Hide column containing action icons,1,true-Yes,false-No
 config_portable_module_filemanager_show_dot_files=Show hidden files,1,true-Yes,false-No
+config_portable_module_filemanager_datetime_from_locale=Use regional settings for dates and times,1,true-Yes,false-No

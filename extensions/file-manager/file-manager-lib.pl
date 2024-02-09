@@ -146,6 +146,12 @@ sub get_user_config_showhiddenfiles
            get_user_config('config_portable_module_filemanager_show_dot_files') ne 'false';
 }
 
+sub get_user_config_datetime_from_locale
+{
+    return $userconfig{'config_portable_module_filemanager_datetime_from_locale'} eq 'true' ||
+           get_user_config('config_portable_module_filemanager_datetime_from_locale') eq 'true';
+}
+
 sub kill_previous
 {
     my $pid = tokenize($_[0]);
@@ -1080,6 +1086,11 @@ sub print_content
             my $access_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][9]));
             my $mod_time    = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][10]));
             my $change_time = POSIX::strftime('%Y/%m/%d - %T', localtime($list[$count - 1][11]));
+            if (get_user_config_datetime_from_locale()) {
+                $access_time = &make_date($list[$count - 1][9]);
+                $mod_time    = &make_date($list[$count - 1][10]);
+                $change_time = &make_date($list[$count - 1][11]);
+            }
             push @row_data,
               ( "<span data-toggle=\"tooltip\" data-html=\"true\" data-title=\"$text{'filemanager_global_access_change_time'}<br>$access_time<br>$change_time\">"
                   . $mod_time . "</span>");

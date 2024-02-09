@@ -130,6 +130,7 @@ var
     config_portable_module_filemanager_checksum_limit = 1024000,
     config_portable_module_filemanager_move_to_trash = false,
     config_portable_module_filemanager_show_dot_files = true,
+    config_portable_module_filemanager_datetime_from_locale = false,
 
     // Locale defaults
     config_portable_theme_locale_format_full = 'LLLL',
