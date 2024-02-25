@@ -131,6 +131,7 @@ sub theme_header
                     }
                 }
                 $params .= "&_cscript=".&urlize($scriptname);
+                $params .= $_[3] eq '1' ? "" : $_[3];
                 print "<a href=\"$theme_webprefix/$cprog?module=", &get_module_name().$params . "\">", $text{'header_config'}, "</a><br>\n";
             }
         }
