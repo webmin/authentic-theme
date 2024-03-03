@@ -134,6 +134,7 @@ sub theme_settings_raw
                        'settings_hotkey_toggle_key_night_mode',
                        'settings_hotkey_focus_search',
                        'settings_hotkey_reload',
+                       'settings_hotkey_logout_dbl',
             ] }
         ],
 
@@ -336,6 +337,7 @@ sub theme_settings_format
              $k eq 'settings_hotkey_navigation'    ||
              $k eq 'settings_hotkey_slider'        ||
              $k eq 'settings_hotkey_reload'        ||
+             $k eq 'settings_hotkey_logout_dbl'    ||
              $k eq 'settings_hotkey_shell'         ||
              $k eq 'settings_hotkey_shell2'        ||
              $k eq 'settings_hotkey_sysinfo'       ||

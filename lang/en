@@ -1446,5 +1446,10 @@ settings_auto_open_panels_on_proximity=Auto open closed panels on proximity
 
 theme_xhred_config_portable_module_xterm_render_addon=Enable WebGL rendering addon
 
+
 #21.09.04
 theme_xhred_datatable_filter_and_export=Filter and export content
+
+
+#21.10
+settings_hotkey_logout_dbl=Sign out

@@ -1138,7 +1138,7 @@ sub nav_links
         get_env('http_user_agent') !~ /webmin/i)
     {
         my $tooltip = get_button_tooltip(($main::session_id ? 'theme_tooltip_logout' : 'theme_xhred_tooltip_switch_user'),
-                                         undef, 'auto top');
+                                         'settings_hotkey_logout_dbl', 'auto top');
         $rv .= "<li $tooltip class=\"user-link __logout-link\">";
         if ($main::session_id) {
             $rv .=

@@ -1991,6 +1991,16 @@ sub get_button_tooltip
         $ctrl_key = '⌃';
         $meta_key = '⌘';
     }
+    my $hot_key_full;
+    if ($hot_key) {
+        $hot_key_full =
+            ($mod_key eq "altKey" ?
+            $alt_key : $mod_key eq "ctrlKey" ?
+            $ctrl_key : $meta_key) . ' + ' . $hot_key;
+        $hot_key_full .= ", $hot_key_full"
+            if ($key =~ /^settings_/ && $key =~ /_dbl$/);
+    }
+
     return (' aria-label="' .
               strip_html($tooltip_text) .
               '" data-container="' .
@@ -2005,12 +2015,7 @@ sub get_button_tooltip
                  .
                  (length $theme_config{'settings_hotkeys_active'} &&
                     $theme_config{'settings_hotkeys_active'} ne 'false' &&
-                    $hot_key ?
-                    " (" .
-                    ($mod_key eq "altKey" ? $alt_key : $mod_key eq "ctrlKey" ? $ctrl_key : $meta_key) . ' + ' .
-                    $hot_key . ")" :
-                    '')
-              ) .
+                    $hot_key ? " ($hot_key_full)" : '')) .
               '"');
 }
 

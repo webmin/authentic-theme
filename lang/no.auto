@@ -306,3 +306,6 @@ theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gjengivelses
 
 #21.09.04
 theme_xhred_datatable_filter_and_export=Filtrer og eksporter innhold
+
+#21.10
+settings_hotkey_logout_dbl=Logg ut

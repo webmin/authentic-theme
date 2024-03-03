@@ -85,6 +85,7 @@ var
     settings_hotkey_navigation = 'a',
     settings_hotkey_slider = 'e',
     settings_hotkey_toggle_key_night_mode = 'l',
+    settings_hotkey_logout_dbl = '[',
 
     // Custom links hotkeys options defaults
     settings_hotkey_custom_1_user = '',
