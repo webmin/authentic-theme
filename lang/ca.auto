@@ -722,3 +722,4 @@ theme_xhred_datatable_filter_and_export=Filtrar i exportar contingut
 
 #21.10
 settings_hotkey_logout_dbl=Tancar sessió
+theme_xhred_hotkey_emsg=La tecla de barra invertida no es pot utilitzar com a tecla d'accés ràpid

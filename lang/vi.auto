@@ -1381,3 +1381,4 @@ theme_xhred_datatable_filter_and_export=Lọc và xuất nội dung
 
 #21.10
 settings_hotkey_logout_dbl=Đăng xuất
+theme_xhred_hotkey_emsg=Phím gạch chéo ngược không thể được sử dụng làm phím nóng

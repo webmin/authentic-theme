@@ -1299,3 +1299,4 @@ theme_xhred_datatable_filter_and_export=Filtrar e exportar conteúdo
 
 #21.10
 settings_hotkey_logout_dbl=Sair
+theme_xhred_hotkey_emsg=A tecla de barra invertida não pode ser usada como tecla de atalho

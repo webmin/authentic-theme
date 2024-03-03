@@ -1381,3 +1381,4 @@ theme_xhred_datatable_filter_and_export=Tartalom szűrése és exportálása
 
 #21.10
 settings_hotkey_logout_dbl=Kijelentkezés
+theme_xhred_hotkey_emsg=A fordított perjel billentyű nem használható gyorsbillentyűként

@@ -413,3 +413,4 @@ theme_xhred_datatable_filter_and_export=Filtrați și exportați conținutul
 
 #21.10
 settings_hotkey_logout_dbl=Deconectare
+theme_xhred_hotkey_emsg=Tasta backslash nu poate fi folosită ca tastă rapidă

@@ -1381,3 +1381,4 @@ theme_xhred_datatable_filter_and_export=Фільтрувати та експор
 
 #21.10
 settings_hotkey_logout_dbl=Вийти
+theme_xhred_hotkey_emsg=Клавішу зворотньої косої риски не можна використовувати як гарячу клавішу

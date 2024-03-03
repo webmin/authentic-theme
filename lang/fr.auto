@@ -309,3 +309,4 @@ theme_xhred_datatable_filter_and_export=Filtrer et exporter du contenu
 
 #21.10
 settings_hotkey_logout_dbl=Se déconnecter
+theme_xhred_hotkey_emsg=La touche barre oblique inverse ne peut pas être utilisée comme raccourci clavier

@@ -1381,3 +1381,4 @@ theme_xhred_datatable_filter_and_export=콘텐츠 필터링 및 내보내기
 
 #21.10
 settings_hotkey_logout_dbl=로그 아웃
+theme_xhred_hotkey_emsg=백슬래시 키는 단축키로 사용할 수 없습니다
