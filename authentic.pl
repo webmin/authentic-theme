@@ -1333,7 +1333,7 @@ sub theme_ui_buttons_end
 sub theme_ui_radio_table
 {
     my ($name, $sel, $rows, $nobold) = @_;
-    return "" if (!@$rows);
+    return "" if (!$rows || !@$rows);
     my $rv = "<table data-radio-table=\"$name\" class='ui_radio_table'>\n";
     foreach my $r (@$rows) {
         $rv .= "<tr>\n";
