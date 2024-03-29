@@ -1967,10 +1967,14 @@ sub get_xhr_request
             flush_file_lines($file);
             print convert_to_json($history);
         } elsif ($in{'xhr-get_autocompletes'} eq '1') {
-            switch_to_remote_user_safe();
-            my @data =
-              get_autocomplete_shell($in{'xhr-get_autocomplete_type'}, $in{'xhr-get_autocomplete_string'});
-            print convert_to_json(\@data);
+            if (foreign_available("shell")) {
+                switch_to_remote_user_safe();
+                my @data =
+                    get_autocomplete_shell(
+                        $in{'xhr-get_autocomplete_type'},
+                        $in{'xhr-get_autocomplete_string'});
+                print convert_to_json(\@data);
+            }
         } elsif ($in{'xhr-theme_latest_version'} eq '1') {
             my @current_versions;
             my @remote_version = theme_remote_version(1, 0, 1);
