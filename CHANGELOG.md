@@ -1,5 +1,24 @@
 ## Changelog
 
+#### Version 21.10 (March 31, 2024)
+* Add improved upload progress indicator [#1692](https://github.com/authentic-theme/authentic-theme/issues/1692)
+* Add HTML signatures support in Usermin
+* Add regional settings support for dates and times in File Manager
+* Add support for sign out hotkey [#1690](https://github.com/authentic-theme/authentic-theme/issues/1690)
+* Add proper support for `en-be` locale
+* Add icons to the new buttons in Edit Users page in Virtualmin
+* Fix height of bouncy top loader
+* Fix main scrollbar visibility
+* Fix header to include passed params to config [webmin#2098](https://github.com/webmin/webmin/issues/2098)
+* Fix icon positioning in Safari [#1693](https://github.com/authentic-theme/authentic-theme/issues/1693)
+* Fix not to wrap domain names in the list of virtual servers
+* Fix to display install as Chrome app button to unauthenticated users [#1687](https://github.com/authentic-theme/authentic-theme/issues/1687)
+* Fix menu link detection after domain switch in Virtualmin
+* Fix to remove Postfix version file on cache clear
+* Fix missing footer in login page [#1691](https://github.com/authentic-theme/authentic-theme/issues/1691)
+
+<!--- separator --->
+
 #### Version 21.09.5 (November 07, 2023)
 * Fix match highlight in file viewer and editor
 * Fix checkbox after content alignment
@@ -60,8 +79,6 @@
 * Fix focus issue in Terminal module on initial load [#1667](https://github.com/authentic-theme/authentic-theme/issues/1667)
 * Fix font rendering issues in Terminal module with Firefox
 * Fix tiny alignment issues for various pages using column layout
-
-<!--- separator --->
 
 #### Version 21.04 (August 04, 2023)
 * Add better filtering unsafe content to prevent possible XSS attacks
