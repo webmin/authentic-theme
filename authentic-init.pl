@@ -2067,7 +2067,7 @@ sub embed_product_branding
 
     return if (get_env('script_name') =~ /password_change\.cgi/);
     return if (getvar('error-fatal'));
-    return if ($theme_config{"settings_embed_product_branding_privileged"} eq 'false');
+    return if ($theme_config{"settings_embed_product_splash_privileged"} eq 'false');
     return &custom_embed_product_branding(@_)
       if (defined(&custom_embed_product_branding));
 

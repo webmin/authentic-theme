@@ -34,6 +34,7 @@ sub theme_settings_raw
                        'settings_cm_editor_palette',
                        'settings_global_palette_unauthenticated',
                        'settings_theme_config_admins_only_privileged',
+                       'settings_embed_product_splash_privileged',
             ] }
         ],
 
@@ -247,6 +248,7 @@ sub theme_settings_filter
     if (!&webmin_user_is_admin()) {
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
+             'settings_embed_product_splash_privileged',
              'settings_hotkey_slider',
              'settings_global_palette_unauthenticated',
              'settings_sysinfo_easypie_charts',

@@ -11,6 +11,7 @@ var
     settings_cm_editor_palette = 'monokai',
     settings_global_palette_unauthenticated = 'light',
     settings_theme_config_admins_only_privileged = false,
+    settings_embed_product_splash_privileged = false,
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
@@ -213,9 +214,6 @@ var
     // Multiselect on click
     settings_multiselect_on_click = false,
 
-    // Show splash screen upon login
-    settings_embed_product_branding_privileged = true,
-
     // This option associates extra names for a given module/page to be searchable in autocomplete dropdown
     settings_autocomplete_extra_associations_privileged = {
         'en': [
@@ -262,7 +260,10 @@ var
                 ]
             }
         ]
-    };
+    },
+
+    // Deprecated options
+    settings_embed_product_branding_privileged = settings_embed_product_splash_privileged;
 //
 //
 //
