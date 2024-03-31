@@ -583,3 +583,4 @@ theme_xhred_datatable_filter_and_export=过滤和导出内容
 #21.10
 settings_hotkey_logout_dbl=登出
 theme_xhred_hotkey_emsg=反斜杠键不能用作热键
+settings_embed_product_splash_privileged=登录后显示品牌启动画面

@@ -310,3 +310,4 @@ theme_xhred_datatable_filter_and_export=Filtrer og eksporter innhold
 #21.10
 settings_hotkey_logout_dbl=Logg ut
 theme_xhred_hotkey_emsg=Omvendt skråstrek-tasten kan ikke brukes som en hurtigtast
+settings_embed_product_splash_privileged=Vis en splash-skjerm for merkevarebygging etter pålogging
