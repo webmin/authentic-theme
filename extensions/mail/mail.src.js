@@ -1059,7 +1059,7 @@ const mail = (function() {
                             form_data = $form.serialize(),
                             $form_textarea = $(rs).find('textarea[name="body"]'),
                             toolbar_mode = $form_textarea.data('html-mode'),
-                            signature = $.trim(_.plugin.quote_escape(_.plugin.html_strip($form_textarea.text())));
+                            signature = $.trim(_.plugin.quote_escape($form_textarea.text()));
 
                         if  (config.d.u.html_edit == 2 && signature) {
                             signature = `${$$.$.template.html.tags.br.repeat(2) + signature}`;
