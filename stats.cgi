@@ -42,7 +42,7 @@ my $jsonify = sub {
     my $json = shift;
     my $json_obj;
     eval {
-        $json_obj = convert_from_json($json)
+        $json_obj = convert_from_json($json);
     };
     return (ref($json_obj) eq 'HASH' && keys %{$json_obj}) ? $json_obj : {};
 };
@@ -53,7 +53,7 @@ my $sdata  = $in{'sdata'} ? 1 : 0;
 my $fdatad = "$var_directory/modules/$current_theme";
 my $fdata  = "$fdatad/stats-$remote_user.json";
 my $cdata  = $jsonify->(read_file_contents($fdata));
-unlink($fdata) if (-r $fdata && !keys %{$cdata});
+unlink($fdata) if (!keys %{$cdata});
 
 my $time   = time();
 my $ddata  = sub {
