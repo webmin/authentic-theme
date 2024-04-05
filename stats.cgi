@@ -38,12 +38,23 @@ my $option = sub {
     return ($settings{"settings_sysinfo_real_time_$_[0]"} eq 'false') ? 0 : 1;
 };
 
+my $jsonify = sub {
+    my $json = shift;
+    my $json_obj;
+    eval {
+        $json_obj = convert_from_json($json)
+    };
+    return (ref($json_obj) eq 'HASH' && keys %{$json_obj}) ? $json_obj : {};
+};
+
 my %data;
 my $tdata  = {};
 my $sdata  = $in{'sdata'} ? 1 : 0;
 my $fdatad = "$var_directory/modules/$current_theme";
 my $fdata  = "$fdatad/stats-$remote_user.json";
-my $cdata  = read_file_contents($fdata);
+my $cdata  = $jsonify->(read_file_contents($fdata));
+unlink($fdata) if (-r $fdata && !keys %{$cdata});
+
 my $time   = time();
 my $ddata  = sub {
     my ($k, $d) = @_;
@@ -121,10 +132,6 @@ my $ddata  = sub {
             y => $d
          });
 };
-
-eval {$cdata = convert_from_json($cdata) if ($cdata);};
-unlink($fdata), $cdata = {} if ($@);
-$cdata ||= {};
 
 if ($in{'xhr-stats'} =~ /[[:alpha:]]/) {
     my $target = $in{'xhr-stats'};
