@@ -692,6 +692,12 @@ sub get_sysinfo_vars
         } else {
             $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
         }
+        
+        # EOL info
+        my $eol = $gconfig{'os_eol_expired'} || $gconfig{'os_eol_expiring'};
+        if ($eol) {
+            $os .= " <span class='label label-danger badge-danger font-uppercase eol-badge'>$eol</span>";
+        }
 
         my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
 
