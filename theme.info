@@ -5,8 +5,8 @@ spa=1
 nomodcall=xnavigation=1
 version=21.10
 mversion=01
-bversion=00
+bversion=01
 webmin=1
 usermin=1
 depends=2.110 2.010
-depends_reason=https://github.com/webmin/webmin/commit/aca2a9a52439e58333613e5421a65dff2f093e0b
+depends_reason=
