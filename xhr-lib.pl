@@ -118,6 +118,9 @@ sub xhr
                       $_->{'link'} =~ /(.*?\/virtualmin-.*?\/.*?\.cgi.*)/,
                 } array_flatten(grep {$_->[0]->{'link'}} map {$_->{'members'}} @menu);
 
+                # Always forbidden Delete Server page when switching domains
+                @submenu = grep {$_ !~ /delete_domain.cgi/} @submenu if (@submenu);
+
                 my @fmmenu = map {$_->{'link'} =~ /(filemin\/.*?\.cgi.*)/} @menu;
                 @menu         = map {$_->{'link'} =~ /.*?$module.*\/(\w+\.cgi).*?$param=/} @menu;
                 @menu         = (@menu, @submenu, @fmmenu);
