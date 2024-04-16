@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 kern
 
+settings_right_logos_title=Themalogo's kunnen hier eenvoudig worden ingesteld, voor zowel geverifieerde als niet-geverifieerde gebruikers. Het aanbevolen logoformaat is <em>180 x 90</em> pixels.
+settings_right_logos_error=Het geüploade bestand is geen afbeelding
+
 settings_right_hotkey_custom_options_description=Met aangepaste koppelingen kunt u cijfers van <code>1</code> tot <code>9</code> gebruiken om snel toegang te krijgen tot elke geldige paneel-<code>URL.</code> De <code>URL</code> code> kan worden geëxtraheerd uit de momenteel geopende pagina. Als u bijvoorbeeld snel wilt overschakelen naar de Apache-module, stelt u <code>apache</code> in op het veld <code>Aangepaste koppeling 1</code>. Als de standaard wijzigingstoets is ingesteld op <code>Alt,</code> zal klikken op <code>Alt + 1</code> uw Apache-module openen.
 settings_hotkey_custom_1_user=Aangepaste link <code>1</code>
 settings_hotkey_custom_2_user=Aangepaste link <code>2</code>
@@ -732,7 +735,7 @@ theme_xhred_mail_search_has_attach=Heeft bijlage
 
 theme_xhred_settings_right_theme_bgs=Thema-achtergronden
 theme_xhred_settings_right_theme_bgs_title=Thema Achtergronden
-settings_right_bgs_title=Thema-achtergrond voor inlogpagina kan hier worden ingesteld. Het enige ondersteunde formaat is <kbd>.png</kbd> om <kbd>.png</kbd> te bieden.
+settings_right_bgs_title=De thema-achtergrond voor de inlogpagina kan hier worden ingesteld.
 settings_right_bg_unauthenticated_users=Achtergrond voor niet-geverifieerde gebruikers
 settings_right_theme_left_background_title=Thema Achtergrondcontrole
 

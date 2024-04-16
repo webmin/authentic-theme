@@ -100,9 +100,10 @@ settings_right_extensions_title=A téma széles körű kialakítása lehetővé 
 
 theme_xhred_settings_right_theme_logos=Téma logók
 theme_xhred_settings_right_theme_logos_title=Téma logók
-settings_right_logos_title=A témalogók itt könnyen beállíthatók, mind a hitelesített, mind a nem hitelesített felhasználók számára. Az ajánlott logó mérete <kbd>180x90</kbd> pixel, az egyetlen támogatott formátum a <kbd>.png</kbd>, az alfa-átlátszóság biztosítása érdekében.
+settings_right_logos_title=Itt könnyen beállíthatóak a témalogók, hitelesített és nem hitelesített felhasználók számára egyaránt. Az ajánlott logóméret <em>180x90</em> képpont.
 settings_right_logo_authenticated_users=Logó a hitelesített felhasználók számára
 settings_right_logo_unauthenticated_users=Logó nem hitelesített felhasználók számára
+settings_right_logos_error=A feltöltött fájl nem kép
 
 settings_right_current_theme=Aktuális téma
 settings_right_title=Ezen az oldalon konfigurálhatja a <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Hiteles téma</a> beállításait. A beállításokat a téma frissítésekor tárolják.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Melléklete van
 
 theme_xhred_settings_right_theme_bgs=Téma háttérrel
 theme_xhred_settings_right_theme_bgs_title=Téma hátterek
-settings_right_bgs_title=A bejelentkezési oldal témájának háttere itt állítható be. Az egyetlen támogatott formátum a <kbd>.png</kbd>, az alfa-átláthatóság biztosítása érdekében.
+settings_right_bgs_title=Itt állítható be a bejelentkezési oldal témája.
 settings_right_bg_unauthenticated_users=Háttér nem hitelesített felhasználók számára
 settings_right_theme_left_background_title=Téma háttérvezérlés
 

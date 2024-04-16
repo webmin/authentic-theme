@@ -44,7 +44,7 @@ print '
                                         <i class="fa fa-fw fa-eye text-muted"></i>
                                     </button>
                                     <input class="ui_upload'
-  . (!-r $bg_content && ' disabled') . '" type=file name="unauthenticated_bg_file" accept=".png" size="40">
+  . (!-r $bg_content && ' disabled') . '" type=file name="unauthenticated_bg_file" accept="image/*" size="40">
                                 </td>
                             </tr>
                         </tbody>

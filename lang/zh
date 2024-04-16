@@ -99,7 +99,6 @@ settings_right_extensions_title=可扩展的主题设计，使您可以轻松操
 
 theme_xhred_settings_right_theme_logos=主题 Logo
 theme_xhred_settings_right_theme_logos_title=主题 Logo
-settings_right_logos_title=对于经过身份验证和未经身份验证的用户，可以在此处轻松设置主题 Logo。建议的 Logo大小为 <kbd>180x90</kbd> 像素，唯一支持的格式为 <kbd>.png</kbd> 以提供 Alpha 透明度。
 settings_right_logo_authenticated_users=已验证用户 Logo
 settings_right_logo_unauthenticated_users=未验证用户 Logo
 

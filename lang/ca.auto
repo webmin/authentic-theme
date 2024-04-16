@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 nucli
 
+settings_right_logos_title=Els logotips temàtics es poden configurar fàcilment aquí, tant per als usuaris autenticats com per als no autenticats. La mida recomanada del logotip és de <em>180 x 90</em> píxels.
+settings_right_logos_error=El fitxer penjat no és una imatge
+
 settings_right_hotkey_custom_options_description=Els enllaços personalitzats us permeten utilitzar els dígits de <code>1</code> a <code>9</code> per accedir ràpidament a qualsevol <code>URL del panell vàlid.</code> L'<code>URL</code> codi> es pot extreure de la pàgina oberta actualment. Per exemple, per canviar ràpidament al mòdul Apache, configureu <code>apache</code> al camp <code>Enllaç personalitzat 1</code>. Si la tecla modificadora predeterminada s'estableix en <code>Alt</code>, fent clic a <code>Alt + 1</code>, s'obrirà el mòdul Apache.
 
 settings_right_reload=Carregueu la pàgina predeterminada al commutador de pestanyes
@@ -184,7 +187,7 @@ theme_xhred_mail_search_has_attach=Té adjunt
 
 theme_xhred_settings_right_theme_bgs=Fons de tema
 theme_xhred_settings_right_theme_bgs_title=Fons de tema
-settings_right_bgs_title=El fons del tema per a la pàgina d’inici de sessió es pot configurar aquí. L’únic format compatible és <kbd>.png</kbd> per proporcionar transparència alfa.
+settings_right_bgs_title=El fons del tema per a la pàgina d'inici de sessió es pot configurar aquí.
 settings_right_bg_unauthenticated_users=Antecedents d’usuaris no autentificats
 settings_right_theme_left_background_title=Tema Control de fons
 

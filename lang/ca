@@ -99,7 +99,6 @@ settings_right_extensions_title=El disseny obert del tema et permet manipular f�
 
 theme_xhred_settings_right_theme_logos=Logotip
 theme_xhred_settings_right_theme_logos_title=Logotip
-settings_right_logos_title=Els logotips, tant pels usuaris autenticats com no, es poden configurar aquí. Es recomana utilitzar una imatge de 180x90 píxels utilitzant el format PNG si es vol utilitzar transparència.
 settings_right_logo_authenticated_users=Logotip per a usuaris autenticats
 settings_right_logo_unauthenticated_users=Logotip per usuaris no autenticats
 

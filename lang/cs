@@ -99,7 +99,6 @@ settings_right_extensions_title=Struktura tohoto tématu umožňuje jednoduchou 
 
 theme_xhred_settings_right_theme_logos=Loga tématu
 theme_xhred_settings_right_theme_logos_title=Loga tématu
-settings_right_logos_title=Zde lze nastavit loga tématu jak pro autentizované, tak pro neautentizované uživatele. Doporučená velikost loga je <kbd>180x90</kbd> pixelů a jediný podporovaný formát je <kbd>.png</kbd>, aby bylo možné zachovat průhledný alfa kanál.
 settings_right_logo_authenticated_users=Logo pro autentizované uživatele
 settings_right_logo_unauthenticated_users=Logo pro neautentizované uživatele
 

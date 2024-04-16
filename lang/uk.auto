@@ -100,9 +100,10 @@ settings_right_extensions_title=Тематичний розширений диз
 
 theme_xhred_settings_right_theme_logos=Тематичні логотипи
 theme_xhred_settings_right_theme_logos_title=Тематичні логотипи
-settings_right_logos_title=Тут можна легко встановити тематичні логотипи, як для аутентифікованих, так і для несанкціонованих користувачів. Рекомендований розмір логотипу становить <kbd>180x90</kbd> пікселів, і єдиний підтримуваний формат - <kbd>.png</kbd>, щоб забезпечити прозорість альфа.
+settings_right_logos_title=Тут можна легко встановити логотипи тем як для автентифікованих, так і для неавтентифікованих користувачів. Рекомендований розмір логотипу становить <em>180x90</em> пікселів.
 settings_right_logo_authenticated_users=Логотип для аутентифікованих користувачів
 settings_right_logo_unauthenticated_users=Логотип для неавторизованих користувачів
+settings_right_logos_error=Завантажений файл не є зображенням
 
 settings_right_current_theme=Актуальна тема
 settings_right_title=Ця сторінка дозволяє налаштувати параметри для <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">автентичної теми</a>. Параметри зберігатимуться після оновлення теми.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Має вкладення
 
 theme_xhred_settings_right_theme_bgs=Теми фонів
 theme_xhred_settings_right_theme_bgs_title=Фони теми
-settings_right_bgs_title=Фон теми для сторінки входу можна встановити тут. Єдиний підтримуваний формат - <kbd>.png</kbd>, щоб забезпечити прозорість альфа.
+settings_right_bgs_title=Тут можна встановити фонову тему для сторінки входу.
 settings_right_bg_unauthenticated_users=Фон для несанкціонованих користувачів
 settings_right_theme_left_background_title=Тема фонового контролю
 

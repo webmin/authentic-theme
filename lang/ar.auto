@@ -100,9 +100,10 @@ settings_right_extensions_title=يتيح لك التصميم المكثف للم
 
 theme_xhred_settings_right_theme_logos=شعارات الموضوع
 theme_xhred_settings_right_theme_logos_title=شعارات الموضوع
-settings_right_logos_title=يمكن تعيين شعارات السمة هنا بسهولة لكل من المستخدمين المصادق عليهم وغير المصادقين. حجم الشعار الموصى به هو <kbd>180x90</kbd> × <kbd>180x90</kbd> بكسل <kbd>180x90</kbd> المدعوم الوحيد هو <kbd>.png</kbd> ، لتوفير شفافية ألفا.
+settings_right_logos_title=يمكن تعيين شعارات السمات بسهولة هنا، لكل من المستخدمين المصادق عليهم وغير المصادقين. حجم الشعار الموصى به هو <em>180×90</em> بكسل.
 settings_right_logo_authenticated_users=شعار للمستخدمين المصادق عليهم
 settings_right_logo_unauthenticated_users=شعار للمستخدمين الذين لم تتم مصادقتهم
+settings_right_logos_error=الملف الذي تم تحميله ليس صورة
 
 settings_right_current_theme=الموضوع الحالي
 settings_right_title=تتيح لك هذه الصفحة تكوين خيارات <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. سيتم تخزين الإعدادات عند تحديث السمة.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=لديها مرفق
 
 theme_xhred_settings_right_theme_bgs=خلفيات الموضوع
 theme_xhred_settings_right_theme_bgs_title=خلفيات الموضوع
-settings_right_bgs_title=يمكن تعيين خلفية موضوع لصفحة تسجيل الدخول هنا. التنسيق الوحيد المدعوم هو <kbd>.png</kbd> ، لتوفير شفافية ألفا.
+settings_right_bgs_title=يمكن تعيين خلفية الموضوع لصفحة تسجيل الدخول هنا.
 settings_right_bg_unauthenticated_users=خلفية للمستخدمين الذين لم تتم مصادقتهم
 settings_right_theme_left_background_title=التحكم في خلفية الموضوع
 

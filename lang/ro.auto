@@ -2,6 +2,9 @@ body_cputype1=$5, $8 miez
 
 theme_xhred_session_failed=Autentificare esuata. Vă rugăm să încercați din nou.
 
+settings_right_logos_title=Siglele temei pot fi setate cu ușurință aici, atât pentru utilizatorii autentificați, cât și pentru cei neautentificați. Dimensiunea recomandată a siglei este de <em>180x90</em> pixeli.
+settings_right_logos_error=Fișierul încărcat nu este o imagine
+
 settings_right_hotkey_custom_options_description=Linkurile personalizate vă permit să utilizați cifre de la <code>1</code> la <code>9</code> pentru a accesa rapid orice <code>URL valid din panou.</code> <code>URL</code>. code> poate fi extras din pagina deschisă curent. De exemplu, pentru a comuta rapid la modulul Apache, setați câmpul <code>apache</code> la <code>Legătură personalizată 1</code>. Dacă tasta modificatoare implicită este setată la <code>Alt</code>, făcând clic pe <code>Alt + 1</code>, se va deschide modulul Apache.
 
 settings_right_reload=Încărcați pagina implicită pe comutatorul de filă
@@ -43,6 +46,8 @@ extensions_mail_flag_spam_status_data=$1 din $2
 extensions_mail_flag_tls_on=Criptare standard (TLS)
 extensions_mail_flag_tls_off=E-mail necriptat
 extensions_mail_flag_tls_none=Nu se cunoaște starea de criptare
+
+settings_right_bgs_title=Fundalul temei pentru pagina de conectare poate fi setat aici.
 
 settings_hotkey_navigation=Comutați starea meniului de navigare
 

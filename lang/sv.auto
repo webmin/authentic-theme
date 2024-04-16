@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 kärna
 
+settings_right_logos_title=Temalogotyper kan enkelt ställas in här, för både autentiserade och oautentiserade användare. Rekommenderad logotypstorlek är <em>180x90</em> pixlar.
+settings_right_logos_error=Uppladdad fil är inte en bild
+
 settings_right_hotkey_custom_options_description=Anpassade länkar gör att du kan använda siffror från <code>1</code> till <code>9</code> för att snabbt komma åt alla giltiga <code>URL-adresser</code> <code>URL</code>. code> kan extraheras från den för närvarande öppnade sidan. Till exempel, för att snabbt växla till Apache-modul, ställ in <code>apache</code> till <code>Anpassad länk 1</code>-fält. Om standardnyckeln är inställd på <code>Alt,</code> öppnas din Apache-modul genom att klicka på <code>Alt + 1</code>.
 
 settings_hotkeys_active=Gör det möjligt
@@ -23,6 +26,8 @@ theme_xhred_sysinfo_cmdocs=Cloudmin dokumentation
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Växla färgpalett
+
+settings_right_bgs_title=Temabakgrund för inloggningssida kan ställas in här.
 
 settings_hotkey_navigation=Växla tillstånd för navigeringsmeny
 

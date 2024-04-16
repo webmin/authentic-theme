@@ -1,5 +1,8 @@
 body_cputype1=$5、$8 核心
 
+settings_right_logos_title=主题徽标可在此轻松设置，适用于已认证和未认证的用户。建议徽标尺寸为 <em>180x90</em> 像素。
+settings_right_logos_error=上传的文件不是图片
+
 settings_right_hotkey_custom_options_description=自定义链接使您能够使用从 <code>1</code> 到 <code>9</code> 的数字来快速访问任何有效的面板 <code>URL。</code> <code>URL</code> 可以从当前打开的页面中提取出来。例如，要快速切换到 Apache 模块，请将 <code>apache</code> 设置为 <code>Custom link 1</code> 字段。如果默认修改键设置为 <code>Alt，</code> 单击 <code>Alt + 1</code>，将打开 Apache 模块。
 
 settings_right_reload=在选项卡开关上加载默认页面
@@ -44,7 +47,7 @@ extensions_mail_flag_tls_none=加密状态未知
 
 theme_xhred_settings_right_theme_bgs=主题背景
 theme_xhred_settings_right_theme_bgs_title=主题背景
-settings_right_bgs_title=可以在此处设置登录页面的主题背景。唯一受支持的格式是<kbd>.png</kbd> ，以提供Alpha透明度。
+settings_right_bgs_title=可以在这里设置登录页面的主题背景。
 settings_right_bg_unauthenticated_users=未经身份验证的用户的背景
 settings_right_theme_left_background_title=主题背景控制
 

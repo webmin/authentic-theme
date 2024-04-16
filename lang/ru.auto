@@ -15,9 +15,10 @@ settings_right_extensions_title=Тема обширного дизайна, по
 
 theme_xhred_settings_right_theme_logos=Тематические логотипы
 theme_xhred_settings_right_theme_logos_title=Логотипы Темы
-settings_right_logos_title=Логотипы тем могут быть легко установлены как для аутентифицированных, так и для неаутентифицированных пользователей. Рекомендуемый размер логотипа - <kbd>180x90</kbd> пикселей. Единственный поддерживаемый формат - <kbd>.png</kbd> для обеспечения альфа-прозрачности.
+settings_right_logos_title=Здесь можно легко установить логотипы тем как для аутентифицированных, так и для неаутентифицированных пользователей. Рекомендуемый размер логотипа — <em>180x90</em> пикселей.
 settings_right_logo_authenticated_users=Логотип для аутентифицированных пользователей
 settings_right_logo_unauthenticated_users=Логотип для неаутентифицированных пользователей
+settings_right_logos_error=Загруженный файл не является изображением
 
 settings_right_current_theme=Актуальная тема
 settings_right_title=На этой странице вы можете настроить параметры для <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">аутентичной темы</a>. Настройки будут сохранены при обновлении темы.
@@ -643,7 +644,7 @@ theme_xhred_mail_search_has_attach=Имеет вложение
 
 theme_xhred_settings_right_theme_bgs=Тематические фоны
 theme_xhred_settings_right_theme_bgs_title=Фоны Темы
-settings_right_bgs_title=Тему фона для страницы входа можно установить здесь. Единственный поддерживаемый формат - <kbd>.png</kbd>, чтобы обеспечить альфа-прозрачность.
+settings_right_bgs_title=Здесь можно установить фон темы для страницы входа.
 settings_right_bg_unauthenticated_users=Фон для неаутентифицированных пользователей
 settings_right_theme_left_background_title=Контроль фона темы
 

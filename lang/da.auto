@@ -14,9 +14,10 @@ settings_right_extensions_title=Tema omfattende design, gør det nemt for dig at
 
 theme_xhred_settings_right_theme_logos=Temalogoer
 theme_xhred_settings_right_theme_logos_title=Temalogoer
-settings_right_logos_title=Temalogoer kan let indstilles her for både godkendte og ikke-godkendte brugere. Den anbefalede <kbd>180x90</kbd> er <kbd>180x90</kbd> pixels, og det eneste understøttede format er <kbd>.png</kbd> at give alfa-gennemsigtighed.
+settings_right_logos_title=Temalogoer kan nemt indstilles her, for både godkendte og ikke-godkendte brugere. Den anbefalede logostørrelse er <em>180x90</em> pixels.
 settings_right_logo_authenticated_users=Logo til godkendte brugere
 settings_right_logo_unauthenticated_users=Logo til ikke-godkendte brugere
+settings_right_logos_error=Den uploadede fil er ikke et billede
 
 settings_right_current_theme=Nuværende tema
 settings_right_title=Denne side giver dig mulighed for at konfigurere indstillinger for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Autentisk tema</a>. Indstillinger gemmes ved temaopdatering.
@@ -757,7 +758,7 @@ theme_xhred_mail_search_has_attach=Har vedhæftning
 
 theme_xhred_settings_right_theme_bgs=Tema baggrunde
 theme_xhred_settings_right_theme_bgs_title=Tema baggrunde
-settings_right_bgs_title=Tema baggrund for login side kan indstilles her. Det eneste understøttede format er <kbd>.png</kbd> at give alfa-gennemsigtighed.
+settings_right_bgs_title=Temabaggrund for login-side kan indstilles her.
 settings_right_bg_unauthenticated_users=Baggrund for ikke-godkendte brugere
 settings_right_theme_left_background_title=Tema Baggrundskontrol
 

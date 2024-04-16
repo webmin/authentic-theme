@@ -98,7 +98,6 @@ settings_right_extensions_title=Proiectarea extinsă a Temei, vă permite manipu
 
 theme_xhred_settings_right_theme_logos=Logo-urile temei
 theme_xhred_settings_right_theme_logos_title=Logo-urile Temei
-settings_right_logos_title=Logo-urile temei pot fi ușor configurate aici, pentru ambele moduri, atât pentru utilizatorii autentificați cât și neautentificați. Dimensiunea recomandată a logo-ului este <kbd>180x90</kbd> pixeli și singurul format acceptat este <kbd>.png</kbd>, pentru a asigura transpatența în mod ALPHA.
 settings_right_logo_authenticated_users=Logo pentru utilizatori autentificați
 settings_right_logo_unauthenticated_users=Logo pentru utilizatori neautentificați
 
@@ -812,7 +811,6 @@ theme_xhred_mail_search_has_attach=Conține atașament
 
 theme_xhred_settings_right_theme_bgs=Fundaluri temă
 theme_xhred_settings_right_theme_bgs_title=Fundaluri Temă
-settings_right_bgs_title=Fundal temă pentru pagina de login poate fi setată aici. Singurele formate suportate sunt <kbd>.png</kbd>, pentru a oferi transparență alpha.
 settings_right_bg_unauthenticated_users=Fundal pentru utilizatori neautentificați
 settings_right_theme_left_background_title=Controlul Fundalului Temă
 

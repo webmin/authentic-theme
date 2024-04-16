@@ -100,9 +100,10 @@ settings_right_extensions_title=Temos platus dizainas leidžia lengvai manipuliu
 
 theme_xhred_settings_right_theme_logos=Teminiai logotipai
 theme_xhred_settings_right_theme_logos_title=Teminiai logotipai
-settings_right_logos_title=Čia galite lengvai nustatyti temos logotipus tiek autentifikuotiems, tiek neautentifikuotiems vartotojams. Rekomenduojamas logotipo dydis yra <kbd>180x90</kbd> taškų, o vienintelis palaikomas formatas yra <kbd>.png</kbd>, kad būtų užtikrintas alfa skaidrumas.
+settings_right_logos_title=Čia galima lengvai nustatyti temų logotipus ir autentifikuotiems, ir neautentifikuotiems vartotojams. Rekomenduojamas logotipo dydis yra <em>180 x 90</em> pikselių.
 settings_right_logo_authenticated_users=Autentifikuotų vartotojų logotipas
 settings_right_logo_unauthenticated_users=Nepatvirtintų vartotojų logotipas
+settings_right_logos_error=Įkeltas failas nėra vaizdas
 
 settings_right_current_theme=Dabartinė tema
 settings_right_title=Šiame puslapyje galima sukonfigūruoti <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">autentiškos temos</a> parinktis. Nustatymai bus išsaugoti atnaujinus temą.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Turi prisirišimą
 
 theme_xhred_settings_right_theme_bgs=Temos fonai
 theme_xhred_settings_right_theme_bgs_title=Temos fonai
-settings_right_bgs_title=Čia galite nustatyti prisijungimo puslapio teminį foną. Vienintelis palaikomas formatas yra <kbd>.png</kbd>, kad būtų užtikrintas alfa skaidrumas.
+settings_right_bgs_title=Čia galima nustatyti prisijungimo puslapio temos foną.
 settings_right_bg_unauthenticated_users=Nepatvirtintų vartotojų fonas
 settings_right_theme_left_background_title=Temos fono valdymas
 

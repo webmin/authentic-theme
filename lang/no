@@ -99,7 +99,6 @@ settings_right_extensions_title=Omfattende temadesign gjør at du enkelt kan man
 
 theme_xhred_settings_right_theme_logos=Tema logoer
 theme_xhred_settings_right_theme_logos_title=Tema logoer
-settings_right_logos_title=Tema logoer kan enkelt settes her, for både autentiserte og uautoriserte brukere. Anbefalt logostørrelse er <kbd>180x90</kbd> piksler, og det eneste støttede formatet er <kbd>.png</kbd>, for å gi alfa-gjennomsiktighet.
 settings_right_logo_authenticated_users=Logo for autentiserte brukere
 settings_right_logo_unauthenticated_users=Logo for unauthenticated users
 
@@ -817,7 +816,6 @@ theme_xhred_mail_search_has_attach=Har vedlegg
 
 theme_xhred_settings_right_theme_bgs=Tema bakgrunner
 theme_xhred_settings_right_theme_bgs_title=Tema bakgrunner
-settings_right_bgs_title=Temabakgrunn for påloggingsside kan settes her. Det eneste støttede formatet er <kbd>.png</kbd>, for å gi alfa-gjennomsiktighet.
 settings_right_bg_unauthenticated_users=Bakgrunn for ikke-autentiserte brukere
 settings_right_theme_left_background_title=Tema bakgrunn kontroll
 

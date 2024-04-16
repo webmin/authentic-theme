@@ -99,7 +99,6 @@ settings_right_extensions_title=Desain ekstensi tema, memungkinkan Anda untuk me
 
 theme_xhred_settings_right_theme_logos=Logo tema
 theme_xhred_settings_right_theme_logos_title=Logo tema
-settings_right_logos_title=Logo tema dapat dengan mudah diatur di sini, untuk pengguna terotentikasi dan tidak terotentikasi. Ukuran logo direkomendasikan adalah <kbd>180x90</kbd> dan hanya format <kbd>.png</kbd> yang didukung, untuk menyediakan transparansi alpha.
 settings_right_logo_authenticated_users=Logo untuk pengguna terotentikasi
 settings_right_logo_unauthenticated_users=Logo untuk pengguna tidak terotentikasi
 

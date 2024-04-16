@@ -100,9 +100,10 @@ settings_right_extensions_title=Teeman laaja suunnittelu antaa sinun käsitellä
 
 theme_xhred_settings_right_theme_logos=Teemalogot
 theme_xhred_settings_right_theme_logos_title=Teeman logot
-settings_right_logos_title=Teemalogot voidaan asettaa täällä helposti sekä todennetulle että todentamattomalle käyttäjälle. Suositeltu logon koko on <kbd>180x90</kbd> pikseliä ja ainoa tuettu muoto on <kbd>.png</kbd> alfa-läpinäkyvyyden aikaansaamiseksi.
+settings_right_logos_title=Teeman logot voidaan asettaa helposti tähän sekä todennetuille että todentamattomille käyttäjille. Logon suositeltu koko on <em>180 x 90</em> pikseliä.
 settings_right_logo_authenticated_users=Tunnistettujen käyttäjien logo
 settings_right_logo_unauthenticated_users=Tunnistamattomien käyttäjien logo
+settings_right_logos_error=Ladattu tiedosto ei ole kuva
 
 settings_right_current_theme=Nykyinen teema
 settings_right_title=Tällä sivulla voit määrittää <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Aito teema</a> -vaihtoehtoja. Asetukset tallennetaan teemapäivityksen yhteydessä.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=On liitetiedosto
 
 theme_xhred_settings_right_theme_bgs=Teeman taustat
 theme_xhred_settings_right_theme_bgs_title=Teeman taustat
-settings_right_bgs_title=Kirjautumissivun teematausta voidaan asettaa täältä. Ainoa tuettu muoto on <kbd>.png</kbd>, jotta saadaan aikaan alfa-läpinäkyvyys.
+settings_right_bgs_title=Kirjautumissivun teeman tausta voidaan asettaa tästä.
 settings_right_bg_unauthenticated_users=Tausta todentamattomille käyttäjille
 settings_right_theme_left_background_title=Teeman taustaohjaus
 

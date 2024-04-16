@@ -14,9 +14,10 @@ settings_right_extensions_title=El diseño extenso del tema le permite manipular
 
 theme_xhred_settings_right_theme_logos=Logotipos temáticos
 theme_xhred_settings_right_theme_logos_title=Logotipos temáticos
-settings_right_logos_title=Los logotipos de temas se pueden configurar fácilmente aquí, tanto para usuarios autenticados como no autenticados. El tamaño de logotipo recomendado es <kbd>180x90</kbd> píxeles y el único formato compatible es <kbd>.png</kbd>, para proporcionar transparencia alfa.
+settings_right_logos_title=Los logotipos de temas se pueden configurar fácilmente aquí, tanto para usuarios autenticados como para usuarios no autenticados. El tamaño del logotipo recomendado es <em>180x90</em> píxeles.
 settings_right_logo_authenticated_users=Logotipo para usuarios autenticados
 settings_right_logo_unauthenticated_users=Logotipo para usuarios no autenticados
+settings_right_logos_error=El archivo subido no es una imagen
 
 settings_right_current_theme=Tema actual
 settings_right_title=Esta página le permite configurar opciones para <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Tema auténtico</a>. La configuración se almacenará al actualizar el tema.
@@ -757,7 +758,7 @@ theme_xhred_mail_search_has_attach=Tiene apego
 
 theme_xhred_settings_right_theme_bgs=Fondos del tema
 theme_xhred_settings_right_theme_bgs_title=Fondos temáticos
-settings_right_bgs_title=El fondo del tema para la página de inicio de sesión se puede configurar aquí. El único formato compatible es <kbd>.png</kbd>, para proporcionar transparencia alfa.
+settings_right_bgs_title=El fondo del tema para la página de inicio de sesión se puede configurar aquí.
 settings_right_bg_unauthenticated_users=Antecedentes para usuarios no autenticados
 settings_right_theme_left_background_title=Control de fondo del tema
 

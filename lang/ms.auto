@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 teras
 
+settings_right_logos_title=Logo tema boleh ditetapkan dengan mudah di sini, untuk kedua-duanya, pengguna yang disahkan dan tidak disahkan. Saiz logo yang disyorkan ialah <em>180x90</em> piksel.
+settings_right_logos_error=Fail yang dimuat naik bukan imej
+
 settings_right_hotkey_custom_options_description=Pautan tersuai membolehkan anda menggunakan digit daripada <code>1</code> hingga <code>9</code> untuk mengakses pantas mana-mana panel <code>URL yang sah.</code> <code>URL</code> boleh diekstrak dari halaman yang sedang dibuka. Contohnya, untuk beralih pantas kepada modul Apache, tetapkan <code>apache</code> kepada medan <code>Pautan tersuai 1</code>. Jika kunci pengubah suai lalai ditetapkan kepada <code>Alt,</code> mengklik <code>Alt + 1</code>, akan membuka modul Apache anda.
 
 settings_right_reload=Muatkan halaman lalai pada suis tab
@@ -253,7 +256,7 @@ theme_xhred_mail_search_has_attach=Mempunyai lampiran
 
 theme_xhred_settings_right_theme_bgs=Latar belakang tema
 theme_xhred_settings_right_theme_bgs_title=Latar Belakang Tema
-settings_right_bgs_title=Latar belakang tema untuk halaman masuk boleh ditetapkan di sini. Satu-satunya format yang disokong ialah <kbd>.png</kbd>, untuk memberikan ketelusan alpha.
+settings_right_bgs_title=Latar belakang tema untuk halaman log masuk boleh ditetapkan di sini.
 settings_right_bg_unauthenticated_users=Latar belakang untuk pengguna yang tidak disahkan
 settings_right_theme_left_background_title=Kawalan Latar Belakang Tema
 

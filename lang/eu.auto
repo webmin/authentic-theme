@@ -100,9 +100,10 @@ settings_right_extensions_title=Gaiaren diseinu zabala, interfaze zati zuzenekoe
 
 theme_xhred_settings_right_theme_logos=Gaiaren logotipoak
 theme_xhred_settings_right_theme_logos_title=Gaiaren logotipoak
-settings_right_logos_title=Gaiaren logotipoak erraz ezar daitezke hemen, egiaztatutako eta baimendu gabeko erabiltzaileentzat. Gomendatutako logotipoaren tamaina <kbd>180x90</kbd> pixel da eta onartzen den formatu bakarra <kbd>.png</kbd>, alfa gardentasuna emateko.
+settings_right_logos_title=Gaien logotipoak erraz ezar daitezke hemen, bai erabiltzaile autentifikatuentzat bai autentifikatu gabekoentzat. Gomendatutako logotipoaren tamaina <em>180x90</em> pixelekoa da.
 settings_right_logo_authenticated_users=Egiaztatutako erabiltzaileentzako logotipoa
 settings_right_logo_unauthenticated_users=Baimendu gabeko erabiltzaileentzako logotipoa
+settings_right_logos_error=Kargatutako fitxategia ez da irudi bat
 
 settings_right_current_theme=Egungo gaia
 settings_right_title=Orrialde honek <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a> aukerak aukeratzeko aukera ematen du. Ezarpenak gaia eguneratzean gordeko dira.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Eranskina du
 
 theme_xhred_settings_right_theme_bgs=Gaiaren aurrekariak
 theme_xhred_settings_right_theme_bgs_title=Gaiaren aurrekariak
-settings_right_bgs_title=Saioa hasierako orrialdearen gaia atzeko planoan hemen ezar daiteke. Onartutako formatu bakarra <kbd>.png</kbd>, alfa gardentasuna emateko.
+settings_right_bgs_title=Saioa hasteko orrirako gaiaren atzeko planoa hemen ezar daiteke.
 settings_right_bg_unauthenticated_users=Baimendu gabeko erabiltzaileentzako aurrekariak
 settings_right_theme_left_background_title=Gaiaren atzeko planoaren kontrola
 

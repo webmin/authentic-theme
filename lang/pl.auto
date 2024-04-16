@@ -19,9 +19,10 @@ settings_right_extensions_title=Rozbudowana kompozycja motywów, pozwala łatwo 
 
 theme_xhred_settings_right_theme_logos=Logo motywów
 theme_xhred_settings_right_theme_logos_title=Logo motywów
-settings_right_logos_title=Tutaj można łatwo ustawić logo motywów, zarówno dla uwierzytelnionych, jak i nieuwierzytelnionych użytkowników. Zalecany rozmiar logo to <kbd>180x90</kbd> x <kbd>180x90</kbd> pikseli, a jedynym obsługiwanym formatem jest <kbd>.png</kbd>, aby zapewnić przezroczystość alfa.
+settings_right_logos_title=Można tutaj łatwo ustawić logo motywów, zarówno dla użytkowników uwierzytelnionych, jak i nieuwierzytelnionych. Zalecany rozmiar logo to <em>180 x 90</em> pikseli.
 settings_right_logo_authenticated_users=Logo dla uwierzytelnionych użytkowników
 settings_right_logo_unauthenticated_users=Logo dla nieuwierzytelnionych użytkowników
+settings_right_logos_error=Przesłany plik nie jest obrazem
 
 settings_right_current_theme=Aktualny temat
 settings_right_title=Ta strona pozwala skonfigurować opcje <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Motyw autentyczny</a>. Ustawienia zostaną zapisane po aktualizacji motywu.
@@ -762,7 +763,7 @@ theme_xhred_mail_search_has_attach=ma załącznik
 
 theme_xhred_settings_right_theme_bgs=Motywy tła
 theme_xhred_settings_right_theme_bgs_title=Tła tematyczne
-settings_right_bgs_title=Tutaj można ustawić tło motywu strony logowania. Jedynym obsługiwanym formatem jest <kbd>.png</kbd>, aby zapewnić przezroczystość alfa.
+settings_right_bgs_title=Tutaj można ustawić tło motywu strony logowania.
 settings_right_bg_unauthenticated_users=Tło dla nieuwierzytelnionych użytkowników
 settings_right_theme_left_background_title=Kontrola tła motywu
 

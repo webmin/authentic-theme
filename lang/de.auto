@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 Kern
 
+settings_right_logos_title=Hier können Sie ganz einfach Theme-Logos für authentifizierte und nicht authentifizierte Benutzer festlegen. Die empfohlene Logogröße beträgt <em>180 x 90</em> Pixel.
+settings_right_logos_error=Bei der hochgeladenen Datei handelt es sich nicht um ein Bild
+
 settings_right_hotkey_custom_options_description=Mit benutzerdefinierten Links können Sie Ziffern von <code>1</code> bis <code>9</code> verwenden, um schnell auf jede gültige Panel-<code>URL</code> zuzugreifen. Die <code>URL</code> code> kann aus der aktuell geöffneten Seite extrahiert werden. Um beispielsweise schnell zum Apache-Modul zu wechseln, setzen Sie <code>apache</code> auf das Feld <code>Benutzerdefinierter Link 1</code>. Wenn die Standard-Zusatztaste auf <code>Alt</code> eingestellt ist, wird durch Klicken auf <code>Alt + 1</code> Ihr Apache-Modul geöffnet.
 
 settings_right_reload=Laden Sie die Standardseite auf den Registerkartenschalter
@@ -41,6 +44,8 @@ extensions_mail_flag_spam_status_data=$1 von $2
 extensions_mail_flag_tls_on=Standardverschlüsselung (TLS)
 extensions_mail_flag_tls_off=Unverschlüsselte Mail
 extensions_mail_flag_tls_none=Verschlüsselungsstatus unbekannt
+
+settings_right_bgs_title=Das Hintergrunddesign für die Anmeldeseite kann hier festgelegt werden.
 
 settings_hotkey_navigation=Status des Navigationsmenüs umschalten
 

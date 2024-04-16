@@ -100,9 +100,10 @@ settings_right_extensions_title=Tema kapsamlı tasarımı, arayüzün hedeflenen
 
 theme_xhred_settings_right_theme_logos=Tema logoları
 theme_xhred_settings_right_theme_logos_title=Tema Logoları
-settings_right_logos_title=Tema logoları, hem kimliği doğrulanmış hem de kimliği doğrulanmamış kullanıcılar için burada kolayca ayarlanabilir. Önerilen logo boyutu <kbd>180x90</kbd> piksel ve yalnızca desteklenen biçimidir <kbd>.png</kbd> alfa saydamlığı sağlamak üzere,.
+settings_right_logos_title=Tema logoları, hem kimliği doğrulanmış hem de kimliği doğrulanmamış kullanıcılar için burada kolayca ayarlanabilir. Önerilen logo boyutu <em>180x90</em> pikseldir.
 settings_right_logo_authenticated_users=Kimliği doğrulanmış kullanıcılar için logo
 settings_right_logo_unauthenticated_users=Kimliği doğrulanmamış kullanıcılar için logo
+settings_right_logos_error=Yüklenen dosya bir resim değil
 
 settings_right_current_theme=Geçerli tema
 settings_right_title=Bu sayfa <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Otantik Tema</a> için seçenekleri yapılandırmanıza olanak tanır. Ayarlar tema güncellemesi üzerine kaydedilecektir.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=ek vardır
 
 theme_xhred_settings_right_theme_bgs=Tema arka planları
 theme_xhred_settings_right_theme_bgs_title=Tema Arka Planlar
-settings_right_bgs_title=Giriş sayfası için tema arka planı buradan ayarlanabilir. Alfa saydamlığı sağlamak için desteklenen tek biçim <kbd>.png</kbd>.
+settings_right_bgs_title=Giriş sayfası için tema arka planı buradan ayarlanabilir.
 settings_right_bg_unauthenticated_users=Kimliği doğrulanmamış kullanıcılar için arka plan
 settings_right_theme_left_background_title=Tema Arka Plan Kontrolü
 

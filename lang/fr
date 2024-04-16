@@ -99,7 +99,6 @@ settings_right_extensions_title=La conception étendue du thème vous permet de 
 
 theme_xhred_settings_right_theme_logos=Logos de thème
 theme_xhred_settings_right_theme_logos_title=Logos de thème
-settings_right_logos_title=Les logos de thème peuvent être facilement définis ici, pour les utilisateurs authentifiés et non authentifiés. La taille recommandée du logo est <kbd>180x90</kbd> pixels et le seul format pris en charge est <kbd>.png</kbd>, pour fournir une transparence alpha.
 settings_right_logo_authenticated_users=Logo pour les utilisateurs authentifiés
 settings_right_logo_unauthenticated_users=Logo pour les utilisateurs non authentifiés
 
@@ -818,7 +817,6 @@ theme_xhred_mail_search_has_attach=Avec pièce jointe
 
 theme_xhred_settings_right_theme_bgs=Arrière-plans de thème
 theme_xhred_settings_right_theme_bgs_title=Arrière-plans de thème
-settings_right_bgs_title=L'arrière-plan du thème de la page de connexion peut être défini ici. Le seul format pris en charge est <kbd>.png</kbd>, pour fournir une transparence alpha.
 settings_right_bg_unauthenticated_users=Arrière-plans pour les utilisateurs non authentifiés
 settings_right_theme_left_background_title=Contrôle de l'arrière-plan du thème
 

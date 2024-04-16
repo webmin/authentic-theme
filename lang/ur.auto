@@ -100,9 +100,10 @@ settings_right_extensions_title=تھیم وسیع ڈیزائن ، آپ کو ان
 
 theme_xhred_settings_right_theme_logos=تھیم لوگو
 theme_xhred_settings_right_theme_logos_title=تھیم لوگو
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <em>180x90</em> pixels.
 settings_right_logo_authenticated_users=تصدیق شدہ صارفین کے لئے لوگو
 settings_right_logo_unauthenticated_users=غیر تصدیق شدہ صارفین کے لئے لوگو
+settings_right_logos_error=اپ لوڈ کردہ فائل تصویر نہیں ہے۔
 
 settings_right_current_theme=موجودہ تھیم
 settings_right_title=This page allows you to configure options for <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Settings will be stored upon theme update.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=لگاؤ ہے
 
 theme_xhred_settings_right_theme_bgs=تھیم کے پس منظر
 theme_xhred_settings_right_theme_bgs_title=تھیم کے پس منظر
-settings_right_bgs_title=Theme background for login page can be set here. The only supported format is <kbd>.png</kbd>, to provide alpha transparency.
+settings_right_bgs_title=لاگ ان پیج کے لیے تھیم کا پس منظر یہاں سیٹ کیا جا سکتا ہے۔
 settings_right_bg_unauthenticated_users=غیر تصدیق شدہ صارفین کے لئے پس منظر
 settings_right_theme_left_background_title=تھیم کا پس منظر کنٹرول
 

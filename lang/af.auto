@@ -100,9 +100,10 @@ settings_right_extensions_title=Tema uitgebreide ontwerp, sodat u maklik kan man
 
 theme_xhred_settings_right_theme_logos=Tema-logo's
 theme_xhred_settings_right_theme_logos_title=Tema-logo's
-settings_right_logos_title=Tema-logo's kan maklik hier opgestel word, vir beide, geverifieerde en ongeverifieerde gebruikers. Die aanbevole logo-grootte is <kbd>180x90</kbd> pixels en die enigste ondersteunde formaat is <kbd>.png</kbd> om alfa-deursigtigheid te bied.
+settings_right_logos_title=Tema-logo's kan maklik hier ingestel word, vir beide, geverifieerde en ongeverifieerde gebruikers. Aanbevole logogrootte is <em>180x90</em> pieksels.
 settings_right_logo_authenticated_users=Logo vir geverifieerde gebruikers
 settings_right_logo_unauthenticated_users=Logo vir nie-geverifieerde gebruikers
+settings_right_logos_error=Opgelaaide lêer is nie 'n prent nie
 
 settings_right_current_theme=Huidige tema
 settings_right_title=Op hierdie bladsy kan u opsies instel vir <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>. Instellings sal gestoor word by die opdatering van die tema.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Het gehegtheid
 
 theme_xhred_settings_right_theme_bgs=Tema-agtergronde
 theme_xhred_settings_right_theme_bgs_title=Tema-agtergronde
-settings_right_bgs_title=Tema-agtergrond vir aanmeldbladsy kan hier gestel word. Die enigste ondersteunde formaat is <kbd>.png</kbd>, om alfa-deursigtigheid te bied.
+settings_right_bgs_title=Tema agtergrond vir aanmeldbladsy kan hier ingestel word.
 settings_right_bg_unauthenticated_users=Agtergrond vir ongeverifieerde gebruikers
 settings_right_theme_left_background_title=Tema Agtergrondbeheer
 

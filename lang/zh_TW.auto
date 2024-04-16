@@ -100,9 +100,10 @@ settings_right_extensions_title=主題廣泛的設計，使您可以輕鬆地在
 
 theme_xhred_settings_right_theme_logos=主題徽標
 theme_xhred_settings_right_theme_logos_title=主題徽標
-settings_right_logos_title=無論是經過身份驗證的用戶還是未經身份驗證的用戶，都可以在此處輕鬆設置主題徽標。徽標的建議大小為<kbd>180x90</kbd>像素，唯一受支持的格式為<kbd>.png</kbd> ，以提供Alpha透明度。
+settings_right_logos_title=可以在此處輕鬆為經過身份驗證和未經身份驗證的使用者設定主題徽標。建議的標誌尺寸為 <em>180x90</em> 像素。
 settings_right_logo_authenticated_users=認證用戶的徽標
 settings_right_logo_unauthenticated_users=未經身份驗證的用戶的徽標
+settings_right_logos_error=上傳的檔案不是圖像
 
 settings_right_current_theme=當前主題
 settings_right_title=該頁面允許您為<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic主題</a>配置選項。設置將在主題更新時存儲。
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=有附件
 
 theme_xhred_settings_right_theme_bgs=主題背景
 theme_xhred_settings_right_theme_bgs_title=主題背景
-settings_right_bgs_title=可以在此處設置登錄頁面的主題背景。唯一受支持的格式是<kbd>.png</kbd> ，以提供alpha透明度。
+settings_right_bgs_title=可以在此處設定登入頁面的主題背景。
 settings_right_bg_unauthenticated_users=未經身份驗證的用戶的背景
 settings_right_theme_left_background_title=主題背景控制
 

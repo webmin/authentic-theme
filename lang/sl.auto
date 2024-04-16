@@ -100,9 +100,10 @@ settings_right_extensions_title=Obsežna zasnova teme vam omogoča enostavno upr
 
 theme_xhred_settings_right_theme_logos=Tematski logotipi
 theme_xhred_settings_right_theme_logos_title=Tema Logotipi
-settings_right_logos_title=Tu lahko enostavno nastavite tematske logotipe, tako za overjene kot za overjene uporabnike. Priporočena velikost logotipa je <kbd>180x90</kbd> x <kbd>180x90</kbd> slikovnih pik, edina podprta oblika pa je <kbd>.png</kbd>, da se zagotovi preglednost alfa.
+settings_right_logos_title=Logotipe tem lahko preprosto nastavite tukaj, za overjene in neavtenticirane uporabnike. Priporočena velikost logotipa je <em>180 x 90</em> slikovnih pik.
 settings_right_logo_authenticated_users=Logotip za pristne uporabnike
 settings_right_logo_unauthenticated_users=Logotip za nepooblaščene uporabnike
+settings_right_logos_error=Naložena datoteka ni slika
 
 settings_right_current_theme=Trenutna tema
 settings_right_title=Na tej strani lahko konfigurirate možnosti za <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">avtentične teme</a>. Nastavitve bodo shranjene po posodobitvi teme.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Ima navezanost
 
 theme_xhred_settings_right_theme_bgs=Tematske ozadje
 theme_xhred_settings_right_theme_bgs_title=Tematske ozadje
-settings_right_bgs_title=Tu lahko nastavite tematsko ozadje za stran za prijavo. Edina podprta oblika je <kbd>.png</kbd>, da se zagotovi preglednost alfa.
+settings_right_bgs_title=Tematsko ozadje za prijavno stran lahko nastavite tukaj.
 settings_right_bg_unauthenticated_users=Ozadje za nepooblaščene uporabnike
 settings_right_theme_left_background_title=Nadzor ozadja teme
 

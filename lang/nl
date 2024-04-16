@@ -99,7 +99,6 @@ settings_right_extensions_title=Thema uitbreidbaar design, stelt je in staat om 
 
 theme_xhred_settings_right_theme_logos=Thema logo's
 theme_xhred_settings_right_theme_logos_title=Thema Logo's
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <kbd>180x90</kbd> pixels and the only supported format is <kbd>.png</kbd>, to provide alpha transparency.
 settings_right_logo_authenticated_users=Logo voor geauthenticeerde gebruikers
 settings_right_logo_unauthenticated_users=Logo voor niet geauthenticeerde gebruikers
 

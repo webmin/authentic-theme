@@ -100,9 +100,10 @@ settings_right_extensions_title=การออกแบบที่ครอบ
 
 theme_xhred_settings_right_theme_logos=โลโก้ของธีม
 theme_xhred_settings_right_theme_logos_title=โลโก้ของธีม
-settings_right_logos_title=โลโก้ของชุดรูปแบบสามารถตั้งค่าได้อย่างง่ายดายที่นี่สำหรับผู้ใช้ที่ผ่านการรับรองความถูกต้องและไม่ได้รับการรับรองความถูกต้อง ขนาดโลโก้ที่แนะนำคือ <kbd>180x90</kbd> พิกเซลและรูปแบบที่รองรับเท่านั้นคือ. <kbd>.png</kbd> เพื่อให้ความโปร่งใสของอัลฟา
+settings_right_logos_title=คุณสามารถตั้งค่าโลโก้ธีมได้อย่างง่ายดายที่นี่ สำหรับทั้งผู้ใช้ที่ได้รับการรับรองความถูกต้องและไม่ได้รับการรับรองความถูกต้อง ขนาดโลโก้ที่แนะนำคือ <em>180x90</em> พิกเซล
 settings_right_logo_authenticated_users=โลโก้สำหรับผู้ใช้รับรองความถูกต้อง
 settings_right_logo_unauthenticated_users=โลโก้สำหรับผู้ใช้ที่ไม่ได้รับการพิสูจน์ตัวตน
+settings_right_logos_error=ไฟล์ที่อัปโหลดไม่ใช่รูปภาพ
 
 settings_right_current_theme=ชุดรูปแบบปัจจุบัน
 settings_right_title=หน้านี้ช่วยให้คุณกำหนดค่าตัวเลือกสำหรับ <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">ธีมของแท้</a> การตั้งค่าจะถูกเก็บไว้เมื่อมีการอัพเดตธีม
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=มีเอกสารแนบ
 
 theme_xhred_settings_right_theme_bgs=พื้นหลังของธีม
 theme_xhred_settings_right_theme_bgs_title=พื้นหลังของธีม
-settings_right_bgs_title=พื้นหลังธีมสำหรับหน้าเข้าสู่ระบบสามารถตั้งค่าได้ที่นี่ รูปแบบที่รองรับเท่านั้นคือ. <kbd>.png</kbd> เพื่อให้ความโปร่งใสของอัลฟา
+settings_right_bgs_title=พื้นหลังธีมสำหรับหน้าเข้าสู่ระบบสามารถตั้งค่าได้ที่นี่
 settings_right_bg_unauthenticated_users=พื้นหลังสำหรับผู้ใช้ที่ไม่ผ่านการตรวจสอบสิทธิ์
 settings_right_theme_left_background_title=การควบคุมพื้นหลังของธีม
 

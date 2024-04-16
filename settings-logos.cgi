@@ -44,7 +44,7 @@ print '
                                         <i class="fa fa-fw fa-eye text-muted"></i>
                                     </button>
                                     <input class="ui_upload'
-  . (!-r $lga && ' disabled') . '" type=file name="authenticated_logo_file" accept=".png" size="40" >
+  . (!-r $lga && ' disabled') . '" type=file name="authenticated_logo_file" accept="image/*" size="40" >
 
                                 </td>
                             </tr>
@@ -60,7 +60,7 @@ print '
                                         <i class="fa fa-fw fa-eye text-muted"></i>
                                     </button>
                                     <input class="ui_upload'
-  . (!-r $lgg && ' disabled') . '" type=file name="unauthenticated_logo_file" accept=".png" size="40">
+  . (!-r $lgg && ' disabled') . '" type=file name="unauthenticated_logo_file" accept="image/*" size="40">
                                 </td>
                             </tr>
                         </tbody>

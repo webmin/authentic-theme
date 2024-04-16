@@ -100,9 +100,10 @@ settings_right_extensions_title=Tēmas plašais dizains ļauj ērti manipulēt a
 
 theme_xhred_settings_right_theme_logos=Motīvu logotipi
 theme_xhred_settings_right_theme_logos_title=Motīvu logotipi
-settings_right_logos_title=Motīvu logotipus šeit var viegli iestatīt gan autentificētiem, gan neautentificētiem lietotājiem. Ieteicamais logotipa izmērs ir <kbd>180x90</kbd> pikseļi, un vienīgais atbalstītais formāts ir <kbd>.png</kbd>, lai nodrošinātu alfa caurspīdīgumu.
+settings_right_logos_title=Šeit var viegli iestatīt motīvu logotipus gan autentificētiem, gan neautentificētiem lietotājiem. Ieteicamais logotipa izmērs ir <em>180 x 90</em> pikseļi.
 settings_right_logo_authenticated_users=Logotips autentificētiem lietotājiem
 settings_right_logo_unauthenticated_users=Neautentificētu lietotāju logotips
+settings_right_logos_error=Augšupielādētais fails nav attēls
 
 settings_right_current_theme=Pašreizējā tēma
 settings_right_title=Šī lapa ļauj jums konfigurēt iespējas <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Autentiska tēma</a>. Atjauninot motīvu, iestatījumi tiks saglabāti.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Ir pieķeršanās
 
 theme_xhred_settings_right_theme_bgs=Tēmas foni
 theme_xhred_settings_right_theme_bgs_title=Tēmas foni
-settings_right_bgs_title=Šeit var iestatīt pieteikšanās lapas motīvu fonu. Vienīgais atbalstītais formāts ir <kbd>.png</kbd>, lai nodrošinātu alfa caurspīdīgumu.
+settings_right_bgs_title=Šeit var iestatīt pieteikšanās lapas motīvu fonu.
 settings_right_bg_unauthenticated_users=Fona neautentificētiem lietotājiem
 settings_right_theme_left_background_title=Tēmas fona kontrole
 

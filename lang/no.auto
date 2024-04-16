@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 kjerne
 
+settings_right_logos_title=Temalogoer kan enkelt settes her, for både autentiserte og uautentiserte brukere. Anbefalt logostørrelse er <em>180x90</em> piksler.
+settings_right_logos_error=Den opplastede filen er ikke et bilde
+
 settings_right_hotkey_custom_options_description=Egendefinerte lenker lar deg bruke sifre fra <code>1</code> til <code>9</code> for å få rask tilgang til alle gyldige panel-<code>URL.</code> <code>URL</code> kode> kan trekkes ut fra siden som er åpnet. For å raskt bytte til Apache-modul, sett for eksempel <code>apache</code> til <code>Egendefinert lenke 1</code>-feltet. Hvis standard modifikasjonsnøkkel er satt til <code>Alt,</code>, åpnes Apache-modulen ved å klikke <code>Alt + 1</code>.
 
 settings_right_reload=Last inn standardsiden på fanebryteren
@@ -34,6 +37,8 @@ settings_webmin_default_module=Standardside for Webmin
 
 #19.09
 theme_git_patch_incompatible_message_desc=Det kan være inkompatible endringer som kan stoppe temaet fra å fungere som det er designet. Det er ikke mulig å fortsette oppgraderingen med brukergrensesnittet.
+
+settings_right_bgs_title=Temabakgrunn for påloggingssiden kan settes her.
 
 settings_hotkey_navigation=Veksle navigasjonsmenystatus
 

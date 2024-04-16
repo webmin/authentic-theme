@@ -99,7 +99,6 @@ settings_right_extensions_title=Design tema esteso, consente di manipolare facil
 
 theme_xhred_settings_right_theme_logos=Loghi del tema
 theme_xhred_settings_right_theme_logos_title=Loghi del tema
-settings_right_logos_title=I loghi del tema possono essere facilmente impostati qui, sia per gli utenti autenticati che per quelli non autenticati. La dimensione raccomandata del logo è <kbd>180x90</kbd> pixel e l'unico formato supportato è <kbd>.png</kbd>, per fornire trasparenza alfa.
 settings_right_logo_authenticated_users=Logo per gli utenti autenticati
 settings_right_logo_unauthenticated_users=Logo per gli utenti non autenticati
 
@@ -822,7 +821,6 @@ theme_xhred_mail_search_has_attach=Ha un allegato
 
 theme_xhred_settings_right_theme_bgs=Sfondi tema
 theme_xhred_settings_right_theme_bgs_title=Sfondi tema
-settings_right_bgs_title=Lo sfondo del tema per la pagina di accesso può essere impostato qui. L'unico formato supportato è <kbd>.png</kbd>, per fornire trasparenza alfa.
 settings_right_bg_unauthenticated_users=Sfondo per gli utenti non autenticati
 settings_right_theme_left_background_title=Controllo dello sfondo del tema
 

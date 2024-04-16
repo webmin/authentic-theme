@@ -100,9 +100,10 @@ settings_right_extensions_title=עיצוב נרחב בנושא, מאפשר לך 
 
 theme_xhred_settings_right_theme_logos=סמלי נושא
 theme_xhred_settings_right_theme_logos_title=סמלי נושא
-settings_right_logos_title=ניתן להגדיר כאן לוגו של ערכות נושא, למשתמשים מאומתים וגם לא מאומתים. גודל הלוגו המומלץ הוא <kbd>180x90</kbd> פיקסלים והפורמט הנתמך היחיד הוא <kbd>.png</kbd>, בכדי לספק שקיפות אלפא.
+settings_right_logos_title=ניתן להגדיר כאן בקלות סמלי לוגו של ערכת נושא, הן עבור משתמשים מאומתים והן עבור משתמשים לא מאומתים. גודל הלוגו המומלץ הוא <em>180x90</em> פיקסלים.
 settings_right_logo_authenticated_users=לוגו למשתמשים מאומתים
 settings_right_logo_unauthenticated_users=לוגו למשתמשים לא מאומתים
+settings_right_logos_error=הקובץ שהועלה אינו תמונה
 
 settings_right_current_theme=נושא נוכחי
 settings_right_title=דף זה מאפשר לך להגדיר אפשרויות עבור <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">נושא אותנטי</a>. ההגדרות יישמרו בעדכון הנושא.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=יש קובץ מצורף
 
 theme_xhred_settings_right_theme_bgs=רקע נושא
 theme_xhred_settings_right_theme_bgs_title=רקע נושא
-settings_right_bgs_title=ניתן לקבוע כאן נושא נושא לדף הכניסה. הפורמט היחיד הנתמך הוא <kbd>.png</kbd>, כדי לספק שקיפות אלפא.
+settings_right_bgs_title=ניתן להגדיר רקע ערכת נושא לדף הכניסה כאן.
 settings_right_bg_unauthenticated_users=רקע למשתמשים לא מאומתים
 settings_right_theme_left_background_title=בקרת רקע נושא
 

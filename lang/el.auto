@@ -100,9 +100,10 @@ settings_right_extensions_title=Η εκτεταμένη σχεδίαση θέμ�
 
 theme_xhred_settings_right_theme_logos=Λογότυπα θεμάτων
 theme_xhred_settings_right_theme_logos_title=Θεματικά λογότυπα
-settings_right_logos_title=Τα λογότυπα θεμάτων μπορούν να ρυθμιστούν εύκολα εδώ, τόσο για τους χρήστες που έχουν πιστοποιηθεί και για τους χρήστες χωρίς έλεγχο ταυτότητας. Το προτεινόμενο μέγεθος λογότυπου είναι <kbd>180x90</kbd> pixel και η μόνη υποστηριζόμενη μορφή είναι <kbd>.png</kbd>, για να παρέχει διαφάνεια άλφα.
+settings_right_logos_title=Τα λογότυπα θεμάτων μπορούν εύκολα να οριστούν εδώ, τόσο για χρήστες με έλεγχο ταυτότητας όσο και για μη πιστοποιημένους χρήστες. Το συνιστώμενο μέγεθος λογότυπου είναι <em>180x90</em> pixel.
 settings_right_logo_authenticated_users=Λογότυπο για πιστοποιημένους χρήστες
 settings_right_logo_unauthenticated_users=Λογότυπο για μη εξουσιοδοτημένους χρήστες
+settings_right_logos_error=Το μεταφορτωμένο αρχείο δεν είναι εικόνα
 
 settings_right_current_theme=Τρέχον θέμα
 settings_right_title=Αυτή η σελίδα σας επιτρέπει να διαμορφώσετε επιλογές για το <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Αυθεντικό θέμα</a>. Οι ρυθμίσεις θα αποθηκευτούν κατά την ενημέρωση του θέματος.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Έχει προσκόλληση
 
 theme_xhred_settings_right_theme_bgs=Θέματα υπόβαθρα
 theme_xhred_settings_right_theme_bgs_title=Θέμα υπόβαθρα
-settings_right_bgs_title=Το φόντο του θέματος για τη σελίδα σύνδεσης μπορεί να οριστεί εδώ. Η μόνη υποστηριζόμενη μορφή είναι <kbd>.png</kbd>, για να παρέχει διαφάνεια άλφα.
+settings_right_bgs_title=Το φόντο του θέματος για τη σελίδα σύνδεσης μπορεί να οριστεί εδώ.
 settings_right_bg_unauthenticated_users=Ιστορικό για μη εξουσιοδοτημένους χρήστες
 settings_right_theme_left_background_title=Έλεγχος φόντου θέματος
 

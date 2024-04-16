@@ -100,9 +100,10 @@ settings_right_extensions_title=طراحی گسترده ای تم ، شما را
 
 theme_xhred_settings_right_theme_logos=آرم های تم
 theme_xhred_settings_right_theme_logos_title=آرم های تم
-settings_right_logos_title=آرم های تم را می توان به راحتی در اینجا تنظیم کرد ، برای کاربران معتبر و غیرمجاز. اندازه آرم <kbd>180x90</kbd> پیکسل است و تنها قالب پشتیبانی شده آن <kbd>.png</kbd> تا شفافیت آلفا را فراهم کند.
+settings_right_logos_title=لوگوهای تم را می توان به راحتی در اینجا تنظیم کرد، هم برای کاربران احراز هویت شده و هم برای کاربران احراز هویت نشده. اندازه لوگوی پیشنهادی <em>180x90</em> پیکسل است.
 settings_right_logo_authenticated_users=لوگو برای کاربران معتبر
 settings_right_logo_unauthenticated_users=لوگو برای کاربران غیرمجاز
+settings_right_logos_error=فایل آپلود شده یک تصویر نیست
 
 settings_right_current_theme=موضوع فعلی
 settings_right_title=این صفحه به شما امکان می دهد گزینه های <a href="https://github.com/authentic-theme/authentic-theme "target="_blank">Theme معتبر</a> را پیکربندی کنید. تنظیمات با بروزرسانی موضوع ذخیره می شوند.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=دلبستگی دارد
 
 theme_xhred_settings_right_theme_bgs=زمینه های تم
 theme_xhred_settings_right_theme_bgs_title=زمینه های زمینه
-settings_right_bgs_title=پس زمینه تم برای صفحه ورود می تواند در اینجا تنظیم شود. تنها قالب پشتیبانی شده <kbd>.png</kbd> ، برای ارائه شفافیت آلفا.
+settings_right_bgs_title=پس زمینه تم برای صفحه ورود را می توان در اینجا تنظیم کرد.
 settings_right_bg_unauthenticated_users=زمینه برای کاربران غیرمجاز
 settings_right_theme_left_background_title=کنترل زمینه زمینه
 

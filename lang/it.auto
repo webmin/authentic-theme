@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 nucleo
 
+settings_right_logos_title=I loghi dei temi possono essere facilmente impostati qui, sia per gli utenti autenticati che per quelli non autenticati. La dimensione consigliata del logo è <em>180x90</em> pixel.
+settings_right_logos_error=Il file caricato non è un'immagine
+
 settings_right_hotkey_custom_options_description=I collegamenti personalizzati ti consentono di utilizzare le cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> del pannello valido. L'<code>URL</code> code> può essere estratto dalla pagina attualmente aperta. Ad esempio, per passare rapidamente al modulo Apache, imposta <code>apache</code> nel campo <code>Link personalizzato 1</code>. Se il tasto modificatore predefinito è impostato su <code>Alt,</code> facendo clic su <code>Alt + 1</code>, si aprirà il modulo Apache.
 
 settings_hotkeys_active=Abilitare
@@ -29,6 +32,8 @@ theme_update_footer=Si prega di essere gentili nel segnalare bug al repository $
 
 #19.09
 theme_git_patch_incompatible_message_desc=Potrebbero esserci modifiche incompatibili, che potrebbero impedire al tema di funzionare come previsto. Non è possibile continuare l'operazione di aggiornamento utilizzando l'interfaccia utente.
+
+settings_right_bgs_title=Qui è possibile impostare lo sfondo del tema per la pagina di accesso.
 
 settings_hotkey_navigation=Attiva/disattiva lo stato del menu di navigazione
 

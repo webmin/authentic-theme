@@ -95,7 +95,6 @@ settings_right_extensions_title=テーマの豊富なデザインは、簡単に
 
 theme_xhred_settings_right_theme_logos=テーマのロゴ
 theme_xhred_settings_right_theme_logos_title=テーマのロゴ
-settings_right_logos_title= テーマのロゴは、認証されたユーザと未認証ユーザーの両方に対して簡単に設定できます。推奨ロゴサイズは <kbd>180x90</kbd> ピクセルで、サポートされている唯一の形式は <kbd>.png</kbd> で、アルファ透過性を提供します。
 settings_right_logo_authenticated_users=認証済みユーザーのロゴ
 settings_right_logo_unauthenticated_users=未認証ユーザーのロゴ
 
@@ -808,7 +807,6 @@ theme_xhred_mail_search_has_attach= 添付ファイルあり
 
 theme_xhred_settings_right_theme_bgs= テーマの背景
 theme_xhred_settings_right_theme_bgs_title= テーマの背景
-settings_right_bgs_title= ログインページのテーマの背景をここで設定できます。アルファ透明度を提供するためにサポートされているフォーマットは<kbd> .png </kbd>のみです。
 settings_right_bg_unauthenticated_users= 認証されていないユーザーの背景
 settings_right_theme_left_background_title= テーマバックグラウンドコントロール
 

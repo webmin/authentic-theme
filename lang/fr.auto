@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 cœur
 
+settings_right_logos_title=Les logos de thème peuvent être facilement définis ici, pour les utilisateurs authentifiés et non authentifiés. La taille du logo recommandée est de <em>180 x 90</em> pixels.
+settings_right_logos_error=Le fichier téléchargé n'est pas une image
+
 settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser des chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à n'importe quelle <code>URL de panneau valide.</code> L'<code>URL</code> peut être extrait de la page actuellement ouverte. Par exemple, pour basculer rapidement vers le module Apache, définissez <code>apache</code> sur le champ <code>Lien personnalisé 1</code>. Si la touche de modification par défaut est définie sur <code>Alt,</code> en cliquant sur <code>Alt + 1</code>, vous ouvrirez le module Apache.
 
 settings_right_reload=Charger la page par défaut sur le commutateur d'onglet
@@ -34,6 +37,8 @@ settings_webmin_default_module=Page par défaut pour Webmin
 
 #19.09
 theme_git_patch_incompatible_message_desc=Il pourrait y avoir des changements incompatibles, qui pourraient empêcher le thème de fonctionner comme prévu. Il n'est pas possible de poursuivre l'opération de mise à niveau à l'aide de l'interface utilisateur.
+
+settings_right_bgs_title=L’arrière-plan du thème pour la page de connexion peut être défini ici.
 
 settings_hotkey_navigation=Basculer l'état du menu de navigation
 

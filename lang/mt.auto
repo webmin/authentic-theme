@@ -100,9 +100,10 @@ settings_right_extensions_title=Tema b'disinn estensiv, tippermettilek timmanipu
 
 theme_xhred_settings_right_theme_logos=Logos b’tema
 theme_xhred_settings_right_theme_logos_title=Logos Tema
-settings_right_logos_title=Il-logos tat-tema jistgħu jiġu ssettjati faċilment hawn, għal utenti kemm awtentikati kif ukoll mhux awtentikati. Id-daqs tal-logo rakkomandat huwa ta ’ <kbd>180x90</kbd> pixel u l-uniku format sostnut huwa <kbd>.png</kbd>, li jipprovdi trasparenza alfa.
+settings_right_logos_title=Il-logos tat-temi jistgħu jiġu stabbiliti faċilment hawn, kemm għall-utenti awtentikati kif ukoll mhux awtentikati. Id-daqs tal-logo rakkomandat huwa <em>180x90</em> pixels.
 settings_right_logo_authenticated_users=Logo għall-utenti awtentikati
 settings_right_logo_unauthenticated_users=Logo għal utenti mhux awtentikati
+settings_right_logos_error=Il-fajl imtella mhux immaġini
 
 settings_right_current_theme=Tema kurrenti
 settings_right_title=Din il-paġna jippermettilek li tikkonfigura għażliet għal <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Tema Awtentika</a>. Is-settings se jinħażnu malli l-aġġornament tat-tema.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Għandha sekwestru
 
 theme_xhred_settings_right_theme_bgs=Sfondi b'tema
 theme_xhred_settings_right_theme_bgs_title=Sfondi b'tema
-settings_right_bgs_title=L-isfond tat-tema għall-paġna tal-login jista 'jkun hawn. L-uniku format sostnut huwa <kbd>.png</kbd>, li jipprovdi trasparenza alfa.
+settings_right_bgs_title=L-isfond tat-tema għall-paġna tal-login jista’ jiġi stabbilit hawn.
 settings_right_bg_unauthenticated_users=Sfond għal utenti mhux awtentikati
 settings_right_theme_left_background_title=Tema tal-Kontroll tal-Isfond
 

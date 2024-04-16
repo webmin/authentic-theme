@@ -100,9 +100,10 @@ settings_right_extensions_title=Chủ đề thiết kế rộng rãi, cho phép 
 
 theme_xhred_settings_right_theme_logos=Logo chủ đề
 theme_xhred_settings_right_theme_logos_title=Logo chủ đề
-settings_right_logos_title=Logo chủ đề có thể dễ dàng được đặt ở đây, cho cả người dùng, người dùng xác thực và không xác thực. Kích thước logo được đề xuất là <kbd>180x90</kbd> pixel và định dạng được hỗ trợ duy nhất là <kbd>.png</kbd>, để cung cấp độ trong suốt alpha.
+settings_right_logos_title=Logo chủ đề có thể dễ dàng được đặt ở đây, cho cả người dùng đã được xác thực và chưa được xác thực. Kích thước biểu trưng được đề xuất là <em>180x90</em> pixel.
 settings_right_logo_authenticated_users=Logo cho người dùng xác thực
 settings_right_logo_unauthenticated_users=Logo cho người dùng không được xác thực
+settings_right_logos_error=Tệp được tải lên không phải là hình ảnh
 
 settings_right_current_theme=Chủ đề hiện tại
 settings_right_title=Trang này cho phép bạn định cấu hình các tùy chọn cho <a href="https://github.com/authentic-theme/authentic-theme"lists">Theme Theme</a>. Cài đặt sẽ được lưu trữ khi cập nhật chủ đề.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=có tập tin đính kèm
 
 theme_xhred_settings_right_theme_bgs=Hình nền chủ đề
 theme_xhred_settings_right_theme_bgs_title=Hình nền chủ đề
-settings_right_bgs_title=Nền chủ đề cho trang đăng nhập có thể được đặt ở đây. Định dạng được hỗ trợ duy nhất là <kbd>.png</kbd>, để cung cấp độ trong suốt alpha.
+settings_right_bgs_title=Nền chủ đề cho trang đăng nhập có thể được đặt ở đây.
 settings_right_bg_unauthenticated_users=Bối cảnh cho người dùng không được xác thực
 settings_right_theme_left_background_title=Kiểm soát nền chủ đề
 

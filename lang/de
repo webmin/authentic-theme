@@ -99,7 +99,6 @@ settings_right_extensions_title=Das erweiterbare Design erlaubt es sehr einfach 
 
 theme_xhred_settings_right_theme_logos=Design Logos
 theme_xhred_settings_right_theme_logos_title=Design Logos
-settings_right_logos_title=Hier kann man die Design Logos angemeldete und nicht angemeldete Benutzer einstellen. Die empfohlene Grö&szlige der Logos beträgt <kbd>180x90</kbd> Pixel im Format <kbd>.png</kbd> da Unterstützung für den Hintergrund Kanals benötigt wird.
 settings_right_logo_authenticated_users=Logo für angemeldete Benutzer
 settings_right_logo_unauthenticated_users=Logo für nicht angemeldete Benutzer
 
@@ -813,7 +812,6 @@ theme_xhred_mail_search_has_attach=Hat Anhang
 
 theme_xhred_settings_right_theme_bgs=Design Hintergründe
 theme_xhred_settings_right_theme_bgs_title=Design Hintergründe
-settings_right_bgs_title=Hier kannst Du den Hintergrund für die Anmeldeseite des Designs ändern. Es wird nur das <kbd>.png</kbd> Format unterstützt, nur damit ist Transparenz möglich..
 settings_right_bg_unauthenticated_users=Hintergrund f&uml;r nicht angemeldete Benutzer
 settings_right_theme_left_background_title=Einstellung für Design Hintergrund
 

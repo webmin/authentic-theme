@@ -100,9 +100,10 @@ settings_right_extensions_title=Téma rozsiahly dizajn, umožňuje ľahkú manip
 
 theme_xhred_settings_right_theme_logos=Logá motívov
 theme_xhred_settings_right_theme_logos_title=Logá motívov
-settings_right_logos_title=Témy loga sa dajú ľahko nastaviť pre autentifikovaných aj neoverených používateľov. Odporúčaná veľkosť loga je <kbd>180x90</kbd> x <kbd>180x90</kbd> pixlov a jediný podporovaný formát je <kbd>.png</kbd>, aby sa zabezpečila priehľadnosť alfa.
+settings_right_logos_title=Logá tém sa tu dajú jednoducho nastaviť pre overených aj neoverených používateľov. Odporúčaná veľkosť loga je <em>180 x 90</em> pixelov.
 settings_right_logo_authenticated_users=Logo pre overených používateľov
 settings_right_logo_unauthenticated_users=Logo pre neregistrovaných používateľov
+settings_right_logos_error=Nahraný súbor nie je obrázok
 
 settings_right_current_theme=Aktuálna téma
 settings_right_title=Táto stránka vám umožňuje konfigurovať možnosti pre <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">autentickú tému</a>. Nastavenia sa uložia po aktualizácii témy.
@@ -844,7 +845,7 @@ theme_xhred_mail_search_has_attach=Má pripútanosť
 
 theme_xhred_settings_right_theme_bgs=Pozadie témy
 theme_xhred_settings_right_theme_bgs_title=Pozadie témy
-settings_right_bgs_title=Tu môžete nastaviť pozadie témy pre prihlasovaciu stránku. Jediným podporovaným formátom je <kbd>.png</kbd> na zabezpečenie priehľadnosti alfa.
+settings_right_bgs_title=Tu je možné nastaviť pozadie témy pre prihlasovaciu stránku.
 settings_right_bg_unauthenticated_users=Pozadie pre neoverených používateľov
 settings_right_theme_left_background_title=Ovládanie pozadia témy
 

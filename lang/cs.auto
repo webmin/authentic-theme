@@ -1,5 +1,8 @@
 body_cputype1=$5, $8 jádra
 
+settings_right_logos_title=Loga motivů lze zde snadno nastavit pro ověřené i neověřené uživatele. Doporučená velikost loga je <em>180 x 90</em> pixelů.
+settings_right_logos_error=Nahraný soubor není obrázek
+
 settings_right_hotkey_custom_options_description=Vlastní odkazy vám umožňují používat číslice od <code>1</code> do <code>9</code> za účelem rychlého přístupu k libovolné platné <code>URL panelu</code> <code>URL</code> kód> lze extrahovat z aktuálně otevřené stránky. Chcete-li například rychle přepnout na modul Apache, nastavte <code>apache</code> na pole <code>Vlastní odkaz 1</code>. Pokud je výchozí modifikační klíč nastaven na <code>Alt</code>, kliknutím na <code>Alt + 1</code> se otevře modul Apache.
 
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
@@ -702,7 +705,7 @@ theme_xhred_mail_search_has_attach=Má připoutání
 
 theme_xhred_settings_right_theme_bgs=Pozadí motivu
 theme_xhred_settings_right_theme_bgs_title=Pozadí motivu
-settings_right_bgs_title=Pozadí motivu pro přihlašovací stránku lze nastavit zde. Jediným podporovaným formátem je <kbd>.png</kbd>, který zajišťuje průhlednost alfa.
+settings_right_bgs_title=Zde lze nastavit pozadí motivu pro přihlašovací stránku.
 settings_right_bg_unauthenticated_users=Zázemí pro neověřené uživatele
 settings_right_theme_left_background_title=Ovládání pozadí motivu
 
