@@ -122,8 +122,7 @@ sub theme_header
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
                 my $params = "";
-                our %in;
-                my %in_ = %in;
+                my %in_;
                 if ($ENV{'REQUEST_METHOD'} eq 'GET') {
                     &ReadParse(\%in_);
                 }
