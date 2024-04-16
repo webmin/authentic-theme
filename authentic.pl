@@ -122,10 +122,13 @@ sub theme_header
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
                 my $params = "";
-                my %in;
-                &ReadParse(\%in);
-                foreach my $k (keys %in) {
-                    foreach my $v (split(/\0/, $in{$k})) {
+                our %in;
+                my %in_ = %in;
+                if ($ENV{'REQUEST_METHOD'} eq 'GET') {
+                    &ReadParse(\%in_);
+                }
+                foreach my $k (keys %in_) {
+                    foreach my $v (split(/\0/, $in_{$k})) {
                         $params .= "&_cparam_".
                         &urlize($k)."=".&urlize($v);
                     }
