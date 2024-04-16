@@ -138,7 +138,9 @@ embed_logo();
 
 # Login message
 my $host;
-if ($gconfig{'realname'}) {
+if ($theme_config{'settings_login_page_server_name'}) {
+    $host = $theme_config{'settings_login_page_server_name'};
+} elsif ($gconfig{'realname'}) {
     $host = &get_display_hostname();
 } else {
     $host = get_env('server_name');
