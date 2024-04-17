@@ -67,10 +67,10 @@ if (&foreign_check("webmin")) {
 }
 
 &webmin_log("_config_", undef, undef, \%in, $module);
-my $redir = &link_config_cparams($module, \%in);
 if ($in{'save_next'}) {
+    my $redir = &link_config_cparams($module, \%in, 1);
 	&redirect("config.cgi?module=$module&section=$in{'section_next'}".
         ($redir =~ /\?(.*)$/ ? "&".$1 : ""));
 } else {
-    &redirect($redir);
+    &redirect(&link_config_cparams($module, \%in));
 }
