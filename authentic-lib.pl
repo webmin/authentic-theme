@@ -204,6 +204,7 @@ sub get_extended_sysinfo
                         ))
                     {
                         foreach my $t (@{ $info->{'table'} }) {
+                            $t->{"desc"} =~ s/<img src='.*?\/virtual-server\/images\/(\S+).(png|gif)'.*?>/$status_icons->{$1}/g;
                             $t->{"value"} =~ s/<img src='.*?\/virtual-server\/images\/(\S+).(png|gif)'.*?>/$status_icons->{$1}/g;
                             $returned_sysinfo .= '<tr>
                                 <td>' . $t->{"desc"} . '</td>
