@@ -1456,3 +1456,5 @@ theme_xhred_datatable_filter_and_export=Filter and export content
 settings_hotkey_logout_dbl=Sign out
 theme_xhred_hotkey_emsg=The backslash key cannot be used as a hotkey
 settings_embed_product_splash_privileged=Display a branding splash screen following login
+dashboard_status_running=Running
+dashboard_status_stopped=Stopped

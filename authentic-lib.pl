@@ -184,9 +184,9 @@ sub get_extended_sysinfo
                         _vert_algn_md => 'vertical-align-middle',
                     };
                     my $status_icons = {
-                        up     => "<i class=\"$status_icons_tpl->{'_fa'}-check $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_succ'}\"></i>",
+                        up     => "<i data-toggle=\"tooltip\" title=\"$theme_text{'dashboard_status_running'}\" class=\"$status_icons_tpl->{'_fa'}-check $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_succ'}\"></i>",
                         stop   => "<i class=\"$status_icons_tpl->{'_fa'}-times-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_warn'}\"></i>",
-                        down   => "<i class=\"$status_icons_tpl->{'_fa'}-minus-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_dang'}\"></i>",
+                        down   => "<i data-toggle=\"tooltip\" title=\"$theme_text{'dashboard_status_stopped'}\" class=\"$status_icons_tpl->{'_fa'}-minus-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_dang'}\"></i>",
                         start  => "<i class=\"$status_icons_tpl->{'_fa'}-play text-success $status_icons_tpl->{'_falg'}\"></i>",
                         reload => "<i class=\"$status_icons_tpl->{'_fa'}-refresh text-info $status_icons_tpl->{'_falg'}\"></i>",
                         quest  => "<i class=\"$status_icons_tpl->{'_fa'}-question-circle $status_icons_tpl->{'_fa115x'}\"></i>",
