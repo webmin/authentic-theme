@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Filtruokite ir eksportuokite turinį
 settings_hotkey_logout_dbl=Atsijungti
 theme_xhred_hotkey_emsg=Pasvirojo brūkšnio klavišo negalima naudoti kaip greitojo klavišo
 settings_embed_product_splash_privileged=Prisijungę parodykite prekės ženklo įjungimo ekraną
+dashboard_status_running=Bėgimas
+dashboard_status_stopped=Sustojo

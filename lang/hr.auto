@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Filtrirajte i izvezite sadržaj
 settings_hotkey_logout_dbl=Odjavite se
 theme_xhred_hotkey_emsg=Tipka obrnute kose crte ne može se koristiti kao tipka prečaca
 settings_embed_product_splash_privileged=Prikažite uvodni zaslon robne marke nakon prijave
+dashboard_status_running=Trčanje
+dashboard_status_stopped=Zaustavljeno

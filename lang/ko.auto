@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=콘텐츠 필터링 및 내보내기
 settings_hotkey_logout_dbl=로그 아웃
 theme_xhred_hotkey_emsg=백슬래시 키는 단축키로 사용할 수 없습니다
 settings_embed_product_splash_privileged=로그인 후 브랜딩 스플래시 화면 표시
+dashboard_status_running=달리기
+dashboard_status_stopped=중지됨

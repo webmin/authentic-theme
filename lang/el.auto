@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Φιλτράρισμα και εξαγω
 settings_hotkey_logout_dbl=Αποσύνδεση
 theme_xhred_hotkey_emsg=Το πλήκτρο ανάστροφης κάθετο δεν μπορεί να χρησιμοποιηθεί ως πλήκτρο πρόσβασης
 settings_embed_product_splash_privileged=Εμφανίστε μια οθόνη εκκίνησης επωνυμίας μετά τη σύνδεση
+dashboard_status_running=Τρέξιμο
+dashboard_status_stopped=Σταμάτησε

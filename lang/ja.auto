@@ -355,3 +355,5 @@ theme_xhred_datatable_filter_and_export=コンテンツのフィルタリング�
 settings_hotkey_logout_dbl=ログアウト
 theme_xhred_hotkey_emsg=バックスラッシュ キーはホットキーとして使用できません
 settings_embed_product_splash_privileged=ログイン後にブランドのスプラッシュ画面を表示する
+dashboard_status_running=ランニング
+dashboard_status_stopped=停止

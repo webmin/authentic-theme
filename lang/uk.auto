@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Фільтрувати та експор
 settings_hotkey_logout_dbl=Вийти
 theme_xhred_hotkey_emsg=Клавішу зворотньої косої риски не можна використовувати як гарячу клавішу
 settings_embed_product_splash_privileged=Після входу відображати заставку бренду
+dashboard_status_running=Біг
+dashboard_status_stopped=Зупинився

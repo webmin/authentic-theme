@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Iragazi eta esportatu edukia
 settings_hotkey_logout_dbl=Saioa amaitu
 theme_xhred_hotkey_emsg=Atzeko barra-tekla ezin da laster-tekla gisa erabili
 settings_embed_product_splash_privileged=Erakutsi marka-pantaila bat saioa hasi ondoren
+dashboard_status_running=Korrika
+dashboard_status_stopped=Gelditu

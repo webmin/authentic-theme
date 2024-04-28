@@ -1296,3 +1296,5 @@ theme_xhred_datatable_filter_and_export=Filtrar y exportar contenido
 settings_hotkey_logout_dbl=Cerrar sesión
 theme_xhred_hotkey_emsg=La tecla de barra invertida no se puede utilizar como tecla de acceso rápido
 settings_embed_product_splash_privileged=Mostrar una pantalla de presentación de marca después de iniciar sesión
+dashboard_status_running=Correr
+dashboard_status_stopped=Interrumpido

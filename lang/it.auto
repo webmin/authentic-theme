@@ -247,3 +247,5 @@ theme_xhred_datatable_filter_and_export=Filtra ed esporta contenuti
 settings_hotkey_logout_dbl=Disconnettersi
 theme_xhred_hotkey_emsg=Il tasto barra rovesciata non può essere utilizzato come tasto di scelta rapida
 settings_embed_product_splash_privileged=Visualizza una schermata iniziale del branding dopo l'accesso
+dashboard_status_running=Corsa
+dashboard_status_stopped=Fermato

@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=تصفية وتصدير المحتوى
 settings_hotkey_logout_dbl=تسجيل خروج
 theme_xhred_hotkey_emsg=لا يمكن استخدام مفتاح الخط المائل العكسي كمفتاح تشغيل سريع
 settings_embed_product_splash_privileged=عرض شاشة البداية للعلامة التجارية بعد تسجيل الدخول
+dashboard_status_running=جري
+dashboard_status_stopped=توقفت

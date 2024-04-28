@@ -1274,3 +1274,5 @@ theme_xhred_datatable_filter_and_export=Filter en exporteer inhoud
 settings_hotkey_logout_dbl=Uitloggen
 theme_xhred_hotkey_emsg=De backslash-toets kan niet als sneltoets worden gebruikt
 settings_embed_product_splash_privileged=Geef na het inloggen een branding-splash-scherm weer
+dashboard_status_running=Rennen
+dashboard_status_stopped=Gestopt

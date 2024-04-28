@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Фільтраваць і экспарт
 settings_hotkey_logout_dbl=Выйсці з сістэмы
 theme_xhred_hotkey_emsg=Клавішу зваротнай касой рысы нельга выкарыстоўваць як гарачую клавішу
 settings_embed_product_splash_privileged=Адлюстроўваць застаўку брэнда пасля ўваходу
+dashboard_status_running=Бег
+dashboard_status_stopped=Спыніліся

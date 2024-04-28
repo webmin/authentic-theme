@@ -346,3 +346,5 @@ theme_xhred_datatable_filter_and_export=Inhalte filtern und exportieren
 settings_hotkey_logout_dbl=Ausloggen
 theme_xhred_hotkey_emsg=Die Backslash-Taste kann nicht als Hotkey verwendet werden
 settings_embed_product_splash_privileged=Nach der Anmeldung wird ein Branding-Begrüßungsbildschirm angezeigt
+dashboard_status_running=Läuft
+dashboard_status_stopped=Gestoppt

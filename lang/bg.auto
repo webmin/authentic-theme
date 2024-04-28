@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Филтрирайте и експорт
 settings_hotkey_logout_dbl=Излез от профила си
 theme_xhred_hotkey_emsg=Клавишът с обратна наклонена черта не може да се използва като клавишна комбинация
 settings_embed_product_splash_privileged=Показване на начален екран за брандиране след влизане
+dashboard_status_running=бягане
+dashboard_status_stopped=Спряна

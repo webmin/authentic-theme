@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=過濾和匯出內容
 settings_hotkey_logout_dbl=登出
 theme_xhred_hotkey_emsg=反斜杠鍵不能當熱鍵
 settings_embed_product_splash_privileged=登入後顯示品牌啟動畫面
+dashboard_status_running=跑步
+dashboard_status_stopped=已停止

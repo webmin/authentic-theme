@@ -420,3 +420,5 @@ theme_xhred_datatable_filter_and_export=Filtrați și exportați conținutul
 settings_hotkey_logout_dbl=Deconectare
 theme_xhred_hotkey_emsg=Tasta backslash nu poate fi folosită ca tastă rapidă
 settings_embed_product_splash_privileged=Afișați un ecran de introducere a mărcii după conectare
+dashboard_status_running=Alergare
+dashboard_status_stopped=Oprit

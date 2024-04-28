@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Iffiltra u esportazzjoni kontenut
 settings_hotkey_logout_dbl=Oħroġ
 theme_xhred_hotkey_emsg=Iċ-ċavetta backslash ma tistax tintuża bħala hotkey
 settings_embed_product_splash_privileged=Uri splash screen tal-marka wara l-login
+dashboard_status_running=Running
+dashboard_status_stopped=Waqqaf

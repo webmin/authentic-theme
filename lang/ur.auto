@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=مواد کو فلٹر اور ایکسپ
 settings_hotkey_logout_dbl=لاگ آوٹ
 theme_xhred_hotkey_emsg=بیک سلیش کلید کو ہاٹکی کے طور پر استعمال نہیں کیا جا سکتا
 settings_embed_product_splash_privileged=لاگ ان کے بعد ایک برانڈنگ سپلیش اسکرین دکھائیں۔
+dashboard_status_running=چل رہا ہے۔
+dashboard_status_stopped=رک گیا۔

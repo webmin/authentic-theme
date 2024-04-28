@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Filtrējiet un eksportējiet saturu
 settings_hotkey_logout_dbl=Izlogoties
 theme_xhred_hotkey_emsg=Slīpssvītras taustiņu nevar izmantot kā karsto taustiņu
 settings_embed_product_splash_privileged=Parādiet zīmola uzklāšanas ekrānu pēc pieteikšanās
+dashboard_status_running=Skriešana
+dashboard_status_stopped=Apstājās

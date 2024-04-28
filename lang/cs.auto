@@ -1244,3 +1244,5 @@ theme_xhred_datatable_filter_and_export=Filtrujte a exportujte obsah
 settings_hotkey_logout_dbl=Odhlásit se
 theme_xhred_hotkey_emsg=Klávesu zpětného lomítka nelze použít jako klávesovou zkratku
 settings_embed_product_splash_privileged=Po přihlášení zobrazit úvodní obrazovku značky
+dashboard_status_running=Běh
+dashboard_status_stopped=Zastavil

@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=Filtrirajte in izvozite vsebino
 settings_hotkey_logout_dbl=Odjava
 theme_xhred_hotkey_emsg=Tipke s poševnico nazaj ni mogoče uporabiti kot bližnjico
 settings_embed_product_splash_privileged=Po prijavi prikažite začetni zaslon blagovne znamke
+dashboard_status_running=tek
+dashboard_status_stopped=ustavil

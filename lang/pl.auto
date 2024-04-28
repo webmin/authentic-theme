@@ -1302,3 +1302,5 @@ theme_xhred_datatable_filter_and_export=Filtruj i eksportuj zawartość
 settings_hotkey_logout_dbl=Wyloguj
 theme_xhred_hotkey_emsg=Klawisz ukośnika odwrotnego nie może być używany jako klawisz skrótu
 settings_embed_product_splash_privileged=Wyświetl ekran powitalny marki po zalogowaniu
+dashboard_status_running=Działanie
+dashboard_status_stopped=Zatrzymany

@@ -1384,3 +1384,5 @@ theme_xhred_datatable_filter_and_export=İçeriği filtreleme ve dışa aktarma
 settings_hotkey_logout_dbl=Çıkış Yap
 theme_xhred_hotkey_emsg=Ters eğik çizgi tuşu kısayol tuşu olarak kullanılamaz
 settings_embed_product_splash_privileged=Giriş yaptıktan sonra marka bilinci oluşturma ekranı görüntüle
+dashboard_status_running=Koşma
+dashboard_status_stopped=Durduruldu
