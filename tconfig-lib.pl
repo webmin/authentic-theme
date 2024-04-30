@@ -680,7 +680,7 @@ sub theme_controls
             <a tabindex='1' class=\"btn btn-default capitalize\" id=\"atrestore\">
                 <i class=\"fa fa-fw fa-history\"></i><span>$theme_text{'settings_right_restore_defaults'}</span>
             </a>
-            <a tabindex='1' class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this);\">
+            <a tabindex='1' class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this,1);\">
                 <i class=\"fa fa-fw fa-hourglass-o\"></i><span>$theme_text{'settings_right_clear_local_cache'}</span>
             </a>
             $update_dropdown

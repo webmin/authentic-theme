@@ -1697,7 +1697,7 @@ sub theme_var_dir
 
 sub clear_theme_cache
 {
-    my ($root)  = @_;
+    my ($root, $full)  = @_;
     my $salt    = substr(encode_base64($main::session_id), 0, 6);
     my $tmp_dir = tempname_dir();
     my $home_tmp_dir = get_user_home() . "/tmp";
@@ -1791,6 +1791,12 @@ sub clear_theme_cache
         opendir(my $dir, $vm_var_dir);
         grep {unlink_file("$vm_var_dir/$_") if (/^virtual\-server\-server\-templates/)} readdir($dir);
         closedir $dir;
+
+        # Clear seen features cache
+        if ($full) {
+            my $seenfeatdir = $virtual_server::newfeatures_seen_dir;
+            unlink_file("$seenfeatdir/$remote_user-pro-tips");
+        }
     }
 
     # Clear potentially stuck menus and other cache
@@ -2003,7 +2009,7 @@ sub get_xhr_request
                  "$remote_version_number$remote_mversion_number$remote_bversion_number");
             print convert_to_json(\@current_versions);
         } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
-            clear_theme_cache(&webmin_user_is_admin());
+            clear_theme_cache(&webmin_user_is_admin(), $in{'xhr-theme_clear_cache_full'});
         } elsif ($in{'xhr-update'} eq '1' && &webmin_user_is_admin()) {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
