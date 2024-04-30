@@ -1262,6 +1262,8 @@ sub get_button_style
     {
         $class = "warning ";
         $icon  = "refresh";
+    } elsif (string_contains($keys, "scripts_ureload")) {
+        $icon  = "refresh";
     } elsif (string_contains($keys, "ddrop_empty")) {
         $class = "warning ";
         $icon  = "times-circle-o";
