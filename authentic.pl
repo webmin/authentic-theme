@@ -899,12 +899,18 @@ sub theme_ui_submit
     if ($label) {
         $nbsp = "&nbsp;";
     }
-
+    # Form attr has to be passed directly to input
+    my $form_value = "";
+    if ($tags && $tags =~ /form=/) {
+        if ($tags =~ s/(form='([^']*)')//) {
+            $form_value = " $1";
+        }
+    }
     return "<button class=\"btn btn-$class ui_submit ui_form_end_submit $btn_class_extra\" type=\"button\"" .
       ($name ne '' ? " name=\"" . &quote_escape($name) . "\""      : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
       ($dis        ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "$nbsp<span data-entry=\"$keys\">" .
-      &html_escape($label) . "$nbsp</span></button>\n" . "<input class=\"hidden\" type=\"submit\""
+      &html_escape($label) . "$nbsp</span></button>\n" . "<input$form_value class=\"hidden\" type=\"submit\""
       .
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
           ""
