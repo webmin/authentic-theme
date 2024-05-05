@@ -830,6 +830,8 @@ sub print_content
     my $info_folders = scalar(@folders);
 
     my @allowed_for_edit = split(/\s+/, $access{'allowed_for_edit'});
+    # Some experimental MIME types are now recognized
+    push(@allowed_for_edit, map { (my $__ = $_) =~ s/-x-/-/; $__ ne $_ ? $__ : () } @allowed_for_edit);
     my %allowed_for_edit = map {$_ => 1} @allowed_for_edit;
 
     # Set icons variables
