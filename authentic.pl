@@ -986,11 +986,11 @@ sub theme_ui_tabs_start
         if ($t->[0] eq $sel) {
             $rv .=
               '<li class="active"><a data-toggle="tab" onclick="return tab_action(\'' .
-              $name . '\', \'' . $t->[0] . '\')" href="#att_' . $t->[0] . '">' . $t->[1] . '</a></li>' . "\n";
+              $name . '\', \'' . $t->[0] . '\', this, event)" href="#att_' . $t->[0] . '">' . $t->[1] . '</a></li>' . "\n";
         } else {
             $rv .=
               '<li><a data-toggle="tab" onclick="return tab_action(\'' .
-              $name . '\', \'' . $t->[0] . '\')" href="#att_' . $t->[0] . '">' . $t->[1] . '</a></li>' . "\n";
+              $name . '\', \'' . $t->[0] . '\', this, event)" href="#att_' . $t->[0] . '">' . $t->[1] . '</a></li>' . "\n";
         }
     }
     $rv .= '</ul>' . "\n";
