@@ -1115,6 +1115,9 @@ sub get_button_style
     } elsif (string_contains($keys, "disable_ok") || string_contains($keys, "jail_block")) {
         $class = "warning ";
         $icon  = "lock";
+    } elsif (string_contains($keys, "scripts_kit") && string_contains($keys, "_login")) {
+        $class = "success ";
+        $icon  = "unlock fa-1_05x";
     } elsif (string_contains($keys, "enable_ok") || string_contains($keys, "jail_unblock")) {
         $class = "success ";
         $icon  = "unlock";
