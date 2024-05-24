@@ -1124,6 +1124,9 @@ sub get_button_style
     } elsif (string_contains($keys, "twofactor_enable")) {
         $class = "info ";
         $icon  = "lock";
+    } elsif (string_contains($keys, "blockip")) {
+        $class = "grey ";
+        $icon  = " fa2 fa2-not-interested fa-1_10x margined-left--2";
     } elsif (string_contains($keys, "twofactor_disable")) {
         $class = "warning ";
         $icon  = "unlock";
