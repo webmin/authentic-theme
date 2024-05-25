@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Праверце <a>папярэджа�
 #19.71
 settings_sysinfo_hidden_panels_user=Схаваныя акардэоны
 theme_xhred_tooltip_dashboard_panels_disable=Схаваць панэль $1 
-theme_xhred_dashboard_panels_disabled_explain=Схаваную панэль можна паўторна ўключыць на старонцы канфігурацыі тэмы.
+theme_xhred_dashboard_panels_disabled_explain=Схаваную панэль можна зноў уключыць з дапамогай <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Прыборная панэль і маніторынг у рэжыме рэальнага часу
 settings_right_navigation_menu_options=Меню навігацыі
 settings_right_notification_slider_options=Бакавы паўзунок

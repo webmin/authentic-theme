@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Ελέγξτε την προειδοπ�
 #19.71
 settings_sysinfo_hidden_panels_user=Κρυμμένα ακορντεόν
 theme_xhred_tooltip_dashboard_panels_disable=Απόκρυψη του πίνακα $1 
-theme_xhred_dashboard_panels_disabled_explain=Το κρυφό πλαίσιο μπορεί να ενεργοποιηθεί ξανά χρησιμοποιώντας τη σελίδα διαμόρφωσης θέματος.
+theme_xhred_dashboard_panels_disabled_explain=Ο κρυφός πίνακας μπορεί να ενεργοποιηθεί ξανά χρησιμοποιώντας <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Πίνακας ελέγχου και παρακολούθηση σε πραγματικό χρόνο
 settings_right_navigation_menu_options=Μενού πλοήγησης
 settings_right_notification_slider_options=Πλευρικό ρυθμιστικό

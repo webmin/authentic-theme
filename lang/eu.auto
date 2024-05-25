@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziu
 #19.71
 settings_sysinfo_hidden_panels_user=Ezkutuko akordeoiak
 theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela
-theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke gaiaren konfigurazio orria erabiliz.
+theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke <tt>Theme Configuration: Dashboard and real-time monitoring</tt> orria erabiliz.
 settings_right_sysinfo_page_options=Arbel eta denbora errealeko monitorizazioa
 settings_right_navigation_menu_options=Nabigazio menua
 settings_right_notification_slider_options=Alboko graduatzailea

@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=<a>Kendinden imzalı SSL sertifikasın�
 #19.71
 settings_sysinfo_hidden_panels_user=Gizli akordeonlar
 theme_xhred_tooltip_dashboard_panels_disable=$1 panelini gizle
-theme_xhred_dashboard_panels_disabled_explain=Gizli panel, tema yapılandırma sayfası kullanılarak yeniden etkinleştirilebilir.
+theme_xhred_dashboard_panels_disabled_explain=Gizli panel <tt>Theme Configuration: Dashboard and real-time monitoring</tt> sayfası kullanılarak yeniden etkinleştirilebilir.
 settings_right_sysinfo_page_options=Kontrol paneli ve gerçek zamanlı izleme
 settings_right_navigation_menu_options=Navigasyon menüsü
 settings_right_notification_slider_options=Yan kaydırıcı

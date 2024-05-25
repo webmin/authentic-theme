@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-va
 #19.71
 settings_sysinfo_hidden_panels_user=Piilotetut harmonikat
 theme_xhred_tooltip_dashboard_panels_disable=Piilota $1 paneeli
-theme_xhred_dashboard_panels_disabled_explain=Piilotettu paneeli voidaan ottaa uudelleen käyttöön teeman määrityssivulla.
+theme_xhred_dashboard_panels_disabled_explain=Piilotettu paneeli voidaan ottaa uudelleen käyttöön käyttämällä <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Kojelauta ja reaaliaikainen seuranta
 settings_right_navigation_menu_options=Navigointivalikko
 settings_right_notification_slider_options=Sivuliukusäädin

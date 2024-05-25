@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=ตรวจสอบคำเตือ
 #19.71
 settings_sysinfo_hidden_panels_user=หีบเพลงที่ซ่อนอยู่
 theme_xhred_tooltip_dashboard_panels_disable=ซ่อนแผง $1 
-theme_xhred_dashboard_panels_disabled_explain=แผงที่ซ่อนสามารถเปิดใช้งานได้อีกครั้งโดยใช้หน้าการกำหนดค่าธีม
+theme_xhred_dashboard_panels_disabled_explain=แผงที่ซ่อนอยู่สามารถเปิดใช้งานได้อีกครั้งโดยใช้ <tt>Theme Configuration: Dashboard and real-time monitoring</tt>
 settings_right_sysinfo_page_options=แดชบอร์ดและการตรวจสอบตามเวลาจริง
 settings_right_navigation_menu_options=เมนูการนำทาง
 settings_right_notification_slider_options=แถบเลื่อนด้านข้าง

@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=<a>자체 서명 된 SSL 인증서</a> 
 #19.71
 settings_sysinfo_hidden_panels_user=숨겨진 아코디언
 theme_xhred_tooltip_dashboard_panels_disable=$1 패널 숨기기
-theme_xhred_dashboard_panels_disabled_explain=숨겨진 패널은 테마 구성 페이지를 사용하여 다시 활성화 할 수 있습니다.
+theme_xhred_dashboard_panels_disabled_explain=숨겨진 패널은 <tt>Theme Configuration: Dashboard and real-time monitoring</tt> 페이지를 통해 다시 활성화할 수 있습니다.
 settings_right_sysinfo_page_options=대시 보드 및 실시간 모니터링
 settings_right_navigation_menu_options=탐색 메뉴
 settings_right_notification_slider_options=사이드 슬라이더

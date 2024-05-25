@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Перевірте <a>попередж�
 #19.71
 settings_sysinfo_hidden_panels_user=Приховані гармошки
 theme_xhred_tooltip_dashboard_panels_disable=Сховати панель $1 
-theme_xhred_dashboard_panels_disabled_explain=Приховану панель можна ввімкнути за допомогою сторінки конфігурації теми.
+theme_xhred_dashboard_panels_disabled_explain=Приховану панель можна повторно ввімкнути за допомогою <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Інформаційна панель та моніторинг у реальному часі
 settings_right_navigation_menu_options=Меню навігації
 settings_right_notification_slider_options=Бічний повзунок

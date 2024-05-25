@@ -351,7 +351,7 @@ theme_xhred_connection_error_details_ssl=检查<a>自签名SSL证书</a>警告
 #19.71
 settings_sysinfo_hidden_panels_user=隐藏的手风琴
 theme_xhred_tooltip_dashboard_panels_disable=隐藏 $1面板
-theme_xhred_dashboard_panels_disabled_explain=可以使用主题配置页面重新启用隐藏面板。
+theme_xhred_dashboard_panels_disabled_explain=可以使用<tt>Theme Configuration: Dashboard and real-time monitoring</tt>页面重新启用隐藏面板。
 settings_right_sysinfo_page_options=仪表板和实时监控
 settings_right_navigation_menu_options=导航菜单
 settings_right_notification_slider_options=侧滑杆

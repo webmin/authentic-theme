@@ -1204,7 +1204,7 @@ theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a
 #19.71
 settings_sysinfo_hidden_panels_user=Hidden accordions
 theme_xhred_tooltip_dashboard_panels_disable=Hide $1 panel
-theme_xhred_dashboard_panels_disabled_explain=Hidden panel can be re-enabled using theme configuration page.
+theme_xhred_dashboard_panels_disabled_explain=Hidden panel can be re-enabled using <tt>Theme Configuration: Dashboard and real-time monitoring</tt> page.
 settings_right_sysinfo_page_options=Dashboard and real-time monitoring
 settings_right_navigation_menu_options=Navigation menu
 settings_right_notification_slider_options=Side slider

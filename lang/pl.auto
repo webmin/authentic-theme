@@ -1067,7 +1067,7 @@ theme_xhred_connection_error_details_ssl=Sprawdź ostrzeżenie <a>certyfikat SSL
 #19.71
 settings_sysinfo_hidden_panels_user=Ukryte akordeony
 theme_xhred_tooltip_dashboard_panels_disable=Ukryj panel $1 
-theme_xhred_dashboard_panels_disabled_explain=Ukryty panel można ponownie włączyć za pomocą strony konfiguracji kompozycji.
+theme_xhred_dashboard_panels_disabled_explain=Ukryty panel można ponownie włączyć za pomocą <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Pulpit nawigacyjny i monitorowanie w czasie rzeczywistym
 settings_right_navigation_menu_options=Menu nawigacji
 settings_right_notification_slider_options=Boczny suwak

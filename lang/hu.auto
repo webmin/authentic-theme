@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Ellenőrizze az <a>önaláírt SSL tan�
 #19.71
 settings_sysinfo_hidden_panels_user=Rejtett harmonikák
 theme_xhred_tooltip_dashboard_panels_disable=$1 panel elrejtése
-theme_xhred_dashboard_panels_disabled_explain=A rejtett panel újból engedélyezhető a téma konfigurációs oldalán.
+theme_xhred_dashboard_panels_disabled_explain=A rejtett panel újra engedélyezhető <tt>Theme Configuration: Dashboard and real-time monitoring</tt> oldal segítségével.
 settings_right_sysinfo_page_options=Irányítópult és valós idejű figyelés
 settings_right_navigation_menu_options=Navigációs menü
 settings_right_notification_slider_options=Oldalsó csúszka

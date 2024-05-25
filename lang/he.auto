@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=בדוק אזהרת <a>אישור SSL �
 #19.71
 settings_sysinfo_hidden_panels_user=אקורדיונים נסתרים
 theme_xhred_tooltip_dashboard_panels_disable=הסתר את החלונית $1 
-theme_xhred_dashboard_panels_disabled_explain=ניתן להפעיל מחדש את החלונית הנסתרת באמצעות דף תצורת העיצוב.
+theme_xhred_dashboard_panels_disabled_explain=ניתן להפעיל מחדש פאנל מוסתר באמצעות <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=לוח מחוונים וניטור בזמן אמת
 settings_right_navigation_menu_options=תפריט ניווט
 settings_right_notification_slider_options=מחוון צד

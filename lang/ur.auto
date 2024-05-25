@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a
 #19.71
 settings_sysinfo_hidden_panels_user=پوشیدہ معاہدے
 theme_xhred_tooltip_dashboard_panels_disable=$1 پینل چھپائیں
-theme_xhred_dashboard_panels_disabled_explain=تھیم کنفیگریشن پیج کا استعمال کرکے پوشیدہ پینل کو دوبارہ فعال کیا جاسکتا ہے۔
+theme_xhred_dashboard_panels_disabled_explain=Hidden panel can be re-enabled using <tt>Theme Configuration: Dashboard and real-time monitoring</tt> page.
 settings_right_sysinfo_page_options=ڈیش بورڈ اور اصل وقت کی نگرانی
 settings_right_navigation_menu_options=نیویگیشن مینو
 settings_right_notification_slider_options=سائیڈ سلائیڈر

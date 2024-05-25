@@ -119,7 +119,7 @@ theme_xhred_connection_error_details_ssl=<a>自己署名SSL証明書</a>の警�
 #19.71
 settings_sysinfo_hidden_panels_user=隠されたアコーディオン
 theme_xhred_tooltip_dashboard_panels_disable=$1パネルを非表示
-theme_xhred_dashboard_panels_disabled_explain=非表示のパネルは、テーマ構成ページを使用して再度有効にすることができます。
+theme_xhred_dashboard_panels_disabled_explain=非表示のパネルは<tt>Theme Configuration: Dashboard and real-time monitoring</tt>ページを使用して再度有効にすることができます。
 settings_right_sysinfo_page_options=ダッシュボードとリアルタイムの監視
 settings_right_navigation_menu_options=ナビゲーションメニュー
 settings_right_notification_slider_options=サイドスライダー

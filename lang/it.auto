@@ -44,6 +44,9 @@ theme_xhred_filemanager_mass_selected_for_delete=Tutti gli elementi nella direct
 #19.61
 settings_hotkey_shell2=Apri la shell dei comandi
 
+#19.71
+theme_xhred_dashboard_panels_disabled_explain=Il pannello nascosto può essere riattivato utilizzando <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
+
 #19.84
 settings_right_table_links_type=Tipo di visualizzazione dei collegamenti alle tabelle
 settings_right_table_links_type_2=Icone grandi con testo

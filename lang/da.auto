@@ -1062,7 +1062,7 @@ theme_xhred_connection_error_details_ssl=Tjek advarslen <a>selvsigneret SSL-cert
 #19.71
 settings_sysinfo_hidden_panels_user=Skjulte harmonikaer
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
-theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan genaktiveres ved hjælp af temakonfigurationssiden.
+theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan genaktiveres ved hjælp af <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Dashboard og overvågning i realtid
 settings_right_navigation_menu_options=Navigationsmenu
 settings_right_notification_slider_options=Sideskyder

@@ -1119,7 +1119,6 @@ theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>Certificato SSL a
 #19.71
 settings_sysinfo_hidden_panels_user=Pannelli nascosti
 theme_xhred_tooltip_dashboard_panels_disable=Nascondi il pannello $1 
-theme_xhred_dashboard_panels_disabled_explain=Il pannello nascosto può essere riattivato utilizzando la pagina di configurazione del tema.
 settings_right_sysinfo_page_options=Dashboard e monitoraggio in tempo reale
 settings_right_navigation_menu_options=Menu di navigazione
 settings_right_notification_slider_options=Slider laterale

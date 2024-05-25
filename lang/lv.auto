@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Pārbaudiet brīdinājumu par <a>pašu 
 #19.71
 settings_sysinfo_hidden_panels_user=Slēptie akordeoni
 theme_xhred_tooltip_dashboard_panels_disable=Slēpt $1 paneli
-theme_xhred_dashboard_panels_disabled_explain=Slēpto paneli var atkārtoti iespējot, izmantojot motīva konfigurācijas lapu.
+theme_xhred_dashboard_panels_disabled_explain=Slēpto paneli var atkārtoti iespējot, izmantojot <tt>Theme Configuration: Dashboard and real-time monitoring</tt> lapu.
 settings_right_sysinfo_page_options=Vadības panelis un reāllaika uzraudzība
 settings_right_navigation_menu_options=Navigācijas izvēlne
 settings_right_notification_slider_options=Sānu slīdnis

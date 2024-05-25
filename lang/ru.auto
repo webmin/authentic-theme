@@ -939,7 +939,7 @@ theme_xhred_connection_error_details_ssl=Проверьте предупрежд
 #19.71
 settings_sysinfo_hidden_panels_user=Скрытые аккордеоны
 theme_xhred_tooltip_dashboard_panels_disable=Скрыть панель $1 
-theme_xhred_dashboard_panels_disabled_explain=Скрытую панель можно повторно включить на странице конфигурации темы.
+theme_xhred_dashboard_panels_disabled_explain=Скрытую панель можно повторно включить с помощью <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Панель управления и мониторинг в реальном времени
 settings_right_navigation_menu_options=Меню навигации
 settings_right_notification_slider_options=Боковой слайдер

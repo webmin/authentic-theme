@@ -80,7 +80,7 @@ theme_xhred_connection_error_details_ssl=Sjekk <a>selvsignert SSL-sertifikat</a>
 #19.71
 settings_sysinfo_hidden_panels_user=Skjulte trekkspill
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
-theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan aktiveres på nytt ved hjelp av temakonfigurasjonssiden.
+theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan aktiveres på nytt ved å bruke <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Dashbord og sanntidsovervåking
 settings_right_navigation_menu_options=Navigasjonsmeny
 settings_right_notification_slider_options=Sideskyve

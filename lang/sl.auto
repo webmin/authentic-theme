@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Preverite <a>samopodpisano potrdilo SSL
 #19.71
 settings_sysinfo_hidden_panels_user=Skrite harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Skrij podokno $1 
-theme_xhred_dashboard_panels_disabled_explain=Skrite plošče lahko znova omogočite s pomočjo strani s konfiguracijo teme.
+theme_xhred_dashboard_panels_disabled_explain=Skrito ploščo je mogoče znova omogočiti z uporabo <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Nadzorna plošča in nadzor v realnem času
 settings_right_navigation_menu_options=Navigacijski meni
 settings_right_notification_slider_options=Stranski drsnik

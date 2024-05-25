@@ -36,6 +36,9 @@ settings_hotkey_slider=Växla sidoreglagets tillstånd
 #19.61
 settings_hotkey_shell2=Öppna kommandoskalet
 
+#19.71
+theme_xhred_dashboard_panels_disabled_explain=Dold panel kan återaktiveras med hjälp av <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
+
 #19.85
 theme_xhred_sysinfo_vmforum=Virtualmin Community
 

@@ -110,7 +110,7 @@ theme_xhred_connection_error_details_ssl=Überprüfen Sie die Warnung <a>selbsts
 #19.71
 settings_sysinfo_hidden_panels_user=Versteckte Akkordeons
 theme_xhred_tooltip_dashboard_panels_disable=$1 Panel ausblenden
-theme_xhred_dashboard_panels_disabled_explain=Das ausgeblendete Bedienfeld kann über die Designkonfigurationsseite wieder aktiviert werden.
+theme_xhred_dashboard_panels_disabled_explain=Das versteckte Panel kann mithilfe <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Dashboard und Echtzeitüberwachung
 settings_right_navigation_menu_options=Navigationsmenü
 settings_right_notification_slider_options=Seitenschieber

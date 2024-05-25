@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Kiểm tra cảnh báo <a>chứng chỉ
 #19.71
 settings_sysinfo_hidden_panels_user=Đàn accordions ẩn
 theme_xhred_tooltip_dashboard_panels_disable=Ẩn bảng điều khiển $1 
-theme_xhred_dashboard_panels_disabled_explain=Bảng điều khiển ẩn có thể được bật lại bằng cách sử dụng trang cấu hình chủ đề.
+theme_xhred_dashboard_panels_disabled_explain=Bảng ẩn có thể được bật lại bằng cách sử dụng <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Bảng điều khiển và giám sát thời gian thực
 settings_right_navigation_menu_options=Chức năng điều hướng
 settings_right_notification_slider_options=Thanh trượt bên

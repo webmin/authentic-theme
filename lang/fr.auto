@@ -80,7 +80,7 @@ theme_xhred_connection_error_details_ssl=Vérifiez l'avertissement concernant le
 #19.71
 settings_sysinfo_hidden_panels_user=Accordéons cachés
 theme_xhred_tooltip_dashboard_panels_disable=Masquer le panneau $1 
-theme_xhred_dashboard_panels_disabled_explain=Le panneau masqué peut être réactivé à l'aide de la page de configuration du thème.
+theme_xhred_dashboard_panels_disabled_explain=Le panneau masqué peut être réactivé à l’aide de <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Tableau de bord et surveillance en temps réel
 settings_right_navigation_menu_options=Le menu de navigation
 settings_right_notification_slider_options=Curseur latéral

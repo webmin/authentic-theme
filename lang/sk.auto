@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Skontrolujte varovanie <a>certifikát S
 #19.71
 settings_sysinfo_hidden_panels_user=Skryté harmoniky
 theme_xhred_tooltip_dashboard_panels_disable=Skryť panel $1 
-theme_xhred_dashboard_panels_disabled_explain=Skrytý panel je možné znova povoliť pomocou konfiguračnej stránky témy.
+theme_xhred_dashboard_panels_disabled_explain=Skrytý panel je možné znova povoliť pomocou <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Dashboard a monitorovanie v reálnom čase
 settings_right_navigation_menu_options=Navigačné menu
 settings_right_notification_slider_options=Bočný posúvač

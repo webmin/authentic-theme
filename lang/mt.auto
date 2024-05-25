@@ -1149,7 +1149,7 @@ theme_xhred_connection_error_details_ssl=Iċċekkja t-twissija <a>ċertifikat SS
 #19.71
 settings_sysinfo_hidden_panels_user=Akkordjoni moħbija
 theme_xhred_tooltip_dashboard_panels_disable=Aħbi $1 panel
-theme_xhred_dashboard_panels_disabled_explain=Il-pannell moħbi jista 'jerġa' jiġi attivat billi tintuża l-paġna tal-konfigurazzjoni tat-tema.
+theme_xhred_dashboard_panels_disabled_explain=Il-pannell moħbi jista’ jerġa’ jiġi attivat billi tuża <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Dashboard u monitoraġġ f'ħin reali
 settings_right_navigation_menu_options=Menu tan-navigazzjoni
 settings_right_notification_slider_options=Slider tal-ġenb
