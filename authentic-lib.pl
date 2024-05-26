@@ -1745,6 +1745,18 @@ sub clear_theme_cache
         &webmin::detect_operating_system();
     }
 
+    # Remove EOL cache
+    if (defined($gconfig{'os_eol'})) {
+        # Invalidate EOL cache
+        &lock_file("$config_directory/config");
+        foreach my $key (keys %gconfig) {
+            delete $gconfig{$key}
+                if ($key =~ /^(os_eol|os_ext_eol)/);
+        }
+        &write_file("$config_directory/config", \%gconfig);
+        &unlock_file("$config_directory/config");
+    }
+
     # Clear potentially stuck BIND cache
     if (&foreign_available('bind8')) {
         &foreign_require("bind8");
