@@ -1245,10 +1245,13 @@ sub get_button_style
         }
 
         if (string_contains($keys, "view_refresh")) {
-            $icon = "refresh-fi fa-1_25x";
+            $icon = "refresh-fi  fa-1_25x";
         } else {
             $icon = "refresh-mdi fa-1_25x";
         }
+    } elsif ($keys eq "view_filter_btn") {
+        $icon = "filter fa-1_10x";
+        $class = "info";
     } elsif (string_contains($keys, "search") ||
              string_contains($keys, "index_broad")    ||
              string_contains($keys, "scripts_findok") ||
