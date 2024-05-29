@@ -973,9 +973,11 @@ sub get_button_style
     my $label = quote_escape(@_);
 
     my %module_text = module_text_full();
-    my (@keys) = grep {$module_text{$_} eq $label} keys %module_text;
-
-    my $keys = "@keys";
+    my ($keys) = grep {$module_text{$_} eq $label} keys %module_text;
+    if (!$keys) {
+        my %text_replaced = &text();
+        $keys = $text_replaced{$label};
+    }
     my $icon;
     my $class = "default";
 
