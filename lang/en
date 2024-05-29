@@ -1462,3 +1462,6 @@ dashboard_status_stopped=Stopped
 
 #21.11
 theme_xhred_global_watching=Watching
+theme_xhred_global_connected=Connected
+theme_xhred_global_disconnected=Disconnected
+theme_xhred_global_connecting=Connecting
