@@ -4,7 +4,15 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+no warnings 'uninitialized';
+use lib ($ENV{'LIBROOT'} . "/vendor_perl");
+use Async;
+BEGIN {push(@INC, "..");}
+use WebminCore;
+init_config();
+ReadParse();
 
+# Import global variables
 our (%in, $config_directory, $var_directory, $current_theme, $remote_user);
 
 # Load theme language and settings
