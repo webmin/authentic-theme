@@ -7,7 +7,7 @@
 #
 use strict;
 
-do($ENV{'THEME_ROOT'} . "/stats-lib.pl");
+require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 
 # Check access
 init_prefail();

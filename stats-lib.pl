@@ -10,7 +10,6 @@ use Async;
 BEGIN {push(@INC, "..");}
 use WebminCore;
 init_config();
-ReadParse();
 do($ENV{'THEME_ROOT'} . "/authentic-funcs.pl");
 
 # Import global variables
@@ -45,9 +44,14 @@ sub jsonify
 
 sub stats
 {
+    my ($in_sdata) = @_;
     my %data;
-    my $tdata  = {};
-    my $sdata  = $in{'sdata'} ? 1 : 0;
+    my $tdata = {};
+    my $sdata = defined($in_sdata) ? ($in_sdata ? 1 : 0) : undef;
+    if (!defined($sdata)) {
+        ReadParse();
+        $sdata = $in{'sdata'} ? 1 : 0;
+    }
     my $fdatad = "$var_directory/modules/$current_theme";
     my $fdata  = "$fdatad/stats-$remote_user.json";
     my $cdata  = jsonify(read_file_contents($fdata));
