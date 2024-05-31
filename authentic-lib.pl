@@ -192,6 +192,8 @@ sub get_extended_sysinfo
                         quest  => "<i class=\"$status_icons_tpl->{'_fa'}-question-circle $status_icons_tpl->{'_fa115x'}\"></i>",
                         not    => "<i class=\"$status_icons_tpl->{'_fa2'}-not-interested $status_icons_tpl->{'_fa115x'}\"></i>",
                         skip   => "<i class=\"$status_icons_tpl->{'_fa2'}-minus $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'}\"></i>",
+                        timed   => "<i class=\"$status_icons_tpl->{'_fa'}-clock $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'} $status_icons_tpl->{'_text_warn'}\"></i>",
+                        webmin   => "<i class=\"$status_icons_tpl->{'_fa'}-webmin $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'} $status_icons_tpl->{'_text_warn'}\"></i>",
                     };
                     if ($info->{'id'} eq 'status_services') {
                         $info->{"html"} =~ s/<img src=.*?\/status\/images\/(\S+).gif.*?>/$status_icons->{$1}/g;
