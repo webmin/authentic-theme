@@ -7,7 +7,6 @@
 #
 use strict;
 
-do($ENV{'THEME_ROOT'} . "/authentic-funcs.pl");
 do($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 
 # Check access

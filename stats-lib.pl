@@ -11,6 +11,7 @@ BEGIN {push(@INC, "..");}
 use WebminCore;
 init_config();
 ReadParse();
+do($ENV{'THEME_ROOT'} . "/authentic-funcs.pl");
 
 # Import global variables
 our (%in, $config_directory, $var_directory, $current_theme, $remote_user);
