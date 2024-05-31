@@ -63,8 +63,8 @@ sub stats
 
                 # Clear existing cache if available features was disabled
                 my %map = (cpu  => ['cpu',  'disk'],
-                        mem  => ['mem',  'virt'],
-                        load => ['proc', 'net']);
+                           mem  => ['mem',  'virt'],
+                           load => ['proc', 'net']);
 
                 foreach my $key (keys %map) {
                     my $feature = acl_system_status($key);
@@ -83,7 +83,9 @@ sub stats
 
                 # Cache complete dataset
                 mkdir($fdatad, 0700) if (!-d $fdatad);
+                lock_file($fdata);
                 write_file_contents($fdata, convert_to_json($cdata));
+                unlock_file($fdata);
 
                 # Return requested data
                 if ($sdata) {
@@ -101,7 +103,7 @@ sub stats
         }
         push(@{ $cdata->{$k} },
             {  x => $time,
-                y => $d
+               y => $d
             });
 
         my $n = get_stats_option('stored_length', 1) || 600;
@@ -251,6 +253,11 @@ sub stats
             }
         }
     }
+
+    # Store data if enabled
+    &$ddata();
+
+    # Return data
     return \%data;
 }
 
