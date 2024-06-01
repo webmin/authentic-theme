@@ -22,8 +22,8 @@ my @modnames = ("Digest::SHA", "Digest::MD5", "IO::Select",
                 "Time::HiRes", "Net::WebSocket::Server");
 
 foreach my $modname (@modnames) {
-	eval "use ${modname};";
-	if ($@) {
+    eval "use ${modname};";
+    if ($@) {
         push(@errors, $@, $modname);
         push(@errors, text('index_mods_missing', $modname));
         last;

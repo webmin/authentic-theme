@@ -28,10 +28,10 @@ if (!webmin_user_is_admin()) {
 
 # Clean up when socket is terminated
 $SIG{'ALRM'} = sub {
-	&remove_miniserv_websocket($port);
-	&error_stderr("Timeout waiting for connection");
-	exit(1);
-	};
+    &remove_miniserv_websocket($port);
+    &error_stderr("Timeout waiting for connection");
+    exit(1);
+    };
 alarm(60);
 
 # Log successful connection
@@ -45,35 +45,35 @@ my $stats_running :shared = 0;
 
 # Start WebSocket server
 Net::WebSocket::Server->new(
-	listen     => $port,
-	on_connect => sub {
-		my ($serv, $conn) = @_;
-		&error_stderr("WebSocket connection established");
-		if ($wsconn) {
-			&error_stderr("Unexpected another connection attempted to the same port.");
-			$wsconn->disconnect();
-			return;
+    listen     => $port,
+    on_connect => sub {
+        my ($serv, $conn) = @_;
+        &error_stderr("WebSocket connection established");
+        if ($wsconn) {
+            &error_stderr("Unexpected another connection attempted to the same port.");
+            $wsconn->disconnect();
+            return;
         }
-		$wsconn = $conn;
-		alarm(0);
-		
+        $wsconn = $conn;
+        alarm(0);
+        
         $conn->on(
-			handshake => sub {
-				# Is the key valid for this Webmin session?
-				my ($conn, $handshake) = @_;
-				my $key   = $handshake->req->fields->{'sec-websocket-key'};
-				my $dsess = &encode_base64($main::session_id);
-				$key   =~ s/\s//g;
-				$dsess =~ s/\s//g;
-				if (!$key || !$dsess || $key ne $dsess) {
-					&error_stderr("Key $key does not match session ID $dsess");
-					$conn->disconnect();
-					}
-				},
-			utf8 => sub {
-				my ($conn, $msg) = @_;
-				utf8::encode($msg) if (utf8::is_utf8($msg));
-				my $data = decode_json($msg);
+            handshake => sub {
+                # Is the key valid for this Webmin session?
+                my ($conn, $handshake) = @_;
+                my $key   = $handshake->req->fields->{'sec-websocket-key'};
+                my $dsess = &encode_base64($main::session_id);
+                $key   =~ s/\s//g;
+                $dsess =~ s/\s//g;
+                if (!$key || !$dsess || $key ne $dsess) {
+                    &error_stderr("Key $key does not match session ID $dsess");
+                    $conn->disconnect();
+                    }
+                },
+            utf8 => sub {
+                my ($conn, $msg) = @_;
+                utf8::encode($msg) if (utf8::is_utf8($msg));
+                my $data = decode_json($msg);
                 $stats_extract = $data->{'save'};
                 $stats_interval = $data->{'interval'};
                 $stats_running = $data->{'running'};
@@ -94,15 +94,15 @@ Net::WebSocket::Server->new(
                 if ($stats_running && (!$thread || !$thread->is_running())) {
                     $thread = threads->create($collect);
                 }
-			},
-			disconnect => sub {
-				&error_stderr("WebSocket connection closed");
-				&remove_miniserv_websocket($port);
-				kill('KILL', $pid) if ($pid);
-				exit(0);
-				}
-			);
-	},
+            },
+            disconnect => sub {
+                &error_stderr("WebSocket connection closed");
+                &remove_miniserv_websocket($port);
+                kill('KILL', $pid) if ($pid);
+                exit(0);
+                }
+            );
+    },
 )->start;
 &error_stderr("Exited WebSocket server");
 &remove_miniserv_websocket($port);
