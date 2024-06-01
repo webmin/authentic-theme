@@ -22,20 +22,20 @@ my ($port) = @ARGV;
 # Check if user is admin
 if (!webmin_user_is_admin()) {
     &remove_miniserv_websocket($port);
-    &error_stderr("Access denied to non-master administrators!");
+    &error_stderr("WebSocket server cannot be accessed because the user is not a master administrator");
     exit(2);
 }
 
 # Clean up when socket is terminated
 $SIG{'ALRM'} = sub {
     &remove_miniserv_websocket($port);
-    &error_stderr("Timeout waiting for connection");
+    &error_stderr("WebSocket server timeout waiting for a connection");
     exit(1);
     };
 alarm(60);
 
 # Log successful connection
-&error_stderr("Listening on port $port");
+&error_stderr("WebSocket server is listening on port $port");
 
 # Used variables
 my ($wsconn, $thread);
@@ -104,7 +104,7 @@ Net::WebSocket::Server->new(
             );
     },
 )->start;
-&error_stderr("Exited WebSocket server");
+&error_stderr("WebSocket server failed");
 &remove_miniserv_websocket($port);
 &cleanup_miniserv_websockets([$port]);
 
