@@ -38,23 +38,23 @@ alarm(60);
 &error_stderr("WebSocket server is listening on port $port");
 
 # Used variables
-my ($wsconn, $thread);
+my ($thread);
 my $stats_extract :shared = 0;
 my $stats_interval :shared = 1;
-my $stats_running :shared = 0;
+my $stats_running :shared = 1;
+my $clients_connected :shared = 0;
+my $client_disconnected :shared = 0;
+my $server_shutdown :shared = 0;
 
 # Start WebSocket server
 Net::WebSocket::Server->new(
     listen     => $port,
     on_connect => sub {
         my ($serv, $conn) = @_;
-        &error_stderr("WebSocket connection established");
-        if ($wsconn) {
-            &error_stderr("Unexpected another connection attempted to the same port.");
-            $wsconn->disconnect();
-            return;
-        }
-        $wsconn = $conn;
+        &error_stderr("WebSocket connection $conn->{'port'} established");
+        $client_disconnected = 0;
+        $clients_connected++;
+        $thread = undef;
         alarm(0);
         
         $conn->on(
@@ -74,12 +74,22 @@ Net::WebSocket::Server->new(
                 my ($conn, $msg) = @_;
                 utf8::encode($msg) if (utf8::is_utf8($msg));
                 my $data = decode_json($msg);
-                $stats_extract = $data->{'save'};
-                $stats_interval = $data->{'interval'};
-                $stats_running = $data->{'running'};
+                $stats_extract = $data->{'save'} // 0;
+                $stats_interval = $data->{'interval'} // 1;
+                $stats_running = $data->{'running'} // 1;
+                $server_shutdown = $data->{'shutdown'} // 0;
                 my $collect = sub {
                     while ($stats_running) {
-                        $wsconn->send_utf8(encode_json(stats($stats_extract)));
+                        # Exit this thread if new client connected
+                        last if (scalar(keys %{$serv->{'conns'}})
+                            != $clients_connected && !$client_disconnected);
+                        # Pull stats and send to all connected clients
+                        my $stats = encode_json(stats($stats_extract));
+                        foreach my $conn_id (keys %{$serv->{'conns'}}) {
+                            $serv->{'conns'}->
+                                {$conn_id}->{'conn'}->
+                                    send_utf8($stats);
+                        }
                         sleep($stats_interval);
                     }
                 };
@@ -96,12 +106,26 @@ Net::WebSocket::Server->new(
                 }
             },
             disconnect => sub {
-                &error_stderr("WebSocket connection closed");
-                &remove_miniserv_websocket($port);
-                kill('KILL', $pid) if ($pid);
-                exit(0);
+                my ($conn) = @_;
+                $client_disconnected = 1;
+                $clients_connected--;
+                &error_stderr("WebSocket connection $conn->{'port'} closed");
+                # If shutdown requested and no clients connected
+                # then exit the server
+                if ($server_shutdown && $clients_connected == 0) {
+                    foreach my $thr (threads->list(threads::all)) {
+                        if ($thr->is_joinable()) {
+                            $thr->join();
+                        } else {
+                            $thr->detach();
+                        }
+                    }
+                    &error_stderr("WebSocket server has shut down");
+                    &remove_miniserv_websocket($port);
+                    exit(0);
                 }
-            );
+            }
+        );
     },
 )->start;
 &error_stderr("WebSocket server failed");
