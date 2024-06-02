@@ -36,6 +36,32 @@ if (@errors) {
     exit;
 }
 
+# Get the log file
+my $get_logfile = sub {
+    my ($port) = @_;
+    return "$var_directory/modules/$current_theme/stats-server-$port.log";
+};
+
+# Get the socket URL
+my $get_socket = sub {
+    my ($port) = @_;
+    my $ws_proto = lc($ENV{'HTTPS'}) eq 'on' ? 'wss' : 'ws';
+    my $http_host = "$ws_proto://$ENV{'HTTP_HOST'}";
+    my $url = "$http_host/$current_theme/ws-$port";
+};
+
+# Do we have an active socket?
+my %miniserv;
+&get_miniserv_config(\%miniserv);
+foreach my $k (keys %miniserv) {
+    if ($k =~ /^websockets_\/$current_theme\/ws-(\d+)$/) {
+        print_json({ success => 1, port => $1, new => !!0,
+                     socket => $get_socket->($1),
+                     errlog => $get_logfile->($1) });
+        exit;
+    }
+}
+
 # Allocate port
 my $port = &allocate_miniserv_websocket();
 
@@ -46,9 +72,11 @@ my $statsserver_cmd = "$config_directory/$current_theme/$server_name";
     if (!-r $statsserver_cmd);
 
 # Launch the server
-my $logfile = "$var_directory/modules/$current_theme/stats-server-$port.log";
+my $logfile = $get_logfile->($port);
 my $rs = &system_logged(
     "SESSION_ID=$main::session_id ".
     "$statsserver_cmd @{[quotemeta($port)]} ".
     ">$logfile 2>&1 </dev/null &");
-print_json({success => !$rs, port => $port, errlog => $logfile});
+print_json({ success => !$rs, port => $port,
+             socket => $get_socket->($port),
+             new => !!1, errlog => $logfile });
