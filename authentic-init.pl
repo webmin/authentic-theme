@@ -1666,6 +1666,8 @@ sub header_html_data
       theme_debug_mode() .
       '" data-session="' .
       ($remote_user ? '1' : '0') .
+      '" data-session-hash="' .
+      (eval { return &miniserv::hash_session_id($main::session_id) }) .
       '" data-script-name="' .
       ($module ? "/$module/" : get_env('script_name')) . '"' .
       ($skip   ? ''          : ' data-bgs="' . (theme_night_mode() ? 'nightRider' : 'gainsboro') . '"') . '' .

@@ -56,24 +56,44 @@ Net::WebSocket::Server->new(
         $clients_connected++;
         $thread = undef;
         alarm(0);
-        
+        # Handle connection events
         $conn->on(
-            handshake => sub {
-                # Is the key valid for this Webmin session?
-                my ($conn, $handshake) = @_;
-                my $key   = $handshake->req->fields->{'sec-websocket-key'};
-                my $dsess = &encode_base64($main::session_id);
-                $key   =~ s/\s//g;
-                $dsess =~ s/\s//g;
-                if (!$key || !$dsess || $key ne $dsess) {
-                    &error_stderr("Key $key does not match session ID $dsess");
-                    $conn->disconnect();
-                    }
-                },
             utf8 => sub {
                 my ($conn, $msg) = @_;
+                # Decode JSON message
                 utf8::encode($msg) if (utf8::is_utf8($msg));
                 my $data = decode_json($msg);
+                # Connection permission test
+                my %miniserv;
+                foreign_require('acl');
+                &get_miniserv_config(\%miniserv);
+                &acl::open_session_db(\%miniserv);
+                my $client_allowed = 0;
+                foreach my $k (grep { $acl::sessiondb{$_} } keys %acl::sessiondb) {
+                    if ($k eq $data->{'session'}) {
+                        my ($user) = split(/\s+/, $acl::sessiondb{$k});
+                        last if (!$user);
+                        my %access = &get_module_acl($user, "");
+                        if ($user !~ /^(root|admin|sysadm)$/) {
+                            if ($access{'_safe'} == 1 || $access{'rpc'} == 0) {
+                                # Disconnect if user is not a master administrator
+                                &error_stderr("WebSocket connection for user $user will be closed because the user is not a master administrator");
+                                $conn->disconnect();
+                                return;
+                            }
+                        }
+                        $client_allowed++;
+                        &error_stderr("WebSocket connection for user $user is granted as the user is a master administrator");
+                        last;
+                    }
+                }
+                # If session id is unknown then disconnect as well
+                if (!$client_allowed) {
+                    &error_stderr("WebSocket connection will be closed because the session for the user cannot be verified");
+                    $conn->disconnect();
+                    return;
+                }
+                # Set shared variables
                 $stats_stack = $data->{'stack'} // 0;
                 $stats_interval = $data->{'interval'} // 1;
                 $stats_running = $data->{'running'} // 1;
@@ -93,7 +113,6 @@ Net::WebSocket::Server->new(
                         sleep($stats_interval);
                     }
                 };
-
                 # Ensure thread is restarted if needed
                 if (!$stats_running) {
                     $thread->join() if ($thread && $thread->is_joinable());
