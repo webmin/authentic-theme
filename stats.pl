@@ -39,7 +39,7 @@ alarm(60);
 
 # Used variables
 my ($thread);
-my $stats_extract :shared = 0;
+my $stats_stack :shared = 0;
 my $stats_interval :shared = 1;
 my $stats_running :shared = 1;
 my $clients_connected :shared = 0;
@@ -74,7 +74,7 @@ Net::WebSocket::Server->new(
                 my ($conn, $msg) = @_;
                 utf8::encode($msg) if (utf8::is_utf8($msg));
                 my $data = decode_json($msg);
-                $stats_extract = $data->{'save'} // 0;
+                $stats_stack = $data->{'stack'} // 0;
                 $stats_interval = $data->{'interval'} // 1;
                 $stats_running = $data->{'running'} // 1;
                 $server_shutdown = $data->{'shutdown'} // 0;
@@ -84,7 +84,7 @@ Net::WebSocket::Server->new(
                         last if (scalar(keys %{$serv->{'conns'}})
                             != $clients_connected && !$client_disconnected);
                         # Pull stats and send to all connected clients
-                        my $stats = encode_json(stats($stats_extract));
+                        my $stats = encode_json(stats($stats_stack));
                         foreach my $conn_id (keys %{$serv->{'conns'}}) {
                             $serv->{'conns'}->
                                 {$conn_id}->{'conn'}->
@@ -132,4 +132,4 @@ Net::WebSocket::Server->new(
 &remove_miniserv_websocket($port);
 &cleanup_miniserv_websockets([$port]);
 
-# 1;
+1;
