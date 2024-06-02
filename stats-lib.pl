@@ -44,14 +44,9 @@ sub jsonify
 
 sub stats
 {
-    my ($in_sdata) = @_;
+    my ($stack) = @_;
     my %data;
     my $tdata = {};
-    my $sdata = defined($in_sdata) ? ($in_sdata ? 1 : 0) : undef;
-    if (!defined($sdata)) {
-        ReadParse();
-        $sdata = $in{'sdata'} ? 1 : 0;
-    }
     my $fdatad = "$var_directory/modules/$current_theme";
     my $fdata  = "$fdatad/stats-$remote_user.json";
     my $cdata  = jsonify(read_file_contents($fdata));
@@ -92,7 +87,7 @@ sub stats
                 unlock_file($fdata);
 
                 # Return requested data
-                if ($sdata) {
+                if ($stack) {
                     $data{'fcached'} = $cdata;
                 } else {
                     $data{'scached'} = $tdata;
