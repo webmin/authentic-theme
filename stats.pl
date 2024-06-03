@@ -61,7 +61,7 @@ Net::WebSocket::Server->new(
             &error_stderr("WebSocket connection $conn->{'port'} will be closed due to post-connection inactivity");
             $conn->disconnect();
         };
-        alarm(1);
+        alarm(3);
         # Handle connection events
         $conn->on(
             utf8 => sub {
