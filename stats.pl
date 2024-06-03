@@ -115,6 +115,7 @@ Net::WebSocket::Server->new(
                             != $clients_connected && !$client_disconnected);
                         # Pull stats and send to all connected clients
                         my $stats = encode_json(stats($stats_stack));
+                        # Broadcast stats to all connected verified clients
                         foreach my $conn_id (keys %{$serv->{'conns'}}) {
                             my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
                             if ($conn->{'verified'}) {
