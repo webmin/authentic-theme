@@ -81,8 +81,8 @@ Net::WebSocket::Server->new(
                     if ($k eq $data->{'session'}) {
                         my ($user) = split(/\s+/, $acl::sessiondb{$k});
                         last if (!$user);
-                        my %access = &get_module_acl($user, "");
                         if ($user !~ /^(root|admin|sysadm)$/) {
+                            my %access = &get_module_acl($user, "");
                             if ($access{'_safe'} == 1 || $access{'rpc'} == 0) {
                                 # Disconnect if user is not a master administrator
                                 &error_stderr("WebSocket connection for user $user will be closed because the user is not a master administrator");
