@@ -56,11 +56,19 @@ Net::WebSocket::Server->new(
         $clients_connected++;
         $thread = undef;
         alarm(0);
+        # Set post-connect activity timeout
+        $SIG{'ALRM'} = sub {
+            &error_stderr("WebSocket connection $conn->{'port'} will be closed due to post-connection inactivity");
+            $conn->disconnect();
+        };
+        alarm(1);
         # Handle connection events
         $conn->on(
             utf8 => sub {
-                my ($conn, $msg) = @_;
+                # Reset inactivity timer
+                alarm(0);
                 # Decode JSON message
+                my ($conn, $msg) = @_;
                 utf8::encode($msg) if (utf8::is_utf8($msg));
                 my $data = decode_json($msg);
                 # Connection permission test
@@ -93,6 +101,8 @@ Net::WebSocket::Server->new(
                     $conn->disconnect();
                     return;
                 }
+                # Set connection as verified
+                $conn->{'verified'} = 1;
                 # Set shared variables
                 $stats_stack = $data->{'stack'} // 0;
                 $stats_interval = $data->{'interval'} // 1;
@@ -106,9 +116,10 @@ Net::WebSocket::Server->new(
                         # Pull stats and send to all connected clients
                         my $stats = encode_json(stats($stats_stack));
                         foreach my $conn_id (keys %{$serv->{'conns'}}) {
-                            $serv->{'conns'}->
-                                {$conn_id}->{'conn'}->
-                                    send_utf8($stats);
+                            my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
+                            if ($conn->{'verified'}) {
+                                $conn->send_utf8($stats);
+                            }
                         }
                         sleep($stats_interval);
                     }
