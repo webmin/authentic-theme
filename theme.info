@@ -10,3 +10,4 @@ webmin=1
 usermin=1
 depends=2.110 2.010
 depends_reason=
+websockets=1
