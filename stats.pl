@@ -5,6 +5,7 @@
 # Copyright Ilia Rostovtsev <ilia@virtualmin.com>
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
+use strict;
 use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use Net::WebSocket::Server;
 use utf8;
@@ -13,22 +14,22 @@ use threads;
 use threads::shared;
 use threads 'exit' => 'threads_only';
 
+our ($current_theme);
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
-do "$root_directory/websockets-lib-funcs.pl";
 
 # Get port number
 my ($port) = @ARGV;
 
 # Check if user is admin
 if (!webmin_user_is_admin()) {
-    &remove_miniserv_websocket($port);
+    &remove_miniserv_websocket($port, $current_theme);
     &error_stderr("WebSocket server cannot be accessed because the user is not a master administrator");
     exit(2);
 }
 
 # Clean up when socket is terminated
 $SIG{'ALRM'} = sub {
-    &remove_miniserv_websocket($port);
+    &remove_miniserv_websocket($port, $current_theme);
     &error_stderr("WebSocket server timeout waiting for a connection");
     exit(1);
     };
@@ -152,7 +153,7 @@ Net::WebSocket::Server->new(
                         }
                     }
                     &error_stderr("WebSocket server has shut down");
-                    &remove_miniserv_websocket($port);
+                    &remove_miniserv_websocket($port, $current_theme);
                     exit(0);
                 }
             }
@@ -160,7 +161,7 @@ Net::WebSocket::Server->new(
     },
 )->start;
 &error_stderr("WebSocket server failed");
-&remove_miniserv_websocket($port);
-&cleanup_miniserv_websockets([$port]);
+&remove_miniserv_websocket($port, $current_theme);
+&cleanup_miniserv_websockets([$port], $current_theme);
 
 1;

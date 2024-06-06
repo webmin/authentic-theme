@@ -9,7 +9,6 @@ use strict;
 
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 our ($config_directory, $current_theme, $root_directory, $var_directory, %text);
-do "$root_directory/websockets-lib-funcs.pl";
 
 # Check access
 init_prefail();
@@ -57,7 +56,7 @@ my %miniserv;
 &get_miniserv_config(\%miniserv);
 foreach my $k (keys %miniserv) {
     if ($k =~ /^websockets_\/$current_theme\/ws-(\d+)$/) {
-        print_json({ success => 1, port => $1, new => !!0,
+        print_json({ success => 1, port => $1, new => 0,
                      socket => $get_socket->($1),
                      errlog => $get_logfile->($1) });
         exit;
@@ -65,7 +64,7 @@ foreach my $k (keys %miniserv) {
 }
 
 # Allocate port
-my $port = &allocate_miniserv_websocket();
+my $port = &allocate_miniserv_websocket($current_theme);
 
 # Launch the stats server
 my $server_name = "stats.pl";
@@ -81,4 +80,4 @@ my $rs = &system_logged(
     ">$logfile 2>&1 </dev/null &");
 print_json({ success => !$rs, port => $port,
              socket => $get_socket->($port),
-             new => !!1, errlog => $logfile });
+             new => 1, errlog => $logfile });
