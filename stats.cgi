@@ -56,9 +56,18 @@ my %miniserv;
 &get_miniserv_config(\%miniserv);
 foreach my $k (keys %miniserv) {
     if ($k =~ /^websockets_\/$current_theme\/ws-(\d+)$/) {
-        print_json({ success => 1, port => $1, new => 0,
-                     socket => $get_socket->($1),
-                     errlog => $get_logfile->($1) });
+        my $port = $1;
+        my $host = $miniserv{$k};
+        ($host) = $host =~ /.*host=([^ ]+).*/;
+        next if (!$host);
+
+        # Is this socket still active?
+        my $err;
+        &open_socket($host, $port, my $fh, \$err);
+        next if ($err);
+        print_json({ success => 1, port => $port, new => 0,
+                     socket => $get_socket->($port),
+                     errlog => $get_logfile->($port) });
         exit;
     }
 }
