@@ -46,9 +46,7 @@ my $get_logfile = sub {
 # Get the socket URL
 my $get_socket = sub {
     my ($port) = @_;
-    my $ws_proto = lc($ENV{'HTTPS'}) eq 'on' ? 'wss' : 'ws';
-    my $http_host = "$ws_proto://$ENV{'HTTP_HOST'}";
-    my $url = "$http_host/$current_theme/ws-$port";
+    return &get_miniserv_websocket_url($port, undef, $current_theme);
 };
 
 # Do we have an active socket?
