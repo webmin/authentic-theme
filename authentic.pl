@@ -1660,6 +1660,15 @@ sub theme_ui_page_refresh
 return "page_refresh()";
 }
 
+sub theme_fonts
+{
+    return embed_css_fonts(1);
+}
+
+sub theme_css_inline
+{
+    return get_css_inline(@_);
+}
 
 $main::cloudmin_no_create_links = 1;
 $main::cloudmin_no_edit_buttons = 1;

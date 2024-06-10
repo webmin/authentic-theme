@@ -563,12 +563,18 @@ sub embed_pm_scripts
 
 sub embed_css_fonts
 {
-    print ' <link href="' .
+    my ($return) = @_;
+    my $font_link = ' <link href="' .
       $theme_webprefix .
       '/unauthenticated/css/fonts-roboto.' .
       (theme_debug_mode() ? 'src' : 'min') . '.css?' .
       theme_version('timestamped') .
       '" rel="stylesheet">' . "\n";
+    if ($return) {
+        return $font_link;
+    } else {
+        print $font_link;
+    }
 }
 
 sub embed_css_bundle
@@ -675,6 +681,23 @@ EOF
     $noscript =~ tr/\r\n//d;
     $noscript =~ s/\s+/ /g;
     print $noscript, "\n";
+}
+
+sub get_css_inline
+{
+    my ($target) = @_;
+    if ($target eq 'calendar') {
+        return <<CALENDAR;
+.calendar-table .calendar-cell,
+.calendar-table .calendar-cell strong,
+.calendar-table strong {
+  font-weight: 500;
+}
+.calendar-details .detail strong {
+  opacity: 0.97;
+}
+CALENDAR
+        }
 }
 
 sub embed_port_shell
