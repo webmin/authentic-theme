@@ -66,7 +66,25 @@ foreach my $name (@entries_list) {
         if (!$gz_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'gzip/gunzip');
         } else {
-            $status = system("$gz_cmd -d -f -k " . quotemeta("$cwd/$name"));
+            if ($ecwd ne $cwd) {
+                my $name_ = $name;
+                $name_ =~ s/\.gz$//g;
+                my $out = &backquote_command("$gz_cmd -d -f -k -c ".
+                    quotemeta("$cwd/$name"). " 2>&1".
+                    " > ".quotemeta($ecwd."/".$name_));
+                $status = $?;
+                if ($out && $status != 0) {
+                    $status = -999;
+                    $errors{$text{'theme_xhred_global_error'}} = $out;
+                }
+            } else {
+                my $out = &backquote_command("$gz_cmd -d -f -k " . quotemeta("$cwd/$name") . " 2>&1");
+                $status = $?;
+                if ($out && $status != 0) {
+                    $status = -999;
+                    $errors{$text{'theme_xhred_global_error'}} = $out;
+                }
+            }
         }
     } elsif ($archive_type =~ /x-xz/) {
         my $xz_cmd = has_command('xz');
@@ -154,7 +172,7 @@ foreach my $name (@entries_list) {
         unlink_file("$cwd/$name");
     }
 
-    if ($status != 0) {
+    if ($status != 0 && $status != -999) {
         if ($status == 1280 || $status == 65280) {
             $errors{$name} = $text{'filemanager_archive_password_required'};
         } elsif ($status == 256 || $status == 512 || $status == 768 || $status == 20736 || $status == 20992) {
