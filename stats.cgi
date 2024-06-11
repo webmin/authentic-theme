@@ -20,7 +20,8 @@ if (!defined(&webmin_user_is_admin) || !webmin_user_is_admin()) {
 # Check dependencies
 my @errors;
 my @modnames = ("Digest::SHA", "Digest::MD5", "IO::Select",
-                "Time::HiRes", "Net::WebSocket::Server");
+                "Time::HiRes", "Net::WebSocket::Server",
+                "threadss", "threads::shared");
 
 foreach my $modname (@modnames) {
     eval "use ${modname};";
