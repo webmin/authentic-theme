@@ -598,6 +598,7 @@ sub nav_search
 "<input type=\"text\" class=\"form-control sidebar-search\" name=\"search\" placeholder=\"$theme_text{'left_search'}\">\n";
         $rv .= "<i class=\"fa fa-search\"></i>\n";
         $rv .= "</div>\n";
+        $rv .= "<div class='autocomplete-dropdown-container'></div>\n";
         $rv .= "</form>\n</li>\n";
     }
     return $rv;
@@ -1386,7 +1387,7 @@ sub print_switch
 
     }
     print '<a></a>
-            </div><div class="toggle-space"></div>';
+            </div><div class="toggle-space"></div><div class="select-dropdown-container"></div>';
 }
 
 # XXX - needs further refactor
