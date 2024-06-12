@@ -900,14 +900,17 @@ sub init_prefail
 {
     # Usermin is always fully restarted
     return if (get_product_name() eq 'usermin');
-    my $pversion = get_webmin_version();
+    my $prod_version = get_webmin_version();
     if (
+        # Affects upgrades 2.120 and up
+        (!defined(&get_miniserv_websocket_url) && $prod_version >= 2.120) ||
+        
         # Affects upgrades 2.103 and up
-        (!defined(&ui_switch_theme_javascript) && $pversion >= 2.103) ||
+        (!defined(&ui_switch_theme_javascript) && $prod_version >= 2.103) ||
         
         # Affects upgrades 2.022 and up
-        (!defined(&get_http_redirect) && $pversion >= 2.022) ||
-        (!defined(&create_wrapper) && $pversion >= 2.022) ||
+        (!defined(&get_http_redirect) && $prod_version >= 2.022) ||
+        (!defined(&create_wrapper) && $prod_version >= 2.022) ||
 
         # Affects upgrades before 2.020
         !defined(&parse_accepted_language) ||
