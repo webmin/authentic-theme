@@ -795,7 +795,7 @@ sub ui_table_content
         $content .= "<tr>";
         foreach my $cell (@$row) {
             $content .= "<td>";
-            $content .= $cell;
+            $content .= html_escape($cell);
             $content .= "</td>";
         }
         $content .= "</tr>";
