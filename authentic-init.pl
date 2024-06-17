@@ -1210,6 +1210,9 @@ sub get_button_style
              string_contains($keys, "massdomains_enaok"))
     {
         $icon = "toggle-switch  fa-1_25x";
+    } elsif (string_contains($keys, "disable_domain")) {
+        $class = "success ";
+        $icon = "clock";
     } elsif (string_contains($keys, "shutdown")) {
         $icon = "power-off";
     } elsif (string_contains($keys, "index_shut")) {
