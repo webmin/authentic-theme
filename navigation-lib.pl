@@ -998,7 +998,7 @@ sub nav_links
         $rv .= '<li data-linked' .
           get_button_tooltip('theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto top') . ' class="user-link">';
         $rv .=
-          '<a class="menu-exclude-link sidebar_sysinfo_link" href="' .
+          '<a tabindex="-1" class="menu-exclude-link sidebar_sysinfo_link" href="' .
           $theme_webprefix . '/sysinfo.cgi"><i class="fa fa-fw fa-' .
           ($get_user_level eq '3' ? 'user-circle' : 'dashboard') . '"></i></a>';
         $rv .= '</li>';
@@ -1043,7 +1043,7 @@ sub nav_links
     {
         my $tooltip = get_button_tooltip('settings_title', 'settings_hotkey_open_module_config_privileged', 'auto top');
         $rv .= "<li $tooltip data-linked class=\"user-link theme-options cursor-pointer\">";
-        $rv .= '<a class="menu-exclude-link" href="' . $theme_webprefix .
+        $rv .= '<a tabindex="-1" class="menu-exclude-link" href="' . $theme_webprefix .
           '/tconfig.cgi" data-href="' . $theme_webprefix . '/tconfig.cgi"><i class="fa2 fa-fw fa2-palette"></i></a>';
         $rv .= '</li>';
     }
@@ -1053,7 +1053,7 @@ sub nav_links
     {
         $rv .=
           '<li data-linked' . get_button_tooltip('theme_xhred_title_language_locale', undef, 'auto top') .
-          ' class="user-link"><a class="menu-exclude-link" href="' .
+          ' class="user-link"><a tabindex="-1" class="menu-exclude-link" href="' .
           $theme_webprefix . '/change-user"><i class="fa fa-fw fa-globe"></i></a></li>';
     }
 
@@ -1121,12 +1121,12 @@ sub nav_links
     $rv .= "$menu_elem_br<li $user_title class=\"user-link user-link-acl$cursor_def\">";
     if ($foreign_acl) {
         $rv .=
-          '<a class="menu-exclude-link" data-href="' . $theme_webprefix . '/acl/edit_user.cgi" href="' .
+          '<a tabindex="-1" class="menu-exclude-link" data-href="' . $theme_webprefix . '/acl/edit_user.cgi" href="' .
           $theme_webprefix . '/acl/edit_user.cgi?user=' . (get_env('base_remote_user') eq "root" ? "root" : $remote_user) .
           '"><i class="fa2 fa-fw ' . get_user_icon() . '"></i>&nbsp;<span>' . $remote_user . '</span></a>';
     } else {
         $rv .=
-          '<a class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' .
+          '<a tabindex="-1" class="menu-exclude-link cursor-default no-hover"><i class="fa2 fa-fw ' .
           get_user_icon() . '"></i>&nbsp;<span>' . $remote_user . '</span></a>';
     }
     $rv .= '</li>';
@@ -1143,11 +1143,11 @@ sub nav_links
         $rv .= "<li $tooltip class=\"user-link __logout-link\">";
         if ($main::session_id) {
             $rv .=
-              '<a data-nref class="menu-exclude-link" href="' .
+              '<a tabindex="-1" data-nref class="menu-exclude-link" href="' .
               $theme_webprefix . '/session_login.cgi?logout=1"><i class="fa fa-fw fa-sign-out text-danger"></i></a>';
         } else {
             $rv .=
-              '<a data-nref class="menu-exclude-link" href="' .
+              '<a tabindex="-1" data-nref class="menu-exclude-link" href="' .
               $theme_webprefix . '/switch_user.cgi"><i class="fa fa-fw fa-exchange text-danger"></i></a>';
         }
         $rv .= '</li>';
@@ -1158,7 +1158,7 @@ sub nav_links
             my $tooltip_other_servers = get_button_tooltip('tooltip_list_other_servers',           undef, 'auto top');
             $rv .= "<li class=\"user-link servers-index-link\">";
             $rv .=
-              '<a ' . $tooltip_go_to_master . ' data-nref class="menu-exclude-link" href="' .
+              '<a tabindex="-1" ' . $tooltip_go_to_master . ' data-nref class="menu-exclude-link" href="' .
               $master_link . '?' . $xnav . '"><i class="fa fa-fw fa2 fa2-server"></i></a>';
             $rv .= '
                 <div data-http-webmin-servers="' .
@@ -1177,7 +1177,7 @@ sub nav_links
       '<li data-linked' .
       get_button_tooltip('theme_xhred_filemanager_context_refresh', 'settings_hotkey_reload', 'auto top') .
       ' class="user-link' . ($theme_config{'settings_leftmenu_button_refresh'} ne 'true' && ' hidden') .
-'"><a class="menu-exclude-link" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
+'"><a tabindex="-1" class="menu-exclude-link" data-refresh="true" style="cursor: pointer"><i class="fa fa-fw fa-refresh"></i></a></li>';
     $rv .= '</ul></li>';
     $rv .= "\n";
     return $rv;
