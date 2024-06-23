@@ -5,7 +5,8 @@
 #
 use strict;
 
-our (%in, %gconfig, $root_directory, $remote_user, $get_user_level, %theme_config, %theme_text, $current_theme);
+our (%in, %gconfig, $root_directory, $remote_user, $get_user_level,
+     %theme_config, %theme_text, $current_theme, $has_usermin);
 
 sub xhr
 {
@@ -334,6 +335,319 @@ sub xhr
             $data{'size'}    = [$fz, $fzi];
         }
     }
+
+    # Legacy calls from index page
+    if (post_has('xhr-')) {
+        head();
+
+        if ($in{'xhr-get_available_modules'} eq '1') {
+            print get_available_modules('json');
+        }
+
+        # This should be split on next refactor to be used separately by modules (filemin/mailbox)
+        elsif ($in{'xhr-get_size'} eq '1') {
+            switch_to_remote_user_safe();
+            my $nodir  = $in{'xhr-get_size_nodir'};
+            my $path   = get_access_data('root') . $in{'xhr-get_size_path'};
+            my $home   = get_user_home();
+            my $module = $in{'xhr-get_size_cmodule'};                          # $in{'xhr-get_size_cmodule'};
+            if ($module eq 'filemin') {
+                exit if (!foreign_available($module));
+                my $jailed_user = get_fm_jailed_user($module);
+                if ($jailed_user) {
+                    $home = $jailed_user;
+                    $path = $home . $in{'xhr-get_size_path'};
+                }
+                if (($jailed_user || $get_user_level eq '3') && !string_starts_with($path, $home)) {
+                    $path = $home . $path;
+                    $path =~ s/\/\//\//g;
+                }
+            }
+            if ($nodir && -d $path) {
+                print "$theme_text{'theme_xhred_global_error'}|-2";
+            } elsif (!-r $path) {
+                print "$theme_text{'theme_xhred_global_error'}|-1";
+            } else {
+                my $size = recursive_disk_usage($path);
+                print nice_size($size, -1) . '|' . nice_number($size);
+            }
+        } elsif ($in{'xhr-get_list'} eq '1') {
+            switch_to_remote_user_safe();
+            my $module = 'filemin';    # $in{'xhr-get_list_cmodule'};
+            exit if (!foreign_available($module));
+            my $path = "$in{'xhr-get_list_path'}";
+            my @dirs;
+
+            my $jailed_user = get_fm_jailed_user($module);
+            if ($jailed_user ||
+                $get_user_level eq '2' ||
+                $get_user_level eq '4' ||
+                webmin_user_is('safe-user'))
+            {
+                $path = ($jailed_user || get_user_home()) . $path;
+            }
+            opendir(my $dirs, $path);
+            while (my $dir = readdir $dirs) {
+                next unless -d $path . '/' . $dir;
+                next if $dir eq '.' or $dir eq '..';
+                push @dirs, $dir;
+            }
+            closedir $dirs;
+
+            @dirs = sort {"\L$a" cmp "\L$b"} @dirs;
+            print convert_to_json(\@dirs);
+
+        } elsif ($in{'xhr-encoding_convert'} eq '1') {
+            my $module = 'filemin';    # $in{'xhr-encoding_convert_cmodule'};
+            exit if (!foreign_available($module));
+            my $jailed_user      = get_fm_jailed_user($module, 1);
+            my $jailed_user_home = get_fm_jailed_user($module);
+            my $cfile            = $in{'xhr-encoding_convert_file'};
+            if ($jailed_user) {
+                switch_to_given_unix_user($jailed_user);
+                $cfile = $jailed_user_home . $cfile;
+            } else {
+                switch_to_remote_user_safe();
+            }
+            my $data = &ui_read_file_contents_limit(
+                                                    { 'file',    $cfile, 'limit', $in{'xhr-encoding_convert_limit'},
+                                                      'reverse', $in{'xhr-encoding_convert_reverse'},
+                                                      'head',    $in{'xhr-encoding_convert_head'},
+                                                      'tail',    $in{'xhr-encoding_convert_tail'} });
+            if (-s $cfile < 128 || -T $cfile) {
+                eval {$data = Encode::encode('utf-8', Encode::decode($in{'xhr-encoding_convert_name'}, $data));};
+            }
+            print $data;
+        } elsif ($in{'xhr-get_gpg_keys'} eq '1') {
+            my $module = 'filemin';    # $in{'xhr-get_gpg_keys_cmodule'};
+            exit if (!foreign_available($module));
+            my $jailed_user = get_fm_jailed_user($module, 1);
+            my ($public, $gpgpath) =
+              get_user_allowed_gpg_keys($jailed_user, $in{'xhr-get_gpg_keys_all'});
+            my %keys;
+            $keys{'public'}  = $public;
+            $keys{'gpgpath'} = $gpgpath;
+            print convert_to_json(\%keys);
+        } elsif ($in{'xhr-get_user_level'} eq '1') {
+            print $get_user_level;
+        } elsif ($in{'xhr-get_update_notice'} eq '1') {
+            print update_notice();
+        } elsif ($in{'xhr-get_nice_size'} eq '1') {
+            print nice_size($in{'xhr-get_nice_size_sum'}, -1);
+        } elsif ($in{'xhr-get_command_exists'} eq '1') {
+            print has_command($in{'xhr-get_command_exists_name'});
+        } elsif ($in{'xhr-theme_temp_data'} eq '1') {
+            if ($in{'xhr-theme_temp_data_action'} eq 'set') {
+                set_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_value'});
+            } elsif ($in{'xhr-theme_temp_data_action'} eq 'get') {
+                print get_theme_temp_data($in{'xhr-theme_temp_data_name'}, $in{'xhr-theme_temp_data_keep'});
+            }
+        } elsif ($in{'xhr-shell-pop'}) {
+            my $file    = get_history_shell_file();
+            my $index   = (int($in{'xhr-shell-pop'}) - 1);
+            my $history = read_file_lines($file);
+            if (@$history[$index]) {
+                splice(@$history, $index, 1);
+                flush_file_lines($file);
+                print 1;
+            }
+        } elsif ($in{'xhr-shell-insert'}) {
+            my $file    = get_history_shell_file();
+            my $history = read_file_lines($file);
+            push(@$history, $in{'xhr-shell-inserted'}) if ($in{'xhr-shell-inserted'});
+            flush_file_lines($file);
+            print convert_to_json($history);
+        } elsif ($in{'xhr-get_autocompletes'} eq '1') {
+            if (foreign_available("shell")) {
+                switch_to_remote_user_safe();
+                my @data =
+                    get_autocomplete_shell(
+                        $in{'xhr-get_autocomplete_type'},
+                        $in{'xhr-get_autocomplete_string'});
+                print convert_to_json(\@data);
+            }
+        } elsif ($in{'xhr-theme_latest_version'} eq '1') {
+            my @current_versions;
+            my @remote_version = theme_remote_version(1, 0, 1);
+            my ($remote_version_number) = "@remote_version" =~ /^version=(.*)/m;
+            my ($remote_mversion_number) = "@remote_version" =~ /^mversion=(.*)/m;
+            if ($remote_mversion_number <= 1) {
+                $remote_mversion_number = "";
+            } else {
+                $remote_mversion_number = "-$remote_mversion_number";
+            }
+            my ($remote_bversion_number) = "@remote_version" =~ /^bversion=(.*)/m;
+            if ($remote_bversion_number <= 1) {
+                $remote_bversion_number = "";
+            } else {
+                $remote_bversion_number = ":$remote_bversion_number";
+            }
+            push(@current_versions,
+                 (theme_remote_version(1, 1) =~ /^version=(.*)/m),
+                 "$remote_version_number$remote_mversion_number$remote_bversion_number");
+            print convert_to_json(\@current_versions);
+        } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
+            clear_theme_cache(&webmin_user_is_admin(), $in{'xhr-theme_clear_cache_full'});
+        } elsif ($in{'xhr-update'} eq '1' && &webmin_user_is_admin()) {
+            my @update_rs;
+            my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
+            my $update_force            = $in{'xhr-update-force'};
+            my $update_version          = $in{'xhr-update-version'};
+            my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
+            if (!has_command('git') || !has_command('curl') || !has_command('bash')) {
+                @update_rs = {
+                               "no_git" => replace((!has_command('curl') || !has_command('bash') ? '>git<'  : '~'),
+                                                   (!has_command('curl')                         ? '>curl<' : '>bash<'),
+                                                   $theme_text{'theme_git_patch_no_git_message'}
+                               ), };
+                print convert_to_json(\@update_rs);
+            } else {
+                if ($update_force ne "1" && !$update_version) {
+                    my $authentic_remote_data;
+
+                    if ($version_type eq '-release') {
+                        $authentic_remote_data = theme_remote_version(1, 1, undef, 1);
+                    } else {
+                        $authentic_remote_data = theme_remote_version(1, 0, 1, 1);
+                    }
+
+                    if ($authentic_remote_data eq '0') {
+                        @update_rs = { "no_connection" => $theme_text{'theme_git_update_locked'} };
+                        print convert_to_json(\@update_rs);
+                        exit;
+                    }
+
+                    @update_rs = theme_update_incompatible($authentic_remote_data, ($version_type eq '-release' ? 1 : 0));
+                    if (@update_rs) {
+                        print convert_to_json(\@update_rs);
+                        exit;
+                    }
+                }
+                my $usermin = ($has_usermin && $usermin_enabled_updates);
+                my $usermin_root;
+                $version_type = "$version_type:$update_version" if ($update_version);
+                backquote_logged("yes | $root_directory/$current_theme/theme-update.sh $version_type -no-restart");
+                if ($usermin) {
+                    $usermin_root = $root_directory;
+                    $usermin_root =~ s/webmin/usermin/;
+                    backquote_logged("yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart");
+                }
+                my $tversion = theme_version('versionfull', 'no-cache');
+
+                @update_rs = {
+                               "success" => ($usermin ? theme_text('theme_git_patch_update_success_message2', $tversion) :
+                                               theme_text('theme_git_patch_update_success_message', $tversion)
+                               ) };
+                print convert_to_json(\@update_rs);
+            }
+        } elsif ($in{'xhr-info'} eq '1') {
+            if (&foreign_available('virtual-server')) {
+                &foreign_require("virtual-server");
+
+                # Refresh regularly collected info on status of services
+                &virtual_server::refresh_startstop_status();
+            }
+            my @info = theme_list_combined_system_info();
+            our ($cpu_percent,
+                 $mem_percent,
+                 $virt_percent,
+                 $disk_percent,
+                 $host,
+                 $os,
+                 $webmin_version,
+                 $virtualmin_version,
+                 $cloudmin_version,
+                 $authentic_theme_version,
+                 $local_time,
+                 $kernel_arch,
+                 $cpu_type,
+                 $cpu_temperature,
+                 $cpu_fans,
+                 $hdd_temperature,
+                 $uptime,
+                 $running_proc,
+                 $load,
+                 $real_memory,
+                 $virtual_memory,
+                 $disk_space,
+                 $package_message,
+                 $csf_title,
+                 $csf_data,
+                 $csf_remote_version,
+                 $authentic_remote_version,
+                 $local_motd
+            ) = get_sysinfo_vars(\@info);
+
+            # Build update info
+            my @updated_info = {
+                  "data"                     => 1,
+                  "cpu_percent"              => $cpu_percent,
+                  "mem_percent"              => $mem_percent,
+                  "virt_percent"             => $virt_percent,
+                  "disk_percent"             => $disk_percent,
+                  "host"                     => $host,
+                  "os"                       => $os,
+                  "webmin_version"           => $webmin_version,
+                  "virtualmin_version"       => $virtualmin_version,
+                  "cloudmin_version"         => $cloudmin_version,
+                  "authentic_theme_version"  => $authentic_theme_version,
+                  "local_time"               => $local_time,
+                  "kernel_arch"              => $kernel_arch,
+                  "cpu_type"                 => $cpu_type,
+                  "cpu_temperature"          => $cpu_temperature,
+                  "cpu_fans"                 => $cpu_fans,
+                  "hdd_temperature"          => $hdd_temperature,
+                  "uptime"                   => $uptime,
+                  "proc"                     => $running_proc,
+                  "cpu"                      => $load,
+                  "mem"                      => $real_memory,
+                  "virt"                     => $virtual_memory,
+                  "disk"                     => $disk_space,
+                  "package_message"          => $package_message,
+                  "authentic_remote_version" => $authentic_remote_version,
+                  "local_motd"               => $local_motd,
+                  "csf_title"                => $csf_title,
+                  "csf_data"                 => $csf_data,
+                  "csf_remote_version"       => $csf_remote_version,
+                  "csf_deny"                 => (
+                      (defined(&csf_temporary_list) && $theme_config{'settings_sysinfo_csf_temp_list_privileged'} ne 'false')
+                      ? csf_temporary_list() :
+                        undef
+                  ),
+                  "collect_interval" => get_module_config_data('system-status', 'collect_interval'),
+                  "extended_si"      => get_extended_sysinfo(\@info, undef),
+                  "warning_si"       => get_sysinfo_warning(\@info), };
+            print convert_to_json(\@updated_info);
+        } elsif ($in{'xhr-search-in-file'} eq '1') {
+            switch_to_remote_user_safe();
+            my @files = split(/,/, $in{'xhr-search-in-file-files'});
+            my $match = trim($in{'xhr-search-in-file-string'});
+            my @match;
+            fdo {
+                my ($file, $line, $text) = @_;
+                if ($text =~ /\Q$match\E/i) {
+                    push(@match, ([$files[$file] => [html_escape(substr($text, 0, 120)), $line]]));
+                }
+            }
+            @files;
+            print convert_to_json(\@match);
+        } elsif ($in{'xhr-csf-unload'} eq '1') {
+            lib_csf_control('unload');
+        } elsif ($in{'xhr-gennewpass'} eq 'get') {
+            my $pass;
+            if (&foreign_available('virtual-server')) {
+                &foreign_require("virtual-server");
+                $pass = &virtual_server::random_password();
+            } elsif (&foreign_available('useradmin')) {
+                &foreign_require("useradmin", "user-lib.pl");
+                $pass = &useradmin::generate_random_password();
+            }
+            print $pass;
+        }
+
+        exit;
+    }
+
     &$output(\%data);
 }
 

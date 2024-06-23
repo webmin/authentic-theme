@@ -1016,7 +1016,7 @@ const mail = (function() {
                     cmodule = _.variable.module.name(),
                     prefix = `${path}/${cmodule}`;
 
-                xtarget.getSize = `${path}/index.cgi/?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
+                xtarget.getSize = `${path}/xhr.cgi?xhr-get_size=1&xhr-get_size_nodir=1&xhr-get_size_path=`;
                 xtarget.delete = `${prefix}/delete_mail.cgi?confirm=1&delete=1&noredirect=1`;
                 xtarget.schedule = `${path}/schedule/save.cgi`;
                 xtarget.addressBook = `${prefix}/export.cgi?fmt=csv&dup=0&incgr=1`;
