@@ -2378,19 +2378,6 @@ sub theme_config_save
     }
 }
 
-sub theme_config_get
-{
-    my %tuconfig;
-    my $tuconfig_file = get_tuconfig_file();
-    if (-f $tuconfig_file) {
-        my %tuconfig = settings($tuconfig_file);
-        return convert_to_json(\%tuconfig);
-    } else {
-        return convert_to_json();
-    }
-
-}
-
 sub theme_config_restore
 {
     my $tuconfig_file = get_tuconfig_file();
