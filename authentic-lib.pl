@@ -1866,17 +1866,7 @@ sub get_xhr_request
     if (post_has('xhr-')) {
         head();
 
-        if ($in{'xhr-settings'} eq '1') {
-            if ($in{'restore'} eq '1') {
-                theme_config_restore();
-            }
-        } elsif ($in{'xhr-manage-config'} eq '1') {
-            if ($in{'save'} eq '1') {
-                theme_config_save();
-            } elsif ($in{'load'} eq '1') {
-                print theme_config_get();
-            }
-        } elsif ($in{'xhr-get_available_modules'} eq '1') {
+        if ($in{'xhr-get_available_modules'} eq '1') {
             print get_available_modules('json');
         }
 

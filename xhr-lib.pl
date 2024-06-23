@@ -25,6 +25,7 @@ sub xhr
 
     if ($type eq "data") {
         if ($subtype eq "theme") {
+            # List theme hotkeys
             if ($action eq "list-hotkeys") {
                 do("$ENV{'THEME_ROOT'}/tconfig-lib.pl");
                 my @hotkeys_labels =
@@ -71,6 +72,16 @@ sub xhr
                     push(@hotkeys_editor, { key => $editor_hotkeys_map{$value}, title => $value });
                 }
                 $data{'hotkeys-editor'} = \@hotkeys_editor;
+            }
+            # Control theme settings
+            if ($action eq "settings") {
+                my $do = $in{'do'};
+                do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
+                if ($do eq 'save') {
+                    theme_config_save();
+                } elsif ($do eq 'restore') {
+                    theme_config_restore();
+                }
             }
         }
     }
