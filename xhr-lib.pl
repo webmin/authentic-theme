@@ -76,7 +76,6 @@ sub xhr
             # Control theme settings
             if ($action eq "settings") {
                 my $do = $in{'do'};
-                do("$ENV{'THEME_ROOT'}/authentic-lib.pl");
                 if ($do eq 'save') {
                     theme_config_save();
                 } elsif ($do eq 'restore') {
