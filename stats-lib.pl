@@ -6,7 +6,6 @@
 use strict;
 no warnings 'uninitialized';
 use lib ($ENV{'LIBROOT'} . "/vendor_perl");
-use Async;
 BEGIN {push(@INC, "..");}
 use WebminCore;
 init_config();
@@ -133,12 +132,6 @@ sub stats
     };
 
     # Collect stats
-    # Run in async to reduce script execution time
-    my $network;
-    if (acl_system_status('load')) {
-        $network = Async->new(sub {network_stats('io')});
-    }
-
     if (foreign_check("proc")) {
         foreign_require("proc");
 
@@ -224,22 +217,15 @@ sub stats
     }
 
     # Network I/O
-    if ($network) {
-        for (;;) {
-            if ($network->ready) {
-                if (!$network->error) {
-                    my $nrs = unserialise_variable($network->result);
-                    my $in  = @{$nrs}[0];
-                    my $out = @{$nrs}[1];
+    if (acl_system_status('load')) {
+        my $network = network_stats('io');
+        my $nrs = unserialise_variable($network);
+        my $in  = @{$nrs}[0];
+        my $out = @{$nrs}[1];
 
-                    if ($in && $out || $in eq '0' || $out eq '0') {
-                        $data{'net'} = [$in, $out];
-                        &$ddata('net', [$in, $out]);
-                    }
-                }
-                last;
-            }
-            select(undef, undef, undef, 0.1);
+        if ($in && $out || $in eq '0' || $out eq '0') {
+            $data{'net'} = [$in, $out];
+            &$ddata('net', [$in, $out]);
         }
     }
 
