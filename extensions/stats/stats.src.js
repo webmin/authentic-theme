@@ -8,44 +8,87 @@
 /* jshint esversion: 6 */
 /* jshint jquery: true */
 
-'use strict';
+"use strict";
 
 // Stats module
 const stats = {
-    general: {
-        timeout: settings_sysinfo_query_timeout,
-        stopped: 1,
-        killed: 0,
+    sys: {
         error: 0,
-        requery: 0,
-        call: {},
+        requery: null,
+        socket: null,
+        socketData: function () {
+            return {
+                stack: document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0,
+                interval: this.timeout(true),
+                running: settings_sysinfo_real_time_status ? 1 : 0,
+                shutdown: 0, // Not used, we always want Webmin to keep it running
+                session: session.server.data("session-hash"),
+            };
+        },
+        timeout: (d) => {
+            return d ? settings_sysinfo_query_timeout  / 1000 : settings_sysinfo_query_timeout;
+        },
+        state: () => {
+            return theme.visibility.get();
+        },
+        stored_length: () => {
+            return settings_sysinfo_real_time_stored_length;
+        },
+        enabled: () => {
+            return settings_sysinfo_real_time_status;
+        },
+
+        // Stop querying
+        disable: function () {
+            console.log("Pre-disabling stats ..");
+            // Disable if socket is opened
+            if (this.socket) {
+                console.log("Disabling stats ..");
+                const socketData = this.socketData();
+                socketData.running = 0;
+                this.socket.send(JSON.stringify(socketData));
+            }
+        },
+
+        // Check to enable stats after stop
+        enable: function () {
+            console.log("Pre-enabling stats ..", this.enabled(), this.socket);
+            // If enabled in config
+            if (this.enabled()) {
+                // If socket is yet closed
+                if (!this.socket) {
+                    console.log(".. activating stats ..");
+                    // this.socket = null;
+                    this.activate();
+                }
+                // If socket is opened, just send start signal
+                else {
+                    console.log(".. stats already enabled, sending enable signal ..");
+                    const socketData = this.socketData();
+                    socketData.running = 1;
+                    this.socket.send(JSON.stringify(socketData));
+                }
+            }
+        },
+
+        block: theme_updating,
 
         // Import globals
         /* jshint -W117 */
-        extend: {
+        _: {
             prefix: v___location_prefix,
             error: connection_error,
-            prevent: theme_updating,
             language: theme_language,
             convert: {
-                size: Convert.nice_size
+                size: Convert.nice_size,
             },
             chart: Chartist,
             dayjs: dayjs,
             locale: {
                 time: config_portable_theme_locale_format_time,
                 offset: () => {
-                    return get_utc_offset()
-                }
-            },
-            state: () => {
-                return theme.visibility.get()
-            },
-            stored_length: () => {
-                return settings_sysinfo_real_time_stored_length
-            },
-            enabled: () => {
-                return settings_sysinfo_real_time_status
+                    return get_utc_offset();
+                },
             },
         },
 
@@ -53,114 +96,124 @@ const stats = {
         selector: {
             chart: {
                 container: {
-                    parent: 'live_stats',
-                    data: 'data-chart',
+                    parent: "live_stats",
+                    data: "data-chart",
                 },
-                loader: 'data-charts-loader'
-
+                loader: "data-charts-loader",
             },
-            collapse: 'collapse',
-            dashboard: 'system-status',
-            slider: 'info-container',
-            piechart: 'piechart'
+            collapse: "collapse",
+            dashboard: "system-status",
+            slider: "info-container",
+            piechart: "piechart",
         },
 
         // Get data
-        query: function() {
+        activate: function () {
+            
+            // Disable stats in some cases
+            if (this.block()) {
+                return;
+            }
+            
+            // Already open
+            if (this.socket) {
+                return;
+            }
+            
+            // Live charts already loaded
+            console.warn("Activating socket", this.socket);
+            $.ajax({
+                context: this,
+                url: `${this._.prefix}/stats.cgi`,
+                error: function () {
+                    // Set error counter
+                    this.error++;
 
-            // Repeat right after success
-            (this.stopped && !this.killed) && (() => {
-                this.stopped = 0;
-                this.call = {};
+                    // Show error
+                    if (this.error > 3) {
+                        return;
+                    }
 
-                // Disable stats upon theme update
-                if (this.extend.prevent()) {
-                    return
-                }
+                    // Retry again
+                    !this.requery &&
+                        (this.requery = setTimeout(() => {
+                            this.requery = null;
+                            this.activate();
+                        }, parseInt((this.timeout(true) + 1) ** 1.5)));
+                },
+                success: function (data) {
+                    var_dump("Success. Connection established:", data);
 
-                // Live charts already loaded
-                let extra = String();
-                if (document.querySelector(`[${this.selector.chart.loader}]`)) {
-                    extra = '&sdata=1';
-                }
+                    // Do we have socket opened?
+                    if (data.success) {
+                        // Open socket
+                        console.warn("Opening WebSocket connection ..");
+                        this.socket = new WebSocket(data.socket);
+                        this.socket.onopen = () => {
+                            console.log("Connected!");
+                            // Send initial parameters to the server
+                            if (this.enabled()) {
+                                this.socket.send(
+                                    JSON.stringify(this.socketData()));
+                            }
+                        };
+                        this.socket.onmessage = (event) => {
+                            let message = JSON.parse(event.data);
+                            console.log("Received stats:", message);
+                            this.render(message);
+                        };
+                        this.socket.onclose = () => {
+                            console.warn("Disconnected");
+                            setTimeout(() => {
+                                this.socket = null;
+                            }, parseInt((this.timeout(true) + 1) ** 1.6));
+                        };
+                    }
 
-                this.call = $.ajax({
-                    context: this,
-                    url: `${this.extend.prefix}/stats.cgi?xhr-stats=general${extra}`,
-                    error: function(xhr) {
-
-                        // Abort is not an error, don't retry
-                        if (xhr.statusText === 'abort') {
-                            return
-                        }
-
-                        // Set error counter
-                        this.error++;
-
-                        // Show error
-                        if (this.error > 3) {
-                            this.extend.error(xhr, 1), this.stopped = 1, this.error = 0, this.requery = 0;
-                            return;
-                        }
-
-                        // Retry again
-                        !this.requery && (this.requery = setTimeout(() => {
-                            this.stopped = 1, this.requery = 0, this.query();
-                        }, (this.timeout * 6)));
-                    },
-                    success: function(data) {
-
-                        // Reset error counter
-                        this.error = 0;
-
-                        // Take half a second delay, render and restart
-                        setTimeout(() => {
-                            this.render(data);
-                        }, this.timeout);
-                        this.stopped = 1;
-                    },
-                    dataType: "json",
-                })
-            })();
+                    // Reset error counter
+                    this.error = 0;
+                },
+                dataType: "json",
+            });
         },
 
         // Display changes
-        render: function(data) {
-
+        render: function (data) {
             // Iterate through response
             Object.entries(data).map(([target, data]) => {
                 let v = parseInt(data),
-                    vo = (typeof data === 'object' ? data[(data.length - 1)] : false),
-                    vt = (vo ? vo : v),
-                    $pc = $(`#${this.selector.dashboard} .${this.selector.piechart}[data-charts*="${target}"]`),
+                    vo = typeof data === "object" ? data[data.length - 1] : false,
+                    vt = vo ? vo : v,
+                    $pc = $(
+                        `#${this.selector.dashboard} .${this.selector.piechart}[data-charts*="${target}"]`
+                    ),
                     $lc = $(`.${this.selector.slider} .${target}_percent`),
                     $od = $(`#${this.selector.dashboard} span[data-id="sysinfo_${target}"], 
                              .${this.selector.slider} span[data-data="${target}"]`),
-                    cached = (target === 'fcached' ? 2 : (target === 'scached' ? 1 : 0));
+                    cached = target === "fcached" ? 2 : target === "scached" ? 1 : 0;
 
                 if (Number.isInteger(v)) {
-
                     // Update pie-charts
                     if ($pc.length) {
-                        let piechart = $pc.data('easyPieChart');
+                        let piechart = $pc.data("easyPieChart");
                         piechart && piechart.update(v);
                     }
 
                     // Update line-charts
                     if ($lc.length) {
-                        $lc.find('.bar').attr('style', 'width:' + v + '%');
+                        $lc.find(".bar").attr("style", "width:" + v + "%");
 
                         // Update line-charts' text
-                        let $dp = $lc.find('.description'),
+                        let $dp = $lc.find(".description"),
                             $lb = $dp.text().split(":")[0];
 
-                        $dp.attr('title', vo).text($lb + ": " + v + '% (' + vo + ')');
+                        $dp.attr("title", vo).text($lb + ": " + v + "% (" + vo + ")");
                     }
 
                     // Update other data
                     if ($od.length) {
-                        if ($od.find('a').length) {
-                            $od.find('a').text(vt);
+                        if ($od.find("a").length) {
+                            $od.find("a").text(vt);
                         } else {
                             $od.text(vt);
                         }
@@ -177,50 +230,60 @@ const stats = {
                         let options = {
                                 chart: {
                                     type: () => {
-                                        return (type === 'proc' || type === 'disk' || type === 'net');
+                                        return type === "proc" || type === "disk" || type === "net";
                                     },
                                     bandwidth: () => {
-                                        return (type === 'disk' || type === 'net');
+                                        return type === "disk" || type === "net";
                                     },
-                                    fill: function() { return this.type() ? false : true },
-                                    high: function() { return this.type() ? undefined : 100 },
-                                    threshold: function() { return this.type() ? -1 : 50 },
-                                    height: '100px',
-                                }
+                                    fill: function () {
+                                        return this.type() ? false : true;
+                                    },
+                                    high: function () {
+                                        return this.type() ? undefined : 100;
+                                    },
+                                    threshold: function () {
+                                        return this.type() ? -1 : 50;
+                                    },
+                                    height: "100px",
+                                },
                             },
-                            lg = this.extend.language(`${this.selector.chart.container.parent}_${type}`),
-                            tg = $(`#${lds}`).find(`[${this.selector.chart.container.data}=${type}]`),
-                            sr = [{
-                                name: `series-${type}`,
-                                data: array
-                            }];
+                            lg = this._.language(`${this.selector.chart.container.parent}_${type}`),
+                            tg = $(`#${lds}`).find(
+                                `[${this.selector.chart.container.data}=${type}]`
+                            ),
+                            sr = [
+                                {
+                                    name: `series-${type}`,
+                                    data: array,
+                                },
+                            ];
 
                         // Don't run further in case there is no container
                         if (!tg.length) {
-                            return
+                            return;
                         }
 
                         // Extend data object expected way to draw multiple series in single graph
-                        if (array[0] && typeof array[0].y === 'object') {
+                        if (array[0] && typeof array[0].y === "object") {
                             sr = [];
-                            array[0].y.forEach(function(x, i) {
+                            array[0].y.forEach(function (x, i) {
                                 let data = [];
-                                array.forEach(function(n) {
+                                array.forEach(function (n) {
                                     data.push({
-                                        data: { x: n.x, y: n.y[i] }
-                                    })
+                                        data: { x: n.x, y: n.y[i] },
+                                    });
                                 });
                                 sr.push({
                                     name: `series-${type}-${i}`,
-                                    data: data
-                                })
+                                    data: data,
+                                });
                             });
                         }
 
                         // Update series if chart already exist
                         if (tg[0] && tg[0].textContent) {
                             if (cached === 1) {
-                                let lf = parseInt(this.extend.stored_length());
+                                let lf = parseInt(this.stored_length());
                                 if (lf < 600 || lf > 86400) {
                                     lf = 600;
                                 }
@@ -229,21 +292,24 @@ const stats = {
                                     cdata_start,
                                     cdata_end,
                                     cdata_ready = new Promise((resolve) => {
-                                        tdata.forEach(function(d, i, a) {
-                                            cdata_start = cdata[i].data[0].x || cdata[i].data[0].data.x;
-                                            cdata_end = cdata[i].data[cdata[i].data.length - 1].x || cdata[i].data[cdata[i].data.length - 1].data.x;
+                                        tdata.forEach(function (d, i, a) {
+                                            cdata_start =
+                                                cdata[i].data[0].x || cdata[i].data[0].data.x;
+                                            cdata_end =
+                                                cdata[i].data[cdata[i].data.length - 1].x ||
+                                                cdata[i].data[cdata[i].data.length - 1].data.x;
                                             cdata[i].data.push(d.data[0]);
                                             if (cdata_end - cdata_start > lf) {
                                                 cdata[i].data.shift();
                                             }
                                             if (i === a.length - 1) {
-                                                resolve()
+                                                resolve();
                                             }
                                         });
                                     });
                                 cdata_ready.then(() => {
                                     this[`chart_${type}`].update({
-                                        series: cdata
+                                        series: cdata,
                                     });
                                 });
                             }
@@ -251,92 +317,82 @@ const stats = {
 
                         // Initialize chart the first time
                         else if (cached === 2) {
-                            this[`chart_${type}`] = new this.extend.chart.Line(tg[0], {
-                                series: sr,
-                            }, {
-                                axisX: {
-                                    type: this.extend.chart.FixedScaleAxis,
-                                    divisor: 12,
-                                    labelInterpolationFnc: (value) => {
-                                        return this.extend.dayjs(value * 1000).utcOffset(this.extend.locale.offset()).format(this.extend.locale.time);
-                                    }
+                            this[`chart_${type}`] = new this._.chart.Line(
+                                tg[0],
+                                {
+                                    series: sr,
                                 },
-                                height: options.chart.height,
-                                showArea: options.chart.fill(),
-                                showPoint: !options.chart.fill(),
-                                high: options.chart.high(),
-                                low: 0,
-                                fullWidth: true,
-                                chartPadding: {
-                                    left: 25
-                                },
-                                axisY: {
-                                    onlyInteger: true,
-                                    labelInterpolationFnc: (value) => {
-                                        if (options.chart.fill()) {
-                                            return (value ? (value + '%') : value);
-                                        } else if (options.chart.bandwidth(value)) {
-                                            if (type === 'net') {
-                                                return (value ? this.extend.convert.size(value, {
-                                                    'fixed': 0,
-                                                    'bits': 1,
-                                                    'round': 1,
-                                                }) : value)
-                                            }
-                                            return (value ? this.extend.convert.size(value * 1000, {
-                                                'fixed': 0,
-                                                'round': 1,
-                                            }) : value)
-                                        } else {
-                                            return value
-                                        }
+                                {
+                                    axisX: {
+                                        type: this._.chart.FixedScaleAxis,
+                                        divisor: 12,
+                                        labelInterpolationFnc: (value) => {
+                                            return this._.dayjs(value * 1000)
+                                                .utcOffset(this._.locale.offset())
+                                                .format(this._.locale.time);
+                                        },
                                     },
-                                },
-                                plugins: [
-                                    this.extend.chart.plugins.ctAxisTitle({
-                                        axisY: {
-                                            axisTitle: lg,
-                                            axisClass: "ct-axis-title",
-                                            offset: {
-                                                x: 0,
-                                                y: 9
+                                    height: options.chart.height,
+                                    showArea: options.chart.fill(),
+                                    showPoint: !options.chart.fill(),
+                                    high: options.chart.high(),
+                                    low: 0,
+                                    fullWidth: true,
+                                    chartPadding: {
+                                        left: 25,
+                                    },
+                                    axisY: {
+                                        onlyInteger: true,
+                                        labelInterpolationFnc: (value) => {
+                                            if (options.chart.fill()) {
+                                                return value ? value + "%" : value;
+                                            } else if (options.chart.bandwidth(value)) {
+                                                if (type === "net") {
+                                                    return value
+                                                        ? this._.convert.size(value, {
+                                                              fixed: 0,
+                                                              bits: 1,
+                                                              round: 1,
+                                                          })
+                                                        : value;
+                                                }
+                                                return value
+                                                    ? this._.convert.size(value * 1000, {
+                                                          fixed: 0,
+                                                          round: 1,
+                                                      })
+                                                    : value;
+                                            } else {
+                                                return value;
+                                            }
+                                        },
+                                    },
+                                    plugins: [
+                                        this._.chart.plugins.ctAxisTitle({
+                                            axisY: {
+                                                axisTitle: lg,
+                                                axisClass: "ct-axis-title",
+                                                offset: {
+                                                    x: 0,
+                                                    y: 9,
+                                                },
+                                                flipTitle: true,
                                             },
-                                            flipTitle: true,
-                                        }
-                                    }),
-                                    this.extend.chart.plugins.ctThreshold({
-                                        threshold: options.chart.threshold(),
-                                    }),
-                                ]
-                            });
+                                        }),
+                                        this._.chart.plugins.ctThreshold({
+                                            threshold: options.chart.threshold(),
+                                        }),
+                                    ],
+                                }
+                            );
 
                             // Remove loader
-                            this[`chart_${type}`].on('created', () => ld.remove());
+                            this[`chart_${type}`].on("created", () => ld.remove());
                         }
-                    })
+                    });
                 }
             });
-            (this.extend.state() || this.extend.enabled() === 2) && this.query();
+            (this.state() || this.enabled() === 2) && this.activate();
         },
-
-        // Stop querying
-        disable: function() {
-            let abort = this.call.abort;
-
-            typeof abort === "function" &&
-                (
-                    abort.call(),
-                    this.killed = 1,
-                    this.stopped = 1,
-                    this.call = {}
-                );
-        },
-
-        // Check to enable stats after stop
-        enable: function() {
-            if (this.extend.enabled()) {
-                this.stopped = 1, this.killed = 0, this.query();
-            }
-        }
-    }
-}
+    },
+};
