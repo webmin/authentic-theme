@@ -156,6 +156,7 @@ const stats = {
                             console.warn("WebSocket connection closed");
                             setTimeout(() => {
                                 this.socket = null;
+                                this.enable();
                             }, this.timeout());
                         };
                     }
