@@ -14,6 +14,7 @@
 const stats = {
     sys: {
         error: 0,
+        activating: 0,
         requery: null,
         socket: null,
         socketData: function () {
@@ -109,6 +110,9 @@ const stats = {
 
         // Get data
         activate: function () {
+            if (this.activating++) {
+                return;
+            }
             if (this.block()) {
                 return;
             }
@@ -121,14 +125,12 @@ const stats = {
                 context: this,
                 url: `${this._.prefix}/stats.cgi`,
                 error: function () {
-                    // Set error counter
-                    this.error++;
-
+                    // Reset activating flag
+                    this.activating = 0;
                     // Show error
-                    if (this.error > 3) {
+                    if (this.error++ > 3) {
                         return;
                     }
-
                     // Retry again
                     !this.requery &&
                         (this.requery = setTimeout(() => {
@@ -143,6 +145,7 @@ const stats = {
                         console.warn("WebSocket allocated", data);
                         this.socket = new WebSocket(data.socket);
                         this.socket.onopen = () => {
+                            this.activating = 0;
                             console.log("WebSocket connection established");
                             this.active() && this.fetch(true);
                         };
@@ -156,11 +159,14 @@ const stats = {
                             console.warn("WebSocket connection closed");
                             setTimeout(() => {
                                 this.socket = null;
+                                this.activating = 0;
                                 this.enable();
                             }, this.timeout());
                         };
+                    } else {
+                        // Reset activating flag
+                        this.activating = 0;
                     }
-
                     // Reset error counter
                     this.error = 0;
                 },
