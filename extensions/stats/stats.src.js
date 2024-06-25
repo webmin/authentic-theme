@@ -18,59 +18,59 @@ const stats = {
         socket: null,
         socketData: function () {
             return {
-                stack: document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0,
-                interval: this.timeout(true),
-                running: settings_sysinfo_real_time_status ? 1 : 0,
-                shutdown: 0, // Not used, we always want Webmin to keep it running
+                stack: this.get_stack(),
+                interval: this.timeout(),
+                running: this.enabled(),
+                shutdown: 0, // Will be optional
                 session: session.server.data("session-hash"),
             };
         },
-        timeout: (d) => {
-            return d ? settings_sysinfo_query_timeout  / 1000 : settings_sysinfo_query_timeout;
+        fetch: function (init) {
+            if (this.enabled()) {
+                const socketData = this.socketData();
+                // Start signal on init
+                if (init) {
+                    this.socket.send(JSON.stringify(socketData));
+                    return;
+                }
+                // Update socket settings
+                const stack = this.get_stack();
+                if (stack || this.get_stack._) {
+                    this.get_stack._ = !this.get_stack._;
+                    socketData.stack = +this.get_stack._;
+                    this.socket.send(JSON.stringify(socketData));
+                }
+            }
         },
-        state: () => {
+        get_stack: function () {
+            return document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0;
+        },
+        timeout: () => {
+            return settings_sysinfo_real_time_run_rate / 1000;
+        },
+        active: () => {
             return theme.visibility.get();
         },
         stored_length: () => {
             return settings_sysinfo_real_time_stored_length;
         },
         enabled: () => {
-            return settings_sysinfo_real_time_status;
+            return settings_sysinfo_real_time_status ? 1 : 0;
         },
-
-        // Stop querying
         disable: function () {
-            console.log("Pre-disabling stats ..");
-            // Disable if socket is opened
             if (this.socket) {
-                console.log("Disabling stats ..");
-                const socketData = this.socketData();
-                socketData.running = 0;
-                this.socket.send(JSON.stringify(socketData));
+                this.socket.close();
             }
         },
-
-        // Check to enable stats after stop
         enable: function () {
-            console.log("Pre-enabling stats ..", this.enabled(), this.socket);
-            // If enabled in config
             if (this.enabled()) {
-                // If socket is yet closed
-                if (!this.socket) {
-                    console.log(".. activating stats ..");
-                    // this.socket = null;
+                if (this.socket) {
+                    this.socket.send(JSON.stringify(this.socketData()));
+                } else {
                     this.activate();
                 }
-                // If socket is opened, just send start signal
-                else {
-                    console.log(".. stats already enabled, sending enable signal ..");
-                    const socketData = this.socketData();
-                    socketData.running = 1;
-                    this.socket.send(JSON.stringify(socketData));
-                }
             }
         },
-
         block: theme_updating,
 
         // Import globals
@@ -109,19 +109,14 @@ const stats = {
 
         // Get data
         activate: function () {
-            
-            // Disable stats in some cases
             if (this.block()) {
                 return;
             }
-            
-            // Already open
             if (this.socket) {
                 return;
             }
-            
+
             // Live charts already loaded
-            console.warn("Activating socket", this.socket);
             $.ajax({
                 context: this,
                 url: `${this._.prefix}/stats.cgi`,
@@ -139,34 +134,29 @@ const stats = {
                         (this.requery = setTimeout(() => {
                             this.requery = null;
                             this.activate();
-                        }, parseInt((this.timeout(true) + 1) ** 1.5)));
+                        }, this.timeout() * 1000));
                 },
                 success: function (data) {
-                    var_dump("Success. Connection established:", data);
-
                     // Do we have socket opened?
                     if (data.success) {
                         // Open socket
-                        console.warn("Opening WebSocket connection ..");
+                        console.warn("WebSocket allocated", data);
                         this.socket = new WebSocket(data.socket);
                         this.socket.onopen = () => {
-                            console.log("Connected!");
-                            // Send initial parameters to the server
-                            if (this.enabled()) {
-                                this.socket.send(
-                                    JSON.stringify(this.socketData()));
-                            }
+                            console.log("WebSocket connection established");
+                            this.active() && this.fetch(true);
                         };
                         this.socket.onmessage = (event) => {
-                            let message = JSON.parse(event.data);
-                            console.log("Received stats:", message);
+                            const message = JSON.parse(event.data);
                             this.render(message);
+                            console.log("Received stats:", message);
+                            this.active() && this.fetch(false);
                         };
                         this.socket.onclose = () => {
-                            console.warn("Disconnected");
+                            console.warn("WebSocket connection closed");
                             setTimeout(() => {
                                 this.socket = null;
-                            }, parseInt((this.timeout(true) + 1) ** 1.6));
+                            }, this.timeout());
                         };
                     }
 
@@ -392,7 +382,6 @@ const stats = {
                     });
                 }
             });
-            (this.state() || this.enabled() === 2) && this.activate();
         },
     },
 };
