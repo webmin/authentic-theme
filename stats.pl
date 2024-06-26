@@ -93,37 +93,17 @@ Net::WebSocket::Server->new(
                 my $data = decode_json($msg);
                 # Connection permission test unless already verified
                 if (!$conn->{'verified'}) {
-                    my %miniserv;
-                    foreign_require('acl');
-                    get_miniserv_config(\%miniserv);
-                    acl::open_session_db(\%miniserv);
-                    my $client_allowed = 0;
-                    foreach my $k (grep { $acl::sessiondb{$_} } keys %acl::sessiondb) {
-                        if ($k eq $data->{'session'}) {
-                            my ($user) = split(/\s+/, $acl::sessiondb{$k});
-                            last if (!$user);
-                            if ($user !~ /^(root|admin|sysadm)$/) {
-                                my %access = get_module_acl($user, "");
-                                if ($access{'_safe'} == 1 || $access{'rpc'} == 0) {
-                                    # Disconnect if user is not a master administrator
-                                    error_stderr("WebSocket connection for user $user was denied");
-                                    $conn->disconnect();
-                                    return;
-                                }
-                            }
-                            $client_allowed++;
-                            error_stderr("WebSocket connection for user $user is granted");
-                            last;
-                        }
-                    }
-                    # If session id is unknown then disconnect as well
-                    if (!$client_allowed) {
-                        error_stderr("WebSocket connection closed as it cannot be verified");
+                    my $user = verify_session_id($data->{'session'});
+                    if ($user && webmin_user_is_admin()) {
+                        # Set connection as verified and continue
+                        error_stderr("WebSocket connection for user $user is granted");
+                        $conn->{'verified'} = 1;
+                    } else {
+                        # Deny connection and disconnect
+                        error_stderr("WebSocket connection for user $user was denied");
                         $conn->disconnect();
                         return;
                     }
-                    # Set connection as verified
-                    $conn->{'verified'} = 1;
                 }
                 # Update shared variables
                 $stats_stack = $data->{'stack'} // 0;
