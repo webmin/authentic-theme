@@ -43,7 +43,7 @@ sub jsonify
 
 sub stats
 {
-    my ($history) = @_;
+    my ($history, $ticked) = @_;
     my %data;
     my $tdata = {};
     my $fdatad = "$var_directory/modules/$current_theme";
@@ -79,11 +79,12 @@ sub stats
                     }
                 }
 
-                # Cache complete dataset
-                mkdir($fdatad, 0700) if (!-d $fdatad);
-                lock_file($fdata);
-                write_file_contents($fdata, convert_to_json($cdata));
-                unlock_file($fdata);
+                # Store complete dataset every 20th tick
+                if ($ticked > 0 && $ticked % 20 == 0) {
+                    lock_file($fdata);
+                    write_file_contents($fdata, convert_to_json($cdata));
+                    unlock_file($fdata);
+                }
 
                 # Return requested data
                 if ($history) {
