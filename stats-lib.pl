@@ -77,13 +77,11 @@ sub stats
                 }
             }
 
-            # Store complete dataset every 20th tick
-            if ($ticked > 0 && $ticked % 20 == 0) {
-                lock_file($fdata);
-                write_file_contents($fdata, convert_to_json($cdata));
-                unlock_file($fdata);
-            }
-
+            # Store complete dataset
+            lock_file($fdata);
+            write_file_contents($fdata, convert_to_json($cdata));
+            unlock_file($fdata);
+        
             # Return requested data
             if ($history) {
                 $data{'_history'} = $cdata;
@@ -93,7 +91,7 @@ sub stats
             return;
         }
 
-        # Store complete dataset
+        # Check if dataset is available
         if (ref($cdata->{$k}) ne 'ARRAY') {
             $cdata->{$k} = [];
         }

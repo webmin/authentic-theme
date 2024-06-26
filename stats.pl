@@ -51,7 +51,7 @@ Net::WebSocket::Server->new(
             return;
         }
         # Collect stats and send them to all connected clients unless paused
-        my $stats = encode_json(stats($history, $serv->{'ticked'}++));
+        my $stats = encode_json(stats($history));
         foreach my $conn_id (keys %{$serv->{'conns'}}) {
             my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
             if ($conn->{'verified'}) {
