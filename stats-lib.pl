@@ -43,7 +43,7 @@ sub jsonify
 
 sub stats
 {
-    my ($stack) = @_;
+    my ($history) = @_;
     my %data;
     my $tdata = {};
     my $fdatad = "$var_directory/modules/$current_theme";
@@ -86,10 +86,10 @@ sub stats
                 unlock_file($fdata);
 
                 # Return requested data
-                if ($stack) {
-                    $data{'fcached'} = $cdata;
+                if ($history) {
+                    $data{'_history'} = $cdata;
                 } else {
-                    $data{'scached'} = $tdata;
+                    $data{'_current'} = $tdata;
                 }
             }
             return;
