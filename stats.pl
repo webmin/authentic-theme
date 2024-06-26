@@ -67,7 +67,7 @@ Net::WebSocket::Server->new(
     },
     on_connect => sub {
         my ($serv, $conn) = @_;
-        error_stderr("WebSocket connection $conn->{'port'} established");
+        error_stderr("WebSocket connection $conn->{'port'} opened");
         $serv->{'clients_connected'}++;
         alarm(0);
         # Set post-connect activity timeout
