@@ -971,8 +971,6 @@ theme_xhred_mail_composer_scheduled=Enviar %1 em %2
 theme_global_core=Testemunho
 settings_sysinfo_real_time_stored=Ativar histórico de estatísticas
 settings_sysinfo_real_time_stored_description=Se ativado, as estatísticas coletadas anteriormente serão armazenadas e exibidas em um gráfico no Painel
-settings_sysinfo_real_time_stored_length=Duração do histórico de estatísticas
-settings_sysinfo_real_time_stored_length_description=O tempo durante o qual o histórico de estatísticas é armazenado
 theme_dashboard_accordion_live_stats=Histórico de Estatísticas
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memória
@@ -1089,8 +1087,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Este recurso requer que o 
 theme_xhred_global_module_preferences=Preferências de módulo
 
 #19.74
-settings_sysinfo_real_time_status_forced=Sim forçado
-settings_sysinfo_real_time_status_forced_warn=Habilitar o monitoramento em tempo real no modo force não é recomendado porque a coleta de segundo plano será realizada mesmo quando a guia do navegador não estiver focada, podendo causar sobrecarga do servidor com várias guias abertas
 theme_xhred_theme_update_available=Uma nova versão do Authentic Theme está instalada
 settings_right_page_keep=Carregar a mesma página na troca de domínio
 settings_right_page_keep_description=Esta opção tentará carregar a mesma página ao selecionar o domínio, quando alterada na lista suspensa do menu de navegação
@@ -1304,3 +1300,11 @@ theme_xhred_hotkey_emsg=A tecla de barra invertida não pode ser usada como tecl
 settings_embed_product_splash_privileged=Exibir uma tela inicial da marca após o login
 dashboard_status_running=Correndo
 dashboard_status_stopped=Parou
+
+#21.11
+theme_xhred_global_watching=Assistindo
+theme_xhred_global_connected=Conectado
+theme_xhred_global_disconnected=Desconectado
+theme_xhred_global_connecting=Conectando
+index_mods_missing=O módulo Perl <tt>$1</tt> está faltando.
+index_noadmin_eaccess=Acesso negado a administradores não mestres!

@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Gönder %1 de %2
 theme_global_core=çekirdek
 settings_sysinfo_real_time_stored=İstatistik geçmişini etkinleştir
 settings_sysinfo_real_time_stored_description=Etkinleştirilirse, önceden toplanan istatistikler depolanır ve Gösterge Tablosundaki bir grafikte görüntülenir
-settings_sysinfo_real_time_stored_length=İstatistik geçmişi süresi
-settings_sysinfo_real_time_stored_length_description=İstatistik geçmişinin saklandığı zaman
 theme_dashboard_accordion_live_stats=İstatistik Geçmişi
 theme_xhred_live_stats_cpu=İşlemci
 theme_xhred_live_stats_mem=Hafıza
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Bu özellik, dosya sistemi
 theme_xhred_global_module_preferences=Modül tercihleri
 
 #19.74
-settings_sysinfo_real_time_status_forced=Evet, zorunlu
-settings_sysinfo_real_time_status_forced_warn=Zorla modunda gerçek zamanlı izlemeyi etkinleştirmek önerilmez çünkü tarayıcı sekmesi odaklanılmadığında bile arka planda toplama gerçekleştirilir ve bu durum, birden çok sekme açıkken sunucunun aşırı yüklenmesine neden olabilir.
 theme_xhred_theme_update_available=Authentic Theme'in yeni bir sürümü yüklendi
 settings_right_page_keep=Aynı sayfayı etki alanı anahtarına yükleyin
 settings_right_page_keep_description=Bu seçenek, gezinme menüsü açılır listesinden değiştirildiğinde, alan seçildiğinde aynı sayfayı yüklemeyi deneyecektir.
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Ters eğik çizgi tuşu kısayol tuşu olarak kullanıla
 settings_embed_product_splash_privileged=Giriş yaptıktan sonra marka bilinci oluşturma ekranı görüntüle
 dashboard_status_running=Koşma
 dashboard_status_stopped=Durduruldu
+
+#21.11
+theme_xhred_global_watching=Seyretme
+theme_xhred_global_connected=Bağlı
+theme_xhred_global_disconnected=Bağlantı kesildi
+theme_xhred_global_connecting=Bağlanıyor
+index_mods_missing=<tt>$1</tt> Perl modülü eksik.
+index_noadmin_eaccess=Yönetici olmayan yöneticilerin erişimi reddedildi!

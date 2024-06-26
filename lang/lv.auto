@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Nosūtiet %1 uz %2
 theme_global_core=Core
 settings_sysinfo_real_time_stored=Iespējot statistikas vēsturi
 settings_sysinfo_real_time_stored_description=Ja tā ir iespējota, iepriekš apkopotā statistika tiks saglabāta un parādīta diagrammā informācijas panelī
-settings_sysinfo_real_time_stored_length=Starta vēstures ilgums
-settings_sysinfo_real_time_stored_length_description=Laiks, kurā tiek glabāta statistikas vēsture
 theme_dashboard_accordion_live_stats=Statistikas vēsture
 theme_xhred_live_stats_cpu=Procesors
 theme_xhred_live_stats_mem=Atmiņas
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Lai izmantotu šo funkciju
 theme_xhred_global_module_preferences=Moduļa preferences
 
 #19.74
-settings_sysinfo_real_time_status_forced=Jā, piespiedu kārtā
-settings_sysinfo_real_time_status_forced_warn=Reāllaika monitoringa iespējošana spēka režīmā nav ieteicama, jo fona apkopošana tiks veikta pat tad, ja pārlūkprogrammas cilne nav fokusēta, kas var izraisīt servera pārslodzi, ja ir atvērtas vairākas cilnes.
 theme_xhred_theme_update_available=Ir instalēta jauna autentiskās motīva versija
 settings_right_page_keep=Ielādējiet to pašu lapu domēna slēdzī
 settings_right_page_keep_description=Šī opcija mēģinās ielādēt to pašu lapu pēc domēna izvēles, kad tā tiek mainīta navigācijas izvēlnes nolaižamajā sarakstā
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Slīpssvītras taustiņu nevar izmantot kā karsto taust
 settings_embed_product_splash_privileged=Parādiet zīmola uzklāšanas ekrānu pēc pieteikšanās
 dashboard_status_running=Skriešana
 dashboard_status_stopped=Apstājās
+
+#21.11
+theme_xhred_global_watching=Skatos
+theme_xhred_global_connected=Savienots
+theme_xhred_global_disconnected=Atvienots
+theme_xhred_global_connecting=Savienojuma izveide
+index_mods_missing=Trūkst Perl moduļa <tt>$1</tt>.
+index_noadmin_eaccess=Piekļuve liegta administratoriem, kas nav galvenie administratori!

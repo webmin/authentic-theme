@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=%2 에서 %1 를) 보내십시오
 theme_global_core=핵심
 settings_sysinfo_real_time_stored=통계 기록 사용
 settings_sysinfo_real_time_stored_description=활성화하면 이전에 수집 한 통계가 저장되고 대시 보드의 그래프에 표시됩니다
-settings_sysinfo_real_time_stored_length=통계 기록 기간
-settings_sysinfo_real_time_stored_length_description=통계 기록이 저장되는 시간
 theme_dashboard_accordion_live_stats=통계 기록
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=기억
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=이 기능을 사용하려
 theme_xhred_global_module_preferences=모듈 환경 설정
 
 #19.74
-settings_sysinfo_real_time_status_forced=예, 강제
-settings_sysinfo_real_time_status_forced_warn=강제 모드에서 실시간 모니터링을 활성화하는 것은 권장되지 않습니다. 브라우저 탭에 초점이 맞춰져 있지 않은 경우에도 백그라운드 수집이 수행되어 여러 탭이 열린 상태에서 서버 과부하가 발생할 수 있기 때문입니다.
 theme_xhred_theme_update_available=새로운 버전의 Authentic Theme가 설치되었습니다.
 settings_right_page_keep=도메인 스위치에 동일한 페이지로드
 settings_right_page_keep_description=이 옵션은 탐색 메뉴 드롭 다운 목록에서 변경할 때 도메인 선택시 동일한 페이지를로드하려고합니다.
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=백슬래시 키는 단축키로 사용할 수 없습니
 settings_embed_product_splash_privileged=로그인 후 브랜딩 스플래시 화면 표시
 dashboard_status_running=달리기
 dashboard_status_stopped=중지됨
+
+#21.11
+theme_xhred_global_watching=보고 있다
+theme_xhred_global_connected=연결됨
+theme_xhred_global_disconnected=연결이 끊김
+theme_xhred_global_connecting=연결 중
+index_mods_missing=Perl 모듈 <tt>$1</tt>이(가) 없습니다.
+index_noadmin_eaccess=마스터 관리자가 아닌 사용자의 접근이 거부되었습니다!

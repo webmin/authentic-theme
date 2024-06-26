@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Gửi %1 với %2
 theme_global_core=Cốt lõi
 settings_sysinfo_real_time_stored=Kích hoạt lịch sử thống kê
 settings_sysinfo_real_time_stored_description=Nếu được bật, các số liệu thống kê được thu thập trước đó sẽ được lưu trữ và hiển thị trong biểu đồ trên Bảng điều khiển
-settings_sysinfo_real_time_stored_length=Thống kê thời lượng lịch sử
-settings_sysinfo_real_time_stored_length_description=Thời gian lưu trữ lịch sử thống kê
 theme_dashboard_accordion_live_stats=Thống kê lịch sử
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Ký ức
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Tính năng này yêu cầ
 theme_xhred_global_module_preferences=Tùy chọn mô-đun
 
 #19.74
-settings_sysinfo_real_time_status_forced=Có, bắt buộc
-settings_sysinfo_real_time_status_forced_warn=Không khuyến khích bật theo dõi thời gian thực ở chế độ bắt buộc vì thu thập nền sẽ được thực hiện ngay cả khi tab trình duyệt không được tập trung, có khả năng gây quá tải máy chủ với nhiều tab được mở
 theme_xhred_theme_update_available=Một phiên bản mới của Chủ đề đích thực đã được cài đặt
 settings_right_page_keep=Tải cùng một trang trên chuyển đổi miền
 settings_right_page_keep_description=Tùy chọn này sẽ cố gắng tải cùng một trang khi chọn miền, khi được thay đổi từ danh sách thả xuống của menu điều hướng
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Phím gạch chéo ngược không thể được sử d
 settings_embed_product_splash_privileged=Hiển thị màn hình giới thiệu thương hiệu sau khi đăng nhập
 dashboard_status_running=Đang chạy
 dashboard_status_stopped=Đã dừng
+
+#21.11
+theme_xhred_global_watching=Xem
+theme_xhred_global_connected=Đã kết nối
+theme_xhred_global_disconnected=Đã ngắt kết nối
+theme_xhred_global_connecting=Đang kết nối
+index_mods_missing=Mô-đun Perl <tt>$1</tt> bị thiếu.
+index_noadmin_eaccess=Quyền truy cập bị từ chối đối với quản trị viên không phải là quản trị viên chính!

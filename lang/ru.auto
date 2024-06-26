@@ -843,8 +843,6 @@ theme_xhred_mail_composer_scheduled=Отправить %1 на %2
 theme_global_core=ядро
 settings_sysinfo_real_time_stored=Включить историю статистики
 settings_sysinfo_real_time_stored_description=Если этот параметр включен, ранее собранные статистические данные будут сохранены и отображены в виде графика на информационной панели.
-settings_sysinfo_real_time_stored_length=Продолжительность истории
-settings_sysinfo_real_time_stored_length_description=Время, в течение которого хранится история статистики
 theme_dashboard_accordion_live_stats=Статистика История
 theme_xhred_live_stats_cpu=ЦПУ
 theme_xhred_live_stats_mem=Память
@@ -961,8 +959,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Эта функция тр
 theme_xhred_global_module_preferences=Настройки модуля
 
 #19.74
-settings_sysinfo_real_time_status_forced=Да, принудительно
-settings_sysinfo_real_time_status_forced_warn=Включение мониторинга в реальном времени в принудительном режиме не рекомендуется, поскольку фоновый сбор будет выполняться, даже если вкладка браузера не сфокусирована, что может вызвать перегрузку сервера при открытии нескольких вкладок.
 theme_xhred_theme_update_available=Установлена новая версия Authentic Theme
 
 settings_right_page_keep=Загрузить ту же страницу при переключении домена
@@ -1177,3 +1173,11 @@ theme_xhred_hotkey_emsg=Клавишу обратной косой черты н
 settings_embed_product_splash_privileged=Отображение фирменного экрана-заставки после входа в систему
 dashboard_status_running=Бег
 dashboard_status_stopped=Остановлено
+
+#21.11
+theme_xhred_global_watching=Смотрю
+theme_xhred_global_connected=Связанный
+theme_xhred_global_disconnected=Отключено
+theme_xhred_global_connecting=Подключение
+index_mods_missing=Модуль Perl <tt>$1</tt> отсутствует.
+index_noadmin_eaccess=Доступ запрещен лицам, не являющимся главными администраторами!

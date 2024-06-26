@@ -252,3 +252,11 @@ theme_xhred_hotkey_emsg=Il tasto barra rovesciata non può essere utilizzato com
 settings_embed_product_splash_privileged=Visualizza una schermata iniziale del branding dopo l'accesso
 dashboard_status_running=Corsa
 dashboard_status_stopped=Fermato
+
+#21.11
+theme_xhred_global_watching=Guardando
+theme_xhred_global_connected=Collegato
+theme_xhred_global_disconnected=Disconnesso
+theme_xhred_global_connecting=Connessione
+index_mods_missing=Manca il modulo Perl <tt>$1</tt>.
+index_noadmin_eaccess=Accesso negato agli amministratori non master!

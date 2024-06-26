@@ -966,8 +966,6 @@ theme_xhred_mail_composer_scheduled=Send %1 ved %2
 theme_global_core=Core
 settings_sysinfo_real_time_stored=Aktivér statistikhistorik
 settings_sysinfo_real_time_stored_description=Hvis det er aktiveret, gemmes tidligere indsamlede statistikker og vises i en graf på Dashboard
-settings_sysinfo_real_time_stored_length=Statistikens varighed
-settings_sysinfo_real_time_stored_length_description=Den tid, hvor statistikhistorikken gemmes
 theme_dashboard_accordion_live_stats=Statistikhistorie
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Hukommelse
@@ -1084,8 +1082,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Denne funktion kræver, at
 theme_xhred_global_module_preferences=Modulindstillinger
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ja tvunget
-settings_sysinfo_real_time_status_forced_warn=Aktivering af realtidsovervågning i krafttilstand frarådes, fordi baggrundssamling udføres, selv når browserfanen ikke er fokuseret, hvilket potentielt kan forårsage serveroverbelastning med flere åbne faner
 theme_xhred_theme_update_available=En ny version af Authentic Theme er installeret
 settings_right_page_keep=Indlæs samme side på domæneswitch
 settings_right_page_keep_description=Denne mulighed forsøger at indlæse den samme side ved valg af domæne, når den ændres fra rullemenuen til navigationsmenuen
@@ -1299,3 +1295,11 @@ theme_xhred_hotkey_emsg=Omvendt skråstreg-tasten kan ikke bruges som en genvejs
 settings_embed_product_splash_privileged=Vis en branding-splash-skærm efter login
 dashboard_status_running=Løb
 dashboard_status_stopped=Holdt op
+
+#21.11
+theme_xhred_global_watching=Ser på
+theme_xhred_global_connected=Forbundet
+theme_xhred_global_disconnected=Afbrudt
+theme_xhred_global_connecting=Tilslutning
+index_mods_missing=Perl-modulet <tt>$1</tt> mangler.
+index_noadmin_eaccess=Adgang nægtet for ikke-masteradministratorer!

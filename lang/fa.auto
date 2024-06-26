@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=%1 با %2
 theme_global_core=هسته
 settings_sysinfo_real_time_stored=سابقه آمار را فعال کنید
 settings_sysinfo_real_time_stored_description=در صورت فعال بودن ، آمار قبلی جمع آوری شده ذخیره می شود و در یک نمودار در داشبورد نمایش داده می شود
-settings_sysinfo_real_time_stored_length=مدت زمان آمار
-settings_sysinfo_real_time_stored_length_description=زمانی که تاریخچه آمار ذخیره می شود
 theme_dashboard_accordion_live_stats=تاریخچه آمار
 theme_xhred_live_stats_cpu=پردازنده
 theme_xhred_live_stats_mem=حافظه
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=این ویژگی نیاز
 theme_xhred_global_module_preferences=تنظیمات برگزیده ماژول
 
 #19.74
-settings_sysinfo_real_time_status_forced=بله ، مجبور
-settings_sysinfo_real_time_status_forced_warn=فعال کردن نظارت بر زمان واقعی در حالت نیرو دلسرد نمی شود ، زیرا جمع آوری پس زمینه حتی در صورت عدم تمرکز برگه مرورگر انجام می شود ، به طور بالقوه باعث ایجاد سربار بیش از حد سرور با باز شدن چندین برگه می شود
 theme_xhred_theme_update_available=نسخه جدیدی از Authentic Theme نصب شده است
 settings_right_page_keep=بارگیری همان صفحه در سوئیچ دامنه
 settings_right_page_keep_description=این گزینه سعی می کند هنگام تغییر از لیست کشویی منوی پیمایش ، همان صفحه را روی انتخاب دامنه بارگیری کند
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=کلید بک اسلش را نمی توان به عنو�
 settings_embed_product_splash_privileged=پس از ورود به سیستم، یک صفحه نمایش نام تجاری نمایش داده می شود
 dashboard_status_running=در حال دویدن
 dashboard_status_stopped=متوقف شد
+
+#21.11
+theme_xhred_global_watching=تماشا کردن
+theme_xhred_global_connected=متصل
+theme_xhred_global_disconnected=قطع شده
+theme_xhred_global_connecting=برقراری ارتباط
+index_mods_missing=ماژول پرل <tt>$1</tt> وجود ندارد.
+index_noadmin_eaccess=دسترسی به مدیران غیر اصلی ممنوع شد!

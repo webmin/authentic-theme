@@ -1024,8 +1024,6 @@ theme_xhred_mail_composer_scheduled=Invia %1 all'ora %2
 theme_global_core=Core
 settings_sysinfo_real_time_stored=Attiva cronologia statistiche
 settings_sysinfo_real_time_stored_description=Se attivato, le statistiche precedentemente raccolte saranno memorizzate e visualizzate in un grafico nella Dashboard.
-settings_sysinfo_real_time_stored_length=Durata cronologia statistiche
-settings_sysinfo_real_time_stored_length_description=Il tempo durante il quale la cronologia delle statistiche è salvata
 theme_dashboard_accordion_live_stats=Cronologia statistiche
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memoria
@@ -1140,8 +1138,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Questa funzione richiede c
 theme_xhred_global_module_preferences=Preferenze del modulo
 
 #19.74
-settings_sysinfo_real_time_status_forced=Sì, forzato
-settings_sysinfo_real_time_status_forced_warn=L'abilitazione del monitoraggio in tempo reale in modalità forzata è sconsigliata perché la raccolta in background verrà eseguita anche quando la scheda del browser non è focalizzata, causando potenzialmente un sovraccarico del server con più schede aperte
 theme_xhred_theme_update_available=È installata una nuova versione di Authentic Theme
 settings_right_page_keep=Carica la stessa pagina sull'interruttore di dominio
 settings_right_page_keep_description=Questa opzione proverà a caricare la stessa pagina alla selezione del dominio, se modificata dall'elenco a discesa del menu di navigazione

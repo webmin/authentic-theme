@@ -943,8 +943,6 @@ theme_xhred_mail_composer_scheduled=Stuur %1 naar %2
 theme_global_core=Kern
 settings_sysinfo_real_time_stored=Statistiekengeschiedenis inschakelen
 settings_sysinfo_real_time_stored_description=Indien ingeschakeld, worden eerder verzamelde statistieken opgeslagen en weergegeven in een grafiek op het dashboard
-settings_sysinfo_real_time_stored_length=Statistieken geschiedenis duur
-settings_sysinfo_real_time_stored_length_description=De tijd gedurende welke de geschiedenis van statistieken wordt opgeslagen
 theme_dashboard_accordion_live_stats=Statistieken Geschiedenis
 theme_xhred_live_stats_cpu=processor
 theme_xhred_live_stats_mem=Geheugen
@@ -1061,8 +1059,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Deze functie vereist dat h
 theme_xhred_global_module_preferences=Module voorkeuren
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ja, gedwongen
-settings_sysinfo_real_time_status_forced_warn=Het inschakelen van realtime monitoring in de force-modus wordt afgeraden omdat het verzamelen op de achtergrond wordt uitgevoerd, zelfs als het browsertabblad niet is gefocust, waardoor de server mogelijk overbelast raakt met meerdere geopende tabbladen
 theme_xhred_theme_update_available=Er is een nieuwe versie van Authentic Theme geïnstalleerd
 settings_right_page_keep=Laad dezelfde pagina op de domeinschakelaar
 settings_right_page_keep_description=Deze optie zal proberen om dezelfde pagina te laden bij het selecteren van een domein, indien gewijzigd in de vervolgkeuzelijst van het navigatiemenu
@@ -1276,3 +1272,11 @@ theme_xhred_hotkey_emsg=De backslash-toets kan niet als sneltoets worden gebruik
 settings_embed_product_splash_privileged=Geef na het inloggen een branding-splash-scherm weer
 dashboard_status_running=Rennen
 dashboard_status_stopped=Gestopt
+
+#21.11
+theme_xhred_global_watching=Aan het kijken
+theme_xhred_global_connected=Verbonden
+theme_xhred_global_disconnected=Losgekoppeld
+theme_xhred_global_connecting=Verbinden
+index_mods_missing=De Perl-module <tt>$1</tt> ontbreekt.
+index_noadmin_eaccess=Toegang geweigerd aan niet-masterbeheerders!

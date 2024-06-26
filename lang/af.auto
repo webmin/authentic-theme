@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Stuur %1 op %2
 theme_global_core=Core
 settings_sysinfo_real_time_stored=Aktiveer statistiekgeskiedenis
 settings_sysinfo_real_time_stored_description=As dit inskakel, sal statistieke wat voorheen versamel is, gestoor word en in 'n grafiek op die Dashboard vertoon word
-settings_sysinfo_real_time_stored_length=Statistiek se geskiedenis duur
-settings_sysinfo_real_time_stored_length_description=Die tyd waartydens statistiekgeskiedenis gestoor word
 theme_dashboard_accordion_live_stats=Statistiek Geskiedenis
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Geheue
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Hierdie funksie vereis dat
 theme_xhred_global_module_preferences=Modulevoorkeure
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ja, gedwing
-settings_sysinfo_real_time_status_forced_warn=Aktiveer real-time monitering in kragmodus word ontmoedig omdat agtergrondversameling uitgevoer sal word, selfs as die blaaier-oortjie nie gefokus is nie, wat moontlik bedieneroorlading kan veroorsaak met verskeie oop oortjies
 theme_xhred_theme_update_available='N Nuwe weergawe van Authentic Theme is geïnstalleer
 settings_right_page_keep=Laai dieselfde bladsy op die domein skakelaar
 settings_right_page_keep_description=Hierdie opsie sal probeer om dieselfde bladsy te laai wanneer die domein gekies word, as dit verander word in die keuselys van die navigasie-menu
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Die backslash-sleutel kan nie as 'n sneltoets gebruik wo
 settings_embed_product_splash_privileged=Vertoon 'n handelsmerk-spatskerm na aanmelding
 dashboard_status_running=Hardloop
 dashboard_status_stopped=Gestop
+
+#21.11
+theme_xhred_global_watching=Kyk
+theme_xhred_global_connected=Gekoppel
+theme_xhred_global_disconnected=Ontkoppel
+theme_xhred_global_connecting=Verbind
+index_mods_missing=Die Perl-module <tt>$1</tt> ontbreek.
+index_noadmin_eaccess=Toegang geweier aan nie-meester administrateurs!

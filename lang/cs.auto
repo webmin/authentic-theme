@@ -913,8 +913,6 @@ theme_xhred_mail_composer_scheduled=Odeslat %1 na %2
 theme_global_core=Jádro
 settings_sysinfo_real_time_stored=Povolit historii statistik
 settings_sysinfo_real_time_stored_description=Pokud je tato možnost povolena, budou dříve shromážděné statistiky uloženy a zobrazeny v grafu na hlavním panelu
-settings_sysinfo_real_time_stored_length=Statistiky trvání historie
-settings_sysinfo_real_time_stored_length_description=Čas, během kterého se ukládá historie statistik
 theme_dashboard_accordion_live_stats=Statistiky historie
 theme_xhred_live_stats_cpu=procesor
 theme_xhred_live_stats_mem=Paměť
@@ -1031,8 +1029,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Tato funkce vyžaduje při
 theme_xhred_global_module_preferences=Předvolby modulu
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ano, vynucený
-settings_sysinfo_real_time_status_forced_warn=Povolení monitorování v reálném čase v režimu vynucení se nedoporučuje, protože sběr pozadí bude proveden, i když karta prohlížeče není zaměřena, což může způsobit přetížení serveru při otevření více karet
 theme_xhred_theme_update_available=Je nainstalována nová verze Authentic Theme
 settings_right_page_keep=Načtěte stejnou stránku do přepínače domény
 settings_right_page_keep_description=Tato možnost se pokusí načíst stejnou stránku při výběru domény, když se změní z rozevíracího seznamu navigační nabídky
@@ -1246,3 +1242,11 @@ theme_xhred_hotkey_emsg=Klávesu zpětného lomítka nelze použít jako kláves
 settings_embed_product_splash_privileged=Po přihlášení zobrazit úvodní obrazovku značky
 dashboard_status_running=Běh
 dashboard_status_stopped=Zastavil
+
+#21.11
+theme_xhred_global_watching=Sledování
+theme_xhred_global_connected=Připojeno
+theme_xhred_global_disconnected=Odpojeno
+theme_xhred_global_connecting=Spojovací
+index_mods_missing=Chybí modul Perl <tt>$1</tt>.
+index_noadmin_eaccess=Přístup odepřen správcům, kteří nejsou hlavními administrátory!

@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Bidali %1 %2
 theme_global_core=Core
 settings_sysinfo_real_time_stored=Gaitu estatistiken historia
 settings_sysinfo_real_time_stored_description=Gaituta badago, aurrez bildutako estatistikak gordeko dira eta arbeleko grafikoan bistaratuko dira
-settings_sysinfo_real_time_stored_length=Estatistiken historiaren iraupena
-settings_sysinfo_real_time_stored_length_description=Estatistikak historia gordetzen den denbora
 theme_dashboard_accordion_live_stats=Estatistikak Historia
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memoria
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Eginbide honek fitxategi s
 theme_xhred_global_module_preferences=Moduluaren hobespenak
 
 #19.74
-settings_sysinfo_real_time_status_forced=Bai, behartuta
-settings_sysinfo_real_time_status_forced_warn=Denbora errealeko monitorizazioa indarrean moduan gaitzea ez da gomendagarria atzeko planoko bilketa egingo baita arakatzailearen fitxa bideratuta ez dagoenean, eta horrek zerbitzariaren gainkarga sor dezake fitxa anitz irekita daudelarik.
 theme_xhred_theme_update_available=Benetako Gaiaren bertsio berria instalatuta dago
 settings_right_page_keep=Kargatu orri bera domeinu-aldatzailean
 settings_right_page_keep_description=Aukera hau orri bera kargatzen saiatuko da domeinua hautatzean, nabigazio menuko goitibeherako zerrendatik aldatzen denean
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Atzeko barra-tekla ezin da laster-tekla gisa erabili
 settings_embed_product_splash_privileged=Erakutsi marka-pantaila bat saioa hasi ondoren
 dashboard_status_running=Korrika
 dashboard_status_stopped=Gelditu
+
+#21.11
+theme_xhred_global_watching=Begira
+theme_xhred_global_connected=Konektatuta
+theme_xhred_global_disconnected=Deskonektatuta
+theme_xhred_global_connecting=Konektatzen
+index_mods_missing=<tt>$1</tt> Perl modulua falta da.
+index_noadmin_eaccess=Sarbidea ukatu zaie maisu ez diren administratzaileei!

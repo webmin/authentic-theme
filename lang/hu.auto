@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Küldje el a (z) %1 fájlt a %2
 theme_global_core=Mag
 settings_sysinfo_real_time_stored=A statisztikák előzményeinek engedélyezése
 settings_sysinfo_real_time_stored_description=Ha engedélyezve van, a korábban összegyűjtött statisztikák tárolódnak, és egy grafikonon jelennek meg az irányítópulton
-settings_sysinfo_real_time_stored_length=Az előzmények időtartamát mutatja
-settings_sysinfo_real_time_stored_length_description=Az az idő, amely alatt a statisztikák előzményeit tárolják
 theme_dashboard_accordion_live_stats=Statisztika története
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=memória
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Ehhez a funkcióhoz a fáj
 theme_xhred_global_module_preferences=A modul beállításai
 
 #19.74
-settings_sysinfo_real_time_status_forced=Igen, kénytelen
-settings_sysinfo_real_time_status_forced_warn=A valós idejű felügyelet bekapcsolása kényszerített módban nem ajánlott, mert a háttérgyűjtést akkor is elvégezzük, ha a böngésző lap nincs fókuszálva, ami a szerver túlterhelését okozhatja, ha több fül van megnyitva
 theme_xhred_theme_update_available=A Hiteles téma új verziója telepítve van
 settings_right_page_keep=Töltse be ugyanazt az oldalt a tartományváltóra
 settings_right_page_keep_description=Ez az opció megpróbálja ugyanazt az oldalt betölteni a tartomány kiválasztásakor, amikor megváltoztatja a navigációs menü legördülő listájából
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=A fordított perjel billentyű nem használható gyorsbi
 settings_embed_product_splash_privileged=A bejelentkezést követően jelenítsen meg egy márkaépítési indítóképernyőt
 dashboard_status_running=Futás
 dashboard_status_stopped=Megállt
+
+#21.11
+theme_xhred_global_watching=Nézni
+theme_xhred_global_connected=csatlakoztatva
+theme_xhred_global_disconnected=Szétkapcsolt
+theme_xhred_global_connecting=Csatlakozás
+index_mods_missing=Hiányzik a <tt>$1</tt> Perl modul.
+index_noadmin_eaccess=A nem főadminisztrátorok hozzáférése megtagadva!

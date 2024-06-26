@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Αποστολή %1 στο %2
 theme_global_core=Πυρήνας
 settings_sysinfo_real_time_stored=Ενεργοποίηση ιστορικού στατιστικών
 settings_sysinfo_real_time_stored_description=Εάν είναι ενεργοποιημένη, τα στατιστικά που συλλέχθηκαν προηγουμένως θα αποθηκευτούν και θα εμφανιστούν σε ένα γράφημα στον Πίνακα ελέγχου
-settings_sysinfo_real_time_stored_length=Διάρκεια ιστορικού στατιστικών
-settings_sysinfo_real_time_stored_length_description=Ο χρόνος κατά τον οποίο αποθηκεύεται το ιστορικό στατιστικών
 theme_dashboard_accordion_live_stats=Ιστορία στατιστικών
 theme_xhred_live_stats_cpu=ΕΠΕΞΕΡΓΑΣΤΗΣ
 theme_xhred_live_stats_mem=Μνήμη
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Αυτή η δυνατότ
 theme_xhred_global_module_preferences=Προτιμήσεις ενότητας
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ναι, αναγκασμένος
-settings_sysinfo_real_time_status_forced_warn=Δεν επιτρέπεται η ενεργοποίηση της παρακολούθησης σε πραγματικό χρόνο σε κατάσταση λειτουργίας, επειδή η συλλογή παρασκηνίου θα πραγματοποιηθεί ακόμα και όταν η καρτέλα του προγράμματος περιήγησης δεν είναι εστιασμένη, προκαλώντας δυνητικά υπερφόρτωση διακομιστή με ανοιχτές πολλές καρτέλες
 theme_xhred_theme_update_available=Έχει εγκατασταθεί μια νέα έκδοση του Αυθεντικού θέματος
 settings_right_page_keep=Φόρτωση της ίδιας σελίδας στο διακόπτη τομέα
 settings_right_page_keep_description=Αυτή η επιλογή θα προσπαθήσει να φορτώσει την ίδια σελίδα κατά την επιλογή τομέα, όταν αλλάξει από την αναπτυσσόμενη λίστα μενού πλοήγησης
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Το πλήκτρο ανάστροφης κάθετο δ
 settings_embed_product_splash_privileged=Εμφανίστε μια οθόνη εκκίνησης επωνυμίας μετά τη σύνδεση
 dashboard_status_running=Τρέξιμο
 dashboard_status_stopped=Σταμάτησε
+
+#21.11
+theme_xhred_global_watching=Βλέποντας
+theme_xhred_global_connected=Συνδεδεμένος
+theme_xhred_global_disconnected=Ασύνδετος
+theme_xhred_global_connecting=Συνδετικός
+index_mods_missing=Η λειτουργική μονάδα Perl <tt>$1</tt> λείπει.
+index_noadmin_eaccess=Δεν επιτρέπεται η πρόσβαση σε μη κύριους διαχειριστές!

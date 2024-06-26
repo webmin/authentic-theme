@@ -132,8 +132,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Für diese Funktion muss d
 theme_xhred_global_module_preferences=Moduleinstellungen
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ja, gezwungen
-settings_sysinfo_real_time_status_forced_warn=Das Aktivieren der Echtzeitüberwachung im Force-Modus wird nicht empfohlen, da die Hintergrundsammlung auch dann durchgeführt wird, wenn die Registerkarte "Browser" nicht fokussiert ist. Dies kann zu einer Serverüberlastung führen, wenn mehrere Registerkarten geöffnet sind
 theme_xhred_theme_update_available=Eine neue Version von Authentic Theme wird installiert
 
 settings_right_page_keep=Laden Sie dieselbe Seite auf den Domain-Switch
@@ -348,3 +346,11 @@ theme_xhred_hotkey_emsg=Die Backslash-Taste kann nicht als Hotkey verwendet werd
 settings_embed_product_splash_privileged=Nach der Anmeldung wird ein Branding-Begrüßungsbildschirm angezeigt
 dashboard_status_running=Läuft
 dashboard_status_stopped=Gestoppt
+
+#21.11
+theme_xhred_global_watching=Aufpassen
+theme_xhred_global_connected=In Verbindung gebracht
+theme_xhred_global_disconnected=Getrennt
+theme_xhred_global_connecting=Verbinden
+index_mods_missing=Das Perl-Modul <tt>$1</tt> fehlt.
+index_noadmin_eaccess=Zugriff für Nicht-Master-Administratoren verweigert!

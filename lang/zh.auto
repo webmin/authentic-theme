@@ -255,8 +255,6 @@ theme_xhred_mail_composer_scheduled=在%2发送%1
 theme_global_core=核心
 settings_sysinfo_real_time_stored=启用统计记录
 settings_sysinfo_real_time_stored_description=如果启用，将存储以前收集的统计信息，并显示在仪表板上的图形中
-settings_sysinfo_real_time_stored_length=统计历史持续时间
-settings_sysinfo_real_time_stored_length_description=统计历史记录的存储时间
 theme_dashboard_accordion_live_stats=统计历史
 theme_xhred_live_stats_cpu=中央处理器
 theme_xhred_live_stats_mem=记忆
@@ -373,8 +371,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=此功能要求在打开<t
 theme_xhred_global_module_preferences=模块首选项
 
 #19.74
-settings_sysinfo_real_time_status_forced=是的，强迫
-settings_sysinfo_real_time_status_forced_warn=不建议在强制模式下启用实时监视，因为即使浏览器选项卡未聚焦时也会执行后台收集，这可能会导致打开多个选项卡时服务器过载
 theme_xhred_theme_update_available=安装了新版本的Authentic Theme
 
 settings_right_page_keep=在域交换机上加载同一页面
@@ -589,3 +585,11 @@ theme_xhred_hotkey_emsg=反斜杠键不能用作热键
 settings_embed_product_splash_privileged=登录后显示品牌启动画面
 dashboard_status_running=跑步
 dashboard_status_stopped=已停止
+
+#21.11
+theme_xhred_global_watching=观看
+theme_xhred_global_connected=连接的
+theme_xhred_global_disconnected=断开连接
+theme_xhred_global_connecting=正在连接
+index_mods_missing=Perl 模块 <tt>$1</tt> 缺失。
+index_noadmin_eaccess=拒绝非主管理员访问！

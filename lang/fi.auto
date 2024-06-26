@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Lähetä %1 %2
 theme_global_core=Ydin
 settings_sysinfo_real_time_stored=Ota tilastotiedot käyttöön
 settings_sysinfo_real_time_stored_description=Jos tämä on käytössä, aiemmin kerätyt tilastot tallennetaan ja näytetään kaaviona hallintapaneelissa
-settings_sysinfo_real_time_stored_length=Tilastot historian kestosta
-settings_sysinfo_real_time_stored_length_description=Aika, jonka ajan tilastotiedot tallennetaan
 theme_dashboard_accordion_live_stats=Tilastohistoria
 theme_xhred_live_stats_cpu=prosessori
 theme_xhred_live_stats_mem=Muisti
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Tämä ominaisuus edellytt
 theme_xhred_global_module_preferences=Moduulin asetukset
 
 #19.74
-settings_sysinfo_real_time_status_forced=Kyllä, pakko
-settings_sysinfo_real_time_status_forced_warn=Reaaliaikaisen valvonnan käyttöönottoa pakotustilassa ei suositella, koska taustakokoelma suoritetaan myös silloin, kun selaimen välilehti ei ole kohdistettu, mikä voi aiheuttaa palvelimen ylikuormituksen, kun useita välilehtiä on avattu
 theme_xhred_theme_update_available=Uusi versio Authentic Theme -asennuksesta on asennettu
 settings_right_page_keep=Lataa sama sivu verkkotunnuskytkimelle
 settings_right_page_keep_description=Tämä vaihtoehto yrittää ladata saman sivun verkkotunnuksen valinnan yhteydessä, kun se muutetaan navigointivalikon avattavasta luettelosta
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Kenoviivanäppäintä ei voi käyttää pikanäppäimen�
 settings_embed_product_splash_privileged=Näytä brändäyksen aloitusnäyttö kirjautumisen jälkeen
 dashboard_status_running=Juoksemassa
 dashboard_status_stopped=Pysähtynyt
+
+#21.11
+theme_xhred_global_watching=Katsomassa
+theme_xhred_global_connected=Yhdistetty
+theme_xhred_global_disconnected=Yhteys katkaistu
+theme_xhred_global_connecting=Yhdistetään
+index_mods_missing=Perl-moduuli <tt>$1</tt> puuttuu.
+index_noadmin_eaccess=Pääsy kielletty muille kuin pääjärjestelmänvalvojille!

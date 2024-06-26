@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=%1 پر %2 بھیجیں
 theme_global_core=لازمی
 settings_sysinfo_real_time_stored=اعدادوشمار کی تاریخ کو قابل بنائیں
 settings_sysinfo_real_time_stored_description=اگر فعال ہوجائے تو ، پہلے جمع کردہ اعدادوشمار کو اسٹور کیا جائے گا ، اور ڈیش بورڈ کے گراف میں دکھائے جائیں گے
-settings_sysinfo_real_time_stored_length=اعدادوشمار کی تاریخ کا دورانیہ
-settings_sysinfo_real_time_stored_length_description=وہ وقت جس کے دوران اعدادوشمار کی تاریخ محفوظ کی جاتی ہے
 theme_dashboard_accordion_live_stats=اعدادوشمار کی تاریخ
 theme_xhred_live_stats_cpu=سی پی یو
 theme_xhred_live_stats_mem=یاداشت
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=This feature requires file
 theme_xhred_global_module_preferences=ماڈیول کی ترجیحات
 
 #19.74
-settings_sysinfo_real_time_status_forced=ہاں ، جبری
-settings_sysinfo_real_time_status_forced_warn=ریئل ٹائم مانیٹرنگ کو فورس موڈ میں چالو کرنے کی حوصلہ شکنی کی جاتی ہے کیونکہ پس منظر کا مجموعہ اس وقت بھی انجام دیا جائے گا جب براؤزر ٹیب پر توجہ مرکوز نہیں کی جاتی ہے ، جس کی وجہ سے ممکنہ طور پر متعدد ٹیبز کے ساتھ سرور اوورلوڈ کھولا جاتا ہے۔
 theme_xhred_theme_update_available=مستند تھیم کا ایک نیا ورژن انسٹال ہوا ہے
 settings_right_page_keep=ڈومین سوئچ پر اسی صفحے کو لوڈ کریں
 settings_right_page_keep_description=جب یہ نیویگیشن مینو ڈراپ ڈاؤن فہرست سے تبدیل ہوتا ہے تو یہ آپشن ڈومین منتخب ہونے پر اسی صفحے کو لوڈ کرنے کی کوشش کرے گا
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=بیک سلیش کلید کو ہاٹکی کے طور پ�
 settings_embed_product_splash_privileged=لاگ ان کے بعد ایک برانڈنگ سپلیش اسکرین دکھائیں۔
 dashboard_status_running=چل رہا ہے۔
 dashboard_status_stopped=رک گیا۔
+
+#21.11
+theme_xhred_global_watching=دیکھ رہا ہے۔
+theme_xhred_global_connected=جڑا ہوا
+theme_xhred_global_disconnected=منقطع
+theme_xhred_global_connecting=جڑ رہا ہے۔
+index_mods_missing=The Perl module <tt>$1</tt> is missing.
+index_noadmin_eaccess=غیر ماسٹر ایڈمنسٹریٹرز تک رسائی سے انکار!

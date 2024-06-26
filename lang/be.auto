@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Адправіць %1 на %2
 theme_global_core=Асяродак
 settings_sysinfo_real_time_stored=Уключыць гісторыю статыстыкі
 settings_sysinfo_real_time_stored_description=Пры ўключэнні папярэдне сабраныя статыстычныя дадзеныя будуць захоўвацца і адлюстроўвацца ў графіцы на прыборнай панэлі
-settings_sysinfo_real_time_stored_length=Статыстыка працягласці гісторыі
-settings_sysinfo_real_time_stored_length_description=Час, на працягу якога захоўваецца гісторыя статыстыкі
 theme_dashboard_accordion_live_stats=Гісторыя статыстыкі
 theme_xhred_live_stats_cpu=Цэнтральны працэсар
 theme_xhred_live_stats_mem=Памяць
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Гэтая функцыя 
 theme_xhred_global_module_preferences=Перавагі модуля
 
 #19.74
-settings_sysinfo_real_time_status_forced=Так, прымусова
-settings_sysinfo_real_time_status_forced_warn=Уключэнне маніторынгу ў рэжыме рэальнага часу ў сілавым рэжыме не рэкамендуецца, таму што збор у фонавым рэжыме будзе выконвацца нават тады, калі ўкладка браўзэра не сфакусавана, што можа прывесці да перагрузкі сервера пры адкрыцці некалькіх укладак
 theme_xhred_theme_update_available=Усталявана новая версія Аўтэнтычнай тэмы
 settings_right_page_keep=Загрузіць тую ж старонку на камутатары дамена
 settings_right_page_keep_description=Гэты параметр паспрабуе загрузіць тую ж старонку пры выбары дамена пры змене з выпадальнага спісу навігацыйнага меню
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Клавішу зваротнай касой рысы н
 settings_embed_product_splash_privileged=Адлюстроўваць застаўку брэнда пасля ўваходу
 dashboard_status_running=Бег
 dashboard_status_stopped=Спыніліся
+
+#21.11
+theme_xhred_global_watching=Глядзець
+theme_xhred_global_connected=Падключана
+theme_xhred_global_disconnected=Адключана
+theme_xhred_global_connecting=Падключэнне
+index_mods_missing=Модуль Perl <tt>$1</tt> адсутнічае.
+index_noadmin_eaccess=Доступ забаронены адміністратарам, якія не з'яўляюцца галоўнымі!

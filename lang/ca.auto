@@ -395,8 +395,6 @@ theme_xhred_mail_composer_scheduled=Envia %1 a %2
 theme_global_core=Nucli
 settings_sysinfo_real_time_stored=Activa l'historial de estadístiques
 settings_sysinfo_real_time_stored_description=Si està activat, les estadístiques recollides prèviament s’emmagatzemaran i es mostraran en un gràfic al Tauler de control
-settings_sysinfo_real_time_stored_length=Història durada de la història
-settings_sysinfo_real_time_stored_length_description=El temps durant el qual s’emmagatzema l’historial d’estadístiques
 theme_dashboard_accordion_live_stats=Estadístiques Història
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memòria
@@ -513,8 +511,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Aquesta característica re
 theme_xhred_global_module_preferences=Preferències del mòdul
 
 #19.74
-settings_sysinfo_real_time_status_forced=Sí, forçat
-settings_sysinfo_real_time_status_forced_warn=Es desaconsella habilitar la supervisió en temps real en mode de força perquè la recopilació de fons es realitzarà fins i tot quan la pestanya del navegador no estigui enfocada, cosa que pot provocar una sobrecàrrega del servidor amb diverses pestanyes obertes.
 theme_xhred_theme_update_available=S'instal·la una nova versió d'Autentic Theme
 
 settings_right_page_keep=Carregueu la mateixa pàgina al commutador de domini
@@ -729,3 +725,11 @@ theme_xhred_hotkey_emsg=La tecla de barra invertida no es pot utilitzar com a te
 settings_embed_product_splash_privileged=Mostra una pantalla de presentació de marca després de l'inici de sessió
 dashboard_status_running=Córrer
 dashboard_status_stopped=Parat
+
+#21.11
+theme_xhred_global_watching=Mirant
+theme_xhred_global_connected=Connectat
+theme_xhred_global_disconnected=Desconnectat
+theme_xhred_global_connecting=Connectant
+index_mods_missing=Falta el mòdul Perl <tt>$1</tt>.
+index_noadmin_eaccess=Accés denegat a administradors no mestres!

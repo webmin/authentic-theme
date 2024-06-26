@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Изпратете %1 на %2
 theme_global_core=сърцевина
 settings_sysinfo_real_time_stored=Активиране на историята на статистиките
 settings_sysinfo_real_time_stored_description=Ако е активирана, събраните по-рано статистически данни ще се съхраняват и показват в графика на таблото за управление
-settings_sysinfo_real_time_stored_length=Статистика продължителност на историята
-settings_sysinfo_real_time_stored_length_description=Времето, през което се съхранява историята на статистическите данни
 theme_dashboard_accordion_live_stats=История на статистиките
 theme_xhred_live_stats_cpu=процесор
 theme_xhred_live_stats_mem=памет
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Тази функция и
 theme_xhred_global_module_preferences=Предпочитания на модула
 
 #19.74
-settings_sysinfo_real_time_status_forced=Да, принуден
-settings_sysinfo_real_time_status_forced_warn=Активирането на мониторинг в реално време в режим на сила не се препоръчва, тъй като събирането на фона ще се извършва дори когато раздела на браузъра не е фокусиран, което може да причини претоварване на сървъра с отворени множество раздели
 theme_xhred_theme_update_available=Инсталирана е нова версия на автентична тема
 settings_right_page_keep=Заредете същата страница на превключвателя на домейн
 settings_right_page_keep_description=Тази опция ще се опита да зареди същата страница при избор на домейн, когато се промени от падащия списък на менюто за навигация
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Клавишът с обратна наклонена ч
 settings_embed_product_splash_privileged=Показване на начален екран за брандиране след влизане
 dashboard_status_running=бягане
 dashboard_status_stopped=Спряна
+
+#21.11
+theme_xhred_global_watching=Гледане
+theme_xhred_global_connected=Свързан
+theme_xhred_global_disconnected=Прекъсната връзка
+theme_xhred_global_connecting=Свързване
+index_mods_missing=Модулът на Perl <tt>$1</tt> липсва.
+index_noadmin_eaccess=Достъпът е отказан на администратори, които не са главни!

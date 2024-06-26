@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Siųsti %1 %2
 theme_global_core=Core
 settings_sysinfo_real_time_stored=Įgalinti statistikos istoriją
 settings_sysinfo_real_time_stored_description=Jei įjungta, anksčiau surinkta statistika bus saugoma ir rodoma diagramoje informacijos suvestinėje
-settings_sysinfo_real_time_stored_length=Statistikos istorijos trukmė
-settings_sysinfo_real_time_stored_length_description=Laikas, per kurį saugoma statistikos istorija
 theme_dashboard_accordion_live_stats=Statistikos istorija
 theme_xhred_live_stats_cpu=Centrinis procesorius
 theme_xhred_live_stats_mem=Atmintis
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Šiai funkcijai reikia, ka
 theme_xhred_global_module_preferences=Modulio nuostatos
 
 #19.74
-settings_sysinfo_real_time_status_forced=Taip, priversti
-settings_sysinfo_real_time_status_forced_warn=Įjungti realaus laiko stebėjimą priverstiniu režimu nerekomenduojama, nes foninis rinkimas bus atliekamas net ir tada, kai naršyklės skirtukas nebus sutelktas, o tai gali sukelti serverio perkrovą atidarius kelis skirtukus
 theme_xhred_theme_update_available=Įdiegta nauja Autentiškos temos versija
 settings_right_page_keep=Įkelkite tą patį puslapį į domeno jungiklį
 settings_right_page_keep_description=Ši parinktis bandys įkelti tą patį puslapį pasirinkus domeną, kai jis bus pakeistas iš naršymo meniu išskleidžiamojo sąrašo
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Pasvirojo brūkšnio klavišo negalima naudoti kaip grei
 settings_embed_product_splash_privileged=Prisijungę parodykite prekės ženklo įjungimo ekraną
 dashboard_status_running=Bėgimas
 dashboard_status_stopped=Sustojo
+
+#21.11
+theme_xhred_global_watching=Žiūrint
+theme_xhred_global_connected=Prisijungta
+theme_xhred_global_disconnected=Atjungtas
+theme_xhred_global_connecting=Prisijungimas
+index_mods_missing=Trūksta Perl modulio <tt>$1</tt>.
+index_noadmin_eaccess=Ne pagrindiniams administratoriams prieiga uždrausta!

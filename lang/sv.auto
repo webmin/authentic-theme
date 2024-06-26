@@ -130,3 +130,11 @@ theme_xhred_hotkey_emsg=Omvänt snedstreckstangent kan inte användas som en sna
 settings_embed_product_splash_privileged=Visa en startskärm för varumärke efter inloggning
 dashboard_status_running=Löpning
 dashboard_status_stopped=Slutade
+
+#21.11
+theme_xhred_global_watching=Tittar på
+theme_xhred_global_connected=Ansluten
+theme_xhred_global_disconnected=Osammanhängande
+theme_xhred_global_connecting=Ansluter
+index_mods_missing=Perl-modulen <tt>$1</tt> saknas.
+index_noadmin_eaccess=Åtkomst nekad för icke-masteradministratörer!

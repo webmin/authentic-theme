@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=قم بإرسال %1 إلى %2
 theme_global_core=النواة
 settings_sysinfo_real_time_stored=تمكين سجل الإحصائيات
 settings_sysinfo_real_time_stored_description=في حالة التمكين ، سيتم تخزين الإحصائيات التي تم جمعها مسبقًا وعرضها في رسم بياني على لوحة البيانات
-settings_sysinfo_real_time_stored_length=مدة سجل الإحصائيات
-settings_sysinfo_real_time_stored_length_description=الوقت الذي يتم فيه تخزين محفوظات الإحصائيات
 theme_dashboard_accordion_live_stats=تاريخ الإحصائيات
 theme_xhred_live_stats_cpu=وحدة المعالجة المركزية
 theme_xhred_live_stats_mem=ذاكرة
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=تتطلب هذه المي
 theme_xhred_global_module_preferences=تفضيلات الوحدة
 
 #19.74
-settings_sysinfo_real_time_status_forced=نعم ، قسري
-settings_sysinfo_real_time_status_forced_warn=لا يُنصح بتمكين المراقبة في الوقت الفعلي في وضع القوة لأنه سيتم تنفيذ مجموعة الخلفية حتى عندما لا تكون علامة تبويب المتصفح مركزة ، مما قد يتسبب في تحميل زائد للخادم مع فتح علامات تبويب متعددة
 theme_xhred_theme_update_available=تم تثبيت إصدار جديد من Authentic Theme
 settings_right_page_keep=تحميل نفس الصفحة على تبديل المجال
 settings_right_page_keep_description=سيحاول هذا الخيار تحميل نفس الصفحة عند تحديد المجال ، عند التغيير من القائمة المنسدلة لقائمة التنقل
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=لا يمكن استخدام مفتاح الخط الم�
 settings_embed_product_splash_privileged=عرض شاشة البداية للعلامة التجارية بعد تسجيل الدخول
 dashboard_status_running=جري
 dashboard_status_stopped=توقفت
+
+#21.11
+theme_xhred_global_watching=مشاهدة
+theme_xhred_global_connected=متصل
+theme_xhred_global_disconnected=انقطع الاتصال
+theme_xhred_global_connecting=توصيل
+index_mods_missing=وحدة Perl <tt>$1</tt> مفقودة.
+index_noadmin_eaccess=تم رفض الوصول للمسؤولين غير الرئيسيين!

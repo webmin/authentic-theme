@@ -971,8 +971,6 @@ theme_xhred_mail_composer_scheduled=Wyślij %1 na %2
 theme_global_core=Rdzeń
 settings_sysinfo_real_time_stored=Włącz historię statystyk
 settings_sysinfo_real_time_stored_description=Jeśli ta opcja jest włączona, wcześniej zgromadzone statystyki będą przechowywane i wyświetlane na wykresie na pulpicie nawigacyjnym
-settings_sysinfo_real_time_stored_length=Czas trwania historii statystyk
-settings_sysinfo_real_time_stored_length_description=Czas przechowywania historii statystyk
 theme_dashboard_accordion_live_stats=Historia statystyk
 theme_xhred_live_stats_cpu=procesor
 theme_xhred_live_stats_mem=Pamięć
@@ -1089,8 +1087,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Ta funkcja wymaga zamontow
 theme_xhred_global_module_preferences=Preferencje modułu
 
 #19.74
-settings_sysinfo_real_time_status_forced=Tak, wymuszony
-settings_sysinfo_real_time_status_forced_warn=Włączanie monitorowania w czasie rzeczywistym w trybie wymuszonym jest odradzane, ponieważ zbieranie w tle będzie wykonywane nawet wtedy, gdy karta przeglądarki nie jest aktywna, co może spowodować przeciążenie serwera przy otwartych wielu kartach
 theme_xhred_theme_update_available=Zainstalowana jest nowa wersja Authentic Theme
 settings_right_page_keep=Załaduj tę samą stronę na przełączniku domeny
 settings_right_page_keep_description=Ta opcja spowoduje próbę załadowania tej samej strony po wybraniu domeny, po zmianie z listy rozwijanej menu nawigacyjnego
@@ -1304,3 +1300,11 @@ theme_xhred_hotkey_emsg=Klawisz ukośnika odwrotnego nie może być używany jak
 settings_embed_product_splash_privileged=Wyświetl ekran powitalny marki po zalogowaniu
 dashboard_status_running=Działanie
 dashboard_status_stopped=Zatrzymany
+
+#21.11
+theme_xhred_global_watching=Oglądanie
+theme_xhred_global_connected=Połączony
+theme_xhred_global_disconnected=Bezładny
+theme_xhred_global_connecting=Złączony
+index_mods_missing=Brak modułu Perla <tt>$1</tt>.
+index_noadmin_eaccess=Odmowa dostępu administratorom innym niż główny!

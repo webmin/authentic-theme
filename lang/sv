@@ -1027,8 +1027,6 @@ theme_xhred_mail_composer_scheduled=Skicka %1 vid %2
 theme_global_core=Kärna
 settings_sysinfo_real_time_stored=Aktivera statistikhistorik
 settings_sysinfo_real_time_stored_description=Om aktiverad kommer tidigare samlad statistik att lagras och visas i en graf på översiktssidan
-settings_sysinfo_real_time_stored_length=Statistikens historikvaraktighet
-settings_sysinfo_real_time_stored_length_description=Tiden under vilken statistikhistoriken lagras
 theme_dashboard_accordion_live_stats=Statistikhistorik
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Minne
@@ -1143,8 +1141,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Denna funktion kräver att
 theme_xhred_global_module_preferences=Modulinställningar
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ja, tvingad
-settings_sysinfo_real_time_status_forced_warn=Aktivera realtidsövervakning i kraftläge avskräckas eftersom bakgrundssamling kommer att utföras även när webbläsarfliken inte är fokuserad, vilket kan orsaka serveröverbelastning med flera flikar öppnade
 theme_xhred_theme_update_available=En ny version av Authentic Theme är installerad
 settings_right_page_keep=Ladda samma sida på domänbytaren
 settings_right_page_keep_description=Det här alternativet försöker ladda samma sida när domänen väljs, när den ändras från rullgardinsmenyn för navigeringsmenyn

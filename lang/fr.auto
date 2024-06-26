@@ -102,8 +102,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Cette fonctionnalité néc
 theme_xhred_global_module_preferences=Préférences du module
 
 #19.74
-settings_sysinfo_real_time_status_forced=Oui, forcé
-settings_sysinfo_real_time_status_forced_warn=L'activation de la surveillance en temps réel en mode forcé est déconseillée car la collecte en arrière-plan sera effectuée même lorsque l'onglet du navigateur n'est pas ciblé, ce qui peut entraîner une surcharge du serveur avec plusieurs onglets ouverts
 theme_xhred_theme_update_available=Une nouvelle version d'Authentic Theme est installée
 
 settings_right_page_keep=Charger la même page sur le commutateur de domaine
@@ -318,3 +316,11 @@ theme_xhred_hotkey_emsg=La touche barre oblique inverse ne peut pas être utilis
 settings_embed_product_splash_privileged=Afficher un écran de démarrage de marque après la connexion
 dashboard_status_running=En cours d'exécution
 dashboard_status_stopped=Arrêté
+
+#21.11
+theme_xhred_global_watching=En train de regarder
+theme_xhred_global_connected=Connecté
+theme_xhred_global_disconnected=Débranché
+theme_xhred_global_connecting=De liaison
+index_mods_missing=Le module Perl <tt>$1</tt> est manquant.
+index_noadmin_eaccess=Accès refusé aux administrateurs non-maîtres !

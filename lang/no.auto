@@ -102,8 +102,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Denne funksjonen krever at
 theme_xhred_global_module_preferences=Modulinnstillinger
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ja, tvunget
-settings_sysinfo_real_time_status_forced_warn=Aktivering av sanntidsovervåking i kraftmodus frarådes fordi bakgrunnsinnsamling vil utføres selv når nettleserfanen ikke er fokusert, noe som potensielt kan forårsake serveroverbelastning med flere åpne faner
 theme_xhred_theme_update_available=En ny versjon av Authentic Theme er installert
 
 settings_right_page_keep=Last inn samme side på domenebryteren
@@ -318,3 +316,11 @@ theme_xhred_hotkey_emsg=Omvendt skråstrek-tasten kan ikke brukes som en hurtigt
 settings_embed_product_splash_privileged=Vis en splash-skjerm for merkevarebygging etter pålogging
 dashboard_status_running=Løping
 dashboard_status_stopped=Stoppet
+
+#21.11
+theme_xhred_global_watching=Ser på
+theme_xhred_global_connected=Tilkoblet
+theme_xhred_global_disconnected=Koblet fra
+theme_xhred_global_connecting=Kobler til
+index_mods_missing=Perl-modulen <tt>$1</tt> mangler.
+index_noadmin_eaccess=Tilgang nektet for ikke-masteradministratorer!

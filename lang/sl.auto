@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Pošlji %1 na %2
 theme_global_core=Jedro
 settings_sysinfo_real_time_stored=Omogoči zgodovino statistike
 settings_sysinfo_real_time_stored_description=Če je omogočeno, se prej zbrane statistike shranijo in prikažejo v grafu na nadzorni plošči
-settings_sysinfo_real_time_stored_length=Trajanje zgodovine statistike
-settings_sysinfo_real_time_stored_length_description=Čas, v katerem se hrani zgodovina statistike
 theme_dashboard_accordion_live_stats=Zgodovina statistike
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Spomin
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Ta funkcija zahteva, da je
 theme_xhred_global_module_preferences=Nastavitve modula
 
 #19.74
-settings_sysinfo_real_time_status_forced=Da, prisilno
-settings_sysinfo_real_time_status_forced_warn=Omogočanje sprotnega nadzora v prisilnem načinu se odsvetuje, ker se bo zbiranje ozadja izvajalo tudi, če zavihek brskalnika ni osredotočen, kar bi lahko povzročilo preobremenitev strežnika z več zavihki
 theme_xhred_theme_update_available=Nameščena je nova različica avtentične teme
 settings_right_page_keep=Naloži isto stran na stikalo domene
 settings_right_page_keep_description=Ta možnost bo poskusila naložiti isto stran ob izbiri domene, ko jo spremenite s spustnega seznama v navigacijskem meniju
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Tipke s poševnico nazaj ni mogoče uporabiti kot bližn
 settings_embed_product_splash_privileged=Po prijavi prikažite začetni zaslon blagovne znamke
 dashboard_status_running=tek
 dashboard_status_stopped=ustavil
+
+#21.11
+theme_xhred_global_watching=Gledanje
+theme_xhred_global_connected=Povezan
+theme_xhred_global_disconnected=Prekinjena povezava
+theme_xhred_global_connecting=Povezovanje
+index_mods_missing=Modul Perl <tt>$1</tt> manjka.
+index_noadmin_eaccess=Dostop zavrnjen skrbnikom, ki niso glavni!

@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=שלח %1 ב- %2
 theme_global_core=הליבה
 settings_sysinfo_real_time_stored=אפשר היסטוריית סטטיסטיקות
 settings_sysinfo_real_time_stored_description=אם זה פעיל, הנתונים הסטטיסטיים שנאספו בעבר יאוחסנו ויוצגו בתרשים בלוח המחוונים
-settings_sysinfo_real_time_stored_length=משך היסטוריית הנתונים הסטטיסטיים
-settings_sysinfo_real_time_stored_length_description=הזמן בו נשמרת היסטוריית הסטטיסטיקה
 theme_dashboard_accordion_live_stats=היסטוריית נתונים סטטיסטיים
 theme_xhred_live_stats_cpu=מעבד
 theme_xhred_live_stats_mem=זיכרון
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=תכונה זו מחייב
 theme_xhred_global_module_preferences=העדפות מודול
 
 #19.74
-settings_sysinfo_real_time_status_forced=כן, מאולץ
-settings_sysinfo_real_time_status_forced_warn=הפעלת ניטור בזמן אמת במצב כוח מתייאשת מכיוון שאיסוף הרקע יבוצע גם כאשר כרטיסיית הדפדפן אינה ממוקדת, ועלולה לגרום לעומס יתר בשרת עם כרטיסיות מרובות שנפתחות
 theme_xhred_theme_update_available=מותקנת גרסה חדשה של Theme Authentic
 settings_right_page_keep=טען את אותו הדף במתג הדומיין
 settings_right_page_keep_description=אפשרות זו תנסה לטעון את אותו הדף לאחר בחירת הדומיין, כאשר תשונה מהרשימה הנפתחת של תפריט הניווט
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=לא ניתן להשתמש במקש הנטוי האחו�
 settings_embed_product_splash_privileged=הצג מסך פתיחה של מיתוג לאחר הכניסה
 dashboard_status_running=רץ
 dashboard_status_stopped=עצר
+
+#21.11
+theme_xhred_global_watching=צופה
+theme_xhred_global_connected=מְחוּבָּר
+theme_xhred_global_disconnected=מְנוּתָק
+theme_xhred_global_connecting=מְקַשֵׁר
+index_mods_missing=מודול Perl <tt>$1</tt> חסר.
+index_noadmin_eaccess=הגישה נדחתה למנהלים שאינם מנהלי מערכת!

@@ -1053,8 +1053,6 @@ theme_xhred_mail_composer_scheduled=Ibgħat %1 fi %2
 theme_global_core=Qalba
 settings_sysinfo_real_time_stored=Jippermetti l-istorja tal-istats
 settings_sysinfo_real_time_stored_description=Jekk ikun attivat, stats preċedentement miġbura se jinħażnu, u jintwerew fil-graff fuq id-Dashboard
-settings_sysinfo_real_time_stored_length=Stats tal-istorja kemm iddum
-settings_sysinfo_real_time_stored_length_description=Il-ħin li matulu tinħażen l-istorja
 theme_dashboard_accordion_live_stats=Stats Storja
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memorja
@@ -1171,8 +1169,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Din il-karatteristika teħ
 theme_xhred_global_module_preferences=Preferenzi tal-modulu
 
 #19.74
-settings_sysinfo_real_time_status_forced=Iva, sfurzat
-settings_sysinfo_real_time_status_forced_warn=L-abilitazzjoni tal-monitoraġġ fil-ħin reali fil-modalità seħħ hija skuraġġita minħabba li l-ġbir tal-isfond se jsir anke meta t-tab tal-browser ma jkunx iffokat, u potenzjalment jikkawża tagħbija żejda fuq is-server b'ħafna tabs miftuħa.
 theme_xhred_theme_update_available=Verżjoni ġdida ta 'Tema Awtentika hija installata
 settings_right_page_keep=Tagħbija l-istess paġna fuq swiċċ tad-dominju
 settings_right_page_keep_description=Din l-għażla tipprova tgħabbi l-istess paġna mal-għażla tad-dominju, meta tinbidel mil-lista dropdown tal-menu tan-navigazzjoni
@@ -1386,3 +1382,11 @@ theme_xhred_hotkey_emsg=Iċ-ċavetta backslash ma tistax tintuża bħala hotkey
 settings_embed_product_splash_privileged=Uri splash screen tal-marka wara l-login
 dashboard_status_running=Running
 dashboard_status_stopped=Waqqaf
+
+#21.11
+theme_xhred_global_watching=Jaraw
+theme_xhred_global_connected=Konnessi
+theme_xhred_global_disconnected=Skonnettjat
+theme_xhred_global_connecting=Konnessjoni
+index_mods_missing=Il-modulu Perl <tt>$1</tt> huwa nieqes.
+index_noadmin_eaccess=Aċċess miċħud lil amministraturi mhux kaptan!

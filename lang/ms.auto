@@ -464,8 +464,6 @@ theme_xhred_mail_composer_scheduled=Hantar %1 pada %2
 theme_global_core=Teras
 settings_sysinfo_real_time_stored=Dayakan sejarah statistik
 settings_sysinfo_real_time_stored_description=Sekiranya diaktifkan, statistik yang dikumpulkan sebelumnya akan disimpan, dan dipaparkan dalam grafik di Dashboard
-settings_sysinfo_real_time_stored_length=Tempoh sejarah statistik
-settings_sysinfo_real_time_stored_length_description=Masa di mana sejarah statistik disimpan
 theme_dashboard_accordion_live_stats=Sejarah Statistik
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Ingatan
@@ -582,8 +580,6 @@ theme_xhred_filemanager_mconfig_columns_acls_disabled=Fungsi ini memerlukan sist
 theme_xhred_global_module_preferences=Keutamaan modul
 
 #19.74
-settings_sysinfo_real_time_status_forced=Ya, terpaksa
-settings_sysinfo_real_time_status_forced_warn=Mengaktifkan pemantauan masa nyata dalam mod kekuatan tidak digalakkan kerana pengumpulan latar belakang akan dilakukan walaupun tab penyemak imbas tidak difokuskan, berpotensi menyebabkan pelayan berlebihan dengan banyak tab dibuka
 theme_xhred_theme_update_available=Versi baru Tema Autentik dipasang
 
 settings_right_page_keep=Muatkan halaman yang sama pada pertukaran domain
@@ -798,3 +794,11 @@ theme_xhred_hotkey_emsg=Kekunci sengkang ke belakang tidak boleh digunakan sebag
 settings_embed_product_splash_privileged=Paparkan skrin percikan penjenamaan selepas log masuk
 dashboard_status_running=Berlari
 dashboard_status_stopped=Berhenti
+
+#21.11
+theme_xhred_global_watching=Menonton
+theme_xhred_global_connected=Bersambung
+theme_xhred_global_disconnected=Terputus sambungan
+theme_xhred_global_connecting=Menyambung
+index_mods_missing=Modul Perl <tt>$1</tt> tiada.
+index_noadmin_eaccess=Akses ditolak kepada pentadbir bukan induk!
