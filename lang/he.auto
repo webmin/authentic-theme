@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=תואר שני
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=בתים
-settings_sysinfo_real_time_status_disk=אפשר לדיסקים
-settings_sysinfo_real_time_status_disk_description=יכול להיות שימושי להשבית ניטור בזמן אמת עבור דיסקים במערכות קבצים איטיות/גדולות
 theme_xhred_title_locale_non_ui_config=פורמט תאריך שנוצר על ידי שרת
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=היום
 theme_xhred_global_tomorrow=מחר
 theme_xhred_mail_composer_scheduled=שלח %1 ב- %2
 theme_global_core=הליבה
-settings_sysinfo_real_time_stored=אפשר היסטוריית סטטיסטיקות
-settings_sysinfo_real_time_stored_description=אם זה פעיל, הנתונים הסטטיסטיים שנאספו בעבר יאוחסנו ויוצגו בתרשים בלוח המחוונים
 theme_dashboard_accordion_live_stats=היסטוריית נתונים סטטיסטיים
 theme_xhred_live_stats_cpu=מעבד
 theme_xhred_live_stats_mem=זיכרון

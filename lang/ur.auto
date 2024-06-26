@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=جی بی
 theme_xhred_nice_size_MB=ایم بی
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=بائٹس
-settings_sysinfo_real_time_status_disk=ڈسک کے لئے اہل کریں
-settings_sysinfo_real_time_status_disk_description=یہ سست/بڑے فائل سسٹم پر ڈسکوں کے ل real ریئل ٹائم مانیٹرنگ کو غیر موثر ثابت ہوگا
 theme_xhred_title_locale_non_ui_config=سرور نے تاریخ کی شکل تیار کی
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=آج
 theme_xhred_global_tomorrow=کل
 theme_xhred_mail_composer_scheduled=%1 پر %2 بھیجیں
 theme_global_core=لازمی
-settings_sysinfo_real_time_stored=اعدادوشمار کی تاریخ کو قابل بنائیں
-settings_sysinfo_real_time_stored_description=اگر فعال ہوجائے تو ، پہلے جمع کردہ اعدادوشمار کو اسٹور کیا جائے گا ، اور ڈیش بورڈ کے گراف میں دکھائے جائیں گے
 theme_dashboard_accordion_live_stats=اعدادوشمار کی تاریخ
 theme_xhred_live_stats_cpu=سی پی یو
 theme_xhred_live_stats_mem=یاداشت

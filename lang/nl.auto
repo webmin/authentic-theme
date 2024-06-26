@@ -641,8 +641,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk=Inschakelen voor schijven
-settings_sysinfo_real_time_status_disk_description=Het kan handig zijn om realtime monitoring uit te schakelen voor schijven op langzame/grote bestandssystemen
 theme_xhred_title_locale_non_ui_config=Door de server gegenereerd datumnotatie
 
 #19.20
@@ -941,8 +939,6 @@ theme_xhred_global_today=Vandaag
 theme_xhred_global_tomorrow=Morgen
 theme_xhred_mail_composer_scheduled=Stuur %1 naar %2
 theme_global_core=Kern
-settings_sysinfo_real_time_stored=Statistiekengeschiedenis inschakelen
-settings_sysinfo_real_time_stored_description=Indien ingeschakeld, worden eerder verzamelde statistieken opgeslagen en weergegeven in een grafiek op het dashboard
 theme_dashboard_accordion_live_stats=Statistieken Geschiedenis
 theme_xhred_live_stats_cpu=processor
 theme_xhred_live_stats_mem=Geheugen

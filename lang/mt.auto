@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk=Jippermetti d-diski
-settings_sysinfo_real_time_status_disk_description=Jista 'jkun utli li tiddiżattiva l-monitoraġġ f'ħin reali għal diski fuq sistemi ta' fajls bil-mod/kbar
 theme_xhred_title_locale_non_ui_config=Format ta 'data ġġenerat minn server
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Illum
 theme_xhred_global_tomorrow=Għada
 theme_xhred_mail_composer_scheduled=Ibgħat %1 fi %2
 theme_global_core=Qalba
-settings_sysinfo_real_time_stored=Jippermetti l-istorja tal-istats
-settings_sysinfo_real_time_stored_description=Jekk ikun attivat, stats preċedentement miġbura se jinħażnu, u jintwerew fil-graff fuq id-Dashboard
 theme_dashboard_accordion_live_stats=Stats Storja
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memorja

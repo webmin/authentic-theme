@@ -723,8 +723,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk=启用磁盘
-settings_sysinfo_real_time_status_disk_description=在慢速/大型文件系统上禁用磁盘的实时监控可能很有用
 theme_xhred_title_locale_non_ui_config=非 UI 格式（如自动电子邮件和导出的文件）
 
 #19.20

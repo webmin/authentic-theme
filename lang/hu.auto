@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bájt
-settings_sysinfo_real_time_status_disk=Engedélyezze a lemezeket
-settings_sysinfo_real_time_status_disk_description=Hasznos lehet letiltani a valós idejű megfigyelést a lassú/nagy fájlrendszerek lemezein
 theme_xhred_title_locale_non_ui_config=Szerver által generált dátumformátum
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Ma
 theme_xhred_global_tomorrow=Holnap
 theme_xhred_mail_composer_scheduled=Küldje el a (z) %1 fájlt a %2
 theme_global_core=Mag
-settings_sysinfo_real_time_stored=A statisztikák előzményeinek engedélyezése
-settings_sysinfo_real_time_stored_description=Ha engedélyezve van, a korábban összegyűjtött statisztikák tárolódnak, és egy grafikonon jelennek meg az irányítópulton
 theme_dashboard_accordion_live_stats=Statisztika története
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=memória

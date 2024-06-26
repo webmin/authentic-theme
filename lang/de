@@ -723,8 +723,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk=Für Festplatten Laufwerke einschalten
-settings_sysinfo_real_time_status_disk_description=Es kann hilfreich sein den Echtzeit-Monitor für langsame oder große Dateisysteme auszuschalten.
 theme_xhred_title_locale_non_ui_config=Unversales Format (wie in automatischen Mails und exportierten Daten)
 
 #19.20
@@ -1013,8 +1011,6 @@ theme_xhred_global_today=Heute
 theme_xhred_global_tomorrow=Morgen
 theme_xhred_mail_composer_scheduled=Sende %1 um %2
 theme_global_core=Kern
-settings_sysinfo_real_time_stored=Werte Verlauf einschalten
-settings_sysinfo_real_time_stored_description=Die gesammelten Werte werden gespeichert und als Grafik im Dashboard angezeigt
 theme_dashboard_accordion_live_stats=Werte Verlauf
 theme_xhred_live_stats_cpu=Prozesssor
 theme_xhred_live_stats_mem=Hauptspeicher

@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=國標
 theme_xhred_nice_size_MB=兆字節
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=個字節
-settings_sysinfo_real_time_status_disk=為磁盤啟用
-settings_sysinfo_real_time_status_disk_description=禁用慢/大文件系統上磁盤的實時監視可能很有用
 theme_xhred_title_locale_non_ui_config=服務器生成的日期格式
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=今天
 theme_xhred_global_tomorrow=明天
 theme_xhred_mail_composer_scheduled=在%2發送%1
 theme_global_core=核心
-settings_sysinfo_real_time_stored=啟用統計記錄
-settings_sysinfo_real_time_stored_description=如果啟用，將存儲以前收集的統計信息，並顯示在儀表板上的圖形中
 theme_dashboard_accordion_live_stats=統計歷史
 theme_xhred_live_stats_cpu=中央處理器
 theme_xhred_live_stats_mem=記憶

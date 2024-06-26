@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=ไบต์
-settings_sysinfo_real_time_status_disk=เปิดใช้งานสำหรับดิสก์
-settings_sysinfo_real_time_status_disk_description=อาจเป็นประโยชน์ในการปิดใช้งานการตรวจสอบตามเวลาจริงสำหรับดิสก์ในระบบไฟล์ช้า/ใหญ่
 theme_xhred_title_locale_non_ui_config=รูปแบบวันที่สร้างเซิร์ฟเวอร์
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=ในวันนี้
 theme_xhred_global_tomorrow=วันพรุ่งนี้
 theme_xhred_mail_composer_scheduled=ส่ง %1 ที่ %2
 theme_global_core=แกน
-settings_sysinfo_real_time_stored=เปิดใช้งานประวัติสถิติ
-settings_sysinfo_real_time_stored_description=หากเปิดใช้งานสถิติที่รวบรวมไว้ก่อนหน้านี้จะถูกจัดเก็บและแสดงเป็นกราฟบนแดชบอร์ด
 theme_dashboard_accordion_live_stats=ประวัติสถิติ
 theme_xhred_live_stats_cpu=ซีพียู
 theme_xhred_live_stats_mem=หน่วยความจำ

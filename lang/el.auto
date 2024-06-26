@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=γιγαμπάιτ
 theme_xhred_nice_size_MB=ΜΒ
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=byte
-settings_sysinfo_real_time_status_disk=Ενεργοποίηση για δίσκους
-settings_sysinfo_real_time_status_disk_description=Μπορεί να είναι χρήσιμο να απενεργοποιήσετε την παρακολούθηση σε πραγματικό χρόνο για δίσκους σε αργά/μεγάλα συστήματα αρχείων
 theme_xhred_title_locale_non_ui_config=Μορφή ημερομηνίας δημιουργίας διακομιστή
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Σήμερα
 theme_xhred_global_tomorrow=Αύριο
 theme_xhred_mail_composer_scheduled=Αποστολή %1 στο %2
 theme_global_core=Πυρήνας
-settings_sysinfo_real_time_stored=Ενεργοποίηση ιστορικού στατιστικών
-settings_sysinfo_real_time_stored_description=Εάν είναι ενεργοποιημένη, τα στατιστικά που συλλέχθηκαν προηγουμένως θα αποθηκευτούν και θα εμφανιστούν σε ένα γράφημα στον Πίνακα ελέγχου
 theme_dashboard_accordion_live_stats=Ιστορία στατιστικών
 theme_xhred_live_stats_cpu=ΕΠΕΞΕΡΓΑΣΤΗΣ
 theme_xhred_live_stats_mem=Μνήμη

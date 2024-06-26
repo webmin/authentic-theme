@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=KG
 theme_xhred_nice_size_b=grepe
-settings_sysinfo_real_time_status_disk=Aktiveer vir skywe
-settings_sysinfo_real_time_status_disk_description=Dit kan nuttig wees om intydse monitering vir skywe op stadige/groot lêerstelsels uit te skakel
 theme_xhred_title_locale_non_ui_config=Bediener-gegenereerde datumformaat
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=vandag
 theme_xhred_global_tomorrow=môre
 theme_xhred_mail_composer_scheduled=Stuur %1 op %2
 theme_global_core=Core
-settings_sysinfo_real_time_stored=Aktiveer statistiekgeskiedenis
-settings_sysinfo_real_time_stored_description=As dit inskakel, sal statistieke wat voorheen versamel is, gestoor word en in 'n grafiek op die Dashboard vertoon word
 theme_dashboard_accordion_live_stats=Statistiek Geskiedenis
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Geheue

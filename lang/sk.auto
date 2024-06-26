@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajtov
-settings_sysinfo_real_time_status_disk=Povoliť pre disky
-settings_sysinfo_real_time_status_disk_description=Môže byť užitočné zakázať monitorovanie diskov v systémoch s pomalými/veľkými súbormi v reálnom čase
 theme_xhred_title_locale_non_ui_config=Formát dátumu vygenerovaný serverom
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=dnes
 theme_xhred_global_tomorrow=zajtra
 theme_xhred_mail_composer_scheduled=Pošlite %1 na %2
 theme_global_core=jadro
-settings_sysinfo_real_time_stored=Povoliť históriu štatistík
-settings_sysinfo_real_time_stored_description=Ak je povolená, predtým zhromaždené štatistiky sa uložia a zobrazia v grafe na informačnom paneli
 theme_dashboard_accordion_live_stats=Štatistika histórie
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Pamäť

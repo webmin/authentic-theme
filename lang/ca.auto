@@ -93,8 +93,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk=Habilita per a discos
-settings_sysinfo_real_time_status_disk_description=Pot ser útil desactivar la supervisió en temps real dels discos dels sistemes de fitxers lents/grans
 theme_xhred_title_locale_non_ui_config=Format de data generat pel servidor
 
 #19.20
@@ -393,8 +391,6 @@ theme_xhred_global_today=Avui
 theme_xhred_global_tomorrow=Demà
 theme_xhred_mail_composer_scheduled=Envia %1 a %2
 theme_global_core=Nucli
-settings_sysinfo_real_time_stored=Activa l'historial de estadístiques
-settings_sysinfo_real_time_stored_description=Si està activat, les estadístiques recollides prèviament s’emmagatzemaran i es mostraran en un gràfic al Tauler de control
 theme_dashboard_accordion_live_stats=Estadístiques Història
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memòria

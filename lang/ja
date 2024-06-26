@@ -718,8 +718,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=KB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk= ディスクに対して有効にする
-settings_sysinfo_real_time_status_disk_description= 低速/大容量ファイルシステム上のディスクのリアルタイム監視を無効にすると便利な場合があります
 theme_xhred_title_locale_non_ui_config= 非UI形式（自動メールやエクスポートされたファイルなど）
 
 #19.20
@@ -1008,8 +1006,6 @@ theme_xhred_global_today=今日
 theme_xhred_global_tomorrow=明日
 theme_xhred_mail_composer_scheduled=%2で%1を送信
 theme_global_core=コア
-settings_sysinfo_real_time_stored=統計履歴を有効にする
-settings_sysinfo_real_time_stored_description=有効にすると、以前に収集された統計が保存され、ダッシュボードのグラフに表示されます
 theme_dashboard_accordion_live_stats=統計履歴
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Memory

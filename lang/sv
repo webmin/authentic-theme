@@ -729,8 +729,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-settings_sysinfo_real_time_status_disk=Aktiverad för diskar
-settings_sysinfo_real_time_status_disk_description=Det kan vara lönt att inaktivera realtidsövervakning för diskar på långsamma/stora filsystem
 theme_xhred_title_locale_non_ui_config=Icke-UI-format (som i automatiserade e-postmeddelanden och exporterade filer)
 
 #19.20
@@ -1025,8 +1023,6 @@ theme_xhred_global_today=Idag
 theme_xhred_global_tomorrow=Imorgon
 theme_xhred_mail_composer_scheduled=Skicka %1 vid %2
 theme_global_core=Kärna
-settings_sysinfo_real_time_stored=Aktivera statistikhistorik
-settings_sysinfo_real_time_stored_description=Om aktiverad kommer tidigare samlad statistik att lagras och visas i en graf på översiktssidan
 theme_dashboard_accordion_live_stats=Statistikhistorik
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Minne

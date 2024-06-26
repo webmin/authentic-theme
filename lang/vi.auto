@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=byte
-settings_sysinfo_real_time_status_disk=Cho phép đĩa
-settings_sysinfo_real_time_status_disk_description=Có thể hữu ích để vô hiệu hóa giám sát thời gian thực cho các đĩa trên hệ thống tệp chậm/lớn
 theme_xhred_title_locale_non_ui_config=Định dạng ngày tạo của máy chủ
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Hôm nay
 theme_xhred_global_tomorrow=Ngày mai
 theme_xhred_mail_composer_scheduled=Gửi %1 với %2
 theme_global_core=Cốt lõi
-settings_sysinfo_real_time_stored=Kích hoạt lịch sử thống kê
-settings_sysinfo_real_time_stored_description=Nếu được bật, các số liệu thống kê được thu thập trước đó sẽ được lưu trữ và hiển thị trong biểu đồ trên Bảng điều khiển
 theme_dashboard_accordion_live_stats=Thống kê lịch sử
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Ký ức

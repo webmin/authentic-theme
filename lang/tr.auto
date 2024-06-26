@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bayt
-settings_sysinfo_real_time_status_disk=Diskler için etkinleştir
-settings_sysinfo_real_time_status_disk_description=Yavaş/büyük dosya sistemlerindeki diskler için gerçek zamanlı izlemeyi devre dışı bırakmak yararlı olabilir
 theme_xhred_title_locale_non_ui_config=Sunucu tarafından oluşturulan tarih biçimi
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Bugün
 theme_xhred_global_tomorrow=Yarın
 theme_xhred_mail_composer_scheduled=Gönder %1 de %2
 theme_global_core=çekirdek
-settings_sysinfo_real_time_stored=İstatistik geçmişini etkinleştir
-settings_sysinfo_real_time_stored_description=Etkinleştirilirse, önceden toplanan istatistikler depolanır ve Gösterge Tablosundaki bir grafikte görüntülenir
 theme_dashboard_accordion_live_stats=İstatistik Geçmişi
 theme_xhred_live_stats_cpu=İşlemci
 theme_xhred_live_stats_mem=Hafıza

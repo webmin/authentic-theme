@@ -669,8 +669,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajty
-settings_sysinfo_real_time_status_disk=Włącz dla dysków
-settings_sysinfo_real_time_status_disk_description=Przydatne może być wyłączenie monitorowania w czasie rzeczywistym dysków w wolnych/dużych systemach plików
 theme_xhred_title_locale_non_ui_config=Format daty wygenerowany przez serwer
 
 #19.20
@@ -969,8 +967,6 @@ theme_xhred_global_today=Dzisiaj
 theme_xhred_global_tomorrow=Jutro
 theme_xhred_mail_composer_scheduled=Wyślij %1 na %2
 theme_global_core=Rdzeń
-settings_sysinfo_real_time_stored=Włącz historię statystyk
-settings_sysinfo_real_time_stored_description=Jeśli ta opcja jest włączona, wcześniej zgromadzone statystyki będą przechowywane i wyświetlane na wykresie na pulpicie nawigacyjnym
 theme_dashboard_accordion_live_stats=Historia statystyk
 theme_xhred_live_stats_cpu=procesor
 theme_xhred_live_stats_mem=Pamięć

@@ -722,8 +722,6 @@ theme_xhred_nice_size_GB=GO(GB)
 theme_xhred_nice_size_MB=MO(MB)
 theme_xhred_nice_size_kB=kO(kB)
 theme_xhred_nice_size_b=octeți
-settings_sysinfo_real_time_status_disk=Activează pentru discuri
-settings_sysinfo_real_time_status_disk_description=Ar putea fi util să dezactivezi monitorizarea în timp real a discurilor pe sistemele de fișiere lente/mari
 theme_xhred_title_locale_non_ui_config=Format non-UI (ca în e-mailurile automate și fișierele exportate)
 
 #19.20

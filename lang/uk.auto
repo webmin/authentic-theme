@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=ГБ
 theme_xhred_nice_size_MB=МБ
 theme_xhred_nice_size_kB=кБ
 theme_xhred_nice_size_b=байт
-settings_sysinfo_real_time_status_disk=Увімкнути для дисків
-settings_sysinfo_real_time_status_disk_description=Можливо, буде корисно відключити моніторинг у реальному часі для дисків у повільних/великих файлових системах
 theme_xhred_title_locale_non_ui_config=Формат дати, створений сервером
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Сьогодні
 theme_xhred_global_tomorrow=Завтра
 theme_xhred_mail_composer_scheduled=Надіслати %1 на %2
 theme_global_core=Основні
-settings_sysinfo_real_time_stored=Увімкнути історію статистики
-settings_sysinfo_real_time_stored_description=Якщо це ввімкнено, раніше зібрані статистичні дані будуть зберігатися та відображатись у графіку на інформаційній панелі
 theme_dashboard_accordion_live_stats=Історія статистики
 theme_xhred_live_stats_cpu=ЦП
 theme_xhred_live_stats_mem=Пам'ять

@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=گیگابایت
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=کیلوبایت
 theme_xhred_nice_size_b=بایت
-settings_sysinfo_real_time_status_disk=برای دیسک ها فعال شود
-settings_sysinfo_real_time_status_disk_description=ممکن است غیرفعال کردن مانیتورینگ در زمان واقعی برای دیسک ها روی سیستم های فایل کند یا بزرگ باشد
 theme_xhred_title_locale_non_ui_config=فرمت تاریخ ایجاد شده توسط سرور
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=امروز
 theme_xhred_global_tomorrow=فردا
 theme_xhred_mail_composer_scheduled=%1 با %2
 theme_global_core=هسته
-settings_sysinfo_real_time_stored=سابقه آمار را فعال کنید
-settings_sysinfo_real_time_stored_description=در صورت فعال بودن ، آمار قبلی جمع آوری شده ذخیره می شود و در یک نمودار در داشبورد نمایش داده می شود
 theme_dashboard_accordion_live_stats=تاریخچه آمار
 theme_xhred_live_stats_cpu=پردازنده
 theme_xhred_live_stats_mem=حافظه

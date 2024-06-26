@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajti
-settings_sysinfo_real_time_status_disk=Omogoči za diske
-settings_sysinfo_real_time_status_disk_description=Morda bi bilo koristno onemogočiti nadzor v realnem času za diske v počasnih/velikih datotečnih sistemih
 theme_xhred_title_locale_non_ui_config=Oblika datuma, ki jo ustvari strežnik
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=Danes
 theme_xhred_global_tomorrow=Jutri
 theme_xhred_mail_composer_scheduled=Pošlji %1 na %2
 theme_global_core=Jedro
-settings_sysinfo_real_time_stored=Omogoči zgodovino statistike
-settings_sysinfo_real_time_stored_description=Če je omogočeno, se prej zbrane statistike shranijo in prikažejo v grafu na nadzorni plošči
 theme_dashboard_accordion_live_stats=Zgodovina statistike
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Spomin

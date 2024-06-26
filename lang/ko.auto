@@ -751,8 +751,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=바이트
-settings_sysinfo_real_time_status_disk=디스크 활성화
-settings_sysinfo_real_time_status_disk_description=느리거나 큰 파일 시스템에서 디스크에 대한 실시간 모니터링을 비활성화하는 것이 유용 할 수 있습니다
 theme_xhred_title_locale_non_ui_config=서버 생성 날짜 형식
 
 #19.20
@@ -1051,8 +1049,6 @@ theme_xhred_global_today=오늘
 theme_xhred_global_tomorrow=내일
 theme_xhred_mail_composer_scheduled=%2 에서 %1 를) 보내십시오
 theme_global_core=핵심
-settings_sysinfo_real_time_stored=통계 기록 사용
-settings_sysinfo_real_time_stored_description=활성화하면 이전에 수집 한 통계가 저장되고 대시 보드의 그래프에 표시됩니다
 theme_dashboard_accordion_live_stats=통계 기록
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=기억

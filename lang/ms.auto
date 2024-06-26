@@ -162,8 +162,6 @@ theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bait
-settings_sysinfo_real_time_status_disk=Dayakan untuk cakera
-settings_sysinfo_real_time_status_disk_description=Mungkin berguna untuk melumpuhkan pemantauan masa nyata untuk cakera pada sistem fail lambat/besar
 theme_xhred_title_locale_non_ui_config=Format tarikh pelayan dihasilkan
 
 #19.20
@@ -462,8 +460,6 @@ theme_xhred_global_today=Hari ini
 theme_xhred_global_tomorrow=Esok
 theme_xhred_mail_composer_scheduled=Hantar %1 pada %2
 theme_global_core=Teras
-settings_sysinfo_real_time_stored=Dayakan sejarah statistik
-settings_sysinfo_real_time_stored_description=Sekiranya diaktifkan, statistik yang dikumpulkan sebelumnya akan disimpan, dan dipaparkan dalam grafik di Dashboard
 theme_dashboard_accordion_live_stats=Sejarah Statistik
 theme_xhred_live_stats_cpu=CPU
 theme_xhred_live_stats_mem=Ingatan
