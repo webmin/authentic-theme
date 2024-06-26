@@ -51,7 +51,6 @@ sub theme_settings_raw
                        'settings_sysinfo_real_time_status',
                        'settings_sysinfo_real_time_status_disk',
                        'settings_sysinfo_real_time_stored',
-                       'settings_sysinfo_real_time_stored_length',
             ] }
         ],
 
@@ -259,7 +258,6 @@ sub theme_settings_filter
              'settings_sysinfo_real_time_status',
              'settings_sysinfo_real_time_status_disk',
              'settings_sysinfo_real_time_stored',
-             'settings_sysinfo_real_time_stored_length',
              'settings_leftmenu_section_hide_refresh_modules',
              'settings_leftmenu_section_hide_unused_modules',
              'settings_leftmenu_netdata',
@@ -552,34 +550,6 @@ sub theme_settings_format
                        [[('light', $theme_text{'theme_xhred_global_light'})],
                         [('dark',  $theme_text{'theme_xhred_global_dark'})]
                        ]);
-    } elsif ($k eq 'settings_sysinfo_real_time_stored_length') {
-        $v = '<select class="ui_select" name="' . $k . '">
-
-                    <option value="600"'
-          . ($v eq '600' && ' selected') . '>10 ' . lc($theme_text{'theme_xhred_global_minutes'}) . '</option>
-
-                    <option value="1800"'
-          . ($v eq '1800' && ' selected') . '>30 ' . lc($theme_text{'theme_xhred_global_minutes'}) . '</option>
-
-              <option value="3600"'
-          . ($v eq '3600' && ' selected') . '>1 ' . lc($theme_text{'theme_xhred_global_hour'}) . '</option>
-
-              <option value="7200"'
-          . ($v eq '7200' && ' selected') . '>2 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="10800"'
-          . ($v eq '10800' && ' selected') . '>3 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="21600"'
-          . ($v eq '21600' && ' selected') . '>6 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="43200"'
-          . ($v eq '43200' && ' selected') . '>12 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-              <option value="86400"'
-          . ($v eq '86400' && ' selected') . '>24 ' . lc($theme_text{'theme_xhred_global_hours'}) . '</option>
-
-                </select>';
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
     } elsif ($k eq 'settings_sysinfo_real_time_status') {

@@ -22,7 +22,7 @@ var
     settings_sysinfo_real_time_status = 1,
     settings_sysinfo_real_time_status_disk = true,
     settings_sysinfo_real_time_stored = true,
-    settings_sysinfo_real_time_stored_length = 1800,
+    settings_sysinfo_real_time_stored_duration = 600,
 
     // Navigation menu options defaults
     settings_navigation_color = 'blue',
@@ -160,7 +160,7 @@ var
     settings_mailbox_slash_delimiter = true,
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
-    settings_sysinfo_real_time_run_rate = 2000,
+    settings_sysinfo_real_time_run_rate = 1000,
     settings_sysinfo_real_time_shutdown_on_last = false,
     settings_sysinfo_cache_timeout = 86400,
     settings_sysinfo_cpu_fans_base_rpm = 1000,

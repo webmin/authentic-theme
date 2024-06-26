@@ -50,7 +50,7 @@ const stats = {
             return theme.visibility.get();
         },
         stored_length: () => {
-            return settings_sysinfo_real_time_stored_length;
+            return settings_sysinfo_real_time_stored_duration;
         },
         enabled: () => {
             return settings_sysinfo_real_time_status ? 1 : 0;
@@ -287,7 +287,7 @@ const stats = {
                         if (tg[0] && tg[0].textContent) {
                             if (cached === 1) {
                                 let lf = parseInt(this.stored_length());
-                                if (lf < 600 || lf > 86400) {
+                                if (lf < 300 || lf > 86400) {
                                     lf = 600;
                                 }
                                 let tdata = sr,

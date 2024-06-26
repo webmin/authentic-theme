@@ -107,7 +107,7 @@ sub stats
         my $n = get_stats_option('stored_length', 1) || 600;
 
         # User option sanity check
-        if ($n < 600 || $n > 86400) {
+        if ($n < 300 || $n > 86400) {
             $n = 600;
         }
 
