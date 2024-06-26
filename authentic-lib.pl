@@ -237,7 +237,6 @@ sub get_extended_sysinfo
         }
         if (&webmin_user_is_admin() &&
             $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
-            $theme_config{'settings_sysinfo_real_time_stored'} ne 'false' &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {
             my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">

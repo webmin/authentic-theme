@@ -152,13 +152,13 @@ const stats = {
                         this.socket = new WebSocket(data.socket);
                         this.socket.onopen = () => {
                             this.activating = 0;
-                            // console.log("WebSocket connection established");
+                            console.log("WebSocket connection established", this.getSocketDefs());
                             this.socket.send(JSON.stringify(this.getSocketDefs()));
                         };
                         this.socket.onmessage = (event) => {
                             const message = JSON.parse(event.data);
                             this.render(message);
-                            // console.log("Received stats:", message);
+                            console.log("Received stats:", message);
                             this.active() && this.fetch();
                         };
                         this.socket.onclose = () => {
@@ -287,7 +287,7 @@ const stats = {
                         if (tg[0] && tg[0].textContent) {
                             if (cached === 1) {
                                 let lf = parseInt(this.stored_length());
-                                if (lf < 300 || lf > 86400) {
+                                if (lf < 300 || lf > 3600) {
                                     lf = 600;
                                 }
                                 let tdata = sr,

@@ -57,41 +57,38 @@ sub stats
 
         # Save and return data
         if (!$k) {
-            if (get_stats_option('stored')) {
+            # Clear existing cache if available features was disabled
+            my %map = (cpu  => ['cpu',  'disk'],
+                        mem  => ['mem',  'virt'],
+                        load => ['proc', 'net']);
 
-                # Clear existing cache if available features was disabled
-                my %map = (cpu  => ['cpu',  'disk'],
-                           mem  => ['mem',  'virt'],
-                           load => ['proc', 'net']);
-
-                foreach my $key (keys %map) {
-                    my $feature = acl_system_status($key);
-                    if (ref($map{$key}) eq 'ARRAY') {
-                        foreach my $skey (@{ $map{$key} }) {
-                            if (!$feature) {
-                                delete $cdata->{$skey};
-                            }
-                        }
-                    } else {
+            foreach my $key (keys %map) {
+                my $feature = acl_system_status($key);
+                if (ref($map{$key}) eq 'ARRAY') {
+                    foreach my $skey (@{ $map{$key} }) {
                         if (!$feature) {
-                            delete $cdata->{ $map{$key} };
+                            delete $cdata->{$skey};
                         }
                     }
-                }
-
-                # Store complete dataset every 20th tick
-                if ($ticked > 0 && $ticked % 20 == 0) {
-                    lock_file($fdata);
-                    write_file_contents($fdata, convert_to_json($cdata));
-                    unlock_file($fdata);
-                }
-
-                # Return requested data
-                if ($history) {
-                    $data{'_history'} = $cdata;
                 } else {
-                    $data{'_current'} = $tdata;
+                    if (!$feature) {
+                        delete $cdata->{ $map{$key} };
+                    }
                 }
+            }
+
+            # Store complete dataset every 20th tick
+            if ($ticked > 0 && $ticked % 20 == 0) {
+                lock_file($fdata);
+                write_file_contents($fdata, convert_to_json($cdata));
+                unlock_file($fdata);
+            }
+
+            # Return requested data
+            if ($history) {
+                $data{'_history'} = $cdata;
+            } else {
+                $data{'_current'} = $tdata;
             }
             return;
         }
@@ -108,7 +105,7 @@ sub stats
         my $n = get_stats_option('stored_length', 1) || 600;
 
         # User option sanity check
-        if ($n < 300 || $n > 86400) {
+        if ($n < 300 || $n > 3600) {
             $n = 600;
         }
 
