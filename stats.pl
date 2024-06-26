@@ -20,21 +20,21 @@ my ($port) = @ARGV;
 
 # Check if user is admin
 if (!webmin_user_is_admin()) {
-    &remove_miniserv_websocket($port, $current_theme);
-    &error_stderr("WebSocket server cannot be accessed because the user is not a master administrator");
+    remove_miniserv_websocket($port, $current_theme);
+    error_stderr("WebSocket server cannot be accessed because the user is not a master administrator");
     exit(2);
 }
 
 # Clean up when socket is terminated
 $SIG{'ALRM'} = sub {
-    &remove_miniserv_websocket($port, $current_theme);
-    &error_stderr("WebSocket server timeout waiting for a connection");
+    remove_miniserv_websocket($port, $current_theme);
+    error_stderr("WebSocket server timeout waiting for a connection");
     exit(1);
     };
 alarm(60);
 
 # Log successful connection
-&error_stderr("WebSocket server is listening on port $port");
+error_stderr("WebSocket server is listening on port $port");
 
 # Used variables
 my $stats_stack :shared = 0;
@@ -73,12 +73,12 @@ Net::WebSocket::Server->new(
     },
     on_connect => sub {
         my ($serv, $conn) = @_;
-        &error_stderr("WebSocket connection $conn->{'port'} established");
+        error_stderr("WebSocket connection $conn->{'port'} established");
         $clients_connected++;
         alarm(0);
         # Set post-connect activity timeout
         $SIG{'ALRM'} = sub {
-            &error_stderr("WebSocket connection $conn->{'port'} is closed due to inactivity");
+            error_stderr("WebSocket connection $conn->{'port'} is closed due to inactivity");
             $conn->disconnect();
         };
         alarm(15);
@@ -95,30 +95,30 @@ Net::WebSocket::Server->new(
                 if (!$conn->{'verified'}) {
                     my %miniserv;
                     foreign_require('acl');
-                    &get_miniserv_config(\%miniserv);
-                    &acl::open_session_db(\%miniserv);
+                    get_miniserv_config(\%miniserv);
+                    acl::open_session_db(\%miniserv);
                     my $client_allowed = 0;
                     foreach my $k (grep { $acl::sessiondb{$_} } keys %acl::sessiondb) {
                         if ($k eq $data->{'session'}) {
                             my ($user) = split(/\s+/, $acl::sessiondb{$k});
                             last if (!$user);
                             if ($user !~ /^(root|admin|sysadm)$/) {
-                                my %access = &get_module_acl($user, "");
+                                my %access = get_module_acl($user, "");
                                 if ($access{'_safe'} == 1 || $access{'rpc'} == 0) {
                                     # Disconnect if user is not a master administrator
-                                    &error_stderr("WebSocket connection for user $user was denied");
+                                    error_stderr("WebSocket connection for user $user was denied");
                                     $conn->disconnect();
                                     return;
                                 }
                             }
                             $client_allowed++;
-                            &error_stderr("WebSocket connection for user $user is granted");
+                            error_stderr("WebSocket connection for user $user is granted");
                             last;
                         }
                     }
                     # If session id is unknown then disconnect as well
                     if (!$client_allowed) {
-                        &error_stderr("WebSocket connection closed as it cannot be verified");
+                        error_stderr("WebSocket connection closed as it cannot be verified");
                         $conn->disconnect();
                         return;
                     }
@@ -135,12 +135,12 @@ Net::WebSocket::Server->new(
             disconnect => sub {
                 my ($conn) = @_;
                 $clients_connected--;
-                &error_stderr("WebSocket connection $conn->{'port'} closed");
+                error_stderr("WebSocket connection $conn->{'port'} closed");
                 # If shutdown requested and no clients connected
                 # then exit the server
                 if ($server_shutdown && $clients_connected == 0) {
-                    &error_stderr("WebSocket server has shut down on last client disconnect");
-                    &remove_miniserv_websocket($port, $current_theme);
+                    error_stderr("WebSocket server has shut down on last client disconnect");
+                    remove_miniserv_websocket($port, $current_theme);
                     exit(0);
                 }
             }
@@ -148,12 +148,12 @@ Net::WebSocket::Server->new(
     },
 )->start;
 if ($stats_running) {
-    &error_stderr("WebSocket server failed");
+    error_stderr("WebSocket server failed");
 }
 else {
-    &error_stderr("WebSocket server has gracefully shut down");
+    error_stderr("WebSocket server has gracefully shut down");
 }
-&remove_miniserv_websocket($port, $current_theme);
-&cleanup_miniserv_websockets([$port], $current_theme);
+remove_miniserv_websocket($port, $current_theme);
+cleanup_miniserv_websockets([$port], $current_theme);
 
 1;
