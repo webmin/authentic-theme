@@ -49,7 +49,6 @@ sub theme_settings_raw
                        'settings_sysinfo_hidden_panels_user',
                        'settings_sysinfo_max_servers',
                        'settings_sysinfo_real_time_status',
-                       'settings_sysinfo_real_time_status_disk',
                        'settings_sysinfo_real_time_stored',
             ] }
         ],
@@ -256,7 +255,6 @@ sub theme_settings_filter
              'settings_sysinfo_easypie_charts_scale',
              'settings_sysinfo_max_servers',
              'settings_sysinfo_real_time_status',
-             'settings_sysinfo_real_time_status_disk',
              'settings_sysinfo_real_time_stored',
              'settings_leftmenu_section_hide_refresh_modules',
              'settings_leftmenu_section_hide_unused_modules',

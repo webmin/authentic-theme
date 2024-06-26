@@ -20,7 +20,6 @@ var
     settings_sysinfo_easypie_charts_scale = 10,
     settings_sysinfo_max_servers = 10,
     settings_sysinfo_real_time_status = 1,
-    settings_sysinfo_real_time_status_disk = true,
     settings_sysinfo_real_time_stored = true,
     settings_sysinfo_real_time_stored_duration = 600,
 

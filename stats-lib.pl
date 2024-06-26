@@ -195,28 +195,6 @@ sub stats
         }
     }
 
-    # Disk space
-    if (acl_system_status('disk')) {
-        if (foreign_check("mount") && get_stats_option('status_disk')) {
-            foreign_require("mount");
-
-            my @disk_space = defined(&mount::local_disk_space) ? mount::local_disk_space() : ();
-            if (@disk_space) {
-                $data{'disk'} = [];
-
-                if (@disk_space && $disk_space[0] && $disk_space[0] > 0) {
-                    my $disk = int(($disk_space[0] - $disk_space[1]) / $disk_space[0] * 100);
-                    $data{'disk'} = [$disk,
-                                        text('body_used_and_free',
-                                            nice_size($disk_space[0]),
-                                            nice_size($disk_space[1]),
-                                            nice_size($disk_space[0] - $disk_space[1])
-                                        )];
-                }
-            }
-        }
-    }
-
     # Network I/O
     if (acl_system_status('load')) {
         my $network = network_stats('io');
