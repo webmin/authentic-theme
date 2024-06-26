@@ -47,7 +47,7 @@ sub stats
     my %data;
     my $tdata = {};
     my $fdatad = "$var_directory/modules/$current_theme";
-    my $fdata  = "$fdatad/stats-$remote_user.json";
+    my $fdata  = "$fdatad/real-time-monitoring.json";
     my $cdata  = jsonify(read_file_contents($fdata));
     unlink($fdata) if (!keys %{$cdata});
 

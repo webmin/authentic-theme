@@ -583,9 +583,7 @@ sub theme_settings_format
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
     } elsif ($k eq 'settings_sysinfo_real_time_status') {
-        my $yes_forced =
-"$theme_text{'settings_sysinfo_real_time_status_forced'} <sup @{[get_button_tooltip('settings_sysinfo_real_time_status_forced_warn')]} class=\"fa fa-exclamation-circle\"></sup>";
-        $v = ui_radio($k, $v, [[1, $text{'yes'}], [2, $yes_forced], [0, $text{'no'}]]);
+        $v = ui_radio($k, $v, [[1, $text{'yes'}], [0, $text{'no'}]]);
     } elsif ($k eq 'settings_right_table_links_type') {
         $v = ui_radio($k,
                       $v,

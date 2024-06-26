@@ -55,14 +55,14 @@ my $lock_file = "stats-server-locking";
 my $lock_file_checked = 0;
 while ($lock_file_checked < 3 && -r "$tempname_dir/$lock_file") {
     $lock_file_checked++;
-    sleep 1;
+    sleep(1);
 }
 my $lock = transname($lock_file);
 my $lockfh;
 open_tempfile($lockfh, ">$lock");
 print_tempfile($lockfh, $$);
 close_tempfile($lockfh);
-sleep 1;
+sleep(1);
 
 # Do we have an active socket?
 my %miniserv;
@@ -103,3 +103,6 @@ my $rs = system_logged(
 print_json({ success => !$rs, port => $port,
              socket => $get_socket->($port),
              new => 1, errlog => $logfile });
+
+# Make sure the server is up
+sleep(1);

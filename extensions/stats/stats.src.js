@@ -17,33 +17,30 @@ const stats = {
         activating: 0,
         requery: null,
         socket: null,
-        socketData: function () {
+        getSocketDefs: function () {
             return {
-                stack: this.get_stack(),
-                interval: this.timeout(),
-                running: this.enabled(),
-                shutdown: 0, // Will be optional
                 session: session.server.data("session-hash"),
+                paused: 0,
+                history: this.request_history(),
+                interval: this.timeout(),
+                disable: !this.enabled(),
+                shutdown: settings_sysinfo_real_time_shutdown_on_last ? 1 : 0,
             };
         },
-        fetch: function (init) {
+        fetch: function () {
             if (this.enabled()) {
-                const socketData = this.socketData();
-                // Start signal on init
-                if (init) {
-                    this.socket.send(JSON.stringify(socketData));
-                    return;
-                }
+                const socketData = this.getSocketDefs();
                 // Update socket settings
-                const stack = this.get_stack();
-                if (stack || this.get_stack._) {
-                    this.get_stack._ = !this.get_stack._;
-                    socketData.stack = +this.get_stack._;
+                const history = this.request_history();
+                if (history || this.request_history._) {
+                    // console.log("Requesting history:", history);
+                    this.request_history._ = !this.request_history._;
+                    socketData.history = +this.request_history._;
                     this.socket.send(JSON.stringify(socketData));
                 }
             }
         },
-        get_stack: function () {
+        request_history: function () {
             return document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0;
         },
         timeout: () => {
@@ -60,16 +57,25 @@ const stats = {
         },
         disable: function () {
             if (this.socket) {
-                this.socket.close();
+                const socketData = this.getSocketDefs();
+                socketData.paused = 1;
+                this.socket.send(JSON.stringify(socketData));
             }
         },
         enable: function () {
             if (this.enabled()) {
                 if (this.socket) {
-                    this.socket.send(JSON.stringify(this.socketData()));
+                    this.socket.send(JSON.stringify(this.getSocketDefs()));
                 } else {
                     this.activate();
                 }
+            }
+        },
+        shutdown: function () {
+            if (this.socket) {
+                const socketData = this.getSocketDefs();
+                socketData.disable = 1;
+                this.socket.send(JSON.stringify(socketData));
             }
         },
         block: theme_updating,
@@ -142,18 +148,18 @@ const stats = {
                     // Do we have socket opened?
                     if (data.success) {
                         // Open socket
-                        console.warn("WebSocket allocated", data);
+                        console.warn("WebSocket connection opened", data);
                         this.socket = new WebSocket(data.socket);
                         this.socket.onopen = () => {
                             this.activating = 0;
-                            console.log("WebSocket connection established");
-                            this.active() && this.fetch(true);
+                            // console.log("WebSocket connection established");
+                            this.socket.send(JSON.stringify(this.getSocketDefs()));
                         };
                         this.socket.onmessage = (event) => {
                             const message = JSON.parse(event.data);
                             this.render(message);
-                            console.log("Received stats:", message);
-                            this.active() && this.fetch(false);
+                            // console.log("Received stats:", message);
+                            this.active() && this.fetch();
                         };
                         this.socket.onclose = () => {
                             console.warn("WebSocket connection closed");
@@ -187,7 +193,7 @@ const stats = {
                     $lc = $(`.${this.selector.slider} .${target}_percent`),
                     $od = $(`#${this.selector.dashboard} span[data-id="sysinfo_${target}"], 
                              .${this.selector.slider} span[data-data="${target}"]`),
-                    cached = target === "fcached" ? 2 : target === "scached" ? 1 : 0;
+                    cached = target === "_history" ? 2 : target === "_current" ? 1 : 0;
 
                 if (Number.isInteger(v)) {
                     // Update pie-charts
