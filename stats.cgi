@@ -47,12 +47,27 @@ my $get_logfile = sub {
 # Get the socket URL
 my $get_socket = sub {
     my ($port) = @_;
-    return &get_miniserv_websocket_url($port, undef, $current_theme);
+    return get_miniserv_websocket_url($port, undef, $current_theme);
 };
+
+# Prevent race condition
+my $tempname_dir = tempname_dir();
+my $lock_file = "stats-server-locking";
+my $lock_file_checked = 0;
+while ($lock_file_checked < 3 && -r "$tempname_dir/$lock_file") {
+    $lock_file_checked++;
+    sleep 1;
+}
+my $lock = transname($lock_file);
+my $lockfh;
+open_tempfile($lockfh, ">$lock");
+print_tempfile($lockfh, $$);
+close_tempfile($lockfh);
+sleep 1;
 
 # Do we have an active socket?
 my %miniserv;
-&get_miniserv_config(\%miniserv);
+get_miniserv_config(\%miniserv);
 foreach my $k (keys %miniserv) {
     if ($k =~ /^websockets_\/$current_theme\/ws-(\d+)$/) {
         my $port = $1;
@@ -62,7 +77,7 @@ foreach my $k (keys %miniserv) {
 
         # Is this socket still active?
         my $err;
-        &open_socket($host, $port, my $fh, \$err);
+        open_socket($host, $port, my $fh, \$err);
         next if ($err);
         print_json({ success => 1, port => $port, new => 0,
                      socket => $get_socket->($port),
@@ -72,17 +87,17 @@ foreach my $k (keys %miniserv) {
 }
 
 # Allocate port
-my $port = &allocate_miniserv_websocket($current_theme);
+my $port = allocate_miniserv_websocket($current_theme);
 
 # Launch the stats server
 my $server_name = "stats.pl";
 my $statsserver_cmd = "$config_directory/$current_theme/$server_name";
-&create_wrapper($statsserver_cmd, $current_theme, $server_name)
+create_wrapper($statsserver_cmd, $current_theme, $server_name)
     if (!-r $statsserver_cmd);
 
 # Launch the server
 my $logfile = $get_logfile->($port);
-my $rs = &system_logged(
+my $rs = system_logged(
     "SESSION_ID=$main::session_id ".
     "$statsserver_cmd @{[quotemeta($port)]} ".
     ">$logfile 2>&1 </dev/null &");
