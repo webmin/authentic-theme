@@ -50,15 +50,16 @@ Net::WebSocket::Server->new(
             $serv->shutdown();
             return;
         }
+        # XXXXXX Use new API
         # Collect stats and send them to all connected clients unless paused
-        my $stats = encode_json(stats($history));
-        foreach my $conn_id (keys %{$serv->{'conns'}}) {
-            my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
-            if ($conn->{'verified'}) {
-                $conn->{'history'} = 0;
-                !$conn->{'paused'} && $conn->send_utf8($stats);
-            }
-        }
+        # my $stats = encode_json(stats($history));
+        # foreach my $conn_id (keys %{$serv->{'conns'}}) {
+        #     my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
+        #     if ($conn->{'verified'}) {
+        #         $conn->{'history'} = 0;
+        #         !$conn->{'paused'} && $conn->send_utf8($stats);
+        #     }
+        # }
         # If interval is set then sleep minus one
         # second becase tick_period is one second
         if ($serv->{'interval'} > 1) {
