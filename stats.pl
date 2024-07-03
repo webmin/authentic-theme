@@ -35,35 +35,38 @@ alarm(60);
 # Log successful connection
 error_stderr("WebSocket server is listening on port $port");
 
+# Get currently saved stats
+my $stats_histoy = get_stats_history();
+
 # Start WebSocket server
 Net::WebSocket::Server->new(
     listen     => $port,
     tick_period => 1,
     on_tick => sub {
         my ($serv) = @_;
-        # Has any connection requested full set of stats
-        my $history = grep {
-                $serv->{'conns'}->{$_}->{'conn'}->{'history'} }
-                    keys %{$serv->{'conns'}};
         # If asked to stop running, then shut down the server
         if ($serv->{'disable'}) {
             $serv->shutdown();
             return;
         }
-        # XXXXXX Use new API
-        # Collect stats and send them to all connected clients unless paused
-        # my $stats = encode_json(stats($history));
-        # foreach my $conn_id (keys %{$serv->{'conns'}}) {
-        #     my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
-        #     if ($conn->{'verified'}) {
-        #         $conn->{'history'} = 0;
-        #         !$conn->{'paused'} && $conn->send_utf8($stats);
-        #     }
-        # }
+        # Collect current stats and send them to all connected
+        # clients unless paused for some client
+        my $stats_now = encode_json(get_stats_real());
+        foreach my $conn_id (keys %{$serv->{'conns'}}) {
+            my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
+            if ($conn->{'verified'} && !$conn->{'paused'}) {
+                $conn->send_utf8($stats_now);
+            }
+        }
         # If interval is set then sleep minus one
         # second becase tick_period is one second
         if ($serv->{'interval'} > 1) {
             sleep($serv->{'interval'}-1);
+        }
+
+        # Save stats to history
+        if ($serv->{'ticked'}++ % 30 == 0) {
+            # XXXX
         }
     },
     on_connect => sub {
@@ -104,7 +107,6 @@ Net::WebSocket::Server->new(
                 }
                 # Update connection variables
                 $conn->{'paused'} = $data->{'paused'} // 0;
-                $conn->{'history'} = $data->{'history'} // 0;
                 # Update WebSocket server variables
                 $serv->{'interval'} = $data->{'interval'} // 1;
                 $serv->{'disable'} = $data->{'disable'} // 0;

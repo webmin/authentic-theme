@@ -13,73 +13,11 @@
 // Stats module
 const stats = {
     sys: {
+        // Define variables
         error: 0,
         activating: 0,
         requery: null,
         socket: null,
-        getSocketDefs: function () {
-            return {
-                session: session.server.data("session-hash"),
-                paused: 0,
-                history: this.request_history(),
-                interval: this.timeout(),
-                disable: !this.enabled(),
-                shutdown: settings_sysinfo_real_time_shutdown_on_last ? 1 : 0,
-            };
-        },
-        fetch: function () {
-            if (this.enabled()) {
-                const socketData = this.getSocketDefs();
-                // Update socket settings
-                const history = this.request_history();
-                if (history || this.request_history._) {
-                    // console.log("Requesting history:", history);
-                    this.request_history._ = !this.request_history._;
-                    socketData.history = +this.request_history._;
-                    this.socket.send(JSON.stringify(socketData));
-                }
-            }
-        },
-        request_history: function () {
-            return document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0;
-        },
-        timeout: () => {
-            return settings_sysinfo_real_time_run_rate / 1000;
-        },
-        active: () => {
-            return theme.visibility.get();
-        },
-        stored_length: () => {
-            return settings_sysinfo_real_time_stored_duration;
-        },
-        enabled: () => {
-            return settings_sysinfo_real_time_status ? 1 : 0;
-        },
-        disable: function () {
-            if (this.socket) {
-                const socketData = this.getSocketDefs();
-                socketData.paused = 1;
-                this.socket.send(JSON.stringify(socketData));
-            }
-        },
-        enable: function () {
-            if (this.enabled()) {
-                if (this.socket) {
-                    this.socket.send(JSON.stringify(this.getSocketDefs()));
-                } else {
-                    this.activate();
-                }
-            }
-        },
-        shutdown: function () {
-            if (this.socket) {
-                const socketData = this.getSocketDefs();
-                socketData.disable = 1;
-                this.socket.send(JSON.stringify(socketData));
-            }
-        },
-        block: theme_updating,
-
         // Import globals
         /* jshint -W117 */
         _: {
@@ -97,9 +35,12 @@ const stats = {
                     return get_utc_offset();
                 },
             },
+            blocked: theme_updating,
+            getHistoryData: function (data) {
+                return vars.stats.history;
+            },
         },
-
-        // Define selectors
+        // Define reusable selectors
         selector: {
             chart: {
                 container: {
@@ -113,20 +54,91 @@ const stats = {
             slider: "info-container",
             piechart: "piechart",
         },
-
-        // Get data
-        activate: function () {
-            if (this.activating++) {
-                return;
+        // Get current data to submit to the socket
+        getSocketDefs: function () {
+            return {
+                session: session.server.data("session-hash"),
+                paused: !this.runRender() ? 1 : 0,
+                interval: this.getInterval(),
+                disable: !this.isEnabled() ? 1 : 0,
+                shutdown: settings_sysinfo_real_time_shutdown_on_last ? 1 : 0,
+            };
+        },
+        // Update settings for the current client on the socket server
+        updateSocket: function () {
+            if (this.isEnabled() && this.socket) {
+                const socketData = this.getSocketDefs();
+                // Update socket settings
+                this.socket.send(JSON.stringify(socketData));
             }
-            if (this.block()) {
-                return;
-            }
+        },
+        // Check if graphs can be rendered
+        graphsCanPreRender: function () {
+            return document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0;
+        },
+        // Get interval call for the stats update
+        getInterval: function () {
+            return settings_sysinfo_real_time_run_rate / 1000;
+        },
+        // Get the stored data duration period (e.g., from 300 to 3600 seconds)
+        getStoredDuration: function () {
+            return settings_sysinfo_real_time_stored_duration;
+        },
+        // Can we update the stats in the UI?
+        runRender: function() {
+            return theme.visibility.get();
+        },
+        // Check if the stats are enabled
+        isEnabled: function () {
+            return settings_sysinfo_real_time_status ? 1 : 0;
+        },
+        // Restart the stats by shutting down and enabling them
+        restart: function () {
+            this.shutdown();
+            setTimeout(() => {
+                this.enable();
+            }, this.getInterval() * 1000 * 3);
+        },
+        // Disable the stats broadcast for the client
+        disable: function () {
             if (this.socket) {
+                const socketData = this.getSocketDefs();
+                socketData.paused = 1;
+                this.socket.send(JSON.stringify(socketData));
+            }
+        },
+        // Enable the stats broadcast for the client
+        enable: function () {
+            if (this.isEnabled()) {
+                if (this.graphsCanPreRender()) {
+                    this.preRender();
+                }
+                if (this.socket) {
+                    this.socket.send(JSON.stringify(this.getSocketDefs()));
+                } else {
+                    this.activate();
+                }
+            }
+        },
+        // Shutdown the stats broadcast for all
+        // clients by shutting down the socket
+        shutdown: function () {
+            if (this.socket) {
+                const socketData = this.getSocketDefs();
+                socketData.disable = 1;
+                this.socket.send(JSON.stringify(socketData));
+            }
+        },
+
+        // Activate the stats server unless already up and open
+        // the socket to receive the data for the current tab
+        activate: function () {
+            // Already called for this tab?
+            if (this.activating++ ||
+                this._.blocked() ||
+                this.socket) {
                 return;
             }
-
-            // Live charts already loaded
             $.ajax({
                 context: this,
                 url: `${this._.prefix}/stats.cgi`,
@@ -142,7 +154,7 @@ const stats = {
                         (this.requery = setTimeout(() => {
                             this.requery = null;
                             this.activate();
-                        }, this.timeout() * 1000));
+                        }, this.getInterval() * 1000));
                 },
                 success: function (data) {
                     // Do we have socket opened?
@@ -150,24 +162,34 @@ const stats = {
                         // Open socket
                         console.warn("WebSocket connection opened", data);
                         this.socket = new WebSocket(data.socket);
+                        // On socket open
                         this.socket.onopen = () => {
                             this.activating = 0;
-                            console.log("WebSocket connection established", this.getSocketDefs());
-                            this.socket.send(JSON.stringify(this.getSocketDefs()));
+                            console.log("WebSocket connection established",
+                                    this.getSocketDefs());
+                            this.socket.send(
+                                JSON.stringify(this.getSocketDefs()));
                         };
+                        // On socket message
                         this.socket.onmessage = (event) => {
                             const message = JSON.parse(event.data);
                             this.render(message);
                             console.log("Received stats:", message);
-                            this.active() && this.fetch();
+                            // Pause stats broadcast for this client
+                            // if the tab is not visible
+                            if (this.runRender.last != this.runRender()) {
+                                    this.runRender.last = this.runRender();
+                                    this.updateSocket();
+                            }
                         };
+                        // On socket close
                         this.socket.onclose = () => {
                             console.warn("WebSocket connection closed");
                             setTimeout(() => {
                                 this.socket = null;
                                 this.activating = 0;
                                 this.enable();
-                            }, this.timeout());
+                            }, this.getInterval());
                         };
                     } else {
                         // Reset activating flag
@@ -180,8 +202,13 @@ const stats = {
             });
         },
 
+        // Draw initial graphs either using stored data or empty placeholders
+        preRender: function () {
+            this.render(this._.getHistoryData(), 2);
+        },
+
         // Display changes
-        render: function (data) {
+        render: function (data, graphs) {
             // Iterate through response
             Object.entries(data).map(([target, data]) => {
                 let v = parseInt(data),
@@ -193,8 +220,7 @@ const stats = {
                     $lc = $(`.${this.selector.slider} .${target}_percent`),
                     $od = $(`#${this.selector.dashboard} span[data-id="sysinfo_${target}"], 
                              .${this.selector.slider} span[data-data="${target}"]`),
-                    cached = target === "_history" ? 2 : target === "_current" ? 1 : 0;
-
+                    cached = target === "graphs" ? (graphs ? 2 : this.graphsCanPreRender() ? 2 : 1) : 0;
                 if (Number.isInteger(v)) {
                     // Update pie-charts
                     if ($pc.length) {
@@ -286,7 +312,7 @@ const stats = {
                         // Update series if chart already exist
                         if (tg[0] && tg[0].textContent) {
                             if (cached === 1) {
-                                let lf = parseInt(this.stored_length());
+                                let lf = parseInt(this.getStoredDuration());
                                 if (lf < 300 || lf > 3600) {
                                     lf = 600;
                                 }

@@ -27,6 +27,7 @@ our (%in,
 $trust_unknown_referers = 1;
 
 do($ENV{'THEME_ROOT'} . "/authentic-lib.pl");
+do($ENV{'THEME_ROOT'} . "/stats-lib-funcs.pl");
 
 header($title, 'stripped');
 
@@ -70,7 +71,11 @@ if ($get_user_level ne '3') {
     if ($theme_config{'settings_sysinfo_easypie_charts'} ne 'false') {
         print_easypie_charts($cpu_percent, $mem_percent, $virt_percent, $disk_percent);
     }
+    
+    # Pre-load history data
+    print '<script type="text/javascript">vars.stats.history = ' . convert_to_json(get_stats_history()) . ';</script>' . "\n";
 
+    # Print system info table
     print '<table class="table table-hover margined-top-25"><tbody>' . "\n";
 
     my @table_data;
@@ -195,6 +200,7 @@ if ($get_user_level ne '3') {
     print_sysstats_panel_end();
 
     print get_extended_sysinfo(\@info, '-1');
+    print '<script type="text/javascript">typeof stats === "object" && stats.sys.preRender();</script>' . "\n";
 
 } else {
 
