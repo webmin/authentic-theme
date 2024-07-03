@@ -1,5 +1,4 @@
 body_cputype1=$5、$8 核心
-
 settings_right_logos_title=主题徽标可在此轻松设置，适用于已认证和未认证的用户。建议徽标尺寸为 <em>180x90</em> 像素。
 settings_right_logos_error=上传的文件不是图片
 
@@ -370,7 +369,6 @@ theme_xhred_global_module_preferences=模块首选项
 
 #19.74
 theme_xhred_theme_update_available=安装了新版本的Authentic Theme
-
 settings_right_page_keep=在域交换机上加载同一页面
 settings_right_page_keep_description=从导航菜单下拉列表中更改后，此选项将尝试在选择域时加载同一页面
 
@@ -591,3 +589,7 @@ theme_xhred_global_disconnected=断开连接
 theme_xhred_global_connecting=正在连接
 index_mods_missing=Perl 模块 <tt>$1</tt> 缺失。
 index_noadmin_eaccess=拒绝非主管理员访问！
+theme_xhred_body_os=操作系统
+theme_xhred_theme_version=正宗主题版本
+
+theme_xhred_body_updates=程序包更新

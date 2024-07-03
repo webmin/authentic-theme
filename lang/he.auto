@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=מְנוּתָק
 theme_xhred_global_connecting=מְקַשֵׁר
 index_mods_missing=מודול Perl <tt>$1</tt> חסר.
 index_noadmin_eaccess=הגישה נדחתה למנהלים שאינם מנהלי מערכת!
+theme_xhred_body_os=מערכת הפעלה
+theme_xhred_theme_version=גרסת נושא אותנטית
+theme_xhred_body_updates=עדכוני חבילה

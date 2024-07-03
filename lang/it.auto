@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 nucleo
-
 settings_right_logos_title=I loghi dei temi possono essere facilmente impostati qui, sia per gli utenti autenticati che per quelli non autenticati. La dimensione consigliata del logo è <em>180x90</em> pixel.
 settings_right_logos_error=Il file caricato non è un'immagine
 
@@ -260,3 +259,7 @@ theme_xhred_global_disconnected=Disconnesso
 theme_xhred_global_connecting=Connessione
 index_mods_missing=Manca il modulo Perl <tt>$1</tt>.
 index_noadmin_eaccess=Accesso negato agli amministratori non master!
+theme_xhred_body_os=Sistema operativo
+theme_xhred_theme_version=Versione a tema autentica
+
+theme_xhred_body_updates=Aggiornamenti del pacchetto

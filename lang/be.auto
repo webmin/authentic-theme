@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Адключана
 theme_xhred_global_connecting=Падключэнне
 index_mods_missing=Модуль Perl <tt>$1</tt> адсутнічае.
 index_noadmin_eaccess=Доступ забаронены адміністратарам, якія не з'яўляюцца галоўнымі!
+theme_xhred_body_os=Аперацыйная сістэма
+theme_xhred_theme_version=Аўтэнтычная версія тэмы
+theme_xhred_body_updates=Абнаўленні пакетаў

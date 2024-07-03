@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 kerne
-
 settings_right_options=Muligheder
 settings_right_restore_defaults=Gendanne standardindstillingerne
 settings_right_restored=Restaureret
@@ -1299,3 +1298,6 @@ theme_xhred_global_disconnected=Afbrudt
 theme_xhred_global_connecting=Tilslutning
 index_mods_missing=Perl-modulet <tt>$1</tt> mangler.
 index_noadmin_eaccess=Adgang nægtet for ikke-masteradministratorer!
+theme_xhred_body_os=Operativ system
+theme_xhred_theme_version=Autentisk temaversion
+theme_xhred_body_updates=Pakkeopdateringer

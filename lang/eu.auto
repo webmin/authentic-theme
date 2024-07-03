@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Deskonektatuta
 theme_xhred_global_connecting=Konektatzen
 index_mods_missing=<tt>$1</tt> Perl modulua falta da.
 index_noadmin_eaccess=Sarbidea ukatu zaie maisu ez diren administratzaileei!
+theme_xhred_body_os=Sistema eragilea
+theme_xhred_theme_version=Benetako gaiaren bertsioa
+theme_xhred_body_updates=Paketeen eguneraketak

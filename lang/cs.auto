@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 jádra
-
 settings_right_logos_title=Loga motivů lze zde snadno nastavit pro ověřené i neověřené uživatele. Doporučená velikost loga je <em>180 x 90</em> pixelů.
 settings_right_logos_error=Nahraný soubor není obrázek
 
@@ -1246,3 +1245,6 @@ theme_xhred_global_disconnected=Odpojeno
 theme_xhred_global_connecting=Spojovací
 index_mods_missing=Chybí modul Perl <tt>$1</tt>.
 index_noadmin_eaccess=Přístup odepřen správcům, kteří nejsou hlavními administrátory!
+theme_xhred_body_os=Operační systém
+theme_xhred_theme_version=Autentická verze motivu
+theme_xhred_body_updates=Aktualizace balíčků

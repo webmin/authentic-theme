@@ -1,5 +1,4 @@
 body_cputype1=$5、$8コア
-
 theme_xhred_login_pass=パスワード
 theme_xhred_login_token=トークン
 theme_xhred_login_user=ユーザー名
@@ -142,7 +141,6 @@ theme_xhred_global_module_preferences=モジュール設定
 
 #19.74
 theme_xhred_theme_update_available=AuthenticThemeの新しいバージョンがインストールされます
-
 settings_right_page_keep=ドメインスイッチに同じページを読み込む
 settings_right_page_keep_description=このオプションは、ナビゲーションメニューのドロップダウンリストから変更すると、ドメインの選択時に同じページを読み込もうとします。
 
@@ -363,3 +361,7 @@ theme_xhred_global_disconnected=切断
 theme_xhred_global_connecting=接続中
 index_mods_missing=Perl モジュール <tt>$1</tt> がありません。
 index_noadmin_eaccess=マスター管理者以外のアクセスは拒否されました。
+theme_xhred_body_os=オペレーティング·システム
+theme_xhred_theme_version=本格テーマバージョン
+
+theme_xhred_body_updates=パッケージの更新

@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=已斷開連接
 theme_xhred_global_connecting=連接中
 index_mods_missing=Perl 模組 <tt>$1</tt> 遺失。
 index_noadmin_eaccess=非主管理員拒絕存取！
+theme_xhred_body_os=作業系統
+theme_xhred_theme_version=正版主題版本
+theme_xhred_body_updates=套餐更新

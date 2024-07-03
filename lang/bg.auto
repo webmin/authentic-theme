@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Прекъсната връзка
 theme_xhred_global_connecting=Свързване
 index_mods_missing=Модулът на Perl <tt>$1</tt> липсва.
 index_noadmin_eaccess=Достъпът е отказан на администратори, които не са главни!
+theme_xhred_body_os=Операционна система
+theme_xhred_theme_version=Автентична версия на темата
+theme_xhred_body_updates=Актуализации на пакети

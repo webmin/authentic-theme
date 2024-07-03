@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=연결이 끊김
 theme_xhred_global_connecting=연결 중
 index_mods_missing=Perl 모듈 <tt>$1</tt>이(가) 없습니다.
 index_noadmin_eaccess=마스터 관리자가 아닌 사용자의 접근이 거부되었습니다!
+theme_xhred_body_os=운영 체제
+theme_xhred_theme_version=정통 테마 버전
+theme_xhred_body_updates=패키지 업데이트

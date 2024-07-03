@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Atjungtas
 theme_xhred_global_connecting=Prisijungimas
 index_mods_missing=Trūksta Perl modulio <tt>$1</tt>.
 index_noadmin_eaccess=Ne pagrindiniams administratoriams prieiga uždrausta!
+theme_xhred_body_os=Operacinė sistema
+theme_xhred_theme_version=Autentiška temos versija
+theme_xhred_body_updates=Paketo atnaujinimai

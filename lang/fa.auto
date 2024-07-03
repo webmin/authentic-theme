@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=قطع شده
 theme_xhred_global_connecting=برقراری ارتباط
 index_mods_missing=ماژول پرل <tt>$1</tt> وجود ندارد.
 index_noadmin_eaccess=دسترسی به مدیران غیر اصلی ممنوع شد!
+theme_xhred_body_os=سیستم عامل
+theme_xhred_theme_version=نسخه تم معتبر
+theme_xhred_body_updates=به روز رسانی بسته

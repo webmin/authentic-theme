@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=منقطع
 theme_xhred_global_connecting=جڑ رہا ہے۔
 index_mods_missing=The Perl module <tt>$1</tt> is missing.
 index_noadmin_eaccess=غیر ماسٹر ایڈمنسٹریٹرز تک رسائی سے انکار!
+theme_xhred_body_os=آپریٹنگ سسٹم
+theme_xhred_theme_version=مستند تھیم ورژن
+theme_xhred_body_updates=پیکیج اپ ڈیٹس

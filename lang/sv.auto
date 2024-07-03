@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 kärna
-
 settings_right_logos_title=Temalogotyper kan enkelt ställas in här, för både autentiserade och oautentiserade användare. Rekommenderad logotypstorlek är <em>180x90</em> pixlar.
 settings_right_logos_error=Uppladdad fil är inte en bild
 
@@ -138,3 +137,7 @@ theme_xhred_global_disconnected=Osammanhängande
 theme_xhred_global_connecting=Ansluter
 index_mods_missing=Perl-modulen <tt>$1</tt> saknas.
 index_noadmin_eaccess=Åtkomst nekad för icke-masteradministratörer!
+theme_xhred_body_os=Operativ system
+theme_xhred_theme_version=Autentisk temaversion
+
+theme_xhred_body_updates=Paketuppdateringar

@@ -1459,3 +1459,6 @@ theme_xhred_global_disconnected=Disconnected
 theme_xhred_global_connecting=Connecting
 index_mods_missing=The Perl module <tt>$1</tt> is missing.
 index_noadmin_eaccess=Access denied to non-master administrators!
+theme_xhred_body_os=Operating system
+theme_xhred_theme_version=Authentic theme version
+theme_xhred_body_updates=Package updates

@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Ασύνδετος
 theme_xhred_global_connecting=Συνδετικός
 index_mods_missing=Η λειτουργική μονάδα Perl <tt>$1</tt> λείπει.
 index_noadmin_eaccess=Δεν επιτρέπεται η πρόσβαση σε μη κύριους διαχειριστές!
+theme_xhred_body_os=Λειτουργικό σύστημα
+theme_xhred_theme_version=Αυθεντική έκδοση θέματος
+theme_xhred_body_updates=Ενημερώσεις πακέτων

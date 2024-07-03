@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Skonnettjat
 theme_xhred_global_connecting=Konnessjoni
 index_mods_missing=Il-modulu Perl <tt>$1</tt> huwa nieqes.
 index_noadmin_eaccess=Aċċess miċħud lil amministraturi mhux kaptan!
+theme_xhred_body_os=Sistema operattiva
+theme_xhred_theme_version=Verżjoni tat-tema awtentika
+theme_xhred_body_updates=Aġġornamenti tal-pakkett

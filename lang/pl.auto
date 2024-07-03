@@ -1304,3 +1304,6 @@ theme_xhred_global_disconnected=Bezładny
 theme_xhred_global_connecting=Złączony
 index_mods_missing=Brak modułu Perla <tt>$1</tt>.
 index_noadmin_eaccess=Odmowa dostępu administratorom innym niż główny!
+theme_xhred_body_os=System operacyjny
+theme_xhred_theme_version=Autentyczna wersja motywu
+theme_xhred_body_updates=Aktualizacje pakietów

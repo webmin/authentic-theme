@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=ตัดการเชื่อมต่อแ
 theme_xhred_global_connecting=กำลังเชื่อมต่อ
 index_mods_missing=โมดูล Perl <tt>$1</tt> หายไป
 index_noadmin_eaccess=การเข้าถึงถูกปฏิเสธสำหรับผู้ดูแลระบบที่ไม่ใช่ผู้เชี่ยวชาญ!
+theme_xhred_body_os=ระบบปฏิบัติการ
+theme_xhred_theme_version=เวอร์ชันธีมแท้
+theme_xhred_body_updates=อัพเดตแพ็คเกจ

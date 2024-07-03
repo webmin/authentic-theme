@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 núcleo
-
 settings_right_options=Opciones
 settings_right_restore_defaults=Restaurar los valores predeterminados
 settings_right_restored=Restaurado
@@ -1298,3 +1297,6 @@ theme_xhred_global_disconnected=Desconectado
 theme_xhred_global_connecting=Conectando
 index_mods_missing=Falta el módulo Perl <tt>$1</tt>.
 index_noadmin_eaccess=¡Acceso denegado a administradores no maestros!
+theme_xhred_body_os=Sistema operativo
+theme_xhred_theme_version=Versión del tema auténtico
+theme_xhred_body_updates=Actualizaciones de paquetes

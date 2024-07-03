@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Szétkapcsolt
 theme_xhred_global_connecting=Csatlakozás
 index_mods_missing=Hiányzik a <tt>$1</tt> Perl modul.
 index_noadmin_eaccess=A nem főadminisztrátorok hozzáférése megtagadva!
+theme_xhred_body_os=Operációs rendszer
+theme_xhred_theme_version=Hiteles téma verzió
+theme_xhred_body_updates=Csomagfrissítések

@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Odpojené
 theme_xhred_global_connecting=Pripája sa
 index_mods_missing=Chýba modul Perl <tt>$1</tt>.
 index_noadmin_eaccess=Nehlavným administrátorom bol prístup odmietnutý!
+theme_xhred_body_os=Operačný systém
+theme_xhred_theme_version=Autentická verzia motívu
+theme_xhred_body_updates=Aktualizácie balíkov

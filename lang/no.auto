@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 kjerne
-
 settings_right_logos_title=Temalogoer kan enkelt settes her, for både autentiserte og uautentiserte brukere. Anbefalt logostørrelse er <em>180x90</em> piksler.
 settings_right_logos_error=Den opplastede filen er ikke et bilde
 
@@ -103,7 +102,6 @@ theme_xhred_global_module_preferences=Modulinnstillinger
 
 #19.74
 theme_xhred_theme_update_available=En ny versjon av Authentic Theme er installert
-
 settings_right_page_keep=Last inn samme side på domenebryteren
 settings_right_page_keep_description=Dette alternativet vil prøve å laste inn den samme siden ved valg av domene, når den endres fra rullegardinlisten til navigasjonsmenyen
 
@@ -324,3 +322,7 @@ theme_xhred_global_disconnected=Koblet fra
 theme_xhred_global_connecting=Kobler til
 index_mods_missing=Perl-modulen <tt>$1</tt> mangler.
 index_noadmin_eaccess=Tilgang nektet for ikke-masteradministratorer!
+theme_xhred_body_os=Operativsystem
+theme_xhred_theme_version=Autentisk temaversjon
+
+theme_xhred_body_updates=Pakkeoppdateringer

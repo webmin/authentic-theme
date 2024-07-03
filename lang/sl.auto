@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Prekinjena povezava
 theme_xhred_global_connecting=Povezovanje
 index_mods_missing=Modul Perl <tt>$1</tt> manjka.
 index_noadmin_eaccess=Dostop zavrnjen skrbnikom, ki niso glavni!
+theme_xhred_body_os=Operacijski sistem
+theme_xhred_theme_version=Verodostojna različica teme
+theme_xhred_body_updates=Posodobitve paketov

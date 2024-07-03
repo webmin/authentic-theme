@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=انقطع الاتصال
 theme_xhred_global_connecting=توصيل
 index_mods_missing=وحدة Perl <tt>$1</tt> مفقودة.
 index_noadmin_eaccess=تم رفض الوصول للمسؤولين غير الرئيسيين!
+theme_xhred_body_os=نظام التشغيل
+theme_xhred_theme_version=نسخة موضوع أصيلة
+theme_xhred_body_updates=تحديثات الحزمة

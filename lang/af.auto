@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Ontkoppel
 theme_xhred_global_connecting=Verbind
 index_mods_missing=Die Perl-module <tt>$1</tt> ontbreek.
 index_noadmin_eaccess=Toegang geweier aan nie-meester administrateurs!
+theme_xhred_body_os=Bedryfstelsel
+theme_xhred_theme_version=Outentieke tema weergawe
+theme_xhred_body_updates=Pakketopdaterings

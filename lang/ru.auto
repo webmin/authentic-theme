@@ -956,7 +956,6 @@ theme_xhred_global_module_preferences=Настройки модуля
 
 #19.74
 theme_xhred_theme_update_available=Установлена новая версия Authentic Theme
-
 settings_right_page_keep=Загрузить ту же страницу при переключении домена
 settings_right_page_keep_description=Этот параметр будет пытаться загрузить ту же страницу при выборе домена, если он изменен в раскрывающемся списке меню навигации.
 
@@ -1177,3 +1176,7 @@ theme_xhred_global_disconnected=Отключено
 theme_xhred_global_connecting=Подключение
 index_mods_missing=Модуль Perl <tt>$1</tt> отсутствует.
 index_noadmin_eaccess=Доступ запрещен лицам, не являющимся главными администраторами!
+theme_xhred_body_os=Операционная система
+theme_xhred_theme_version=Версия темы Authentic
+
+theme_xhred_body_updates=Обновления пакетов

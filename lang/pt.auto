@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 núcleo
-
 left_favorites=Favoritos
 left_favorites_no=Ainda não foram adicionados favoritos. ..
 
@@ -1304,3 +1303,6 @@ theme_xhred_global_disconnected=Desconectado
 theme_xhred_global_connecting=Conectando
 index_mods_missing=O módulo Perl <tt>$1</tt> está faltando.
 index_noadmin_eaccess=Acesso negado a administradores não mestres!
+theme_xhred_body_os=Sistema operacional
+theme_xhred_theme_version=Versão autêntica do tema
+theme_xhred_body_updates=Atualizações de pacote

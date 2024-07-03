@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 kern
-
 settings_right_logos_title=Themalogo's kunnen hier eenvoudig worden ingesteld, voor zowel geverifieerde als niet-geverifieerde gebruikers. Het aanbevolen logoformaat is <em>180 x 90</em> pixels.
 settings_right_logos_error=Het geüploade bestand is geen afbeelding
 
@@ -1276,3 +1275,6 @@ theme_xhred_global_disconnected=Losgekoppeld
 theme_xhred_global_connecting=Verbinden
 index_mods_missing=De Perl-module <tt>$1</tt> ontbreekt.
 index_noadmin_eaccess=Toegang geweigerd aan niet-masterbeheerders!
+theme_xhred_body_os=Besturingssysteem
+theme_xhred_theme_version=Authentieke themaversie
+theme_xhred_body_updates=Pakketupdates

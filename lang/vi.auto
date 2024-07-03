@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Đã ngắt kết nối
 theme_xhred_global_connecting=Đang kết nối
 index_mods_missing=Mô-đun Perl <tt>$1</tt> bị thiếu.
 index_noadmin_eaccess=Quyền truy cập bị từ chối đối với quản trị viên không phải là quản trị viên chính!
+theme_xhred_body_os=Hệ điều hành
+theme_xhred_theme_version=Phiên bản chủ đề đích thực
+theme_xhred_body_updates=Cập nhật gói

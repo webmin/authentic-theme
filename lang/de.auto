@@ -1,5 +1,4 @@
 body_cputype1=$5, $8 Kern
-
 settings_right_logos_title=Hier können Sie ganz einfach Theme-Logos für authentifizierte und nicht authentifizierte Benutzer festlegen. Die empfohlene Logogröße beträgt <em>180 x 90</em> Pixel.
 settings_right_logos_error=Bei der hochgeladenen Datei handelt es sich nicht um ein Bild
 
@@ -133,7 +132,6 @@ theme_xhred_global_module_preferences=Moduleinstellungen
 
 #19.74
 theme_xhred_theme_update_available=Eine neue Version von Authentic Theme wird installiert
-
 settings_right_page_keep=Laden Sie dieselbe Seite auf den Domain-Switch
 settings_right_page_keep_description=Diese Option versucht, dieselbe Seite bei der Domänenauswahl zu laden, wenn sie aus der Dropdown-Liste des Navigationsmenüs geändert wird
 
@@ -354,3 +352,7 @@ theme_xhred_global_disconnected=Getrennt
 theme_xhred_global_connecting=Verbinden
 index_mods_missing=Das Perl-Modul <tt>$1</tt> fehlt.
 index_noadmin_eaccess=Zugriff für Nicht-Master-Administratoren verweigert!
+theme_xhred_body_os=Betriebssystem
+theme_xhred_theme_version=Authentische Themenversion
+
+theme_xhred_body_updates=Paketaktualisierungen

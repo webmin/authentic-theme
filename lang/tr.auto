@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Bağlantı kesildi
 theme_xhred_global_connecting=Bağlanıyor
 index_mods_missing=<tt>$1</tt> Perl modülü eksik.
 index_noadmin_eaccess=Yönetici olmayan yöneticilerin erişimi reddedildi!
+theme_xhred_body_os=İşletim sistemi
+theme_xhred_theme_version=Otantik tema sürümü
+theme_xhred_body_updates=Paket güncellemeleri

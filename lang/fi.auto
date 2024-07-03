@@ -1386,3 +1386,6 @@ theme_xhred_global_disconnected=Yhteys katkaistu
 theme_xhred_global_connecting=Yhdistetään
 index_mods_missing=Perl-moduuli <tt>$1</tt> puuttuu.
 index_noadmin_eaccess=Pääsy kielletty muille kuin pääjärjestelmänvalvojille!
+theme_xhred_body_os=Käyttöjärjestelmä
+theme_xhred_theme_version=Aito teemaversio
+theme_xhred_body_updates=Paketin päivitykset
