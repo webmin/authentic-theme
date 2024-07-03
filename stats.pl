@@ -35,9 +35,6 @@ alarm(60);
 # Log successful connection
 error_stderr("WebSocket server is listening on port $port");
 
-# Get currently saved stats
-my $stats_histoy = get_stats_history();
-
 # Start WebSocket server
 Net::WebSocket::Server->new(
     listen     => $port,
@@ -51,22 +48,29 @@ Net::WebSocket::Server->new(
         }
         # Collect current stats and send them to all connected
         # clients unless paused for some client
-        my $stats_now = encode_json(get_stats_real());
+        my $stats_now = get_stats_now();
+        my $stats_now_json = encode_json($stats_now);
         foreach my $conn_id (keys %{$serv->{'conns'}}) {
             my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
             if ($conn->{'verified'} && !$conn->{'paused'}) {
-                $conn->send_utf8($stats_now);
+                $conn->send_utf8($stats_now_json);
             }
+        }
+        # Cache stats to server
+        if (!defined($serv->{'stats'})) {
+            $serv->{'stats'} = $stats_now->{'graphs'};
+        } else {
+            $serv->{'stats'} = merge_stats($serv->{'stats'}, $stats_now->{'graphs'});
+        }
+        # Save stats to history and reset cache
+        if ($serv->{'ticked'}++ % 15 == 0) {
+            save_stats_history($serv->{'stats'});
+            $serv->{'stats'} = undef;
         }
         # If interval is set then sleep minus one
         # second becase tick_period is one second
         if ($serv->{'interval'} > 1) {
             sleep($serv->{'interval'}-1);
-        }
-
-        # Save stats to history
-        if ($serv->{'ticked'}++ % 30 == 0) {
-            # XXXX
         }
     },
     on_connect => sub {

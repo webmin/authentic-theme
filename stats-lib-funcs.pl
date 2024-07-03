@@ -50,7 +50,7 @@ my $time = time();
     };
 }
 
-sub get_stats_real
+sub get_stats_now
 {
     my %data;
     my $graphs = {};
@@ -205,15 +205,31 @@ sub trim_stats_history
     }
 }
 
+sub merge_stats {
+    my ($graphs1, $graphs2) = @_;
+    foreach my $key (keys %{$graphs2}) {
+        if (exists($graphs1->{$key})) {
+            push(@{$graphs1->{$key}}, @{$graphs2->{$key}});
+        } else {
+            $graphs1->{$key} = $graphs2->{$key};
+        }
+    }
+    return $graphs1;
+}
+
 sub save_stats_history
 {
     # Store complete dataset
-    my ($graphs)  = @_;
-    my $file = "$var_directory/modules/$current_theme".
-                    "/real-time-monitoring.json";
+    my ($graphs_chunk)  = @_;
+    # Load stored data
+    my $all_stats_histoy = get_stats_history()->{'graphs'};
+    # Merge data
+    my $graphs = merge_stats($all_stats_histoy, $graphs_chunk);
     # Trim dataset
     trim_stats_history($graphs);
     # Save data
+    my $file = "$var_directory/modules/$current_theme".
+                    "/real-time-monitoring.json";
     lock_file($file);
     write_file_contents($file, convert_to_json($graphs));
     unlock_file($file);
