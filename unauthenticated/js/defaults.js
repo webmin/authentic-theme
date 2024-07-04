@@ -143,7 +143,7 @@ var
     //
     // Options that are not presented on UI but could be controlled manually,
     // E.g. to change options below, you would need to open browser's console,
-    // change an option boolean value and call `theme.config.save()` function.
+    // change an option value and call `theme.config.save()` function.
     //
     settings_table_init_datatables = 20000,
     settings_right_page_hide_persistent_vscroll = true,
@@ -157,8 +157,8 @@ var
     settings_mailbox_slash_delimiter = true,
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
-    settings_sysinfo_real_time_run_rate = 2000,
-    settings_sysinfo_real_time_stored_duration = 1800,
+    settings_sysinfo_real_time_run_rate = 1000, // 1 second tick rate (the higher the less CPU intensive it is)
+    settings_sysinfo_real_time_stored_duration = 1200, // 20 minutes of stored stats data (max: 3600; min: 300)
     settings_sysinfo_real_time_shutdown_on_last = false,
     settings_sysinfo_cache_timeout = 86400,
     settings_sysinfo_cpu_fans_base_rpm = 1000,
