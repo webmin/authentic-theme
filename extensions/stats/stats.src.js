@@ -36,7 +36,7 @@ const stats = {
                 },
             },
             blocked: theme_updating,
-            getHistoryData: function (data) {
+            getHistoryData: function () {
                 return vars.stats.history;
             },
         },
