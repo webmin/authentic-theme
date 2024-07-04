@@ -182,13 +182,13 @@ const stats = {
                     // Do we have socket opened?
                     if (data.success) {
                         // Open socket
-                        console.warn("WebSocket connection opened", data);
+                        // console.warn("WebSocket connection opened", data);
                         this.socket = new WebSocket(data.socket);
                         // On socket open
                         this.socket.onopen = () => {
                             this.activating = 0;
-                            console.log("WebSocket connection established",
-                                    this.getSocketDefs());
+                            // console.log("WebSocket connection established",
+                            //         this.getSocketDefs());
                             this.socket.send(
                                 JSON.stringify(this.getSocketDefs()));
                         };
@@ -204,12 +204,12 @@ const stats = {
                             //     this.canRender.last = this.canRender();
                             //     this.updateSocket();
                             // }
-                            console.log("Received stats", renderType, message);
+                            // console.log("Received stats", renderType, message);
                             this.render(message, renderType);
                         };
                         // On socket close
                         this.socket.onclose = () => {
-                            console.warn("WebSocket connection closed");
+                            // console.warn("WebSocket connection closed");
                             setTimeout(() => {
                                 this.socket = null;
                                 this.activating = 0;
