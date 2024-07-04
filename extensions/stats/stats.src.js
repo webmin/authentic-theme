@@ -58,7 +58,7 @@ const stats = {
         getSocketDefs: function () {
             return {
                 session: session.server.data("session-hash"),
-                paused: !this.runRender() ? 1 : 0,
+                paused: !this.canRender() ? 1 : 0,
                 interval: this.getInterval(),
                 disable: !this.isEnabled() ? 1 : 0,
                 shutdown: settings_sysinfo_real_time_shutdown_on_last ? 1 : 0,
@@ -84,8 +84,24 @@ const stats = {
         getStoredDuration: function () {
             return settings_sysinfo_real_time_stored_duration;
         },
+        // Check if the received data has multiple datasets
+        getRenderType: function(graphs) {
+            graphs = graphs.graphs;
+            let hasMultipleDatasets = false;
+            for (const key in graphs) {
+                if (graphs.hasOwnProperty(key) && Array.isArray(graphs[key])) {
+                    if (graphs[key].length > 1) {
+                        hasMultipleDatasets = true;
+                        break;
+                    }
+                }
+            }
+            // Received graphs stats have history
+            // data (3) or a single slice (null)
+            return hasMultipleDatasets ? 3 : null;
+        },
         // Can we update the stats in the UI?
-        runRender: function() {
+        canRender: function() {
             return theme.visibility.get();
         },
         // Check if the stats are enabled
@@ -172,15 +188,17 @@ const stats = {
                         };
                         // On socket message
                         this.socket.onmessage = (event) => {
-                            const message = JSON.parse(event.data);
-                            this.render(message);
-                            console.log("Received stats:", message);
+                            const message = JSON.parse(event.data),
+                                  renderType = this.getRenderType(message);
                             // Pause stats broadcast for this client
                             // if the tab is not visible
-                            if (this.runRender.last != this.runRender()) {
-                                    this.runRender.last = this.runRender();
-                                    this.updateSocket();
+                            if (this.canRender.last != this.canRender()) {
+                               console.log("Visibility changed", this.canRender());
+                                this.canRender.last = this.canRender();
+                                this.updateSocket();
                             }
+                            console.log("Received stats", renderType, message);
+                            this.render(message, renderType);
                         };
                         // On socket close
                         this.socket.onclose = () => {
@@ -220,7 +238,8 @@ const stats = {
                     $lc = $(`.${this.selector.slider} .${target}_percent`),
                     $od = $(`#${this.selector.dashboard} span[data-id="sysinfo_${target}"], 
                              .${this.selector.slider} span[data-data="${target}"]`),
-                    cached = target === "graphs" ? (graphs ? 2 : this.graphsCanPreRender() ? 2 : 1) : 0;
+                    cached = target === "graphs" ? (graphs ? (graphs === 3 ? 3 : 2) : (this.graphsCanPreRender() ? 2 : 1)) : 0;
+                console.log('Mode', cached);
                 if (Number.isInteger(v)) {
                     // Update pie-charts
                     if ($pc.length) {
@@ -309,8 +328,9 @@ const stats = {
                             });
                         }
 
-                        // Update series if chart already exist
-                        if (tg[0] && tg[0].textContent) {
+                        // Update series if chart already
+                        // exist unless it's a re-draw
+                        if (tg[0] && tg[0].textContent && cached !== 3) {
                             if (cached === 1) {
                                 let lf = parseInt(this.getStoredDuration());
                                 if (lf < 300 || lf > 3600) {
@@ -344,8 +364,10 @@ const stats = {
                             }
                         }
 
-                        // Initialize chart the first time
-                        else if (cached === 2) {
+                        // Initialize chart the first time (2) or fully
+                        // update (3) the chart if it's already drawn
+                        else if (cached === 2 || cached === 3) {
+                            console.warn("Re-drawing chart", type);
                             this[`chart_${type}`] = new this._.chart.Line(
                                 tg[0],
                                 {

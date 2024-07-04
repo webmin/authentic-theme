@@ -144,13 +144,14 @@ sub get_stats_now
 
 sub get_stats_history
 {
+    my ($noempty) = @_;
     my $file = "$var_directory/modules/$current_theme".
                     "/real-time-monitoring.json";
     my $graphs = jsonify(read_file_contents($file));
     # No data yet
     if (!keys %{$graphs}) {
         unlink($file);
-        return get_stats_empty();
+        return $noempty ? undef : get_stats_empty();
     }
     # Check if data is right
     foreach my $k (keys %{$graphs}) {
@@ -174,7 +175,8 @@ sub get_stats_history
     trim_stats_history($graphs);
     # No data is available anymore
     if (!keys %{$graphs}) {
-        return get_stats_empty();
+        unlink($file);
+        return $noempty ? undef : get_stats_empty();
     }
     # Return data
     return { graphs => $graphs };

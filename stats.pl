@@ -46,21 +46,60 @@ Net::WebSocket::Server->new(
             $serv->shutdown();
             return;
         }
+        # Has any connection been unpaused?
+        my $unpaused = grep {
+                $serv->{'conns'}->{$_}->{'conn'}->{'pausing'} && 
+                !$serv->{'conns'}->{$_}->{'conn'}->{'paused'} }
+                    keys %{$serv->{'conns'}};
+        my $stats_history;
+        # Return full stats for the given user who was unpaused
+        # to make sure graphs are updated with most recent data
+        $stats_history = get_stats_history(1) if ($unpaused);
         # Collect current stats and send them to all connected
         # clients unless paused for some client
         my $stats_now = get_stats_now();
+        my $stats_now_graphs = $stats_now->{'graphs'};
         my $stats_now_json = encode_json($stats_now);
         foreach my $conn_id (keys %{$serv->{'conns'}}) {
             my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
             if ($conn->{'verified'} && !$conn->{'paused'}) {
+                # Unpaused connection needs full stats
+                if ($conn->{'pausing'}) {
+                    $conn->{'pausing'} = 0;
+                    my $stats_updated;
+                    # Merge stats from both disk data
+                    # and currently cached data
+                    if ($stats_history && $serv->{'stats'}) {
+                        $stats_now->{'graphs'} =
+                            merge_stats($stats_history->{'graphs'},
+                                        $serv->{'stats'});
+                        $stats_updated++;
+                    # If no cached data then use history
+                    } elsif ($stats_history) {
+                        $stats_now->{'graphs'} = $stats_history->{'graphs'};
+                        $stats_updated++;
+                    # If no history then use cached data
+                    } elsif ($serv->{'stats'}) {
+                        $stats_updated++;
+                        $stats_now->{'graphs'} = $serv->{'stats'};
+                    }
+                    # If stats were updated then merge
+                    # them with latest (now) data
+                    if ($stats_updated) {
+                        $stats_now->{'graphs'} =
+                            merge_stats($stats_now->{'graphs'},
+                                        $stats_now_graphs);
+                    }
+                    $stats_now_json = encode_json($stats_now);
+                }
                 $conn->send_utf8($stats_now_json);
             }
         }
         # Cache stats to server
         if (!defined($serv->{'stats'})) {
-            $serv->{'stats'} = $stats_now->{'graphs'};
+            $serv->{'stats'} = $stats_now_graphs;
         } else {
-            $serv->{'stats'} = merge_stats($serv->{'stats'}, $stats_now->{'graphs'});
+            $serv->{'stats'} = merge_stats($serv->{'stats'}, $stats_now_graphs);
         }
         # Save stats to history and reset cache
         if ($serv->{'ticked'}++ % 15 == 0) {
@@ -110,6 +149,7 @@ Net::WebSocket::Server->new(
                     }
                 }
                 # Update connection variables
+                $conn->{'pausing'} = $conn->{'paused'} // 0;
                 $conn->{'paused'} = $data->{'paused'} // 0;
                 # Update WebSocket server variables
                 $serv->{'interval'} = $data->{'interval'} // 1;
