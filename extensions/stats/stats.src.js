@@ -65,13 +65,14 @@ const stats = {
             };
         },
         // Update settings for the current client on the socket server
-        updateSocket: function () {
-            if (this.isEnabled() && this.socket) {
-                const socketData = this.getSocketDefs();
-                // Update socket settings
-                this.socket.send(JSON.stringify(socketData));
-            }
-        },
+        // updateSocket: function () {
+        //     if (this.isEnabled() && this.socket &&
+        //         this.socket.readyState === 1) {
+        //         const socketData = this.getSocketDefs();
+        //         // Update socket settings
+        //         this.socket.send(JSON.stringify(socketData));
+        //     }
+        // },
         // Check if graphs can be rendered
         graphsCanPreRender: function () {
             return document.querySelector(`[${this.selector.chart.loader}]`) ? 1 : 0;
@@ -117,7 +118,8 @@ const stats = {
         },
         // Disable the stats broadcast for the client
         disable: function () {
-            if (this.socket) {
+            if (this.socket && this.socket.readyState === 1) {
+                // console.warn("Disabling stats broadcast");
                 const socketData = this.getSocketDefs();
                 socketData.paused = 1;
                 this.socket.send(JSON.stringify(socketData));
@@ -126,12 +128,16 @@ const stats = {
         // Enable the stats broadcast for the client
         enable: function () {
             if (this.isEnabled()) {
+                // console.warn("Enabling stats broadcast");
                 if (this.graphsCanPreRender()) {
                     this.preRender();
                 }
                 if (this.socket) {
-                    this.socket.send(JSON.stringify(this.getSocketDefs()));
+                    // console.warn("Sending ..", this.socket.readyState === 1),
+                    this.socket.readyState === 1 &&
+                        this.socket.send(JSON.stringify(this.getSocketDefs()));
                 } else {
+                    // console.warn("Activating .."),
                     this.activate();
                 }
             }
@@ -139,7 +145,7 @@ const stats = {
         // Shutdown the stats broadcast for all
         // clients by shutting down the socket
         shutdown: function () {
-            if (this.socket) {
+            if (this.socket && this.socket.readyState === 1) {
                 const socketData = this.getSocketDefs();
                 socketData.disable = 1;
                 this.socket.send(JSON.stringify(socketData));
@@ -192,11 +198,12 @@ const stats = {
                                   renderType = this.getRenderType(message);
                             // Pause stats broadcast for this client
                             // if the tab is not visible
-                            if (this.canRender.last != this.canRender()) {
-                               console.log("Visibility changed", this.canRender());
-                                this.canRender.last = this.canRender();
-                                this.updateSocket();
-                            }
+                            // err: no need, as redundant with enable/disable?
+                            // if (this.canRender.last != this.canRender()) {
+                            //    console.log("Visibility changed", this.canRender());
+                            //     this.canRender.last = this.canRender();
+                            //     this.updateSocket();
+                            // }
                             console.log("Received stats", renderType, message);
                             this.render(message, renderType);
                         };
@@ -239,7 +246,6 @@ const stats = {
                     $od = $(`#${this.selector.dashboard} span[data-id="sysinfo_${target}"], 
                              .${this.selector.slider} span[data-data="${target}"]`),
                     cached = target === "graphs" ? (graphs ? (graphs === 3 ? 3 : 2) : (this.graphsCanPreRender() ? 2 : 1)) : 0;
-                console.log('Mode', cached);
                 if (Number.isInteger(v)) {
                     // Update pie-charts
                     if ($pc.length) {
@@ -367,7 +373,6 @@ const stats = {
                         // Initialize chart the first time (2) or fully
                         // update (3) the chart if it's already drawn
                         else if (cached === 2 || cached === 3) {
-                            console.warn("Re-drawing chart", type);
                             this[`chart_${type}`] = new this._.chart.Line(
                                 tg[0],
                                 {
