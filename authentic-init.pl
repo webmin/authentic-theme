@@ -1173,9 +1173,17 @@ sub get_button_style
     {
         $class = "success ";
         $icon  = "package-install fa-1_25x";
+    } elsif (string_contains($keys, "user_priv_create_view") ||
+             string_contains($keys, "dbase_addview")) {
+        $class = "success ";
+        $icon = "list";
+    } elsif (string_contains($keys, "dbase_add")) {
+        $class = "success ";
+        $icon  = "database-plus fa-1_25x";
     } elsif (string_contains($keys, "uninstall") ||
              string_contains($keys, "edit_uninst") ||
              string_contains($keys, "scripts_uok") ||
+             string_contains($keys, "scripts_utitle") ||
              string_contains($keys, "drecs_ok"))
     {
         $class = "danger ";
@@ -1391,14 +1399,13 @@ sub get_button_style
         $icon = "key";
     } elsif (string_contains($keys, "index_who")) {
         $icon = "sign-in";
-    } elsif (string_contains($keys, "dbase_add") || string_contains($keys, "databases_import")) {
+    } elsif (string_contains($keys, "databases_import")) {
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     } elsif (
-         (string_contains($keys, "add") && !string_contains($keys, "dbase_addview") && !string_contains($keys, "edit_addinc")
-         ) ||
-         (string_contains($keys, "create") &&
-            !string_contains($keys, "user_priv_create_view")) ||
+         (string_contains($keys, "add") &&
+          !string_contains($keys, "edit_addinc")) ||
+         string_contains($keys, "create") ||
          string_contains($keys, "index_crnow") ||
          string_contains($keys, "view_new")    ||
          string_contains($keys, "mass_ok")     ||
