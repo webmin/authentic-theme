@@ -160,10 +160,13 @@ const stats = {
         // the socket to receive the data for the current tab
         activate: function () {
             // Already called for this tab?
-            if (this.tried++ > 3 ||
-                this.activating++ ||
+            if (this.activating++ ||
                 this._.blocked() ||
                 this.socket) {
+                return;
+            }
+            // Tried too many times?
+            if (this.tried++ > 4) {
                 return;
             }
             $.ajax({
