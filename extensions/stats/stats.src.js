@@ -15,6 +15,7 @@ const stats = {
     sys: {
         // Define variables
         error: 0,
+        tried: 0,
         activating: 0,
         requery: null,
         socket: null,
@@ -159,7 +160,8 @@ const stats = {
         // the socket to receive the data for the current tab
         activate: function () {
             // Already called for this tab?
-            if (this.activating++ ||
+            if (this.tried++ > 3 ||
+                this.activating++ ||
                 this._.blocked() ||
                 this.socket) {
                 return;
@@ -189,6 +191,7 @@ const stats = {
                         this.socket = new WebSocket(data.socket);
                         // On socket open
                         this.socket.onopen = () => {
+                            this.tried = 0;
                             this.activating = 0;
                             // console.log("WebSocket connection established",
                             //         this.getSocketDefs());
