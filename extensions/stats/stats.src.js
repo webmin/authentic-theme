@@ -35,6 +35,7 @@ const stats = {
                     return get_utc_offset();
                 },
             },
+            can_conn_ws: can_conn_ws,
             blocked: theme_updating,
             getHistoryData: function () {
                 return vars.stats.history;
@@ -107,7 +108,9 @@ const stats = {
         },
         // Check if the stats are enabled
         isEnabled: function () {
-            return settings_sysinfo_real_time_status ? 1 : 0;
+            const stats_enabled = settings_sysinfo_real_time_status ? 1 : 0,
+                  stats_can = this._.can_conn_ws();
+            return stats_enabled && stats_can;
         },
         // Restart the stats by shutting down and enabling them
         restart: function () {
