@@ -1872,8 +1872,8 @@ sub init
     get_miniserv_config(\%tmp_miniserv);
     my $nolog = quotemeta('/stats.cgi?xhr-stats=general');
     $nolog =~ s/\\ / /g;
-    if ($tmp_miniserv{'nolog'} ne $nolog) {
-        $tmp_miniserv{'nolog'} = $nolog;
+    if ($tmp_miniserv{'nolog'} eq $nolog) {
+        delete($tmp_miniserv{'nolog'});
         put_miniserv_config(\%tmp_miniserv);
         reload_miniserv();
     }
