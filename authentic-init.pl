@@ -200,7 +200,7 @@ sub embed_favicon
             if (-w $theme_config_dir);
     };
 
-    print ' <script src="' . $theme_webprefix . '/service-worker.js" defer></script>' . "\n";
+    print ' <script src="' . $theme_webprefix . '/service-worker.js" type="application/javascript" defer></script>' . "\n";
     print ' <link ' .
         $ref_link .
         ' crossorigin="use-credentials" rel="manifest" href="' .
