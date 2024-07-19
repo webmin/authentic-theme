@@ -68,7 +68,6 @@ sub xhr
                 my @editor_hotkeys_values = $editor =~ /<tr.*?<td.*?<td.*?>(.*?)<\//gms;
                 my %editor_hotkeys_map;
                 @editor_hotkeys_map{(@editor_hotkeys_values)} = (@editor_hotkeys_labels);
-                my @hotkeys_editor;
                 foreach my $value (@editor_hotkeys_values) {
                     push(@hotkeys_editor, { key => $editor_hotkeys_map{$value}, title => $value });
                 }
