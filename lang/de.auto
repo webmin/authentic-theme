@@ -25,6 +25,9 @@ theme_xhred_sysinfo_wmdocs=Webmin-Dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin-Dokumentation
 theme_xhred_sysinfo_cmdocs=Cloudmin-Dokumentation
 
+theme_xhred_database_object_selected_delete2=Ausgewählte Tabelle löschen
+theme_xhred_database_objects_selected_delete2=Ausgewählte Tabellen löschen
+
 #18.40
 settings_hotkey_toggle_key_night_mode=Farbpalette umschalten
 

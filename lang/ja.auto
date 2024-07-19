@@ -33,6 +33,9 @@ theme_xhred_sysinfo_wmdocs=Webmin ドキュメント
 theme_xhred_sysinfo_vmdocs=Virtualmin のドキュメント
 theme_xhred_sysinfo_cmdocs=クラウドミンのドキュメント
 
+theme_xhred_database_object_selected_delete2=選択したテーブルを削除
+theme_xhred_database_objects_selected_delete2=選択したテーブルを削除
+
 #18.40
 settings_hotkey_toggle_key_night_mode=カラー パレットの切り替え
 

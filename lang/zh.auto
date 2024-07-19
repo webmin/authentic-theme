@@ -25,6 +25,9 @@ theme_xhred_sysinfo_wmdocs=Webmin 文档
 theme_xhred_sysinfo_vmdocs=虚拟文档
 theme_xhred_sysinfo_cmdocs=Cloudmin 文档
 
+theme_xhred_database_object_selected_delete2=删除选定的表
+theme_xhred_database_objects_selected_delete2=删除选定的表
+
 #18.40
 settings_hotkey_toggle_key_night_mode=切换调色板
 

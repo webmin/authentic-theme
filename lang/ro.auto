@@ -27,6 +27,9 @@ theme_xhred_sysinfo_wmdocs=Documentație Webmin
 theme_xhred_sysinfo_vmdocs=Documentația Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentația Cloudmin
 
+theme_xhred_database_object_selected_delete2=Aruncă tabelul selectat
+theme_xhred_database_objects_selected_delete2=Aruncă tabelele selectate
+
 #18.40
 settings_hotkey_toggle_key_night_mode=Comutați paleta de culori
 
