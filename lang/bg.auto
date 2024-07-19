@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Достъпът е отказан на администр
 theme_xhred_body_os=Операционна система
 theme_xhred_theme_version=Автентична версия на темата
 theme_xhred_body_updates=Актуализации на пакети
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Превключване на темата

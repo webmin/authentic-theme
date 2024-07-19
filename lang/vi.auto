@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Quyền truy cập bị từ chối đối với quản tr
 theme_xhred_body_os=Hệ điều hành
 theme_xhred_theme_version=Phiên bản chủ đề đích thực
 theme_xhred_body_updates=Cập nhật gói
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Chuyển chủ đề

@@ -1180,3 +1180,6 @@ theme_xhred_body_os=Операционная система
 theme_xhred_theme_version=Версия темы Authentic
 
 theme_xhred_body_updates=Обновления пакетов
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Переключить тему

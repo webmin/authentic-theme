@@ -731,3 +731,6 @@ theme_xhred_body_os=Sistema operatiu
 theme_xhred_theme_version=Versió temàtica autèntica
 
 theme_xhred_body_updates=Actualitzacions de paquets
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Canvia el tema

@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=غیر ماسٹر ایڈمنسٹریٹرز تک رسائی
 theme_xhred_body_os=آپریٹنگ سسٹم
 theme_xhred_theme_version=مستند تھیم ورژن
 theme_xhred_body_updates=پیکیج اپ ڈیٹس
+
+# 21.20
+theme_xhred_hotkey_switch_theme=تھیم سوئچ کریں۔

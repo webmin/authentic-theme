@@ -356,3 +356,6 @@ theme_xhred_body_os=Betriebssystem
 theme_xhred_theme_version=Authentische Themenversion
 
 theme_xhred_body_updates=Paketaktualisierungen
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Design wechseln

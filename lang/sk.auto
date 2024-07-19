@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Nehlavným administrátorom bol prístup odmietnutý!
 theme_xhred_body_os=Operačný systém
 theme_xhred_theme_version=Autentická verzia motívu
 theme_xhred_body_updates=Aktualizácie balíkov
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Prepnúť tému

@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=تم رفض الوصول للمسؤولين غير الر�
 theme_xhred_body_os=نظام التشغيل
 theme_xhred_theme_version=نسخة موضوع أصيلة
 theme_xhred_body_updates=تحديثات الحزمة
+
+# 21.20
+theme_xhred_hotkey_switch_theme=تبديل الموضوع

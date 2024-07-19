@@ -593,3 +593,6 @@ theme_xhred_body_os=操作系统
 theme_xhred_theme_version=正宗主题版本
 
 theme_xhred_body_updates=程序包更新
+
+# 21.20
+theme_xhred_hotkey_switch_theme=切换主题

@@ -1462,3 +1462,6 @@ index_noadmin_eaccess=Access denied to non-master administrators!
 theme_xhred_body_os=Operating system
 theme_xhred_theme_version=Authentic theme version
 theme_xhred_body_updates=Package updates
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Switch theme

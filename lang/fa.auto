@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=دسترسی به مدیران غیر اصلی ممنوع 
 theme_xhred_body_os=سیستم عامل
 theme_xhred_theme_version=نسخه تم معتبر
 theme_xhred_body_updates=به روز رسانی بسته
+
+# 21.20
+theme_xhred_hotkey_switch_theme=تغییر تم

@@ -1300,3 +1300,6 @@ index_noadmin_eaccess=¡Acceso denegado a administradores no maestros!
 theme_xhred_body_os=Sistema operativo
 theme_xhred_theme_version=Versión del tema auténtico
 theme_xhred_body_updates=Actualizaciones de paquetes
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Cambiar tema

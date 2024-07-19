@@ -800,3 +800,6 @@ theme_xhred_body_os=Sistem operasi
 theme_xhred_theme_version=Versi tema tulen
 
 theme_xhred_body_updates=Kemas kini pakej
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Tukar tema

@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Sarbidea ukatu zaie maisu ez diren administratzaileei!
 theme_xhred_body_os=Sistema eragilea
 theme_xhred_theme_version=Benetako gaiaren bertsioa
 theme_xhred_body_updates=Paketeen eguneraketak
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Aldatu gaia

@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=A nem főadminisztrátorok hozzáférése megtagadva!
 theme_xhred_body_os=Operációs rendszer
 theme_xhred_theme_version=Hiteles téma verzió
 theme_xhred_body_updates=Csomagfrissítések
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Téma váltása

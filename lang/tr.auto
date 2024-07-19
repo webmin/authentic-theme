@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Yönetici olmayan yöneticilerin erişimi reddedildi!
 theme_xhred_body_os=İşletim sistemi
 theme_xhred_theme_version=Otantik tema sürümü
 theme_xhred_body_updates=Paket güncellemeleri
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Temayı değiştir

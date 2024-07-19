@@ -426,3 +426,6 @@ theme_xhred_body_os=Sistem de operare
 theme_xhred_theme_version=Versiune tematică autentică
 
 theme_xhred_body_updates=Actualizări de pachete
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Schimbați tema

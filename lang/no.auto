@@ -326,3 +326,6 @@ theme_xhred_body_os=Operativsystem
 theme_xhred_theme_version=Autentisk temaversjon
 
 theme_xhred_body_updates=Pakkeoppdateringer
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Bytt tema

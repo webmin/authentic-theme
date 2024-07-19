@@ -1301,3 +1301,6 @@ index_noadmin_eaccess=Adgang nægtet for ikke-masteradministratorer!
 theme_xhred_body_os=Operativ system
 theme_xhred_theme_version=Autentisk temaversion
 theme_xhred_body_updates=Pakkeopdateringer
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Skift tema

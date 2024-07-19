@@ -1278,3 +1278,6 @@ index_noadmin_eaccess=Toegang geweigerd aan niet-masterbeheerders!
 theme_xhred_body_os=Besturingssysteem
 theme_xhred_theme_version=Authentieke themaversie
 theme_xhred_body_updates=Pakketupdates
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Van thema wisselen

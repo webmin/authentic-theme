@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Dostop zavrnjen skrbnikom, ki niso glavni!
 theme_xhred_body_os=Operacijski sistem
 theme_xhred_theme_version=Verodostojna različica teme
 theme_xhred_body_updates=Posodobitve paketov
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Zamenjaj temo

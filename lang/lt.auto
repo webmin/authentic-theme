@@ -1389,3 +1389,6 @@ index_noadmin_eaccess=Ne pagrindiniams administratoriams prieiga uždrausta!
 theme_xhred_body_os=Operacinė sistema
 theme_xhred_theme_version=Autentiška temos versija
 theme_xhred_body_updates=Paketo atnaujinimai
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Perjungti temą

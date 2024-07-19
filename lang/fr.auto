@@ -326,3 +326,6 @@ theme_xhred_body_os=Système opérateur
 theme_xhred_theme_version=Version thématique authentique
 
 theme_xhred_body_updates=Mises à jour des packages
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Changer de thème

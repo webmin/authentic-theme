@@ -263,3 +263,6 @@ theme_xhred_body_os=Sistema operativo
 theme_xhred_theme_version=Versione a tema autentica
 
 theme_xhred_body_updates=Aggiornamenti del pacchetto
+
+# 21.20
+theme_xhred_hotkey_switch_theme=Cambia tema
