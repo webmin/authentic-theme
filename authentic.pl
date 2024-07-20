@@ -674,14 +674,16 @@ sub theme_ui_form_end
 
 sub theme_ui_textbox
 {
-    my ($name, $value, $size, $dis, $max, $tags) = @_;
+    my ($name, $value, $size, $dis, $max, $tags, $class, $nostyle) = @_;
     my $rv;
 
     my $ids;
     $ids = "_i_$main::ui_textbox_tcalled" if ($main::ui_textbox_tcalled++);
-
+    $class = $class ? " $class" : "";
+    my $style = ' style="display: inline; width: auto; max-width: 100%; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle"';
+    $style = '' if ($nostyle);
     $rv .=
-'<input style="display: inline; width: auto; max-width: 100%; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle" class="form-control ui_textbox" type="text" ';
+"<input$style class=\"form-control ui_textbox$class\" type=\"text\" ";
     $rv .= 'id="' . &quote_escape($name . $ids) . '" ';
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
