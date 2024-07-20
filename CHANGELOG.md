@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 21.20.1 (July 20, 2024)
+* Fix not to attempt enabling stats in proxy mode
+* Fix to limit the number of potential tries to connect to the socket
+* Fix re-authentication modal leaking user password to Webmin logs
+
 #### Version 21.20 (July 8, 2024)
 * Add new way of collecting server stats using WebSocket connection for better efficiency
 * Add significant improvements in supporting keyboard navigation for the navigation menu
