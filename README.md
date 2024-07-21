@@ -86,16 +86,19 @@ Theme only re-renders this module and adds support for code highlight, when edit
 ## Donate
  It takes countless hours to develop and maintain this project. Donations show appreciation. Your donation would help me to pay my bills and _excite future development_.
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&lc=us&business=pay%40ilia%2eengineer&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">![](https://user-images.githubusercontent.com/4426533/226430276-086c5d38-597c-46b0-85d9-4b431e571086.png)</a>
+<a href="https://www.paypal.com/donate/?hosted_button_id=NM3ZRVZTQV39E">![](https://user-images.githubusercontent.com/4426533/226430276-086c5d38-597c-46b0-85d9-4b431e571086.png)</a>
 
-### Bitcoin
-*bc1q5jk7wf6urdj4w9hm9de52xvf8strzc0unyt3cu*
+### Bitcoin (BTC)
+*bc1q3tzz9a5nkrppcmc6tallvlpvavyfh6hljdtucy*
 
-### Ethereum
-*0x598d0549aF24aD80e5b868297D44C479Cc2Dab6F*
+### Ethereum (ETH)
+*0x044CF9EEE22388c59d2813126bF11513C158b010*
 
-### Litecoin
-*ltc1qdc5x5ucah9u6x6rl9ttw29wcejtt0h62rx2t2z*
+### Litecoin (LTC)
+*ltc1qwgqxupqnpk7ttug9x7r84xmuf9ecck90scn8yp*
+
+### The Open Network (TON)
+*EQBUGLcioULfX2N3F-JIr5KTtJ3LKi1pSC20HWqzec7xDL7H*
 
 ## License
 
