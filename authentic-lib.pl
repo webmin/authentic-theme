@@ -236,6 +236,7 @@ sub get_extended_sysinfo
             }
         }
         if (&webmin_user_is_admin() &&
+            $theme_config{'settings_sysinfo_hidden_panels_user'} !~ /\'live_stats\'/ &&
             $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {
