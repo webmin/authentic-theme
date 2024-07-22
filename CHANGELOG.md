@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 21.20.2 (July 22, 2024)
+* Update JSON dependency to use correct namespace [webmin#2222](https://github.com/webmin/webmin/issues/2222)
+
 #### Version 21.20.1 (July 20, 2024)
 * Fix not to attempt enabling stats in proxy mode
 * Fix to limit the number of potential tries to connect to the socket
