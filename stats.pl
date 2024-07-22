@@ -9,7 +9,10 @@ use strict;
 use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use Net::WebSocket::Server;
 use utf8;
-use JSON::PP;
+eval "use JSON::XS qw(encode_json decode_json);";
+if ($@) {
+    eval "use JSON::PP qw(encode_json decode_json);";
+}
 
 our ($current_theme);
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
