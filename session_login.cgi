@@ -172,7 +172,8 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     my $autocomplete = $gconfig{'noremember'} ? "off" : "username";
     print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
       "autocomplete='$autocomplete' autocorrect='off' autocapitalize='none' ".
-      "placeholder='$theme_text{'theme_xhred_login_user'}'", 'session_login', 1);
+      "placeholder='$theme_text{'theme_xhred_login_user'}'" .
+        (!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
 
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print '</div>' . "\n";
