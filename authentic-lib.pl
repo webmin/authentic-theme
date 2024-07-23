@@ -1892,8 +1892,13 @@ sub init
 sub content
 {
     # Mobile toggle
-    print '<div class="' . ($theme_config{'settings_navigation_always_collapse'} eq 'true' ? '' : 'visible-xs ') .
-      'mobile-menu-toggler" style="position: fixed; ' . get_filters() . '">';
+    my $nav_collapsed = $theme_config{'settings_navigation_always_collapse'} eq 'true' ? 1 : 0;
+    my $nav_styles_extra = get_filters();
+    if ($nav_collapsed) {
+        $nav_styles_extra .= " transform: translate(0px, 0px);";
+    }
+    print '<div class="' . ($nav_collapsed ? '' : 'visible-xs ') .
+      "mobile-menu-toggler\" style=\"position: fixed; $nav_styles_extra\">";
 
     print '<button aria-label="' . $theme_text{'left_toggle_navigation_menu'} .
       '" type="button" class="btn btn-primary btn-menu-toggler" style="padding-left: 6px; padding-right: 5px;">' . "\n";
@@ -1903,7 +1908,7 @@ sub content
 
     # Navigation
     do($ENV{'THEME_ROOT'} . "/navigation-lib.pl");
-    print '<aside style="' . get_filters() . '" id="sidebar" class="hidden-xs">' . "\n";
+    print "<aside style=\"$nav_styles_extra\" id=\"sidebar\" class=\"hidden-xs\">\n";
     print_switch();
     print "<ul class=\"navigation\">\n";
     print nav_menu($get_user_level eq '2'   ? 'virtualmin' :
