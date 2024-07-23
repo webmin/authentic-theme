@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 21.20.3 (July 23, 2024)
+* Fix a bug where in some configurations the navigation product switch was stuck on the initial load
+
 #### Version 21.20.2 (July 22, 2024)
 * Update JSON dependency to use correct namespace [webmin#2222](https://github.com/webmin/webmin/issues/2222)
 * Fix the autofocus for the username field on the login page
