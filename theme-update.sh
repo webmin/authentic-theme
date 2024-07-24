@@ -169,6 +169,8 @@ directory. This is strongly \e[3mnot advised\e[0m for any production system!"
         rm -rf "$DIR/authentic-theme"/*
         mv "$DIR/.~authentic-theme"/* "$DIR/authentic-theme/"
         rm -rf "$DIR/.~authentic-theme"
+        shebang=$(head -n 1 "$DIR/miniserv.pl")
+        find "$DIR/authentic-theme" -type f -exec sed -i -e '1s|^#!.*|'"$shebang"'|' {} +
 
         # Local clear
         rm -f "$DIR/authentic-theme/README.md"
