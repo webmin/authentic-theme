@@ -23,8 +23,35 @@ theme_xhred_sysinfo_wmdocs=Documentazione webmin
 theme_xhred_sysinfo_vmdocs=Documentazione Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentazione Cloudmin
 
+theme_xhred_filemanager_setting_permissions=Impostazione delle autorizzazioni su <tt>%value</tt> sui file selezionati.
+theme_xhred_filemanager_changing_ownership=Modifica della proprietà in <tt>%value</tt> sui file selezionati.
+theme_xhred_filemanager_bookmark_success=La directory <tt>%value</tt> è stata aggiunta con successo ai tuoi segnalibri.
+theme_xhred_filemanager_searching=Ricerca di <tt>%value</tt> corrispondente ai nomi dei file /directories.
+
+theme_xhred_filemanager_successful_directory_creation=La directory <tt>%value</tt> è stata creata correttamente.
+theme_xhred_filemanager_successful_file_creation=Il file <tt>%value</tt> è stato creato correttamente.
+
+theme_xhred_filemanager_unbookmark_success=La directory <tt>%value</tt> è stata rimossa con successo dai tuoi segnalibri.
+
 theme_xhred_database_object_selected_delete2=Elimina la tabella selezionata
 theme_xhred_database_objects_selected_delete2=Elimina le tabelle selezionate
+
+filemanager_create_object_exists=$3 <tt>$1</tt> esiste già in <tt>$2</tt>
+filemanager_create_object_denied=Impossibile creare $3 <tt>$1</tt> in <tt>$2</tt> - autorizzazione negata: $4.
+
+filemanager_rename_exists=$3 con nome <tt>$1</tt> esiste già in <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=La ridenominazione <tt>%from</tt> in <tt>%to</tt> è riuscita.
+
+theme_xhred_filemanager_searching_matching=Ricerca di <tt>%value</tt> corrispondente ai nomi dei file /directories, contenenti <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=La sostituzione corrisponde <tt>%text</tt> con <tt>%replace</tt> nei file con nomi contenenti <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=La compressione è stata completata con successo. Il file compresso <tt>%file</tt> si trova nella directory <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=La compressione è terminata con errori. Il file compresso <tt>%file</tt> dovrebbe trovarsi nella directory <tt>%path</tt>.
+
+theme_xhred_filemanager_changing_attributes=Impostazione degli attributi su <tt>%value</tt> sui file selezionati.
+
+theme_xhred_filemanager_changing_secontext=Modifica del contesto di sicurezza in <tt>%value</tt> sui file selezionati.
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Attiva/disattiva la tavolozza dei colori
@@ -269,3 +296,8 @@ theme_xhred_body_updates=Aggiornamenti del pacchetto
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Cambia tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Caricamento riuscito
+theme_xhred_filemanager_upload_status_err=Caricamento fallito:
+theme_xhred_filemanager_download_status_err=Scaricamento fallito:

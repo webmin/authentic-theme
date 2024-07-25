@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=重命名所選內容。
 theme_xhred_filemanager_creating_directory=創建目錄
 theme_xhred_filemanager_creating_file=建立檔案
 theme_xhred_filemanager_downloading_from=從下載
-theme_xhred_filemanager_setting_permissions=將權限設置為所選文件的<strong><em>%value</em></strong> 。
-theme_xhred_filemanager_changing_ownership=將所有權更改為所選文件的<strong><em>%value</em></strong> 。
+theme_xhred_filemanager_setting_permissions=將所選檔案的權限設定為<tt>%value</tt> 。
+theme_xhred_filemanager_changing_ownership=將所選文件的所有權更改為<tt>%value</tt> 。
 theme_xhred_filemanager_compressing_selected=壓縮在後台選擇。
 theme_xhred_filemanager_refreshing=刷新目錄內容。
 theme_xhred_filemanager_copying_successful=複製到剪貼板成功。
 theme_xhred_filemanager_cutting_successful=剪切到剪貼板成功。
 theme_xhred_filemanager_pasting_successful=從剪貼板粘貼成功。
-theme_xhred_filemanager_bookmark_success=目錄<strong><em>%value</em></strong>已成功添加到您的書籤。
-theme_xhred_filemanager_searching=搜索與文件/目錄名稱匹配的`<em>%value</em>` 。
+theme_xhred_filemanager_bookmark_success=目錄<tt>%value</tt>已成功加入您的書籤。
+theme_xhred_filemanager_searching=正在搜尋與檔案“/directories”名稱相符的<tt>%value</tt> /directories.
 theme_xhred_filemanager_search_founds=找到<strong>%value</strong>匹配項。
 theme_xhred_filemanager_search_found=找到<strong>1</strong>匹配項。
 theme_xhred_filemanager_search_no_matches=找不到匹配項。
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=刪除成功。
 theme_xhred_filemanager_successful_permissions=權限已成功更改。
 theme_xhred_filemanager_successful_ownership=所有權已成功更改。
 theme_xhred_filemanager_successful_compression=壓縮已成功完成。
-theme_xhred_filemanager_successful_directory_creation=目錄`<strong>%value</strong>`已成功創建。
-theme_xhred_filemanager_successful_file_creation=文件`<strong>%value</strong>`已成功創建。
+theme_xhred_filemanager_successful_directory_creation=目錄<tt>%value</tt>已成功建立。
+theme_xhred_filemanager_successful_file_creation=文件<tt>%value</tt>已成功建立。
 
 theme_xhred_notifications_packages_updates=套餐更新
 theme_xhred_notifications_theme_update=主題更新
@@ -348,7 +348,7 @@ theme_xhred_global_warning=警告
 theme_xhred_global_close=關
 
 theme_xhred_filemanager__no_bookmarks=沒有保存的書籤
-theme_xhred_filemanager_unbookmark_success=目錄<strong><em>%value</em></strong>已成功從書籤中刪除。
+theme_xhred_filemanager_unbookmark_success=目錄<tt>%value</tt>已成功從您的書籤中刪除。
 theme_xhred_filemanager_bookmark=為當前目錄添加書籤
 theme_xhred_filemanager_unbookmark=取消收藏當前目錄
 theme_xhred_filemanager_move_into_self=您不能將目錄移動到其自身！目標目錄位於源目錄內。
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class=“h5”>未找到結果</sp
 
 theme_xhred_filemanager_buffer_error=無法將文件粘貼到緩衝區-權限被拒絕。
 
-filemanager_create_object_exists=三塊錢`<strong><em>$1</em></strong>`已經存在於`<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=無法創建 $3 `<strong><em>$1</em></strong>`在`<strong><tt>$2</tt></strong>` - 沒有權限 : $4。
+filemanager_create_object_exists=$3 <tt>$1</tt>已存在於<tt>$2</tt>中
+filemanager_create_object_denied=無法在<tt>$2</tt>中創建 $3 <tt>$1</tt> - 權限被拒絕： $4 。
 
 theme_xhred_filemanager_paste_warning=無法粘貼目標。在粘貼之前/之前，被請求的對象可能已被<em>重命名，移動</em>或<em>刪除</em>。另一個可能的原因是目的地不可寫。值得檢查對象的屬性。
 
 theme_xhred_filemanager_delete_warning=刪除成功完成，但並非所有對像都刪除。刪除之前，被請求的對象可能已經<em>重命名</em>或<em>移動</em>。權限受限（屬性）是另一個可能的原因。錯誤信息：
 
-filemanager_rename_exists=$3（帶名稱） `<strong><em>$1</em></strong>`已經存在於`<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=名稱為<tt>$1</tt> $3已存在於<tt>$2</tt>中
 filemanager_rename_denied=無法重命名$3。這可能是由於源$3已被刪除或由於權限受限所致。
 
-theme_xhred_filemanager_successful_rename=重命名`<strong><em><s>%from</s></em></strong>`至`<strong><em>%to</em></strong>`那是成功的。
+theme_xhred_filemanager_successful_rename=將<tt>%from</tt>重新命名為<tt>%to</tt>成功。
 
 filemanager_global_info_total1=總計：$1文件和$2目錄
 filemanager_global_info_total2=總計：$1文件和$2目錄
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=替換結果
 theme_xhred_global_find=找
 theme_xhred_global_replace=更換
 
-theme_xhred_filemanager_searching_matching=搜索包含`<em>%text</em>`文本的文件/目錄的`<em>%value</em>`匹配名稱。
-theme_xhred_filemanager_searching_replacing=在名稱包含`<em>%value</em>`文件中， `<em>%replace</em>` `<em>%text</em>`與`<em>%replace</em>`匹配。
+theme_xhred_filemanager_searching_matching=正在搜尋<tt>%value</tt>符合包含<tt>%text</tt>文字的檔案/directories, 的名稱。
+theme_xhred_filemanager_searching_replacing=在名稱包含<tt>%value</tt>的檔案中，替換將<tt>%text</tt>與<tt>%replace</tt>匹配。
 
 theme_xhred_filemanager_search_replaced_multi=在<strong>%value</strong>文件中找到並替換。
 theme_xhred_filemanager_search_replaced=在<strong>1</strong>文件中找到並替換。
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=尚未成功更改所�
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=由於發生以下錯誤，因此無法更改所有權：
 
 theme_xhred_filemanager_successful_compression_with_errors=壓縮完成時出現以下錯誤：
-theme_xhred_filemanager_successful_compression_bg=壓縮已成功完成。壓縮文件`<strong>%file</strong>`位於`<strong>%path</strong>`目錄中。
-theme_xhred_filemanager_successful_compression_bg_with_errors=壓縮已完成，但有錯誤。壓縮文件`<strong>%file</strong>`應該位於`<strong>%path</strong>`目錄中。
+theme_xhred_filemanager_successful_compression_bg=壓縮已成功完成。壓縮檔案<tt>%file</tt>位於<tt>%path</tt>目錄中。
+theme_xhred_filemanager_successful_compression_bg_with_errors=壓縮已完成，但有錯誤。壓縮檔案<tt>%file</tt>應位於<tt>%path</tt>目錄中。
 
 theme_xhred_filemanager_settings_notification_type=顯示的通知類型
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=信息，警告和錯誤
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=顯示Netdata實時監控鏈接
 settings_leftmenu_netdata_link=Netdata服務器首選鏈接
 
 theme_xhred_filemanager_context_chattr=變更屬性
-theme_xhred_filemanager_changing_attributes=將所選文件的屬性設置為<strong><em>%value</em></strong> 。
+theme_xhred_filemanager_changing_attributes=將所選檔案的屬性設為<tt>%value</tt> 。
 theme_xhred_filemanager_successful_attributes_with_errors=尚未為所有對象成功設置屬性：
 theme_xhred_filemanager_successful_attributes=屬性已成功設置。
 
 theme_xhred_filemanager_context_chcon=更改安全上下文
-theme_xhred_filemanager_changing_secontext=將所選文件的安全性上下文更改為<strong><em>%value</em></strong> 。
+theme_xhred_filemanager_changing_secontext=將所選檔案的安全上下文變更為<tt>%value</tt> 。
 theme_xhred_filemanager_successful_secontext_with_errors=尚未成功更改所有對象的安全上下文：
 theme_xhred_filemanager_successful_secontext=安全上下文已成功更改。
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=套餐更新
 
 # 21.20
 theme_xhred_hotkey_switch_theme=切換主題
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=上傳成功
+theme_xhred_filemanager_upload_status_err=上傳失敗：
+theme_xhred_filemanager_download_status_err=下載失敗：

@@ -25,8 +25,35 @@ theme_xhred_sysinfo_wmdocs=Documentació de Webmin
 theme_xhred_sysinfo_vmdocs=Documentació de Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentació de Cloudmin
 
+theme_xhred_filemanager_setting_permissions=Configurant els permisos a <tt>%value</tt> als fitxers seleccionats.
+theme_xhred_filemanager_changing_ownership=S'està canviant la propietat a <tt>%value</tt> als fitxers seleccionats.
+theme_xhred_filemanager_bookmark_success=El directori <tt>%value</tt> s'ha afegit correctament als vostres marcadors.
+theme_xhred_filemanager_searching=S'estan cercant noms coincidents <tt>%value</tt> dels fitxers /directories.
+
+theme_xhred_filemanager_successful_directory_creation=El directori <tt>%value</tt> s'ha creat correctament.
+theme_xhred_filemanager_successful_file_creation=El fitxer <tt>%value</tt> s'ha creat correctament.
+
+theme_xhred_filemanager_unbookmark_success=El directori <tt>%value</tt> s'ha eliminat correctament de les vostres adreces d'interès.
+
 theme_xhred_database_object_selected_delete2=Deixa anar la taula seleccionada
 theme_xhred_database_objects_selected_delete2=Elimina les taules seleccionades
+
+filemanager_create_object_exists=$3 <tt>$1</tt> ja existeix a <tt>$2</tt>
+filemanager_create_object_denied=No es pot crear $3 <tt>$1</tt> a <tt>$2</tt> - permís denegat: $4.
+
+filemanager_rename_exists=$3 amb el nom <tt>$1</tt> ja existeix a <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=S'ha canviat el nom <tt>%from</tt> a <tt>%to</tt>.
+
+theme_xhred_filemanager_searching_matching=S'estan cercant noms coincidents <tt>%value</tt> dels fitxers /directories, que contenen <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=La substitució de les coincidències <tt>%text</tt> per <tt>%replace</tt> als fitxers amb noms que continguin <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=La compressió s'ha acabat correctament. El fitxer comprimit <tt>%file</tt> es troba al directori <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=La compressió ha acabat amb errors. El fitxer comprimit <tt>%file</tt> s'ha d'ubicar al directori <tt>%path</tt>.
+
+theme_xhred_filemanager_changing_attributes=Configurant els atributs a <tt>%value</tt> als fitxers seleccionats.
+
+theme_xhred_filemanager_changing_secontext=S'està canviant el context de seguretat a <tt>%value</tt> als fitxers seleccionats.
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Canvia la paleta de colors
@@ -737,3 +764,8 @@ theme_xhred_body_updates=Actualitzacions de paquets
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Canvia el tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Pujada correctament
+theme_xhred_filemanager_upload_status_err=La càrrega ha fallat:
+theme_xhred_filemanager_download_status_err=La baixada ha fallat:

@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=שינוי שם נבחר.
 theme_xhred_filemanager_creating_directory=יוצר ספרייה
 theme_xhred_filemanager_creating_file=יוצר קובץ
 theme_xhred_filemanager_downloading_from=מוריד מ-
-theme_xhred_filemanager_setting_permissions=הגדרת הרשאות <strong><em>%value</em></strong> בקבצים שנבחרו.
-theme_xhred_filemanager_changing_ownership=שינוי בעלות <strong><em>%value</em></strong> בקבצים שנבחרו.
+theme_xhred_filemanager_setting_permissions=הגדרת הרשאות ל- <tt>%value</tt> בקבצים שנבחרו.
+theme_xhred_filemanager_changing_ownership=שינוי בעלות ל- <tt>%value</tt> בקבצים שנבחרו.
 theme_xhred_filemanager_compressing_selected=דחיסה שנבחרה ברקע.
 theme_xhred_filemanager_refreshing=מרענן תוכן ספרייה.
 theme_xhred_filemanager_copying_successful=ההעתקה ללוח הצליחה.
 theme_xhred_filemanager_cutting_successful=הגזירה ללוח מוצלחת.
 theme_xhred_filemanager_pasting_successful=הדבק מהלוח היה מוצלח.
-theme_xhred_filemanager_bookmark_success=<strong><em>%value</em></strong> מדריך התווסף לסימניות שלך.
-theme_xhred_filemanager_searching=מחפש `<em>%value</em>` תואם שמות של קבצים/ספריות.
+theme_xhred_filemanager_bookmark_success=ספריה <tt>%value</tt> נוספה בהצלחה לסימניות שלך.
+theme_xhred_filemanager_searching=מחפש שמות תואמים של <tt>%value</tt> של קבצים /directories.
 theme_xhred_filemanager_search_founds=נמצאו התאמות <strong>%value</strong>.
 theme_xhred_filemanager_search_found=נמצא <חזקה>1</strong> התאמה.
 theme_xhred_filemanager_search_no_matches=אין תוצאות מתאימות.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=המחיקה הצליחה.
 theme_xhred_filemanager_successful_permissions=ההרשאות שונו בהצלחה.
 theme_xhred_filemanager_successful_ownership=הבעלות השתנתה בהצלחה.
 theme_xhred_filemanager_successful_compression=הדחיסה הסתיימה בהצלחה.
-theme_xhred_filemanager_successful_directory_creation=מדריך `<strong>%value</strong>` נוצר בהצלחה.
-theme_xhred_filemanager_successful_file_creation=קובץ `<strong>%value</strong>` נוצר בהצלחה.
+theme_xhred_filemanager_successful_directory_creation=הספרייה <tt>%value</tt> נוצרה בהצלחה.
+theme_xhred_filemanager_successful_file_creation=הקובץ <tt>%value</tt> נוצר בהצלחה.
 
 theme_xhred_notifications_packages_updates=עדכון חבילות
 theme_xhred_notifications_theme_update=עדכון נושא
@@ -348,7 +348,7 @@ theme_xhred_global_warning=אזהרה
 theme_xhred_global_close=סגור
 
 theme_xhred_filemanager__no_bookmarks=אין סימניות שמורות
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> מדריך הספריות הוסר בהצלחה מהסימניות שלך.
+theme_xhred_filemanager_unbookmark_success=הספרייה <tt>%value</tt> הוסרה בהצלחה מהסימניות שלך.
 theme_xhred_filemanager_bookmark=הוסף סימניה לספרייה הנוכחית
 theme_xhred_filemanager_unbookmark=בטל את סימון הספריה הנוכחית
 theme_xhred_filemanager_move_into_self=אינך יכול להעביר ספרייה לעצמה! ספריית היעד נמצאת בתוך ספריית המקור.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">לא נמצאו תוצ�
 
 theme_xhred_filemanager_buffer_error=הדבקת קבצים במאגר נכשלה - ההרשאה נדחתה.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` קיים כבר ב `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=לא ניתן ליצור $3 `<strong><em>$1</em></strong>` בתוך `<strong><tt>$2</tt></strong>` - ההרשאה נדחתה : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> כבר קיים ב- <tt>$2</tt>
+filemanager_create_object_denied=לא ניתן ליצור $3 <tt>$1</tt> ב- <tt>$2</tt> - הרשאה נדחתה: $4.
 
 theme_xhred_filemanager_paste_warning=הדבקת יעדים נכשלים. יתכן שניתן היה לשנות את שם האובייקטים המבוקשים, להזיזם </em>או<em> </em> בזמן/לפני ההדבקה. סיבה אפשרית נוספת היא שיעד אינו ניתן לכתיבה. כדאי לבדוק את תכונות האובייקטים.
 
 theme_xhred_filemanager_delete_warning=המחיקה הסתיימה בהצלחה אך לא עבור כל האובייקטים. יתכן כי האובייקטים / ים המבוקשים היו יכולים להיות <em>שינוי שם</em> או <em></em> לפני המחיקה. הרשאות מוגבלות (תכונות) הן סיבה אפשרית נוספת. הודעת שגיאה:
 
-filemanager_rename_exists=$3 עם שם `<strong><em>$1</em></strong>` קיים כבר ב `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 עם השם <tt>$1</tt> כבר קיים ב- <tt>$2</tt>
 filemanager_rename_denied=לא ניתן לשנות את שם ה- $3. זה עשוי לקרות מכיוון שהמקור $3 הוסר או בגלל הרשאות מוגבלות.
 
-theme_xhred_filemanager_successful_rename=שינוי שם `<strong><em><s>%from</s></em></strong>` ל `<strong><em>%to</em></strong>` היה מוצלח.
+theme_xhred_filemanager_successful_rename=שינוי השם <tt>%from</tt> ל- <tt>%to</tt> הצליח.
 
 filemanager_global_info_total1=סה"כ: קובץ $1 וספריית $2
 filemanager_global_info_total2=סה"כ: $1 קבצים וספריית $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=החלף בתוצאות
 theme_xhred_global_find=למצוא
 theme_xhred_global_replace=החלף
 
-theme_xhred_filemanager_searching_matching=מחפש `<em>%value</em>` תואם שמות של קבצים/ספריות, המכיל `<em>%text</em>` טקסט.
-theme_xhred_filemanager_searching_replacing=החלפת התאמות `<em>%text</em>` עם `<em>%replace</em>` בקבצים עם שמות המכילים `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=מחפש שמות תואמים של <tt>%value</tt> של קבצים /directories, המכילים <tt>%text</tt> טקסט.
+theme_xhred_filemanager_searching_replacing=החלפת התאמות <tt>%text</tt> ב- <tt>%replace</tt> בקבצים עם שמות המכילים <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=נמצא והחלף בקבצי <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=נמצא והוחלף בקובץ <strong>1</strong>.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=הבעלות לא הש�
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=לא ניתן לשנות בעלות בגלל השגיאות הבאות:
 
 theme_xhred_filemanager_successful_compression_with_errors=הדחיסה סיימה עם השגיאות הבאות:
-theme_xhred_filemanager_successful_compression_bg=הדחיסה הסתיימה בהצלחה. קובץ `<strong>%file</strong>` נמצא בספריית `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=הדחיסה הסתיימה בשגיאות. קובץ דחוס `<strong>%file</strong>` צריך להיות ממוקם בספריית `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=הדחיסה הסתיימה בהצלחה. הקובץ הדחוס <tt>%file</tt> נמצא בספריית <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=הדחיסה הסתיימה עם שגיאות. הקובץ הדחוס <tt>%file</tt> צריך להיות ממוקם בספריית <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=סוג ההתראות להצגה
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=ידיעות, אזהרות ושגיאות
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=הצג קישור ניטור בזמן אמת בזמן 
 settings_leftmenu_netdata_link=קישור מועדף על שרת Netdata
 
 theme_xhred_filemanager_context_chattr=שנה תכונות
-theme_xhred_filemanager_changing_attributes=הגדרת תכונות <strong><em>%value</em></strong> בקבצים שנבחרו.
+theme_xhred_filemanager_changing_attributes=הגדרת תכונות ל- <tt>%value</tt> בקבצים שנבחרו.
 theme_xhred_filemanager_successful_attributes_with_errors=תכונות לא הוגדרו בהצלחה לכל האובייקטים:
 theme_xhred_filemanager_successful_attributes=התכונות הוגדרו בהצלחה.
 
 theme_xhred_filemanager_context_chcon=שנה את הקשר האבטחה
-theme_xhred_filemanager_changing_secontext=שינוי הקשר האבטחה <strong><em>%value</em></strong> בקבצים שנבחרו.
+theme_xhred_filemanager_changing_secontext=שינוי הקשר האבטחה ל- <tt>%value</tt> בקבצים שנבחרו.
 theme_xhred_filemanager_successful_secontext_with_errors=הקשר האבטחה לא השתנה בהצלחה עבור כל האובייקטים:
 theme_xhred_filemanager_successful_secontext=הקשר האבטחה השתנה בהצלחה.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=עדכוני חבילה
 
 # 21.20
 theme_xhred_hotkey_switch_theme=החלף נושא
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=ההעלאה בוצעה בהצלחה
+theme_xhred_filemanager_upload_status_err=העלאה נכשלה:
+theme_xhred_filemanager_download_status_err=הורדה נכשלה:

@@ -123,15 +123,15 @@ theme_xhred_filemanager_renaming_selected=Omdøb valgt.
 theme_xhred_filemanager_creating_directory=Opretter mappe
 theme_xhred_filemanager_creating_file=Opretter fil
 theme_xhred_filemanager_downloading_from=Download fra
-theme_xhred_filemanager_setting_permissions=Indstilling af tilladelser til <strong><em>%value</em></strong> på valgte (n) fil (er).
-theme_xhred_filemanager_changing_ownership=Ændring af ejerskab til <strong><em>%value</em></strong> på valgte fil (er).
+theme_xhred_filemanager_setting_permissions=Indstilling af tilladelser til <tt>%value</tt> på valgte fil(er).
+theme_xhred_filemanager_changing_ownership=Ændring af ejerskab til <tt>%value</tt> på valgte fil(er).
 theme_xhred_filemanager_compressing_selected=Komprimering valgt i baggrunden.
 theme_xhred_filemanager_refreshing=Forfriskende katalogindhold.
 theme_xhred_filemanager_copying_successful=Kopiering til udklipsholder er vellykket.
 theme_xhred_filemanager_cutting_successful=Klip til udklipsholder succes.
 theme_xhred_filemanager_pasting_successful=Indsæt fra udklipsholder var vellykket.
-theme_xhred_filemanager_bookmark_success=Directory <strong><em>%value</em></strong> blev tilføjet til dine bogmærker.
-theme_xhred_filemanager_searching=Søger efter `<em>%value</em>` matcher navnene på filer/mapper.
+theme_xhred_filemanager_bookmark_success=Directory <tt>%value</tt> blev tilføjet til dine bogmærker.
+theme_xhred_filemanager_searching=Søger efter <tt>%value</tt>, der matcher navnene på filerne /directories.
 theme_xhred_filemanager_search_founds=Fundne <strong>%value</strong> matchninger.
 theme_xhred_filemanager_search_found=Fundet <strong>1</strong> match.
 theme_xhred_filemanager_search_no_matches=Ingen match fundet.
@@ -149,8 +149,8 @@ theme_xhred_filemanager_successful_deletion=Sletningen var vellykket.
 theme_xhred_filemanager_successful_permissions=Tilladelser er ændret med succes.
 theme_xhred_filemanager_successful_ownership=Ejerskab er ændret med succes.
 theme_xhred_filemanager_successful_compression=Kompression er afsluttet.
-theme_xhred_filemanager_successful_directory_creation=Vejviser `<strong>%value</strong>` blev oprettet med succes.
-theme_xhred_filemanager_successful_file_creation=Fil `<strong>%value</strong>` blev oprettet med succes.
+theme_xhred_filemanager_successful_directory_creation=Directory <tt>%value</tt> blev oprettet.
+theme_xhred_filemanager_successful_file_creation=Filen <tt>%value</tt> blev oprettet.
 
 theme_xhred_notifications_packages_updates=Opdatering af pakker
 theme_xhred_notifications_theme_update=Temaopdatering
@@ -261,7 +261,7 @@ theme_xhred_global_warning=Advarsel
 theme_xhred_global_close=Tæt
 
 theme_xhred_filemanager__no_bookmarks=Ingen gemte bogmærker
-theme_xhred_filemanager_unbookmark_success=Directory <strong><em>%value</em></strong> blev fjernet fra dine bogmærker.
+theme_xhred_filemanager_unbookmark_success=Directory <tt>%value</tt> blev fjernet fra dine bogmærker.
 theme_xhred_filemanager_bookmark=Bogmærke den aktuelle mappe
 theme_xhred_filemanager_unbookmark=Fjern bogmærke for det aktuelle bibliotek
 theme_xhred_filemanager_move_into_self=Du kan ikke flytte et bibliotek ind i sig selv! Destinationskataloget er inde i kildekataloget.
@@ -343,17 +343,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ingen resultater fundet
 
 theme_xhred_filemanager_buffer_error=Kunne ikke indsætte filer i bufferen - tilladelse afvist.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` findes allerede i `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Kan ikke oprette $3 `<strong><em>$1</em></strong>` i `<strong><tt>$2</tt></strong>` - adgang nægtet : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> findes allerede i <tt>$2</tt>
+filemanager_create_object_denied=Kan ikke oprette $3 <tt>$1</tt> i <tt>$2</tt> - tilladelse nægtet : $4.
 
 theme_xhred_filemanager_paste_warning=Kunne indsætte mål (er). Det er muligt, at de eller de anmodede objekter kunne have været <em>omdøbt, flyttet</em> eller <em>slettet</em> mens/før du indsætter. En anden mulig årsag er, at destinationen ikke kan skrives. Det er værd at kontrollere objekternes attributter.
 
 theme_xhred_filemanager_delete_warning=Sletningen er afsluttet med succes, men ikke for alle objekter. Det er muligt, at de eller de anmodede objekter kunne have været <em>omdøbt</em> eller <em>flyttet</em> før sletning. Begrænsede tilladelser (attributter) er en anden mulig årsag. Fejl besked:
 
-filemanager_rename_exists=$3 med navn `<strong><em>$1</em></strong>` findes allerede i `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 med navnet <tt>$1</tt> findes allerede i <tt>$2</tt>
 filemanager_rename_denied=Kan ikke omdøbe $3. Dette kan ske, fordi kilden $3 er blevet fjernet eller på grund af begrænsede tilladelser.
 
-theme_xhred_filemanager_successful_rename=Omdøbning `<strong><em><s>%from</s></em></strong>` til `<strong><em>%to</em></strong>` havde succes.
+theme_xhred_filemanager_successful_rename=Det lykkedes at omdøbe <tt>%from</tt> til <tt>%to</tt>.
 
 filemanager_global_info_total1=I alt: $1 fil og $2 katalog
 filemanager_global_info_total2=I alt: $1 filer og $2 bibliotek
@@ -369,8 +369,8 @@ theme_xhred_filemanager_search_replace=Erstat i resultater
 theme_xhred_global_find=Finde
 theme_xhred_global_replace=Erstatte
 
-theme_xhred_filemanager_searching_matching=Søger efter `<em>%value</em>` matchende navne på filer/mapper, der indeholder `<em>%text</em>` tekst.
-theme_xhred_filemanager_searching_replacing=`<em>%replace</em>` matcher `<em>%text</em>` med `<em>%replace</em>` i filer med navne der indeholder `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Søger efter <tt>%value</tt>, der matcher navnene på filerne /directories, der indeholder <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Udskiftning af matcher <tt>%text</tt> med <tt>%replace</tt> i filer med navne, der indeholder <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Fundet og erstattet i <strong>%value</strong> værdifiler.
 theme_xhred_filemanager_search_replaced=Fundet og erstattet i <strong>1</strong> fil.
@@ -381,8 +381,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Ejerskab er ikke ændre
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Ejerskab kan ikke ændres på grund af følgende fejl:
 
 theme_xhred_filemanager_successful_compression_with_errors=Komprimering er afsluttet med følgende fejl:
-theme_xhred_filemanager_successful_compression_bg=Kompression er afsluttet. Komprimeret fil `<strong>%file</strong>` er placeret i `<strong>%path</strong>` bibliotek.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Komprimering er afsluttet med fejl. Komprimeret fil `<strong>%file</strong>` skal være placeret i mappen til `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Komprimeringen er afsluttet. Den komprimerede fil <tt>%file</tt> er placeret i mappen <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Komprimeringen er afsluttet med fejl. Den komprimerede fil <tt>%file</tt> skal være placeret i mappen <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Type meddelelser, der skal vises
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Oplysninger, advarsler og fejl
@@ -443,12 +443,12 @@ settings_leftmenu_netdata=Vis netdata-overvågningslink i realtid
 settings_leftmenu_netdata_link=Netdata-server foretrukket link
 
 theme_xhred_filemanager_context_chattr=Skift attributter
-theme_xhred_filemanager_changing_attributes=Indstilling af attributter til <strong><em>%value</em></strong> på valgte fil (er).
+theme_xhred_filemanager_changing_attributes=Indstilling af attributter til <tt>%value</tt> på valgte fil(er).
 theme_xhred_filemanager_successful_attributes_with_errors=Attributter er ikke blevet sat med succes for alle objekter:
 theme_xhred_filemanager_successful_attributes=Attributter er indstillet med succes.
 
 theme_xhred_filemanager_context_chcon=Skift sikkerhedskontekst
-theme_xhred_filemanager_changing_secontext=Ændring af sikkerhedskontekst til <strong><em>%value</em></strong> på valgte fil (er).
+theme_xhred_filemanager_changing_secontext=Ændring af sikkerhedskontekst til <tt>%value</tt> på valgte fil(er).
 theme_xhred_filemanager_successful_secontext_with_errors=Sikkerhedskontekst er ikke ændret med succes for alle objekter:
 theme_xhred_filemanager_successful_secontext=Sikkerhedskonteksten er blevet ændret med succes.
 
@@ -1306,3 +1306,8 @@ theme_xhred_body_updates=Pakkeopdateringer
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Skift tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Upload gennemført
+theme_xhred_filemanager_upload_status_err=Upload fejlede:
+theme_xhred_filemanager_download_status_err=Download fejlede:

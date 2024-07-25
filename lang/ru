@@ -122,8 +122,6 @@ theme_xhred_filemanager_pasting_selected=Вставить в буфер обме
 theme_xhred_filemanager_successful_extraction=Файлы успешно извлечены.
 theme_xhred_filemanager_successful_deletion=Удаление успешно.
 theme_xhred_filemanager_successful_compression=Компрессия успешно завершена.
-theme_xhred_filemanager_successful_directory_creation=Папка `<strong>%value</strong>` успешно создана.
-theme_xhred_filemanager_successful_file_creation=Файл `<strong>%value</strong>` создан успешно.
 
 theme_xhred_notifications_theme_update_message=Обнаружена новая версия <em>%v</em>  <strong>Authentic Theme</strong>. Пожалуйста установите последнюю версию.
 

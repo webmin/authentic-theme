@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Yeniden adlandırma seçildi.
 theme_xhred_filemanager_creating_directory=Dizin oluşturuluyor
 theme_xhred_filemanager_creating_file=Dosya oluşturuluyor
 theme_xhred_filemanager_downloading_from=Adresinden indiriliyor
-theme_xhred_filemanager_setting_permissions=Seçili dosyalarda <strong><em>%value</em></strong> izinler ayarlama.
-theme_xhred_filemanager_changing_ownership=Seçilen dosyalarda sahipliğin <strong><em>%value</em></strong> değiştirilmesi.
+theme_xhred_filemanager_setting_permissions=Seçilen dosya(lar)daki izinler <tt>%value</tt> olarak ayarlanıyor.
+theme_xhred_filemanager_changing_ownership=Seçilen dosya(lar)daki sahiplik <tt>%value</tt> olarak değiştiriliyor.
 theme_xhred_filemanager_compressing_selected=Arka planda seçilen sıkıştırma.
 theme_xhred_filemanager_refreshing=Dizin içeriğini yenileme.
 theme_xhred_filemanager_copying_successful=Panoya kopyalama başarılı.
 theme_xhred_filemanager_cutting_successful=Panoya kesme başarılı.
 theme_xhred_filemanager_pasting_successful=Panodan yapıştırma başarılı oldu.
-theme_xhred_filemanager_bookmark_success=<strong><em>%value</em></strong> Dizin <strong><em>%value</em></strong>, yer işaretlerinize başarıyla eklendi.
-theme_xhred_filemanager_searching=Dosyaların/dizinlerin `<em>%value</em>` eşleme adlarını arama.
+theme_xhred_filemanager_bookmark_success=<tt>%value</tt> dizini yer imlerinize başarıyla eklendi.
+theme_xhred_filemanager_searching=/directories. dosyalarının <tt>%value</tt> eşleşen adları aranıyor.
 theme_xhred_filemanager_search_founds=<strong>%value</strong> eşleşmesi bulundu.
 theme_xhred_filemanager_search_found=<Strong>1</strong> eşleşmesi bulundu.
 theme_xhred_filemanager_search_no_matches=Hiçbir sonuç bulunamadı.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Silme başarılı oldu.
 theme_xhred_filemanager_successful_permissions=İzinler başarıyla değiştirildi.
 theme_xhred_filemanager_successful_ownership=Sahiplik başarıyla değiştirildi.
 theme_xhred_filemanager_successful_compression=Sıkıştırma başarıyla tamamlandı.
-theme_xhred_filemanager_successful_directory_creation=rehber `<strong>%value</strong>` başarıyla oluşturuldu.
-theme_xhred_filemanager_successful_file_creation=Dosya `<strong>%value</strong>` başarıyla oluşturuldu.
+theme_xhred_filemanager_successful_directory_creation=<tt>%value</tt> dizini başarıyla oluşturuldu.
+theme_xhred_filemanager_successful_file_creation=<tt>%value</tt> dosyası başarıyla oluşturuldu.
 
 theme_xhred_notifications_packages_updates=Paketler Güncellemesi
 theme_xhred_notifications_theme_update=Tema Güncellemesi
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Uyarı
 theme_xhred_global_close=Kapat
 
 theme_xhred_filemanager__no_bookmarks=Kaydedilmiş yer işareti yok
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> Dizin <strong><em>%value</em></strong>, yer işaretlerinizden başarıyla kaldırıldı.
+theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> dizini yer işaretlerinizden başarıyla kaldırıldı.
 theme_xhred_filemanager_bookmark=Geçerli dizine yer işareti koy
 theme_xhred_filemanager_unbookmark=Geçerli dizinin işaretini kaldır
 theme_xhred_filemanager_move_into_self=Bir dizini kendi içine taşıyamazsınız! Hedef dizin kaynak dizinin içindedir.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Sonuç bulunamadı</spa
 
 theme_xhred_filemanager_buffer_error=Ara belleğe dosyalar yapıştırılamadı - izin reddedildi.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` zaten var `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 oluşturulamaz `<strong><em>$1</em></strong>` içinde `<strong><tt>$2</tt></strong>` - izin reddedildi : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> zaten <tt>$2</tt> mevcut
+filemanager_create_object_denied=$3 <tt>$1</tt> içinde <tt>$2</tt> oluşturulamıyor - izin reddedildi : $4.
 
 theme_xhred_filemanager_paste_warning=Hedef (ler) yapıştırılamadı. Yapıştırmadan önce/yapıştırılmadan önce istenen nesnelerin <em>yeniden adlandırılması, taşınması</em> veya <em>silinmesi</em> mümkündür. Başka bir olası neden, hedefin yazılabilir olmamasıdır. Nesnelerin niteliklerini kontrol etmeye değer.
 
 theme_xhred_filemanager_delete_warning=Silme işlemi başarıyla tamamlandı ancak tüm nesneler için tamamlanmadı. İstenen nesnelerin silinmeden önce <em>yeniden adlandırılması</em> veya <em>taşınması</em> mümkündür. Kısıtlı izinler (öznitelikler) başka bir olası nedendir. Hata mesajı:
 
-filemanager_rename_exists=$3 adında `<strong><em>$1</em></strong>` zaten var `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=<tt>$1</tt> adlı $3 zaten <tt>$2</tt> mevcut
 filemanager_rename_denied=$3 yeniden adlandırılamaz. Bu, $3 kaynağının kaldırılmış olması veya kısıtlı izinler nedeniyle olabilir.
 
-theme_xhred_filemanager_successful_rename=Yeniden adlandırma `<strong><em><s>%from</s></em></strong>` için `<strong><em>%to</em></strong>` başarılıydı.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> <tt>%to</tt> to'ya yeniden adlandırma işlemi başarılı oldu.
 
 filemanager_global_info_total1=Toplam: $1 dosya ve $2 dizini
 filemanager_global_info_total2=Toplam: $1 dosya ve $2 dizini
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Sonuçlarda değiştir
 theme_xhred_global_find=bulmak
 theme_xhred_global_replace=değiştirmek
 
-theme_xhred_filemanager_searching_matching=`<em>%text</em>` metni içeren dosya/dizinlerin `<em>%value</em>` eşleme adlarını arama.
-theme_xhred_filemanager_searching_replacing=Değiştirme, `<em>%value</em>` içeren adlara sahip dosyalarda `<em>%text</em>` `<em>%replace</em>` ile eşleştirir.
+theme_xhred_filemanager_searching_matching=<tt>%text</tt> metni içeren /directories, dosyalarının <tt>%value</tt> eşleşen adları aranıyor.
+theme_xhred_filemanager_searching_replacing=<tt>%value</tt> içeren adlara sahip dosyalarda <tt>%text</tt> eşleşmelerinin <tt>%replace</tt> ile değiştirilmesi.
 
 theme_xhred_filemanager_search_replaced_multi=<strong>%value</strong> dosyalarında bulundu ve değiştirildi.
 theme_xhred_filemanager_search_replaced=<Strong>1</strong> dosyasında bulundu ve değiştirildi.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Sahiplik tüm nesneler 
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Sahiplik aşağıdaki hatalar nedeniyle değiştirilemez:
 
 theme_xhred_filemanager_successful_compression_with_errors=Sıkıştırma aşağıdaki hatalarla sona erdi:
-theme_xhred_filemanager_successful_compression_bg=Sıkıştırma başarıyla tamamlandı. Sıkıştırılmış dosya `<strong>%file</strong>` `<strong>%path</strong>` dizininde bulunur.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Sıkıştırma hatalarla bitti. Sıkıştırılmış dosya `<strong>%file</strong>` `<strong>%path</strong>` dizininde bulunmalıdır.
+theme_xhred_filemanager_successful_compression_bg=Sıkıştırma başarıyla tamamlandı. Sıkıştırılmış dosya <tt>%file</tt> <tt>%path</tt> dizininde bulunur.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Sıkıştırma hatalarla tamamlandı. Sıkıştırılmış dosya <tt>%file</tt> <tt>%path</tt> dizininde bulunmalıdır.
 
 theme_xhred_filemanager_settings_notification_type=Görüntülenecek bildirimlerin türü
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Bilgiler, uyarılar ve hatalar
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Netdata gerçek zamanlı izleme bağlantısını göst
 settings_leftmenu_netdata_link=Netdata sunucusu tercih edilen bağlantı
 
 theme_xhred_filemanager_context_chattr=Nitelikleri değiştir
-theme_xhred_filemanager_changing_attributes=Seçili dosyalarda <strong><em>%value</em></strong> öznitelikler ayarlama.
+theme_xhred_filemanager_changing_attributes=Seçilen dosya(lar)daki öznitelikler <tt>%value</tt> olarak ayarlanıyor.
 theme_xhred_filemanager_successful_attributes_with_errors=Özellikler tüm nesneler için başarıyla ayarlanmadı:
 theme_xhred_filemanager_successful_attributes=Özellikler başarıyla ayarlandı.
 
 theme_xhred_filemanager_context_chcon=Güvenlik bağlamını değiştirme
-theme_xhred_filemanager_changing_secontext=Güvenlik bağlamını seçilen dosyalarda <strong><em>%value</em></strong> değiştirme.
+theme_xhred_filemanager_changing_secontext=Seçilen dosya(lar)da güvenlik bağlamı <tt>%value</tt> olarak değiştiriliyor.
 theme_xhred_filemanager_successful_secontext_with_errors=Güvenlik içeriği tüm nesneler için başarıyla değiştirilmedi:
 theme_xhred_filemanager_successful_secontext=Güvenlik içeriği başarıyla değiştirildi.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Paket güncellemeleri
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Temayı değiştir
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=yükleme başarılı
+theme_xhred_filemanager_upload_status_err=Yükleme başarısız:
+theme_xhred_filemanager_download_status_err=Yükleme başarısız:

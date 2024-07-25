@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Átnevezés kiválasztva.
 theme_xhred_filemanager_creating_directory=Könyvtár létrehozása
 theme_xhred_filemanager_creating_file=Fájl létrehozása
 theme_xhred_filemanager_downloading_from=Letöltés a
-theme_xhred_filemanager_setting_permissions=Az engedélyek <strong><em>%value</em></strong> a kiválasztott fájlokon.
-theme_xhred_filemanager_changing_ownership=Tulajdonságok megváltoztatása <strong><em>%value</em></strong> a kiválasztott fájlokon.
+theme_xhred_filemanager_setting_permissions=Engedélyek beállítása <tt>%value</tt> -ra a kiválasztott fájl(ok)on.
+theme_xhred_filemanager_changing_ownership=A kiválasztott fájl(ok) tulajdonjogának módosítása <tt>%value</tt> értékre.
 theme_xhred_filemanager_compressing_selected=A háttérben kiválasztott tömörítés.
 theme_xhred_filemanager_refreshing=A könyvtár tartalmának frissítése.
 theme_xhred_filemanager_copying_successful=Másolás a vágólapra sikeres.
 theme_xhred_filemanager_cutting_successful=A vágólapra vágás sikeres.
 theme_xhred_filemanager_pasting_successful=A vágólapra való beillesztés sikeres volt.
-theme_xhred_filemanager_bookmark_success=A könyvtár <strong><em>%value</em></strong> sikeresen hozzáadtuk a könyvjelzőkhöz.
-theme_xhred_filemanager_searching=`<em>%value</em>` Értékű fájlok/könyvtárak nevének keresése.
+theme_xhred_filemanager_bookmark_success=<tt>%value</tt> könyvtár sikeresen hozzáadva a könyvjelzőihez.
+theme_xhred_filemanager_searching=/directories. fájlok <tt>%value</tt> megfelelő nevének keresése.
 theme_xhred_filemanager_search_founds=Talált <strong>%value</strong> egyezés.
 theme_xhred_filemanager_search_found=Talált <strong> egyezés.
 theme_xhred_filemanager_search_no_matches=Nincs találat.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=A törlés sikeres volt.
 theme_xhred_filemanager_successful_permissions=Az engedélyek sikeresen megváltoztak.
 theme_xhred_filemanager_successful_ownership=A tulajdonos sikeresen megváltozott.
 theme_xhred_filemanager_successful_compression=A tömörítés sikeresen befejeződött.
-theme_xhred_filemanager_successful_directory_creation=Könyvtár `<strong>%value</strong>` sikeresen létrejött.
-theme_xhred_filemanager_successful_file_creation=fájl `<strong>%value</strong>` sikeresen létrejött.
+theme_xhred_filemanager_successful_directory_creation=A <tt>%value</tt> könyvtár sikeresen létrejött.
+theme_xhred_filemanager_successful_file_creation=A(z <tt>%value</tt> fájl sikeresen létrejött.
 
 theme_xhred_notifications_packages_updates=Csomagok frissítése
 theme_xhred_notifications_theme_update=Témafrissítés
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Figyelem
 theme_xhred_global_close=Bezárás
 
 theme_xhred_filemanager__no_bookmarks=Nincs mentett könyvjelző
-theme_xhred_filemanager_unbookmark_success=A könyvtár <strong><em>%value</em></strong> sikeresen eltávolítottuk a könyvjelzőkből.
+theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> könyvtárat sikeresen eltávolítottuk a könyvjelzők közül.
 theme_xhred_filemanager_bookmark=Jelölje meg az aktuális könyvtárat könyvjelzővel
 theme_xhred_filemanager_unbookmark=Törölje az aktuális könyvtár könyvjelzőjét
 theme_xhred_filemanager_move_into_self=Nem helyezhet át egy könyvtárat magába! A cél könyvtár a forrás könyvtárban található.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Nincs találat</span> <
 
 theme_xhred_filemanager_buffer_error=A fájlok beillesztése a pufferbe nem sikerült - az engedély megtagadva.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` már létezik a `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Nem lehet $3 létrehozni `<strong><em>$1</em></strong>` ban ben `<strong><tt>$2</tt></strong>` - hozzáférés megtagadva : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> már létezik a <tt>$2</tt> ben
+filemanager_create_object_denied=Nem hozható létre $3 <tt>$1</tt> a <tt>$2</tt> -ben - engedély megtagadva: $4.
 
 theme_xhred_filemanager_paste_warning=Nem sikerült beilleszteni a célokat. Lehetséges, hogy a kért objektum (oka) t beillesztés előtt/átnevezése, áthelyezése </em>vagy<em> törlése </em> lehetett. Egy másik lehetséges ok az, hogy a rendeltetési hely nem írható. Érdemes ellenőrizni az objektumok attribútumait.
 
 theme_xhred_filemanager_delete_warning=A törlés sikeresen befejeződött, de nem minden objektum esetében. Lehetséges, hogy a kért objektum (oka) t törlés előtt át lehetne nevezni </em>vagy<em> áthelyezni </em>. A korlátozott engedélyek (attribútumok) egy másik lehetséges oka. Hiba üzenet:
 
-filemanager_rename_exists=$3 névvel `<strong><em>$1</em></strong>` már létezik a `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 névvel <tt>$1</tt> már létezik a <tt>$2</tt>
 filemanager_rename_denied=Nem lehet átnevezni a $3. Ez azért fordulhat elő, mert az $3 forrást eltávolították, vagy korlátozott engedélyek miatt.
 
-theme_xhred_filemanager_successful_rename=átnevezése `<strong><em><s>%from</s></em></strong>` nak nek `<strong><em>%to</em></strong>` sikeres volt.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> <tt>%to</tt> -ra sikeres volt.
 
 filemanager_global_info_total1=Összesen: $1 fájl és $2 könyvtár
 filemanager_global_info_total2=Összesen: $1 fájlok és $2 könyvtárak
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Cserélje ki az eredményeket
 theme_xhred_global_find=megtalálja
 theme_xhred_global_replace=Cserélje
 
-theme_xhred_filemanager_searching_matching=`<em>%value</em>` keresése a `<em>%text</em>` tartalmazó fájlok/könyvtárak nevével.
-theme_xhred_filemanager_searching_replacing=A (z) `<em>%text</em>` `<em>%replace</em>` a `<em>%text</em>` `<em>%replace</em>` a `<em>%value</em>` tartalmazó fájlokban.
+theme_xhred_filemanager_searching_matching=<tt>%text</tt> szöveget tartalmazó /directories, fájlok <tt>%value</tt> -egyező nevének keresése.
+theme_xhred_filemanager_searching_replacing=<tt>%text</tt> lecserélése <tt>%replace</tt> re egyezik <tt>%value</tt> tartalmazó fájlokban.
 
 theme_xhred_filemanager_search_replaced_multi=Megtalálva és cserélve <strong>%value</strong> fájlokban.
 theme_xhred_filemanager_search_replaced=Találták és lecserélték az <strong>1</strong> fájlba.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Az összes objektum tul
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=A tulajdonos nem változtatható meg a következő hibák miatt:
 
 theme_xhred_filemanager_successful_compression_with_errors=A tömörítés a következő hibákkal fejeződött be:
-theme_xhred_filemanager_successful_compression_bg=A tömörítés sikeresen befejeződött. A tömörített fájl `<strong>%file</strong>` a `<strong>%path</strong>` könyvtárban található.
-theme_xhred_filemanager_successful_compression_bg_with_errors=A tömörítés hibákkal fejeződött be. Tömörített fájl `<strong>%file</strong>` kell elhelyezni `<strong>%path</strong>` könyvtárba.
+theme_xhred_filemanager_successful_compression_bg=A tömörítés sikeresen befejeződött. A tömörített fájl <tt>%file</tt> a <tt>%path</tt> könyvtárban található.
+theme_xhred_filemanager_successful_compression_bg_with_errors=A tömörítés hibákkal fejeződött be. A tömörített fájlnak <tt>%file</tt> <tt>%path</tt> könyvtárban kell lennie.
 
 theme_xhred_filemanager_settings_notification_type=A megjelenítendő értesítések típusa
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Információk, figyelmeztetések és hibák
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Mutassa a Netdata valósidejű figyelő linket
 settings_leftmenu_netdata_link=A Netdata szerver által preferált link
 
 theme_xhred_filemanager_context_chattr=Tulajdonságok módosítása
-theme_xhred_filemanager_changing_attributes=Az attribútumok <strong><em>%value</em></strong> a kiválasztott fájlokon.
+theme_xhred_filemanager_changing_attributes=Attribútumok beállítása <tt>%value</tt> -ra a kiválasztott fájl(ok)on.
 theme_xhred_filemanager_successful_attributes_with_errors=Az attribútumokat nem sikerült minden objektumhoz beállítani:
 theme_xhred_filemanager_successful_attributes=Az attribútumok sikeresen lettek beállítva.
 
 theme_xhred_filemanager_context_chcon=A biztonsági környezet megváltoztatása
-theme_xhred_filemanager_changing_secontext=A biztonsági környezet megváltoztatása a kiválasztott fájl (ok) <strong><em>%value</em></strong>.
+theme_xhred_filemanager_changing_secontext=A kiválasztott fájl(ok) biztonsági környezetének módosítása <tt>%value</tt> értékre.
 theme_xhred_filemanager_successful_secontext_with_errors=A biztonsági kontextust nem sikerült megváltoztatni az összes objektum esetében:
 theme_xhred_filemanager_successful_secontext=A biztonsági környezet sikeresen megváltozott.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Csomagfrissítések
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Téma váltása
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Feltöltés sikeres
+theme_xhred_filemanager_upload_status_err=Feltöltés sikertelen:
+theme_xhred_filemanager_download_status_err=Sikertelen letöltés:

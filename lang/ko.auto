@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=이름 바꾸기가 선택되었습니
 theme_xhred_filemanager_creating_directory=디렉토리 만들기
 theme_xhred_filemanager_creating_file=파일 만들기
 theme_xhred_filemanager_downloading_from=에서 다운로드
-theme_xhred_filemanager_setting_permissions=선택한 파일에 대한 권한을 <strong><em>%value</em></strong> (으)로 설정
-theme_xhred_filemanager_changing_ownership=선택한 파일에서 소유권을 <strong><em>%value</em></strong> 변경
+theme_xhred_filemanager_setting_permissions=선택한 파일에 대한 권한을 <tt>%value</tt> 로 설정합니다.
+theme_xhred_filemanager_changing_ownership=선택한 파일의 소유권을 <tt>%value</tt> (으)로 변경합니다.
 theme_xhred_filemanager_compressing_selected=백그라운드에서 압축을 선택했습니다.
 theme_xhred_filemanager_refreshing=디렉토리 내용을 새로 고칩니다.
 theme_xhred_filemanager_copying_successful=클립 보드에 복사했습니다.
 theme_xhred_filemanager_cutting_successful=클립 보드로 잘라 내기
 theme_xhred_filemanager_pasting_successful=클립 보드에서 붙여 넣기에 성공했습니다.
-theme_xhred_filemanager_bookmark_success=디렉토리 <strong><em>%value</em></strong> 이 (가) 책갈피에 추가되었습니다.
-theme_xhred_filemanager_searching=파일/디렉토리의 `<em>%value</em>` 일치 이름을 검색 중입니다.
+theme_xhred_filemanager_bookmark_success=<tt>%value</tt> 디렉토리가 북마크에 성공적으로 추가되었습니다.
+theme_xhred_filemanager_searching=/directories. 파일의 이름과 일치하는 <tt>%value</tt> 검색합니다.
 theme_xhred_filemanager_search_founds=일치하는 <strong>%value</strong> 있습니다.
 theme_xhred_filemanager_search_found=<strong>1</strong> 일치를 찾았습니다.
 theme_xhred_filemanager_search_no_matches=검색 결과가 없습니다.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=삭제가 성공했습니다.
 theme_xhred_filemanager_successful_permissions=권한이 성공적으로 변경되었습니다.
 theme_xhred_filemanager_successful_ownership=소유권이 성공적으로 변경되었습니다.
 theme_xhred_filemanager_successful_compression=압축이 완료되었습니다.
-theme_xhred_filemanager_successful_directory_creation=예배 규칙서 `<strong>%value</strong>` 성공적으로 만들어졌습니다.
-theme_xhred_filemanager_successful_file_creation=파일 `<strong>%value</strong>` 성공적으로 만들어졌습니다.
+theme_xhred_filemanager_successful_directory_creation=<tt>%value</tt> 디렉터리가 성공적으로 생성되었습니다.
+theme_xhred_filemanager_successful_file_creation=<tt>%value</tt> 파일이 성공적으로 생성되었습니다.
 
 theme_xhred_notifications_packages_updates=패키지 업데이트
 theme_xhred_notifications_theme_update=테마 업데이트
@@ -348,7 +348,7 @@ theme_xhred_global_warning=경고
 theme_xhred_global_close=닫기
 
 theme_xhred_filemanager__no_bookmarks=저장된 북마크가 없습니다.
-theme_xhred_filemanager_unbookmark_success=북마크에서 디렉토리 <strong><em>%value</em></strong> 이 (가) 제거되었습니다.
+theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> 디렉터리가 북마크에서 성공적으로 제거되었습니다.
 theme_xhred_filemanager_bookmark=현재 디렉토리 북마크
 theme_xhred_filemanager_unbookmark=현재 디렉토리의 북마크 해제
 theme_xhred_filemanager_move_into_self=디렉토리 자체로 이동할 수 없습니다! 대상 디렉토리는 소스 디렉토리 안에 있습니다.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">결과가 없습니다<
 
 theme_xhred_filemanager_buffer_error=파일을 버퍼에 붙여 넣지 못했습니다. 권한이 거부되었습니다.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` 이미 존재합니다 `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 만들 수 없습니다 `<strong><em>$1</em></strong>` 에 `<strong><tt>$2</tt></strong>` -권한이 거부되었습니다 : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> <tt>$2</tt> 에 이미 존재합니다
+filemanager_create_object_denied=<tt>$2</tt> 에서 $3 <tt>$1</tt> 생성할 수 없습니다. 권한이 거부되었습니다: $4.
 
 theme_xhred_filemanager_paste_warning=대상을 붙여 넣지 못했습니다. 붙여 넣기 도중/요청하기 전에 요청한 개체가 <em>이름 바꾸기, 이동</em> 또는 <em>삭제</em>되었을 수 있습니다. 또 다른 가능한 원인은 대상이 쓰기 가능하지 않기 때문입니다. 객체의 속성을 확인할 가치가 있습니다.
 
 theme_xhred_filemanager_delete_warning=삭제가 성공적으로 완료되었지만 모든 객체에 대한 것은 아닙니다. 삭제하기 전에 요청한 객체가 <em>이름 변경</em> 또는 <em>이동</em>되었을 수 있습니다. 제한된 권한 (속성)이 또 다른 가능한 원인입니다. 에러 메시지:
 
-filemanager_rename_exists=이름이 $3 `<strong><em>$1</em></strong>` 이미 존재합니다 `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=이름이 <tt>$1</tt> 인 $3 이(가 <tt>$2</tt> 에 이미 존재합니다
 filemanager_rename_denied=$3의 이름을 바꿀 수 없습니다. 소스 $3이 (가) 제거되었거나 권한이 제한되어서 발생할 수 있습니다.
 
-theme_xhred_filemanager_successful_rename=이름 바꾸기 `<strong><em><s>%from</s></em></strong>` 에 `<strong><em>%to</em></strong>` 성공적이었다.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> 이름을 <tt>%to</tt> 변경했습니다.
 
 filemanager_global_info_total1=전체 : $1 파일 및 $2 디렉토리
 filemanager_global_info_total2=전체 : $1 파일 및 $2 디렉토리
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=결과 대체
 theme_xhred_global_find=찾기
 theme_xhred_global_replace=바꾸다
 
-theme_xhred_filemanager_searching_matching=`<em>%text</em>` 텍스트를 포함하는 파일/디렉토리의 `<em>%value</em>` 일치하는 이름을 검색합니다.
-theme_xhred_filemanager_searching_replacing=이름이 `<em>%value</em>` 포함하는 파일에서 `<em>%text</em>` 를 `<em>%replace</em>` 와 일치 `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=<tt>%text</tt> 텍스트를 포함하는 /directories, 파일의 이름과 일치하는 <tt>%value</tt> 검색하는 중입니다.
+theme_xhred_filemanager_searching_replacing=바꾸기는 이름에 <tt>%value</tt> 포함된 파일에서 <tt>%text</tt> <tt>%replace</tt> 와 일치시킵니다.
 
 theme_xhred_filemanager_search_replaced_multi=<strong>%value</strong> 파일에서 찾아서 바 꾸었습니다.
 theme_xhred_filemanager_search_replaced=<strong>1</strong> 파일에서 찾아서 바꿨습니다.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=모든 객체의 소유
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=다음 오류로 인해 소유권을 변경할 수 없습니다.
 
 theme_xhred_filemanager_successful_compression_with_errors=다음 오류로 압축이 완료되었습니다.
-theme_xhred_filemanager_successful_compression_bg=압축이 완료되었습니다. 압축 파일 `<strong>%file</strong>` 은 `<strong>%path</strong>` 디렉토리에 있습니다.
-theme_xhred_filemanager_successful_compression_bg_with_errors=압축이 오류로 완료되었습니다. 압축 파일 `<strong>%file</strong>` 은 `<strong>%path</strong>` 디렉토리에 있어야합니다.
+theme_xhred_filemanager_successful_compression_bg=압축이 성공적으로 완료되었습니다. 압축된 파일 <tt>%file</tt> <tt>%path</tt> 디렉터리에 있습니다.
+theme_xhred_filemanager_successful_compression_bg_with_errors=오류가 발생하면서 압축이 완료되었습니다. 압축된 파일 <tt>%file</tt> <tt>%path</tt> 디렉터리에 위치해야 합니다.
 
 theme_xhred_filemanager_settings_notification_type=표시 할 알림 유형
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=정보, 경고 및 오류
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Netdata 실시간 모니터링 링크 표시
 settings_leftmenu_netdata_link=넷 데이터 서버 선호 링크
 
 theme_xhred_filemanager_context_chattr=속성 변경
-theme_xhred_filemanager_changing_attributes=선택한 파일에서 속성을 <strong><em>%value</em></strong> (으)로 설정
+theme_xhred_filemanager_changing_attributes=선택한 파일의 <tt>%value</tt> 으로 속성을 설정합니다.
 theme_xhred_filemanager_successful_attributes_with_errors=모든 객체에 대한 속성이 설정되지 않았습니다 :
 theme_xhred_filemanager_successful_attributes=속성이 설정되었습니다.
 
 theme_xhred_filemanager_context_chcon=보안 컨텍스트 변경
-theme_xhred_filemanager_changing_secontext=선택한 파일에서 보안 컨텍스트를 <strong><em>%value</em></strong> (으)로 변경
+theme_xhred_filemanager_changing_secontext=선택한 파일의 보안 컨텍스트를 <tt>%value</tt> 으로 변경합니다.
 theme_xhred_filemanager_successful_secontext_with_errors=모든 개체에 대한 보안 컨텍스트가 성공적으로 변경되지 않았습니다.
 theme_xhred_filemanager_successful_secontext=보안 컨텍스트가 성공적으로 변경되었습니다.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=패키지 업데이트
 
 # 21.20
 theme_xhred_hotkey_switch_theme=테마 전환
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=업로드 성공
+theme_xhred_filemanager_upload_status_err=업로드 실패:
+theme_xhred_filemanager_download_status_err=다운로드 실패:

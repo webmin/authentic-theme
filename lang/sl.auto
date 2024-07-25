@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Preimenovanje je izbrano.
 theme_xhred_filemanager_creating_directory=Ustvarjanje imenika
 theme_xhred_filemanager_creating_file=Ustvarjanje datoteke
 theme_xhred_filemanager_downloading_from=Prenos iz
-theme_xhred_filemanager_setting_permissions=Nastavitev dovoljenj na <strong><em>%value</em></strong> v izbranih datotekah.
-theme_xhred_filemanager_changing_ownership=Spreminjanje lastništva v <strong><em>%value</em></strong> v izbranih datotekah.
+theme_xhred_filemanager_setting_permissions=Nastavitev dovoljenj na <tt>%value</tt> za izbrane datoteke.
+theme_xhred_filemanager_changing_ownership=Spreminjanje lastništva v <tt>%value</tt> na izbranih datotekah.
 theme_xhred_filemanager_compressing_selected=Stiskanje izbrano v ozadju.
 theme_xhred_filemanager_refreshing=Osvežujoča vsebina imenika.
 theme_xhred_filemanager_copying_successful=Kopiranje v odložišče uspešno.
 theme_xhred_filemanager_cutting_successful=Urejanje v odložišče uspešno.
 theme_xhred_filemanager_pasting_successful=Lepljenje iz odložišča je bilo uspešno.
-theme_xhred_filemanager_bookmark_success=<strong><em>%value</em></strong> imenika je bila uspešno dodana med vaše zaznamke.
-theme_xhred_filemanager_searching=Iskanje `<em>%value</em>` datotek imen/datotek.
+theme_xhred_filemanager_bookmark_success=Imenik <tt>%value</tt> je bil uspešno dodan vašim zaznamkom.
+theme_xhred_filemanager_searching=Iskanje <tt>%value</tt>, ki se ujema z imeni datotek /directories.
 theme_xhred_filemanager_search_founds=Najdeno <strong>%value</strong> ujemanje <strong>%value</strong>.
 theme_xhred_filemanager_search_found=Najdeno </strong>1</strong> ujemanje.
 theme_xhred_filemanager_search_no_matches=Zadetkov ni bilo mogoče najti.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Brisanje je bilo uspešno.
 theme_xhred_filemanager_successful_permissions=Dovoljenja so bila uspešno spremenjena.
 theme_xhred_filemanager_successful_ownership=Lastništvo je uspešno spremenjeno.
 theme_xhred_filemanager_successful_compression=Stiskanje je uspešno končano.
-theme_xhred_filemanager_successful_directory_creation=Imenik `<strong>%value</strong>` je bil ustvarjen uspešno.
-theme_xhred_filemanager_successful_file_creation=mapa `<strong>%value</strong>` je bil ustvarjen uspešno.
+theme_xhred_filemanager_successful_directory_creation=Imenik <tt>%value</tt> je bil uspešno ustvarjen.
+theme_xhred_filemanager_successful_file_creation=Datoteka <tt>%value</tt> je bila uspešno ustvarjena.
 
 theme_xhred_notifications_packages_updates=Posodobitev paketov
 theme_xhred_notifications_theme_update=Posodobitev teme
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Opozorilo
 theme_xhred_global_close=Zapri
 
 theme_xhred_filemanager__no_bookmarks=Ni shranjenih zaznamkov
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> imenika je bila uspešno odstranjena iz vaših zaznamkov.
+theme_xhred_filemanager_unbookmark_success=Imenik <tt>%value</tt> je bil uspešno odstranjen iz vaših zaznamkov.
 theme_xhred_filemanager_bookmark=Zaznamek trenutni imenik
 theme_xhred_filemanager_unbookmark=Odznak trenutnega imenika
 theme_xhred_filemanager_move_into_self=Ne morete premakniti imenika vase! Ciljni imenik je znotraj izvornega imenika.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ni najdenih rezultatov<
 
 theme_xhred_filemanager_buffer_error=Ni bilo mogoče prilepiti datotek v medpomnilnik - dovoljenje zavrnjeno.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` že obstaja v `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 ni mogoče ustvariti `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - dovoljenje zavrnjeno : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> že obstaja v <tt>$2</tt>
+filemanager_create_object_denied=Ni mogoče ustvariti $3 <tt>$1</tt> v <tt>$2</tt> - dovoljenje zavrnjeno: $4.
 
 theme_xhred_filemanager_paste_warning=Ciljev ni bilo mogoče prilepiti. Možno je, da bi bili zahtevani predmeti preimenovani, premaknjeni </em>ali</em> izbrisani </em>, preden so bili pred lepljenjem. Drug možen vzrok je, da cilj ni mogoče zapisati. Vredno je preveriti atribute predmetov.
 
 theme_xhred_filemanager_delete_warning=Brisanje je uspešno končano, vendar ne za vse predmete. Možno je, da bi bili zahtevani predmeti pred izbrisom <em>preimenovani</em> ali <em>premaknjeni</em>. Omejeni dovoljenja (atributi) so še en možen vzrok. Obvestilo o napaki:
 
-filemanager_rename_exists=$3 z imenom `<strong><em>$1</em></strong>` že obstaja v `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 z imenom <tt>$1</tt> že obstaja v <tt>$2</tt>
 filemanager_rename_denied=Ne morem preimenovati $3. To se lahko zgodi, ker je bil vir $3 odstranjen ali zaradi omejenih dovoljenj.
 
-theme_xhred_filemanager_successful_rename=Preimenovanje `<strong><em><s>%from</s></em></strong>` do `<strong><em>%to</em></strong>` je bil uspešen.
+theme_xhred_filemanager_successful_rename=Preimenovanje <tt>%from</tt> v <tt>%to</tt> je bilo uspešno.
 
 filemanager_global_info_total1=Skupaj: datoteka $1 in imenik $2
 filemanager_global_info_total2=Skupaj: datoteke $1 in imenik $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Zamenjaj rezultate
 theme_xhred_global_find=Najti
 theme_xhred_global_replace=Zamenjati
 
-theme_xhred_filemanager_searching_matching=Iskanje `<em>%value</em>` ujemajočih se imen datotek/imenikov, ki vsebujejo `<em>%text</em>` besedila.
-theme_xhred_filemanager_searching_replacing=Zamenjava tekem `<em>%text</em>` z `<em>%replace</em>` v datotekah z imeni, ki vsebujejo `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Iskanje <tt>%value</tt>, ki se ujema z imeni datotek /directories, ki vsebujejo besedilo <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Zamenjava ujema <tt>%text</tt> z <tt>%replace</tt> v datotekah z imeni, ki vsebujejo <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Najdeno in zamenjano v datotekah <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=Najdeno in nadomeščeno v datoteki </strong>1</strong>.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Lastništvo ni bilo usp
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Lastništva ni mogoče spremeniti zaradi naslednjih napak:
 
 theme_xhred_filemanager_successful_compression_with_errors=Stiskanje se je končalo z naslednjimi napakami:
-theme_xhred_filemanager_successful_compression_bg=Stiskanje je uspešno končano. Stisnjena datoteka `<strong>%file</strong>` se nahaja v imeniku `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Stiskanje se je končalo z napakami. Stisnjena datoteka `<strong>%file</strong>` mora biti v imeniku `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Stiskanje je uspešno zaključeno. Stisnjena datoteka <tt>%file</tt> se nahaja v imeniku <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Stiskanje se je končalo z napakami. Stisnjena datoteka <tt>%file</tt> mora biti v imeniku <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Vrsta obvestil za prikaz
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informacije, opozorila in napake
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Pokaži povezavo za spremljanje v realnem času v Netd
 settings_leftmenu_netdata_link=Prednostna povezava strežnika Netdata
 
 theme_xhred_filemanager_context_chattr=Spremenite atribute
-theme_xhred_filemanager_changing_attributes=Nastavitev atributov <strong><em>%value</em></strong> v izbranih datotekah.
+theme_xhred_filemanager_changing_attributes=Nastavitev atributov na <tt>%value</tt> za izbrane datoteke.
 theme_xhred_filemanager_successful_attributes_with_errors=Atributi niso bili uspešno nastavljeni za vse predmete:
 theme_xhred_filemanager_successful_attributes=Atributi so bili uspešno nastavljeni.
 
 theme_xhred_filemanager_context_chcon=Spremenite varnostni kontekst
-theme_xhred_filemanager_changing_secontext=Spreminjanje varnostnega konteksta v <strong><em>%value</em></strong> v izbranih datotekah.
+theme_xhred_filemanager_changing_secontext=Spreminjanje varnostnega konteksta v <tt>%value</tt> na izbranih datotekah.
 theme_xhred_filemanager_successful_secontext_with_errors=Varnostni kontekst ni bil uspešno spremenjen za vse predmete:
 theme_xhred_filemanager_successful_secontext=Varnostni kontekst je bil uspešno spremenjen.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Posodobitve paketov
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Zamenjaj temo
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Nalaganje uspešno
+theme_xhred_filemanager_upload_status_err=Nalaganje ni uspelo:
+theme_xhred_filemanager_download_status_err=Prenos ni uspel:

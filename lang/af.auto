@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Hernoem gekies.
 theme_xhred_filemanager_creating_directory=Skep gids
 theme_xhred_filemanager_creating_file=Skep lêer
 theme_xhred_filemanager_downloading_from=Laai af van
-theme_xhred_filemanager_setting_permissions=Stel regte op <strong><em>%value</em></strong> op geselekteerde lêer (s) in.
-theme_xhred_filemanager_changing_ownership=Verander eienaarskap na <strong><em>%value</em></strong> op geselekteerde lêer (s).
+theme_xhred_filemanager_setting_permissions=Stel toestemmings op <tt>%value</tt> op geselekteerde lêer(s).
+theme_xhred_filemanager_changing_ownership=Verander eienaarskap na <tt>%value</tt> op geselekteerde lêer(s).
 theme_xhred_filemanager_compressing_selected=Kompressie gekies op die agtergrond.
 theme_xhred_filemanager_refreshing=Verfrissende gidsinhoud.
 theme_xhred_filemanager_copying_successful=Kopie na knipbord suksesvol.
 theme_xhred_filemanager_cutting_successful=Sny na knipbord suksesvol.
 theme_xhred_filemanager_pasting_successful=Die plak vanaf die knipbord was suksesvol.
-theme_xhred_filemanager_bookmark_success=Gids <strong><em>%value</em></strong> is suksesvol by u boekmerke gevoeg.
-theme_xhred_filemanager_searching=Soek na `<em>%value</em>` wat ooreenstem met die name van lêers/kaarte.
+theme_xhred_filemanager_bookmark_success=Gids <tt>%value</tt> is suksesvol by jou boekmerke gevoeg.
+theme_xhred_filemanager_searching=Soek tans vir <tt>%value</tt> wat ooreenstem met name van lêers /directories.
 theme_xhred_filemanager_search_founds=Gevind met <strong>%value</strong> ooreenstem.
 theme_xhred_filemanager_search_found=<Sterk>1</strong> wedstryd gevind.
 theme_xhred_filemanager_search_no_matches=Geen vuurhoutjies gevind nie.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Die uitvee was suksesvol.
 theme_xhred_filemanager_successful_permissions=Toestemmings is suksesvol verander.
 theme_xhred_filemanager_successful_ownership=Eienaarskap is suksesvol verander.
 theme_xhred_filemanager_successful_compression=Kompressie is suksesvol voltooi.
-theme_xhred_filemanager_successful_directory_creation=Gids `<strong>%value</strong>` is suksesvol geskep.
-theme_xhred_filemanager_successful_file_creation=lêer `<strong>%value</strong>` is suksesvol geskep.
+theme_xhred_filemanager_successful_directory_creation=Gids <tt>%value</tt> is suksesvol geskep.
+theme_xhred_filemanager_successful_file_creation=Lêer <tt>%value</tt> is suksesvol geskep.
 
 theme_xhred_notifications_packages_updates=Opdatering van pakkette
 theme_xhred_notifications_theme_update=Tema-opdatering
@@ -348,7 +348,7 @@ theme_xhred_global_warning=waarskuwing
 theme_xhred_global_close=Naby
 
 theme_xhred_filemanager__no_bookmarks=Geen gestoor boekmerke nie
-theme_xhred_filemanager_unbookmark_success=Gids <strong><em>%value</em></strong> is suksesvol van u boekmerke verwyder.
+theme_xhred_filemanager_unbookmark_success=Gids <tt>%value</tt> is suksesvol van jou boekmerke verwyder.
 theme_xhred_filemanager_bookmark=Boekmerk huidige gids
 theme_xhred_filemanager_unbookmark=Ontmerk die huidige gids
 theme_xhred_filemanager_move_into_self=U kan nie 'n gids na homself skuif nie! Die bestemmingsgids is in die brongids.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Geen resultate gevind n
 
 theme_xhred_filemanager_buffer_error=Kon nie lêers op die buffer plak nie - toestemming word geweier.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` bestaan reeds in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Kan nie $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - toestemming geweier : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> bestaan reeds in <tt>$2</tt>
+filemanager_create_object_denied=Kan nie $3 <tt>$1</tt> in <tt>$2</tt> skep nie - toestemming geweier : $4.
 
 theme_xhred_filemanager_paste_warning=Kon nie teiken (e) plak nie. Dit is moontlik dat die voorgestelde objek (s) <em>hernoem is, verskuif</em> of <em>verwyder is</em> tydens/voordat dit geplak is. 'N Ander moontlike oorsaak is dat die bestemming nie skryfbaar is nie. Dit is die moeite werd om die eienskappe van voorwerpe na te gaan.
 
 theme_xhred_filemanager_delete_warning=Die uitvee is suksesvol voltooi, maar nie vir alle voorwerpe nie. Dit is moontlik dat voorgestelde voorwerpe <em>hernoem is</em> of <em>verskuif</em> is voordat dit verwyder is. Beperkte toestemmings (eienskappe) is 'n ander moontlike oorsaak. Foutboodskap:
 
-filemanager_rename_exists=$3 met naam `<strong><em>$1</em></strong>` bestaan reeds in `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 met naam <tt>$1</tt> bestaan reeds in <tt>$2</tt>
 filemanager_rename_denied=Kan nie die naam $3 hernoem nie. Dit kan gebeur omdat die bron $3 verwyder is of weens beperkte toestemmings.
 
-theme_xhred_filemanager_successful_rename=hernoeming `<strong><em><s>%from</s></em></strong>` om `<strong><em>%to</em></strong>` was suksesvol.
+theme_xhred_filemanager_successful_rename=Die hernoeming van <tt>%from</tt> na <tt>%to</tt> was suksesvol.
 
 filemanager_global_info_total1=Totaal: $1 lêer en $2 gids
 filemanager_global_info_total2=Totaal: $1 lêers en $2 gids
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Vervang die resultate
 theme_xhred_global_find=Vind
 theme_xhred_global_replace=vervang
 
-theme_xhred_filemanager_searching_matching=Soek na `<em>%value</em>` wat ooreenstem met die name van lêers/kaarte, met `<em>%text</em>` teksteks.
-theme_xhred_filemanager_searching_replacing=Die vervanging van wedstryde `<em>%text</em>` met `<em>%replace</em>` in lêers met name met `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Soek tans vir <tt>%value</tt> wat ooreenstem met name van lêers /directories, wat <tt>%text</tt> teksteks bevat.
+theme_xhred_filemanager_searching_replacing=Vervang passings <tt>%text</tt> met <tt>%replace</tt> in lêers met name wat <tt>%value</tt> bevat.
 
 theme_xhred_filemanager_search_replaced_multi=Gevind en vervang in <strong>%value</strong> -waardelêers.
 theme_xhred_filemanager_search_replaced=Gevind en vervang in die <strong>1</strong> lêer.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Eienaarskap is nie suks
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Eienaarskap kan nie verander word as gevolg van die volgende foute:
 
 theme_xhred_filemanager_successful_compression_with_errors=Kompressie is klaar met die volgende foute:
-theme_xhred_filemanager_successful_compression_bg=Kompressie is suksesvol voltooi. Gekomprimeerde lêer `<strong>%file</strong>` is in die `<strong>%path</strong>` gids geleë.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Kompressie is klaar met foute. Die saamgeperste lêer `<strong>%file</strong>` moet in die `<strong>%path</strong>` geleë wees.
+theme_xhred_filemanager_successful_compression_bg=Kompressie is suksesvol voltooi. Die saamgeperste lêer <tt>%file</tt> is in <tt>%path</tt> gids geleë.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Kompressie is klaar met foute. Die saamgeperste lêer <tt>%file</tt> moet in <tt>%path</tt> gids geleë wees.
 
 theme_xhred_filemanager_settings_notification_type=Tipe kennisgewings wat vertoon moet word
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Inligting, waarskuwings en foute
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Wys Netdata-intydse moniteringskakel
 settings_leftmenu_netdata_link=Netdata-bediener se voorkeurskakel
 
 theme_xhred_filemanager_context_chattr=Verander eienskappe
-theme_xhred_filemanager_changing_attributes=Die instelling van attribute tot <strong><em>%value</em></strong> op geselekteerde lêer (s).
+theme_xhred_filemanager_changing_attributes=Stel kenmerke op <tt>%value</tt> op geselekteerde lêer(s).
 theme_xhred_filemanager_successful_attributes_with_errors=Eienskappe is nie suksesvol vir alle voorwerpe opgestel nie:
 theme_xhred_filemanager_successful_attributes=Eienskappe is suksesvol opgestel.
 
 theme_xhred_filemanager_context_chcon=Verander sekuriteitskonteks
-theme_xhred_filemanager_changing_secontext=Verander sekuriteitskonteks na <strong><em>%value</em></strong> op geselekteerde lêer (s).
+theme_xhred_filemanager_changing_secontext=Verander sekuriteitskonteks na <tt>%value</tt> op geselekteerde lêer(s).
 theme_xhred_filemanager_successful_secontext_with_errors=Sekuriteitskonteks is nie suksesvol vir alle voorwerpe verander nie:
 theme_xhred_filemanager_successful_secontext=Sekuriteitskonteks is suksesvol verander.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Pakketopdaterings
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Verander tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Oplaai suksesvol
+theme_xhred_filemanager_upload_status_err=Oplaai het misluk:
+theme_xhred_filemanager_download_status_err=Aflaai het misluk:

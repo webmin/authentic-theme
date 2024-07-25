@@ -27,8 +27,35 @@ theme_xhred_sysinfo_wmdocs=Documentație Webmin
 theme_xhred_sysinfo_vmdocs=Documentația Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentația Cloudmin
 
+theme_xhred_filemanager_setting_permissions=Setarea permisiunilor la <tt>%value</tt> pentru fișierele selectate.
+theme_xhred_filemanager_changing_ownership=Se schimbă proprietatea în <tt>%value</tt> pentru fișierele selectate.
+theme_xhred_filemanager_bookmark_success=Directorul <tt>%value</tt> a fost adăugat cu succes la marcajele dvs.
+theme_xhred_filemanager_searching=Se caută nume de fișiere /directories. care corespund <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_directory_creation=Directorul <tt>%value</tt> a fost creat cu succes.
+theme_xhred_filemanager_successful_file_creation=Fișierul <tt>%value</tt> a fost creat cu succes.
+
+theme_xhred_filemanager_unbookmark_success=Directorul <tt>%value</tt> a fost eliminat cu succes din marcajele dvs.
+
 theme_xhred_database_object_selected_delete2=Aruncă tabelul selectat
 theme_xhred_database_objects_selected_delete2=Aruncă tabelele selectate
+
+filemanager_create_object_exists=$3 <tt>$1</tt> există deja în <tt>$2</tt>
+filemanager_create_object_denied=Nu se poate crea $3 <tt>$1</tt> în <tt>$2</tt> - permisiunea refuzată: $4.
+
+filemanager_rename_exists=$3 cu numele <tt>$1</tt> există deja în <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=Redenumirea <tt>%from</tt> la <tt>%to</tt> a avut succes.
+
+theme_xhred_filemanager_searching_matching=Se caută nume <tt>%value</tt> care se potrivesc ale fișierelor /directories, care conțin <tt>%text</tt> text.
+theme_xhred_filemanager_searching_replacing=Înlocuirea potrivirilor <tt>%text</tt> cu <tt>%replace</tt> în fișierele cu nume care conțin <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=Compresia s-a încheiat cu succes. Fișierul comprimat <tt>%file</tt> se află în directorul <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Compresia s-a terminat cu erori. Fișierul comprimat <tt>%file</tt> ar trebui să fie localizat în directorul <tt>%path</tt>.
+
+theme_xhred_filemanager_changing_attributes=Setarea atributelor la <tt>%value</tt> pentru fișierele selectate.
+
+theme_xhred_filemanager_changing_secontext=Schimbarea contextului de securitate la <tt>%value</tt> pentru fișierele selectate.
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Comutați paleta de culori
@@ -432,3 +459,8 @@ theme_xhred_body_updates=Actualizări de pachete
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Schimbați tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Încărcare reușită
+theme_xhred_filemanager_upload_status_err=Încărcare eșuată:
+theme_xhred_filemanager_download_status_err=Descarcare esuata:

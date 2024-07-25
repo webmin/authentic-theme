@@ -23,8 +23,35 @@ theme_xhred_sysinfo_wmdocs=Webmin dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation
 theme_xhred_sysinfo_cmdocs=Cloudmin dokumentation
 
+theme_xhred_filemanager_setting_permissions=Ställer in behörigheter till <tt>%value</tt> för valda fil(er).
+theme_xhred_filemanager_changing_ownership=Ändra ägande till <tt>%value</tt> på valda fil(er).
+theme_xhred_filemanager_bookmark_success=Katalogen <tt>%value</tt> har lagts till i dina bokmärken.
+theme_xhred_filemanager_searching=Söker efter <tt>%value</tt> som matchar namnen på filerna /directories.
+
+theme_xhred_filemanager_successful_directory_creation=Katalogen <tt>%value</tt> skapades framgångsrikt.
+theme_xhred_filemanager_successful_file_creation=Fil <tt>%value</tt> skapades framgångsrikt.
+
+theme_xhred_filemanager_unbookmark_success=Katalogen <tt>%value</tt> har tagits bort från dina bokmärken.
+
 theme_xhred_database_object_selected_delete2=Släpp vald tabell
 theme_xhred_database_objects_selected_delete2=Släpp valda tabeller
+
+filemanager_create_object_exists=$3 <tt>$1</tt> finns redan i <tt>$2</tt>
+filemanager_create_object_denied=Kan inte skapa $3 <tt>$1</tt> i <tt>$2</tt> - permission nekad: $4.
+
+filemanager_rename_exists=$3 med namnet <tt>$1</tt> finns redan i <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=Att byta namn på <tt>%from</tt> till <tt>%to</tt> lyckades.
+
+theme_xhred_filemanager_searching_matching=Söker efter <tt>%value</tt> som matchar namn på filer /directories, som innehåller <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Ersätter matchar <tt>%text</tt> med <tt>%replace</tt> i filer med namn som innehåller <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=Komprimeringen har slutförts. Den komprimerade filen <tt>%file</tt> finns i katalogen <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Komprimeringen har slutförts med fel. Den komprimerade filen <tt>%file</tt> bör finnas i <tt>%path</tt> katalogen.
+
+theme_xhred_filemanager_changing_attributes=Ställer in attribut till <tt>%value</tt> på valda fil(er).
+
+theme_xhred_filemanager_changing_secontext=Ändra säkerhetskontext till <tt>%value</tt> på valda fil(er).
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Växla färgpalett
@@ -147,3 +174,8 @@ theme_xhred_body_updates=Paketuppdateringar
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Byt tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Uppladdningen lyckades
+theme_xhred_filemanager_upload_status_err=Uppladdningen misslyckades:
+theme_xhred_filemanager_download_status_err=Nedladdning misslyckad:

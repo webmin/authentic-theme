@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Semmi l-isem magħżul.
 theme_xhred_filemanager_creating_directory=Ħolqien ta 'direttorju
 theme_xhred_filemanager_creating_file=Ħolqien ta 'fajl
 theme_xhred_filemanager_downloading_from=Tniżżil minn
-theme_xhred_filemanager_setting_permissions=Twaqqif ta 'permessi fuq <strong><em>%value</em></strong> fuq fajl (i) magħżul.
-theme_xhred_filemanager_changing_ownership=Nibdlu s-sjieda għal <strong><em>%value</em></strong> fuq fajl (i) magħżul.
+theme_xhred_filemanager_setting_permissions=L-issettjar ta' permessi għal <tt>%value</tt> fuq fajl(i) magħżul(a).
+theme_xhred_filemanager_changing_ownership=Nibdlu s-sjieda għal <tt>%value</tt> fuq fajl(i) magħżul(a).
 theme_xhred_filemanager_compressing_selected=Jikkompressa magħżula fl-isfond.
 theme_xhred_filemanager_refreshing=Refreshing tal-kontenut tad-direttorju.
 theme_xhred_filemanager_copying_successful=Kopja għall-clipboard tkun suċċess.
 theme_xhred_filemanager_cutting_successful=Aqta 'l-clipboard biex tirnexxi.
 theme_xhred_filemanager_pasting_successful=Pejst mill-clipboard kien suċċess.
-theme_xhred_filemanager_bookmark_success=Il- <strong><em>%value</em></strong> tad-Direttorju <strong><em>%value</em></strong> ġie miżjud b'suċċess mal-bookmarks tiegħek.
-theme_xhred_filemanager_searching=Tiftix għal `<em>%value</em>` jaqbel ma 'ismijiet ta' fajls/direttorji.
+theme_xhred_filemanager_bookmark_success=Id-direttorju <tt>%value</tt> ġie miżjud b'suċċess mal-bookmarks tiegħek.
+theme_xhred_filemanager_searching=Tiftix għal <tt>%value</tt> li jaqblu ismijiet tal-fajls /directories.
 theme_xhred_filemanager_search_founds=<strong>%value</strong> nstabu.
 theme_xhred_filemanager_search_found=Jinstabu </strong>1</strong>.
 theme_xhred_filemanager_search_no_matches=Ma nstabu l-ebda taqbiliet.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=It-tħassir kien suċċess.
 theme_xhred_filemanager_successful_permissions=Il-permessi nbidlu b'suċċess.
 theme_xhred_filemanager_successful_ownership=Is-sjieda inbidlet b'suċċess.
 theme_xhred_filemanager_successful_compression=Il-kompressjoni intemmet b'suċċess.
-theme_xhred_filemanager_successful_directory_creation=Direttorju `<strong>%value</strong>` inħoloq b'suċċess.
-theme_xhred_filemanager_successful_file_creation=Fajl `<strong>%value</strong>` inħoloq b'suċċess.
+theme_xhred_filemanager_successful_directory_creation=Id-direttorju <tt>%value</tt> inħoloq b'suċċess.
+theme_xhred_filemanager_successful_file_creation=Il-fajl <tt>%value</tt> inħoloq b'suċċess.
 
 theme_xhred_notifications_packages_updates=Aġġornament tal-Pakketti
 theme_xhred_notifications_theme_update=Aġġornament tat-Tema
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Twissija
 theme_xhred_global_close=Qrib
 
 theme_xhred_filemanager__no_bookmarks=L-ebda bookmarks salvati
-theme_xhred_filemanager_unbookmark_success=Il- <strong><em>%value</em></strong> tad-Direttorju <strong><em>%value</em></strong> tneħħa b'suċċess mill-bookmarks tiegħek.
+theme_xhred_filemanager_unbookmark_success=Id-direttorju <tt>%value</tt> tneħħa b'suċċess mill-bookmarks tiegħek.
 theme_xhred_filemanager_bookmark=Direttorju kurrenti tat-Timbru
 theme_xhred_filemanager_unbookmark=Direttorju attwali Unbookmark
 theme_xhred_filemanager_move_into_self=Ma tistax tiċċaqlaq direttorju fiha nfisha! Id-direttorju tad-destinazzjoni jinsab ġewwa d-direttorju tas-sors.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ma nstab l-ebda riżult
 
 theme_xhred_filemanager_buffer_error=Naqset milli tippejstja l-fajls fil-bafer - permess miċħud.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` diġa jeżisti fil `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Ma tistax toħloq $3 `<strong><em>$1</em></strong>` fi `<strong><tt>$2</tt></strong>` - permess miċħud : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> diġà jeżisti fi <tt>$2</tt>
+filemanager_create_object_denied=Ma tistax toħloq $3 <tt>$1</tt> f' <tt>$2</tt> - permess miċħud : $4.
 
 theme_xhred_filemanager_paste_warning=Naqset milli tippejstja l-mira. Huwa possibbli li l-oġġett (i) mitlubin setgħu ġew <em>isem mill-ġdid, imċaqlaq</em> jew <em>imħassar</em> waqt/qabel ma twaħħal. Kawża oħra possibbli hija li d-destinazzjoni ma tkunx miktuba. Ta 'min jiċċekkja l-attributi tal-oġġetti.
 
 theme_xhred_filemanager_delete_warning=It-tħassir spiċċa b'suċċess iżda mhux għall-oġġetti kollha. Huwa possibbli li l-oġġett (i) mitlubin setgħu ġew <em>semmessi</em> jew <em>i mċaqalqa</em> qabel it-tħassir. Permessi (attributi) ristretti huwa kawża oħra possibbli. Messaġġ ta 'żball:
 
-filemanager_rename_exists=$3 bl-isem `<strong><em>$1</em></strong>` diġa jeżisti fil `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 bl-isem <tt>$1</tt> diġà jeżisti fi <tt>$2</tt>
 filemanager_rename_denied=Ma tistax tibdel l-isem minn $3. Dan jista 'jiġri minħabba li s-sors $3 tneħħa jew minħabba permessi ristretti.
 
-theme_xhred_filemanager_successful_rename=Semmija mill-ġdid `<strong><em><s>%from</s></em></strong>` biex `<strong><em>%to</em></strong>` kien suċċess.
+theme_xhred_filemanager_successful_rename=It-tibdil tal-isem <tt>%from</tt> għal <tt>%to</tt> rnexxa.
 
 filemanager_global_info_total1=Total: $1 fajl u $2 direttorju
 filemanager_global_info_total2=Total: $1 fajls u $2 direttorju
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Ibdel ir-riżultati
 theme_xhred_global_find=Sib
 theme_xhred_global_replace=Ibdel
 
-theme_xhred_filemanager_searching_matching=Tiftix għal `<em>%value</em>` jaqbel ma 'ismijiet ta' fajls/direttorji, li fihom `<em>%text</em>` test.
-theme_xhred_filemanager_searching_replacing=Is-sostituzzjoni ta 'taqbiliet ta' `<em>%text</em>` ma ' `<em>%replace</em>` f'fajls b'ismijiet li fihom `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Tiftix għal <tt>%value</tt> li jaqblu ismijiet ta' fajls /directories, li fihom <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Is-sostituzzjoni <tt>%text</tt> ma' <tt>%replace</tt> f'fajls b'ismijiet li fihom <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Instab u mibdul f'fajls ta ' <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=Instab u mibdul f '</strong> fajl
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Is-sjieda ma nbidlitx b
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Is-sjieda ma tistax tinbidel minħabba żbalji li ġejjin:
 
 theme_xhred_filemanager_successful_compression_with_errors=Il-kompressjoni spiċċat bl-iżbalji li ġejjin:
-theme_xhred_filemanager_successful_compression_bg=Il-kompressjoni intemmet b'suċċess. Fajl ikkompressat `<strong>%file</strong>` jinsab fid-direttorju tal- `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Il-kompressjoni spiċċat bi żbalji. Fajl ikkompressat `<strong>%file</strong>` għandu jkun lokalizzat fid-direttorju `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Il-kompressjoni spiċċat b'suċċess. Fajl kompressat <tt>%file</tt> jinsab fid-direttorju <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Il-kompressjoni spiċċat bi żbalji. Fajl kompressat <tt>%file</tt> għandu jkun jinsab fid-direttorju <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Tip ta 'notifiki biex jintwerew
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informazzjonijiet, twissijiet u żbalji
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Uri Netdata link ta 'monitoraġġ f'ħin reali
 settings_leftmenu_netdata_link=Link preferut tas-server Netdata
 
 theme_xhred_filemanager_context_chattr=Ibdel l-attributi
-theme_xhred_filemanager_changing_attributes=Twaqqif ta 'attributi għal <strong><em>%value</em></strong> fuq fajl (i) magħżul.
+theme_xhred_filemanager_changing_attributes=L-issettjar ta' attributi għal <tt>%value</tt> fuq fajl(i) magħżul(a).
 theme_xhred_filemanager_successful_attributes_with_errors=L-attributi ma ġewx issettjati b'suċċess għall-oġġetti kollha:
 theme_xhred_filemanager_successful_attributes=L-attributi ġew stabbiliti b'suċċess.
 
 theme_xhred_filemanager_context_chcon=Ibdel il-kuntest tas-sigurtà
-theme_xhred_filemanager_changing_secontext=Nibdlu l-kuntest tas-sigurtà għal <strong><em>%value</em></strong> fuq fajl (i) magħżul.
+theme_xhred_filemanager_changing_secontext=Nibdlu l-kuntest tas-sigurtà għal <tt>%value</tt> fuq fajl(i) magħżul(a).
 theme_xhred_filemanager_successful_secontext_with_errors=Il-kuntest tas-sigurtà ma nbidilx b’suċċess għall-oġġetti kollha:
 theme_xhred_filemanager_successful_secontext=Il-kuntest tas-sigurtà nbidel b'suċċess.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Aġġornamenti tal-pakkett
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Aqleb it-tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Upload b'suċċess
+theme_xhred_filemanager_upload_status_err=It-tlugħ fallut:
+theme_xhred_filemanager_download_status_err=It-tniżżil falla:

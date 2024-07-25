@@ -33,8 +33,35 @@ theme_xhred_sysinfo_wmdocs=Webmin ドキュメント
 theme_xhred_sysinfo_vmdocs=Virtualmin のドキュメント
 theme_xhred_sysinfo_cmdocs=クラウドミンのドキュメント
 
+theme_xhred_filemanager_setting_permissions=選択したファイルの権限を<tt>%value</tt>に設定しています。
+theme_xhred_filemanager_changing_ownership=選択したファイルの所有権を<tt>%value</tt>に変更しています。
+theme_xhred_filemanager_bookmark_success=ディレクトリ<tt>%value</tt>ブックマークに正常に追加されました。
+theme_xhred_filemanager_searching=ファイル名「/directories」に一致する<tt>%value</tt>を検索しています/directories.
+
+theme_xhred_filemanager_successful_directory_creation=ディレクトリ<tt>%value</tt>正常に作成されました。
+theme_xhred_filemanager_successful_file_creation=ファイル<tt>%value</tt>正常に作成されました。
+
+theme_xhred_filemanager_unbookmark_success=ディレクトリ<tt>%value</tt>ブックマークから正常に削除されました。
+
 theme_xhred_database_object_selected_delete2=選択したテーブルを削除
 theme_xhred_database_objects_selected_delete2=選択したテーブルを削除
+
+filemanager_create_object_exists=$3 <tt>$1</tt> <tt>$2</tt>に既に存在します
+filemanager_create_object_denied=<tt>$2</tt>に$3 <tt>$1</tt>を作成できません - 権限が拒否されました: $4 。
+
+filemanager_rename_exists=名前が<tt>$1</tt>の$3 <tt>$2</tt>に既に存在します
+
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> <tt>%to</tt>の名前変更が成功しました。
+
+theme_xhred_filemanager_searching_matching=<tt>%text</tt>テキストを含むファイル/directories, の名前に一致する<tt>%value</tt>を検索しています。
+theme_xhred_filemanager_searching_replacing=置換は、名前に<tt>%value</tt>が含まれるファイル内の<tt>%text</tt>を<tt>%replace</tt>に一致させます。
+
+theme_xhred_filemanager_successful_compression_bg=圧縮が正常に終了しました。圧縮ファイル<tt>%file</tt> <tt>%path</tt>ディレクトリにあります。
+theme_xhred_filemanager_successful_compression_bg_with_errors=圧縮はエラーで終了しました。圧縮ファイル<tt>%file</tt> <tt>%path</tt>ディレクトリに配置する必要があります。
+
+theme_xhred_filemanager_changing_attributes=選択したファイルの属性を<tt>%value</tt>に設定しています。
+
+theme_xhred_filemanager_changing_secontext=選択したファイルのセキュリティ コンテキストを<tt>%value</tt>に変更しています。
 
 #18.40
 settings_hotkey_toggle_key_night_mode=カラー パレットの切り替え
@@ -371,3 +398,8 @@ theme_xhred_body_updates=パッケージの更新
 
 # 21.20
 theme_xhred_hotkey_switch_theme=テーマを切り替える
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=アップロードに成功しました
+theme_xhred_filemanager_upload_status_err=アップロードに失敗しました:
+theme_xhred_filemanager_download_status_err=ダウンロードに失敗しました：

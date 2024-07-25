@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=نام تبدیل کرنا منتخب 
 theme_xhred_filemanager_creating_directory=ڈائرکٹری بنانا
 theme_xhred_filemanager_creating_file=فائل بنانا
 theme_xhred_filemanager_downloading_from=سے ڈاؤن لوڈ ہو رہا ہے
-theme_xhred_filemanager_setting_permissions=Setting permissions to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_changing_ownership=Changing ownership to <strong><em>%value</em></strong> on selected file(s).
+theme_xhred_filemanager_setting_permissions=Setting permissions to <tt>%value</tt> on selected file(s).
+theme_xhred_filemanager_changing_ownership=Changing ownership to <tt>%value</tt> on selected file(s).
 theme_xhred_filemanager_compressing_selected=پس منظر میں منتخب کردہ سکیڑنا۔
 theme_xhred_filemanager_refreshing=ڈائریکٹری کے مواد کو تازہ دم کرنا۔
 theme_xhred_filemanager_copying_successful=کلپ بورڈ پر کاپی کامیاب۔
 theme_xhred_filemanager_cutting_successful=کٹ ٹو کلپ بورڈ کامیاب۔
 theme_xhred_filemanager_pasting_successful=کلپ بورڈ سے پیسٹ کامیاب رہا۔
-theme_xhred_filemanager_bookmark_success=Directory <strong><em>%value</em></strong> was successfully added to your bookmarks.
-theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
+theme_xhred_filemanager_bookmark_success=Directory <tt>%value</tt> was successfully added to your bookmarks.
+theme_xhred_filemanager_searching=Searching for <tt>%value</tt> matching names of files/directories.
 theme_xhred_filemanager_search_founds=Found <strong>%value</strong> matches.
 theme_xhred_filemanager_search_found=Found <strong>1</strong> match.
 theme_xhred_filemanager_search_no_matches=کوئی میچ نہیں ملا۔
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=حذف کرنا کامیاب رہا�
 theme_xhred_filemanager_successful_permissions=اجازتوں کو کامیابی کے ساتھ تبدیل کردیا گیا ہے۔
 theme_xhred_filemanager_successful_ownership=ملکیت کامیابی کے ساتھ تبدیل کردی گئی ہے۔
 theme_xhred_filemanager_successful_compression=دباؤ کامیابی کے ساتھ ختم ہوچکا ہے۔
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
-theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
+theme_xhred_filemanager_successful_directory_creation=Directory <tt>%value</tt> was created successfully.
+theme_xhred_filemanager_successful_file_creation=File <tt>%value</tt> was created successfully.
 
 theme_xhred_notifications_packages_updates=پیکیج اپ ڈیٹ
 theme_xhred_notifications_theme_update=تھیم اپ ڈیٹ
@@ -348,7 +348,7 @@ theme_xhred_global_warning=انتباہ
 theme_xhred_global_close=بند کریں
 
 theme_xhred_filemanager__no_bookmarks=کوئی محفوظ کردہ بک مارکس نہیں ہیں
-theme_xhred_filemanager_unbookmark_success=Directory <strong><em>%value</em></strong> was successfully removed from your bookmarks.
+theme_xhred_filemanager_unbookmark_success=Directory <tt>%value</tt> was successfully removed from your bookmarks.
 theme_xhred_filemanager_bookmark=موجودہ ڈائریکٹری کو بُک مارک کریں
 theme_xhred_filemanager_unbookmark=موجودہ ڈائرکٹری کو غیر بُک مارک کریں
 theme_xhred_filemanager_move_into_self=آپ کسی ڈائرکٹری کو اپنے اندر منتقل نہیں کرسکتے ہیں! منبع ڈائریکٹری کے اندر منزل مقصود ہے۔
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">No results found</span>
 
 theme_xhred_filemanager_buffer_error=فائلوں کو بفر پر چسپاں کرنے میں ناکام۔ اجازت سے انکار کردیا گیا۔
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Can't create $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - permission denied : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> already exists in <tt>$2</tt>
+filemanager_create_object_denied=Can't create $3 <tt>$1</tt> in <tt>$2</tt> - permission denied : $4.
 
 theme_xhred_filemanager_paste_warning=Failed to paste target(s). It is possible that requested object(s) could have been <em>renamed, moved</em> or <em>deleted</em> while/before pasting. Another possible cause is that destination is not writable.  It is worth checking objects' attributes.
 
 theme_xhred_filemanager_delete_warning=Deletion has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before deletion. Restricted permissions (attributes) is another possible cause.  Error message:
 
-filemanager_rename_exists=$3 with name `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 with name <tt>$1</tt> already exists in <tt>$2</tt>
 filemanager_rename_denied=$3 کا نام تبدیل نہیں کرسکتے ہیں۔ یہ ہوسکتا ہے کیونکہ ماخذ $3 کو ہٹا دیا گیا ہے یا محدود اجازت کی وجہ سے ہے۔
 
-theme_xhred_filemanager_successful_rename=Renaming `<strong><em><s>%from</s></em></strong>` to `<strong><em>%to</em></strong>` was successful.
+theme_xhred_filemanager_successful_rename=Renaming <tt>%from</tt> to <tt>%to</tt> was successful.
 
 filemanager_global_info_total1=کل: $1 فائل اور $2 ڈائریکٹری
 filemanager_global_info_total2=کل: $1 فائلیں اور $2 ڈائریکٹری
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=نتائج میں بدل دیں
 theme_xhred_global_find=مل
 theme_xhred_global_replace=بدل دیں
 
-theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
-theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
+theme_xhred_filemanager_searching_matching=Searching for <tt>%value</tt> matching names of files/directories, containing <tt>%text</tt> text.
+theme_xhred_filemanager_searching_replacing=Replacing matches <tt>%text</tt> with <tt>%replace</tt> in files with names containing <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Found and replaced in <strong>%value</strong> files.
 theme_xhred_filemanager_search_replaced=Found and replaced in <strong>1</strong> file.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=تمام اشیاء ک�
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=مندرجہ ذیل غلطیوں کی وجہ سے ملکیت کو تبدیل نہیں کیا جاسکتا:
 
 theme_xhred_filemanager_successful_compression_with_errors=درج ذیل غلطیوں کے ساتھ کمپریشن ختم ہوگئی ہے۔
-theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <strong>`%file`</strong> is located in <strong>`%path`</strong> directory.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <strong>`%file`</strong> should be located in <strong>`%path`</strong> directory.
+theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <tt>%file</tt> is located in <tt>%path</tt> directory.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <tt>%file</tt> should be located in <tt>%path</tt> directory.
 
 theme_xhred_filemanager_settings_notification_type=ظاہر کرنے کے لئے اطلاعات کی قسم
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=معلومات ، انتباہات اور غلطیاں
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=نیٹ ڈیٹا ریئل ٹائم مانیٹرنگ ل�
 settings_leftmenu_netdata_link=نیٹ ڈیٹا سرور ترجیحی لنک
 
 theme_xhred_filemanager_context_chattr=اوصاف بدلیں
-theme_xhred_filemanager_changing_attributes=Setting attributes to <strong><em>%value</em></strong> on selected file(s).
+theme_xhred_filemanager_changing_attributes=Setting attributes to <tt>%value</tt> on selected file(s).
 theme_xhred_filemanager_successful_attributes_with_errors=تمام اشیاء کے ل Att صفات کامیابی کے ساتھ طے نہیں کی گئیں:
 theme_xhred_filemanager_successful_attributes=صفات کامیابی کے ساتھ طے کی گئی ہیں۔
 
 theme_xhred_filemanager_context_chcon=سیکیورٹی سیاق و سباق کو تبدیل کریں
-theme_xhred_filemanager_changing_secontext=Changing security context to <strong><em>%value</em></strong> on selected file(s).
+theme_xhred_filemanager_changing_secontext=Changing security context to <tt>%value</tt> on selected file(s).
 theme_xhred_filemanager_successful_secontext_with_errors=سکیورٹی سیاق و سباق کو کامیابی کے ساتھ تبدیل نہیں کیا گیا ہے۔
 theme_xhred_filemanager_successful_secontext=سیکیورٹی سیاق و سباق کامیابی کے ساتھ تبدیل کر دیا گیا ہے۔
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=پیکیج اپ ڈیٹس
 
 # 21.20
 theme_xhred_hotkey_switch_theme=تھیم سوئچ کریں۔
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=اپ لوڈ کامیاب
+theme_xhred_filemanager_upload_status_err=اپ لوڈناکام:
+theme_xhred_filemanager_download_status_err=ڈاؤن لوڈ ناکام:

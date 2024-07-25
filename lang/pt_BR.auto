@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Renomeando selecionado.
 theme_xhred_filemanager_creating_directory=Criando diretório
 theme_xhred_filemanager_creating_file=Criando arquivo
 theme_xhred_filemanager_downloading_from=Fazendo o download de
-theme_xhred_filemanager_setting_permissions=Configurando permissões para o <strong><em>%value</em></strong> nos arquivos selecionados.
-theme_xhred_filemanager_changing_ownership=Alterando a propriedade para o <strong><em>%value</em></strong> nos arquivos selecionados.
+theme_xhred_filemanager_setting_permissions=Configurando permissões para <tt>%value</tt> no(s) arquivo(s) selecionado(s).
+theme_xhred_filemanager_changing_ownership=Alterando a propriedade para <tt>%value</tt> no(s) arquivo(s) selecionado(s).
 theme_xhred_filemanager_compressing_selected=Compactação selecionada em segundo plano.
 theme_xhred_filemanager_refreshing=Atualizando o conteúdo do diretório.
 theme_xhred_filemanager_copying_successful=Copie para a área de transferência com êxito.
 theme_xhred_filemanager_cutting_successful=Cortar para a área de transferência com êxito.
 theme_xhred_filemanager_pasting_successful=A pasta da área de transferência foi bem-sucedida.
-theme_xhred_filemanager_bookmark_success=O <strong><em>%value</em></strong> diretório foi adicionado com sucesso aos seus favoritos.
-theme_xhred_filemanager_searching=Procurando por `<em>%value</em>` corresponde aos nomes dos arquivos/diretórios.
+theme_xhred_filemanager_bookmark_success=<tt>%value</tt> do diretório foi adicionado com sucesso aos seus favoritos.
+theme_xhred_filemanager_searching=Procurando por <tt>%value</tt> nomes correspondentes de arquivos /directories.
 theme_xhred_filemanager_search_founds=Encontrou <strong>%value</strong> correspondências de <strong>%value</strong>.
 theme_xhred_filemanager_search_found=Encontrou <forte>1</strong> correspondência.
 theme_xhred_filemanager_search_no_matches=Nenhuma equivalência encontrada.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=A exclusão foi bem-sucedida.
 theme_xhred_filemanager_successful_permissions=As permissões foram alteradas com sucesso.
 theme_xhred_filemanager_successful_ownership=A propriedade foi alterada com sucesso.
 theme_xhred_filemanager_successful_compression=A compactação foi concluída com êxito.
-theme_xhred_filemanager_successful_directory_creation=Diretório `<strong>%value</strong>` foi criado com sucesso.
-theme_xhred_filemanager_successful_file_creation=Arquivo `<strong>%value</strong>` foi criado com sucesso.
+theme_xhred_filemanager_successful_directory_creation=<tt>%value</tt> do diretório foi criado com sucesso.
+theme_xhred_filemanager_successful_file_creation=O arquivo <tt>%value</tt> foi criado com sucesso.
 
 theme_xhred_notifications_packages_updates=Atualização de Pacotes
 theme_xhred_notifications_theme_update=Atualização do Tema
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Atenção
 theme_xhred_global_close=Fechar
 
 theme_xhred_filemanager__no_bookmarks=Nenhum marcador salvo
-theme_xhred_filemanager_unbookmark_success=O <strong><em>%value</em></strong> diretório foi removido com sucesso dos seus favoritos.
+theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> do diretório foi removido com sucesso dos seus favoritos.
 theme_xhred_filemanager_bookmark=Marque o diretório atual como favorito
 theme_xhred_filemanager_unbookmark=Desmarcar o diretório atual
 theme_xhred_filemanager_move_into_self=Você não pode mover um diretório para si mesmo! O diretório de destino está dentro do diretório de origem.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Não foram encontrados 
 
 theme_xhred_filemanager_buffer_error=Falha ao colar arquivos no buffer - permissão negada.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` já existe em `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Não é possível criar $3 `<strong><em>$1</em></strong>` no `<strong><tt>$2</tt></strong>` - permissão negada : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> já existe em <tt>$2</tt>
+filemanager_create_object_denied=Não é possível criar $3 <tt>$1</tt> em <tt>$2</tt> - permissão negada: $4.
 
 theme_xhred_filemanager_paste_warning=Falha ao colar destino (s). É possível que o (s) objeto (s) solicitado (s) possam ter sido <em>renomeados, movidos</em> ou <em>excluídos</em> enquanto/antes da colagem. Outra causa possível é que o destino não é gravável. Vale a pena conferir os atributos dos objetos.
 
 theme_xhred_filemanager_delete_warning=A exclusão foi concluída com êxito, mas não para todos os objetos. É possível que o (s) objeto (s) solicitado (s) possa ter sido <em>renomeado</em> ou <em>movido</em> antes da exclusão. Permissões restritas (atributos) é outra causa possível. Mensagem de erro:
 
-filemanager_rename_exists=$3 com nome `<strong><em>$1</em></strong>` já existe em `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 com o nome <tt>$1</tt> já existe em <tt>$2</tt>
 filemanager_rename_denied=Não é possível renomear o $3. Isso pode acontecer porque a fonte $3 foi removida ou devido a permissões restritas.
 
-theme_xhred_filemanager_successful_rename=Renomeando `<strong><em><s>%from</s></em></strong>` para `<strong><em>%to</em></strong>` foi bem sucedido.
+theme_xhred_filemanager_successful_rename=A renomeação <tt>%from</tt> para <tt>%to</tt> foi bem-sucedida.
 
 filemanager_global_info_total1=Total: arquivo $1 e diretório $2
 filemanager_global_info_total2=Total: arquivos $1 e diretório $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Substituir nos resultados
 theme_xhred_global_find=Encontrar
 theme_xhred_global_replace=Substituir
 
-theme_xhred_filemanager_searching_matching=Procurando por `<em>%value</em>` correspondendo a nomes de arquivos/diretórios, contendo `<em>%text</em>` text.
-theme_xhred_filemanager_searching_replacing=Substituir combina `<em>%text</em>` com `<em>%replace</em>` em arquivos com nomes contendo `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Procurando por <tt>%value</tt> de nomes correspondentes de arquivos /directories, contendo <tt>%text</tt> texto.
+theme_xhred_filemanager_searching_replacing=A substituição corresponde <tt>%text</tt> por <tt>%replace</tt> em arquivos com nomes contendo <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Encontrado e substituído em arquivos de <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=Encontrado e substituído no arquivo <strong>1</strong>.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=A propriedade não foi 
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=A propriedade não pode ser alterada devido aos seguintes erros:
 
 theme_xhred_filemanager_successful_compression_with_errors=A compactação terminou com os seguintes erros:
-theme_xhred_filemanager_successful_compression_bg=A compactação foi concluída com êxito. O arquivo compactado `<strong>%file</strong>` está localizado no diretório `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=A compactação terminou com erros. O arquivo compactado `<strong>%file</strong>` deve estar localizado no diretório `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=A compactação foi concluída com sucesso. Arquivo compactado <tt>%file</tt> está localizado no diretório <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=A compactação terminou com erros. O arquivo compactado <tt>%file</tt> deve estar localizado no diretório <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Tipo de notificações a serem exibidas
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informações, avisos e erros
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Mostrar link de monitoramento em tempo real do Netdata
 settings_leftmenu_netdata_link=Link preferido do servidor Netdata
 
 theme_xhred_filemanager_context_chattr=Alterar atributos
-theme_xhred_filemanager_changing_attributes=Configurando atributos para o <strong><em>%value</em></strong> no (s) arquivo (s) selecionado (s).
+theme_xhred_filemanager_changing_attributes=Configurando atributos para <tt>%value</tt> no(s) arquivo(s) selecionado(s).
 theme_xhred_filemanager_successful_attributes_with_errors=Os atributos não foram definidos com êxito para todos os objetos:
 theme_xhred_filemanager_successful_attributes=Os atributos foram definidos com sucesso.
 
 theme_xhred_filemanager_context_chcon=Alterar o contexto de segurança
-theme_xhred_filemanager_changing_secontext=Alterando o contexto de segurança para o <strong><em>%value</em></strong> nos arquivos selecionados.
+theme_xhred_filemanager_changing_secontext=Alterando o contexto de segurança para <tt>%value</tt> no(s) arquivo(s) selecionado(s).
 theme_xhred_filemanager_successful_secontext_with_errors=O contexto de segurança não foi alterado com sucesso para todos os objetos:
 theme_xhred_filemanager_successful_secontext=O contexto de segurança foi alterado com sucesso.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Atualizações de pacote
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Mudar de tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Carregamento bem-sucedido
+theme_xhred_filemanager_upload_status_err=Falha no upload:
+theme_xhred_filemanager_download_status_err=Download falhou:

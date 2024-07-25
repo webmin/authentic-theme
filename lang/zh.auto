@@ -25,8 +25,35 @@ theme_xhred_sysinfo_wmdocs=Webmin 文档
 theme_xhred_sysinfo_vmdocs=虚拟文档
 theme_xhred_sysinfo_cmdocs=Cloudmin 文档
 
+theme_xhred_filemanager_setting_permissions=将所选文件的权限设置为<tt>%value</tt> 。
+theme_xhred_filemanager_changing_ownership=将选定文件的所有权更改为<tt>%value</tt> 。
+theme_xhred_filemanager_bookmark_success=目录<tt>%value</tt>已成功添加到您的书签。
+theme_xhred_filemanager_searching=搜索与文件“/directories”的名称匹配的<tt>%value</tt> /directories.
+
+theme_xhred_filemanager_successful_directory_creation=目录<tt>%value</tt>已成功创建。
+theme_xhred_filemanager_successful_file_creation=文件<tt>%value</tt>已成功创建。
+
+theme_xhred_filemanager_unbookmark_success=目录<tt>%value</tt>已成功从您的书签中删除。
+
 theme_xhred_database_object_selected_delete2=删除选定的表
 theme_xhred_database_objects_selected_delete2=删除选定的表
+
+filemanager_create_object_exists=$3 <tt>$1</tt>已存在于<tt>$2</tt>中
+filemanager_create_object_denied=无法在<tt>$2</tt>中创建 $3 <tt>$1</tt> – 权限被拒绝： $4 。
+
+filemanager_rename_exists=名称为<tt>$1</tt> $3已在<tt>$2</tt>中存在
+
+theme_xhred_filemanager_successful_rename=将<tt>%from</tt>重命名为<tt>%to</tt>已成功。
+
+theme_xhred_filemanager_searching_matching=搜索与文件/directories, 的名称匹配的<tt>%value</tt> ，其中包含<tt>%text</tt>文本。
+theme_xhred_filemanager_searching_replacing=在名称包含<tt>%value</tt>的文件中，替换将<tt>%text</tt>与<tt>%replace</tt>匹配。
+
+theme_xhred_filemanager_successful_compression_bg=压缩已成功完成。压缩文件<tt>%file</tt>位于<tt>%path</tt>目录中。
+theme_xhred_filemanager_successful_compression_bg_with_errors=压缩已完成但出现错误。压缩文件<tt>%file</tt>应位于<tt>%path</tt>目录中。
+
+theme_xhred_filemanager_changing_attributes=将所选文件的属性设置为<tt>%value</tt> 。
+
+theme_xhred_filemanager_changing_secontext=将选定文件的安全上下文更改为<tt>%value</tt> 。
 
 #18.40
 settings_hotkey_toggle_key_night_mode=切换调色板
@@ -599,3 +626,8 @@ theme_xhred_body_updates=程序包更新
 
 # 21.20
 theme_xhred_hotkey_switch_theme=切换主题
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=上传成功
+theme_xhred_filemanager_upload_status_err=上传失败：
+theme_xhred_filemanager_download_status_err=下载失败：

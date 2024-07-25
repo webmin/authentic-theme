@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=تغییر نام انتخاب شد.
 theme_xhred_filemanager_creating_directory=ایجاد دایرکتوری
 theme_xhred_filemanager_creating_file=ایجاد پرونده
 theme_xhred_filemanager_downloading_from=بارگیری از
-theme_xhred_filemanager_setting_permissions=تنظیم مجوزها به <strong><em>%value</em></strong> در پرونده (های) انتخاب شده.
-theme_xhred_filemanager_changing_ownership=تغییر مالکیت به <strong><em>%value</em></strong> در پرونده (های) انتخاب شده.
+theme_xhred_filemanager_setting_permissions=تنظیم مجوزها به <tt>%value</tt> در فایل(های) انتخاب شده.
+theme_xhred_filemanager_changing_ownership=تغییر مالکیت به <tt>%value</tt> در فایل(های) انتخاب شده.
 theme_xhred_filemanager_compressing_selected=فشرده سازی انتخاب شده در پس زمینه.
 theme_xhred_filemanager_refreshing=طراوت محتوای فهرست.
 theme_xhred_filemanager_copying_successful=کپی کردن در کلیپ بورد موفقیت آمیز است.
 theme_xhred_filemanager_cutting_successful=برش به کلیپ بورد موفقیت آمیز است.
 theme_xhred_filemanager_pasting_successful=چسباندن از کلیپ بورد موفقیت آمیز بود.
-theme_xhred_filemanager_bookmark_success=دایرکتوری <strong><em>%value</em></strong> با موفقیت به نشانک های شما اضافه شد.
-theme_xhred_filemanager_searching=در جستجوی `<em>%value</em>` نام های پرونده ها و فهرست ها مطابقت دارد.
+theme_xhred_filemanager_bookmark_success=دایرکتوری <tt>%value</tt> با موفقیت به نشانک های شما اضافه شد.
+theme_xhred_filemanager_searching=جستجو برای <tt>%value</tt> مطابق نام فایل های /directories.
 theme_xhred_filemanager_search_founds=<strong>%value</strong> مسابقات مطابقت داشت.
 theme_xhred_filemanager_search_found=مسابقه <strong>1</strong> پیدا شد.
 theme_xhred_filemanager_search_no_matches=جستجو حاصلی دربرنداشت.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=حذف موفقیت آمیز بود.
 theme_xhred_filemanager_successful_permissions=مجوزها با موفقیت تغییر کردند.
 theme_xhred_filemanager_successful_ownership=مالکیت با موفقیت تغییر کرده است.
 theme_xhred_filemanager_successful_compression=فشرده سازی با موفقیت به پایان رسید.
-theme_xhred_filemanager_successful_directory_creation=فهرست راهنما `<strong>%value</strong>` با موفقیت ایجاد شد
-theme_xhred_filemanager_successful_file_creation=فایل `<strong>%value</strong>` با موفقیت ایجاد شد
+theme_xhred_filemanager_successful_directory_creation=دایرکتوری <tt>%value</tt> با موفقیت ایجاد شد.
+theme_xhred_filemanager_successful_file_creation=فایل <tt>%value</tt> با موفقیت ایجاد شد.
 
 theme_xhred_notifications_packages_updates=به روزرسانی بسته ها
 theme_xhred_notifications_theme_update=بروزرسانی تم
@@ -348,7 +348,7 @@ theme_xhred_global_warning=هشدار
 theme_xhred_global_close=نزدیک
 
 theme_xhred_filemanager__no_bookmarks=هیچ نشانک ذخیره نشده است
-theme_xhred_filemanager_unbookmark_success=فهرست <strong><em>%value</em></strong> با موفقیت از بوک مارک ها حذف شد.
+theme_xhred_filemanager_unbookmark_success=دایرکتوری <tt>%value</tt> با موفقیت از نشانک های شما حذف شد.
 theme_xhred_filemanager_bookmark=پوشه فعلی را علامت گذاری کنید
 theme_xhred_filemanager_unbookmark=پوشه فعلی را علامت گذاری نکنید
 theme_xhred_filemanager_move_into_self=شما نمی توانید یک دایرکتوری را به خود جابجا کنید! فهرست مقصد در داخل فهرست منبع قرار دارد.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">نتیجه ای یاف�
 
 theme_xhred_filemanager_buffer_error=چسباندن پرونده ها به بافر انجام نشد - اجازه رد شد.
 
-filemanager_create_object_exists=3 دلار `<strong><em>$1</em></strong>` در حال حاضر وجود دارد `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 ایجاد نمی شود `<strong><em>$1</em></strong>` که در `<strong><tt>$2</tt></strong>` - اجازه رد شد : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> از قبل در <tt>$2</tt> وجود دارد
+filemanager_create_object_denied=نمی توان $3 <tt>$1</tt> در <tt>$2</tt> ایجاد کرد - مجوز رد شد: $4.
 
 theme_xhred_filemanager_paste_warning=چسباندن هدف (های) انجام نشد. این امکان وجود دارد که شیء (های) درخواست شده بتواند </em>تغییر نام داده ، منتقل شود</em> یا <em>پاک شود</em> در حالی که/قبل از چسباندن. علت احتمالی دیگر این است که مقصد قابل نوشتنی نیست. ارزش بررسی ویژگی های اشیاء را دارد.
 
 theme_xhred_filemanager_delete_warning=حذف با موفقیت به پایان رسید اما برای همه اشیاء نیست. این امکان وجود دارد که شیء (های) درخواست شده می توانست <em>تغییر نام داده شود</em> یا <em>منتقل شود</em> قبل از حذف. محدود کردن مجوزها (ویژگیها) یکی دیگر از دلایل احتمالی است. پیغام خطا:
 
-filemanager_rename_exists=3 دلار با نام `<strong><em>$1</em></strong>` در حال حاضر وجود دارد `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 با نام <tt>$1</tt> از قبل در <tt>$2</tt> وجود دارد
 filemanager_rename_denied=نمی توان $3 را تغییر نام داد. این ممکن است رخ دهد زیرا منبع $3 حذف شده یا به دلیل مجوزهای محدود.
 
-theme_xhred_filemanager_successful_rename=تغییر نام `<strong><em><s>%from</s></em></strong>` به `<strong><em>%to</em></strong>` موفقیت آمیز بود.
+theme_xhred_filemanager_successful_rename=تغییر نام <tt>%from</tt> به <tt>%to</tt> موفقیت آمیز بود.
 
 filemanager_global_info_total1=تعداد کل: پرونده $1 و فهرست $2
 filemanager_global_info_total2=تعداد کل پرونده ها: $1 و فهرست $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=نتایج را جایگزین کنید
 theme_xhred_global_find=پیدا کردن
 theme_xhred_global_replace=جایگزین کردن
 
-theme_xhred_filemanager_searching_matching=در حال جستجو برای `<em>%value</em>` نام های مطابق با `<em>%value</em>` پرونده ها/فهرست ها ، حاوی `<em>%text</em>` متن است.
-theme_xhred_filemanager_searching_replacing=جایگزین کردن `<em>%text</em>` با `<em>%replace</em>` در پرونده هایی با نام های حاوی `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Ø¬Ø³ØªØ¬ÙÛ <tt>%value</tt> ÙØ·Ø§Ø¨Ù ÙØ§Ù ÙØ§ÛÙ‌ÙØ§Û /directories, Ø­Ø§ÙÛ <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Ø¬Ø§ÛÚ¯Ø²ÛÙ Ú©Ø±Ø¯Ù <tt>%text</tt> Ø¨Ø§ <tt>%replace</tt> Ø¯Ø± ÙØ§ÛÙ‌ÙØ§ÛÛ Ø¨Ø§ ÙØ§Ù‌ÙØ§Û Ø­Ø§ÙÛ <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=در پرونده هایی با <strong>%value</strong> یافت و جایگزین شد.
 theme_xhred_filemanager_search_replaced=در پرونده <strong>1</strong> پیدا و جایگزین شد.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=مالکیت برای �
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=مالکیت به دلیل خطاهای زیر قابل تغییر نیست:
 
 theme_xhred_filemanager_successful_compression_with_errors=فشرده سازی با خطاهای زیر به پایان رسیده است:
-theme_xhred_filemanager_successful_compression_bg=فشرده سازی با موفقیت به پایان رسید. فشرده سازی فایل `<strong>%file</strong>` در واقع `<strong>%path</strong>` دایرکتوری.
-theme_xhred_filemanager_successful_compression_bg_with_errors=فشرده سازی با خطا به پایان رسیده است. فشرده سازی فایل `<strong>%file</strong>` باید در واقع `<strong>%path</strong>` دایرکتوری.
+theme_xhred_filemanager_successful_compression_bg=فشرده سازی با موفقیت به پایان رسید. فایل فشرده <tt>%file</tt> در فهرست <tt>%path</tt> قرار دارد.
+theme_xhred_filemanager_successful_compression_bg_with_errors=فشرده سازی با خطا به پایان رسیده است. فایل فشرده <tt>%file</tt> باید در دایرکتوری <tt>%path</tt> قرار گیرد.
 
 theme_xhred_filemanager_settings_notification_type=نوع اعلان ها برای نمایش
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=اطلاعات ، هشدارها و خطاها
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=لینک نظارت بر زمان واقعی Netdata �
 settings_leftmenu_netdata_link=پیوند برگزیده سرور Netdata
 
 theme_xhred_filemanager_context_chattr=ویژگی ها را تغییر دهید
-theme_xhred_filemanager_changing_attributes=تنظیم ویژگی ها به <strong><em>%value</em></strong> در پرونده (های) انتخاب شده.
+theme_xhred_filemanager_changing_attributes=تنظیم ویژگی ها به <tt>%value</tt> در فایل(های) انتخاب شده.
 theme_xhred_filemanager_successful_attributes_with_errors=ویژگی ها با موفقیت برای همه اشیاء تنظیم نشده اند:
 theme_xhred_filemanager_successful_attributes=ویژگی ها با موفقیت تنظیم شده اند.
 
 theme_xhred_filemanager_context_chcon=زمینه امنیتی را تغییر دهید
-theme_xhred_filemanager_changing_secontext=تغییر زمینه امنیتی به <strong><em>%value</em></strong> در پرونده (های) انتخاب شده.
+theme_xhred_filemanager_changing_secontext=تغییر زمینه امنیتی به <tt>%value</tt> در فایل(های) انتخاب شده.
 theme_xhred_filemanager_successful_secontext_with_errors=زمینه امنیتی با موفقیت برای همه اشیاء تغییر نکرده است:
 theme_xhred_filemanager_successful_secontext=زمینه امنیتی با موفقیت تغییر کرده است.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=به روز رسانی بسته
 
 # 21.20
 theme_xhred_hotkey_switch_theme=تغییر تم
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=آپلود با موفقیت انجام شد
+theme_xhred_filemanager_upload_status_err=آپلود انجام نشد:
+theme_xhred_filemanager_download_status_err=دانلود نشد:

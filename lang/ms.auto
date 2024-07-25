@@ -25,8 +25,35 @@ theme_xhred_sysinfo_wmdocs=Dokumentasi webmin
 theme_xhred_sysinfo_vmdocs=dokumentasi Virtualmin
 theme_xhred_sysinfo_cmdocs=Dokumentasi Cloudmin
 
+theme_xhred_filemanager_setting_permissions=Menetapkan kebenaran kepada <tt>%value</tt> pada fail yang dipilih.
+theme_xhred_filemanager_changing_ownership=Menukar pemilikan kepada <tt>%value</tt> pada fail yang dipilih.
+theme_xhred_filemanager_bookmark_success=Direktori <tt>%value</tt> telah berjaya ditambahkan pada penanda halaman anda.
+theme_xhred_filemanager_searching=Mencari <tt>%value</tt> padanan nama fail /directories.
+
+theme_xhred_filemanager_successful_directory_creation=Direktori <tt>%value</tt> berjaya dibuat.
+theme_xhred_filemanager_successful_file_creation=Fail <tt>%value</tt> berjaya dibuat.
+
+theme_xhred_filemanager_unbookmark_success=Direktori <tt>%value</tt> telah berjaya dialih keluar daripada penanda halaman anda.
+
 theme_xhred_database_object_selected_delete2=Jatuhkan jadual yang dipilih
 theme_xhred_database_objects_selected_delete2=Gugurkan jadual yang dipilih
+
+filemanager_create_object_exists=$3 <tt>$1</tt> sudah wujud dalam <tt>$2</tt>
+filemanager_create_object_denied=Tidak boleh membuat $3 <tt>$1</tt> dalam <tt>$2</tt> - kebenaran ditolak : $4.
+
+filemanager_rename_exists=$3 dengan nama <tt>$1</tt> sudah wujud dalam <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=Menamakan semula <tt>%from</tt> <tt>%to</tt> berjaya.
+
+theme_xhred_filemanager_searching_matching=Mencari <tt>%value</tt> padanan nama fail /directories, mengandungi <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Menggantikan padanan <tt>%text</tt> dengan <tt>%replace</tt> dalam fail dengan nama yang mengandungi <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=Pemampatan telah berjaya diselesaikan. Fail termampat <tt>%file</tt> terletak dalam direktori <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Pemampatan telah selesai dengan ralat. Fail yang dimampatkan <tt>%file</tt> hendaklah terletak dalam direktori <tt>%path</tt>.
+
+theme_xhred_filemanager_changing_attributes=Menetapkan atribut kepada <tt>%value</tt> pada fail yang dipilih.
+
+theme_xhred_filemanager_changing_secontext=Menukar konteks keselamatan kepada <tt>%value</tt> pada fail yang dipilih.
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Togol palet warna
@@ -806,3 +833,8 @@ theme_xhred_body_updates=Kemas kini pakej
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Tukar tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Muat naik berjaya
+theme_xhred_filemanager_upload_status_err=Muatnaik gagal:
+theme_xhred_filemanager_download_status_err=Muat turun gagal:

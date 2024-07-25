@@ -25,8 +25,35 @@ theme_xhred_sysinfo_wmdocs=Webmin dokumentasjon
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon
 theme_xhred_sysinfo_cmdocs=Cloudmin dokumentasjon
 
+theme_xhred_filemanager_setting_permissions=Setter tillatelser til <tt>%value</tt> på valgte fil(er).
+theme_xhred_filemanager_changing_ownership=Endre eierskap til <tt>%value</tt> på valgte fil(er).
+theme_xhred_filemanager_bookmark_success=Katalog <tt>%value</tt> ble lagt til bokmerkene dine.
+theme_xhred_filemanager_searching=Søker etter <tt>%value</tt> som samsvarer med navnene på filene /directories.
+
+theme_xhred_filemanager_successful_directory_creation=Katalog <tt>%value</tt> ble opprettet.
+theme_xhred_filemanager_successful_file_creation=Fil <tt>%value</tt> ble opprettet.
+
+theme_xhred_filemanager_unbookmark_success=Katalog <tt>%value</tt> ble fjernet fra bokmerkene dine.
+
 theme_xhred_database_object_selected_delete2=Slipp valgt tabell
 theme_xhred_database_objects_selected_delete2=Slipp valgte tabeller
+
+filemanager_create_object_exists=$3 <tt>$1</tt> eksisterer allerede i <tt>$2</tt>
+filemanager_create_object_denied=Kan ikke opprette $3 <tt>$1</tt> i <tt>$2</tt> - tillatelse nektet: $4.
+
+filemanager_rename_exists=$3 med navnet <tt>$1</tt> finnes allerede i <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=Gi nytt navn <tt>%from</tt> til <tt>%to</tt> var vellykket.
+
+theme_xhred_filemanager_searching_matching=Søker etter <tt>%value</tt> som samsvarer med navnene på filene /directories, som inneholder <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Erstatte samsvarer <tt>%text</tt> med <tt>%replace</tt> i filer med navn som inneholder <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=Komprimeringen er fullført. Den komprimerte filen <tt>%file</tt> ligger i <tt>%path</tt> katalogen.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Komprimeringen er fullført med feil. Den komprimerte filen <tt>%file</tt> skal ligge i <tt>%path</tt> -katalogen.
+
+theme_xhred_filemanager_changing_attributes=Sette attributter til <tt>%value</tt> på valgte fil(er).
+
+theme_xhred_filemanager_changing_secontext=Endring av sikkerhetskontekst til <tt>%value</tt> på valgte fil(er).
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Bytt fargepalett
@@ -332,3 +359,8 @@ theme_xhred_body_updates=Pakkeoppdateringer
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Bytt tema
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Opplastingen var vellykket
+theme_xhred_filemanager_upload_status_err=Opplasting mislyktes:
+theme_xhred_filemanager_download_status_err=Nedlasting mislyktes:

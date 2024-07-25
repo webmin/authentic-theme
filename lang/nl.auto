@@ -100,15 +100,15 @@ theme_xhred_filemanager_renaming_selected=Naam wijzigen geselecteerd.
 theme_xhred_filemanager_creating_directory=Directory maken
 theme_xhred_filemanager_creating_file=Bestand maken
 theme_xhred_filemanager_downloading_from=Downloaden van
-theme_xhred_filemanager_setting_permissions=Rechten instellen op <strong><em>%value</em></strong> voor geselecteerde bestand (en).
-theme_xhred_filemanager_changing_ownership=Eigendom wijzigen in <strong><em>%value</em></strong> voor geselecteerde bestand (en).
+theme_xhred_filemanager_setting_permissions=Machtigingen instellen op <tt>%value</tt> voor geselecteerde bestanden.
+theme_xhred_filemanager_changing_ownership=Eigendom wijzigen in <tt>%value</tt> voor geselecteerde bestand(en).
 theme_xhred_filemanager_compressing_selected=Comprimeren geselecteerd op de achtergrond.
 theme_xhred_filemanager_refreshing=Directoryinhoud vernieuwen.
 theme_xhred_filemanager_copying_successful=Kopiëren naar klembord geslaagd.
 theme_xhred_filemanager_cutting_successful=Knippen naar klembord geslaagd.
 theme_xhred_filemanager_pasting_successful=Plakken vanaf klembord is geslaagd.
-theme_xhred_filemanager_bookmark_success=De <strong><em>%value</em></strong> Directory <strong><em>%value</em></strong> is met succes toegevoegd aan uw bladwijzers.
-theme_xhred_filemanager_searching=Zoeken naar `<em>%value</em>` overeenkomende namen van bestanden/mappen.
+theme_xhred_filemanager_bookmark_success=Directory <tt>%value</tt> is succesvol toegevoegd aan uw bladwijzers.
+theme_xhred_filemanager_searching=Zoeken naar <tt>%value</tt> overeenkomende namen van bestanden /directories.
 theme_xhred_filemanager_search_founds=<strong>%value</strong> Waardeovereenkomsten gevonden.
 theme_xhred_filemanager_search_found=<Sterke>1</strong> overeenkomst gevonden.
 theme_xhred_filemanager_search_no_matches=Geen overeenkomsten gevonden.
@@ -126,8 +126,8 @@ theme_xhred_filemanager_successful_deletion=Verwijderen is gelukt.
 theme_xhred_filemanager_successful_permissions=Rechten zijn succesvol gewijzigd.
 theme_xhred_filemanager_successful_ownership=Eigendom is succesvol gewijzigd.
 theme_xhred_filemanager_successful_compression=De compressie is succesvol beëindigd.
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` is met succes gemaakt.
-theme_xhred_filemanager_successful_file_creation=het dossier `<strong>%value</strong>` is met succes gemaakt.
+theme_xhred_filemanager_successful_directory_creation=Directory <tt>%value</tt> is succesvol aangemaakt.
+theme_xhred_filemanager_successful_file_creation=Bestand <tt>%value</tt> is succesvol aangemaakt.
 
 theme_xhred_notifications_packages_updates=Pakketten bijwerken
 theme_xhred_notifications_theme_update=Thema-update
@@ -238,7 +238,7 @@ theme_xhred_global_warning=Waarschuwing
 theme_xhred_global_close=Dichtbij
 
 theme_xhred_filemanager__no_bookmarks=Geen opgeslagen bladwijzers
-theme_xhred_filemanager_unbookmark_success=De <strong><em>%value</em></strong> Directory <strong><em>%value</em></strong> is met succes verwijderd uit uw bladwijzers.
+theme_xhred_filemanager_unbookmark_success=Directory <tt>%value</tt> is succesvol verwijderd uit uw bladwijzers.
 theme_xhred_filemanager_bookmark=Maak een bladwijzer van de huidige directory
 theme_xhred_filemanager_unbookmark=Maak een bladwijzer voor de huidige map
 theme_xhred_filemanager_move_into_self=U kunt een directory niet naar zichzelf verplaatsen! De bestemmingsmap bevindt zich in de bronmap.
@@ -320,17 +320,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Geen resultaten gevonde
 
 theme_xhred_filemanager_buffer_error=Kan bestanden niet in de buffer plakken - toestemming geweigerd.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` bestaat al in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Kan $3 niet maken `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - toestemming geweigerd : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> bestaat al in <tt>$2</tt>
+filemanager_create_object_denied=Kan $3 <tt>$1</tt> niet maken in <tt>$2</tt> - toestemming geweigerd: $4.
 
 theme_xhred_filemanager_paste_warning=Kan doel (en) niet plakken. Het is mogelijk dat het/de gevraagde object (en) tijdens/voor het plakken <em>hernoemd, verplaatst</em> of <em>verwijderd</em> zijn. Een andere mogelijke oorzaak is dat de bestemming niet beschrijfbaar is. Het is de moeite waard om de kenmerken van objecten te controleren.
 
 theme_xhred_filemanager_delete_warning=Het verwijderen is voltooid, maar niet voor alle objecten. Het is mogelijk dat het/de gevraagde object (en) vóór verwijdering is <em>hernoemd</em> of <em>verplaatst</em>. Beperkte rechten (attributen) is een andere mogelijke oorzaak. Foutmelding:
 
-filemanager_rename_exists=$3 met naam `<strong><em>$1</em></strong>` bestaat al in `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 met naam <tt>$1</tt> bestaat al in <tt>$2</tt>
 filemanager_rename_denied=Kan $3 niet hernoemen. Dit kan gebeuren omdat de bron $3 is verwijderd of vanwege beperkte rechten.
 
-theme_xhred_filemanager_successful_rename=Hernoemen `<strong><em><s>%from</s></em></strong>` naar `<strong><em>%to</em></strong>` was succesvol.
+theme_xhred_filemanager_successful_rename=Het hernoemen <tt>%from</tt> naar <tt>%to</tt> is gelukt.
 
 filemanager_global_info_total1=Totaal: $1 -bestand en $2 -directory
 filemanager_global_info_total2=Totaal: $1 -bestanden en $2 -directory
@@ -346,8 +346,8 @@ theme_xhred_filemanager_search_replace=Vervang in resultaten
 theme_xhred_global_find=Vind
 theme_xhred_global_replace=Vervangen
 
-theme_xhred_filemanager_searching_matching=Zoeken naar `<em>%value</em>` overeenkomende namen van bestanden/mappen, die `<em>%text</em>` bevatten.
-theme_xhred_filemanager_searching_replacing=Vervangen komt overeen met `<em>%text</em>` door `<em>%replace</em>` in bestanden met namen die `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Zoeken naar <tt>%value</tt> overeenkomende namen van bestanden /directories, <tt>%text</tt> tekst bevatten.
+theme_xhred_filemanager_searching_replacing=Vervangen komt overeen <tt>%text</tt> door <tt>%replace</tt> in bestanden met namen <tt>%value</tt> bevatten.
 
 theme_xhred_filemanager_search_replaced_multi=Gevonden en vervangen in <strong>%value</strong> -waardebestanden.
 theme_xhred_filemanager_search_replaced=Gevonden en vervangen in <strong>1</strong> -bestand.
@@ -358,8 +358,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Eigendom is niet met su
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Eigendom kan niet worden gewijzigd vanwege de volgende fouten:
 
 theme_xhred_filemanager_successful_compression_with_errors=De compressie is beëindigd met de volgende fouten:
-theme_xhred_filemanager_successful_compression_bg=De compressie is succesvol beëindigd. Het gecomprimeerde bestand `<strong>%file</strong>` bevindt zich in de map `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=De compressie is beëindigd met fouten. Het gecomprimeerde bestand `<strong>%file</strong>` moet zich in de map `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=De compressie is met succes voltooid. Gecomprimeerd bestand <tt>%file</tt> bevindt zich in de map <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=De compressie is geëindigd met fouten. Het gecomprimeerde bestand <tt>%file</tt> moet zich in de map <tt>%path</tt> bevinden.
 
 theme_xhred_filemanager_settings_notification_type=Type meldingen om weer te geven
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informatie, waarschuwingen en fouten
@@ -420,12 +420,12 @@ settings_leftmenu_netdata=Toon realtime monitoringlink van Netdata
 settings_leftmenu_netdata_link=Netdata-server voorkeur link
 
 theme_xhred_filemanager_context_chattr=Verander attributen
-theme_xhred_filemanager_changing_attributes=Attributen instellen op <strong><em>%value</em></strong> op geselecteerde bestand (en).
+theme_xhred_filemanager_changing_attributes=Attributen instellen op <tt>%value</tt> voor geselecteerde bestanden.
 theme_xhred_filemanager_successful_attributes_with_errors=Attributen zijn niet voor alle objecten succesvol ingesteld:
 theme_xhred_filemanager_successful_attributes=Attributen zijn succesvol ingesteld.
 
 theme_xhred_filemanager_context_chcon=Wijzig de beveiligingscontext
-theme_xhred_filemanager_changing_secontext=Beveiligingscontext wijzigen in <strong><em>%value</em></strong> op geselecteerde bestand (en).
+theme_xhred_filemanager_changing_secontext=Beveiligingscontext wijzigen in <tt>%value</tt> voor geselecteerde bestanden.
 theme_xhred_filemanager_successful_secontext_with_errors=De beveiligingscontext is niet voor alle objecten met succes gewijzigd:
 theme_xhred_filemanager_successful_secontext=De beveiligingscontext is met succes gewijzigd.
 
@@ -1283,3 +1283,8 @@ theme_xhred_body_updates=Pakketupdates
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Van thema wisselen
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=succesvol geupload
+theme_xhred_filemanager_upload_status_err=Upload mislukt:
+theme_xhred_filemanager_download_status_err=Download mislukt:

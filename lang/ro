@@ -187,15 +187,11 @@ theme_xhred_filemanager_renaming_selected=Redenumesc selecțiile.
 theme_xhred_filemanager_creating_directory=Creez dosar
 theme_xhred_filemanager_creating_file=Creez fișier
 theme_xhred_filemanager_downloading_from=Descar de la
-theme_xhred_filemanager_setting_permissions=Setez permisiuni pentru <strong><em>%value</em></strong> pe fișier(ele) selectat(e).
-theme_xhred_filemanager_changing_ownership=Modifica proprietatea pentru <strong><em>%value</em></strong> pe fișier(ele) selectat(e).
 theme_xhred_filemanager_compressing_selected=Compressing selected in the background.
 theme_xhred_filemanager_refreshing=Reîmprospătez conșinutul dosarului.
 theme_xhred_filemanager_copying_successful=Copiere cu succes în clipboard.
 theme_xhred_filemanager_cutting_successful=Tăiere cu succes în clipboard.
 theme_xhred_filemanager_pasting_successful=Alipirea din clipboard efectuată cu succes.
-theme_xhred_filemanager_bookmark_success=Dosar <strong><em>%value</em></strong> a fost adăugat cu succes la favorite.
-theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
 theme_xhred_filemanager_search_founds=Găsit <strong>%value</strong> potriviri.
 theme_xhred_filemanager_search_found=Găsit <strong>1</strong> potrivire.
 theme_xhred_filemanager_search_no_matches=Nicio potrivire găsită.
@@ -213,8 +209,6 @@ theme_xhred_filemanager_successful_deletion=Ștergere efectuată cu succes.
 theme_xhred_filemanager_successful_permissions=Permisiunile au fost modificate cu succes.
 theme_xhred_filemanager_successful_ownership=Proprietatea a fost schimbată cu succes.
 theme_xhred_filemanager_successful_compression=Comprimarea s-a finașizat cu succes.
-theme_xhred_filemanager_successful_directory_creation=Dosar `<strong>%value</strong>` creat cu succes.
-theme_xhred_filemanager_successful_file_creation=Fișier `<strong>%value</strong>` creat cu succes.
 
 theme_xhred_notifications_packages_updates=Actualizări de Pachete
 theme_xhred_notifications_theme_update=Actualizări de Temă
@@ -325,7 +319,6 @@ theme_xhred_global_warning=Atenţie
 theme_xhred_global_close=Închide
 
 theme_xhred_filemanager__no_bookmarks=Niciun marcaj salvat
-theme_xhred_filemanager_unbookmark_success=Directorul <strong><em>%value</em></strong> a fost eliminat cu succes din marcaje.
 theme_xhred_filemanager_bookmark=Marchează directorul curent
 theme_xhred_filemanager_unbookmark=Demarchează directorul current
 theme_xhred_filemanager_move_into_self=Nu poţi muta un director în el însuşi! Directorul destinarat este în directorul sursă.
@@ -405,17 +398,11 @@ theme_xhred_datatable_no_search_results=<span class="h5">Niciun rezultat găsit<
 
 theme_xhred_filemanager_buffer_error=Eşuare la lipirea fişierelor în tampon - acces refuzat.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` există deja în `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Nu pot crea $3 `<strong><em>$1</em></strong>` în `<strong><tt>$2</tt></strong>` - acces refuzat : $4.
-
 theme_xhred_filemanager_paste_warning=Eşuare în lipirea obiectiv(elor). Este posibil ca obiectiv(ele) cerute să fi fost <em>redenumite, mutate</em> sau <em>şterse</em> în timp/înaintea lipirii. O altă posibilă cauză este aceea ca destinaţia să nu poată fi scrisă. Merită verificate atributele obiectivului.
 
 theme_xhred_filemanager_delete_warning=Ştergerea s-a finalizat cu succes, dar nu toate obiectele. Este posibil ca obiectul(/ele) cerut(e) să fi fost <em>redenumit(e)</em> sau <em>mutat(e)</em> înainte de ştergere. Permisiuni restricţionate (atribute) sunt o altă posibilă cauză.Mesaj de eroare:
 
-filemanager_rename_exists=$3 cu numele `<strong><em>$1</em></strong>` există deja în `<strong><tt>$2</tt></strong>`
 filemanager_rename_denied=Nu pot redenumi $3. Aceasta se poate întâmpla deaorece sursa $3 a fost muatată sau are permisiuni restricţionate.
-
-theme_xhred_filemanager_successful_rename=Redenumirea `<strong><em><s>%from</s></em></strong>` în `<strong><em>%to</em></strong>` efectuată cu succes.
 
 filemanager_global_info_total1=Total: $1 fişier şi $2 director
 filemanager_global_info_total2=Total: $1 fişiere şi $2 director
@@ -431,9 +418,6 @@ theme_xhred_filemanager_search_replace=Înlocuieşte rezultatele
 theme_xhred_global_find=Caută
 theme_xhred_global_replace=Înlocuiește
 
-theme_xhred_filemanager_searching_matching=Căutarea pentru <em>`%value`</em> potrivirea numelor de fişiere/directoare care conţin <em>`%text`</em> ca text.
-theme_xhred_filemanager_searching_replacing=Înlocuirea potrivirilor <em>`%text`</em> cu <em>`%replace`</em> în fisiere cu nume conţinând <em>`%value`</em>.
-
 theme_xhred_filemanager_search_replaced_multi=Găsit şi înlocuit în <strong>%value</strong> fişiere.
 theme_xhred_filemanager_search_replaced=Găsit şi înlocuit în <strong>1</strong> fişier.
 
@@ -443,8 +427,6 @@ theme_xhred_filemanager_successful_ownership_with_errors=Proprietatea a fost mod
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Proprietatea nu poate fi modificată din cauza erorilor următoare:
 
 theme_xhred_filemanager_successful_compression_with_errors=Comprimarea s-a efectuat cu următoarele erori:
-theme_xhred_filemanager_successful_compression_bg=Comprimarea s-a efectuat cu succes. Fişierul comprimat<strong>`%file`</strong> se află în directorul <strong>`%path`</strong>.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Compresia s-a efectuat cu erori.Fişierul comprimat <strong>`%file`</strong> ar trebui să se afle în directorul <strong>`%path`</strong>.
 
 theme_xhred_filemanager_settings_notification_type=Tipuri de notificări pentru afişare.
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informaţii, atenţionări şi erori
@@ -505,12 +487,10 @@ settings_leftmenu_netdata=Afișați linkul de monitorizare Netdata în timp real
 settings_leftmenu_netdata_link=Link server preferat de Netdata
 
 theme_xhred_filemanager_context_chattr=Schimbă Atribute
-theme_xhred_filemanager_changing_attributes=Aplic atributele <strong><em>%value</em></strong> fişierelor selectate..
 theme_xhred_filemanager_successful_attributes_with_errors=Nu s-au aplicat atributele tuturor obiecteleor:
 theme_xhred_filemanager_successful_attributes=Atributele s-au aplicat cu succes.
 
 theme_xhred_filemanager_context_chcon=Modifică contextul de securitate
-theme_xhred_filemanager_changing_secontext=Schimb contextul de securitate ca <strong><em>%value</em></strong> fişierelor selectate.
 theme_xhred_filemanager_successful_secontext_with_errors=Contextul de securitate nu a fost schimbat cu succes pentru toate obiectele:
 theme_xhred_filemanager_successful_secontext=Contextul de securitate s-a schimbat cu succes.
 

@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Premenovanie bolo vybrané.
 theme_xhred_filemanager_creating_directory=Vytvára sa adresár
 theme_xhred_filemanager_creating_file=Vytvára sa súbor
 theme_xhred_filemanager_downloading_from=Sťahovanie z
-theme_xhred_filemanager_setting_permissions=Nastavenie povolení na <strong><em>%value</em></strong> vo vybraných súboroch.
-theme_xhred_filemanager_changing_ownership=Zmena vlastníctva na <strong><em>%value</em></strong> vo vybraných súboroch.
+theme_xhred_filemanager_setting_permissions=Nastavenie povolení na <tt>%value</tt> pre vybraté súbory.
+theme_xhred_filemanager_changing_ownership=Prebieha zmena vlastníctva na <tt>%value</tt> vybratých súborov.
 theme_xhred_filemanager_compressing_selected=Kompresia vybraná na pozadí.
 theme_xhred_filemanager_refreshing=Obnovuje sa obsah adresára.
 theme_xhred_filemanager_copying_successful=Kopírovanie do schránky bolo úspešné.
 theme_xhred_filemanager_cutting_successful=Strih do schránky bol úspešný.
 theme_xhred_filemanager_pasting_successful=Prilepiť zo schránky bolo úspešné.
-theme_xhred_filemanager_bookmark_success=Do vašich záložiek bola úspešne pridaná <strong><em>%value</em></strong> adresára.
-theme_xhred_filemanager_searching=Hľadá sa `<em>%value</em>` zodpovedajúcich názvov súborov/adresárov.
+theme_xhred_filemanager_bookmark_success=Adresár <tt>%value</tt> bol úspešne pridaný do vašich záložiek.
+theme_xhred_filemanager_searching=Hľadanie <tt>%value</tt> zodpovedajúcich názvov súborov /directories.
 theme_xhred_filemanager_search_founds=Nájdené zhody s <strong>%value</strong>.
 theme_xhred_filemanager_search_found=Nájdená <silná>1</strong> zhoda.
 theme_xhred_filemanager_search_no_matches=Žiadne zhody nenájdené.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Odstránenie bolo úspešné.
 theme_xhred_filemanager_successful_permissions=Povolenia boli úspešne zmenené.
 theme_xhred_filemanager_successful_ownership=Vlastníctvo bolo úspešne zmenené.
 theme_xhred_filemanager_successful_compression=Kompresia bola úspešne dokončená.
-theme_xhred_filemanager_successful_directory_creation=adresár `<strong>%value</strong>` bol úspešne vytvorený.
-theme_xhred_filemanager_successful_file_creation=súbor `<strong>%value</strong>` bol úspešne vytvorený.
+theme_xhred_filemanager_successful_directory_creation=Adresár <tt>%value</tt> bol úspešne vytvorený.
+theme_xhred_filemanager_successful_file_creation=Súbor <tt>%value</tt> bol úspešne vytvorený.
 
 theme_xhred_notifications_packages_updates=Aktualizácia balíkov
 theme_xhred_notifications_theme_update=Aktualizácia témy
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Výstraha
 theme_xhred_global_close=Zavrieť
 
 theme_xhred_filemanager__no_bookmarks=Žiadne uložené záložky
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> adresára bola úspešne odstránená z vašich záložiek.
+theme_xhred_filemanager_unbookmark_success=Adresár <tt>%value</tt> bol úspešne odstránený z vašich záložiek.
 theme_xhred_filemanager_bookmark=Uložte si aktuálny adresár medzi záložky
 theme_xhred_filemanager_unbookmark=Zrušiť označenie aktuálneho adresára
 theme_xhred_filemanager_move_into_self=Nemôžete presunúť adresár do seba! Cieľový adresár je vnútri zdrojového adresára.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Nenašli sa žiadne vý
 
 theme_xhred_filemanager_buffer_error=Vloženie súborov do vyrovnávacej pamäte zlyhalo - povolenie bolo zamietnuté.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` už existuje v `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Nedá sa vytvoriť $3 `<strong><em>$1</em></strong>` v `<strong><tt>$2</tt></strong>` - prístup zamietnutý : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> už existuje v <tt>$2</tt>
+filemanager_create_object_denied=Nie je možné vytvoriť $3 <tt>$1</tt> v <tt>$2</tt> - povolenie zamietnuté: $4.
 
 theme_xhred_filemanager_paste_warning=Cieľ sa nepodarilo prilepiť. Je možné, že požadované objekty mohli byť počas vkladania/pred vložením <em>premenované, presunuté</em> alebo <em>odstránené</em>. Ďalšou možnou príčinou je, že cieľ nie je zapisovateľný. Stojí za to skontrolovať atribúty objektov.
 
 theme_xhred_filemanager_delete_warning=Odstránenie bolo úspešne ukončené, ale nie pre všetky objekty. Je možné, že požadované objekty mohli byť pred odstránením <em>premenované</em> alebo <em>presunuté</em>. Obmedzené povolenia (atribúty) sú ďalšou možnou príčinou. Chybná správa:
 
-filemanager_rename_exists=$3 s menom `<strong><em>$1</em></strong>` už existuje v `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 s názvom <tt>$1</tt> už existuje v <tt>$2</tt>
 filemanager_rename_denied=Nemožno premenovať $3. Toto sa môže stať, pretože zdroj $3 bol odstránený alebo kvôli obmedzeným povoleniam.
 
-theme_xhred_filemanager_successful_rename=premenovanie `<strong><em><s>%from</s></em></strong>` na `<strong><em>%to</em></strong>` bol úspešný.
+theme_xhred_filemanager_successful_rename=Premenovanie <tt>%from</tt> na <tt>%to</tt> bolo úspešné.
 
 filemanager_global_info_total1=Celkom: $1 súbor a $2 adresár
 filemanager_global_info_total2=Celkom: $1 súbory a adresár $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Nahradiť výsledky
 theme_xhred_global_find=Nájsť
 theme_xhred_global_replace=vymeniť
 
-theme_xhred_filemanager_searching_matching=Vyhľadávanie `<em>%value</em>` zhodných názvov súborov/adresárov obsahujúcich `<em>%text</em>` text.
-theme_xhred_filemanager_searching_replacing=Nahradenie zhodných `<em>%text</em>` `<em>%replace</em>` v súboroch s názvami obsahujúcimi `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Hľadanie <tt>%value</tt> zodpovedajúcich názvov súborov /directories, obsahujúcich <tt>%text</tt> text.
+theme_xhred_filemanager_searching_replacing=Nahradenie zhôd <tt>%text</tt> s <tt>%replace</tt> v súboroch s názvami obsahujúcimi <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Nájdený a nahradený v súboroch s <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=Nájdený a nahradený v <strong>1</strong> súbore.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Vlastníctvo nebolo ús
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Vlastníctvo nie je možné zmeniť z dôvodu nasledujúcich chýb:
 
 theme_xhred_filemanager_successful_compression_with_errors=Kompresia sa skončila s nasledujúcimi chybami:
-theme_xhred_filemanager_successful_compression_bg=Kompresia bola úspešne dokončená. Komprimovaný súbor `<strong>%file</strong>` je umiestnený v adresári `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresia skončila s chybami. Komprimovaný súbor `<strong>%file</strong>` by mal byť umiestnený v adresári `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Kompresia bola úspešne dokončená. Komprimovaný súbor <tt>%file</tt> sa nachádza v adresári <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Kompresia sa skončila s chybami. Komprimovaný súbor <tt>%file</tt> by sa mal nachádzať v adresári <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Typ upozornení, ktoré sa majú zobraziť
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informácie, varovania a chyby
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Zobraziť odkaz na sledovanie v reálnom čase Netdata
 settings_leftmenu_netdata_link=Preferovaný odkaz na server Netdata
 
 theme_xhred_filemanager_context_chattr=Zmeniť atribúty
-theme_xhred_filemanager_changing_attributes=Nastavenie atribútov na <strong><em>%value</em></strong> vo vybratých súboroch.
+theme_xhred_filemanager_changing_attributes=Nastavenie atribútov na <tt>%value</tt> vo vybratých súboroch.
 theme_xhred_filemanager_successful_attributes_with_errors=Atribúty neboli úspešne nastavené pre všetky objekty:
 theme_xhred_filemanager_successful_attributes=Atribúty boli úspešne nastavené.
 
 theme_xhred_filemanager_context_chcon=Zmena bezpečnostného kontextu
-theme_xhred_filemanager_changing_secontext=Zmena kontextu zabezpečenia na <strong><em>%value</em></strong> vo vybratých súboroch.
+theme_xhred_filemanager_changing_secontext=Zmena bezpečnostného kontextu na <tt>%value</tt> vo vybratých súboroch.
 theme_xhred_filemanager_successful_secontext_with_errors=Kontext zabezpečenia nebol úspešne zmenený pre všetky objekty:
 theme_xhred_filemanager_successful_secontext=Kontext zabezpečenia bol úspešne zmenený.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Aktualizácie balíkov
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Prepnúť tému
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Odovzdanie bolo úspešné
+theme_xhred_filemanager_upload_status_err=Nahrávanie zlyhalo:
+theme_xhred_filemanager_download_status_err=Sťahovanie zlyhalo:

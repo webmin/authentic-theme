@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Преименуване избран�
 theme_xhred_filemanager_creating_directory=Създаване на директория
 theme_xhred_filemanager_creating_file=Създаване на файл
 theme_xhred_filemanager_downloading_from=Изтегляне от
-theme_xhred_filemanager_setting_permissions=Задаване на разрешения на <strong><em>%value</em></strong> на избрани файлове (файлове).
-theme_xhred_filemanager_changing_ownership=Промяна на собствеността на <strong><em>%value</em></strong> на избрани файлове.
+theme_xhred_filemanager_setting_permissions=Задаване на разрешения за <tt>%value</tt> за избран файл(ове).
+theme_xhred_filemanager_changing_ownership=Промяна на собствеността на <tt>%value</tt> върху избран файл(ове).
 theme_xhred_filemanager_compressing_selected=Компресирането е избрано на заден план.
 theme_xhred_filemanager_refreshing=Освежаващо съдържание на директория.
 theme_xhred_filemanager_copying_successful=Копирането в клипборда е успешно.
 theme_xhred_filemanager_cutting_successful=Изрязване в клипборда успешно.
 theme_xhred_filemanager_pasting_successful=Поставянето от клипборда беше успешно.
-theme_xhred_filemanager_bookmark_success=<strong><em>%value</em></strong> директория <strong><em>%value</em></strong> бе успешно добавена към отметките ви.
-theme_xhred_filemanager_searching=Търсене на `<em>%value</em>` съответстващи на имена на файлове/директории.
+theme_xhred_filemanager_bookmark_success=Директорията <tt>%value</tt> бе добавена успешно към вашите отметки.
+theme_xhred_filemanager_searching=Търсене на <tt>%value</tt>, съответстващи на имена на файлове /directories.
 theme_xhred_filemanager_search_founds=Намерени <strong>%value</strong> съвпадения на <strong>%value</strong>.
 theme_xhred_filemanager_search_found=Намерено е </strong> 1 съвпадение.
 theme_xhred_filemanager_search_no_matches=Няма намерени съвпадения
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Изтриването бе успе
 theme_xhred_filemanager_successful_permissions=Разрешенията бяха променени успешно.
 theme_xhred_filemanager_successful_ownership=Собствеността е променена успешно.
 theme_xhred_filemanager_successful_compression=Компресията приключи успешно.
-theme_xhred_filemanager_successful_directory_creation=указател `<strong>%value</strong>` е създаден успешно.
-theme_xhred_filemanager_successful_file_creation=досие `<strong>%value</strong>` е създаден успешно.
+theme_xhred_filemanager_successful_directory_creation=Директория <tt>%value</tt> е създадена успешно.
+theme_xhred_filemanager_successful_file_creation=Файлът <tt>%value</tt> е създаден успешно.
 
 theme_xhred_notifications_packages_updates=Актуализация на пакетите
 theme_xhred_notifications_theme_update=Актуализация на темата
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Внимание
 theme_xhred_global_close=Близо
 
 theme_xhred_filemanager__no_bookmarks=Няма запазени отметки
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> директория <strong><em>%value</em></strong> беше премахната успешно от отметките ви.
+theme_xhred_filemanager_unbookmark_success=Директория <tt>%value</tt> бе успешно премахната от вашите отметки.
 theme_xhred_filemanager_bookmark=Отметка текуща директория
 theme_xhred_filemanager_unbookmark=Отписване на текущата директория
 theme_xhred_filemanager_move_into_self=Не можете да преместите директория в себе си! Директорията на местоназначението е вътре в директорията на източника.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Няма намерен
 
 theme_xhred_filemanager_buffer_error=Неуспешно поставяне на файлове в буфера - разрешението е отказано.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` вече съществува в `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=$3 не може да се създаде `<strong><em>$1</em></strong>` в `<strong><tt>$2</tt></strong>` - отказано разрешение : $4
+filemanager_create_object_exists=$3 <tt>$1</tt> вече съществува в <tt>$2</tt>
+filemanager_create_object_denied=Не може да се създаде $3 <tt>$1</tt> в <tt>$2</tt> - разрешението е отказано: $4.
 
 theme_xhred_filemanager_paste_warning=Неуспешно поставяне на целта (ите). Възможно е исканият обект (и) да е бил <em>преименуван, преместен</em> или <em>изтрит</em> по време на/преди поставяне. Друга възможна причина е, че дестинацията не може да се записва. Струва си да проверите атрибутите на обектите.
 
 theme_xhred_filemanager_delete_warning=Изтриването завърши успешно, но не за всички обекти. Възможно е исканият обект (и) да е бил <em>преименуван</em> или <em>преместен</em> преди изтриването. Ограничените разрешения (атрибути) са друга възможна причина. Съобщение за грешка:
 
-filemanager_rename_exists=$3 с име `<strong><em>$1</em></strong>` вече съществува в `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 с име <tt>$1</tt> вече съществува в <tt>$2</tt>
 filemanager_rename_denied=Не може да се преименува $3. Това може да се случи, защото източникът $3 е премахнат или поради ограничени разрешения.
 
-theme_xhred_filemanager_successful_rename=Преименуването `<strong><em><s>%from</s></em></strong>` да се `<strong><em>%to</em></strong>` беше успешно.
+theme_xhred_filemanager_successful_rename=Преименуването на <tt>%from</tt> на <tt>%to</tt> бе успешно.
 
 filemanager_global_info_total1=Общо: $1 файл и $2 директория
 filemanager_global_info_total2=Общо: $1 файлове и $2 директория
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Заменете в резултатит�
 theme_xhred_global_find=намирам
 theme_xhred_global_replace=Заменете
 
-theme_xhred_filemanager_searching_matching=Търсене на `<em>%value</em>` съответстващи на имена на файлове/директории, съдържащи `<em>%text</em>` text.
-theme_xhred_filemanager_searching_replacing=Подмяна на съвпадения `<em>%text</em>` с `<em>%replace</em>` във файлове с имена, съдържащи `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Търсене на <tt>%value</tt>, съответстващи на имена на файлове /directories, съдържащи <tt>%text</tt> текст.
+theme_xhred_filemanager_searching_replacing=Замяната съвпада <tt>%text</tt> с <tt>%replace</tt> във файлове с имена, съдържащи <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Намерени и заменени във <strong>%value</strong> файлове.
 theme_xhred_filemanager_search_replaced=Намерен и заменен във файл </strong>1</strong> файл.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Собственост�
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Собствеността не може да бъде променена поради следните грешки:
 
 theme_xhred_filemanager_successful_compression_with_errors=Компресията завърши със следните грешки:
-theme_xhred_filemanager_successful_compression_bg=Компресията приключи успешно. Компресиран файл `<strong>%file</strong>` се намира в директорията `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Компресията завърши с грешки. Компресиран файл `<strong>%file</strong>` трябва да бъде разположен в директорията `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Компресирането завърши успешно. Компресираният файл <tt>%file</tt> се намира в директория <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Компресирането завърши с грешки. Компресираният файл <tt>%file</tt> трябва да се намира в директория <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Тип известия за показване
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Информация, предупреждения и грешки
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Показване на връзка за наблюд
 settings_leftmenu_netdata_link=Предпочитана връзка на сървъра на Netdata
 
 theme_xhred_filemanager_context_chattr=Промяна на атрибути
-theme_xhred_filemanager_changing_attributes=Задаване на атрибути на <strong><em>%value</em></strong> на избрани файлове.
+theme_xhred_filemanager_changing_attributes=Задаване на атрибути на <tt>%value</tt> на избран файл(ове).
 theme_xhred_filemanager_successful_attributes_with_errors=Атрибутите не са зададени успешно за всички обекти:
 theme_xhred_filemanager_successful_attributes=Атрибутите са зададени успешно.
 
 theme_xhred_filemanager_context_chcon=Промяна на контекста на сигурността
-theme_xhred_filemanager_changing_secontext=Промяна на контекста на защита в <strong><em>%value</em></strong> на избрани файлове.
+theme_xhred_filemanager_changing_secontext=Промяна на контекста на сигурността на <tt>%value</tt> на избран файл(ове).
 theme_xhred_filemanager_successful_secontext_with_errors=Контекстът на защита не е променен успешно за всички обекти:
 theme_xhred_filemanager_successful_secontext=Контекстът за сигурност е променен успешно.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Актуализации на пакети
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Превключване на темата
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Качването е успешно
+theme_xhred_filemanager_upload_status_err=Неуспешно качване:
+theme_xhred_filemanager_download_status_err=Изтеглянето се провали:

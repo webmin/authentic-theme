@@ -188,15 +188,11 @@ theme_xhred_filemanager_renaming_selected=Omdøper valgt(e)
 theme_xhred_filemanager_creating_directory=Oppretter katalog
 theme_xhred_filemanager_creating_file=Oppretter fil
 theme_xhred_filemanager_downloading_from=Laster ned fra
-theme_xhred_filemanager_setting_permissions=Setter tillatelser til <strong><em>%value</em></strong> på valgt(e) fil(er).
-theme_xhred_filemanager_changing_ownership=Endrer eierskap til <strong><em>%value</em></strong> på valgt(e) fil(er).
 theme_xhred_filemanager_compressing_selected=Komprimerer valgt(e) i bakgrunnen.
 theme_xhred_filemanager_refreshing=Oppfrisker katalog-innhold.
 theme_xhred_filemanager_copying_successful=Kopiert til utklippstavle.
 theme_xhred_filemanager_cutting_successful=Utklipp til utklippstavle gjennomført.
 theme_xhred_filemanager_pasting_successful=Innliming fra utklippstavle utført.
-theme_xhred_filemanager_bookmark_success=Katalogen <strong><em>%value</em></strong> ble lagt til i bokmerkene dine.
-theme_xhred_filemanager_searching=Søker etter <em>`%value`</em> matchende navn på filer/kataloger.
 theme_xhred_filemanager_search_founds=Fant  <strong>%value</strong> matcher.
 theme_xhred_filemanager_search_found=Fant <strong>1</strong> match.
 theme_xhred_filemanager_search_no_matches=Ingen matcher funnet.
@@ -214,8 +210,6 @@ theme_xhred_filemanager_successful_deletion=Sletting utført.
 theme_xhred_filemanager_successful_permissions=Tillatelser er endret.
 theme_xhred_filemanager_successful_ownership=Eierskap er endret.
 theme_xhred_filemanager_successful_compression=Komprimering er fullført
-theme_xhred_filemanager_successful_directory_creation=Katalogen `<samp>%value</samp>` ble opprettet.
-theme_xhred_filemanager_successful_file_creation=Filen `<samp>%value</samp>` ble opprettet.
 
 theme_xhred_notifications_packages_updates=Pakker oppdater
 theme_xhred_notifications_theme_update=Tema Oppdater
@@ -326,7 +320,6 @@ theme_xhred_global_warning=Advarsel
 theme_xhred_global_close=Lukk
 
 theme_xhred_filemanager__no_bookmarks=Ingen lagrede bokmerker
-theme_xhred_filemanager_unbookmark_success=Katalogen<strong><em>%value</em></strong> ble fjernet fra bokmerkene dine.
 theme_xhred_filemanager_bookmark=Bokmerk gjeldende katalog
 theme_xhred_filemanager_unbookmark=Fjern bokmerke for gjeldende katalog
 theme_xhred_filemanager_move_into_self=Du kan ikke flytte en katalog til seg selv! Målkatalogen er inne i kildekatalogen.
@@ -405,17 +398,11 @@ theme_xhred_filemanager_new_tab=Legg til ny fane (Ctrl+Mellomrom)
 theme_xhred_datatable_no_search_results=<span class="h5">Ingen reultater funnet</span><br>Prøv et annet søk
 theme_xhred_filemanager_buffer_error=Kunne ikke lime inn filer til bufferet - tilgang nektet.
 
-filemanager_create_object_exists=$3 `<samp><em>$1</em></samp>` finnes allerede i `<samp><tt>$2</tt></samp>`
-filemanager_create_object_denied=Kan ikke opprette $3 `<samp><em>$1</em></samp>` i `<samp><tt>$2</tt></samp>` - tilgang nektet : $4.
-
 theme_xhred_filemanager_paste_warning=Kunne ikke lime inn mål. Det er mulig at forespurte objekt(er) har blitt <em>omdøpt,flyttet</em> eller <em>slettet</em> mens/før de ble limt inn. En annen mulig årsak er at destinasjonen ikke er skrivbar. Du bør sjekke objektenes attributter.
 
 theme_xhred_filemanager_delete_warning=Sletting er fullført, men ikke for alle objekter. Det kan hende al forespurt(e) objekt(er) har blitt <em>omdøpt</em> eller <em>flyttet</em> før sletting. Manglende rettigheter (attributter) er en annen mulig årsak. Feilmelding:
 
-filemanager_rename_exists=$3 med navn `<samp><em>$1</em></samp>` finnes allerede i `<samp><tt>$2</tt></samp>`
 filemanager_rename_denied=Kan ikke gi nytt navn til $3. Det kan være fordi kilden $3 er fjernet eller på grunn av manglende tillatelser.
-
-theme_xhred_filemanager_successful_rename=Omdøping av `<strong><em><s>%from</s></em></strong>` til `<strong><em>%to</em></strong>` er gjennomført.
 
 filemanager_global_info_total1=Totalt: $1 fil og $2 katalog
 filemanager_global_info_total2=Totalt: $1 filer og $2 katalog
@@ -431,9 +418,6 @@ theme_xhred_filemanager_search_replace=Erstatt i resultater
 theme_xhred_global_find=Finn
 theme_xhred_global_replace=Erstatt
 
-theme_xhred_filemanager_searching_matching=Søker etter <em>`%value`</em> matchende navn på filer/kataloger som inneholder teksten <em>`%text`</em>.
-theme_xhred_filemanager_searching_replacing=Erstatter matcher <em>`% text`</em> med <em>`%replace`</em> i filer med navn som inneholder <em>`%value`</em>.
-
 theme_xhred_filemanager_search_replaced_multi=Fant og erstattet i <strong>%value</strong> filer.
 theme_xhred_filemanager_search_replaced=Fant og erstattet i <strong>1</strong> fil.
 
@@ -443,8 +427,6 @@ theme_xhred_filemanager_successful_ownership_with_errors=Eierskap er ikke endret
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Eierskap kan ikke endres pga. følgende feil:
 
 theme_xhred_filemanager_successful_compression_with_errors=Komprimering er fullført med følgende feil:
-theme_xhred_filemanager_successful_compression_bg=Komprimering er fullført. Komprimert fil <strong>`%file</strong> finnes i katalogen <strong>`%path`</strong> .
-theme_xhred_filemanager_successful_compression_bg_with_errors=Komprimering er fullført med feil. Komprimert fil <strong>`%file</strong> skal finnes i katalogen <strong>`%path`</strong> .
 
 theme_xhred_filemanager_settings_notification_type=Type beskjed som skal vises
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informasjoner, advarsler og feil
@@ -505,12 +487,10 @@ settings_leftmenu_netdata=Vis lenke for Netdata sanntidsovervåking
 settings_leftmenu_netdata_link=Foretrukket lenke for Netdata tjener
 
 theme_xhred_filemanager_context_chattr=Endre attributter
-theme_xhred_filemanager_changing_attributes=Setter attributter til <strong><em>%value</em></strong> på valgt(e) fil(er).
 theme_xhred_filemanager_successful_attributes_with_errors=Attributter er ikke satt for alle objekter.
 theme_xhred_filemanager_successful_attributes=Attributter er satt
 
 theme_xhred_filemanager_context_chcon=Endre sikkerhets-kontekst
-theme_xhred_filemanager_changing_secontext=Endrer sikkerhetskontekst til <strong><em>%value</em></strong> på valgt(e) fil(er).
 theme_xhred_filemanager_successful_secontext_with_errors=Sikkerhets-kontekst er ikke endret for alle objekter.
 theme_xhred_filemanager_successful_secontext=Sikkerhets-kontekst er endret.
 

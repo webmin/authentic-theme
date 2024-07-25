@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=تم تحديد إعادة التسم�
 theme_xhred_filemanager_creating_directory=إنشاء دليل
 theme_xhred_filemanager_creating_file=إنشاء ملف
 theme_xhred_filemanager_downloading_from=جارٍ التنزيل من
-theme_xhred_filemanager_setting_permissions=تعيين أذونات لـ <strong><em>%value</em></strong> على الملفات المحددة.
-theme_xhred_filemanager_changing_ownership=تغيير الملكية إلى <strong><em>%value</em></strong> على الملفات المحددة.
+theme_xhred_filemanager_setting_permissions=تعيين الأذونات على <tt>%value</tt> للملف (الملفات) المحددة.
+theme_xhred_filemanager_changing_ownership=تغيير الملكية إلى <tt>%value</tt> في الملف (الملفات) المحددة.
 theme_xhred_filemanager_compressing_selected=الضغط المحدد في الخلفية.
 theme_xhred_filemanager_refreshing=تحديث محتوى الدليل.
 theme_xhred_filemanager_copying_successful=تم النسخ إلى الحافظة بنجاح.
 theme_xhred_filemanager_cutting_successful=تم القص إلى الحافظة بنجاح.
 theme_xhred_filemanager_pasting_successful=نجح اللصق من الحافظة.
-theme_xhred_filemanager_bookmark_success=تمت إضافة <strong><em>%value</em></strong> الدليل بنجاح إلى إشاراتك المرجعية.
-theme_xhred_filemanager_searching=جاري البحث عن `<em>%value</em>` تطابق أسماء الملفات/الدلائل.
+theme_xhred_filemanager_bookmark_success=تمت إضافة <tt>%value</tt> بنجاح إلى إشاراتك المرجعية.
+theme_xhred_filemanager_searching=البحث عن أسماء مطابقة <tt>%value</tt> للملفات /directories.
 theme_xhred_filemanager_search_founds=تم العثور على <strong>%value</strong> متطابقات.
 theme_xhred_filemanager_search_found=تم العثور على تطابق <strong>1</strong>.
 theme_xhred_filemanager_search_no_matches=لم يتم العثور على تطابق.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=تم الحذف بنجاح.
 theme_xhred_filemanager_successful_permissions=تم تغيير الأذونات بنجاح.
 theme_xhred_filemanager_successful_ownership=تم تغيير الملكية بنجاح.
 theme_xhred_filemanager_successful_compression=تم الضغط بنجاح.
-theme_xhred_filemanager_successful_directory_creation=الدليل `<strong>%value</strong>` تم إنشاؤه بنجاح.
-theme_xhred_filemanager_successful_file_creation=ملف `<strong>%value</strong>` تم إنشاؤه بنجاح.
+theme_xhred_filemanager_successful_directory_creation=تم إنشاء <tt>%value</tt> بنجاح.
+theme_xhred_filemanager_successful_file_creation=تم إنشاء الملف <tt>%value</tt> بنجاح.
 
 theme_xhred_notifications_packages_updates=تحديث الحزم
 theme_xhred_notifications_theme_update=تحديث الموضوع
@@ -348,7 +348,7 @@ theme_xhred_global_warning=تحذير
 theme_xhred_global_close=قريب
 
 theme_xhred_filemanager__no_bookmarks=لا توجد إشارات مرجعية محفوظة
-theme_xhred_filemanager_unbookmark_success=تمت إزالة <strong><em>%value</em></strong> الدليل بنجاح من إشاراتك المرجعية.
+theme_xhred_filemanager_unbookmark_success=تمت إزالة <tt>%value</tt> بنجاح من إشاراتك المرجعية.
 theme_xhred_filemanager_bookmark=وضع إشارة على الدليل الحالي
 theme_xhred_filemanager_unbookmark=الدليل الحالي غير مرجعي
 theme_xhred_filemanager_move_into_self=لا يمكنك نقل دليل إلى نفسه! يوجد دليل الوجهة داخل الدليل المصدر.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">لم يتم العثو�
 
 theme_xhred_filemanager_buffer_error=فشل لصق الملفات في المخزن المؤقت - تم رفض الإذن.
 
-filemanager_create_object_exists=3 دولارات `<strong><em>$1</em></strong>` موجود بالفعل في `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=لا يمكن إنشاء $3 `<strong><em>$1</em></strong>` في `<strong><tt>$2</tt></strong>` - طلب الاذن مرفوض : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> موجود بالفعل في <tt>$2</tt>
+filemanager_create_object_denied=لا يمكن إنشاء $3 <tt>$1</tt> في <tt>$2</tt> - تم رفض الإذن: $4.
 
 theme_xhred_filemanager_paste_warning=فشل لصق الهدف (الأهداف). من الممكن أن تتم إعادة تسمية الكائن/الكائنات المطلوبة أو نقلها </em>أو<em> </em> أثناء/قبل اللصق. سبب آخر محتمل هو أن الوجهة غير قابلة للكتابة. يجدر التحقق من سمات الكائنات.
 
 theme_xhred_filemanager_delete_warning=تم الحذف بنجاح ولكن ليس لجميع الكائنات. من الممكن أن تتم إعادة تسمية الكائن (الكائنات) المطلوب <em></em> أو <em></em> قبل الحذف. الأذونات المقيدة (السمات) هي سبب آخر محتمل. رسالة خطأ:
 
-filemanager_rename_exists=$3 بالاسم `<strong><em>$1</em></strong>` موجود بالفعل في `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 بالاسم <tt>$1</tt> موجود بالفعل في <tt>$2</tt>
 filemanager_rename_denied=لا يمكن إعادة تسمية $3. قد يحدث هذا لأنه تمت إزالة المصدر $3 أو بسبب أذونات مقيدة.
 
-theme_xhred_filemanager_successful_rename=إعادة التسمية `<strong><em><s>%from</s></em></strong>` إلى `<strong><em>%to</em></strong>` كانت ناجحة.
+theme_xhred_filemanager_successful_rename=تمت إعادة تسمية <tt>%from</tt> إلى <tt>%to</tt> بنجاح.
 
 filemanager_global_info_total1=الإجمالي: $1 وملف $2
 filemanager_global_info_total2=الإجمالي: $1 وملفات $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=الاستبدال في النتائج
 theme_xhred_global_find=تجد
 theme_xhred_global_replace=يحل محل
 
-theme_xhred_filemanager_searching_matching=البحث عن `<em>%value</em>` تطابق أسماء الملفات/الدلائل التي تحتوي على `<em>%text</em>` text.
-theme_xhred_filemanager_searching_replacing=استبدال التطابقات `<em>%text</em>` بـ `<em>%replace</em>` في الملفات التي تحتوي على `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=البحث عن أسماء مطابقة <tt>%value</tt> للملفات /directories, التي تحتوي على <tt>%text</tt> text.
+theme_xhred_filemanager_searching_replacing=استبدال المطابقات <tt>%text</tt> بـ <tt>%replace</tt> في الملفات ذات الأسماء التي تحتوي على <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=تم العثور عليه واستبداله في <strong>%value</strong> ملفات.
 theme_xhred_filemanager_search_replaced=تم العثور عليها واستبدالها في ملف <strong>1</strong>.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=لم يتم تغيير 
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=لا يمكن تغيير الملكية بسبب الأخطاء التالية:
 
 theme_xhred_filemanager_successful_compression_with_errors=انتهى الضغط بالأخطاء التالية:
-theme_xhred_filemanager_successful_compression_bg=تم الضغط بنجاح. يوجد ملف مضغوط `<strong>%file</strong>` في دليل `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=انتهى الضغط مع وجود أخطاء. يجب وضع الملف المضغوط `<strong>%file</strong>` في دليل `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=لقد انتهى الضغط بنجاح. الملف المضغوط <tt>%file</tt> موجود في دليل <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=انتهى الضغط مع وجود أخطاء. يجب أن يكون الملف المضغوط <tt>%file</tt> موجودًا في دليل <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=نوع الإخطارات المراد عرضها
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=المعلومات والتحذيرات والأخطاء
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=عرض رابط مراقبة Netdata في الوقت �
 settings_leftmenu_netdata_link=الرابط المفضل لخادم Netdata
 
 theme_xhred_filemanager_context_chattr=تغيير السمات
-theme_xhred_filemanager_changing_attributes=تعيين السمات إلى <strong><em>%value</em></strong> على الملف (الملفات) المحددة.
+theme_xhred_filemanager_changing_attributes=تعيين السمات إلى <tt>%value</tt> في الملف (الملفات) المحددة.
 theme_xhred_filemanager_successful_attributes_with_errors=لم يتم تعيين السمات بنجاح لجميع الكائنات:
 theme_xhred_filemanager_successful_attributes=تم تعيين السمات بنجاح.
 
 theme_xhred_filemanager_context_chcon=تغيير سياق الأمان
-theme_xhred_filemanager_changing_secontext=تغيير سياق الأمان إلى <strong><em>%value</em></strong> على الملف (الملفات) المحددة.
+theme_xhred_filemanager_changing_secontext=تغيير سياق الأمان إلى <tt>%value</tt> في الملف (الملفات) المحددة.
 theme_xhred_filemanager_successful_secontext_with_errors=لم يتم تغيير سياق الأمان بنجاح لجميع الكائنات:
 theme_xhred_filemanager_successful_secontext=تم تغيير سياق الأمان بنجاح.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=تحديثات الحزمة
 
 # 21.20
 theme_xhred_hotkey_switch_theme=تبديل الموضوع
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=تحميل ناجح
+theme_xhred_filemanager_upload_status_err=التحميل فشل:
+theme_xhred_filemanager_download_status_err=التحميل فشل:

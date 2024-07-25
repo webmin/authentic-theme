@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Nimeä uudelleen valittuna.
 theme_xhred_filemanager_creating_directory=Luominen hakemisto
 theme_xhred_filemanager_creating_file=Luodaan tiedostoa
 theme_xhred_filemanager_downloading_from=Ladataan
-theme_xhred_filemanager_setting_permissions=Asetus oikeuksien <strong><em>%value</em></strong> valituissa tiedostoissa.
-theme_xhred_filemanager_changing_ownership=Omistajuuden muuttaminen valittujen tiedostojen <strong><em>%value</em></strong>.
+theme_xhred_filemanager_setting_permissions=Asetetaan käyttöoikeudet <tt>%value</tt> valituille tiedostoille.
+theme_xhred_filemanager_changing_ownership=Muutetaan valitun tiedoston omistajuus arvoon <tt>%value</tt>.
 theme_xhred_filemanager_compressing_selected=Pakkataan valitut taustalla.
 theme_xhred_filemanager_refreshing=Päivitetään hakemistosisältöä.
 theme_xhred_filemanager_copying_successful=Kopiointi leikepöydälle onnistui.
 theme_xhred_filemanager_cutting_successful=Leikkaus leikepöydälle onnistui.
 theme_xhred_filemanager_pasting_successful=Liittäminen leikepöydältä onnistui.
-theme_xhred_filemanager_bookmark_success=Hakemisto <strong><em>%value</em></strong> on lisätty kirjanmerkkeihisi onnistuneesti.
-theme_xhred_filemanager_searching=Etsitään `<em>%value</em>` vastaavia tiedostojen/hakemistojen nimiä.
+theme_xhred_filemanager_bookmark_success=Hakemisto <tt>%value</tt> lisättiin onnistuneesti kirjanmerkkeihisi.
+theme_xhred_filemanager_searching=Haetaan <tt>%value</tt> vastaavia nimiä tiedostoista /directories.
 theme_xhred_filemanager_search_founds=Löydetty <strong>%value</strong> vastaa.
 theme_xhred_filemanager_search_found=Löytyi vahva 1 </strong> haku.
 theme_xhred_filemanager_search_no_matches=Hakutuloksia ei löytynyt.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Poistaminen onnistui.
 theme_xhred_filemanager_successful_permissions=Käyttöoikeuksia on muutettu onnistuneesti.
 theme_xhred_filemanager_successful_ownership=Omistus on vaihdettu onnistuneesti.
 theme_xhred_filemanager_successful_compression=Pakkaus on onnistunut.
-theme_xhred_filemanager_successful_directory_creation=hakemisto `<strong>%value</strong>` luotiin onnistuneesti.
-theme_xhred_filemanager_successful_file_creation=tiedosto `<strong>%value</strong>` luotiin onnistuneesti.
+theme_xhred_filemanager_successful_directory_creation=Hakemisto <tt>%value</tt> luotiin onnistuneesti.
+theme_xhred_filemanager_successful_file_creation=Tiedoston <tt>%value</tt> luominen onnistui.
 
 theme_xhred_notifications_packages_updates=Pakettien päivitys
 theme_xhred_notifications_theme_update=Teeman päivitys
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Varoitus
 theme_xhred_global_close=kiinni
 
 theme_xhred_filemanager__no_bookmarks=Ei tallennettuja kirjanmerkkejä
-theme_xhred_filemanager_unbookmark_success=Hakemiston <strong><em>%value</em></strong> on poistettu onnistuneesti kirjanmerkeistäsi.
+theme_xhred_filemanager_unbookmark_success=Hakemisto <tt>%value</tt> poistettiin onnistuneesti kirjanmerkeistäsi.
 theme_xhred_filemanager_bookmark=Lisää nykyinen hakemisto kirjanmerkkeihin
 theme_xhred_filemanager_unbookmark=Poista nykyisen hakemiston kirjanmerkki
 theme_xhred_filemanager_move_into_self=Et voi siirtää hakemistoa itsensä sisään! Kohdehakemisto on lähdehakemiston sisällä.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Tuloksia ei löytynyt</
 
 theme_xhred_filemanager_buffer_error=Tiedostojen liittäminen puskuriin epäonnistui - käyttöoikeus evätty.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` on jo olemassa `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Ei voi luoda $3 `<strong><em>$1</em></strong>` sisään `<strong><tt>$2</tt></strong>` - lupa kielletty : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> on jo olemassa <tt>$2</tt> ssa
+filemanager_create_object_denied=Ei voi luoda $3 <tt>$1</tt> in <tt>$2</tt> - lupa estetty: $4.
 
 theme_xhred_filemanager_paste_warning=Kohteiden liittäminen epäonnistui. On mahdollista, että pyydetyt esineet olisi voitu <em>nimetä uudelleen, siirtää</em> tai <em>poistaa</em> ennen/ennen liittämistä. Toinen mahdollinen syy on, että määränpäätä ei voida kirjoittaa. Kohteiden ominaisuuksien tarkistaminen on syytä.
 
 theme_xhred_filemanager_delete_warning=Poisto on suoritettu onnistuneesti, mutta ei kaikilta objekteilta. On mahdollista, että pyydetyt esineet olisi voitu <em>nimetä uudelleen</em> tai <em>siirtää</em> ennen poistamista. Rajoitetut käyttöoikeudet (määritteet) on toinen mahdollinen syy. Virheviesti:
 
-filemanager_rename_exists=$3 nimellä `<strong><em>$1</em></strong>` on jo olemassa `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 nimellä <tt>$1</tt> on jo olemassa <tt>$2</tt> ssa
 filemanager_rename_denied=$3 ei voida nimetä uudelleen. Tämä voi tapahtua, koska lähde $3 on poistettu tai johtuen rajoitetuista käyttöoikeuksista.
 
-theme_xhred_filemanager_successful_rename=uudelleennimeäminen `<strong><em><s>%from</s></em></strong>` että `<strong><em>%to</em></strong>` oli onnistunut.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> <tt>%to</tt> onnistui.
 
 filemanager_global_info_total1=Yhteensä: $1 tiedosto ja $2 hakemisto
 filemanager_global_info_total2=Yhteensä: $1 tiedostot ja $2 hakemisto
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Korvaa tulokset
 theme_xhred_global_find=löytö
 theme_xhred_global_replace=Korvata
 
-theme_xhred_filemanager_searching_matching=Etsitään `<em>%value</em>` vastaavia tiedostojen/hakemistojen nimiä, jotka sisältävät `<em>%text</em>` tekstiä.
-theme_xhred_filemanager_searching_replacing=Korvaa vastaavat `<em>%text</em>` `<em>%replace</em>` tiedostoissa, joiden nimi sisältää `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Haetaan <tt>%value</tt> vastaavia nimiä tiedostoille /directories, jotka sisältävät <tt>%text</tt> tekstiä.
+theme_xhred_filemanager_searching_replacing=Korvaaminen vastaa <tt>%text</tt> <tt>%replace</tt> tiedostoissa, joiden nimet sisältävät <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Löydetty ja korvattu <strong>%value</strong> tiedostoina
 theme_xhred_filemanager_search_replaced=Löydetty ja korvattu <strong> 1-tiedostoon.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Kaikkien kohteiden omis
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Omistusta ei voi muuttaa seuraavien virheiden takia:
 
 theme_xhred_filemanager_successful_compression_with_errors=Pakkaus on päättynyt seuraaviin virheisiin:
-theme_xhred_filemanager_successful_compression_bg=Pakkaus on onnistunut. Pakattu tiedosto `<strong>%file</strong>` sijaitsee `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Pakkaus on päättynyt virheisiin. Pakatun tiedoston `<strong>%file</strong>` pitäisi sijaita hakemistossa `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Pakkaus on onnistuneesti päättynyt. Pakattu tiedosto <tt>%file</tt> sijaitsee <tt>%path</tt> hakemistossa.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Pakkaus on päättynyt virheiden kanssa. Pakatun tiedoston <tt>%file</tt> tulee sijaita <tt>%path</tt> hakemistossa.
 
 theme_xhred_filemanager_settings_notification_type=Näytettävien ilmoitusten tyyppi
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Tiedot, varoitukset ja virheet
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Näytä Netdatan reaaliaikainen tarkkailulinkki
 settings_leftmenu_netdata_link=Netdata-palvelimen ensisijainen linkki
 
 theme_xhred_filemanager_context_chattr=Vaihda määritteet
-theme_xhred_filemanager_changing_attributes=Asetusten määrittäminen valittujen tiedostojen <strong><em>%value</em></strong>.
+theme_xhred_filemanager_changing_attributes=Asetetaan määritteet <tt>%value</tt> valituissa tiedostoissa.
 theme_xhred_filemanager_successful_attributes_with_errors=Kaikkien objektien ominaisuuksia ei ole määritetty onnistuneesti:
 theme_xhred_filemanager_successful_attributes=Attribuutit on asetettu onnistuneesti.
 
 theme_xhred_filemanager_context_chcon=Muuta tietoturvakonteksti
-theme_xhred_filemanager_changing_secontext=Suojauskontekstin muuttaminen valittujen tiedostojen <strong><em>%value</em></strong>.
+theme_xhred_filemanager_changing_secontext=Muutetaan suojauskonteksti <tt>%value</tt> valituissa tiedostoissa.
 theme_xhred_filemanager_successful_secontext_with_errors=Kaikkien objektien suojauskontekstia ei ole muutettu onnistuneesti:
 theme_xhred_filemanager_successful_secontext=Suojauskonteksti on muutettu onnistuneesti.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Paketin päivitykset
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Vaihda teemaa
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Lataus onnistui
+theme_xhred_filemanager_upload_status_err=Lataus epäonnistui:
+theme_xhred_filemanager_download_status_err=Lataus epäonnistui:

@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Pasirinkta pervardyti.
 theme_xhred_filemanager_creating_directory=Kuriamas katalogas
 theme_xhred_filemanager_creating_file=Kuriamas failas
 theme_xhred_filemanager_downloading_from=Atsisiunčiama iš
-theme_xhred_filemanager_setting_permissions=Leidimų <strong><em>%value</em></strong> nustatymas pasirinktame faile (-uose).
-theme_xhred_filemanager_changing_ownership=Pakeitus pasirinktos (-ų) failo (-ų) nuosavybės <strong><em>%value</em></strong> į <strong><em>%value</em></strong>.
+theme_xhred_filemanager_setting_permissions=Pasirinktame faile (-uose) nustatomi leidimai į <tt>%value</tt>.
+theme_xhred_filemanager_changing_ownership=Pasirinkto failo (-ų) nuosavybės teisės pakeitimas į <tt>%value</tt>.
 theme_xhred_filemanager_compressing_selected=Suspaudimas pasirinktas fone.
 theme_xhred_filemanager_refreshing=Atnaujinamas katalogų turinys.
 theme_xhred_filemanager_copying_successful=Kopijuoti į mainų sritį sėkmingai.
 theme_xhred_filemanager_cutting_successful=Iškirpti į mainų sritį sėkmingai.
 theme_xhred_filemanager_pasting_successful=Įklijavimas iš iškarpinės buvo sėkmingas.
-theme_xhred_filemanager_bookmark_success=<strong><em>%value</em></strong> Katalogo <strong><em>%value</em></strong> buvo sėkmingai pridėta prie jūsų žymių.
-theme_xhred_filemanager_searching=Ieškoma `<em>%value</em>` atitinkančios failų/katalogų pavadinimus.
+theme_xhred_filemanager_bookmark_success=Katalogas <tt>%value</tt> sėkmingai pridėtas prie jūsų žymių.
+theme_xhred_filemanager_searching=Ieškoma <tt>%value</tt> atitinkančių failų pavadinimų /directories.
 theme_xhred_filemanager_search_founds=Rasta atitikmenų <strong>%value</strong>.
 theme_xhred_filemanager_search_found=Rasta 1 atitikmens.
 theme_xhred_filemanager_search_no_matches=Nerasta atitikmenų.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Ištrinti pavyko.
 theme_xhred_filemanager_successful_permissions=Leidimai buvo sėkmingai pakeisti.
 theme_xhred_filemanager_successful_ownership=Nuosavybė sėkmingai pakeista.
 theme_xhred_filemanager_successful_compression=Suspaudimas sėkmingai baigtas.
-theme_xhred_filemanager_successful_directory_creation=Katalogas `<strong>%value</strong>` buvo sėkmingai sukurta.
-theme_xhred_filemanager_successful_file_creation=Byla `<strong>%value</strong>` buvo sėkmingai sukurta.
+theme_xhred_filemanager_successful_directory_creation=Katalogas <tt>%value</tt> sėkmingai sukurtas.
+theme_xhred_filemanager_successful_file_creation=Failas <tt>%value</tt> sėkmingai sukurtas.
 
 theme_xhred_notifications_packages_updates=Paketų atnaujinimas
 theme_xhred_notifications_theme_update=Temos atnaujinimas
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Įspėjimas
 theme_xhred_global_close=Uždaryti
 
 theme_xhred_filemanager__no_bookmarks=Nėra išsaugotų žymių
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> Katalogo <strong><em>%value</em></strong> buvo sėkmingai pašalinta iš jūsų žymių.
+theme_xhred_filemanager_unbookmark_success=Katalogas <tt>%value</tt> sėkmingai pašalintas iš jūsų žymių.
 theme_xhred_filemanager_bookmark=Pažymėkite dabartinį katalogą
 theme_xhred_filemanager_unbookmark=Pašalinti dabartinio katalogo žymėjimą
 theme_xhred_filemanager_move_into_self=Negalite perkelti katalogo į save! Paskirties katalogas yra šaltinio kataloge.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Nerasta jokių rezultat
 
 theme_xhred_filemanager_buffer_error=Nepavyko įklijuoti failų į buferį - atsisakyta suteikti leidimą.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` jau egzistuoja `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Neįmanoma sukurti $3 `<strong><em>$1</em></strong>` į `<strong><tt>$2</tt></strong>` - leidimas nesuteiktas : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> jau yra <tt>$2</tt>
+filemanager_create_object_denied=Negalima sukurti $3 <tt>$1</tt> <tt>$2</tt> - leidimas atmestas: $4.
 
 theme_xhred_filemanager_paste_warning=Nepavyko įklijuoti tikslo (-ų). Gali būti, kad prašomas (-i) objektas (-ai) galėjo būti <em>pervardyti, perkelti</em> arba <em>ištrinti</em>, kol/prieš įklijuodami. Kita galima priežastis yra ta, kad kelionės tikslo negalima rašyti. Verta patikrinti objektų atributus.
 
 theme_xhred_filemanager_delete_warning=Trinti sėkmingai baigta, bet ne visus objektus. Gali būti, kad prašomas (-i) objektas (-ai) galėjo būti <em>pervadintas</em> arba <em>perkeltas</em> prieš ištrinant. Riboti leidimai (atributai) yra dar viena galima priežastis. Klaidos pranešimas:
 
-filemanager_rename_exists=$3 su vardu `<strong><em>$1</em></strong>` jau egzistuoja `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 pavadinimu <tt>$1</tt> jau yra <tt>$2</tt>
 filemanager_rename_denied=Neįmanoma pervardyti $3. Tai gali nutikti dėl to, kad šaltinis $3 buvo pašalintas arba dėl ribotų teisių.
 
-theme_xhred_filemanager_successful_rename=Pervadinimas `<strong><em><s>%from</s></em></strong>` į `<strong><em>%to</em></strong>` buvo sėkmingas.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> į <tt>%to</tt> buvo sėkmingas.
 
 filemanager_global_info_total1=Iš viso: $1 failas ir $2 katalogas
 filemanager_global_info_total2=Iš viso: $1 failai ir $2 katalogas
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Pakeiskite rezultatais
 theme_xhred_global_find=Rasti
 theme_xhred_global_replace=Pakeiskite
 
-theme_xhred_filemanager_searching_matching=Ieškoma `<em>%value</em>` atitinkančios failų/katalogų pavadinimus, kuriuose yra `<em>%text</em>` teksto.
-theme_xhred_filemanager_searching_replacing=Pakeitus atitikmenis `<em>%text</em>` `<em>%replace</em>` failais pavadinimais, kuriuose yra `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Ieškoma <tt>%value</tt> atitinkančių failų pavadinimų /directories, kuriuose yra <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Keitimas atitinka <tt>%text</tt> su <tt>%replace</tt> failuose, kurių pavadinimai yra <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Rasta ir pakeista <strong>%value</strong> failais.
 theme_xhred_filemanager_search_replaced=Rasta ir pakeista <strong>1</strong> faile.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Visų objektų nuosavyb
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Nuosavybės negalima pakeisti dėl šių klaidų:
 
 theme_xhred_filemanager_successful_compression_with_errors=Suspaudimas baigtas šiomis klaidomis:
-theme_xhred_filemanager_successful_compression_bg=Suspaudimas sėkmingai baigtas. Suspaustas failas `<strong>%file</strong>` yra `<strong>%path</strong>` kataloge.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Suspaudimas baigėsi klaidomis. Suspaustas failas `<strong>%file</strong>` turėtų būti `<strong>%path</strong>` aplanke.
+theme_xhred_filemanager_successful_compression_bg=Suspaudimas sėkmingai baigtas. Suspaustas failas <tt>%file</tt> yra <tt>%path</tt> kataloge.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Suspaudimas baigtas su klaidomis. Suspaustas failas <tt>%file</tt> turi būti <tt>%path</tt> kataloge.
 
 theme_xhred_filemanager_settings_notification_type=Rodomų pranešimų tipas
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informacija, įspėjimai ir klaidos
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Rodyti „Netdata“ stebėjimo nuorodą realiu laiku
 settings_leftmenu_netdata_link=„Netdata“ serverio pasirinkta nuoroda
 
 theme_xhred_filemanager_context_chattr=Keisti atributus
-theme_xhred_filemanager_changing_attributes=Atributų nustatymas pagal pasirinktos (-ų) bylos (-ų) <strong><em>%value</em></strong>.
+theme_xhred_filemanager_changing_attributes=Pasirinktame faile (-iuose) nustatomi atributai į <tt>%value</tt>.
 theme_xhred_filemanager_successful_attributes_with_errors=Atributai nebuvo sėkmingai nustatyti visiems objektams:
 theme_xhred_filemanager_successful_attributes=Atributai buvo nustatyti sėkmingai.
 
 theme_xhred_filemanager_context_chcon=Pakeiskite saugos kontekstą
-theme_xhred_filemanager_changing_secontext=Saugos konteksto keitimas į pasirinktos (-ų) failo (-ų) <strong><em>%value</em></strong>.
+theme_xhred_filemanager_changing_secontext=Pasirinktame faile (-iuose) keičiamas saugos kontekstas į <tt>%value</tt>.
 theme_xhred_filemanager_successful_secontext_with_errors=Visų objektų saugos kontekstas nebuvo sėkmingai pakeistas:
 theme_xhred_filemanager_successful_secontext=Saugumo kontekstas buvo sėkmingai pakeistas.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Paketo atnaujinimai
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Perjungti temą
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Įkėlimas sėkmingas
+theme_xhred_filemanager_upload_status_err=Įkelti nepavyko:
+theme_xhred_filemanager_download_status_err=Atsisiuntimas nepavyko:

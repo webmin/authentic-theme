@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Hautatutako izena aldatzen du.
 theme_xhred_filemanager_creating_directory=Direktorioa sortzen
 theme_xhred_filemanager_creating_file=Fitxategia sortzen
 theme_xhred_filemanager_downloading_from=Noiz deskargatzen
-theme_xhred_filemanager_setting_permissions=Baimenak aukeratutako <strong><em>%value</em></strong> fitxategietan <strong><em>%value</em></strong> zehaztea.
-theme_xhred_filemanager_changing_ownership=Jabetza aldatzea <strong><em>%value</em></strong> hautatutako fitxategi (k )etan.
+theme_xhred_filemanager_setting_permissions=Aukeratutako fitxategietan <tt>%value</tt> -n baimenak ezartzen.
+theme_xhred_filemanager_changing_ownership=Jabetza <tt>%value</tt> ra aldatzen hautatutako fitxategietan.
 theme_xhred_filemanager_compressing_selected=Hautatutako atzeko planoan konprimitzea.
 theme_xhred_filemanager_refreshing=Direktorioaren edukia freskatzea.
 theme_xhred_filemanager_copying_successful=Kopiatu arbelean arrakastaz.
 theme_xhred_filemanager_cutting_successful=Moztu arbelean arrakastaz.
 theme_xhred_filemanager_pasting_successful=Arbeletik itsatsi da arrakasta.
-theme_xhred_filemanager_bookmark_success=<strong><em>%value</em></strong> zure laster-marketan gehitu da.
-theme_xhred_filemanager_searching=Fitxategien/direktorioen izenekin bat datozen `<em>%value</em>` bilatzen ari da.
+theme_xhred_filemanager_bookmark_success=Directory <tt>%value</tt> behar bezala gehitu da zure laster-marketan.
+theme_xhred_filemanager_searching=/directories. fitxategien bat datozen <tt>%value</tt> izenak bilatzen.
 theme_xhred_filemanager_search_founds=<strong>%value</strong> datoz.
 theme_xhred_filemanager_search_found=Aurkitu </strong>1</strong> ko partida.
 theme_xhred_filemanager_search_no_matches=Ez da emaitzarik aurkitu
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Ezabatzea arrakastatsua izan zen.
 theme_xhred_filemanager_successful_permissions=Baimenak behar bezala aldatu dira.
 theme_xhred_filemanager_successful_ownership=Jabetza ondo aldatu da.
 theme_xhred_filemanager_successful_compression=Konpresioa ondo amaitu da.
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` arrakastaz sortu da.
-theme_xhred_filemanager_successful_file_creation=file `<strong>%value</strong>` arrakastaz sortu da.
+theme_xhred_filemanager_successful_directory_creation=Direktorioa <tt>%value</tt> behar bezala sortu da.
+theme_xhred_filemanager_successful_file_creation=<tt>%value</tt> fitxategia behar bezala sortu da.
 
 theme_xhred_notifications_packages_updates=Paketeak eguneratzea
 theme_xhred_notifications_theme_update=Gaiaren eguneratzea
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Abisua
 theme_xhred_global_close=Itxi
 
 theme_xhred_filemanager__no_bookmarks=Ez dago gordetako laster-markarik
-theme_xhred_filemanager_unbookmark_success=<strong><em>%value</em></strong> zure laster-marketatik kendu da.
+theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> direktorioa behar bezala kendu da zure laster-marketatik.
 theme_xhred_filemanager_bookmark=Markaren uneko direktorioa
 theme_xhred_filemanager_unbookmark=Desmarkatu uneko direktorio
 theme_xhred_filemanager_move_into_self=Ezin duzu direktorio bat mugitu berez! Helmuga direktorioa iturburu-direktorioaren barruan dago.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Ez da emaitzarik aurkit
 
 theme_xhred_filemanager_buffer_error=Ezin izan da fitxategiak bufferrean itsatsi. Baimena ukatu da.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` dagoeneko badago `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Ezin da $3 sortu `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - Baimena ukatu : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> dagoeneko existitzen da <tt>$2</tt>
+filemanager_create_object_denied=Ezin da $3 <tt>$1</tt> sortu <tt>$2</tt> -n - baimena ukatua: $4.
 
 theme_xhred_filemanager_paste_warning=Huts egin du helburuak (k) itsatsiz. Litekeena da eskatutako objektu (e) k <em>i izena aldatzea, lekuz aldatzea</em> edo <em>ezabatu</em> izatea itsatsi aurretik /. Beste arrazoi posible bat da helmuga ezin dela idatzi. Objektuen atributuak egiaztatzea merezi du.
 
 theme_xhred_filemanager_delete_warning=Ezabatzea ondo amaitu da, baina ez objektu guztientzat. Litekeena da eskatutako objektu (e) k <em>eko izena aldatu edo</em> ren izena aldatu izana edo ezabatzea aurretik ezabatzea. Mugatutako baimenak (atributuak) beste arrazoi posible bat da. Errore mezua:
 
-filemanager_rename_exists=$3 izenarekin `<strong><em>$1</em></strong>` dagoeneko badago `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=<tt>$1</tt> izena duen $3 dagoeneko existitzen da <tt>$2</tt>
 filemanager_rename_denied=Ezin da $3 izenarekin aldatu. Hori gerta liteke $3 iturria kendu egin delako edo baimen murriztuak direla eta.
 
-theme_xhred_filemanager_successful_rename=Izena aldatzen `<strong><em><s>%from</s></em></strong>` to `<strong><em>%to</em></strong>` arrakasta izan zuen.
+theme_xhred_filemanager_successful_rename=Arrakasta <tt>%to</tt> da <tt>%from</tt> izena aldatzea.
 
 filemanager_global_info_total1=Guztira: $1 fitxategia eta $2 direktorioa
 filemanager_global_info_total2=Guztira: $1 fitxategiak eta $2 direktorioa
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Ordeztu emaitzetan
 theme_xhred_global_find=Aurki
 theme_xhred_global_replace=Ordezkatu
 
-theme_xhred_filemanager_searching_matching=Fitxategien/direktorioen izenekin bat datozen `<em>%value</em>` bilatzen ari `<em>%value</em>`, `<em>%text</em>` testua dutenak.
-theme_xhred_filemanager_searching_replacing=`<em>%text</em>` `<em>%replace</em>` `<em>%value</em>` duten izenak `<em>%replace</em>` ditu.
+theme_xhred_filemanager_searching_matching=<tt>%text</tt> testua duten /directories, fitxategien bat datozen <tt>%value</tt> izenak bilatzen.
+theme_xhred_filemanager_searching_replacing=<tt>%text</tt> ekin ordezkatuz <tt>%value</tt> duten izenak dituzten fitxategietan <tt>%replace</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=<strong>%value</strong> fitxategietan aurkitu eta ordezkatu da.
 theme_xhred_filemanager_search_replaced=Aurkitu </strong>da eta ordezkatu</strong> fitxategian.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Jabetza ez da behar bez
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Jabetza ezin da aldatu ondorengo akatsengatik:
 
 theme_xhred_filemanager_successful_compression_with_errors=Konpresioa akats hauekin amaitu da:
-theme_xhred_filemanager_successful_compression_bg=Konpresioa ondo amaitu da. Konprimitutako `<strong>%file</strong>` `<strong>%path</strong>` direktorioan dago.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Konpresioa akatsekin amaitu da. Konprimatutako `<strong>%file</strong>` `<strong>%path</strong>` direktorioaren barruan kokatu beharko litzateke.
+theme_xhred_filemanager_successful_compression_bg=Konpresioa behar bezala amaitu da. <tt>%file</tt> file fitxategi konprimitua <tt>%path</tt> direktorioan dago.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Konpresioa akatsekin amaitu da. Konprimitutako fitxategia <tt>%file</tt> <tt>%path</tt> direktorioan kokatu behar da.
 
 theme_xhred_filemanager_settings_notification_type=Bistaratzeko jakinarazpen mota
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informazioak, abisuak eta akatsak
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Erakutsi Netdata denbora errealeko jarraipen esteka
 settings_leftmenu_netdata_link=Netdata zerbitzariaren esteka hobetsi
 
 theme_xhred_filemanager_context_chattr=Aldatu atributuak
-theme_xhred_filemanager_changing_attributes=Hautatutako fitxategi (k) fitxategietan <strong><em>%value</em></strong> ezartzea.
+theme_xhred_filemanager_changing_attributes=Atributuak <tt>%value</tt> ra ezartzen hautatutako fitxategietan.
 theme_xhred_filemanager_successful_attributes_with_errors=Atributuak ez dira objektu guztientzako ezarri
 theme_xhred_filemanager_successful_attributes=Emaitzak ongi finkatu dira.
 
 theme_xhred_filemanager_context_chcon=Segurtasun testuingurua aldatu
-theme_xhred_filemanager_changing_secontext=Segurtasun testuingurua aldatzea <strong><em>%value</em></strong> hautatutako fitxategi (k )etan.
+theme_xhred_filemanager_changing_secontext=Segurtasun-testuingurua <tt>%value</tt> -ra aldatzen hautatutako fitxategietan.
 theme_xhred_filemanager_successful_secontext_with_errors=Segurtasun testuingurua ez da behar bezala aldatu objektu guztientzat:
 theme_xhred_filemanager_successful_secontext=Segurtasun testuingurua aldatu da.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Paketeen eguneraketak
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Aldatu gaia
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Kargatu ondo
+theme_xhred_filemanager_upload_status_err=Ezin izan da kargatu:
+theme_xhred_filemanager_download_status_err=Deskargatu huts egin du:

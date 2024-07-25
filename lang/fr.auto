@@ -25,8 +25,35 @@ theme_xhred_sysinfo_wmdocs=Documentation Webmin
 theme_xhred_sysinfo_vmdocs=Documentation Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentation Cloudmin
 
+theme_xhred_filemanager_setting_permissions=Définition des autorisations sur <tt>%value</tt> sur le(s) fichier(s) sélectionné(s).
+theme_xhred_filemanager_changing_ownership=Modification de la propriété en <tt>%value</tt> sur le(s) fichier(s) sélectionné(s).
+theme_xhred_filemanager_bookmark_success=Le répertoire <tt>%value</tt> a été ajouté avec succès à vos favoris.
+theme_xhred_filemanager_searching=Recherche de <tt>%value</tt> correspondant aux noms de fichiers /directories.
+
+theme_xhred_filemanager_successful_directory_creation=Le répertoire <tt>%value</tt> a été créé avec succès.
+theme_xhred_filemanager_successful_file_creation=Le fichier <tt>%value</tt> a été créé avec succès.
+
+theme_xhred_filemanager_unbookmark_success=Le répertoire <tt>%value</tt> a été supprimé avec succès de vos favoris.
+
 theme_xhred_database_object_selected_delete2=Supprimer le tableau sélectionné
 theme_xhred_database_objects_selected_delete2=Supprimer les tables sélectionnées
+
+filemanager_create_object_exists=$3 <tt>$1</tt> existe déjà dans <tt>$2</tt>
+filemanager_create_object_denied=Impossible de créer $3 <tt>$1</tt> dans <tt>$2</tt> - autorisation refusée : $4.
+
+filemanager_rename_exists=$3 portant le nom <tt>$1</tt> existe déjà dans <tt>$2</tt>
+
+theme_xhred_filemanager_successful_rename=Le changement de nom <tt>%from</tt> en <tt>%to</tt> a réussi.
+
+theme_xhred_filemanager_searching_matching=Recherche de <tt>%value</tt> correspondant aux noms de fichiers /directories, contenant <tt>%text</tt> text.
+theme_xhred_filemanager_searching_replacing=Remplacement des correspondances <tt>%text</tt> par <tt>%replace</tt> dans les fichiers dont les noms contiennent <tt>%value</tt>.
+
+theme_xhred_filemanager_successful_compression_bg=La compression s'est terminée avec succès. Le fichier compressé <tt>%file</tt> se trouve dans le répertoire <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=La compression s'est terminée avec des erreurs. Le fichier compressé <tt>%file</tt> doit être situé dans le répertoire <tt>%path</tt>.
+
+theme_xhred_filemanager_changing_attributes=Définition des attributs sur <tt>%value</tt> sur le(s) fichier(s) sélectionné(s).
+
+theme_xhred_filemanager_changing_secontext=Modification du contexte de sécurité en <tt>%value</tt> sur le(s) fichier(s) sélectionné(s).
 
 #18.40
 settings_hotkey_toggle_key_night_mode=Basculer la palette de couleurs
@@ -332,3 +359,8 @@ theme_xhred_body_updates=Mises à jour des packages
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Changer de thème
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Téléchargement réussi
+theme_xhred_filemanager_upload_status_err=Échec du téléchargement :
+theme_xhred_filemanager_download_status_err=Échec du téléchargement:

@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Atlasīta pārdēvēšana.
 theme_xhred_filemanager_creating_directory=Izveido direktoriju
 theme_xhred_filemanager_creating_file=Notiek faila izveidošana
 theme_xhred_filemanager_downloading_from=Lejupielāde no
-theme_xhred_filemanager_setting_permissions=Iestatot atļauju <strong><em>%value</em></strong> atlasītajā failā (-os).
-theme_xhred_filemanager_changing_ownership=Mainot īpašumtiesības uz <strong><em>%value</em></strong> atlasītajā failā.
+theme_xhred_filemanager_setting_permissions=Notiek atļauju iestatīšana <tt>%value</tt> atlasītajam(-iem) failam(-iem).
+theme_xhred_filemanager_changing_ownership=Atlasītā(-o) faila(-u) īpašumtiesību maiņa uz <tt>%value</tt>.
 theme_xhred_filemanager_compressing_selected=Notiek fonā atlasītā saspiešana.
 theme_xhred_filemanager_refreshing=Atjaunina direktoriju saturu.
 theme_xhred_filemanager_copying_successful=Kopēšana starpliktuvē ir veiksmīga.
 theme_xhred_filemanager_cutting_successful=Izgriešana starpliktuvē ir veiksmīga.
 theme_xhred_filemanager_pasting_successful=Ielīmēšana no starpliktuves bija veiksmīga.
-theme_xhred_filemanager_bookmark_success=Kataloga <strong><em>%value</em></strong> tika veiksmīgi pievienota jūsu grāmatzīmēm.
-theme_xhred_filemanager_searching=Tiek meklēti `<em>%value</em>` atbilst failu/direktoriju nosaukumiem.
+theme_xhred_filemanager_bookmark_success=Katalogs <tt>%value</tt> tika veiksmīgi pievienots jūsu grāmatzīmēm.
+theme_xhred_filemanager_searching=Notiek <tt>%value</tt> atbilstošo failu nosaukumu meklēšana /directories.
 theme_xhred_filemanager_search_founds=Atrasti <strong>%value</strong> sakritības.
 theme_xhred_filemanager_search_found=Atrasta <strong>1</strong> atbilstība.
 theme_xhred_filemanager_search_no_matches=Sakritības nav atrastas.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Dzēšana bija veiksmīga.
 theme_xhred_filemanager_successful_permissions=Atļaujas ir veiksmīgi mainītas.
 theme_xhred_filemanager_successful_ownership=Īpašumtiesības ir veiksmīgi mainītas.
 theme_xhred_filemanager_successful_compression=Kompresija ir veiksmīgi pabeigta.
-theme_xhred_filemanager_successful_directory_creation=Katalogs `<strong>%value</strong>` tika veiksmīgi izveidots.
-theme_xhred_filemanager_successful_file_creation=Fails `<strong>%value</strong>` tika veiksmīgi izveidots.
+theme_xhred_filemanager_successful_directory_creation=Katalogs <tt>%value</tt> tika veiksmīgi izveidots.
+theme_xhred_filemanager_successful_file_creation=Fails <tt>%value</tt> tika veiksmīgi izveidots.
 
 theme_xhred_notifications_packages_updates=Pakešu atjaunināšana
 theme_xhred_notifications_theme_update=Tēmas atjaunināšana
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Brīdinājums
 theme_xhred_global_close=Aizveriet
 
 theme_xhred_filemanager__no_bookmarks=Nav saglabātu grāmatzīmju
-theme_xhred_filemanager_unbookmark_success=Kataloga <strong><em>%value</em></strong> tika veiksmīgi noņemta no jūsu grāmatzīmēm.
+theme_xhred_filemanager_unbookmark_success=Katalogs <tt>%value</tt> tika veiksmīgi noņemts no jūsu grāmatzīmēm.
 theme_xhred_filemanager_bookmark=Grāmatzīme pašreizējo direktoriju
 theme_xhred_filemanager_unbookmark=Noņemt pašreizējā direktorija grāmatzīmi
 theme_xhred_filemanager_move_into_self=Jūs nevarat pārvietot direktoriju pats par sevi! Galamērķa direktorija atrodas avota direktorijā.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Rezultāti nav atrasti<
 
 theme_xhred_filemanager_buffer_error=Neizdevās ielīmēt failus buferī - atļauja ir liegta.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` jau pastāv `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Nevar izveidot $3 `<strong><em>$1</em></strong>` iekšā `<strong><tt>$2</tt></strong>` - atļauja liegta : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> jau pastāv mapē <tt>$2</tt>
+filemanager_create_object_denied=Nevar izveidot $3 <tt>$1</tt> iekš <tt>$2</tt> - atļauja liegta: $4.
 
 theme_xhred_filemanager_paste_warning=Neizdevās ielīmēt mērķi (-us). Iespējams, ka pieprasīto (-os) objektu (-us) varēja <em>pārdēvēt, pārvietot</em> vai <em>izdzēst</em>, kamēr/pirms ielīmēšanas. Vēl viens iespējamais iemesls ir tas, ka galamērķi nevar ierakstīt. Ir vērts pārbaudīt objektu atribūtus.
 
 theme_xhred_filemanager_delete_warning=Dzēšana ir veiksmīgi pabeigta, bet ne visiem objektiem. Iespējams, ka pieprasītais (-ie) objekts (-i) pirms dzēšanas varēja būt <em>pārdēvēts</em> vai <em>pārvietots</em>. Cits iespējamais iemesls ir ierobežotas atļaujas (atribūti). Kļūdas ziņojums:
 
-filemanager_rename_exists=$3 ar vārdu `<strong><em>$1</em></strong>` jau pastāv `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 ar nosaukumu <tt>$1</tt> jau pastāv mapē <tt>$2</tt>
 filemanager_rename_denied=Nevar pārdēvēt $3. Tas var notikt tāpēc, ka avots $3 ir noņemts vai ierobežotu atļauju dēļ.
 
-theme_xhred_filemanager_successful_rename=Pārdēvēšana `<strong><em><s>%from</s></em></strong>` uz `<strong><em>%to</em></strong>` bija veiksmīgs.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> uz <tt>%to</tt> bija veiksmīga.
 
 filemanager_global_info_total1=Kopā: $1 fails un $2 direktorijs
 filemanager_global_info_total2=Kopā: $1 faili un $2 direktorijs
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Aizstāt rezultātos
 theme_xhred_global_find=Atrodi
 theme_xhred_global_replace=Aizvietot
 
-theme_xhred_filemanager_searching_matching=Tiek meklēti `<em>%value</em>` atbilstošie failu/direktoriju nosaukumi, kas satur `<em>%text</em>` tekstu.
-theme_xhred_filemanager_searching_replacing=Aizvietojot atbilstības `<em>%text</em>` ar `<em>%replace</em>` failos ar nosaukumiem, kas satur `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Tiek meklēti <tt>%value</tt> atbilstošie nosaukumi failiem /directories, kas satur <tt>%text</tt> tekstu.
+theme_xhred_filemanager_searching_replacing=Aizstāšana atbilst <tt>%text</tt> ar <tt>%replace</tt> failos ar nosaukumiem, kas satur <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Atrasts un aizstāts <strong>%value</strong> failos.
 theme_xhred_filemanager_search_replaced=Atrasts un aizstāts <strong> failā.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Īpašumtiesības nav v
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Īpašumtiesības nevar mainīt šādu kļūdu dēļ:
 
 theme_xhred_filemanager_successful_compression_with_errors=Saspiešana ir pabeigta ar šādām kļūdām:
-theme_xhred_filemanager_successful_compression_bg=Kompresija ir veiksmīgi pabeigta. Saspiests fails `<strong>%file</strong>` atrodas `<strong>%path</strong>` direktorijā.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Saspiešana ir pabeigta ar kļūdām. Saspiestajam failam `<strong>%file</strong>` jāatrodas `<strong>%path</strong>` direktorijā.
+theme_xhred_filemanager_successful_compression_bg=Saspiešana ir veiksmīgi pabeigta. Saspiestais fails <tt>%file</tt> atrodas <tt>%path</tt> direktorijā.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Saspiešana ir beigusies ar kļūdām. Saspiestajam failam <tt>%file</tt> jāatrodas <tt>%path</tt> direktorijā.
 
 theme_xhred_filemanager_settings_notification_type=Parādāmo paziņojumu veids
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informācija, brīdinājumi un kļūdas
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Rādīt Netdata reāllaika uzraudzības saiti
 settings_leftmenu_netdata_link=Netdata servera vēlamā saite
 
 theme_xhred_filemanager_context_chattr=Mainīt atribūtus
-theme_xhred_filemanager_changing_attributes=Iestatot atribūtiem <strong><em>%value</em></strong> atlasītajā failā.
+theme_xhred_filemanager_changing_attributes=Notiek atribūtu iestatīšana uz <tt>%value</tt> atlasītajam(-iem) failam(-iem).
 theme_xhred_filemanager_successful_attributes_with_errors=Visiem objektiem atribūti nav veiksmīgi iestatīti:
 theme_xhred_filemanager_successful_attributes=Atribūti ir veiksmīgi iestatīti.
 
 theme_xhred_filemanager_context_chcon=Mainiet drošības kontekstu
-theme_xhred_filemanager_changing_secontext=Drošības konteksta maiņa uz <strong><em>%value</em></strong> atlasītajā failā.
+theme_xhred_filemanager_changing_secontext=Atlasītajā(-os) failā(-os) tiek mainīts drošības konteksts uz <tt>%value</tt>.
 theme_xhred_filemanager_successful_secontext_with_errors=Drošības konteksts nav veiksmīgi mainīts visiem objektiem:
 theme_xhred_filemanager_successful_secontext=Drošības konteksts ir veiksmīgi mainīts.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Pakešu atjauninājumi
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Pārslēgt motīvu
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Augšupielāde ir veiksmīga
+theme_xhred_filemanager_upload_status_err=Augšupielāde neizdevās:
+theme_xhred_filemanager_download_status_err=Lejupielāde neizdevās:

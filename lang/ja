@@ -183,15 +183,11 @@ theme_xhred_filemanager_renaming_selected=選択した名前の変更。
 theme_xhred_filemanager_creating_directory=ディレクトリの作成
 theme_xhred_filemanager_creating_file=ファイルの作成
 theme_xhred_filemanager_downloading_from=からのダウンロード
-theme_xhred_filemanager_setting_permissions=選択したファイルの<strong><em>%value</em></strong>へのアクセス許可を設定しています。
-theme_xhred_filemanager_changing_ownership=選択したファイルの所有権を<strong><em>%value </em></strong>に変更しています。
 theme_xhred_filemanager_compressing_selected=バックグラウンドで選択された圧縮。
 theme_xhred_filemanager_refreshing=ディレクトリの内容を更新する。
 theme_xhred_filemanager_copying_successful=クリップボードにコピーに成功しました。
 theme_xhred_filemanager_cutting_successful=クリップボードへの切り取りが成功しました。
 theme_xhred_filemanager_pasting_successful=クリップボードから貼り付けが成功しました。
-theme_xhred_filemanager_bookmark_success=ディレクトリ<strong><em>%value </em></strong>がブックマークに正常に追加されました。
-theme_xhred_filemanager_searching= ファイル/ディレクトリの名前に一致する<em>'%value'</em>を検索しています。
 theme_xhred_filemanager_search_founds=<strong>%value</strong>が一致しました。
 theme_xhred_filemanager_search_found=<strong>1</strong>つ一致するものが見つかりました。
 theme_xhred_filemanager_search_no_matches=一致するものが見つかりません。
@@ -209,8 +205,6 @@ theme_xhred_filemanager_successful_deletion=削除に成功しました。
 theme_xhred_filemanager_successful_permissions=アクセス許可が正常に変更されました。
 theme_xhred_filemanager_successful_ownership=アクセス許可が正常に変更されました。
 theme_xhred_filemanager_successful_compression=圧縮は正常に終了しました。
-theme_xhred_filemanager_successful_directory_creation=ディレクトリ '<strong>%value</strong>' が正常に作成されました。
-theme_xhred_filemanager_successful_file_creation=ファイル '<strong>%value</strong>' が正常に作成されました。
 
 theme_xhred_notifications_packages_updates=パッケージの更新
 theme_xhred_notifications_theme_update=テーマの更新
@@ -321,7 +315,6 @@ theme_xhred_global_warning= 警告
 theme_xhred_global_close= 閉じる
 
 theme_xhred_filemanager__no_bookmarks=保存したブックマークがありません
-theme_xhred_filemanager_unbookmark_success= ディレクトリ<strong><em>%value </em> </strong>がブックマークから正常に削除されました。
 theme_xhred_filemanager_bookmark= ブックマークカレントディレクトリ
 theme_xhred_filemanager_unbookmark= 現在のディレクトリのブックマークを解除する
 theme_xhred_filemanager_move_into_self= ディレクトリを自分自身に移動することはできません！宛先ディレクトリはソースディレクトリ内にあります。
@@ -401,17 +394,11 @@ theme_xhred_datatable_no_search_results= <span class="h5">結果が見つかり�
 
 theme_xhred_filemanager_buffer_error= ファイルをバッファに貼り付けることができませんでした - 許可が拒否されました。
 
-filemanager_create_object_exists= <strong><tt>$2</tt></strong>に既に$ 3<strong> <em>$1</em>
-filemanager_create_object_denied= `<strong><tt>$2</tt></strong>`で$3`<strong><em>$1</em></strong>`を作成できません : $4。
-
 theme_xhred_filemanager_paste_warning= ターゲットを貼り付けることができませんでした。貼り付けの前/中に要求されたオブジェクトが<em>名前変更、移動</em>、または<em>削除</em>されている可能性があります。別の考えられる原因は、宛先が書き込み可能でないことです。オブジェクトの属性をチェックする価値があります。
 
 theme_xhred_filemanager_delete_warning= 削除は正常に終了しましたが、すべてのオブジェクトに対して正常に終了しませんでした。削除する前に、要求されたオブジェクトを<em>名前を変更</em>または<em>移動</em>できた可能性があります。制限されたアクセス許可（属性）は別の考えられる原因です。エラーメッセージ:
 
-filemanager_rename_exists= <strong> <em>$1</em></strong>という名前の$3は既に<strong><tt>$2</tt>
 filemanager_rename_denied=$3の名前を変更できません。これは、ソース$3が削除されているか、アクセス権が制限されているために発生する可能性があります。
-
-theme_xhred_filemanager_successful_rename= '<strong><em><s>%from ' から</s></em></strong>'<strong><em>%to</em></strong>' への名前変更は成功しました。
 
 filemanager_global_info_total1= 合計:$1ファイルと$2ディレクトリ
 filemanager_global_info_total2= 合計:$1ファイルと$2ディレクトリ
@@ -427,9 +414,6 @@ theme_xhred_filemanager_search_replace= 結果の置換
 theme_xhred_global_find= 検索
 theme_xhred_global_replace= 置換
 
-theme_xhred_filemanager_searching_matching= <em>`%text`</em>テキストを含むファイル/ディレクトリの名前と一致する<em>`%value`</em>を検索します。
-theme_xhred_filemanager_searching_replacing= <em>`%value`</em>を含む名前のファイルで<em>`％text`</em>を<em>`%replace`</em>に置き換えます。
-
 theme_xhred_filemanager_search_replaced_multi= 検索され、<strong>%value</strong>ファイルに置き換えられました。
 theme_xhred_filemanager_search_replaced= 見つけられ、<strong>1</strong>ファイルに置き換えられました。
 
@@ -439,8 +423,6 @@ theme_xhred_filemanager_successful_ownership_with_errors= 所有権は、すべ�
 theme_xhred_filemanager_successful_ownership_with_errors_fatal= 所有権は、以下のエラーのために変更することはできません。:
 
 theme_xhred_filemanager_successful_compression_with_errors= 圧縮は次のエラーで終了しました:
-theme_xhred_filemanager_successful_compression_bg= 圧縮は正常に終了しました。圧縮ファイル<strong> `%file` </strong>は、<strong>`%path` </strong>ディレクトリにあります。
-theme_xhred_filemanager_successful_compression_bg_with_errors= 圧縮は正常に終了しました。圧縮ファイル<strong> `%file` </strong>は、<strong>`%path` </strong>ディレクトリにあります。
 
 theme_xhred_filemanager_settings_notification_type= 表示する通知のタイプ
 theme_xhred_filemanager_settings_notification_type_inf_warn_err= 情報、警告、エラー
@@ -501,12 +483,10 @@ settings_leftmenu_netdata= Netdataリアルタイム監視リンクを表示す�
 settings_leftmenu_netdata_link= Netdataサーバーの優先リンク
 
 theme_xhred_filemanager_context_chattr= 属性の変更
-theme_xhred_filemanager_changing_attributes= 選択したファイルの属性を<strong><em>%value</em></strong>に設定します。
 theme_xhred_filemanager_successful_attributes_with_errors= 属性がすべてのオブジェクトに対して正常に設定されていません:
 theme_xhred_filemanager_successful_attributes= 属性が正常に設定されました。
 
 theme_xhred_filemanager_context_chcon= セキュリティコンテキストを変更する
-theme_xhred_filemanager_changing_secontext= 選択したファイルのセキュリティコンテキストを<strong><em>%valie</em></strong>に変更します。
 theme_xhred_filemanager_successful_secontext_with_errors= セキュリティコンテキストは、すべてのオブジェクトに対して正常に変更されていません。:
 theme_xhred_filemanager_successful_secontext= セキュリティコンテキストが正常に変更されました。
 

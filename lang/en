@@ -221,15 +221,15 @@ theme_xhred_filemanager_renaming_selected=Renaming selected.
 theme_xhred_filemanager_creating_directory=Creating directory
 theme_xhred_filemanager_creating_file=Creating file
 theme_xhred_filemanager_downloading_from=Downloading from
-theme_xhred_filemanager_setting_permissions=Setting permissions to <strong><em>%value</em></strong> on selected file(s).
-theme_xhred_filemanager_changing_ownership=Changing ownership to <strong><em>%value</em></strong> on selected file(s).
+theme_xhred_filemanager_setting_permissions=Setting permissions to <tt>%value</tt> on selected file(s).
+theme_xhred_filemanager_changing_ownership=Changing ownership to <tt>%value</tt> on selected file(s).
 theme_xhred_filemanager_compressing_selected=Compressing selected in the background.
 theme_xhred_filemanager_refreshing=Refreshing directory content.
 theme_xhred_filemanager_copying_successful=Copy to clipboard successful.
 theme_xhred_filemanager_cutting_successful=Cut to clipboard successful.
 theme_xhred_filemanager_pasting_successful=Paste from clipboard was successful.
-theme_xhred_filemanager_bookmark_success=Directory <strong><em>%value</em></strong> was successfully added to your bookmarks.
-theme_xhred_filemanager_searching=Searching for <em>`%value`</em> matching names of files/directories.
+theme_xhred_filemanager_bookmark_success=Directory <tt>%value</tt> was successfully added to your bookmarks.
+theme_xhred_filemanager_searching=Searching for <tt>%value</tt> matching names of files/directories.
 theme_xhred_filemanager_search_founds=Found <strong>%value</strong> matches.
 theme_xhred_filemanager_search_found=Found <strong>1</strong> match.
 theme_xhred_filemanager_search_no_matches=No matches found.
@@ -247,8 +247,8 @@ theme_xhred_filemanager_successful_deletion=Deletion was successful.
 theme_xhred_filemanager_successful_permissions=Permissions have been changed successfully.
 theme_xhred_filemanager_successful_ownership=Ownership has been changed successfully.
 theme_xhred_filemanager_successful_compression=Compression has successfully finished.
-theme_xhred_filemanager_successful_directory_creation=Directory `<strong>%value</strong>` was created successfully.
-theme_xhred_filemanager_successful_file_creation=File `<strong>%value</strong>` was created successfully.
+theme_xhred_filemanager_successful_directory_creation=Directory <tt>%value</tt> was created successfully.
+theme_xhred_filemanager_successful_file_creation=File <tt>%value</tt> was created successfully.
 
 theme_xhred_notifications_packages_updates=Packages Update
 theme_xhred_notifications_theme_update=Theme Update
@@ -359,7 +359,7 @@ theme_xhred_global_warning=Warning
 theme_xhred_global_close=Close
 
 theme_xhred_filemanager__no_bookmarks=No saved bookmarks
-theme_xhred_filemanager_unbookmark_success=Directory <strong><em>%value</em></strong> was successfully removed from your bookmarks.
+theme_xhred_filemanager_unbookmark_success=Directory <tt>%value</tt> was successfully removed from your bookmarks.
 theme_xhred_filemanager_bookmark=Bookmark current directory
 theme_xhred_filemanager_unbookmark=Unbookmark current directory
 theme_xhred_filemanager_move_into_self=You cannot move a directory into itself! The destination directory is inside the source directory.
@@ -442,18 +442,18 @@ theme_xhred_datatable_no_search_results=<span class="h5">No results found</span>
 
 theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Can't create $3 `<strong><em>$1</em></strong>` in `<strong><tt>$2</tt></strong>` - permission denied : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> already exists in <tt>$2</tt>
+filemanager_create_object_denied=Can't create $3 <tt>$1</tt> in <tt>$2</tt> - permission denied : $4.
 
 theme_xhred_filemanager_paste_warning=Failed to paste target(s). It is possible that requested object(s) could have been <em>renamed, moved</em> or <em>deleted</em> while/before pasting
 
 theme_xhred_filemanager_delete_warning=Deletion has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before deletion. Restricted permissions (attributes) is another possible cause. Error message:
 
 
-filemanager_rename_exists=$3 with name `<strong><em>$1</em></strong>` already exists in `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 with name <tt>$1</tt> already exists in <tt>$2</tt>
 filemanager_rename_denied=Can not rename the $3. This might happen because the source $3 has been removed or due to restricted permissions.
 
-theme_xhred_filemanager_successful_rename=Renaming `<strong><em><s>%from</s></em></strong>` to `<strong><em>%to</em></strong>` was successful.
+theme_xhred_filemanager_successful_rename=Renaming <tt>%from</tt> to <tt>%to</tt> was successful.
 
 filemanager_global_info_total1=Total: $1 file and $2 directory
 filemanager_global_info_total2=Total: $1 files and $2 directory
@@ -469,8 +469,8 @@ theme_xhred_filemanager_search_replace=Replace in results
 theme_xhred_global_find=Find
 theme_xhred_global_replace=Replace
 
-theme_xhred_filemanager_searching_matching=Searching for <em>`%value`</em> matching names of files/directories, containing <em>`%text`</em> text.
-theme_xhred_filemanager_searching_replacing=Replacing matches <em>`%text`</em> with <em>`%replace`</em> in files with names containing <em>`%value`</em>.
+theme_xhred_filemanager_searching_matching=Searching for <tt>%value</tt> matching names of files/directories, containing <tt>%text</tt> text.
+theme_xhred_filemanager_searching_replacing=Replacing matches <tt>%text</tt> with <tt>%replace</tt> in files with names containing <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Found and replaced in <strong>%value</strong> files.
 theme_xhred_filemanager_search_replaced=Found and replaced in <strong>1</strong> file.
@@ -481,8 +481,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Ownership has not been 
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Ownership can't be changed due to following errors:
 
 theme_xhred_filemanager_successful_compression_with_errors=Compression has finished with the following errors:
-theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <strong>`%file`</strong> is located in <strong>`%path`</strong> directory.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <strong>`%file`</strong> should be located in <strong>`%path`</strong> directory.
+theme_xhred_filemanager_successful_compression_bg=Compression has successfully finished. Compressed file <tt>%file</tt> is located in <tt>%path</tt> directory.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Compression has finished with errors. Compressed file <tt>%file</tt> should be located in <tt>%path</tt> directory.
 
 theme_xhred_filemanager_settings_notification_type=Type of notifications to display
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Informations, warnings and errors
@@ -546,12 +546,12 @@ settings_leftmenu_netdata=Show Netdata realtime monitoring link
 settings_leftmenu_netdata_link=Netdata server preferred link
 
 theme_xhred_filemanager_context_chattr=Change attributes
-theme_xhred_filemanager_changing_attributes=Setting attributes to <strong><em>%value</em></strong> on selected file(s).
+theme_xhred_filemanager_changing_attributes=Setting attributes to <tt>%value</tt> on selected file(s).
 theme_xhred_filemanager_successful_attributes_with_errors=Attributes haven't been set successfully for all objects:
 theme_xhred_filemanager_successful_attributes=Attributes have been set successfully.
 
 theme_xhred_filemanager_context_chcon=Change security context
-theme_xhred_filemanager_changing_secontext=Changing security context to <strong><em>%value</em></strong> on selected file(s).
+theme_xhred_filemanager_changing_secontext=Changing security context to <tt>%value</tt> on selected file(s).
 theme_xhred_filemanager_successful_secontext_with_errors=Security context has not been changed successfully for all objects:
 theme_xhred_filemanager_successful_secontext=Security context has been changed successfully.
 
@@ -1465,5 +1465,12 @@ theme_xhred_body_os=Operating system
 theme_xhred_theme_version=Authentic theme version
 theme_xhred_body_updates=Package updates
 
+
 # 21.20
 theme_xhred_hotkey_switch_theme=Switch theme
+
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Upload successful
+theme_xhred_filemanager_upload_status_err=Upload failed:
+theme_xhred_filemanager_download_status_err=Download failed:

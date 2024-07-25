@@ -210,15 +210,15 @@ theme_xhred_filemanager_renaming_selected=Đổi tên đã chọn.
 theme_xhred_filemanager_creating_directory=Tạo thư mục
 theme_xhred_filemanager_creating_file=Tạo tập tin
 theme_xhred_filemanager_downloading_from=Đang tải xuống từ
-theme_xhred_filemanager_setting_permissions=Đặt quyền thành <strong><em>%value</em></strong> trên (các) tệp đã chọn.
-theme_xhred_filemanager_changing_ownership=Thay đổi quyền sở hữu thành <strong><em>%value</em></strong> trên (các) tệp đã chọn.
+theme_xhred_filemanager_setting_permissions=Đặt quyền thành <tt>%value</tt> trên (các) tệp đã chọn.
+theme_xhred_filemanager_changing_ownership=Thay đổi quyền sở hữu thành <tt>%value</tt> trên (các) tệp đã chọn.
 theme_xhred_filemanager_compressing_selected=Nén được chọn trong nền.
 theme_xhred_filemanager_refreshing=Làm mới nội dung thư mục.
 theme_xhred_filemanager_copying_successful=Sao chép vào clipboard thành công.
 theme_xhred_filemanager_cutting_successful=Cắt để clipboard thành công.
 theme_xhred_filemanager_pasting_successful=Dán từ clipboard đã thành công.
-theme_xhred_filemanager_bookmark_success=Thư mục <strong><em>%value</em></strong> đã được thêm thành công vào dấu trang của bạn.
-theme_xhred_filemanager_searching=Tìm kiếm `<em>%value</em>` khớp với tên của tệp/thư mục.
+theme_xhred_filemanager_bookmark_success=Thư mục <tt>%value</tt> đã được thêm thành công vào dấu trang của bạn.
+theme_xhred_filemanager_searching=Tìm kiếm <tt>%value</tt> khớp với tên của tập tin /directories.
 theme_xhred_filemanager_search_founds=Tìm thấy <strong>%value</strong> khớp.
 theme_xhred_filemanager_search_found=Đã tìm thấy <strong>1</strong> khớp.
 theme_xhred_filemanager_search_no_matches=Lọc kết quả tìm thấy.
@@ -236,8 +236,8 @@ theme_xhred_filemanager_successful_deletion=Xóa đã thành công.
 theme_xhred_filemanager_successful_permissions=Quyền đã được thay đổi thành công.
 theme_xhred_filemanager_successful_ownership=Quyền sở hữu đã được thay đổi thành công.
 theme_xhred_filemanager_successful_compression=Nén đã thành công.
-theme_xhred_filemanager_successful_directory_creation=Danh mục `<strong>%value</strong>` đã được tạo thành công.
-theme_xhred_filemanager_successful_file_creation=Tập tin `<strong>%value</strong>` đã được tạo thành công.
+theme_xhred_filemanager_successful_directory_creation=Thư mục <tt>%value</tt> đã được tạo thành công.
+theme_xhred_filemanager_successful_file_creation=Tệp <tt>%value</tt> đã được tạo thành công.
 
 theme_xhred_notifications_packages_updates=Cập nhật gói
 theme_xhred_notifications_theme_update=Cập nhật chủ đề
@@ -348,7 +348,7 @@ theme_xhred_global_warning=Cảnh báo
 theme_xhred_global_close=Đóng
 
 theme_xhred_filemanager__no_bookmarks=Không có dấu trang đã lưu
-theme_xhred_filemanager_unbookmark_success=Thư mục <strong><em>%value</em></strong> đã được xóa thành công khỏi dấu trang của bạn.
+theme_xhred_filemanager_unbookmark_success=Thư mục <tt>%value</tt> đã được xóa thành công khỏi dấu trang của bạn.
 theme_xhred_filemanager_bookmark=Đánh dấu thư mục hiện tại
 theme_xhred_filemanager_unbookmark=Bỏ đánh dấu thư mục hiện tại
 theme_xhred_filemanager_move_into_self=Bạn không thể di chuyển một thư mục vào chính nó! Thư mục đích nằm trong thư mục nguồn.
@@ -430,17 +430,17 @@ theme_xhred_datatable_no_search_results=<span class="h5">Không tìm thấy kế
 
 theme_xhred_filemanager_buffer_error=Không thể dán tệp vào bộ đệm - quyền bị từ chối.
 
-filemanager_create_object_exists=$3 `<strong><em>$1</em></strong>` đã tồn tại trong `<strong><tt>$2</tt></strong>`
-filemanager_create_object_denied=Không thể tạo $3 `<strong><em>$1</em></strong>` trong `<strong><tt>$2</tt></strong>` - sự cho phép bị từ chối : $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> đã tồn tại trong <tt>$2</tt>
+filemanager_create_object_denied=Không thể tạo $3 <tt>$1</tt> trong <tt>$2</tt> - quyền bị từ chối : $4.
 
 theme_xhred_filemanager_paste_warning=Không thể dán mục tiêu. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên, di chuyển</em> hoặc <em>đã xóa</em> trong khi/trước khi dán. Một nguyên nhân khác có thể là đích đến không thể ghi được. Đó là giá trị kiểm tra thuộc tính của đối tượng.
 
 theme_xhred_filemanager_delete_warning=Xóa đã kết thúc thành công nhưng không phải cho tất cả các đối tượng. Có thể các đối tượng được yêu cầu có thể đã được <em>đổi tên</em> hoặc <em>di chuyển</em> trước khi xóa. Quyền hạn chế (thuộc tính) là một nguyên nhân có thể khác. Thông báo lỗi:
 
-filemanager_rename_exists=$3 với tên `<strong><em>$1</em></strong>` đã tồn tại trong `<strong><tt>$2</tt></strong>`
+filemanager_rename_exists=$3 với tên <tt>$1</tt> đã tồn tại trong <tt>$2</tt>
 filemanager_rename_denied=Không thể đổi tên $3. Điều này có thể xảy ra do nguồn $3 đã bị xóa hoặc do quyền hạn chế.
 
-theme_xhred_filemanager_successful_rename=Đổi tên `<strong><em><s>%from</s></em></strong>` đến `<strong><em>%to</em></strong>` đã thành công.
+theme_xhred_filemanager_successful_rename=Đổi tên <tt>%from</tt> thành <tt>%to</tt> đã thành công.
 
 filemanager_global_info_total1=Tổng cộng: tệp $1 và thư mục $2
 filemanager_global_info_total2=Tổng cộng: các tệp $1 và thư mục $2
@@ -456,8 +456,8 @@ theme_xhred_filemanager_search_replace=Thay thế trong kết quả
 theme_xhred_global_find=Tìm thấy
 theme_xhred_global_replace=Thay thế
 
-theme_xhred_filemanager_searching_matching=Tìm kiếm `<em>%value</em>` khớp với tên của tệp/thư mục, chứa `<em>%text</em>` bản văn bản.
-theme_xhred_filemanager_searching_replacing=Thay thế khớp `<em>%text</em>` bằng `<em>%replace</em>` trong tệp bằng tên chứa `<em>%value</em>`.
+theme_xhred_filemanager_searching_matching=Tìm kiếm <tt>%value</tt> khớp với tên của tập tin /directories, chứa <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Thay thế các kết quả khớp <tt>%text</tt> bằng <tt>%replace</tt> trong các tệp có tên chứa <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Tìm thấy và thay thế trong các tệp <strong>%value</strong>.
 theme_xhred_filemanager_search_replaced=Tìm thấy và thay thế trong tệp <strong>1</strong>.
@@ -468,8 +468,8 @@ theme_xhred_filemanager_successful_ownership_with_errors=Quyền sở hữu đã
 theme_xhred_filemanager_successful_ownership_with_errors_fatal=Quyền sở hữu không thể thay đổi do các lỗi sau:
 
 theme_xhred_filemanager_successful_compression_with_errors=Quá trình nén đã kết thúc với các lỗi sau:
-theme_xhred_filemanager_successful_compression_bg=Nén đã thành công. Tập tin `<strong>%file</strong>` nén được đặt trong thư mục `<strong>%path</strong>`.
-theme_xhred_filemanager_successful_compression_bg_with_errors=Nén đã kết thúc với lỗi. Tập tin `<strong>%file</strong>` nén được đặt trong thư mục `<strong>%path</strong>`.
+theme_xhred_filemanager_successful_compression_bg=Quá trình nén đã hoàn tất thành công. Tệp nén <tt>%file</tt> nằm trong thư mục <tt>%path</tt>.
+theme_xhred_filemanager_successful_compression_bg_with_errors=Quá trình nén đã hoàn tất và có lỗi. Tệp nén <tt>%file</tt> phải được đặt trong thư mục <tt>%path</tt>.
 
 theme_xhred_filemanager_settings_notification_type=Loại thông báo sẽ hiển thị
 theme_xhred_filemanager_settings_notification_type_inf_warn_err=Thông tin, cảnh báo và lỗi
@@ -530,12 +530,12 @@ settings_leftmenu_netdata=Hiển thị liên kết giám sát thời gian thực
 settings_leftmenu_netdata_link=Liên kết ưa thích máy chủ Netdata
 
 theme_xhred_filemanager_context_chattr=Thay đổi thuộc tính
-theme_xhred_filemanager_changing_attributes=Đặt thuộc tính thành <strong><em>%value</em></strong> trên (các) tệp đã chọn.
+theme_xhred_filemanager_changing_attributes=Đặt thuộc tính thành <tt>%value</tt> trên (các) tệp đã chọn.
 theme_xhred_filemanager_successful_attributes_with_errors=Các thuộc tính chưa được đặt thành công cho tất cả các đối tượng:
 theme_xhred_filemanager_successful_attributes=Các thuộc tính đã được thiết lập thành công.
 
 theme_xhred_filemanager_context_chcon=Thay đổi bối cảnh bảo mật
-theme_xhred_filemanager_changing_secontext=Thay đổi bối cảnh bảo mật thành <strong><em>%value</em></strong> trên (các) tệp đã chọn.
+theme_xhred_filemanager_changing_secontext=Thay đổi bối cảnh bảo mật thành <tt>%value</tt> trên (các) tệp đã chọn.
 theme_xhred_filemanager_successful_secontext_with_errors=Bối cảnh bảo mật đã không được thay đổi thành công cho tất cả các đối tượng:
 theme_xhred_filemanager_successful_secontext=Bối cảnh an ninh đã được thay đổi thành công.
 
@@ -1394,3 +1394,8 @@ theme_xhred_body_updates=Cập nhật gói
 
 # 21.20
 theme_xhred_hotkey_switch_theme=Chuyển chủ đề
+
+# 21.20.2
+theme_xhred_filemanager_upload_status_ok=Tải lên thành công
+theme_xhred_filemanager_upload_status_err=Tải lên không thành công:
+theme_xhred_filemanager_download_status_err=Tải xuống không thành công:
