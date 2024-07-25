@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 21.xx (Upcoming)
+* Fix to improve error handling in File Manager
+
 #### Version 21.20.3 (July 23, 2024)
 * Fix a bug where in some configurations the navigation product switch was stuck on the initial load
 
