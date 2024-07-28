@@ -402,7 +402,14 @@ sub theme_settings_format
             ';
 
     } elsif ($k eq 'settings_leftmenu_custom_links') {
-        $v = ui_textarea($k, $v, 1);
+        my $line_count = 1;
+        if ($v) {
+            $v = replace('\'', '"', un_urlize($v, 1));
+            $v = convert_from_json($v);
+            $v = convert_to_json($v, 1);
+            $line_count = () = $v =~ /\n/g;
+        }
+        $v = ui_textarea($k, $v, $line_count);
     } elsif ($k =~ /settings_hotkey_custom/ ||
              $k eq 'settings_leftmenu_netdata_link' ||
              $k eq 'settings_leftmenu_user_html')
@@ -561,6 +568,14 @@ sub theme_settings_format
     my $description = $theme_text{ $k . '_description' };
 
     # Return formatted
+    if ($description =~ /<pre.*?data-json>(.*?)<\/pre>/s) {
+        my $json_str = $1;
+        my $json_data = convert_from_json($json_str);
+        my $pretty_json = convert_to_json($json_data, 1);
+        $pretty_json =~ s/   /&nbsp;/g;
+        $pretty_json =~ s/\n/<br>/g;
+        $description =~ s/<pre.*?data-json>.*?<\/pre>/<pre data-json>$pretty_json<\/pre>/s;
+    }
     return [
         (
          (
@@ -681,6 +696,9 @@ sub settings_get_select_navigation_color
 
                     <option value="green"'
       . ($v eq 'green' && ' selected') . '>Green</option>
+
+                    <option value="teal"'
+      . ($v eq 'teal' && ' selected') . '>Teal</option>
 
                     <option value="grey"'
       . ($v eq 'grey' && ' selected') . '>Gray</option>

@@ -82,6 +82,9 @@ settings_hotkey_navigation=Comutați starea meniului de navigare
 
 settings_hotkey_slider=Comutați starea glisorului lateral
 
+#19.32
+settings_leftmenu_custom_links_description=Este posibil să aveți legături personalizate, suplimentare injectate în meniul de navigare. <br><br> Tastele <em>titlu</em>, <em>link</em> și <em>pictograma</em> sunt necesare; opțional, puteți defini în ce mod de conectare va fi afișat un link, specificând cheia <em>nivel</em>, cu valori, în listă separată prin virgulă, care conține: <br><br> <em>0</em > - autentificare administrator; <br><em>1</em> - autentificare reseller;<br><em>2</em> - autentificare proprietar de server;<br><em>3</em> - autentificare utilizator;<br><em>4</em>- autentificarea proprietarului sistemului.<br><br> Vă va cere să transmiteți obiect JSON valid ca șir, ca în exemplul de mai jos.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+
 theme_xhred_filemanager_mass_selected_for_delete=Toate articolele din directorul %1
 
 #19.37

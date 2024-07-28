@@ -62,6 +62,9 @@ settings_hotkey_navigation=Växla tillstånd för navigeringsmeny
 
 settings_hotkey_slider=Växla sidoreglagets tillstånd
 
+#19.32
+settings_leftmenu_custom_links_description=Det är möjligt att få anpassade, extra länkar injicerade i navigeringsmenyn. <br><br> Nycklarna <em>titel</em>, <em>länk</em> och <em>ikon</em> krävs; valfritt kan du definiera i vilket inloggningsläge en länk ska visas, genom att ange <em>nivå</em> nyckel, med värden, i kommaseparerad lista, innehållande: <br><br> <em>0</em > - administratörsinloggning; <br><em>1</em> - återförsäljarinloggning;<br><em>2</em> - inloggning till serverägare;<br><em>3</em> - användarinloggning;<br><em>4</em>- inloggning för systemägare.<br><br> Det kräver att du skickar ett giltigt JSON-objekt som en sträng, som i exemplet nedan.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+
 #19.61
 settings_hotkey_shell2=Öppna kommandoskalet
 

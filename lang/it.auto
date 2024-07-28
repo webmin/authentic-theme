@@ -68,6 +68,9 @@ settings_hotkey_navigation=Attiva/disattiva lo stato del menu di navigazione
 
 settings_hotkey_slider=Attiva/disattiva lo stato del cursore laterale
 
+#19.32
+settings_leftmenu_custom_links_description=È possibile inserire collegamenti aggiuntivi personalizzati nel menu di navigazione. <br><br> I tasti <em>titolo</em>, <em>link</em> e <em>icona</em> sono obbligatori; facoltativamente, è possibile definire in quale modalità di accesso verrà visualizzato un collegamento, specificando la chiave <em>livello</em>, con valori, in un elenco separato da virgole, contenente: <br><br> <em>0</em > - login amministratore; <br><em>1</em> - login rivenditore;<br><em>2</em> - login proprietario del server;<br><em>3</em> - login utente;<br><em>4</em>- login del proprietario del sistema.<br><br> Richiederà di passare un oggetto JSON valido come stringa, come nell'esempio seguente.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+
 theme_xhred_filemanager_mass_selected_for_delete=Tutti gli elementi nella directory %1
 
 #19.61

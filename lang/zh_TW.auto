@@ -924,7 +924,7 @@ theme_xhred_shell_aborted=行動取消
 #19.32
 theme_xhred_connection_reboot=重新啟動
 theme_xhred_connection_reboot_details=服務器正在重新啟動。請稍候 ..
-settings_leftmenu_custom_links_description=可以將自定義的額外鏈接注入到導航菜單中。 <br><br>需要鍵<em>title</em>，<em>link</em>和<em>icon</em>； （可選）您可以通過指定<em>level</em>鍵，並在逗號分隔的列表中指定值，以定義在哪種登錄模式下顯示鏈接，該值包含：<br><br> <em>0</ em >-管理員登錄； <br><em> 1 </em>-經銷商登錄；<br> <em>2</em>-服務器所有者登錄； <br><em> 3 </em>-用戶登錄；<br> <em>4</em>-系統所有者登錄。<br><br>這將要求您將有效的JSON對像作為字符串傳遞，如下例。<hr><pre> {"extra"：[{ "標題"："Google Mail"，"鏈接"："https://gmail.com/"，"icon"："google"，"級別"："0、1、2、3、4"}，{ "title"："BIND DNS服務器"，"link"："/bind8"，"icon"："服務器"}，{"title"："Usermin"，"link"："/"，"icon"："信封"，"端口"："20000"，"目標"："_ blank"}]} </pre>
+settings_leftmenu_custom_links_description=可以將自訂的額外連結注入到導覽功能表中。 <br><br><em>標題</em>、<em>連結</em>和<em>圖示</em>鍵是必需的；或者，您可以透過指定 <em>level</em> 鍵和逗號分隔清單中的值來定義連結將在哪種登入模式下顯示，其中包含：<br><br> <em>0</em > - 管理員登入； <br><em>1</em> - 經銷商登入；<br><em>2</em> - 伺服器擁有者登入；<br><em>3</em> - 使用者登入；<br ><em>4</em>- 系統擁有者登入。 "extra" :[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4" }, {"title": "BIND DNS 伺服器", "link": "/bind8", "icon": "伺服器"}, {"title": "Usermin", "link": "/", "icon" ": "信封", "連接埠": "20000", "目標": "_blank"}]}</pre>
 left_favorites_edit=編輯收藏夾
 left_favorites_edit_desc=該頁面可用於手動編輯主題收藏夾用戶文件。這應該謹慎進行，因為不會對您的更改執行語法或其他有效性檢查。
 theme_xhred_filemanager_records_for_server_pagination=目錄中用於啟動服務器分頁的默認項目數

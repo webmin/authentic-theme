@@ -73,6 +73,9 @@ settings_hotkey_navigation=Basculer l'état du menu de navigation
 
 settings_hotkey_slider=Basculer l'état du curseur latéral
 
+#19.32
+settings_leftmenu_custom_links_description=Il est possible d'injecter des liens supplémentaires personnalisés dans le menu de navigation. <br><br> Les clés <em>titre</em>, <em>lien</em> et <em>icône</em> sont obligatoires ; en option, vous pouvez définir dans quel mode de connexion un lien sera affiché, en spécifiant la clé de <em>niveau</em>, avec des valeurs, dans une liste séparée par des virgules, contenant : <br><br> <em>0</em > - connexion administrateur ; <br><em>1</em> - connexion du revendeur ;<br><em>2</em> - connexion du propriétaire du serveur ;<br><em>3</em> - connexion de l'utilisateur ;<br><em>4</em>- connexion du propriétaire du système.<br><br> Vous devrez transmettre un objet JSON valide sous forme de chaîne, comme dans l'exemple ci-dessous.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+
 theme_xhred_filemanager_mass_selected_for_delete=Tous les éléments du répertoire %1
 
 #19.61

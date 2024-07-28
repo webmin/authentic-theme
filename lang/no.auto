@@ -73,6 +73,9 @@ settings_hotkey_navigation=Veksle navigasjonsmenystatus
 
 settings_hotkey_slider=Veksle på sideskyvetilstand
 
+#19.32
+settings_leftmenu_custom_links_description=Det er mulig å få tilpassede, ekstra lenker injisert i navigasjonsmenyen. <br><br> Nøklene <em>tittel</em>, <em>link</em> og <em>ikon</em> kreves; eventuelt kan du definere i hvilken påloggingsmodus en kobling skal vises, ved å spesifisere <em>nivå</em>-nøkkel, med verdier, i kommadelt liste, som inneholder: <br><br> <em>0</em > - administratorinnlogging; <br><em>1</em> - forhandlerpålogging;<br><em>2</em> - pålogging til servereier;<br><em>3</em> - brukerpålogging;<br><em>4</em>- systemeier pålogging.<br><br> Det vil kreve at du sender gyldig JSON-objekt som en streng, som i eksemplet nedenfor.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+
 theme_xhred_filemanager_mass_selected_for_delete=Alle elementer i katalogen %1
 
 #19.61

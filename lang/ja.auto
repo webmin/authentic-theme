@@ -88,6 +88,9 @@ settings_hotkey_navigation=ナビゲーション メニューの状態を切り�
 
 settings_hotkey_slider=サイドスライダーの状態を切り替え
 
+#19.32
+settings_leftmenu_custom_links_description=ナビゲーション メニューにカスタムの追加リンクを挿入することができます。<br><br> キー <em>title</em>、<em>link</em>、および <em>icon</em> は必須です。オプションで、<em>level</em> キーと、コンマ区切りのリストで次の値を指定して、どのログイン モードでリンクを表示するかを定義できます。<br><br> <em>0</em> - 管理者ログイン。 <br><em>1</em> - 再販業者ログイン。<br><em>2</em> - サーバー所有者ログイン。<br><em>3</em> - ユーザーログイン。<br><em>4</em> - システム所有者ログイン。<br><br> 以下の例のように、有効な JSON オブジェクトを文字列として渡す必要があります。<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+
 theme_xhred_filemanager_mass_selected_for_delete=%1 ディレクトリ内のすべてのアイテム
 
 #19.47

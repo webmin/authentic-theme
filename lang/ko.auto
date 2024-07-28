@@ -924,7 +924,7 @@ theme_xhred_shell_aborted=작업이 중단되었습니다
 #19.32
 theme_xhred_connection_reboot=재부팅
 theme_xhred_connection_reboot_details=서버가 재부팅 중입니다. 기다려주세요 ..
-settings_leftmenu_custom_links_description=탐색 메뉴에 사용자 정의 된 추가 링크를 삽입 할 수 있습니다. <br><br> <em>제목</em>, <em>링크</em> 및 <em>아이콘</em> 키가 필요합니다. 선택적으로 <em>level</em> 키를 쉼표로 구분 된 목록에 <br><br> <em>0</ em으로 지정하여 링크가 표시되는 로그인 모드를 정의 할 수 있습니다. >-관리자 로그인; <br><em> 1 </em>-리셀러 로그인;<br> <em>2</em>-서버 소유자 로그인; <br><em> 3 </em>-사용자 로그인;<br> <em>4</em>-시스템 소유자 로그인. <br><br> 아래 예와 같이 유효한 JSON 객체를 문자열로 전달해야합니다. <hr><pre> { "extra": [{ "title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, { "title": "BIND DNS 서버", "link": "/bind8", "icon": "server"}, { "title": "Usermin", "link": "/", "icon": " envelope ","port ":"20000 ","target ":"_blank "}]} </pre>
+settings_leftmenu_custom_links_description=탐색 메뉴에 사용자 지정 추가 링크를 삽입할 수 있습니다. <br><br> <em>제목</em>, <em>링크</em> 및 <em>아이콘</em> 키가 필요합니다. 선택적으로 <em>level</em> 키를 지정하고 값을 쉼표로 구분된 목록으로 지정하여 링크가 표시되는 로그인 모드를 정의할 수 있습니다. <br><br> <em>0</em > - 관리자 로그인; <br><em>1</em> - 리셀러 로그인,<br><em>2</em> - 서버 소유자 로그인,<br><em>3</em> - 사용자 로그인,<br><em>4</em>- 시스템 소유자 로그인.<br><br> 아래 예와 같이 유효한 JSON 개체를 문자열로 전달해야 합니다.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 left_favorites_edit=즐겨 찾기 편집
 left_favorites_edit_desc=이 페이지는 테마 즐겨 찾기 사용자 파일을 수동으로 편집하는 데 사용할 수 있습니다. 변경 사항에 대해 구문 또는 기타 유효성 검사가 수행되지 않으므로 신중하게 수행해야합니다.
 theme_xhred_filemanager_records_for_server_pagination=서버 페이지 매김을 시작하기위한 디렉토리의 기본 항목 수

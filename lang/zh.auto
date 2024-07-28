@@ -155,7 +155,7 @@ theme_xhred_shell_aborted=行动取消
 #19.32
 theme_xhred_connection_reboot=重新启动
 theme_xhred_connection_reboot_details=服务器正在重新启动。请稍候 ..
-settings_leftmenu_custom_links_description=可以将自定义的额外链接注入到导航菜单中。 <br><br>需要键<em>title</em>，<em>link</em>和<em>icon</em>； （可选）您可以通过指定<em>level</em>键，并在逗号分隔的列表中指定值，以定义在哪种登录模式下显示链接，该值包含：<br><br> <em>0</ em >-管理员登录； <br><em> 1 </em>-经销商登录；<br> <em>2</em>-服务器所有者登录； <br><em> 3 </em>-用户登录；<br> <em>4</em>-系统所有者登录。<br><br>这将要求您将有效的JSON对象作为字符串传递，如下例。<hr><pre> {"extra"：[{ "标题"："Google Mail"，"链接"："https://gmail.com/"，"icon"："google"，"级别"："0、1、2、3、4"}，{ "title"："BIND DNS服务器"，"link"："/bind8"，"icon"："服务器"}，{"title"："Usermin"，"link"："/"，"icon"："信封"，"端口"："20000"，"目标"："_ blank"}]} </pre>
+settings_leftmenu_custom_links_description=可以将自定义的额外链接注入导航菜单。<br><br>需要<em>title</em>、<em>link</em>和<em>icon</em>键；或者，您可以通过指定<em>level</em>键及其值（以逗号分隔的列表）来定义在哪种登录模式下显示链接，其中包含：<br><br> <em>0</em> - 管理员登录； <br><em>1</em> - 经销商登录;<br><em>2</em> - 服务器所有者登录;<br><em>3</em> - 用户登录;<br><em>4</em> - 系统所有者登录。<br><br>它将要求您将有效的 JSON 对象作为字符串传递，如下例所示。<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 left_favorites_edit=编辑收藏夹
 left_favorites_edit_desc=该页面可用于手动编辑主题收藏夹用户文件。这应该谨慎进行，因为不会对您的更改执行语法或其他有效性检查。
 theme_xhred_filemanager_records_for_server_pagination=目录中用于启动服务器分页的默认项目数

@@ -869,7 +869,6 @@ theme_xhred_shell_aborted=Handling avbrutt
 #19.32
 theme_xhred_connection_reboot=Omstarter
 theme_xhred_connection_reboot_details=Serveren omstartes. Vennligst vent..
-settings_leftmenu_custom_links_description=Det er mulig å få tilpassede, ekstra lenker injisert i navigasjonsmenyen. <br><br>Tastene <em>title</em>, <em>link</em> og <em>icon</em> er obligatoriske; eventuelt kan du definere i hvilken påloggingsmodus en lenke skal vises, ved å angi <em>nivå</em> nøkkel, med verdier, i en kommadelt liste, som inneholder: <br><br><em>0</em> - administratorinnlogging; <br><em>1</em> - forhandlerinnlogging; <br><em>2</em> - pålogging av servereier; <br><em>3</em> - brukerinnlogging; <br><em>4</em> - pålogging av systemeier. <br><br> Det krever at du sender gyldig JSON-objekt som en streng, som i eksemplet nedenfor. <hr><pre>{"ekstra":[{"title":"Google Mail","link":"https://gmail.com/","icon":"google","level":"0,1,2,3,4"},{"title":"BIND DNS Server","link":"/bind8","icon":"server"} {"title":"Usermin","link":"/","icon":"envelope","port":"20000","target":"_blank"}]}</pre>
 left_favorites_edit=Rediger favoritter
 left_favorites_edit_desc=Denne siden kan brukes til manuell redigering av brukerfilen til favoritter i temaet. Dette bør gjøres forsiktig, da det ikke blir utført syntaks- eller annen gyldighetskontroll på endringene dine.
 theme_xhred_filemanager_records_for_server_pagination=Standard antall elementer i katalogen for å starte serverpaginering
