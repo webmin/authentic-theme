@@ -9,9 +9,13 @@ use strict;
 use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use Net::WebSocket::Server;
 use utf8;
+my $json;
 eval "use JSON::XS";
-if ($@) {
+if (!$@) {
+    $json = JSON::XS->new->latin1;
+} else {
     eval "use JSON::PP";
+    $json = JSON::PP->new->latin1;
 }
 
 our ($current_theme);
@@ -62,7 +66,8 @@ Net::WebSocket::Server->new(
         # clients unless paused for some client
         my $stats_now = get_stats_now();
         my $stats_now_graphs = $stats_now->{'graphs'};
-        my $stats_now_json = encode_json($stats_now);
+        my $stats_now_json = $json->encode($stats_now);
+        utf8::decode($stats_now_json);
         foreach my $conn_id (keys %{$serv->{'conns'}}) {
             my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
             if ($conn->{'verified'} && !$conn->{'paused'}) {
@@ -93,7 +98,8 @@ Net::WebSocket::Server->new(
                             merge_stats($stats_now->{'graphs'},
                                         $stats_now_graphs);
                     }
-                    $stats_now_json = encode_json($stats_now);
+                    $stats_now_json = $json->encode($stats_now);
+                    utf8::decode($stats_now_json);
                 }
                 $conn->send_utf8($stats_now_json);
             }
@@ -136,7 +142,7 @@ Net::WebSocket::Server->new(
                 # Decode JSON message
                 my ($conn, $msg) = @_;
                 utf8::encode($msg) if (utf8::is_utf8($msg));
-                my $data = decode_json($msg);
+                my $data = $json->decode($msg);
                 # Connection permission test unless already verified
                 if (!$conn->{'verified'}) {
                     my $user = verify_session_id($data->{'session'});
