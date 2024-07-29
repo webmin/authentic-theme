@@ -77,15 +77,15 @@ sub get_theme_color
 {
     # Chrome application header color should be darker than the theme color
     my %theme_colors = ('blue'   => '#003374', # '#004090',
-                        'brown'  => '#423328',
-                        'gold'   => '#624b33',
-                        'green'  => '#1a5936',
-                        'teal'   => '#034f58',
-                        'grey'   => '#313533',
-                        'orange' => '#724e2d',
-                        'purple' => '#3a2b3f',
-                        'red'    => '#752323',
-                        'white'  => '#eeeeee');
+                        'brown'  => '#423328', # '#5d4839',
+                        'gold'   => '#624b33', # '#7e6143',
+                        'green'  => '#1a5936', # '#247648',
+                        'teal'   => '#024048', # '#034f58',
+                        'grey'   => '#313533', # '#464b49',
+                        'orange' => '#724e2d', # '#8b5f37',
+                        'purple' => '#3a2b3f', # '#4f3b56',
+                        'red'    => '#752323', # '#8e2b2b',
+                        'white'  => '#eeeeee');# '#ffffff'
 
     my $color = $theme_config{'settings_navigation_color'};
     return $theme_colors{$color};
