@@ -4,7 +4,7 @@ bootstrap=3
 spa=1
 nomodcall=xnavigation=1
 version=21.20.4-beta1
-mversion=02
+mversion=03
 bversion=00
 webmin=1
 usermin=1
