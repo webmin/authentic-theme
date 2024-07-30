@@ -688,29 +688,29 @@ sub settings_get_select_navigation_color
                     <option value="blue"'
       . ($v eq 'blue' && ' selected') . '>Blue (' . $theme_text{'theme_xhred_global_default'} . ')</option>
 
+                    <option value="teal"'
+      . ($v eq 'teal' && ' selected') . '>Teal</option>
+
+                    <option value="green"'
+      . ($v eq 'green' && ' selected') . '>Green</option>
+
+                    <option value="purple"'
+      . ($v eq 'purple' && ' selected') . '>Purple</option>
+      
                     <option value="brown"'
       . ($v eq 'brown' && ' selected') . '>Brown</option>
 
                     <option value="gold"'
       . ($v eq 'gold' && ' selected') . '>Gold</option>
 
-                    <option value="green"'
-      . ($v eq 'green' && ' selected') . '>Green</option>
-
-                    <option value="teal"'
-      . ($v eq 'teal' && ' selected') . '>Teal</option>
-
-                    <option value="grey"'
-      . ($v eq 'grey' && ' selected') . '>Gray</option>
-
                     <option value="orange"'
       . ($v eq 'orange' && ' selected') . '>Orange</option>
       
-                    <option value="purple"'
-      . ($v eq 'purple' && ' selected') . '>Purple</option>
-      
-                 <option value="red"'
+                     <option value="red"'
       . ($v eq 'red' && ' selected') . '>Red</option>
+
+                    <option value="grey"'
+      . ($v eq 'grey' && ' selected') . '>Gray</option>
 
                     <option value="white"'
       . ($v eq 'white' && ' selected') . '>White</option>
