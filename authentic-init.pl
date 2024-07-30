@@ -84,6 +84,7 @@ sub get_theme_color
                         'gold'   => '#624b33', # '#74573a',
                         'orange' => '#724e2d', # '#88532c',
                         'red'    => '#752323', # '#8e3025',
+                        'maroon' => '#772543', # '#862b4c',
                         'grey'   => '#313533', # '#3f4246',
                         'white'  => '#eeeeee');# '#ffffff'
 

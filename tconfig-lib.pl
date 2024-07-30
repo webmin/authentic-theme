@@ -709,6 +709,9 @@ sub settings_get_select_navigation_color
                      <option value="red"'
       . ($v eq 'red' && ' selected') . '>Red</option>
 
+                     <option value="maroon"'
+      . ($v eq 'maroon' && ' selected') . '>Maroon</option>
+
                     <option value="grey"'
       . ($v eq 'grey' && ' selected') . '>Gray</option>
 
