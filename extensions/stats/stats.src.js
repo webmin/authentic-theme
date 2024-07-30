@@ -118,7 +118,7 @@ const stats = {
             this.shutdown();
             setTimeout(() => {
                 this.enable();
-            }, this.getInterval() * 1000 * 3);
+            }, this.getInterval() * 1000 * 4);
         },
         // Disable the stats broadcast for the client
         disable: function () {
@@ -184,7 +184,7 @@ const stats = {
                         (this.requery = setTimeout(() => {
                             this.requery = null;
                             this.activate();
-                        }, this.getInterval() * 1000));
+                        }, this.getInterval() * 1000 * 4));
                 },
                 success: function (data) {
                     // Do we have socket opened?
@@ -223,7 +223,7 @@ const stats = {
                                 this.socket = null;
                                 this.activating = 0;
                                 this.enable();
-                            }, this.getInterval());
+                            }, this.getInterval() * 1000 * 4);
                         };
                     } else {
                         // Reset activating flag
