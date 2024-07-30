@@ -1,10 +1,14 @@
 ## Changelog
 
-#### Version 21.xx (Upcoming)
-* Fix to improve error handling in File Manager
+#### Version 21.20.4 (July 30, 2024)
+* Add new Teal and Maroon color palettes
+* Fix contrast ratio for all color palettes
+* Fix reconnection attempt rate to the real-time monitoring socket
+* Fix real-time monitoring server return correctly encoded data [webmin#2237](https://github.com/webmin/webmin/issues/2237)
+* Fix to improve error handling in File Manager on files upload and download
 
 #### Version 21.20.3 (July 23, 2024)
-* Fix a bug where in some configurations the navigation product switch was stuck on the initial load
+* Fix a bug where in some configurations navigation product switch gets stuck on the initial load
 
 #### Version 21.20.2 (July 22, 2024)
 * Update JSON dependency to use correct namespace [webmin#2222](https://github.com/webmin/webmin/issues/2222)
