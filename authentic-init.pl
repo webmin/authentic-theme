@@ -85,7 +85,7 @@ sub get_theme_color
                         'orange' => '#724e2d', # '#885c34',
                         'red'    => '#752323', # '#9a3531',
                         'maroon' => '#772543', # '#862b4c',
-                        'grey'   => '#313533', # '#3f4246',
+                        'grey'   => '#313533', # '#3b3e41',
                         'white'  => '#eeeeee');# '#ffffff'
 
     my $color = $theme_config{'settings_navigation_color'};
