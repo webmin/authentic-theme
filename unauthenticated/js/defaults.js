@@ -256,6 +256,8 @@ var
                     ['migrate_form', 'cpanel ensim plesk lxadmin directadmin'],
                     ['cert_form', 'lets encrypt let\'s encrypt'],
                     ['edit_newdynip', 'DynDNS'],
+                    ['list_scripts', 'script scripts install script install scripts'],
+                    ['edit_newscripts', 'script scripts install script install scripts'],
                 ]
             }
         ]
