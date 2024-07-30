@@ -78,7 +78,7 @@ sub get_theme_color
     # Chrome application header color should be darker than the theme color
     my %theme_colors = ('blue'   => '#003374', # '#004090',
                         'teal'   => '#024048', # '#034f58',
-                        'green'  => '#1a5936', # '#285332',
+                        'green'  => '#1a5936', # '#28533e',
                         'purple' => '#3a2b3f', # '#533e71',
                         'brown'  => '#423328', # '#594739',
                         'gold'   => '#624b33', # '#74573a',
