@@ -265,12 +265,18 @@ const stats = {
                     // Update line-charts
                     if ($lc.length) {
                         $lc.find(".bar").attr("style", "width:" + v + "%");
-
                         // Update line-charts' text
                         let $dp = $lc.find(".description"),
-                            $lb = $dp.text().split(":")[0];
-
-                        $dp.attr("title", vo).text($lb + ": " + v + "% (" + vo + ")");
+                            $lb = $dp.text().split(":")[0],
+                            uv = $lb + ": " + v + "% (" + vo + ")";
+                        // Flatten and plunk the data for some graphs
+                        if (target !== "cpu") {
+                            uv = plugins.slider.update.stats.graphs.flatten(uv);
+                            if (target !== "virt") {
+                                uv = plugins.slider.update.stats.graphs.plunk(uv);
+                            }
+                        }
+                        $dp.attr("title", vo).text(uv);
                     }
 
                     // Update other data
