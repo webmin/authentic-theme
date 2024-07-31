@@ -1916,10 +1916,11 @@ sub content
                      $get_user_level eq '3' ? 'usermin' :
                      undef);
     print "</ul>\n";
-    print '</aside><x-aside class="x-aside"></x-aside>' . "\n";
 
     # Authenticated logo
     embed_logo();
+
+    print '</aside><x-aside class="x-aside"></x-aside>' . "\n";
 
     # Favorites menu
     print_favorites();
