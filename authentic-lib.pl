@@ -20,7 +20,7 @@ our (
     $theme_root_directory,
     $current_theme, $root_directory, $config_directory, $var_directory,
 
-    %theme_text,     %module_text_full, %theme_config, $get_user_level, $theme_webprefix, $http_x_url,
+    %theme_text,     %module_text_full, %theme_config, $theme_info, $get_user_level, $theme_webprefix, $http_x_url,
     $has_virtualmin, $has_cloudmin,
     $has_usermin,    $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
 
@@ -780,7 +780,7 @@ sub get_sysinfo_vars
         }
 
         # Fetch theme version
-        if (&webmin_user_is_admin()) {
+        if (&webmin_user_is_admin() && $theme_config{'settings_upgrade_allowed'} eq 'true') {
 
             # Theme version/update
             my $authentic_remote_data                = theme_remote_version(1);
@@ -1561,7 +1561,7 @@ sub theme_update_incompatible
 
 sub theme_remote_version
 {
-
+    return if ($theme_config{'settings_upgrade_allowed'} ne 'true');
     my ($data, $force_stable_check, $force_beta_check, $nocache) = @_;
 
     my $remote_version = 0;

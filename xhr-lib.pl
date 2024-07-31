@@ -6,7 +6,7 @@
 use strict;
 
 our (%in, %gconfig, $root_directory, $remote_user, $get_user_level,
-     %theme_config, %theme_text, $current_theme, $has_usermin);
+     %theme_config, $theme_info, %theme_text, $current_theme, $has_usermin);
 
 sub xhr
 {
@@ -487,7 +487,8 @@ sub xhr
             print convert_to_json(\@current_versions);
         } elsif ($in{'xhr-theme_clear_cache'} eq '1') {
             clear_theme_cache(&webmin_user_is_admin(), $in{'xhr-theme_clear_cache_full'});
-        } elsif ($in{'xhr-update'} eq '1' && &webmin_user_is_admin()) {
+        } elsif ($in{'xhr-update'} eq '1' && &webmin_user_is_admin() &&
+                 $theme_config{'settings_upgrade_allowed'} eq 'true') {
             my @update_rs;
             my $version_type            = ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
             my $update_force            = $in{'xhr-update-force'};

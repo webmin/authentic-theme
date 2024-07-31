@@ -11,6 +11,7 @@ our (%gconfig,
      $current_theme,
      $theme_webprefix,
      %theme_config,
+     $theme_info,
      %theme_text,
      $has_usermin,
      $has_usermin_root_dir,
@@ -18,7 +19,8 @@ our (%gconfig,
 
 sub theme_settings_raw
 {
-    return (
+    # Available settings
+    my @theme_settings_raw = (
         [
          {  'id'    => 's1',
             'title' => &theme_text('settings_global_general_options_title'),
@@ -151,14 +153,21 @@ sub theme_settings_raw
                        'settings_hotkey_custom_8_user',
                        'settings_hotkey_custom_9_user',
             ] }
-        ],
-
+        ]);
+    # Add upgrade settings if available
+    if ($theme_config{'settings_upgrade_allowed'} eq 'true') {
+        push(@theme_settings_raw,
         [
          {  'id'    => 's8',
             'title' => &theme_text('settings_right_soft_updates_page_options'),
-            'data'  =>
-              ['settings_sysinfo_theme_updates', 'settings_sysinfo_theme_updates_for_usermin', 'settings_cache_interval'] }
+            'data'  => [
+                        'settings_sysinfo_theme_updates', 
+                        'settings_sysinfo_theme_updates_for_usermin',
+                        'settings_cache_interval'
+            ] }
         ]);
+    }
+    return @theme_settings_raw;
 }
 
 sub theme_settings_filter

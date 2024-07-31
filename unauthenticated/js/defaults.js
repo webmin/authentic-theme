@@ -97,6 +97,7 @@ var
     settings_hotkey_custom_9_user = '',
 
     // Theme updates options defaults
+    settings_upgrade_allowed = false,
     settings_sysinfo_theme_updates = false,
     settings_cache_interval = 86400,
     settings_sysinfo_theme_updates_for_usermin = true,

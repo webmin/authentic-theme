@@ -9,6 +9,7 @@ our (@theme_bundle_css,
      @theme_bundle_js,
      %module_text_full,
      %theme_config,
+     $theme_info,
      %theme_text,
      %theme_temp_data,
      $get_user_level,
@@ -802,6 +803,8 @@ sub init_vars
                          settings(get_taconfig_file()),
                          settings(get_tgconfig_file(), "settings_"),
                          settings(get_tuconfig_file(), "settings_"));
+    our $theme_info = get_current_theme_info_cached($current_theme);
+
     our $http_x_url =
       (get_env('http_x_pjax_url') || get_env('http_x_progressive_url'));
 
@@ -1614,11 +1617,9 @@ sub theme_version
     my $tversions = getvar('tversion_cached');
 
     if (!$tversions || $nocache) {
-        my %tinfo    = get_theme_info($current_theme);
-        my $version  = $tinfo{'version'};
-        my $mversion = $tinfo{'mversion'};
-        my $bversion = $tinfo{'bversion'};
-
+        my $version           = $theme_info->{'version'};
+        my $mversion          = $theme_info->{'mversion'};
+        my $bversion          = $theme_info->{'bversion'};
         my $is_alpha          = string_contains($version, 'alpha');
         my $is_beta           = string_contains($version, 'beta');
         my $is_rc             = string_contains($version, 'RC');
@@ -1720,6 +1721,8 @@ sub header_html_data
       foreign_available("xterm") .
       '" data-shell="' .
       foreign_available("shell") .
+      '" data-upgrade="' .
+      ($theme_config{'settings_upgrade_allowed'} eq 'true' ? '1' : '0') .
       '" data-webmin="' .
       foreign_available("webmin") .
       '" data-usermin="' .
