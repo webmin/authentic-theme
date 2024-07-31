@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 21.20.5 (August 1, 2024)
+* Fix to remove the old ability to upgrade the theme from Git using the UI [webmin#2243](https://github.com/webmin/webmin/issues/2243#issuecomment-2260489869)
+* Fix the issue of the logo being stuck in mobile mode
+* Fix to improve matching for currently selected name in domain autocomplete dropdown in Virtualmin
+
 #### Version 21.20.4 (July 30, 2024)
 * Add new Teal and Maroon color palettes
 * Fix contrast ratio for all color palettes
@@ -69,11 +74,11 @@
 * Fix to remove Postfix version file on cache clear
 * Fix missing footer in login page [#1691](https://github.com/authentic-theme/authentic-theme/issues/1691)
 
-#### Version 21.09.5 (November 07, 2023)
+#### Version 21.09.5 (November 7, 2023)
 * Fix match highlight in file viewer and editor
 * Fix checkbox after content alignment
 
-#### Version 21.09.4 (November 03, 2023)
+#### Version 21.09.4 (November 3, 2023)
 * Add CSV export functionality for table data
 * Fix spinners from appearing on top of other content in File Manager
 * Fix to show original size in bytes in file properties in File Manager
@@ -117,7 +122,7 @@
 * Fix check to determine if the Virtualmin package contains the necessary function [#1675](https://github.com/webmin/authentic-theme/discussions/1675)
 * Fix inconsistent buttons size in Command Shell module
 
-#### Version 21.06 (September 06, 2023)
+#### Version 21.06 (September 6, 2023)
 * Add support for disabling WebGL rendering addon in Terminal module [#1674](https://github.com/authentic-theme/authentic-theme/issues/1674)
 * Add support for mail forward in Usermin [#431](https://github.com/authentic-theme/authentic-theme/issues/431#issuecomment-1703615018)
 * Fix to correctly save theme config when changing column layout [#1671](https://github.com/authentic-theme/authentic-theme/issues/1671)
@@ -130,7 +135,7 @@
 * Fix font rendering issues in Terminal module with Firefox
 * Fix tiny alignment issues for various pages using column layout
 
-#### Version 21.04 (August 04, 2023)
+#### Version 21.04 (August 4, 2023)
 * Add better filtering unsafe content to prevent possible XSS attacks
 * Fix print email functionality for Read User Mail module (for both Webmin and Usermin)
 * Fix checkbox positioning for Webmin Users module
@@ -153,7 +158,7 @@
 * Add support for screen reader mode in Terminal module
 * Fix aligns inside of buttons in scaled resolutions
 
-#### Version 21.00 (July 09, 2023)
+#### Version 21.00 (July 9, 2023)
 * Add new column layout mode with variations
 * Add list of theme hotkeys in single help screen (F1)
 * Add significant improvements to the dark palette
@@ -168,7 +173,7 @@
 * Fix elements positioning in password reset form
 * Fix plenty of other bugs and add various improvements
 
-#### Version 20.22 (April 09, 2023)
+#### Version 20.22 (April 9, 2023)
 * Add to allow setting host and protocol in custom links [#904#issuecomment-1482540434](https://github.com/webmin/authentic-theme/issues/904#issuecomment-1482540434)
 * Fix to interrupt previous call when getting navigation menu content
 * Fix issues when opening navigation menu on iOS devices [#1652](https://github.com/authentic-theme/authentic-theme/issues/1652)
