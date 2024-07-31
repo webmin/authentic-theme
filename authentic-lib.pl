@@ -1848,7 +1848,7 @@ sub get_theme_user_link
     my $is_hidden = (!foreign_available("webmin") &&
                        $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true' ? ' hidden-force ' :
                        undef);
-    my $is_hidden_link = (!&webmin_user_is_admin() ? ' hidden-force ' : undef);
+    my $is_hidden_link = ((!&webmin_user_is_admin() || $theme_config{'settings_upgrade_allowed'} ne 'true') ? ' hidden-force ' : undef);
     my $link           = '/tconfig.cgi';
 
     return '' . theme_version('versionfull') .
