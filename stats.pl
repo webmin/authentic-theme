@@ -42,6 +42,9 @@ alarm(60);
 # Log successful connection
 error_stderr("WebSocket server is listening on port $port");
 
+# Current stats within a period
+my $stats_period;
+
 # Start WebSocket server
 Net::WebSocket::Server->new(
     listen     => $port,
@@ -77,19 +80,19 @@ Net::WebSocket::Server->new(
                     my $stats_updated;
                     # Merge stats from both disk data
                     # and currently cached data
-                    if ($stats_history && $serv->{'stats'}) {
+                    if ($stats_history && $stats_period) {
                         $stats_now->{'graphs'} =
                             merge_stats($stats_history->{'graphs'},
-                                        $serv->{'stats'});
+                                        $stats_period);
                         $stats_updated++;
                     # If no cached data then use history
                     } elsif ($stats_history) {
                         $stats_now->{'graphs'} = $stats_history->{'graphs'};
                         $stats_updated++;
                     # If no history then use cached data
-                    } elsif ($serv->{'stats'}) {
+                    } elsif ($stats_period) {
                         $stats_updated++;
-                        $stats_now->{'graphs'} = $serv->{'stats'};
+                        $stats_now->{'graphs'} = $stats_period;
                     }
                     # If stats were updated then merge
                     # them with latest (now) data
@@ -105,15 +108,15 @@ Net::WebSocket::Server->new(
             }
         }
         # Cache stats to server
-        if (!defined($serv->{'stats'})) {
-            $serv->{'stats'} = $stats_now_graphs;
+        if (!defined($stats_period)) {
+            $stats_period = $stats_now_graphs;
         } else {
-            $serv->{'stats'} = merge_stats($serv->{'stats'}, $stats_now_graphs);
+            $stats_period = merge_stats($stats_period, $stats_now_graphs);
         }
         # Save stats to history and reset cache
-        if ($serv->{'ticked'}++ % 15 == 0) {
-            save_stats_history($serv->{'stats'});
-            $serv->{'stats'} = undef;
+        if ($serv->{'ticked'}++ % 20 == 0) {
+            save_stats_history($stats_period);
+            $stats_period = undef;
         }
         # If interval is set then sleep minus one
         # second becase tick_period is one second
@@ -131,9 +134,9 @@ Net::WebSocket::Server->new(
             error_stderr("WebSocket connection $conn->{'port'} is closed due to inactivity");
             $conn->disconnect();
         };
-        alarm(15);
+        alarm(30);
         # Set maximum send size
-        $conn->max_send_size(256 * 1024);
+        $conn->max_send_size(128 * 1024);
         # Handle connection events
         $conn->on(
             utf8 => sub {
