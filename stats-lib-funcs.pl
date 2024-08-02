@@ -62,15 +62,15 @@ sub jsonify
 
 sub get_stats_empty
 {
-my $time = time();
+    my $time = time();
     return {
         graphs =>
-            { cpu => [{x => $time, y => 0}],
-              mem => [{x => $time, y => 0}],
+            { cpu =>  [{x => $time, y => 0}],
+              mem =>  [{x => $time, y => 0}],
               virt => [{x => $time, y => 0}],
               proc => [{x => $time, y => 0}],
               disk => [{x => $time, y => [0, 0]}],
-              net => [{x => $time, y => [0, 0]}]
+              net =>  [{x => $time, y => [0, 0]}]
             }
     };
 }
@@ -84,6 +84,8 @@ sub get_stats_now
         my ($k, $d) = @_;
         $graphs->{$k} = [] if (ref($graphs->{$k}) ne 'ARRAY');
         push(@{$graphs->{$k}}, {x => $time, y => $d});
+        # Release memory
+        undef($d);
     };
     # Collect stats
     if ($foreign_check_proc) {
@@ -103,6 +105,9 @@ sub get_stats_now
                     $data{'io'} = [$in, $out];
                     $gadd->('disk', [$in, $out]);
                 }
+                # Release memory
+                undef(@cpuinfo);
+                undef(@cpuusage);
             }
         }
         # Memory stats
@@ -130,6 +135,8 @@ sub get_stats_now
                                         )];
                     $gadd->('virt', $virt);
                 }
+                # Release memory
+                undef(@memory);
             }
         }
         # Number of running processes
@@ -138,6 +145,8 @@ sub get_stats_now
             my $proc      = scalar(@processes);
             $data{'proc'} = $proc;
             $gadd->('proc', $proc);
+            # Release memory
+            undef(@processes);
         }
     }
     # Network I/O
@@ -151,6 +160,11 @@ sub get_stats_now
             $data{'net'} = [$in, $out];
             $gadd->('net', [$in, $out]);
         }
+        # Release memory
+        undef($network);
+        undef($nrs);
+        undef($in);
+        undef($out);
     }
     # Reverse output for LTR users
     if (get_text_ltr()) {
@@ -161,7 +175,10 @@ sub get_stats_now
             }
         }
     }
+    # Assign data
     $data{'graphs'} = $graphs;
+    # Release memory
+    undef($graphs);
     # Return data
     return \%data;
 }
@@ -240,6 +257,8 @@ sub merge_stats {
             $graphs1->{$key} = $graphs2->{$key};
         }
     }
+    # Release memory
+    undef($graphs2);
     return $graphs1;
 }
 
@@ -259,6 +278,10 @@ sub save_stats_history
     lock_file($file);
     write_file_contents($file, $json->encode($graphs));
     unlock_file($file);
+    # Release memory
+    undef($graphs_chunk);
+    undef($all_stats_histoy);
+    undef($graphs);
 }
 
 1;

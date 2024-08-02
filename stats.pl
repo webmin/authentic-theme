@@ -109,13 +109,18 @@ Net::WebSocket::Server->new(
         # Save stats to history and reset cache
         if ($serv->{'ticked'}++ % 20 == 0) {
             save_stats_history($stats_period);
-            $stats_period = undef;
+            undef($stats_period);
         }
         # If interval is set then sleep minus one
         # second becase tick_period is one second
         if ($serv->{'interval'} > 1) {
             sleep($serv->{'interval'}-1);
         }
+        # Release memory
+        undef($stats_now);
+        undef($stats_now_graphs);
+        undef($stats_now_json);
+        undef($stats_history);
     },
     on_connect => sub {
         my ($serv, $conn) = @_;
