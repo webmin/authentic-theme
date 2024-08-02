@@ -5,12 +5,37 @@
 #
 use strict;
 
+our $json;
+eval "use JSON::XS";
+if (!$@) {
+    $json = JSON::XS->new->latin1;
+} else {
+    eval "use JSON::PP";
+    $json = JSON::PP->new->latin1;
+}
+
 # Import global variables
 our ($config_directory, $var_directory, $current_theme);
 
 # Load theme language and settings
 our %text = load_language($current_theme);
 my %settings = settings("$config_directory/$current_theme/settings.js", 'settings_');
+
+# Reuqired libs
+my $foreign_check_proc = foreign_check("proc");
+if ($foreign_check_proc) {
+    foreign_require("proc");
+}
+# System status ACLs
+my $acl_system_status = {
+    cpu  => acl_system_status('cpu'),
+    mem  => acl_system_status('mem'),
+    load => acl_system_status('load'),
+    proc => acl_system_status('proc'),
+    disk => acl_system_status('disk'),
+    net  => acl_system_status('net'),
+    virt => acl_system_status('virt'),
+};
 
 # Check if feature is enabled
 sub get_stats_option
@@ -27,10 +52,10 @@ sub get_stats_option
 # JSON conversion
 sub jsonify
 {
-    my $json = shift;
+    my $json_ = shift;
     my $json_obj;
     eval {
-        $json_obj = convert_from_json($json);
+        $json_obj = $json->decode($json_)
     };
     return (ref($json_obj) eq 'HASH' && keys %{$json_obj}) ? $json_obj : {};
 }
@@ -61,10 +86,9 @@ sub get_stats_now
         push(@{$graphs->{$k}}, {x => $time, y => $d});
     };
     # Collect stats
-    if (foreign_check("proc")) {
-        foreign_require("proc");
+    if ($foreign_check_proc) {
         # CPU stats
-        if (acl_system_status('cpu')) {
+        if ($acl_system_status->{'cpu'}) {
             my @cpuinfo  = defined(&proc::get_cpu_info)     ? proc::get_cpu_info()     : ();
             my @cpuusage = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ();
             if (@cpuinfo && @cpuusage) {
@@ -82,7 +106,7 @@ sub get_stats_now
             }
         }
         # Memory stats
-        if (acl_system_status('mem')) {
+        if ($acl_system_status->{'mem'}) {
             my @memory = defined(&proc::get_memory_info) ? proc::get_memory_info() : ();
             if (@memory) {
                 $data{'mem'}  = [];
@@ -109,7 +133,7 @@ sub get_stats_now
             }
         }
         # Number of running processes
-        if (acl_system_status('load')) {
+        if ($acl_system_status->{'load'}) {
             my @processes = proc::list_processes();
             my $proc      = scalar(@processes);
             $data{'proc'} = $proc;
@@ -117,7 +141,7 @@ sub get_stats_now
         }
     }
     # Network I/O
-    if (acl_system_status('load')) {
+    if ($acl_system_status->{'load'}) {
         my $network = network_stats('io');
         my $nrs = unserialise_variable($network);
         my $in  = @{$nrs}[0];
@@ -164,7 +188,7 @@ sub get_stats_history
                mem  => ['mem',  'virt'],
                load => ['proc', 'net']);
     foreach my $key (keys %map) {
-        my $feature = acl_system_status($key);
+        my $feature = $acl_system_status->{$key};
         unless ($feature) {
             foreach my $skey (@{$map{$key}}) {
                 delete $graphs->{$skey};
@@ -233,7 +257,7 @@ sub save_stats_history
     my $file = "$var_directory/modules/$current_theme".
                     "/real-time-monitoring.json";
     lock_file($file);
-    write_file_contents($file, convert_to_json($graphs));
+    write_file_contents($file, $json->encode($graphs));
     unlock_file($file);
 }
 

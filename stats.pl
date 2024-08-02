@@ -6,19 +6,12 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+
 use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use Net::WebSocket::Server;
 use utf8;
-my $json;
-eval "use JSON::XS";
-if (!$@) {
-    $json = JSON::XS->new->latin1;
-} else {
-    eval "use JSON::PP";
-    $json = JSON::PP->new->latin1;
-}
 
-our ($current_theme);
+our ($current_theme, $json);
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 
 # Get port number
