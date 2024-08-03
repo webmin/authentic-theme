@@ -53,6 +53,7 @@ sub stats_read_file_contents {
     if (!flock($fh, LOCK_SH)) {
         error_stderr("Failed to acquire shared lock on file '$filename': $!");
         close($fh);
+        undef($fh);
         return undef;
     }
     # Read file contents
@@ -63,8 +64,11 @@ sub stats_read_file_contents {
     # Close file
     if (!close($fh)) {
         error_stderr("Failed to close file '$filename': $!");
+        undef($fh);
         return undef;
     }
+    # Release memory
+    undef($fh);
     # Return file contents
     return $contents;
 }
@@ -82,12 +86,14 @@ sub stats_write_file_contents {
     if (!flock($fh, LOCK_EX)) {
         error_stderr("Failed to acquire exclusive lock on file '$filename': $!");
         close($fh);
+        undef($fh);
         return 0;
     }
     # Write to file
     if (!print($fh $contents)) {
         error_stderr("Failed to write to file '$filename': $!");
         close($fh);
+        undef($fh);
         return 0;
     }
     # Unlock the file
@@ -95,8 +101,12 @@ sub stats_write_file_contents {
     # Close file
     if (!close($fh)) {
         error_stderr("Failed to close file '$filename': $!");
+        undef($fh);
         return 0;
     }
+    # Release memory
+    undef($fh);
+    # Return success
     return 1;
 }
 
