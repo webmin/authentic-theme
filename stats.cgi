@@ -100,6 +100,7 @@ my $rs = system_logged(
     "SESSION_ID=$main::session_id ".
     "$statsserver_cmd @{[quotemeta($port)]} ".
     ">$logfile 2>&1 </dev/null &");
+# Return the result
 print_json({ success => !$rs, port => $port,
              socket => $get_socket->($port),
              new => 1, errlog => $logfile });

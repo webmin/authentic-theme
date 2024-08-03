@@ -696,57 +696,6 @@ sub current_to_pid
     write_file($tmp_file, \%pid);
 }
 
-sub network_stats
-{
-    # Get network data from all interfaces
-    my ($type) = @_;
-    my $file = "/proc/net/dev";
-    return () unless -r $file;
-    open(my $dev, $file);
-    my (@titles, %result);
-    while (my $line = <$dev>) {
-        chomp($line);
-        if ($line =~ /^.{6}\|([^\\]+)\|([^\\]+)$/) {
-            my ($rec, $trans) = ($1, $2);
-            @titles = ((map {"r$_"} split(/\s+/, $rec)), (map {"t$_"} split(/\s+/, $trans)));
-        } elsif ($line =~ /^\s*([^:]+):\s*(.*)$/) {
-            my ($id, @data) = ($1, split(/\s+/, $2));
-            $result{$id} = { map {$titles[$_] => $data[$_];} (0 .. $#titles) };
-        }
-    }
-    close($dev);
-
-    # Return current network I/O
-    if ($type eq 'io') {
-        my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
-        my @rs;
-        my $results = \%result;
-
-        # Parse current data
-        foreach (%$results) {
-            $rbytes += $results->{$_}->{'rbytes'};
-            $tbytes += $results->{$_}->{'tbytes'};
-        }
-
-        # Wait for one second and fetch data over again
-        sleep 1, $results = network_stats();
-
-        # Parse data after dalay
-        foreach (%$results) {
-            $rbytes2 += $results->{$_}->{'rbytes'};
-            $tbytes2 += $results->{$_}->{'tbytes'};
-        }
-
-        # Return current network I/O
-        $rbytes = int($rbytes2 - $rbytes);
-        $tbytes = int($tbytes2 - $tbytes);
-
-        @rs = ($rbytes, $tbytes);
-        return serialise_variable(\@rs);
-    }
-    return \%result;
-}
-
 sub acl_system_status
 {
     my ($show) = @_;

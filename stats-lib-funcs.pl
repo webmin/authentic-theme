@@ -139,18 +139,14 @@ sub get_stats_now
         }
         # Number of running processes
         if ($acl_system_status->{'load'}) {
-            my @processes = proc::list_processes();
-            my $proc      = scalar(@processes);
+            my $proc      = proc::count_processes();
             $data{'proc'} = $proc;
             $gadd->('proc', $proc);
-            # Release memory
-            undef(@processes);
         }
     }
     # Network I/O
     if ($acl_system_status->{'load'}) {
-        my $network = network_stats('io');
-        my $nrs = unserialise_variable($network);
+        my $nrs = stats_network('io');
         my $in  = @{$nrs}[0];
         my $out = @{$nrs}[1];
 
@@ -159,7 +155,6 @@ sub get_stats_now
             $gadd->('net', [$in, $out]);
         }
         # Release memory
-        undef($network);
         undef($nrs);
         undef($in);
         undef($out);
@@ -279,6 +274,58 @@ sub save_stats_history
     undef($graphs_chunk);
     undef($all_stats_histoy);
     undef($graphs);
+}
+
+sub stats_network
+{
+    # Get network data from all interfaces
+    my ($type) = @_;
+    my $file = "/proc/net/dev";
+    return () unless -r $file;
+    open(my $dev, $file);
+    my (@titles, %result);
+    while (my $line = <$dev>) {
+        chomp($line);
+        if ($line =~ /^.{6}\|([^\\]+)\|([^\\]+)$/) {
+            my ($rec, $trans) = ($1, $2);
+            @titles = ((map {"r$_"} split(/\s+/, $rec)), (map {"t$_"} split(/\s+/, $trans)));
+        } elsif ($line =~ /^\s*([^:]+):\s*(.*)$/) {
+            my ($id, @data) = ($1, split(/\s+/, $2));
+            $result{$id} = { map {$titles[$_] => $data[$_];} (0 .. $#titles) };
+        }
+    }
+    close($dev);
+
+    # Return current network I/O
+    if ($type eq 'io') {
+        my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
+        my @rs;
+        my $results = \%result;
+
+        # Parse current data
+        foreach (%$results) {
+            $rbytes += $results->{$_}->{'rbytes'};
+            $tbytes += $results->{$_}->{'tbytes'};
+        }
+
+        # Wait for quater of a second and fetch data over again
+        select(undef, undef, undef, 0.25);
+        $results = stats_network();
+
+        # Parse data after dalay
+        foreach (%$results) {
+            $rbytes2 += $results->{$_}->{'rbytes'};
+            $tbytes2 += $results->{$_}->{'tbytes'};
+        }
+
+        # Return current network I/O
+        $rbytes = int($rbytes2 - $rbytes);
+        $tbytes = int($tbytes2 - $tbytes);
+
+        @rs = ($rbytes, $tbytes);
+        return \@rs;
+    }
+    return \%result;
 }
 
 1;
