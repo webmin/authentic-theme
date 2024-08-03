@@ -11,7 +11,7 @@ use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use Net::WebSocket::Server;
 use utf8;
 
-our ($current_theme, $json, $time);
+our ($current_theme, $json);
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 
 # Get port number
@@ -38,17 +38,12 @@ error_stderr("WebSocket server is listening on port $port");
 # Current stats within a period
 my $stats_period;
 
-# Register start time and update it on each tick
-$time = time();
-
 # Start WebSocket server
 Net::WebSocket::Server->new(
     listen     => $port,
     tick_period => 1,
     on_tick => sub {
         my ($serv) = @_;
-        # Update time
-        $time += 1; 
         # If asked to stop running, then shut down the server
         if ($serv->{'disable'}) {
             $serv->shutdown();
@@ -115,15 +110,6 @@ Net::WebSocket::Server->new(
         if ($serv->{'ticked'}++ % 20 == 0) {
             save_stats_history($stats_period);
             undef($stats_period);
-            undef(%main::read_file_cache);
-            undef(%main::read_file_missing);
-            undef(%main::acl_hash_cache);
-            undef(%main::acl_array_cache);
-            undef(%main::has_command_cache);
-            undef(@main::list_languages_cache);
-            undef($main::got_list_usermods_cache);
-            undef(@main::list_usermods_cache);
-            undef(%main::foreign_installed_cache);
         }
         # If interval is set then sleep minus one
         # second becase tick_period is one second

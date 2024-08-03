@@ -16,7 +16,7 @@ if (!$@) {
 }
 
 # Import global variables
-our ($config_directory, $var_directory, $current_theme, $time);
+our ($config_directory, $var_directory, $current_theme);
 
 # Load theme language and settings
 our %text = load_language($current_theme);
@@ -135,6 +135,7 @@ sub jsonify
 
 sub get_stats_empty
 {
+    my $time = time();
     return {
         graphs =>
             { cpu =>  [{x => $time, y => 0}],
@@ -152,6 +153,7 @@ sub get_stats_now
     my %data;
     my $graphs = {};
     my $gadd = sub {
+        my $time = time();
         my ($k, $d) = @_;
         $graphs->{$k} = [] if (ref($graphs->{$k}) ne 'ARRAY');
         push(@{$graphs->{$k}}, {x => $time, y => $d});
@@ -292,6 +294,7 @@ sub get_stats_history
 sub trim_stats_history
 {
     my ($graphs) = @_;
+    my $time = time();
     my $get_default_graph = sub {
         my ($key, $time) = @_;
         my $default = get_stats_empty();
