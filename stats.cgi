@@ -94,12 +94,14 @@ my $statsserver_cmd = "$config_directory/$current_theme/$server_name";
 create_wrapper($statsserver_cmd, $current_theme, $server_name)
     if (!-r $statsserver_cmd);
 
-# Launch the server
+# Launch the server in a sub-process (no fork)
 my $logfile = $get_logfile->($port);
 my $rs = system_logged(
+    "ulimit -v 384000; ". # Set sanity limit for memory usage to 384 MB
     "SESSION_ID=$main::session_id ".
     "$statsserver_cmd @{[quotemeta($port)]} ".
     ">$logfile 2>&1 </dev/null &");
+
 # Return the result
 print_json({ success => !$rs, port => $port,
              socket => $get_socket->($port),

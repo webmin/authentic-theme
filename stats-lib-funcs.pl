@@ -4,6 +4,7 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+use Fcntl ':flock';
 
 our $json;
 eval "use JSON::XS";
@@ -36,6 +37,68 @@ my $acl_system_status = {
     net  => acl_system_status('net'),
     virt => acl_system_status('virt'),
 };
+
+# Read file contents
+sub stats_read_file_contents {
+    my ($filename) = @_;
+    # Check if file is readable
+    return undef unless -r $filename;
+    # Read file contents
+    my $fh;
+    if (!open($fh, '<', $filename)) {
+        error_stderr("Failed to open file '$filename' for reading: $!");
+        return undef;
+    }
+    # Acquire lock
+    if (!flock($fh, LOCK_SH)) {
+        error_stderr("Failed to acquire shared lock on file '$filename': $!");
+        close($fh);
+        return undef;
+    }
+    # Read file contents
+    local $/;
+    my $contents = <$fh>;
+    # Release lock
+    flock($fh, LOCK_UN);
+    # Close file
+    if (!close($fh)) {
+        error_stderr("Failed to close file '$filename': $!");
+        return undef;
+    }
+    # Return file contents
+    return $contents;
+}
+
+# Write file contents
+sub stats_write_file_contents {
+    my ($filename, $contents) = @_;
+    # Open file for writing
+    my $fh;
+    if (!open($fh, '>', $filename)) {
+        error_stderr("Failed to open file '$filename' for writing: $!");
+        return 0;
+    }
+    # Acquire lock the file for writing
+    if (!flock($fh, LOCK_EX)) {
+        error_stderr("Failed to acquire exclusive lock on file '$filename': $!");
+        close($fh);
+        return 0;
+    }
+    # Write to file
+    if (!print($fh $contents)) {
+        error_stderr("Failed to write to file '$filename': $!");
+        close($fh);
+        return 0;
+    }
+    # Unlock the file
+    flock($fh, LOCK_UN);
+    # Close file
+    if (!close($fh)) {
+        error_stderr("Failed to close file '$filename': $!");
+        return 0;
+    }
+    return 1;
+}
 
 # Check if feature is enabled
 sub get_stats_option
@@ -181,7 +244,7 @@ sub get_stats_history
     my ($noempty) = @_;
     my $file = "$var_directory/modules/$current_theme".
                     "/real-time-monitoring.json";
-    my $graphs = jsonify(read_file_contents($file));
+    my $graphs = jsonify(stats_read_file_contents($file));
     # No data yet
     if (!keys %{$graphs}) {
         unlink($file);
@@ -267,9 +330,7 @@ sub save_stats_history
     # Save data
     my $file = "$var_directory/modules/$current_theme".
                     "/real-time-monitoring.json";
-    lock_file($file);
-    write_file_contents($file, $json->encode($graphs));
-    unlock_file($file);
+    stats_write_file_contents($file, $json->encode($graphs));
     # Release memory
     undef($graphs_chunk);
     undef($all_stats_histoy);
