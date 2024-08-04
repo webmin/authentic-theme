@@ -14,30 +14,25 @@ jobs:
       - uses: actions/checkout@v3
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with: 
-          packages: git tar gzip openssl curl openssh-client rpm perl libjson-pp-perl libdigest-sha-perl liblist-moreutils-perl libencode-detect-perl
+          packages: git tar gzip openssl curl openssh-client rpm perl libdigest-sha-perl liblist-moreutils-perl libencode-detect-perl zstd
           version: 1.0
       - uses: szenius/set-timezone@v1.2
         with:
           timezoneLinux: "Europe/Nicosia"
       - name: Fetch dependencies
-        uses: docker/setup-buildx-action@v2
+        run: |-
+          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/vars.sh
+          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/init.sh
+          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/funcs.sh
+          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/deb.sh
+          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/rpm.sh
       - name: Build and upload packages
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/workspace \
-            -w /workspace \
-            debian:11 \
-            /bin/bash -c "apt-get update && \
-                          apt-get install -y git tar gzip openssl curl openssh-client rpm perl libjson-pp-perl libdigest-sha-perl liblist-moreutils-perl libencode-detect-perl && \
-                          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/vars.sh && \
-                          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/init.sh && \
-                          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/funcs.sh && \
-                          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/deb.sh && \
-                          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/rpm.sh && \
-                          bash deb.sh --devel && \
-                          bash rpm.sh --devel"
         env:
           WEBMIN_DEV__SSH_PRV_KEY: ${{ secrets.WEBMIN_DEV__SSH_PRV_KEY }}
           WEBMIN_DEV__SSH_PUB_KEY: ${{ secrets.WEBMIN_DEV__SSH_PUB_KEY }}
           WEBMIN_DEV__GPG_PH: ${{ secrets.WEBMIN_DEV__GPG_PH }}
           ENV_BUILD__CLOUD_UPLOAD_SSH_HOST: ${{ secrets.WEBMIN_DEV__IP_ADDR }}
+        run: |-
+          bash deb.sh --devel
+          bash rpm.sh --devel
+
