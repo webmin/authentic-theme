@@ -134,7 +134,7 @@ Net::WebSocket::Server->new(
         };
         alarm(30);
         # Set maximum send size
-        $conn->max_send_size(128 * 1024);
+        $conn->max_send_size(384 * 1024); # Sent data must never be more than 384 KB
         # Handle connection events
         $conn->on(
             utf8 => sub {
