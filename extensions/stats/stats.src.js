@@ -311,7 +311,7 @@ const stats = {
                                         return this.type() ? undefined : 100;
                                     },
                                     threshold: function () {
-                                        return this.type() ? -1 : 50;
+                                        return this.type() ? -1 : 80;
                                     },
                                     height: "100px",
                                 },
