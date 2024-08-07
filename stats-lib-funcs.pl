@@ -221,9 +221,8 @@ sub get_stats_now
     }
     # Network I/O
     if ($acl_system_status->{'load'}) {
-        my $nrs = stats_network('io');
-        my $in  = @{$nrs}[0];
-        my $out = @{$nrs}[1];
+        my $nrs = stats_network();
+        my ($in, $out) = @{$nrs};
 
         if ($in && $out || $in eq '0' || $out eq '0') {
             $data{'net'} = [$in, $out];
@@ -352,10 +351,25 @@ sub save_stats_history
 
 sub stats_network
 {
+    my $stats_network_proc = stats_network_proc();
+    if ($stats_network_proc == -1) {
+        my $stats_network_netstat = stats_network_netstat();
+        if ($stats_network_netstat == -1) {
+            return ();
+        } else {
+            return $stats_network_netstat;
+        }
+    } else {
+        return $stats_network_proc;
+    }
+}
+
+sub stats_network_proc
+{
     # Get network data from all interfaces
-    my ($type) = @_;
+    my ($interval) = @_;
     my $file = "/proc/net/dev";
-    return () unless -r $file;
+    return -1 unless -r $file;
     open(my $dev, $file);
     my (@titles, %result);
     while (my $line = <$dev>) {
@@ -371,7 +385,7 @@ sub stats_network
     close($dev);
 
     # Return current network I/O
-    if ($type eq 'io') {
+    if (!$interval) {
         my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
         my @rs;
         my $results = \%result;
@@ -383,8 +397,9 @@ sub stats_network
         }
 
         # Wait for quater of a second and fetch data over again
-        select(undef, undef, undef, 0.25);
-        $results = stats_network();
+        my $wait_interval = 0.25;
+        select(undef, undef, undef, $wait_interval);
+        $results = stats_network_proc(1);
 
         # Parse data after dalay
         foreach (%$results) {
@@ -392,14 +407,51 @@ sub stats_network
             $tbytes2 += $results->{$_}->{'tbytes'};
         }
 
-        # Return current network I/O
-        $rbytes = int($rbytes2 - $rbytes);
-        $tbytes = int($tbytes2 - $tbytes);
+        # Return current network I/O (per second)
+        $rbytes = int(($rbytes2 - $rbytes) / $wait_interval);
+        $tbytes = int(($tbytes2 - $tbytes) / $wait_interval);
 
         @rs = ($rbytes, $tbytes);
         return \@rs;
     }
     return \%result;
+}
+
+sub stats_network_netstat
+{
+    my $interval = 0.25;
+    my $get_net_stats = sub {
+        my %stats;
+        open my $netstat, '-|', 'netstat -ib' or return -1;
+        while (<$netstat>) {
+            next if $. == 1;  # Skip header
+            my @fields = split;
+            my $iface = $fields[0];
+            my $ibytes = $fields[7];
+            my $obytes = $fields[10];
+            $stats{$iface} = [$ibytes, $obytes];
+        }
+        close $netstat;
+        return \%stats;
+    };
+
+    # Capture initial network statistics
+    my $before_stats = $get_net_stats->();
+    select(undef, undef, undef, $interval);
+    # Capture network statistics after the interval
+    my $after_stats = $get_net_stats->();
+    # Calculate the total received and transmitted bytes
+    my ($total_rx_before, $total_tx_before, $total_rx_after, $total_tx_after) = (0, 0, 0, 0);
+    foreach my $iface (keys %$before_stats) {
+        $total_rx_before += $before_stats->{$iface}->[0];
+        $total_tx_before += $before_stats->{$iface}->[1];
+        $total_rx_after += $after_stats->{$iface}->[0];
+        $total_tx_after += $after_stats->{$iface}->[1];
+    }
+    my $rbytes = ($total_rx_after - $total_rx_before) / $interval;
+    my $tbytes = ($total_tx_after - $total_tx_before) / $interval;
+    my @rs = ($rbytes, $tbytes);
+    return \@rs;
 }
 
 1;
