@@ -1715,8 +1715,12 @@ sub clear_theme_cache
         unlink_file("$theme_var_dir/software+latest");
 
         # Clear stats history
+        opendir(my $dir, $theme_var_dir);
+        grep {unlink_file("$theme_var_dir/$_") if (/^stats-server-\d+/)} readdir($dir);
+        closedir($dir);
+        unlink_file("$theme_var_dir/real-time-monitoring.json");
+        kill_byname("$current_theme/stats.pl", 9);
         unlink_file("$theme_var_dir/stats-$remote_user.json");
-        kill_byname("$current_theme/stats.cgi", 9);
 
         # Remove cached downloads
         unlink_file("$product_var/cache");
@@ -1804,7 +1808,7 @@ sub clear_theme_cache
         my $vm_var_dir = $virtual_server::module_var_directory;
         opendir(my $dir, $vm_var_dir);
         grep {unlink_file("$vm_var_dir/$_") if (/^virtual\-server\-server\-templates/)} readdir($dir);
-        closedir $dir;
+        closedir($dir);
 
         # Clear seen features cache
         if ($full) {
@@ -1819,7 +1823,7 @@ sub clear_theme_cache
     # Clear session specific temporary files
     opendir(my $dir, $tmp_dir);
     grep {unlink_file("$tmp_dir/$_") if (/^\.theme_/ && /$salt/)} readdir($dir);
-    closedir $dir;
+    closedir($dir);
 }
 
 sub theme_make_config_dir
