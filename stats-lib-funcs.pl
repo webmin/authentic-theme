@@ -454,6 +454,8 @@ sub stats_network_netstat
     }
     my $rbytes = ($total_rx_after - $total_rx_before) / $interval;
     my $tbytes = ($total_tx_after - $total_tx_before) / $interval;
+    $rbytes = $rbytes < 0 ? 0 : $rbytes;
+    $tbytes = $tbytes < 0 ? 0 : $tbytes;
     my @rs = ($rbytes, $tbytes);
     return \@rs;
 }
