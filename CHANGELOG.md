@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 21.20.7 (August 7, 2024)
+* Add network I/O support in real-time monitoring for FreeBSD
+* Fix network I/O calculations on Linux systems
+* Fix cache purging support for the new real-time monitoring stats server
+
 #### Version 21.20.6 (August 4, 2024)
 * Fix memory leak in the new real-monitoring stats server [forum.virtualmin.com/t/128189](https://forum.virtualmin.com/t/keep-previous-version-of-authentic-theme-to-test-possible-memory-leak/128189/39?u=ilia)
 * Fix pie charts not to show in red for real memory usage if virtual memory exists
