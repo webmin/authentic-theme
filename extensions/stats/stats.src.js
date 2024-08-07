@@ -428,7 +428,7 @@ const stats = {
                                                         : value;
                                                 }
                                                 return value
-                                                    ? this._.convert.size(value * 1000, {
+                                                    ? this._.convert.size(value * 1024, {
                                                           fixed: 0,
                                                           round: 1,
                                                       })
