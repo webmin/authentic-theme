@@ -4,6 +4,7 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+use feature 'state';
 use Fcntl ':flock';
 
 our $json;
@@ -27,6 +28,7 @@ my $foreign_check_proc = foreign_check("proc");
 if ($foreign_check_proc) {
     foreign_require("proc");
 }
+
 # System status ACLs
 my $acl_system_status = {
     cpu  => acl_system_status('cpu'),
@@ -351,27 +353,24 @@ sub save_stats_history
 
 sub stats_network
 {
-    my $stats_network_proc = stats_network_proc();
-    if ($stats_network_proc == -1) {
-        my $stats_network_netstat = stats_network_netstat();
-        if ($stats_network_netstat == -1) {
-            return ();
-        } else {
-            return $stats_network_netstat;
-        }
-    } else {
-        return $stats_network_proc;
-    }
+    return stats_network_proc() || stats_network_netstat();
 }
 
 sub stats_network_proc
 {
+    # Return if not available
+    state $no_stats_network_proc = 0;
+    return () if ($no_stats_network_proc);
     # Get network data from all interfaces
-    my ($interval) = @_;
+    my ($await) = @_;
     my $file = "/proc/net/dev";
-    return -1 unless -r $file;
-    open(my $dev, $file);
+    if (!-r $file) {
+        $no_stats_network_proc = 1;
+        return ();
+    }
+    # Read and parse network data
     my (@titles, %result);
+    open(my $dev, $file);
     while (my $line = <$dev>) {
         chomp($line);
         if ($line =~ /^.{6}\|([^\\]+)\|([^\\]+)$/) {
@@ -385,32 +384,28 @@ sub stats_network_proc
     close($dev);
 
     # Return current network I/O
-    if (!$interval) {
+    if (!$await) {
         my ($rbytes, $tbytes, $rbytes2, $tbytes2) = (0, 0, 0, 0);
         my @rs;
         my $results = \%result;
-
         # Parse current data
         foreach (%$results) {
             $rbytes += $results->{$_}->{'rbytes'};
             $tbytes += $results->{$_}->{'tbytes'};
         }
-
         # Wait for quater of a second and fetch data over again
         my $wait_interval = 0.25;
         select(undef, undef, undef, $wait_interval);
         $results = stats_network_proc(1);
-
         # Parse data after dalay
         foreach (%$results) {
             $rbytes2 += $results->{$_}->{'rbytes'};
             $tbytes2 += $results->{$_}->{'tbytes'};
         }
-
         # Return current network I/O (per second)
         $rbytes = int(($rbytes2 - $rbytes) / $wait_interval);
         $tbytes = int(($tbytes2 - $tbytes) / $wait_interval);
-
+        # Return data
         @rs = ($rbytes, $tbytes);
         return \@rs;
     }
@@ -419,10 +414,20 @@ sub stats_network_proc
 
 sub stats_network_netstat
 {
+    state $no_stats_network_netstat = 0;
+    # Return if not available
+    return () if ($no_stats_network_netstat);
+    # Check if netstat is available
+    if (!has_command('netstat')) {
+        $no_stats_network_netstat = 1;
+        return ();
+    }
+    # Quarter of a second interval
     my $interval = 0.25;
+    # Capture network stats
     my $get_net_stats = sub {
         my %stats;
-        open my $netstat, '-|', 'netstat -ib' or return -1;
+        open(my $netstat, '-|', 'netstat -ib');
         while (<$netstat>) {
             next if $. == 1;  # Skip header
             my @fields = split;
@@ -431,10 +436,9 @@ sub stats_network_netstat
             my $obytes = $fields[10];
             $stats{$iface} = [$ibytes, $obytes];
         }
-        close $netstat;
+        close($netstat);
         return \%stats;
     };
-
     # Capture initial network statistics
     my $before_stats = $get_net_stats->();
     select(undef, undef, undef, $interval);
