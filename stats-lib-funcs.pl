@@ -78,8 +78,9 @@ sub stats_read_file_contents {
 # Write file contents
 sub stats_write_file_contents {
     my ($filename, $contents) = @_;
+    my $fh;
     my $cleanup = sub {
-        my ($fh, $unlock, $success) = @_;
+        my ($unlock, $success) = @_;
         # Unlock the file. Not strictly necessary as Perl
         # automatically releases locks on file closure
         flock($fh, LOCK_UN) if ($unlock);
@@ -99,7 +100,7 @@ sub stats_write_file_contents {
     };
     # Open file for reading and writing without truncating it, or 
     # create it if it doesn't exist
-    sysopen(my $fh, $filename, O_RDWR | O_CREAT)
+    sysopen($fh, $filename, O_RDWR | O_CREAT)
         or do {
             error_stderr("Failed to open file '$filename' for reading and writing: $!");
             return 0;
@@ -108,29 +109,29 @@ sub stats_write_file_contents {
     flock($fh, LOCK_EX)
         or do {
             error_stderr("Failed to acquire exclusive lock on file '$filename': $!");
-            return $cleanup->($fh, 0);
+            return $cleanup->(0);
         };
     # Truncate the file after acquiring the lock
     truncate($fh, 0)
         or do {
             error_stderr("Failed to truncate file '$filename': $!");
-            return $cleanup->($fh, 1);
+            return $cleanup->(1);
         };
     # Reset the file pointer to the beginning of the file
     # preventing potential race conditions
     seek($fh, 0, 0)
         or do {
             error_stderr("Failed to seek to the beginning of file '$filename': $!");
-            return $cleanup->($fh, 1);
+            return $cleanup->(1);
         };
     # Write to file
     print($fh $contents)
         or do {
             error_stderr("Failed to write to file '$filename': $!");
-            return $cleanup->($fh, 1);
+            return $cleanup->(1);
         };
     # Clean up and return success
-    return $cleanup->($fh, 1, 1);
+    return $cleanup->(1, 1);
 }
 
 # Check if feature is enabled
