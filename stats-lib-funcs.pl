@@ -5,7 +5,6 @@
 #
 use strict;
 use feature 'state';
-use Fcntl qw(:flock O_RDWR O_CREAT);
 
 our $json;
 eval "use JSON::XS";
@@ -39,100 +38,6 @@ my $acl_system_status = {
     net  => acl_system_status('net'),
     virt => acl_system_status('virt'),
 };
-
-# Read file contents
-sub stats_read_file_contents {
-    my ($filename) = @_;
-    # Check if file is readable
-    return undef unless -r $filename;
-    # Read file contents
-    my $fh;
-    if (!open($fh, '<', $filename)) {
-        error_stderr("Failed to open file '$filename' for reading: $!");
-        return undef;
-    }
-    # Acquire lock
-    if (!flock($fh, LOCK_SH)) {
-        error_stderr("Failed to acquire shared lock on file '$filename': $!");
-        close($fh);
-        undef($fh);
-        return undef;
-    }
-    # Read file contents
-    local $/;
-    my $contents = <$fh>;
-    # Release lock
-    flock($fh, LOCK_UN);
-    # Close file
-    if (!close($fh)) {
-        error_stderr("Failed to close file '$filename': $!");
-        undef($fh);
-        return undef;
-    }
-    # Release memory
-    undef($fh);
-    # Return file contents
-    return $contents;
-}
-
-# Write file contents
-sub stats_write_file_contents {
-    my ($filename, $contents) = @_;
-    my $fh;
-    my $cleanup = sub {
-        my ($unlock, $success) = @_;
-        # Unlock the file. Not strictly necessary as Perl
-        # automatically releases locks on file closure
-        flock($fh, LOCK_UN) if ($unlock);
-        # Close file handle
-        close($fh)
-            or do {
-                error_stderr("Failed to close file '$filename': $!");
-                undef($fh);
-                return 0;
-            };
-        # Release memory. Generally not necessary as Perl's garbage collection
-        # should always handle this. However, it doesn't hurt and can be
-        # useful in certain scenarios, like long-running processes
-        undef($fh);
-        # Return result
-        return $success ? 1 : 0;
-    };
-    # Open file for reading and writing without truncating it, or 
-    # create it if it doesn't exist
-    sysopen($fh, $filename, O_RDWR | O_CREAT)
-        or do {
-            error_stderr("Failed to open file '$filename' for reading and writing: $!");
-            return 0;
-        };
-    # Acquire exclusive lock on the file for writing
-    flock($fh, LOCK_EX)
-        or do {
-            error_stderr("Failed to acquire exclusive lock on file '$filename': $!");
-            return $cleanup->(0);
-        };
-    # Truncate the file after acquiring the lock
-    truncate($fh, 0)
-        or do {
-            error_stderr("Failed to truncate file '$filename': $!");
-            return $cleanup->(1);
-        };
-    # Reset the file pointer to the beginning of the file
-    # preventing potential race conditions
-    seek($fh, 0, 0)
-        or do {
-            error_stderr("Failed to seek to the beginning of file '$filename': $!");
-            return $cleanup->(1);
-        };
-    # Write to file
-    print($fh $contents)
-        or do {
-            error_stderr("Failed to write to file '$filename': $!");
-            return $cleanup->(1);
-        };
-    # Clean up and return success
-    return $cleanup->(1, 1);
-}
 
 # Check if feature is enabled
 sub get_stats_option
@@ -279,7 +184,7 @@ sub get_stats_history
     my ($noempty) = @_;
     my $file = "$var_directory/modules/$current_theme".
                     "/real-time-monitoring.json";
-    my $graphs = jsonify(stats_read_file_contents($file));
+    my $graphs = jsonify(read_file_contents($file));
     # No data yet
     if (!keys %{$graphs}) {
         unlink($file);
@@ -366,7 +271,9 @@ sub save_stats_history
     # Save data
     my $file = "$var_directory/modules/$current_theme".
                     "/real-time-monitoring.json";
-    stats_write_file_contents($file, $json->encode($graphs));
+    lock_file($file, undef, undef, 1);
+    write_file_contents($file, $json->encode($graphs));
+    unlock_file($file);
     # Release memory
     undef($graphs_chunk);
     undef($all_stats_histoy);
