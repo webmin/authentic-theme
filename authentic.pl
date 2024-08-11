@@ -13,6 +13,7 @@ our ($get_user_level,
      %gconfig,
      %tconfig,
      %text,
+     %in,
      $scriptname,
      $basic_virtualmin_domain,
      $basic_virtualmin_menu,
@@ -122,12 +123,8 @@ sub theme_header
                   $user_module_config_directory ? "uconfig.cgi" :
                   "config.cgi";
                 my $params = "";
-                my %in_;
-                if ($ENV{'REQUEST_METHOD'} eq 'GET') {
-                    &ReadParse(\%in_);
-                }
-                foreach my $k (keys %in_) {
-                    foreach my $v (split(/\0/, $in_{$k})) {
+                foreach my $k (keys %in) {
+                    foreach my $v (split(/\0/, $in{$k})) {
                         $params .= "&_cparam_".
                         &urlize($k)."=".&urlize($v);
                     }
