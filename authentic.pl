@@ -1558,6 +1558,14 @@ sub theme_post_save_server
     }
 }
 
+sub theme_select_domain
+{
+    my ($s) = @_;
+    print '<script>';
+    print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '') . '', "\n";
+    print "</script>\n";
+}
+
 sub theme_select_server
 {
     my ($s) = @_;
