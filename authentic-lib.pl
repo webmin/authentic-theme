@@ -510,7 +510,7 @@ sub print_sysstats_panel_start
 
 sub print_sysstats_table
 {
-    my ($data, $quota, $prod) = @_;
+    my ($data, $quota) = @_;
 
     if ((defined($data) && scalar(@{$data})) ||
         (defined($quota) && scalar(@{$quota})))
@@ -518,14 +518,7 @@ sub print_sysstats_table
         print '<table class="table table-hover">' . "\n";
         if (defined($data) && scalar(@{$data})) {
             foreach my $t (@{ @{$data}[0]->{'table'} }) {
-                my $insert = ($t->{"desc"} =~ /\Q$prod/i);
-                if ($insert && $get_user_level ne '3') {
-                    print_table_row($theme_text{'body_webmin'}, get_webmin_version());
-                }
                 print_table_row($t->{"desc"}, $t->{"value"});
-                if ($insert) {
-                    print_table_row($theme_text{'theme_version'}, get_theme_user_link());
-                }
             }
         }
         if (defined($quota) && scalar(@{$quota})) {

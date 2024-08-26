@@ -206,10 +206,23 @@ if ($get_user_level ne '3') {
 
     my @mailbox = grep {$_->{'module'} eq 'mailbox'} @info;
     my @quota   = grep {$_->{'module'} eq 'quota'} @info;
-    my $prod    = &get_product_name();
-
+    # Handle theme link if allowed
+    if (!defined($gconfig{'ui_show'}) || $gconfig{'ui_show'} =~ /\btver\b/) {
+        my $link =
+            { desc  => $theme_text{theme_version}, value => get_theme_user_link() };
+        foreach my $item (@mailbox) {
+            for (my $i = 0; $i < @{$item->{'table'}}; $i++) {
+                if ($item->{'table'}->[$i]->{'type'} =~ /^(version|time)$/) {
+                    splice(@{$item->{'table'}}, $i + ($1 eq 'time' ? -1 : 1), 0, $link);
+                    undef($link);
+                    last;
+                }
+            }
+        }
+        push(@{$mailbox[0]->{'table'}}, $link) if ($link);
+    }
     print_sysstats_panel_start();
-    print_sysstats_table(\@mailbox, \@quota, $prod);
+    print_sysstats_table(\@mailbox, \@quota);
     print_sysstats_panel_end();
 
     # Common modules
