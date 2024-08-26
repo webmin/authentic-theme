@@ -65,18 +65,15 @@ my ($cpu_percent,
 ) = get_sysinfo_vars(\@info);
 
 if ($get_user_level ne '3') {
-    print_sysstats_panel_start(\@info);
+    my $sysinfo = grep { $_->{'id'} eq 'sysinfo' } @info;
+    
+    # Print sysinfo panel start
+    print_sysstats_panel_start(\@info)  if ($sysinfo);
 
     # Easypie charts
-    if ($theme_config{'settings_sysinfo_easypie_charts'} ne 'false') {
+    if ($sysinfo && $theme_config{'settings_sysinfo_easypie_charts'} ne 'false') {
         print_easypie_charts($cpu_percent, $mem_percent, $virt_percent, $disk_percent);
     }
-    
-    # Pre-load history data
-    print '<script type="text/javascript">vars.stats.history = ' . convert_to_json(get_stats_history()) . ';</script>' . "\n";
-
-    # Print system info table
-    print '<table class="table table-hover margined-top-25"><tbody>' . "\n";
 
     my @table_data;
 
@@ -186,21 +183,29 @@ if ($get_user_level ne '3') {
         push @table_data, [$theme_text{'body_updates'}, $package_message, 'sysinfo_package_message'];
     }
 
-    while (scalar(@table_data) > 0) {
-        my $left  = shift(@table_data);
-        my $right = shift(@table_data);
-        print_table_row_responsive(@$left, @$right);
+    # Pre-load history data
+    print '<script type="text/javascript">vars.stats.history = ' .
+        convert_to_json(get_stats_history()) . ';</script>' . "\n"  if ($sysinfo);
+
+    # Print system info table
+    if (@table_data) {
+        print '<table class="table table-hover margined-top-25"><tbody>' . "\n";
+        while (scalar(@table_data) > 0) {
+            my $left  = shift(@table_data);
+            my $right = shift(@table_data);
+            print_table_row_responsive(@$left, @$right);
+        }
+        print '</tbody></table>' . "\n";
     }
 
-    print '</tbody></table>' . "\n";
-
     # Print System Warning
-    print get_sysinfo_warning(\@info);
+    print get_sysinfo_warning(\@info) if ($sysinfo);
 
-    print_sysstats_panel_end();
+    # Print sysinfo panel end
+    print_sysstats_panel_end() if ($sysinfo);
 
     print get_extended_sysinfo(\@info, '-1');
-    print '<script type="text/javascript">typeof stats === "object" && stats.sys.preRender();</script>' . "\n";
+    print '<script type="text/javascript">typeof stats === "object" && stats.sys.preRender();</script>' . "\n" if ($sysinfo);
 
 } else {
 
