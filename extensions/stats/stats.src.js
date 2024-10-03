@@ -458,7 +458,20 @@ const stats = {
                             );
 
                             // Remove loader
-                            this[`chart_${type}`].on("created", () => ld.remove());
+                            this[`chart_${type}`].on("created", (data) => {
+                                // Add labels to the first foreign object
+                                const ffObj = data.svg.getNode().querySelector('foreignObject');
+                                if (ffObj) {
+                                    const readLbl = this._.language(`dashboard_chart_${type}_read`),
+                                          writeLbl = this._.language(`dashboard_chart_${type}_write`);
+                                    if (readLbl && writeLbl) {
+                                        ffObj.setAttribute('data-label-read', `▪ ${readLbl}`);
+                                        ffObj.setAttribute('data-label-write', `▪ ${writeLbl}`);
+                                    }
+                                }
+                                // Clean-up loader
+                                ld.remove();
+                              });
                         }
                     });
                 }

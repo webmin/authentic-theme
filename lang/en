@@ -1474,3 +1474,10 @@ theme_xhred_hotkey_switch_theme=Switch theme
 theme_xhred_filemanager_upload_status_ok=Upload successful
 theme_xhred_filemanager_upload_status_err=Upload failed:
 theme_xhred_filemanager_download_status_err=Download failed:
+
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Read
+theme_xhred_dashboard_chart_disk_write=Write
+theme_xhred_dashboard_chart_net_read=Fetch
+theme_xhred_dashboard_chart_net_write=Send
