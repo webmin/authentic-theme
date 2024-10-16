@@ -3472,7 +3472,7 @@ const mail = (function() {
                         toggleEffect: false,
                     },
                     scroll: {
-                        axis: 'xy',
+                        axis: 'x',
                         theme: 'minimal',
                         keyboard: false,
                         scrollInertia: 300,
