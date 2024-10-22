@@ -1180,10 +1180,11 @@ sub theme_ui_table_hr
 
 sub theme_ui_opt_textbox
 {
-    my ($name, $value, $size, $opt1, $opt2, $dis, $extra, $max, $tags) = @_;
+    my ($name, $value, $size, $opt1, $opt2, $dis, $extra, $max, $tags, $type) = @_;
     my $dis1 = &js_disable_inputs([$name, (defined($extra) ? @$extra : ())], []);
     my $dis2 = &js_disable_inputs([],                                        [$name, (defined($extra) ? @$extra : ())]);
     my $rv;
+    $type ||= 'text';
     $size = &ui_max_text_width($size);
     $rv .= &ui_radio($name . "_def",
                      $value eq '' ? 1 : 0,
@@ -1191,7 +1192,7 @@ sub theme_ui_opt_textbox
       "\n";
     my $min_width = $size ? '' : ' min-width: 15%;';
     $rv .=
-"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px;$min_width' type='text' name=\""
+"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px;$min_width' type='$type' name=\""
       . &quote_escape($name)
       . "\" " . "size=$size value=\"" .
       &quote_escape($value) . "\"" . ($dis ? " disabled=true" : "") . ($max ? " maxlength=$max" : "") .
