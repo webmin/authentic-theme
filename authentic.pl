@@ -1182,7 +1182,7 @@ sub theme_ui_opt_textbox
 {
     my ($name, $value, $size, $opt1, $opt2, $dis, $extra, $max, $tags, $type) = @_;
     my $dis1 = &js_disable_inputs([$name, (defined($extra) ? @$extra : ())], []);
-    my $dis2 = &js_disable_inputs([],                                        [$name, (defined($extra) ? @$extra : ())]);
+    my $dis2 = &js_disable_inputs([], [$name, (defined($extra) ? @$extra : ())]);
     my $rv;
     $type ||= 'text';
     $size = &ui_max_text_width($size);
