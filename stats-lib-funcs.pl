@@ -179,11 +179,15 @@ sub get_stats_now
     return \%data;
 }
 
+sub get_stats_history_file
+{
+    return "$var_directory/modules/$current_theme/real-time-monitoring.json";
+}
+
 sub get_stats_history
 {
     my ($noempty) = @_;
-    my $file = "$var_directory/modules/$current_theme".
-                    "/real-time-monitoring.json";
+    my $file = get_stats_history_file();
     my $graphs = jsonify(read_file_contents($file));
     # No data yet
     if (!keys %{$graphs}) {

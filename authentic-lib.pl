@@ -21,7 +21,7 @@ our (
     $current_theme, $root_directory, $config_directory, $var_directory,
 
     %theme_text,     %module_text_full, %theme_config, $theme_info, $get_user_level, $theme_webprefix, $http_x_url,
-    $has_virtualmin, $has_cloudmin,
+    $has_virtualmin, $has_cloudmin, $theme_server_webprefix,
     $has_usermin,    $has_usermin_version, $has_usermin_root_dir, $has_usermin_conf_dir, $has_usermin_var_dir);
 
 init_type();
@@ -238,6 +238,7 @@ sub get_extended_sysinfo
         if (&webmin_user_is_admin() &&
             $theme_config{'settings_sysinfo_hidden_panels_user'} !~ /\'live_stats\'/ &&
             $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
+            (!$theme_server_webprefix || $theme_server_webprefix && -r get_stats_history_file()) &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {
             my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
