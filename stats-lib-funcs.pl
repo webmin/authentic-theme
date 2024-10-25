@@ -37,6 +37,7 @@ my $acl_system_status = {
     disk => acl_system_status('disk'),
     net  => acl_system_status('net'),
     virt => acl_system_status('virt'),
+    temp => acl_system_status('temp'),
 };
 
 # Check if feature is enabled
@@ -72,7 +73,8 @@ sub get_stats_empty
               virt => [{x => $time, y => 0}],
               proc => [{x => $time, y => 0}],
               disk => [{x => $time, y => [0, 0]}],
-              net =>  [{x => $time, y => [0, 0]}]
+              net =>  [{x => $time, y => [0, 0]}],
+              temp => [{x => $time, y => []}]
             }
     };
 }
@@ -162,6 +164,15 @@ sub get_stats_now
         undef($in);
         undef($out);
     }
+    # Temperature and fans
+    if ($acl_system_status->{'temp'}) {
+        my ($cpu, $fans) = defined(&proc::get_current_cpu_data) ?
+                proc::get_current_cpu_data() : (undef, undef);
+        if ($cpu || $fans) {
+            $data{'temp'} = [{c => $cpu, f => $fans}];
+            # $gadd->('temp', [{c => $cpu, f => $fans}]);
+        }
+    }
     # Reverse output for LTR users
     if (get_text_ltr()) {
         my @watched = ('mem', 'virt', 'disk');
@@ -203,7 +214,8 @@ sub get_stats_history
     # Check if still avilable based on current ACLs
     my %map = (cpu  => ['cpu',  'disk'],
                mem  => ['mem',  'virt'],
-               load => ['proc', 'net']);
+               load => ['proc', 'net',
+                        'temp']);
     foreach my $key (keys %map) {
         my $feature = $acl_system_status->{$key};
         unless ($feature) {
