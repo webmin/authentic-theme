@@ -397,3 +397,10 @@ theme_xhred_hotkey_switch_theme=Design wechseln
 theme_xhred_filemanager_upload_status_ok=Hochladen erfolgreich
 theme_xhred_filemanager_upload_status_err=Upload fehlgeschlagen:
 theme_xhred_filemanager_download_status_err=Herunterladen fehlgeschlagen:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lesen
+theme_xhred_dashboard_chart_disk_write=Schreiben
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Aus
+theme_xhred_tooltip_dashboard_live_stats_offline=Live-Statistiken sind nicht verfügbar, wenn auf das System im Proxy-Modus zugegriffen wird. Es werden nur zuvor erfasste Statistiken angezeigt und nur, wenn diese verfügbar sind. Die Seite muss neu geladen werden, um diese Statistiken zu aktualisieren

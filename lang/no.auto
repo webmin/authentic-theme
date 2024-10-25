@@ -367,3 +367,10 @@ theme_xhred_hotkey_switch_theme=Bytt tema
 theme_xhred_filemanager_upload_status_ok=Opplastingen var vellykket
 theme_xhred_filemanager_upload_status_err=Opplasting mislyktes:
 theme_xhred_filemanager_download_status_err=Nedlasting mislyktes:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lese
+theme_xhred_dashboard_chart_disk_write=Skrive
+theme_xhred_dashboard_chart_net_read=I
+theme_xhred_dashboard_chart_net_write=Ute
+theme_xhred_tooltip_dashboard_live_stats_offline=Live-statistikk er ikke tilgjengelig når systemet er tilgjengelig i proxy-modus; bare tidligere innsamlet statistikk vil bli vist, og bare hvis tilgjengelig, og siden må lastes inn på nytt for å oppdatere denne statistikken

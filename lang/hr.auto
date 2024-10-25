@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Promijeni temu
 theme_xhred_filemanager_upload_status_ok=Učitavanje uspješno
 theme_xhred_filemanager_upload_status_err=Prijenos nije uspio:
 theme_xhred_filemanager_download_status_err=Preuzimanje neuspješno:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=čitati
+theme_xhred_dashboard_chart_disk_write=Pisati
+theme_xhred_dashboard_chart_net_read=U
+theme_xhred_dashboard_chart_net_write=Van
+theme_xhred_tooltip_dashboard_live_stats_offline=Statistika uživo nije dostupna kada se sustavu pristupa u proxy modu; prikazat će se samo prethodno prikupljeni statistički podaci i samo ako su dostupni, a stranicu će trebati ponovno učitati kako bi se ažurirali ti statistički podaci

@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=تبديل الموضوع
 theme_xhred_filemanager_upload_status_ok=تحميل ناجح
 theme_xhred_filemanager_upload_status_err=التحميل فشل:
 theme_xhred_filemanager_download_status_err=التحميل فشل:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=يقرأ
+theme_xhred_dashboard_chart_disk_write=يكتب
+theme_xhred_dashboard_chart_net_read=في
+theme_xhred_dashboard_chart_net_write=خارج
+theme_xhred_tooltip_dashboard_live_stats_offline=لا تتوفر الإحصائيات المباشرة عند الوصول إلى النظام في وضع الوكيل؛ سيتم عرض الإحصائيات التي تم جمعها مسبقًا فقط، وفقط إذا كانت متوفرة، وسيتعين إعادة تحميل الصفحة لتحديث هذه الإحصائيات

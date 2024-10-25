@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Εναλλαγή θέματος
 theme_xhred_filemanager_upload_status_ok=Επιτυχής μεταφόρτωση
 theme_xhred_filemanager_upload_status_err=Η μεταφόρτωση απέτυχε:
 theme_xhred_filemanager_download_status_err=Η λήψη απέτυχε:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Ανάγνωση
+theme_xhred_dashboard_chart_disk_write=Γράφω
+theme_xhred_dashboard_chart_net_read=Σε
+theme_xhred_dashboard_chart_net_write=Εξω
+theme_xhred_tooltip_dashboard_live_stats_offline=Τα ζωντανά στατιστικά δεν είναι διαθέσιμα όταν γίνεται πρόσβαση στο σύστημα σε λειτουργία διακομιστή μεσολάβησης. θα εμφανίζονται μόνο τα στατιστικά που έχουν συλλεχθεί προηγουμένως, και μόνο εάν είναι διαθέσιμα, και η σελίδα θα πρέπει να φορτωθεί ξανά για να ενημερώσετε αυτά τα στατιστικά στοιχεία

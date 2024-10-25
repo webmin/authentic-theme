@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=تھیم سوئچ کریں۔
 theme_xhred_filemanager_upload_status_ok=اپ لوڈ کامیاب
 theme_xhred_filemanager_upload_status_err=اپ لوڈناکام:
 theme_xhred_filemanager_download_status_err=ڈاؤن لوڈ ناکام:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=پڑھیں
+theme_xhred_dashboard_chart_disk_write=لکھیں۔
+theme_xhred_dashboard_chart_net_read=میں
+theme_xhred_dashboard_chart_net_write=باہر
+theme_xhred_tooltip_dashboard_live_stats_offline=پراکسی موڈ میں سسٹم تک رسائی کے وقت لائیو اعدادوشمار دستیاب نہیں ہوتے ہیں۔ صرف پہلے جمع کیے گئے اعدادوشمار ہی دکھائے جائیں گے، اور صرف دستیاب ہونے کی صورت میں، اور ان اعدادوشمار کو اپ ڈیٹ کرنے کے لیے صفحہ کو دوبارہ لوڈ کرنے کی ضرورت ہوگی۔

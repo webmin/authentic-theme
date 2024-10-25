@@ -1311,3 +1311,10 @@ theme_xhred_hotkey_switch_theme=Skift tema
 theme_xhred_filemanager_upload_status_ok=Upload gennemført
 theme_xhred_filemanager_upload_status_err=Upload fejlede:
 theme_xhred_filemanager_download_status_err=Download fejlede:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Læse
+theme_xhred_dashboard_chart_disk_write=Skrive
+theme_xhred_dashboard_chart_net_read=I
+theme_xhred_dashboard_chart_net_write=Ud
+theme_xhred_tooltip_dashboard_live_stats_offline=Live-statistikker er ikke tilgængelige, når systemet er tilgået i proxy-tilstand; kun tidligere indsamlede statistikker vil blive vist, og kun hvis de er tilgængelige, og siden skal genindlæses for at opdatere disse statistikker

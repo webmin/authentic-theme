@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Chuyển chủ đề
 theme_xhred_filemanager_upload_status_ok=Tải lên thành công
 theme_xhred_filemanager_upload_status_err=Tải lên không thành công:
 theme_xhred_filemanager_download_status_err=Tải xuống không thành công:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Đọc
+theme_xhred_dashboard_chart_disk_write=Viết
+theme_xhred_dashboard_chart_net_read=TRONG
+theme_xhred_dashboard_chart_net_write=Ngoài
+theme_xhred_tooltip_dashboard_live_stats_offline=Số liệu thống kê trực tiếp không khả dụng khi hệ thống được truy cập ở chế độ proxy; chỉ những số liệu thống kê đã thu thập trước đó mới được hiển thị và chỉ khi có sẵn, và trang sẽ cần được tải lại để cập nhật những số liệu thống kê này

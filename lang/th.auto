@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=สลับธีม
 theme_xhred_filemanager_upload_status_ok=อัปโหลดสำเร็จ
 theme_xhred_filemanager_upload_status_err=การอัพโหลดล้มเหลว:
 theme_xhred_filemanager_download_status_err=การดาวน์โหลดล้มเหลว:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=อ่าน
+theme_xhred_dashboard_chart_disk_write=เขียน
+theme_xhred_dashboard_chart_net_read=ใน
+theme_xhred_dashboard_chart_net_write=ออก
+theme_xhred_tooltip_dashboard_live_stats_offline=สถิติสดจะไม่พร้อมใช้งานเมื่อเข้าถึงระบบในโหมดพร็อกซี จะแสดงเฉพาะสถิติที่รวบรวมไว้ก่อนหน้านี้เท่านั้น และจะแสดงก็ต่อเมื่อมีอยู่เท่านั้น และจะต้องโหลดหน้าใหม่เพื่ออัปเดตสถิติเหล่านี้

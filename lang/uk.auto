@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Змінити тему
 theme_xhred_filemanager_upload_status_ok=Завантаження успішне
 theme_xhred_filemanager_upload_status_err=Помилка завантаження:
 theme_xhred_filemanager_download_status_err=Помилка завантаження:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Прочитайте
+theme_xhred_dashboard_chart_disk_write=Напишіть
+theme_xhred_dashboard_chart_net_read=в
+theme_xhred_dashboard_chart_net_write=Вийти
+theme_xhred_tooltip_dashboard_live_stats_offline=Статистика в реальному часі недоступна, якщо доступ до системи здійснюється в режимі проксі; відображатиметься тільки раніше зібрана статистика, і лише якщо вона доступна, і сторінку потрібно буде перезавантажити, щоб оновити цю статистику

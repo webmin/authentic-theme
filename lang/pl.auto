@@ -1317,3 +1317,10 @@ theme_xhred_hotkey_switch_theme=Zmień motyw
 theme_xhred_filemanager_upload_status_ok=Wysyłanie zakończone
 theme_xhred_filemanager_upload_status_err=Przesyłanie nie powiodło się:
 theme_xhred_filemanager_download_status_err=Pobieranie nie udane:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Czytać
+theme_xhred_dashboard_chart_disk_write=Pisać
+theme_xhred_dashboard_chart_net_read=W
+theme_xhred_dashboard_chart_net_write=Na zewnątrz
+theme_xhred_tooltip_dashboard_live_stats_offline=Statystyki na żywo nie są dostępne, gdy dostęp do systemu odbywa się w trybie proxy; wyświetlane są tylko wcześniej zebrane statystyki, i tylko wtedy, gdy są dostępne, a w celu ich zaktualizowania konieczne będzie ponowne załadowanie strony

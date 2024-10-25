@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Téma váltása
 theme_xhred_filemanager_upload_status_ok=Feltöltés sikeres
 theme_xhred_filemanager_upload_status_err=Feltöltés sikertelen:
 theme_xhred_filemanager_download_status_err=Sikertelen letöltés:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Olvas
+theme_xhred_dashboard_chart_disk_write=Írj
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Ki
+theme_xhred_tooltip_dashboard_live_stats_offline=Az élő statisztikák nem érhetők el, ha a rendszerhez proxy módban fér hozzá; csak a korábban összegyűjtött statisztikák jelennek meg, és csak akkor, ha elérhetők, és az oldalt újra be kell tölteni a statisztikák frissítéséhez

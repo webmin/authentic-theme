@@ -304,3 +304,10 @@ theme_xhred_hotkey_switch_theme=Cambia tema
 theme_xhred_filemanager_upload_status_ok=Caricamento riuscito
 theme_xhred_filemanager_upload_status_err=Caricamento fallito:
 theme_xhred_filemanager_download_status_err=Scaricamento fallito:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Leggere
+theme_xhred_dashboard_chart_disk_write=Scrivere
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Fuori
+theme_xhred_tooltip_dashboard_live_stats_offline=Le statistiche live non sono disponibili quando si accede al sistema in modalità proxy; verranno visualizzate solo le statistiche raccolte in precedenza, e solo se disponibili, e la pagina dovrà essere ricaricata per aggiornare queste statistiche

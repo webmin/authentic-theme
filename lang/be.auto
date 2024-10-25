@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Пераключыць тэму
 theme_xhred_filemanager_upload_status_ok=Запампоўка паспяховая
 theme_xhred_filemanager_upload_status_err=Памылка загрузкі:
 theme_xhred_filemanager_download_status_err=Памылка спампоўкі:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Прачытайце
+theme_xhred_dashboard_chart_disk_write=Пішыце
+theme_xhred_dashboard_chart_net_read=У
+theme_xhred_dashboard_chart_net_write=Выхад
+theme_xhred_tooltip_dashboard_live_stats_offline=Жывая статыстыка недаступная, калі доступ да сістэмы ажыццяўляецца ў рэжыме проксі; будзе адлюстроўвацца толькі сабраная раней статыстыка, і толькі калі яна даступная, і старонку трэба будзе перазагрузіць, каб абнавіць гэтую статыстыку

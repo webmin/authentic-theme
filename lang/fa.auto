@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=تغییر تم
 theme_xhred_filemanager_upload_status_ok=آپلود با موفقیت انجام شد
 theme_xhred_filemanager_upload_status_err=آپلود انجام نشد:
 theme_xhred_filemanager_download_status_err=دانلود نشد:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=بخوانید
+theme_xhred_dashboard_chart_disk_write=بنویسید
+theme_xhred_dashboard_chart_net_read=در
+theme_xhred_dashboard_chart_net_write=بیرون
+theme_xhred_tooltip_dashboard_live_stats_offline=هنگامی که سیستم در حالت پروکسی قابل دسترسی است، آمار زنده در دسترس نیست. فقط آمارهای جمع آوری شده قبلی نمایش داده می شود، و فقط در صورت موجود بودن، و برای به روز رسانی این آمار، صفحه باید بارگذاری مجدد شود

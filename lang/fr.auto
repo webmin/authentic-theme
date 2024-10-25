@@ -367,3 +367,10 @@ theme_xhred_hotkey_switch_theme=Changer de thème
 theme_xhred_filemanager_upload_status_ok=Téléchargement réussi
 theme_xhred_filemanager_upload_status_err=Échec du téléchargement :
 theme_xhred_filemanager_download_status_err=Échec du téléchargement:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lire
+theme_xhred_dashboard_chart_disk_write=Écrire
+theme_xhred_dashboard_chart_net_read=Dans
+theme_xhred_dashboard_chart_net_write=Dehors
+theme_xhred_tooltip_dashboard_live_stats_offline=Les statistiques en direct ne sont pas disponibles lorsque le système est accessible en mode proxy ; seules les statistiques précédemment collectées seront affichées, et uniquement si elles sont disponibles, et la page devra être rechargée pour mettre à jour ces statistiques

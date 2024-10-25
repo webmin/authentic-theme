@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Perjungti temą
 theme_xhred_filemanager_upload_status_ok=Įkėlimas sėkmingas
 theme_xhred_filemanager_upload_status_err=Įkelti nepavyko:
 theme_xhred_filemanager_download_status_err=Atsisiuntimas nepavyko:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Skaityti
+theme_xhred_dashboard_chart_disk_write=Rašyti
+theme_xhred_dashboard_chart_net_read=Į
+theme_xhred_dashboard_chart_net_write=Išeina
+theme_xhred_tooltip_dashboard_live_stats_offline=Tiesioginė statistika nepasiekiama, kai sistema pasiekiama tarpinio serverio režimu; bus rodoma tik anksčiau surinkta statistika ir tik tada, jei ji yra, ir norint atnaujinti šią statistiką, puslapį reikės įkelti iš naujo

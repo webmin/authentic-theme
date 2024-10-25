@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Zamenjaj temo
 theme_xhred_filemanager_upload_status_ok=Nalaganje uspešno
 theme_xhred_filemanager_upload_status_err=Nalaganje ni uspelo:
 theme_xhred_filemanager_download_status_err=Prenos ni uspel:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Preberi
+theme_xhred_dashboard_chart_disk_write=Pišite
+theme_xhred_dashboard_chart_net_read=notri
+theme_xhred_dashboard_chart_net_write=ven
+theme_xhred_tooltip_dashboard_live_stats_offline=Statistika v živo ni na voljo, ko se do sistema dostopa v načinu proxy; prikazani bodo samo predhodno zbrani statistični podatki in le, če so na voljo, stran pa bo treba znova naložiti, da posodobite te statistične podatke

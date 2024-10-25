@@ -838,3 +838,10 @@ theme_xhred_hotkey_switch_theme=Tukar tema
 theme_xhred_filemanager_upload_status_ok=Muat naik berjaya
 theme_xhred_filemanager_upload_status_err=Muatnaik gagal:
 theme_xhred_filemanager_download_status_err=Muat turun gagal:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Baca
+theme_xhred_dashboard_chart_disk_write=tulis
+theme_xhred_dashboard_chart_net_read=Dalam
+theme_xhred_dashboard_chart_net_write=keluar
+theme_xhred_tooltip_dashboard_live_stats_offline=Statistik langsung tidak tersedia apabila sistem diakses dalam mod proksi; hanya statistik yang dikumpul sebelum ini akan dipaparkan, dan hanya jika tersedia, dan halaman perlu dimuat semula untuk mengemas kini statistik ini

@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Vaihda teemaa
 theme_xhred_filemanager_upload_status_ok=Lataus onnistui
 theme_xhred_filemanager_upload_status_err=Lataus epäonnistui:
 theme_xhred_filemanager_download_status_err=Lataus epäonnistui:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lukea
+theme_xhred_dashboard_chart_disk_write=Kirjoittaa
+theme_xhred_dashboard_chart_net_read=sisään
+theme_xhred_dashboard_chart_net_write=Ulos
+theme_xhred_tooltip_dashboard_live_stats_offline=Live-tilastot eivät ole saatavilla, kun järjestelmää käytetään välityspalvelintilassa; vain aiemmin kerätyt tilastot näytetään, ja vain jos niitä on saatavilla, ja sivu on ladattava uudelleen näiden tilastojen päivittämiseksi

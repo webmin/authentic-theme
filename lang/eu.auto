@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Aldatu gaia
 theme_xhred_filemanager_upload_status_ok=Kargatu ondo
 theme_xhred_filemanager_upload_status_err=Ezin izan da kargatu:
 theme_xhred_filemanager_download_status_err=Deskargatu huts egin du:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Irakurri
+theme_xhred_dashboard_chart_disk_write=Idatzi
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Kanpoan
+theme_xhred_tooltip_dashboard_live_stats_offline=Zuzeneko estatistikak ez daude erabilgarri sistemara proxy moduan sartzen denean; aldez aurretik bildutako estatistikak soilik bistaratuko dira, eta eskuragarri egonez gero, eta orria berriro kargatu beharko da estatistikak eguneratzeko

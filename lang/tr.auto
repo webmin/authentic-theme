@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Temayı değiştir
 theme_xhred_filemanager_upload_status_ok=yükleme başarılı
 theme_xhred_filemanager_upload_status_err=Yükleme başarısız:
 theme_xhred_filemanager_download_status_err=Yükleme başarısız:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Okumak
+theme_xhred_dashboard_chart_disk_write=Yazmak
+theme_xhred_dashboard_chart_net_read=İçinde
+theme_xhred_dashboard_chart_net_write=Dışarı
+theme_xhred_tooltip_dashboard_live_stats_offline=Sistem proxy modunda erişildiğinde canlı istatistikler kullanılamaz; yalnızca daha önce toplanan istatistikler görüntülenir ve yalnızca varsa görüntülenir ve bu istatistikleri güncellemek için sayfanın yeniden yüklenmesi gerekir

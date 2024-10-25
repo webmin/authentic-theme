@@ -1288,3 +1288,10 @@ theme_xhred_hotkey_switch_theme=Van thema wisselen
 theme_xhred_filemanager_upload_status_ok=succesvol geupload
 theme_xhred_filemanager_upload_status_err=Upload mislukt:
 theme_xhred_filemanager_download_status_err=Download mislukt:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lezen
+theme_xhred_dashboard_chart_disk_write=Schrijven
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Uit
+theme_xhred_tooltip_dashboard_live_stats_offline=Live statistieken zijn niet beschikbaar wanneer het systeem in proxy-modus wordt benaderd; alleen eerder verzamelde statistieken worden weergegeven, en alleen als ze beschikbaar zijn, en de pagina moet opnieuw worden geladen om deze statistieken bij te werken

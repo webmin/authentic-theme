@@ -631,3 +631,10 @@ theme_xhred_hotkey_switch_theme=切换主题
 theme_xhred_filemanager_upload_status_ok=上传成功
 theme_xhred_filemanager_upload_status_err=上传失败：
 theme_xhred_filemanager_download_status_err=下载失败：
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=读
+theme_xhred_dashboard_chart_disk_write=写
+theme_xhred_dashboard_chart_net_read=在
+theme_xhred_dashboard_chart_net_write=出去
+theme_xhred_tooltip_dashboard_live_stats_offline=在代理模式下访问系统时，无法获取实时统计数据；仅显示之前收集的统计数据（如果可用），并且需要重新加载页面才能更新这些统计数据

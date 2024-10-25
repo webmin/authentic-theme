@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=החלף נושא
 theme_xhred_filemanager_upload_status_ok=ההעלאה בוצעה בהצלחה
 theme_xhred_filemanager_upload_status_err=העלאה נכשלה:
 theme_xhred_filemanager_download_status_err=הורדה נכשלה:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=לִקְרוֹא
+theme_xhred_dashboard_chart_disk_write=לִכתוֹב
+theme_xhred_dashboard_chart_net_read=ב
+theme_xhred_dashboard_chart_net_write=הַחוּצָה
+theme_xhred_tooltip_dashboard_live_stats_offline=נתונים סטטיסטיים חיים אינם זמינים כאשר הגישה למערכת מתבצעת במצב פרוקסי; רק נתונים סטטיסטיים שנאספו בעבר יוצגו, ורק אם הם זמינים, ויהיה צורך לטעון מחדש את הדף כדי לעדכן את הנתונים הסטטיסטיים הללו

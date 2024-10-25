@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=테마 전환
 theme_xhred_filemanager_upload_status_ok=업로드 성공
 theme_xhred_filemanager_upload_status_err=업로드 실패:
 theme_xhred_filemanager_download_status_err=다운로드 실패:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=읽다
+theme_xhred_dashboard_chart_disk_write=쓰다
+theme_xhred_dashboard_chart_net_read=~ 안에
+theme_xhred_dashboard_chart_net_write=밖으로
+theme_xhred_tooltip_dashboard_live_stats_offline=프록시 모드에서 시스템에 액세스하는 경우 라이브 통계를 사용할 수 없습니다. 이전에 수집된 통계만 표시되며 사용 가능한 경우에만 표시되며 이러한 통계를 업데이트하려면 페이지를 다시 로드해야 합니다

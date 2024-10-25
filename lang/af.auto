@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Verander tema
 theme_xhred_filemanager_upload_status_ok=Oplaai suksesvol
 theme_xhred_filemanager_upload_status_err=Oplaai het misluk:
 theme_xhred_filemanager_download_status_err=Aflaai het misluk:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lees
+theme_xhred_dashboard_chart_disk_write=Skryf
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Uit
+theme_xhred_tooltip_dashboard_live_stats_offline=Regstreekse statistieke is nie beskikbaar wanneer toegang tot die stelsel in instaanbedienermodus verkry word nie; slegs voorheen versamelde statistieke sal vertoon word, en slegs indien beskikbaar, en die bladsy sal herlaai moet word om hierdie statistieke op te dateer

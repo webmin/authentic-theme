@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Prepnúť tému
 theme_xhred_filemanager_upload_status_ok=Odovzdanie bolo úspešné
 theme_xhred_filemanager_upload_status_err=Nahrávanie zlyhalo:
 theme_xhred_filemanager_download_status_err=Sťahovanie zlyhalo:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Prečítajte si
+theme_xhred_dashboard_chart_disk_write=Napíšte
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Vonku
+theme_xhred_tooltip_dashboard_live_stats_offline=Živé štatistiky nie sú dostupné, keď je systém prístupný v režime proxy; zobrazia sa iba predtým zhromaždené štatistiky a iba ak sú k dispozícii, a na aktualizáciu týchto štatistík bude potrebné znova načítať stránku

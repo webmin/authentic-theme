@@ -1192,3 +1192,10 @@ theme_xhred_hotkey_switch_theme=Переключить тему
 theme_xhred_filemanager_upload_status_ok=Загрузка успешна
 theme_xhred_filemanager_upload_status_err=Загрузка не удалась:
 theme_xhred_filemanager_download_status_err=Загрузка не удалась:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Читать
+theme_xhred_dashboard_chart_disk_write=Писать
+theme_xhred_dashboard_chart_net_read=В
+theme_xhred_dashboard_chart_net_write=Вне
+theme_xhred_tooltip_dashboard_live_stats_offline=Текущая статистика недоступна, если доступ к системе осуществляется в режиме прокси-сервера; будут отображаться только ранее собранные статистические данные и только в том случае, если они доступны, а для обновления этих данных потребуется перезагрузить страницу

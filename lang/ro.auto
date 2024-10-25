@@ -467,3 +467,10 @@ theme_xhred_hotkey_switch_theme=Schimbați tema
 theme_xhred_filemanager_upload_status_ok=Încărcare reușită
 theme_xhred_filemanager_upload_status_err=Încărcare eșuată:
 theme_xhred_filemanager_download_status_err=Descarcare esuata:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Citire
+theme_xhred_dashboard_chart_disk_write=Scrie
+theme_xhred_dashboard_chart_net_read=În
+theme_xhred_dashboard_chart_net_write=Afară
+theme_xhred_tooltip_dashboard_live_stats_offline=Statisticile live nu sunt disponibile atunci când sistemul este accesat în modul proxy; vor fi afișate numai statisticile colectate anterior și numai dacă sunt disponibile, iar pagina va trebui reîncărcată pentru a actualiza aceste statistici

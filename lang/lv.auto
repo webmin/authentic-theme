@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Pārslēgt motīvu
 theme_xhred_filemanager_upload_status_ok=Augšupielāde ir veiksmīga
 theme_xhred_filemanager_upload_status_err=Augšupielāde neizdevās:
 theme_xhred_filemanager_download_status_err=Lejupielāde neizdevās:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Lasīt
+theme_xhred_dashboard_chart_disk_write=Rakstiet
+theme_xhred_dashboard_chart_net_read=In
+theme_xhred_dashboard_chart_net_write=Ārā
+theme_xhred_tooltip_dashboard_live_stats_offline=Tiešraides statistika nav pieejama, ja sistēmai tiek piekļūts starpniekservera režīmā; tiks parādīta tikai iepriekš apkopotā statistika un tikai tad, ja tā būs pieejama, un lapa būs atkārtoti jāielādē, lai atjauninātu šo statistiku

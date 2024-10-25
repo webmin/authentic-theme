@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=切換主題
 theme_xhred_filemanager_upload_status_ok=上傳成功
 theme_xhred_filemanager_upload_status_err=上傳失敗：
 theme_xhred_filemanager_download_status_err=下載失敗：
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=讀
+theme_xhred_dashboard_chart_disk_write=寫
+theme_xhred_dashboard_chart_net_read=在
+theme_xhred_dashboard_chart_net_write=出去
+theme_xhred_tooltip_dashboard_live_stats_offline=當系統以代理模式存取時，即時統計資料不可用；僅顯示先前收集的統計信息，並且僅在可用時顯示，並且需要重新加載頁面才能更新這些統計信息

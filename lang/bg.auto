@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Превключване на темата
 theme_xhred_filemanager_upload_status_ok=Качването е успешно
 theme_xhred_filemanager_upload_status_err=Неуспешно качване:
 theme_xhred_filemanager_download_status_err=Изтеглянето се провали:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Прочетете
+theme_xhred_dashboard_chart_disk_write=Пишете
+theme_xhred_dashboard_chart_net_read=в
+theme_xhred_dashboard_chart_net_write=Навън
+theme_xhred_tooltip_dashboard_live_stats_offline=Статистическите данни на живо не са налични, когато системата е достъпна в прокси режим; ще се показват само предварително събрани статистически данни и само ако са налични и страницата ще трябва да се презареди, за да се актуализират тези статистики

@@ -182,3 +182,10 @@ theme_xhred_hotkey_switch_theme=Byt tema
 theme_xhred_filemanager_upload_status_ok=Uppladdningen lyckades
 theme_xhred_filemanager_upload_status_err=Uppladdningen misslyckades:
 theme_xhred_filemanager_download_status_err=Nedladdning misslyckad:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Läsa
+theme_xhred_dashboard_chart_disk_write=Skriva
+theme_xhred_dashboard_chart_net_read=I
+theme_xhred_dashboard_chart_net_write=Ut
+theme_xhred_tooltip_dashboard_live_stats_offline=Livestatistik är inte tillgänglig när systemet nås i proxyläge; endast tidigare insamlad statistik kommer att visas, och endast om tillgänglig, och sidan kommer att behöva laddas om för att uppdatera denna statistik

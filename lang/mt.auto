@@ -1399,3 +1399,10 @@ theme_xhred_hotkey_switch_theme=Aqleb it-tema
 theme_xhred_filemanager_upload_status_ok=Upload b'suċċess
 theme_xhred_filemanager_upload_status_err=It-tlugħ fallut:
 theme_xhred_filemanager_download_status_err=It-tniżżil falla:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Aqra
+theme_xhred_dashboard_chart_disk_write=Ikteb
+theme_xhred_dashboard_chart_net_read=Fil
+theme_xhred_dashboard_chart_net_write=Barra
+theme_xhred_tooltip_dashboard_live_stats_offline=L-istatistiċi ħajjin mhumiex disponibbli meta s-sistema tiġi aċċessata fil-modalità prokura; se jintwerew biss stats miġbura qabel, u jekk disponibbli biss, u l-paġna trid terġa' titgħabba biex taġġorna dawn l-istatistiċi

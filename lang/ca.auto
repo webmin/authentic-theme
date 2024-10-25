@@ -769,3 +769,10 @@ theme_xhred_hotkey_switch_theme=Canvia el tema
 theme_xhred_filemanager_upload_status_ok=Pujada correctament
 theme_xhred_filemanager_upload_status_err=La càrrega ha fallat:
 theme_xhred_filemanager_download_status_err=La baixada ha fallat:
+
+# 21.20.7
+theme_xhred_dashboard_chart_disk_read=Llegeix
+theme_xhred_dashboard_chart_disk_write=Escriu
+theme_xhred_dashboard_chart_net_read=En
+theme_xhred_dashboard_chart_net_write=Fora
+theme_xhred_tooltip_dashboard_live_stats_offline=Les estadístiques en directe no estan disponibles quan s'accedeix al sistema en mode proxy; només es mostraran les estadístiques recopilades anteriorment, i només si estan disponibles, i caldrà tornar a carregar la pàgina per actualitzar aquestes estadístiques
