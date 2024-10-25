@@ -1481,3 +1481,4 @@ theme_xhred_dashboard_chart_disk_read=Read
 theme_xhred_dashboard_chart_disk_write=Write
 theme_xhred_dashboard_chart_net_read=In
 theme_xhred_dashboard_chart_net_write=Out
+theme_xhred_tooltip_dashboard_live_stats_offline=Live stats aren’t available when the system is accessed in proxy mode; only previously collected stats will be displayed, and only if available, and the page will need to be reloaded to update these stats
