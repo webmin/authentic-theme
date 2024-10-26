@@ -169,8 +169,7 @@ sub get_stats_now
         my ($cpu, $fans) = defined(&proc::get_current_cpu_data) ?
                 proc::get_current_cpu_data() : (undef, undef);
         if ($cpu || $fans) {
-            $data{'temp'} = [{c => $cpu, f => $fans}];
-            # $gadd->('temp', [{c => $cpu, f => $fans}]);
+            $data{'sensors'} = [{cpu => $cpu, fans => $fans}];
         }
     }
     # Reverse output for LTR users

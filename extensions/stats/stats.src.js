@@ -55,6 +55,8 @@ const stats = {
             dashboard: "system-status",
             slider: "info-container",
             piechart: "piechart",
+            defaultClassLabel: "bg-semi-transparent",
+            defaultSliderClassLabel: "bg-semi-transparent-dark",
         },
         // Get current data to submit to the socket
         getSocketDefs: function () {
@@ -287,6 +289,87 @@ const stats = {
                             $od.text(vt);
                         }
                     }
+                }
+
+                // Update sensors data
+                if (target === "sensors" && vo) {
+                    // Iterate through sensors
+                    Object.entries(vo).forEach(([sensor, value]) => {
+                        let this_ = this,
+                            $lb1 = $(`#${this.selector.dashboard} span[data-stats="${sensor}"]`),
+                            $lb2 = $(`.${this.selector.slider} span[data-stats="${sensor}"]`);
+
+                        if ($lb1 && $lb1.length) {
+                            let lb_count1 = $lb1.length,
+                                lb_count2 = $lb2.length;
+
+                            // Sort the values based on 'fan' or 'core' field
+                            value.sort((a, b) =>
+                                sensor === "fans" ? a.fan - b.fan : a.core - b.core
+                            );
+
+                            // Function to update individual label
+                            const updateLabel = function ($label, data, isSingleLabel, sideSlider) {
+                                // Update the label text based on count condition
+                                if (isSingleLabel) {
+                                    // Replace only the numeric part, preserving unit (°C or RPM)
+                                    $label.html(function (_, html) {
+                                        const iSFahrenheit = html.includes("°F");
+                                        return html.replace(
+                                            /\d+/,
+                                            sensor === "fans"
+                                                ? data.rpm
+                                                : (iSFahrenheit ? Math.round((data.temp * 9) / 5 + 32) : data.temp));
+                                    });
+                                } else {
+                                    // Replace the numeric part after the colon, preserving prefix and unit
+                                    $label.html(function (_, html) {
+                                        const iSFahrenheit = html.includes("°F");
+                                        return html.replace(
+                                            /: \d+/,
+                                            `: ${sensor === "fans" ? data.rpm :
+                                                (iSFahrenheit ? Math.round((data.temp * 9) / 5 + 32) : data.temp)}`
+                                        );
+                                    });
+                                }
+
+                                const label_text = $label.text().replace(/.*?\d+:\s*/, "");
+                                let className =
+                                        HTML.label.textMaxLevels(sensor, label_text) ||
+                                        (sideSlider
+                                            ? this_.selector.defaultSliderClassLabel
+                                            : this_.selector.defaultClassLabel);
+                                if (sideSlider && className === this_.selector.defaultClassLabel) {
+                                    className = this_.selector.defaultSliderClassLabel;
+                                }
+                                // Update class based on current label text
+                                $label
+                                    .removeClass((i, c) => (c.match(/\bbg-\S+/g) || []).join(" "))
+                                    .addClass(className);
+                            };
+                            // Handle $lb1 labels
+                            if (lb_count1 === 1) {
+                                updateLabel($lb1, value[0], true);
+                            } else {
+                                // Handle multiple labels for $lb1
+                                $lb1.each((index, el) => {
+                                    if (value[index]) {
+                                        updateLabel($(el), value[index], false);
+                                    }
+                                });
+                            }
+                            // Handle $lb2 labels similarly
+                            if (lb_count2 === 1) {
+                                updateLabel($lb2, value[0], true, true);
+                            } else {
+                                $lb2.each((index, el) => {
+                                    if (value[index]) {
+                                        updateLabel($(el), value[index], false, true);
+                                    }
+                                });
+                            }
+                        }
+                    });
                 }
 
                 // Draw history graphs

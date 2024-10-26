@@ -903,8 +903,8 @@ sub get_sysinfo_vars
                   ($cpucores > 1 ? ($theme_text{'theme_global_core'} . ' ' . (int($t->{'core'}) + 1) . ': ') : '')
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
-                      (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
-                      (int($t->{'temp'}) . '&#176;C ')
+                      (int(($t->{'temp'} * 9.0 / 5) + 32) . " &#176;F") :
+                      (int($t->{'temp'}) . ' &#176;C ')
                   ) .
                   '</span>';
             }
@@ -935,8 +935,8 @@ sub get_sysinfo_vars
                 $hdd_temperature .= '<span class="badge-custom badge-drivestatus" data-stats="drive">' . $short . ': '
                   .
                   ( get_module_config_data('system-status', 'collect_units') ?
-                      (int(($t->{'temp'} * 9.0 / 5) + 32) . "&#176;F") :
-                      (int($t->{'temp'}) . '&#176;C ')
+                      (int(($t->{'temp'} * 9.0 / 5) + 32) . " &#176;F") :
+                      (int($t->{'temp'}) . ' &#176;C ')
                   ) .
                   $emsg . '</span>';
             }
