@@ -310,6 +310,9 @@ const stats = {
 
                             // Function to update individual label
                             const updateLabel = function ($label, data, isSingleLabel, sideSlider) {
+                                if (!data) {
+                                    return;
+                                }
                                 // Update the label text based on count condition
                                 if (isSingleLabel) {
                                     // Replace only the numeric part, preserving unit (°C or RPM)
