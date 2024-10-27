@@ -85,7 +85,7 @@ const stats = {
         getInterval: function () {
             return settings_sysinfo_real_time_run_rate / 1000;
         },
-        // Get the stored data duration period (e.g., from 300 to 3600 seconds)
+        // Get the stored data duration period (e.g., from 300 to 86400 seconds)
         getStoredDuration: function () {
             return settings_sysinfo_real_time_stored_duration;
         },
@@ -440,8 +440,8 @@ const stats = {
                         if (tg[0] && tg[0].textContent && cached !== 3) {
                             if (cached === 1) {
                                 let lf = parseInt(this.getStoredDuration());
-                                if (lf < 300 || lf > 3600) {
-                                    lf = 600;
+                                if (lf < 300 || lf > 86400) {
+                                    lf = 1200;
                                 }
                                 let tdata = sr,
                                     cdata = this[`chart_${type}`].data.series,

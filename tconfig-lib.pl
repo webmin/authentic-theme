@@ -263,6 +263,7 @@ sub theme_settings_filter
              'settings_sysinfo_easypie_charts_scale',
              'settings_sysinfo_max_servers',
              'settings_sysinfo_real_time_status',
+             'settings_sysinfo_real_time_stored_duration',
              'settings_leftmenu_section_hide_refresh_modules',
              'settings_leftmenu_section_hide_unused_modules',
              'settings_leftmenu_netdata',
@@ -565,7 +566,23 @@ sub theme_settings_format
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
     } elsif ($k eq 'settings_sysinfo_real_time_status') {
-        $v = ui_radio($k, $v, [[1, $text{'yes'}], [0, $text{'no'}]]);
+        my $realtime = 'settings_sysinfo_real_time_';
+        my $realtime_pref = "${realtime}status_";
+        my $duration_key = "${realtime}stored_duration";
+        my $select = ui_select($duration_key, $theme_config{$duration_key},
+                       [
+                        [(1200, $theme_text{"${realtime_pref}history_duration1"})],
+                        [(3600, $theme_text{"${realtime_pref}history_duration2"})],
+                        [(21600, $theme_text{"${realtime_pref}history_duration3"})],
+                        [(43200, $theme_text{"${realtime_pref}history_duration4"})],
+                        [(64800, $theme_text{"${realtime_pref}history_duration5"})],
+                        [(86400, $theme_text{"${realtime_pref}history_duration6"})]
+                       ]);
+        $v = ui_radio($k, $v, [
+            [1, $theme_text{"${realtime_pref}history1"}.$select],
+            [2, $theme_text{"${realtime_pref}history2"}],
+            [0, $text{'no'}]
+        ]);
     } elsif ($k eq 'settings_right_table_links_type') {
         $v = ui_radio($k,
                       $v,

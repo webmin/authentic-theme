@@ -108,7 +108,8 @@ Net::WebSocket::Server->new(
         }
         # Save stats to history and reset cache
         if ($serv->{'ticked'}++ % 20 == 0) {
-            save_stats_history($stats_period);
+            save_stats_history($stats_period)
+                if (get_stats_option('status', 1) != 2);
             undef($stats_period);
         }
         # If interval is set then sleep minus one
@@ -134,7 +135,7 @@ Net::WebSocket::Server->new(
         };
         alarm(30);
         # Set maximum send size
-        $conn->max_send_size(384 * 1024); # Sent data must never be more than 384 KB
+        $conn->max_send_size(9216 * 1024); # Max 9 MiB to accomodate 24h of data
         # Handle connection events
         $conn->on(
             utf8 => sub {

@@ -243,9 +243,9 @@ sub trim_stats_history
         my $default = get_stats_empty();
         return $default->{'graphs'}{$key};
     };
-    my $n = get_stats_option('stored_duration', 1) || 600;
-    if ($n < 300 || $n > 3600) {
-        $n = 600;
+    my $n = get_stats_option('stored_duration', 1) || 1200;
+    if ($n < 300 || $n > 86400) {
+        $n = 1200;
     }
     foreach my $k (keys %{$graphs}) {
         my @new_array;
