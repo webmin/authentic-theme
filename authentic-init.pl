@@ -77,13 +77,13 @@ sub settings_filter
 sub get_theme_color
 {
     # Chrome application header color should be darker than the theme color
-    my %theme_colors = ('blue'   => '#003670', # '#004090',
-                        'teal'   => '#02474c', # '#03535c',
-                        'green'  => '#234b2d', # '#2a5c36',
-                        'purple' => '#45345e', # '#533e71',
-                        'brown'  => '#4b3a2e', # '#594739',
+    my %theme_colors = ('blue'   => '#003670', # '#003d88',
+                        'teal'   => '#02474c', # '#045059',
+                        'green'  => '#234b2d', # '#2b5936',
+                        'purple' => '#45345e', # '#503a6f',
+                        'brown'  => '#4b3a2e', # '#544336',
                         'gold'   => '#61482e', # '#74573a',
-                        'orange' => '#724d2a', # '#885c34',
+                        'orange' => '#724d2a', # '#7e5631',
                         'red'    => '#7e2b27', # '#9a3531',
                         'maroon' => '#6f233e', # '#862b4c',
                         'grey'   => '#2f3336', # '#343c42',
@@ -109,7 +109,7 @@ sub embed_favicon
     }
 
     my $theme_config_dir = "$config_directory/$current_theme";
-    my $theme_user_color = get_theme_color() || "#004090";
+    my $theme_user_color = get_theme_color() || "#003d88";
 
     my $favicon_path = $theme_webprefix . '/images/favicons/' . $product_name;
     my $ref_link     = 'data-link-ref';
