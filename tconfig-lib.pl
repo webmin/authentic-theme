@@ -573,10 +573,11 @@ sub theme_settings_format
                        [
                         [(1200, $theme_text{"${realtime_pref}history_duration1"})],
                         [(3600, $theme_text{"${realtime_pref}history_duration2"})],
-                        [(21600, $theme_text{"${realtime_pref}history_duration3"})],
-                        [(43200, $theme_text{"${realtime_pref}history_duration4"})],
-                        [(64800, $theme_text{"${realtime_pref}history_duration5"})],
-                        [(86400, $theme_text{"${realtime_pref}history_duration6"})]
+                        [(10800, $theme_text{"${realtime_pref}history_duration3"})],
+                        [(21600, $theme_text{"${realtime_pref}history_duration4"})],
+                        [(43200, $theme_text{"${realtime_pref}history_duration5"})],
+                        [(64800, $theme_text{"${realtime_pref}history_duration6"})],
+                        [(86400, $theme_text{"${realtime_pref}history_duration7"})]
                        ]);
         $v = ui_radio($k, $v, [
             [1, $theme_text{"${realtime_pref}history1"}.$select],
