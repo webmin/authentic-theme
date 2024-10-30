@@ -1036,6 +1036,8 @@ sub get_button_style
         $icon = "virtualmin fa-1_15x margined-left--2 margined-top-1";
         if (string_contains($keys, "licence_recheck")) {
             $icon = "refresh fa-1_05x margined-left--2";
+        } elsif (string_contains($keys, "licence_manager_goto")) {
+            $icon = " fa2 fa2-key fa-1_15x margined-left--1";
         }
         $class = "warning ";
         if (string_contains($keys, "licence_manager_change")) {
