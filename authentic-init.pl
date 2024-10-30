@@ -1257,6 +1257,13 @@ sub get_button_style
         $icon = "times-circle-o";
     } elsif (string_contains($keys, "wizard_end")) {
         $icon = "virtualmin fa-1_05x";
+    } elsif (string_contains($keys, "licence_manager") ||
+             string_contains($keys, "licence_recheck")) {
+        $icon = "virtualmin fa-1_15x margined-left--2 margined-top-1";
+        if (string_contains($keys, "licence_recheck")) {
+            $icon = "refresh fa-1_05x margined-left--2";
+        }
+        $class = "warning ";
     } elsif (string_contains($keys, "ticket_submit")) {
         $icon = "question-circle";
     } elsif (string_contains($keys, "trace_change")) {
@@ -1309,8 +1316,7 @@ sub get_button_style
         $class = "warning ";
         $icon  = " fa2 fa2-transfer";
     } elsif (string_contains($keys, "restart") ||
-             string_contains($keys, "edit_kill") ||
-             string_contains($keys, "licence_recheck"))
+             string_contains($keys, "edit_kill"))
     {
         $class = "warning ";
         $icon  = "refresh";
