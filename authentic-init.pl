@@ -1043,7 +1043,7 @@ sub get_button_style
             $icon = "unlock fa-1_15x margined-left--2";
         }
         if (string_contains($keys, "licence_manager_deregister")) {
-            $class = "danger ";
+            $class = "grey ";
             $icon = "lock fa-1_15x margined-left--2";
         }
     } elsif (string_contains($keys, "user_createover")) {
