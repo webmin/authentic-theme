@@ -1029,6 +1029,23 @@ sub get_button_style
         if (string_contains($keys, 'ssl_gen')) {
             $class = "grey ";
         }
+    } elsif (string_contains($keys, "licence_manager") ||
+             string_contains($keys, "licence_manager_change") ||
+             string_contains($keys, "licence_manager_deregister") ||
+             string_contains($keys, "licence_recheck")) {
+        $icon = "virtualmin fa-1_15x margined-left--2 margined-top-1";
+        if (string_contains($keys, "licence_recheck")) {
+            $icon = "refresh fa-1_05x margined-left--2";
+        }
+        $class = "warning ";
+        if (string_contains($keys, "licence_manager_change")) {
+            $class = "success ";
+            $icon = "unlock fa-1_15x margined-left--2";
+        }
+        if (string_contains($keys, "licence_manager_deregister")) {
+            $class = "danger ";
+            $icon = "lock fa-1_15x margined-left--2";
+        }
     } elsif (string_contains($keys, "user_createover")) {
         $class = "warning ";
         $icon  = "user-switch fa-1_10x";
@@ -1257,13 +1274,6 @@ sub get_button_style
         $icon = "times-circle-o";
     } elsif (string_contains($keys, "wizard_end")) {
         $icon = "virtualmin fa-1_05x";
-    } elsif (string_contains($keys, "licence_manager") ||
-             string_contains($keys, "licence_recheck")) {
-        $icon = "virtualmin fa-1_15x margined-left--2 margined-top-1";
-        if (string_contains($keys, "licence_recheck")) {
-            $icon = "refresh fa-1_05x margined-left--2";
-        }
-        $class = "warning ";
     } elsif (string_contains($keys, "ticket_submit")) {
         $icon = "question-circle";
     } elsif (string_contains($keys, "trace_change")) {
