@@ -1798,10 +1798,6 @@ sub clear_theme_cache
         }
         &virtual_server::clear_links_cache($remote_user);
 
-        # Clear license status cache
-        my $licence_status = &virtual_server::cache_file_path("licence-status");
-        unlink_file($licence_status);
-
         # Clear collected data
         my $collected_info_file = &virtual_server::cache_file_path("collected");
         unlink_file($collected_info_file);
