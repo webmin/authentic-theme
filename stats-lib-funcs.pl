@@ -408,8 +408,8 @@ sub stats_network_netstat
             next if $. == 1;  # Skip header
             my @fields = split;
             my $iface = $fields[0];
-            my $ibytes = $fields[7];
-            my $obytes = $fields[10];
+            my $ibytes = $fields[-5];
+            my $obytes = $fields[-2];
             $stats{$iface} = [$ibytes, $obytes];
         }
         close($netstat);
