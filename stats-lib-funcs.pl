@@ -66,17 +66,21 @@ sub jsonify
 sub get_stats_empty
 {
     my $time = time();
-    return {
-        graphs =>
-            { cpu =>  [{x => $time, y => 0}],
-              mem =>  [{x => $time, y => 0}],
-              virt => [{x => $time, y => 0}],
-              proc => [{x => $time, y => 0}],
-              disk => [{x => $time, y => [0, 0]}],
-              net =>  [{x => $time, y => [0, 0]}],
-              temp => [{x => $time, y => []}]
-            }
+    my $stats = {
+        graphs => {
+            cpu  => [{x => $time, y => 0}],
+            mem  => [{x => $time, y => 0}],
+            proc => [{x => $time, y => 0}],
+            temp => [{x => $time, y => []}]
+        }
     };
+    $stats->{'graphs'}->{'virt'} = [{x => $time, y => 0}]
+        if (has_stats_virt());
+    $stats->{'graphs'}->{'disk'} = [{x => $time, y => [0, 0]}]
+        if (has_stats('proc', 'disk'));
+    $stats->{'graphs'}->{'net'} = [{x => $time, y => [0, 0]}]
+        if (has_stats('proc', 'network'));
+    return $stats;
 }
 
 sub get_stats_now
@@ -105,7 +109,8 @@ sub get_stats_now
                 # Disk I/O
                 my $in  = $cpuusage[5];
                 my $out = $cpuusage[6];
-                if ($in && $out || $in eq '0' || $out eq '0') {
+                if (has_stats('proc', 'disk') &&
+                    (($in && $out) || $in eq '0' || $out eq '0')) {
                     $data{'io'} = [$in, $out];
                     $gadd->('disk', [$in, $out]);
                 }
@@ -151,7 +156,7 @@ sub get_stats_now
         }
     }
     # Network I/O
-    if ($acl_system_status->{'load'}) {
+    if (has_stats('proc', 'network') && $acl_system_status->{'load'}) {
         my $nrs = stats_network();
         my ($in, $out) = @{$nrs};
 
@@ -293,6 +298,33 @@ sub save_stats_history
     undef($graphs_chunk);
     undef($all_stats_histoy);
     undef($graphs);
+}
+
+sub has_stats
+{
+    my ($mod, $type) = @_;
+    state %cache;
+    my $cached_func = "$mod:$type";
+    return $cache{$cached_func} if (exists($cache{$cached_func}));
+    my $func_name = "${mod}::has_${type}_stats";
+    my $func_ref = \&{$func_name} if defined(&{$func_name});
+    $cache{$cached_func} = $func_ref ? $func_ref->() : 0;
+    return $cache{$cached_func};
+}
+
+sub has_stats_virt
+{
+    state $has_virt_memory;
+    return $has_virt_memory if defined($has_virt_memory);
+    if (defined(&proc::get_memory_info)) {
+		my @m = &proc::get_memory_info();
+        if (@m && $m[2]) {
+            $has_virt_memory = 1;
+            return 1;
+        }
+    }
+    $has_virt_memory = 0;
+    return 0;
 }
 
 sub stats_network
