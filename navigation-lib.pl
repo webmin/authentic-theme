@@ -818,7 +818,7 @@ sub nav_list_combined_menu
                     }
                 } elsif (
                         ($link =~ /^http:\/\// || $link =~ /^https:\/\// || $link =~ /^ftp:\/\// || $link =~ /^ftps:\/\//) &&
-                        $link !~ /virtualmin\.com\/professional/)
+                        $link !~ /virtualmin\.com\/docs\/professional/)
                 {
                     $icon = '<i class="fa fa-fw fa-external-link"></i>';
                 } elsif ($link =~ /\.\.\/servers\/link\.cgi/) {
