@@ -1870,13 +1870,20 @@ sub init_type
 
 sub init
 {
-    # Don't log XHR requests
+    # Don't log XHR requests (exclude from logs)
     my %tmp_miniserv;
     get_miniserv_config(\%tmp_miniserv);
     my $nolog = quotemeta('/stats.cgi?xhr-stats=general');
     $nolog =~ s/\\ / /g;
     if ($tmp_miniserv{'nolog'} eq $nolog) {
         delete($tmp_miniserv{'nolog'});
+        put_miniserv_config(\%tmp_miniserv);
+        reload_miniserv();
+    }
+    my $webpref = "$theme_webprefix/";
+    my $nologerr = "${webpref}404.cgi ${webpref}403.cgi ${webpref}401.cgi";
+    if ($tmp_miniserv{'nolog'} ne $nologerr) {
+        $tmp_miniserv{'nolog'} = $nologerr;
         put_miniserv_config(\%tmp_miniserv);
         reload_miniserv();
     }
