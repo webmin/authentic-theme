@@ -1073,9 +1073,11 @@ sub get_button_style
     } elsif (string_contains($keys, "mail_delete")) {
         $icon  = "times-circle";
         $class = "danger ";
-    } elsif (string_contains($keys, "mail_forward")) {
+    } elsif (string_contains($keys, "mail_forward") ||
+             string_contains($keys, "view_forward")) {
         $icon = "forward";
-    } elsif (string_contains($keys, "view_quick_all")) {
+    } elsif (string_contains($keys, "view_quick_all") ||
+             string_contains($keys, "view_reply2")) { 
         $icon = "reply-all";
     } elsif (string_contains($keys, "view_reply")) {
         $icon  = "reply";
