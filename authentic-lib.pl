@@ -1880,13 +1880,6 @@ sub init
         put_miniserv_config(\%tmp_miniserv);
         reload_miniserv();
     }
-    my $webpref = "$theme_webprefix/";
-    my $nologerr = "${webpref}404.cgi ${webpref}403.cgi ${webpref}401.cgi";
-    if ($tmp_miniserv{'nolog'} ne $nologerr) {
-        $tmp_miniserv{'nolog'} = $nologerr;
-        put_miniserv_config(\%tmp_miniserv);
-        reload_miniserv();
-    }
 
     # Make sure that config directory exists
     theme_make_config_dir();
