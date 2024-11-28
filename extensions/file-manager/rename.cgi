@@ -33,14 +33,15 @@ if (-e "$cwd/$in{'name'}") {
     my $to   = $in{'name'};
     my $fsid = $in{'fsid'};
 
-    if (rename_file($cwd . '/' . $from, $cwd . '/' . $to)) {
+    if (can_move($cwd . '/' . $from, $cwd) && 
+        rename_file($cwd . '/' . $from, $cwd . '/' . $to)) {
         cache_search_rename($fsid, $from, $to) if ($fsid);
         redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin' . extra_query());
     } else {
         print_error(
                     (
                      text('filemanager_rename_denied',
-                          html_escape($in{'name'}),
+                          html_escape($to),
                           html_escape($path),
                           lc($text{ 'theme_xhred_global_' . $type . '' })
                      )

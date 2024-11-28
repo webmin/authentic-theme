@@ -7,7 +7,7 @@
 #
 use strict;
 
-our (%in, %request_uri, $cwd, $base, $path);
+our (%in, %text, %request_uri, $cwd, $base, $path);
 
 do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
@@ -50,6 +50,10 @@ if (!$dr) {
     for (my $i = 2; $i <= scalar(@arr) - 1; $i++) {
         chomp($arr[$i]);
         $arr[$i] = simplify_path($arr[$i]);
+        if (!can_move("$from/$arr[$i]", $cwd, $from)) {
+            $errors{"$arr[$i]"} = "$text{'error_move'}";
+            next;
+        }
         my $err = paster("$cwd", "$arr[$i]", "$from/$arr[$i]", "$cwd/$arr[$i]", $fo, $mv, $in{'fownergroup'});
         if ($err) {
             $errors{"$arr[$i]"} = $err;
