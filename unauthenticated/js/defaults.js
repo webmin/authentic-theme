@@ -187,6 +187,7 @@ var
     // Terminal related custom options
     config_portable_module_xterm_options = '{}',
     config_portable_module_xterm_render_addon = true,
+    config_portable_module_xterm_font_size = 12,
 
     // Custom password generator options
     config_portable_funcs_password_complexity_meter = '{}',
