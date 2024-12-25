@@ -1358,6 +1358,13 @@ sub theme_ui_radio_table
     return $rv;
 }
 
+sub theme_ui_make_date
+{
+    my ($date, $ts) = @_;
+    return $date if ($main::webmin_script_type ne 'web');
+    return "<span data-filesize-bytes='$ts'>$date</span>";
+}
+
 sub theme_make_date
 {
     return theme_make_date_local(@_);
