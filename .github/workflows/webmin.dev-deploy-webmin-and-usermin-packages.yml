@@ -33,5 +33,5 @@ jobs:
           WEBMIN_DEV__GPG_PH: ${{ secrets.WEBMIN_DEV__GPG_PH }}
           ENV_BUILD__CLOUD_UPLOAD_SSH_HOST: ${{ secrets.WEBMIN_DEV__IP_ADDR }}
         run: |-
-          bash deb.sh --testing
-          bash rpm.sh --testing
+          bash deb.sh --testing --debug
+          bash rpm.sh --testing --debug
