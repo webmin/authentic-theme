@@ -1,11 +1,11 @@
-name: "webmin.dev: Deploy Webmin and Usermin packages"
+name: "webmin.dev: Authentic Theme"
 
 on:
   push:
     branches:
       - master
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 9 * * *"
 
 jobs:
   build:
@@ -21,11 +21,7 @@ jobs:
           timezoneLinux: "Europe/Nicosia"
       - name: Fetch dependencies
         run: |-
-          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/vars.sh
-          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/init.sh
-          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/funcs.sh
-          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/deb.sh
-          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/rpm.sh
+          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/bootstrap.bash
       - name: Build and upload packages
         env:
           WEBMIN_DEV__SSH_PRV_KEY: ${{ secrets.WEBMIN_DEV__SSH_PRV_KEY }}
@@ -33,5 +29,6 @@ jobs:
           WEBMIN_DEV__GPG_PH: ${{ secrets.WEBMIN_DEV__GPG_PH }}
           ENV_BUILD__CLOUD_UPLOAD_SSH_HOST: ${{ secrets.WEBMIN_DEV__IP_ADDR }}
         run: |-
-          bash deb.sh --testing
-          bash rpm.sh --testing
+          bash bootstrap.bash
+          bash build-deb-package.bash --testing
+          bash build-rpm-package.bash --testing
