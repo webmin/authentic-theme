@@ -21,7 +21,7 @@ jobs:
           timezoneLinux: "Europe/Nicosia"
       - name: Fetch dependencies
         run: |-
-          curl -O https://raw.githubusercontent.com/webmin/webmin/master/.github/build/bootstrap.bash
+          curl -O https://raw.githubusercontent.com/webmin/webmin-ci-cd/main/build/bootstrap.bash
       - name: Build and upload packages
         env:
           WEBMIN_DEV__SSH_PRV_KEY: ${{ secrets.WEBMIN_DEV__SSH_PRV_KEY }}
