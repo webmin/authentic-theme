@@ -324,55 +324,73 @@ sub theme_ui_upload
       ($tags ? " " . $tags : "") . ">";
 }
 
-sub theme_icons_table
-{
-    my $lt = $theme_config{'settings_right_table_links_type'};
-    my $sm = $lt eq '1' ? ' small-icons' : undef;
-    my $nl = $lt eq '0' ? 1              : undef;
+sub theme_icons_table {
+    my ($links, $titles, $icons, $cols, $href, $width, $height, $befores, $afters) = @_;
+    my $lt           = $theme_config{'settings_right_table_links_type'};
+    my $sm           = $lt eq '1' ? ' small-icons' : undef;
+    my $nl           = $lt eq '0' ? 1              : undef;
+    my $icons_sorted = $theme_config{'settings_right_table_links_sorted'} eq 'true' ? 1 : 0;
+
+    # Sort links, titles, and icons
+    if ($icons_sorted) {
+        my @sorted_indices = sort { $titles->[$a] cmp $titles->[$b] } 0 .. $#$titles;
+        @$links   = @$links[@sorted_indices];
+        @$titles  = @$titles[@sorted_indices];
+        @$icons   = @$icons[@sorted_indices];
+        @$befores = @$befores[@sorted_indices];
+        @$afters  = @$afters[@sorted_indices];
+    }
 
     if ($nl) {
-
         # Print plain text links
         print "<div class=\"links-row-padded\">";
         print
 "<div class=\"row-flex row-flex-cols-sm-1 row-flex-cols-md-2 row-flex-cols-lg-3 row-flex-cols-xl-3 row-flex-cols-xxl-4 links-row\">";
-        for (my $i = 0; $i < @{ $_[0] }; $i++) {
-            my $after;
-            if ($_[8]->[$i]) {
-                $after = $_[8]->[$i];
-                $after =~
-s/ui_link/margined-left-4 btn btn-default btn-transparent-link btn-xxs btn-xxs-compact btn-hover-hide f__lnk_t_btn-el/g;
-                $after =~ s/>\((.*?)\)</>$1</g;
-            }
-            my $before;
-            $before = $_[7]->[$i];
-            print "<div class=\"col-flex-sm-6" . ($before ? " link-row-col" : " link-row-col-narrow") . "\">";
-            print "$before <a class='row-link' href='$_[0]->[$i]' " . (ref($_[4]) ? $_[4]->[$i] : $_[4]) .
-              ">" . ($before ? "" : "<i class='fa fa-fw fa-angle-right'>&nbsp;&nbsp;</i>") .
-              "<span>@{[html_strip($_[1]->[$i], ' ')]}</span></a> $after";
+
+        for my $i (0 .. $#$links) {
+            my $after  = $afters->[$i] // '';
+            my $before = $befores->[$i] // '';
+
+            # Process "after" HTML
+            $after =~ s/ui_link/margined-left-4 btn btn-default btn-transparent-link btn-xxs btn-xxs-compact btn-hover-hide f__lnk_t_btn-el/g;
+            $after =~ s/>\((.*?)\)</>$1</g;
+
+            # Print individual link
+            print "<div class=\"col-flex-sm-6"
+              . ($before ? " link-row-col" : " link-row-col-narrow")
+              . "\">";
+            print "$before <a class='row-link' href='$links->[$i]' "
+              . (ref($href) ? $href->[$i] : $href)
+              . ">"
+              . ($before ? "" : "<i class='fa fa-fw fa-angle-right'>&nbsp;&nbsp;</i>")
+              . "<span>@{[html_strip($titles->[$i], ' ')]}</span></a> $after";
             print "</div>";
         }
-        print "</div>";
-        print "</div>";
 
+        print "</div>";
+        print "</div>";
     } else {
-
         # Print icons
         my $ff;
-        my $in = scalar(@{ $_[0] });
+        my $total = scalar(@$links);
         print "<div class=\"row icons-row$sm\">\n";
-        for (my $i = 0; $i < @{ $_[0] }; $i++) {
-            &generate_icon($_[2]->[$i], $_[1]->[$i], $_[0]->[$i], ref($_[4]) ? $_[4]->[$i] : $_[4],
-                           $_[5], $_[6], $_[7]->[$i], $_[8]->[$i]);
-            $ff .= '<div class="icons-container-filler"></div>', "\n" if (!$sm);
+
+        for my $i (0 .. $#$links) {
+            &generate_icon($icons->[$i], $titles->[$i], $links->[$i],
+                ref($href) ? $href->[$i] : $href,
+                $width, $height, $befores->[$i], $afters->[$i]);
+
+            $ff .= '<div class="icons-container-filler"></div>' if (!$sm);
         }
-        if ($in < 2) {
+
+        # Adjust fillers for row balancing
+        if ($total < 2) {
             $ff .= "$ff" x 16;
-        } elsif ($in < 4) {
+        } elsif ($total < 4) {
             $ff .= "$ff" x 8;
-        } elsif ($in < 8) {
+        } elsif ($total < 8) {
             $ff .= "$ff" x 4;
-        } elsif ($in < 16) {
+        } elsif ($total < 16) {
             $ff .= "$ff" x 2;
         }
         print "$ff</div>\n";

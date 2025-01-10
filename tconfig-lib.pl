@@ -107,6 +107,7 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_table_options'),
             'data'  => [
                        'settings_right_table_links_type',
+                       'settings_right_table_links_sorted',
                        'settings_right_table_animate_icons',
                        'settings_right_table_grayscaled_icons',
                        'settings_right_table_layout_control',

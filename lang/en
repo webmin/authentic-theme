@@ -1492,3 +1492,4 @@ settings_sysinfo_real_time_status_history_duration5=12 hours
 settings_sysinfo_real_time_status_history_duration6=18 hours
 settings_sysinfo_real_time_status_history_duration7=24 hours
 theme_xhred_license_purchase=Purchase a license
+settings_right_table_links_sorted=Sort table links in alphabetical order
