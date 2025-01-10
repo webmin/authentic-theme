@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - master
-  schedule:
-    - cron: "0 9 * * *"
 
 jobs:
   build:
-    uses: webmin/webmin-ci-cd/.github/workflows/testing-master-workflow.yml@main
+    uses: webmin/webmin-ci-cd/.github/workflows/master-workflow.yml@main
     with:
       build-type: package
     secrets:
