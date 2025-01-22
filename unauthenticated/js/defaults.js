@@ -199,6 +199,10 @@ var
 
     // Embed default/custom favicons
     settings_embed_favicon_privileged = true,
+    
+    // Set custom product name and full product name in manifest
+    settings_manifest_product_name = '',
+    settings_manifest_product_name_full = '',
 
     // Tables related
     settings_right_table_wrap_inside_scrolled_container = false,

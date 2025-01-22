@@ -182,9 +182,9 @@ sub embed_favicon
 
     # Generate manifest file from template
     my $display_hostname         = get_display_hostname();
-    my $manifest_product_name_uc = ucfirst($product_name);
-    my $manifest_product_name_uc_with_hostname =
-        $manifest_product_name_uc . ($display_hostname ? " on " . $display_hostname : "");
+    my $manifest_product_name_uc = $theme_config{'settings_manifest_product_name'} || ucfirst($product_name);
+    my $manifest_product_name_uc_with_hostname = $theme_config{'settings_manifest_product_name_full'} ||
+        ($manifest_product_name_uc . ($display_hostname ? " on " . $display_hostname : ""));
     my %manifest_prod_descs = ('webmin'     => 'Powerful and flexible web-based server management control panel',
                                 'usermin'    => 'Powerful and flexible web-based user management interface',
                                 'virtualmin' => 'Powerful and flexible web hosting control panel',
