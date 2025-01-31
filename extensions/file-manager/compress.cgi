@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %text, %config, $cwd, $path);
 
-do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 if (!$in{'arch'}) {
     redirect_local('list.cgi?path=' . urlize($path) . '&module=filemin');

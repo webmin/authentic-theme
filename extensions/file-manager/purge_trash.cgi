@@ -11,7 +11,7 @@ use lib ($ENV{'LIBROOT'} . "/vendor_perl");
 
 our (%access, @remote_user_info, %in, %text, $path);
 
-do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my %errors;
 my $tdirname = '.Trash';

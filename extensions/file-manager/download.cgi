@@ -10,7 +10,7 @@ use strict;
 
 our (%in, $cwd, @allowed_paths);
 
-do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my $command;
 my $has_zip    = has_command('zip');

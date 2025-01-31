@@ -9,7 +9,7 @@ use strict;
 
 our (%in, %text, $cwd, $path);
 
-do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my @entries_list = get_entries_list();
 my $path_urlized = urlize($path);

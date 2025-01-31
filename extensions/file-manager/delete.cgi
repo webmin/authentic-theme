@@ -15,7 +15,7 @@ use File::Path;
 
 our (%in, %text, $cwd, $path, @allowed_paths);
 
-do($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my %errors;
 my @deleted_entries;
