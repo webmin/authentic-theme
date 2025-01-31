@@ -1432,6 +1432,11 @@ sub get_button_style
         $class = "success ";
         $icon  = "database-plus fa-1_25x";
     } elsif (
+         string_contains($keys, "index_fadd")
+         )
+    {
+        $icon  = "plus-square-o";
+    } elsif (
          (string_contains($keys, "add") &&
           !string_contains($keys, "edit_addinc")) ||
          string_contains($keys, "create") ||
