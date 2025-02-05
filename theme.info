@@ -3,9 +3,9 @@ longdesc=Webmin/Usermin/Virtualmin/Cloudmin theme based on Bootstrap and Font Aw
 bootstrap=3
 spa=1
 nomodcall=xnavigation=1
-version=21.30-beta8
-mversion=33
-bversion=00
+version=22.10-rc1
+mversion=01
+bversion=01
 webmin=1
 usermin=1
 depends=2.210 2.030
