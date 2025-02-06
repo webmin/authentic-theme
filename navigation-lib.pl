@@ -697,7 +697,7 @@ sub nav_theme_links
 sub nav_list_combined_menu
 {
     my ($modules, $items, $id, $group, $page) = @_;
-    my ($nav_pos, $extra_links, $rv, $rv_after, $login_mode);
+    my ($nav_pos, $extra_links, $summary, $rv, $rv_after, $login_mode);
 
     my $gwp = sub {
         my ($link) = @_;
@@ -774,7 +774,13 @@ sub nav_list_combined_menu
                 }
 
                 if ($link =~ /\/virtual-server\/domain_form\.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-server-add"></i>';
+                    if ($link =~ /to=/) {
+                        $icon = '<i class="fa fa-fw fa-reply fa-flip-horizontal fa-0_90x margined-left--3 margined-right-3"></i>';
+                    } elsif ($link =~ /parentuser/) {
+                        $icon = '<i class="fa fa-fw fa-level-down fa-1_10x margined-left-1 margined-right--5"></i>';
+                    } else {
+                        $icon = '<i class="fa fa-fw fa-server-add"></i>';
+                    }
 
                 } elsif ($link =~ /\/virtual-server\/edit_domain\.cgi/ ||
                          $link =~ /\/server-manager\/edit_serv\.cgi/)
@@ -825,24 +831,19 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-webmin scaled1_5"></i>';
                 }
 
-                # Print Virtual Server Summary link
-                my $print_server_summary = sub {
-                    my ($dom_id) = @_;
-                    return '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                      $theme_webprefix . '/virtual-server/summary_domain.cgi?dom=' .
-                      $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                      $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
-                };
-                if ((&webmin_user_is_admin() || $get_user_level eq '1') &&
-                    $link =~ /\/virtual-server\/domain_form\.cgi/ &&
-                    nav_virtualmin_domain_available_count())
-                {
-                    my $dom_id = $item->{'link'};
-                    $dom_id =~ /gparent=(\d+)/;
-                    $dom_id = $1;
-                    if ($dom_id) {
-                        $rv .= &$print_server_summary($dom_id);
-                    }
+                # Check for 'Virtual Server Summary' link                
+                if (!$summary && ((&webmin_user_is_admin() || $get_user_level eq '1') &&
+                    nav_virtualmin_domain_available_count())) {
+                        my ($dom_id) = $item->{'link'};
+                        $dom_id =~ /gparent=(\d+)/;
+                        $dom_id = $1;
+                        if ($dom_id) {
+                            $summary =
+                                '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
+                                $theme_webprefix . '/virtual-server/summary_domain.cgi?dom=' .
+                                $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
+                                $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                        }
                 }
 
                 # Set variable in case it hasn't been set before
@@ -944,7 +945,7 @@ sub nav_list_combined_menu
                     $rv .= ui_hidden(@$h);
                 }
 
-                $rv .= $item->{'desc'}, "\n";
+                $rv .= $item->{'desc'};
                 if ($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') {
                     if ($item->{'name'} eq 'dname' && $item->{'module'} eq 'virtual-server') {
 
@@ -971,6 +972,7 @@ sub nav_list_combined_menu
                     $rv .= ui_select($item->{'name'}, $item->{'value'}, $item->{'menu'}, 1, 0, 0, 0, $style);
                 }
                 $rv .= "</form></li>\n";
+                $rv .= $summary if ($summary); # Add summary link
             }
         }
     }
