@@ -144,7 +144,7 @@ sub theme_header
               "+2";
             print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
               ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
-            print "<br>$_[9]\n" if ($_[9]);
+            print "<br><span data-main_title_sub>$_[9]</span>\n" if ($_[9]);
             if ($theme_ui_post_header_text) {
                 print "<span data-sub_title><br>$theme_ui_post_header_text</span>";
             } else {
