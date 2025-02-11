@@ -589,9 +589,10 @@ sub nav_cat
 
 sub nav_search
 {
+    my $new_layout = shift;
     my $rv = "<li><br></li>";
     if (-r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'}) {
-        $rv = "<li class=\"menu-container search-form-container\">\n";
+        $rv = "<li class=\"menu-container search-form-container" . ($new_layout ? " new-layout" : "") . "\">\n";
         $rv .= "<form id=\"webmin_search_form\" action=\"$theme_webprefix/webmin_search.cgi\" role=\"search\">\n";
         $rv .= "<div class=\"form-group\">\n";
         $rv .=
@@ -698,6 +699,7 @@ sub nav_list_combined_menu
 {
     my ($modules, $items, $id, $group, $page) = @_;
     my ($nav_pos, $extra_links, $summary, $rv, $rv_after, $login_mode);
+    my $search_bar = '';
 
     my $gwp = sub {
         my ($link) = @_;
@@ -718,6 +720,26 @@ sub nav_list_combined_menu
         }
         return $link;
     };
+    
+    # Support upcoming change to navigation menu in Virtualmin
+    my $vm_new_format = grep { $_->{'format'} eq 'new' &&
+                               $_->{'module'} eq 'virtual-server' } @$items;
+    my $vm_has_menu = grep { $_->{'type'} eq 'menu' &&
+                             $_->{'module'} eq 'virtual-server' } @$items;
+    my $vm_has_new_domform = grep { $_->{'format'} eq 'link-new' &&
+                                    $_->{'module'} eq 'virtual-server' } @$items;
+    if ($vm_new_format) {
+        if ($vm_has_new_domform) {
+            my @vm_hr = grep { $_->{'type'} eq 'hr' &&
+                               $_->{'module'} eq 'virtual-server' } @$items;
+                    if (@vm_hr > 2) {
+                        $items = [ grep { $_ != $vm_hr[0] } @$items ];
+                        $items = [ grep { $_ != $vm_hr[1] } @$items ] if (!$vm_has_menu);
+                    }
+        }
+        $search_bar = nav_search($vm_new_format);
+    }
+
     foreach my $item (@$items) {
         if ((grep {$_ eq $item->{'module'}} @{$modules}) || $group) {
 
@@ -928,8 +950,17 @@ sub nav_list_combined_menu
                 }
                 $rv .= "</ul></li>\n";
             } elsif ($item->{'type'} eq 'hr') {
-                if ($nav_pos++ eq '1') {
-                    $rv .= nav_search();
+                $nav_pos++;
+                my $separator = '<li class="menu-container menu-separator"><span class="hr"></span></li>';
+                if ($vm_new_format) {
+                    if ($nav_pos eq '2') {
+                        $rv .= $separator;
+                    }
+                }
+                else {
+                    if ($nav_pos eq '2') {
+                        $rv .= nav_search($vm_new_format);
+                    }
                 }
             } elsif (($item->{'type'} eq 'menu' || $item->{'type'} eq 'input') &&
                      $item->{'module'} ne 'mailbox')
@@ -976,7 +1007,7 @@ sub nav_list_combined_menu
             }
         }
     }
-    return { 'before' => $rv,
+    return { 'before' => $search_bar . $rv,
              'after'  => $rv_after,
              'mode'   => $login_mode };
 }
