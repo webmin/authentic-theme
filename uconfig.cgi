@@ -95,7 +95,7 @@ if (@sections > 1) {
     # We have some sections .. show a menu to select
     print &ui_form_start("uconfig.cgi");
     print &ui_hidden("module", $module), "\n";
-    print &ui_span_local($theme_text{'settings_config_configuration_category'} . ":", 'row-block-label') . "\n";
+    print &ui_span_local($theme_text{'settings_config_configuration_category'}, 'row-block-label') . "\n";
     print &ui_select("section", $in{'section'}, \@sections, 1, 0, 0, 0, "onChange='form.submit()'");
     print &ui_button_group_local(
                                  (
