@@ -853,21 +853,6 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-webmin scaled1_5"></i>';
                 }
 
-                # Check for 'Virtual Server Summary' link                
-                if (!$summary && ((&webmin_user_is_admin() || $get_user_level eq '1') &&
-                    nav_virtualmin_domain_available_count())) {
-                        my ($dom_id) = $item->{'link'};
-                        $dom_id =~ /gparent=(\d+)/;
-                        $dom_id = $1;
-                        if ($dom_id) {
-                            $summary =
-                                '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                                $theme_webprefix . '/virtual-server/summary_domain.cgi?dom=' .
-                                $dom_id . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                                $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
-                        }
-                }
-
                 # Set variable in case it hasn't been set before
                 if (!length $link) {
                     $icon = undef;
@@ -1001,6 +986,16 @@ sub nav_list_combined_menu
 
                     # Build select menu
                     $rv .= ui_select($item->{'name'}, $item->{'value'}, $item->{'menu'}, 1, 0, 0, 0, $style);
+
+                    # Check for 'Virtual Server Summary' link                
+                    if (!$summary && ((&webmin_user_is_admin() || $get_user_level eq '1') &&
+                        nav_virtualmin_domain_available_count())) {
+                            $summary = '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
+                                $theme_webprefix . '/virtual-server/summary_domain.cgi?dom=' .
+                                $item->{'value'} . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
+                                $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
+                    }
+
                 }
                 $rv .= "</form></li>\n";
                 $rv .= $summary if ($summary); # Add summary link
