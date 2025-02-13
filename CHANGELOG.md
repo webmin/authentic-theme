@@ -1,5 +1,31 @@
 ## Changelog
 
+#### Version 23.00 (February 14, 2025)
+
+* Add ability to zoom the terminal window in/out using standard hotkeys  
+* Add support for CPU and fan data in live stats  
+* Add an option to select the retention period for live stats  
+* Add labels to I/O graphs for better readability  
+* Improve the Bandwidth Monitoring module display  
+* Enhance color palettes and contrast for better accessibility  
+* Add full support for the new Virtualmin License Manager page  
+* Improve sorting for date-based columns in data tables  
+* Account for non-essential motion settings based on OS preferences  
+* Enhance display support for the Fetchmail module  
+* Fix long subtitles wrapping correctly in headers  
+* Stop adding domains to autocomplete in Virtualmin  
+* Fix page progress issues when installing SSL certificates in Virtualmin  
+* Check first if delete, rename, paste, and save are allowed in File Manager
+* Fix "DirectoryMatch" highlighting when manually editing Apache config files  
+* Correctly handle teletype text inside error messages  
+* Fix live history stats display when using proxy servers via link
+* Prevent the theme page from getting stuck after using the HTTP Tunnel module  
+* Fix Cloudmin backup progressive output issues  
+* Remove unmaintained language translations  
+* Update upstream libraries
+
+<!--- separator --->
+
 #### Version 21.20.7 (August 7, 2024)
 * Add network I/O support in real-time monitoring for FreeBSD
 * Fix network I/O calculations on Linux systems
@@ -63,8 +89,6 @@
 * Fix to prevent the display of partially loaded navigation menu
 * Fix to correctly wrap mail headers in Usermin
 * Fix XSS-related issues
-
-<!--- separator --->
 
 #### Version 21.10 (March 31, 2024)
 * Add improved upload progress indicator [#1692](https://github.com/authentic-theme/authentic-theme/issues/1692)
