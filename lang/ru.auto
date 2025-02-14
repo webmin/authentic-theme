@@ -1209,3 +1209,4 @@ settings_sysinfo_real_time_status_history_duration5=12 часов
 settings_sysinfo_real_time_status_history_duration6=18 часов
 settings_sysinfo_real_time_status_history_duration7=24 часа
 theme_xhred_license_purchase=Купить лицензию
+settings_right_table_links_sorted=Сортировать ссылки таблицы в алфавитном порядке

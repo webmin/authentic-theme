@@ -1416,3 +1416,4 @@ settings_sysinfo_real_time_status_history_duration5=12시간
 settings_sysinfo_real_time_status_history_duration6=18시간
 settings_sysinfo_real_time_status_history_duration7=24시간
 theme_xhred_license_purchase=라이센스 구매
+settings_right_table_links_sorted=테이블 링크를 알파벳순으로 정렬
