@@ -8,7 +8,8 @@
 use strict;
 
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
-our ($config_directory, $current_theme, $root_directory, $var_directory, %text);
+our ($config_directory, $current_theme, $root_directory, $var_directory,
+     $base_remote_user, %text);
 
 # Check access
 init_prefail();
@@ -86,7 +87,7 @@ foreach my $k (keys %miniserv) {
 }
 
 # Allocate port
-my $port = allocate_miniserv_websocket($current_theme);
+my $port = allocate_miniserv_websocket($current_theme, $base_remote_user);
 
 # Launch the stats server
 my $server_name = "stats.pl";
