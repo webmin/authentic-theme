@@ -1,7 +1,14 @@
 ## Changelog
 
-#### Version 23.00 (February 14, 2025)
+#### Version 23.01 (February 16, 2025)
+* Fix the line height of plain-text email body
+* Fix bottom controls positioning when viewing mail
+* Fix horizontal scrollbars when scrolling tables
+* Fix server pagination controls size
+* Fix various bugs in dark palette
+* Change to prevent disk space calculation in File Manager on spacebar by default
 
+#### Version 23.00 (February 14, 2025)
 * Add ability to zoom the terminal window in/out using standard hotkeys  
 * Add support for CPU and fan data in live stats  
 * Add an option to select the retention period for live stats  
