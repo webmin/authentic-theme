@@ -1544,16 +1544,21 @@ sub theme_redirect_download
 
 sub theme_js_redirect
 {
-    my ($url, $window) = @_;
+    my ($url, $window, $timeout) = @_;
     $window ||= "window";
+    $timeout ||= 100;
     if ($url =~ /^\//) {
         # If the URL is like /foo , add webprefix
         $url = &get_webprefix().$url;
     }
-    return
-"<span class=\"loading-dots\"></span><script type='text/javascript'>var v___theme_postponed_fetcher = setTimeout(function(){ location.href = '"
-      . quote_escape($url)
-      . "';}, 2000);</script>\n";
+    return "<script type='text/javascript'>"."
+            try {
+                progress.end();
+                set_onbeforeunload_status_native(0);
+                set_onbeforeunload_status(0, 0);
+            } catch (e) {};
+            setTimeout(function(){location.href='@{[quote_escape($url)]}'},$timeout)".
+           "</script>\n";
 }
 
 sub theme_post_save_domain
@@ -1607,6 +1612,12 @@ sub theme_post_change_theme
 
     # Remove error handler
     error_40x_handler(1);
+    
+    # Remove service worker
+    print '<script>';
+    print 'navigator.serviceWorker.getRegistrations().then(
+        registrations => {registrations.forEach(reg => reg.unregister());});';
+    print "</script>\n";
 }
 
 sub theme_post_change_modules
