@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 23.02 (March 1, 2025)
+* Fix to unregister service worker on theme change
+* Add improvements to JavaScript redirect function
+
 #### Version 23.01 (February 16, 2025)
 * Fix the line height of plain-text email body
 * Fix bottom controls positioning when viewing mail
