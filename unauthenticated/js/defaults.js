@@ -255,7 +255,7 @@ var
                     ['dnsclouds', 'AWS Amazon Route 53 Google Cloud DNS gcdns Cloudflare DNS'],
                     ['list_clouds', 'AWS Amazon S3 Rackspace Cloud Files Google Cloud Storage Dropbox Backblaze Azure Blob Storage'],
                     ['edit_newvalidate', 'fix reset'],
-                    ['list_scripts', 'wordpress roundcube whmcs phpmyadmin'],
+                    ['list_scripts', 'wordpress roundcube whmcs phpmyadmin wp workbench'],
                     ['list_users', 'new add password realname fullname email database permissions quota mail forwarding shell thunderbird outlook geary'],
                     ['edit_domain', 'domain update plan template password features dns website database mariadb mysql mail spam webalizer webmin login awstats'],
                     ['domain_form', 'new add create domain alias subdomain sub-domain subserver sub-server top-level'],
