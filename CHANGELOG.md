@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 23.02 (March 1, 2025)
+#### Version 23.02 (March 5, 2025)
 * Fix to unregister service worker on theme change
 * Add improvements to JavaScript redirect function
 
