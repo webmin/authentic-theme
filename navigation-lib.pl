@@ -698,7 +698,7 @@ sub nav_theme_links
 sub nav_list_combined_menu
 {
     my ($modules, $items, $id, $group, $page) = @_;
-    my ($nav_pos, $extra_links, $summary, $rv, $rv_after, $login_mode);
+    my ($nav_pos, $extra_links, $rv, $rv_after, $login_mode);
     my $search_bar = '';
 
     my $gwp = sub {
@@ -986,19 +986,8 @@ sub nav_list_combined_menu
 
                     # Build select menu
                     $rv .= ui_select($item->{'name'}, $item->{'value'}, $item->{'menu'}, 1, 0, 0, 0, $style);
-
-                    # Check for 'Virtual Server Summary' link                
-                    if (!$summary && ((&webmin_user_is_admin() || $get_user_level eq '1') &&
-                        nav_virtualmin_domain_available_count())) {
-                            $summary = '<li data-linked><a target="page" class="navigation_module_trigger" href="' .
-                                $theme_webprefix . '/virtual-server/summary_domain.cgi?dom=' .
-                                $item->{'value'} . '"><i class="fa fa-fw fa-info-circle"></i> <span>' .
-                                $theme_text{'right_vm_server_summary'} . '</span></a></li>' . "\n";
-                    }
-
                 }
                 $rv .= "</form></li>\n";
-                $rv .= $summary if ($summary); # Add summary link
             }
         }
     }
