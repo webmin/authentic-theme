@@ -86,15 +86,6 @@ session_logout=Logout successful. Use the form below to login again.
 session_timed_out=Session timed out after $1 minutes of inactivity.
 session_twofailed=Two-factor authentication failed: $1
 
-
-
-
-
-
-
-
-
-
 settings_right_options=Options
 settings_right_restore_defaults=Restore defaults
 settings_right_restored=Restored
@@ -188,7 +179,7 @@ theme_update_notice=Update Notice
 theme_version=Authentic theme version
 
 
-# Version 17.40
+#17.40
 theme_xhred_global_error=Error
 theme_global_warning=Warning
 theme_global_success=Success
@@ -261,6 +252,7 @@ theme_xhred_notifications_firewall_danger_message=It appears that <strong>Config
 
 theme_xhred_notifications_firewall_warning=Firewall Warning
 
+
 #17.50
 settings_grayscale_level_navigation=Grayscale filter
 settings_grayscale_level_navigation_description=Default/current values <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
@@ -290,6 +282,7 @@ theme_xhred_filemanager_context_paste=Paste
 theme_xhred_filemanager_context_chmod=Change permissions
 theme_xhred_filemanager_context_chown=Change ownership
 
+
 #17.51
 theme_xhred_filemanager_context_new=New
 theme_xhred_filemanager_context_newarchive=Create new archive
@@ -301,10 +294,12 @@ theme_xhred_filemanager_context_goto=Open item location
 theme_xhred_filemanager_context_properties=Properties
 theme_xhred_filemanager_context_search=Search
 
+
 #17.52
 theme_xhred_filemanager_context_deselect_all=Deselect All
 theme_xhred_filemanager_context_upload=Upload to current directory
 theme_xhred_filemanager_context_download=Download from remote URL
+
 
 #17.53
 theme_config_virtualmin=Virtualmin Virtual Servers
@@ -315,8 +310,10 @@ theme_xhred_filemanager_context_bookmarks=Bookmarks
 theme_xhred_filemanager_context_bookmark_current=Bookmark currently opened path
 theme_xhred_filemanager_context_transfer=Transfer
 
+
 #17.54
 theme_xhred_filemanager_title_symlink_target=Link target
+
 
 #17.60
 right_unlimited=Unlimited
@@ -324,6 +321,7 @@ settings_leftmenu_width=Preferable width
 settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Show switches reversed
 settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required
+
 
 #17.63
 theme_xhred_filemanager_context_calculate_selected_size=Calculate selected size
@@ -338,6 +336,7 @@ theme_xhred_datatable_sloadingrecords=Loading
 theme_xhred_datatable_sprocessing=Processing...
 theme_xhred_datatable_szerorecords=No matching records found
 
+
 #17.64
 theme_xhred_filemanager_file_edit_but_not_saved=File has been edited but hasn't been saved.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=What do you want to do?
@@ -347,9 +346,11 @@ theme_xhred_global_close_without_saving=Close without saving
 theme_xhred_global_continue_editing=Continue editing
 theme_xhred_filemanager_context_download_file=Download
 
+
 #17.65
 settings_sysinfo_easypie_charts_width=Width of charts
 settings_sysinfo_easypie_charts_scale=Scale length of charts
+
 
 #17.80
 right_return_theme_options=theme options
@@ -381,11 +382,13 @@ theme_xhred_filemanager_hide_actions=Hide actions column
 theme_xhred_filemanager_hovered_toolbar=Activate dropdown in toolbar on mouse hover
 theme_xhred_filemanager_context_delete_selected=Delete selected
 
+
 #17.83
 theme_xhred_database_adding_new_row=Adding new row
 theme_xhred_database_editing_row=Editing selected row
 theme_xhred_database_editing_rows=Editing selected rows
 theme_xhred_database_adding_new_row_data=Set data
+
 
 #17.84
 theme_xhred_datatable_filter=Filter
@@ -448,7 +451,6 @@ filemanager_create_object_denied=Can't create $3 <tt>$1</tt> in <tt>$2</tt> - pe
 theme_xhred_filemanager_paste_warning=Failed to paste target(s). It is possible that requested object(s) could have been <em>renamed, moved</em> or <em>deleted</em> while/before pasting
 
 theme_xhred_filemanager_delete_warning=Deletion has finished successfully but not for all objects. It is possible that requested object(s) could have been <em>renamed</em> or <em>moved</em> before deletion. Restricted permissions (attributes) is another possible cause. Error message:
-
 
 filemanager_rename_exists=$3 with name <tt>$1</tt> already exists in <tt>$2</tt>
 filemanager_rename_denied=Can not rename the $3. This might happen because the source $3 has been removed or due to restricted permissions.
@@ -1432,7 +1434,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Minimum column width
 theme_xhred_columns_layout_vertical_opts_break_title=Column overflow action
 theme_xhred_columns_layout_vertical_opts_break_new=Break
 theme_xhred_columns_layout_vertical_opts_break_scroll=Scroll
-
 theme_xhred_columns_layout_remove=Hide This Widget
 theme_xhred_columns_layout_remove_button=Save and Hide
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontal layout cannot be used in the mobile mode, specifically when the screen width is less than 992px
@@ -1466,17 +1467,17 @@ theme_xhred_theme_version=Authentic theme version
 theme_xhred_body_updates=Package updates
 
 
-# 21.20
+#21.20
 theme_xhred_hotkey_switch_theme=Switch theme
 
 
-# 21.20.2
+#21.20.2
 theme_xhred_filemanager_upload_status_ok=Upload successful
 theme_xhred_filemanager_upload_status_err=Upload failed:
 theme_xhred_filemanager_download_status_err=Download failed:
 
 
-# 21.20.7
+#21.20.7
 theme_xhred_dashboard_chart_disk_read=Read
 theme_xhred_dashboard_chart_disk_write=Write
 theme_xhred_dashboard_chart_net_read=In
