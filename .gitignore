@@ -3,3 +3,4 @@
 .crossnote/parser.js
 .crossnote/style.less
 .scripts-project/sync:repos-sf-to-gh.sh
+.DS_Store
