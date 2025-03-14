@@ -1379,7 +1379,8 @@ sub theme_ui_radio_table
 sub theme_ui_make_date
 {
     my ($date, $ts) = @_;
-    return $date if ($main::webmin_script_type ne 'web');
+    return $date if ($main::webmin_script_type ne 'web' ||
+                     $main::theme_prevent_make_date);
     return "<span data-filesize-bytes='$ts'>$date</span>";
 }
 
