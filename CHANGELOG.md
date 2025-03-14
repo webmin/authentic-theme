@@ -1,5 +1,11 @@
 ## Changelog
 
+#### Version 23.03 (March 14, 2025)
+* Update icons for PHP Configuration module
+* Update German translations
+* Remove the mostly redundant virtual server summary menu link in Virtualmin
+* Fix minor styling issues for navigation menu
+
 #### Version 23.02 (March 5, 2025)
 * Fix to unregister service worker on theme change
 * Add improvements to JavaScript redirect function
