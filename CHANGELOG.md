@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 23.03.1 (March 16, 2025)
+* Add an API to allow modules to determine whether tables should be sortable
+
 #### Version 23.03 (March 14, 2025)
 * Update icons for PHP Configuration module
 * Update German translations
