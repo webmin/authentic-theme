@@ -73,7 +73,8 @@ sub theme_header
         # Print default container
         print '<div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
-        print '<div class="panel panel-default">' . "\n";
+        print '<div data-module-sortable="' . ($this_module_info{'sortable'} ? 1 : 0) . 
+              '" class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
         print $tconfig{'preheader'};
         print '<div class="header">
