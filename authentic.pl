@@ -73,7 +73,8 @@ sub theme_header
         # Print default container
         print '<div class="container-fluid col-lg-10 col-lg-offset-1" data-dcontainer="1">' . "\n";
         my %this_module_info = &get_module_info(&get_module_name());
-        print '<div class="panel panel-default">' . "\n";
+        print '<div data-module-sortable="' . ($this_module_info{'sortable'} ? 1 : 0) . 
+              '" class="panel panel-default">' . "\n";
         print '<div class="panel-heading">' . "\n";
         print $tconfig{'preheader'};
         print '<div class="header">
@@ -1379,7 +1380,8 @@ sub theme_ui_radio_table
 sub theme_ui_make_date
 {
     my ($date, $ts) = @_;
-    return $date if ($main::webmin_script_type ne 'web');
+    return $date if ($main::webmin_script_type ne 'web' ||
+                     $main::theme_prevent_make_date);
     return "<span data-filesize-bytes='$ts'>$date</span>";
 }
 
