@@ -557,11 +557,13 @@ sub theme_ui_help
 
 sub theme_hlink
 {
-    my $mod    = $_[2] ? $_[2] : &get_module_name();
-    my $width  = $_[3] || $tconfig{'help_width'}  || $gconfig{'help_width'}  || 600;
-    my $height = $_[4] || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
+    my ($txt, $page, $mod, $width, $height, $tmpl) = @_;
+    $mod ||= &get_module_name();
+    $width  = $width || $tconfig{'help_width'}  || $gconfig{'help_width'}  || 600;
+    $height = $height || $tconfig{'help_height'} || $gconfig{'help_height'} || 400;
+    my $params = $tmpl ? "?".join("&", map { "tmpl_".&urlize($_)."=".&urlize($tmpl->{$_}) } keys %{$tmpl}) : "";
     return
-"<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$_[1]\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$_[1]\">$_[0]</a>";
+"<a onClick='window.open(\"$theme_webprefix/help.cgi/$mod/$page$params\", \"help\", \"toolbar=no,menubar=no,scrollbars=yes,width=$width,height=$height,resizable=yes\"); return false' href=\"$theme_webprefix/help.cgi/$mod/$page$params\">$txt</a>";
 }
 
 sub theme_ui_link
