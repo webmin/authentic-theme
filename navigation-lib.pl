@@ -542,8 +542,8 @@ sub nav_cat
                       'global_add'        => 'fa-plus',
                       'backup'            => 'fa-backup fa-1_15x',
                       'global_backup'     => 'fa-backup fa-1_15x',
-                      'global_server',    => 'fa-cogs',
-                      'cat_server',       => 'fa-cogs',
+                      'global_server'    => 'fa-cogs',
+                      'cat_server'       => 'fa-cogs',
                       'global_system'     => 'fa-cogs',
                       'global_delete'     => 'fa-plug',
                       'cat_delete'        => 'fa-plug',
@@ -720,7 +720,7 @@ sub nav_list_combined_menu
         }
         return $link;
     };
-    
+
     # Support upcoming change to navigation menu in Virtualmin
     my $vm_new_format = grep { $_->{'format'} eq 'new' &&
                                $_->{'module'} eq 'virtual-server' } @$items;

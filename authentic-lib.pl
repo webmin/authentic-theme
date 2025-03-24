@@ -254,7 +254,7 @@ sub get_extended_sysinfo
                             <span data-chart="proc"></span>
                             <span data-chart="disk"></span>
                             <span data-chart="net"></span>';
-            my $live_stats_not_live; 
+            my $live_stats_not_live;
             $live_stats_not_live =
                 '<span data-live="'.
                         ($theme_server_webprefix ? 0 : 1).'"'.get_button_tooltip(
@@ -697,7 +697,7 @@ sub get_sysinfo_vars
         } else {
             $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
         }
-        
+
         # EOL info
         my $eol = $gconfig{'os_eol_expired'} || $gconfig{'os_eol_expiring'};
         if ($eol) {
@@ -973,7 +973,7 @@ sub get_sysinfo_vars
                         $uptime_text =~ s/es/e/;
                     }
                 }
-                $uptime = !$uptime_text ? undef : 
+                $uptime = !$uptime_text ? undef :
                   (foreign_available("init") ? '<a href=\'' . $theme_webprefix . '/init/\'>' . $uptime_text . '</a>' : $uptime_text);
             }
 
