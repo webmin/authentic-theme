@@ -154,10 +154,10 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print &ui_hidden('save',                     $in{'failed_save'});
     print &ui_hidden('failed_twofactor_attempt', $in{'failed_twofactor_attempt'});
     print '<div class="input-group form-group">' . "\n";
-    print
-'<input type="text" class="form-control session_login" name="twofactor" autocomplete="one-time-code" autocorrect="off" placeholder="'
-      . &theme_text('theme_xhred_login_token')
-      . '" autofocus>' . "\n";
+    print &ui_textbox("twofactor", undef, 20, 0, undef,
+      "autocomplete='one-time-code' autocorrect='off' autocapitalize='none' ".
+      "placeholder='$theme_text{'theme_xhred_login_token'}' autofocus", 
+      'session_login', 1);
     print '<span class="input-group-addon"><i class="fa fa-fw fa-qrcode"></i></span>' . "\n";
     print '</div>' . "\n";
     print '<div class="form-group form-signin-group">';
@@ -178,10 +178,12 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
     print '</div>' . "\n";
     print '<div class="input-group form-group">' . "\n";
+    print &ui_password("pass", undef, 20, 0, undef,
+      "autocomplete='off' autocorrect='off' autocapitalize='none' ".
+      "placeholder='$theme_text{'theme_xhred_login_pass'}' ".
+        ($in{"failed"} ? ' autofocus' : '')."", 
+      'session_login', 1);
     print
-'<input type="password" class="form-control session_login" name="pass" autocomplete="off" autocorrect="off" placeholder="'
-      . &theme_text('theme_xhred_login_pass')
-      . '"' . ($in{"failed"} ? ' autofocus' : '') . '>' . "\n";
     print '<span class="input-group-addon"><i class="fa fa-fw fa2 fa2-key"></i></span>' . "\n";
     print '</div>' . "\n";
 

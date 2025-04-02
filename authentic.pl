@@ -716,11 +716,13 @@ sub theme_ui_textbox
 
 sub theme_ui_password
 {
-    my ($name, $value, $size, $dis, $max, $tags) = @_;
-    my $rv;
-
-    $rv .=
-'<input spellcheck="false" style="display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align:middle" class="form-control ui_password" type="password" ';
+    my ($name, $value, $size, $dis, $max, $tags, $class, $nostyle) = @_;
+    $class = $class ? " $class" : "";
+    my $style = ' style="display: inline; width: auto; height: 28px;'.
+                ' padding-top: 0; padding-bottom: 2px; vertical-align:middle"';
+    $style = '' if ($nostyle);
+    my $rv .=
+"<input$style class=\"form-control ui_password$class\" type=\"password\" ";
     $rv .= 'name="' . &quote_escape($name) . '" ';
     $rv .= 'value="' . &quote_escape($value) . '" ';
     $rv .= 'size="' . $size . '" ';
