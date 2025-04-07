@@ -198,7 +198,8 @@ sub message_addressee
             $x_name = undef;
         }
         if ($x_address || $x_name) {
-            $x = ui_bold(html_escape($x_name || $x_address)) . html_escape(' &lt;' . trim($x_address || $x_name) . '&gt;');
+            $x = ui_text(html_escape($x_name)) . ($x_address ?
+                (' &lt;' . ui_text(html_escape(trim($x_address))) . '&gt;') : '');
         }
         push(@addressees_proc, $x);
     }
@@ -739,14 +740,16 @@ sub ui_bold
 sub ui_italic
 {
     my ($str, $cls) = @_;
-    return '<em class=\'text-' . $cls . '\'>' . html_escape($str) . '</em>';
+    $str = filter_javascript($str);
+    return '<em class=\'text-' . $cls . '\'>' . $str . '</em>';
 
 }
 
 sub ui_text
 {
     my ($str, $cls) = @_;
-    return '<span class=\'text-' . $cls . '\'>' . html_escape($str) . '</span>';
+    $str = filter_javascript($str);
+    return '<span class=\'text-' . $cls . '\'>' . $str . '</span>';
 
 }
 
