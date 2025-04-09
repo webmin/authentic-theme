@@ -380,8 +380,10 @@ sub message_flags
     if (mail_has_attachments($mail, $folder)) {
         $all .= ui_icon('paperclip fa-rotate-315 mail-list-attachment',
                         (
-                         ui_text($text{'extensions_mail_flag_attachment'} . "<br>(" . theme_nice_size_local($mail->{'size'}, 1024) . ")"
-                         )
+                         ui_text(
+                            html_escape($text{'extensions_mail_flag_attachment'} . 
+                                "<br>(" . theme_nice_size_local($mail->{'size'},
+                                    1024) . ")"))
                         ),
                         'auto top',
                         1);
