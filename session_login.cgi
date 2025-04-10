@@ -170,6 +170,11 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
     print '<div class="input-group form-group">' . "\n";
     my $autocomplete = $gconfig{'noremember'} ? "off" : "username";
+    eval {
+      require utf8;
+      utf8::decode($in{'failed'});
+    };
+    $in{'failed'} = "" if ($in{'failed'} !~ /^[\p{L}\p{N}_.-]+$/);
     print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
       "autocomplete='$autocomplete' autocorrect='off' autocapitalize='none' ".
       "placeholder='$theme_text{'theme_xhred_login_user'}'" .
