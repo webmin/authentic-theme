@@ -19,10 +19,13 @@ if (!$@) {
 our ($config_directory, $var_directory, $current_theme);
 
 # Load theme language and settings
-our %text = load_language($current_theme);
+our %stats_text = load_language($current_theme);
+%stats_text = map { $_ => $stats_text{$_} }
+    qw(body_load body_used_cached_total body_used
+       index_noadmin_eaccess index_mods_missing);
 my %settings = settings("$config_directory/$current_theme/settings.js", 'settings_');
 
-# Reuqired libs
+# Required libs
 my $foreign_check_proc = foreign_check("proc");
 if ($foreign_check_proc) {
     foreign_require("proc");
@@ -39,6 +42,13 @@ my $acl_system_status = {
     virt => acl_system_status('virt'),
     temp => acl_system_status('temp'),
 };
+
+sub stats_text
+{
+    my $rv = $stats_text{ $_[0] };
+    $rv =~ s/\$(\d+)/$1 < @_ ? $_[$1] : '$'.$1/ge;
+    return $rv;
+}
 
 # Check if feature is enabled
 sub get_stats_option
@@ -104,7 +114,7 @@ sub get_stats_now
             if (@cpuinfo && @cpuusage) {
                 # CPU load
                 my $cpu = int($cpuusage[0] + $cpuusage[1] + $cpuusage[3]);
-                $data{'cpu'} = [$cpu, text('body_load', ($cpuinfo[0], $cpuinfo[1], $cpuinfo[2]))];
+                $data{'cpu'} = [$cpu, stats_text('body_load', ($cpuinfo[0], $cpuinfo[1], $cpuinfo[2]))];
                 $gadd->('cpu', $cpu);
                 # Disk I/O
                 my $in  = $cpuusage[5];
@@ -128,7 +138,7 @@ sub get_stats_now
                 if (@memory && $memory[0] && $memory[0] > 0) {
                     my $mem = (100 - int(($memory[1] / $memory[0]) * 100));
                     $data{'mem'} = [$mem,
-                                    text(($memory[4] ? 'body_used_cached_total' : 'body_used'),
+                                    stats_text(($memory[4] ? 'body_used_cached_total' : 'body_used'),
                                             nice_size($memory[0] * 1024),
                                             nice_size(($memory[0] - $memory[1]) * 1024),
                                             ($memory[4] ? nice_size($memory[4] * 1024) : undef)
@@ -138,7 +148,7 @@ sub get_stats_now
                 if (@memory && $memory[2] && $memory[2] > 0) {
                     my $virt = (100 - int(($memory[3] / $memory[2]) * 100));
                     $data{'virt'} = [$virt,
-                                        text('body_used',
+                                        stats_text('body_used',
                                             nice_size(($memory[2]) * 1024),
                                             nice_size(($memory[2] - $memory[3]) * 1024)
                                         )];

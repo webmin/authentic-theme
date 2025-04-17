@@ -9,12 +9,12 @@ use strict;
 
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 our ($config_directory, $current_theme, $root_directory, $var_directory,
-     $base_remote_user, %text);
+     $base_remote_user, %stats_text);
 
 # Check access
 init_prefail();
 if (!defined(&webmin_user_is_admin) || !webmin_user_is_admin()) {
-    print_json({ error => $text{'index_noadmin_eaccess'}, access => 0 });
+    print_json({ error => $stats_text{'index_noadmin_eaccess'}, access => 0 });
     exit;
 }
 
@@ -27,7 +27,7 @@ foreach my $modname (@modnames) {
     eval "use ${modname};";
     if ($@) {
         push(@errors, $@, $modname);
-        push(@errors, text('index_mods_missing', $modname));
+        push(@errors, stats_text('index_mods_missing', $modname));
         last;
     }
 }
