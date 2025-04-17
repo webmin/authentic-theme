@@ -107,7 +107,7 @@ Net::WebSocket::Server->new(
             $stats_period = merge_stats($stats_period, $stats_now_graphs);
         }
         # Save stats to history and reset cache
-        if ($serv->{'ticked'}++ % 20 == 0) {
+        if ($serv->{'ticked'}++ % 15 == 0) {
             save_stats_history($stats_period)
                 if (get_stats_option('status', 1) != 2);
             undef($stats_period);

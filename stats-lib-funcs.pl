@@ -213,7 +213,7 @@ sub get_stats_history
 {
     my ($noempty) = @_;
     my $file = get_stats_history_file();
-    my $graphs = jsonify(read_file_contents($file));
+    my $graphs = jsonify(theme_read_file_contents($file));
     # No data yet
     if (!keys %{$graphs}) {
         unlink($file);
@@ -299,11 +299,8 @@ sub save_stats_history
     # Trim dataset
     trim_stats_history($graphs);
     # Save data
-    my $file = "$var_directory/modules/$current_theme".
-                    "/real-time-monitoring.json";
-    lock_file($file, undef, undef, 1);
-    write_file_contents($file, $json->encode($graphs));
-    unlock_file($file);
+    my $file = "$var_directory/modules/$current_theme/real-time-monitoring.json";
+    theme_write_file_contents($file, $json->encode($graphs));
     # Release memory
     undef($graphs_chunk);
     undef($all_stats_histoy);
