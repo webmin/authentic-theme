@@ -167,7 +167,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
       '/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' . &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
     print '</div>';
 } else {
-    print '<p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
+    print '<div class="side1"><p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
     print '<div class="input-group form-group">' . "\n";
     my $autocomplete = $gconfig{'noremember'} ? "off" : "username";
     eval {
@@ -209,7 +209,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
           $link->[0] . ' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;' . $link->[1] . '</a>' . "\n";
     }
 
-    print '</div>';
+    print '</div></div>';
 
 }
 print '</form>' . "\n";
