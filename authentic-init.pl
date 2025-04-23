@@ -1596,8 +1596,7 @@ sub embed_login_head
         print '</style>';
 
     } else {
-        print '<link href="' . $theme_webprefix .
-          '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
+        embed_css_bundle();
 
         print
 '<script>document.addEventListener("DOMContentLoaded", function(event) {var a=document.querySelectorAll(\'input[type="password"]\');i=0;
@@ -1605,7 +1604,6 @@ for(length=a.length;i<length;i++){var b=document.createElement("span"),d=30<a[i]
 c.getModifierState("CapsLock"))?this.nextSibling.classList.add("visible"):this.nextSibling.classList.remove("visible"))})};});function spinner() {var x = document.querySelector(\'button i.fa-sign-in:not(.invisible)\') || document.querySelector(\'button i.fa-qrcode:not(.invisible)\'),s = \'<span class="cspinner_container"><span class="cspinner"><span class="cspinner-icon white small"></span></span></span>\';if(x){x.classList.add("invisible"); x.insertAdjacentHTML(\'afterend\', s);x.parentNode.classList.add("disabled");x.parentNode.disabled=true}}setTimeout(function(){if(navigator&&navigator.oscpu){var t=navigator.oscpu,i=document.querySelector("html"),e="data-platform";t.indexOf("Linux")>-1?i.setAttribute(e,"linux"):t.indexOf("Windows")>-1&&i.setAttribute(e,"windows")}});</script>';
 
         embed_css_night_rider();
-        embed_css_fonts();
     }
 
     embed_background();
