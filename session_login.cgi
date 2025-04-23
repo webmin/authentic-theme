@@ -176,8 +176,8 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print '<div class="session_login_wrapper">';
     print '<div class="session_login_flipper">';
     
+    # Front side
     print '<div class="session_login_front">';
-    
     print '<p class="form-signin-paragraph">';
     print &theme_text('login_message') . "<strong> $host</strong></p>";
     
@@ -196,7 +196,6 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
       "placeholder='$theme_text{'theme_xhred_login_pass'}' ".
         ($in{"failed"} ? ' autofocus' : '')."", 
       'session_login', 1);
-    # print
     print '<span class="input-group-addon">';
     print '<i class="fa fa-fw fa2 fa2-key"></i></span>';
     print '</div>';
@@ -227,16 +226,18 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     }
 
     print '</div>'; # form sign-in group
-    print '</div>'; # front
+    print '</div>'; # front side end
+
+    # Back side
     print '<div class="session_login_back">';
     print '<p class="form-signin-paragraph">';
     print &theme_text('lost_message')."</p>";
     
     print '<div class="input-group form-group">';
-    print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
+    print &ui_textbox("forgot", $in{'failed'}, 20, 0, undef,
       "autocomplete='$autocomplete' autocorrect='off' autocapitalize='none' ".
-      "placeholder='$theme_text{'theme_xhred_login_user'}'" .
-        (!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
+      "placeholder='$theme_text{'theme_xhred_login_user'}' autofocus",
+      "session_login", 1);
     print '<span class="input-group-addon">';
     print '<i class="fa fa-fw fa-user-o"></i></span>';
     print '</div>';
@@ -250,8 +251,7 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
           "&nbsp;&nbsp;$theme_text{'login_back'}</a>";
 
     print '</div>'; # form sign-in group
-
-    print '</div>'; # back
+    print '</div>'; # back side end
 
     print '</div>'; # flipper
     print '</div>'; # wrapper
