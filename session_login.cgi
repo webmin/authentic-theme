@@ -167,30 +167,39 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
       '/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' . &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
     print '</div>';
 } else {
-    print '<div class="side1"><p class="form-signin-paragraph">' . &theme_text('login_message') . '<strong> ' . $host . '</strong></p>' . "\n";
-    print '<div class="input-group form-group">' . "\n";
-    my $autocomplete = $gconfig{'noremember'} ? "off" : "username";
     eval {
       require utf8;
       utf8::decode($in{'failed'});
     };
     $in{'failed'} = "" if ($in{'failed'} !~ /^[\p{L}\p{N}_.-]+$/);
+    my $autocomplete = $gconfig{'noremember'} ? "off" : "username";
+    print '<div class="session_login_wrapper">';
+    print '<div class="session_login_flipper">';
+    
+    print '<div class="session_login_front">';
+    
+    print '<p class="form-signin-paragraph">';
+    print &theme_text('login_message') . "<strong> $host</strong></p>";
+    
+    print '<div class="input-group form-group">';
     print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
       "autocomplete='$autocomplete' autocorrect='off' autocapitalize='none' ".
       "placeholder='$theme_text{'theme_xhred_login_user'}'" .
         (!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
+    print '<span class="input-group-addon">';
+    print '<i class="fa fa-fw fa-user"></i></span>';
+    print '</div>';
 
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-    print '</div>' . "\n";
-    print '<div class="input-group form-group">' . "\n";
+    print '<div class="input-group form-group">';
     print &ui_password("pass", undef, 20, 0, undef,
       "autocomplete='off' autocorrect='off' autocapitalize='none' ".
       "placeholder='$theme_text{'theme_xhred_login_pass'}' ".
         ($in{"failed"} ? ' autofocus' : '')."", 
       'session_login', 1);
-    print
-    print '<span class="input-group-addon"><i class="fa fa-fw fa2 fa2-key"></i></span>' . "\n";
-    print '</div>' . "\n";
+    # print
+    print '<span class="input-group-addon">';
+    print '<i class="fa fa-fw fa2 fa2-key"></i></span>';
+    print '</div>';
 
     if (!$gconfig{'noremember'}) {
         print '<div class="input-group form-group form-group-remember">
@@ -200,8 +209,16 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
         </div></div>' . "\n";
     }
     print '<div class="form-group form-signin-group">';
-    print '<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;' .
+    print '<button class="btn btn-primary" type="submit">';
+    print '<i class="fa fa-sign-in"></i>&nbsp;&nbsp;' .
       &theme_text('login_signin') . '</button>' . "\n";
+
+    if ($in{'failed'} && $gconfig{'forgot_pass'}) {
+      # Show forgotten password link
+      print "<a onclick=\"flipLoginCard()\" data-href=\"forgot_form.cgi?failed=@{[&html_escape($in{'failed'})]}\" ".
+            "class=\"btn btn-grey\"><i class=\"fa fa-unlock\"></i>".
+            "&nbsp;&nbsp;$text{'session_forgot'}</a>";
+    }
 
     if ($text{'session_postfix'} =~ "href") {
         my $link = get_link($text{'session_postfix'}, 'ugly');
@@ -209,7 +226,35 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
           $link->[0] . ' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;' . $link->[1] . '</a>' . "\n";
     }
 
-    print '</div></div>';
+    print '</div>'; # form sign-in group
+    print '</div>'; # front
+    print '<div class="session_login_back">';
+    print '<p class="form-signin-paragraph">';
+    print &theme_text('lost_message')."</p>";
+    
+    print '<div class="input-group form-group">';
+    print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
+      "autocomplete='$autocomplete' autocorrect='off' autocapitalize='none' ".
+      "placeholder='$theme_text{'theme_xhred_login_user'}'" .
+        (!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
+    print '<span class="input-group-addon">';
+    print '<i class="fa fa-fw fa-user-o"></i></span>';
+    print '</div>';
+    
+    print '<div class="form-group form-signin-group">';
+    print '<button class="btn btn-success" type="submit">';
+    print '<i class="fa2 fa2-email"></i>&nbsp;&nbsp;' .
+      &theme_text('login_recover') . '</button>' . "\n";
+    print "<a onclick=\"flipLoginCard()\"".
+          "class=\"btn btn-default\"><i class=\"fa fa-undo\"></i>".
+          "&nbsp;&nbsp;$theme_text{'login_back'}</a>";
+
+    print '</div>'; # form sign-in group
+
+    print '</div>'; # back
+
+    print '</div>'; # flipper
+    print '</div>'; # wrapper
 
 }
 print '</form>' . "\n";

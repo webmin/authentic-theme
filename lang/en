@@ -48,9 +48,12 @@ left_statistics=System Statistics
 
 login_danger=Danger!
 login_message=You must enter a username and password to login to the server on
+lost_message=If your Webmin login has a recovery email set, you can use this form to send yourself a password reset link
 theme_xhred_login_pass=Password
 login_save=Remember me
-login_signin=Sign in
+login_recover=Request Password Reset
+login_back=Go Back
+login_signin=Sign In
 login_success=Success!
 theme_xhred_login_token=Token
 theme_xhred_login_user=Username
