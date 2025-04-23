@@ -412,7 +412,7 @@ sub embed_header
     
     # Embed theme switcher
     print &ui_switch_theme_javascript()
-        if (defined(&ui_switch_theme_javascript));
+        if ($main::session_id && defined(&ui_switch_theme_javascript));
     
     print '</head>', "\n";
 }
