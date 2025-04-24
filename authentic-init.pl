@@ -93,6 +93,12 @@ sub get_theme_color
     return $theme_colors{$color};
 }
 
+sub load_devel_dependencies
+{
+do("$ENV{'THEME_ROOT'}/dependencies.pl")
+    if (!@theme_bundle_css || !@theme_bundle_js);
+}
+
 sub embed_favicon
 {
     my ($is_login_page) = @_;
@@ -305,22 +311,13 @@ sub embed_header
     print "</script>\n";
 
     if ($args[2]) {
-        do($ENV{'THEME_ROOT'} . "/dependencies.pl");
+        load_devel_dependencies();
     }
 
     if ($args[3] eq '1') {
 
         if ($args[2]) {
-            foreach my $css (@theme_bundle_css) {
-                print ' <link href="' .
-                  $theme_webprefix .
-                  '/unauthenticated/css/' .
-                  $css .
-                  '.src.css?' .
-                  theme_version('timestamped') .
-                  '" rel="stylesheet">' . "\n";
-            }
-            embed_css_fonts();
+            embed_css_unbundled();
         } else {
             embed_css_bundle();
         }
@@ -578,6 +575,18 @@ sub embed_css_fonts
     } else {
         print $font_link;
     }
+}
+
+sub embed_css_unbundled
+{
+    load_devel_dependencies();
+    foreach my $css (@theme_bundle_css) {
+        printf " <link href=\"%s/unauthenticated/css/%s.src.css?%s\" rel=\"stylesheet\">\n",
+               $theme_webprefix,
+               $css,
+               theme_version('timestamped');
+    }
+    embed_css_fonts();
 }
 
 sub embed_css_bundle
@@ -1596,7 +1605,11 @@ sub embed_login_head
         print '</style>';
 
     } else {
-        embed_css_bundle();
+        if ($ext eq 'src') {
+            embed_css_unbundled();
+        } else {
+            embed_css_bundle();
+        }
 
         print ' <script src="' .
               $theme_webprefix .
