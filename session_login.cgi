@@ -214,9 +214,9 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
 
     if ($in{'failed'} && $gconfig{'forgot_pass'}) {
       # Show forgotten password link
-      print "<a onclick=\"flipLoginCard()\" data-href=\"forgot_form.cgi?failed=@{[&html_escape($in{'failed'})]}\" ".
-            "class=\"btn btn-grey\"><i class=\"fa fa-unlock\"></i>".
-            "&nbsp;&nbsp;$text{'session_forgot'}</a>";
+      print "<button data-flipper type='button' class=\"btn btn-grey\">".
+            "<i class=\"fa fa-unlock\"></i>".
+            "&nbsp;&nbsp;$text{'session_forgot'}</button>";
     }
 
     if ($text{'session_postfix'} =~ "href") {
@@ -246,9 +246,9 @@ if ($in{'twofactor_msg'} && $miniserv{'twofactor_provider'}) {
     print '<button class="btn btn-success" type="submit">';
     print '<i class="fa2 fa2-email"></i>&nbsp;&nbsp;' .
       &theme_text('login_recover') . '</button>' . "\n";
-    print "<a onclick=\"flipLoginCard()\"".
-          "class=\"btn btn-default\"><i class=\"fa fa-undo\"></i>".
-          "&nbsp;&nbsp;$theme_text{'login_back'}</a>";
+    print "<button data-flipper type='button' class='btn btn-default'>".
+          "<i class='fa fa-undo'></i>".
+          "&nbsp;&nbsp;$theme_text{'login_back'}</button>";
 
     print '</div>'; # form sign-in group
     print '</div>'; # back side end

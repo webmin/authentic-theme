@@ -233,6 +233,16 @@ sub get_theme_language
 
 }
 
+sub get_theme_language_login
+{
+    my %s;
+    foreach my $key (keys %theme_text) {
+        next if ($key !~ /^session_/);
+        $s{$key} = $theme_text{$key};
+    }
+    return convert_to_json(\%s);
+}
+
 sub get_user_allowed_gpg_keys
 {
     my ($switch_to_user, $list_avoided_system_keys, $self) = @_;

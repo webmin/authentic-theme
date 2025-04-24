@@ -1581,11 +1581,16 @@ sub embed_login_head
     print '<head>',                                           "\n";
     print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
-    print '<meta charset="utf-8">', "\n";
+    print ' <meta charset="utf-8">', "\n";
     embed_favicon('login-page');
-    print '<title>', $title, '</title>', "\n";
-    print '<meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
-
+    print ' <title>', $title, '</title>', "\n";
+    print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
+    # Print object with language strings
+    if ($in{'failed'} && $gconfig{'forgot_pass'}) {
+        print ' <script>';
+        print 'const theme_language = ' . get_theme_language_login();
+        print "</script>\n";
+    }
     if ($inline) {
         my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/bundle.min.css");
         print '<style>';
