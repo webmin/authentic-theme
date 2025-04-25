@@ -1720,6 +1720,21 @@ sub theme_css_inline
     return get_css_inline(@_);
 }
 
+sub theme_forgot_url
+{
+    my ($baseurl, $id, $username) = @_;
+    return "$baseurl/?forgot=".&urlize($id)."&username=".&urlize($username);
+}
+
+sub theme_forgot_handler
+{
+    my $page = shift;
+    if (!$ENV{'HTTP_X_REQUESTED_WITH'}) {
+        redirect(&get_webmin_email_url());
+        exit;
+    }
+}
+
 $main::cloudmin_no_create_links = 1;
 $main::cloudmin_no_edit_buttons = 1;
 $main::cloudmin_no_global_links = 1;

@@ -46,18 +46,19 @@ left_refresh_modules=Refresh Modules
 left_search=Search
 left_statistics=System Statistics
 
-login_danger=Danger!
+login_danger=Danger
 login_message=You must enter a username and password to login to the server on
 lost_message=If your Webmin login has a recovery email set, you can use this form to send yourself a password reset link
+reset_message=You are about to reset the password for user <tt>$1</tt> on
 theme_xhred_login_pass=Password
 login_save=Remember me
 login_recover=Request Password Reset
 login_back=Go Back
 login_signin=Sign In
-login_success=Success!
+login_success=Success
 theme_xhred_login_token=Token
 theme_xhred_login_user=Username
-login_warning=Warning!
+login_warning=Warning
 
 right_aliases=Alias servers
 right_bw=Bandwith usage and limit
@@ -1499,10 +1500,17 @@ theme_xhred_license_purchase=Purchase a license
 settings_right_table_links_sorted=Sort table links in alphabetical order
 
 
-# 23.04
-session_error=Error!
-session_success=Success!
+# 24.00
+session_error=Error
+session_success=Success
 session_cannot=Failed to reset password : The username is missing.
 session_neterror=Cannot get a response from the network!
 session_unkerror=An unexpected error occurred. Try again later.
 session_conerror=Failed to reach the server. Try again later.
+session_resetpass1=New password
+session_resetpass2=Confirm new password
+session_resetepassreq=Password is required.
+session_pwdconf=Password confirmation is required.
+session_pwdmatch=Passwords do not match.
+session_noid=Recovery ID is not found!
+session_pwdsucc=Password changed successfully! You can now log in with the new password.
