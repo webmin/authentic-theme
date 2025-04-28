@@ -11,7 +11,6 @@ our (%in, %miniserv, %gconfig, %tconfig, %text,
      $config_directory, $current_theme, %theme_text);
 
 require "$ENV{'THEME_ROOT'}/authentic-lib.pl";
-require "$ENV{'THEME_ROOT'}/ui-lib.pl";
 
 my $miniserv = \%miniserv::config;
 load_theme_library();
@@ -89,14 +88,15 @@ if (&miniserv_using_default_cert()) {
 		'</strong><br /><span>' . &text('defcert_error', ucfirst(&get_product_name()), ($ENV{'MINISERV_KEYFILE'} || $miniserv{'->keyfile'})) . "</span>\n";
 	print '</div>' . "\n";
 	# my ($msg, $class, $style, $new_line, $desc_to_title, $desc_icon) = @_;
-	# print(theme_ui_alert_box(
-	# 	&text('defcert_error', ucfirst(&get_product_name()), ($ENV{'MINISERV_KEYFILE'} || $miniserv{'keyfile'})),
-	# 	'warn',
-	# 	'data-defcert',
-	# 	1,
-	# 	$theme_text{'login_warning'},
-	# 	'fa-exclamation-triangle'
-	#     ));
+	print(theme_ui_alert_box(
+		&text('defcert_error', 
+		ucfirst(&get_product_name()), ($ENV{'MINISERV_KEYFILE'} || $miniserv{'keyfile'})),
+		'warn',
+		'data-defcert',
+		1,
+		$theme_text{'login_warning'},
+		'fa-exclamation-triangle'
+	    ));
 	
 	}
 
