@@ -1166,7 +1166,7 @@ theme_xhred_editing_config_file=Editing config file
 
 
 # 19.61
-theme_xhred_login_message_2fa=Two-factor authentication has been enabled for this user to login
+theme_xhred_login_message_2fa=Two-factor authentication is required for this user to log in
 theme_xhred_global_verify=Verify
 settings_show_terminal_link2=Show command shell button
 settings_hotkey_shell2=Open command shell

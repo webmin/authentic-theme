@@ -113,7 +113,7 @@ if (defined($in{'failed'})) {
 }
 print "$text{'pam_prefix'}\n";
 print '<form method="post" action="' . $gconfig{'webprefix'} .
-  '/pam_login.cgi" class="form-signin session_login pam_login clearfix" role="form" onsubmit="spinner()">' . "\n";
+  '/pam_login.cgi" class="form-signin session_login pam_login clearfix" role="form" onsubmit="theme_spinner()">' . "\n";
 print ui_hidden("cid", $in{'cid'});
 
 print '<i class="wbm-webmin"></i><h2 class="form-signin-heading">
