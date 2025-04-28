@@ -6,6 +6,8 @@
 use strict;
 use warnings;
 
+our (%theme_text);
+
 # ui_http_header(name, value)
 # Function to format a single HTTP header. Returns the formatted string with
 # CRLF ending
@@ -130,6 +132,141 @@ my %void_tags = map { $_ => 1 }
 		meta param source track wbr
 	);
 $rv .= ui_tag_end($tag) if (!exists($void_tags{lc($tag)}));
+return $rv;
+}
+
+# ui_alert(content, type, [icon], [attrs])
+# Generates an HTML alert with the specified content, type, and optional icon
+# and attributes.
+#
+# Parameters:
+#   content - The main message/body of the alert
+#   type    - Alert style: "success", "info", "warning", "danger", "danger-fatal"
+#   icon    - Optional. Controls icon and title display:
+#             - If undefined: uses default icon and title for the alert type
+#             - If string: uses as icon class with default title
+#             - If array ref [icon, title, no_break]:
+#               - icon: Icon class
+#               - title: Custom title (if undef, uses default for type)
+#               - no_break: If 1, no line break after title (space instead)
+#   attrs   - Optional hash ref of additional HTML attributes for the alert div
+#
+# Examples:
+#   ui_alert("Operation completed", "success");
+#   ui_alert("Access denied", "danger", "fa-lock");
+#   ui_alert("Settings changed", "info", ["fa-info-circle", "", 1]);
+#   ui_alert("Server offline", "warning", undef, {id => "server-status"});
+sub ui_alert
+{
+return theme_ui_alert(@_) if (defined(&theme_ui_alert));
+my ($content, $type, $icon, $attrs) = @_;
+
+# Default alert type
+$type ||= 'info';
+
+# Default icons and titles based on type
+my %type_defaults = (
+	'success' => {
+		'icon' => 'fa-check-circle',
+		'title' => $theme_text{'theme_global_success'}
+	},
+	'info' => {
+		'icon' => 'fa-info-circle',
+		'title' => $theme_text{'theme_global_info'}
+	},
+	'warning' => {
+		'icon' => 'fa-exclamation-triangle',
+		'title' => $theme_text{'theme_global_warning'}
+	},
+	'danger' => {
+		'icon' => 'fa-bolt',
+		'title' => $theme_text{'theme_xhred_global_error'}
+	},
+	'danger-fatal' => {
+		'icon' => 'fa-exclamation-triangle',
+		'title' => $theme_text{'theme_xhred_global_error_fatal'}
+	}
+);
+
+my $use_icon = '';
+my $use_title = '';
+my $use_br = 1;  # Default to using line break
+
+# Process icon parameter
+if (!defined($icon)) {
+	# Use defaults based on type
+	if ($type_defaults{$type}) {
+		$use_icon = $type_defaults{$type}{'icon'};
+		$use_title = $type_defaults{$type}{'title'};
+		}
+	}
+elsif (ref($icon) eq 'ARRAY') {
+	# Array format [icon_class, title, no_br]
+	$use_icon = $icon->[0] if (defined($icon->[0]));
+
+	# Title: if provided use it, else use default for type
+	if (defined($icon->[1])) {
+		$use_title = $icon->[1];
+		}
+	elsif ($type_defaults{$type}) {
+		$use_title = $type_defaults{$type}{'title'};
+		}
+
+	# Line break flag: 1 = no break, anything else = break
+	$use_br = $icon->[2] ? 0 : 1 if (defined($icon->[2]));
+	}
+else {
+	# String format: just the icon class
+	$use_icon = $icon;
+	$use_title = $type_defaults{$type} ? $type_defaults{$type}{'title'} : '';
+	}
+
+# Prepare attributes for the alert div
+my $all_attrs = $attrs || {};
+
+# Add alert class
+my $class = 'alert';
+$class .= ' alert-'.$type if ($type);
+
+$all_attrs->{'class'} = $all_attrs->{'class'}
+	? "$class $all_attrs->{'class'}"
+	:  $class;
+
+# Build alert
+my $rv = '';
+
+# Start alert container
+$rv .= ui_tag_start('div', $all_attrs);
+
+# Add icon and title if either is available
+if ($use_icon || $use_title) {
+	# Add icon if available
+	if ($use_icon) {
+		$rv .= ui_tag('i', undef, { 'class' => "fa fa-fw $use_icon" });
+		$rv .= ' ';
+		}
+
+	# Add title if available
+	if ($use_title) {
+		$rv .= ui_tag('strong', $use_title);
+		}
+
+	# Add line break if needed
+	if ($use_br) {
+		$rv .= '<br>';
+		}
+	else {
+		$rv .= ' ';
+		}
+	$rv .= "\n";
+	}
+
+# Add main content
+$rv .= ui_tag_content($content);
+
+# Close alert container
+$rv .= ui_tag_end('div');
+
 return $rv;
 }
 
