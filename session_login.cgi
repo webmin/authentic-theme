@@ -10,7 +10,7 @@ use strict;
 our (%in, %miniserv, %gconfig, %tconfig, %text,
      $config_directory, $current_theme, %theme_text);
 
-require "$ENV{'THEME_ROOT'}/authentic-lib.pl";
+require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
 my $miniserv = \%miniserv::config;
 load_theme_library();
