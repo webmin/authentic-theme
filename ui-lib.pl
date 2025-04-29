@@ -275,4 +275,119 @@ $rv .= ui_tag_end('div');
 return $rv;
 }
 
+# ui_button_icon(text, icon, [attrs])
+# Creates a button with an icon and text
+# Parameters:
+#   text    - The text/label for the button
+#   icon    - Icon class
+#   attrs   - Optional hash ref of additional HTML attributes
+#
+# Examples:
+#   ui_button_icon("Save", "save", {class => "primary"})
+#   ui_button_icon("Delete", "trash", {type => "submit", name => "delete"})
+sub ui_button_icon
+{
+return theme_ui_button_icon(@_) if (defined(&theme_ui_button_icon));
+my ($text, $icon, $attrs) = @_;
+
+# Default to button type if not specified
+my $all_attrs = $attrs || {};
+$all_attrs->{'type'} ||= 'button';
+
+# Button class
+my $btn_cls = $all_attrs->{'class'};
+$all_attrs->{'class'} = "btn " . ($btn_cls 
+	? ($btn_cls =~ /^btn-/ ? $btn_cls
+	: "btn-$btn_cls") : 'btn-default');
+
+# Build the button
+my $rv = ui_tag_start('button', $all_attrs);
+
+# Add icon if specified
+if ($icon) {
+	my $icon_class = "";
+
+	# Check if icon specifies a specific bundle (fa2)
+	if ($icon =~ /^fa2-/) {
+		$icon_class = "fa2 $icon";
+		}
+	# Check if it already has fa- prefix
+	elsif ($icon =~ /^fa-/) {
+		$icon_class = "fa $icon";
+		}
+	# Otherwise add the default fa- prefix
+	else {
+		$icon_class = "fa fa-$icon";
+		}
+	$rv .= ui_tag('i', undef, {'class' => $icon_class});
+	$rv .= "&nbsp;&nbsp;";
+	}
+
+# Add text
+$rv .= ui_tag_content($text) if defined($text);
+
+# Close the button
+$rv .= ui_tag_end('button');
+
+return $rv;
+}
+
+# ui_link_icon(text, icon, href, [attrs])
+# Creates a link with an icon and text
+# Parameters:
+#   text    - The text/label for the link
+#   icon    - Icon class
+#   href    - The URL for the link
+#   attrs   - Optional hash ref of additional HTML attributes
+#
+# Examples:
+#   ui_link_icon("View Details", "eye", "view.cgi?id=1", {class => "primary"})
+#   ui_link_icon("Documentation", "book", "docs.html", {target => "_blank"})
+sub ui_link_icon
+{
+return theme_ui_link_icon(@_) if (defined(&theme_ui_link_icon));
+my ($text, $icon, $href, $attrs) = @_;
+
+# Create attribute hash and set href
+my $all_attrs = $attrs || {};
+$all_attrs->{'href'} = $href if defined($href);
+
+# Button class
+my $btn_cls = $all_attrs->{'class'};
+$all_attrs->{'class'} = "btn " . ($btn_cls 
+	? ($btn_cls =~ /^btn-/ ? $btn_cls
+	: "btn-$btn_cls") : 'btn-default');
+
+# Build the link
+my $rv = ui_tag_start('a', $all_attrs);
+
+# Add icon if specified
+if ($icon) {
+	my $icon_class = "";
+
+	# Check if icon specifies a specific bundle (fa2)
+	if ($icon =~ /^fa2-/) {
+		$icon_class = "fa2 $icon";
+		}
+	# Check if it already has fa- prefix
+	elsif ($icon =~ /^fa-/) {
+		$icon_class = "fa $icon";
+		}
+	# Otherwise add the default fa- prefix
+	else {
+		$icon_class = "fa fa-$icon";
+		}
+	$rv .= ui_tag('i', undef, {'class' => $icon_class});
+	$rv .= "&nbsp;&nbsp;";
+	}
+
+# Add text
+$rv .= ui_tag_content($text) if defined($text);
+
+# Close the link
+$rv .= ui_tag_end('a');
+
+return $rv;
+}
+
 1;
