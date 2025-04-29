@@ -31,9 +31,9 @@ $secook .= "; httpOnly" if (!$miniserv->{'no_httponly'});
 error_40x_handler();
 
 our %theme_config = (
-    settings($config_directory . "/$current_theme/settings.js",    'settings_'),
-    settings($config_directory . "/$current_theme/settings-admin", 'settings_'),
-    settings($config_directory . "/$current_theme/settings-root",  'settings_'));
+    settings("$config_directory/$current_theme/settings.js",    'settings_'),
+    settings("$config_directory/$current_theme/settings-admin", 'settings_'),
+    settings("$config_directory/$current_theme/settings-root",  'settings_'));
 
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
