@@ -46,6 +46,28 @@ sub settings
     }
 }
 
+# decode_utf8(\$scalar , [\$err])
+# Decode UTF-8 string by reference. Optionally, return error message
+sub decode_utf8 {
+    my ($sref, $errref) = @_;
+    return 0 unless defined($sref) && ref($sref) eq 'SCALAR';
+    my $tmp = $$sref;
+    my $ok  = eval {
+        require utf8;
+        utf8::decode($tmp);
+        1;
+    };
+
+    if ($ok) {
+        $$sref = $tmp;
+        return 1;
+        }
+    else {
+        $$errref = $@ || 'utf8 decode failed' if ($errref);
+        return 0;
+        }
+}
+
 sub ui_button_group_local
 {
     my ($buttons, $extra_class) = @_;
