@@ -332,25 +332,25 @@ $rv .= ui_tag_end('button');
 return $rv;
 }
 
-# ui_link_icon(text, icon, href, [attrs])
+# ui_link_icon(text, href, [icon], [attrs])
 # Creates a link with an icon and text
 # Parameters:
 #   text    - The text/label for the link
-#   icon    - Icon class
 #   href    - The URL for the link
+#   icon    - Icon class
 #   attrs   - Optional hash ref of additional HTML attributes
 #
 # Examples:
-#   ui_link_icon("View Details", "eye", "view.cgi?id=1", {class => "primary"})
-#   ui_link_icon("Documentation", "book", "docs.html", {target => "_blank"})
+#   ui_link_icon("View Details", "view.cgi?id=1", "eye", {class => "primary"})
+#   ui_link_icon("Documentation", "docs.html", "book", {target => "_blank"})
 sub ui_link_icon
 {
 return theme_ui_link_icon(@_) if (defined(&theme_ui_link_icon));
-my ($text, $icon, $href, $attrs) = @_;
+my ($text, $href, $icon, $attrs) = @_;
 
 # Create attribute hash and set href
 my $all_attrs = $attrs || {};
-$all_attrs->{'href'} = $href if defined($href);
+$all_attrs->{'href'} = $href if (defined($href));
 
 # Button class
 my $btn_cls = $all_attrs->{'class'};
@@ -382,7 +382,7 @@ if ($icon) {
 	}
 
 # Add text
-$rv .= ui_tag_content($text) if defined($text);
+$rv .= ui_tag_content($text) if (defined($text));
 
 # Close the link
 $rv .= ui_tag_end('a');

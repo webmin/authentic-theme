@@ -221,7 +221,7 @@ if ($in{'failed'} && $gconfig{'forgot_pass'}) {
 	}
 if ($text{'session_postfix'} =~ "href") {
 	my $link = get_link($text{'session_postfix'}, 'ugly');
-	print ui_link_icon($link->[1], "unlock", $link->[0],
+	print ui_link_icon($link->[1], $link->[0], "unlock",
 		{ class => 'warning', target => "_blank" });
 	}
 else {
@@ -233,22 +233,30 @@ print ui_tag_end('div'); # front side end
 
 # Do we have 2fa
 if ($miniserv->{'twofactor_provider'}) {
-	print '<div class="session_login_back twofactor">';
-	print '<p class="form-signin-paragraph">';
-	print "$theme_text{'theme_xhred_login_message_2fa'}</p>\n";
+	print ui_tag_start('div', { 'class' => 'session_login_back twofactor' });
 
-	print '<div class="input-group form-group">';
+	print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
+	print ui_tag_content($theme_text{'theme_xhred_login_message_2fa'});
+	print ui_tag_end('p');
+	print ui_tag_start('div',
+		{ 'class' => 'input-group form-group' });
 	print &ui_textbox("twofactor", undef, 20, 0, undef,
-		"autocomplete='one-time-code' autocorrect='off' autocapitalize='none' ".
+		"autocomplete='one-time-code' autocorrect='off' ".
+		"autocapitalize='none' ".
 		"placeholder='$theme_text{'theme_xhred_login_token'}'",
 		'session_login', 1);
-	print '<span class="input-group-addon">';
-	print '<i class="fa fa-fw fa-qrcode"></i></span>';
-	print '</div>'; # 2fa input
-	print '<div class="form-group form-signin-group">';
-	print '<button data-submit="2fa" data-redirect="'.&get_webmin_email_url().'" class="btn btn-info" type="submit">';
-	print '<i class="fa fa-qrcode"></i>&nbsp;&nbsp;' .
-		&theme_text('theme_xhred_global_verify') . '</button>' . "\n";
+	print ui_tag_start('span', { 'class' => 'input-group-addon' });
+	print ui_tag_content(['<i class="fa fa-fw fa-qrcode"></i>']);
+	print ui_tag_end('span');
+	print ui_tag_end('div');
+
+	print ui_tag_start('div', { 'class' => 'form-group form-signin-group' });
+	print ui_button_icon($theme_text{'theme_xhred_global_verify'}, "qrcode",
+		{ class => "info", 'type' => 'submit', 'data-submit' => '2fa',
+		 'data-redirect' => &get_webmin_email_url() });
+	print ui_link_icon($link->[1], "unlock", $link->[0],
+			{ class => 'warning', target => "_blank" });
+	
 	print '<a class="btn btn-default" href="' . $webprefix .
 		'/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' . &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
 	print '</div>'; # form sign-in group
