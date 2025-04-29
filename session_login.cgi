@@ -54,8 +54,7 @@ if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
 	print ui_tag_start('div',
 		{ 'class' => 'form-signin-banner container session_login
 			      alert alert-danger', 'data-dcontainer' => 1 });
-	print ui_tag_content(
-		['<i class="fa fa-3x fa-exclamation-triangle"></i>']);
+	print ui_icon('exclamation-triangle', { 'class' => 'fa-3x' });
 	print ui_tag("br"), ui_tag("br");
 	# Print the banner
 	if (open(my $banner_fh, '<', $gconfig{'loginbanner'})) {
@@ -191,7 +190,7 @@ print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
 	"placeholder='$theme_text{'theme_xhred_login_user'}'" .
 		(!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
-print ui_tag_content(['<i class="fa fa-fw fa-user"></i>']);
+print ui_icon('user');
 print ui_tag_end('span');
 print ui_tag_end('div');
 
@@ -202,7 +201,7 @@ print &ui_password("pass", undef, 20, 0, undef,
 		($in{"failed"} ? ' autofocus' : '')."", 
 	'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
-print ui_tag_content(['<i class="fa fa-fw fa2 fa2-key"></i>']);
+print ui_icon('fa2-key');
 print ui_tag_end('span');
 print ui_tag_end('div');
 
@@ -248,7 +247,7 @@ if ($miniserv->{'twofactor_provider'}) {
 		"placeholder='$theme_text{'theme_xhred_login_token'}'",
 		'session_login', 1);
 	print ui_tag_start('span', { 'class' => 'input-group-addon' });
-	print ui_tag_content(['<i class="fa fa-fw fa-qrcode"></i>']);
+	print ui_icon('qrcode');
 	print ui_tag_end('span');
 	print ui_tag_end('div');
 
@@ -286,7 +285,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 			"placeholder='$theme_text{'session_resetpass1'}'",
 			'session_login', 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
-		print ui_tag_content(['<i class="fa-fw fa2 fa2-account-key"></i>']);
+		print ui_icon('fa2-account-key');
 		print ui_tag_end('span');
 		print ui_tag_end('div');
 		
@@ -297,7 +296,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 			"placeholder='$theme_text{'session_resetpass2'}'",
 			'session_login', 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
-		print ui_tag_content(['<i class="fa fa-fw fa-key-plus"></i>']);
+		print ui_icon('key-plus');
 		print ui_tag_end('span');
 		print ui_tag_end('div');
 
@@ -326,7 +325,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 			"placeholder='$theme_text{'theme_xhred_login_user'}'",
 			"session_login", 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
-		print ui_tag_content(['<i class="fa fa-fw fa-user-o"></i>']);
+		print ui_icon('user-o');
 		print ui_tag_end('span');
 		print ui_tag_end('div');
 

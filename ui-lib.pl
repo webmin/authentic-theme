@@ -390,4 +390,51 @@ $rv .= ui_tag_end('a');
 return $rv;
 }
 
+# ui_icon(icon, [attrs])
+# Creates an icon element
+# Parameters:
+#   icon    - Icon class (with or without fa- prefix)
+#   attrs   - Optional hash ref of additional HTML attributes
+#
+# Examples:
+#   ui_icon("search")                  # Standard icon
+#   ui_icon("fa2-warning")             # Extended icon set
+sub ui_icon
+{
+return theme_ui_icon(@_) if (defined(&theme_ui_icon));
+my ($icon, $attrs) = @_;
+
+return "" if (!defined($icon)) || $icon eq '';
+
+# Create attribute hash
+my $all_attrs = $attrs || {};
+
+# Process icon class
+my $icon_class = "";
+
+# Check if icon is in a specific bundle
+if ($icon =~ /^fa2-/) {
+	$icon_class = "fa2 $icon";
+	}
+elsif ($icon =~ /^fa-/) {
+	$icon_class = "fa $icon";
+	}
+else {
+	$icon_class = "fa fa-$icon";
+	}
+
+# Make icon always fixed width unless specified otherwise
+$icon_class .= " fa-fw" if ($all_attrs->{'class'} !~ /fa-dw/);
+
+# Add icon class to any existing classes
+if ($all_attrs->{'class'}) {
+	$all_attrs->{'class'} .= " $icon_class";
+} else {
+	$all_attrs->{'class'} = $icon_class;
+	}
+
+# Build the icon tag
+return ui_tag('i', undef, $all_attrs);
+}
+
 1;
