@@ -224,6 +224,9 @@ if ($text{'session_postfix'} =~ "href") {
 	print ui_link_icon($link->[1], "unlock", $link->[0],
 		{ class => 'warning', target => "_blank" });
 	}
+else {
+	print $text{'session_postfix'};
+	}
 print ui_tag_end('div');
 
 print ui_tag_end('div'); # front side end
