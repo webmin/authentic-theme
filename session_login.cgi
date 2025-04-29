@@ -221,7 +221,7 @@ if ($in{'failed'} && $gconfig{'forgot_pass'}) {
 	}
 if ($text{'session_postfix'} =~ "href") {
 	my $link = get_link($text{'session_postfix'}, 'ugly');
-	print ui_link_icon($link->[1], $link->[0], "unlock",
+	print ui_link_icon($link->[0], $link->[1], "unlock",
 		{ class => 'warning', target => "_blank" });
 	}
 else {
@@ -254,13 +254,11 @@ if ($miniserv->{'twofactor_provider'}) {
 	print ui_button_icon($theme_text{'theme_xhred_global_verify'}, "qrcode",
 		{ class => "info", 'type' => 'submit', 'data-submit' => '2fa',
 		 'data-redirect' => &get_webmin_email_url() });
-	print ui_link_icon($link->[1], "unlock", $link->[0],
+	print ui_link_icon("$webprefix/", $theme_text{'theme_xhred_global_cancel'}, "times-circle-o",
 			{ class => 'warning', target => "_blank" });
+	print ui_tag_end('div');
 	
-	print '<a class="btn btn-default" href="' . $webprefix .
-		'/"><i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;' . &theme_text('theme_xhred_global_cancel') . '</a>' . "\n";
-	print '</div>'; # form sign-in group
-	print '</div>'; # back side end
+	print ui_tag_end('div'); # back side end
 }
 
 # Can reset password
