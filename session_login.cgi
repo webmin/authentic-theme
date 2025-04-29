@@ -13,37 +13,19 @@ our ($miniserv, $charset, $webprefix, $bg, $textbox_attrs, $hostname);
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
-# Show pre-login text banner
-if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
-    !$in{'logout'} && !$in{'failed'} && !$in{'timed_out'}) {
+# Print the pre-login text banner and exit
+if ($gconfig{'loginbanner'}              &&
+    get_env('http_cookie') !~ /banner=1/ &&
+    !$in{'logout'}                       &&
+    !$in{'failed'}                       &&
+    !$in{'timed_out'}) {
 	print_banner_auth_headers();
 	&PrintHeader($charset);
-	print ui_tag_start('html',
-		{ 'class' => 'session_login', 'data-bgs' => $bg });
-	embed_login_head();
-	print ui_tag_start('body',
-		{ 'class' => 'session_login', $tconfig{'inbody'} });
-	embed_overlay_prebody();
-	print ui_tag_start('div',
-		{ 'class' => 'form-signin-banner container session_login
-			      alert alert-danger', 'data-dcontainer' => 1 });
-	print ui_icon('exclamation-triangle', { 'class' => 'fa-3x' });
-	print ui_tag("br"), ui_tag("br");
-	# Print the banner
-	if (open(my $banner_fh, '<', $gconfig{'loginbanner'})) {
-		while (my $line = <$banner_fh>) {
-			$line =~ s/LOGINURL/$in{'page'}/g;
-			print $line;
-			}
-		close($banner_fh);
-		}
-	print ui_tag_end('div');
-	print ui_tag_end('body');
-	print ui_tag_end('html');
+	print_banner();
 	return;
 	}
 
-# Print the header
+# Print the standard header
 print_login_auth_headers();
 &PrintHeader($charset);
 
