@@ -39,7 +39,7 @@ error_40x_handler();
     settings("$config_directory/$current_theme/settings-admin", 'settings_'),
     settings("$config_directory/$current_theme/settings-root",  'settings_'));
 
-# Never cache 
+# Never cache
 $pragma_no_cache = 1;
 
 1;
