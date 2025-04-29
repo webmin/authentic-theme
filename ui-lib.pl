@@ -202,7 +202,12 @@ if (!defined($icon)) {
 	}
 elsif (ref($icon) eq 'ARRAY') {
 	# Array format [icon_class, title, no_br]
-	$use_icon = $icon->[0] if (defined($icon->[0]));
+	if (defined($icon->[0])) {
+		$use_icon = $icon->[0];
+		}
+	else {
+		$use_icon = $type_defaults{$type}{'icon'};
+		}
 
 	# Title: if provided use it, else use default for type
 	if (defined($icon->[1])) {
