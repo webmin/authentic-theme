@@ -32,7 +32,7 @@ print "$text{'session_prefix'}\n";
 # Print the form
 print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
 	'role="form" onsubmit="theme_spinner()"',
-	"form-signin session_login clearfix");
+	'form-signin session_login clearfix');
 
 # Add Webmin icon and title
 print_login_logo();
@@ -40,30 +40,22 @@ print_login_logo();
 # Embed custom logo
 embed_logo();
 
-# Decode the UTF-8 username returned by the server, if needed
-decode_utf8($in{'failed'});
-$in{'failed'} = "" if ($in{'failed'} !~ /^[\p{L}\p{N}_.-]+$/);
+# Filter the username returned by the server, if needed
+login_username_filter();
 
-# Parse other input data not passed back by the server
-($in{'forgot'}) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/
-	if ($gconfig{'forgot_pass'} && !$in{'failed'});
-($in{'username'}) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}_.-]+)/
-	if ($in{'forgot'});
+# Populate other input data not passed back by the server
+login_params_populate();
 
 # Print login container wrapper
-print ui_tag_start('div', { 'class' => 'session_login_wrapper' });
-print ui_tag_start('div',
-	{ 'class' => "session_login_flipper".
-		     ($in{'forgot'} ? ' flipped forgot no-transition' : '') });
+print_login_container();
 
-# Front side
-print ui_tag_start('div', { 'class' => 'session_login_front' });
-
+# Print welcome message
 print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 print ui_tag_content($theme_text{'login_message'});
 print ui_tag('strong', $hostname);
 print ui_tag_end('p');
 
+# Print the input fields
 print ui_tag_start('div', { 'class' => 'input-group form-group' });
 print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
 	"@{[$textbox_attrs->()]} ".

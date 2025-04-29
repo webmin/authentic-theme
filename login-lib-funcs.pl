@@ -56,6 +56,8 @@ print ui_http_header("Set-Cookie", "redirect=1; path=/$secook");
 print ui_http_header("Set-Cookie", "testing=1; path=/$secook");
 }
 
+# print_login_start($type)
+# Prints the start of the login page
 sub print_login_start
 {
 my $type = shift;
@@ -111,6 +113,8 @@ elsif ($in{'timed_out'}) {
 	}
 }
 
+# print_login_logo()
+# Prints the Webmin logo and title
 sub print_login_logo
 {
 print ui_tag('i', undef, { 'class' => 'wbm-webmin' });
@@ -121,6 +125,37 @@ print ui_tag('h2',
 			: $theme_text{'theme_xhred_titles_um'}))],
 	{ 'class' => 'form-signin-heading' }
 );
+}
+
+# login_username_filter()
+# Filters the username returned by the server
+sub login_username_filter
+{
+decode_utf8($in{'failed'});
+$in{'failed'} = "" if ($in{'failed'} !~ /^[\p{L}\p{N}_.-]+$/);
+}
+
+# login_params_populate()
+# Populates the input data not passed back by the server
+sub login_params_populate
+{
+($in{'forgot'}) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/
+	if ($gconfig{'forgot_pass'} && !$in{'failed'});
+($in{'username'}) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}_.-]+)/
+	if ($in{'forgot'});
+}
+
+# print_login_container()
+# Prints the login container
+sub print_login_container
+{
+# Print login container wrapper
+print ui_tag_start('div', { 'class' => 'session_login_wrapper' });
+print ui_tag_start('div',
+	{ 'class' => "session_login_flipper".
+		     ($in{'forgot'} ? ' flipped forgot no-transition' : '') });
+# Front side
+print ui_tag_start('div', { 'class' => 'session_login_front' });
 }
 
 1;
