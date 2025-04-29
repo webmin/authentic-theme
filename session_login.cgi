@@ -7,38 +7,12 @@
 #
 use strict;
 
-our (%in, %miniserv, %gconfig, %tconfig, %text,
-     $config_directory, $current_theme, %theme_text);
+our (%in, %gconfig, %tconfig, %text, %theme_text);
+our ($miniserv, $charset, $webprefix, $bg,
+     $textbox_attrs, $secook, %theme_config);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
-
-# Use config from miniserv
-my $miniserv = \%miniserv::config;
-
-# Load the theme library
-load_theme_library();
-
-# Set basic variables
-my $charset = &get_charset();
-my $webprefix = &get_webprefix();
-my $bg = theme_night_mode_login() ? "nightRider" : "gainsboro";
-my $textbox_attrs = sub {
-	my $complete = shift;
-	$complete ||= $gconfig{'noremember'} ? "off" : "username";
-	return "autocomplete=$complete autocorrect=off autocapitalize=none";
-	};
-
-# Secure cookie
-my $secook = lc(get_env('https')) eq 'on' ? "; secure" : "";
-$secook .= "; httpOnly" if (!$miniserv->{'no_httponly'});
-
-# Check to add error handler
-error_40x_handler();
-
-our %theme_config = (
-    settings("$config_directory/$current_theme/settings.js",    'settings_'),
-    settings("$config_directory/$current_theme/settings-admin", 'settings_'),
-    settings("$config_directory/$current_theme/settings-root",  'settings_'));
+require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
