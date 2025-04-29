@@ -30,6 +30,7 @@ our %theme_config = (
 
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
+#     !$in{'logout'} && !$in{'failed'} && !$in{'timed_out'} || 1==1) {
     !$in{'logout'} && !$in{'failed'} && !$in{'timed_out'}) {
 	print "Auth-type: auth-required=1\r\n";
 	print "Set-Cookie: banner=1; path=/\r\n";
@@ -54,6 +55,7 @@ if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
 			}
 		close($banner_fh);
 		}
+	# print "XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXX ";
 	print ui_tag_end('div');
 	print ui_tag_end('body');
 	print ui_tag_end('html');
@@ -82,57 +84,49 @@ embed_overlay_prebody();
 print ui_tag_start('div',
 	{ 'class' => 'container session_login', 'data-dcontainer' => 1 }); 
 
+# Print alert if bundled SSL cert is used
 if (&miniserv_using_default_cert()) {
-	print '<div class="alert alert-warning" data-defcert>' . "\n";
-	print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $theme_text{'login_warning'} .
-		'</strong><br /><span>' . &text('defcert_error', ucfirst(&get_product_name()), ($ENV{'MINISERV_KEYFILE'} || $miniserv{'->keyfile'})) . "</span>\n";
-	print '</div>' . "\n";
-	# my ($msg, $class, $style, $new_line, $desc_to_title, $desc_icon) = @_;
-	print(theme_ui_alert_box(
-		&text('defcert_error', 
-		ucfirst(&get_product_name()), ($ENV{'MINISERV_KEYFILE'} || $miniserv{'keyfile'})),
-		'warn',
-		'data-defcert',
-		1,
-		$theme_text{'login_warning'},
-		'fa-exclamation-triangle'
-	    ));
-	
+	print ui_alert(
+		[&text('defcert_error', ucfirst(&get_product_name()), 
+			($ENV{'MINISERV_KEYFILE'} || $miniserv{'keyfile'}))],
+		'warning', undef, { 'data-defcert' => 1 }
+		);
+	}
+# Print alert on failed login
+if (defined($in{'failed'})) {
+	# Two-factor authentication failed
+	if ($in{'twofactor_msg'}) {
+		print ui_alert(&theme_text('session_twofailed',
+				$in{'twofactor_msg'}), 'warning',
+			undef, { 'data-twofactor' => 1 });
+		}
+	# Login failed
+	else {
+		print ui_alert($theme_text{'theme_xhred_session_failed'},
+			'warning');
+		}
+	}
+# Print alert on logout
+elsif ($in{'logout'}) {
+	print ui_alert($theme_text{'session_logout'},
+		       'success', ['fa-sign-out', $theme_text{'login_success'}]);
+	}
+# Print alert on session timeout
+elsif ($in{'timed_out'}) {
+	print ui_alert(&theme_text('session_timed_out',
+			           int($in{'timed_out'} / 60)),
+				   'warning', ['fa-clock']);
 	}
 
-# XXXX switch to using UI API!
-if (defined($in{'failed'})) {
-		if ($in{'twofactor_msg'}) {
-				print "<h3>",, "</h3><p></p>\n";
-				print '<div class="alert alert-warning" data-twofactor>' . "\n";
-				print '<strong><i class ="fa fa-exclamation-triangle"></i> ' . $theme_text{'login_warning'} .
-					'</strong><br /><span>' . &theme_text('session_twofailed', &html_escape($in{'twofactor_msg'})) . "</span>\n";
-				print '</div>' . "\n";
-		} else {
-				print '<div class="alert alert-warning">' . "\n";
-				print '<strong><i class ="fa fa-exclamation-triangle"></i> ' .
-					$theme_text{'login_warning'} . '</strong><br />' . "\n";
-				print '<span>' . $theme_text{'theme_xhred_session_failed'} . "</span>\n";
-				print '</div>' . "\n";
-		}
-} elsif ($in{'logout'}) {
-		print '<div class="alert alert-success">' . "\n";
-		print '<strong><i class ="fa fa-check"></i> ' . $theme_text{'login_success'} . '</strong><br />' . "\n";
-		print '<span>' . $theme_text{'session_logout'} . "</span>\n";
-		print '</div>' . "\n";
-} elsif ($in{'timed_out'}) {
-		print '<div class="alert alert-warning">' . "\n";
-		print '<strong><i class ="fa fa fa-exclamation-triangle"></i> ' .
-			$theme_text{'login_warning'} . '</strong><br />' . "\n";
-		print '<span>' . &theme_text('session_timed_out', int($in{'timed_out'} / 60)) . "</span>\n";
-		print '</div>' . "\n";
-}
+# Print pre-login text
 print "$text{'session_prefix'}\n";
 
-print &ui_form_start("$webprefix/session_login.cgi",
-										 "post", undef,
-										 "role=\"form\" onsubmit=\"theme_spinner()\"",
-										 "form-signin session_login clearfix");
+# Print the form
+print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
+	"role=\"form\" onsubmit=\"theme_spinner()\"",
+	"form-signin session_login clearfix");
+
+
 
 print "<i class=\"wbm-webmin\"></i><h2 class=\"form-signin-heading\"><span> "
 	.
