@@ -12,13 +12,20 @@ our (%in, %miniserv, %gconfig, %tconfig, %text,
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 
+# Use config from miniserv
 my $miniserv = \%miniserv::config;
+
+# Load the theme library
 load_theme_library();
 
+# Set basic variables
 my $charset = &get_charset();
 my $webprefix = &get_webprefix();
-
 my $bg = theme_night_mode_login() ? "nightRider" : "gainsboro";
+
+# Secure cookie
+my $secook = lc(get_env('https')) eq 'on' ? "; secure" : "";
+$secook .= "; httpOnly" if (!$miniserv->{'no_httponly'});
 
 # Check to add error handler
 error_40x_handler();
@@ -32,8 +39,7 @@ our %theme_config = (
 if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
 #     !$in{'logout'} && !$in{'failed'} && !$in{'timed_out'} || 1==1) {
     !$in{'logout'} && !$in{'failed'} && !$in{'timed_out'}) {
-	print "Auth-type: auth-required=1\r\n";
-	print "Set-Cookie: banner=1; path=/\r\n";
+	print ui_http_header("Set-Cookie", "banner=1; path=/$secook")
 	&PrintHeader($charset);
 	print ui_tag_start('html',
 		{ 'class' => 'session_login', 'data-bgs' => $bg });
@@ -63,15 +69,14 @@ if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
 	}
 
 # Print the header
-my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
-$sec .= "; httpOnly" if (!$miniserv->{'no_httponly'});
-my $sidname = $miniserv{'->sidname'} || "sid";
+my $sidname = $miniserv->{'sidname'} || "sid";
 print ui_http_header("Auth-type", "auth-required=1");
-print ui_http_header("Set-Cookie", "banner=0; path=/$sec")
+print ui_http_header("Set-Cookie", "banner=0; path=/$secook")
 	if ($gconfig{'loginbanner'});
-print ui_http_header("Set-Cookie", "$sidname=x; path=/$sec") if ($in{'logout'});
-print ui_http_header("Set-Cookie", "redirect=1; path=/$sec");
-print ui_http_header("Set-Cookie", "testing=1; path=/$sec");
+print ui_http_header("Set-Cookie", "$sidname=x; path=/$secook")
+	if ($in{'logout'});
+print ui_http_header("Set-Cookie", "redirect=1; path=/$secook");
+print ui_http_header("Set-Cookie", "testing=1; path=/$secook");
 &PrintHeader($charset);
 
 # Print the HTML header
@@ -88,7 +93,7 @@ print ui_tag_start('div',
 if (&miniserv_using_default_cert()) {
 	print ui_alert(
 		[&text('defcert_error', ucfirst(&get_product_name()), 
-			($ENV{'MINISERV_KEYFILE'} || $miniserv{'keyfile'}))],
+			($ENV{'MINISERV_KEYFILE'} || $miniserv->{'keyfile'}))],
 		'warning', undef, { 'data-defcert' => 1 }
 		);
 	}
