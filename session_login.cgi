@@ -8,7 +8,7 @@
 use strict;
 
 our (%in, %gconfig, %tconfig, %text, %theme_text);
-our ($miniserv, $charset, $webprefix, $bg, $textbox_attrs, $hostname);
+our ($miniserv, $webprefix, $bg, $textbox_attrs, $hostname);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
@@ -19,59 +19,12 @@ if ($gconfig{'loginbanner'}              &&
     !$in{'logout'}                       &&
     !$in{'failed'}                       &&
     !$in{'timed_out'}) {
-	print_banner_auth_headers();
-	&PrintHeader($charset);
 	print_banner();
 	return;
 	}
 
-# Print the standard header
-print_login_auth_headers();
-&PrintHeader($charset);
-
-# Print the HTML header
-print ui_tag_start('html', { 'class' => 'session_login', 'data-bgs' => $bg });
-embed_login_head();
-print ui_tag_start('body', { 'class' => 'session_login', $tconfig{'inbody'} });
-embed_overlay_prebody();
-
-# Print the container HTML
-print ui_tag_start('div',
-	{ 'class' => 'container session_login', 'data-dcontainer' => 1 }); 
-
-# Print alert if bundled SSL cert is used
-if (&miniserv_using_default_cert()) {
-	print ui_alert(
-		[&text('defcert_error', ucfirst(&get_product_name()), 
-			($ENV{'MINISERV_KEYFILE'} || $miniserv->{'keyfile'}))],
-		'warning', undef, { 'data-defcert' => 1 }
-		);
-	}
-# Print alert on failed login
-if (defined($in{'failed'})) {
-	# Two-factor authentication failed
-	if ($in{'twofactor_msg'}) {
-		print ui_alert(&theme_text('session_twofailed',
-				$in{'twofactor_msg'}), 'warning',
-			undef, { 'data-twofactor' => 1 });
-		}
-	# Login failed
-	else {
-		print ui_alert($theme_text{'theme_xhred_session_failed'},
-			'warning');
-		}
-	}
-# Print alert on logout
-elsif ($in{'logout'}) {
-	print ui_alert($theme_text{'session_logout'},
-		       'success', ['fa-sign-out', $theme_text{'login_success'}]);
-	}
-# Print alert on session timeout
-elsif ($in{'timed_out'}) {
-	print ui_alert(&theme_text('session_timed_out',
-			           int($in{'timed_out'} / 60)),
-				   'warning', ['fa-clock']);
-	}
+# Print login_start
+print_login_start('session');
 
 # Print pre-login text
 print "$text{'session_prefix'}\n";
@@ -82,14 +35,7 @@ print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
 	"form-signin session_login clearfix");
 
 # Add Webmin icon and title
-print ui_tag('i', undef, { 'class' => 'wbm-webmin' });
-print ui_tag('h2', 
-    [ui_tag('span', ' ' .
-        (&get_product_name() eq "webmin" ? 
-        	$theme_text{'theme_xhred_titles_wm'} : 
-        	$theme_text{'theme_xhred_titles_um'}))],
-    { 'class' => 'form-signin-heading' }
-);
+print_login_logo();
 
 # Embed custom logo
 embed_logo();
