@@ -6,9 +6,10 @@
 use strict;
 use warnings;
 
+require("$ENV{'THEME_ROOT'}/login-lib-funcs.pl");
+
 our (%gconfig, $config_directory, $pragma_no_cache, $current_theme);
-our ($miniserv, $charset, $webprefix, $bg,
-     $textbox_attrs, $secook, %theme_config);
+our ($miniserv, $charset, $webprefix, $bg, $textbox_attrs, $secook, $hostname);
 
 # Use config from miniserv
 $miniserv = \%miniserv::config;
@@ -34,10 +35,23 @@ $secook .= "; httpOnly" if (!$miniserv->{'no_httponly'});
 error_40x_handler();
 
 # Collect theme configs
-%theme_config = (
+my %theme_config = (
     settings("$config_directory/$current_theme/settings.js",    'settings_'),
     settings("$config_directory/$current_theme/settings-admin", 'settings_'),
     settings("$config_directory/$current_theme/settings-root",  'settings_'));
+
+# Get hostname
+if ($theme_config{'settings_login_page_server_name'}) {
+    $hostname = $theme_config{'settings_login_page_server_name'};
+    }
+elsif ($gconfig{'realname'}) {
+    $hostname = &get_display_hostname();
+    }
+else {
+    $hostname = get_env('server_name');
+    $hostname =~ s/:\d+//g;
+    $hostname = &html_escape($hostname);
+    }
 
 # Never cache
 $pragma_no_cache = 1;

@@ -8,8 +8,7 @@
 use strict;
 
 our (%in, %gconfig, %tconfig, %text, %theme_text);
-our ($miniserv, $charset, $webprefix, $bg,
-     $textbox_attrs, $secook, %theme_config);
+our ($miniserv, $charset, $webprefix, $bg, $textbox_attrs, $hostname);
 
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
@@ -17,7 +16,7 @@ require("$ENV{'THEME_ROOT'}/login-lib.pl");
 # Show pre-login text banner
 if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
     !$in{'logout'} && !$in{'failed'} && !$in{'timed_out'}) {
-	print ui_http_header("Set-Cookie", "banner=1; path=/$secook");
+	print_banner_auth_headers();
 	&PrintHeader($charset);
 	print ui_tag_start('html',
 		{ 'class' => 'session_login', 'data-bgs' => $bg });
@@ -45,14 +44,7 @@ if ($gconfig{'loginbanner'} && get_env('http_cookie') !~ /banner=1/ &&
 	}
 
 # Print the header
-my $sidname = $miniserv->{'sidname'} || "sid";
-print ui_http_header("Auth-type", "auth-required=1");
-print ui_http_header("Set-Cookie", "banner=0; path=/$secook")
-	if ($gconfig{'loginbanner'});
-print ui_http_header("Set-Cookie", "$sidname=x; path=/$secook")
-	if ($in{'logout'});
-print ui_http_header("Set-Cookie", "redirect=1; path=/$secook");
-print ui_http_header("Set-Cookie", "testing=1; path=/$secook");
+print_login_auth_headers();
 &PrintHeader($charset);
 
 # Print the HTML header
@@ -120,20 +112,6 @@ print ui_tag('h2',
 # Embed custom logo
 embed_logo();
 
-# Login message
-my $host;
-if ($theme_config{'settings_login_page_server_name'}) {
-	$host = $theme_config{'settings_login_page_server_name'};
-	}
-elsif ($gconfig{'realname'}) {
-	$host = &get_display_hostname();
-	}
-else {
-	$host = get_env('server_name');
-	$host =~ s/:\d+//g;
-	$host = &html_escape($host);
-	}
-
 # Decode the UTF-8 username returned by the server, if needed
 decode_utf8($in{'failed'});
 $in{'failed'} = "" if ($in{'failed'} !~ /^[\p{L}\p{N}_.-]+$/);
@@ -155,7 +133,7 @@ print ui_tag_start('div', { 'class' => 'session_login_front' });
 
 print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 print ui_tag_content($theme_text{'login_message'});
-print ui_tag('strong', $host);
+print ui_tag('strong', $hostname);
 print ui_tag_end('p');
 
 print ui_tag_start('div', { 'class' => 'input-group form-group' });
@@ -249,7 +227,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 		print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 		print ui_tag_content(
 			&theme_text('reset_message', $in{'username'}));
-		print ui_tag('strong', $host);
+		print ui_tag('strong', $hostname);
 		print ui_tag_end('p');
 
 		print ui_tag_start('div',
