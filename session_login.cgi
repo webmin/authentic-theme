@@ -22,7 +22,11 @@ load_theme_library();
 my $charset = &get_charset();
 my $webprefix = &get_webprefix();
 my $bg = theme_night_mode_login() ? "nightRider" : "gainsboro";
-my $attr_save = $gconfig{'noremember'} ? "off" : "username";
+my $textbox_attrs = sub {
+	my $complete = shift;
+	$complete ||= $gconfig{'noremember'} ? "off" : "username";
+	return "autocomplete=$complete autocorrect=off autocapitalize=none";
+	};
 
 # Secure cookie
 my $secook = lc(get_env('https')) eq 'on' ? "; secure" : "";
@@ -183,7 +187,7 @@ print ui_tag_end('p');
 
 print ui_tag_start('div', { 'class' => 'input-group form-group' });
 print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
-	"autocomplete='$attr_save' autocorrect='off' autocapitalize='none' ".
+	"@{[$textbox_attrs->()]} ".
 	"placeholder='$theme_text{'theme_xhred_login_user'}'" .
 		(!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
@@ -193,7 +197,7 @@ print ui_tag_end('div');
 
 print ui_tag_start('div', { 'class' => 'input-group form-group' });
 print &ui_password("pass", undef, 20, 0, undef,
-	"autocomplete='off' autocorrect='off' autocapitalize='none' ".
+	"@{[$textbox_attrs->('off')]} ".
 	"placeholder='$theme_text{'theme_xhred_login_pass'}' ".
 		($in{"failed"} ? ' autofocus' : '')."", 
 	'session_login', 1);
@@ -240,8 +244,7 @@ if ($miniserv->{'twofactor_provider'}) {
 	print ui_tag_end('p');
 	print ui_tag_start('div', { 'class' => 'input-group form-group' });
 	print &ui_textbox("twofactor", undef, 20, 0, undef,
-		"autocomplete='one-time-code' autocorrect='off' ".
-		"autocapitalize='none' ".
+		"@{[$textbox_attrs->('one-time-code')]} ".
 		"placeholder='$theme_text{'theme_xhred_login_token'}'",
 		'session_login', 1);
 	print ui_tag_start('span', { 'class' => 'input-group-addon' });
@@ -279,8 +282,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 		print ui_tag_start('div',
 			{ 'class' => 'input-group form-group' });
 		print &ui_password("newpass", undef, 20, 0, undef,
-			"autocomplete='off' autocorrect='off' ".
-			"autocapitalize='none' ".
+			"@{[$textbox_attrs->('off')]} ".
 			"placeholder='$theme_text{'session_resetpass1'}'",
 			'session_login', 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
@@ -291,8 +293,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 		print ui_tag_start('div',
 			{ 'class' => 'input-group form-group' });
 		print &ui_password("newpass2", undef, 20, 0, undef,
-			"autocomplete='off' autocorrect='off' ".
-			"autocapitalize='none' ".
+			"@{[$textbox_attrs->('off')]} ".
 			"placeholder='$theme_text{'session_resetpass2'}'",
 			'session_login', 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
@@ -321,8 +322,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 		print ui_tag_start('div',
 			{ 'class' => 'input-group form-group' });
 		print &ui_textbox("forgot", $in{'failed'}, 20, 0, undef,
-			"autocomplete='$attr_save' autocorrect='off' ".
-			"autocapitalize='none' ".
+			"@{[$textbox_attrs->()]} ".
 			"placeholder='$theme_text{'theme_xhred_login_user'}'",
 			"session_login", 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
