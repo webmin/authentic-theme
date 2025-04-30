@@ -29,8 +29,8 @@ if ($gconfig{'loginbanner'} &&
 # Print login_start
 print_login_start('pam');
 
-# Print pre-login text
-print "$text{'pam_prefix'}\n";
+# Print pre-login element
+print_login_fix($text{'pam_prefix'});
 
 # Print the form
 print &ui_form_start("$webprefix/pam_login.cgi", "post", undef,
@@ -102,15 +102,9 @@ if ($in{'failed'} && $gconfig{'forgot_pass'}) {
 			     {class => "grey", 'data-flipper'});
 	}
 
-# Print pre-login text
-if ($text{'pam_postfix'} =~ "href") {
-	my $link = get_link($text{'pam_postfix'}, 'ugly');
-	print ui_link_icon($link->[0], $link->[1], "unlock",
-		{ class => 'warning', target => "_blank" });
-	}
-else {
-	print $text{'pam_postfix'};
-	}
+# Print post-login element
+print_login_fix($text{'pam_postfix'});
+
 print ui_tag_end('div');
 
 print ui_tag_end('div'); # front side end

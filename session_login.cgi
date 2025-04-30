@@ -26,8 +26,8 @@ if ($gconfig{'loginbanner'}              &&
 # Print login_start
 print_login_start('session');
 
-# Print pre-login text
-print "$text{'session_prefix'}\n";
+# Print pre-login element
+print_login_fix($text{'session_prefix'});
 
 # Print the form
 print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
@@ -97,15 +97,9 @@ if ($in{'failed'} && $gconfig{'forgot_pass'}) {
 			     {class => "grey", 'data-flipper'});
 	}
 
-# Print post-login
-if ($text{'session_postfix'} =~ "href") {
-	my $link = get_link($text{'session_postfix'}, 'ugly');
-	print ui_link_icon($link->[0], $link->[1], "unlock",
-		{ class => 'warning', target => "_blank" });
-	}
-else {
-	print $text{'session_postfix'};
-	}
+# Print post-login element
+print_login_fix($text{'session_postfix'});
+
 print ui_tag_end('div');
 
 print ui_tag_end('div'); # front side end

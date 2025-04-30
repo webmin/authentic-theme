@@ -126,6 +126,23 @@ print ui_tag_end('body');
 print ui_tag_end('html');
 }
 
+# print_login_fix(type)
+# Prints an auxiliary element for the login page before opening the form and
+# before closing it. If the type is "href", it will print a properly formatted
+# link to the login page.
+sub print_login_fix
+{
+my $type = shift;
+if ($type =~ "href") {
+	my $link = get_link($type, 'ugly');
+	print ui_link_icon($link->[0], $link->[1], "unlock",
+		{ class => 'warning', target => "_blank" });
+	}
+else {
+	print "$type\n";
+	}
+}
+
 # print_login_logo()
 # Prints the Webmin logo and title
 sub print_login_logo
