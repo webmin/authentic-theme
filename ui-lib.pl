@@ -4,8 +4,6 @@
 use strict;
 use warnings;
 
-require("$ENV{'THEME_ROOT'}/ui-lib-funcs.pl");
-
 our (%theme_text);
 
 # ui_http_header(name, value)
@@ -64,6 +62,12 @@ sub ui_tag_start
 {
 return theme_ui_tag_start(@_) if (defined(&theme_ui_tag_start));
 my ($tag, $attrs) = @_;
+
+# Ensure every tag gets a "ui-$tag" class
+$attrs ||= {};
+$attrs->{'class'} = defined($attrs->{class})
+	? "ui-$tag $attrs->{class}"
+	: "ui-$tag";
 
 # Start building tag
 my $rv = "<$tag";
