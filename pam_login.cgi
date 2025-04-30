@@ -107,7 +107,7 @@ print ui_tag_end('div');
 
 print ui_tag_end('div'); # front side end
 
-# Print reset password inputs
+# Print password reset inputs
 print_password_reset();
 
 # Print login end

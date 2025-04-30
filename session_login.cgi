@@ -46,10 +46,7 @@ embed_logo();
 
 # Print login container wrapper
 print_login_container();
-print "XXXXXXXXXXXX\n";
-print ui_br({id => 12345});
-print ui_p('Love and <b>hate</b> are two sides of the same coin.', {class => 'p1s test'});
-print "XXXXXXXXXXXX\n";
+
 # Print welcome message
 print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 print ui_tag_content($theme_text{'login_message'});
@@ -134,7 +131,7 @@ if ($miniserv->{'twofactor_provider'}) {
 	print ui_tag_end('div'); # back side end
 	}
 
-# Print reset password inputs
+# Print password reset inputs
 print_password_reset();
 
 # Print login end
