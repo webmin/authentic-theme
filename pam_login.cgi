@@ -6,10 +6,11 @@
 # Licensed under MIT (https://github.com/webmin/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+no strict 'refs';
 
 our (%in, %gconfig, %tconfig, %text, %theme_text);
 our ($miniserv, $webprefix, $bg, $textbox_attrs, $hostname);
-     
+
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
@@ -49,39 +50,78 @@ login_username_filter();
 # Print login container wrapper
 print_login_container();
 
-my $autocompleteuser = $gconfig{'noremember'} ? "autocomplete=off" : "autocomplete=username";
-print '<p class="form-signin-paragraph">' .
-  text($gconfig{'nohostname'} ? 'pam_mesg2' : 'pam_mesg', "<br><strong>$hostname</strong>") . "\n";
-if (!$in{'password'}) {
-    print '<div class="input-group form-group">' . "\n";
-    print '<input type="text" class="form-control session_login pam_login" name="answer" ' .
-      $autocompleteuser . ' autocorrect="off" autocapitalize="none" placeholder="' .
-      &theme_text('theme_xhred_login_user') . '" ' . ' autofocus>' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>' . "\n";
-    print '</div>' . "\n";
-} else {
-    print '<div class="input-group form-group">' . "\n";
-    print '<input type="' . ($in{'question'} =~ /code/i ? 'text' : 'password') .
-      '" class="form-control session_login pam_login" name="answer" autocomplete="off" autocorrect="off" placeholder="' .
-      ($in{'question'} =~ /code/i ? theme_text('theme_xhred_login_passphrase') : theme_text('theme_xhred_login_pass')) .
-      '" autofocus>' . "\n";
-    print '<span class="input-group-addon"><i class="fa fa-fw fa-' .
-      ($in{'question'} =~ /code/i ? 'qrcode' : ' fa2 fa2-key') . '"></i></span>' . "\n";
-    print '</div>' . "\n";
-}
+# Print welcome message
+my $welcome_message = ui_tag('p',
+	[&text($gconfig{'nohostname'}
+		? 'pam_mesg2' : 'pam_mesg', ui_tag('strong', $hostname))],
+	{ 'class' => 'form-signin-paragraph' });
+$welcome_message =~ s/\.\s*(<\/p>)$/$1/; # remove last dot for consistency
+print $welcome_message;
 
-print '<div class="form-group form-signin-group">';
-print '<button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;' .
-  ($in{'password'} ? &theme_text('pam_login') : &theme_text('login_signin')) . '</button>' . "\n";
+# Print the input fields
 if (!$in{'password'}) {
-    if ($text{'session_postfix'} =~ "href") {
-	my $link = get_link($text{'session_postfix'}, 'ugly');
-	print '<a target="_blank" href=' .
-	  $link->[0] . ' class="btn btn-warning"><i class="fa fa-unlock"></i>&nbsp;&nbsp;' . $link->[1] . '</a>' . "\n";
-    }
-}
+	print ui_tag_start('div', { 'class' => 'input-group form-group' });
+	print &ui_textbox("answer", undef, 20, 0, undef,
+		"@{[$textbox_attrs->()]} ".
+		"placeholder='$theme_text{'theme_xhred_login_user'}' autofocus",
+		'session_login pam_login', 1);
+	print ui_tag_start('span', { 'class' => 'input-group-addon' });
+	print ui_icon('user');
+	print ui_tag_end('span');
+	print ui_tag_end('div');
+	}
+else {
+	print ui_tag_start('div', { 'class' => 'input-group form-group' });
+	my $boxfunc = 'ui_password';
+	my $boxtext = $theme_text{'theme_xhred_login_pass'};
+	my $boxicon = 'fa2-key';
+	if ($in{'question'} =~ /code/i) {
+		$boxfunc = 'ui_textbox';
+		$boxtext = $theme_text{'theme_xhred_login_passphrase'};
+		$boxicon = 'qrcode';
+		}
+	print &{$boxfunc}("answer", undef, 20, 0, undef,
+		"@{[$textbox_attrs->()]} ".
+		"placeholder='$boxtext' autofocus",
+		'session_login pam_login', 1);
+	print ui_tag_start('span', { 'class' => 'input-group-addon' });
+	print ui_icon($boxicon);
+	print ui_tag_end('span');
+	print ui_tag_end('div');
+	}
 
-print '</div>';
-print '</form>' . "\n";
-print "$text{'pam_postfix'}\n";
-&footer();
+# Print submit button
+print ui_tag_start('div', { 'class' => 'form-group form-signin-group' });
+my $submit_button_text = $in{'password'}
+	? $text{'pam_login'} 
+	: $theme_text{'login_signin'};
+print ui_button_icon($submit_button_text, "sign-in",
+	{ class => "primary", 'type' => 'submit', 'data-submit' => 'login' });
+if ($in{'failed'} && $gconfig{'forgot_pass'}) {
+	print ui_button_icon($theme_text{'session_forgot'}, "unlock",
+			     {class => "grey", 'data-flipper'});
+	}
+
+# Print pre-login text
+if ($text{'pam_postfix'} =~ "href") {
+	my $link = get_link($text{'pam_postfix'}, 'ugly');
+	print ui_link_icon($link->[0], $link->[1], "unlock",
+		{ class => 'warning', target => "_blank" });
+	}
+else {
+	print $text{'pam_postfix'};
+	}
+print ui_tag_end('div');
+
+print ui_tag_end('div'); # front side end
+
+# Print reset password inputs
+print_password_reset();
+
+print ui_tag_end('div');  # flipper end
+print ui_tag_end('div');  # wrapper end
+print ui_tag_end('form'); # form end
+
+print ui_tag_end('div');  # main container end 
+print ui_tag_end('body');
+print ui_tag_end('html');
