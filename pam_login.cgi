@@ -18,6 +18,7 @@ require("$ENV{'THEME_ROOT'}/login-lib.pl");
 if ($gconfig{'loginbanner'} &&
     get_env('http_cookie') !~ /banner=1/ &&
     !$in{'logout'}                       &&
+	!$in{'forgot'}                       &&
     !$in{'failed'}                       &&
     !$in{'password'}                     &&
     !$in{'error'}                        &&

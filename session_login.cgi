@@ -13,10 +13,17 @@ our ($miniserv, $webprefix, $bg, $textbox_attrs, $hostname);
 require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
+# Filter the username returned by the server, if needed
+login_username_filter();
+
+# Populate other input data not passed back by the server
+login_params_populate();
+
 # Print the pre-login text banner and exit
 if ($gconfig{'loginbanner'}              &&
     get_env('http_cookie') !~ /banner=1/ &&
     !$in{'logout'}                       &&
+    !$in{'forgot'}                       &&
     !$in{'failed'}                       &&
     !$in{'timed_out'}) {
 	print_banner();
@@ -39,12 +46,6 @@ print_login_logo();
 
 # Embed custom logo
 embed_logo();
-
-# Filter the username returned by the server, if needed
-login_username_filter();
-
-# Populate other input data not passed back by the server
-login_params_populate();
 
 # Print login container wrapper
 print_login_container();
