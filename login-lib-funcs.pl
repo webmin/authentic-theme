@@ -32,7 +32,7 @@ print ui_tag_start('div',
 	{ 'class' => 'form-signin-banner container session_login
 		      alert alert-danger', 'data-dcontainer' => 1 });
 print ui_icon('exclamation-triangle', { 'class' => 'fa-3x' });
-print ui_tag("br"), ui_tag("br");
+print ui_br(), ui_br();
 my $banner = &read_file_contents($gconfig{'loginbanner'});
 my $page = $gconfig{'loginpage'} || $in{'page'} || $webprefix || '/';
 $banner =~ s/LOGINURL/$page/g;

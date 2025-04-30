@@ -1,10 +1,10 @@
-#
-# Authentic Theme (https://github.com/webmin/authentic-theme)
-# Copyright Ilia Ross <ilia@webmin.dev>
-# Licensed under MIT (https://github.com/webmin/authentic-theme/blob/master/LICENSE)
-#
+# ui-lib.pl
+# UI library function
+
 use strict;
 use warnings;
+
+require("$ENV{'THEME_ROOT'}/ui-lib-funcs.pl");
 
 our (%theme_text);
 
@@ -435,6 +435,24 @@ if ($all_attrs->{'class'}) {
 
 # Build the icon tag
 return ui_tag('i', undef, $all_attrs);
+}
+
+# ui_br([attrs])
+# Creates a line break element
+sub ui_br
+{
+return theme_ui_br(@_) if (defined(&theme_ui_br));
+my ($attrs) = @_;
+return ui_tag('br', undef, $attrs);
+}
+
+# ui_p(content, [attrs])
+# Creates a paragraph element with optional content
+sub ui_p
+{
+return theme_ui_p(@_) if (defined(&theme_ui_p));
+my ($content, $attrs) = @_;
+return ui_tag('p', $content, $attrs);
 }
 
 1;
