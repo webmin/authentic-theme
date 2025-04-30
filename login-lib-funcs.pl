@@ -7,7 +7,7 @@ use strict;
 use warnings;
 
 our (%in, %gconfig, %tconfig, %theme_text);
-our ($miniserv, $charset, $bg, $webprefix, $secook);
+our ($miniserv, $charset, $bg, $webprefix, $textbox_attrs, $secook, $hostname);
 
 # print_banner_auth_headers()
 # Prints the headers for the login banner
@@ -156,6 +156,89 @@ print ui_tag_start('div',
 		     ($in{'forgot'} ? ' flipped forgot no-transition' : '') });
 # Front side
 print ui_tag_start('div', { 'class' => 'session_login_front' });
+}
+
+# print_password_reset()
+# Prints the password reset inputs
+sub print_password_reset
+{
+# Can reset password and failed or forgot
+if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
+	# Back side
+	my $extra_attrs = $in{'username'} ? {
+		'data-username' => $in{'username'},
+		'data-forgot' => $in{'forgot'} } : {};
+	print ui_tag_start('div',
+		{ 'class' => 'session_login_back forgot', %{$extra_attrs} });
+	if($in{'forgot'}) {
+		print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
+		print ui_tag_content(
+			[&theme_text('reset_message',
+				&html_escape($in{'username'}))]);
+		print ui_tag('strong', $hostname);
+		print ui_tag_end('p');
+
+		print ui_tag_start('div',
+			{ 'class' => 'input-group form-group' });
+		print &ui_password("newpass", undef, 20, 0, undef,
+			"@{[$textbox_attrs->('off')]} ".
+			"placeholder='$theme_text{'session_resetpass1'}'",
+			'session_login', 1);
+		print ui_tag_start('span', { 'class' => 'input-group-addon' });
+		print ui_icon('fa2-account-key');
+		print ui_tag_end('span');
+		print ui_tag_end('div');
+		
+		print ui_tag_start('div',
+			{ 'class' => 'input-group form-group' });
+		print &ui_password("newpass2", undef, 20, 0, undef,
+			"@{[$textbox_attrs->('off')]} ".
+			"placeholder='$theme_text{'session_resetpass2'}'",
+			'session_login', 1);
+		print ui_tag_start('span', { 'class' => 'input-group-addon' });
+		print ui_icon('key-plus');
+		print ui_tag_end('span');
+		print ui_tag_end('div');
+
+		print ui_tag_start('div',
+			{ 'class' => 'form-group form-signin-group' });
+		print ui_button_icon(
+			$theme_text{'theme_left_mail_change_password'},
+			"unlock", { class => "warning", 'data-unlocker' });
+		print ui_button_icon(
+			$theme_text{'theme_xhred_global_cancel'},
+			"fa2-back-in-time", { 'data-flipper' });
+		print ui_tag_end('div');
+		
+		print ui_tag_end('div'); # back side end
+		}
+	elsif ($in{'failed'}) {
+		print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
+		print ui_tag_content($theme_text{'lost_message'});
+		print ui_tag_end('p');
+		
+		print ui_tag_start('div',
+			{ 'class' => 'input-group form-group' });
+		print &ui_textbox("forgot", $in{'failed'}, 20, 0, undef,
+			"@{[$textbox_attrs->()]} ".
+			"placeholder='$theme_text{'theme_xhred_login_user'}'",
+			"session_login", 1);
+		print ui_tag_start('span', { 'class' => 'input-group-addon' });
+		print ui_icon('user-o');
+		print ui_tag_end('span');
+		print ui_tag_end('div');
+
+		print ui_tag_start('div',
+			{ 'class' => 'form-group form-signin-group' });
+		print ui_button_icon(
+			$theme_text{'login_recover'}, "fa2-email",
+			{ class => "success", type => 'submit' });
+		print ui_button_icon(
+			$theme_text{'login_back'}, "undo", { 'data-flipper' });
+		print ui_tag_end('div');
+		}
+	print ui_tag_end('div'); # back side end
+	}
 }
 
 1;
