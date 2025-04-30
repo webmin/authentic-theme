@@ -55,13 +55,13 @@ $input = html_escape($input) if ($escape);
 return $input;
 }
 
-# ui_tag_start(tag, [attrs])
+# ui_tag_start(tag, [attrs], [no-new-line])
 # Function to create an opening HTML tag with optional attributes.
 # Attributes are passed as a hash reference and its values are quote escaped.
 sub ui_tag_start
 {
 return theme_ui_tag_start(@_) if (defined(&theme_ui_tag_start));
-my ($tag, $attrs) = @_;
+my ($tag, $attrs, $nnl) = @_;
 
 # Ensure every tag gets a "ui-$tag" class
 $attrs ||= {};
@@ -89,7 +89,7 @@ if ($attrs && ref($attrs) eq 'HASH') {
 	}
 
 # Close the opening tag
-$rv .= ">\n";
+$rv .= $nnl ? ">" : ">\n";
 
 # Handle special case for <html> tag
 $rv = "<!DOCTYPE html>\n$rv" if ($tag eq 'html');
@@ -109,7 +109,6 @@ $rv = ui_tag_escape_value($content)."\n" if (defined($content));
 return $rv;
 }
 
-
 # ui_tag_end(tag)
 # Function to create a closing HTML tag.
 sub ui_tag_end
@@ -128,7 +127,7 @@ sub ui_tag
 {
 return theme_ui_tag(@_) if (defined(&theme_ui_tag));
 my ($tag, $content, $attrs) = @_;
-my $rv = ui_tag_start($tag, $attrs);
+my $rv = ui_tag_start($tag, $attrs, !defined($content));
 $rv .= ui_tag_content($content) if (defined($content));
 my %void_tags = map { $_ => 1 }
 	qw(
