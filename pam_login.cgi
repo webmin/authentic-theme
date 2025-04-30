@@ -1,10 +1,7 @@
 #!/usr/local/bin/perl
+# pam_login.cgi
+# PAM login page
 
-#
-# Authentic Theme (https://github.com/webmin/authentic-theme)
-# Copyright Ilia Ross <ilia@webmin.dev>
-# Licensed under MIT (https://github.com/webmin/authentic-theme/blob/master/LICENSE)
-#
 use strict;
 no strict 'refs';
 

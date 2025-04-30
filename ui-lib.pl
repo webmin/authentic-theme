@@ -1,5 +1,5 @@
 # ui-lib.pl
-# UI library function
+# UI library functions
 
 use strict;
 use warnings;

@@ -1,8 +1,5 @@
-#
-# Authentic Theme (https://github.com/webmin/authentic-theme)
-# Copyright Ilia Ross <ilia@webmin.dev>
-# Licensed under MIT (https://github.com/webmin/authentic-theme/blob/master/LICENSE)
-#
+# login-lib-funcs.pl
+# Login library reusable functions
 use strict;
 use warnings;
 

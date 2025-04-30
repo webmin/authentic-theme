@@ -1,10 +1,7 @@
 #!/usr/local/bin/perl
+# session_login.cgi
+# Session login page
 
-#
-# Authentic Theme (https://github.com/webmin/authentic-theme)
-# Copyright Ilia Ross <ilia@webmin.dev>
-# Licensed under MIT (https://github.com/webmin/authentic-theme/blob/master/LICENSE)
-#
 use strict;
 
 our (%in, %gconfig, %tconfig, %text, %theme_text);
@@ -49,7 +46,10 @@ embed_logo();
 
 # Print login container wrapper
 print_login_container();
-
+print "XXXXXXXXXXXX\n";
+print ui_br({id => 12345});
+print ui_p('Love and <b>hate</b> are two sides of the same coin.', {class => 'p1s test'});
+print "XXXXXXXXXXXX\n";
 # Print welcome message
 print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 print ui_tag_content($theme_text{'login_message'});
