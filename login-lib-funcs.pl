@@ -113,6 +113,19 @@ elsif ($in{'timed_out'}) {
 	}
 }
 
+# print_login_end()
+# Prints the end of the login page
+sub print_login_end
+{
+print ui_tag_end('div');  # flipper end
+print ui_tag_end('div');  # wrapper end
+print ui_tag_end('form'); # form end
+
+print ui_tag_end('div');  # main container end 
+print ui_tag_end('body');
+print ui_tag_end('html');
+}
+
 # print_login_logo()
 # Prints the Webmin logo and title
 sub print_login_logo

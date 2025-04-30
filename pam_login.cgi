@@ -118,10 +118,5 @@ print ui_tag_end('div'); # front side end
 # Print reset password inputs
 print_password_reset();
 
-print ui_tag_end('div');  # flipper end
-print ui_tag_end('div');  # wrapper end
-print ui_tag_end('form'); # form end
-
-print ui_tag_end('div');  # main container end 
-print ui_tag_end('body');
-print ui_tag_end('html');
+# Print login end
+print_login_end();
