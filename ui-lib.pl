@@ -63,11 +63,11 @@ sub ui_tag_start
 return theme_ui_tag_start(@_) if (defined(&theme_ui_tag_start));
 my ($tag, $attrs, $nnl) = @_;
 
-# Ensure every tag gets a "ui-$tag" class
+# Ensure every tag gets a proper marker class
 $attrs ||= {};
 $attrs->{'class'} = defined($attrs->{class})
-	? "ui-$tag $attrs->{class}"
-	: "ui-$tag";
+	? "ui--$tag $attrs->{class}"
+	: "ui--$tag";
 
 # Start building tag
 my $rv = "<$tag";
