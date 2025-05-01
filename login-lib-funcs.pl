@@ -84,7 +84,7 @@ if (&miniserv_using_default_cert()) {
 		);
 	}
 # Print alert on failed login
-if (defined($in{'failed'})) {
+if ($in{'failed'}) {
 	# Two-factor authentication failed
 	if ($in{'twofactor_msg'}) {
 		print ui_alert(&theme_text('session_twofailed',
