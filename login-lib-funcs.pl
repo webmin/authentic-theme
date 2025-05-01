@@ -2,6 +2,7 @@
 # Login library reusable functions
 use strict;
 use warnings;
+no warnings 'uninitialized';
 
 our (%in, %gconfig, %tconfig, %theme_text);
 our ($miniserv, $charset, $bg, $webprefix, $textbox_attrs, $secook, $hostname);
@@ -23,7 +24,7 @@ print ui_tag_start('html',
 	{ 'class' => 'session_login', 'data-bgs' => $bg });
 embed_login_head();
 print ui_tag_start('body',
-	{ 'class' => 'session_login', $tconfig{'inbody'} });
+	{ 'class' => 'session_login', $tconfig{'inbody'} => undef });
 embed_overlay_prebody();
 print ui_tag_start('div',
 	{ 'class' => 'form-signin-banner container session_login
@@ -68,7 +69,7 @@ print_login_auth_headers();
 # Print the HTML header
 print ui_tag_start('html', { 'class' => $class, 'data-bgs' => $bg });
 embed_login_head();
-print ui_tag_start('body', { 'class' => $class, $tconfig{'inbody'} });
+print ui_tag_start('body', { 'class' => $class, $tconfig{'inbody'} => undef });
 embed_overlay_prebody();
 
 # Print the container HTML
@@ -231,10 +232,10 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 			{ 'class' => 'form-group form-signin-group' });
 		print ui_button_icon(
 			$theme_text{'theme_left_mail_change_password'},
-			"unlock", { class => "warning", 'data-unlocker' });
+			"unlock", { class => "warning", 'data-unlocker' => undef });
 		print ui_button_icon(
 			$theme_text{'theme_xhred_global_cancel'},
-			"fa2-back-in-time", { 'data-flipper' });
+			"fa2-back-in-time", { 'data-flipper' => undef });
 		print ui_tag_end('div');
 		
 		print ui_tag_end('div'); # back side end
@@ -261,7 +262,8 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 			$theme_text{'login_recover'}, "fa2-email",
 			{ class => "success", type => 'submit' });
 		print ui_button_icon(
-			$theme_text{'login_back'}, "undo", { 'data-flipper' });
+			$theme_text{'login_back'}, "undo",
+				{ 'data-flipper' => undef });
 		print ui_tag_end('div');
 		}
 	print ui_tag_end('div'); # back side end

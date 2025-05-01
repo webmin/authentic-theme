@@ -3,6 +3,7 @@
 
 use strict;
 use warnings;
+no warnings 'uninitialized';
 
 our (%theme_text);
 
