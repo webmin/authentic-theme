@@ -7,12 +7,12 @@ no warnings 'uninitialized';
 
 our (%theme_text);
 
-# ui_http_header(name, value)
+# format_http_header(name, value)
 # Function to format a single HTTP header. Returns the formatted string with
 # CRLF ending
-sub ui_http_header
+sub format_http_header
 {
-return theme_ui_http_header(@_) if (defined(&theme_ui_http_header));
+return theme_format_http_header(@_) if (defined(&theme_format_http_header));
 my ($name, $value) = @_;
 return "$name: $value\r\n";
 }

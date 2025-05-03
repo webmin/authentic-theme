@@ -11,7 +11,7 @@ our ($miniserv, $charset, $bg, $webprefix, $textbox_attrs, $secook, $hostname);
 # Prints the headers for the login banner
 sub print_banner_auth_headers
 {
-print ui_http_header("Set-Cookie", "banner=1; path=/$secook");
+print format_http_header("Set-Cookie", "banner=1; path=/$secook");
 }
 
 # print_banner()
@@ -45,13 +45,13 @@ print ui_tag_end('html');
 sub print_login_auth_headers
 {
 my $sidname = $miniserv->{'sidname'} || "sid";
-print ui_http_header("Auth-type", "auth-required=1");
-print ui_http_header("Set-Cookie", "banner=0; path=/$secook")
+print format_http_header("Auth-type", "auth-required=1");
+print format_http_header("Set-Cookie", "banner=0; path=/$secook")
     if ($gconfig{'loginbanner'});
-print ui_http_header("Set-Cookie", "$sidname=x; path=/$secook")
+print format_http_header("Set-Cookie", "$sidname=x; path=/$secook")
     if ($in{'logout'});
-print ui_http_header("Set-Cookie", "redirect=1; path=/$secook");
-print ui_http_header("Set-Cookie", "testing=1; path=/$secook");
+print format_http_header("Set-Cookie", "redirect=1; path=/$secook");
+print format_http_header("Set-Cookie", "testing=1; path=/$secook");
 }
 
 # print_login_start($type)
