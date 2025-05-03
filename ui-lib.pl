@@ -210,7 +210,7 @@ if (!defined($icon)) {
 		$use_title = $type_defaults{$type}{'title'};
 		}
 	}
-elsif (ref($icon) eq 'ARRAY') {
+elsif (ref($icon)) {
 	# Array format [icon_class, title, no_br]
 	if (defined($icon->[0])) {
 		$use_icon = $icon->[0];
