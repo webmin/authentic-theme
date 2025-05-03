@@ -30,7 +30,10 @@ my ($string, $quote) = @_;
 my $escape = 1;     # Default is to quote escape the value
 
 # Check if input is an array ref to allow unescaped value
-($string, $escape) = ($string->[0], 0) if (ref($string) eq 'ARRAY');
+if (ref($string)) {
+	$string = $string->[0];
+	$escape = 0;
+	}
 
 # Escape the value if needed
 $string = quote_escape($string, $quote || '"') if ($escape);
@@ -48,7 +51,10 @@ my ($input) = @_;
 my $escape = 1;     # Default is to HTML escape the value
 
 # Check if input is an array ref to allow unescaped value
-($input, $escape) = ($input->[0], 0) if (ref($input) eq 'ARRAY');
+if (ref($input)) {
+	$input = $input->[0];
+	$escape = 0;
+	}
 
 # Escape the value if needed
 $input = html_escape($input) if ($escape);
