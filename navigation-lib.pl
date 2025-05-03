@@ -756,6 +756,9 @@ sub nav_list_combined_menu
                     $link =~ /server-manager\/index\.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
+                } elsif ($link =~ /\/virtualmin-wp-workbench/)
+                {
+                    $icon = '<i class="fa fa-fw fa2 fa2-workbench margined-left--05 margined-right-05"></i>';
                 } elsif ($link =~ /\/virtual-server\/edit_newvalidate\.cgi/ &&
                          !&webmin_user_is_admin())
                 {
