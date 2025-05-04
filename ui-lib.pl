@@ -17,15 +17,6 @@ my ($name, $value) = @_;
 return "$name: $value\r\n";
 }
 
-# ui_tag_escape_quote(string)
-# Function to handle escaping of quotes in attribute values.
-sub ui_tag_escape_quote
-{
-return theme_ui_tag_escape_quote(@_) if (defined(&theme_ui_tag_escape_quote));
-my ($string) = @_;
-return quote_escape($string, '"');
-}
-
 # ui_tag_start(tag, [attrs], [no-new-line])
 # Function to create an opening HTML tag with optional attributes.
 # Attributes are passed as a hash reference and its values are quote escaped.
@@ -48,7 +39,7 @@ if ($attrs && ref($attrs) eq 'HASH') {
 	foreach my $key (keys %$attrs) {
 		my $value = $attrs->{$key};
 		if (defined($value)) {
-			$value = ui_tag_escape_quote($value);
+			$value = &quote_escape($value, '"');
 			$value =~ tr/\n\t//d;
 			$value =~ s/\s+/ /g;
 			$rv .= " $key=\"$value\"" ;
