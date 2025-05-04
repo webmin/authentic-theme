@@ -9,7 +9,7 @@ use warnings;
 require("$ENV{'THEME_ROOT'}/login-lib-funcs.pl");
 
 our (%gconfig, $config_directory, $pragma_no_cache, $current_theme);
-our ($miniserv, $charset, $webprefix, $bg, $textbox_attrs, $secook, $hostname);
+our ($miniserv, $webprefix, $bg, $textbox_attrs, $hostname);
 
 # Use config from miniserv
 $miniserv = \%miniserv::config;
@@ -18,7 +18,6 @@ $miniserv = \%miniserv::config;
 load_theme_library();
 
 # Set basic variables
-$charset = &get_charset();
 $webprefix = &get_webprefix();
 $bg = theme_night_mode_login() ? "nightRider" : "gainsboro";
 $textbox_attrs = sub {
@@ -26,10 +25,6 @@ $textbox_attrs = sub {
 	$complete ||= $gconfig{'noremember'} ? "off" : "username";
 	return "autocomplete=$complete autocorrect=off autocapitalize=none";
 	};
-
-# Secure cookie
-$secook = lc(get_env('https')) eq 'on' ? "; secure" : "";
-$secook .= "; httpOnly" if (!$miniserv->{'no_httponly'});
 
 # Check to add error handler
 error_40x_handler();

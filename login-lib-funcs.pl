@@ -5,21 +5,32 @@ use warnings;
 no warnings 'uninitialized';
 
 our (%in, %gconfig, %tconfig, %theme_text);
-our ($miniserv, $charset, $bg, $webprefix, $textbox_attrs, $secook, $hostname);
+our ($miniserv, $bg, $webprefix, $textbox_attrs, $hostname);
 
-# print_banner_auth_headers()
-# Prints the headers for the login banner
-sub print_banner_auth_headers
+# get_secure_cookie()
+# Returns the secure cookie string
+sub get_secure_cookie
 {
-print format_http_header("Set-Cookie", "banner=1; path=/$secook");
+my $secook = lc(get_env('https')) eq 'on' ? "; secure" : "";
+$secook .= "; httpOnly" if (!$miniserv->{'no_httponly'});
+return $secook;
+}
+
+# get_banner_auth_headers()
+# Returns headers for the login banner
+sub get_banner_auth_headers
+{
+my $secook = get_secure_cookie();
+my @headers;
+push(@headers, ["Set-Cookie", "banner=1; path=/$secook"]);
+return \@headers;
 }
 
 # print_banner()
 # Prints the login banner
 sub print_banner
 {
-print_banner_auth_headers();
-&PrintHeader($charset);
+&PrintHeader(&get_charset(), undef, get_banner_auth_headers());
 print ui_tag_start('html',
 	{ 'class' => 'session_login', 'data-bgs' => $bg });
 embed_login_head();
@@ -40,18 +51,21 @@ print ui_tag_end('body');
 print ui_tag_end('html');
 }
 
-# print_login_auth_headers()
-# Prints the headers for the login page
-sub print_login_auth_headers
+# get_login_auth_headers()
+# Returns headers for the login page
+sub get_login_auth_headers
 {
 my $sidname = $miniserv->{'sidname'} || "sid";
-print format_http_header("Auth-type", "auth-required=1");
-print format_http_header("Set-Cookie", "banner=0; path=/$secook")
-    if ($gconfig{'loginbanner'});
-print format_http_header("Set-Cookie", "$sidname=x; path=/$secook")
-    if ($in{'logout'});
-print format_http_header("Set-Cookie", "redirect=1; path=/$secook");
-print format_http_header("Set-Cookie", "testing=1; path=/$secook");
+my $secook = get_secure_cookie();
+my @headers;
+push(@headers, ["Auth-type", "auth-required=1"]);
+push(@headers, ["Set-Cookie", "banner=0; path=/$secook"])
+	if ($gconfig{'loginbanner'});
+push(@headers, ["Set-Cookie", "$sidname=x; path=/$secook"])
+	if ($in{'logout'});
+push(@headers, ["Set-Cookie", "redirect=1; path=/$secook"]);
+push(@headers, ["Set-Cookie", "testing=1; path=/$secook"]);
+return \@headers;
 }
 
 # print_login_start($type)
@@ -63,8 +77,7 @@ my $class = 'session_login';
 $class .= ' pam_login' if ($type eq 'pam');
 
 # Print the standard header
-print_login_auth_headers();
-&PrintHeader($charset);
+&PrintHeader(&get_charset(), undef, get_login_auth_headers());
 
 # Print the HTML header
 print ui_tag_start('html', { 'class' => $class, 'data-bgs' => $bg });
