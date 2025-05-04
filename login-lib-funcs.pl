@@ -170,7 +170,8 @@ print ui_tag('h2',
 
 # login_username_filter()
 # Filters the username returned by the server
-sub login_username_filter {
+sub login_username_filter
+{
 my $username = decode_utf8($in{'failed'});
 return ($username =~ /^[\p{L}\p{N}_.-]+$/) ? $username : undef;
 }
