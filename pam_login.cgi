@@ -43,7 +43,7 @@ print_login_logo();
 embed_logo();
 
 # Filter the username returned by the server, if needed
-login_username_filter();
+login_username_filter(\%in);
 
 # Print login container wrapper
 print_login_container();

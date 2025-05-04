@@ -11,10 +11,10 @@ require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
 # Filter the username returned by the server, if needed
-login_username_filter();
+login_username_filter(\%in);
 
 # Populate other input data not passed back by the server
-login_params_populate();
+login_params_populate(\%in);
 
 # Print the pre-login text banner and exit
 if ($gconfig{'loginbanner'}              &&
