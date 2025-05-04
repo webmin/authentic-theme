@@ -170,20 +170,22 @@ print ui_tag('h2',
 
 # login_username_filter()
 # Filters the username returned by the server
-sub login_username_filter
-{
-decode_utf8($in{'failed'});
-$in{'failed'} = "" if ($in{'failed'} !~ /^[\p{L}\p{N}_.-]+$/);
+sub login_username_filter {
+my $username = decode_utf8($in{'failed'});
+return ($username =~ /^[\p{L}\p{N}_.-]+$/) ? $username : undef;
 }
 
 # login_params_populate()
 # Populates the input data not passed back by the server
 sub login_params_populate
 {
-($in{'forgot'}) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/
-	if ($gconfig{'forgot_pass'} && !$in{'failed'});
-($in{'username'}) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}_.-]+)/
-	if ($in{'forgot'});
+my ($forgot, $username);
+if ($gconfig{'forgot_pass'} && !$in{'failed'}) {
+	($forgot) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/;
+	($username) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}_.-]+)/
+		if ($forgot);
+	}
+return ($forgot, $username);
 }
 
 # print_login_container()

@@ -43,7 +43,7 @@ print_login_logo();
 embed_logo();
 
 # Filter the username returned by the server, if needed
-login_username_filter(\%in);
+$in{'failed'} = login_username_filter();
 
 # Print login container wrapper
 print_login_container();
