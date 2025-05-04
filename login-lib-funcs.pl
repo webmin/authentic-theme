@@ -147,10 +147,10 @@ sub print_login_logo
 {
 print ui_tag('i', undef, { 'class' => 'wbm-webmin' });
 print ui_tag('h2', 
-	[ui_tag('span', ' ' .
+	ui_tag('span', ' ' .
 		(&get_product_name() eq "webmin"
 			? $theme_text{'theme_xhred_titles_wm'}
-			: $theme_text{'theme_xhred_titles_um'}))],
+			: $theme_text{'theme_xhred_titles_um'})),
 	{ 'class' => 'form-signin-heading' }
 );
 }
@@ -201,9 +201,9 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 	if($in{'forgot'}) {
 		print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 		print ui_tag_content(
-			[&theme_text('reset_message',
-				&html_escape($in{'username'}))]);
-		print ui_tag('strong', $hostname);
+			&theme_text('reset_message',
+				&html_escape($in{'username'})));
+		print ui_tag('strong', &html_escape($hostname));
 		print ui_tag_end('p');
 
 		print ui_tag_start('div',

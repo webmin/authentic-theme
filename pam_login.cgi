@@ -50,8 +50,8 @@ print_login_container();
 
 # Print welcome message
 my $welcome_message = ui_tag('p',
-	[&text($gconfig{'nohostname'}
-		? 'pam_mesg2' : 'pam_mesg', ui_tag('strong', $hostname))],
+	&text($gconfig{'nohostname'}
+		? 'pam_mesg2' : 'pam_mesg', ui_tag('strong', &html_escape($hostname))),
 	{ 'class' => 'form-signin-paragraph' });
 $welcome_message =~ s/\.\s*(<\/p>)$/$1/; # remove last dot for consistency
 print $welcome_message;

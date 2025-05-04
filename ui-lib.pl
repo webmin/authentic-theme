@@ -17,49 +17,13 @@ my ($name, $value) = @_;
 return "$name: $value\r\n";
 }
 
-# ui_tag_escape_quote(string, quote)
-# Function to handle escaping of quotes in attribute values. If the input
-# is a string, it will be escaped using the provided quote character (default
-# is double quote). This is useful for HTML attributes where quotes need to
-# be escaped to prevent breaking the HTML structure. If the input is an
-# array reference, it will be treated as a raw value and not HTML escaped.
+# ui_tag_escape_quote(string)
+# Function to handle escaping of quotes in attribute values.
 sub ui_tag_escape_quote
 {
 return theme_ui_tag_escape_quote(@_) if (defined(&theme_ui_tag_escape_quote));
-my ($string, $quote) = @_;
-my $escape = 1;     # Default is to quote escape the value
-
-# Check if input is an array ref to allow unescaped value
-if (ref($string)) {
-	$string = $string->[0];
-	$escape = 0;
-	}
-
-# Escape the value if needed
-$string = quote_escape($string, $quote || '"') if ($escape);
-
-return $string;
-}
-
-# ui_tag_escape_value(string|array-ref)
-# Function to handle escaping of values inside open HTML tag. If the input is
-# an array reference, it will be treated as a raw value and not HTML escaped.
-sub ui_tag_escape_value
-{
-return theme_ui_tag_escape_value(@_) if (defined(&theme_ui_tag_escape_value));
-my ($input) = @_;
-my $escape = 1;     # Default is to HTML escape the value
-
-# Check if input is an array ref to allow unescaped value
-if (ref($input)) {
-	$input = $input->[0];
-	$escape = 0;
-	}
-
-# Escape the value if needed
-$input = html_escape($input) if ($escape);
-
-return $input;
+my ($string) = @_;
+return quote_escape($string, '"');
 }
 
 # ui_tag_start(tag, [attrs], [no-new-line])
@@ -104,15 +68,14 @@ $rv = "<!DOCTYPE html>\n$rv" if ($tag eq 'html');
 return $rv;
 }
 
-# ui_tag_content(content|array-ref)
-# Function to handle the content of an HTML tag. If the input is an array
-# reference, it will be treated as a raw value and not HTML escaped.
+# ui_tag_content(content)
+# Function to handle the content of an HTML tag.
 sub ui_tag_content
 {
 return theme_ui_tag_content(@_) if (defined(&theme_ui_tag_content));
 my ($content) = @_;
 my $rv;
-$rv = ui_tag_escape_value($content)."\n" if (defined($content));
+$rv = $content."\n" if (defined($content));
 return $rv;
 }
 
@@ -127,9 +90,6 @@ return "</$tag>\n";
 
 # ui_tag(tag, [content], [attrs])
 # Function to create a complete HTML tag with optional content and attributes.
-# If content is an array reference, it will be treated as a raw value and not
-# HTML escaped. Self-closing tags are handled automatically and do not require
-# a closing tag.
 sub ui_tag
 {
 return theme_ui_tag(@_) if (defined(&theme_ui_tag));

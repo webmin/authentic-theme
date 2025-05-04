@@ -50,7 +50,7 @@ print_login_container();
 # Print welcome message
 print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 print ui_tag_content($theme_text{'login_message'});
-print ui_tag('strong', $hostname);
+print ui_tag('strong', &html_escape($hostname));
 print ui_tag_end('p');
 
 # Print the input fields
