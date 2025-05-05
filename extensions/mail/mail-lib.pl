@@ -295,8 +295,8 @@ sub message_details
             $lock   = 'unlocked fa-flip-horizontal';
             $status = 'danger';
         }
-        my $success = ui_icon('check text-success');
-        my $fail    = ui_icon('times text-danger');
+        my $success = ui_mail_icon('check text-success');
+        my $fail    = ui_mail_icon('times text-danger');
 
         $data = ui_table_tbody_start('table table-condensed table-transparent table-message-details');
         my @tcontent;
@@ -319,7 +319,7 @@ sub message_details
         push(@tcontent, [$text{'extensions_mail_header_spf'} . ":", ui_italic(($spf ? $success : $fail), 'light')]);
         push(@tcontent,
              [$text{'extensions_mail_header_encrypted'} . ":",
-              ui_icon($encrypted)
+              ui_mail_icon($encrypted)
                 .
                 ui_italic(
                           (  $encryption ? $encryption_label :
@@ -347,9 +347,9 @@ sub message_flags
     my $unread  = 0;
     my $starred = $read & 2 ? 1 : 0;
     if ($starred) {
-        $special = ui_icon('star star', 'theme_xhred_global_starred');
+        $special = ui_mail_icon('star star', 'theme_xhred_global_starred');
     } else {
-        $special = ui_icon('star-o star', 'theme_xhred_global_unstarred');
+        $special = ui_mail_icon('star-o star', 'theme_xhred_global_unstarred');
     }
     if (($read & 1) == 0) {
         $unread = 1;
@@ -358,27 +358,27 @@ sub message_flags
     my @reply;
     my $reply;
     if ($read & 4) {
-        $reply = ui_icon('reply mail-list-reply');
+        $reply = ui_mail_icon('reply mail-list-reply');
     }
 
     my @security;
     my ($security_data, $security_status) = message_details($mail, $folder);
     my $security;
     if ($security_data) {
-        $security = ui_icon('caret-down text-light mail-list-dkim', $security_data, 'bottom');
+        $security = ui_mail_icon('caret-down text-light mail-list-dkim', $security_data, 'bottom');
     }
 
     my @all;
     my $all;
     my $p = int($mail->{'header'}->{'x-priority'});
     if ($p == 1 || $p == 2) {
-        $all .= ui_icon('exclamation text-danger mail-list-important', 'extensions_mail_flag_important');
+        $all .= ui_mail_icon('exclamation text-danger mail-list-important', 'extensions_mail_flag_important');
     } else {
-        $all .= ui_icon();
+        $all .= ui_mail_icon();
     }
 
     if (mail_has_attachments($mail, $folder)) {
-        $all .= ui_icon('paperclip fa-rotate-315 mail-list-attachment',
+        $all .= ui_mail_icon('paperclip fa-rotate-315 mail-list-attachment',
                         (
                          ui_text(
                             html_escape($text{'extensions_mail_flag_attachment'} . 
@@ -388,7 +388,7 @@ sub message_flags
                         'auto top',
                         1);
     } else {
-        $all .= ui_icon();
+        $all .= ui_mail_icon();
     }
 
     my @dns;
@@ -397,15 +397,15 @@ sub message_flags
         open_dsn_hash();
         my $mid = $mail->{'header'}->{'message-id'};
         if ($dsnreplies{$mid}) {
-            $dns = ui_icon('read text-primary mail-list-dns-reply');
+            $dns = ui_mail_icon('read text-primary mail-list-dns-reply');
         }
         if ($delreplies{$mid}) {
             my ($bounce) = grep {/^\!/}
               split(/\s+/, $delreplies{$mid});
             if ($bounce) {
-                $dns = ui_icon('read text-danger mail-list-dns-reply');
+                $dns = ui_mail_icon('read text-danger mail-list-dns-reply');
             } else {
-                $dns = ui_icon('read text-success mail-list-dns-reply');
+                $dns = ui_mail_icon('read text-success mail-list-dns-reply');
             }
         }
     }
@@ -559,7 +559,7 @@ sub messages_list
         if ($showto) {
             $dcolumn .=
               ui_span_row('trow trow-to-pointer', 1) .
-              ui_span_row('trow trow-to') . ($showfrom ? ui_icon('long-arrow-right') : undef) .
+              ui_span_row('trow trow-to') . ($showfrom ? ui_mail_icon('long-arrow-right') : undef) .
               view_mail_link($folder, $id, $start, encode_guess($m->{'header'}->{'to'}, 'to')) . ui_span_row();
         }
         $dcolumn .= ui_span_row('trow trow-flag-security') . $flag_security . ui_span_row();
@@ -715,7 +715,7 @@ sub ui_tooltip
     return "data-tooltip='mailbox' data-placement='@{[$_[1] || 'bottom']}' data-title='$_[0]'";
 }
 
-sub ui_icon
+sub ui_mail_icon
 {
     my ($fa, $tt, $tp, $cb) = @_;
     if ($tt) {
