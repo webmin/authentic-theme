@@ -173,7 +173,7 @@ print ui_tag('h2',
 sub login_username_filter
 {
 my $username = $in{'failed'};
-decode_utf8($username);
+decode_utf8(\$username);
 return ($username =~ /^[\p{L}\p{N}_.-]+$/) ? $username : undef;
 }
 
