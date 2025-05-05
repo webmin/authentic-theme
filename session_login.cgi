@@ -122,7 +122,7 @@ if ($miniserv->{'twofactor_provider'}) {
 	print ui_tag_start('div', { 'class' => 'form-group form-signin-group' });
 	print ui_button_icon($theme_text{'theme_xhred_global_verify'}, "qrcode",
 		{ class => "info", 'type' => 'submit', 'data-submit' => '2fa',
-		 'data-redirect' => &get_webmin_email_url() });
+		 'data-prefix' => $webprefix });
 	print ui_link_icon("$webprefix/", 
 		$theme_text{'theme_xhred_global_cancel'}, "times-circle-o",
 		{ class => 'warning' });
