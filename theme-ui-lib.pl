@@ -7,16 +7,6 @@ no warnings 'uninitialized';
 
 our (%theme_text);
 
-# format_http_header(name, value)
-# Function to format a single HTTP header. Returns the formatted string with
-# CRLF ending
-sub format_http_header
-{
-return theme_format_http_header(@_) if (defined(&theme_format_http_header));
-my ($name, $value) = @_;
-return "$name: $value\r\n";
-}
-
 # ui_tag_start(tag, [attrs], [no-new-line])
 # Function to create an opening HTML tag with optional attributes.
 # Attributes are passed as a hash reference and its values are quote escaped.
