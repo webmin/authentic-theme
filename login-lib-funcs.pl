@@ -177,12 +177,13 @@ decode_utf8(\$username);
 return ($username =~ /^[\p{L}\p{N}_.-]+$/) ? $username : undef;
 }
 
-# login_params_populate()
+# login_params_populate(failed-username)
 # Populates the input data not passed back by the server
 sub login_params_populate
 {
+my $failed = shift;
 my ($forgot, $username);
-if ($gconfig{'forgot_pass'} && !$in{'failed'}) {
+if ($gconfig{'forgot_pass'} && !$failed) {
 	($forgot) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/;
 	($username) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}_.-]+)/
 		if ($forgot);

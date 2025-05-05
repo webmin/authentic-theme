@@ -14,7 +14,7 @@ require("$ENV{'THEME_ROOT'}/login-lib.pl");
 $in{'failed'} = login_username_filter($in{'failed'});
 
 # Populate other input data not passed back by the server
-($in{'forgot'}, $in{'username'}) = login_params_populate();
+($in{'forgot'}, $in{'username'}) = login_params_populate($in{'failed'});
 
 # Print the pre-login text banner and exit
 if ($gconfig{'loginbanner'}              &&
