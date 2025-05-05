@@ -11,7 +11,7 @@ require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
 # Filter the username returned by the server, if needed
-$in{'failed'} = login_username_filter();
+$in{'failed'} = login_username_filter($in{'failed'});
 
 # Populate other input data not passed back by the server
 ($in{'forgot'}, $in{'username'}) = login_params_populate();
