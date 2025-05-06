@@ -166,16 +166,15 @@ my %brand = ( icon => 'wbm-webmin',
 # Read brand info from file if it exists
 my $brand_info = "$config_directory/brand.info";
 &read_file($brand_info, \%brand) if (-f $brand_info);
-my $brand_file = $brand{'file'};
+my $brand_file = $brand{'file'} && -r $brand{'file'} ? $brand{'file'} : undef;
 # Print either logo from file or icon
-if (-r $brand_file) {
+my $mime;
+$mime = &guess_mime_type($brand_file) if ($brand_file);
+if ($mime && $mime =~ /^image\//) {
 	my $image = &read_file_contents($brand_file);
-	my %mime = ('svg'  => 'svg+xml', 'jpg' => 'jpeg');
-	my ($ext) = $brand_file =~ /\.([a-zA-Z]+)$/;
-	$ext = $mime{lc($ext)} || $ext;
 	$image =~ s/[\r\n\t ]+/ /g;
 	print ui_tag('img', undef,
-		{ 'src' => "data:image/$ext;base64,".&encode_base64($image),
+		{ 'src' => "data:$mime;base64,".&encode_base64($image),
 		  'alt' => $brand{'title'}, });
 	}
 else {
