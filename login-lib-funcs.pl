@@ -4,7 +4,7 @@ use strict;
 use warnings;
 no warnings 'uninitialized';
 
-our (%in, %gconfig, %tconfig, %theme_text);
+our (%in, %gconfig, $config_directory, %tconfig, %theme_text);
 our ($miniserv, $bg, $webprefix, $textbox_attrs, $hostname);
 
 # get_secure_cookie()
@@ -158,14 +158,32 @@ else {
 # Prints the Webmin logo and title
 sub print_login_logo
 {
-print ui_tag('i', undef, { 'class' => 'wbm-webmin' });
-print ui_tag('h2', 
-	ui_tag('span', ' ' .
-		(&get_product_name() eq "webmin"
-			? $theme_text{'theme_xhred_titles_wm'}
-			: $theme_text{'theme_xhred_titles_um'})),
-	{ 'class' => 'form-signin-heading' }
-);
+# Default icon and title
+my %brand = ( icon => 'wbm-webmin',
+	      title => &get_product_name() eq "usermin"
+	      	? $theme_text{'theme_xhred_titles_um'}
+	      	: $theme_text{'theme_xhred_titles_wm'} );
+# Read brand info from file if it exists
+my $brand_info = "$config_directory/brand.info";
+&read_file($brand_info, \%brand) if (-f $brand_info);
+my $brand_file = $brand{'file'};
+# Print either logo from file or icon
+if (-r $brand_file) {
+	my $image = &read_file_contents($brand_file);
+	my %mime = ('svg'  => 'svg+xml', 'jpg' => 'jpeg');
+	my ($ext) = $brand_file =~ /\.([a-zA-Z]+)$/;
+	$ext = $mime{lc($ext)} || $ext;
+	$image =~ s/[\r\n\t ]+/ /g;
+	print ui_tag('img', undef,
+		{ 'src' => "data:image/$ext;base64,".&encode_base64($image),
+		  'alt' => $brand{'title'}, });
+	}
+else {
+	print ui_tag('i', undef, { 'class' => $brand{'icon'} });
+	}
+# Print the product title
+print ui_tag('h2', ui_tag('span', "&nbsp;$brand{'title'}"),
+	     { 'class' => 'form-signin-heading' } );
 }
 
 # login_username_filter(username)
