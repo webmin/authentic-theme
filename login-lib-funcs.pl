@@ -91,13 +91,11 @@ print ui_tag_start('div',
 
 # Print alert if bundled SSL cert is used
 if (&miniserv_using_default_cert()) {
-	print ui_alert(
-		&text('defcert_error', ucfirst(&get_product_name()), 
-		       ($ENV{'MINISERV_KEYFILE'} || $miniserv->{'keyfile'})),
-		'warning', undef,
-			{ 'data-defcert' => 1,
-			  'class' => 'faa-horizontal animated' } 
-		);
+	print ui_alert(&text('defcert_error', ucfirst(&get_product_name()), 
+		       	($ENV{'MINISERV_KEYFILE'} || $miniserv->{'keyfile'})),
+		       'warning', undef,
+		       { 'data-defcert' => 1,
+		         'class' => 'faa-horizontal animated' });
 	}
 # Print alert on failed login
 if ($in{'failed'}) {
