@@ -92,9 +92,11 @@ print ui_tag_start('div',
 # Print alert if bundled SSL cert is used
 if (&miniserv_using_default_cert()) {
 	print ui_alert(
-		[&text('defcert_error', ucfirst(&get_product_name()), 
-		       ($ENV{'MINISERV_KEYFILE'} || $miniserv->{'keyfile'}))],
-		'warning', undef, { 'data-defcert' => 1 }
+		&text('defcert_error', ucfirst(&get_product_name()), 
+		       ($ENV{'MINISERV_KEYFILE'} || $miniserv->{'keyfile'})),
+		'warning', undef,
+			{ 'data-defcert' => 1,
+			  'class' => 'faa-horizontal animated' } 
 		);
 	}
 # Print alert on failed login
@@ -103,24 +105,28 @@ if ($in{'failed'}) {
 	if ($in{'twofactor_msg'}) {
 		print ui_alert(&theme_text('session_twofailed',
 			       $in{'twofactor_msg'}), 'warning',
-			       undef, { 'data-twofactor' => 1 });
+			       undef, { 'data-twofactor' => 1,
+			                'class' => 'faa-horizontal animated' });
 		}
 	# Login failed
 	else {
 		print ui_alert($theme_text{'theme_xhred_session_failed'},
-			       'warning');
+			       'warning', undef,
+			       { 'class' => 'faa-horizontal animated' });
 		}
 	}
 # Print alert on logout
 elsif ($in{'logout'}) {
 	print ui_alert($theme_text{'session_logout'},
-		       'success', ['fa-sign-out', $theme_text{'login_success'}]);
+		       'success', ['fa-sign-out', $theme_text{'login_success'}],
+		       { 'class' => 'faa-bounce animated' });
 	}
 # Print alert on session timeout
 elsif ($in{'timed_out'}) {
 	print ui_alert(&theme_text('session_timed_out',
 				   int($in{'timed_out'} / 60)),
-		       'warning', ['fa-clock']);
+		       'warning', ['fa-clock'],
+		       { 'class' => 'faa-horizontal animated' });
 	}
 }
 
