@@ -16,6 +16,7 @@ require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$root_directory/config-lib.pl");
 
 my (%access,
+    %module_info,
     %newconfig,
     %oldconfig,
     $module,
@@ -25,7 +26,9 @@ my (%access,
 
 $module = $in{'module'};
 &error_setup($text{'config_err'});
-&foreign_available($module) || &error($text{'config_eaccess'});
+%module_info = &get_module_info($module);
+%module_info || &error($text{'config_emodule'});
+&foreign_available($module) || $module_info{'noacl'} || &error($text{'config_eaccess'});
 %access = &get_module_acl(undef, $module);
 $access{'noconfig'} && &error($text{'config_ecannot'});
 

@@ -31,11 +31,12 @@ my (%access,
     %moduletext);
 
 $module = $in{'module'}     || $ARGV[0];
-&foreign_available($module) || &error($text{'config_eaccess'});
+%module_info = &get_module_info($module);
+%module_info || &error($text{'config_emodule'});
+&foreign_available($module) || $module_info{'noacl'} || &error($text{'config_eaccess'});
 %access = &get_module_acl(undef, $module);
 $access{'noconfig'} &&
   &error($text{'config_ecannot'});
-%module_info = &get_module_info($module);
 
 if (-r &help_file($module, "config_intro")) {
     $help = ["config_intro", $module];
