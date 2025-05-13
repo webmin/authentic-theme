@@ -1735,6 +1735,13 @@ sub theme_forgot_handler
     }
 }
 
+sub theme_ui_brh
+{
+    my $rv;
+    $rv .= "<div data-x-br></div>" . "\n";
+    return $rv;
+}
+
 $main::cloudmin_no_create_links = 1;
 $main::cloudmin_no_edit_buttons = 1;
 $main::cloudmin_no_global_links = 1;
