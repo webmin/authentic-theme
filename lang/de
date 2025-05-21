@@ -38,7 +38,7 @@ body_virt=Virtueller Speicher
 body_webmin=Webmin-Version
 
 left_favorites=Favoriten
-left_favorites_no=Es wurden noch keine Favoriten hinzugefügt…
+left_favorites_no=Es wurden noch keine Favoriten hinzugefügt ..
 left_feedback=Feedback senden
 theme_xhred_global_sys_info=Systeminformationen
 left_others=Sonstiges
@@ -46,15 +46,19 @@ left_refresh_modules=Module aktualisieren
 left_search=Suche
 left_statistics=Systemstatistiken
 
-login_danger=Achtung!
+login_danger=Gefahr
 login_message=Sie müssen einen Benutzernamen und ein Passwort eingeben, um sich am Server anzumelden
+lost_message=Falls für Ihre Webmin-Anmeldung eine Wiederherstellungs-E-Mail hinterlegt ist, können Sie dieses Formular verwenden, um sich einen Link zum Zurücksetzen des Passworts zu senden
+reset_message=Sie sind dabei, das Passwort für den/die Benutzer:in <tt>$1</tt> auf diesem Server zurückzusetzen
 theme_xhred_login_pass=Passwort
 login_save=Angemeldet bleiben
+login_recover=Passwortzurücksetzung anfordern
+login_back=Zurück
 login_signin=Anmelden
-login_success=Erfolgreich!
+login_success=Erfolg
 theme_xhred_login_token=Token
 theme_xhred_login_user=Benutzername
-login_warning=Warnung!
+login_warning=Warnung
 
 right_aliases=Alias-Server
 right_bw=Bandbreitennutzung und -limit
@@ -202,7 +206,7 @@ theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Bitte warten…
+theme_xhred_global_please_wait=Bitte warten ..
 theme_xhred_filemanager_copying_selected=Auswahl wird kopiert.
 theme_xhred_filemanager_cutting_selected=Auswahl wird ausgeschnitten.
 theme_xhred_filemanager_pasting_selected=Aus Zwischenablage wird eingefügt.
@@ -333,7 +337,7 @@ theme_xhred_datatable_sinfo=Zeige START bis END von TOTAL Einträgen
 theme_xhred_datatable_sinfoempty=Zeige 0 bis 0 von 0 Einträgen
 theme_xhred_datatable_slengthmenu=Zeige MENU Einträge
 theme_xhred_datatable_sloadingrecords=Lade
-theme_xhred_datatable_sprocessing=Verarbeitung läuft…
+theme_xhred_datatable_sprocessing=Verarbeitung läuft ..
 theme_xhred_datatable_szerorecords=Keine passenden Einträge gefunden
 
 
@@ -590,8 +594,8 @@ theme_xhred_global_ok=OK
 settings_sysinfo_theme_updates_description=Damit diese Option funktioniert, muss der Befehl git auf Ihrem System installiert sein
 theme_git_patch_available=Neueste Entwicklungsversion
 theme_git_patch_no_git_message=Um die neuesten Updates direkt von GitHub zu installieren, muss der Befehl git auf Ihrem System installiert sein.
-theme_git_patch_update_success_message=Design-Update für Webmin war erfolgreich. Derzeit installierte Version ist $1. Neuladen…
-theme_git_patch_update_success_message2=Design-Update für Webmin und Usermin war erfolgreich. Derzeit installierte Version ist $1. Neuladen…
+theme_git_patch_update_success_message=Design-Update für Webmin war erfolgreich. Derzeit installierte Version ist $1. Neuladen ..
+theme_git_patch_update_success_message2=Design-Update für Webmin und Usermin war erfolgreich. Derzeit installierte Version ist $1. Neuladen ..
 theme_xhred_git_patch_update=Design-Update fehlgeschlagen. Bitte führen Sie das Update manuell über die Konsole durch.
 theme_xhred_git_patch_initiated=Design-Update wurde gestartet.
 theme_xhred_global_prev_page=Eine Seite zurück
@@ -898,8 +902,8 @@ theme_xhred_global_target=Ziel
 settings_sysinfo_max_servers=Maximale Anzahl anzuzeigender virtueller Server
 
 right_download_is_ready=Ihr Download ist bereit.
-theme_xhred_download_is_being_prepared=Ihr Download wird vorbereitet. Dies kann einige Zeit dauern. Bitte warten…
-theme_xhred_backup_is_being_prepared=Ihre Sicherung wird vorbereitet. Dies kann einige Zeit dauern. Bitte warten…
+theme_xhred_download_is_being_prepared=Ihr Download wird vorbereitet. Dies kann einige Zeit dauern. Bitte warten ..
+theme_xhred_backup_is_being_prepared=Ihre Sicherung wird vorbereitet. Dies kann einige Zeit dauern. Bitte warten ..
 
 settings_mail_ui=Neue E-Mail-Oberfläche aktivieren
 
@@ -964,7 +968,7 @@ theme_xhred_shell_aborted=Vorgang abgebrochen
 
 # 19.32
 theme_xhred_connection_reboot=Neustart läuft
-theme_xhred_connection_reboot_details=Der Server wird neu gestartet. Bitte warten…
+theme_xhred_connection_reboot_details=Der Server wird neu gestartet. Bitte warten ..
 settings_leftmenu_custom_links_description=Es können benutzerdefinierte, zusätzliche Links in das Navigationsmenü eingefügt werden. Die Schlüssel title, link und icon sind erforderlich. Optional können Sie angeben, in welchem Anmeldemodus ein Link angezeigt wird, über den Schlüssel level mit Werten in kommaseparierter Liste: 0 – Administrator:innen-Anmeldung;1 – Reseller-Anmeldung;2 – Serverbesitzer:in-Anmeldung;3 – Benutzer:in-Anmeldung;4 – Systembesitzer:in-Anmeldung. Es muss ein gültiges JSON-Objekt als Zeichenfolge übergeben werden, wie im folgenden Beispiel.{“extra”:[{“title”: “Google Mail”, “link”: “https://gmail.com/”, “icon”: “google”, “level”: “0,1,2,3,4”}, {“title”: “BIND DNS Server”, “link”: “/bind8”, “icon”: “server”}, {“title”: “Usermin”, “link”: “/”, “icon”: “envelope”, “port”: “20000”, “target”: “_blank”}]}
 left_favorites_edit=Favoriten bearbeiten
 left_favorites_edit_desc=Auf dieser Seite kann die Favoritendatei des Designs manuell bearbeitet werden. Änderungen erfolgen auf eigene Verantwortung – es findet keine Syntax- oder Gültigkeitsprüfung statt.
@@ -1086,7 +1090,7 @@ theme_xhred_mail_composer_addrecipients=Empfänger:in zum Adressbuch hinzufügen
 theme_xhred_mail_composer_notifications_dsn=Zustellstatus anfordern
 theme_xhred_mail_composer_notifications_del=Lesebestätigung anfordern
 theme_xhred_global_options=Optionen
-theme_xhred_mail_composer_draft_saving=Entwurf wird gespeichert…
+theme_xhred_mail_composer_draft_saving=Entwurf wird gespeichert ..
 theme_xhred_mail_composer_draft_saved=Entwurf gespeichert
 theme_xhred_mail_composer_server_attach_error_read=Angeforderte Datei kann nicht gelesen werden oder Zugriff verweigert
 theme_xhred_mail_composer_server_attach_error_dir=Verzeichnisse können nicht angehängt werden
@@ -1342,7 +1346,7 @@ theme_xhred_filemanager_path_manual=Pfad manuell eingeben (Ctrl + L)
 # 20.02
 theme_xhred_socket_conn_lost_title=Verbindung verloren
 theme_xhred_socket_conn_lost_reconnect=Erneut verbinden
-theme_xhred_socket_conn_lost_connecting=Verbindung wird aufgebaut …
+theme_xhred_socket_conn_lost_connecting=Verbindung wird aufgebaut ..
 theme_xhred_socket_conn_lost_try=Erneut versuchen
 theme_xhred_socket_conn_parse_error=Terminal konnte nicht geladen werden: Antwort des Servers nicht lesbar
 theme_xhred_socket_conn_sock_error=Terminal konnte nicht geladen werden: WebSocket-Verbindungsfehler
@@ -1382,6 +1386,7 @@ theme_xhred_hotkeys_custom_not_set=nicht gesetzt
 theme_xhred_hotkey_open_module_config_privileged=Modulkonfiguration öffnen
 theme_xhred_hotkey_open_theme_config=Designkonfiguration öffnen
 theme_xhred_hotkey_list_table=Paginierte Tabelle anzeigen
+theme_xhred_hotkey_list_tabs=Registerkarten auflisten
 theme_xhred_hotkey_clear_cache=Cache leeren und neu laden
 theme_xhred_hotkey_open_new=In neuem Tab duplizieren
 theme_xhred_hotkey_copy_to_clipboard=Elementdaten in Zwischenablage kopieren
@@ -1392,7 +1397,7 @@ theme_xhred_search_content=Inhalt durchsuchen
 theme_xhred_global_disabled=Deaktiviert
 theme_xhred_connection_reset_title=Verbindung zurückgesetzt
 theme_xhred_connection_reset_message=Keine Verbindung zum Remote-Server möglich
-right_file_is_being_prepared=Datei wird vorbereitet. Bitte warten …
+right_file_is_being_prepared=Datei wird vorbereitet. Bitte warten ..
 
 theme_xhred_global_paragraph=Absatz
 theme_xhred_global_heading=Überschrift
@@ -1494,3 +1499,19 @@ settings_sysinfo_real_time_status_history_duration6=18 Stunden
 settings_sysinfo_real_time_status_history_duration7=24 Stunden
 theme_xhred_license_purchase=Lizenz kaufen
 settings_right_table_links_sorted=Tabellenlinks alphabetisch sortieren
+
+
+# 24.00
+session_error=Fehler
+session_success=Erfolg
+session_cannot=Passwortzurücksetzung fehlgeschlagen: Der Benutzername fehlt.
+session_neterror=Keine Antwort vom Netzwerk erhalten!
+session_unkerror=Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.
+session_conerror=Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es später erneut.
+session_resetpass1=Neues Passwort
+session_resetpass2=Neues Passwort bestätigen
+session_resetepassreq=Ein Passwort ist erforderlich.
+session_pwdconf=Die Passwortbestätigung ist erforderlich.
+session_pwdmatch=Die Passwörter stimmen nicht überein.
+session_noid=Wiederherstellungs-ID wurde nicht gefunden!
+session_pwdsucc=Passwort erfolgreich geändert! Sie können sich nun mit dem neuen Passwort anmelden.
