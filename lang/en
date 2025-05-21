@@ -38,7 +38,7 @@ body_virt=Virtual memory
 body_webmin=Webmin version
 
 left_favorites=Favorites
-left_favorites_no=There were no favorites added yet...
+left_favorites_no=There were no favorites added yet ..
 left_feedback=Send Feedback
 theme_xhred_global_sys_info=System Information
 left_others=Others
@@ -206,7 +206,7 @@ theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=Please wait...
+theme_xhred_global_please_wait=Please wait ..
 theme_xhred_filemanager_copying_selected=Copying selected.
 theme_xhred_filemanager_cutting_selected=Cutting selected.
 theme_xhred_filemanager_pasting_selected=Pasting from clipboard.
@@ -337,7 +337,7 @@ theme_xhred_datatable_sinfo=Showing _START_ to _END_ of _TOTAL_ items
 theme_xhred_datatable_sinfoempty=Showing 0 to 0 of 0 items
 theme_xhred_datatable_slengthmenu=Show _MENU_ items
 theme_xhred_datatable_sloadingrecords=Loading
-theme_xhred_datatable_sprocessing=Processing...
+theme_xhred_datatable_sprocessing=Processing ..
 theme_xhred_datatable_szerorecords=No matching records found
 
 
@@ -594,8 +594,8 @@ theme_xhred_global_ok=OK
 settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=In order to install latest updates directly from GitHub, you must make sure that <code>git</code> command is installed.
-theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading...
-theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading...
+theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading ..
+theme_git_patch_update_success_message2=Theme update for both Webmin and Usermin was successful. Currently installed version is <tt>$1</tt>. Reloading ..
 theme_xhred_git_patch_update=Theme update has failed. Try using console to do it manually.
 theme_xhred_git_patch_initiated=Theme update has been initiated.
 theme_xhred_global_prev_page=Go back one page
@@ -902,8 +902,8 @@ theme_xhred_global_target=Target
 settings_sysinfo_max_servers=Maximum virtual servers to show
 
 right_download_is_ready=Your download is ready.
-theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait..
-theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait..
+theme_xhred_download_is_being_prepared=Your download is being prepared. It may take a while. Please wait ..
+theme_xhred_backup_is_being_prepared=Your backup is being prepared. It may take a while. Please wait ..
 
 settings_mail_ui=Enable new mail UI
 
@@ -968,7 +968,7 @@ theme_xhred_shell_aborted=Operation aborted
 
 # 19.32
 theme_xhred_connection_reboot=Rebooting
-theme_xhred_connection_reboot_details=The server is being rebooted. Please wait..
+theme_xhred_connection_reboot_details=The server is being rebooted. Please wait ..
 settings_leftmenu_custom_links_description=It is possible to have custom, extra links injected into the navigation menu. <br><br> The keys <em>title</em>, <em>link</em> and <em>icon</em> are required; optionally, you can define at which login mode a link would be displayed, by specifying <em>level</em> key, with values, in comma separated list, containing: <br><br> <em>0</em> - administrator login; <br><em>1</em> - reseller login;<br><em>2</em> - server owner login;<br> <em>3</em> - user login;<br> <em>4</em> - system owner login.<br><br> It will require you to pass valid JSON object as a string, as in the example below.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 left_favorites_edit=Edit Favorites
 left_favorites_edit_desc=This page can be used to manually edit theme favorites user file. This should be done carefully, as no syntax or other validity checking will be performed on your changes.
@@ -1090,7 +1090,7 @@ theme_xhred_mail_composer_addrecipients=Add recipients to addressbook
 theme_xhred_mail_composer_notifications_dsn=Request delivery status
 theme_xhred_mail_composer_notifications_del=Request read receipt
 theme_xhred_global_options=Options
-theme_xhred_mail_composer_draft_saving=Draft saving...
+theme_xhred_mail_composer_draft_saving=Draft saving ..
 theme_xhred_mail_composer_draft_saved=Draft saved
 theme_xhred_mail_composer_server_attach_error_read=Requested file cannot be read or permission denied
 theme_xhred_mail_composer_server_attach_error_dir=Directories cannot be attached
