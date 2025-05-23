@@ -163,9 +163,10 @@ else {
 sub print_login_logo
 {
 # Default icon and title
+my $product_name = &get_product_name();
 my %brand = (
-	file => "$root_directory/images/brand.svg",
-	title => &get_product_name() eq "usermin"
+	file => "$root_directory/images/brand_$product_name.svg",
+	title => $product_name eq "usermin"
 		? $theme_text{'theme_xhred_titles_um'}
 		: $theme_text{'theme_xhred_titles_wm'},
 	mode => 'full' );
