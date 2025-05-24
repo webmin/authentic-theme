@@ -811,7 +811,7 @@ sub nav_list_combined_menu
                          $link =~ /\/server-manager\/edit_serv\.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa2 fa2-settings"></i>';
-                } elsif ($link =~ /\/virtual-server\/view_domain\.cgi/) {
+                } elsif ($link =~ /\/virtual-server\/(view_domain|summary_domain)\.cgi/ ) {
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/list_users\.cgi/) {
