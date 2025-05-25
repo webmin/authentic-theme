@@ -49,7 +49,7 @@ left_statistics=Systemstatistiken
 login_danger=Gefahr
 login_message=Sie müssen einen Benutzernamen und ein Passwort eingeben, um sich am Server anzumelden
 lost_message=Falls für Ihre Webmin-Anmeldung eine Wiederherstellungs-E-Mail hinterlegt ist, können Sie dieses Formular verwenden, um sich einen Link zum Zurücksetzen des Passworts zu senden
-reset_message=Sie sind dabei, das Passwort für den/die Benutzer:in <tt>$1</tt> auf diesem Server zurückzusetzen
+reset_message=Sie sind dabei, das Passwort für den Benutzer <tt>$1</tt> auf diesem Server zurückzusetzen
 theme_xhred_login_pass=Passwort
 login_save=Angemeldet bleiben
 login_recover=Passwortzurücksetzung anfordern
@@ -67,8 +67,8 @@ right_faliases=E-Mail-Aliase
 right_fdbs=Datenbanken
 right_fdoms=Virtuelle Server
 right_from=Angemeldet von
-right_fusers2=FTP-Benutzer:innen
-right_fusers=Mail-/FTP-Benutzer:innen
+right_fusers2=FTP-Benutzer
+right_fusers=Mail-/FTP-Benutzer
 right_fvm2=Virtuelle Maschinen
 right_fweb=Virtuelle Websites
 right_licenceheader_vm2=Cloudmin-Lizenzen
@@ -104,9 +104,9 @@ settings_right_extensions_title=Design-Erweiterungen ermöglichen die gezielte A
 
 theme_xhred_settings_right_theme_logos=Design-Logos
 theme_xhred_settings_right_theme_logos_title=Design-Logos
-settings_right_logos_title=Design-Logos können hier für authentifizierte und nicht authentifizierte Benutzer:innen festgelegt werden. Empfohlene Logo-Größe ist 180x90 Pixel.
-settings_right_logo_authenticated_users=Logo für authentifizierte Benutzer:innen
-settings_right_logo_unauthenticated_users=Logo für nicht authentifizierte Benutzer:innen
+settings_right_logos_title=Design-Logos können hier für authentifizierte und nicht authentifizierte Benutzer festgelegt werden. Empfohlene Logo-Größe ist 180x90 Pixel.
+settings_right_logo_authenticated_users=Logo für authentifizierte Benutzer
+settings_right_logo_unauthenticated_users=Logo für nicht authentifizierte Benutzer
 settings_right_logos_error=Die hochgeladene Datei ist kein Bild
 
 settings_right_current_theme=Aktuelles Design
@@ -189,7 +189,7 @@ theme_global_warning=Warnung
 theme_global_success=Erfolg
 theme_global_info=Information
 sysinfo_system_status_warning=Um Systeminformationen anzeigen zu können, muss das Modul Systemstatus in den Benutzereinstellungen aktiviert werden.
-settings_leftmenu_user_html_privileged=HTML-Snippet nur für Administrator:innen anzeigen
+settings_leftmenu_user_html_privileged=HTML-Snippet nur für Administrator anzeigen
 theme_xhred_sysinfo_wmdocs=Webmin-Dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin-Dokumentation
 theme_xhred_sysinfo_cmdocs=Cloudmin-Dokumentation
@@ -565,7 +565,7 @@ theme_xhred_global_no_results_found=Keine Ergebnisse gefunden
 
 
 # 18.40
-theme_new_password_header=Neues Passwort für Benutzer:in festlegen
+theme_new_password_header=Neues Passwort für Benutzer festlegen
 login_reset=Passwort-Wiederherstellung
 theme_xhred_move_top=Nach oben verschieben
 theme_xhred_move_bottom=Nach unten verschieben
@@ -576,14 +576,14 @@ theme_xhred_add_before=Vor diesem hinzufügen
 settings_show_night_mode_link=Tag-/Nachtmodus-Schaltfläche anzeigen
 settings_hotkey_toggle_key_night_mode=Farbpalette umschalten
 settings_title=Design-Konfiguration
-settings_subtitle=Für Benutzer:in
+settings_subtitle=Für Benutzer
 
 theme_tooltip_night_mode=Tag-/Nachtmodus umschalten
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Sprache
-theme_xhred_tooltip_switch_user=Benutzer:in wechseln
+theme_xhred_tooltip_switch_user=Benutzer wechseln
 theme_tooltip_logout=Abmelden
-theme_tooltip_edit_user=Benutzer:in bearbeiten
+theme_tooltip_edit_user=Benutzer bearbeiten
 
 
 # 18.45
@@ -634,10 +634,10 @@ theme_xhred_filemanager_save_to_change_encoding=Datei muss gespeichert werden, u
 
 
 # 18.49
-theme_xhred_filemanager_user_switch=Zu Benutzer:in wechseln (Strg + M)
-theme_xhred_filemanager_user_switch_description=Durch Auswahl des unten aufgeführten Benutzernamens führen Sie weitere Vorgänge als diese:r Benutzer:in aus.
+theme_xhred_filemanager_user_switch=Zu Benutzer wechseln (Strg + M)
+theme_xhred_filemanager_user_switch_description=Durch Auswahl des unten aufgeführten Benutzernamens führen Sie weitere Vorgänge als diese Benutzer aus.
 theme_xhred_filemanager_user_switch_description_back=Um zum Standardmodus zurückzukehren, wählen Sie die erste Option in der Auswahl.
-theme_xhred_filemanager_user_switch_current_user=Aktuelle:r Benutzer:in
+theme_xhred_filemanager_user_switch_current_user=Aktuelle Benutzer
 theme_xhred_filemanager_user_switch_option=Beim Betreten des Home-Verzeichnisses automatisch in Benutzermodus wechseln
 theme_xhred_filemanager_editor_align_panels_horizontally=Panels horizontal ausrichten
 theme_xhred_filemanager_editor_align_panels_vertically=Panels vertikal ausrichten
@@ -749,7 +749,7 @@ theme_xhred_filemanager_sorting_desc=Absteigend
 theme_xhred_filemanager_sorting_by_name=Name
 theme_xhred_filemanager_sorting_by_type=Typ
 theme_xhred_filemanager_sorting_by_size=Größe
-theme_xhred_filemanager_sorting_by_ownership=Eigentümer:in
+theme_xhred_filemanager_sorting_by_ownership=Eigentümer
 theme_xhred_filemanager_sorting_by_permissions=Modus
 theme_xhred_filemanager_sorting_by_attributes=Attribute
 theme_xhred_filemanager_sorting_by_selinux=Sicherheitskontext
@@ -799,8 +799,8 @@ theme_xhred_title_locale_non_ui_config=Vom Server generiertes Datumsformat
 
 # 19.20
 extensions_mail_current_position=Nachrichten $1–$2 von $3
-extensions_mail_sort_by_sender=Nach Absender:in sortieren
-extensions_mail_sort_by_recipient=Nach Empfänger:in sortieren
+extensions_mail_sort_by_sender=Nach Absender sortieren
+extensions_mail_sort_by_recipient=Nach Empfänger sortieren
 extensions_mail_sort_by_date=Nach Datum sortieren
 extensions_mail_sort_by_size=Nach Größe sortieren
 extensions_mail_sort_by_spam=Nach Spam-Score sortieren
@@ -854,11 +854,11 @@ extensions_mail_header_dkim=DKIM-Signatur
 extensions_mail_header_encrypted=verschlüsselt
 extensions_mail_mark_spam_view_razordel=Als Spam markieren und löschen
 extensions_mail_mark_spam_view_razor=Als Spam markieren
-extensions_mail_mark_spam_mail_black=Absender:in blockieren
+extensions_mail_mark_spam_mail_black=Absender blockieren
 extensions_mail_mark_spam_view_ham=Als kein Spam markieren
 extensions_mail_mark_spam_view_hammove=Als kein Spam markieren und in Posteingang verschieben
-extensions_mail_mark_spam_mail_white=Absender:in erlauben
-extensions_mail_mark_spam_mail_whitemove=Absender:in erlauben und in Posteingang verschieben
+extensions_mail_mark_spam_mail_white=Absender erlauben
+extensions_mail_mark_spam_mail_whitemove=Absender erlauben und in Posteingang verschieben
 extensions_mail_search_filter_reset=Sortierfilter zurücksetzen
 extensions_mail_move_copy_only=Nicht verschieben, nur kopieren
 theme_xhred_global_total=Gesamt
@@ -888,7 +888,7 @@ theme_xhred_mail_search_has_attach=Enthält Anhang
 theme_xhred_settings_right_theme_bgs=Design-Hintergründe
 theme_xhred_settings_right_theme_bgs_title=Design-Hintergründe
 settings_right_bgs_title=Hier kann der Design-Hintergrund für die Anmeldeseite festgelegt werden.
-settings_right_bg_unauthenticated_users=Hintergrund für nicht authentifizierte Benutzer:innen
+settings_right_bg_unauthenticated_users=Hintergrund für nicht authentifizierte Benutzer
 settings_right_theme_left_background_title=Hintergrundsteuerung für Design
 
 theme_xhred_find_in_config_files=In Konfigurationsdateien suchen
@@ -907,7 +907,7 @@ theme_xhred_backup_is_being_prepared=Ihre Sicherung wird vorbereitet. Dies kann 
 
 settings_mail_ui=Neue E-Mail-Oberfläche aktivieren
 
-settings_theme_config_admins_only_privileged_error=Zugriff verweigert: Administrator:in hat den Zugriff auf Benutzeranpassungen blockiert
+settings_theme_config_admins_only_privileged_error=Zugriff verweigert: Administrator hat den Zugriff auf Benutzeranpassungen blockiert
 
 theme_xhred_tooltip_navigation_pinned=Navigationsmenü an-/abheften
 settings_hotkey_navigation=Status des Navigationsmenüs umschalten
@@ -969,7 +969,7 @@ theme_xhred_shell_aborted=Vorgang abgebrochen
 # 19.32
 theme_xhred_connection_reboot=Neustart läuft
 theme_xhred_connection_reboot_details=Der Server wird neu gestartet. Bitte warten ..
-settings_leftmenu_custom_links_description=Es können benutzerdefinierte, zusätzliche Links in das Navigationsmenü eingefügt werden. Die Schlüssel title, link und icon sind erforderlich. Optional können Sie angeben, in welchem Anmeldemodus ein Link angezeigt wird, über den Schlüssel level mit Werten in kommaseparierter Liste: 0 – Administrator:innen-Anmeldung;1 – Reseller-Anmeldung;2 – Serverbesitzer:in-Anmeldung;3 – Benutzer:in-Anmeldung;4 – Systembesitzer:in-Anmeldung. Es muss ein gültiges JSON-Objekt als Zeichenfolge übergeben werden, wie im folgenden Beispiel.{“extra”:[{“title”: “Google Mail”, “link”: “https://gmail.com/”, “icon”: “google”, “level”: “0,1,2,3,4”}, {“title”: “BIND DNS Server”, “link”: “/bind8”, “icon”: “server”}, {“title”: “Usermin”, “link”: “/”, “icon”: “envelope”, “port”: “20000”, “target”: “_blank”}]}
+settings_leftmenu_custom_links_description=Es können benutzerdefinierte, zusätzliche Links in das Navigationsmenü eingefügt werden. Die Schlüssel title, link und icon sind erforderlich. Optional können Sie angeben, in welchem Anmeldemodus ein Link angezeigt wird, über den Schlüssel level mit Werten in kommaseparierter Liste: 0 – Administrator-Anmeldung;1 – Reseller-Anmeldung;2 – Serverbesitzer-Anmeldung;3 – Benutzer-Anmeldung;4 – Systembesitzer-Anmeldung. Es muss ein gültiges JSON-Objekt als Zeichenfolge übergeben werden, wie im folgenden Beispiel.{“extra”:[{“title”: “Google Mail”, “link”: “https://gmail.com/”, “icon”: “google”, “level”: “0,1,2,3,4”}, {“title”: “BIND DNS Server”, “link”: “/bind8”, “icon”: “server”}, {“title”: “Usermin”, “link”: “/”, “icon”: “envelope”, “port”: “20000”, “target”: “_blank”}]}
 left_favorites_edit=Favoriten bearbeiten
 left_favorites_edit_desc=Auf dieser Seite kann die Favoritendatei des Designs manuell bearbeitet werden. Änderungen erfolgen auf eigene Verantwortung – es findet keine Syntax- oder Gültigkeitsprüfung statt.
 theme_xhred_filemanager_records_for_server_pagination=Standardanzahl der Einträge im Verzeichnis zur Initialisierung der Server-Paginierung
@@ -1086,7 +1086,7 @@ theme_xhred_mail_composer_attach=Datei(en) anhängen
 theme_xhred_mail_composer_toggle=HTML-/Textmodus umschalten
 theme_xhred_mail_composer_discard=Entwurf verwerfen
 theme_xhred_mail_composer_server_attach=Datei vom Server anhängen
-theme_xhred_mail_composer_addrecipients=Empfänger:in zum Adressbuch hinzufügen
+theme_xhred_mail_composer_addrecipients=Empfänger zum Adressbuch hinzufügen
 theme_xhred_mail_composer_notifications_dsn=Zustellstatus anfordern
 theme_xhred_mail_composer_notifications_del=Lesebestätigung anfordern
 theme_xhred_global_options=Optionen
@@ -1166,7 +1166,7 @@ theme_xhred_editing_config_file=Konfigurationsdatei bearbeiten
 
 
 # 19.61
-theme_xhred_login_message_2fa=Zwei-Faktor-Authentifizierung ist für diese:n Benutzer:in aktiviert
+theme_xhred_login_message_2fa=Zwei-Faktor-Authentifizierung ist für diese:n Benutzer aktiviert
 theme_xhred_global_verify=Verifizieren
 settings_show_terminal_link2=Befehlsshell-Schaltfläche anzeigen
 settings_hotkey_shell2=Befehlsshell öffnen
@@ -1186,7 +1186,7 @@ theme_xhred_filemanager_view_tail_and_reverse=Dateiausgabe (Ende und rückwärts
 theme_xhred_filemanager_view_head_and_tail=Dateiausgabe (Anfang und Ende)
 
 theme_xhred_filemanager_search_info_search_dir=Suchverzeichnis
-theme_xhred_filemanager_search_limit_user=Im Besitz von Benutzer:in
+theme_xhred_filemanager_search_limit_user=Im Besitz von Benutzer
 theme_xhred_filemanager_search_limit_group=Im Besitz von Gruppe
 theme_xhred_filemanager_search_limit_type=Dateityp
 theme_xhred_filemanager_search_limit_size=Dateigröße
@@ -1215,9 +1215,9 @@ settings_right_hotkey_options=Tastenkombinationen
 settings_right_hotkey_custom_options=Benutzerdefinierte Link-Kurzbefehle
 settings_right_soft_updates_page_options=Design-Updates
 settings_global_general_options_title=Allgemeine Standardwerte
-theme_error_access_not_root_user=Zugriff verweigert: Benutzer:in hat keine Berechtigung zum Bearbeiten dieses Bereichs
-settings_theme_config_admins_only_privileged=Zugriff auf Designkonfiguration für Benutzer:innen verbieten
-settings_theme_config_admins_only_privileged_description=Wenn vom Server-Administrator aktiviert, wird die Seite zur Designkonfiguration für normale, nicht privilegierte Benutzer:innen ausgeblendet. Diese Option wird jedoch nicht empfohlen, da reguläre Benutzer:innen ohnehin nur begrenzten Zugriff auf Designoptionen haben.
+theme_error_access_not_root_user=Zugriff verweigert: Benutzer hat keine Berechtigung zum Bearbeiten dieses Bereichs
+settings_theme_config_admins_only_privileged=Zugriff auf Designkonfiguration für Benutzer verbieten
+settings_theme_config_admins_only_privileged_description=Wenn vom Server-Administrator aktiviert, wird die Seite zur Designkonfiguration für normale, nicht privilegierte Benutzer ausgeblendet. Diese Option wird jedoch nicht empfohlen, da reguläre Benutzer ohnehin nur begrenzten Zugriff auf Designoptionen haben.
 
 
 # 19.72
@@ -1258,16 +1258,16 @@ theme_xhred_filemanager_successful_emptying_trash=Leeren des Verzeichnisses $1 w
 theme_xhred_notifications_motd=Administrator-Hinweis
 theme_xhred_notifications_motd2=Administrator-Nachricht
 theme_xhred_notifications_motd_says=$1 sagt
-theme_xhred_tooltip_side_slider_notifications_motd_add=Systemnachrichten für andere Benutzer:innen senden
+theme_xhred_tooltip_side_slider_notifications_motd_add=Systemnachrichten für andere Benutzer senden
 theme_xhred_modal_motd_title=Systemnachrichten senden
-theme_xhred_modal_motd_desc=Mit dieser Oberfläche können Sie Nachrichten an andere Benutzer:innen im System senden
+theme_xhred_modal_motd_desc=Mit dieser Oberfläche können Sie Nachrichten an andere Benutzer im System senden
 theme_xhred_global_message=Nachricht
-theme_xhred_modal_motd_select_all=Alle Benutzer:innen
-theme_xhred_modal_motd_select_adm=Hauptadministrator:innen
+theme_xhred_modal_motd_select_all=Alle Benutzer
+theme_xhred_modal_motd_select_adm=Hauptadministrator
 theme_xhred_modal_motd_select_res=Reseller
-theme_xhred_modal_motd_select_vm=Serverbesitzer:innen
-theme_xhred_modal_motd_select_cm=Systembesitzer:innen
-theme_xhred_modal_motd_select_um=E-Mail-Benutzer:innen
+theme_xhred_modal_motd_select_vm=Serverbesitzer
+theme_xhred_modal_motd_select_cm=Systembesitzer
+theme_xhred_modal_motd_select_um=E-Mail-Benutzer
 theme_xhred_modal_motd_btn_add=Neue Nachricht hinzufügen
 theme_xhred_modal_motd_btn_save=Aktuelle Nachrichten speichern und senden
 theme_xhred_modal_motd_btn_rm=Aktuelle Nachricht entfernen
@@ -1466,7 +1466,7 @@ theme_xhred_global_connected=Verbunden
 theme_xhred_global_disconnected=Getrennt
 theme_xhred_global_connecting=Verbindung wird hergestellt
 index_mods_missing=Perl-Modul $1 fehlt.
-index_noadmin_eaccess=Zugriff verweigert für Nicht-Hauptadministrator:innen!
+index_noadmin_eaccess=Zugriff verweigert für Nicht-Hauptadministrator!
 theme_xhred_body_os=Betriebssystem
 theme_xhred_theme_version=Authentic Theme Version
 theme_xhred_body_updates=Paketupdates
