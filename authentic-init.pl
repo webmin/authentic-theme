@@ -39,7 +39,6 @@ our (@theme_bundle_css,
      $title);
 
 do($ENV{'THEME_ROOT'} . "/authentic-funcs.pl");
-do($ENV{'THEME_ROOT'} . "/theme-ui-lib.pl");
 
 init_prefail();
 init_vars();
