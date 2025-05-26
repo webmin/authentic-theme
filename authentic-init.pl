@@ -1143,13 +1143,13 @@ sub get_button_style
         $icon  = "check-circle-o";
     } elsif (string_contains($keys, "migrate_show") ||
              string_contains($keys, "import_show") ||
-             string_contains($keys, "keys_import"))
-    {
+             string_contains($keys, "keys_import")) {
         $class = "success ";
         $icon  = " fa2 fa2-import";
+    } elsif (string_contains($keys, "index_refresh")) {
+        $icon  = "refresh-mdi fa-1_25x";
     } elsif (string_contains($keys, "update") ||
-             string_contains($keys, "index_sync"))
-    {
+             string_contains($keys, "index_sync")) {
         $class = "info ";
         $icon  = "refresh";
     } elsif ((string_contains($keys, "delete") && !string_contains($keys, "users_delete")) ||
@@ -1204,6 +1204,9 @@ sub get_button_style
         } else {
             $icon = " fa2 fa2-key";
         }
+    } elsif (string_contains($keys, "mods_install") ||
+             string_contains($keys, "pkgs_install")) {
+        $icon  = "package-install fa-1_25x";
     } elsif (
              (string_contains($keys, "install")     ||
               string_contains($keys, "recsok")      ||
