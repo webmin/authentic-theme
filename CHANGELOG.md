@@ -1,5 +1,14 @@
 ## Changelog
 
+#### Version 24.00 (May 25, 2025)
+* Add a flipping screen effect to the new login page for password recovery
+* Add more straight forward functions to lock, read and write file in live stats
+* Add dozens of small improvements to the user interface
+* Fix to allow proxy links to open as they are if the referrer is trusted
+* Fix layout issues in Webmin Servers Index module
+
+<!--- separator --->
+
 #### Version 23.03.1 (March 16, 2025)
 * Add an API to allow modules to determine whether tables should be sortable
 
@@ -43,8 +52,6 @@
 * Fix Cloudmin backup progressive output issues  
 * Remove unmaintained language translations  
 * Update upstream libraries
-
-<!--- separator --->
 
 #### Version 21.20.7 (August 7, 2024)
 * Add network I/O support in real-time monitoring for FreeBSD
