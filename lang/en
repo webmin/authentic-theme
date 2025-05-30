@@ -444,7 +444,7 @@ theme_xhred_global_none=None
 theme_xhred_global_yes=Yes
 theme_xhred_global_no=No
 
-theme_xhred_filemanager_new_tab=Add new tab (Ctrl + Space)
+theme_xhred_filemanager_new_tab=Add new tab (Alt + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
 
 theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
