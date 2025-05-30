@@ -1,426 +1,448 @@
-body_cputype1=$5、$8コア
-theme_xhred_login_pass=パスワード
-theme_xhred_login_token=トークン
-theme_xhred_login_user=ユーザー名
+body_cputype1=$5ã$8ã³ã¢
+lost_message=Webminã­ã°ã¤ã³ã«åå¾©ç¨ã¡ã¼ã«ãè¨­å®ããã¦ããå ´åã¯ããã®ãã©ã¼ã ãä½¿ç¨ãã¦ãã¹ã¯ã¼ããªã»ãããªã³ã¯ãèªåã«éä¿¡ã§ãã¾ãã
+reset_message=ã¦ã¼ã¶ã¼ <tt>$1</tt> ã®ãã¹ã¯ã¼ãããªã»ãããããã¨ãã¦ãã¾ã
+theme_xhred_login_pass=ãã¹ã¯ã¼ã
+login_recover=ãã¹ã¯ã¼ãã®ãªã»ããããªã¯ã¨ã¹ããã
+login_back=æ»ã
+theme_xhred_login_token=ãã¼ã¯ã³
+theme_xhred_login_user=ã¦ã¼ã¶ã¼å
 
-theme_xhred_session_failed=ログインに失敗しました。もう一度お試しください。
+theme_xhred_session_failed=ã­ã°ã¤ã³ã«å¤±æãã¾ãããããä¸åº¦ãè©¦ããã ããã
 
-settings_right_logos_title=認証されたユーザーと認証されていないユーザーの両方に対して、テーマのロゴをここで簡単に設定できます。推奨されるロゴのサイズは <em>180x90</em> ピクセルです。
-settings_right_logos_error=アップロードされたファイルは画像ではありません
+settings_right_logos_title=èªè¨¼ãããã¦ã¼ã¶ã¼ã¨èªè¨¼ããã¦ããªãã¦ã¼ã¶ã¼ã®ä¸¡æ¹ã«å¯¾ãã¦ããã¼ãã®ã­ã´ãããã§ç°¡åã«è¨­å®ã§ãã¾ããæ¨å¥¨ãããã­ã´ã®ãµã¤ãºã¯ <em>180x90</em> ãã¯ã»ã«ã§ãã
+settings_right_logos_error=ã¢ããã­ã¼ãããããã¡ã¤ã«ã¯ç»åã§ã¯ããã¾ãã
 
-settings_right_hotkey_custom_options_description=カスタム リンクを使用すると、<code>1</code> から <code>9</code> までの数字を使用して、有効なパネルの <code>URL</code> にすばやくアクセスできます。<code>URL</code> は、現在開いているページから抽出できます。たとえば、Apache モジュールにすばやく切り替えるには、<code>apache</code> を <code>Custom link 1</code> フィールドに設定します。デフォルトの修飾キーが <code>Alt</code> に設定されている場合、<code>Alt + 1</code> をクリックすると、Apache モジュールが開きます。
+settings_right_hotkey_custom_options_description=ã«ã¹ã¿ã  ãªã³ã¯ãä½¿ç¨ããã¨ã<code>1</code> ãã <code>9</code> ã¾ã§ã®æ°å­ãä½¿ç¨ãã¦ãæå¹ãªããã«ã® <code>URL</code> ã«ãã°ããã¢ã¯ã»ã¹ã§ãã¾ãã<code>URL</code> ã¯ãç¾å¨éãã¦ãããã¼ã¸ããæ½åºã§ãã¾ãããã¨ãã°ãApache ã¢ã¸ã¥ã¼ã«ã«ãã°ããåãæ¿ããã«ã¯ã<code>apache</code> ã <code>Custom link 1</code> ãã£ã¼ã«ãã«è¨­å®ãã¾ããããã©ã«ãã®ä¿®é£¾ã­ã¼ã <code>Alt</code> ã«è¨­å®ããã¦ããå ´åã<code>Alt + 1</code> ãã¯ãªãã¯ããã¨ãApache ã¢ã¸ã¥ã¼ã«ãéãã¾ãã
 
-settings_right_reload=タブスイッチにデフォルトページをロード
+settings_right_reload=ã¿ãã¹ã¤ããã«ããã©ã«ããã¼ã¸ãã­ã¼ã
 
-settings_favorites=お気に入りボタンを表示
+settings_favorites=ãæ°ã«å¥ããã¿ã³ãè¡¨ç¤º
 
-settings_hotkeys_active=有効
-settings_hotkey_toggle_modifier=修飾キー
-settings_hotkey_toggle_key_webmin=Webminメニューをロード
-settings_hotkey_toggle_key_virtualmin=Virtualmin メニューの読み込み
-settings_hotkey_toggle_key_cloudmin=Cloudminメニューをロード
-settings_hotkey_toggle_key_usermin=Userminメニューをロード
-settings_hotkey_toggle_key_webmail=メール読み込みメニュー
-settings_hotkey_sysinfo=ダッシュボードを開く
-settings_hotkey_shell=ドロップダウン ターミナルを開く
-settings_hotkey_favorites=お気に入りを開く
-settings_hotkey_focus_search=検索フィールドにフォーカス
-settings_hotkey_reload=現在のページを更新
+settings_hotkeys_active=æå¹
+settings_hotkey_toggle_modifier=ä¿®é£¾ã­ã¼
+settings_hotkey_toggle_key_webmin=Webminã¡ãã¥ã¼ãã­ã¼ã
+settings_hotkey_toggle_key_virtualmin=Virtualmin ã¡ãã¥ã¼ã®èª­ã¿è¾¼ã¿
+settings_hotkey_toggle_key_cloudmin=Cloudminã¡ãã¥ã¼ãã­ã¼ã
+settings_hotkey_toggle_key_usermin=Userminã¡ãã¥ã¼ãã­ã¼ã
+settings_hotkey_toggle_key_webmail=ã¡ã¼ã«èª­ã¿è¾¼ã¿ã¡ãã¥ã¼
+settings_hotkey_sysinfo=ããã·ã¥ãã¼ããéã
+settings_hotkey_shell=ãã­ãããã¦ã³ ã¿ã¼ããã«ãéã
+settings_hotkey_favorites=ãæ°ã«å¥ããéã
+settings_hotkey_focus_search=æ¤ç´¢ãã£ã¼ã«ãã«ãã©ã¼ã«ã¹
+settings_hotkey_reload=ç¾å¨ã®ãã¼ã¸ãæ´æ°
 
-settings_hotkey_toggle_slider=サイド スライダーの表示を切り替えます
+settings_hotkey_toggle_slider=ãµã¤ã ã¹ã©ã¤ãã¼ã®è¡¨ç¤ºãåãæ¿ãã¾ã
 
-theme_xhred_sysinfo_wmdocs=Webmin ドキュメント
-theme_xhred_sysinfo_vmdocs=Virtualmin のドキュメント
-theme_xhred_sysinfo_cmdocs=クラウドミンのドキュメント
+# 17.40
+theme_xhred_sysinfo_wmdocs=Webmin ãã­ã¥ã¡ã³ã
+theme_xhred_sysinfo_vmdocs=Virtualmin ã®ãã­ã¥ã¡ã³ã
+theme_xhred_sysinfo_cmdocs=ã¯ã©ã¦ããã³ã®ãã­ã¥ã¡ã³ã
 
-theme_xhred_filemanager_setting_permissions=選択したファイルの権限を<tt>%value</tt>に設定しています。
-theme_xhred_filemanager_changing_ownership=選択したファイルの所有権を<tt>%value</tt>に変更しています。
-theme_xhred_filemanager_bookmark_success=ディレクトリ<tt>%value</tt>ブックマークに正常に追加されました。
-theme_xhred_filemanager_searching=ファイル名「/directories」に一致する<tt>%value</tt>を検索しています/directories.
+theme_xhred_filemanager_setting_permissions=é¸æãããã¡ã¤ã«ã®æ¨©éã<tt>%value</tt>ã«è¨­å®ãã¦ãã¾ãã
+theme_xhred_filemanager_changing_ownership=é¸æãããã¡ã¤ã«ã®æææ¨©ã<tt>%value</tt>ã«å¤æ´ãã¦ãã¾ãã
+theme_xhred_filemanager_bookmark_success=ãã£ã¬ã¯ããª<tt>%value</tt>ããã¯ãã¼ã¯ã«æ­£å¸¸ã«è¿½å ããã¾ããã
+theme_xhred_filemanager_searching=ãã¡ã¤ã«åã/directoriesãã«ä¸è´ãã<tt>%value</tt>ãæ¤ç´¢ãã¦ãã¾ã/directories.
 
-theme_xhred_filemanager_successful_directory_creation=ディレクトリ<tt>%value</tt>正常に作成されました。
-theme_xhred_filemanager_successful_file_creation=ファイル<tt>%value</tt>正常に作成されました。
+theme_xhred_filemanager_successful_directory_creation=ãã£ã¬ã¯ããª<tt>%value</tt>æ­£å¸¸ã«ä½æããã¾ããã
+theme_xhred_filemanager_successful_file_creation=ãã¡ã¤ã«<tt>%value</tt>æ­£å¸¸ã«ä½æããã¾ããã
 
-theme_xhred_filemanager_unbookmark_success=ディレクトリ<tt>%value</tt>ブックマークから正常に削除されました。
+theme_xhred_filemanager_unbookmark_success=ãã£ã¬ã¯ããª<tt>%value</tt>ããã¯ãã¼ã¯ããæ­£å¸¸ã«åé¤ããã¾ããã
 
-theme_xhred_database_object_selected_delete2=選択したテーブルを削除
-theme_xhred_database_objects_selected_delete2=選択したテーブルを削除
+theme_xhred_database_object_selected_delete2=é¸æãããã¼ãã«ãåé¤
+theme_xhred_database_objects_selected_delete2=é¸æãããã¼ãã«ãåé¤
 
-filemanager_create_object_exists=$3 <tt>$1</tt> <tt>$2</tt>に既に存在します
-filemanager_create_object_denied=<tt>$2</tt>に$3 <tt>$1</tt>を作成できません - 権限が拒否されました: $4 。
+theme_xhred_filemanager_new_tab=æ°ããã¿ããè¿½å  (Alt + Space)
 
-filemanager_rename_exists=名前が<tt>$1</tt>の$3 <tt>$2</tt>に既に存在します
+filemanager_create_object_exists=$3 <tt>$1</tt> <tt>$2</tt>ã«æ¢ã«å­å¨ãã¾ã
+filemanager_create_object_denied=<tt>$2</tt>ã«$3 <tt>$1</tt>ãä½æã§ãã¾ãã - æ¨©éãæå¦ããã¾ãã: $4 ã
 
-theme_xhred_filemanager_successful_rename=<tt>%from</tt> <tt>%to</tt>の名前変更が成功しました。
+filemanager_rename_exists=ååã<tt>$1</tt>ã®$3 <tt>$2</tt>ã«æ¢ã«å­å¨ãã¾ã
 
-theme_xhred_filemanager_searching_matching=<tt>%text</tt>テキストを含むファイル/directories, の名前に一致する<tt>%value</tt>を検索しています。
-theme_xhred_filemanager_searching_replacing=置換は、名前に<tt>%value</tt>が含まれるファイル内の<tt>%text</tt>を<tt>%replace</tt>に一致させます。
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> <tt>%to</tt>ã®ååå¤æ´ãæåãã¾ããã
 
-theme_xhred_filemanager_successful_compression_bg=圧縮が正常に終了しました。圧縮ファイル<tt>%file</tt> <tt>%path</tt>ディレクトリにあります。
-theme_xhred_filemanager_successful_compression_bg_with_errors=圧縮はエラーで終了しました。圧縮ファイル<tt>%file</tt> <tt>%path</tt>ディレクトリに配置する必要があります。
+theme_xhred_filemanager_searching_matching=<tt>%text</tt>ãã­ã¹ããå«ããã¡ã¤ã«/directories, ã®ååã«ä¸è´ãã<tt>%value</tt>ãæ¤ç´¢ãã¦ãã¾ãã
+theme_xhred_filemanager_searching_replacing=ç½®æã¯ãååã«<tt>%value</tt>ãå«ã¾ãããã¡ã¤ã«åã®<tt>%text</tt>ã<tt>%replace</tt>ã«ä¸è´ããã¾ãã
 
-theme_xhred_filemanager_changing_attributes=選択したファイルの属性を<tt>%value</tt>に設定しています。
+theme_xhred_filemanager_successful_compression_bg=å§ç¸®ãæ­£å¸¸ã«çµäºãã¾ãããå§ç¸®ãã¡ã¤ã«<tt>%file</tt> <tt>%path</tt>ãã£ã¬ã¯ããªã«ããã¾ãã
+theme_xhred_filemanager_successful_compression_bg_with_errors=å§ç¸®ã¯ã¨ã©ã¼ã§çµäºãã¾ãããå§ç¸®ãã¡ã¤ã«<tt>%file</tt> <tt>%path</tt>ãã£ã¬ã¯ããªã«éç½®ããå¿è¦ãããã¾ãã
 
-theme_xhred_filemanager_changing_secontext=選択したファイルのセキュリティ コンテキストを<tt>%value</tt>に変更しています。
+theme_xhred_filemanager_changing_attributes=é¸æãããã¡ã¤ã«ã®å±æ§ã<tt>%value</tt>ã«è¨­å®ãã¦ãã¾ãã
 
-#18.40
-settings_hotkey_toggle_key_night_mode=カラー パレットの切り替え
+theme_xhred_filemanager_changing_secontext=é¸æãããã¡ã¤ã«ã®ã»ã­ã¥ãªãã£ ã³ã³ãã­ã¹ãã<tt>%value</tt>ã«å¤æ´ãã¦ãã¾ãã
 
-#18.48
-theme_force_upgrade=テーマを更新
-theme_update_footer=バグを $1リポジトリに報告してください。最新のニュースを入手するには、 $2チャネルに参加してください。
+# 18.40
+settings_hotkey_toggle_key_night_mode=ã«ã©ã¼ ãã¬ããã®åãæ¿ã
 
-settings_webmin_default_module=Webminのデフォルトページ
+# 18.48
+theme_force_upgrade=ãã¼ããæ´æ°
+theme_update_footer=ãã°ã $1ãªãã¸ããªã«å ±åãã¦ãã ãããææ°ã®ãã¥ã¼ã¹ãå¥æããã«ã¯ã $2ãã£ãã«ã«åå ãã¦ãã ããã
 
-#19.09
-theme_git_patch_incompatible_message_desc=互換性のない変更がある可能性があり、テーマが設計どおりに機能しなくなる可能性があります。 UIを使用してアップグレード操作を続行することはできません。
+settings_webmin_default_module=Webminã®ããã©ã«ããã¼ã¸
 
-#19.20
-extensions_mail_flag_spam_status=スパム状況
-extensions_mail_flag_spam_status_data=$2のうち$1
-extensions_mail_flag_tls_on=標準暗号化（TLS）
-extensions_mail_flag_tls_off=暗号化されていないメール
-extensions_mail_flag_tls_none=暗号化ステータスが不明です
+# 19.09
+theme_git_patch_incompatible_message_desc=äºææ§ã®ãªãå¤æ´ãããå¯è½æ§ãããããã¼ããè¨­è¨ã©ããã«æ©è½ããªããªãå¯è½æ§ãããã¾ãã UIãä½¿ç¨ãã¦ã¢ããã°ã¬ã¼ãæä½ãç¶è¡ãããã¨ã¯ã§ãã¾ããã
 
-settings_right_bgs_title=ログインページのテーマの背景をここで設定できます。
+# 19.20
+extensions_mail_flag_spam_status=ã¹ãã ç¶æ³
+extensions_mail_flag_spam_status_data=$2ã®ãã¡$1
+extensions_mail_flag_tls_on=æ¨æºæå·åï¼TLSï¼
+extensions_mail_flag_tls_off=æå·åããã¦ããªãã¡ã¼ã«
+extensions_mail_flag_tls_none=æå·åã¹ãã¼ã¿ã¹ãä¸æã§ã
 
-settings_hotkey_navigation=ナビゲーション メニューの状態を切り替える
+settings_right_bgs_title=ã­ã°ã¤ã³ãã¼ã¸ã®ãã¼ãã®èæ¯ãããã§è¨­å®ã§ãã¾ãã
 
-settings_hotkey_slider=サイドスライダーの状態を切り替え
+settings_hotkey_navigation=ããã²ã¼ã·ã§ã³ ã¡ãã¥ã¼ã®ç¶æãåãæ¿ãã
 
-#19.32
-settings_leftmenu_custom_links_description=ナビゲーション メニューにカスタムの追加リンクを挿入することができます。<br><br> キー <em>title</em>、<em>link</em>、および <em>icon</em> は必須です。オプションで、<em>level</em> キーと、コンマ区切りのリストで次の値を指定して、どのログイン モードでリンクを表示するかを定義できます。<br><br> <em>0</em> - 管理者ログイン。 <br><em>1</em> - 再販業者ログイン。<br><em>2</em> - サーバー所有者ログイン。<br><em>3</em> - ユーザーログイン。<br><em>4</em> - システム所有者ログイン。<br><br> 以下の例のように、有効な JSON オブジェクトを文字列として渡す必要があります。<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+settings_hotkey_slider=ãµã¤ãã¹ã©ã¤ãã¼ã®ç¶æãåãæ¿ã
 
-theme_xhred_filemanager_mass_selected_for_delete=%1 ディレクトリ内のすべてのアイテム
+# 19.32
+settings_leftmenu_custom_links_description=ããã²ã¼ã·ã§ã³ ã¡ãã¥ã¼ã«ã«ã¹ã¿ã ã®è¿½å ãªã³ã¯ãæ¿å¥ãããã¨ãã§ãã¾ãã<br><br> ã­ã¼ <em>title</em>ã<em>link</em>ãããã³ <em>icon</em> ã¯å¿é ã§ãããªãã·ã§ã³ã§ã<em>level</em> ã­ã¼ã¨ãã³ã³ãåºåãã®ãªã¹ãã§æ¬¡ã®å¤ãæå®ãã¦ãã©ã®ã­ã°ã¤ã³ ã¢ã¼ãã§ãªã³ã¯ãè¡¨ç¤ºããããå®ç¾©ã§ãã¾ãã<br><br> <em>0</em> - ç®¡çèã­ã°ã¤ã³ã <br><em>1</em> - åè²©æ¥­èã­ã°ã¤ã³ã<br><em>2</em> - ãµã¼ãã¼ææèã­ã°ã¤ã³ã<br><em>3</em> - ã¦ã¼ã¶ã¼ã­ã°ã¤ã³ã<br><em>4</em> - ã·ã¹ãã ææèã­ã°ã¤ã³ã<br><br> ä»¥ä¸ã®ä¾ã®ããã«ãæå¹ãª JSON ãªãã¸ã§ã¯ããæå­åã¨ãã¦æ¸¡ãå¿è¦ãããã¾ãã<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 
-#19.47
-theme_xhred_textarea_to_clipboard=選択したテキストエリアのコンテンツがクリップボードに正常にコピーされました
+theme_xhred_filemanager_mass_selected_for_delete=%1 ãã£ã¬ã¯ããªåã®ãã¹ã¦ã®ã¢ã¤ãã 
 
-#19.48
-theme_xhred_global_alias=エイリアス
+# 19.47
+theme_xhred_textarea_to_clipboard=é¸æãããã­ã¹ãã¨ãªã¢ã®ã³ã³ãã³ããã¯ãªãããã¼ãã«æ­£å¸¸ã«ã³ãã¼ããã¾ãã
 
-#19.50
-theme_xhred_mail_composer_real_name=本名
-theme_xhred_mail_composer_username=ユーザー名
+# 19.48
+theme_xhred_global_alias=ã¨ã¤ãªã¢ã¹
 
-#19.53
-settings_global_palette_unauthenticated=ログインページのカラーパレット
+# 19.50
+theme_xhred_mail_composer_real_name=æ¬å
+theme_xhred_mail_composer_username=ã¦ã¼ã¶ã¼å
 
-#19.60
-settings_config_save_and_next=保存して次へ
-settings_config_configuration_category=構成カテゴリ
-config_search_options_all=すべてのモジュール構成オプションを検索します
-theme_xhred_editing_config_file=設定ファイルの編集
+# 19.53
+settings_global_palette_unauthenticated=ã­ã°ã¤ã³ãã¼ã¸ã®ã«ã©ã¼ãã¬ãã
 
-#19.61
-theme_xhred_login_message_2fa=このユーザーがログインできるように、2要素認証が有効になっています
-theme_xhred_global_verify=確認
-settings_show_terminal_link2=コマンドシェルボタンを表示
-settings_hotkey_shell2=コマンド シェルを開く
-theme_xhred_path_to_console2=コマンドシェルで現在のパスを開く<tt>（Alt+Shift+K）</tt>
-theme_tooltip_terminal_link2=コマンドシェル
+# 19.60
+settings_config_save_and_next=ä¿å­ãã¦æ¬¡ã¸
+settings_config_configuration_category=æ§æã«ãã´ãª
+config_search_options_all=ãã¹ã¦ã®ã¢ã¸ã¥ã¼ã«æ§æãªãã·ã§ã³ãæ¤ç´¢ãã¾ã
+theme_xhred_editing_config_file=è¨­å®ãã¡ã¤ã«ã®ç·¨é
 
-#19.70
-theme_xhred_filemanager_context_view=見る
-theme_xhred_file_viewer=ファイルビューア
-theme_xhred_global_done=完了。
-theme_xhred_filemanager_file_save_err=ファイルの保存中にエラーが発生しました。
-theme_xhred_filemanager_view_head=ヘッドファイル出力
-theme_xhred_filemanager_view_head_and_reverse=ヘッドおよびリバースファイル出力
-theme_xhred_filemanager_view_tail=テールファイル出力
-theme_xhred_filemanager_view_tail_and_reverse=テールおよびリバースファイル出力
-theme_xhred_filemanager_view_head_and_tail=ヘッドとテールのファイル出力
+# 19.61
+theme_xhred_login_message_2fa=ãã®ã¦ã¼ã¶ã¼ãã­ã°ã¤ã³ã§ããããã«ã2è¦ç´ èªè¨¼ãæå¹ã«ãªã£ã¦ãã¾ã
+theme_xhred_global_verify=ç¢ºèª
+settings_show_terminal_link2=ã³ãã³ãã·ã§ã«ãã¿ã³ãè¡¨ç¤º
+settings_hotkey_shell2=ã³ãã³ã ã·ã§ã«ãéã
+theme_xhred_path_to_console2=ã³ãã³ãã·ã§ã«ã§ç¾å¨ã®ãã¹ãéã<tt>ï¼Alt+Shift+Kï¼</tt>
+theme_tooltip_terminal_link2=ã³ãã³ãã·ã§ã«
 
-theme_xhred_filemanager_search_info_search_dir=検索ディレクトリ
-theme_xhred_filemanager_search_limit_user=ユーザーが所有
-theme_xhred_filemanager_search_limit_group=グループが所有
-theme_xhred_filemanager_search_limit_type=ファイルタイプ
-theme_xhred_filemanager_search_limit_size=ファイルサイズ
-theme_xhred_filemanager_search_limit_size_desc=例えば<2Kまたは>3M-<5M
+# 19.70
+theme_xhred_filemanager_context_view=è¦ã
+theme_xhred_file_viewer=ãã¡ã¤ã«ãã¥ã¼ã¢
+theme_xhred_global_done=å®äºã
+theme_xhred_filemanager_file_save_err=ãã¡ã¤ã«ã®ä¿å­ä¸­ã«ã¨ã©ã¼ãçºçãã¾ããã
+theme_xhred_filemanager_view_head=ããããã¡ã¤ã«åºå
+theme_xhred_filemanager_view_head_and_reverse=ãããããã³ãªãã¼ã¹ãã¡ã¤ã«åºå
+theme_xhred_filemanager_view_tail=ãã¼ã«ãã¡ã¤ã«åºå
+theme_xhred_filemanager_view_tail_and_reverse=ãã¼ã«ããã³ãªãã¼ã¹ãã¡ã¤ã«åºå
+theme_xhred_filemanager_view_head_and_tail=ãããã¨ãã¼ã«ã®ãã¡ã¤ã«åºå
 
-theme_xhred_filemanager_context_move_to_trash=ゴミ箱へ移動
-theme_xhred_filemanager_context_permanently_delete=完全に削除する
-theme_xhred_global_remove=削除する
-theme_xhred_filemanager_settings_deletion_mode=ゴミ箱に移動してファイルを安全に削除します
-theme_xhred_filemanager_successful_removal=ごみ箱への削除<tt>$1</tt>は成功しました。
-theme_xhred_filemanager_removing_selected=選択したものを削除します。
-theme_xhred_filemanager_remove_warning=削除は正常に完了しましたが、すべてのオブジェクトについてではありません。リクエストされたオブジェクトは、削除する前に<em>名前が変更された</em>または<em>移動された</em>可能性があります。制限された権限（属性）は、別の考えられる原因です。エラーメッセージ：
+theme_xhred_filemanager_search_info_search_dir=æ¤ç´¢ãã£ã¬ã¯ããª
+theme_xhred_filemanager_search_limit_user=ã¦ã¼ã¶ã¼ãææ
+theme_xhred_filemanager_search_limit_group=ã°ã«ã¼ããææ
+theme_xhred_filemanager_search_limit_type=ãã¡ã¤ã«ã¿ã¤ã
+theme_xhred_filemanager_search_limit_size=ãã¡ã¤ã«ãµã¤ãº
+theme_xhred_filemanager_search_limit_size_desc=ä¾ãã°<2Kã¾ãã¯>3M-<5M
 
-theme_xhred_connection_error_details_ssl=<a>自己署名SSL証明書</a>の警告を確認してください
+theme_xhred_filemanager_context_move_to_trash=ã´ãç®±ã¸ç§»å
+theme_xhred_filemanager_context_permanently_delete=å®å¨ã«åé¤ãã
+theme_xhred_global_remove=åé¤ãã
+theme_xhred_filemanager_settings_deletion_mode=ã´ãç®±ã«ç§»åãã¦ãã¡ã¤ã«ãå®å¨ã«åé¤ãã¾ã
+theme_xhred_filemanager_successful_removal=ãã¿ç®±ã¸ã®åé¤<tt>$1</tt>ã¯æåãã¾ããã
+theme_xhred_filemanager_removing_selected=é¸æãããã®ãåé¤ãã¾ãã
+theme_xhred_filemanager_remove_warning=åé¤ã¯æ­£å¸¸ã«å®äºãã¾ãããããã¹ã¦ã®ãªãã¸ã§ã¯ãã«ã¤ãã¦ã§ã¯ããã¾ããããªã¯ã¨ã¹ãããããªãã¸ã§ã¯ãã¯ãåé¤ããåã«<em>ååãå¤æ´ããã</em>ã¾ãã¯<em>ç§»åããã</em>å¯è½æ§ãããã¾ããå¶éãããæ¨©éï¼å±æ§ï¼ã¯ãå¥ã®èããããåå ã§ããã¨ã©ã¼ã¡ãã»ã¼ã¸ï¼
 
-#19.71
-settings_sysinfo_hidden_panels_user=隠されたアコーディオン
-theme_xhred_tooltip_dashboard_panels_disable=$1パネルを非表示
-theme_xhred_dashboard_panels_disabled_explain=非表示のパネルは<tt>Theme Configuration: Dashboard and real-time monitoring</tt>ページを使用して再度有効にすることができます。
-settings_right_sysinfo_page_options=ダッシュボードとリアルタイムの監視
-settings_right_navigation_menu_options=ナビゲーションメニュー
-settings_right_notification_slider_options=サイドスライダー
-settings_right_table_options=テーブル表示
-settings_right_hotkey_options=ホットキー
-settings_right_hotkey_custom_options=カスタムリンクのホットキー
-settings_right_soft_updates_page_options=テーマの更新
-settings_global_general_options_title=一般的なデフォルト
-theme_error_access_not_root_user=アクセスが拒否されました：ユーザーにはこのセクションを編集する権限がありません
-settings_theme_config_admins_only_privileged=ユーザーのテーマ構成へのアクセスを禁止する
-settings_theme_config_admins_only_privileged_description=このオプションは、サーバー管理者によって実施された場合、通常の非特権ユーザーからテーマ構成ページを非表示にします。ただし、通常のユーザーはすでにテーマ構成へのアクセスが制限されており、ユーザー固有のオプションの最小限のセットしか変更できないため、このオプションの使用はお勧めしません。
+theme_xhred_connection_error_details_ssl=<a>èªå·±ç½²åSSLè¨¼ææ¸</a>ã®è­¦åãç¢ºèªãã¦ãã ãã
 
-#19.72
-theme_xhred_global_prefs=環境設定
-mconfig_eaccess=このモジュールにはアクセスできません
-mconfig_ecannot=このモジュールのカスタム構成ファイルが見つかりません
-theme_xhred_filemanager_mconfig_columns_selinux_disabled=この機能を使用するには、<tt>SELinux</tt>をインストールして有効にする必要があります
-theme_xhred_filemanager_mconfig_columns_acls_disabled=この機能を使用するには、<tt>ACL</tt>をオンにしてファイルシステムをマウントし、<kbd>getfacl</kbd>コマンドを使用できるようにする必要があります。
-theme_xhred_global_module_preferences=モジュール設定
+# 19.71
+settings_sysinfo_hidden_panels_user=é ãããã¢ã³ã¼ãã£ãªã³
+theme_xhred_tooltip_dashboard_panels_disable=$1ããã«ãéè¡¨ç¤º
+theme_xhred_dashboard_panels_disabled_explain=éè¡¨ç¤ºã®ããã«ã¯<tt>Theme Configuration: Dashboard and real-time monitoring</tt>ãã¼ã¸ãä½¿ç¨ãã¦ååº¦æå¹ã«ãããã¨ãã§ãã¾ãã
+settings_right_sysinfo_page_options=ããã·ã¥ãã¼ãã¨ãªã¢ã«ã¿ã¤ã ã®ç£è¦
+settings_right_navigation_menu_options=ããã²ã¼ã·ã§ã³ã¡ãã¥ã¼
+settings_right_notification_slider_options=ãµã¤ãã¹ã©ã¤ãã¼
+settings_right_table_options=ãã¼ãã«è¡¨ç¤º
+settings_right_hotkey_options=ãããã­ã¼
+settings_right_hotkey_custom_options=ã«ã¹ã¿ã ãªã³ã¯ã®ãããã­ã¼
+settings_right_soft_updates_page_options=ãã¼ãã®æ´æ°
+settings_global_general_options_title=ä¸è¬çãªããã©ã«ã
+theme_error_access_not_root_user=ã¢ã¯ã»ã¹ãæå¦ããã¾ããï¼ã¦ã¼ã¶ã¼ã«ã¯ãã®ã»ã¯ã·ã§ã³ãç·¨éããæ¨©éãããã¾ãã
+settings_theme_config_admins_only_privileged=ã¦ã¼ã¶ã¼ã®ãã¼ãæ§æã¸ã®ã¢ã¯ã»ã¹ãç¦æ­¢ãã
+settings_theme_config_admins_only_privileged_description=ãã®ãªãã·ã§ã³ã¯ããµã¼ãã¼ç®¡çèã«ãã£ã¦å®æ½ãããå ´åãéå¸¸ã®éç¹æ¨©ã¦ã¼ã¶ã¼ãããã¼ãæ§æãã¼ã¸ãéè¡¨ç¤ºã«ãã¾ãããã ããéå¸¸ã®ã¦ã¼ã¶ã¼ã¯ãã§ã«ãã¼ãæ§æã¸ã®ã¢ã¯ã»ã¹ãå¶éããã¦ãããã¦ã¼ã¶ã¼åºæã®ãªãã·ã§ã³ã®æå°éã®ã»ããããå¤æ´ã§ããªãããããã®ãªãã·ã§ã³ã®ä½¿ç¨ã¯ãå§ããã¾ããã
 
-#19.74
-theme_xhred_theme_update_available=AuthenticThemeの新しいバージョンがインストールされます
-settings_right_page_keep=ドメインスイッチに同じページを読み込む
-settings_right_page_keep_description=このオプションは、ナビゲーションメニューのドロップダウンリストから変更すると、ドメインの選択時に同じページを読み込もうとします。
+# 19.72
+theme_xhred_global_prefs=ç°å¢è¨­å®
+mconfig_eaccess=ãã®ã¢ã¸ã¥ã¼ã«ã«ã¯ã¢ã¯ã»ã¹ã§ãã¾ãã
+mconfig_ecannot=ãã®ã¢ã¸ã¥ã¼ã«ã®ã«ã¹ã¿ã æ§æãã¡ã¤ã«ãè¦ã¤ããã¾ãã
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=ãã®æ©è½ãä½¿ç¨ããã«ã¯ã<tt>SELinux</tt>ãã¤ã³ã¹ãã¼ã«ãã¦æå¹ã«ããå¿è¦ãããã¾ã
+theme_xhred_filemanager_mconfig_columns_acls_disabled=ãã®æ©è½ãä½¿ç¨ããã«ã¯ã<tt>ACL</tt>ããªã³ã«ãã¦ãã¡ã¤ã«ã·ã¹ãã ããã¦ã³ããã<kbd>getfacl</kbd>ã³ãã³ããä½¿ç¨ã§ããããã«ããå¿è¦ãããã¾ãã
+theme_xhred_global_module_preferences=ã¢ã¸ã¥ã¼ã«è¨­å®
 
-#19.76
-theme_xhred_global_show_all=すべて表示する
-theme_xhred_filemanager_context_prop_show_all=すべてのプロパティを表示
+# 19.74
+theme_xhred_theme_update_available=AuthenticThemeã®æ°ãããã¼ã¸ã§ã³ãã¤ã³ã¹ãã¼ã«ããã¾ã
+settings_right_page_keep=ãã¡ã¤ã³ã¹ã¤ããã«åããã¼ã¸ãèª­ã¿è¾¼ã
+settings_right_page_keep_description=ãã®ãªãã·ã§ã³ã¯ãããã²ã¼ã·ã§ã³ã¡ãã¥ã¼ã®ãã­ãããã¦ã³ãªã¹ãããå¤æ´ããã¨ããã¡ã¤ã³ã®é¸ææã«åããã¼ã¸ãèª­ã¿è¾¼ããã¨ãã¾ãã
 
-#19.84
-settings_right_table_links_type=テーブルリンク表示タイプ
-settings_right_table_links_type_2=テキスト付きの大きなアイコン
-settings_right_table_links_type_1=ツールチップテキスト付きの小さなアイコン
-settings_right_table_links_type_0=アイコンはなく、テキストリンクのみ
-settings_right_table_animate_icons=テーブルアイコンリンクのホバーアニメーションを表示する
-settings_right_table_grayscaled_icons=カーソルを合わせない限り、テーブルアイコンのリンクをグレースケールで表示します
-theme_xhred_upload_initial_info_dir=ここにディレクトリをドラッグアンドドロップするか、クリックして選択します
-theme_xhred_upload_one_dir_with=1つのディレクトリ
-theme_xhred_upload_err_dir_mode=エラー：ディレクトリのアップロードが有効になっているファイルを追加しようとしています
-theme_xhred_upload_err_files_mode=エラー：ファイルのみのアップロードモードでディレクトリを追加しようとしています
-theme_xhred_filemanager_context_empty_trash=空のごみ箱
-theme_xhred_filemanager_empty_trash_button=ごみ箱にあるすべてのファイルを削除します
-theme_xhred_filemanager_emptying_trash_selected=ゴミ箱を空にします。
-theme_xhred_filemanager_successful_emptying_trash=<tt>$1</tt>ディレクトリを空にすることに成功しました。
-theme_xhred_notifications_motd=管理者メモ
-theme_xhred_notifications_motd2=管理者メッセージ
-theme_xhred_notifications_motd_says=$1は言う
-theme_xhred_tooltip_side_slider_notifications_motd_add=システム上の他のユーザーにメッセージをブロードキャストする
-theme_xhred_modal_motd_title=放送システムメッセージ
-theme_xhred_modal_motd_desc=このインターフェースは、システム上の他のユーザーにメッセージをブロードキャストするために使用できます
-theme_xhred_global_message=メッセージ
-theme_xhred_modal_motd_select_all=全てのユーザー
-theme_xhred_modal_motd_select_adm=マスター管理者
-theme_xhred_modal_motd_select_res=再販業者
-theme_xhred_modal_motd_select_vm=サーバーの所有者
-theme_xhred_modal_motd_select_cm=機械の所有者
-theme_xhred_modal_motd_select_um=メールユーザー
-theme_xhred_modal_motd_btn_add=新しいメッセージを追加する
-theme_xhred_modal_motd_btn_save=現在のメッセージセットを保存してブロードキャストする
-theme_xhred_modal_motd_btn_rm=現在のメッセージを削除する
-theme_xhred_global_hide=隠れる
-body_cputemp=CPU温度
-theme_global_fan=クーラー
-body_cpufans=CPUファン
+# 19.76
+theme_xhred_global_show_all=ãã¹ã¦è¡¨ç¤ºãã
+theme_xhred_filemanager_context_prop_show_all=ãã¹ã¦ã®ãã­ããã£ãè¡¨ç¤º
+
+# 19.84
+settings_right_table_links_type=ãã¼ãã«ãªã³ã¯è¡¨ç¤ºã¿ã¤ã
+settings_right_table_links_type_2=ãã­ã¹ãä»ãã®å¤§ããªã¢ã¤ã³ã³
+settings_right_table_links_type_1=ãã¼ã«ããããã­ã¹ãä»ãã®å°ããªã¢ã¤ã³ã³
+settings_right_table_links_type_0=ã¢ã¤ã³ã³ã¯ãªãããã­ã¹ããªã³ã¯ã®ã¿
+settings_right_table_animate_icons=ãã¼ãã«ã¢ã¤ã³ã³ãªã³ã¯ã®ããã¼ã¢ãã¡ã¼ã·ã§ã³ãè¡¨ç¤ºãã
+settings_right_table_grayscaled_icons=ã«ã¼ã½ã«ãåãããªãéãããã¼ãã«ã¢ã¤ã³ã³ã®ãªã³ã¯ãã°ã¬ã¼ã¹ã±ã¼ã«ã§è¡¨ç¤ºãã¾ã
+theme_xhred_upload_initial_info_dir=ããã«ãã£ã¬ã¯ããªããã©ãã°ã¢ã³ããã­ããããããã¯ãªãã¯ãã¦é¸æãã¾ã
+theme_xhred_upload_one_dir_with=1ã¤ã®ãã£ã¬ã¯ããª
+theme_xhred_upload_err_dir_mode=ã¨ã©ã¼ï¼ãã£ã¬ã¯ããªã®ã¢ããã­ã¼ããæå¹ã«ãªã£ã¦ãããã¡ã¤ã«ãè¿½å ãããã¨ãã¦ãã¾ã
+theme_xhred_upload_err_files_mode=ã¨ã©ã¼ï¼ãã¡ã¤ã«ã®ã¿ã®ã¢ããã­ã¼ãã¢ã¼ãã§ãã£ã¬ã¯ããªãè¿½å ãããã¨ãã¦ãã¾ã
+theme_xhred_filemanager_context_empty_trash=ç©ºã®ãã¿ç®±
+theme_xhred_filemanager_empty_trash_button=ãã¿ç®±ã«ãããã¹ã¦ã®ãã¡ã¤ã«ãåé¤ãã¾ã
+theme_xhred_filemanager_emptying_trash_selected=ã´ãç®±ãç©ºã«ãã¾ãã
+theme_xhred_filemanager_successful_emptying_trash=<tt>$1</tt>ãã£ã¬ã¯ããªãç©ºã«ãããã¨ã«æåãã¾ããã
+theme_xhred_notifications_motd=ç®¡çèã¡ã¢
+theme_xhred_notifications_motd2=ç®¡çèã¡ãã»ã¼ã¸
+theme_xhred_notifications_motd_says=$1ã¯è¨ã
+theme_xhred_tooltip_side_slider_notifications_motd_add=ã·ã¹ãã ä¸ã®ä»ã®ã¦ã¼ã¶ã¼ã«ã¡ãã»ã¼ã¸ããã­ã¼ãã­ã£ã¹ããã
+theme_xhred_modal_motd_title=æ¾éã·ã¹ãã ã¡ãã»ã¼ã¸
+theme_xhred_modal_motd_desc=ãã®ã¤ã³ã¿ã¼ãã§ã¼ã¹ã¯ãã·ã¹ãã ä¸ã®ä»ã®ã¦ã¼ã¶ã¼ã«ã¡ãã»ã¼ã¸ããã­ã¼ãã­ã£ã¹ãããããã«ä½¿ç¨ã§ãã¾ã
+theme_xhred_global_message=ã¡ãã»ã¼ã¸
+theme_xhred_modal_motd_select_all=å¨ã¦ã®ã¦ã¼ã¶ã¼
+theme_xhred_modal_motd_select_adm=ãã¹ã¿ã¼ç®¡çè
+theme_xhred_modal_motd_select_res=åè²©æ¥­è
+theme_xhred_modal_motd_select_vm=ãµã¼ãã¼ã®ææè
+theme_xhred_modal_motd_select_cm=æ©æ¢°ã®ææè
+theme_xhred_modal_motd_select_um=ã¡ã¼ã«ã¦ã¼ã¶ã¼
+theme_xhred_modal_motd_btn_add=æ°ããã¡ãã»ã¼ã¸ãè¿½å ãã
+theme_xhred_modal_motd_btn_save=ç¾å¨ã®ã¡ãã»ã¼ã¸ã»ãããä¿å­ãã¦ãã­ã¼ãã­ã£ã¹ããã
+theme_xhred_modal_motd_btn_rm=ç¾å¨ã®ã¡ãã»ã¼ã¸ãåé¤ãã
+theme_xhred_global_hide=é ãã
+body_cputemp=CPUæ¸©åº¦
+theme_global_fan=ã¯ã¼ã©ã¼
+body_cpufans=CPUãã¡ã³
 body_cpufan_rpm=RPM
-body_cpufan=CPUファン
-filemanager_symlink_exists=ファイルはすでに<tt>$2</tt> <tt>$1</tt>を作成できません
+body_cpufan=CPUãã¡ã³
+filemanager_symlink_exists=ãã¡ã¤ã«ã¯ãã§ã«<tt>$2</tt> <tt>$1</tt>ãä½æã§ãã¾ãã
 
-#19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=基本的なシステム情報をクリップボードにコピーします。 $1キーを押したままに拡張してコピーします。マークダウンではなくプレーンテキストデータをコピーするには、 $2キーを押したままにします
-theme_xhred_tooltip_side_slider_clipboard_account=すべてのアカウント情報をクリップボードにコピーします。マークダウンではなくプレーンテキストデータをコピーするには、 $1キーを押したままにします
-tooltip_back_to_servers_index_master=マスターマシン上のWebminサーバーインデックスモジュール
-tooltip_list_other_servers=他の登録済みWebminサーバーのリスト
-theme_xhred_status_module_mon_up=上
-theme_xhred_status_module_mon_down=下
-theme_xhred_status_module_mon_webmin=Webminがダウンしています
-theme_xhred_status_module_mon_timed=タイムアウトしました
-theme_xhred_status_module_mon_not=インストールされていない
-theme_xhred_status_module_mon_skip=スキップ
-theme_xhred_status_module_mon_quest=利用不可
-theme_xhred_webminlog_module_no_command_escapes=実行されたコマンドの円記号を切り替えます
-settings_navigation_auto_fold_category=非アクティブなカテゴリを自動折りたたみ
-theme_xhred_tooltip_virtualmin_templates_filter_generating=テンプレートのオプションの検索可能なリストを生成する
-theme_xhred_tooltip_virtualmin_templates_filter=テンプレートのすべてのオプションを検索
-theme_xhred_sysinfo_vmforum=Virtualmin コミュニティ
-theme_xhred_tooltip_support_ticket=システム情報を添付したサポートチケットを送信します。 $1キーを押したままにして、サポートリンクをクリップボードにコピーします
-theme_xhred_tooltip_side_slider_refresh_sysinfo=システム情報を強制的に更新する
-theme_xhred_disk_quota_error_title=クォータを超えています
-theme_xhred_disk_quota_error_message=デバイスにスペースが残っていません
-theme_xhred_filemanager_decrypt_option_use_master_admin_keys=復号化にマスター管理者キーを使用する
+# 19.85
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=åºæ¬çãªã·ã¹ãã æå ±ãã¯ãªãããã¼ãã«ã³ãã¼ãã¾ãã $1ã­ã¼ãæ¼ããã¾ã¾ã«æ¡å¼µãã¦ã³ãã¼ãã¾ãããã¼ã¯ãã¦ã³ã§ã¯ãªããã¬ã¼ã³ãã­ã¹ããã¼ã¿ãã³ãã¼ããã«ã¯ã $2ã­ã¼ãæ¼ããã¾ã¾ã«ãã¾ã
+theme_xhred_tooltip_side_slider_clipboard_account=ãã¹ã¦ã®ã¢ã«ã¦ã³ãæå ±ãã¯ãªãããã¼ãã«ã³ãã¼ãã¾ãããã¼ã¯ãã¦ã³ã§ã¯ãªããã¬ã¼ã³ãã­ã¹ããã¼ã¿ãã³ãã¼ããã«ã¯ã $1ã­ã¼ãæ¼ããã¾ã¾ã«ãã¾ã
+tooltip_back_to_servers_index_master=ãã¹ã¿ã¼ãã·ã³ä¸ã®Webminãµã¼ãã¼ã¤ã³ããã¯ã¹ã¢ã¸ã¥ã¼ã«
+tooltip_list_other_servers=ä»ã®ç»é²æ¸ã¿Webminãµã¼ãã¼ã®ãªã¹ã
+theme_xhred_status_module_mon_up=ä¸
+theme_xhred_status_module_mon_down=ä¸
+theme_xhred_status_module_mon_webmin=Webminããã¦ã³ãã¦ãã¾ã
+theme_xhred_status_module_mon_timed=ã¿ã¤ã ã¢ã¦ããã¾ãã
+theme_xhred_status_module_mon_not=ã¤ã³ã¹ãã¼ã«ããã¦ããªã
+theme_xhred_status_module_mon_skip=ã¹ã­ãã
+theme_xhred_status_module_mon_quest=å©ç¨ä¸å¯
+theme_xhred_webminlog_module_no_command_escapes=å®è¡ãããã³ãã³ãã®åè¨å·ãåãæ¿ãã¾ã
+settings_navigation_auto_fold_category=éã¢ã¯ãã£ããªã«ãã´ãªãèªåæãããã¿
+theme_xhred_tooltip_virtualmin_templates_filter_generating=ãã³ãã¬ã¼ãã®ãªãã·ã§ã³ã®æ¤ç´¢å¯è½ãªãªã¹ããçæãã
+theme_xhred_tooltip_virtualmin_templates_filter=ãã³ãã¬ã¼ãã®ãã¹ã¦ã®ãªãã·ã§ã³ãæ¤ç´¢
+theme_xhred_sysinfo_vmforum=Virtualmin ã³ãã¥ããã£
+theme_xhred_tooltip_support_ticket=ã·ã¹ãã æå ±ãæ·»ä»ãããµãã¼ããã±ãããéä¿¡ãã¾ãã $1ã­ã¼ãæ¼ããã¾ã¾ã«ãã¦ããµãã¼ããªã³ã¯ãã¯ãªãããã¼ãã«ã³ãã¼ãã¾ã
+theme_xhred_tooltip_side_slider_refresh_sysinfo=ã·ã¹ãã æå ±ãå¼·å¶çã«æ´æ°ãã
+theme_xhred_disk_quota_error_title=ã¯ã©ã¼ã¿ãè¶ãã¦ãã¾ã
+theme_xhred_disk_quota_error_message=ããã¤ã¹ã«ã¹ãã¼ã¹ãæ®ã£ã¦ãã¾ãã
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=å¾©å·åã«ãã¹ã¿ã¼ç®¡çèã­ã¼ãä½¿ç¨ãã
 
-#19.90
-settings_hotkey_toggle_hold_modifier=修飾キーを押し続ける
+# 19.90
+settings_hotkey_toggle_hold_modifier=ä¿®é£¾ã­ã¼ãæ¼ãç¶ãã
 
-#19.91
-theme_xhred_filemanager_files_mode_ask=常に尋ねる
-theme_xhred_filemanager_files_mode_ask_remember=将来のデフォルトとして覚えておいてください
-theme_xhred_filemanager_files_mode_ask_title=既存のものを上書きする
-theme_xhred_filemanager_files_mode_ask_title2=現在のファイルを上書きする
-theme_xhred_filemanager_files_mode_ask_desc=次の操作で既存のファイルを上書きしますか
-theme_xhred_filemanager_files_mode_ask_title_yes=はい、上書きします
-theme_xhred_filemanager_files_mode_ask_title_no=いいえ、存在し続けます
-theme_xhred_filemanager_trash_empty_curr_user_single=ごみ箱ディレクトリを空にする
-theme_xhred_filemanager_trash_empty_curr_user=現在のユーザーのゴミ箱ディレクトリを空にします
-theme_xhred_filemanager_trash_empty_all_users=他のすべてのユーザーのゴミ箱ディレクトリを空にします
-theme_xhred_filemanager_purge_trash_curr_start=$1ディレクトリを削除しています。
-theme_xhred_filemanager_purge_trash_all_start=他のすべてのユーザーのゴミ箱ディレクトリを削除します。
-theme_xhred_filemanager_purge_trash_curr_end=$1ディレクトリが正常にパージされました。
-theme_xhred_filemanager_purge_trash_all_end=他のすべてのユーザーのゴミ箱ディレクトリを正常に削除しました。
-theme_error_access_dir_not_allowed=アクセスが拒否されました：ファイルにアクセスできません
+# 19.91
+theme_xhred_filemanager_files_mode_ask=å¸¸ã«å°ã­ã
+theme_xhred_filemanager_files_mode_ask_remember=å°æ¥ã®ããã©ã«ãã¨ãã¦è¦ãã¦ããã¦ãã ãã
+theme_xhred_filemanager_files_mode_ask_title=æ¢å­ã®ãã®ãä¸æ¸ããã
+theme_xhred_filemanager_files_mode_ask_title2=ç¾å¨ã®ãã¡ã¤ã«ãä¸æ¸ããã
+theme_xhred_filemanager_files_mode_ask_desc=æ¬¡ã®æä½ã§æ¢å­ã®ãã¡ã¤ã«ãä¸æ¸ããã¾ãã
+theme_xhred_filemanager_files_mode_ask_title_yes=ã¯ããä¸æ¸ããã¾ã
+theme_xhred_filemanager_files_mode_ask_title_no=ããããå­å¨ãç¶ãã¾ã
+theme_xhred_filemanager_trash_empty_curr_user_single=ãã¿ç®±ãã£ã¬ã¯ããªãç©ºã«ãã
+theme_xhred_filemanager_trash_empty_curr_user=ç¾å¨ã®ã¦ã¼ã¶ã¼ã®ã´ãç®±ãã£ã¬ã¯ããªãç©ºã«ãã¾ã
+theme_xhred_filemanager_trash_empty_all_users=ä»ã®ãã¹ã¦ã®ã¦ã¼ã¶ã¼ã®ã´ãç®±ãã£ã¬ã¯ããªãç©ºã«ãã¾ã
+theme_xhred_filemanager_purge_trash_curr_start=$1ãã£ã¬ã¯ããªãåé¤ãã¦ãã¾ãã
+theme_xhred_filemanager_purge_trash_all_start=ä»ã®ãã¹ã¦ã®ã¦ã¼ã¶ã¼ã®ã´ãç®±ãã£ã¬ã¯ããªãåé¤ãã¾ãã
+theme_xhred_filemanager_purge_trash_curr_end=$1ãã£ã¬ã¯ããªãæ­£å¸¸ã«ãã¼ã¸ããã¾ããã
+theme_xhred_filemanager_purge_trash_all_end=ä»ã®ãã¹ã¦ã®ã¦ã¼ã¶ã¼ã®ã´ãç®±ãã£ã¬ã¯ããªãæ­£å¸¸ã«åé¤ãã¾ããã
+theme_error_access_dir_not_allowed=ã¢ã¯ã»ã¹ãæå¦ããã¾ããï¼ãã¡ã¤ã«ã«ã¢ã¯ã»ã¹ã§ãã¾ãã
 
-#19.95
-theme_xhred_global_outdated_desc=インストールされている $1 のバージョンは古くなっています。利用可能な最新バージョンは $2 です。アップグレードするか、クリックして最近のリリースの詳細を確認してください。
-theme_xhred_global_outdated_desc2=インストールされている $1 のバージョンは古くなっています。利用可能な最新バージョンは $2 です。
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=選択中に <tt>Ctrl</tt> キーを押したままにする
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=選択中に <tt>Command</tt> キーを押したままにする
+# 19.95
+theme_xhred_global_outdated_desc=ã¤ã³ã¹ãã¼ã«ããã¦ãã $1 ã®ãã¼ã¸ã§ã³ã¯å¤ããªã£ã¦ãã¾ããå©ç¨å¯è½ãªææ°ãã¼ã¸ã§ã³ã¯ $2 ã§ããã¢ããã°ã¬ã¼ãããããã¯ãªãã¯ãã¦æè¿ã®ãªãªã¼ã¹ã®è©³ç´°ãç¢ºèªãã¦ãã ããã
+theme_xhred_global_outdated_desc2=ã¤ã³ã¹ãã¼ã«ããã¦ãã $1 ã®ãã¼ã¸ã§ã³ã¯å¤ããªã£ã¦ãã¾ããå©ç¨å¯è½ãªææ°ãã¼ã¸ã§ã³ã¯ $2 ã§ãã
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=é¸æä¸­ã« <tt>Ctrl</tt> ã­ã¼ãæ¼ããã¾ã¾ã«ãã
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=é¸æä¸­ã« <tt>Command</tt> ã­ã¼ãæ¼ããã¾ã¾ã«ãã
 
-#19.97
-theme_xhred_webmin_requires_restart=前回のパッケージアップグレードで、WebminWebサーバーデーモンが正しく再起動されなかったことが検出されました。これは、<tt>$1</tt>コマンドを呼び出してWebサーバーを手動で再起動するために必要です。
-theme_xhred_webmin_requires_restart_yes=はい、再起動してみてください
-theme_xhred_webmin_requires_restart_no=いいえ、手動で再起動します
+# 19.97
+theme_xhred_webmin_requires_restart=ååã®ããã±ã¼ã¸ã¢ããã°ã¬ã¼ãã§ãWebminWebãµã¼ãã¼ãã¼ã¢ã³ãæ­£ããåèµ·åãããªãã£ããã¨ãæ¤åºããã¾ãããããã¯ã<tt>$1</tt>ã³ãã³ããå¼ã³åºãã¦Webãµã¼ãã¼ãæåã§åèµ·åããããã«å¿è¦ã§ãã
+theme_xhred_webmin_requires_restart_yes=ã¯ããåèµ·åãã¦ã¿ã¦ãã ãã
+theme_xhred_webmin_requires_restart_no=ããããæåã§åèµ·åãã¾ã
 
-#19.99
-theme_xhred_filemanager_path_manual=パスを手動で入力します（Ctrl + L）
+# 19.99
+theme_xhred_filemanager_path_manual=ãã¹ãæåã§å¥åãã¾ãï¼Ctrl + Lï¼
 
-#20.02
-theme_xhred_socket_conn_lost_title=接続切断
-theme_xhred_socket_conn_lost_reconnect=再接続
-theme_xhred_socket_conn_lost_connecting=接続中 ..
-theme_xhred_socket_conn_lost_try=再試行
-theme_xhred_socket_conn_parse_error=ターミナルの読み込みに失敗しました: サーバーからの応答オブジェクトを解析できません
-theme_xhred_socket_conn_sock_error=端末の読み込みに失敗しました: WebSocket 接続エラー
+# 20.02
+theme_xhred_socket_conn_lost_title=æ¥ç¶åæ­
+theme_xhred_socket_conn_lost_reconnect=åæ¥ç¶
+theme_xhred_socket_conn_lost_connecting=æ¥ç¶ä¸­ ..
+theme_xhred_socket_conn_lost_try=åè©¦è¡
+theme_xhred_socket_conn_parse_error=ã¿ã¼ããã«ã®èª­ã¿è¾¼ã¿ã«å¤±æãã¾ãã: ãµã¼ãã¼ããã®å¿ç­ãªãã¸ã§ã¯ããè§£æã§ãã¾ãã
+theme_xhred_socket_conn_sock_error=ç«¯æ«ã®èª­ã¿è¾¼ã¿ã«å¤±æãã¾ãã: WebSocket æ¥ç¶ã¨ã©ã¼
 
-#20.10
-theme_xhred_global_open=開ける
-theme_xhred_xterm_error_title=接続できません
-theme_xhred_xterm_error=詳細については、端末モジュールに移動してください
+# 20.10
+theme_xhred_global_open=éãã
+theme_xhred_xterm_error_title=æ¥ç¶ã§ãã¾ãã
+theme_xhred_xterm_error=è©³ç´°ã«ã¤ãã¦ã¯ãç«¯æ«ã¢ã¸ã¥ã¼ã«ã«ç§»åãã¦ãã ãã
 
-#20.11
-theme_xhred_global_error_fatal=致命的な誤り
+# 20.11
+theme_xhred_global_error_fatal=è´å½çãªèª¤ã
 
-#20.20
-theme_xhred_global_automatic=自動
-theme_xhred_filemanager_context_acls=アクセス制御リストの変更
-theme_xhred_filemanager_changing_acls=アクセス制御リストの変更。
-theme_xhred_filemanager_successful_acls_with_errors=すべてのオブジェクトのアクセス制御リストが正常に変更されていません:
-theme_xhred_filemanager_successful_acls=アクセス制御リストが正常に変更されました。
-theme_download_error=許可されたディレクトリの外にあるため、ファイルのダウンロード中にエラーが発生しました : $1
+# 20.20
+theme_xhred_global_automatic=èªå
+theme_xhred_filemanager_context_acls=ã¢ã¯ã»ã¹å¶å¾¡ãªã¹ãã®å¤æ´
+theme_xhred_filemanager_changing_acls=ã¢ã¯ã»ã¹å¶å¾¡ãªã¹ãã®å¤æ´ã
+theme_xhred_filemanager_successful_acls_with_errors=ãã¹ã¦ã®ãªãã¸ã§ã¯ãã®ã¢ã¯ã»ã¹å¶å¾¡ãªã¹ããæ­£å¸¸ã«å¤æ´ããã¦ãã¾ãã:
+theme_xhred_filemanager_successful_acls=ã¢ã¯ã»ã¹å¶å¾¡ãªã¹ããæ­£å¸¸ã«å¤æ´ããã¾ããã
+theme_download_error=è¨±å¯ããããã£ã¬ã¯ããªã®å¤ã«ããããããã¡ã¤ã«ã®ãã¦ã³ã­ã¼ãä¸­ã«ã¨ã©ã¼ãçºçãã¾ãã : $1
 
-#20.30
-theme_xhred_hotkeys_help=ヘルプ (F1)
-theme_xhred_hotkeys_help_title=キーボードショートカット
-theme_xhred_hotkeys_help_title_docs=ドキュメンテーション
-theme_xhred_hotkeys_help_title_global=テーマ
-theme_xhred_hotkeys_help_title_module=モジュール固有のショートカット
-theme_xhred_hotkeys_help_title_fm=ファイルマネージャー
-theme_xhred_hotkeys_help_title_edit=編集者
-theme_xhred_global_community=コミュニティ
-theme_xhred_hotkeys_server_error=ヘルプ ファイルを取得できません
-theme_xhred_hotkeys_custom_to_opens=開く
-theme_xhred_hotkeys_custom_not_set=設定されていません
-theme_xhred_hotkey_open_module_config_privileged=モジュール構成を開く
-theme_xhred_hotkey_open_theme_config=テーマ設定を開く
-theme_xhred_hotkey_list_table=リストのページ分割されたテーブル
-theme_xhred_hotkey_clear_cache=キャッシュをクリアしてリロード
-theme_xhred_hotkey_open_new=新しいタブに複製
-theme_xhred_hotkey_copy_to_clipboard=要素データをクリップボードにコピー
-theme_xhred_hotkey_copy_to_clipboard_click=左クリック
-theme_xhred_hotkey_print_title=Authentic テーマの Webmin ホットキー
-theme_xhred_global_success=成功
-theme_xhred_search_content=コンテンツの検索
-theme_xhred_global_disabled=無効
-theme_xhred_connection_reset_title=接続のリセット
-theme_xhred_connection_reset_message=リモートサーバーへの接続を確立できません
-right_file_is_being_prepared=ファイルは準備中です。お待ちください..
+# 20.30
+theme_xhred_hotkeys_help=ãã«ã (F1)
+theme_xhred_hotkeys_help_title=ã­ã¼ãã¼ãã·ã§ã¼ãã«ãã
+theme_xhred_hotkeys_help_title_docs=ãã­ã¥ã¡ã³ãã¼ã·ã§ã³
+theme_xhred_hotkeys_help_title_global=ãã¼ã
+theme_xhred_hotkeys_help_title_module=ã¢ã¸ã¥ã¼ã«åºæã®ã·ã§ã¼ãã«ãã
+theme_xhred_hotkeys_help_title_fm=ãã¡ã¤ã«ããã¼ã¸ã£ã¼
+theme_xhred_hotkeys_help_title_edit=ç·¨éè
+theme_xhred_global_community=ã³ãã¥ããã£
+theme_xhred_hotkeys_server_error=ãã«ã ãã¡ã¤ã«ãåå¾ã§ãã¾ãã
+theme_xhred_hotkeys_custom_to_opens=éã
+theme_xhred_hotkeys_custom_not_set=è¨­å®ããã¦ãã¾ãã
+theme_xhred_hotkey_open_module_config_privileged=ã¢ã¸ã¥ã¼ã«æ§æãéã
+theme_xhred_hotkey_open_theme_config=ãã¼ãè¨­å®ãéã
+theme_xhred_hotkey_list_table=ãªã¹ãã®ãã¼ã¸åå²ããããã¼ãã«
+theme_xhred_hotkey_list_tabs=ãªã¹ãã¿ã
+theme_xhred_hotkey_clear_cache=ã­ã£ãã·ã¥ãã¯ãªã¢ãã¦ãªã­ã¼ã
+theme_xhred_hotkey_open_new=æ°ããã¿ãã«è¤è£½
+theme_xhred_hotkey_copy_to_clipboard=è¦ç´ ãã¼ã¿ãã¯ãªãããã¼ãã«ã³ãã¼
+theme_xhred_hotkey_copy_to_clipboard_click=å·¦ã¯ãªãã¯
+theme_xhred_hotkey_print_title=Authentic ãã¼ãã® Webmin ãããã­ã¼
+theme_xhred_global_success=æå
+theme_xhred_search_content=ã³ã³ãã³ãã®æ¤ç´¢
+theme_xhred_global_disabled=ç¡å¹
+theme_xhred_connection_reset_title=æ¥ç¶ã®ãªã»ãã
+theme_xhred_connection_reset_message=ãªã¢ã¼ããµã¼ãã¼ã¸ã®æ¥ç¶ãç¢ºç«ã§ãã¾ãã
+right_file_is_being_prepared=ãã¡ã¤ã«ã¯æºåä¸­ã§ãããå¾ã¡ãã ãã..
 
-theme_xhred_global_paragraph=段落
-theme_xhred_global_heading=見出し
-theme_xhred_editor_tb_font=フォント名
-theme_xhred_editor_tb_font_fixed_width=固定幅
-theme_xhred_editor_tb_size=フォントサイズ
-theme_xhred_editor_tb_paragraph=段落スタイル
-theme_xhred_editor_tb_header=段落スタイル
-theme_xhred_editor_tb_bold=太字 (%cmd+B)
-theme_xhred_editor_tb_italic=斜体 (%cmd+I)
-theme_xhred_editor_tb_underline=下線 (%cmd+U)
-theme_xhred_editor_tb_color=テキストの色
-theme_xhred_editor_tb_background=テキストの背景
-theme_xhred_editor_tb_align=整列
-theme_xhred_editor_tb_list_ordered=番号付きリスト (%cmd+Shift+7)
-theme_xhred_editor_tb_list_bullet=箇条書きリスト (%cmd+Shift+8)
-theme_xhred_editor_tb_strike=取り消し線
-theme_xhred_editor_tb_blockquote=引用符 (%cmd+Shift+9)
-theme_xhred_editor_tb_link=リンクを挿入 (%cmd+K)
-theme_xhred_editor_tb_image=インライン画像を挿入
-theme_xhred_editor_tb_clean=書式設定を削除する
-theme_xhred_editor_tb_script_super=上付き文字
-theme_xhred_editor_tb_script_sub=添字
-theme_xhred_editor_tb_indent_+1=インデントを増やします
-theme_xhred_editor_tb_indent_-1=インデントを減らす
-theme_xhred_editor_tb_code=コードブロック
-theme_xhred_editor_tb_code-block=コードブロック
-theme_xhred_editor_tb_direction=テキストの方向
+theme_xhred_global_paragraph=æ®µè½
+theme_xhred_global_heading=è¦åºã
+theme_xhred_editor_tb_font=ãã©ã³ãå
+theme_xhred_editor_tb_font_fixed_width=åºå®å¹
+theme_xhred_editor_tb_size=ãã©ã³ããµã¤ãº
+theme_xhred_editor_tb_paragraph=æ®µè½ã¹ã¿ã¤ã«
+theme_xhred_editor_tb_header=æ®µè½ã¹ã¿ã¤ã«
+theme_xhred_editor_tb_bold=å¤ªå­ (%cmd+B)
+theme_xhred_editor_tb_italic=æä½ (%cmd+I)
+theme_xhred_editor_tb_underline=ä¸ç· (%cmd+U)
+theme_xhred_editor_tb_color=ãã­ã¹ãã®è²
+theme_xhred_editor_tb_background=ãã­ã¹ãã®èæ¯
+theme_xhred_editor_tb_align=æ´å
+theme_xhred_editor_tb_list_ordered=çªå·ä»ããªã¹ã (%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=ç®æ¡æ¸ããªã¹ã (%cmd+Shift+8)
+theme_xhred_editor_tb_strike=åãæ¶ãç·
+theme_xhred_editor_tb_blockquote=å¼ç¨ç¬¦ (%cmd+Shift+9)
+theme_xhred_editor_tb_link=ãªã³ã¯ãæ¿å¥ (%cmd+K)
+theme_xhred_editor_tb_image=ã¤ã³ã©ã¤ã³ç»åãæ¿å¥
+theme_xhred_editor_tb_clean=æ¸å¼è¨­å®ãåé¤ãã
+theme_xhred_editor_tb_script_super=ä¸ä»ãæå­
+theme_xhred_editor_tb_script_sub=æ·»å­
+theme_xhred_editor_tb_indent_+1=ã¤ã³ãã³ããå¢ããã¾ã
+theme_xhred_editor_tb_indent_-1=ã¤ã³ãã³ããæ¸ãã
+theme_xhred_editor_tb_code=ã³ã¼ããã­ãã¯
+theme_xhred_editor_tb_code-block=ã³ã¼ããã­ãã¯
+theme_xhred_editor_tb_direction=ãã­ã¹ãã®æ¹å
 
-settings_right_table_layout_control=コンテンツレイアウトコントロールを表示
-theme_xhred_tooltip_columns_layout=コンテンツのレイアウト制御
-theme_xhred_columns_layout_title=コンテンツのレイアウト
-theme_xhred_columns_layout_variation=レイアウトバリエーション
-theme_xhred_global_vertical=垂直
-theme_xhred_global_horizontal=水平
-theme_xhred_columns_layout_vertical_opts=垂直レイアウトのオプション
-theme_xhred_columns_layout_vertical_opts_max_columns=最大列数
-theme_xhred_columns_layout_vertical_opts_max_width=最小列幅
-theme_xhred_columns_layout_vertical_opts_break_title=列オーバーフローアクション
-theme_xhred_columns_layout_vertical_opts_break_new=壊す
-theme_xhred_columns_layout_vertical_opts_break_scroll=スクロール
+settings_right_table_layout_control=ã³ã³ãã³ãã¬ã¤ã¢ã¦ãã³ã³ãã­ã¼ã«ãè¡¨ç¤º
+theme_xhred_tooltip_columns_layout=ã³ã³ãã³ãã®ã¬ã¤ã¢ã¦ãå¶å¾¡
+theme_xhred_columns_layout_title=ã³ã³ãã³ãã®ã¬ã¤ã¢ã¦ã
+theme_xhred_columns_layout_variation=ã¬ã¤ã¢ã¦ãããªã¨ã¼ã·ã§ã³
+theme_xhred_global_vertical=åç´
+theme_xhred_global_horizontal=æ°´å¹³
+theme_xhred_columns_layout_vertical_opts=åç´ã¬ã¤ã¢ã¦ãã®ãªãã·ã§ã³
+theme_xhred_columns_layout_vertical_opts_max_columns=æå¤§åæ°
+theme_xhred_columns_layout_vertical_opts_max_width=æå°åå¹
+theme_xhred_columns_layout_vertical_opts_break_title=åãªã¼ãã¼ãã­ã¼ã¢ã¯ã·ã§ã³
+theme_xhred_columns_layout_vertical_opts_break_new=å£ã
+theme_xhred_columns_layout_vertical_opts_break_scroll=ã¹ã¯ã­ã¼ã«
+theme_xhred_columns_layout_remove=ãã®ã¦ã£ã¸ã§ãããéè¡¨ç¤ºã«ãã
+theme_xhred_columns_layout_remove_button=ä¿å­ãã¦éè¡¨ç¤ºã«ãã
+theme_xhred_columns_layout_variation_cannot_horizontal=ã¢ãã¤ã«ã¢ã¼ããç¹ã«ç»é¢å¹ã992pxæªæºã®å ´åãæ¨ªåã¬ã¤ã¢ã¦ãã¯ä½¿ç¨ã§ãã¾ããã
 
-theme_xhred_columns_layout_remove=このウィジェットを非表示にする
-theme_xhred_columns_layout_remove_button=保存して非表示にする
-theme_xhred_columns_layout_variation_cannot_horizontal=モバイルモード、特に画面幅が992px未満の場合、横型レイアウトは使用できません。
+settings_auto_open_panels_on_proximity=éããããã«ãè¿ã¥ãã¨èªåçã«éãã¾ã
 
-settings_auto_open_panels_on_proximity=閉じたパネルが近づくと自動的に開きます
+theme_xhred_config_portable_module_xterm_render_addon=WebGL ã¬ã³ããªã³ã° ã¢ããªã³ãæå¹ã«ãã
 
-theme_xhred_config_portable_module_xterm_render_addon=WebGL レンダリング アドオンを有効にする
+# 21.09.04
+theme_xhred_datatable_filter_and_export=ã³ã³ãã³ãã®ãã£ã«ã¿ãªã³ã°ã¨ã¨ã¯ã¹ãã¼ã
 
-#21.09.04
-theme_xhred_datatable_filter_and_export=コンテンツのフィルタリングとエクスポート
+# 21.10
+settings_hotkey_logout_dbl=ã­ã°ã¢ã¦ã
+theme_xhred_hotkey_emsg=ããã¯ã¹ã©ãã·ã¥ ã­ã¼ã¯ãããã­ã¼ã¨ãã¦ä½¿ç¨ã§ãã¾ãã
+settings_embed_product_splash_privileged=ã­ã°ã¤ã³å¾ã«ãã©ã³ãã®ã¹ãã©ãã·ã¥ç»é¢ãè¡¨ç¤ºãã
+dashboard_status_running=ã©ã³ãã³ã°
+dashboard_status_stopped=åæ­¢
 
-#21.10
-settings_hotkey_logout_dbl=ログアウト
-theme_xhred_hotkey_emsg=バックスラッシュ キーはホットキーとして使用できません
-settings_embed_product_splash_privileged=ログイン後にブランドのスプラッシュ画面を表示する
-dashboard_status_running=ランニング
-dashboard_status_stopped=停止
+# 21.11
+theme_xhred_global_watching=è¦ã¦ãã
+theme_xhred_global_connected=æ¥ç¶
+theme_xhred_global_disconnected=åæ­
+theme_xhred_global_connecting=æ¥ç¶ä¸­
+index_mods_missing=Perl ã¢ã¸ã¥ã¼ã« <tt>$1</tt> ãããã¾ããã
+index_noadmin_eaccess=ãã¹ã¿ã¼ç®¡çèä»¥å¤ã®ã¢ã¯ã»ã¹ã¯æå¦ããã¾ããã
+theme_xhred_body_os=ãªãã¬ã¼ãã£ã³ã°Â·ã·ã¹ãã 
+theme_xhred_theme_version=æ¬æ ¼ãã¼ããã¼ã¸ã§ã³
 
-#21.11
-theme_xhred_global_watching=見ている
-theme_xhred_global_connected=接続
-theme_xhred_global_disconnected=切断
-theme_xhred_global_connecting=接続中
-index_mods_missing=Perl モジュール <tt>$1</tt> がありません。
-index_noadmin_eaccess=マスター管理者以外のアクセスは拒否されました。
-theme_xhred_body_os=オペレーティング·システム
-theme_xhred_theme_version=本格テーマバージョン
-
-theme_xhred_body_updates=パッケージの更新
+theme_xhred_body_updates=ããã±ã¼ã¸ã®æ´æ°
 
 # 21.20
-theme_xhred_hotkey_switch_theme=テーマを切り替える
+theme_xhred_hotkey_switch_theme=ãã¼ããåãæ¿ãã
 
 # 21.20.2
-theme_xhred_filemanager_upload_status_ok=アップロードに成功しました
-theme_xhred_filemanager_upload_status_err=アップロードに失敗しました:
-theme_xhred_filemanager_download_status_err=ダウンロードに失敗しました：
+theme_xhred_filemanager_upload_status_ok=ã¢ããã­ã¼ãã«æåãã¾ãã
+theme_xhred_filemanager_upload_status_err=ã¢ããã­ã¼ãã«å¤±æãã¾ãã:
+theme_xhred_filemanager_download_status_err=ãã¦ã³ã­ã¼ãã«å¤±æãã¾ããï¼
 
 # 21.20.7
-theme_xhred_dashboard_chart_disk_read=読む
-theme_xhred_dashboard_chart_disk_write=書く
-theme_xhred_dashboard_chart_net_read=で
-theme_xhred_dashboard_chart_net_write=外
-theme_xhred_tooltip_dashboard_live_stats_offline=プロキシモードでシステムにアクセスした場合、ライブ統計は利用できません。以前に収集された統計のみが利用可能である場合のみ表示され、これらの統計を更新するにはページを再読み込みする必要があります。
-settings_sysinfo_real_time_status_history1=はい、そして統計を保存します
-settings_sysinfo_real_time_status_history2=はい、統計を保存せずに
-settings_sysinfo_real_time_status_history_duration1=20分
-settings_sysinfo_real_time_status_history_duration2=1時間
-settings_sysinfo_real_time_status_history_duration3=3時間
-settings_sysinfo_real_time_status_history_duration4=6時間
-settings_sysinfo_real_time_status_history_duration5=12時間
-settings_sysinfo_real_time_status_history_duration6=18時間
-settings_sysinfo_real_time_status_history_duration7=24時間
-theme_xhred_license_purchase=ライセンスを購入する
-settings_right_table_links_sorted=テーブルリンクをアルファベット順に並べ替える
+theme_xhred_dashboard_chart_disk_read=èª­ã
+theme_xhred_dashboard_chart_disk_write=æ¸ã
+theme_xhred_dashboard_chart_net_read=ã§
+theme_xhred_dashboard_chart_net_write=å¤
+theme_xhred_tooltip_dashboard_live_stats_offline=ãã­ã­ã·ã¢ã¼ãã§ã·ã¹ãã ã«ã¢ã¯ã»ã¹ããå ´åãã©ã¤ãçµ±è¨ã¯å©ç¨ã§ãã¾ãããä»¥åã«åéãããçµ±è¨ã®ã¿ãå©ç¨å¯è½ã§ããå ´åã®ã¿è¡¨ç¤ºããããããã®çµ±è¨ãæ´æ°ããã«ã¯ãã¼ã¸ãåèª­ã¿è¾¼ã¿ããå¿è¦ãããã¾ãã
+settings_sysinfo_real_time_status_history1=ã¯ããããã¦çµ±è¨ãä¿å­ãã¾ã
+settings_sysinfo_real_time_status_history2=ã¯ããçµ±è¨ãä¿å­ããã«
+settings_sysinfo_real_time_status_history_duration1=20å
+settings_sysinfo_real_time_status_history_duration2=1æé
+settings_sysinfo_real_time_status_history_duration3=3æé
+settings_sysinfo_real_time_status_history_duration4=6æé
+settings_sysinfo_real_time_status_history_duration5=12æé
+settings_sysinfo_real_time_status_history_duration6=18æé
+settings_sysinfo_real_time_status_history_duration7=24æé
+theme_xhred_license_purchase=ã©ã¤ã»ã³ã¹ãè³¼å¥ãã
+settings_right_table_links_sorted=ãã¼ãã«ãªã³ã¯ãã¢ã«ãã¡ãããé ã«ä¸¦ã¹æ¿ãã
+
+# 24.00
+session_error=ã¨ã©ã¼
+session_success=æå
+session_cannot=ãã¹ã¯ã¼ãã®ãªã»ããã«å¤±æãã¾ãã: ã¦ã¼ã¶ã¼åãããã¾ããã
+session_neterror=ãããã¯ã¼ã¯ããå¿ç­ãåå¾ã§ãã¾ããã
+session_unkerror=äºæããªãã¨ã©ã¼ãçºçãã¾ããããã°ãããã¦ããããä¸åº¦ãè©¦ããã ããã
+session_conerror=ãµã¼ãã¼ã«æ¥ç¶ã§ãã¾ããã§ããããã°ãããã¦ããããä¸åº¦ãè©¦ããã ããã
+session_resetpass1=æ°ãããã¹ã¯ã¼ã
+session_resetpass2=æ°ãããã¹ã¯ã¼ããç¢ºèª
+session_resetepassreq=ãã¹ã¯ã¼ããå¿è¦ã§ãã
+session_pwdconf=ãã¹ã¯ã¼ãã®ç¢ºèªãå¿è¦ã§ãã
+session_pwdmatch=ãã¹ã¯ã¼ããä¸è´ãã¾ããã
+session_noid=åå¾©IDãè¦ã¤ããã¾ããã
+session_pwdsucc=ãã¹ã¯ã¼ãã®å¤æ´ã«æåãã¾ãããæ°ãããã¹ã¯ã¼ãã§ã­ã°ã¤ã³ã§ãã¾ãã

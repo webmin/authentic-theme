@@ -48,8 +48,12 @@ left_statistics=Sistemaren estatistikak
 
 login_danger=Danger!
 login_message=Erabiltzaile izena eta pasahitza sartu behar dituzu zerbitzarira sartzeko
+lost_message=Zure Webmin saioa hasteko berreskuratze helbide elektronikoa ezarrita baduzu, formulario hau erabil dezakezu pasahitza berrezartzeko esteka bat bidaltzeko
+reset_message=<tt>$1</tt> erabiltzailearen pasahitza berrezartzear zaude
 theme_xhred_login_pass=Pasahitza
 login_save=Gogora nazazu
+login_recover=Pasahitza berrezartzeko eskaera
+login_back=Itzuli
 login_signin=Hasi saioa
 login_success=Arrakasta!
 theme_xhred_login_token=token
@@ -178,6 +182,7 @@ theme_update_available=Azken bertsioa eskuragarri
 theme_update_notice=Eguneratu oharra
 theme_version=Benetako gaiaren bertsioa
 
+# 17.40
 theme_xhred_global_error=Akatsa
 theme_global_warning=Abisua
 theme_global_success=Arrakasta
@@ -250,7 +255,7 @@ theme_xhred_notifications_firewall_danger_message=Badirudi <strong>ConfigServer 
 
 theme_xhred_notifications_firewall_warning=Suhiltzaileen abisua
 
-#17.50
+# 17.50
 settings_grayscale_level_navigation=Eskala handiko iragazkia
 settings_grayscale_level_navigation_description=Lehenetsia/uneko balioak <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia iragazkia
@@ -279,7 +284,7 @@ theme_xhred_filemanager_context_paste=itsatsi
 theme_xhred_filemanager_context_chmod=Aldatzeko baimenak
 theme_xhred_filemanager_context_chown=Jabetza aldatu
 
-#17.51
+# 17.51
 theme_xhred_filemanager_context_new=New
 theme_xhred_filemanager_context_newarchive=Artxibo berria sortu
 theme_xhred_filemanager_context_delete=Ezabatu
@@ -290,12 +295,12 @@ theme_xhred_filemanager_context_goto=Ireki elementuen kokalekua
 theme_xhred_filemanager_context_properties=Properties
 theme_xhred_filemanager_context_search=Search
 
-#17.52
+# 17.52
 theme_xhred_filemanager_context_deselect_all=Hautatu guztiak
 theme_xhred_filemanager_context_upload=Kargatu uneko direktoriora
 theme_xhred_filemanager_context_download=Deskargatu urruneko URL batetik
 
-#17.53
+# 17.53
 theme_config_virtualmin=Virtualmin zerbitzari birtualak
 theme_config_cloudmin=Cloudmin kudeatutako sistemak
 settings_right_thirdparties_options_title=Hirugarrenen moduluen aukerak
@@ -304,17 +309,17 @@ theme_xhred_filemanager_context_bookmarks=Bookmarks
 theme_xhred_filemanager_context_bookmark_current=Une honetan laster-markak irekitako bidea
 theme_xhred_filemanager_context_transfer=Transfer
 
-#17.54
+# 17.54
 theme_xhred_filemanager_title_symlink_target=Loturaren helburua
 
-#17.60
+# 17.60
 right_unlimited=Mugarik gabe
 settings_leftmenu_width=Lehentasunezko zabalera
 settings_leftmenu_width_description=Lehenetsia/oraingo zabalera <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Erakutsi etengailuak alderantzikatuta
 settings_switch_rdisplay_description=Aukera honek goi-ezkerreko etengailuen orden desberdinak ezartzeko aukera ematen du. Aukera hau aldatu ondoren, orrialde osoa berriro kargatu behar da
 
-#17.63
+# 17.63
 theme_xhred_filemanager_context_calculate_selected_size=Kalkulatu hautatutako tamaina
 theme_xhred_filemanager_selected_entries=Aukeratutakoak: %value elementuak
 theme_xhred_filemanager_manual_path=Sartu bidea eskuz
@@ -327,7 +332,7 @@ theme_xhred_datatable_sloadingrecords=Lanean
 theme_xhred_datatable_sprocessing=Izapidea. ..
 theme_xhred_datatable_szerorecords=Ez da bat datorren erregistrorik aurkitu
 
-#17.64
+# 17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Fitxategia editatu da baina ez da gorde.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Zer egin nahi duzu?
 theme_xhred_global_save=Save
@@ -336,11 +341,11 @@ theme_xhred_global_close_without_saving=Itxi aurreztu gabe
 theme_xhred_global_continue_editing=Jarraitu editatzen
 theme_xhred_filemanager_context_download_file=Deskarga
 
-#17.65
+# 17.65
 settings_sysinfo_easypie_charts_width=Grafikoen zabalera
 settings_sysinfo_easypie_charts_scale=Grafikoen luzera eskala
 
-#17.80
+# 17.80
 right_return_theme_options=gaiaren aukerak
 theme_xhred_datatable_semptydirectory=Direktorioa hutsik dago
 theme_xhred_filemanager_context_clipboard=Kopiatu arbelera bidea
@@ -370,13 +375,13 @@ theme_xhred_filemanager_hide_actions=Ezkutatu ekintzak zutabea
 theme_xhred_filemanager_hovered_toolbar=Aktibatu tresna-barran goitibeherako sagua mugitzeko
 theme_xhred_filemanager_context_delete_selected=Aukeratu hautatuta
 
-#17.83
+# 17.83
 theme_xhred_database_adding_new_row=Errenkada berria gehitzea
 theme_xhred_database_editing_row=Hautatutako errenkada editatzea
 theme_xhred_database_editing_rows=Hautatutako errenkadak editatzea
 theme_xhred_database_adding_new_row_data=Ezarri datuak
 
-#17.84
+# 17.84
 theme_xhred_datatable_filter=Filter
 
 theme_xhred_global_update=eguneratzearen
@@ -413,7 +418,7 @@ theme_xhred_global_notice=oharra
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
-#18.00
+# 18.00
 theme_xhred_global_file=file
 theme_xhred_global_directory=Directory
 theme_xhred_global_no_target=Helburua ez da existitzen edo ezin da eskuragarri egon
@@ -425,7 +430,7 @@ theme_xhred_global_none=Bat ere ez
 theme_xhred_global_yes=Bai
 theme_xhred_global_no=Ez
 
-theme_xhred_filemanager_new_tab=Gehitu fitxa berria (Ktrl+Espazioa)
+theme_xhred_filemanager_new_tab=Gehitu fitxa berria (Alt + Espazioa)
 theme_xhred_datatable_no_search_results=<span class="h5">Ez da emaitzarik aurkitu</span> <br> Saiatu beste bilaketa bat
 
 theme_xhred_filemanager_buffer_error=Ezin izan da fitxategiak bufferrean itsatsi. Baimena ukatu da.
@@ -486,16 +491,16 @@ theme_xhred_module_help=Moduluaren laguntza
 
 theme_xhred_server_process_running=Zerbitzariaren prozesua martxan dago oraindik ?? Ziur al zaude kanpoan nabigatu nahi duzula eta irteerako informaziorako sarbiderik ez duzula? Nahiz eta orain utzi prozesua ez da amaitu.
 
-#18.03
+# 18.03
 settings_global_options_title=Aukera globala
 theme_xhred_password_generator_new=Sortu pasahitz berria <br> (arbelera)
 theme_xhred_password_generator_new_success=Sortutako %password arbelean kopiatu da.
 
-#18.08
+# 18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Fitxategi honekin amaitu behar da `1;` arrakastaz lan egiteko.
 
-#18.30
+# 18.30
 settings_leftmenu_vm_cm_dropdown_icons=Erakutsi goitibeherako ikono sinbolikoak Virtualmin/Cloudmin zerbitzuan
 theme_xhred_global_shipped=datorrena
 theme_xhred_global_available=eskura
@@ -541,7 +546,7 @@ theme_xhred_filemanager_successful_secontext=Segurtasun testuingurua aldatu da.
 
 theme_xhred_global_no_results_found=Ez da emaitzarik aurkitu
 
-#18.40
+# 18.40
 theme_new_password_header=Ezarri pasahitz berria erabiltzailearentzat
 login_reset=Pasahitza berreskuratzea
 theme_xhred_move_top=Mugitu gorantz
@@ -562,7 +567,7 @@ theme_xhred_tooltip_switch_user=Aldatu erabiltzailea
 theme_tooltip_logout=Hasi saioa
 theme_tooltip_edit_user=Erabiltzailea editatu
 
-#18.45
+# 18.45
 settings_sysinfo_easypie_charts_size=Grafikoen diametroa
 theme_xhred_global_choose=Aukeratu
 theme_xhred_global_select=Aukeratu
@@ -579,7 +584,7 @@ theme_xhred_global_help=Laguntza
 theme_xhred_git_compare_changes=Aldatu aldaketak
 theme_xhred_filemanager_link_to_clipboard=Esteka sinbolikoaren izena arbelean kopiatu da.
 
-#18.46
+# 18.46
 theme_left_mail_prefs=Posta lehentasunak
 theme_left_mail_change_password=Aldatu pasahitza
 theme_left_mail_account_functions=Kontuaren funtzioak
@@ -588,7 +593,7 @@ theme_xhred_global_module_config=Moduluaren konfigurazioa
 theme_xhred_global_return=Return
 theme_xhred_global_return_to_module_index=Modulu indizera itzuli
 
-#18.47
+# 18.47
 theme_xhred_global_complete_changelog=Aldaketa osoa
 theme_xhred_global_beta_version=Beta bertsioa
 theme_xhred_global_release=Askatu
@@ -596,7 +601,7 @@ theme_xhred_global_released_on=Argitaratzean
 theme_xhred_global_committed_on=Konpromisoa
 theme_xhred_global_resolved_issues=Arazoak konpondu dira %value oharretan
 
-#18.48
+# 18.48
 theme_force_upgrade=Eguneratu gaia
 theme_xhred_force_upgrade_beta=Instalatu azken bertsio bertsioa (beta)
 theme_xhred_force_upgrade_stable=Instalatu azken bertsio bertsioa (egonkorra)
@@ -605,7 +610,7 @@ theme_update_footer=Mesedez, izan adeitsu akatsen berri ematen $1 biltegira. Sar
 theme_xhred_encoding_manually_set=Eskuz kodetzea
 theme_xhred_filemanager_save_to_change_encoding=Fitxategia gorde behar da kodetzea aldatu ahal izateko.
 
-#18.49
+# 18.49
 theme_xhred_filemanager_user_switch=Aldatu erabiltzailea (Ktrl+M)
 theme_xhred_filemanager_user_switch_description=Jarraian agertzen den erabiltzaile izena aukeratuz gero, eragiketa gehiago aldatuko dituzu erabiltzaile gisa.
 theme_xhred_filemanager_user_switch_description_back=Modu lehenetsira itzultzeko hautatu hautatu lehen aukera.
@@ -624,7 +629,7 @@ theme_xhred_global_maximize=Maximizatu
 theme_xhred_global_normalize=Normalkuntza
 theme_xhred_global_set_encoding=Ezarri kodetzea
 
-#19.00
+# 19.00
 theme_xhred_sysinfo_update_start=Sistemaren informazioa gogoratzen ari da.
 theme_xhred_sysinfo_update_end=Sistemaren informazioa ondo gogoratu da.
 theme_xhred_sysinfo_update_failed=Sistemaren informazioa ezin da gogoratu. Saiatu berriro geroago.
@@ -645,14 +650,14 @@ theme_xhred_global_seconds=seconds
 theme_xhred_global_minute=Minute
 theme_xhred_global_minutes=Minutu
 
-#19.01
+# 19.01
 theme_xhred_browser_warning=Zure ordenagailuko zerbitzarien panelean esperientziarik onena izateko, erabili arakatzaile egokia eta eguneratua. <br><br> <em>Internet Explorer</em> ez da gehiago onartzen. <br><br> Gomendatutako arakatzaileak <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> edo <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Arakatzailearen bertsio eramangarria deskargatu dezakezu, ez baitu instalaziorik eskatzen, inposatutako mugak saihesteko.</div>
 
-#19.02
+# 19.02
 theme_xhred_filter_content=Iragazi edukia
 theme_xhred_log_file_empty=Erregistroaren fitxategia hutsik dago
 
-#19.03
+# 19.03
 theme_xhred_config_configurable_options=Konfigura daitezkeen aukerak
 theme_xhred_filter_content_no_matches_query=Ez da edukia bat dator %str kontsultarekin
 theme_xhred_toggle_accordions=Txandakatu akordeoien ikusgarritasuna
@@ -671,18 +676,18 @@ theme_xhred_signing_success=Saioa ondo hasi da!
 theme_xhred_session_failed_password=Pasahitz okerra, saiatu berriro.
 theme_xhred_global_reauthenticate=autentifikatzeko
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=Gaitu denbora errealeko jarraipena
 theme_xhred_global_redirecting=Ber bideratu
 
-#19.05
+# 19.05
 body_no_javascript_title=JavaScript desgaituta dago
 body_no_javascript_message=Mesedez, aktibatu javascript eta freskatu orria
 theme_xhred_connection_lost=Konexioa galdu da
 theme_xhred_connection_success=Konexioa arrakastatsua izan da
 theme_xhred_connection_success_details=Zerbitzariarekin konexioa berriro ezarri da.
 
-#19.08
+# 19.08
 theme_xhred_return_home=Itzuli paneleko aurkibidera
 theme_xhred_global_upload=Upload
 theme_xhred_global_select_files=Aukeratu fitxategiak
@@ -691,14 +696,14 @@ theme_xhred_global_files_selected=fitxategiak hautatuta
 theme_xhred_global_reset=berrezarri
 theme_xhred_upload_initial_info=Arrastatu eta jaregin fitxategiak hemen edo egin klik hautatzeko
 
-#19.09
+# 19.09
 theme_xhred_global_empty=Empty
 theme_xhred_global_click_here=klikatu hemen
 theme_git_patch_incompatible_message=$1 <em>$2</em> bertsio hau instalatzeak behar bezala funtziona dezan $3 eta $5 bertsio berrienak eta/edo agian argitaratu gabeak behar ditu.
 theme_git_patch_incompatible_message_s=$1 <em>$2</em> bertsio hau instalatzeak behar bezala funtziona dezan $3 bertsio berriena eta/edo agian argitaratu gabekoa behar du.
 theme_git_patch_incompatible_message_desc=Aldaketa bateraezinak egon daitezke, gaiak diseinatu bezala funtzionatzeari utz diezaiokete. Ezin da bertsio berritze-eragiketa jarraitu UI erabiliz.
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=Editatu HTML gisa
 theme_xhred_global_example=Adibidea
 theme_xhred_global_output_example=Irteera adibidea
@@ -724,7 +729,7 @@ theme_xhred_global_unlimited=Mugarik gabe
 theme_xhred_filemanager_tree_exclude_on_first_load=Bazter ezazu direktorio esentzialak zuhaitza ikusteko (kargak azkarrago) hasierako kargan ibiltzea.
 theme_xhred_filemanager_tree_expand_search=Zabaldu bat datozen adar guztiak zuhaitz ikuspegia iragaztean
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=Joan arbela
 theme_xhred_tooltip_side_slider_open_favorites_control=Ireki gogokoen kontrola
 theme_xhred_tooltip_side_slider_delete_all_notification=Ezabatu jakinarazpen guztiak
@@ -732,7 +737,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Markatu jakinarazpen 
 theme_xhred_global_settings=ezarpenak
 theme_xhred_tooltip_side_slider_pinned=Pin/unpin alboko graduatzailea
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=Instalatu gaiaren eguneratzeak Erabiltzaileentzako ere
 theme_xhred_global_installed_version=Instalatutako bertsioa
 theme_xhred_global_installed_and_latest_version=Instalatu eta azken bertsioa
@@ -740,12 +745,12 @@ theme_xhred_global_latest_stable=Azken egonkorra
 theme_xhred_global_latest_beta=Azken beta
 theme_xhred_global_firewall=Firewall
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=Deskarga prestatzen. %number fitxategi (k) artxibatzea. Mesedez itxaron %dots
 theme_xhred_filemanager_prepared_download=Deskarga prest dago. %number fitxategi (k) artxibatuta.
 theme_xhred_filemanager_canceled_download=Deskarga bertan behera utzi da.
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=Behartu <code>tar</code> komandoa, nahiz eta <code>zip</code> erabilgarri egon, artxibo gisa deskargatzerakoan
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -755,7 +760,7 @@ theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=byte
 theme_xhred_title_locale_non_ui_config=Zerbitzariak sortutako data formatua
 
-#19.20
+# 19.20
 extensions_mail_current_position=Mezuak $1 $2 $3
 extensions_mail_sort_by_sender=Sailkatu igorlearen arabera
 extensions_mail_sort_by_recipient=Ordena hartzailearen arabera
@@ -896,14 +901,14 @@ settings_cache_interval_1y=urtean behin
 
 theme_xhred_reload_notification=Gaiaren konfigurazioa aldatu da, baina ez da gorde. Orrialdea berriro kargatuko da, uneko ezarpenetara berrezarri ahal izateko.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=Gorde
 theme_xhred_editor_save_file_as=Gorde fitxategia gisa
 theme_xhred_global_configuration=konfigurazioa
 
 body_used_cached_total=$1 guztira / $3 cached / $2 erabilitako
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=Gehitu gogokoetara
 theme_xhred_favorites_remove=Kendu gogokoetatik
 theme_xhred_select_deselect=Hautatu/deshautatu uneko elementua
@@ -921,7 +926,7 @@ theme_xhred_editor_set_syntax=Ezarri sintaxia
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Eragiketa bertan behera geratu da
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=berrabiarazten
 theme_xhred_connection_reboot_details=Zerbitzaria berrabiarazten ari da. Itxaron mesedez ..
 settings_leftmenu_custom_links_description=Posible da nabigazio menuan esteka pertsonalizatu eta gehigarriak sartzea. <br><br> <em>izenburua</em>, <em>esteka</em> eta <em>ikonoa</em> teklak beharrezkoak dira; aukeran, esteka bat saio-hasiera zein modutan bistaratuko den defini dezakezu, <em>maila</em> gakoa, balioekin, komaz bereizitako zerrendan zehaztuta, honako hauek dituena: <br><br> <em>0</em> > - administratzailearen saioa; <br><em>1</em> - saltzaileen saioa;<br><em>2</em> - zerbitzariaren jabearen saioa;<br><em>3</em> - erabiltzaileen saioa;<br><em>4</em>- sistemaren jabearen saioa.<br><br> Baliozko JSON objektua kate gisa pasatzea eskatuko dizu, beheko adibidean bezala.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -1007,28 +1012,28 @@ theme_xhred_global_version=Bertsio
 theme_xhred_notify_patching_module_style=$1 hasierako UI adabakia aplikatzea eta berriro kargatzea.
 theme_xhred_global_error_more_details_online=Oharra: Irakurri gehiago errore honi buruz eta nola konpondu, gure %1wiki %1 orrian.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=Fitxategiaren maskara
 theme_xhred_filemanager_search_regex=Adierazpen erregularra
 theme_xhred_upload_successful=<span>$1 fitxategiak</span> behar bezala igo dira $2 direktoriora
 theme_xhred_upload_successful_single=<span>$1 fitxategia</span> behar bezala igo da $2 direktoriora
 settings_usermin_default_module=Lehenetsitako modulua
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=Deskargatu fitxategia editore bereizteko
 theme_xhred_path_to_console=Ireki uneko bidea <tt>terminalean (Alt+Maius+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Itzuli fitxategia
 theme_xhred_filemanager_editor_reverting_content=Aldaketak jaitsi eta jatorrizko fitxategiaren edukira itzuliko dira.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=Sarrerak baztertu
 theme_xhred_filemanager_exclude_dirs_desc=Baztertu beharreko fitxategi edo azpidirektorioen koma bereizita
 
-#19.38
+# 19.38
 theme_global_access_level=Sarbide maila
 theme_global_user_mode=Erabiltzaile modua
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=eranskinak
 theme_xhred_mail_composer_send=Bidali
 theme_xhred_mail_composer_schedule=Ordutegiak
@@ -1073,13 +1078,13 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 theme_xhred_global_rows=Ilarak
 
-#19.42
+# 19.42
 settings_side_slider_blend=heretatzen
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=Gaiaren hizkuntza aldatu da. Orrialdea berriro kargatuko da, ezarpen berriak aplikatzeko.
 
-#19.46
+# 19.46
 theme_xhred_global_small=Small
 theme_xhred_global_normal=normal
 theme_xhred_global_medium=Medium
@@ -1087,26 +1092,26 @@ theme_xhred_global_large=Handiak
 theme_xhred_global_huge=Erraldoia
 theme_xhred_filemanager_editor_maximized=Gehitu editoreen panela hasieran
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=Aukeratutako textarea edukia arbelean kopiatu da
 
-#19.48
+# 19.48
 theme_xhred_global_alias=alias
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=Benetako izena
 theme_xhred_mail_composer_username=Erabiltzaile izena
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=Sartu orriaren paleta
 
-#19.60
+# 19.60
 settings_config_save_and_next=Gorde eta Hurrengoa
 settings_config_configuration_category=Konfigurazio kategoria
 config_search_options_all=Bilatu modulua konfiguratzeko aukera guztietan
 theme_xhred_editing_config_file=Konfigurazio fitxategia editatzen
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=Bi faktoreko autentifikazioa gaitu da erabiltzaile honek saioa hasteko
 theme_xhred_global_verify=Egiaztatu
 settings_show_terminal_link2=Erakutsi komando shell botoia
@@ -1114,7 +1119,7 @@ settings_hotkey_shell2=Ireki komandoen shell
 theme_xhred_path_to_console2=Ireki uneko bidea komando shellean <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Agindu shell
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Ikusi
 theme_xhred_file_viewer=Fitxategi ikustailea
 theme_xhred_global_done=Eginda.
@@ -1142,7 +1147,7 @@ theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objekt
 
 theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziurtagiria</a> abisua
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Ezkutuko akordeoiak
 theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela
 theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke <tt>Theme Configuration: Dashboard and real-time monitoring</tt> orria erabiliz.
@@ -1158,7 +1163,7 @@ theme_error_access_not_root_user=Sarbidea ukatuta: erabiltzaileak ez du atal hau
 settings_theme_config_admins_only_privileged=Debekatu erabiltzaileentzako gaiaren konfiguraziora sartzea
 settings_theme_config_admins_only_privileged_description=Aukera honek, zerbitzariaren administratzaileak ezartzen badu, gaiaren konfigurazio orria ezkutatuko die pribilegiatu gabeko erabiltzaile arruntei. Hala ere, ez da gomendatzen aukera hau erabiltzea, erabiltzaile arruntek dagoeneko sarbide mugatua izango baitute gaiaren konfiguraziorako, eta erabiltzailearen berariazko aukera multzo minimoa soilik aldatzeko aukera izango dute.
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Lehentasunak
 mconfig_eaccess=Ezin da modulu honetara sartu
 mconfig_ecannot=Ez dago modulu honetarako konfigurazio fitxategi pertsonalizaturik
@@ -1166,16 +1171,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Funtzio honek <tt>SELin
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Eginbide honek fitxategi sistema <tt>ACL</tt> aktibatuta muntatu behar du eta <kbd>getfacl</kbd> komandoa erabilgarri egon behar da
 theme_xhred_global_module_preferences=Moduluaren hobespenak
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=Benetako Gaiaren bertsio berria instalatuta dago
 settings_right_page_keep=Kargatu orri bera domeinu-aldatzailean
 settings_right_page_keep_description=Aukera hau orri bera kargatzen saiatuko da domeinua hautatzean, nabigazio menuko goitibeherako zerrendatik aldatzen denean
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Erakutsi dena
 theme_xhred_filemanager_context_prop_show_all=Erakutsi propietate guztiak
 
-#19.84
+# 19.84
 settings_right_table_links_type=Taulako estekak bistaratzeko mota
 settings_right_table_links_type_2=Testuarekin ikono handiak
 settings_right_table_links_type_1=Aholku testua duten ikono txikiak
@@ -1214,7 +1219,7 @@ body_cpufan_rpm=RPM
 body_cpufan=CPU haizagailua
 filemanager_symlink_exists=Ezin sortu <tt>$1</tt> fitxategia dagoeneko existitzen gisa <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiatu sistemaren oinarrizko informazioa arbelean; eduki $1 tekla hedatuta kopiatzeko; Eduki sakatuta $2 tekla testu arrunteko datuak kopiatzeko, markatu beharrean
 theme_xhred_tooltip_side_slider_clipboard_account=Kopiatu kontuaren informazio guztia arbelean; eduki sakatuta $1 tekla testu arrunteko datuak kopiatzeko, markatu beharrean
 tooltip_back_to_servers_index_master=Webmin zerbitzariak indexatzeko modulua makina nagusian
@@ -1237,10 +1242,10 @@ theme_xhred_disk_quota_error_title=Kupotik kanpo
 theme_xhred_disk_quota_error_message=Ez da lekurik geratzen gailuan
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Erabili administratzaile-gako nagusia deszifratzeko
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Eutsi sakatuta tekla aldatzailea
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Beti galdetu
 theme_xhred_filemanager_files_mode_ask_remember=Gogoratu etorkizuneko lehenetsi gisa
 theme_xhred_filemanager_files_mode_ask_title=Gainidatzi lehendik dagoena
@@ -1257,21 +1262,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Behar bezala garbitu da $1 direktor
 theme_xhred_filemanager_purge_trash_all_end=Garbitu behar bezala gainontzeko erabiltzaileen zaborrontzien direktorio guztiak.
 theme_error_access_dir_not_allowed=Sarbidea ukatua: fitxategia ez da eskuragarri
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=$1 instalatutako bertsioa zaharkituta dago. Eskuragarri dagoen azken bertsioa $2 da. Mesedez, bertsio berritu edo egin klik azken bertsioari buruzko xehetasun gehiago lortzeko.
 theme_xhred_global_outdated_desc2=$1 instalatutako bertsioa zaharkituta dago. Eskuragarri dagoen azken bertsioa $2 da.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Eutsi sakatuta <tt>Ktrl</tt> aukeratzerakoan
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Eutsi sakatuta <tt>Komandoa</tt> aukeratzerakoan
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Detektatu da Webmin web-zerbitzariaren deabrua ez dela behar bezala berrabiarazi azken paketearen bertsio berritzean. Hau beharrezkoa da web-zerbitzaria eskuz berrabiarazteko <tt>$1</tt> komandoa deituz.
 theme_xhred_webmin_requires_restart_yes=Bai, saiatu berrabiarazi
 theme_xhred_webmin_requires_restart_no=Ez, eskuz berrabiaraziko dut
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Sartu bidea eskuz (Ktrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Konexioa galdu da
 theme_xhred_socket_conn_lost_reconnect=Berriro konektatu
 theme_xhred_socket_conn_lost_connecting=Konektatzen ..
@@ -1279,15 +1284,15 @@ theme_xhred_socket_conn_lost_try=Saiatu berriro
 theme_xhred_socket_conn_parse_error=Huts egin du terminala kargatzean: ezin da zerbitzaritik erantzun objektua analizatu
 theme_xhred_socket_conn_sock_error=Huts egin du terminala kargatzean: WebSocket konexio-errorea
 
-#20.10
+# 20.10
 theme_xhred_global_open=Ireki
 theme_xhred_xterm_error_title=Ezin da konektatu
 theme_xhred_xterm_error=Joan Terminal modulura xehetasun gehiago lortzeko
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Akats larria
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatikoa
 theme_xhred_filemanager_context_acls=Aldatu sarbide-kontrolen zerrenda
 theme_xhred_filemanager_changing_acls=Sarbide-kontrolen zerrenda aldatzea.
@@ -1295,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Sarbide-kontrolaren zerrenda
 theme_xhred_filemanager_successful_acls=Sarbide-kontrolen zerrenda behar bezala aldatu da.
 theme_download_error=Errore bat gertatu da fitxategia deskargatzean baimendutako direktoriotik kanpo dagoelako : $1
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Laguntza (F1)
 theme_xhred_hotkeys_help_title=Teklatuko lasterbideak
 theme_xhred_hotkeys_help_title_docs=Dokumentazioa
@@ -1310,6 +1315,7 @@ theme_xhred_hotkeys_custom_not_set=ezarri gabe
 theme_xhred_hotkey_open_module_config_privileged=Ireki moduluaren konfigurazioa
 theme_xhred_hotkey_open_theme_config=Ireki gaiaren konfigurazioa
 theme_xhred_hotkey_list_table=Zerrenda orridun taula
+theme_xhred_hotkey_list_tabs=Zerrenda fitxak
 theme_xhred_hotkey_clear_cache=Garbitu cachea eta kargatu berriro
 theme_xhred_hotkey_open_new=Bikoiztu fitxa berri batera
 theme_xhred_hotkey_copy_to_clipboard=Kopiatu elementuen datuak arbelean
@@ -1362,7 +1368,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Zutabeen gutxieneko zabalera
 theme_xhred_columns_layout_vertical_opts_break_title=Zutabeak gainezkatzeko ekintza
 theme_xhred_columns_layout_vertical_opts_break_new=Atsedenaldia
 theme_xhred_columns_layout_vertical_opts_break_scroll=Korritu
-
 theme_xhred_columns_layout_remove=Ezkutatu widget hau
 theme_xhred_columns_layout_remove_button=Gorde eta Ezkutatu
 theme_xhred_columns_layout_variation_cannot_horizontal=Diseinu horizontala ezin da erabili mugikor moduan, bereziki pantailaren zabalera 992 px baino txikiagoa denean
@@ -1371,17 +1376,17 @@ settings_auto_open_panels_on_proximity=Hurbiltasunean automatikoki irekitzen dir
 
 theme_xhred_config_portable_module_xterm_render_addon=Gaitu WebGL errendatze gehigarria
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Iragazi eta esportatu edukia
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Saioa amaitu
 theme_xhred_hotkey_emsg=Atzeko barra-tekla ezin da laster-tekla gisa erabili
 settings_embed_product_splash_privileged=Erakutsi marka-pantaila bat saioa hasi ondoren
 dashboard_status_running=Korrika
 dashboard_status_stopped=Gelditu
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Begira
 theme_xhred_global_connected=Konektatuta
 theme_xhred_global_disconnected=Deskonektatuta
@@ -1417,3 +1422,18 @@ settings_sysinfo_real_time_status_history_duration6=18 ordu
 settings_sysinfo_real_time_status_history_duration7=24 ordu
 theme_xhred_license_purchase=Lizentzia bat erosi
 settings_right_table_links_sorted=Ordenatu taulako estekak alfabetikoki
+
+# 24.00
+session_error=Errorea
+session_success=Arrakasta
+session_cannot=Pasahitza berrezartzea huts egin da: Erabiltzaile-izena falta da.
+session_neterror=Ezin da saretik erantzunik jaso!
+session_unkerror=Ustekabeko errore bat gertatu da. Saiatu berriro geroago.
+session_conerror=Zerbitzarira konektatzea huts egin da. Saiatu berriro geroago.
+session_resetpass1=Pasahitz berria
+session_resetpass2=Berretsi pasahitz berria
+session_resetepassreq=Pasahitza beharrezkoa da.
+session_pwdconf=Pasahitza berretsi behar da.
+session_pwdmatch=Pasahitzak ez datoz bat.
+session_noid=Berreskuratze IDa ez da aurkitu!
+session_pwdsucc=Pasahitza behar bezala aldatu da! Orain pasahitz berriarekin saioa has dezakezu.

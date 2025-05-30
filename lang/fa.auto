@@ -48,8 +48,12 @@ left_statistics=آمار سیستم
 
 login_danger=خطر!
 login_message=برای ورود به سرور باید یک نام کاربری و رمز عبور وارد کنید
+lost_message=اگر ورود به وب‌مین شما دارای ایمیل بازیابی است، می‌توانید از این فرم برای ارسال لینک بازنشانی رمز عبور به خودتان استفاده کنید
+reset_message=شما در حال بازنشانی رمز عبور کاربر <tt>$1</tt> در هستید
 theme_xhred_login_pass=کلمه عبور
 login_save=مرا به خاطر بسپار
+login_recover=درخواست بازنشانی رمز عبور
+login_back=برگرد
 login_signin=ورود
 login_success=موفقیت!
 theme_xhred_login_token=گفتن
@@ -112,7 +116,7 @@ settings_right_theme_left_extensions_title=ویرایشگر برنامه تم
 settings_right_theme_left_logo_title=کنترل آرم تم
 settings_right_theme_configurable_options_title=گزینه های قابل تنظیم برای موضوع معتبر
 
-settings_right_hotkey_custom_options_description=Ù¾ÛÙÙØ¯ÙØ§Û Ø³ÙØ§Ø±Ø´Û Ø¨Ù Ø´ÙØ§ Ø§ÙÚ©Ø§Ù ÙÛ Ø¯ÙÙØ¯ Ø§Ø² Ø§Ø±ÙØ§Ù <code>1</code> ØªØ§ <code>9</code> Ø¨Ø±Ø§Û Ø¯Ø³ØªØ±Ø³Û Ø³Ø±ÛØ¹ Ø¨Ù ÙØ± Ù¾Ø§ÙÙ ÙØ¹ØªØ¨Ø± <code>URL</code> Ø§Ø³ØªÙØ§Ø¯Ù Ú©ÙÛØ¯. <code>URL</code> code> Ø±Ø§ ÙÛ ØªÙØ§Ù Ø§Ø² ØµÙØ­Ù Ø¨Ø§Ø² Ø´Ø¯Ù ÙØ¹ÙÛ Ø§Ø³ØªØ®Ø±Ø§Ø¬ Ú©Ø±Ø¯. Ø¨Ù Ø¹ÙÙØ§Ù ÙØ«Ø§ÙØ Ø¨Ø±Ø§Û ØªØºÛÛØ± Ø³Ø±ÛØ¹ Ø¨Ù ÙØ§ÚÙÙ ApacheØ ÙØ³ÙØª <code>apache</code> Ø±Ø§ Ø±ÙÛ ÙØ³ÙØª <code>Custom link 1</code> ØªÙØ¸ÛÙ Ú©ÙÛØ¯. Ø§Ú¯Ø± Ú©ÙÛØ¯ Ø§ØµÙØ§Ø­ Ú©ÙÙØ¯Ù Ù¾ÛØ´‌ÙØ±Ø¶ Ø±ÙÛ <code>Alt</code> ØªÙØ¸ÛÙ Ø´Ø¯Ù Ø¨Ø§Ø´Ø¯Ø Ø¨Ø§ Ú©ÙÛÚ© Ø±ÙÛ <code>Alt + 1</code>Ø ÙØ§ÚÙÙ Ø¢Ù¾Ø§ÚÛ Ø´ÙØ§ Ø±Ø§ Ø¨Ø§Ø² ÙÛ‌Ú©ÙØ¯.
+settings_right_hotkey_custom_options_description=پیوندهای سفارشی شما را قادر می‌سازند تا از ارقام <code>1</code> تا <code>9</code> برای دسترسی سریع به هر <code>URL> معتبر پنل استفاده کنید.</code> <code>URL</code> را می‌توان از صفحه باز شده فعلی استخراج کرد. به عنوان مثال، برای تغییر سریع به ماژول آپاچی، <code>apache</code> را روی فیلد <code>لینک سفارشی ۱</code> تنظیم کنید. اگر کلید اصلاح‌کننده پیش‌فرض روی <code>Alt تنظیم شده باشد،</code> با کلیک روی <code>Alt + ۱</code>، ماژول آپاچی شما باز می‌شود.
 settings_hotkey_custom_1_user=پیوند سفارشی <code>1</code>
 settings_hotkey_custom_2_user=پیوند سفارشی <code>2</code>
 settings_hotkey_custom_3_user=پیوند سفارشی <code>3</code>
@@ -178,6 +182,7 @@ theme_update_available=آخرین نسخه موجود
 theme_update_notice=اعلامیه به روزرسانی
 theme_version=نسخه تم معتبر
 
+# 17.40
 theme_xhred_global_error=خطا
 theme_global_warning=هشدار
 theme_global_success=موفقیت
@@ -250,7 +255,7 @@ theme_xhred_notifications_firewall_danger_message=به نظر می رسد که <
 
 theme_xhred_notifications_firewall_warning=اخطار فایروال
 
-#17.50
+# 17.50
 settings_grayscale_level_navigation=فیلتر خاکستری
 settings_grayscale_level_navigation_description=پیش فرض/ارزش های فعلی <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=فیلتر سپیا
@@ -279,7 +284,7 @@ theme_xhred_filemanager_context_paste=چسباندن
 theme_xhred_filemanager_context_chmod=مجوزها را تغییر دهید
 theme_xhred_filemanager_context_chown=تغییر مالکیت
 
-#17.51
+# 17.51
 theme_xhred_filemanager_context_new=جدید
 theme_xhred_filemanager_context_newarchive=ایجاد بایگانی جدید
 theme_xhred_filemanager_context_delete=حذف
@@ -290,12 +295,12 @@ theme_xhred_filemanager_context_goto=مکان مورد را باز کنید
 theme_xhred_filemanager_context_properties=خصوصیات
 theme_xhred_filemanager_context_search=جستجو کردن
 
-#17.52
+# 17.52
 theme_xhred_filemanager_context_deselect_all=لغو انتخاب همه
 theme_xhred_filemanager_context_upload=در پوشه فعلی بارگذاری شود
 theme_xhred_filemanager_context_download=بارگیری از URL از راه دور
 
-#17.53
+# 17.53
 theme_config_virtualmin=سرورهای مجازی Virtualmin
 theme_config_cloudmin=سیستم های مدیریت Cloudmin
 settings_right_thirdparties_options_title=گزینه های ماژول های شخص ثالث
@@ -304,17 +309,17 @@ theme_xhred_filemanager_context_bookmarks=نشانک ها
 theme_xhred_filemanager_context_bookmark_current=در حال حاضر مسیر باز شده است
 theme_xhred_filemanager_context_transfer=انتقال
 
-#17.54
+# 17.54
 theme_xhred_filemanager_title_symlink_target=هدف پیوند
 
-#17.60
+# 17.60
 right_unlimited=نامحدود
 settings_leftmenu_width=عرض ترجیحی
 settings_leftmenu_width_description=پیش فرض/در حال حاضر عرض <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=نمایش سوئیچ ها معکوس شد
 settings_switch_rdisplay_description=این گزینه به شما امکان می دهد تا ترتیب های مختلفی را برای سوئیچ های بالا سمت چپ تنظیم کنید. پس از تغییر این گزینه ، بارگذاری مجدد صفحه مورد نیاز است
 
-#17.63
+# 17.63
 theme_xhred_filemanager_context_calculate_selected_size=اندازه انتخاب شده را محاسبه کنید
 theme_xhred_filemanager_selected_entries=انتخاب شده: %value موارد با %value
 theme_xhred_filemanager_manual_path=مسیر را به صورت دستی وارد کنید
@@ -327,7 +332,7 @@ theme_xhred_datatable_sloadingrecords=بارگذاری
 theme_xhred_datatable_sprocessing=در حال پردازش. ..
 theme_xhred_datatable_szerorecords=هیچ سابقه تطبیقی یافت نشد
 
-#17.64
+# 17.64
 theme_xhred_filemanager_file_edit_but_not_saved=پرونده ویرایش شده است ، اما ذخیره نشده است.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=شما می خواهید چه کاری انجام دهید؟
 theme_xhred_global_save=صرفه جویی
@@ -336,11 +341,11 @@ theme_xhred_global_close_without_saving=بستن بدون صرفه جویی
 theme_xhred_global_continue_editing=ویرایش را ادامه دهید
 theme_xhred_filemanager_context_download_file=دانلود
 
-#17.65
+# 17.65
 settings_sysinfo_easypie_charts_width=عرض نمودار
 settings_sysinfo_easypie_charts_scale=طول مقیاس نمودار
 
-#17.80
+# 17.80
 right_return_theme_options=گزینه های تم
 theme_xhred_datatable_semptydirectory=دایرکتوری خالی است
 theme_xhred_filemanager_context_clipboard=مسیر را به کلیپ بورد کپی کنید
@@ -370,13 +375,13 @@ theme_xhred_filemanager_hide_actions=ستون اقدامات را مخفی کن�
 theme_xhred_filemanager_hovered_toolbar=کشویی را در نوار ابزار در شناور موس فعال کنید
 theme_xhred_filemanager_context_delete_selected=انتخاب شده را پاک کن
 
-#17.83
+# 17.83
 theme_xhred_database_adding_new_row=اضافه کردن ردیف جدید
 theme_xhred_database_editing_row=سطر انتخاب شده را ویرایش کنید
 theme_xhred_database_editing_rows=ردیف های انتخاب شده را ویرایش کنید
 theme_xhred_database_adding_new_row_data=داده را تنظیم کنید
 
-#17.84
+# 17.84
 theme_xhred_datatable_filter=فیلتر
 
 theme_xhred_global_update=به روز رسانی
@@ -413,7 +418,7 @@ theme_xhred_global_notice=اطلاع
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
-#18.00
+# 18.00
 theme_xhred_global_file=فایل
 theme_xhred_global_directory=فهرست راهنما
 theme_xhred_global_no_target=هدف وجود ندارد یا در دسترس نیست
@@ -425,7 +430,7 @@ theme_xhred_global_none=هیچ یک
 theme_xhred_global_yes=آره
 theme_xhred_global_no=نه
 
-theme_xhred_filemanager_new_tab=برگه جدید (Ctrl + Space) اضافه کنید
+theme_xhred_filemanager_new_tab=اضافه کردن تب جدید (Alt + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">نتیجه ای یافت نشد</span> <br> جستجوی متفاوتی را امتحان کنید
 
 theme_xhred_filemanager_buffer_error=چسباندن پرونده ها به بافر انجام نشد - اجازه رد شد.
@@ -456,8 +461,8 @@ theme_xhred_filemanager_search_replace=نتایج را جایگزین کنید
 theme_xhred_global_find=پیدا کردن
 theme_xhred_global_replace=جایگزین کردن
 
-theme_xhred_filemanager_searching_matching=Ø¬Ø³ØªØ¬ÙÛ <tt>%value</tt> ÙØ·Ø§Ø¨Ù ÙØ§Ù ÙØ§ÛÙ‌ÙØ§Û /directories, Ø­Ø§ÙÛ <tt>%text</tt>.
-theme_xhred_filemanager_searching_replacing=Ø¬Ø§ÛÚ¯Ø²ÛÙ Ú©Ø±Ø¯Ù <tt>%text</tt> Ø¨Ø§ <tt>%replace</tt> Ø¯Ø± ÙØ§ÛÙ‌ÙØ§ÛÛ Ø¨Ø§ ÙØ§Ù‌ÙØ§Û Ø­Ø§ÙÛ <tt>%value</tt>.
+theme_xhred_filemanager_searching_matching=جستجوی <tt>%value</tt> منطبق با نام فایل‌های /directories, که حاوی <tt>%text</tt> text هستند.
+theme_xhred_filemanager_searching_replacing=جایگزینی، <tt>%text</tt> با <tt>%replace</tt> در فایل‌هایی که نام آنها شامل <tt>%value</tt> است، مطابقت می‌دهد.
 
 theme_xhred_filemanager_search_replaced_multi=در پرونده هایی با <strong>%value</strong> یافت و جایگزین شد.
 theme_xhred_filemanager_search_replaced=در پرونده <strong>1</strong> پیدا و جایگزین شد.
@@ -486,16 +491,16 @@ theme_xhred_module_help=راهنما ماژول
 
 theme_xhred_server_process_running=روند سرور هنوز در حال انجام است !؟ آیا مطمئن هستید که می خواهید از آنجا دور شوید و به اطلاعات خروجی دسترسی ندارید؟ حتی اگر شما هم اکنون ترک کنید این روند خاتمه نمی یابد.
 
-#18.03
+# 18.03
 settings_global_options_title=گزینه های جهانی
 theme_xhred_password_generator_new=ایجاد گذرواژه جدید <br> (به کلیپ بورد)
 theme_xhred_password_generator_new_success=رمز عبور تولید شده %password با موفقیت در کلیپ بورد کپی شد.
 
-#18.08
+# 18.08
 theme_fileformat_perl=پرل
 theme_fileformat_perl_placeholder=این پرونده باید پایان یابد ` 1؛ ` تا با موفقیت کار کنیم
 
-#18.30
+# 18.30
 settings_leftmenu_vm_cm_dropdown_icons=نمادهای نمادین را به صورت کشویی در Virtualmin/Cloudmin نمایش دهید
 theme_xhred_global_shipped=حمل شده
 theme_xhred_global_available=در دسترس
@@ -541,7 +546,7 @@ theme_xhred_filemanager_successful_secontext=زمینه امنیتی با موف
 
 theme_xhred_global_no_results_found=نتیجه ای پیدا نشد
 
-#18.40
+# 18.40
 theme_new_password_header=رمزعبور جدیدی را برای کاربر تنظیم کنید
 login_reset=بازیابی رمز عبور
 theme_xhred_move_top=حرکت به بالا
@@ -562,7 +567,7 @@ theme_xhred_tooltip_switch_user=تغییر کاربر
 theme_tooltip_logout=خروج از سیستم
 theme_tooltip_edit_user=ویرایش کاربر
 
-#18.45
+# 18.45
 settings_sysinfo_easypie_charts_size=قطر نمودار
 theme_xhred_global_choose=انتخاب کنید
 theme_xhred_global_select=انتخاب کنید
@@ -579,7 +584,7 @@ theme_xhred_global_help=کمک
 theme_xhred_git_compare_changes=تغییرات را مقایسه کنید
 theme_xhred_filemanager_link_to_clipboard=نام پیوند نمادین در کلیپ بورد کپی شده است.
 
-#18.46
+# 18.46
 theme_left_mail_prefs=تنظیمات برگزیده ایمیل
 theme_left_mail_change_password=تغییر رمز عبور
 theme_left_mail_account_functions=توابع حساب
@@ -588,7 +593,7 @@ theme_xhred_global_module_config=پیکربندی ماژول
 theme_xhred_global_return=برگشت
 theme_xhred_global_return_to_module_index=بازگشت به فهرست ماژول
 
-#18.47
+# 18.47
 theme_xhred_global_complete_changelog=تغییر کامل
 theme_xhred_global_beta_version=نسخه بتا
 theme_xhred_global_release=رهایی
@@ -596,7 +601,7 @@ theme_xhred_global_released_on=منتشر شد
 theme_xhred_global_committed_on=متعهد شد
 theme_xhred_global_resolved_issues=موارد حل شده در %value انتشار نسخه
 
-#18.48
+# 18.48
 theme_force_upgrade=موضوع را به روز کنید
 theme_xhred_force_upgrade_beta=آخرین نسخه توسعه (بتا) را نصب کنید
 theme_xhred_force_upgrade_stable=نصب آخرین نسخه نسخه (پایدار)
@@ -605,7 +610,7 @@ theme_update_footer=لطفاً با مهربانی اشکالات را به مخ
 theme_xhred_encoding_manually_set=رمزگذاری را به صورت دستی تنظیم کنید
 theme_xhred_filemanager_save_to_change_encoding=برای اینکه امکان تغییر رمزگذاری فراهم شود ، باید پرونده را ذخیره کنید.
 
-#18.49
+# 18.49
 theme_xhred_filemanager_user_switch=تغییر به کاربر (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=با انتخاب نام کاربری ذکر شده در زیر ، کارهای دیگری را انجام می دهید تا به عنوان این کاربر انجام شود.
 theme_xhred_filemanager_user_switch_description_back=برای بازگشت به حالت پیش فرض گزینه اول را انتخاب کنید.
@@ -624,7 +629,7 @@ theme_xhred_global_maximize=به حداکثر رساندن
 theme_xhred_global_normalize=عادی سازی
 theme_xhred_global_set_encoding=رمزگذاری را تنظیم کنید
 
-#19.00
+# 19.00
 theme_xhred_sysinfo_update_start=اطلاعات سیستم در حال یادآوری است.
 theme_xhred_sysinfo_update_end=اطلاعات سیستم با موفقیت فراخوانی شده است.
 theme_xhred_sysinfo_update_failed=اطلاعات سیستم قابل یادآوری نیست. بعدا دوباره تلاش کنید.
@@ -645,14 +650,14 @@ theme_xhred_global_seconds=ثانیه
 theme_xhred_global_minute=دقیقه
 theme_xhred_global_minutes=دقایق
 
-#19.01
+# 19.01
 theme_xhred_browser_warning=برای داشتن بهترین تجربه با پنل سرور در رایانه خود ، از یک مرورگر پشتیبانی شده و به روز استفاده کنید. <br><br> <em>Internet Explorer</em> دیگر پشتیبانی نمی شود. <br><br> مرورگرهای پیشنهادی <em>Chrome</em> ، <em>Firefox</em> ، <em>Opera</em> یا <em>Safari</em> ، <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8" style=";text-align:right;direction:rtl">برای دور زدن محدودیت های اعمال شده می توانید نسخه قابل حمل یک مرورگر را که نیازی به نصب ندارد ، بارگیری کنید.</div>
 
-#19.02
+# 19.02
 theme_xhred_filter_content=محتوای فیلتر
 theme_xhred_log_file_empty=پرونده log خالی است
 
-#19.03
+# 19.03
 theme_xhred_config_configurable_options=گزینه های قابل تنظیم
 theme_xhred_filter_content_no_matches_query=هیچ محتوا با پرس و جو %str مطابقت ندارد
 theme_xhred_toggle_accordions=دید آکاردئونها را تغییر دهید
@@ -671,18 +676,18 @@ theme_xhred_signing_success=با موفقیت وارد سیستم شد!
 theme_xhred_session_failed_password=گذرواژه اشتباه ، لطفاً دوباره امتحان کنید.
 theme_xhred_global_reauthenticate=تأیید مجدد
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=نظارت در زمان واقعی را فعال کنید
 theme_xhred_global_redirecting=تغییر مسیر
 
-#19.05
+# 19.05
 body_no_javascript_title=جاوا اسکریپت غیرفعال است
 body_no_javascript_message=لطفا جاوا اسکریپت را فعال کرده و صفحه را مجددا باز کنید
 theme_xhred_connection_lost=اتصال از بین رفت
 theme_xhred_connection_success=اتصال موفقیت آمیز است
 theme_xhred_connection_success_details=اتصال به سرور دوباره برقرار شد.
 
-#19.08
+# 19.08
 theme_xhred_return_home=بازگشت به فهرست پانل
 theme_xhred_global_upload=بارگذاری
 theme_xhred_global_select_files=انتخاب پرونده (ها)
@@ -691,14 +696,14 @@ theme_xhred_global_files_selected=پرونده ها انتخاب شدند
 theme_xhred_global_reset=تنظیم مجدد
 theme_xhred_upload_initial_info=فایل ها را در اینجا بکشید و رها کنید یا برای انتخاب کلیک کنید
 
-#19.09
+# 19.09
 theme_xhred_global_empty=خالی
 theme_xhred_global_click_here=اینجا کلیک کنید
 theme_git_patch_incompatible_message=نصب این نسخه از $1 <em>$2</em> نیاز به جدیدترین و یا احتمالاً انتشار نشده $3 و $5 مناسب دارد.
 theme_git_patch_incompatible_message_s=نصب این نسخه از $1 <em>$2</em> نیاز به آخرین نسخه و یا احتمالاً انتشار نشده $3 به درستی دارد.
 theme_git_patch_incompatible_message_desc=ممکن است تغییرات ناسازگاری وجود داشته باشد که می‌تواند مانع از کارکرد طرح زمینه شود. ادامه عملیات ارتقاء با استفاده از رابط کاربری امکان پذیر نیست
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=به عنوان HTML ویرایش کنید
 theme_xhred_global_example=مثال
 theme_xhred_global_output_example=مثال خروجی
@@ -724,7 +729,7 @@ theme_xhred_global_unlimited=نامحدود
 theme_xhred_filemanager_tree_exclude_on_first_load=دایرکتوری های غیر ضروری را از بارگیری در بارهای اولیه برای نمای درخت (بارگیری سریع تر) خارج نکنید
 theme_xhred_filemanager_tree_expand_search=در حالی که فیلتر نمای درخت ، همه شاخه هایی که حاوی مسابقات هستند را گسترش دهید
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=برو به داشبورد
 theme_xhred_tooltip_side_slider_open_favorites_control=کنترل موارد دلخواه را باز کنید
 theme_xhred_tooltip_side_slider_delete_all_notification=همه اعلان ها را حذف کنید
@@ -732,7 +737,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=همه اعلان ه�
 theme_xhred_global_settings=تنظیمات
 theme_xhred_tooltip_side_slider_pinned=پین/لغزنده سمت باز کردن
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=به روزرسانی های تم را برای Usermin نیز نصب کنید
 theme_xhred_global_installed_version=نسخه نصب شده
 theme_xhred_global_installed_and_latest_version=نصب شده و آخرین نسخه
@@ -740,12 +745,12 @@ theme_xhred_global_latest_stable=آخرین پایدار
 theme_xhred_global_latest_beta=آخرین بتا
 theme_xhred_global_firewall=دیواره آتش
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=آماده سازی بارگیری بایگانی %number (پرونده) پرونده لطفا %dots صبر کنید
 theme_xhred_filemanager_prepared_download=بارگیری آماده است بایگانی %number پرونده فایل (ها) بایگانی شده است.
 theme_xhred_filemanager_canceled_download=بارگیری لغو شد
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=نیروی <code>tar</code> فرمان، حتی اگر <code>zip</code> در دسترس است، در هنگام دانلود به عنوان آرشیو
 theme_xhred_nice_size_PB=سرب
 theme_xhred_nice_size_TB=سل
@@ -755,7 +760,7 @@ theme_xhred_nice_size_kB=کیلوبایت
 theme_xhred_nice_size_b=بایت
 theme_xhred_title_locale_non_ui_config=فرمت تاریخ ایجاد شده توسط سرور
 
-#19.20
+# 19.20
 extensions_mail_current_position=پیام 1 تا 2 دلار از 3 دلار
 extensions_mail_sort_by_sender=مرتب سازی بر اساس فرستنده
 extensions_mail_sort_by_recipient=مرتب سازی بر اساس گیرنده
@@ -896,14 +901,14 @@ settings_cache_interval_1y=سالی یک بار
 
 theme_xhred_reload_notification=پیکربندی موضوع تغییر کرده است اما ذخیره نشده است. برای تنظیم مجدد در تنظیمات فعلی ، این صفحه بارگیری مجدد می شود.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=ذخیره به عنوان
 theme_xhred_editor_save_file_as=ذخیره پرونده به عنوان
 theme_xhred_global_configuration=پیکربندی
 
 body_used_cached_total=$1 $ / $3 ذخیره شده / $2 مورد استفاده قرار گرفت
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=افزودن به علاقه مندی ها
 theme_xhred_favorites_remove=از علاقه مندی ها حذف شود
 theme_xhred_select_deselect=مورد فعلی را انتخاب یا از حالت انتخاب خارج کنید
@@ -921,7 +926,7 @@ theme_xhred_editor_set_syntax=تنظیم نحو
 theme_xhred_global_menu=منو
 theme_xhred_shell_aborted=عملیات متوقف شد
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=راه اندازی مجدد
 theme_xhred_connection_reboot_details=راه اندازی مجدد سرور. لطفا صبر کنید ..
 settings_leftmenu_custom_links_description=این امکان وجود دارد که پیوندهای سفارشی و اضافی به منوی ناوبری تزریق شود. <br><br> کلیدهای <em>عنوان</em>، <em>پیوند</em> و <em>نماد</em> مورد نیاز هستند. به صورت اختیاری، می توانید با تعیین کلید <em>سطح</em>، با مقادیر، در لیست جدا شده با کاما، که حاوی: <br><br> <em>0</em است، تعیین کنید که در کدام حالت ورود به سیستم یک پیوند نمایش داده شود. > - ورود مدیر؛ <br><em>1</em> - ورود به سیستم فروشنده؛<br><em>2</em> - ورود به سیستم مالک سرور؛<br><em>3</em> - ورود به سیستم کاربر؛<br><em>4</em>- ورود به سیستم مالک سیستم.<br><br> از شما می خواهد که مانند مثال زیر، شیء JSON معتبر را به عنوان رشته ارسال کنید.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -1007,28 +1012,28 @@ theme_xhred_global_version=نسخه
 theme_xhred_notify_patching_module_style=اعمال وصله اولیه UI برای $1 و بارگیری مجدد.
 theme_xhred_global_error_more_details_online=توجه: لطفاً در صفحه %1 %1wiki %1 بصورت آنلاین در مورد این خطا و چگونگی حل آن اطلاعات بیشتری کسب کنید.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=ماسک پرونده
 theme_xhred_filemanager_search_regex=عبارت منظم
 theme_xhred_upload_successful=<span>$1 $</span> با موفقیت در فهرست $2 بارگذاری شد
 theme_xhred_upload_successful_single=پرونده <span>$1</span> با موفقیت در فهرست $2 بارگذاری شد
 settings_usermin_default_module=ماژول پیش فرض
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=جدا کردن پرونده به ویرایشگر جدا
 theme_xhred_path_to_console=مسیر فعلی را در ترمینال <tt> (Alt + ⇧ + K) باز کنید
 theme_xhred_filemanager_editor_revert_content=برگرداندن پرونده
 theme_xhred_filemanager_editor_reverting_content=حذف تغییرات و بازگشت به محتوای اصلی فایل.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=ورودی ها را حذف نکنید
 theme_xhred_filemanager_exclude_dirs_desc=Semicolon لیست پرونده ها یا زیرشاخه ها را جدا کرد
 
-#19.38
+# 19.38
 theme_global_access_level=سطح دسترسی
 theme_global_user_mode=حالت کاربر
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=پیوست ها
 theme_xhred_mail_composer_send=ارسال
 theme_xhred_mail_composer_schedule=برنامه
@@ -1073,13 +1078,13 @@ theme_xhred_nice_size_MBB=مگابیت در ثانیه
 theme_xhred_nice_size_kBB=Kbps
 theme_xhred_global_rows=ردیف ها
 
-#19.42
+# 19.42
 settings_side_slider_blend=به ارث می برند
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=زبان مضمون تغییر کرده است. برای اعمال تنظیمات جدید ، این صفحه بارگیری مجدد می شود.
 
-#19.46
+# 19.46
 theme_xhred_global_small=کم اهمیت
 theme_xhred_global_normal=طبیعی
 theme_xhred_global_medium=متوسط
@@ -1087,26 +1092,26 @@ theme_xhred_global_large=بزرگ
 theme_xhred_global_huge=بزرگ
 theme_xhred_filemanager_editor_maximized=پنل ویرایشگر را از شروع به حداکثر برسانید
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=محتوای متن انتخابی با موفقیت در کلیپ بورد کپی شد
 
-#19.48
+# 19.48
 theme_xhred_global_alias=نام مستعار
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=اسم واقعی
 theme_xhred_mail_composer_username=نام کاربری
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=پالت رنگ صفحه ورود
 
-#19.60
+# 19.60
 settings_config_save_and_next=ذخیره و بعدی
 settings_config_configuration_category=دسته پیکربندی
 config_search_options_all=از طریق تمام گزینه های پیکربندی ماژول جستجو کنید
 theme_xhred_editing_config_file=در حال ویرایش فایل پیکربندی
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=احراز هویت دو عاملی برای ورود به سیستم این کاربر فعال شده است
 theme_xhred_global_verify=تأیید کنید
 settings_show_terminal_link2=دکمه پوسته فرمان را نشان دهید
@@ -1114,7 +1119,7 @@ settings_hotkey_shell2=پوسته فرمان را باز کنید
 theme_xhred_path_to_console2=مسیر جاری را در پوسته دستور <tt>(Alt + ⇧ + K)</tt> باز کنید
 theme_tooltip_terminal_link2=پوسته فرمان
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=چشم انداز
 theme_xhred_file_viewer=نمایشگر پرونده
 theme_xhred_global_done=انجام شده.
@@ -1142,7 +1147,7 @@ theme_xhred_filemanager_remove_warning=حذف با موفقیت به پایان 
 
 theme_xhred_connection_error_details_ssl=هشدار <a>گواهی SSL خود امضا شده</a> را بررسی کنید
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=آکاردئون پنهان
 theme_xhred_tooltip_dashboard_panels_disable=پانل$1 پنهان شود
 theme_xhred_dashboard_panels_disabled_explain=پانل مخفی را می توان با استفاده از <tt>Theme Configuration: Dashboard and real-time monitoring</tt> دوباره فعال کرد.
@@ -1158,7 +1163,7 @@ theme_error_access_not_root_user=دسترسی ممنوع: کاربر ویرای�
 settings_theme_config_admins_only_privileged=دسترسی به پیکربندی موضوع را برای کاربران ممنوع کنید
 settings_theme_config_admins_only_privileged_description=این گزینه ، اگر توسط سرور اجرا شود ، صفحه پیکربندی موضوع را از دید کاربران عادی و غیرمستقیم پنهان می کند. با این حال ، استفاده از این گزینه توصیه نمی شود ، زیرا کاربران عادی از قبل دسترسی محدود به پیکربندی موضوع را دارند و فقط قادر به تغییر حداقل گزینه های خاص کاربر هستند
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=اولویت ها
 mconfig_eaccess=این ماژول قابل دسترسی نیست
 mconfig_ecannot=هیچ پرونده پیکربندی سفارشی برای این ماژول یافت نشد
@@ -1166,16 +1171,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=این ویژگی نی�
 theme_xhred_filemanager_mconfig_columns_acls_disabled=این ویژگی نیاز به نصب فایل سیستم با روشن شدن <tt>ACLs</tt> دارد و دستور <kbd>getfacl</kbd> باید در دسترس باشد
 theme_xhred_global_module_preferences=تنظیمات برگزیده ماژول
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=نسخه جدیدی از Authentic Theme نصب شده است
 settings_right_page_keep=بارگیری همان صفحه در سوئیچ دامنه
 settings_right_page_keep_description=این گزینه سعی می کند هنگام تغییر از لیست کشویی منوی پیمایش ، همان صفحه را روی انتخاب دامنه بارگیری کند
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=نمایش همه
 theme_xhred_filemanager_context_prop_show_all=نمایش تمام خصوصیات
 
-#19.84
+# 19.84
 settings_right_table_links_type=نوع نمایش پیوندهای جدول
 settings_right_table_links_type_2=نمادهای بزرگ با متن
 settings_right_table_links_type_1=نمادهای کوچک با متن راهنمای ابزار
@@ -1214,7 +1219,7 @@ body_cpufan_rpm=دور در دقیقه
 body_cpufan=فن CPU
 filemanager_symlink_exists=نمی توان <tt>$1</tt> ایجاد کرد زیرا فایل از قبل در <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=کپی اطلاعات اولیه سیستم در کلیپ بورد. کلید $1 را برای کپی گسترده نگه دارید. کلید $2 را برای کپی کردن داده های متن ساده به جای علامت گذاری نگه دارید
 theme_xhred_tooltip_side_slider_clipboard_account=تمام اطلاعات حساب را در کلیپ بورد کپی کنید. کلید $1 را برای کپی کردن داده های متن ساده به جای علامت گذاری نگه دارید
 tooltip_back_to_servers_index_master=ماژول نمایه سرورهای وبمین در ماشین اصلی
@@ -1227,7 +1232,7 @@ theme_xhred_status_module_mon_not=نصب نشده
 theme_xhred_status_module_mon_skip=رد شد
 theme_xhred_status_module_mon_quest=در دسترس نیست
 theme_xhred_webminlog_module_no_command_escapes=برای دستور اجرا شده، اسلش های معکوس را تغییر دهید
-settings_navigation_auto_fold_category=Ø¯Ø³ØªÙ‌ÙØ§Û ØºÛØ±ÙØ¹Ø§Ù ØªØ§Ø´Ù Ø®ÙØ¯Ú©Ø§Ø±
+settings_navigation_auto_fold_category=دسته بندی های غیرفعال را به صورت خودکار تا کنید
 theme_xhred_tooltip_virtualmin_templates_filter_generating=ایجاد لیست قابل جستجو از گزینه ها برای الگو
 theme_xhred_tooltip_virtualmin_templates_filter=در تمام گزینه های قالب جستجو کنید
 theme_xhred_sysinfo_vmforum=انجمن Virtualmin
@@ -1237,10 +1242,10 @@ theme_xhred_disk_quota_error_title=خارج از سهمیه
 theme_xhred_disk_quota_error_message=هیچ فضایی در دستگاه باقی نمانده است
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=برای رمزگشایی از کلید مدیر اصلی استفاده کنید
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=کلید اصلاح کننده را نگه دارید
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=همیشه بپرس
 theme_xhred_filemanager_files_mode_ask_remember=به عنوان پیش فرض آینده به خاطر بسپارید
 theme_xhred_filemanager_files_mode_ask_title=رونویسی موجود
@@ -1257,21 +1262,21 @@ theme_xhred_filemanager_purge_trash_curr_end=دایرکتوری $1 با موفق
 theme_xhred_filemanager_purge_trash_all_end=همه دایرکتوری های سطل زباله کاربران دیگر با موفقیت پاک شد.
 theme_error_access_dir_not_allowed=دسترسی ممنوع شد: فایل قابل دسترسی نیست
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=نسخه نصب شده $1 قدیمی است. آخرین نسخه موجود $2 است. لطفاً برای دریافت جزئیات بیشتر درباره نسخه اخیر، آن را ارتقا دهید یا کلیک کنید.
 theme_xhred_global_outdated_desc2=نسخه نصب شده $1 قدیمی است. آخرین نسخه موجود $2 است.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=در حین انتخاب، کلید <tt>Ctrl</tt> را فشار داده نگه دارید
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=کلید <tt>Command</tt> را در حین انتخاب فشار داده نگه دارید
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=مشخص شده است که شبح وب سرور وبمین در آخرین ارتقاء بسته به درستی راه اندازی مجدد نشده است. این برای راه اندازی مجدد وب سرور به صورت دستی با فراخوانی فرمان <tt>$1</tt> ضروری است.
 theme_xhred_webmin_requires_restart_yes=بله، سعی کنید آن را دوباره راه اندازی کنید
 theme_xhred_webmin_requires_restart_no=نه، من آن را به صورت دستی ریستارت می کنم
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=مسیر را به صورت دستی وارد کنید (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=اتصال قطع شد
 theme_xhred_socket_conn_lost_reconnect=دوباره وصل شوید
 theme_xhred_socket_conn_lost_connecting=برقراری ارتباط ..
@@ -1279,15 +1284,15 @@ theme_xhred_socket_conn_lost_try=دوباره امتحان کنید
 theme_xhred_socket_conn_parse_error=پایانه بارگیری ناموفق: نمی توان شی پاسخ را از سرور تجزیه کرد
 theme_xhred_socket_conn_sock_error=ترمینال بارگیری نشد: خطای اتصال WebSocket
 
-#20.10
+# 20.10
 theme_xhred_global_open=باز کن
 theme_xhred_xterm_error_title=نمی تواند وصل شود
 theme_xhred_xterm_error=برای جزئیات بیشتر به ماژول ترمینال بروید
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=خطای مرگبار
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=خودکار
 theme_xhred_filemanager_context_acls=تغییر لیست کنترل دسترسی
 theme_xhred_filemanager_changing_acls=تغییر لیست کنترل دسترسی
@@ -1295,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=لیست کنترل دستر
 theme_xhred_filemanager_successful_acls=لیست کنترل دسترسی با موفقیت تغییر کرده است.
 theme_download_error=خطا در دانلود فایل زیرا خارج از فهرست مجاز است : $1 
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=راهنما (F1)
 theme_xhred_hotkeys_help_title=میانبرهای صفحه کلید
 theme_xhred_hotkeys_help_title_docs=مستندات
@@ -1310,6 +1315,7 @@ theme_xhred_hotkeys_custom_not_set=تنظیم نشده
 theme_xhred_hotkey_open_module_config_privileged=پیکربندی ماژول را باز کنید
 theme_xhred_hotkey_open_theme_config=پیکربندی تم را باز کنید
 theme_xhred_hotkey_list_table=جدول صفحه بندی شده را فهرست کنید
+theme_xhred_hotkey_list_tabs=تب‌های فهرست
 theme_xhred_hotkey_clear_cache=کش را پاک کنید و دوباره بارگذاری کنید
 theme_xhred_hotkey_open_new=به یک برگه جدید کپی کنید
 theme_xhred_hotkey_copy_to_clipboard=داده های عنصر را در کلیپ بورد کپی کنید
@@ -1336,7 +1342,7 @@ theme_xhred_editor_tb_color=رنگ متن
 theme_xhred_editor_tb_background=پس زمینه متن
 theme_xhred_editor_tb_align=تراز کردن
 theme_xhred_editor_tb_list_ordered=لیست شماره گذاری شده (%cmd+Shift+7)
-theme_xhred_editor_tb_list_bullet=ÙÛØ³Øª Ú¯ÙÙÙÙ‌Ø´Ø¯Ù (%cmd+Shift+8)
+theme_xhred_editor_tb_list_bullet=لیست گلوله‌ای (%cmd+Shift+8)
 theme_xhred_editor_tb_strike=ضربه زدن
 theme_xhred_editor_tb_blockquote=نقل قول (%cmd+Shift+9)
 theme_xhred_editor_tb_link=درج پیوند (%cmd+K)
@@ -1362,7 +1368,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=حداقل عرض ستون
 theme_xhred_columns_layout_vertical_opts_break_title=عمل سرریز ستون
 theme_xhred_columns_layout_vertical_opts_break_new=زنگ تفريح
 theme_xhred_columns_layout_vertical_opts_break_scroll=طومار
-
 theme_xhred_columns_layout_remove=پنهان کردن این ویجت
 theme_xhred_columns_layout_remove_button=ذخیره و پنهان کردن
 theme_xhred_columns_layout_variation_cannot_horizontal=طرح افقی را نمی توان در حالت موبایل استفاده کرد، به ویژه زمانی که عرض صفحه کمتر از 992 پیکسل باشد
@@ -1371,17 +1376,17 @@ settings_auto_open_panels_on_proximity=باز کردن خودکار پانل ه�
 
 theme_xhred_config_portable_module_xterm_render_addon=افزونه رندر WebGL را فعال کنید
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=فیلتر کردن و صادرات محتوا
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=خروج
 theme_xhred_hotkey_emsg=کلید بک اسلش را نمی توان به عنوان کلید میانبر استفاده کرد
 settings_embed_product_splash_privileged=پس از ورود به سیستم، یک صفحه نمایش نام تجاری نمایش داده می شود
 dashboard_status_running=در حال دویدن
 dashboard_status_stopped=متوقف شد
 
-#21.11
+# 21.11
 theme_xhred_global_watching=تماشا کردن
 theme_xhred_global_connected=متصل
 theme_xhred_global_disconnected=قطع شده
@@ -1417,3 +1422,18 @@ settings_sysinfo_real_time_status_history_duration6=18 ساعت
 settings_sysinfo_real_time_status_history_duration7=24 ساعت
 theme_xhred_license_purchase=مجوز خرید
 settings_right_table_links_sorted=پیوندهای جدول را به ترتیب حروف الفبا مرتب کنید
+
+# 24.00
+session_error=خطا
+session_success=موفقیت
+session_cannot=بازیابی رمز عبور ناموفق بود: نام کاربری وارد نشده است.
+session_neterror=نمی‌توانم پاسخی از شبکه دریافت کنم!
+session_unkerror=خطای غیرمنتظره‌ای رخ داد. بعداً دوباره امتحان کنید.
+session_conerror=دسترسی به سرور ناموفق بود. بعداً دوباره امتحان کنید.
+session_resetpass1=رمز عبور جدید
+session_resetpass2=رمز عبور جدید را تأیید کنید
+session_resetepassreq=رمز عبور الزامی است.
+session_pwdconf=تایید رمز عبور الزامی است.
+session_pwdmatch=رمزهای عبور مطابقت ندارند.
+session_noid=شناسه بازیابی یافت نشد!
+session_pwdsucc=رمز عبور با موفقیت تغییر یافت! اکنون می‌توانید با رمز عبور جدید وارد شوید.

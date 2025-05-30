@@ -28,7 +28,6 @@ body_upok=Все обновления установлены
 body_upsec=Доступно $1 обновлен., из которых $2 обновлен. безопасности
 body_uptime=Время непрерывной работы системы
 body_used=$1 всего / $2 использовано
-body_used_and_free=$1 всего / $2 свободно / $3 использовано
 body_usermin=Версия Usermin
 body_virt=Виртуальная память
 body_webmin=Версия Webmin
@@ -107,6 +106,7 @@ theme_update_available=Последний имеющийся релиз
 theme_update_notice=Уведомление Обновления
 theme_version=Authentic theme version
 
+# 17.40
 theme_xhred_global_error=Ошибка
 theme_global_warning=Внимание
 theme_global_success=Удачно
@@ -133,7 +133,7 @@ theme_xhred_filemanager_context_copy=Копировать
 theme_xhred_filemanager_context_cut=Вырезать
 theme_xhred_filemanager_context_paste=Вставить
 
-#17.51
+# 17.51
 theme_xhred_filemanager_context_new=Новый
 theme_xhred_filemanager_context_newarchive=Создать новый архив
 theme_xhred_filemanager_context_delete=Удалить
@@ -143,17 +143,17 @@ theme_xhred_filemanager_context_extract=Извлечь
 theme_xhred_filemanager_context_properties=Свойства
 theme_xhred_filemanager_context_search=Поиск
 
-#17.63
+# 17.63
 theme_xhred_filemanager_selected_entries=Выбрано: %value объектов
 
-#17.64
+# 17.64
 theme_xhred_global_save=Сохранить
 theme_xhred_global_save_and_close=Сохранить и закрыть
 theme_xhred_global_close_without_saving=Закрыть не сохраняя
 theme_xhred_global_continue_editing=Продолжить редактирование
 theme_xhred_filemanager_context_download_file=Загрузить
 
-#17.84
+# 17.84
 theme_xhred_datatable_filter=Фильтр
 
 theme_xhred_global_update=Обновить
@@ -162,7 +162,7 @@ theme_xhred_global_update_and_close=Обновить и закрыть
 theme_xhred_global_back=Вернуться
 theme_xhred_global_cancel=Отменить
 
-#18.00
+# 18.00
 theme_xhred_global_file=Файл
 theme_xhred_global_directory=Директория
 theme_xhred_global_on=Включить
@@ -182,12 +182,12 @@ theme_xhred_filemanager_selected_entry=Выбран: %value объект
 theme_xhred_global_find=Поиск
 theme_xhred_global_replace=Заменить
 
-#18.03
+# 18.03
 settings_global_options_title=Глобальные настройки
 theme_xhred_password_generator_new=Сгенерировать новый пароль<br> (В буфер обмена)
 theme_xhred_password_generator_new_success=Сгенерированный пароль %password скопирован в буфер обмена.
 
-#18.30
+# 18.30
 theme_xhred_global_notifications=Уведомления
 theme_xhred_global_favorites=Избранное
 theme_xhred_global_theme_version=Версия темы
@@ -198,7 +198,7 @@ theme_xhred_sysinfo_recent_logins=Последние входившие
 theme_xhred_sysinfo_vm_package_updates=Обновление пакетов Virtualmin
 theme_xhred_sysinfo_disk_quotas=Дисковые квоты
 
-#18.40
+# 18.40
 theme_new_password_header=Установить новый пароль для пользователя
 login_reset=Востановление пароля
 settings_title=Настройка темы
@@ -210,25 +210,25 @@ theme_xhred_tooltip_switch_user=Сменить пользователя
 theme_tooltip_logout=Записать
 theme_tooltip_edit_user=Редактировать пользователя
 
-#18.45
+# 18.45
 theme_xhred_git_patch_initiated=Начато обновление темы.
 theme_xhred_global_help=Помощь
 theme_xhred_git_compare_changes=Сравнить изменения
 
-#18.46
+# 18.46
 theme_left_mail_change_password=Сменить Пароль
 
-#18.48
+# 18.48
 theme_xhred_force_upgrade_beta=Установить последнюю бета версию
 theme_xhred_force_upgrade_stable=Установить последнюю стабильную версию
 
-#19.03
+# 19.03
 theme_xhred_global_whats_new=Что нового
 theme_xhred_global_theme_configuration=Настройка темы
 theme_xhred_global_official_website=Официальный сайт
 theme_xhred_global_about_theme=О теме
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=Включить мониторинг в реальном времени
 
 settings_document_title_option_3=Модуль

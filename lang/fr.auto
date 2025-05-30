@@ -1,4 +1,9 @@
 body_cputype1=$5, $8 cœur
+lost_message=Si votre identifiant Webmin dispose d'une adresse e-mail de récupération, vous pouvez utiliser ce formulaire pour vous envoyer un lien de réinitialisation de mot de passe
+reset_message=Vous êtes sur le point de réinitialiser le mot de passe de l'utilisateur <tt>$1</tt> sur
+login_recover=Demander une réinitialisation du mot de passe
+login_back=Retour
+
 settings_right_logos_title=Les logos de thème peuvent être facilement définis ici, pour les utilisateurs authentifiés et non authentifiés. La taille du logo recommandée est de <em>180 x 90</em> pixels.
 settings_right_logos_error=Le fichier téléchargé n'est pas une image
 
@@ -21,6 +26,7 @@ settings_hotkey_reload=Actualiser la page actuelle
 
 settings_hotkey_toggle_slider=Basculer la visibilité du curseur latéral
 
+# 17.40
 theme_xhred_sysinfo_wmdocs=Documentation Webmin
 theme_xhred_sysinfo_vmdocs=Documentation Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentation Cloudmin
@@ -37,6 +43,8 @@ theme_xhred_filemanager_unbookmark_success=Le répertoire <tt>%value</tt> a ét�
 
 theme_xhred_database_object_selected_delete2=Supprimer le tableau sélectionné
 theme_xhred_database_objects_selected_delete2=Supprimer les tables sélectionnées
+
+theme_xhred_filemanager_new_tab=Ajouter un nouvel onglet (Alt + Espace)
 
 filemanager_create_object_exists=$3 <tt>$1</tt> existe déjà dans <tt>$2</tt>
 filemanager_create_object_denied=Impossible de créer $3 <tt>$1</tt> dans <tt>$2</tt> - autorisation refusée : $4.
@@ -55,16 +63,16 @@ theme_xhred_filemanager_changing_attributes=Définition des attributs sur <tt>%v
 
 theme_xhred_filemanager_changing_secontext=Modification du contexte de sécurité en <tt>%value</tt> sur le(s) fichier(s) sélectionné(s).
 
-#18.40
+# 18.40
 settings_hotkey_toggle_key_night_mode=Basculer la palette de couleurs
 
-#18.48
+# 18.48
 theme_force_upgrade=Mettre à jour le thème
 theme_update_footer=Merci de bien vouloir signaler les bogues au référentiel $1. Rejoignez notre chaîne $2 pour obtenir les dernières nouvelles.
 
 settings_webmin_default_module=Page par défaut pour Webmin
 
-#19.09
+# 19.09
 theme_git_patch_incompatible_message_desc=Il pourrait y avoir des changements incompatibles, qui pourraient empêcher le thème de fonctionner comme prévu. Il n'est pas possible de poursuivre l'opération de mise à niveau à l'aide de l'interface utilisateur.
 
 settings_right_bgs_title=L’arrière-plan du thème pour la page de connexion peut être défini ici.
@@ -73,15 +81,15 @@ settings_hotkey_navigation=Basculer l'état du menu de navigation
 
 settings_hotkey_slider=Basculer l'état du curseur latéral
 
-#19.32
+# 19.32
 settings_leftmenu_custom_links_description=Il est possible d'injecter des liens supplémentaires personnalisés dans le menu de navigation. <br><br> Les clés <em>titre</em>, <em>lien</em> et <em>icône</em> sont obligatoires ; en option, vous pouvez définir dans quel mode de connexion un lien sera affiché, en spécifiant la clé de <em>niveau</em>, avec des valeurs, dans une liste séparée par des virgules, contenant : <br><br> <em>0</em > - connexion administrateur ; <br><em>1</em> - connexion du revendeur ;<br><em>2</em> - connexion du propriétaire du serveur ;<br><em>3</em> - connexion de l'utilisateur ;<br><em>4</em>- connexion du propriétaire du système.<br><br> Vous devrez transmettre un objet JSON valide sous forme de chaîne, comme dans l'exemple ci-dessous.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 
 theme_xhred_filemanager_mass_selected_for_delete=Tous les éléments du répertoire %1
 
-#19.61
+# 19.61
 settings_hotkey_shell2=Ouvrir le shell de commande
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Vue
 theme_xhred_file_viewer=Visionneuse de fichiers
 theme_xhred_global_done=Terminé.
@@ -109,7 +117,7 @@ theme_xhred_filemanager_remove_warning=La suppression s'est terminée avec succ�
 
 theme_xhred_connection_error_details_ssl=Vérifiez l'avertissement concernant le <a>certificat SSL auto-signé</a>
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Accordéons cachés
 theme_xhred_tooltip_dashboard_panels_disable=Masquer le panneau $1 
 theme_xhred_dashboard_panels_disabled_explain=Le panneau masqué peut être réactivé à l’aide de <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
@@ -125,7 +133,7 @@ theme_error_access_not_root_user=Accès refusé: l'utilisateur n'est pas autoris
 settings_theme_config_admins_only_privileged=Interdire l'accès à la configuration du thème pour les utilisateurs
 settings_theme_config_admins_only_privileged_description=Cette option, si elle est appliquée par l'administrateur du serveur, masquera la page de configuration du thème aux utilisateurs normaux non privilégiés. Cependant, il n'est pas recommandé d'utiliser cette option, car les utilisateurs réguliers auront déjà un accès limité à la configuration du thème et ne pourront modifier qu'un ensemble minimal d'options spécifiques à l'utilisateur.
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Préférences
 mconfig_eaccess=Ce module n'est pas accessible
 mconfig_ecannot=Aucun fichier de configuration personnalisé n'a été trouvé pour ce module
@@ -133,16 +141,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Cette fonctionnalité n
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Cette fonctionnalité nécessite que le système de fichiers soit monté avec les <tt>ACL</tt> activés et la commande <kbd>getfacl</kbd> doit être disponible
 theme_xhred_global_module_preferences=Préférences du module
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=Une nouvelle version d'Authentic Theme est installée
 settings_right_page_keep=Charger la même page sur le commutateur de domaine
 settings_right_page_keep_description=Cette option essaiera de charger la même page lors de la sélection du domaine, lorsqu'elle sera modifiée dans la liste déroulante du menu de navigation
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Afficher tout
 theme_xhred_filemanager_context_prop_show_all=Afficher toutes les propriétés
 
-#19.84
+# 19.84
 settings_right_table_links_type=Type d'affichage des liens de table
 settings_right_table_links_type_2=Grandes icônes avec texte
 settings_right_table_links_type_1=Petites icônes avec texte d'info-bulle
@@ -181,7 +189,7 @@ body_cpufan_rpm=RPM
 body_cpufan=ventilateur de CPU
 filemanager_symlink_exists=Impossible de créer <tt>$1</tt> car le fichier existe déjà dans <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copiez les informations système de base dans le presse-papiers ; maintenez la touche $1 enfoncée pour copier longuement ; maintenez la touche $2 enfoncée pour copier des données en texte brut plutôt que des démarques
 theme_xhred_tooltip_side_slider_clipboard_account=Copiez toutes les informations de compte dans le presse-papiers ; maintenez la touche $1 enfoncée pour copier des données en texte brut plutôt que des démarques
 tooltip_back_to_servers_index_master=Module d'indexation des serveurs Webmin sur la machine maître
@@ -204,10 +212,10 @@ theme_xhred_disk_quota_error_title=Hors quota
 theme_xhred_disk_quota_error_message=Pas d'espace disponible sur le périphérique
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utiliser la clé d'administrateur principal pour le déchiffrement
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Maintenir la touche de modification
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Demandez toujours
 theme_xhred_filemanager_files_mode_ask_remember=Mémoriser comme future valeur par défaut
 theme_xhred_filemanager_files_mode_ask_title=Remplacer l'existant
@@ -224,21 +232,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Le répertoire $1 a été purgé av
 theme_xhred_filemanager_purge_trash_all_end=Purger avec succès tous les répertoires de la corbeille des autres utilisateurs.
 theme_error_access_dir_not_allowed=Accès refusé : le fichier n'est pas accessible
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=La version installée de $1 est obsolète. La dernière version disponible est $2. Veuillez mettre à niveau ou cliquer pour obtenir plus de détails sur la version récente.
 theme_xhred_global_outdated_desc2=La version installée de $1 est obsolète. La dernière version disponible est $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Maintenez la touche <tt>Ctrl</tt> enfoncée pendant la sélection
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Maintenez la touche <tt>Command</tt> enfoncée pendant la sélection
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Il est détecté que le démon du serveur Web Webmin n'a pas été redémarré correctement lors de la dernière mise à niveau du package. Ceci est nécessaire pour redémarrer manuellement le serveur Web en appelant la commande <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Oui, essayez de le redémarrer
 theme_xhred_webmin_requires_restart_no=Non, je vais le redémarrer manuellement
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Entrez le chemin manuellement (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Connexion perdue
 theme_xhred_socket_conn_lost_reconnect=Se reconnecter
 theme_xhred_socket_conn_lost_connecting=Connexion ..
@@ -246,15 +254,15 @@ theme_xhred_socket_conn_lost_try=Réessayer
 theme_xhred_socket_conn_parse_error=Échec du chargement du terminal : impossible d'analyser l'objet de réponse du serveur
 theme_xhred_socket_conn_sock_error=Échec du chargement du terminal : erreur de connexion WebSocket
 
-#20.10
+# 20.10
 theme_xhred_global_open=Ouvert
 theme_xhred_xterm_error_title=Peut pas se connecter
 theme_xhred_xterm_error=Aller au module Terminal pour plus de détails
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Erreur fatale
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatique
 theme_xhred_filemanager_context_acls=Modifier la liste de contrôle d'accès
 theme_xhred_filemanager_changing_acls=Modification de la liste de contrôle d'accès.
@@ -262,7 +270,7 @@ theme_xhred_filemanager_successful_acls_with_errors=La liste de contrôle d'acc�
 theme_xhred_filemanager_successful_acls=La liste de contrôle d'accès a été modifiée avec succès.
 theme_download_error=Erreur lors du téléchargement du fichier car il se trouve en dehors du répertoire autorisé  : $1
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Aide (F1)
 theme_xhred_hotkeys_help_title=Raccourcis clavier
 theme_xhred_hotkeys_help_title_docs=Documentation
@@ -277,6 +285,7 @@ theme_xhred_hotkeys_custom_not_set=pas encore défini
 theme_xhred_hotkey_open_module_config_privileged=Ouvrir la configuration du module
 theme_xhred_hotkey_open_theme_config=Ouvrir la configuration du thème
 theme_xhred_hotkey_list_table=Liste table paginée
+theme_xhred_hotkey_list_tabs=Onglets de liste
 theme_xhred_hotkey_clear_cache=Vider le cache et recharger
 theme_xhred_hotkey_open_new=Dupliquer dans un nouvel onglet
 theme_xhred_hotkey_copy_to_clipboard=Copier les données de l'élément dans le presse-papiers
@@ -329,7 +338,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Largeur de colonne minimale
 theme_xhred_columns_layout_vertical_opts_break_title=Action de dépassement de colonne
 theme_xhred_columns_layout_vertical_opts_break_new=Casser
 theme_xhred_columns_layout_vertical_opts_break_scroll=Faire défiler
-
 theme_xhred_columns_layout_remove=Masquer ce widget
 theme_xhred_columns_layout_remove_button=Enregistrer et masquer
 theme_xhred_columns_layout_variation_cannot_horizontal=La disposition horizontale ne peut pas être utilisée en mode mobile, en particulier lorsque la largeur de l'écran est inférieure à 992px
@@ -338,17 +346,17 @@ settings_auto_open_panels_on_proximity=Ouverture automatique des panneaux fermé
 
 theme_xhred_config_portable_module_xterm_render_addon=Activer le module complémentaire de rendu WebGL
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Filtrer et exporter du contenu
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Se déconnecter
 theme_xhred_hotkey_emsg=La touche barre oblique inverse ne peut pas être utilisée comme raccourci clavier
 settings_embed_product_splash_privileged=Afficher un écran de démarrage de marque après la connexion
 dashboard_status_running=En cours d'exécution
 dashboard_status_stopped=Arrêté
 
-#21.11
+# 21.11
 theme_xhred_global_watching=En train de regarder
 theme_xhred_global_connected=Connecté
 theme_xhred_global_disconnected=Débranché
@@ -385,3 +393,18 @@ settings_sysinfo_real_time_status_history_duration6=18 heures
 settings_sysinfo_real_time_status_history_duration7=24 heures
 theme_xhred_license_purchase=Acheter une licence
 settings_right_table_links_sorted=Trier les liens du tableau par ordre alphabétique
+
+# 24.00
+session_error=Erreur
+session_success=Succès
+session_cannot=Échec de la réinitialisation du mot de passe : le nom d'utilisateur est manquant.
+session_neterror=Impossible d'obtenir une réponse du réseau !
+session_unkerror=Une erreur inattendue s'est produite. Veuillez réessayer ultérieurement.
+session_conerror=Impossible d'accéder au serveur. Veuillez réessayer ultérieurement.
+session_resetpass1=Nouveau mot de passe
+session_resetpass2=Confirmer le nouveau mot de passe
+session_resetepassreq=Le mot de passe est requis.
+session_pwdconf=La confirmation du mot de passe est requise.
+session_pwdmatch=Les mots de passe ne correspondent pas.
+session_noid=L'ID de récupération n'est pas trouvé !
+session_pwdsucc=Mot de passe modifié avec succès ! Vous pouvez maintenant vous connecter avec le nouveau mot de passe.

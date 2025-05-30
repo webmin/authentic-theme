@@ -1,4 +1,9 @@
 body_cputype1=$5, $8 kärna
+lost_message=Om din Webmin-inloggning har en återställnings-e-postadress angiven kan du använda det här formuläret för att skicka en länk till lösenordsåterställning till dig själv
+reset_message=Du håller på att återställa lösenordet för användaren <tt>$1</tt> den
+login_recover=Begär återställning av lösenord
+login_back=Gå tillbaka
+
 settings_right_logos_title=Temalogotyper kan enkelt ställas in här, för både autentiserade och oautentiserade användare. Rekommenderad logotypstorlek är <em>180x90</em> pixlar.
 settings_right_logos_error=Uppladdad fil är inte en bild
 
@@ -19,6 +24,7 @@ settings_hotkey_reload=Uppdatera aktuell sida
 
 settings_hotkey_toggle_slider=Växla sidoreglagets synlighet
 
+# 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation
 theme_xhred_sysinfo_cmdocs=Cloudmin dokumentation
@@ -35,6 +41,8 @@ theme_xhred_filemanager_unbookmark_success=Katalogen <tt>%value</tt> har tagits 
 
 theme_xhred_database_object_selected_delete2=Släpp vald tabell
 theme_xhred_database_objects_selected_delete2=Släpp valda tabeller
+
+theme_xhred_filemanager_new_tab=Lägg till ny flik (Alt + mellanslag)
 
 filemanager_create_object_exists=$3 <tt>$1</tt> finns redan i <tt>$2</tt>
 filemanager_create_object_denied=Kan inte skapa $3 <tt>$1</tt> i <tt>$2</tt> - permission nekad: $4.
@@ -53,7 +61,7 @@ theme_xhred_filemanager_changing_attributes=Ställer in attribut till <tt>%value
 
 theme_xhred_filemanager_changing_secontext=Ändra säkerhetskontext till <tt>%value</tt> på valda fil(er).
 
-#18.40
+# 18.40
 settings_hotkey_toggle_key_night_mode=Växla färgpalett
 
 settings_right_bgs_title=Temabakgrund för inloggningssida kan ställas in här.
@@ -62,22 +70,22 @@ settings_hotkey_navigation=Växla tillstånd för navigeringsmeny
 
 settings_hotkey_slider=Växla sidoreglagets tillstånd
 
-#19.32
+# 19.32
 settings_leftmenu_custom_links_description=Det är möjligt att få anpassade, extra länkar injicerade i navigeringsmenyn. <br><br> Nycklarna <em>titel</em>, <em>länk</em> och <em>ikon</em> krävs; valfritt kan du definiera i vilket inloggningsläge en länk ska visas, genom att ange <em>nivå</em> nyckel, med värden, i kommaseparerad lista, innehållande: <br><br> <em>0</em > - administratörsinloggning; <br><em>1</em> - återförsäljarinloggning;<br><em>2</em> - inloggning till serverägare;<br><em>3</em> - användarinloggning;<br><em>4</em>- inloggning för systemägare.<br><br> Det kräver att du skickar ett giltigt JSON-objekt som en sträng, som i exemplet nedan.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 
-#19.61
+# 19.61
 settings_hotkey_shell2=Öppna kommandoskalet
 
-#19.71
+# 19.71
 theme_xhred_dashboard_panels_disabled_explain=Dold panel kan återaktiveras med hjälp av <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 
-#19.85
+# 19.85
 theme_xhred_sysinfo_vmforum=Virtualmin Community
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Håll ned modifieringsknappen
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Hjälp (F1)
 theme_xhred_hotkeys_help_title=Tangentbordsgenvägar
 theme_xhred_hotkeys_help_title_docs=Dokumentation
@@ -92,6 +100,7 @@ theme_xhred_hotkeys_custom_not_set=inte inställd
 theme_xhred_hotkey_open_module_config_privileged=Öppna modulkonfiguration
 theme_xhred_hotkey_open_theme_config=Öppna temakonfiguration
 theme_xhred_hotkey_list_table=Lista paginerad tabell
+theme_xhred_hotkey_list_tabs=Listflikar
 theme_xhred_hotkey_clear_cache=Rensa cache och ladda om
 theme_xhred_hotkey_open_new=Duplicera till en ny flik
 theme_xhred_hotkey_copy_to_clipboard=Kopiera elementdata till urklipp
@@ -144,7 +153,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Minsta kolumnbredd
 theme_xhred_columns_layout_vertical_opts_break_title=Kolumnspillåtgärd
 theme_xhred_columns_layout_vertical_opts_break_new=Ha sönder
 theme_xhred_columns_layout_vertical_opts_break_scroll=Skrolla
-
 theme_xhred_columns_layout_remove=Dölj den här widgeten
 theme_xhred_columns_layout_remove_button=Spara och dölj
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontell layout kan inte användas i mobilläget, speciellt när skärmbredden är mindre än 992px
@@ -153,17 +161,17 @@ settings_auto_open_panels_on_proximity=Öppna stängda paneler automatiskt i nä
 
 theme_xhred_config_portable_module_xterm_render_addon=Aktivera WebGL-renderingstillägg
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Filtrera och exportera innehåll
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Logga ut
 theme_xhred_hotkey_emsg=Omvänt snedstreckstangent kan inte användas som en snabbtangent
 settings_embed_product_splash_privileged=Visa en startskärm för varumärke efter inloggning
 dashboard_status_running=Löpning
 dashboard_status_stopped=Slutade
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Tittar på
 theme_xhred_global_connected=Ansluten
 theme_xhred_global_disconnected=Osammanhängande
@@ -200,3 +208,18 @@ settings_sysinfo_real_time_status_history_duration6=18 timmar
 settings_sysinfo_real_time_status_history_duration7=24 timmar
 theme_xhred_license_purchase=Köp en licens
 settings_right_table_links_sorted=Sortera tabelllänkar i alfabetisk ordning
+
+# 24.00
+session_error=Fel
+session_success=Framgång
+session_cannot=Misslyckades med att återställa lösenordet: Användarnamnet saknas.
+session_neterror=Kan inte få svar från nätverket!
+session_unkerror=Ett oväntat fel uppstod. Försök igen senare.
+session_conerror=Det gick inte att nå servern. Försök igen senare.
+session_resetpass1=Nytt lösenord
+session_resetpass2=Bekräfta nytt lösenord
+session_resetepassreq=Lösenord krävs.
+session_pwdconf=Lösenordsbekräftelse krävs.
+session_pwdmatch=Lösenorden matchar inte.
+session_noid=Återställnings-ID hittades inte!
+session_pwdsucc=Lösenordet har ändrats! Du kan nu logga in med det nya lösenordet.

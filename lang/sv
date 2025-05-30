@@ -160,6 +160,7 @@ theme_update_available=Senaste tillgängliga version
 theme_update_notice=Uppdateringsmeddelande
 theme_version=Authentic theme version
 
+# 17.40
 theme_xhred_global_error=Fel
 theme_global_warning=Varning
 theme_global_success=Lyckades
@@ -223,7 +224,7 @@ theme_xhred_notifications_firewall_danger_message=Det verkar som att <strong>Con
 
 theme_xhred_notifications_firewall_warning=Brandväggsvarning
 
-#17.50
+# 17.50
 settings_grayscale_level_navigation=Filter för gråskala
 settings_grayscale_level_navigation_description=Standard/nuvarande värde <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Filter för sepia
@@ -252,7 +253,7 @@ theme_xhred_filemanager_context_paste=Klistra in
 theme_xhred_filemanager_context_chmod=Ändra behörigheter
 theme_xhred_filemanager_context_chown=Ändra ägare
 
-#17.51
+# 17.51
 theme_xhred_filemanager_context_new=Ny
 theme_xhred_filemanager_context_newarchive=Skapa nytt arkiv
 theme_xhred_filemanager_context_delete=Ta bort
@@ -263,12 +264,12 @@ theme_xhred_filemanager_context_goto=Öppna objektplats
 theme_xhred_filemanager_context_properties=Egenskaper
 theme_xhred_filemanager_context_search=Sök
 
-#17.52
+# 17.52
 theme_xhred_filemanager_context_deselect_all=Avmarkera alla
 theme_xhred_filemanager_context_upload=Ladda upp till nuvarande katalog
 theme_xhred_filemanager_context_download=Ladda ner från fjärr-URL
 
-#17.53
+# 17.53
 theme_config_virtualmin=Virtualmin Virtual Servers
 theme_config_cloudmin=Cloudmin Managed Systems
 settings_right_thirdparties_options_title=Tredjeparts modulalternativ
@@ -277,17 +278,17 @@ theme_xhred_filemanager_context_bookmarks=Bokmärken
 theme_xhred_filemanager_context_bookmark_current=Bokmarkera den nuvarande öppna sökvägen
 theme_xhred_filemanager_context_transfer=Överför
 
-#17.54
+# 17.54
 theme_xhred_filemanager_title_symlink_target=Länka målet
 
-#17.60
+# 17.60
 right_unlimited=Obegränsad
 settings_leftmenu_width=Önskvärd bredd
 settings_leftmenu_width_description=Standard/nuvarande bredd <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Omvänd utdata
 settings_switch_rdisplay_description=Detta alternativet låter dig ändra ordningen på knapparna till vänster. När du har ändrat detta alternativet, måste en fullständig uppdatering av sidan göras för att de nya inställningarna ska fungera.
 
-#17.63
+# 17.63
 theme_xhred_filemanager_context_calculate_selected_size=Beräkna storlek på markerade
 theme_xhred_filemanager_selected_entries=Markerade: %value poster
 theme_xhred_filemanager_manual_path=Ange sökvägen manuellt
@@ -300,7 +301,7 @@ theme_xhred_datatable_sloadingrecords=Laddar
 theme_xhred_datatable_sprocessing=Bearbetar...
 theme_xhred_datatable_szerorecords=Inga matchande uppgifter funna
 
-#17.64
+# 17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Filen har ändrats men har inte blivit sparad.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Vad vill du göra?
 theme_xhred_global_save=Spara
@@ -309,11 +310,11 @@ theme_xhred_global_close_without_saving=Stäng utan att spara
 theme_xhred_global_continue_editing=Fortsätt redigera
 theme_xhred_filemanager_context_download_file=Ladda ner
 
-#17.65
+# 17.65
 settings_sysinfo_easypie_charts_width=Diagrambredd
 settings_sysinfo_easypie_charts_scale=Skallängd på diagram
 
-#17.80
+# 17.80
 right_return_theme_options=temaalternativ
 theme_xhred_datatable_semptydirectory=Katalogen är tom
 theme_xhred_filemanager_context_clipboard=Kopiera sökväg till urklippet
@@ -342,13 +343,13 @@ theme_xhred_filemanager_hide_actions=Dölj åtgärdskolumn
 theme_xhred_filemanager_hovered_toolbar=Aktivera rullgardinsmenyn i verktygsfältet när musen är ovanför
 theme_xhred_filemanager_context_delete_selected=Ta bort markerade
 
-#17.83
+# 17.83
 theme_xhred_database_adding_new_row=Lägg till ny rad
 theme_xhred_database_editing_row=Redigera markerad rad
 theme_xhred_database_editing_rows=Redigera markerade rader
 theme_xhred_database_adding_new_row_data=Ange värde
 
-#17.84
+# 17.84
 theme_xhred_datatable_filter=Filter
 
 theme_xhred_global_update=Uppdatera
@@ -383,7 +384,7 @@ theme_xhred_global_notice=Notera
 
 theme_xhred_updates_disabled_notice=Upptäckte att du har stängt av aviseringar för uppdateringar av <em>Authentic Theme</em>? <br><br>Aktivera detta i <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Temakonfigurationen</strong></a> hjälper dig att uppdatera till senaste versionen i ett klick så fort den är släppt.
 
-#18.00
+# 18.00
 theme_xhred_global_file=Fil
 theme_xhred_global_directory=Katalog
 theme_xhred_global_no_target=Target doesn't exist or not accessible
@@ -395,7 +396,6 @@ theme_xhred_global_none=Ingen
 theme_xhred_global_yes=Ja
 theme_xhred_global_no=Nej
 
-theme_xhred_filemanager_new_tab=Lägg till ny flik (Ctrl+Mellanslag)
 theme_xhred_datatable_no_search_results=<span class="h5">Hittade inga träffar</span><br>Försök sök efter något annat
 
 theme_xhred_filemanager_buffer_error=Det gick inte att klistra in filer till bufferten - åtkomst nekad.
@@ -445,16 +445,16 @@ theme_xhred_module_help=Modulhjälp
 
 theme_xhred_server_process_running=Serverprocessen körs fortfarande? Är du säker på att du vill lämna sidan och missa all information om processen? Även om du lämnar nu avslutas inte processen.
 
-#18.03
+# 18.03
 settings_global_options_title=Globala alternativ
 theme_xhred_password_generator_new=Skapa nytt lösenord<br> (till urklippet)
 theme_xhred_password_generator_new_success=Det nya lösenordet %password har blivit kopierat till urklippet.
 
-#18.08
+# 18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Denna filen måste avslutas med `1;` för att fungera korrekt.
 
-#18.30
+# 18.30
 settings_leftmenu_vm_cm_dropdown_icons=Visa symboliska ikoner i drag-och-släpp i Virtualmin/Cloudmin
 theme_xhred_global_shipped=Shipped
 theme_xhred_global_available=Tillgängliga
@@ -498,7 +498,7 @@ theme_xhred_filemanager_successful_secontext=Security context har ändrats.
 
 theme_xhred_global_no_results_found=Inga resultat funna
 
-#18.40
+# 18.40
 theme_new_password_header=Ange nytt lösenord för användaren
 login_reset=Återställning av lösenord
 theme_xhred_move_top=Flytta längst upp
@@ -518,7 +518,7 @@ theme_xhred_tooltip_switch_user=Växla användare
 theme_tooltip_logout=Logga ut
 theme_tooltip_edit_user=Redigera användare
 
-#18.45
+# 18.45
 settings_sysinfo_easypie_charts_size=Diameter diagram
 theme_xhred_global_choose=Välj
 theme_xhred_global_select=Markera
@@ -535,7 +535,7 @@ theme_xhred_global_help=Hjälp
 theme_xhred_git_compare_changes=Jämför förändringar
 theme_xhred_filemanager_link_to_clipboard=Symbolisk länknamn har kopierats till urklippet.
 
-#18.46
+# 18.46
 theme_left_mail_prefs=E-postinställningar
 theme_left_mail_change_password=Ändra lösenord
 theme_left_mail_account_functions=Kontofunktioner
@@ -544,7 +544,7 @@ theme_xhred_global_module_config=Modulkonfiguration
 theme_xhred_global_return=Återgå
 theme_xhred_global_return_to_module_index=Återgå till modulindex
 
-#18.47
+# 18.47
 theme_xhred_global_complete_changelog=Fullständig ändringslogg
 theme_xhred_global_beta_version=Betaversion
 theme_xhred_global_release=Utgåvor
@@ -552,7 +552,7 @@ theme_xhred_global_released_on=Släppt den
 theme_xhred_global_committed_on=Upplagd den
 theme_xhred_global_resolved_issues=Problem lösta i %value utgåvor
 
-#18.48
+# 18.48
 theme_force_upgrade=Uppdatera tema
 theme_xhred_force_upgrade_beta=Installera senaste utvecklingsversionen (beta)
 theme_xhred_force_upgrade_stable=Installera senaste versionen (stabil)
@@ -561,7 +561,7 @@ theme_update_footer=Var snäll och rapportera buggar till $1-förrådet. Gå med
 theme_xhred_encoding_manually_set=Ange kodning manuellt
 theme_xhred_filemanager_save_to_change_encoding=Filen måste sparas innan kodningen ändras.
 
-#18.49
+# 18.49
 theme_xhred_filemanager_user_switch=Byt till användare (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Genom att byta användarnamn i listan här under, kommer fortsatta operationer utföras som denna användaren.
 theme_xhred_filemanager_user_switch_description_back=För att växla tillbaka till standardläge välj det första alternativet i listan.
@@ -580,7 +580,7 @@ theme_xhred_global_maximize=Maximera
 theme_xhred_global_normalize=Återställ nedåt
 theme_xhred_global_set_encoding=Ange kodning
 
-#19.00
+# 19.00
 theme_xhred_sysinfo_update_start=Systeminformationen samlas in.
 theme_xhred_sysinfo_update_end=Systeminformationen har samlats in.
 theme_xhred_sysinfo_update_failed=Det gick inte att samla in systeminformationen. Försök igen senare.
@@ -601,14 +601,14 @@ theme_xhred_global_seconds=Sekunder
 theme_xhred_global_minute=Minut
 theme_xhred_global_minutes=Minuter
 
-#19.01
+# 19.01
 theme_xhred_browser_warning=För att få den bästa upplevelsen med serverpanelen på din dator, använd en uppdaterad aktuell webbläsare.<br><br><em>Internet Explorer</em> stöds inte längre.<br><br>Rekommenderade webbläsare är <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em>, <em>Safari</em> eller <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Du skulle kunna ladda ner en portabel webbläsare som inte kräver installation, för att kringgå begränsningarna.</div>
 
-#19.02
+# 19.02
 theme_xhred_filter_content=Filtrera innehåll
 theme_xhred_log_file_empty=Loggfilen är tom
 
-#19.03
+# 19.03
 theme_xhred_config_configurable_options=Konfigurerbara alternativ
 theme_xhred_filter_content_no_matches_query=Inget matchar ditt filter %str
 theme_xhred_toggle_accordions=Utvidga/dra ihop menyraderna
@@ -627,18 +627,18 @@ theme_xhred_signing_success=Inloggad!
 theme_xhred_session_failed_password=Fel lösenord, försök igen.
 theme_xhred_global_reauthenticate=Verifiera igen
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=Aktivera realtidsövervakning
 theme_xhred_global_redirecting=Omdirigerar
 
-#19.05
+# 19.05
 body_no_javascript_title=Javascript är inaktiverat
 body_no_javascript_message=Aktivera javascript och uppdatera sidan
 theme_xhred_connection_lost=Frånkopplad
 theme_xhred_connection_success=Ansluten
 theme_xhred_connection_success_details=Anslutningen till servern har återupprättats.
 
-#19.08
+# 19.08
 theme_xhred_return_home=Återgå till panelindex
 theme_xhred_global_upload=Ladda upp
 theme_xhred_global_select_files=Markera fil(er)
@@ -647,14 +647,14 @@ theme_xhred_global_files_selected=filer markerade
 theme_xhred_global_reset=Återställ
 theme_xhred_upload_initial_info=Dra och släpp filer här eller klicka för att markera
 
-#19.09
+# 19.09
 theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=klicka här
 theme_git_patch_incompatible_message=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 och $5 för att fungera korrekt.
 theme_git_patch_incompatible_message_s=Installera den här versionen av $1 <em>$2</em> kräver senaste och/eller eventuellt osläppt version av $3 för att fungera korrekt.
 theme_git_patch_incompatible_message_desc=Det kan finnas inkompatibla ändringar som kan hindra temat från att fungera som det är tänkt. Det är inte möjligt att fortsätta uppgraderingen med UI.
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=Redigera som HTML
 theme_xhred_global_example=Exempel
 theme_xhred_global_output_example=Utexampel
@@ -680,7 +680,7 @@ theme_xhred_global_unlimited=Obegränsat
 theme_xhred_filemanager_tree_exclude_on_first_load=Uteslut mindre viktiga mappar från att genomsökas vid uppstart av trädvyn (laddar snabbare)
 theme_xhred_filemanager_tree_expand_search=Expandera alla grenar som innehåller matchningar när trädvyn filtreras
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=Gå till översikt
 theme_xhred_tooltip_side_slider_open_favorites_control=Öppna favoritkontrollen
 theme_xhred_tooltip_side_slider_delete_all_notification=Ta bort alla aviseringar
@@ -688,7 +688,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Markera alla aviserin
 theme_xhred_global_settings=Inställningar
 theme_xhred_tooltip_side_slider_pinned=Fäst/ta bort sidomenyn
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=Installera temauppdateringar även för Usermin
 theme_xhred_global_installed_version=Installerad version
 theme_xhred_global_installed_and_latest_version=Installerad och senaste versionen
@@ -696,12 +696,12 @@ theme_xhred_global_latest_stable=Senaste stabila
 theme_xhred_global_latest_beta=Senaste betan
 theme_xhred_global_firewall=Brandvägg
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=Förbereder nerladdning. Arkiverar %number fil(er). Vänta%dots
 theme_xhred_filemanager_prepared_download=Klar för nerladdning. Arkiverat %number fil(er).
 theme_xhred_filemanager_canceled_download=Nerladdningen avbruten.
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=Använd <code>tar</code> även om <code>zip</code> finns tillgängligt när du laddar ner som arkiv
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -711,7 +711,7 @@ theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
 theme_xhred_title_locale_non_ui_config=Icke-UI-format (som i automatiserade e-postmeddelanden och exporterade filer)
 
-#19.20
+# 19.20
 extensions_mail_current_position=Meddelande $1-$2 av $3
 extensions_mail_sort_by_sender=Sortera efter avsändare
 extensions_mail_sort_by_recipient=Sortera efter mottagare
@@ -848,14 +848,14 @@ settings_cache_interval_1y=en gång om året
 
 theme_xhred_reload_notification=Temakonfiguration har ändrats, men inte sparats. Sidan laddas därför om för att återställas till nuvarande inställningar.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=Spara som
 theme_xhred_editor_save_file_as=Spara fil som
 theme_xhred_global_configuration=Konfiguration
 
 body_used_cached_total=$1 totalt / $3 buffrat / $2 använt
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=Lägg till i favoriter
 theme_xhred_favorites_remove=Ta bort från favoriter
 theme_xhred_select_deselect=Markera/avmarkera nuvarande objekt
@@ -873,7 +873,7 @@ theme_xhred_editor_set_syntax=Ange syntax
 theme_xhred_global_menu=Meny
 theme_xhred_shell_aborted=Operationen avbruten
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=Startar om
 theme_xhred_connection_reboot_details=Servern startas om, vänta...
 left_favorites_edit=Redigera favoriter
@@ -958,28 +958,28 @@ theme_xhred_global_version=version
 theme_xhred_notify_patching_module_style=Verkställer inledande UI-fix för $1 och uppdaterar.
 theme_xhred_global_error_more_details_online=Obs: Läs mer om detta felet och hur du löser det i vårt %1wiki page%1 online.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=Filmask
 theme_xhred_filemanager_search_regex=Reguljärt uttryck
 theme_xhred_upload_successful=<span>$1 filer</span> har laddats upp till mappen $2
 theme_xhred_upload_successful_single=<span>$1 fil</span> har laddats upp till mappen $2
 settings_usermin_default_module=Standardmodul
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=Redigera filen i friliggande redigerare
 theme_xhred_path_to_console=Öppna nuvarande sökväg i terminalen (Alt+Skift+K)
 theme_xhred_filemanager_editor_revert_content=Återställ fil
 theme_xhred_filemanager_editor_reverting_content=Återställ ändringarna till originalfilinnehåll.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=Uteslut poster
 theme_xhred_filemanager_exclude_dirs_desc=Semikolonseparerad lista över filer eller underkataloger till att utesluta
 
-#19.38
+# 19.38
 theme_global_access_level=Åtkomstnivå
 theme_global_user_mode=Användarläge
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=Bilagor
 theme_xhred_mail_composer_send=Skicka
 theme_xhred_mail_composer_schedule=Schedule
@@ -1024,13 +1024,13 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 theme_xhred_global_rows=Rader
 
-#19.42
+# 19.42
 settings_side_slider_blend=Ärv
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=Temaspråket har ändrats. Sidan laddas om för att tillämpa de nya inställningarna.
 
-#19.46
+# 19.46
 theme_xhred_global_small=Liten
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Medium
@@ -1038,33 +1038,33 @@ theme_xhred_global_large=Stor
 theme_xhred_global_huge=Enorm
 theme_xhred_filemanager_editor_maximized=Maximera redigeringspanelen vid start
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=Det markerade innehållet i textområdet har kopierats till urklippet
 
-#19.48
+# 19.48
 theme_xhred_global_alias=Alias
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=Ditt namn
 theme_xhred_mail_composer_username=Användarnamn
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=Inloggningssidan färgpalett
 
-#19.60
+# 19.60
 settings_config_save_and_next=Spara och nästa
 settings_config_configuration_category=Konfigurationskategori
 config_search_options_all=Sök igenom alla modulkonfigurationsalternativ
 theme_xhred_editing_config_file=Redigerar konfigurationsfil
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=Tvåfaktorautentisering har aktiverats för den här användaren att logga in
 theme_xhred_global_verify=Kontrollera
 settings_show_terminal_link2=Visa knapp för kommandoskal
 theme_xhred_path_to_console2=Öppna aktuell sökväg i kommandoskal <tt>(Alt+Skift+K)</tt>
 theme_tooltip_terminal_link2=Kommandoskal
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Visa
 theme_xhred_file_viewer=Filvisare
 theme_xhred_global_done=Klar.
@@ -1092,7 +1092,7 @@ theme_xhred_filemanager_remove_warning=Borttagningen är klar men inte för alla
 
 theme_xhred_connection_error_details_ssl=Kontrollera <a>självsignerat SSL-certifikat</a>
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Dolda menyrader
 theme_xhred_tooltip_dashboard_panels_disable=Dölj panelen $1
 settings_right_sysinfo_page_options=Instrumentpanel och realtidsövervakning
@@ -1107,7 +1107,7 @@ theme_error_access_not_root_user=Åtkomst nekad: Användaren har inte behörighe
 settings_theme_config_admins_only_privileged=Förbjuda åtkomst till temakonfiguration för användare
 settings_theme_config_admins_only_privileged_description=Om detta verkställs av serveradministratören döljs temakonfigurationssidan från vanliga, icke-privilegierade användare. Det här alternativet rekommenderas dock inte att användas, eftersom vanliga användare redan har begränsad åtkomst till temakonfiguration och endast kan ändra minimal uppsättning användarspecifika alternativ
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Inställningar
 mconfig_eaccess=Den här modulen kan inte nås
 mconfig_ecannot=Det finns ingen anpassad konfigurationsfil för den här modulen
@@ -1115,16 +1115,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Denna funktion kräver 
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Denna funktion kräver att filsystemet är monterat med <tt>ACLs</tt> aktiverat och <kbd>getfacl</kbd> -kommandot måste vara tillgängligt
 theme_xhred_global_module_preferences=Modulinställningar
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=En ny version av Authentic Theme är installerad
 settings_right_page_keep=Ladda samma sida på domänbytaren
 settings_right_page_keep_description=Det här alternativet försöker ladda samma sida när domänen väljs, när den ändras från rullgardinsmenyn för navigeringsmenyn
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Visa allt
 theme_xhred_filemanager_context_prop_show_all=Visa alla egenskaper
 
-#19.84
+# 19.84
 settings_right_table_links_type=Tabellänkar visar typ
 settings_right_table_links_type_2=Stora ikoner med text
 settings_right_table_links_type_1=Små ikoner med verktygstipstext
@@ -1163,7 +1163,7 @@ body_cpufan_rpm=RPM
 body_cpufan=CPU-fläkt
 filemanager_symlink_exists=Det går inte att skapa <tt>$1</tt> eftersom filen redan finns i <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopiera grundläggande systeminformation till urklipp; håll $1-tangenten för att kopiera utökad; håll tangenten $2 nedtryckt för att kopiera oformaterad textdata istället för nedmärkning
 theme_xhred_tooltip_side_slider_clipboard_account=Kopiera all kontoinformation till urklipp; håll tangenten $1 nedtryckt för att kopiera oformaterad textdata istället för nedmärkning
 tooltip_back_to_servers_index_master=Webmin-servrars indexmodul på huvuddatorn
@@ -1185,7 +1185,7 @@ theme_xhred_disk_quota_error_title=Utom kvot
 theme_xhred_disk_quota_error_message=Inget utrymme kvar på enheten
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Använd huvudadministratörsnyckeln för dekryptering
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Fråga alltid
 theme_xhred_filemanager_files_mode_ask_remember=Kom ihåg som framtida standard
 theme_xhred_filemanager_files_mode_ask_title=Skriv över befintliga
@@ -1202,21 +1202,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Katalogen $1 har rensats.
 theme_xhred_filemanager_purge_trash_all_end=Har rensat alla andra användares papperskorgar.
 theme_error_access_dir_not_allowed=Åtkomst nekad: Filen är inte tillgänglig
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2. Uppgradera eller klicka för att få mer information om den senaste versionen.
 theme_xhred_global_outdated_desc2=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Håll <tt>Ctrl</tt>-tangenten nedtryckt under valet
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Håll <tt>Kommando</tt>-tangenten nedtryckt under valet
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Det har upptäckts att Webmin-webbserverdemonen inte startades om korrekt vid den senaste paketuppgraderingen. Detta är nödvändigt för att starta om webbservern manuellt genom att anropa kommandot <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ja, försök starta om den
 theme_xhred_webmin_requires_restart_no=Nej, jag startar om den manuellt
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Ange sökväg manuellt (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Anslutning förlorad
 theme_xhred_socket_conn_lost_reconnect=Återanslut
 theme_xhred_socket_conn_lost_connecting=Ansluter ..
@@ -1224,15 +1224,15 @@ theme_xhred_socket_conn_lost_try=Försök igen
 theme_xhred_socket_conn_parse_error=Det gick inte att ladda terminalen : Det går inte att analysera svarsobjekt från servern
 theme_xhred_socket_conn_sock_error=Det gick inte att ladda terminalen : WebSocket-anslutningsfel
 
-#20.10
+# 20.10
 theme_xhred_global_open=Öppna
 theme_xhred_xterm_error_title=Kan inte ansluta
 theme_xhred_xterm_error=Gå till terminalmodulen för mer information
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Allvarligt fel
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatiskt
 theme_xhred_filemanager_context_acls=Ändra åtkomstkontrolllista
 theme_xhred_filemanager_changing_acls=Ändrar åtkomstkontrolllista.

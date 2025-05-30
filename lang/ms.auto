@@ -1,4 +1,9 @@
 body_cputype1=$5, $8 teras
+lost_message=Jika log masuk Webmin anda mempunyai set e-mel pemulihan, anda boleh menggunakan borang ini untuk menghantar pautan tetapan semula kata laluan kepada diri sendiri
+reset_message=Anda akan menetapkan semula kata laluan untuk pengguna <tt>$1</tt> dihidupkan
+login_recover=Minta Tetapan Semula Kata Laluan
+login_back=Pergi Balik
+
 settings_right_logos_title=Logo tema boleh ditetapkan dengan mudah di sini, untuk kedua-duanya, pengguna yang disahkan dan tidak disahkan. Saiz logo yang disyorkan ialah <em>180x90</em> piksel.
 settings_right_logos_error=Fail yang dimuat naik bukan imej
 
@@ -21,6 +26,7 @@ settings_hotkey_reload=Muat semula halaman semasa
 
 settings_hotkey_toggle_slider=Togol keterlihatan peluncur sisi
 
+# 17.40
 theme_xhred_sysinfo_wmdocs=Dokumentasi webmin
 theme_xhred_sysinfo_vmdocs=dokumentasi Virtualmin
 theme_xhred_sysinfo_cmdocs=Dokumentasi Cloudmin
@@ -37,6 +43,8 @@ theme_xhred_filemanager_unbookmark_success=Direktori <tt>%value</tt> telah berja
 
 theme_xhred_database_object_selected_delete2=Jatuhkan jadual yang dipilih
 theme_xhred_database_objects_selected_delete2=Gugurkan jadual yang dipilih
+
+theme_xhred_filemanager_new_tab=Tambah tab baharu (Alt + Space)
 
 filemanager_create_object_exists=$3 <tt>$1</tt> sudah wujud dalam <tt>$2</tt>
 filemanager_create_object_denied=Tidak boleh membuat $3 <tt>$1</tt> dalam <tt>$2</tt> - kebenaran ditolak : $4.
@@ -55,14 +63,14 @@ theme_xhred_filemanager_changing_attributes=Menetapkan atribut kepada <tt>%value
 
 theme_xhred_filemanager_changing_secontext=Menukar konteks keselamatan kepada <tt>%value</tt> pada fail yang dipilih.
 
-#18.40
+# 18.40
 settings_hotkey_toggle_key_night_mode=Togol palet warna
 
-#18.48
+# 18.48
 theme_force_upgrade=Kemas kini tema
 theme_update_footer=Sila berbaik hati melaporkan pepijat kepada $1 repositori. Sertai saluran $2 kami untuk mendapatkan berita terkini.
 
-#19.00
+# 19.00
 theme_xhred_sysinfo_update_start=Maklumat sistem dikenang.
 theme_xhred_sysinfo_update_end=Maklumat sistem berjaya dikenang semula.
 theme_xhred_sysinfo_update_failed=Maklumat sistem tidak dapat dikenang. Cuba lagi nanti.
@@ -83,14 +91,14 @@ theme_xhred_global_seconds=Detik
 theme_xhred_global_minute=Minit
 theme_xhred_global_minutes=Minit
 
-#19.01
+# 19.01
 theme_xhred_browser_warning=Untuk mendapat pengalaman terbaik dengan panel pelayan di komputer anda, gunakan penyemak imbas terkini yang disokong. <br><br> <em>Internet Explorer</em> tidak lagi disokong. <br><br> Penyemak imbas yang disyorkan ialah <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> atau <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Anda boleh memuat turun versi penyemak imbas mudah alih, yang tidak memerlukan pemasangan, untuk memintas had yang dikenakan.</div>
 
-#19.02
+# 19.02
 theme_xhred_filter_content=Tapis kandungan
 theme_xhred_log_file_empty=Fail log kosong
 
-#19.03
+# 19.03
 theme_xhred_config_configurable_options=Pilihan yang boleh dikonfigurasikan
 theme_xhred_filter_content_no_matches_query=Tiada kandungan yang sepadan dengan pertanyaan %str
 theme_xhred_toggle_accordions=Togol keterlihatan akordion
@@ -109,18 +117,18 @@ theme_xhred_signing_success=Berjaya log masuk!
 theme_xhred_session_failed_password=Kata laluan salah, sila cuba lagi.
 theme_xhred_global_reauthenticate=Sahkan semula
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=Dayakan pemantauan masa nyata
 theme_xhred_global_redirecting=Mengarahkan semula
 
-#19.05
+# 19.05
 body_no_javascript_title=JavaScript dilumpuhkan
 body_no_javascript_message=Sila aktifkan javascript dan muat semula halaman
 theme_xhred_connection_lost=Sambungan terputus
 theme_xhred_connection_success=Sambungan berjaya
 theme_xhred_connection_success_details=Sambungan ke pelayan telah dibuat semula.
 
-#19.08
+# 19.08
 theme_xhred_return_home=Kembali ke indeks panel
 theme_xhred_global_upload=Muat naik
 theme_xhred_global_select_files=Pilih fail
@@ -129,14 +137,14 @@ theme_xhred_global_files_selected=fail dipilih
 theme_xhred_global_reset=Tetapkan semula
 theme_xhred_upload_initial_info=Seret dan lepaskan fail di sini atau klik untuk memilih
 
-#19.09
+# 19.09
 theme_xhred_global_empty=Kosong
 theme_xhred_global_click_here=tekan di sini
 theme_git_patch_incompatible_message=Memasang versi $1 <em>$2</em> ini memerlukan versi $3 dan $5 yang terkini dan/atau belum dirilis untuk berfungsi dengan baik.
 theme_git_patch_incompatible_message_s=Memasang versi $1 <em>$2</em> ini memerlukan versi $3 yang terkini dan/atau belum dirilis untuk berfungsi dengan baik.
 theme_git_patch_incompatible_message_desc=Mungkin terdapat perubahan yang tidak serasi, yang boleh menghalang tema daripada berfungsi seperti yang direka. Meneruskan operasi naik taraf menggunakan UI tidak boleh dilakukan.
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=Edit sebagai HTML
 theme_xhred_global_example=Contohnya
 theme_xhred_global_output_example=Contoh output
@@ -162,7 +170,7 @@ theme_xhred_global_unlimited=Tanpa had
 theme_xhred_filemanager_tree_exclude_on_first_load=Kecualikan direktori yang tidak penting daripada melintasi beban awal untuk paparan pokok (muat lebih cepat)
 theme_xhred_filemanager_tree_expand_search=Kembangkan semua cabang yang mengandungi padanan sambil menyaring paparan pokok
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=Pergi ke papan pemuka
 theme_xhred_tooltip_side_slider_open_favorites_control=Buka kawalan kegemaran
 theme_xhred_tooltip_side_slider_delete_all_notification=Padamkan semua pemberitahuan
@@ -170,7 +178,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Tandakan semua pember
 theme_xhred_global_settings=Tetapan
 theme_xhred_tooltip_side_slider_pinned=Pin/lepaskan gelangsar sisi
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=Pasang kemas kini tema untuk Usermin juga
 theme_xhred_global_installed_version=Versi terpasang
 theme_xhred_global_installed_and_latest_version=Versi terpasang dan terkini
@@ -178,12 +186,12 @@ theme_xhred_global_latest_stable=Stabil terkini
 theme_xhred_global_latest_beta=Beta terkini
 theme_xhred_global_firewall=Firewall
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=Menyiapkan muat turun. Mengarkibkan %number fail. Sila tunggu %dots
 theme_xhred_filemanager_prepared_download=Muat turun sudah siap. Fail %number diarkibkan
 theme_xhred_filemanager_canceled_download=Muat turun dibatalkan.
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=Perintah <code>tar</code>, walaupun <code>zip</code> tersedia, semasa memuat turun sebagai arkib
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -193,7 +201,7 @@ theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bait
 theme_xhred_title_locale_non_ui_config=Format tarikh pelayan dihasilkan
 
-#19.20
+# 19.20
 extensions_mail_current_position=Mesej $1-$2 dari $3
 extensions_mail_sort_by_sender=Isih mengikut pengirim
 extensions_mail_sort_by_recipient=Isih mengikut penerima
@@ -334,14 +342,14 @@ settings_cache_interval_1y=sekali setahun
 
 theme_xhred_reload_notification=Konfigurasi tema telah diubah tetapi tidak disimpan. Halaman akan dimuat semula, untuk menetapkan semula ke tetapan semasa.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=Simpan sebagai
 theme_xhred_editor_save_file_as=Simpan fail sebagai
 theme_xhred_global_configuration=Konfigurasi
 
 body_used_cached_total=Jumlah $1 / $3 cache / $2 digunakan
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=Tambah ke kegemaran
 theme_xhred_favorites_remove=Alih keluar dari kegemaran
 theme_xhred_select_deselect=Pilih/nyahpilih item semasa
@@ -359,7 +367,7 @@ theme_xhred_editor_set_syntax=Tetapkan sintaks
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Operasi dibatalkan
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=But semula
 theme_xhred_connection_reboot_details=Pelayan sedang dihidupkan semula. Sila tunggu ..
 settings_leftmenu_custom_links_description=Adalah mungkin untuk mempunyai pautan tambahan tersuai yang disuntik ke dalam menu navigasi. <br><br> Kekunci <em>tajuk</em>, <em>pautan</em> dan <em>ikon</em> diperlukan; secara pilihan, anda boleh menentukan pada mod log masuk mana pautan akan dipaparkan, dengan menentukan kunci <em>level</em>, dengan nilai, dalam senarai dipisahkan koma, mengandungi: <br><br> <em>0</em > - log masuk pentadbir; <br><em>1</em> - log masuk penjual semula;<br><em>2</em> - log masuk pemilik pelayan;<br><em>3</em> - log masuk pengguna;<br><em>4</em>- log masuk pemilik sistem.<br><br> Ia memerlukan anda menghantar objek JSON yang sah sebagai rentetan, seperti dalam contoh di bawah.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -445,28 +453,28 @@ theme_xhred_global_version=versi
 theme_xhred_notify_patching_module_style=Menerapkan patch UI awal untuk $1 dan memuat semula.
 theme_xhred_global_error_more_details_online=Catatan: Sila baca lebih lanjut mengenai ralat ini dan cara menyelesaikannya, di halaman %1 %1wiki %1 dalam talian.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=Topeng fail
 theme_xhred_filemanager_search_regex=Ekspresi biasa
 theme_xhred_upload_successful=<span>$1 fail</span> telah berjaya dimuat ke direktori $2
 theme_xhred_upload_successful_single=<span>$1 file</span> telah berjaya dimuat naik ke $2 direktori
 settings_usermin_default_module=Modul lalai
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=Tanggalkan fail untuk memisahkan editor
 theme_xhred_path_to_console=Buka jalan semasa di terminal <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Kembalikan Fail
 theme_xhred_filemanager_editor_reverting_content=Menjatuhkan perubahan dan kembali ke kandungan fail asal.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=Kecualikan penyertaan
 theme_xhred_filemanager_exclude_dirs_desc=Senarai fail atau subdirektori yang dipisahkan dengan titik koma untuk dikecualikan
 
-#19.38
+# 19.38
 theme_global_access_level=Tahap Akses
 theme_global_user_mode=Mod Pengguna
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=Lampiran
 theme_xhred_mail_composer_send=Hantar
 theme_xhred_mail_composer_schedule=Jadual
@@ -511,13 +519,13 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 theme_xhred_global_rows=Baris
 
-#19.42
+# 19.42
 settings_side_slider_blend=Waris
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=Bahasa tema telah diubah. Halaman akan dimuat semula, untuk menerapkan tetapan baru.
 
-#19.46
+# 19.46
 theme_xhred_global_small=Kecil
 theme_xhred_global_normal=Biasa
 theme_xhred_global_medium=Sedang
@@ -525,26 +533,26 @@ theme_xhred_global_large=Besar
 theme_xhred_global_huge=Besar
 theme_xhred_filemanager_editor_maximized=Maksimumkan panel editor semasa mula
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=Kandungan teks yang dipilih berjaya disalin ke papan keratan
 
-#19.48
+# 19.48
 theme_xhred_global_alias=Alias
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=Nama sebenar
 theme_xhred_mail_composer_username=nama pengguna
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=Palet warna halaman log masuk
 
-#19.60
+# 19.60
 settings_config_save_and_next=Simpan dan Seterusnya
 settings_config_configuration_category=Kategori konfigurasi
 config_search_options_all=Cari melalui semua pilihan konfigurasi modul
 theme_xhred_editing_config_file=Mengedit fail konfigurasi
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=Pengesahan dua faktor telah diaktifkan untuk pengguna ini log masuk
 theme_xhred_global_verify=Sahkan
 settings_show_terminal_link2=Tunjukkan butang shell arahan
@@ -552,7 +560,7 @@ settings_hotkey_shell2=Buka shell arahan
 theme_xhred_path_to_console2=Buka jalan semasa dalam shell arahan <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Cengkerang arahan
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Pandangan
 theme_xhred_file_viewer=Pemapar Fail
 theme_xhred_global_done=Selesai.
@@ -580,7 +588,7 @@ theme_xhred_filemanager_remove_warning=Pembuangan telah berjaya dilakukan tetapi
 
 theme_xhred_connection_error_details_ssl=Periksa amaran <a>sijil SSL yang ditandatangani sendiri</a>
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Akordeon tersembunyi
 theme_xhred_tooltip_dashboard_panels_disable=Sembunyikan panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Panel tersembunyi boleh didayakan semula menggunakan <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
@@ -596,7 +604,7 @@ theme_error_access_not_root_user=Akses ditolak: Pengguna tidak berhak untuk meng
 settings_theme_config_admins_only_privileged=Larang akses ke konfigurasi tema untuk pengguna
 settings_theme_config_admins_only_privileged_description=Pilihan ini, jika ditegakkan oleh pentadbir pelayan, akan menyembunyikan halaman konfigurasi tema dari pengguna biasa dan tidak berhak. Namun, opsi ini tidak disarankan untuk digunakan, karena pengguna biasa sudah memiliki akses terbatas ke konfigurasi tema, dan hanya dapat mengubah sekumpulan minimum pilihan khusus pengguna
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Keutamaan
 mconfig_eaccess=Modul ini tidak dapat diakses
 mconfig_ecannot=Tidak terdapat fail konfigurasi tersuai untuk modul ini
@@ -604,16 +612,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ciri ini memerlukan <tt
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Fungsi ini memerlukan sistem fail dipasang dengan <tt>ACLs</tt> dihidupkan dan perintah <kbd>getfacl</kbd> mesti ada
 theme_xhred_global_module_preferences=Keutamaan modul
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=Versi baru Tema Autentik dipasang
 settings_right_page_keep=Muatkan halaman yang sama pada pertukaran domain
 settings_right_page_keep_description=Pilihan ini akan cuba memuatkan halaman yang sama setelah pilih domain, apabila diubah dari daftar turun menu navigasi
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Tunjukkan semua
 theme_xhred_filemanager_context_prop_show_all=Tunjukkan semua harta tanah
 
-#19.84
+# 19.84
 settings_right_table_links_type=Jenis paparan pautan jadual
 settings_right_table_links_type_2=Ikon besar dengan teks
 settings_right_table_links_type_1=Ikon kecil dengan teks petua alat
@@ -652,7 +660,7 @@ body_cpufan_rpm=RPM
 body_cpufan=kipas CPU
 filemanager_symlink_exists=Tidak boleh mencipta <tt>$1</tt> kerana fail sudah wujud dalam <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Salin maklumat sistem asas ke papan keratan; tahan $1 kekunci untuk menyalin dilanjutkan; tahan kekunci $2 untuk menyalin data teks biasa dan bukannya turunkan
 theme_xhred_tooltip_side_slider_clipboard_account=Salin semua maklumat akaun ke papan keratan; tahan kekunci $1 untuk menyalin data teks biasa dan bukannya penurunan harga
 tooltip_back_to_servers_index_master=Modul indeks pelayan webmin pada mesin induk
@@ -675,10 +683,10 @@ theme_xhred_disk_quota_error_title=Habis kuota
 theme_xhred_disk_quota_error_message=Tiada lagi ruang di dalam peranti
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Gunakan kunci pentadbir induk untuk penyahsulitan
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Pegang kekunci pengubah suai
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Selalu bertanya
 theme_xhred_filemanager_files_mode_ask_remember=Ingat sebagai lalai masa hadapan
 theme_xhred_filemanager_files_mode_ask_title=Tulis ganti yang sedia ada
@@ -695,21 +703,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Berjaya membersihkan $1 direktori.
 theme_xhred_filemanager_purge_trash_all_end=Berjaya membersihkan semua direktori sampah pengguna lain.
 theme_error_access_dir_not_allowed=Akses dinafikan: Fail tidak boleh diakses
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=Versi $1 yang dipasang sudah lapuk. Versi terkini yang tersedia ialah $2. Sila tingkatkan atau klik untuk mendapatkan butiran lanjut tentang keluaran terbaru.
 theme_xhred_global_outdated_desc2=Versi $1 yang dipasang sudah lapuk. Versi terkini yang tersedia ialah $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Tahan kekunci <tt>Ctrl</tt> ditekan semasa pemilihan
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tahan kekunci <tt>Arahan</tt> ditekan semasa pemilihan
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Ia dikesan bahawa daemon pelayan web Webmin tidak dimulakan semula dengan betul pada peningkatan pakej terakhir. Ini adalah perlu untuk memulakan semula pelayan web secara manual dengan memanggil perintah <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ya, cuba mulakan semula
 theme_xhred_webmin_requires_restart_no=Tidak, saya akan memulakan semula secara manual
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Masukkan laluan secara manual (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Sambungan terputus
 theme_xhred_socket_conn_lost_reconnect=Sambung semula
 theme_xhred_socket_conn_lost_connecting=Menyambung ..
@@ -717,15 +725,15 @@ theme_xhred_socket_conn_lost_try=Cuba lagi
 theme_xhred_socket_conn_parse_error=Gagal memuatkan terminal : Tidak dapat menghuraikan objek tindak balas daripada pelayan
 theme_xhred_socket_conn_sock_error=Gagal memuatkan terminal : Ralat sambungan WebSocket
 
-#20.10
+# 20.10
 theme_xhred_global_open=Buka
 theme_xhred_xterm_error_title=Tidak boleh disambungkan
 theme_xhred_xterm_error=Pergi ke modul Terminal untuk butiran lanjut
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Ralat Maut
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatik
 theme_xhred_filemanager_context_acls=Tukar senarai kawalan akses
 theme_xhred_filemanager_changing_acls=Menukar senarai kawalan akses.
@@ -733,7 +741,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Senarai kawalan akses tidak 
 theme_xhred_filemanager_successful_acls=Senarai kawalan akses telah berjaya ditukar.
 theme_download_error=Ralat memuat turun fail kerana ia berada di luar direktori yang dibenarkan  : $1 
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Bantuan (F1)
 theme_xhred_hotkeys_help_title=Pintasan Papan Kekunci
 theme_xhred_hotkeys_help_title_docs=Dokumentasi
@@ -748,6 +756,7 @@ theme_xhred_hotkeys_custom_not_set=tidak ditetapkan
 theme_xhred_hotkey_open_module_config_privileged=Buka konfigurasi modul
 theme_xhred_hotkey_open_theme_config=Buka konfigurasi tema
 theme_xhred_hotkey_list_table=Senaraikan jadual bernombor
+theme_xhred_hotkey_list_tabs=Senaraikan tab
 theme_xhred_hotkey_clear_cache=Kosongkan cache dan muat semula
 theme_xhred_hotkey_open_new=Salin ke tab baharu
 theme_xhred_hotkey_copy_to_clipboard=Salin data elemen ke papan keratan
@@ -800,7 +809,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Lebar lajur minimum
 theme_xhred_columns_layout_vertical_opts_break_title=Tindakan limpahan lajur
 theme_xhred_columns_layout_vertical_opts_break_new=Rehat
 theme_xhred_columns_layout_vertical_opts_break_scroll=Tatal
-
 theme_xhred_columns_layout_remove=Sembunyikan Widget Ini
 theme_xhred_columns_layout_remove_button=Simpan dan Sembunyikan
 theme_xhred_columns_layout_variation_cannot_horizontal=Reka letak mendatar tidak boleh digunakan dalam mod mudah alih, khususnya apabila lebar skrin kurang daripada 992px
@@ -809,17 +817,17 @@ settings_auto_open_panels_on_proximity=Auto buka panel tertutup pada jarak dekat
 
 theme_xhred_config_portable_module_xterm_render_addon=Dayakan tambahan pemaparan WebGL
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Tapis dan eksport kandungan
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Log keluar
 theme_xhred_hotkey_emsg=Kekunci sengkang ke belakang tidak boleh digunakan sebagai kekunci pintas
 settings_embed_product_splash_privileged=Paparkan skrin percikan penjenamaan selepas log masuk
 dashboard_status_running=Berlari
 dashboard_status_stopped=Berhenti
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Menonton
 theme_xhred_global_connected=Bersambung
 theme_xhred_global_disconnected=Terputus sambungan
@@ -856,3 +864,18 @@ settings_sysinfo_real_time_status_history_duration6=18 jam
 settings_sysinfo_real_time_status_history_duration7=24 jam
 theme_xhred_license_purchase=Beli lesen
 settings_right_table_links_sorted=Isih pautan jadual dalam susunan abjad
+
+# 24.00
+session_error=ralat
+session_success=Kejayaan
+session_cannot=Gagal menetapkan semula kata laluan : Nama pengguna tiada.
+session_neterror=Tidak boleh mendapat respons daripada rangkaian!
+session_unkerror=Ralat yang tidak dijangka berlaku. Cuba lagi nanti.
+session_conerror=Gagal mencapai pelayan. Cuba lagi nanti.
+session_resetpass1=Kata laluan baharu
+session_resetpass2=Sahkan kata laluan baharu
+session_resetepassreq=Kata laluan diperlukan.
+session_pwdconf=Pengesahan kata laluan diperlukan.
+session_pwdmatch=Kata laluan tidak sepadan.
+session_noid=ID Pemulihan tidak ditemui!
+session_pwdsucc=Kata laluan berjaya ditukar! Anda kini boleh log masuk dengan kata laluan baharu.

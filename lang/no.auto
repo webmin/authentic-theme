@@ -1,4 +1,9 @@
 body_cputype1=$5, $8 kjerne
+lost_message=Hvis du har angitt en gjenopprettings-e-postadresse for Webmin-påloggingen din, kan du bruke dette skjemaet til å sende deg selv en lenke til tilbakestilling av passord
+reset_message=Du er i ferd med å tilbakestille passordet for bruker <tt>$1</tt> den
+login_recover=Be om tilbakestilling av passord
+login_back=Gå tilbake
+
 settings_right_logos_title=Temalogoer kan enkelt settes her, for både autentiserte og uautentiserte brukere. Anbefalt logostørrelse er <em>180x90</em> piksler.
 settings_right_logos_error=Den opplastede filen er ikke et bilde
 
@@ -21,6 +26,7 @@ settings_hotkey_reload=Oppdater gjeldende side
 
 settings_hotkey_toggle_slider=Slå sideglidebryterens synlighet
 
+# 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentasjon
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon
 theme_xhred_sysinfo_cmdocs=Cloudmin dokumentasjon
@@ -37,6 +43,8 @@ theme_xhred_filemanager_unbookmark_success=Katalog <tt>%value</tt> ble fjernet f
 
 theme_xhred_database_object_selected_delete2=Slipp valgt tabell
 theme_xhred_database_objects_selected_delete2=Slipp valgte tabeller
+
+theme_xhred_filemanager_new_tab=Legg til ny fane (Alt + mellomrom)
 
 filemanager_create_object_exists=$3 <tt>$1</tt> eksisterer allerede i <tt>$2</tt>
 filemanager_create_object_denied=Kan ikke opprette $3 <tt>$1</tt> i <tt>$2</tt> - tillatelse nektet: $4.
@@ -55,16 +63,16 @@ theme_xhred_filemanager_changing_attributes=Sette attributter til <tt>%value</tt
 
 theme_xhred_filemanager_changing_secontext=Endring av sikkerhetskontekst til <tt>%value</tt> på valgte fil(er).
 
-#18.40
+# 18.40
 settings_hotkey_toggle_key_night_mode=Bytt fargepalett
 
-#18.48
+# 18.48
 theme_force_upgrade=Oppdater tema
 theme_update_footer=Vær så snill å rapportere feil til $1-depotet. Bli med på $2-kanalen vår for å få de siste nyhetene.
 
 settings_webmin_default_module=Standardside for Webmin
 
-#19.09
+# 19.09
 theme_git_patch_incompatible_message_desc=Det kan være inkompatible endringer som kan stoppe temaet fra å fungere som det er designet. Det er ikke mulig å fortsette oppgraderingen med brukergrensesnittet.
 
 settings_right_bgs_title=Temabakgrunn for påloggingssiden kan settes her.
@@ -73,15 +81,15 @@ settings_hotkey_navigation=Veksle navigasjonsmenystatus
 
 settings_hotkey_slider=Veksle på sideskyvetilstand
 
-#19.32
+# 19.32
 settings_leftmenu_custom_links_description=Det er mulig å få tilpassede, ekstra lenker injisert i navigasjonsmenyen. <br><br> Nøklene <em>tittel</em>, <em>link</em> og <em>ikon</em> kreves; eventuelt kan du definere i hvilken påloggingsmodus en kobling skal vises, ved å spesifisere <em>nivå</em>-nøkkel, med verdier, i kommadelt liste, som inneholder: <br><br> <em>0</em > - administratorinnlogging; <br><em>1</em> - forhandlerpålogging;<br><em>2</em> - pålogging til servereier;<br><em>3</em> - brukerpålogging;<br><em>4</em>- systemeier pålogging.<br><br> Det vil kreve at du sender gyldig JSON-objekt som en streng, som i eksemplet nedenfor.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
 
 theme_xhred_filemanager_mass_selected_for_delete=Alle elementer i katalogen %1
 
-#19.61
+# 19.61
 settings_hotkey_shell2=Åpne kommandoskall
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Utsikt
 theme_xhred_file_viewer=File Viewer
 theme_xhred_global_done=Ferdig.
@@ -109,7 +117,7 @@ theme_xhred_filemanager_remove_warning=Fjerningen er fullført, men ikke for all
 
 theme_xhred_connection_error_details_ssl=Sjekk <a>selvsignert SSL-sertifikat</a> advarsel
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Skjulte trekkspill
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
 theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan aktiveres på nytt ved å bruke <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
@@ -125,7 +133,7 @@ theme_error_access_not_root_user=Tilgang nektet: Brukeren har ikke rett til å r
 settings_theme_config_admins_only_privileged=Forby tilgang til temakonfigurasjon for brukere
 settings_theme_config_admins_only_privileged_description=Dette alternativet, hvis det håndheves av serveradministratoren, vil skjule temakonfigurasjonssiden for vanlige, ikke-privilegerte brukere. Dette alternativet anbefales imidlertid ikke å brukes, ettersom vanlige brukere allerede har begrenset tilgang til temakonfigurasjon, og bare vil kunne endre minimalt med brukerspesifikke alternativer
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Preferanser
 mconfig_eaccess=Denne modulen er ikke tilgjengelig
 mconfig_ecannot=Det finnes ingen tilpassede konfigurasjonsfiler for denne modulen
@@ -133,16 +141,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Denne funksjonen krever
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Denne funksjonen krever at filsystemet er montert med <tt>ACLs</tt> slått på og <kbd>getfacl</kbd> -kommandoen må være tilgjengelig
 theme_xhred_global_module_preferences=Modulinnstillinger
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=En ny versjon av Authentic Theme er installert
 settings_right_page_keep=Last inn samme side på domenebryteren
 settings_right_page_keep_description=Dette alternativet vil prøve å laste inn den samme siden ved valg av domene, når den endres fra rullegardinlisten til navigasjonsmenyen
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Vis alt
 theme_xhred_filemanager_context_prop_show_all=Vis alle eiendommer
 
-#19.84
+# 19.84
 settings_right_table_links_type=Tabelllenker viser type
 settings_right_table_links_type_2=Store ikoner med tekst
 settings_right_table_links_type_1=Små ikoner med verktøytips
@@ -181,7 +189,7 @@ body_cpufan_rpm=RPM
 body_cpufan=CPU vifte
 filemanager_symlink_exists=Kan ikke opprette <tt>$1</tt> da filen allerede eksisterer i <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier grunnleggende systeminformasjon til utklippstavlen; hold $1-tasten for å kopiere utvidet; hold $2-tasten for å kopiere ren tekstdata i stedet for markering
 theme_xhred_tooltip_side_slider_clipboard_account=Kopier all kontoinformasjon til utklippstavlen; hold $1-tasten for å kopiere ren tekstdata i stedet for markering
 tooltip_back_to_servers_index_master=Webmin-servere-indeksmodul på hovedmaskin
@@ -204,10 +212,10 @@ theme_xhred_disk_quota_error_title=Utenfor kvote
 theme_xhred_disk_quota_error_message=Ikke mer lagringskapasitet igjen på enheten
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Bruk hovedadministratornøkkel for dekryptering
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Hold nede modifikasjonstasten
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Spør alltid
 theme_xhred_filemanager_files_mode_ask_remember=Husk som fremtidig standard
 theme_xhred_filemanager_files_mode_ask_title=Overskriv eksisterende
@@ -224,21 +232,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Vellykket slettet $1-katalogen.
 theme_xhred_filemanager_purge_trash_all_end=Fjernet alle andre brukeres søppelkataloger.
 theme_error_access_dir_not_allowed=Tilgang nektet: Filen er ikke tilgjengelig
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=Installert versjon av $1 er utdatert. Siste tilgjengelige versjon er $2. Oppgrader eller klikk for å få mer informasjon om nylig utgivelse.
 theme_xhred_global_outdated_desc2=Installert versjon av $1 er utdatert. Siste tilgjengelige versjon er $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hold nede <tt>Ctrl</tt>-tasten under valget
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold nede <tt>Kommando</tt>-tasten under valget
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Det oppdages at Webmin-webserverdemonen ikke ble restartet på riktig måte ved siste pakkeoppgradering. Dette er nødvendig for å starte nettserveren på nytt manuelt ved å ringe kommandoen <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ja, prøv å starte den på nytt
 theme_xhred_webmin_requires_restart_no=Nei, jeg starter den på nytt manuelt
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Skriv inn banen manuelt (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Forbindelse mistet
 theme_xhred_socket_conn_lost_reconnect=Koble til på nytt
 theme_xhred_socket_conn_lost_connecting=Kobler til ..
@@ -246,15 +254,15 @@ theme_xhred_socket_conn_lost_try=Prøv igjen
 theme_xhred_socket_conn_parse_error=Kunne ikke laste inn terminal: Kan ikke analysere svarobjekt fra serveren
 theme_xhred_socket_conn_sock_error=Feil ved lasting av terminal: WebSocket-tilkoblingsfeil
 
-#20.10
+# 20.10
 theme_xhred_global_open=Åpen
 theme_xhred_xterm_error_title=Kan ikke koble til
 theme_xhred_xterm_error=Gå til Terminalmodul for ytterligere detaljer
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Fatal feil
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatisk
 theme_xhred_filemanager_context_acls=Endre tilgangskontrollliste
 theme_xhred_filemanager_changing_acls=Endring av tilgangskontrollliste.
@@ -262,7 +270,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Tilgangskontrolllisten er ik
 theme_xhred_filemanager_successful_acls=Tilgangskontrolllisten er endret.
 theme_download_error=Feil ved nedlasting av filen fordi den er utenfor tillatt katalog : $1
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Hjelp (F1)
 theme_xhred_hotkeys_help_title=Tastatursnarveier
 theme_xhred_hotkeys_help_title_docs=Dokumentasjon
@@ -277,6 +285,7 @@ theme_xhred_hotkeys_custom_not_set=ikke satt
 theme_xhred_hotkey_open_module_config_privileged=Åpne modulkonfig
 theme_xhred_hotkey_open_theme_config=Åpne temakonfigurasjon
 theme_xhred_hotkey_list_table=Liste paginert tabell
+theme_xhred_hotkey_list_tabs=Listefaner
 theme_xhred_hotkey_clear_cache=Tøm hurtigbufferen og last inn på nytt
 theme_xhred_hotkey_open_new=Dupliser til en ny fane
 theme_xhred_hotkey_copy_to_clipboard=Kopier elementdata til utklippstavlen
@@ -329,7 +338,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Minimum kolonnebredde
 theme_xhred_columns_layout_vertical_opts_break_title=Kolonneoverløpshandling
 theme_xhred_columns_layout_vertical_opts_break_new=Gå i stykker
 theme_xhred_columns_layout_vertical_opts_break_scroll=Rull
-
 theme_xhred_columns_layout_remove=Skjul denne widgeten
 theme_xhred_columns_layout_remove_button=Lagre og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontal layout kan ikke brukes i mobilmodus, spesielt når skjermbredden er mindre enn 992px
@@ -338,17 +346,17 @@ settings_auto_open_panels_on_proximity=Automatisk åpne lukkede paneler i nærhe
 
 theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gjengivelsestillegg
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Filtrer og eksporter innhold
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Logg ut
 theme_xhred_hotkey_emsg=Omvendt skråstrek-tasten kan ikke brukes som en hurtigtast
 settings_embed_product_splash_privileged=Vis en splash-skjerm for merkevarebygging etter pålogging
 dashboard_status_running=Løping
 dashboard_status_stopped=Stoppet
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Ser på
 theme_xhred_global_connected=Tilkoblet
 theme_xhred_global_disconnected=Koblet fra
@@ -385,3 +393,18 @@ settings_sysinfo_real_time_status_history_duration6=18 timer
 settings_sysinfo_real_time_status_history_duration7=24 timer
 theme_xhred_license_purchase=Kjøp en lisens
 settings_right_table_links_sorted=Sorter tabellkoblinger i alfabetisk rekkefølge
+
+# 24.00
+session_error=Feil
+session_success=Suksess
+session_cannot=Klarte ikke å tilbakestille passordet: Brukernavnet mangler.
+session_neterror=Får ikke svar fra nettverket!
+session_unkerror=Det oppsto en uventet feil. Prøv igjen senere.
+session_conerror=Kunne ikke nå serveren. Prøv på nytt senere.
+session_resetpass1=Nytt passord
+session_resetpass2=Bekreft nytt passord
+session_resetepassreq=Passord er påkrevd.
+session_pwdconf=Passordbekreftelse er nødvendig.
+session_pwdmatch=Passordene stemmer ikke overens.
+session_noid=Gjenopprettings-ID-en ble ikke funnet!
+session_pwdsucc=Passordet er endret! Du kan nå logge inn med det nye passordet.

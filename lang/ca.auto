@@ -1,4 +1,9 @@
 body_cputype1=$5, $8 nucli
+lost_message=Si el vostre inici de sessió de Webmin té configurat un correu electrònic de recuperació, podeu utilitzar aquest formulari per enviar-vos un enllaç de restabliment de contrasenya
+reset_message=Esteu a punt de restablir la contrasenya de l'usuari <tt>$1</tt> el
+login_recover=Sol·licita el restabliment de la contrasenya
+login_back=Torna enrere
+
 settings_right_logos_title=Els logotips temàtics es poden configurar fàcilment aquí, tant per als usuaris autenticats com per als no autenticats. La mida recomanada del logotip és de <em>180 x 90</em> píxels.
 settings_right_logos_error=El fitxer penjat no és una imatge
 
@@ -21,6 +26,7 @@ settings_hotkey_reload=Actualitza la pàgina actual
 
 settings_hotkey_toggle_slider=Commuta la visibilitat del control lliscant lateral
 
+# 17.40
 theme_xhred_sysinfo_wmdocs=Documentació de Webmin
 theme_xhred_sysinfo_vmdocs=Documentació de Virtualmin
 theme_xhred_sysinfo_cmdocs=Documentació de Cloudmin
@@ -37,6 +43,8 @@ theme_xhred_filemanager_unbookmark_success=El directori <tt>%value</tt> s'ha eli
 
 theme_xhred_database_object_selected_delete2=Deixa anar la taula seleccionada
 theme_xhred_database_objects_selected_delete2=Elimina les taules seleccionades
+
+theme_xhred_filemanager_new_tab=Afegeix una nova pestanya (Alt + Espai)
 
 filemanager_create_object_exists=$3 <tt>$1</tt> ja existeix a <tt>$2</tt>
 filemanager_create_object_denied=No es pot crear $3 <tt>$1</tt> a <tt>$2</tt> - permís denegat: $4.
@@ -55,19 +63,19 @@ theme_xhred_filemanager_changing_attributes=Configurant els atributs a <tt>%valu
 
 theme_xhred_filemanager_changing_secontext=S'està canviant el context de seguretat a <tt>%value</tt> als fitxers seleccionats.
 
-#18.40
+# 18.40
 settings_hotkey_toggle_key_night_mode=Canvia la paleta de colors
 
-#18.48
+# 18.48
 theme_force_upgrade=Actualitza el tema
 theme_update_footer=Si us plau, informeu d'errors al repositori $1. Uneix-te al nostre canal $2 per rebre les últimes notícies.
 
 settings_webmin_default_module=Pàgina predeterminada per a Webmin
 
-#19.09
+# 19.09
 theme_git_patch_incompatible_message_desc=Pot ser que hi hagi canvis incompatibles, que podrien impedir que el tema funcioni tal com s'ha dissenyat. No és possible continuar l'operació d'actualització mitjançant la interfície d'usuari.
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=Edita com a HTML
 theme_xhred_global_example=Exemple
 theme_xhred_global_output_example=Exemple de sortida
@@ -93,7 +101,7 @@ theme_xhred_global_unlimited=Il·limitat
 theme_xhred_filemanager_tree_exclude_on_first_load=Exclou que els directoris no essencials es desplacin en la càrrega inicial per a la visualització en arbre (es carrega més ràpidament)
 theme_xhred_filemanager_tree_expand_search=Expandiu totes les branques que continguin coincidències mentre filtreu la vista en arbre
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=Vés al tauler
 theme_xhred_tooltip_side_slider_open_favorites_control=Obriu el control de preferits
 theme_xhred_tooltip_side_slider_delete_all_notification=Suprimeix totes les notificacions
@@ -101,7 +109,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Marqueu totes les not
 theme_xhred_global_settings=Configuració
 theme_xhred_tooltip_side_slider_pinned=Llisqueu el punteador lateral/fixeu-lo
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=Instal·leu també actualitzacions de tema per a Usermin
 theme_xhred_global_installed_version=Versió instal·lada
 theme_xhred_global_installed_and_latest_version=Instal·lada i última versió
@@ -109,12 +117,12 @@ theme_xhred_global_latest_stable=Darrer estable
 theme_xhred_global_latest_beta=Última versió beta
 theme_xhred_global_firewall=Tallafoc
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=Preparant la baixada. Arxivant %number fitxers (s). Espereu %dots
 theme_xhred_filemanager_prepared_download=La descàrrega ja està a punt. %number Arxiu (s) arxivat (s).
 theme_xhred_filemanager_canceled_download=S'ha cancel·lat la baixada.
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=Força l’ordre <code>tar</code>, encara que estigui disponible <code>zip</code> quan descarregueu com a arxiu
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -124,7 +132,7 @@ theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
 theme_xhred_title_locale_non_ui_config=Format de data generat pel servidor
 
-#19.20
+# 19.20
 extensions_mail_current_position=Missatges 1- $2 de 3 dòlars
 extensions_mail_sort_by_sender=Ordena per remitent
 extensions_mail_sort_by_recipient=Ordena per destinatari
@@ -265,14 +273,14 @@ settings_cache_interval_1y=una vegada a l'any
 
 theme_xhred_reload_notification=La configuració del tema s'ha canviat, però no s'ha desat. La pàgina es tornarà a carregar per restablir la configuració actual.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=Guardar com
 theme_xhred_editor_save_file_as=Desa el fitxer com a
 theme_xhred_global_configuration=Configuració
 
 body_used_cached_total=$1 total / $3 cache / $2 que s'utilitza
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=Afegir a preferits
 theme_xhred_favorites_remove=Elimina de les preferides
 theme_xhred_select_deselect=Seleccioneu/deseleccioneu l’actualitat
@@ -290,7 +298,7 @@ theme_xhred_editor_set_syntax=Estableix la sintaxi
 theme_xhred_global_menu=Menú
 theme_xhred_shell_aborted=L'operació s'ha desactivat
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=Reiniciar
 theme_xhred_connection_reboot_details=El servidor es reinicia. Espereu ..
 settings_leftmenu_custom_links_description=És possible injectar enllaços addicionals personalitzats al menú de navegació. <br><br> Les claus <em>títol</em>, <em>enllaç</em> i <em>icona</em> són necessàries; opcionalment, podeu definir en quin mode d'inici de sessió es mostrarà un enllaç, especificant la clau de <em>nivell</em>, amb valors, en una llista separada per comes, que contingui: <br><br> <em>0</em> > - inici de sessió de l'administrador; <br><em>1</em> - inici de sessió del distribuïdor;<br><em>2</em> - inici de sessió del propietari del servidor;<br><em>3</em> - inici de sessió de l'usuari;<br><em>4</em>- inici de sessió del propietari del sistema.<br><br> Caldrà que passis un objecte JSON vàlid com a cadena, com a l'exemple següent.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -376,28 +384,28 @@ theme_xhred_global_version=versió
 theme_xhred_notify_patching_module_style=Aplicació del pegat inicial de la interfície d'usuari per a $1 i recàrrega.
 theme_xhred_global_error_more_details_online=Nota: si us plau, llegiu més informació sobre aquest error i com resoldre'l, a la nostra pàgina %1 %1wiki %1 en línia.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=Màscara de fitxer
 theme_xhred_filemanager_search_regex=Expressió normal
 theme_xhred_upload_successful=Els fitxers <span>$1</span> s'han carregat correctament al directori $2
 theme_xhred_upload_successful_single=El fitxer <span>$1</span> s'ha penjat correctament al directori $2
 settings_usermin_default_module=Mòdul per defecte
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=Desmarqueu el fitxer de l’editor per separat
 theme_xhred_path_to_console=Obriu el camí actual al terminal <tt>(Alt+Maj+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Revertiu el fitxer
 theme_xhred_filemanager_editor_reverting_content=Eliminar els canvis i tornar al contingut del fitxer original.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=Exclou les entrades
 theme_xhred_filemanager_exclude_dirs_desc=Llista de fitxers o subdirectoris separats de punt i coma
 
-#19.38
+# 19.38
 theme_global_access_level=Nivell d'accés
 theme_global_user_mode=Mode Usuari
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=Arxius adjunts
 theme_xhred_mail_composer_send=Envia
 theme_xhred_mail_composer_schedule=Programació
@@ -442,13 +450,13 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 theme_xhred_global_rows=Files
 
-#19.42
+# 19.42
 settings_side_slider_blend=Herència
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=El llenguatge del tema s'ha canviat. Es tornarà a carregar la pàgina per aplicar la configuració nova.
 
-#19.46
+# 19.46
 theme_xhred_global_small=Petita
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Mitjà
@@ -456,26 +464,26 @@ theme_xhred_global_large=De grans dimensions
 theme_xhred_global_huge=Enorme
 theme_xhred_filemanager_editor_maximized=Maximitzeu el tauler de l'editor des del començament
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=El contingut de textura seleccionat s'ha copiat correctament al porta-retalls
 
-#19.48
+# 19.48
 theme_xhred_global_alias=Àlies
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=Nom real
 theme_xhred_mail_composer_username=nom d'usuari
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=Paleta de colors de la pàgina d’inici de sessió
 
-#19.60
+# 19.60
 settings_config_save_and_next=Desa i següent
 settings_config_configuration_category=Categoria de configuració
 config_search_options_all=Cerqueu entre totes les opcions de configuració del mòdul
 theme_xhred_editing_config_file=S'està editant el fitxer de configuració
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=S'ha habilitat l'autenticació de dos factors perquè aquest usuari pugui iniciar la sessió
 theme_xhred_global_verify=Verifiqueu
 settings_show_terminal_link2=Mostra el botó de l'intèrpret d'ordres
@@ -483,7 +491,7 @@ settings_hotkey_shell2=Obriu l'intèrpret d'ordres
 theme_xhred_path_to_console2=Obriu el camí actual a l'intèrpret d'ordres <tt>(Alt+Maj+K)</tt>
 theme_tooltip_terminal_link2=Intèrpret d'ordres
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Veure
 theme_xhred_file_viewer=Visualitzador de fitxers
 theme_xhred_global_done=Fet.
@@ -511,7 +519,7 @@ theme_xhred_filemanager_remove_warning=L'eliminació s'ha acabat correctament, p
 
 theme_xhred_connection_error_details_ssl=Comproveu l'advertiment <a>certificat SSL autofirmat</a>
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Acordions ocults
 theme_xhred_tooltip_dashboard_panels_disable=Amaga el tauler $1 
 theme_xhred_dashboard_panels_disabled_explain=El tauler ocult es pot tornar a activar mitjançant <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
@@ -527,7 +535,7 @@ theme_error_access_not_root_user=Accés denegat: l'usuari no té el privilegi d'
 settings_theme_config_admins_only_privileged=Prohibiu l'accés a la configuració del tema per als usuaris
 settings_theme_config_admins_only_privileged_description=Aquesta opció, si l'administrador del servidor la fa complir, amagarà la pàgina de configuració del tema als usuaris habituals no privilegiats. Tanmateix, no es recomana utilitzar aquesta opció, ja que els usuaris habituals ja tindran accés limitat a la configuració del tema i només podran canviar el conjunt mínim d'opcions específiques de l'usuari.
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Preferències
 mconfig_eaccess=No es pot accedir a aquest mòdul
 mconfig_ecannot=No es troba cap fitxer de configuració personalitzat per a aquest mòdul
@@ -535,16 +543,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Aquesta característica
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Aquesta característica requereix que el sistema de fitxers estigui muntat amb les <tt>ACL</tt> activades i l'ordre <kbd>getfacl</kbd> ha d'estar disponible
 theme_xhred_global_module_preferences=Preferències del mòdul
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=S'instal·la una nova versió d'Autentic Theme
 settings_right_page_keep=Carregueu la mateixa pàgina al commutador de domini
 settings_right_page_keep_description=Aquesta opció intentarà carregar la mateixa pàgina en seleccionar el domini, quan es canviï de la llista desplegable del menú de navegació
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Mostrar tots
 theme_xhred_filemanager_context_prop_show_all=Mostra totes les propietats
 
-#19.84
+# 19.84
 settings_right_table_links_type=Tipus de visualització d'enllaços de taula
 settings_right_table_links_type_2=Icones grans amb text
 settings_right_table_links_type_1=Icones petites amb text d’informació
@@ -583,7 +591,7 @@ body_cpufan_rpm=RPM
 body_cpufan=Ventilador de la CPU
 filemanager_symlink_exists=No es pot crear <tt>$1</tt> perquè el fitxer ja existeix a <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Copia la informació bàsica del sistema al porta-retalls; manteniu premuda la tecla $1 per copiar estesa; manteniu premuda la tecla $2 per copiar dades de text sense format en lloc de rebaixar
 theme_xhred_tooltip_side_slider_clipboard_account=Copieu tota la informació del compte al porta-retalls; manteniu premuda la tecla $1 per copiar dades de text sense format en lloc de rebaixar
 tooltip_back_to_servers_index_master=Mòdul d'índex dels servidors Webmin a la màquina mestra
@@ -606,10 +614,10 @@ theme_xhred_disk_quota_error_title=Fora de quota
 theme_xhred_disk_quota_error_message=no queda espai lliure al dispositiu
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Utilitzeu la clau mestra d'administrador per al desxifrat
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Mantén premuda la tecla modificadora
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Pregunta sempre
 theme_xhred_filemanager_files_mode_ask_remember=Recordeu com a predeterminat futur
 theme_xhred_filemanager_files_mode_ask_title=Sobreescriu l'existent
@@ -626,21 +634,21 @@ theme_xhred_filemanager_purge_trash_curr_end=S'ha purgat correctament el directo
 theme_xhred_filemanager_purge_trash_all_end=S'han purgat correctament tots els directoris de paperera dels altres usuaris.
 theme_error_access_dir_not_allowed=Accés denegat: no es pot accedir al fitxer
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=La versió instal·lada de $1 està obsoleta. L'última versió disponible és $2. Si us plau, actualitzeu o feu clic per obtenir més detalls sobre la versió recent.
 theme_xhred_global_outdated_desc2=La versió instal·lada de $1 està obsoleta. L'última versió disponible és $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Manteniu premuda la tecla <tt>Ctrl</tt> durant la selecció
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Manteniu premuda la tecla <tt>Ordre</tt> durant la selecció
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=S'ha detectat que el dimoni del servidor web Webmin no es va reiniciar correctament a l'última actualització del paquet. Això és necessari per reiniciar el servidor web manualment cridant l'ordre <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Sí, prova de reiniciar-lo
 theme_xhred_webmin_requires_restart_no=No, ho reiniciaré manualment
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Introduïu el camí manualment (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Connexió perduda
 theme_xhred_socket_conn_lost_reconnect=Torna a connectar
 theme_xhred_socket_conn_lost_connecting=Connectant ..
@@ -648,15 +656,15 @@ theme_xhred_socket_conn_lost_try=Torna-ho a provar
 theme_xhred_socket_conn_parse_error=No s'ha pogut carregar el terminal: no es pot analitzar l'objecte de resposta des del servidor
 theme_xhred_socket_conn_sock_error=No s'ha pogut carregar el terminal: error de connexió de WebSocket
 
-#20.10
+# 20.10
 theme_xhred_global_open=Obert
 theme_xhred_xterm_error_title=No es pot connectar
 theme_xhred_xterm_error=Aneu al mòdul Terminal per obtenir més detalls
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Error fatal
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automàtic
 theme_xhred_filemanager_context_acls=Canvia la llista de control d'accés
 theme_xhred_filemanager_changing_acls=Canvi de la llista de control d'accés.
@@ -664,7 +672,7 @@ theme_xhred_filemanager_successful_acls_with_errors=La llista de control d'accé
 theme_xhred_filemanager_successful_acls=La llista de control d'accés s'ha canviat correctament.
 theme_download_error=S'ha produït un error en baixar el fitxer perquè està fora del directori permès : $1
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Ajuda (F1)
 theme_xhred_hotkeys_help_title=Dreceres de teclat
 theme_xhred_hotkeys_help_title_docs=Documentació
@@ -679,6 +687,7 @@ theme_xhred_hotkeys_custom_not_set=no establert
 theme_xhred_hotkey_open_module_config_privileged=Obriu la configuració del mòdul
 theme_xhred_hotkey_open_theme_config=Obriu la configuració del tema
 theme_xhred_hotkey_list_table=Llista de taula paginada
+theme_xhred_hotkey_list_tabs=Pestanyes de llista
 theme_xhred_hotkey_clear_cache=Esborra la memòria cau i torna a carregar
 theme_xhred_hotkey_open_new=Duplica a una pestanya nova
 theme_xhred_hotkey_copy_to_clipboard=Copieu les dades de l'element al porta-retalls
@@ -731,7 +740,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Amplada mínima de columna
 theme_xhred_columns_layout_vertical_opts_break_title=Acció de desbordament de la columna
 theme_xhred_columns_layout_vertical_opts_break_new=Trencar
 theme_xhred_columns_layout_vertical_opts_break_scroll=Desplaçament
-
 theme_xhred_columns_layout_remove=Amaga aquest widget
 theme_xhred_columns_layout_remove_button=Desa i amaga
 theme_xhred_columns_layout_variation_cannot_horizontal=El disseny horitzontal no es pot utilitzar en el mode mòbil, concretament quan l'amplada de la pantalla és inferior a 992 píxels
@@ -740,17 +748,17 @@ settings_auto_open_panels_on_proximity=Panells tancats oberts automàticament a 
 
 theme_xhred_config_portable_module_xterm_render_addon=Activa el complement de representació de WebGL
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Filtrar i exportar contingut
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Tancar sessió
 theme_xhred_hotkey_emsg=La tecla de barra invertida no es pot utilitzar com a tecla d'accés ràpid
 settings_embed_product_splash_privileged=Mostra una pantalla de presentació de marca després de l'inici de sessió
 dashboard_status_running=Córrer
 dashboard_status_stopped=Parat
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Mirant
 theme_xhred_global_connected=Connectat
 theme_xhred_global_disconnected=Desconnectat
@@ -787,3 +795,18 @@ settings_sysinfo_real_time_status_history_duration6=18 hores
 settings_sysinfo_real_time_status_history_duration7=24 hores
 theme_xhred_license_purchase=Compra una llicència
 settings_right_table_links_sorted=Ordena els enllaços de les taules per ordre alfabètic
+
+# 24.00
+session_error=Error
+session_success=Èxit
+session_cannot=No s'ha pogut restablir la contrasenya: falta el nom d'usuari.
+session_neterror=No puc obtenir cap resposta de la xarxa!
+session_unkerror=S'ha produït un error inesperat. Torna-ho a provar més tard.
+session_conerror=No s'ha pogut connectar amb el servidor. Torna-ho a provar més tard.
+session_resetpass1=Nova contrasenya
+session_resetpass2=Confirma la nova contrasenya
+session_resetepassreq=Cal introduir una contrasenya.
+session_pwdconf=Cal confirmar la contrasenya.
+session_pwdmatch=Les contrasenyes no coincideixen.
+session_noid=No s'ha trobat l'ID de recuperació!
+session_pwdsucc=La contrasenya s'ha canviat correctament! Ara podeu iniciar la sessió amb la nova contrasenya.

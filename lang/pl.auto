@@ -1,8 +1,18 @@
-#17.84
+lost_message=Jeśli Twój login Webmin ma ustawiony adres e-mail odzyskiwania hasła, możesz użyć tego formularza, aby wysłać sobie link do resetowania hasła
+reset_message=Zamierzasz zresetować hasło użytkownika <tt>$1</tt> na
+login_recover=Poproś o zresetowanie hasła
+login_back=Wracać
+
+# 17.84
 theme_xhred_datatable_filter=Filtr
 
-#19.30
+theme_xhred_filemanager_new_tab=Dodaj nową kartę (Alt + Spacja)
+
+# 19.30
 theme_xhred_favorites_add=Dodaj do ulubionych
+
+# 20.30
+theme_xhred_hotkey_list_tabs=Lista kart
 
 # 21.20.7
 theme_xhred_dashboard_chart_disk_read=Czytać
@@ -21,3 +31,18 @@ settings_sysinfo_real_time_status_history_duration6=18 godzin
 settings_sysinfo_real_time_status_history_duration7=24 godziny
 theme_xhred_license_purchase=Kup licencję
 settings_right_table_links_sorted=Sortuj linki do tabel w kolejności alfabetycznej
+
+# 24.00
+session_error=Błąd
+session_success=Sukces
+session_cannot=Nie udało się zresetować hasła: Brak nazwy użytkownika.
+session_neterror=Nie można uzyskać odpowiedzi z sieci!
+session_unkerror=Wystąpił nieoczekiwany błąd. Spróbuj ponownie później.
+session_conerror=Nie udało się połączyć z serwerem. Spróbuj ponownie później.
+session_resetpass1=Nowe hasło
+session_resetpass2=Potwierdź nowe hasło
+session_resetepassreq=Hasło jest wymagane.
+session_pwdconf=Wymagane jest potwierdzenie hasła.
+session_pwdmatch=Hasła nie są takie same.
+session_noid=Nie znaleziono identyfikatora odzyskiwania!
+session_pwdsucc=Hasło zostało pomyślnie zmienione! Teraz możesz się zalogować przy użyciu nowego hasła.

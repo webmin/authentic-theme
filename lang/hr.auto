@@ -48,8 +48,12 @@ left_statistics=Statistika sustava
 
 login_danger=Opasnost!
 login_message=Morate unijeti korisničko ime i lozinku za prijavu na poslužitelj koji je uključen
+lost_message=Ako vaša prijava na Webmin ima postavljenu e-adresu za oporavak, možete koristiti ovaj obrazac za slanje poveznice za resetiranje lozinke
+reset_message=Namjeravate resetirati lozinku za korisnika <tt>$1</tt> na
 theme_xhred_login_pass=Lozinka
 login_save=Zapamti me
+login_recover=Zahtjev za resetiranje lozinke
+login_back=Natrag
 login_signin=Prijaviti se
 login_success=Uspjeh!
 theme_xhred_login_token=žeton
@@ -178,6 +182,7 @@ theme_update_available=Najnovije dostupno izdanje
 theme_update_notice=Obavijest o ažuriranju
 theme_version=Autentična verzija teme
 
+# 17.40
 theme_xhred_global_error=greška
 theme_global_warning=Upozorenje
 theme_global_success=Uspjeh
@@ -250,7 +255,7 @@ theme_xhred_notifications_firewall_danger_message=Čini se da <strong>ConfigServ
 
 theme_xhred_notifications_firewall_warning=Upozorenje vatrozida
 
-#17.50
+# 17.50
 settings_grayscale_level_navigation=Sivi filter
 settings_grayscale_level_navigation_description=Default/trenutne vrijednosti <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia filter
@@ -279,7 +284,7 @@ theme_xhred_filemanager_context_paste=Zalijepiti
 theme_xhred_filemanager_context_chmod=Promjena dozvola
 theme_xhred_filemanager_context_chown=Promijenite vlasništvo
 
-#17.51
+# 17.51
 theme_xhred_filemanager_context_new=Novi
 theme_xhred_filemanager_context_newarchive=Stvorite novu arhivu
 theme_xhred_filemanager_context_delete=Izbrisati
@@ -290,12 +295,12 @@ theme_xhred_filemanager_context_goto=Otvori lokaciju predmeta
 theme_xhred_filemanager_context_properties=Svojstva
 theme_xhred_filemanager_context_search=traži
 
-#17.52
+# 17.52
 theme_xhred_filemanager_context_deselect_all=Odznači sve
 theme_xhred_filemanager_context_upload=Prijenos u trenutni direktorij
 theme_xhred_filemanager_context_download=Preuzmi s udaljenog URL-a
 
-#17.53
+# 17.53
 theme_config_virtualmin=Virtualmin Virtualni poslužitelji
 theme_config_cloudmin=Cloudmin Upravljani sustavi
 settings_right_thirdparties_options_title=Opcije modula treće strane
@@ -304,17 +309,17 @@ theme_xhred_filemanager_context_bookmarks=Oznake
 theme_xhred_filemanager_context_bookmark_current=Oznaka trenutno otvorene staze
 theme_xhred_filemanager_context_transfer=Prijenos
 
-#17.54
+# 17.54
 theme_xhred_filemanager_title_symlink_target=Cilj veze
 
-#17.60
+# 17.60
 right_unlimited=Neograničen
 settings_leftmenu_width=Poželjna širina
 settings_leftmenu_width_description=Default/struja širina <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Pokažite prekidače obrnuto
 settings_switch_rdisplay_description=Ova opcija omogućuje vam postavljanje različitog redoslijeda za gornje lijeve sklopke. Nakon promjene ove opcije potrebno je potpuno ponovno učitavanje stranice
 
-#17.63
+# 17.63
 theme_xhred_filemanager_context_calculate_selected_size=Izračunajte odabranu veličinu
 theme_xhred_filemanager_selected_entries=Odabrano: %value stavki
 theme_xhred_filemanager_manual_path=Unesite put ručno
@@ -327,7 +332,7 @@ theme_xhred_datatable_sloadingrecords=Učitavam
 theme_xhred_datatable_sprocessing=Obrada. ..
 theme_xhred_datatable_szerorecords=Nisu pronađeni odgovarajući zapisi
 
-#17.64
+# 17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Datoteka je uređena, ali nije spremljena.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Što želiš raditi?
 theme_xhred_global_save=Uštedjeti
@@ -336,11 +341,11 @@ theme_xhred_global_close_without_saving=Zatvorite bez spremanja
 theme_xhred_global_continue_editing=Nastavite s uređivanjem
 theme_xhred_filemanager_context_download_file=preuzimanje datoteka
 
-#17.65
+# 17.65
 settings_sysinfo_easypie_charts_width=Širina karata
 settings_sysinfo_easypie_charts_scale=Duljina ljestvice ljestvica
 
-#17.80
+# 17.80
 right_return_theme_options=opcije teme
 theme_xhred_datatable_semptydirectory=Imenik je prazan
 theme_xhred_filemanager_context_clipboard=Kopirajte put u međuspremnik
@@ -370,13 +375,13 @@ theme_xhred_filemanager_hide_actions=Sakrij stupac radnji
 theme_xhred_filemanager_hovered_toolbar=Aktivirajte padajući alatnu traku na pokazivaču miša
 theme_xhred_filemanager_context_delete_selected=Obriši odabrano
 
-#17.83
+# 17.83
 theme_xhred_database_adding_new_row=Dodavanje novog retka
 theme_xhred_database_editing_row=Uređivanje odabranog retka
 theme_xhred_database_editing_rows=Uređivanje odabranih redaka
 theme_xhred_database_adding_new_row_data=Postavljanje podataka
 
-#17.84
+# 17.84
 theme_xhred_datatable_filter=filtar
 
 theme_xhred_global_update=Ažuriraj
@@ -413,7 +418,7 @@ theme_xhred_global_notice=Obavijest
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
-#18.00
+# 18.00
 theme_xhred_global_file=Datoteka
 theme_xhred_global_directory=Imenik
 theme_xhred_global_no_target=Cilj ne postoji ili nije dostupan
@@ -425,7 +430,7 @@ theme_xhred_global_none=nijedan
 theme_xhred_global_yes=Da
 theme_xhred_global_no=Ne
 
-theme_xhred_filemanager_new_tab=Dodavanje nove kartice (Ctrl+razmak)
+theme_xhred_filemanager_new_tab=Dodaj novi tab (Alt + razmaknica)
 theme_xhred_datatable_no_search_results=<span class="h5">Nema rezultata</span> <br> Pokušajte s drugačijim pretraživanjem
 
 theme_xhred_filemanager_buffer_error=Nije uspjelo zalijepiti datoteke na međuspremnik - odbijeno je dopuštenje.
@@ -486,16 +491,16 @@ theme_xhred_module_help=Pomoć modula
 
 theme_xhred_server_process_running=Proces poslužitelja i dalje traje !? Jeste li sigurni da želite navigirati dalje i nemate pristup izlaznim informacijama? Čak i ako sada napustite, postupak neće biti zaustavljen.
 
-#18.03
+# 18.03
 settings_global_options_title=Globalne mogućnosti
 theme_xhred_password_generator_new=Stvori novu lozinku <br> (u međuspremnik)
 theme_xhred_password_generator_new_success=Generirana lozinka %password uspješno je kopirana u međuspremnik.
 
-#18.08
+# 18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Ova datoteka mora završiti sa `1;` da uspješno rade.
 
-#18.30
+# 18.30
 settings_leftmenu_vm_cm_dropdown_icons=Prikažite simboličke ikone u padajućem izborniku u Virtualmin/Cloudmin
 theme_xhred_global_shipped=isporučen
 theme_xhred_global_available=Dostupno
@@ -541,7 +546,7 @@ theme_xhred_filemanager_successful_secontext=Kontekst sigurnosti uspješno je pr
 
 theme_xhred_global_no_results_found=Nema rezultata
 
-#18.40
+# 18.40
 theme_new_password_header=Postavi novu lozinku za korisnika
 login_reset=Oporavak lozinke
 theme_xhred_move_top=Pomicanje na vrh
@@ -562,7 +567,7 @@ theme_xhred_tooltip_switch_user=Promijeni korisnika
 theme_tooltip_logout=Odjavi se
 theme_tooltip_edit_user=Uređivanje korisnika
 
-#18.45
+# 18.45
 settings_sysinfo_easypie_charts_size=Promjer grafikona
 theme_xhred_global_choose=izabrati
 theme_xhred_global_select=Odaberi
@@ -579,7 +584,7 @@ theme_xhred_global_help=Pomozite
 theme_xhred_git_compare_changes=Usporedite promjene
 theme_xhred_filemanager_link_to_clipboard=Ime simbolične veze kopirano je u međuspremnik.
 
-#18.46
+# 18.46
 theme_left_mail_prefs=Postavke e-pošte
 theme_left_mail_change_password=Promijenite lozinku
 theme_left_mail_account_functions=Funkcije računa
@@ -588,7 +593,7 @@ theme_xhred_global_module_config=Konfiguracija modula
 theme_xhred_global_return=Povratak
 theme_xhred_global_return_to_module_index=Povratak na indeks modula
 
-#18.47
+# 18.47
 theme_xhred_global_complete_changelog=Kompletni dnevnik promjena
 theme_xhred_global_beta_version=Beta verzija
 theme_xhred_global_release=puštanje
@@ -596,7 +601,7 @@ theme_xhred_global_released_on=Objavljeno dana
 theme_xhred_global_committed_on=Predano na
 theme_xhred_global_resolved_issues=Riješena su pitanja u %value izdanja %value
 
-#18.48
+# 18.48
 theme_force_upgrade=Ažuriraj temu
 theme_xhred_force_upgrade_beta=Instalirajte najnoviju razvojnu verziju (beta)
 theme_xhred_force_upgrade_stable=Instalirajte najnoviju verziju izdanja (stabilno)
@@ -605,7 +610,7 @@ theme_update_footer=Molimo vas da prijavite greške u $1 spremište. Pridružite
 theme_xhred_encoding_manually_set=Ručno postavljeno kodiranje
 theme_xhred_filemanager_save_to_change_encoding=Datoteka mora biti spremljena kako bi se omogućilo mijenjanje kodiranja.
 
-#18.49
+# 18.49
 theme_xhred_filemanager_user_switch=Prebaci se na korisnika (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Odabirom navedenog korisničkog imena niže ćete prebaciti daljnje operacije koje će se izvoditi kao ovaj korisnik.
 theme_xhred_filemanager_user_switch_description_back=Za povratak na zadani način odaberite prvu opciju u odabiru.
@@ -624,7 +629,7 @@ theme_xhred_global_maximize=Povećaj
 theme_xhred_global_normalize=Normalizacija
 theme_xhred_global_set_encoding=Postavite kodiranje
 
-#19.00
+# 19.00
 theme_xhred_sysinfo_update_start=Prikupljaju se informacije o sustavu.
 theme_xhred_sysinfo_update_end=Podaci o sustavu prikupljani su uspješno.
 theme_xhred_sysinfo_update_failed=Podaci o sustavu ne mogu se prisjetiti. Pokušajte ponovno kasnije.
@@ -645,14 +650,14 @@ theme_xhred_global_seconds=sekunde
 theme_xhred_global_minute=Minuta
 theme_xhred_global_minutes=minuta
 
-#19.01
+# 19.01
 theme_xhred_browser_warning=Da biste imali najbolje iskustvo s poslužiteljskom pločom na računalu, koristite podržani ažurni preglednik. <br><br> <em>Internet Explorer</em> više nije podržan. <br><br> Preporučeni preglednici su <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> ili <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Možete preuzeti prijenosnu verziju preglednika, koji ne zahtijeva instalaciju, zaobići nametnuta ograničenja.</div>
 
-#19.02
+# 19.02
 theme_xhred_filter_content=Filtrirajte sadržaj
 theme_xhred_log_file_empty=Datoteka dnevnika je prazna
 
-#19.03
+# 19.03
 theme_xhred_config_configurable_options=Opcije koje se mogu konfigurirati
 theme_xhred_filter_content_no_matches_query=Nema sadržaja koji odgovara %str upitu
 theme_xhred_toggle_accordions=Uključite vidljivost harmonika
@@ -671,18 +676,18 @@ theme_xhred_signing_success=Prijavljeni smo uspješno!
 theme_xhred_session_failed_password=Pogrešna lozinka, pokušajte ponovo.
 theme_xhred_global_reauthenticate=ponovne autentifikacije
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=Omogući praćenje u stvarnom vremenu
 theme_xhred_global_redirecting=preusmjeravanje
 
-#19.05
+# 19.05
 body_no_javascript_title=JavaScript je onemogućen
 body_no_javascript_message=Omogućite JavaScript i osvježite stranicu
 theme_xhred_connection_lost=Izgubljena veza
 theme_xhred_connection_success=Veza je uspjela
 theme_xhred_connection_success_details=Ponovno je uspostavljena veza s poslužiteljem.
 
-#19.08
+# 19.08
 theme_xhred_return_home=Povratak na indeks panela
 theme_xhred_global_upload=Učitaj
 theme_xhred_global_select_files=Odabir datoteke
@@ -691,14 +696,14 @@ theme_xhred_global_files_selected=datoteke su odabrane
 theme_xhred_global_reset=Reset
 theme_xhred_upload_initial_info=Ovdje povucite i ispustite datoteke ili kliknite da biste odabrali
 
-#19.09
+# 19.09
 theme_xhred_global_empty=Prazan
 theme_xhred_global_click_here=kliknite ovdje
 theme_git_patch_incompatible_message=Instaliranje ove verzije $1 <em>$2</em> zahtijeva da najnovija i/ili eventualno neobjavljena verzija $3 i $5 radi ispravnog rada.
 theme_git_patch_incompatible_message_s=Instaliranje ove verzije $1 <em>$2</em> zahtijeva da najnovija i/ili eventualno neobjavljena verzija $3 radi ispravno.
 theme_git_patch_incompatible_message_desc=Možda postoje nekompatibilne promjene koje bi mogle spriječiti rad teme kako je dizajniran. Nastavak operacije nadogradnje pomoću korisničkog sučelja nije moguć.
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=Uredi kao HTML
 theme_xhred_global_example=Primjer
 theme_xhred_global_output_example=Primjer izlaza
@@ -724,7 +729,7 @@ theme_xhred_global_unlimited=Neograničen
 theme_xhred_filemanager_tree_exclude_on_first_load=Izuzmi nebitne direktorije iz kretanja na početnom opterećenju za prikaz stabla (učitava se brže)
 theme_xhred_filemanager_tree_expand_search=Proširite sve grane koje sadrže podudaranja dok filtrirate prikaz stabla
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=Idite na nadzornu ploču
 theme_xhred_tooltip_side_slider_open_favorites_control=Otvori kontrolu favorita
 theme_xhred_tooltip_side_slider_delete_all_notification=Izbrišite sve obavijesti
@@ -732,7 +737,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Označite sve obavije
 theme_xhred_global_settings=postavke
 theme_xhred_tooltip_side_slider_pinned=Pin/otkopčajte bočni klizač
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=Instalirajte ažuriranja tema i za Usermin
 theme_xhred_global_installed_version=Instalirana verzija
 theme_xhred_global_installed_and_latest_version=Instalirana i najnovija verzija
@@ -740,12 +745,12 @@ theme_xhred_global_latest_stable=Najnovije stabilno
 theme_xhred_global_latest_beta=Najnovija beta verzija
 theme_xhred_global_firewall=firewall
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=Priprema za preuzimanje. Arhiviranje datoteke s %number. Pričekajte %dots
 theme_xhred_filemanager_prepared_download=Preuzimanje je spremno. Arhivirane datoteke %number.
 theme_xhred_filemanager_canceled_download=Preuzimanje otkazano.
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=Prisilite naredbu <code>tar</code>, čak i ako je dostupan <code>zip</code>, pri preuzimanju kao arhiva
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -755,7 +760,7 @@ theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bajtova
 theme_xhred_title_locale_non_ui_config=Format datuma generiran na poslužitelju
 
-#19.20
+# 19.20
 extensions_mail_current_position=Poruke $1–$2 od $3
 extensions_mail_sort_by_sender=Poredaj po pošiljatelju
 extensions_mail_sort_by_recipient=Poredaj po primatelju
@@ -896,14 +901,14 @@ settings_cache_interval_1y=jednom godišnje
 
 theme_xhred_reload_notification=Konfiguracija teme je promijenjena, ali nije spremljena. Stranica će se učitati kako bi se vratile na trenutne postavke.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=Spremi kao
 theme_xhred_editor_save_file_as=Spremi datoteku kao
 theme_xhred_global_configuration=Konfiguracija
 
 body_used_cached_total=$1 ukupno / $3 predmemorirano / $2 korišteno
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=Dodaj u favorite
 theme_xhred_favorites_remove=Ukloni iz favorita
 theme_xhred_select_deselect=Odaberite/poništi odabir trenutne stavke
@@ -921,7 +926,7 @@ theme_xhred_editor_set_syntax=Postavite sintaksu
 theme_xhred_global_menu=izbornik
 theme_xhred_shell_aborted=Operacija je prekinuta
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=Ponovno pokretanje
 theme_xhred_connection_reboot_details=Ponovno se pokreće poslužitelj. Molimo pričekajte ..
 settings_leftmenu_custom_links_description=Moguće je imati prilagođene, dodatne veze umetnute u navigacijski izbornik. <br><br> Potrebni su ključevi <em>title</em>, <em>link</em> i <em>icon</em>; po izboru, možete definirati u kojem načinu prijave će se veza prikazati, specificiranjem ključa <em>razine</em>, s vrijednostima, na popisu odvojenim zarezima, koji sadrži: <br><br> <em>0</em > - prijava administratora; <br><em>1</em> - prijava preprodavača;<br><em>2</em> - prijava vlasnika poslužitelja;<br><em>3</em> - prijava korisnika;<br><em>4</em>- prijava vlasnika sustava.<br><br> Zahtijevat će da proslijedite važeći JSON objekt kao niz, kao u donjem primjeru.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -1007,28 +1012,28 @@ theme_xhred_global_version=verzija
 theme_xhred_notify_patching_module_style=Primjena početne zakrpe za korisničko sučelje za $1 i ponovno učitavanje.
 theme_xhred_global_error_more_details_online=Napomena: Molimo pročitajte više o ovoj pogrešci i kako je riješiti na našoj %1wiki stranici %1 %1wiki %1 mreži.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=Maska datoteke
 theme_xhred_filemanager_search_regex=Redovan izraz
 theme_xhred_upload_successful=<span>Datoteke $1</span> uspješno su prenesene u direktorij $2
 theme_xhred_upload_successful_single=<span>Datoteka $1</span> uspješno je prenesena u direktorij $2
 settings_usermin_default_module=Zadani modul
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=Odvojite datoteku u zasebni uređivač
 theme_xhred_path_to_console=Otvorite trenutni put u terminalu <tt>(Alt + ⇧ + K)</tt>
 theme_xhred_filemanager_editor_revert_content=Vrati datoteku
 theme_xhred_filemanager_editor_reverting_content=Ispuštanje promjena i vraćanje na izvorni sadržaj datoteke.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=Izuzmi unose
 theme_xhred_filemanager_exclude_dirs_desc=Popis datoteka ili poddirektorija koje je potrebno isključiti točkom zarezom
 
-#19.38
+# 19.38
 theme_global_access_level=Razina pristupa
 theme_global_user_mode=Korisnički način rada
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=Prilozi
 theme_xhred_mail_composer_send=Poslati
 theme_xhred_mail_composer_schedule=Raspored
@@ -1073,13 +1078,13 @@ theme_xhred_nice_size_MBB=Mb
 theme_xhred_nice_size_kBB=kbps
 theme_xhred_global_rows=redovi
 
-#19.42
+# 19.42
 settings_side_slider_blend=naslijediti
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=Jezik teme je promijenjen. Stranica će se ponovo učitati kako bi se primijenile nove postavke.
 
-#19.46
+# 19.46
 theme_xhred_global_small=Mali
 theme_xhred_global_normal=normalan
 theme_xhred_global_medium=Srednji
@@ -1087,26 +1092,26 @@ theme_xhred_global_large=veliki
 theme_xhred_global_huge=Ogroman
 theme_xhred_filemanager_editor_maximized=Maksimalno povećajte ploču uređivača na početku
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=Odabrani sadržaj textarea uspješno je kopiran u međuspremnik
 
-#19.48
+# 19.48
 theme_xhred_global_alias=pseudonim
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=Pravo ime
 theme_xhred_mail_composer_username=Korisničko ime
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=Paleta boja na stranici za prijavu
 
-#19.60
+# 19.60
 settings_config_save_and_next=Spremi i Dalje
 settings_config_configuration_category=Kategorija konfiguracije
 config_search_options_all=Pretražite sve opcije konfiguracije modula
 theme_xhred_editing_config_file=Uređivanje konfiguracijske datoteke
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=Ovom korisniku je omogućena dvofaktorska autentifikacija za prijavu
 theme_xhred_global_verify=Potvrdite
 settings_show_terminal_link2=Prikaži gumb naredbene ljuske
@@ -1114,7 +1119,7 @@ settings_hotkey_shell2=Otvorite naredbenu ljusku
 theme_xhred_path_to_console2=Otvorite trenutnu stazu u naredbenoj ljusci <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Naredbena ljuska
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Pogled
 theme_xhred_file_viewer=Preglednik datoteka
 theme_xhred_global_done=Gotovo.
@@ -1142,7 +1147,7 @@ theme_xhred_filemanager_remove_warning=Uklanjanje je uspješno završeno, ali ne
 
 theme_xhred_connection_error_details_ssl=Provjerite <a>upozorenje o samopotpisanom SSL certifikatu</a>
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Skrivene harmonike
 theme_xhred_tooltip_dashboard_panels_disable=Sakrij ploču $1 
 theme_xhred_dashboard_panels_disabled_explain=Skrivena ploča može se ponovno omogućiti pomoću <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
@@ -1158,7 +1163,7 @@ theme_error_access_not_root_user=Pristup odbijen: Korisnik nema privilegiju ure�
 settings_theme_config_admins_only_privileged=Zabraniti pristup konfiguraciji teme za korisnike
 settings_theme_config_admins_only_privileged_description=Ova će opcija, ako je prisili administrator poslužitelja, sakriti stranicu s konfiguracijom teme od redovnih, ne privilegiranih korisnika. Međutim, ne preporučuje se korištenje ove opcije, jer će redovni korisnici već imati ograničeni pristup konfiguraciji teme i moći će mijenjati samo minimalni skup specifičnih za korisnika opcija
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Postavke
 mconfig_eaccess=Ovom modulu se ne može pristupiti
 mconfig_ecannot=Za ovaj modul nije pronađena prilagođena konfiguracijska datoteka
@@ -1166,16 +1171,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Ova značajka zahtijeva
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Ova značajka zahtijeva montiranje datotečnog sustava s uključenim <tt>ACL-ovima</tt> i mora biti dostupna naredba <kbd>getfacl</kbd>
 theme_xhred_global_module_preferences=Postavke modula
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=Instalirana je nova verzija Autentične teme
 settings_right_page_keep=Učitajte istu stranicu na preklopnik domene
 settings_right_page_keep_description=Ova će opcija pokušati učitati istu stranicu nakon odabira domene, kada se promijeni s padajućeg popisa navigacijskog izbornika
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Pokaži sve
 theme_xhred_filemanager_context_prop_show_all=Prikaži sva svojstva
 
-#19.84
+# 19.84
 settings_right_table_links_type=Vrsta prikaza tabličnih veza
 settings_right_table_links_type_2=Velike ikone s tekstom
 settings_right_table_links_type_1=Male ikone s tekstom opisa
@@ -1214,7 +1219,7 @@ body_cpufan_rpm=RPM
 body_cpufan=CPU ventilator
 filemanager_symlink_exists=Nije moguće stvoriti <tt>$1</tt> jer datoteka već postoji u <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopirajte osnovne informacije o sustavu u međuspremnik; držite tipku $1 za prošireno kopiranje; držite tipku $2 da biste kopirali obični tekstualni podaci umjesto smanjenja
 theme_xhred_tooltip_side_slider_clipboard_account=Kopirajte sve podatke o računu u međuspremnik; držite tipku $1 da biste kopirali obični tekstualni podaci umjesto smanjenja
 tooltip_back_to_servers_index_master=Indeksni modul Webmin poslužitelja na glavnom stroju
@@ -1237,10 +1242,10 @@ theme_xhred_disk_quota_error_title=Izvan kvote
 theme_xhred_disk_quota_error_message=Nema više mjesta na uređaju
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Za dešifriranje koristite glavni administratorski ključ
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Držite modifikatorsku tipku
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Uvijek pitaj
 theme_xhred_filemanager_files_mode_ask_remember=Zapamti kao buduću zadanu vrijednost
 theme_xhred_filemanager_files_mode_ask_title=Prepiši postojeće
@@ -1257,21 +1262,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Uspješno očišćen $1 direktorij.
 theme_xhred_filemanager_purge_trash_all_end=Uspješno su očišćeni direktoriji smeća svih ostalih korisnika.
 theme_error_access_dir_not_allowed=Pristup odbijen: Datoteka nije dostupna
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=Instalirana verzija $1 je zastarjela. Najnovija dostupna verzija je $2. Nadogradite ili kliknite da biste dobili više pojedinosti o nedavnom izdanju.
 theme_xhred_global_outdated_desc2=Instalirana verzija $1 je zastarjela. Najnovija dostupna verzija je $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Držite tipku <tt>Ctrl</tt> pritisnutu tijekom odabira
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Držite tipku <tt>Command</tt> pritisnutu tijekom odabira
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Otkriveno je da demon web-poslužitelja Webmin nije ispravno ponovno pokrenut pri zadnjoj nadogradnji paketa. Ovo je potrebno za ručno ponovno pokretanje web-poslužitelja pozivanjem naredbe <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Da, pokušajte ga ponovno pokrenuti
 theme_xhred_webmin_requires_restart_no=Ne, ponovno ću ga pokrenuti ručno
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Unesite put ručno (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Izgubljena veza
 theme_xhred_socket_conn_lost_reconnect=Ponovno se spojite
 theme_xhred_socket_conn_lost_connecting=Povezivanje ..
@@ -1279,15 +1284,15 @@ theme_xhred_socket_conn_lost_try=Pokušajte ponovno
 theme_xhred_socket_conn_parse_error=Neuspješno učitavanje terminala: Ne mogu analizirati objekt odgovora s poslužitelja
 theme_xhred_socket_conn_sock_error=Neuspješno učitavanje terminala: pogreška veze s WebSocketom
 
-#20.10
+# 20.10
 theme_xhred_global_open=Otvorena
 theme_xhred_xterm_error_title=Ne mogu se povezati
 theme_xhred_xterm_error=Idite na Terminal modul za više detalja
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Fatalna greška
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatski
 theme_xhred_filemanager_context_acls=Promjena liste kontrole pristupa
 theme_xhred_filemanager_changing_acls=Promjena liste kontrole pristupa.
@@ -1295,7 +1300,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Popis kontrole pristupa nije
 theme_xhred_filemanager_successful_acls=Popis kontrole pristupa je uspješno promijenjen.
 theme_download_error=Pogreška pri preuzimanju datoteke jer je izvan dopuštenog direktorija : $1
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Pomoć (F1)
 theme_xhred_hotkeys_help_title=Tipkovnički prečaci
 theme_xhred_hotkeys_help_title_docs=Dokumentacija
@@ -1310,6 +1315,7 @@ theme_xhred_hotkeys_custom_not_set=nespreman
 theme_xhred_hotkey_open_module_config_privileged=Otvori konfiguraciju modula
 theme_xhred_hotkey_open_theme_config=Otvorite konfiguraciju teme
 theme_xhred_hotkey_list_table=Popis paginirane tablice
+theme_xhred_hotkey_list_tabs=Popis kartica
 theme_xhred_hotkey_clear_cache=Očistite predmemoriju i ponovno učitajte
 theme_xhred_hotkey_open_new=Dupliciraj na novu karticu
 theme_xhred_hotkey_copy_to_clipboard=Kopiraj podatke elementa u međuspremnik
@@ -1362,7 +1368,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Minimalna širina stupca
 theme_xhred_columns_layout_vertical_opts_break_title=Radnja prelijevanja stupca
 theme_xhred_columns_layout_vertical_opts_break_new=Pauza
 theme_xhred_columns_layout_vertical_opts_break_scroll=Svitak
-
 theme_xhred_columns_layout_remove=Sakrij ovaj widget
 theme_xhred_columns_layout_remove_button=Spremi i sakrij
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalni raspored ne može se koristiti u mobilnom načinu rada, posebno kada je širina zaslona manja od 992 px
@@ -1371,17 +1376,17 @@ settings_auto_open_panels_on_proximity=Automatski otvara zatvorene ploče na bli
 
 theme_xhred_config_portable_module_xterm_render_addon=Omogući dodatak WebGL renderiranja
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Filtrirajte i izvezite sadržaj
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Odjavite se
 theme_xhred_hotkey_emsg=Tipka obrnute kose crte ne može se koristiti kao tipka prečaca
 settings_embed_product_splash_privileged=Prikažite uvodni zaslon robne marke nakon prijave
 dashboard_status_running=Trčanje
 dashboard_status_stopped=Zaustavljeno
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Gledanje
 theme_xhred_global_connected=Povezan
 theme_xhred_global_disconnected=Isključeno
@@ -1417,3 +1422,18 @@ settings_sysinfo_real_time_status_history_duration6=18 sati
 settings_sysinfo_real_time_status_history_duration7=24 sata
 theme_xhred_license_purchase=Kupite licencu
 settings_right_table_links_sorted=Poredaj veze tablice abecednim redom
+
+# 24.00
+session_error=Pogreška
+session_success=Uspjeh
+session_cannot=Nije uspjelo resetiranje lozinke: Nedostaje korisničko ime.
+session_neterror=Ne mogu dobiti odgovor od mreže!
+session_unkerror=Došlo je do neočekivane pogreške. Pokušajte ponovno kasnije.
+session_conerror=Nije moguće pristupiti serveru. Pokušajte ponovno kasnije.
+session_resetpass1=Nova lozinka
+session_resetpass2=Potvrdite novu lozinku
+session_resetepassreq=Lozinka je obavezna.
+session_pwdconf=Potrebna je potvrda lozinke.
+session_pwdmatch=Lozinke se ne podudaraju.
+session_noid=ID za oporavak nije pronađen!
+session_pwdsucc=Lozinka je uspješno promijenjena! Sada se možete prijaviti s novom lozinkom.

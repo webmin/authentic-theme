@@ -1,4 +1,9 @@
 body_cputype1=$5, $8 kerne
+lost_message=Hvis dit Webmin-login har en gendannelses-e-mail angivet, kan du bruge denne formular til at sende dig selv et link til nulstilling af adgangskode
+reset_message=Du er ved at nulstille adgangskoden for bruger <tt>$1</tt> den
+login_recover=Anmod om nulstilling af adgangskode
+login_back=Gå tilbage
+
 settings_right_options=Muligheder
 settings_right_restore_defaults=Gendanne standardindstillingerne
 settings_right_restored=Restaureret
@@ -91,6 +96,7 @@ theme_update_available=Seneste tilgængelige udgivelse
 theme_update_notice=Opdateringsmeddelelse
 theme_version=Autentisk temaversion
 
+# 17.40
 theme_xhred_global_error=Fejl
 theme_global_warning=Advarsel
 theme_global_success=Succes
@@ -163,7 +169,7 @@ theme_xhred_notifications_firewall_danger_message=Det ser ud til, at <strong>Con
 
 theme_xhred_notifications_firewall_warning=Firewall Advarsel
 
-#17.50
+# 17.50
 settings_grayscale_level_navigation=Gråtonefilter
 settings_grayscale_level_navigation_description=Standard/aktuelle værdier <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
 settings_sepia_level_navigation=Sepia-filter
@@ -192,7 +198,7 @@ theme_xhred_filemanager_context_paste=sæt ind
 theme_xhred_filemanager_context_chmod=Skift tilladelser
 theme_xhred_filemanager_context_chown=Skift ejerskab
 
-#17.51
+# 17.51
 theme_xhred_filemanager_context_new=Ny
 theme_xhred_filemanager_context_newarchive=Opret nyt arkiv
 theme_xhred_filemanager_context_delete=Slet
@@ -203,12 +209,12 @@ theme_xhred_filemanager_context_goto=Åbn varens placering
 theme_xhred_filemanager_context_properties=Ejendomme
 theme_xhred_filemanager_context_search=Søg
 
-#17.52
+# 17.52
 theme_xhred_filemanager_context_deselect_all=Fravælg alle
 theme_xhred_filemanager_context_upload=Upload til det aktuelle bibliotek
 theme_xhred_filemanager_context_download=Download fra ekstern URL
 
-#17.53
+# 17.53
 theme_config_virtualmin=Virtualmin virtuelle servere
 theme_config_cloudmin=Cloudmin styrede systemer
 settings_right_thirdparties_options_title=Tredjeparts moduler indstillinger
@@ -217,17 +223,17 @@ theme_xhred_filemanager_context_bookmarks=bogmærker
 theme_xhred_filemanager_context_bookmark_current=Bogmærke, der i øjeblikket er åbnet
 theme_xhred_filemanager_context_transfer=Overførsel
 
-#17.54
+# 17.54
 theme_xhred_filemanager_title_symlink_target=Link mål
 
-#17.60
+# 17.60
 right_unlimited=Ubegrænset
 settings_leftmenu_width=Foretrukken bredde
 settings_leftmenu_width_description=Default/aktuelle bredde <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Vis switches reverseret
 settings_switch_rdisplay_description=Denne mulighed giver dig mulighed for at indstille anden rækkefølge for top-venstre switches. Når du har ændret denne mulighed, kræves fuldstændig genindlæsning af sider
 
-#17.63
+# 17.63
 theme_xhred_filemanager_context_calculate_selected_size=Beregn den valgte størrelse
 theme_xhred_filemanager_selected_entries=Valgt: %value værdiposter
 theme_xhred_filemanager_manual_path=Indtast stien manuelt
@@ -240,7 +246,7 @@ theme_xhred_datatable_sloadingrecords=Indlæser
 theme_xhred_datatable_sprocessing=Forarbejdning. ..
 theme_xhred_datatable_szerorecords=Der blev ikke fundet nogen matchende poster
 
-#17.64
+# 17.64
 theme_xhred_filemanager_file_edit_but_not_saved=Filen er redigeret, men er ikke gemt.
 theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=Hvad vil du lave?
 theme_xhred_global_save=Gemme
@@ -249,11 +255,11 @@ theme_xhred_global_close_without_saving=Luk uden at gemme
 theme_xhred_global_continue_editing=Fortsæt med at redigere
 theme_xhred_filemanager_context_download_file=Hent
 
-#17.65
+# 17.65
 settings_sysinfo_easypie_charts_width=Bredde på diagrammer
 settings_sysinfo_easypie_charts_scale=Skala-længde på diagrammer
 
-#17.80
+# 17.80
 right_return_theme_options=tema muligheder
 theme_xhred_datatable_semptydirectory=Kataloget er tomt
 theme_xhred_filemanager_context_clipboard=Kopier sti til udklipsholder
@@ -283,13 +289,13 @@ theme_xhred_filemanager_hide_actions=Skjul handlingskolonne
 theme_xhred_filemanager_hovered_toolbar=Aktivér dropdown i værktøjslinjen på musemarkøren
 theme_xhred_filemanager_context_delete_selected=Slet valgt
 
-#17.83
+# 17.83
 theme_xhred_database_adding_new_row=Tilføjelse af ny række
 theme_xhred_database_editing_row=Redigering af valgt række
 theme_xhred_database_editing_rows=Redigering af valgte rækker
 theme_xhred_database_adding_new_row_data=Indstil data
 
-#17.84
+# 17.84
 theme_xhred_datatable_filter=Filter
 
 theme_xhred_global_update=Opdatering
@@ -326,7 +332,7 @@ theme_xhred_global_notice=Varsel
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
-#18.00
+# 18.00
 theme_xhred_global_file=Fil
 theme_xhred_global_directory=Vejviser
 theme_xhred_global_no_target=Målet findes ikke eller er ikke tilgængeligt
@@ -338,7 +344,7 @@ theme_xhred_global_none=Ingen
 theme_xhred_global_yes=Ja
 theme_xhred_global_no=Ingen
 
-theme_xhred_filemanager_new_tab=Tilføj ny fane (Ctrl+Mellemrum)
+theme_xhred_filemanager_new_tab=Tilføj ny fane (Alt + mellemrum)
 theme_xhred_datatable_no_search_results=<span class="h5">Ingen resultater fundet</span> <br> Prøv en anden søgning
 
 theme_xhred_filemanager_buffer_error=Kunne ikke indsætte filer i bufferen - tilladelse afvist.
@@ -399,16 +405,16 @@ theme_xhred_module_help=Modulhjælp
 
 theme_xhred_server_process_running=Serverprocessen kører stadig !? Er du sikker på, at du vil navigere væk og ikke har adgang til outputoplysninger? Selvom du forlader nu, vil processen ikke blive afsluttet.
 
-#18.03
+# 18.03
 settings_global_options_title=Globale muligheder
 theme_xhred_password_generator_new=Generer nyt kodeord <br> (til udklipsholder)
 theme_xhred_password_generator_new_success=Den genererede adgangskode %password er blevet kopieret til udklipsholder med succes.
 
-#18.08
+# 18.08
 theme_fileformat_perl=Perl
 theme_fileformat_perl_placeholder=Denne fil skal slutte med `1;` at arbejde med succes.
 
-#18.30
+# 18.30
 settings_leftmenu_vm_cm_dropdown_icons=Vis symbolikoner i rullemenuen i Virtualmin/Cloudmin
 theme_xhred_global_shipped=afsendt
 theme_xhred_global_available=Ledig
@@ -454,7 +460,7 @@ theme_xhred_filemanager_successful_secontext=Sikkerhedskonteksten er blevet ænd
 
 theme_xhred_global_no_results_found=Ingen resultater fundet
 
-#18.40
+# 18.40
 theme_new_password_header=Indstil nyt kodeord for brugeren
 theme_xhred_move_top=Gå til toppen
 theme_xhred_move_bottom=Gå til bunden
@@ -474,7 +480,7 @@ theme_xhred_tooltip_switch_user=Skift bruger
 theme_tooltip_logout=Log ud
 theme_tooltip_edit_user=Rediger bruger
 
-#18.45
+# 18.45
 settings_sysinfo_easypie_charts_size=Diagrammets diameter
 theme_xhred_global_choose=Vælge
 theme_xhred_global_select=Vælg
@@ -491,7 +497,7 @@ theme_xhred_global_help=Hjælp
 theme_xhred_git_compare_changes=Sammenlign ændringer
 theme_xhred_filemanager_link_to_clipboard=Navnet på symbolsk link er blevet kopieret til udklipsholder.
 
-#18.46
+# 18.46
 theme_left_mail_prefs=Mailpræferencer
 theme_left_mail_change_password=Skift kodeord
 theme_left_mail_account_functions=Kontofunktioner
@@ -500,7 +506,7 @@ theme_xhred_global_module_config=Modulkonfiguration
 theme_xhred_global_return=Vend tilbage
 theme_xhred_global_return_to_module_index=Tilbage til modulindeks
 
-#18.47
+# 18.47
 theme_xhred_global_complete_changelog=Komplet skiftelog
 theme_xhred_global_beta_version=Betaversion
 theme_xhred_global_release=Frigøre
@@ -508,7 +514,7 @@ theme_xhred_global_released_on=Udgivet den
 theme_xhred_global_committed_on=Forpligtet den
 theme_xhred_global_resolved_issues=Løste problemer i %value værdiudgivelser
 
-#18.48
+# 18.48
 theme_force_upgrade=Opdater tema
 theme_xhred_force_upgrade_beta=Installer den nyeste udviklingsversion (beta)
 theme_xhred_force_upgrade_stable=Installer den nyeste version (stabil)
@@ -517,7 +523,7 @@ theme_update_footer=Vær venlig at rapportere fejl til $1-lageret. Tilmeld dig v
 theme_xhred_encoding_manually_set=Manuelt indstillet kodning
 theme_xhred_filemanager_save_to_change_encoding=Filen skal gemmes for at ændre kodningen.
 
-#18.49
+# 18.49
 theme_xhred_filemanager_user_switch=Skift til bruger (Ctrl + M)
 theme_xhred_filemanager_user_switch_description=Ved at vælge det brugernavn, der er anført nedenfor, skifter du yderligere handlinger, der skal udføres som denne bruger.
 theme_xhred_filemanager_user_switch_description_back=For at skifte tilbage til standardtilstand skal du vælge den første indstilling i vælg.
@@ -536,7 +542,7 @@ theme_xhred_global_maximize=Maksimer
 theme_xhred_global_normalize=Normalisér
 theme_xhred_global_set_encoding=Indstil kodning
 
-#19.00
+# 19.00
 theme_xhred_sysinfo_update_start=Systeminformation genvindes.
 theme_xhred_sysinfo_update_end=Systemoplysninger er blevet husket med succes.
 theme_xhred_sysinfo_update_failed=Systemoplysninger kan ikke huskes. Prøv igen senere.
@@ -557,14 +563,14 @@ theme_xhred_global_seconds=Sekunder
 theme_xhred_global_minute=Minut
 theme_xhred_global_minutes=minutter
 
-#19.01
+# 19.01
 theme_xhred_browser_warning=For at få den bedste oplevelse med serverpanel på din computer skal du bruge en understøttet, opdateret browser. <br><br> <em>Internet Explorer</em> understøttes ikke længere. <br><br> Anbefalede browsere er <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> eller <em>Safari</em>, <em>Edge</em>. <div class="alert alert-warning margined-top-10 margined-bottom--8">Du kan downloade bærbar version af en browser, der ikke kræver installation, for at omgå pålagte begrænsninger.</div>
 
-#19.02
+# 19.02
 theme_xhred_filter_content=Filtrer indhold
 theme_xhred_log_file_empty=Logfilen er tom
 
-#19.03
+# 19.03
 theme_xhred_config_configurable_options=Konfigurerbare indstillinger
 theme_xhred_filter_content_no_matches_query=Intet indhold matcher %str forespørgsel
 theme_xhred_toggle_accordions=Skift trekksynlighed
@@ -583,18 +589,18 @@ theme_xhred_signing_success=Logget ind!
 theme_xhred_session_failed_password=Forkert adgangskode, prøv igen.
 theme_xhred_global_reauthenticate=godkende igen
 
-#19.04
+# 19.04
 settings_sysinfo_real_time_status=Aktivér overvågning i realtid
 theme_xhred_global_redirecting=Omdirigering
 
-#19.05
+# 19.05
 body_no_javascript_title=JavaScript er deaktiveret
 body_no_javascript_message=Aktivér javascript og opdater siden
 theme_xhred_connection_lost=Forbindelse afbrudt
 theme_xhred_connection_success=Forbindelsen er vellykket
 theme_xhred_connection_success_details=Forbindelsen til serveren er blevet genoprettet.
 
-#19.08
+# 19.08
 theme_xhred_return_home=Vend tilbage til panelindeks
 theme_xhred_global_upload=Upload
 theme_xhred_global_select_files=Vælg fil (er)
@@ -603,14 +609,14 @@ theme_xhred_global_files_selected=valgte filer
 theme_xhred_global_reset=Nulstil
 theme_xhred_upload_initial_info=Træk og slip filer her, eller klik for at vælge
 
-#19.09
+# 19.09
 theme_xhred_global_empty=Tom
 theme_xhred_global_click_here=Klik her
 theme_git_patch_incompatible_message=Installation af denne version af $1 <em>$2</em> kræver den nyeste og/eller muligvis ikke-udgivne version af $3 og $5 for at fungere korrekt.
 theme_git_patch_incompatible_message_s=Installation af denne version af $1 <em>$2</em> kræver den nyeste og/eller muligvis ikke-udgivne version af $3 for at fungere korrekt.
 theme_git_patch_incompatible_message_desc=Der kan være inkompatible ændringer, der kan forhindre temaet i at fungere som designet. Det er ikke muligt at fortsætte opgraderingen ved hjælp af brugergrænsefladen.
 
-#19.10
+# 19.10
 theme_xhred_filemanager_edit_html=Rediger som HTML
 theme_xhred_global_example=Eksempel
 theme_xhred_global_output_example=Outputeksempel
@@ -636,7 +642,7 @@ theme_xhred_global_unlimited=Ubegrænset
 theme_xhred_filemanager_tree_exclude_on_first_load=Ekskluder uundværlige mapper fra at gå gennem den indledende belastning til trævisning (indlæses hurtigere)
 theme_xhred_filemanager_tree_expand_search=Udvid alle grene, der indeholder tændstikker, mens du filtrerer trævisning
 
-#19.12
+# 19.12
 theme_xhred_tooltip_side_slider_go_to_dashboard=Gå til dashboard
 theme_xhred_tooltip_side_slider_open_favorites_control=Åbn favoritkontrol
 theme_xhred_tooltip_side_slider_delete_all_notification=Slet alle underretninger
@@ -644,7 +650,7 @@ theme_xhred_tooltip_side_slider_mark_read_all_notification=Marker alle underretn
 theme_xhred_global_settings=Indstillinger
 theme_xhred_tooltip_side_slider_pinned=Fastgør/løsn sideskyderen
 
-#19.13
+# 19.13
 settings_sysinfo_theme_updates_for_usermin=Installer også temaopdateringer til Usermin
 theme_xhred_global_installed_version=Installeret version
 theme_xhred_global_installed_and_latest_version=Installeret og seneste version
@@ -652,12 +658,12 @@ theme_xhred_global_latest_stable=Seneste stabile
 theme_xhred_global_latest_beta=Seneste beta
 theme_xhred_global_firewall=Firewall
 
-#19.14
+# 19.14
 theme_xhred_filemanager_preparing_download=Forbereder download. Arkivering af %number nummerfil (er). Vent %dots
 theme_xhred_filemanager_prepared_download=Download er klar. Arkiveret %number nummerfil (er).
 theme_xhred_filemanager_canceled_download=Download annulleret.
 
-#19.19
+# 19.19
 theme_xhred_filemanager_settings_force_tar_download=Tving <code>tar</code>, selvom <code>zip</code> er tilgængelig, når du downloader det som arkiv
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
@@ -667,7 +673,7 @@ theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
 theme_xhred_title_locale_non_ui_config=Servergenereret datoformat
 
-#19.20
+# 19.20
 extensions_mail_current_position=Meddelelser $1-$2 af $3
 extensions_mail_sort_by_sender=Sorter efter afsender
 extensions_mail_sort_by_recipient=Sorter efter modtager
@@ -808,14 +814,14 @@ settings_cache_interval_1y=en gang om året
 
 theme_xhred_reload_notification=Temakonfiguration er blevet ændret, men ikke gemt. Siden bliver genindlæst for at nulstille til aktuelle indstillinger.
 
-#19.22
+# 19.22
 theme_xhred_global_save_as=Gem som
 theme_xhred_editor_save_file_as=Gem fil som
 theme_xhred_global_configuration=Konfiguration
 
 body_used_cached_total=$1 i alt / $3 cache / $2 brugt
 
-#19.30
+# 19.30
 theme_xhred_favorites_add=Tilføj til favoritter
 theme_xhred_favorites_remove=Fjern fra favoritter
 theme_xhred_select_deselect=Vælg/fravælg det aktuelle element
@@ -833,7 +839,7 @@ theme_xhred_editor_set_syntax=Indstil syntaks
 theme_xhred_global_menu=Menu
 theme_xhred_shell_aborted=Funktion afbrudt
 
-#19.32
+# 19.32
 theme_xhred_connection_reboot=genstart
 theme_xhred_connection_reboot_details=Serveren genstartes. Vent venligst ..
 settings_leftmenu_custom_links_description=Det er muligt at få indsat brugerdefinerede, ekstra links i navigationsmenuen. <br><br> Nøglerne <em>titel</em>, <em>link</em> og <em>ikon</em> er påkrævet; valgfrit kan du definere, i hvilken login-tilstand et link vil blive vist, ved at angive <em>niveau</em>-nøgle med værdier i en kommasepareret liste, der indeholder: <br><br> <em>0</em > - administrator login; <br><em>1</em> - forhandler login;<br><em>2</em> - server ejer login;<br><em>3</em> - bruger login;<br><em>4</em>- systemejer login.<br><br> Det kræver, at du sender et gyldigt JSON-objekt som en streng, som i eksemplet nedenfor.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
@@ -919,28 +925,28 @@ theme_xhred_global_version=version
 theme_xhred_notify_patching_module_style=Anvendelse af den første UI-patch til $1 og genindlæsning.
 theme_xhred_global_error_more_details_online=Bemærk: Læs mere om denne fejl, og hvordan du løser den på vores %1wiki side %1 online.
 
-#19.33
+# 19.33
 theme_xhred_filemanager_search_file_mask=Filmaske
 theme_xhred_filemanager_search_regex=Almindelig udtryk
 theme_xhred_upload_successful=<span>$1 filer</span> er blevet uploadet til $2 biblioteket
 theme_xhred_upload_successful_single=<span>$1 fil</span> er blevet uploadet til $2 biblioteket
 settings_usermin_default_module=Standardmodul
 
-#19.34
+# 19.34
 theme_xhred_search_in_file_open_external=Fjern fil til separat editor
 theme_xhred_path_to_console=Åbn nuværende sti i terminal <tt>(Alt+Skift+K)</tt>
 theme_xhred_filemanager_editor_revert_content=Gendan fil
 theme_xhred_filemanager_editor_reverting_content=Slipper ændringer og vender tilbage til det originale filindhold.
 
-#19.37
+# 19.37
 theme_xhred_filemanager_exclude_dirs=Ekskluder poster
 theme_xhred_filemanager_exclude_dirs_desc=Semikolonsepareret liste over filer eller undermapper, der skal udelukkes
 
-#19.38
+# 19.38
 theme_global_access_level=Adgangsniveau
 theme_global_user_mode=Brugertilstand
 
-#19.40
+# 19.40
 theme_xhred_global_attachments=Vedhæftede filer
 theme_xhred_mail_composer_send=Sende
 theme_xhred_mail_composer_schedule=Tidsplan
@@ -985,13 +991,13 @@ theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
 theme_xhred_global_rows=rækker
 
-#19.42
+# 19.42
 settings_side_slider_blend=Arve
 
-#19.44
+# 19.44
 theme_xhred_reload_lang_notification=Temasprog er blevet ændret. Siden bliver genindlæst for at anvende nye indstillinger.
 
-#19.46
+# 19.46
 theme_xhred_global_small=Lille
 theme_xhred_global_normal=Normal
 theme_xhred_global_medium=Medium
@@ -999,26 +1005,26 @@ theme_xhred_global_large=Stor
 theme_xhred_global_huge=Kæmpe stor
 theme_xhred_filemanager_editor_maximized=Maksimer redigeringspanelet ved start
 
-#19.47
+# 19.47
 theme_xhred_textarea_to_clipboard=Det valgte tekstindhold er blevet kopieret til udklipsholder
 
-#19.48
+# 19.48
 theme_xhred_global_alias=Alias
 
-#19.50
+# 19.50
 theme_xhred_mail_composer_real_name=Rigtige navn
 theme_xhred_mail_composer_username=brugernavn
 
-#19.53
+# 19.53
 settings_global_palette_unauthenticated=Login-side farvepalet
 
-#19.60
+# 19.60
 settings_config_save_and_next=Gem og Næste
 settings_config_configuration_category=Konfigurationskategori
 config_search_options_all=Søg gennem alle modulkonfigurationsindstillinger
 theme_xhred_editing_config_file=Redigering af konfigurationsfil
 
-#19.61
+# 19.61
 theme_xhred_login_message_2fa=To-faktor-godkendelse er blevet aktiveret for denne bruger til at logge på
 theme_xhred_global_verify=Verificere
 settings_show_terminal_link2=Vis kommandoskal-knap
@@ -1026,7 +1032,7 @@ settings_hotkey_shell2=Åbn kommandoskal
 theme_xhred_path_to_console2=Åbn den aktuelle sti i kommandoskallen <tt>(Alt + ⇧ + K)</tt>
 theme_tooltip_terminal_link2=Kommandoskal
 
-#19.70
+# 19.70
 theme_xhred_filemanager_context_view=Udsigt
 theme_xhred_file_viewer=File Viewer
 theme_xhred_global_done=Færdig.
@@ -1054,7 +1060,7 @@ theme_xhred_filemanager_remove_warning=Fjernelse er afsluttet med succes, men ik
 
 theme_xhred_connection_error_details_ssl=Tjek advarslen <a>selvsigneret SSL-certifikat</a>
 
-#19.71
+# 19.71
 settings_sysinfo_hidden_panels_user=Skjulte harmonikaer
 theme_xhred_tooltip_dashboard_panels_disable=Skjul $1 -panelet
 theme_xhred_dashboard_panels_disabled_explain=Skjult panel kan genaktiveres ved hjælp af <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
@@ -1070,7 +1076,7 @@ theme_error_access_not_root_user=Adgang nægtet: Brugeren har ikke ret til at re
 settings_theme_config_admins_only_privileged=Forbud adgang til temakonfiguration for brugere
 settings_theme_config_admins_only_privileged_description=Denne mulighed, hvis den håndhæves af serveradministratoren, skjuler temakonfigurationssiden for almindelige, ikke-privilegerede brugere. Denne mulighed anbefales dog ikke at blive brugt, da almindelige brugere allerede har begrænset adgang til temakonfiguration og kun kan ændre minimalt sæt brugerspecifikke indstillinger
 
-#19.72
+# 19.72
 theme_xhred_global_prefs=Præferencer
 mconfig_eaccess=Dette modul kan ikke tilgås
 mconfig_ecannot=Der findes ingen brugerdefineret konfigurationsfil til dette modul
@@ -1078,16 +1084,16 @@ theme_xhred_filemanager_mconfig_columns_selinux_disabled=Denne funktion kræver,
 theme_xhred_filemanager_mconfig_columns_acls_disabled=Denne funktion kræver, at filsystemet er monteret med <tt>ACL'er</tt> slået til, og kommandoen <kbd>getfacl</kbd> skal være tilgængelig
 theme_xhred_global_module_preferences=Modulindstillinger
 
-#19.74
+# 19.74
 theme_xhred_theme_update_available=En ny version af Authentic Theme er installeret
 settings_right_page_keep=Indlæs samme side på domæneswitch
 settings_right_page_keep_description=Denne mulighed forsøger at indlæse den samme side ved valg af domæne, når den ændres fra rullemenuen til navigationsmenuen
 
-#19.76
+# 19.76
 theme_xhred_global_show_all=Vis alt
 theme_xhred_filemanager_context_prop_show_all=Vis alle egenskaber
 
-#19.84
+# 19.84
 settings_right_table_links_type=Tabellinks viser type
 settings_right_table_links_type_2=Store ikoner med tekst
 settings_right_table_links_type_1=Små ikoner med værktøjstiptekst
@@ -1126,7 +1132,7 @@ body_cpufan_rpm=RPM
 body_cpufan=CPU blæser
 filemanager_symlink_exists=Kan ikke oprette <tt>$1</tt> da filen allerede findes i <tt>$2</tt>
 
-#19.85
+# 19.85
 theme_xhred_tooltip_side_slider_clipboard_sysinfo=Kopier grundlæggende systemoplysninger til udklipsholder; hold $1-tasten nede for at kopiere udvidet; hold $2-tasten nede for at kopiere almindelig tekstdata i stedet for markering
 theme_xhred_tooltip_side_slider_clipboard_account=Kopier alle kontooplysninger til udklipsholder; hold $1-tasten nede for at kopiere almindelig tekstdata i stedet for markering
 tooltip_back_to_servers_index_master=Webmin-servere indeksmodul på mastermaskine
@@ -1149,10 +1155,10 @@ theme_xhred_disk_quota_error_title=Uden for kvote
 theme_xhred_disk_quota_error_message=Ikke mere plads på enheden
 theme_xhred_filemanager_decrypt_option_use_master_admin_keys=Brug hovedadministratornøgle til dekryptering
 
-#19.90
+# 19.90
 settings_hotkey_toggle_hold_modifier=Hold modifikationstasten nede
 
-#19.91
+# 19.91
 theme_xhred_filemanager_files_mode_ask=Spørg altid
 theme_xhred_filemanager_files_mode_ask_remember=Husk som fremtidig standard
 theme_xhred_filemanager_files_mode_ask_title=Overskriv eksisterende
@@ -1169,21 +1175,21 @@ theme_xhred_filemanager_purge_trash_curr_end=Udryddet mappen $1.
 theme_xhred_filemanager_purge_trash_all_end=Alle andre brugeres papirkurv er blevet slettet.
 theme_error_access_dir_not_allowed=Adgang nægtet: Filen er ikke tilgængelig
 
-#19.95
+# 19.95
 theme_xhred_global_outdated_desc=Den installerede version af $1 er forældet. Seneste tilgængelige version er $2. Opgrader eller klik for at få flere detaljer om den seneste udgivelse.
 theme_xhred_global_outdated_desc2=Den installerede version af $1 er forældet. Seneste tilgængelige version er $2.
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hold <tt>Ctrl</tt> nede under valget
 theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold <tt>Kommando</tt> nede under valget
 
-#19.97
+# 19.97
 theme_xhred_webmin_requires_restart=Det er registreret, at Webmin-webserver-dæmonen ikke blev genstartet korrekt ved den sidste pakkeopgradering. Dette er nødvendigt for at genstarte webserveren manuelt ved at kalde kommandoen <tt>$1</tt>.
 theme_xhred_webmin_requires_restart_yes=Ja, prøv at genstarte den
 theme_xhred_webmin_requires_restart_no=Nej, jeg genstarter den manuelt
 
-#19.99
+# 19.99
 theme_xhred_filemanager_path_manual=Indtast stien manuelt (Ctrl + L)
 
-#20.02
+# 20.02
 theme_xhred_socket_conn_lost_title=Forbindelse afbrudt
 theme_xhred_socket_conn_lost_reconnect=Tilslut igen
 theme_xhred_socket_conn_lost_connecting=Tilslutning ..
@@ -1191,15 +1197,15 @@ theme_xhred_socket_conn_lost_try=Prøv igen
 theme_xhred_socket_conn_parse_error=Mislykket indlæsning af terminal: Kan ikke parse svarobjekt fra serveren
 theme_xhred_socket_conn_sock_error=Fejl ved indlæsning af terminal: WebSocket-forbindelsesfejl
 
-#20.10
+# 20.10
 theme_xhred_global_open=Åben
 theme_xhred_xterm_error_title=Kan ikke oprette forbindelse
 theme_xhred_xterm_error=Gå til Terminalmodul for yderligere detaljer
 
-#20.11
+# 20.11
 theme_xhred_global_error_fatal=Fatal fejl
 
-#20.20
+# 20.20
 theme_xhred_global_automatic=Automatisk
 theme_xhred_filemanager_context_acls=Skift adgangskontrolliste
 theme_xhred_filemanager_changing_acls=Ændring af adgangskontrolliste.
@@ -1207,7 +1213,7 @@ theme_xhred_filemanager_successful_acls_with_errors=Adgangskontrollisten er ikke
 theme_xhred_filemanager_successful_acls=Adgangskontrollisten er blevet ændret.
 theme_download_error=Fejl ved download af filen, fordi den er uden for den tilladte mappe : $1
 
-#20.30
+# 20.30
 theme_xhred_hotkeys_help=Hjælp (F1)
 theme_xhred_hotkeys_help_title=Tastaturgenveje
 theme_xhred_hotkeys_help_title_docs=Dokumentation
@@ -1222,6 +1228,7 @@ theme_xhred_hotkeys_custom_not_set=ikke indstillet
 theme_xhred_hotkey_open_module_config_privileged=Åbn modulkonfiguration
 theme_xhred_hotkey_open_theme_config=Åbn temakonfiguration
 theme_xhred_hotkey_list_table=Liste pagineret tabel
+theme_xhred_hotkey_list_tabs=Listefaner
 theme_xhred_hotkey_clear_cache=Ryd cache og genindlæs
 theme_xhred_hotkey_open_new=Dupliker til en ny fane
 theme_xhred_hotkey_copy_to_clipboard=Kopier elementdata til udklipsholder
@@ -1274,7 +1281,6 @@ theme_xhred_columns_layout_vertical_opts_max_width=Minimum søjlebredde
 theme_xhred_columns_layout_vertical_opts_break_title=Kolonneoverløbshandling
 theme_xhred_columns_layout_vertical_opts_break_new=Pause
 theme_xhred_columns_layout_vertical_opts_break_scroll=Rul
-
 theme_xhred_columns_layout_remove=Skjul denne widget
 theme_xhred_columns_layout_remove_button=Gem og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Vandret layout kan ikke bruges i mobiltilstand, specielt når skærmbredden er mindre end 992px
@@ -1283,17 +1289,17 @@ settings_auto_open_panels_on_proximity=Åbn automatisk lukkede paneler i nærhed
 
 theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gengivelsestilføjelse
 
-#21.09.04
+# 21.09.04
 theme_xhred_datatable_filter_and_export=Filtrer og eksporter indhold
 
-#21.10
+# 21.10
 settings_hotkey_logout_dbl=Log ud
 theme_xhred_hotkey_emsg=Omvendt skråstreg-tasten kan ikke bruges som en genvejstast
 settings_embed_product_splash_privileged=Vis en branding-splash-skærm efter login
 dashboard_status_running=Løb
 dashboard_status_stopped=Holdt op
 
-#21.11
+# 21.11
 theme_xhred_global_watching=Ser på
 theme_xhred_global_connected=Forbundet
 theme_xhred_global_disconnected=Afbrudt
@@ -1329,3 +1335,18 @@ settings_sysinfo_real_time_status_history_duration6=18 timer
 settings_sysinfo_real_time_status_history_duration7=24 timer
 theme_xhred_license_purchase=Køb en licens
 settings_right_table_links_sorted=Sorter tabellinks i alfabetisk rækkefølge
+
+# 24.00
+session_error=Fejl
+session_success=Succes
+session_cannot=Kunne ikke nulstille adgangskode: Brugernavnet mangler.
+session_neterror=Kan ikke få svar fra netværket!
+session_unkerror=Der opstod en uventet fejl. Prøv igen senere.
+session_conerror=Kunne ikke nå serveren. Prøv igen senere.
+session_resetpass1=Ny adgangskode
+session_resetpass2=Bekræft ny adgangskode
+session_resetepassreq=Adgangskode er påkrævet.
+session_pwdconf=Adgangskodebekræftelse er påkrævet.
+session_pwdmatch=Adgangskoderne stemmer ikke overens.
+session_noid=Gendannelses-ID blev ikke fundet!
+session_pwdsucc=Adgangskoden er ændret! Du kan nu logge ind med den nye adgangskode.
