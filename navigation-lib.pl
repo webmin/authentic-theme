@@ -592,7 +592,7 @@ sub nav_search
     my $new_layout = shift;
     my $rv = "<li><br></li>";
     if (-r "$root_directory/webmin_search.cgi" && $gaccess{'webminsearch'}) {
-        $rv = "<li class=\"menu-container search-form-container new-layout new-layout-prod" . ($new_layout ? " new-layout" : "") . "\">\n";
+        $rv = "<li class=\"menu-container search-form-container new-layout-prod" . ($new_layout ? " new-layout" : "") . "\">\n";
         $rv .= "<form id=\"webmin_search_form\" action=\"$theme_webprefix/webmin_search.cgi\" role=\"search\">\n";
         $rv .= "<div class=\"form-group\">\n";
         $rv .=
