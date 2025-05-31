@@ -222,8 +222,9 @@ sub login_params_populate
 my $failed = shift;
 my ($forgot, $username);
 if ($gconfig{'forgot_pass'} && !$failed) {
-	($forgot) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/;
-	($username) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
+	my $request_uri_uu = &un_urlize(get_env('request_uri'));
+	($forgot) = $request_uri_uu =~ /[?&]forgot=([A-Fa-f0-9]+)/;
+	($username) = $request_uri_uu =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
 		if ($forgot);
 	}
 return ($forgot, $username);
