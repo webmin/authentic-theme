@@ -164,31 +164,37 @@ sub print_login_logo
 {
 # Default icon and title
 my $product_name = &get_product_name();
-my %brand = (
+my %def_brand = (
 	file => "$root_directory/images/brand_$product_name.svg",
 	title => $product_name eq "usermin"
 		? $theme_text{'theme_xhred_titles_um'}
-		: $theme_text{'theme_xhred_titles_wm'},
-	mode => 'full' );
+		: $theme_text{'theme_xhred_titles_wm'} );
+my %brand = %def_brand;
 # Read brand info from file if it exists
 my $brand_info = "$config_directory/brand.info";
-&read_file($brand_info, \%brand) if (-f $brand_info);
-my $brand_file = $brand{'file'} && -r $brand{'file'} ? $brand{'file'} : undef;
+if (-f $brand_info) {
+	my %mod_brand;
+	&read_file($brand_info, \%mod_brand);
+	%brand = %mod_brand;
+	# If brand file defined but doesn't exist use default
+	%brand = %def_brand if (defined($brand{'file'}) && !-f $brand{'file'});
+	}
 # Print either logo from file or icon
+my $brand_file = $brand{'file'} && -r $brand{'file'} ? $brand{'file'} : undef;
+my $title = $brand_file ? undef :
+	"&nbsp;". $brand{'title'} // $theme_text{'theme_xhred_titles_wm'};
 my $mime;
 $mime = &guess_mime_type($brand_file) if ($brand_file);
-my $title = $brand{'mode'} eq 'full' ? undef : "&nbsp;$brand{'title'}";
-my $class = $title ? undef : 'img-title';
 if ($mime && $mime =~ /^image\//) {
 	my $image = &read_file_contents($brand_file);
 	$image =~ s/[\r\n\t ]+/ /g;
 	print ui_tag('img', undef,
 		{ 'src' => "data:$mime;base64,".&encode_base64($image),
 		  'alt' => $brand{'title'},
-		  'class' => $class });
+		  'class' => 'img-title' });
 	}
 else {
-	print ui_tag('i', undef, { 'class' => $brand{'icon'} });
+	print ui_tag('i', undef, { 'class' => $brand{'icon'} // 'wbm-webmin' });
 	}
 # Print the product title
 print ui_tag('h2', ui_tag('span', $title),
