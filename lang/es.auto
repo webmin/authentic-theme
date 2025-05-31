@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 núcleo
-lost_message=Si su inicio de sesión de Webmin tiene configurado un correo electrónico de recuperación, puede usar este formulario para enviarse un enlace de restablecimiento de contraseña
+lost_message=Si su cuenta tiene configurado un correo electrónico de recuperación, puede usar este formulario para enviarse un enlace de restablecimiento de contraseña
 reset_message=Está a punto de restablecer la contraseña del usuario <tt>$1</tt> en
 login_recover=Solicitar restablecimiento de contraseña
 login_back=Volver

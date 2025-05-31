@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 cœur
-lost_message=Si votre identifiant Webmin dispose d'une adresse e-mail de récupération, vous pouvez utiliser ce formulaire pour vous envoyer un lien de réinitialisation de mot de passe
+lost_message=Si votre compte dispose d'une adresse e-mail de récupération, vous pouvez utiliser ce formulaire pour vous envoyer un lien de réinitialisation de mot de passe
 reset_message=Vous êtes sur le point de réinitialiser le mot de passe de l'utilisateur <tt>$1</tt> sur
 login_recover=Demander une réinitialisation du mot de passe
 login_back=Retour

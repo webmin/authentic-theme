@@ -48,7 +48,7 @@ left_statistics=Sistemaren estatistikak
 
 login_danger=Danger!
 login_message=Erabiltzaile izena eta pasahitza sartu behar dituzu zerbitzarira sartzeko
-lost_message=Zure Webmin saioa hasteko berreskuratze helbide elektronikoa ezarrita baduzu, formulario hau erabil dezakezu pasahitza berrezartzeko esteka bat bidaltzeko
+lost_message=Zure kontuak berreskuratzeko helbide elektroniko bat badu ezarrita, formulario hau erabil dezakezu pasahitza berrezartzeko esteka bat bidaltzeko
 reset_message=<tt>$1</tt> erabiltzailearen pasahitza berrezartzear zaude
 theme_xhred_login_pass=Pasahitza
 login_save=Gogora nazazu

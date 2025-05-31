@@ -1,4 +1,4 @@
-lost_message=Jeśli Twój login Webmin ma ustawiony adres e-mail odzyskiwania hasła, możesz użyć tego formularza, aby wysłać sobie link do resetowania hasła
+lost_message=Jeśli Twoje konto ma ustawiony adres e-mail umożliwiający odzyskanie hasła, możesz użyć tego formularza, aby wysłać sobie link do zresetowania hasła
 reset_message=Zamierzasz zresetować hasło użytkownika <tt>$1</tt> na
 login_recover=Poproś o zresetowanie hasła
 login_back=Wracać

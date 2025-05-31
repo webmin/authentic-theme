@@ -2,7 +2,7 @@ body_cputype1=$5, $8 núcleo
 left_favorites=Favoritos
 left_favorites_no=Ainda não foram adicionados favoritos. ..
 
-lost_message=Se o seu login do Webmin tiver um e-mail de recuperação definido, você pode usar este formulário para enviar a si mesmo um link de redefinição de senha
+lost_message=Se sua conta tiver um e-mail de recuperação definido, você pode usar este formulário para enviar a si mesmo um link para redefinir sua senha
 reset_message=Você está prestes a redefinir a senha do usuário <tt>$1</tt> em
 login_recover=Solicitar redefinição de senha
 login_back=Volte

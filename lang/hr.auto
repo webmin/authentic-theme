@@ -48,7 +48,7 @@ left_statistics=Statistika sustava
 
 login_danger=Opasnost!
 login_message=Morate unijeti korisničko ime i lozinku za prijavu na poslužitelj koji je uključen
-lost_message=Ako vaša prijava na Webmin ima postavljenu e-adresu za oporavak, možete koristiti ovaj obrazac za slanje poveznice za resetiranje lozinke
+lost_message=Ako za vaš račun postoji e-adresa za oporavak, možete upotrijebiti ovaj obrazac za slanje poveznice za resetiranje lozinke
 reset_message=Namjeravate resetirati lozinku za korisnika <tt>$1</tt> na
 theme_xhred_login_pass=Lozinka
 login_save=Zapamti me

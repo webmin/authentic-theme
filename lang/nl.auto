@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 kern
-lost_message=Als uw Webmin-inloggegevens een herstel-e-mailadres hebben, kunt u dit formulier gebruiken om uzelf een link te sturen om uw wachtwoord opnieuw in te stellen
+lost_message=Als er voor uw account een herstel-e-mailadres is ingesteld, kunt u dit formulier gebruiken om uzelf een link te sturen om uw wachtwoord opnieuw in te stellen
 reset_message=U staat op het punt het wachtwoord voor gebruiker <tt>$1</tt> opnieuw in te stellen op
 login_recover=Wachtwoord opnieuw instellen aanvragen
 login_back=Ga terug

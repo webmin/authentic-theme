@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 nucli
-lost_message=Si el vostre inici de sessió de Webmin té configurat un correu electrònic de recuperació, podeu utilitzar aquest formulari per enviar-vos un enllaç de restabliment de contrasenya
+lost_message=Si el vostre compte té configurada una adreça electrònica de recuperació, podeu utilitzar aquest formulari per enviar-vos un enllaç de restabliment de contrasenya
 reset_message=Esteu a punt de restablir la contrasenya de l'usuari <tt>$1</tt> el
 login_recover=Sol·licita el restabliment de la contrasenya
 login_back=Torna enrere

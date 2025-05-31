@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 teras
-lost_message=Jika log masuk Webmin anda mempunyai set e-mel pemulihan, anda boleh menggunakan borang ini untuk menghantar pautan tetapan semula kata laluan kepada diri sendiri
+lost_message=Jika akaun anda mempunyai set e-mel pemulihan, anda boleh menggunakan borang ini untuk menghantar pautan tetapan semula kata laluan kepada diri sendiri
 reset_message=Anda akan menetapkan semula kata laluan untuk pengguna <tt>$1</tt> dihidupkan
 login_recover=Minta Tetapan Semula Kata Laluan
 login_back=Pergi Balik

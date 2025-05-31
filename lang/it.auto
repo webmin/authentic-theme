@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 nucleo
-lost_message=Se il tuo accesso Webmin ha impostato un indirizzo email di recupero, puoi utilizzare questo modulo per inviarti un link per reimpostare la password
+lost_message=Se il tuo account ha impostato un indirizzo email di recupero, puoi utilizzare questo modulo per inviarti un link per reimpostare la password
 reset_message=Stai per reimpostare la password per l'utente <tt>$1</tt> su
 login_recover=Richiedi reimpostazione password
 login_back=Torna indietro

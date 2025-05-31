@@ -48,7 +48,7 @@ left_statistics=Systemstatistiken
 
 login_danger=Gefahr
 login_message=Sie müssen einen Benutzernamen und ein Passwort eingeben, um sich am Server anzumelden
-lost_message=Falls für Ihre Webmin-Anmeldung eine Wiederherstellungs-E-Mail hinterlegt ist, können Sie dieses Formular verwenden, um sich einen Link zum Zurücksetzen des Passworts zu senden
+lost_message=Falls für Ihr Konto eine Wiederherstellungs-E-Mail hinterlegt ist, können Sie dieses Formular verwenden, um sich einen Link zum Zurücksetzen des Passworts zu senden
 reset_message=Sie sind dabei, das Passwort für den Benutzer <tt>$1</tt> auf diesem Server zurückzusetzen
 theme_xhred_login_pass=Passwort
 login_save=Angemeldet bleiben

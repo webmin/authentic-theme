@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 kjerne
-lost_message=Hvis du har angitt en gjenopprettings-e-postadresse for Webmin-påloggingen din, kan du bruke dette skjemaet til å sende deg selv en lenke til tilbakestilling av passord
+lost_message=Hvis kontoen din har en gjenopprettings-e-postadresse angitt, kan du bruke dette skjemaet til å sende deg selv en lenke til tilbakestilling av passord
 reset_message=Du er i ferd med å tilbakestille passordet for bruker <tt>$1</tt> den
 login_recover=Be om tilbakestilling av passord
 login_back=Gå tilbake

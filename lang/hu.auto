@@ -48,7 +48,7 @@ left_statistics=Rendszerstatisztika
 
 login_danger=Veszély!
 login_message=A kiszolgálóra való bejelentkezéshez be kell írnia egy felhasználónevet és jelszót
-lost_message=Ha a Webmin bejelentkezésedhez van beállítva helyreállítási e-mail cím, akkor ezzel az űrlappal küldhetsz magadnak egy jelszó-visszaállító linket
+lost_message=Ha a fiókodhoz van beállítva helyreállítási e-mail cím, akkor ezzel az űrlappal küldhetsz magadnak egy jelszó-visszaállító linket
 reset_message=A(z) <tt>$1</tt> felhasználó jelszavát készül visszaállítani a következőn:
 theme_xhred_login_pass=Jelszó
 login_save=Emlékezz rám

@@ -1,5 +1,5 @@
 body_cputype1=$5, $8 kerne
-lost_message=Hvis dit Webmin-login har en gendannelses-e-mail angivet, kan du bruge denne formular til at sende dig selv et link til nulstilling af adgangskode
+lost_message=Hvis din konto har en e-mailadresse til gendannelse, kan du bruge denne formular til at sende dig selv et link til nulstilling af adgangskode
 reset_message=Du er ved at nulstille adgangskoden for bruger <tt>$1</tt> den
 login_recover=Anmod om nulstilling af adgangskode
 login_back=Gå tilbage

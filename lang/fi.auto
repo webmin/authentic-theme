@@ -48,7 +48,7 @@ left_statistics=Järjestelmätilastot
 
 login_danger=Vaara!
 login_message=Sinun on annettava käyttäjänimi ja salasana kirjautuaksesi palvelimeen
-lost_message=Jos Webmin-kirjautumisellesi on asetettu palautussähköpostiosoite, voit lähettää itsellesi salasanan palautuslinkin tällä lomakkeella
+lost_message=Jos tilillesi on asetettu palauttamisen sähköpostiosoite, voit lähettää itsellesi salasanan palautuslinkin tällä lomakkeella
 reset_message=Olet aikeissa nollata käyttäjän <tt>$1</tt> salasanan sovelluksessa
 theme_xhred_login_pass=Salasana
 login_save=Muista minut

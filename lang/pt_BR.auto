@@ -48,7 +48,7 @@ left_statistics=Estatísticas do sistema
 
 login_danger=Perigo!
 login_message=Você deve digitar um nome de usuário e senha para fazer login no servidor em
-lost_message=Se o seu login do Webmin tiver um e-mail de recuperação definido, você pode usar este formulário para enviar a si mesmo um link de redefinição de senha
+lost_message=Se sua conta tiver um e-mail de recuperação definido, você pode usar este formulário para enviar a si mesmo um link para redefinir sua senha
 reset_message=Você está prestes a redefinir a senha do usuário <tt>$1</tt> em
 theme_xhred_login_pass=Senha
 login_save=Lembre de mim

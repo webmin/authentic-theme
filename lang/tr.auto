@@ -48,7 +48,7 @@ left_statistics=Sistem İstatistikleri
 
 login_danger=Tehlike!
 login_message=Sunucuda oturum açmak için bir kullanıcı adı ve şifre girmelisiniz
-lost_message=Webmin oturum açma bilgilerinizin bir kurtarma e-postası ayarlanmışsa, kendinize bir parola sıfırlama bağlantısı göndermek için bu formu kullanabilirsiniz
+lost_message=Hesabınızda bir kurtarma e-postası ayarlanmışsa, kendinize bir parola sıfırlama bağlantısı göndermek için bu formu kullanabilirsiniz
 reset_message=<tt>$1</tt> kullanıcısı için parolayı sıfırlamak üzeresiniz
 theme_xhred_login_pass=Parola
 login_save=Beni hatırla
