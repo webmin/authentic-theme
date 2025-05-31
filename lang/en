@@ -48,7 +48,7 @@ left_statistics=System Statistics
 
 login_danger=Danger
 login_message=You must enter a username and password to login to the server on
-lost_message=If your Webmin login has a recovery email set, you can use this form to send yourself a password reset link
+lost_message=If your account has a recovery email set, you can use this form to send yourself a password reset link
 reset_message=You are about to reset the password for user <tt>$1</tt> on
 theme_xhred_login_pass=Password
 login_save=Remember me
@@ -1514,4 +1514,4 @@ session_resetepassreq=Password is required.
 session_pwdconf=Password confirmation is required.
 session_pwdmatch=Passwords do not match.
 session_noid=Recovery ID is not found!
-session_pwdsucc=Password changed successfully! You can now log in with the new password.
+session_pwdsucc=Password changed successfully! You can now log in with your new password.
