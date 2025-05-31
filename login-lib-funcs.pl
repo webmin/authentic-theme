@@ -175,9 +175,14 @@ my $brand_info = "$config_directory/brand.info";
 if (-f $brand_info) {
 	my %mod_brand;
 	&read_file($brand_info, \%mod_brand);
-	%brand = %mod_brand;
-	# If brand file defined but doesn't exist use default
-	%brand = %def_brand if (defined($brand{'file'}) && !-f $brand{'file'});
+	# If enabled, use the brand file
+	if ($mod_brand{'enabled'}) {
+		%brand = %mod_brand;
+		# If brand file defined but doesn't exist use default
+		if (defined($brand{'file'}) && !-f $brand{'file'}) {
+			%brand = %def_brand;
+			}
+		}
 	}
 # Print either logo from file or icon
 my $brand_file = $brand{'file'} && -r $brand{'file'} ? $brand{'file'} : undef;
