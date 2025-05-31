@@ -212,7 +212,7 @@ sub login_username_filter
 {
 my $username = shift;
 decode_utf8(\$username);
-return ($username =~ /^[\p{L}\p{N}_.-]+$/) ? $username : undef;
+return ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
 }
 
 # login_params_populate(failed-username)
@@ -223,7 +223,7 @@ my $failed = shift;
 my ($forgot, $username);
 if ($gconfig{'forgot_pass'} && !$failed) {
 	($forgot) = get_env('request_uri') =~ /[?&]forgot=([A-Fa-f0-9]+)/;
-	($username) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}_.-]+)/
+	($username) = get_env('request_uri') =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
 		if ($forgot);
 	}
 return ($forgot, $username);
