@@ -95,7 +95,7 @@ my $submit_button_text = $in{'password'}
 	: $theme_text{'login_signin'};
 print ui_button_icon($submit_button_text, "sign-in",
 	{ class => "primary", 'type' => 'submit', 'data-submit' => 'login' });
-if ($in{'failed'} && $gconfig{'forgot_pass'}) {
+if ($gconfig{'forgot_pass'}) {
 	print ui_button_icon($theme_text{'session_forgot'}, "unlock",
 			     {class => "grey", 'data-flipper'});
 	}

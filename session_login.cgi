@@ -90,9 +90,9 @@ if (!$gconfig{'noremember'}) {
 print ui_tag_start('div', { 'class' => 'form-group form-signin-group' });
 print ui_button_icon($theme_text{'login_signin'}, "sign-in",
 	{ class => "primary", 'type' => 'submit', 'data-submit' => 'login' });
-if ($in{'failed'} && $gconfig{'forgot_pass'}) {
+if ($gconfig{'forgot_pass'}) {
 	print ui_button_icon($theme_text{'session_forgot'}, "unlock",
-			     {class => "grey", 'data-flipper'});
+			     {class => "default", 'data-flipper'});
 	}
 
 # Print post-login element

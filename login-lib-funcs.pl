@@ -248,7 +248,7 @@ print ui_tag_start('div', { 'class' => 'session_login_front' });
 sub print_password_reset
 {
 # Can reset password and failed or forgot
-if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
+if ($gconfig{'forgot_pass'}) {
 	# Back side
 	my $extra_attrs = $in{'username'} ? {
 		'data-username' => $in{'username'},
@@ -297,7 +297,7 @@ if ($gconfig{'forgot_pass'} && ($in{'failed'} || $in{'forgot'})) {
 		
 		print ui_tag_end('div'); # back side end
 		}
-	elsif ($in{'failed'}) {
+	else {
 		print ui_tag_start('p', { 'class' => 'form-signin-paragraph' });
 		print ui_tag_content($theme_text{'lost_message'});
 		print ui_tag_end('p');
