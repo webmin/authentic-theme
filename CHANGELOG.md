@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 24.01 (June 2, 2025)
+* Fix to correctly identify new menu layout for Virtualmin
+* Fix to always show password recovery link if enabled
+
 #### Version 24.00 (May 25, 2025)
 * Add a flipping screen effect to the new login page for password recovery
 * Add more straight forward functions to lock, read and write file in live stats
