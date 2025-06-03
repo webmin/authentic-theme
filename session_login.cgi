@@ -59,7 +59,7 @@ print ui_tag_start('div', { 'class' => 'input-group form-group' });
 print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
 	"@{[$textbox_attrs->()]} ".
 	"placeholder='$theme_text{'theme_xhred_login_user'}'" .
-		(!$in{"failed"} && !$in{"return"} ? 
+		(!$in{"failed"} && !$in{"return"} && !$in{'forgot'} ? 
 			' autofocus' : ''), 'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
 print ui_icon('user');

@@ -285,7 +285,7 @@ if ($gconfig{'forgot_pass'}) {
 		print ui_tag_start('div',
 			{ 'class' => 'input-group form-group' });
 		print &ui_password("newpass", undef, 20, 0, undef,
-			"@{[$textbox_attrs->('off')]} ".
+			"@{[$textbox_attrs->('off')]} autofocus ".
 			"data-return='".&quote_escape($in{'return'}, "'")."' ".
 			"placeholder='$theme_text{'session_resetpass1'}'",
 			'session_login', 1);
