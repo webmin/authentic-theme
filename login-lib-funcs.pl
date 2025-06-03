@@ -244,8 +244,8 @@ if ($gconfig{'forgot_pass'} && !$in->{'failed'}) {
 		$request_uri_uu =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
 			if ($in->{'forgot'});
 	($in->{'return'}) = $request_uri_uu =~ /[?&]return=([^&]+)/;
-	($in->{'returned'}) = $request_uri_uu =~ /[?&]returned=([01])/
-		if ($ENV{'HTTP_REFERER'});
+	$in->{'returned'} =
+		($request_uri_uu =~ /[?&]returned=password-reset-success\b/);
 	}
 }
 

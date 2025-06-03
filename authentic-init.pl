@@ -1586,7 +1586,7 @@ sub embed_login_head
     print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
-    print ' <script type="text/javascript">try{const a=new URL(location.href),s=a.pathname;/\/(session_login|pam_login)\.cgi$/.test(s)&&a.searchParams.has("logout")&&(a.pathname=s.substring(0,s.lastIndexOf("/")),a.search="",history.pushState({},"",a))}catch(a){}</script>', "\n";
+    print ' <script type="text/javascript">try{const s=new URL(location.href),a=s.pathname;(/\/(session_login|pam_login)\.cgi$/.test(a)&&s.searchParams.has("logout")||"password-reset-success"===s.searchParams.get("returned"))&&(s.pathname=a.substring(0,a.lastIndexOf("/")),s.search="",history.pushState({},"",s))}catch(s){}</script>', "\n";
     embed_favicon('login-page');
     print ' <title>', $title, '</title>', "\n";
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
