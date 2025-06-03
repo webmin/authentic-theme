@@ -1731,9 +1731,14 @@ sub theme_forgot_url
 sub theme_forgot_handler
 {
     my $page = shift;
-    if (!$ENV{'HTTP_X_REQUESTED_WITH'}) {
+    if (!$ENV{'HTTP_X_REQUESTED_WITH'} && !$main::session_id) {
         my $prefix = &get_webprefix()."/";
-        if ($gconfig{'forgot_pass'} && $page =~ /forgot\.cgi$/) {
+        if ($page && $page =~ /forgot_form/ && $in{'return'}) {
+            my $return = &un_urlize($in{'return'});
+            &redirect($prefix."?return=".&urlize($return));
+            exit;
+        }
+        elsif ($gconfig{'forgot_pass'} && $page =~ /forgot\.cgi$/) {
             my ($id) = $ENV{'REQUEST_URI'} =~ /[?&]id=([0-9a-fA-F]{32})/;
             if ($id) {
                 &redirect("$prefix?forgot=$id");
