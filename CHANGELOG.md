@@ -1,6 +1,7 @@
 ## Changelog
 
 #### Version 24.01 (June 2, 2025)
+* Add password reset support in Usermin
 * Fix to correctly identify new menu layout for Virtualmin
 * Fix to always show password recovery link if enabled
 
