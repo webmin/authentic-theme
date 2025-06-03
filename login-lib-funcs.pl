@@ -221,31 +221,32 @@ print ui_tag('h2', ui_tag('span', $title),
 	     { 'class' => 'form-signin-heading' } );
 }
 
-# login_username_filter(username)
+# login_username_filter(&in)
 # Filters the username returned by the server
 sub login_username_filter
 {
-my $username = shift;
+my ($in) = @_;
+my $username = $in->{'failed'};
 decode_utf8(\$username);
-return ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
+$username = ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
+$in->{'failed'} = $username;
 }
 
-# login_params_populate(failed-username)
+# login_params_populate(&in)
 # Populates the input data not passed back by the server
 sub login_params_populate
 {
-my $failed = shift;
-my ($forgot, $username, $return, $returned);
-if ($gconfig{'forgot_pass'} && !$failed) {
+my ($in) = @_;
+if ($gconfig{'forgot_pass'} && !$in->{'failed'}) {
 	my $request_uri_uu = &un_urlize(get_env('request_uri'));
-	($forgot) = $request_uri_uu =~ /[?&]forgot=([A-Fa-f0-9]+)/;
-	($username) = $request_uri_uu =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
-		if ($forgot);
-	($return) = $request_uri_uu =~ /[?&]return=([^&]+)/;
-	($returned) = $request_uri_uu =~ /[?&]returned=([01])/
+	($in->{'forgot'}) = $request_uri_uu =~ /[?&]forgot=([A-Fa-f0-9]+)/;
+	($in->{'username'}) =
+		$request_uri_uu =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
+			if ($in->{'forgot'});
+	($in->{'return'}) = $request_uri_uu =~ /[?&]return=([^&]+)/;
+	($in->{'returned'}) = $request_uri_uu =~ /[?&]returned=([01])/
 		if ($ENV{'HTTP_REFERER'});
 	}
-return ($forgot, $username, $return, $returned);
 }
 
 # print_login_container()

@@ -3,6 +3,7 @@
 # Session login page
 
 use strict;
+no strict 'refs';
 
 our (%in, %gconfig, %tconfig, %text, %theme_text);
 our ($miniserv, $webprefix, $bg, $textbox_attrs, $hostname);
@@ -11,11 +12,10 @@ require("$ENV{'THEME_ROOT'}/authentic-lib.pl");
 require("$ENV{'THEME_ROOT'}/login-lib.pl");
 
 # Filter the username returned by the server, if needed
-$in{'failed'} = login_username_filter($in{'failed'});
+login_username_filter(\%in);
 
 # Populate other input data not passed back by the server
-($in{'forgot'}, $in{'username'}, $in{'return'}, $in{'returned'}) =
-	login_params_populate($in{'failed'});
+login_params_populate(\%in);
 
 # Print the pre-login text banner and exit
 if ($gconfig{'loginbanner'}              &&
