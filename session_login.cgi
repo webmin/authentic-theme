@@ -128,7 +128,7 @@ if ($miniserv->{'twofactor_provider'}) {
 		 'data-prefix' => $webprefix });
 	print ui_link_icon("$webprefix/", 
 		$theme_text{'theme_xhred_global_cancel'}, "times-circle-o",
-		{ class => 'warning' });
+		{ class => 'default' });
 	print ui_tag_end('div');
 	
 	print ui_tag_end('div'); # back side end
