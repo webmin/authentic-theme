@@ -97,7 +97,8 @@ print ui_button_icon($submit_button_text, "sign-in",
 	{ class => "primary", 'type' => 'submit', 'data-submit' => 'login' });
 if ($gconfig{'forgot_pass'}) {
 	print ui_button_icon($theme_text{'session_forgot'}, "unlock",
-			     {class => "grey", 'data-flipper'});
+			     { 'class' => "default", 'data-flipper' => 1,
+				   'data-webmin' => &get_webmin_base_url() });
 	}
 
 # Print post-login element
