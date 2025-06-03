@@ -758,7 +758,7 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 } elsif ($link =~ /\/virtualmin-wp-workbench/)
                 {
-                    $icon = '<i class="fa fa-fw fa2 fa2-workbench margined-left--05 margined-right-05"></i>';
+                    $icon = '<i class="fa fa-fw fa2 fa2-workbench margined-left--1 margined-right-1"></i>';
                 } elsif ($link =~ /\/virtual-server\/edit_newvalidate\.cgi/ &&
                          !&webmin_user_is_admin())
                 {
