@@ -1435,4 +1435,4 @@ session_resetepassreq=Ein Passwort ist erforderlich.
 session_pwdconf=Die Passwortbestätigung ist erforderlich.
 session_pwdmatch=Die Passwörter stimmen nicht überein.
 session_noid=Wiederherstellungs-ID wurde nicht gefunden!
-session_pwdsucc=Passwort erfolgreich geändert! Sie können sich nun mit dem neuen Passwort anmelden.
+session_pwdsucc=Passwort erfolgreich geändert! Sie können sich nun mit dem neuen Passwort anmelden!

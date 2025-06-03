@@ -1514,4 +1514,4 @@ session_resetepassreq=Password is required.
 session_pwdconf=Password confirmation is required.
 session_pwdmatch=Passwords do not match.
 session_noid=Recovery ID is not found!
-session_pwdsucc=Password changed successfully—you can now log in with your new password.
+session_pwdsucc=Password changed successfully—you can now log in with your new password!
