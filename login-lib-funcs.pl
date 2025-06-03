@@ -238,14 +238,13 @@ sub login_params_populate
 {
 my ($in) = @_;
 if ($gconfig{'forgot_pass'} && !$in->{'failed'}) {
-	my $request_uri_uu = &un_urlize(get_env('request_uri'));
-	($in->{'forgot'}) = $request_uri_uu =~ /[?&]forgot=([A-Fa-f0-9]+)/;
+	my $request_uri_u = &un_urlize(get_env('request_uri'));
+	($in->{'forgot'}) = $request_uri_u =~ /[?&]forgot=([A-Fa-f0-9]+)/;
 	($in->{'username'}) =
-		$request_uri_uu =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
+		$request_uri_u =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
 			if ($in->{'forgot'});
-	($in->{'return'}) = $request_uri_uu =~ /[?&]return=([^&]+)/;
-	$in->{'returned'} =
-		($request_uri_uu =~ /[?&]returned=password-reset-success\b/);
+	($in->{'return'}) = $request_uri_u =~ /[?&]return=([^&]+)/;
+	($in->{'returned'}) = $request_uri_u =~ /[?&]returned-username=([^&#]*)/;
 	}
 }
 

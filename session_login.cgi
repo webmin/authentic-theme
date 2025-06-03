@@ -56,10 +56,11 @@ print ui_tag_end('p');
 
 # Print the input fields
 print ui_tag_start('div', { 'class' => 'input-group form-group' });
-print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
+print &ui_textbox("user", $in{'failed'} || $in{'returned'}, 20, 0, undef,
 	"@{[$textbox_attrs->()]} ".
 	"placeholder='$theme_text{'theme_xhred_login_user'}'" .
-		(!$in{"failed"} && !$in{"return"} && !$in{'forgot'} ? 
+		(!$in{"failed"} && !$in{"return"} &&
+		 !$in{'forgot'} && !$in{'returned'} ? 
 			' autofocus' : ''), 'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
 print ui_icon('user');
@@ -70,7 +71,7 @@ print ui_tag_start('div', { 'class' => 'input-group form-group' });
 print &ui_password("pass", undef, 20, 0, undef,
 	"@{[$textbox_attrs->('off')]} ".
 	"placeholder='$theme_text{'theme_xhred_login_pass'}' ".
-		($in{"failed"} ? ' autofocus' : '')."", 
+		($in{"failed"} || $in{'returned'} ? ' autofocus' : '')."", 
 	'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
 print ui_icon('fa2-key');
