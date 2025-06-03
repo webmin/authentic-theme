@@ -1723,7 +1723,9 @@ sub theme_css_inline
 sub theme_forgot_url
 {
     my ($baseurl, $id, $username) = @_;
-    return "$baseurl/?forgot=".&urlize($id)."&username=".&urlize($username);
+    my $url = "$baseurl/?forgot=".&urlize($id)."&username=".&urlize($username);
+    $url .= "&return=".&urlize($in{'return'}) if ($in{'return'});
+    return $url;
 }
 
 sub theme_forgot_handler

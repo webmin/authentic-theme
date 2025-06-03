@@ -14,7 +14,8 @@ require("$ENV{'THEME_ROOT'}/login-lib.pl");
 $in{'failed'} = login_username_filter($in{'failed'});
 
 # Populate other input data not passed back by the server
-($in{'forgot'}, $in{'username'}) = login_params_populate($in{'failed'});
+($in{'forgot'}, $in{'username'}, $in{'return'}, $in{'returned'}) =
+	login_params_populate($in{'failed'});
 
 # Print the pre-login text banner and exit
 if ($gconfig{'loginbanner'}              &&
@@ -58,7 +59,8 @@ print ui_tag_start('div', { 'class' => 'input-group form-group' });
 print &ui_textbox("user", $in{'failed'}, 20, 0, undef,
 	"@{[$textbox_attrs->()]} ".
 	"placeholder='$theme_text{'theme_xhred_login_user'}'" .
-		(!$in{"failed"} ? ' autofocus' : ''), 'session_login', 1);
+		(!$in{"failed"} && !$in{"return"} ? 
+			' autofocus' : ''), 'session_login', 1);
 print ui_tag_start('span', { 'class' => 'input-group-addon' });
 print ui_icon('user');
 print ui_tag_end('span');
@@ -92,7 +94,8 @@ print ui_button_icon($theme_text{'login_signin'}, "sign-in",
 	{ class => "primary", 'type' => 'submit', 'data-submit' => 'login' });
 if ($gconfig{'forgot_pass'}) {
 	print ui_button_icon($theme_text{'session_forgot'}, "unlock",
-			     {class => "default", 'data-flipper'});
+			     { 'class' => 'default', 'data-flipper' => 1,
+				   'data-webmin' => &get_webmin_base_url() });
 	}
 
 # Print post-login element

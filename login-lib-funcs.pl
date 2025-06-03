@@ -97,8 +97,15 @@ if (&miniserv_using_default_cert()) {
 		       { 'data-defcert' => 1,
 		         'class' => 'faa-horizontal animated' });
 	}
+# Print success on password reset
+if ($in{'returned'}) {
+	# Password reset successful
+	print ui_alert($theme_text{'session_pwdsucc'},
+		       'success', ['fa-unlock', $theme_text{'login_success'}],
+		       { 'class' => 'faa-bounce animated' });
+	}
 # Print alert on failed login
-if ($in{'failed'}) {
+elsif ($in{'failed'}) {
 	# Two-factor authentication failed
 	if ($in{'twofactor_msg'}) {
 		print ui_alert(&theme_text('session_twofailed',
@@ -164,6 +171,14 @@ sub print_login_logo
 {
 # Default icon and title
 my $product_name = &get_product_name();
+local $root_directory = $root_directory;
+local $config_directory = $config_directory;
+# If request came from Usermin, use its branding instead
+if ($in{'return'}) {
+	$product_name = "usermin";
+	$root_directory =~ s|/webmin|/usermin|;
+	$config_directory =~ s|/webmin|/usermin|;
+	}
 my %def_brand = (
 	file => "$root_directory/images/brand_$product_name.svg",
 	title => $product_name eq "usermin"
@@ -220,14 +235,17 @@ return ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
 sub login_params_populate
 {
 my $failed = shift;
-my ($forgot, $username);
+my ($forgot, $username, $return, $returned);
 if ($gconfig{'forgot_pass'} && !$failed) {
 	my $request_uri_uu = &un_urlize(get_env('request_uri'));
 	($forgot) = $request_uri_uu =~ /[?&]forgot=([A-Fa-f0-9]+)/;
 	($username) = $request_uri_uu =~ /[?&]username=([\p{L}\p{N}\@\_\.\-]+)/
 		if ($forgot);
+	($return) = $request_uri_uu =~ /[?&]return=([^&]+)/;
+	($returned) = $request_uri_uu =~ /[?&]returned=([01])/
+		if ($ENV{'HTTP_REFERER'});
 	}
-return ($forgot, $username);
+return ($forgot, $username, $return, $returned);
 }
 
 # print_login_container()
@@ -267,6 +285,7 @@ if ($gconfig{'forgot_pass'}) {
 			{ 'class' => 'input-group form-group' });
 		print &ui_password("newpass", undef, 20, 0, undef,
 			"@{[$textbox_attrs->('off')]} ".
+			"data-return='".&quote_escape($in{'return'}, "'")."' ".
 			"placeholder='$theme_text{'session_resetpass1'}'",
 			'session_login', 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
@@ -306,6 +325,7 @@ if ($gconfig{'forgot_pass'}) {
 			{ 'class' => 'input-group form-group' });
 		print &ui_textbox("forgot", $in{'failed'}, 20, 0, undef,
 			"@{[$textbox_attrs->()]} ".
+			"data-return='".&quote_escape($in{'return'}, "'")."' ".
 			"placeholder='$theme_text{'theme_xhred_login_user'}'",
 			"session_login", 1);
 		print ui_tag_start('span', { 'class' => 'input-group-addon' });
