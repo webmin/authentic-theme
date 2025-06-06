@@ -1586,7 +1586,7 @@ sub embed_login_head
     print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
-    print ' <script type="text/javascript">try{const e=new URL(location.href),a=e.pathname,s=/\/(session_login|pam_login)\.cgi$/.test(a),r=e.searchParams.has("logout"),t=e.searchParams.has("returned-username")&&/^\S+$/.test(e.searchParams.get("returned-username"));(s&&r||t)&&(e.pathname=a.substring(0,a.lastIndexOf("/")),e.searchParams.delete("logout"),e.searchParams.delete("returned-username"),history.pushState({},"",e))}catch(e){}</script>', "\n";
+    print ' <script type="text/javascript">try{const e=new URL(location.href),a=e.pathname,s=/\/(session_login|pam_login)\.cgi$/.test(a),t=e.searchParams.has("logout"),r=e.searchParams.has("returned-username")&&/^\S+$/.test(e.searchParams.get("returned-username"));(s&&t||r)&&(e.pathname=a.substring(0,a.lastIndexOf("/")),e.pathname.endsWith("/")||(e.pathname+="/"),e.searchParams.delete("logout"),e.searchParams.delete("returned-username"),history.pushState({},"",e))}catch(e){}</script>', "\n";
     embed_favicon('login-page');
     print ' <title>', $title, '</title>', "\n";
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
