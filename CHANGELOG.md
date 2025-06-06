@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 24.02 (June 9, 2025)
+* Fix broken encoding for Japanese, Korean, and Chinese
+* Fix tab hotkeys so they don't trigger when other modifier keys are pressed
+* Fix to explicitly set MIME types for scripts and stylesheets
+
 #### Version 24.01 (June 2, 2025)
 * Add password reset support in Usermin
 * Fix to correctly identify new menu layout for Virtualmin
