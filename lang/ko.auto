@@ -1,1439 +1,1439 @@
 body_cp=CPU
-body_cpu=CPUë¡ë íê· 
-body_cpuinfo=íë¡ì¸ì ì ë³´
-body_cputemps=CPU ì¨ë
-body_cputype=$5, $8 ì½ì´
-body_cputype1=$5, $8 ì½ì´
-body_disk=ë¡ì»¬ ëì¤í¬ ê³µê°
-body_driveerr=1 ë¬ë¬ ì¤ë¥!
-body_drivefailed=ì¤ë§í¸ ê²ì¬ì ì¤í¨íìµëë¤!
-body_drivetemps=ì´ì  ì¨ë
-body_firewall=ë°©íë²½ ë²ì 
-body_header0=ìì¤í ì ë³´
-body_header1=ê³ì  ì ë³´
-body_host=ìì¤í í¸ì¤í¸ ì´ë¦
-body_kernel=ì»¤ëê³¼ CPU
-body_kernelon=$3ìì $1 $2
-body_load=$1 (1 ë¶) $2 (5 ë¶) $3 (15 ë¶)
-body_os=ì´ì ì²´ì 
-body_procs=íë¡ì¸ì¤ ì¤í
-body_real=ì¤ì  ë©ëª¨ë¦¬
-body_time=ìì¤í ìê°
-body_updates=í¨í¤ì§ ìë°ì´í¸
-body_updays=$1 ì¼, $2 ìê°, $3 ë¶
-body_uphours=$1 ìê°, $2 ë¶
-body_upmins=1 ë¶
-body_upneed=$1 í¨í¤ì§ ìë°ì´í¸ê° ê°ë¥í©ëë¤
-body_upneed1=$1 í¨í¤ì§ ìë°ì´í¸ ê°ë¥
-body_upok=ì¤ì¹ë ëª¨ë  í¨í¤ì§ê° ìµì ìëë¤
-body_upsec=$1 í¨í¤ì§ ìë°ì´í¸ê° ìì¼ë©° ê·¸ ì¤ $2ë ë³´ì ìë°ì´í¸ìëë¤.
-body_upsec1=$1 í¨í¤ì§ ìë°ì´í¸ê° ìì¼ë©° ê·¸ ì¤ $2ë ë³´ì ìë°ì´í¸ìëë¤.
-body_upsec2=$1 í¨í¤ì§ ìë°ì´í¸ê° ìì¼ë©° ê·¸ ì¤ $2ë ë³´ì ìë°ì´í¸ìëë¤.
-body_upsec3=$1 í¨í¤ì§ ìë°ì´í¸ê° ìì¼ë©° ê·¸ ì¤ $2ë ë³´ì ìë°ì´í¸ìëë¤.
-body_uptime=ìì¤í ê°ë ìê°
-body_used=ì´ $1 / $2 ì¬ì©
-body_used_and_free=ì´ $1 / $2 ë¬´ë£ / $3 ì¬ì©
-body_usermin=Usermin ë²ì 
-body_virt=ê°ì ë©ëª¨ë¦¬
-body_webmin=Webmin ë²ì 
+body_cpu=CPU로드 평균
+body_cpuinfo=프로세서 정보
+body_cputemps=CPU 온도
+body_cputype=$5, $8 코어
+body_cputype1=$5, $8 코어
+body_disk=로컬 디스크 공간
+body_driveerr=1 달러 오류!
+body_drivefailed=스마트 검사에 실패했습니다!
+body_drivetemps=운전 온도
+body_firewall=방화벽 버전
+body_header0=시스템 정보
+body_header1=계정 정보
+body_host=시스템 호스트 이름
+body_kernel=커널과 CPU
+body_kernelon=$3에서 $1 $2
+body_load=$1 (1 분) $2 (5 분) $3 (15 분)
+body_os=운영 체제
+body_procs=프로세스 실행
+body_real=실제 메모리
+body_time=시스템 시간
+body_updates=패키지 업데이트
+body_updays=$1 일, $2 시간, $3 분
+body_uphours=$1 시간, $2 분
+body_upmins=1 분
+body_upneed=$1 패키지 업데이트가 가능합니다
+body_upneed1=$1 패키지 업데이트 가능
+body_upok=설치된 모든 패키지가 최신입니다
+body_upsec=$1 패키지 업데이트가 있으며 그 중 $2는 보안 업데이트입니다.
+body_upsec1=$1 패키지 업데이트가 있으며 그 중 $2는 보안 업데이트입니다.
+body_upsec2=$1 패키지 업데이트가 있으며 그 중 $2는 보안 업데이트입니다.
+body_upsec3=$1 패키지 업데이트가 있으며 그 중 $2는 보안 업데이트입니다.
+body_uptime=시스템 가동 시간
+body_used=총 $1 / $2 사용
+body_used_and_free=총 $1 / $2 무료 / $3 사용
+body_usermin=Usermin 버전
+body_virt=가상 메모리
+body_webmin=Webmin 버전
 
-left_favorites=ì¦ê²¨ ì°¾ê¸°
-left_favorites_no=ìì§ ì¦ê²¨ ì°¾ê¸°ê° ì¶ê°ëì§ ìììµëë¤. ..
-left_feedback=ìê²¬ ë³´ë´ê¸°
-theme_xhred_global_sys_info=ìì¤í ì ë³´
-left_others=ê¸°í
-left_refresh_modules=ëª¨ë ìë¡ ê³ ì¹¨
-left_search=ê²ì
-left_statistics=ìì¤í íµê³
+left_favorites=즐겨 찾기
+left_favorites_no=아직 즐겨 찾기가 추가되지 않았습니다. ..
+left_feedback=의견 보내기
+theme_xhred_global_sys_info=시스템 정보
+left_others=기타
+left_refresh_modules=모듈 새로 고침
+left_search=검색
+left_statistics=시스템 통계
 
-login_danger=ìí!
-login_message=ìë²ì ë¡ê·¸ì¸íë ¤ë©´ ì¬ì©ì ì´ë¦ê³¼ ë¹ë°ë²í¸ë¥¼ ìë ¥í´ì¼í©ëë¤
+login_danger=위험!
+login_message=서버에 로그인하려면 사용자 이름과 비밀번호를 입력해야합니다
 lost_message=계정에 복구 이메일이 설정되어 있는 경우 이 양식을 사용하여 비밀번호 재설정 링크를 자신에게 보낼 수 있습니다
-reset_message=ì¬ì©ì <tt>$1</tt>ì ë¹ë°ë²í¸ë¥¼ ì¬ì¤ì íë ¤ê³  í©ëë¤
-theme_xhred_login_pass=ìí¸
-login_save=ë  ê¸°ìµí´
-login_recover=ë¹ë°ë²í¸ ì¬ì¤ì  ìì²­
-login_back=ëìê°ê¸°
-login_signin=ë¡ê·¸ì¸
-login_success=ì±ê³µ!
-theme_xhred_login_token=í í°
-theme_xhred_login_user=ì¬ì©ì ì´ë¦
-login_warning=ê²½ê³ !
+reset_message=사용자 <tt>$1</tt>의 비밀번호를 재설정하려고 합니다
+theme_xhred_login_pass=암호
+login_save=날 기억해
+login_recover=비밀번호 재설정 요청
+login_back=돌아가기
+login_signin=로그인
+login_success=성공!
+theme_xhred_login_token=토큰
+theme_xhred_login_user=사용자 이름
+login_warning=경고!
 
-right_aliases=ë³ëª ìë²
-right_bw=ì¬ì© ë° ì í ë°´ë
-right_dom=ìë² ì´ë¦
-right_faliases=ë©ì¼ ë³ì¹­
-right_fdbs=ë°ì´í°ë² ì´ì¤
-right_fdoms=ê°ì ìë²
-right_from=ìì ë¡ê·¸ì¸
-right_fusers2=FTP ì¬ì©ì
-right_fusers=ë©ì¼/FTP ì¬ì©ì
-right_fvm2=ê°ì ë¨¸ì 
-right_fweb=ê°ì ì¹ ì¬ì´í¸
-right_licenceheader_vm2=Cloudmin ë¼ì´ì¼ì¤
-right_login=ë¡ ë¡ê·¸ì¸
-right_not=ë¯¸ì¤ì¹
-right_of=2 ë¬ë¬ ì¤ 1 ë¬ë¬
-right_quota=ëì¤í¬ ì¬ì©ë ë° í ë¹ë
-right_reselip=(ë¦¬ìë¬ $1)
-right_sharedip=(ê³µì  IP)
-right_slcheck=Cloudmin ë¼ì´ì¼ì¤ ì¬íì¸
-right_subs=ìë¸ ìë²
-right_virtdocs2=ì¶ê° ë¬¸ì
-right_virtualmin=Virtualmin ë²ì 
-right_vlcheck=Virtualmin ë¼ì´ì¼ì¤ ì¬íì¸
-right_vm2=Cloudmin ë²ì 
+right_aliases=별명 서버
+right_bw=사용 및 제한 밴드
+right_dom=서버 이름
+right_faliases=메일 별칭
+right_fdbs=데이터베이스
+right_fdoms=가상 서버
+right_from=에서 로그인
+right_fusers2=FTP 사용자
+right_fusers=메일/FTP 사용자
+right_fvm2=가상 머신
+right_fweb=가상 웹 사이트
+right_licenceheader_vm2=Cloudmin 라이센스
+right_login=로 로그인
+right_not=미설치
+right_of=2 달러 중 1 달러
+right_quota=디스크 사용량 및 할당량
+right_reselip=(리셀러 $1)
+right_sharedip=(공유 IP)
+right_slcheck=Cloudmin 라이센스 재확인
+right_subs=서브 서버
+right_virtdocs2=추가 문서
+right_virtualmin=Virtualmin 버전
+right_vlcheck=Virtualmin 라이센스 재확인
+right_vm2=Cloudmin 버전
 
-theme_xhred_session_failed=ë¡ê·¸ì¸ ì¤í¨. ë¤ì ìëíì­ìì¤.
-session_logout=ë¡ê·¸ ììì ì±ê³µíìµëë¤. ìë ììì ì¬ì©íì¬ ë¤ì ë¡ê·¸ì¸íì­ìì¤.
-session_timed_out=$1 ë¶ ëì íëì´ ìì¼ë©´ ì¸ì ìê°ì´ ì´ê³¼ëììµëë¤.
-session_twofailed=ì´ì¤ ì¸ì¦ ì¤í¨ : $1
+theme_xhred_session_failed=로그인 실패. 다시 시도하십시오.
+session_logout=로그 아웃에 성공했습니다. 아래 양식을 사용하여 다시 로그인하십시오.
+session_timed_out=$1 분 동안 활동이 없으면 세션 시간이 초과되었습니다.
+session_twofailed=이중 인증 실패 : $1
 
-settings_right_options=ìµì
-settings_right_restore_defaults=ê¸°ë³¸ê°ì¼ë¡ ë³µì
-settings_right_restored=ë³µì
-settings_right_restoring=ë³µì
-settings_right_saved=ì ì¥ëììµëë¤
-settings_right_saving=ì ì½
+settings_right_options=옵션
+settings_right_restore_defaults=기본값으로 복원
+settings_right_restored=복원
+settings_right_restoring=복원
+settings_right_saved=저장되었습니다
+settings_right_saving=절약
 
-settings_right_theme_extensions=íë§ íì¥
-settings_right_theme_extensions_title=íë§ íì¥
-settings_right_file_edit=íì¥ íì¼ í¸ì§ :
-settings_right_extensions_title=íë§ê° ê´ë²ìí ëìì¸ì¼ë¡ ì¸í°íì´ì¤ì ëì ë¶ë¶ì ì½ê² ì¡°ì í  ì ììµëë¤.
+settings_right_theme_extensions=테마 확장
+settings_right_theme_extensions_title=테마 확장
+settings_right_file_edit=확장 파일 편집 :
+settings_right_extensions_title=테마가 광범위한 디자인으로 인터페이스의 대상 부분을 쉽게 조작 할 수 있습니다.
 
-theme_xhred_settings_right_theme_logos=íë§ ë¡ê³ 
-theme_xhred_settings_right_theme_logos_title=íë§ ë¡ê³ 
-settings_right_logos_title=ì¸ì¦ë ì¬ì©ìì ì¸ì¦ëì§ ìì ì¬ì©ì ëª¨ë ì¬ê¸°ìì íë§ ë¡ê³ ë¥¼ ì½ê² ì¤ì í  ì ììµëë¤. ê¶ì¥ëë ë¡ê³  í¬ê¸°ë <em>180x90</em>í½ììëë¤.
-settings_right_logo_authenticated_users=ì¸ì¦ ë ì¬ì©ìë¥¼ìí ë¡ê³ 
-settings_right_logo_unauthenticated_users=ì¸ì¦ëì§ ìì ì¬ì©ìë¥¼ìí ë¡ê³ 
-settings_right_logos_error=ìë¡ëí íì¼ì ì´ë¯¸ì§ê° ìëëë¤
+theme_xhred_settings_right_theme_logos=테마 로고
+theme_xhred_settings_right_theme_logos_title=테마 로고
+settings_right_logos_title=인증된 사용자와 인증되지 않은 사용자 모두 여기에서 테마 로고를 쉽게 설정할 수 있습니다. 권장되는 로고 크기는 <em>180x90</em>픽셀입니다.
+settings_right_logo_authenticated_users=인증 된 사용자를위한 로고
+settings_right_logo_unauthenticated_users=인증되지 않은 사용자를위한 로고
+settings_right_logos_error=업로드한 파일은 이미지가 아닙니다
 
-settings_right_current_theme=íì¬ íë§
-settings_right_title=ì´ íì´ì§ìì <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>ì ëí ìµìì êµ¬ì± í  ì ììµëë¤. íë§ ìë°ì´í¸ì ì¤ì ì´ ì ì¥ë©ëë¤.
-settings_right_theme_left_configuration_title=íë§ êµ¬ì±
-settings_right_theme_left_extensions_title=íë§ íì¥ í¸ì§ê¸°
-settings_right_theme_left_logo_title=íë§ ë¡ê³  ì»¨í¸ë¡¤
-settings_right_theme_configurable_options_title=ì¸ì¦ íë§ì ëí´ êµ¬ì± ê°ë¥í ìµì
+settings_right_current_theme=현재 테마
+settings_right_title=이 페이지에서 <a href="https://github.com/authentic-theme/authentic-theme" target="_blank">Authentic Theme</a>에 대한 옵션을 구성 할 수 있습니다. 테마 업데이트시 설정이 저장됩니다.
+settings_right_theme_left_configuration_title=테마 구성
+settings_right_theme_left_extensions_title=테마 확장 편집기
+settings_right_theme_left_logo_title=테마 로고 컨트롤
+settings_right_theme_configurable_options_title=인증 테마에 대해 구성 가능한 옵션
 
-settings_right_hotkey_custom_options_description=ì¬ì©ì ì ì ë§í¬ë¥¼ ì¬ì©íë©´ ì í¨í í¨ë <code>URL</code>ì ë¹ ë¥´ê² ì¡ì¸ì¤íê¸° ìí´ <code>1</code>ìì <code>9</code>ê¹ì§ì ì«ìë¥¼ ì¬ì©í  ì ììµëë¤. <code>URL</code> code>ë íì¬ ì´ë ¤ ìë íì´ì§ìì ì¶ì¶í  ì ììµëë¤. ìë¥¼ ë¤ì´ Apache ëª¨ëë¡ ë¹ ë¥´ê² ì ííë ¤ë©´ <code>apache</code>ë¥¼ <code>Custom link 1</code> íëë¡ ì¤ì í©ëë¤. ê¸°ë³¸ ìì ì í¤ê° <code>Alt</code>ë¡ ì¤ì ë ê²½ì° <code>Alt + 1</code>ì í´ë¦­íë©´ Apache ëª¨ëì´ ì´ë¦½ëë¤.
-settings_hotkey_custom_1_user=ë§ì¶¤ ë§í¬ <code>1</code>
-settings_hotkey_custom_2_user=ë§ì¶¤ ë§í¬ <code>2</code>
-settings_hotkey_custom_3_user=ë§ì¶¤ ë§í¬ <code>3</code>
-settings_hotkey_custom_4_user=ë§ì¶¤ ë§í¬ <code>4</code>
-settings_hotkey_custom_5_user=ë§ì¶¤ ë§í¬ <code>5</code>
-settings_hotkey_custom_6_user=ë§ì¶¤ ë§í¬ <code>6</code>
-settings_hotkey_custom_7_user=ë§ì¶¤ ë§í¬ <code>7</code>
-settings_hotkey_custom_8_user=ë§ì¶¤ ë§í¬ <code>8</code>
-settings_hotkey_custom_9_user=ë§ì¶¤ ë§í¬ <code>9</code>
+settings_right_hotkey_custom_options_description=사용자 정의 링크를 사용하면 유효한 패널 <code>URL</code>에 빠르게 액세스하기 위해 <code>1</code>에서 <code>9</code>까지의 숫자를 사용할 수 있습니다. <code>URL</code> code>는 현재 열려 있는 페이지에서 추출할 수 있습니다. 예를 들어 Apache 모듈로 빠르게 전환하려면 <code>apache</code>를 <code>Custom link 1</code> 필드로 설정합니다. 기본 수정자 키가 <code>Alt</code>로 설정된 경우 <code>Alt + 1</code>을 클릭하면 Apache 모듈이 열립니다.
+settings_hotkey_custom_1_user=맞춤 링크 <code>1</code>
+settings_hotkey_custom_2_user=맞춤 링크 <code>2</code>
+settings_hotkey_custom_3_user=맞춤 링크 <code>3</code>
+settings_hotkey_custom_4_user=맞춤 링크 <code>4</code>
+settings_hotkey_custom_5_user=맞춤 링크 <code>5</code>
+settings_hotkey_custom_6_user=맞춤 링크 <code>6</code>
+settings_hotkey_custom_7_user=맞춤 링크 <code>7</code>
+settings_hotkey_custom_8_user=맞춤 링크 <code>8</code>
+settings_hotkey_custom_9_user=맞춤 링크 <code>9</code>
 
-settings_navigation_color=ìì íë í¸
-settings_loader_top=íë©´ ìë¨ì íì´ì§ ì§í ë¡ë ì¬ì©
-settings_loader_left=íì ë©ë´ì ì¤í¼ë ì¬ì©
-settings_right_reload=í­ ì¤ìì¹ì ê¸°ë³¸ íì´ì§ë¡ë
+settings_navigation_color=색상 팔레트
+settings_loader_top=화면 상단에 페이지 진행 로더 사용
+settings_loader_left=탐색 메뉴에 스피너 사용
+settings_right_reload=탭 스위치에 기본 페이지로드
 
-settings_leftmenu_section_hide_refresh_modules=ìë¡ ê³ ì¹¨ ëª¨ë ë§í¬ ì¨ê¸°ê¸°
-settings_leftmenu_section_hide_unused_modules=ì¬ì©íì§ ìë ëª¨ë ì¹ì ì¨ê¸°ê¸°
-settings_favorites=ì¦ê²¨ ì°¾ê¸° ë²í¼ íì
-settings_leftmenu_button_language=ì¸ì´ íì ë²í¼
-settings_leftmenu_button_refresh=ìë¡ ê³ ì¹¨ ë²í¼ íì
+settings_leftmenu_section_hide_refresh_modules=새로 고침 모듈 링크 숨기기
+settings_leftmenu_section_hide_unused_modules=사용하지 않는 모듈 섹션 숨기기
+settings_favorites=즐겨 찾기 버튼 표시
+settings_leftmenu_button_language=언어 표시 버튼
+settings_leftmenu_button_refresh=새로 고침 버튼 표시
 
-settings_theme_options_button=íë§ ì¤ì  íì ë²í¼
+settings_theme_options_button=테마 설정 표시 버튼
 
-settings_hotkeys_active=í  ì ìê² íë¤
-settings_hotkey_toggle_modifier=ìì ì í¤
-settings_hotkey_toggle_key_webmin=Webmin ë©ë´ ë¶ë¬ì¤ê¸°
-settings_hotkey_toggle_key_virtualmin=Virtualmin ë©ë´ ë¡ë
-settings_hotkey_toggle_key_cloudmin=Cloudmin ë©ë´ ë¶ë¬ì¤ê¸°
-settings_hotkey_toggle_key_usermin=Usermin ë©ë´ ë¶ë¬ì¤ê¸°
-settings_hotkey_toggle_key_webmail=ë©ì¼ ë¡ë ë©ë´
-settings_hotkey_sysinfo=ëìë³´ë ì´ê¸°
-settings_hotkey_shell=ëë¡­ë¤ì´ í°ë¯¸ë ì´ê¸°
-settings_hotkey_favorites=ì¦ê²¨ì°¾ê¸° ì´ê¸°
-settings_hotkey_focus_search=ê²ì íëì ì§ì¤
-settings_hotkey_reload=íì¬ íì´ì§ ìë¡ ê³ ì¹¨
+settings_hotkeys_active=할 수 있게 하다
+settings_hotkey_toggle_modifier=수정자 키
+settings_hotkey_toggle_key_webmin=Webmin 메뉴 불러오기
+settings_hotkey_toggle_key_virtualmin=Virtualmin 메뉴 로드
+settings_hotkey_toggle_key_cloudmin=Cloudmin 메뉴 불러오기
+settings_hotkey_toggle_key_usermin=Usermin 메뉴 불러오기
+settings_hotkey_toggle_key_webmail=메일 로드 메뉴
+settings_hotkey_sysinfo=대시보드 열기
+settings_hotkey_shell=드롭다운 터미널 열기
+settings_hotkey_favorites=즐겨찾기 열기
+settings_hotkey_focus_search=검색 필드에 집중
+settings_hotkey_reload=현재 페이지 새로 고침
 
-settings_sysinfo_easypie_charts=ì°¨í¸ íì
-settings_sysinfo_theme_updates=ì íµ íë§ ìë°ì´í¸ íì¸
-settings_sysinfo_drive_status_on_new_line=ì ì¤ì ê°ê° CPU ë° ëë¼ì´ë¸ ìí íì
-settings_sysinfo_link_mini=ëì ë³´ë ë§í¬ë¥¼ ë²í¼ì¼ë¡ íì
+settings_sysinfo_easypie_charts=차트 표시
+settings_sysinfo_theme_updates=정통 테마 업데이트 확인
+settings_sysinfo_drive_status_on_new_line=새 줄에 각각 CPU 및 드라이브 상태 표시
+settings_sysinfo_link_mini=대시 보드 링크를 버튼으로 표시
 
-settings_right_page_defaults_title=ê¸°ë³¸ íì´ì§
-settings_right_default_tab_webmin=Webminì ë¡ê·¸ì¸ í í ê¸°ë³¸ í­
-settings_right_default_tab_usermin=Userminì ë¡ê·¸ì¸ í í ê¸°ë³¸ í­
-settings_right_virtualmin_default=Virtualminì ê¸°ë³¸ íì´ì§
-settings_right_cloudmin_default=Cloudminì ê¸°ë³¸ íì´ì§
+settings_right_page_defaults_title=기본 페이지
+settings_right_default_tab_webmin=Webmin에 로그인 한 후 기본 탭
+settings_right_default_tab_usermin=Usermin에 로그인 한 후 기본 탭
+settings_right_virtualmin_default=Virtualmin의 기본 페이지
+settings_right_cloudmin_default=Cloudmin의 기본 페이지
 
-settings_right_clear_local_cache=ìºì ì§ì°ê¸°
-settings_side_slider_fixed=í­ì ë³´ì´ê²
-settings_hotkey_toggle_slider=ì¸¡ë©´ ì¬ë¼ì´ë ê°ìì± ì í
+settings_right_clear_local_cache=캐시 지우기
+settings_side_slider_fixed=항상 보이게
+settings_hotkey_toggle_slider=측면 슬라이더 가시성 전환
 
-settings_side_slider_enabled=ì¬ë¼ì´ë ì¬ì©
-settings_leftmenu_user_html=HTML ì¤ ëí« íì
+settings_side_slider_enabled=슬라이더 사용
+settings_leftmenu_user_html=HTML 스 니펫 표시
 
-theme_changelog=ë³ê²½ ë¡ê·¸
-theme_conference=íë§ ì»¨í¼ë°ì¤
-theme_development_support=ê°ë° ì§ì
-theme_donate=ê¸°ë¶
-theme_download=ë¤ì´ë¡ë
-theme_name=ì íµ íë§
-theme_update=ìµì  ì ë³´
-theme_update_available=ì¬ì© ê°ë¥í ìµì  ë¦´ë¦¬ì¤
-theme_update_notice=ê³µì§ ì¬í­
-theme_version=ì íµ íë§ ë²ì 
+theme_changelog=변경 로그
+theme_conference=테마 컨퍼런스
+theme_development_support=개발 지원
+theme_donate=기부
+theme_download=다운로드
+theme_name=정통 테마
+theme_update=최신 정보
+theme_update_available=사용 가능한 최신 릴리스
+theme_update_notice=공지 사항
+theme_version=정통 테마 버전
 
 # 17.40
-theme_xhred_global_error=ì¤ë¥
-theme_global_warning=ê²½ê³ 
-theme_global_success=ì±ê³µ
-theme_global_info=ì ë³´
-sysinfo_system_status_warning=<strong>ìì¤í ì ë³´</strong>ë¥¼ íìíë ¤ë©´ ì¬ì©ì ì¤ì ìì <em>ìì¤í ìí</em> ëª¨ëì íì±íí´ì¼í©ëë¤.
-settings_leftmenu_user_html_privileged=ê´ë¦¬ììê²ë§ HTML ì¤ ëí« íì
-theme_xhred_sysinfo_wmdocs=Webmin ì¤ëªì
-theme_xhred_sysinfo_vmdocs=ë²ì¶ì¼ë¯¼ ë¬¸ì
-theme_xhred_sysinfo_cmdocs=í´ë¼ì°ëë¯¼ ë¬¸ì
+theme_xhred_global_error=오류
+theme_global_warning=경고
+theme_global_success=성공
+theme_global_info=정보
+sysinfo_system_status_warning=<strong>시스템 정보</strong>를 표시하려면 사용자 설정에서 <em>시스템 상태</em> 모듈을 활성화해야합니다.
+settings_leftmenu_user_html_privileged=관리자에게만 HTML 스 니펫 표시
+theme_xhred_sysinfo_wmdocs=Webmin 설명서
+theme_xhred_sysinfo_vmdocs=버추얼민 문서
+theme_xhred_sysinfo_cmdocs=클라우드민 문서
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
-theme_fileformat_js=ìë° ì¤í¬ë¦½í¸
-theme_fileformat_plain_text=ì¼ë° íì¤í¸
+theme_fileformat_js=자바 스크립트
+theme_fileformat_plain_text=일반 텍스트
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
-theme_xhred_titles_dashboard=ê³ê¸°ë°
-theme_xhred_titles_mail=ì°í¸
+theme_xhred_titles_dashboard=계기반
+theme_xhred_titles_mail=우편
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=ê¸°ë¤ë ¤ì£¼ì¸ì. ..
-theme_xhred_filemanager_copying_selected=ë³µì¬ê° ì íëììµëë¤.
-theme_xhred_filemanager_cutting_selected=ì ë¨ì´ ì íëììµëë¤.
-theme_xhred_filemanager_pasting_selected=í´ë¦½ ë³´ëìì ë¶ì¬ ë£ê¸°
-theme_xhred_filemanager_unpacking_archive=ì íí íì¼ì ìì¶ì íë ë¤.
-theme_xhred_filemanager_deleting_selected=ì­ì ê° ì íëììµëë¤.
-theme_xhred_filemanager_renaming_selected=ì´ë¦ ë°ê¾¸ê¸°ê° ì íëììµëë¤.
-theme_xhred_filemanager_creating_directory=ëë í ë¦¬ ë§ë¤ê¸°
-theme_xhred_filemanager_creating_file=íì¼ ë§ë¤ê¸°
-theme_xhred_filemanager_downloading_from=ìì ë¤ì´ë¡ë
-theme_xhred_filemanager_setting_permissions=ì íí íì¼ì ëí ê¶íì <tt>%value</tt> ë¡ ì¤ì í©ëë¤.
-theme_xhred_filemanager_changing_ownership=ì íí íì¼ì ìì ê¶ì <tt>%value</tt> (ì¼)ë¡ ë³ê²½í©ëë¤.
-theme_xhred_filemanager_compressing_selected=ë°±ê·¸ë¼ì´ëìì ìì¶ì ì ííìµëë¤.
-theme_xhred_filemanager_refreshing=ëë í ë¦¬ ë´ì©ì ìë¡ ê³ ì¹©ëë¤.
-theme_xhred_filemanager_copying_successful=í´ë¦½ ë³´ëì ë³µì¬íìµëë¤.
-theme_xhred_filemanager_cutting_successful=í´ë¦½ ë³´ëë¡ ìë¼ ë´ê¸°
-theme_xhred_filemanager_pasting_successful=í´ë¦½ ë³´ëìì ë¶ì¬ ë£ê¸°ì ì±ê³µíìµëë¤.
-theme_xhred_filemanager_bookmark_success=<tt>%value</tt> ëë í ë¦¬ê° ë¶ë§í¬ì ì±ê³µì ì¼ë¡ ì¶ê°ëììµëë¤.
-theme_xhred_filemanager_searching=/directories. íì¼ì ì´ë¦ê³¼ ì¼ì¹íë <tt>%value</tt> ê²ìí©ëë¤.
-theme_xhred_filemanager_search_founds=ì¼ì¹íë <strong>%value</strong> ììµëë¤.
-theme_xhred_filemanager_search_found=<strong>1</strong> ì¼ì¹ë¥¼ ì°¾ììµëë¤.
-theme_xhred_filemanager_search_no_matches=ê²ì ê²°ê³¼ê° ììµëë¤.
-theme_xhred_filemanager_nothing_is_selected=ìë¬´ê²ë ì íëì§ ìììµëë¤!
-theme_xhred_filemanager_saving_file=íì¼ <tt>%value</tt> ì ì¥ ì¤ìëë¤.
-theme_xhred_filemanager_file_saved=íì¼ <tt>%value</tt> ì ì¥ëììµëë¤.
-theme_xhred_filemanager_not_editable=ì´ ì íì ì íì í¸ì§ í  ì ììµëë¤.
-theme_xhred_filemanager_not_decompressable=ì´ íìì íì¼ì ìì¶ í´ì  í  ì ììµëë¤.
-theme_xhred_filemanager_no_selection_to_copy=ë³µì¬ í  ëë í ë¦¬/íì¼ì´ ììµëë¤.
-theme_xhred_filemanager_no_selection_to_cut=ìë¼ë¼ ëë í ë¦¬/íì¼ì´ ììµëë¤.
-theme_xhred_filemanager_empty_clipboard=í´ë¦½ ë³´ëê° ë¹ì´ ììµëë¤.
+theme_xhred_global_please_wait=기다려주세요. ..
+theme_xhred_filemanager_copying_selected=복사가 선택되었습니다.
+theme_xhred_filemanager_cutting_selected=절단이 선택되었습니다.
+theme_xhred_filemanager_pasting_selected=클립 보드에서 붙여 넣기
+theme_xhred_filemanager_unpacking_archive=선택한 파일의 압축을 풉니 다.
+theme_xhred_filemanager_deleting_selected=삭제가 선택되었습니다.
+theme_xhred_filemanager_renaming_selected=이름 바꾸기가 선택되었습니다.
+theme_xhred_filemanager_creating_directory=디렉토리 만들기
+theme_xhred_filemanager_creating_file=파일 만들기
+theme_xhred_filemanager_downloading_from=에서 다운로드
+theme_xhred_filemanager_setting_permissions=선택한 파일에 대한 권한을 <tt>%value</tt> 로 설정합니다.
+theme_xhred_filemanager_changing_ownership=선택한 파일의 소유권을 <tt>%value</tt> (으)로 변경합니다.
+theme_xhred_filemanager_compressing_selected=백그라운드에서 압축을 선택했습니다.
+theme_xhred_filemanager_refreshing=디렉토리 내용을 새로 고칩니다.
+theme_xhred_filemanager_copying_successful=클립 보드에 복사했습니다.
+theme_xhred_filemanager_cutting_successful=클립 보드로 잘라 내기
+theme_xhred_filemanager_pasting_successful=클립 보드에서 붙여 넣기에 성공했습니다.
+theme_xhred_filemanager_bookmark_success=<tt>%value</tt> 디렉토리가 북마크에 성공적으로 추가되었습니다.
+theme_xhred_filemanager_searching=/directories. 파일의 이름과 일치하는 <tt>%value</tt> 검색합니다.
+theme_xhred_filemanager_search_founds=일치하는 <strong>%value</strong> 있습니다.
+theme_xhred_filemanager_search_found=<strong>1</strong> 일치를 찾았습니다.
+theme_xhred_filemanager_search_no_matches=검색 결과가 없습니다.
+theme_xhred_filemanager_nothing_is_selected=아무것도 선택되지 않았습니다!
+theme_xhred_filemanager_saving_file=파일 <tt>%value</tt> 저장 중입니다.
+theme_xhred_filemanager_file_saved=파일 <tt>%value</tt> 저장되었습니다.
+theme_xhred_filemanager_not_editable=이 유형의 선택을 편집 할 수 없습니다.
+theme_xhred_filemanager_not_decompressable=이 형식의 파일을 압축 해제 할 수 없습니다.
+theme_xhred_filemanager_no_selection_to_copy=복사 할 디렉토리/파일이 없습니다.
+theme_xhred_filemanager_no_selection_to_cut=잘라낼 디렉토리/파일이 없습니다.
+theme_xhred_filemanager_empty_clipboard=클립 보드가 비어 있습니다.
 
-theme_xhred_filemanager_successful_extraction=ì íí íì¼ì ì¶ì¶íìµëë¤.
-theme_xhred_filemanager_successful_deletion=ì­ì ê° ì±ê³µíìµëë¤.
-theme_xhred_filemanager_successful_permissions=ê¶íì´ ì±ê³µì ì¼ë¡ ë³ê²½ëììµëë¤.
-theme_xhred_filemanager_successful_ownership=ìì ê¶ì´ ì±ê³µì ì¼ë¡ ë³ê²½ëììµëë¤.
-theme_xhred_filemanager_successful_compression=ìì¶ì´ ìë£ëììµëë¤.
-theme_xhred_filemanager_successful_directory_creation=<tt>%value</tt> ëë í°ë¦¬ê° ì±ê³µì ì¼ë¡ ìì±ëììµëë¤.
-theme_xhred_filemanager_successful_file_creation=<tt>%value</tt> íì¼ì´ ì±ê³µì ì¼ë¡ ìì±ëììµëë¤.
+theme_xhred_filemanager_successful_extraction=선택한 파일을 추출했습니다.
+theme_xhred_filemanager_successful_deletion=삭제가 성공했습니다.
+theme_xhred_filemanager_successful_permissions=권한이 성공적으로 변경되었습니다.
+theme_xhred_filemanager_successful_ownership=소유권이 성공적으로 변경되었습니다.
+theme_xhred_filemanager_successful_compression=압축이 완료되었습니다.
+theme_xhred_filemanager_successful_directory_creation=<tt>%value</tt> 디렉터리가 성공적으로 생성되었습니다.
+theme_xhred_filemanager_successful_file_creation=<tt>%value</tt> 파일이 성공적으로 생성되었습니다.
 
-theme_xhred_notifications_packages_updates=í¨í¤ì§ ìë°ì´í¸
-theme_xhred_notifications_theme_update=íë§ ìë°ì´í¸
-theme_xhred_notifications_theme_update_message=<strong>Authentic Theme</strong> ì ìë¡ì´ ë²ì  <em>%v</em> ë¥¼ ì¬ì©í  ì ììµëë¤. ìë°ì´í¸íì­ìì¤.
-theme_xhred_notifications_firewall_update=ë°©íë²½ ìë°ì´í¸
+theme_xhred_notifications_packages_updates=패키지 업데이트
+theme_xhred_notifications_theme_update=테마 업데이트
+theme_xhred_notifications_theme_update_message=<strong>Authentic Theme</strong> 의 새로운 버전 <em>%v</em> 를 사용할 수 있습니다. 업데이트하십시오.
+theme_xhred_notifications_firewall_update=방화벽 업데이트
 theme_xhred_notifications_firewall_update_message=A new version <em>%v</em> of <strong>ConfigServer Server Security and Firewall</strong> is available. Please update.
 
-theme_xhred_notifications_firewall_danger=ë°©íë²½ ìí
-theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer Server Security and Firewall</strong> ì´ <i class="badge badge-danger">ì¤í ì¤ì´ ìë</i> ê±°ë ì¤ì§ ë ê² ê°ìµëë¤! ìë²ë¥¼ ë¸ì¶ìí¤ì§ ë§ê³  ë°©íë²½ ì¤ì  (%v)ì íì¸íì­ìì¤.
+theme_xhred_notifications_firewall_danger=방화벽 위험
+theme_xhred_notifications_firewall_danger_message=<strong>ConfigServer Server Security and Firewall</strong> 이 <i class="badge badge-danger">실행 중이 아니</i> 거나 중지 된 것 같습니다! 서버를 노출시키지 말고 방화벽 설정 (%v)을 확인하십시오.
 
-theme_xhred_notifications_firewall_warning=ë°©íë²½ ê²½ê³ 
+theme_xhred_notifications_firewall_warning=방화벽 경고
 
 # 17.50
-settings_grayscale_level_navigation=ê·¸ë ì´ ì¤ì¼ì¼ íí°
-settings_grayscale_level_navigation_description=ê¸°ë³¸/íì¬ ê° <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
-settings_sepia_level_navigation=ì¸í¼ì íí°
-settings_sepia_level_navigation_description=ê¸°ë³¸/íì¬ ê° <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturation_level_navigation=í¬í íí°
-settings_saturation_level_navigation_description=ê¸°ë³¸/ì ë¥ ê° <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
-settings_hue_level_navigation=ìì¡° íì  íí°
-settings_hue_level_navigation_description=ê¸°ë³¸/íì¬ ê° <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
-settings_invert_level_navigation=íí° ë°ì 
-settings_invert_level_navigation_description=ê¸°ë³¸/íì¬ ê° <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
-settings_brightness_level_navigation=ë°ê¸° íí°
-settings_brightness_level_navigation_description=ê¸°ë³¸/ì ë¥ ê° <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
-settings_contrast_level_navigation=ëë¹ íí°
-settings_contrast_level_navigation_description=ê¸°ë³¸/ì ë¥ ê° <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+settings_grayscale_level_navigation=그레이 스케일 필터
+settings_grayscale_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=세피아 필터
+settings_sepia_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturation_level_navigation=포화 필터
+settings_saturation_level_navigation_description=기본/전류 값 <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
+settings_hue_level_navigation=색조 회전 필터
+settings_hue_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_hue_level_navigation">0</code>
+settings_invert_level_navigation=필터 반전
+settings_invert_level_navigation_description=기본/현재 값 <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=밝기 필터
+settings_brightness_level_navigation_description=기본/전류 값 <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=대비 필터
+settings_contrast_level_navigation_description=기본/전류 값 <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
-settings_cm_editor_palette=ì½ë íì´ë¼ì´í¸ ìì íë í¸
+settings_cm_editor_palette=코드 하이라이트 색상 팔레트
 
-theme_xhred_filemanager_context_select_all=ëª¨ë ì í
-theme_xhred_filemanager_context_select_invert=ë°ì  ì í
-theme_xhred_filemanager_context_refresh=ìë¡­ê² íë¤
-theme_xhred_filemanager_context_newfile=ì íì¼ ë§ë¤ê¸°
-theme_xhred_filemanager_context_newfoder=ì ëë í ë¦¬ ë§ë¤ê¸°
-theme_xhred_filemanager_context_copy=ë¶
-theme_xhred_filemanager_context_cut=ì ë¨
-theme_xhred_filemanager_context_paste=í
-theme_xhred_filemanager_context_chmod=ê¶í ë³ê²½
-theme_xhred_filemanager_context_chown=ìì ê¶ ë³ê²½
+theme_xhred_filemanager_context_select_all=모두 선택
+theme_xhred_filemanager_context_select_invert=반전 선택
+theme_xhred_filemanager_context_refresh=새롭게 하다
+theme_xhred_filemanager_context_newfile=새 파일 만들기
+theme_xhred_filemanager_context_newfoder=새 디렉토리 만들기
+theme_xhred_filemanager_context_copy=부
+theme_xhred_filemanager_context_cut=절단
+theme_xhred_filemanager_context_paste=풀
+theme_xhred_filemanager_context_chmod=권한 변경
+theme_xhred_filemanager_context_chown=소유권 변경
 
 # 17.51
-theme_xhred_filemanager_context_new=ìë¡ì´
-theme_xhred_filemanager_context_newarchive=ì ë³´ê´ íì¼ ë§ë¤ê¸°
-theme_xhred_filemanager_context_delete=ì§ì°ë¤
-theme_xhred_filemanager_context_rename=ì´ë¦ ë°ê¾¸ê¸°
-theme_xhred_filemanager_context_edit=í¸ì§íë¤
-theme_xhred_filemanager_context_extract=ì¶ì¶ë¬¼
-theme_xhred_filemanager_context_goto=ì´ë¦° íëª© ìì¹
-theme_xhred_filemanager_context_properties=ìì±
-theme_xhred_filemanager_context_search=ê²ì
+theme_xhred_filemanager_context_new=새로운
+theme_xhred_filemanager_context_newarchive=새 보관 파일 만들기
+theme_xhred_filemanager_context_delete=지우다
+theme_xhred_filemanager_context_rename=이름 바꾸기
+theme_xhred_filemanager_context_edit=편집하다
+theme_xhred_filemanager_context_extract=추출물
+theme_xhred_filemanager_context_goto=열린 품목 위치
+theme_xhred_filemanager_context_properties=속성
+theme_xhred_filemanager_context_search=검색
 
 # 17.52
-theme_xhred_filemanager_context_deselect_all=ëª¨ë ì í í´ì 
-theme_xhred_filemanager_context_upload=íì¬ ëë í ë¦¬ë¡ ìë¡ë
-theme_xhred_filemanager_context_download=ìê²© URLìì ë¤ì´ë¡ë
+theme_xhred_filemanager_context_deselect_all=모두 선택 해제
+theme_xhred_filemanager_context_upload=현재 디렉토리로 업로드
+theme_xhred_filemanager_context_download=원격 URL에서 다운로드
 
 # 17.53
-theme_config_virtualmin=Virtualmin ê°ì ìë²
-theme_config_cloudmin=Cloudmin ê´ë¦¬ ìì¤í
-settings_right_thirdparties_options_title=íì¬ ëª¨ë ìµì
-theme_xhred_filemanager_context_calculate_size=ì¤íì´ì¤ ë°ìì í¬ê¸° ê³ì°
-theme_xhred_filemanager_context_bookmarks=ë¶ë§í¬
-theme_xhred_filemanager_context_bookmark_current=íì¬ ì´ë¦° ê²½ë¡ ë¶ë§í¬
-theme_xhred_filemanager_context_transfer=ì´ì 
+theme_config_virtualmin=Virtualmin 가상 서버
+theme_config_cloudmin=Cloudmin 관리 시스템
+settings_right_thirdparties_options_title=타사 모듈 옵션
+theme_xhred_filemanager_context_calculate_size=스페이스 바에서 크기 계산
+theme_xhred_filemanager_context_bookmarks=북마크
+theme_xhred_filemanager_context_bookmark_current=현재 열린 경로 북마크
+theme_xhred_filemanager_context_transfer=이전
 
 # 17.54
-theme_xhred_filemanager_title_symlink_target=ë§í¬ ëì
+theme_xhred_filemanager_title_symlink_target=링크 대상
 
 # 17.60
-right_unlimited=ì í ìë
-settings_leftmenu_width=ë°ëì§í í­
-settings_leftmenu_width_description=ê¸°ë³¸ ì ë¥/í­ <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
-settings_switch_rdisplay=ì¤ìì¹ë¥¼ ë°ëë¡ íì
-settings_switch_rdisplay_description=ì´ ìµìì ì¬ì©íë©´ ì¼ìª½ ìë¨ ì¤ìì¹ì ëí´ ë¤ë¥¸ ììë¥¼ ì¤ì í  ì ììµëë¤. ì´ ìµìì ë³ê²½ í í ì ì²´ íì´ì§ë¥¼ ë¤ìë¡ëí´ì¼í©ëë¤.
+right_unlimited=제한 없는
+settings_leftmenu_width=바람직한 폭
+settings_leftmenu_width_description=기본 전류/폭 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=스위치를 반대로 표시
+settings_switch_rdisplay_description=이 옵션을 사용하면 왼쪽 상단 스위치에 대해 다른 순서를 설정할 수 있습니다. 이 옵션을 변경 한 후 전체 페이지를 다시로드해야합니다.
 
 # 17.63
-theme_xhred_filemanager_context_calculate_selected_size=ì íí í¬ê¸° ê³ì°
-theme_xhred_filemanager_selected_entries=ì í : %value ê° í­ëª©
-theme_xhred_filemanager_manual_path=ê²½ë¡ë¥¼ ìëì¼ë¡ ìë ¥
+theme_xhred_filemanager_context_calculate_selected_size=선택한 크기 계산
+theme_xhred_filemanager_selected_entries=선택 : %value 개 항목
+theme_xhred_filemanager_manual_path=경로를 수동으로 입력
 
-theme_xhred_datatable_semptytable=íì´ë¸ì ë°ì´í°ê° ììµëë¤
-theme_xhred_datatable_sinfo=_TOTAL_ ê° í­ëª© ì¤ _START_ ~ _END_ íì
-theme_xhred_datatable_sinfoempty=0 ê° ì¤ 0ìì 0 ê° í­ëª© íì
-theme_xhred_datatable_slengthmenu=_MENU_ ê° í­ëª© íì
-theme_xhred_datatable_sloadingrecords=ë¡ë©
-theme_xhred_datatable_sprocessing=ì²ë¦¬ ì¤. ..
-theme_xhred_datatable_szerorecords=ì¼ì¹íë ë ì½ëê° ììµëë¤
+theme_xhred_datatable_semptytable=테이블에 데이터가 없습니다
+theme_xhred_datatable_sinfo=_TOTAL_ 개 항목 중 _START_ ~ _END_ 표시
+theme_xhred_datatable_sinfoempty=0 개 중 0에서 0 개 항목 표시
+theme_xhred_datatable_slengthmenu=_MENU_ 개 항목 표시
+theme_xhred_datatable_sloadingrecords=로딩
+theme_xhred_datatable_sprocessing=처리 중. ..
+theme_xhred_datatable_szerorecords=일치하는 레코드가 없습니다
 
 # 17.64
-theme_xhred_filemanager_file_edit_but_not_saved=íì¼ì´ í¸ì§ëìì§ë§ ì ì¥ëì§ ìììµëë¤.
-theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=ë­íê³  ì¶ì´?
-theme_xhred_global_save=ì ì¥
-theme_xhred_global_save_and_close=ì ì¥íê³  ë«ìµëë¤
-theme_xhred_global_close_without_saving=ì ì¥íì§ ìê³  ë«ê¸°
-theme_xhred_global_continue_editing=ê³ì í¸ì§
-theme_xhred_filemanager_context_download_file=ë¤ì´ë¡ë
+theme_xhred_filemanager_file_edit_but_not_saved=파일이 편집되었지만 저장되지 않았습니다.
+theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=뭐하고 싶어?
+theme_xhred_global_save=저장
+theme_xhred_global_save_and_close=저장하고 닫습니다
+theme_xhred_global_close_without_saving=저장하지 않고 닫기
+theme_xhred_global_continue_editing=계속 편집
+theme_xhred_filemanager_context_download_file=다운로드
 
 # 17.65
-settings_sysinfo_easypie_charts_width=ì°¨í¸ ëë¹
-settings_sysinfo_easypie_charts_scale=ì°¨í¸ì ì¤ì¼ì¼ ê¸¸ì´
+settings_sysinfo_easypie_charts_width=차트 너비
+settings_sysinfo_easypie_charts_scale=차트의 스케일 길이
 
 # 17.80
-right_return_theme_options=íë§ ìµì
-theme_xhred_datatable_semptydirectory=ëë í ë¦¬ê° ë¹ì´ ììµëë¤
-theme_xhred_filemanager_context_clipboard=í´ë¦½ ë³´ëì ê²½ë¡ ë³µì¬
-theme_xhred_global_warning=ê²½ê³ 
-theme_xhred_global_close=ë«ê¸°
+right_return_theme_options=테마 옵션
+theme_xhred_datatable_semptydirectory=디렉토리가 비어 있습니다
+theme_xhred_filemanager_context_clipboard=클립 보드에 경로 복사
+theme_xhred_global_warning=경고
+theme_xhred_global_close=닫기
 
-theme_xhred_filemanager__no_bookmarks=ì ì¥ë ë¶ë§í¬ê° ììµëë¤.
-theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> ëë í°ë¦¬ê° ë¶ë§í¬ìì ì±ê³µì ì¼ë¡ ì ê±°ëììµëë¤.
-theme_xhred_filemanager_bookmark=íì¬ ëë í ë¦¬ ë¶ë§í¬
-theme_xhred_filemanager_unbookmark=íì¬ ëë í ë¦¬ì ë¶ë§í¬ í´ì 
-theme_xhred_filemanager_move_into_self=ëë í ë¦¬ ìì²´ë¡ ì´ëí  ì ììµëë¤! ëì ëë í ë¦¬ë ìì¤ ëë í ë¦¬ ìì ììµëë¤.
-theme_xhred_filemanager_pasting_and_copying_1=ì íí ìì¤ë¥¼ ì ì´ë¦ì¼ë¡ ë¶ì¬ ë£ììµëë¤.
-theme_xhred_filemanager_pasting_and_copying_2=ì íí ìì¤ê° ì ì´ë¦ì¼ë¡ ë¶ì¬ì¡ìµëë¤.
-theme_xhred_filemanager_pasting_and_replacing_1=ê¸°ì¡´ ëìì´ ì ëìì¼ë¡ ëì²´ëììµëë¤.
-theme_xhred_filemanager_pasting_and_replacing_2=ê¸°ì¡´ ëìì´ ì ëìì¼ë¡ ëì²´ëììµëë¤.
-theme_xhred_filemanager_target_conflict_1=ëì ì¶©ë
-theme_xhred_filemanager_target_conflict_2=ì¶©ëì ëª©íë¡
-theme_xhred_filemanager_target_conflict_message_1=ë¶ì¬ ë£ì ëìì´ ì´ë¯¸ ì¡´ì¬í©ëë¤! ë¹ì ì ë¬´ìì ì í¸í©ëê¹?
-theme_xhred_filemanager_target_conflict_message_2=ë¶ì¬ ë£ì ëìì´ ì´ë¯¸ ì¡´ì¬í©ëë¤! ë¹ì ì ë¬´ìì ì í¸í©ëê¹?
-theme_xhred_filemanager_target_conflict_replace=ë³í© ë° êµì²´
-theme_xhred_filemanager_target_conflict_paste=ìë¡ì´ ì´ë¦ì¼ë¡ ë¶ì¬ ë£ê¸°
+theme_xhred_filemanager__no_bookmarks=저장된 북마크가 없습니다.
+theme_xhred_filemanager_unbookmark_success=<tt>%value</tt> 디렉터리가 북마크에서 성공적으로 제거되었습니다.
+theme_xhred_filemanager_bookmark=현재 디렉토리 북마크
+theme_xhred_filemanager_unbookmark=현재 디렉토리의 북마크 해제
+theme_xhred_filemanager_move_into_self=디렉토리 자체로 이동할 수 없습니다! 대상 디렉토리는 소스 디렉토리 안에 있습니다.
+theme_xhred_filemanager_pasting_and_copying_1=선택한 소스를 새 이름으로 붙여 넣었습니다.
+theme_xhred_filemanager_pasting_and_copying_2=선택한 소스가 새 이름으로 붙여졌습니다.
+theme_xhred_filemanager_pasting_and_replacing_1=기존 대상이 새 대상으로 대체되었습니다.
+theme_xhred_filemanager_pasting_and_replacing_2=기존 대상이 새 대상으로 대체되었습니다.
+theme_xhred_filemanager_target_conflict_1=대상 충돌
+theme_xhred_filemanager_target_conflict_2=충돌을 목표로
+theme_xhred_filemanager_target_conflict_message_1=붙여 넣은 대상이 이미 존재합니다! 당신은 무엇을 선호합니까?
+theme_xhred_filemanager_target_conflict_message_2=붙여 넣은 대상이 이미 존재합니다! 당신은 무엇을 선호합니까?
+theme_xhred_filemanager_target_conflict_replace=병합 및 교체
+theme_xhred_filemanager_target_conflict_paste=새로운 이름으로 붙여 넣기
 
-theme_xhred_editor_help_title=ìëí° í¤ë³´ë ë¨ì¶í¤
+theme_xhred_editor_help_title=에디터 키보드 단축키
 
-theme_xhred_filemanager_hide_toolbar=í´ë° ì¨ê¸°ê¸°
-theme_xhred_filemanager_hide_actions=ì¡ì ì´ ì¨ê¸°ê¸°
-theme_xhred_filemanager_hovered_toolbar=ë§ì°ì¤ë¡ ê°ë¦¬í¤ë©´ í´ë°ìì ëë¡­ ë¤ì´ íì±í
-theme_xhred_filemanager_context_delete_selected=ì íë ê²ì ì§ì ë¼
+theme_xhred_filemanager_hide_toolbar=툴바 숨기기
+theme_xhred_filemanager_hide_actions=액션 열 숨기기
+theme_xhred_filemanager_hovered_toolbar=마우스로 가리키면 툴바에서 드롭 다운 활성화
+theme_xhred_filemanager_context_delete_selected=선택된 것을 지워 라
 
 # 17.83
-theme_xhred_database_adding_new_row=ì í ì¶ê°
-theme_xhred_database_editing_row=ì íë í í¸ì§
-theme_xhred_database_editing_rows=ì íë í í¸ì§
-theme_xhred_database_adding_new_row_data=ë°ì´í° ì¤ì 
+theme_xhred_database_adding_new_row=새 행 추가
+theme_xhred_database_editing_row=선택된 행 편집
+theme_xhred_database_editing_rows=선택된 행 편집
+theme_xhred_database_adding_new_row_data=데이터 설정
 
 # 17.84
-theme_xhred_datatable_filter=íí°
+theme_xhred_datatable_filter=필터
 
-theme_xhred_global_update=ìµì  ì ë³´
-theme_xhred_global_update_and_return=ìë°ì´í¸ ë° ë°í
-theme_xhred_global_update_and_close=ìë°ì´í¸ í ë«ê¸°
-theme_xhred_global_back=ë¤
-theme_xhred_global_cancel=ì·¨ì
+theme_xhred_global_update=최신 정보
+theme_xhred_global_update_and_return=업데이트 및 반환
+theme_xhred_global_update_and_close=업데이트 후 닫기
+theme_xhred_global_back=뒤
+theme_xhred_global_cancel=취소
 
-theme_xhred_database_add_row_successful=ì íì´ ì±ê³µì ì¼ë¡ ì¶ê°ëììµëë¤
-theme_xhred_database_edit_row_successful=ì íí íì´ ì±ê³µì ì¼ë¡ ìë°ì´í¸ëììµëë¤
-theme_xhred_database_edit_rows_successful=ì íë íì´ ì±ê³µì ì¼ë¡ ìë°ì´í¸ëììµëë¤
-theme_xhred_database_edit_row_delete_successful=ì íë íì´ ì±ê³µì ì¼ë¡ ì­ì ëììµëë¤
-theme_xhred_database_edit_rows_delete_successful=ì íí í <em>%n</em> ê°ë¥¼ ì±ê³µì ì¼ë¡ ì­ì íìµëë¤.
-theme_xhred_database_edit_field_delete_successful=ì íí íëê° ì±ê³µì ì¼ë¡ ì­ì ëììµëë¤
-theme_xhred_database_edit_fields_delete_successful=ì íí íë <em>%n</em> ì±ê³µì ì¼ë¡ ì­ì íìµëë¤.
-theme_xhred_database_edit_selected_row=ì íë í í¸ì§
-theme_xhred_database_edit_selected_rows=ì íë í í¸ì§
-theme_xhred_database_add_new_row=í ì¶ê°
-theme_xhred_database_delete_selected_row=ì íë í ì­ì 
-theme_xhred_database_delete_selected_rows=ì íë í ì­ì 
-theme_xhred_database_delete_selected_field=ì íë íë ì­ì 
-theme_xhred_database_delete_selected_fields=ì íë íë ì­ì 
-theme_xhred_database_object_selected_delete=ì íë ê°ì²´ ì­ì 
-theme_xhred_database_objects_selected_delete=ì íë ê°ì²´ ì­ì 
-theme_xhred_database_object_selected_delete2=ì íí íì´ë¸ ì­ì 
-theme_xhred_database_objects_selected_delete2=ì íí íì´ë¸ ì­ì 
-theme_xhred_database_db_selected_drop=ì íë ë°ì´í°ë² ì´ì¤ ì­ì 
-theme_xhred_database_dbs_selected_drop=ì íë ë°ì´í°ë² ì´ì¤ ì­ì 
-theme_xhred_database_edit_but_not_saved=íì´ë¸ ë°ì´í°ê° í¸ì§ëìì§ë§ ì ì¥ëì§ ìììµëë¤.
+theme_xhred_database_add_row_successful=새 행이 성공적으로 추가되었습니다
+theme_xhred_database_edit_row_successful=선택한 행이 성공적으로 업데이트되었습니다
+theme_xhred_database_edit_rows_successful=선택된 행이 성공적으로 업데이트되었습니다
+theme_xhred_database_edit_row_delete_successful=선택된 행이 성공적으로 삭제되었습니다
+theme_xhred_database_edit_rows_delete_successful=선택한 행 <em>%n</em> 개를 성공적으로 삭제했습니다.
+theme_xhred_database_edit_field_delete_successful=선택한 필드가 성공적으로 삭제되었습니다
+theme_xhred_database_edit_fields_delete_successful=선택한 필드 <em>%n</em> 성공적으로 삭제했습니다.
+theme_xhred_database_edit_selected_row=선택된 행 편집
+theme_xhred_database_edit_selected_rows=선택된 행 편집
+theme_xhred_database_add_new_row=행 추가
+theme_xhred_database_delete_selected_row=선택된 행 삭제
+theme_xhred_database_delete_selected_rows=선택된 행 삭제
+theme_xhred_database_delete_selected_field=선택된 필드 삭제
+theme_xhred_database_delete_selected_fields=선택된 필드 삭제
+theme_xhred_database_object_selected_delete=선택된 객체 삭제
+theme_xhred_database_objects_selected_delete=선택된 객체 삭제
+theme_xhred_database_object_selected_delete2=선택한 테이블 삭제
+theme_xhred_database_objects_selected_delete2=선택한 테이블 삭제
+theme_xhred_database_db_selected_drop=선택된 데이터베이스 삭제
+theme_xhred_database_dbs_selected_drop=선택된 데이터베이스 삭제
+theme_xhred_database_edit_but_not_saved=테이블 데이터가 편집되었지만 저장되지 않았습니다.
 
-theme_xhred_global_no_such_command=<tt>$1</tt> ì¤í íì¼ì´ ìì¤íì ê²½ë¡ì ì¤ì¹ëì§ ììê±°ëìë ê² ê°ìµëë¤.
+theme_xhred_global_no_such_command=<tt>$1</tt> 실행 파일이 시스템의 경로에 설치되지 않았거나없는 것 같습니다.
 
-theme_xhred_global_notice=ì£¼ì
+theme_xhred_global_notice=주의
 
 theme_xhred_updates_disabled_notice=Detected that you don't have enabled notifications for <em>Authentic Theme</em> updates? <br><br>Enabling this feature in <a href="%link" class="label label-default"><strong><i class="fa fa-cogs"></i> Theme Configuration</strong></a> will help you to update to the latest version in a single click as soon as it's out.
 
 # 18.00
-theme_xhred_global_file=íì¼
-theme_xhred_global_directory=ìë°° ê·ì¹ì
-theme_xhred_global_no_target=ëìì´ ì¡´ì¬íì§ ìê±°ë ì¡ì¸ì¤ í  ì ììµëë¤
-theme_xhred_global_error_code=ìë¬ ì½ë
-theme_xhred_global_on=ì ìì
-theme_xhred_global_off=ë¨ì´ì ¸ì
-theme_xhred_global_all=ëª¨ë
-theme_xhred_global_none=ìì
-theme_xhred_global_yes=ì
-theme_xhred_global_no=ìë
+theme_xhred_global_file=파일
+theme_xhred_global_directory=예배 규칙서
+theme_xhred_global_no_target=대상이 존재하지 않거나 액세스 할 수 없습니다
+theme_xhred_global_error_code=에러 코드
+theme_xhred_global_on=의 위에
+theme_xhred_global_off=떨어져서
+theme_xhred_global_all=모두
+theme_xhred_global_none=없음
+theme_xhred_global_yes=예
+theme_xhred_global_no=아니
 
-theme_xhred_filemanager_new_tab=ì í­ ì¶ê°(Alt + Space)
-theme_xhred_datatable_no_search_results=<span class="h5">ê²°ê³¼ê° ììµëë¤</span> <br> ë¤ë¥¸ ê²ìì ìëíì­ìì¤
+theme_xhred_filemanager_new_tab=새 탭 추가 (Ctrl + Space)
+theme_xhred_datatable_no_search_results=<span class="h5">결과가 없습니다</span> <br> 다른 검색을 시도하십시오
 
-theme_xhred_filemanager_buffer_error=íì¼ì ë²í¼ì ë¶ì¬ ë£ì§ ëª»íìµëë¤. ê¶íì´ ê±°ë¶ëììµëë¤.
+theme_xhred_filemanager_buffer_error=파일을 버퍼에 붙여 넣지 못했습니다. 권한이 거부되었습니다.
 
-filemanager_create_object_exists=$3 <tt>$1</tt> <tt>$2</tt> ì ì´ë¯¸ ì¡´ì¬í©ëë¤
-filemanager_create_object_denied=<tt>$2</tt> ìì $3 <tt>$1</tt> ìì±í  ì ììµëë¤. ê¶íì´ ê±°ë¶ëììµëë¤: $4.
+filemanager_create_object_exists=$3 <tt>$1</tt> <tt>$2</tt> 에 이미 존재합니다
+filemanager_create_object_denied=<tt>$2</tt> 에서 $3 <tt>$1</tt> 생성할 수 없습니다. 권한이 거부되었습니다: $4.
 
-theme_xhred_filemanager_paste_warning=ëìì ë¶ì¬ ë£ì§ ëª»íìµëë¤. ë¶ì¬ ë£ê¸° ëì¤/ìì²­íê¸° ì ì ìì²­í ê°ì²´ê° <em>ì´ë¦ ë°ê¾¸ê¸°, ì´ë</em> ëë <em>ì­ì </em>ëìì ì ììµëë¤. ë ë¤ë¥¸ ê°ë¥í ìì¸ì ëìì´ ì°ê¸° ê°ë¥íì§ ìê¸° ëë¬¸ìëë¤. ê°ì²´ì ìì±ì íì¸í  ê°ì¹ê° ììµëë¤.
+theme_xhred_filemanager_paste_warning=대상을 붙여 넣지 못했습니다. 붙여 넣기 도중/요청하기 전에 요청한 개체가 <em>이름 바꾸기, 이동</em> 또는 <em>삭제</em>되었을 수 있습니다. 또 다른 가능한 원인은 대상이 쓰기 가능하지 않기 때문입니다. 객체의 속성을 확인할 가치가 있습니다.
 
-theme_xhred_filemanager_delete_warning=ì­ì ê° ì±ê³µì ì¼ë¡ ìë£ëìì§ë§ ëª¨ë  ê°ì²´ì ëí ê²ì ìëëë¤. ì­ì íê¸° ì ì ìì²­í ê°ì²´ê° <em>ì´ë¦ ë³ê²½</em> ëë <em>ì´ë</em>ëìì ì ììµëë¤. ì íë ê¶í (ìì±)ì´ ë ë¤ë¥¸ ê°ë¥í ìì¸ìëë¤. ìë¬ ë©ìì§:
+theme_xhred_filemanager_delete_warning=삭제가 성공적으로 완료되었지만 모든 객체에 대한 것은 아닙니다. 삭제하기 전에 요청한 객체가 <em>이름 변경</em> 또는 <em>이동</em>되었을 수 있습니다. 제한된 권한 (속성)이 또 다른 가능한 원인입니다. 에러 메시지:
 
-filemanager_rename_exists=ì´ë¦ì´ <tt>$1</tt> ì¸ $3 ì´(ê° <tt>$2</tt> ì ì´ë¯¸ ì¡´ì¬í©ëë¤
-filemanager_rename_denied=$3ì ì´ë¦ì ë°ê¿ ì ììµëë¤. ìì¤ $3ì´ (ê°) ì ê±°ëìê±°ë ê¶íì´ ì íëì´ì ë°ìí  ì ììµëë¤.
+filemanager_rename_exists=이름이 <tt>$1</tt> 인 $3 이(가 <tt>$2</tt> 에 이미 존재합니다
+filemanager_rename_denied=$3의 이름을 바꿀 수 없습니다. 소스 $3이 (가) 제거되었거나 권한이 제한되어서 발생할 수 있습니다.
 
-theme_xhred_filemanager_successful_rename=<tt>%from</tt> ì´ë¦ì <tt>%to</tt> ë³ê²½íìµëë¤.
+theme_xhred_filemanager_successful_rename=<tt>%from</tt> 이름을 <tt>%to</tt> 변경했습니다.
 
-filemanager_global_info_total1=ì ì²´ : $1 íì¼ ë° $2 ëë í ë¦¬
-filemanager_global_info_total2=ì ì²´ : $1 íì¼ ë° $2 ëë í ë¦¬
-filemanager_global_info_total3=ì ì²´ : $1 íì¼ ë° $2 ëë í ë¦¬
-filemanager_global_info_total4=ì ì²´ : $1 íì¼ ë° $2 ëë í ë¦¬
+filemanager_global_info_total1=전체 : $1 파일 및 $2 디렉토리
+filemanager_global_info_total2=전체 : $1 파일 및 $2 디렉토리
+filemanager_global_info_total3=전체 : $1 파일 및 $2 디렉토리
+filemanager_global_info_total4=전체 : $1 파일 및 $2 디렉토리
 
-theme_xhred_filemanager_selected_entry=ì í : %value í­ëª©
+theme_xhred_filemanager_selected_entry=선택 : %value 항목
 
-theme_xhred_filemanager_search_query=ì¿¼ë¦¬ ë§ì¤í¬
-theme_xhred_filemanager_search_match=ê²°ê³¼ ì°¾ê¸°
-theme_xhred_filemanager_search_replace=ê²°ê³¼ ëì²´
+theme_xhred_filemanager_search_query=쿼리 마스크
+theme_xhred_filemanager_search_match=결과 찾기
+theme_xhred_filemanager_search_replace=결과 대체
 
-theme_xhred_global_find=ì°¾ê¸°
-theme_xhred_global_replace=ë°ê¾¸ë¤
+theme_xhred_global_find=찾기
+theme_xhred_global_replace=바꾸다
 
-theme_xhred_filemanager_searching_matching=<tt>%text</tt> íì¤í¸ë¥¼ í¬í¨íë /directories, íì¼ì ì´ë¦ê³¼ ì¼ì¹íë <tt>%value</tt> ê²ìíë ì¤ìëë¤.
-theme_xhred_filemanager_searching_replacing=ë°ê¾¸ê¸°ë ì´ë¦ì <tt>%value</tt> í¬í¨ë íì¼ìì <tt>%text</tt> <tt>%replace</tt> ì ì¼ì¹ìíµëë¤.
+theme_xhred_filemanager_searching_matching=<tt>%text</tt> 텍스트를 포함하는 /directories, 파일의 이름과 일치하는 <tt>%value</tt> 검색하는 중입니다.
+theme_xhred_filemanager_searching_replacing=바꾸기는 이름에 <tt>%value</tt> 포함된 파일에서 <tt>%text</tt> <tt>%replace</tt> 와 일치시킵니다.
 
-theme_xhred_filemanager_search_replaced_multi=<strong>%value</strong> íì¼ìì ì°¾ìì ë° ê¾¸ììµëë¤.
-theme_xhred_filemanager_search_replaced=<strong>1</strong> íì¼ìì ì°¾ìì ë°ê¿¨ìµëë¤.
+theme_xhred_filemanager_search_replaced_multi=<strong>%value</strong> 파일에서 찾아서 바 꾸었습니다.
+theme_xhred_filemanager_search_replaced=<strong>1</strong> 파일에서 찾아서 바꿨습니다.
 
-theme_xhred_filemanager_successful_permissions_with_errors=ì¬ì© ê¶íì´ ì±ê³µì ì¼ë¡ ë³ê²½ëìì§ë§ ëª¨ë  ê°ì²´ì ëí ê²ì ìëëë¤.
+theme_xhred_filemanager_successful_permissions_with_errors=사용 권한이 성공적으로 변경되었지만 모든 개체에 대한 것은 아닙니다.
 
-theme_xhred_filemanager_successful_ownership_with_errors=ëª¨ë  ê°ì²´ì ìì ê¶ì´ ì±ê³µì ì¼ë¡ ë³ê²½ëì§ ìììµëë¤ :
-theme_xhred_filemanager_successful_ownership_with_errors_fatal=ë¤ì ì¤ë¥ë¡ ì¸í´ ìì ê¶ì ë³ê²½í  ì ììµëë¤.
+theme_xhred_filemanager_successful_ownership_with_errors=모든 객체의 소유권이 성공적으로 변경되지 않았습니다 :
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=다음 오류로 인해 소유권을 변경할 수 없습니다.
 
-theme_xhred_filemanager_successful_compression_with_errors=ë¤ì ì¤ë¥ë¡ ìì¶ì´ ìë£ëììµëë¤.
-theme_xhred_filemanager_successful_compression_bg=ìì¶ì´ ì±ê³µì ì¼ë¡ ìë£ëììµëë¤. ìì¶ë íì¼ <tt>%file</tt> <tt>%path</tt> ëë í°ë¦¬ì ììµëë¤.
-theme_xhred_filemanager_successful_compression_bg_with_errors=ì¤ë¥ê° ë°ìíë©´ì ìì¶ì´ ìë£ëììµëë¤. ìì¶ë íì¼ <tt>%file</tt> <tt>%path</tt> ëë í°ë¦¬ì ìì¹í´ì¼ í©ëë¤.
+theme_xhred_filemanager_successful_compression_with_errors=다음 오류로 압축이 완료되었습니다.
+theme_xhred_filemanager_successful_compression_bg=압축이 성공적으로 완료되었습니다. 압축된 파일 <tt>%file</tt> <tt>%path</tt> 디렉터리에 있습니다.
+theme_xhred_filemanager_successful_compression_bg_with_errors=오류가 발생하면서 압축이 완료되었습니다. 압축된 파일 <tt>%file</tt> <tt>%path</tt> 디렉터리에 위치해야 합니다.
 
-theme_xhred_filemanager_settings_notification_type=íì í  ìë¦¼ ì í
-theme_xhred_filemanager_settings_notification_type_inf_warn_err=ì ë³´, ê²½ê³  ë° ì¤ë¥
-theme_xhred_filemanager_settings_notification_type_warn_err=ê²½ê³  ë° ì¤ë¥
-theme_xhred_filemanager_settings_notification_type_err=ì¤ë¥ ë§
+theme_xhred_filemanager_settings_notification_type=표시 할 알림 유형
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=정보, 경고 및 오류
+theme_xhred_filemanager_settings_notification_type_warn_err=경고 및 오류
+theme_xhred_filemanager_settings_notification_type_err=오류 만
 
-theme_xhred_filemanager_settings_tabs_remember_state=ì²ìë¡ëì ì´ì ì ì¬ì©í í­ ë³µì
-theme_xhred_filemanager_context_open_new_tab=ì í­ìì ì´ê¸°
+theme_xhred_filemanager_settings_tabs_remember_state=처음로드시 이전에 사용한 탭 복원
+theme_xhred_filemanager_context_open_new_tab=새 탭에서 열기
 
-theme_xhred_xsql_fit_content_screen_height=íë©´ ëì´ì ë°ì´í°ë² ì´ì¤ íì´ë¸ ë´ì© ë§ì¶ê¸°
+theme_xhred_xsql_fit_content_screen_height=화면 높이에 데이터베이스 테이블 내용 맞추기
 
-theme_xhred_datatable_filter_visible_tables=ë³´ì´ë íì´ë¸ íí°ë§
-theme_xhred_module_help=ëª¨ë ëìë§
+theme_xhred_datatable_filter_visible_tables=보이는 테이블 필터링
+theme_xhred_module_help=모듈 도움말
 
-theme_xhred_server_process_running=ìë² íë¡ì¸ì¤ê° ì¬ì í ì¤í ì¤ìëê¹? ë¤ë¥¸ ê³³ì¼ë¡ ì´ëíê³  ì¶ë ¥ ì ë³´ì ì¡ì¸ì¤ í  ì ììµëê¹? ì§ê¸ ëê°ë íë¡ì¸ì¤ê° ì¢ë£ëì§ ììµëë¤.
+theme_xhred_server_process_running=서버 프로세스가 여전히 실행 중입니까? 다른 곳으로 이동하고 출력 정보에 액세스 할 수 없습니까? 지금 나가도 프로세스가 종료되지 않습니다.
 
 # 18.03
-settings_global_options_title=ê¸ë¡ë² ìµì
-theme_xhred_password_generator_new=ì ë¹ë°ë²í¸ ìì± <br> (í´ë¦½ ë³´ëë¡)
-theme_xhred_password_generator_new_success=ìì± ë ë¹ë°ë²í¸ %password ê° í´ë¦½ ë³´ëì ë³µì¬ëììµëë¤.
+settings_global_options_title=글로벌 옵션
+theme_xhred_password_generator_new=새 비밀번호 생성 <br> (클립 보드로)
+theme_xhred_password_generator_new_success=생성 된 비밀번호 %password 가 클립 보드에 복사되었습니다.
 
 # 18.08
-theme_fileformat_perl=í
-theme_fileformat_perl_placeholder=ì´ íì¼ì `1;` ì±ê³µì ì¼ë¡ ìëí©ëë¤.
+theme_fileformat_perl=펄
+theme_fileformat_perl_placeholder=이 파일은 `1;` 성공적으로 작동합니다.
 
 # 18.30
-settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudminì ëë¡­ ë¤ì´ì ê¸°í¸ ìì´ì½ íì
-theme_xhred_global_shipped=ë°°ì¡ ë¨
-theme_xhred_global_available=ì í¨í
-theme_xhred_global_not_available=ì¬ì©í  ì ììµëë¤
-theme_xhred_global_default=ê¸°ë³¸
-theme_xhred_global_system_default=ìì¤í ê¸°ë³¸ê°
-theme_xhred_global_local_system_default=ë¡ì»¬ ìì¤í ê¸°ë³¸ê°
-theme_xhred_global_stats=íµê³
-theme_xhred_global_notifications=ìë¦¼
-theme_xhred_global_favorites=ì¦ê²¨ ì°¾ê¸°
-theme_xhred_global_cpu_load=CPUë¡ë
-theme_xhred_notification_none=ìë¦¼ì´ ììµëë¤
-theme_xhred_notification_no_data=ìì§ ë ë°ì´í°ê° ììµëë¤
-theme_xhred_notification_no_favorites=ì¦ê²¨ ì°¾ê¸° ë°ì´í°ê° ììµëë¤
-theme_xhred_global_theme_version=íë§ ë²ì 
+settings_leftmenu_vm_cm_dropdown_icons=Virtualmin/Cloudmin의 드롭 다운에 기호 아이콘 표시
+theme_xhred_global_shipped=배송 됨
+theme_xhred_global_available=유효한
+theme_xhred_global_not_available=사용할 수 없습니다
+theme_xhred_global_default=기본
+theme_xhred_global_system_default=시스템 기본값
+theme_xhred_global_local_system_default=로컬 시스템 기본값
+theme_xhred_global_stats=통계
+theme_xhred_global_notifications=알림
+theme_xhred_global_favorites=즐겨 찾기
+theme_xhred_global_cpu_load=CPU로드
+theme_xhred_notification_none=알림이 없습니다
+theme_xhred_notification_no_data=수집 된 데이터가 없습니다
+theme_xhred_notification_no_favorites=즐겨 찾기 데이터가 없습니다
+theme_xhred_global_theme_version=테마 버전
 
-settings_side_slider_sysinfo_enabled=ëì ë³´ë í­ íì
-settings_side_slider_notifications_enabled=ìë¦¼ íì í­
-settings_side_slider_favorites_enabled=ì¦ê²¨ ì°¾ê¸° í­ íì
-settings_show_terminal_link=í°ë¯¸ë ë²í¼ íì
+settings_side_slider_sysinfo_enabled=대시 보드 탭 표시
+settings_side_slider_notifications_enabled=알림 표시 탭
+settings_side_slider_favorites_enabled=즐겨 찾기 탭 표시
+settings_show_terminal_link=터미널 버튼 표시
 
-theme_xhred_sysinfo_system_monitors=ìì¤í ëª¨ëí°
-theme_xhred_sysinfo_server_status=ìë² ìí
-theme_xhred_sysinfo_software_versions=ìíí¸ì¨ì´ ë²ì 
-theme_xhred_sysinfo_recent_logins=ìµê·¼ ë¡ê·¸ì¸
-theme_xhred_sysinfo_vm_package_updates=Virtualmin í¨í¤ì§ ìë°ì´í¸
-theme_xhred_sysinfo_disk_quotas=ëì¤í¬ í ë¹ë
-theme_xhred_sysinfo_bandwidth_quotas=ëì­í­ í ë¹ë
+theme_xhred_sysinfo_system_monitors=시스템 모니터
+theme_xhred_sysinfo_server_status=서버 상태
+theme_xhred_sysinfo_software_versions=소프트웨어 버전
+theme_xhred_sysinfo_recent_logins=최근 로그인
+theme_xhred_sysinfo_vm_package_updates=Virtualmin 패키지 업데이트
+theme_xhred_sysinfo_disk_quotas=디스크 할당량
+theme_xhred_sysinfo_bandwidth_quotas=대역폭 할당량
 
-left_netdata=ì¤ìê° ëª¨ëí°ë§
-settings_leftmenu_netdata=Netdata ì¤ìê° ëª¨ëí°ë§ ë§í¬ íì
-settings_leftmenu_netdata_link=ë· ë°ì´í° ìë² ì í¸ ë§í¬
+left_netdata=실시간 모니터링
+settings_leftmenu_netdata=Netdata 실시간 모니터링 링크 표시
+settings_leftmenu_netdata_link=넷 데이터 서버 선호 링크
 
-theme_xhred_filemanager_context_chattr=ìì± ë³ê²½
-theme_xhred_filemanager_changing_attributes=ì íí íì¼ì <tt>%value</tt> ì¼ë¡ ìì±ì ì¤ì í©ëë¤.
-theme_xhred_filemanager_successful_attributes_with_errors=ëª¨ë  ê°ì²´ì ëí ìì±ì´ ì¤ì ëì§ ìììµëë¤ :
-theme_xhred_filemanager_successful_attributes=ìì±ì´ ì¤ì ëììµëë¤.
+theme_xhred_filemanager_context_chattr=속성 변경
+theme_xhred_filemanager_changing_attributes=선택한 파일의 <tt>%value</tt> 으로 속성을 설정합니다.
+theme_xhred_filemanager_successful_attributes_with_errors=모든 객체에 대한 속성이 설정되지 않았습니다 :
+theme_xhred_filemanager_successful_attributes=속성이 설정되었습니다.
 
-theme_xhred_filemanager_context_chcon=ë³´ì ì»¨íì¤í¸ ë³ê²½
-theme_xhred_filemanager_changing_secontext=ì íí íì¼ì ë³´ì ì»¨íì¤í¸ë¥¼ <tt>%value</tt> ì¼ë¡ ë³ê²½í©ëë¤.
-theme_xhred_filemanager_successful_secontext_with_errors=ëª¨ë  ê°ì²´ì ëí ë³´ì ì»¨íì¤í¸ê° ì±ê³µì ì¼ë¡ ë³ê²½ëì§ ìììµëë¤.
-theme_xhred_filemanager_successful_secontext=ë³´ì ì»¨íì¤í¸ê° ì±ê³µì ì¼ë¡ ë³ê²½ëììµëë¤.
+theme_xhred_filemanager_context_chcon=보안 컨텍스트 변경
+theme_xhred_filemanager_changing_secontext=선택한 파일의 보안 컨텍스트를 <tt>%value</tt> 으로 변경합니다.
+theme_xhred_filemanager_successful_secontext_with_errors=모든 개체에 대한 보안 컨텍스트가 성공적으로 변경되지 않았습니다.
+theme_xhred_filemanager_successful_secontext=보안 컨텍스트가 성공적으로 변경되었습니다.
 
-theme_xhred_global_no_results_found=ê²ì ê²°ê³¼ê° ììµëë¤
+theme_xhred_global_no_results_found=검색 결과가 없습니다
 
 # 18.40
-theme_new_password_header=ì¬ì©ìì ì ë¹ë°ë²í¸ ì¤ì 
-login_reset=ë¹ë°ë²í¸ ë³µêµ¬
-theme_xhred_move_top=ë§¨ ìë¡ ì´ë
-theme_xhred_move_bottom=ìëë¡ ì´ë
-theme_xhred_move_up=ì´ë
-theme_xhred_move_down=ìëë¡ ì´ë
-theme_xhred_add_after=ì´íì ì¶ê°
-theme_xhred_add_before=ì ì ì¶ê°
-settings_show_night_mode_link=ì£¼ì¼ê° ëª¨ë ë²í¼ íì
-settings_hotkey_toggle_key_night_mode=ìì íë í¸ ì í
-settings_title=íë§ êµ¬ì±
-settings_subtitle=ì¬ì©ì
+theme_new_password_header=사용자의 새 비밀번호 설정
+login_reset=비밀번호 복구
+theme_xhred_move_top=맨 위로 이동
+theme_xhred_move_bottom=아래로 이동
+theme_xhred_move_up=이동
+theme_xhred_move_down=아래로 이동
+theme_xhred_add_after=이후에 추가
+theme_xhred_add_before=전에 추가
+settings_show_night_mode_link=주야간 모드 버튼 표시
+settings_hotkey_toggle_key_night_mode=색상 팔레트 전환
+settings_title=테마 구성
+settings_subtitle=사용자
 
-theme_tooltip_night_mode=ì£¼ì¼ê° ëª¨ë í ê¸
-theme_tooltip_terminal_link=ë¨ë§ê¸°
-theme_tooltip_language_link=ì¸ì´
-theme_xhred_tooltip_switch_user=ì¬ì©ì ì í
-theme_tooltip_logout=ë¡ê·¸ ìì
-theme_tooltip_edit_user=ì¬ì©ì í¸ì§
+theme_tooltip_night_mode=주야간 모드 토글
+theme_tooltip_terminal_link=단말기
+theme_tooltip_language_link=언어
+theme_xhred_tooltip_switch_user=사용자 전환
+theme_tooltip_logout=로그 아웃
+theme_tooltip_edit_user=사용자 편집
 
 # 18.45
-settings_sysinfo_easypie_charts_size=ì°¨í¸ ì§ë¦
-theme_xhred_global_choose=ê³ ë¥´ë¤
-theme_xhred_global_select=ê³ ë¥´ë¤
-theme_xhred_global_ok=íì¸
-settings_sysinfo_theme_updates_description=ì´ ìµìì ì¬ì©íë ¤ë©´ ìì¤íì <code>git</code> ëªë ¹ì ì¤ì¹í´ì¼í©ëë¤
-theme_git_patch_available=ìµì  ê°ë° ë²ì 
-theme_git_patch_no_git_message=GitHubìì ì§ì  ìµì  ìë°ì´í¸ë¥¼ ì¤ì¹íë ¤ë©´ <code>git</code> ëªë ¹ì´ ì¤ì¹ëì´ ìëì§ íì¸í´ì¼í©ëë¤.
-theme_git_patch_update_success_message=Webmin íë§ ìë°ì´í¸ì ì±ê³µíìµëë¤. íì¬ ì¤ì¹ë ë²ì ì <tt>$1</tt>ìëë¤. ìë¡ ê³ ì¹¨ ì¤. ..
-theme_git_patch_update_success_message2=Webmin ë° Userminì ëí íë§ ìë°ì´í¸ê° ìë£ëììµëë¤. íì¬ ì¤ì¹ë ë²ì ì <tt>$1</tt>ìëë¤. ìë¡ ê³ ì¹¨ ì¤. ..
-theme_xhred_git_patch_update=íë§ ìë°ì´í¸ì ì¤í¨íìµëë¤. ì½ìì ì¬ì©íì¬ ìëì¼ë¡ ìëíì­ìì¤.
-theme_xhred_git_patch_initiated=íë§ ìë°ì´í¸ê° ììëììµëë¤.
-theme_xhred_global_prev_page=í íì´ì§ ë¤ë¡
-theme_xhred_global_help=ëì
-theme_xhred_git_compare_changes=ë³ê²½ ì¬í­ ë¹êµ
-theme_xhred_filemanager_link_to_clipboard=ì¬ë³¼ë¦­ ë§í¬ì ì´ë¦ì´ í´ë¦½ ë³´ëì ë³µì¬ëììµëë¤.
+settings_sysinfo_easypie_charts_size=차트 지름
+theme_xhred_global_choose=고르다
+theme_xhred_global_select=고르다
+theme_xhred_global_ok=확인
+settings_sysinfo_theme_updates_description=이 옵션을 사용하려면 시스템에 <code>git</code> 명령을 설치해야합니다
+theme_git_patch_available=최신 개발 버전
+theme_git_patch_no_git_message=GitHub에서 직접 최신 업데이트를 설치하려면 <code>git</code> 명령이 설치되어 있는지 확인해야합니다.
+theme_git_patch_update_success_message=Webmin 테마 업데이트에 성공했습니다. 현재 설치된 버전은 <tt>$1</tt>입니다. 새로 고침 중. ..
+theme_git_patch_update_success_message2=Webmin 및 Usermin에 대한 테마 업데이트가 완료되었습니다. 현재 설치된 버전은 <tt>$1</tt>입니다. 새로 고침 중. ..
+theme_xhred_git_patch_update=테마 업데이트에 실패했습니다. 콘솔을 사용하여 수동으로 시도하십시오.
+theme_xhred_git_patch_initiated=테마 업데이트가 시작되었습니다.
+theme_xhred_global_prev_page=한 페이지 뒤로
+theme_xhred_global_help=도움
+theme_xhred_git_compare_changes=변경 사항 비교
+theme_xhred_filemanager_link_to_clipboard=심볼릭 링크의 이름이 클립 보드에 복사되었습니다.
 
 # 18.46
-theme_left_mail_prefs=ë©ì¼ íê²½ ì¤ì 
-theme_left_mail_change_password=ë¹ë°ë²í¸ ë³ê²½
-theme_left_mail_account_functions=ê³ì  ê¸°ë¥
-theme_xhred_global_dir_up=ì´ì  ëë í ë¦¬ë¡ ì´ë (ë°± ì¤íì´ì¤)
-theme_xhred_global_module_config=ëª¨ë êµ¬ì±
-theme_xhred_global_return=ë°í
-theme_xhred_global_return_to_module_index=ëª¨ë ìì¸ì¼ë¡ ëì ê°ê¸°
+theme_left_mail_prefs=메일 환경 설정
+theme_left_mail_change_password=비밀번호 변경
+theme_left_mail_account_functions=계정 기능
+theme_xhred_global_dir_up=이전 디렉토리로 이동 (백 스페이스)
+theme_xhred_global_module_config=모듈 구성
+theme_xhred_global_return=반환
+theme_xhred_global_return_to_module_index=모듈 색인으로 돌아 가기
 
 # 18.47
-theme_xhred_global_complete_changelog=ìì í ë³ê²½ ë´ì­
-theme_xhred_global_beta_version=ë² í ë²ì 
-theme_xhred_global_release=í´ì 
-theme_xhred_global_released_on=ì ì¶ì
-theme_xhred_global_committed_on=ì íì 
-theme_xhred_global_resolved_issues=%value ë¦´ë¦¬ì¤ìì í´ê²° ë ë¬¸ì 
+theme_xhred_global_complete_changelog=완전한 변경 내역
+theme_xhred_global_beta_version=베타 버전
+theme_xhred_global_release=해제
+theme_xhred_global_released_on=에 출시
+theme_xhred_global_committed_on=에 헌신
+theme_xhred_global_resolved_issues=%value 릴리스에서 해결 된 문제
 
 # 18.48
-theme_force_upgrade=íë§ ìë°ì´í¸
-theme_xhred_force_upgrade_beta=ìµì  ê°ë° ë²ì  (ë² í) ì¤ì¹
-theme_xhred_force_upgrade_stable=ìµì  ë¦´ë¦¬ì¤ ë²ì  ì¤ì¹ (ìì ì )
-theme_xhred_source_encoding=ìì¤ ì¸ì½ë©
-theme_update_footer=$1 ì ì¥ìì ë²ê·¸ë¥¼ ë³´ê³ í´ ì£¼ì­ìì¤. ìµì  ë´ì¤ë¥¼ ì»ì¼ë ¤ë©´ $2 ì±ëì ê°ìíì­ìì¤.
-theme_xhred_encoding_manually_set=ìëì¼ë¡ ì¸ì½ë© ì¤ì 
-theme_xhred_filemanager_save_to_change_encoding=ì¸ì½ë©ì ë³ê²½íë ¤ë©´ íì¼ì ì ì¥í´ì¼í©ëë¤.
+theme_force_upgrade=테마 업데이트
+theme_xhred_force_upgrade_beta=최신 개발 버전 (베타) 설치
+theme_xhred_force_upgrade_stable=최신 릴리스 버전 설치 (안정적)
+theme_xhred_source_encoding=소스 인코딩
+theme_update_footer=$1 저장소에 버그를 보고해 주십시오. 최신 뉴스를 얻으려면 $2 채널에 가입하십시오.
+theme_xhred_encoding_manually_set=수동으로 인코딩 설정
+theme_xhred_filemanager_save_to_change_encoding=인코딩을 변경하려면 파일을 저장해야합니다.
 
 # 18.49
-theme_xhred_filemanager_user_switch=ì¬ì©ìë¡ ì í (Ctrl + M)
-theme_xhred_filemanager_user_switch_description=ìë ëì´ë ì¬ì©ì ì´ë¦ì ì ííë©´ì´ ì¬ì©ìë¡ ìí í  ì¶ê° ììì´ ì íë©ëë¤.
-theme_xhred_filemanager_user_switch_description_back=ê¸°ë³¸ ëª¨ëë¡ ë¤ì ì ííë ¤ë©´ selectì ì²« ë²ì§¸ ìµìì ì ííì­ìì¤.
-theme_xhred_filemanager_user_switch_current_user=íì¬ ì¬ì©ì
-theme_xhred_filemanager_user_switch_option=í ëë í ë¦¬ì ë¤ì´ê°ë©´ ìëì¼ë¡ ì¬ì©ì ëª¨ëë¡ ì í
-theme_xhred_filemanager_editor_align_panels_horizontally=í¨ëì ê°ë¡ë¡ ì ë ¬
-theme_xhred_filemanager_editor_align_panels_vertically=í¨ëì ì¸ë¡ë¡ ì ë ¬
-theme_xhred_filemanager_editor_toggle_soft_wrap=ìíí¸ ë© ì í
-theme_xhred_filemanager_editor_refresh_content=ì»¨íì¸  ìë¡ ê³ ì¹¨
-theme_xhred_filemanager_save_to_refresh_content=ë´ì©ì ìë¡ ê³ ì¹ë ¤ë©´ íì¼ì ì ì¥í´ì¼í©ëë¤.
-theme_xhred_filemanager_save_to_refresh_content_proc=íì¼ ë´ì©ì ìë¡ ê³ ì¹©ëë¤.
-theme_xhred_global_dark=ì´ëì´
-theme_xhred_global_light=ë¹
-theme_xhred_global_minimize=ìµìí
-theme_xhred_global_maximize=ìµëí
-theme_xhred_global_normalize=ì ê·í
-theme_xhred_global_set_encoding=ì¸ì½ë© ì¤ì 
+theme_xhred_filemanager_user_switch=사용자로 전환 (Ctrl + M)
+theme_xhred_filemanager_user_switch_description=아래 나열된 사용자 이름을 선택하면이 사용자로 수행 할 추가 작업이 전환됩니다.
+theme_xhred_filemanager_user_switch_description_back=기본 모드로 다시 전환하려면 select의 첫 번째 옵션을 선택하십시오.
+theme_xhred_filemanager_user_switch_current_user=현재 사용자
+theme_xhred_filemanager_user_switch_option=홈 디렉토리에 들어가면 자동으로 사용자 모드로 전환
+theme_xhred_filemanager_editor_align_panels_horizontally=패널을 가로로 정렬
+theme_xhred_filemanager_editor_align_panels_vertically=패널을 세로로 정렬
+theme_xhred_filemanager_editor_toggle_soft_wrap=소프트 랩 전환
+theme_xhred_filemanager_editor_refresh_content=컨텐츠 새로 고침
+theme_xhred_filemanager_save_to_refresh_content=내용을 새로 고치려면 파일을 저장해야합니다.
+theme_xhred_filemanager_save_to_refresh_content_proc=파일 내용을 새로 고칩니다.
+theme_xhred_global_dark=어두운
+theme_xhred_global_light=빛
+theme_xhred_global_minimize=최소화
+theme_xhred_global_maximize=최대화
+theme_xhred_global_normalize=정규화
+theme_xhred_global_set_encoding=인코딩 설정
 
 # 19.00
-theme_xhred_sysinfo_update_start=ìì¤í ì ë³´ë¥¼ ìì§ ì¤ìëë¤.
-theme_xhred_sysinfo_update_end=ìì¤í ì ë³´ê° ì±ê³µì ì¼ë¡ ìì§ëììµëë¤.
-theme_xhred_sysinfo_update_failed=ìì¤í ì ë³´ë¥¼ ìì§ í  ì ììµëë¤. ëì¤ì ë¤ì ìëíì­ìì¤.
+theme_xhred_sysinfo_update_start=시스템 정보를 수집 중입니다.
+theme_xhred_sysinfo_update_end=시스템 정보가 성공적으로 수집되었습니다.
+theme_xhred_sysinfo_update_failed=시스템 정보를 수집 할 수 없습니다. 나중에 다시 시도하십시오.
 
-theme_xhred_global_development_version=ê°ë° ë²ì 
+theme_xhred_global_development_version=개발 버전
 
-right_vm_server_summary=ê°ì ìë² ìì½
+right_vm_server_summary=가상 서버 요약
 
-settings_webmin_default_module=Webminì ê¸°ë³¸ íì´ì§
+settings_webmin_default_module=Webmin의 기본 페이지
 
-theme_xhred_global_unbeforeunload_title=ë³ê²½ ì¬í­ì´ ì ì¥ëì§ ìì ì ììµëë¤
-theme_xhred_global_unbeforeunload_message=ê³ìíë©´ì´ íì´ì§ì ì ì¥íì§ ìì ë³ê²½ ì¬í­ì´ ìêµ¬ì ì¼ë¡ ìì¤ ë  ì ììµëë¤.
-theme_xhred_global_continue=ê³ìíë¤
+theme_xhred_global_unbeforeunload_title=변경 사항이 저장되지 않을 수 있습니다
+theme_xhred_global_unbeforeunload_message=계속하면이 페이지에 저장하지 않은 변경 사항이 영구적으로 손실 될 수 있습니다.
+theme_xhred_global_continue=계속하다
 
-theme_xhred_global_automatic_refresh=ìë ìë¡ ê³ ì¹¨
-theme_xhred_global_second=ëì§¸
-theme_xhred_global_seconds=ì´
-theme_xhred_global_minute=ë¶
-theme_xhred_global_minutes=ìì¬ë¡
+theme_xhred_global_automatic_refresh=자동 새로 고침
+theme_xhred_global_second=둘째
+theme_xhred_global_seconds=초
+theme_xhred_global_minute=분
+theme_xhred_global_minutes=의사록
 
 # 19.01
-theme_xhred_browser_warning=ì»´í¨í°ì ìë² í¨ëì ëí ìµìì ê²½íì ì»ì¼ë ¤ë©´ ì§ìëë ìµì  ë¸ë¼ì°ì ë¥¼ ì¬ì©íì­ìì¤. <br><br> <em>Internet Explorer</em> ë ë ì´ì ì§ìëì§ ììµëë¤. <br><br> ê¶ì¥ ë¸ë¼ì°ì ë <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> ëë <em>Safari</em>, <em>Edge</em> ìëë¤. <div class="alert alert-warning margined-top-10 margined-bottom--8">ë¶ê³¼ ë ì íì ë¬´ìíê¸° ìí´ ì¤ì¹ê° íììë í´ëì© ë²ì ì ë¸ë¼ì°ì ë¥¼ ë¤ì´ë¡ë í  ì ììµëë¤.</div>
+theme_xhred_browser_warning=컴퓨터의 서버 패널에 대한 최상의 경험을 얻으려면 지원되는 최신 브라우저를 사용하십시오. <br><br> <em>Internet Explorer</em> 는 더 이상 지원되지 않습니다. <br><br> 권장 브라우저는 <em>Chrome</em>, <em>Firefox</em>, <em>Opera</em> 또는 <em>Safari</em>, <em>Edge</em> 입니다. <div class="alert alert-warning margined-top-10 margined-bottom--8">부과 된 제한을 무시하기 위해 설치가 필요없는 휴대용 버전의 브라우저를 다운로드 할 수 있습니다.</div>
 
 # 19.02
-theme_xhred_filter_content=ë´ì© íí°ë§
-theme_xhred_log_file_empty=ë¡ê·¸ íì¼ì´ ë¹ì´ ììµëë¤
+theme_xhred_filter_content=내용 필터링
+theme_xhred_log_file_empty=로그 파일이 비어 있습니다
 
 # 19.03
-theme_xhred_config_configurable_options=êµ¬ì± ê°ë¥í ìµì
-theme_xhred_filter_content_no_matches_query=%str ì¿¼ë¦¬ì ì¼ì¹íë ë´ì©ì´ ììµëë¤
-theme_xhred_toggle_accordions=ìì½ëì¸ ê°ìì± ì í
-theme_xhred_global_whats_new=ìë¡ì´ ìì
-theme_xhred_global_report_an_issue=ë¬¸ì  ì ê³ 
-theme_xhred_global_theme_configuration=íë§ êµ¬ì±
-theme_xhred_global_official_website=ê³µì ì¹ ì¬ì´í¸
-theme_xhred_global_about_theme=íë§ì ëí´
-theme_xhred_connection_error=ì°ê²° ì¤ë¥
-theme_xhred_connection_error_details=<strong>%server</strong> ìì ìë²ì ì°ê²°í  ì ììµëë¤. <ul><li> ìë² ìí íì¸ </li><li> ì°ê²° íì¸ </li></ul>
-theme_xhred_session_expired=ì¸ì ë§ë£
-theme_xhred_session_unlocked=ì¸ì ì ê¸ í´ì 
-theme_xhred_session_expired_details=ë¹íì± ìíë¡ ì¸í´ ë¡ê·¸ ììëììµëë¤.
-theme_xhred_signing_in=ë¡ê·¸ì¸
-theme_xhred_signing_success=ì±ê³µì ì¼ë¡ ë¡ê·¸ì¸íìµëë¤!
-theme_xhred_session_failed_password=ë¹ë°ë²í¸ê° íë¦½ëë¤. ë¤ì ìëíì­ìì¤.
-theme_xhred_global_reauthenticate=ì¬ ì¸ì¦
+theme_xhred_config_configurable_options=구성 가능한 옵션
+theme_xhred_filter_content_no_matches_query=%str 쿼리와 일치하는 내용이 없습니다
+theme_xhred_toggle_accordions=아코디언 가시성 전환
+theme_xhred_global_whats_new=새로운 소식
+theme_xhred_global_report_an_issue=문제 신고
+theme_xhred_global_theme_configuration=테마 구성
+theme_xhred_global_official_website=공식 웹 사이트
+theme_xhred_global_about_theme=테마에 대해
+theme_xhred_connection_error=연결 오류
+theme_xhred_connection_error_details=<strong>%server</strong> 에서 서버에 연결할 수 없습니다. <ul><li> 서버 상태 확인 </li><li> 연결 확인 </li></ul>
+theme_xhred_session_expired=세션 만료
+theme_xhred_session_unlocked=세션 잠금 해제
+theme_xhred_session_expired_details=비활성 상태로 인해 로그 아웃되었습니다.
+theme_xhred_signing_in=로그인
+theme_xhred_signing_success=성공적으로 로그인했습니다!
+theme_xhred_session_failed_password=비밀번호가 틀립니다. 다시 시도하십시오.
+theme_xhred_global_reauthenticate=재 인증
 
 # 19.04
-settings_sysinfo_real_time_status=ì¤ìê° ëª¨ëí°ë§ íì±í
-theme_xhred_global_redirecting=ë¦¬ëë ì
+settings_sysinfo_real_time_status=실시간 모니터링 활성화
+theme_xhred_global_redirecting=리디렉션
 
 # 19.05
-body_no_javascript_title=ìë° ì¤í¬ë¦½í¸ ë¹íì±í
-body_no_javascript_message=ìë° ì¤í¬ë¦½í¸ë¥¼ íì±ííê³  íì´ì§ë¥¼ ìë¡ ê³ ì¹¨íì­ìì¤.
-theme_xhred_connection_lost=ì°ê²°ì´ ëì´ì¡ìµëë¤
-theme_xhred_connection_success=ì°ê²° ì±ê³µ
-theme_xhred_connection_success_details=ìë² ì°ê²°ì´ ë¤ì ì¤ì ëììµëë¤.
+body_no_javascript_title=자바 스크립트 비활성화
+body_no_javascript_message=자바 스크립트를 활성화하고 페이지를 새로 고침하십시오.
+theme_xhred_connection_lost=연결이 끊어졌습니다
+theme_xhred_connection_success=연결 성공
+theme_xhred_connection_success_details=서버 연결이 다시 설정되었습니다.
 
 # 19.08
-theme_xhred_return_home=í¨ë ì¸ë±ì¤ë¡ ëì ê°ê¸°
-theme_xhred_global_upload=ìë¡ë
-theme_xhred_global_select_files=íì¼ ì í
-theme_xhred_global_file_selected=ì íë íì¼
-theme_xhred_global_files_selected=ì íë íì¼
-theme_xhred_global_reset=ì´ê¸°í
-theme_xhred_upload_initial_info=ì¬ê¸°ë¡ íì¼ì ëì´ë¤ ëê±°ë í´ë¦­íì¬ ì í
+theme_xhred_return_home=패널 인덱스로 돌아 가기
+theme_xhred_global_upload=업로드
+theme_xhred_global_select_files=파일 선택
+theme_xhred_global_file_selected=선택된 파일
+theme_xhred_global_files_selected=선택된 파일
+theme_xhred_global_reset=초기화
+theme_xhred_upload_initial_info=여기로 파일을 끌어다 놓거나 클릭하여 선택
 
 # 19.09
-theme_xhred_global_empty=ë¹
-theme_xhred_global_click_here=ì¬ê¸°ë¥¼ í´ë¦­íì­ìì¤
-theme_git_patch_incompatible_message=ì´ $1 <em>$2</em> ë²ì ì ì¤ì¹íë ¤ë©´ $3 ë° $5ì ìµì  ë°/ëë ë¯¸ê³µê° ë²ì ì´ ì ëë¡ ìëí´ì¼í©ëë¤.
-theme_git_patch_incompatible_message_s=ì´ $1 <em>$2</em> ë²ì ì ì¤ì¹íë ¤ë©´ $3ì ìµì  ë°/ëë ì¶ìëì§ ìì ë²ì ì´ ì ëë¡ ìëí´ì¼í©ëë¤.
-theme_git_patch_incompatible_message_desc=íë§ê° ì¤ê³ë ëë¡ ìëíì§ ìì ì ìë í¸íëì§ ìë ë³ê²½ ì¬í­ì´ ìì ì ììµëë¤. UIë¥¼ ì¬ì©íì¬ ìê·¸ë ì´ë ììì ê³ìí  ì ììµëë¤.
+theme_xhred_global_empty=빈
+theme_xhred_global_click_here=여기를 클릭하십시오
+theme_git_patch_incompatible_message=이 $1 <em>$2</em> 버전을 설치하려면 $3 및 $5의 최신 및/또는 미공개 버전이 제대로 작동해야합니다.
+theme_git_patch_incompatible_message_s=이 $1 <em>$2</em> 버전을 설치하려면 $3의 최신 및/또는 출시되지 않은 버전이 제대로 작동해야합니다.
+theme_git_patch_incompatible_message_desc=테마가 설계된 대로 작동하지 않을 수 있는 호환되지 않는 변경 사항이 있을 수 있습니다. UI를 사용하여 업그레이드 작업을 계속할 수 없습니다.
 
 # 19.10
-theme_xhred_filemanager_edit_html=HTMLë¡ í¸ì§
-theme_xhred_global_example=ì
-theme_xhred_global_output_example=ì¶ë ¥ ì
-theme_xhred_title_language_locale=ì¸ì´ ë° ë¡ìº
-theme_xhred_global_manual=ì¤ëªì
-settings_navigation_always_collapse=í­ì ë¶ê´´
-theme_xhred_filemanager_records_per_page=íì´ì§ ë¹ ê¸°ë³¸ ë ì½ë ì
-theme_xhred_filemanager_sorting=ê¸°ë³¸ ì ë ¬ ì í
-theme_xhred_filemanager_sorting_asc=ì¤ë¦ì°¨ì
-theme_xhred_filemanager_sorting_desc=ë´ë¦¼ì°¨ì
-theme_xhred_filemanager_sorting_by_name=ì´ë¦
-theme_xhred_filemanager_sorting_by_type=ì í
-theme_xhred_filemanager_sorting_by_size=í¬ê¸°
-theme_xhred_filemanager_sorting_by_ownership=ìì ì
-theme_xhred_filemanager_sorting_by_permissions=ë°©ë²
-theme_xhred_filemanager_sorting_by_attributes=ìì±
-theme_xhred_filemanager_sorting_by_selinux=ë³´ì ì»¨íì¤í¸
-theme_xhred_filemanager_sorting_by_last_mod_time=ìì 
-theme_xhred_filemanager_tree_view_toggle=í¸ë¦¬ ë·° í ê¸
-theme_xhred_filemanager_hide_tree_view=í¸ë¦¬ ë·° í¨ë íì±í
-theme_xhred_filemanager_tree_view_depth=ì´ê¸°ë¡ëìì ì¶ì¶ ë í¸ë¦¬ ë·° ê¹ì´ (ììë¡ëê° ë ë¹ ë¦)
-theme_xhred_global_unlimited=ì í ìë
-theme_xhred_filemanager_tree_exclude_on_first_load=í¸ë¦¬ ë·°ë¥¼ìí ì´ê¸°ë¡ëìì ë¶íìí ëë í ë¦¬ íµê³¼ë¥¼ ì ì¸í©ëë¤ (ë ë¹ ë¥´ê²ë¡ë).
-theme_xhred_filemanager_tree_expand_search=í¸ë¦¬ ë·°ë¥¼ íí°ë§íë ëì ì¼ì¹íë í­ëª©ì´ í¬í¨ ë ëª¨ë  ë¶ê¸° íì¥
+theme_xhred_filemanager_edit_html=HTML로 편집
+theme_xhred_global_example=예
+theme_xhred_global_output_example=출력 예
+theme_xhred_title_language_locale=언어 및 로캘
+theme_xhred_global_manual=설명서
+settings_navigation_always_collapse=항상 붕괴
+theme_xhred_filemanager_records_per_page=페이지 당 기본 레코드 수
+theme_xhred_filemanager_sorting=기본 정렬 유형
+theme_xhred_filemanager_sorting_asc=오름차순
+theme_xhred_filemanager_sorting_desc=내림차순
+theme_xhred_filemanager_sorting_by_name=이름
+theme_xhred_filemanager_sorting_by_type=유형
+theme_xhred_filemanager_sorting_by_size=크기
+theme_xhred_filemanager_sorting_by_ownership=소유자
+theme_xhred_filemanager_sorting_by_permissions=방법
+theme_xhred_filemanager_sorting_by_attributes=속성
+theme_xhred_filemanager_sorting_by_selinux=보안 컨텍스트
+theme_xhred_filemanager_sorting_by_last_mod_time=수정
+theme_xhred_filemanager_tree_view_toggle=트리 뷰 토글
+theme_xhred_filemanager_hide_tree_view=트리 뷰 패널 활성화
+theme_xhred_filemanager_tree_view_depth=초기로드에서 추출 된 트리 뷰 깊이 (작은로드가 더 빠름)
+theme_xhred_global_unlimited=제한 없는
+theme_xhred_filemanager_tree_exclude_on_first_load=트리 뷰를위한 초기로드에서 불필요한 디렉토리 통과를 제외합니다 (더 빠르게로드).
+theme_xhred_filemanager_tree_expand_search=트리 뷰를 필터링하는 동안 일치하는 항목이 포함 된 모든 분기 확장
 
 # 19.12
-theme_xhred_tooltip_side_slider_go_to_dashboard=ëì ë³´ëë¡ ì´ë
-theme_xhred_tooltip_side_slider_open_favorites_control=ì¦ê²¨ ì°¾ê¸° ì ì´ ì´ê¸°
-theme_xhred_tooltip_side_slider_delete_all_notification=ëª¨ë  ìë¦¼ ì­ì 
-theme_xhred_tooltip_side_slider_mark_read_all_notification=ëª¨ë  ìë¦¼ì ì½ì ìíë¡ íì
-theme_xhred_global_settings=ì¤ì 
-theme_xhred_tooltip_side_slider_pinned=í/í í´ì  ì¬ì´ë ì¬ë¼ì´ë
+theme_xhred_tooltip_side_slider_go_to_dashboard=대시 보드로 이동
+theme_xhred_tooltip_side_slider_open_favorites_control=즐겨 찾기 제어 열기
+theme_xhred_tooltip_side_slider_delete_all_notification=모든 알림 삭제
+theme_xhred_tooltip_side_slider_mark_read_all_notification=모든 알림을 읽은 상태로 표시
+theme_xhred_global_settings=설정
+theme_xhred_tooltip_side_slider_pinned=핀/핀 해제 사이드 슬라이더
 
 # 19.13
-settings_sysinfo_theme_updates_for_usermin=Userminììí íë§ ìë°ì´í¸ ì¤ì¹
-theme_xhred_global_installed_version=ì¤ì¹ë ë²ì 
-theme_xhred_global_installed_and_latest_version=ì¤ì¹ ë° ìµì  ë²ì 
-theme_xhred_global_latest_stable=ìµì  ìì 
-theme_xhred_global_latest_beta=ìµì  ë² í
-theme_xhred_global_firewall=ë°©íë²½
+settings_sysinfo_theme_updates_for_usermin=Usermin을위한 테마 업데이트 설치
+theme_xhred_global_installed_version=설치된 버전
+theme_xhred_global_installed_and_latest_version=설치 및 최신 버전
+theme_xhred_global_latest_stable=최신 안정
+theme_xhred_global_latest_beta=최신 베타
+theme_xhred_global_firewall=방화벽
 
 # 19.14
-theme_xhred_filemanager_preparing_download=ë¤ì´ë¡ë ì¤ë¹ ì¤ìëë¤. %number íì¼ì ë³´ê´ ì¤ìëë¤. %dots ê¸°ë¤ë ¤ì£¼ì­ìì¤
-theme_xhred_filemanager_prepared_download=ë¤ì´ë¡ëê° ì¤ë¹ëììµëë¤. ë³´ê´ ë %number íì¼.
-theme_xhred_filemanager_canceled_download=ë¤ì´ë¡ëê° ì·¨ìëììµëë¤.
+theme_xhred_filemanager_preparing_download=다운로드 준비 중입니다. %number 파일을 보관 중입니다. %dots 기다려주십시오
+theme_xhred_filemanager_prepared_download=다운로드가 준비되었습니다. 보관 된 %number 파일.
+theme_xhred_filemanager_canceled_download=다운로드가 취소되었습니다.
 
 # 19.19
-theme_xhred_filemanager_settings_force_tar_download=ìì¹´ì´ë¸ë¡ ë¤ì´ë¡ë í  ë <code>zip</code> ì ì¬ì©í  ììë ê²½ì°ìë <code>tar</code> ëªë ¹ ì¤í
+theme_xhred_filemanager_settings_force_tar_download=아카이브로 다운로드 할 때 <code>zip</code> 을 사용할 수있는 경우에도 <code>tar</code> 명령 실행
 theme_xhred_nice_size_PB=PB
-theme_xhred_nice_size_TB=ê²°íµ
+theme_xhred_nice_size_TB=결핵
 theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
-theme_xhred_nice_size_b=ë°ì´í¸
-theme_xhred_title_locale_non_ui_config=ìë² ìì± ë ì§ íì
+theme_xhred_nice_size_b=바이트
+theme_xhred_title_locale_non_ui_config=서버 생성 날짜 형식
 
 # 19.20
-extensions_mail_current_position=$3ì $1-$2 ë©ìì§
-extensions_mail_sort_by_sender=ë°ì ìë³ë¡ ì ë ¬
-extensions_mail_sort_by_recipient=ìì ìë³ë¡ ì ë ¬
-extensions_mail_sort_by_date=ë ì§ìì¼ë¡ ì ë ¬
-extensions_mail_sort_by_size=í¬ê¸°ë³ë¡ ì ë ¬
-extensions_mail_sort_by_spam=ì¤í¸ ì ìë¡ ì ë ¬
-extensions_mail_sort_by_subject=ì£¼ì ë³ë¡ ì ë ¬
-extensions_mail_security_spf=ë°ì ì ì ì± íë ì ìí¬ <em>(SPF)</em>
-extensions_mail_security_dkim=ëë©ì¸ í¤ë¡ ìë³ ë ë©ì¼ <em>(DKIM)</em>
-extensions_mail_flag_important=ì¤ìë¡ íìë ë©ìì§
-extensions_mail_flag_attachment=ë©ìì§ì ì²¨ë¶ íì¼ì´ ììµëë¤
-extensions_mail_flag_spam_score=ì¤í¸ ì ì
-extensions_mail_flag_spam_status=ì¤í¸ ìí
-extensions_mail_flag_spam_status_data=2 ë¬ë¬ ì¤ 1 ë¬ë¬
-extensions_mail_flag_tls_on=íì¤ ìí¸í (TLS)
-extensions_mail_flag_tls_off=ìí¸íëì§ ìì ë©ì¼
-extensions_mail_flag_tls_none=ìí¸í ìíë¥¼ ì ì ìì
-extensions_mail_header_no_subject=(ì ëª© ìì)
-extensions_mail_select_all=ëª¨ë
-extensions_mail_select_none=ìì
-extensions_mail_select_invert=ê±°ê¾¸ë¡ íë¤
-extensions_mail_select_read=ì½ë¤
-extensions_mail_select_unread=ì½íì§ ìë
-extensions_mail_mark_read=ì½ì ìíë¡ íì
-extensions_mail_mark_unread=ì½ì§ ìì ìíë¡ íì
-extensions_mail_mark_special=í¹ë³ì¼ë¡ íì
-extensions_mail_quota=$1 ($2 %)ì $3 ì¬ì©
-extensions_mail_pagination_right=ë¤ì
-extensions_mail_pagination_left=ì´ì 
-theme_xhred_global_move=ìì§ì
-theme_xhred_global_copy=ë¶
-theme_xhred_mail_more=ë
-theme_xhred_mail_copy_only=ìì§ì´ì§ ë§ê³  ë³µì¬ ë§
-theme_xhred_global_sort=ì¢ë¥
-theme_xhred_global_search=ê²ì
-theme_xhred_global_delete=ì§ì°ë¤
-theme_xhred_global_forward=ìì¼ë¡
-theme_xhred_global_refresh=ìë¡­ê² íë¤
-theme_xhred_mail_pagination_first=ë¨¼ì  ììíë ëª©ë¡
-theme_xhred_mail_pagination_last=ë§ì§ë§ì¼ë¡ ììíë ëª©ë¡
-theme_xhred_global_starred=ë³í
-theme_xhred_global_unstarred=ë³í íìëì§ ìì
-extensions_mail_header_from=...ìì
-extensions_mail_header_reply_to=ëµì¥íë¤
-extensions_mail_header_to=ì
+extensions_mail_current_position=$3의 $1-$2 메시지
+extensions_mail_sort_by_sender=발신자별로 정렬
+extensions_mail_sort_by_recipient=수신자별로 정렬
+extensions_mail_sort_by_date=날짜순으로 정렬
+extensions_mail_sort_by_size=크기별로 정렬
+extensions_mail_sort_by_spam=스팸 점수로 정렬
+extensions_mail_sort_by_subject=주제별로 정렬
+extensions_mail_security_spf=발신자 정책 프레임 워크 <em>(SPF)</em>
+extensions_mail_security_dkim=도메인 키로 식별 된 메일 <em>(DKIM)</em>
+extensions_mail_flag_important=중요로 표시된 메시지
+extensions_mail_flag_attachment=메시지에 첨부 파일이 있습니다
+extensions_mail_flag_spam_score=스팸 점수
+extensions_mail_flag_spam_status=스팸 상태
+extensions_mail_flag_spam_status_data=2 달러 중 1 달러
+extensions_mail_flag_tls_on=표준 암호화 (TLS)
+extensions_mail_flag_tls_off=암호화되지 않은 메일
+extensions_mail_flag_tls_none=암호화 상태를 알 수 없음
+extensions_mail_header_no_subject=(제목 없음)
+extensions_mail_select_all=모두
+extensions_mail_select_none=없음
+extensions_mail_select_invert=거꾸로 하다
+extensions_mail_select_read=읽다
+extensions_mail_select_unread=읽히지 않는
+extensions_mail_mark_read=읽은 상태로 표시
+extensions_mail_mark_unread=읽지 않은 상태로 표시
+extensions_mail_mark_special=특별으로 표시
+extensions_mail_quota=$1 ($2 %)의 $3 사용
+extensions_mail_pagination_right=다음
+extensions_mail_pagination_left=이전
+theme_xhred_global_move=움직임
+theme_xhred_global_copy=부
+theme_xhred_mail_more=더
+theme_xhred_mail_copy_only=움직이지 말고 복사 만
+theme_xhred_global_sort=종류
+theme_xhred_global_search=검색
+theme_xhred_global_delete=지우다
+theme_xhred_global_forward=앞으로
+theme_xhred_global_refresh=새롭게 하다
+theme_xhred_mail_pagination_first=먼저 시작하는 목록
+theme_xhred_mail_pagination_last=마지막으로 시작하는 목록
+theme_xhred_global_starred=별표
+theme_xhred_global_unstarred=별표 표시되지 않음
+extensions_mail_header_from=...에서
+extensions_mail_header_reply_to=답장하다
+extensions_mail_header_to=에
 extensions_mail_header_cc=cc
-extensions_mail_header_bcc=ì¨ì ì°¸ì¡°
-extensions_mail_header_date=ë°ì´í¸
-extensions_mail_header_spam=ì¤í¸
-extensions_mail_header_mailed_by=ì°ì¡
-extensions_mail_header_signed_by=ìëª í
-extensions_mail_header_spf=ë°ì spp
-extensions_mail_header_dkim=ê¹ìí
-extensions_mail_header_encrypted=ìí¸í
-extensions_mail_mark_spam_view_razordel=ì¤í¸ì¼ë¡ íìíê³  ì­ì 
-extensions_mail_mark_spam_view_razor=ì¤í¸ì¼ë¡ íì
-extensions_mail_mark_spam_mail_black=ë¸ëë¦¬ì¤í¸ë¡ íì
-extensions_mail_mark_spam_view_ham=ì¤í¸ ìëì¼ë¡ íì
-extensions_mail_mark_spam_view_hammove=ì¤í¸ ìëì¼ë¡ íìíê³ ë°ì í¸ì§í¨ì¼ë¡ ì´ë
-extensions_mail_mark_spam_mail_white=íì© ë ê²ì¼ë¡ íì
-extensions_mail_mark_spam_mail_whitemove=íì© ë ê²ì¼ë¡ íìíê³ ë°ì í¸ì§í¨ì¼ë¡ ì´ë
-extensions_mail_search_filter_reset=ì ë ¬ íí° ì¬ì¤ì 
-extensions_mail_move_copy_only=ìì§ì´ì§ ë§ê³  ê·¸ë¥ ë³µì¬ í´
-theme_xhred_global_total=í©ê³
-theme_xhred_global_selected=ì íë
-theme_xhred_mail_new_message=ìë¡ì´ ë©ìì§
+extensions_mail_header_bcc=숨은 참조
+extensions_mail_header_date=데이트
+extensions_mail_header_spam=스팸
+extensions_mail_header_mailed_by=우송
+extensions_mail_header_signed_by=서명 한
+extensions_mail_header_spf=받은 spp
+extensions_mail_header_dkim=김서현
+extensions_mail_header_encrypted=암호화
+extensions_mail_mark_spam_view_razordel=스팸으로 표시하고 삭제
+extensions_mail_mark_spam_view_razor=스팸으로 표시
+extensions_mail_mark_spam_mail_black=블랙리스트로 표시
+extensions_mail_mark_spam_view_ham=스팸 아님으로 표시
+extensions_mail_mark_spam_view_hammove=스팸 아님으로 표시하고받은 편지함으로 이동
+extensions_mail_mark_spam_mail_white=허용 된 것으로 표시
+extensions_mail_mark_spam_mail_whitemove=허용 된 것으로 표시하고받은 편지함으로 이동
+extensions_mail_search_filter_reset=정렬 필터 재설정
+extensions_mail_move_copy_only=움직이지 말고 그냥 복사 해
+theme_xhred_global_total=합계
+theme_xhred_global_selected=선택된
+theme_xhred_mail_new_message=새로운 메시지
 
-theme_xhred_mail_search_simple=ê²ì ìµì íì
-theme_xhred_mail_search_advanced=ê²ì ìµì ì¨ê¸°ê¸°
-theme_xhred_mail_search_clear=ëªíí ê²ì ê²°ê³¼
-theme_xhred_mail_search_empty=ê²ìì´ì ì¼ì¹íë ë©ìì§ê° ììµëë¤
-theme_xhred_mail_search_search_mail=ë©ì¼ ê²ì
-theme_xhred_mail_search_from=ìì
-theme_xhred_mail_search_to=ì
-theme_xhred_mail_search_subject=ì ëª©
-theme_xhred_mail_search_has_words=ë¨ì´ê°
-theme_xhred_mail_search_doesnt_have_words=ì´ ììµëë¤
-theme_xhred_mail_search_with_status=ìí
-theme_xhred_mail_search_with_status_any=ì´ë¤
-theme_xhred_mail_search_with_status_unread=ì½íì§ ìë
-theme_xhred_mail_search_with_status_read=ì½ë¤
-theme_xhred_mail_search_with_status_special=í¹ë³í
-theme_xhred_mail_search_search_in=ìì ê²ì
-theme_xhred_mail_search_limit_results=ê²ì ê²°ê³¼ ì í
-theme_xhred_mail_search_limit_results_yes=ì, ê²ì ë§
-theme_xhred_mail_search_has_attach=ì²¨ë¶ íì¼ ìì
+theme_xhred_mail_search_simple=검색 옵션 표시
+theme_xhred_mail_search_advanced=검색 옵션 숨기기
+theme_xhred_mail_search_clear=명확한 검색 결과
+theme_xhred_mail_search_empty=검색어와 일치하는 메시지가 없습니다
+theme_xhred_mail_search_search_mail=메일 검색
+theme_xhred_mail_search_from=에서
+theme_xhred_mail_search_to=에
+theme_xhred_mail_search_subject=제목
+theme_xhred_mail_search_has_words=단어가
+theme_xhred_mail_search_doesnt_have_words=이 없습니다
+theme_xhred_mail_search_with_status=상태
+theme_xhred_mail_search_with_status_any=어떤
+theme_xhred_mail_search_with_status_unread=읽히지 않는
+theme_xhred_mail_search_with_status_read=읽다
+theme_xhred_mail_search_with_status_special=특별한
+theme_xhred_mail_search_search_in=에서 검색
+theme_xhred_mail_search_limit_results=검색 결과 제한
+theme_xhred_mail_search_limit_results_yes=예, 검색 만
+theme_xhred_mail_search_has_attach=첨부 파일 있음
 
-theme_xhred_settings_right_theme_bgs=íë§ ë°°ê²½
-theme_xhred_settings_right_theme_bgs_title=íë§ ë°°ê²½
-settings_right_bgs_title=ë¡ê·¸ì¸ íì´ì§ì íë§ ë°°ê²½ì ì¬ê¸°ìì ì¤ì í  ì ììµëë¤.
-settings_right_bg_unauthenticated_users=ì¸ì¦ëì§ ìì ì¬ì©ìë¥¼ìí ë°°ê²½
-settings_right_theme_left_background_title=íë§ ë°°ê²½ ì»¨í¸ë¡¤
+theme_xhred_settings_right_theme_bgs=테마 배경
+theme_xhred_settings_right_theme_bgs_title=테마 배경
+settings_right_bgs_title=로그인 페이지의 테마 배경을 여기에서 설정할 수 있습니다.
+settings_right_bg_unauthenticated_users=인증되지 않은 사용자를위한 배경
+settings_right_theme_left_background_title=테마 배경 컨트롤
 
-theme_xhred_find_in_config_files=êµ¬ì± íì¼ìì ì°¾ê¸°
-theme_xhred_find_in_config_files_result_found_single=$2 íì¼ìì $3ì $1 ê²ì ê²°ê³¼
-theme_xhred_find_in_config_files_result_found_multi=$2 íì¼ìì $3ì $1 ê²ì ê²°ê³¼
-theme_xhred_find_in_config_files_results_found=$3ì $2 íì¼ìì $1 ê°ì ê²°ê³¼ê° ë°ê²¬ëììµëë¤.
+theme_xhred_find_in_config_files=구성 파일에서 찾기
+theme_xhred_find_in_config_files_result_found_single=$2 파일에서 $3의 $1 검색 결과
+theme_xhred_find_in_config_files_result_found_multi=$2 파일에서 $3의 $1 검색 결과
+theme_xhred_find_in_config_files_results_found=$3의 $2 파일에서 $1 개의 결과가 발견되었습니다.
 
-theme_xhred_filemanager_context_symlink=ìë¡ì´ ì¬ë³¼ë¦­ ë§í¬ ë§ë¤ê¸°
-theme_xhred_global_symbolic=ì¬ë³¼ë¦­ ë§í¬
-theme_xhred_global_target=íì 
-settings_sysinfo_max_servers=íì í  ìµë ê°ì ìë²
+theme_xhred_filemanager_context_symlink=새로운 심볼릭 링크 만들기
+theme_xhred_global_symbolic=심볼릭 링크
+theme_xhred_global_target=표적
+settings_sysinfo_max_servers=표시 할 최대 가상 서버
 
-right_download_is_ready=ë¤ì´ë¡ëê° ì¤ë¹ëììµëë¤.
-theme_xhred_download_is_being_prepared=ë¤ì´ë¡ë ì¤ë¹ ì¤ìëë¤. ìê°ì´ ê±¸ë¦´ ì ììµëë¤. ê¸°ë¤ë ¤ì£¼ì¸ì ..
-theme_xhred_backup_is_being_prepared=ë°±ì ì¤ë¹ ì¤ìëë¤. ìê°ì´ ê±¸ë¦´ ì ììµëë¤. ê¸°ë¤ë ¤ì£¼ì¸ì ..
+right_download_is_ready=다운로드가 준비되었습니다.
+theme_xhred_download_is_being_prepared=다운로드 준비 중입니다. 시간이 걸릴 수 있습니다. 기다려주세요 ..
+theme_xhred_backup_is_being_prepared=백업 준비 중입니다. 시간이 걸릴 수 있습니다. 기다려주세요 ..
 
-settings_mail_ui=ì ë©ì¼ UI ì¬ì©
+settings_mail_ui=새 메일 UI 사용
 
-settings_theme_config_admins_only_privileged_error=ì¡ì¸ì¤ ê±°ë¶ : ê´ë¦¬ìê° ì¬ì©ì ì ìì ëí ì¡ì¸ì¤ë¥¼ ì°¨ë¨íìµëë¤
+settings_theme_config_admins_only_privileged_error=액세스 거부 : 관리자가 사용자 정의에 대한 액세스를 차단했습니다
 
-theme_xhred_tooltip_navigation_pinned=íì ë©ë´ í/í í´ì 
-settings_hotkey_navigation=íì ë©ë´ ìí ì í
+theme_xhred_tooltip_navigation_pinned=탐색 메뉴 핀/핀 해제
+settings_hotkey_navigation=탐색 메뉴 상태 전환
 
-theme_xhred_search_in_webmin=Webmin ê²ì
-theme_xhred_search_in_usermin=Usermin ê²ì
-theme_xhred_search_in_virtualserver=Virtualmin ê²ì
-theme_xhred_search_in_servermanager=Cloudmin ê²ì
+theme_xhred_search_in_webmin=Webmin 검색
+theme_xhred_search_in_usermin=Usermin 검색
+theme_xhred_search_in_virtualserver=Virtualmin 검색
+theme_xhred_search_in_servermanager=Cloudmin 검색
 
-theme_xhred_filemanager_context_clipboard_selection=ì í ë¬¼ì í´ë¦½ ë³´ëì ë³µì¬
+theme_xhred_filemanager_context_clipboard_selection=선택 물을 클립 보드에 복사
 
-settings_hotkey_slider=ì¸¡ë©´ ì¬ë¼ì´ë ìí ì í
+settings_hotkey_slider=측면 슬라이더 상태 전환
 
-theme_git_update_locked=GitHubì ì°ê²°ëì§ ììê±°ë API ìë ì íì ì´ê³¼íì¬ íë§ ìë°ì´í¸ë¥¼ ìë£ í  ì ììµëë¤. íìì ì¸ì¦ëì§ ìì ìì²­ì ê²½ì° ìë ì íì ìê°ë¹ ìµë 60 ê°ì ìì²­ì íì©í©ëë¤. ëì¤ì ë¤ì ìëíê±°ë ì½ìì ì¬ì©íì¬ ìë°ì´í¸ ì¤í¬ë¦½í¸ë¥¼ íµí´ ìëì¼ë¡ ìííì­ìì¤.
+theme_git_update_locked=GitHub에 연결되지 않았거나 API 속도 제한을 초과하여 테마 업데이트를 완료 할 수 없습니다. 후자의 인증되지 않은 요청의 경우 속도 제한은 시간당 최대 60 개의 요청을 허용합니다. 나중에 다시 시도하거나 콘솔을 사용하여 업데이트 스크립트를 통해 수동으로 수행하십시오.
 
-settings_collapse_navigation_link=í/í í´ì  ë²í¼ íì
+settings_collapse_navigation_link=핀/핀 해제 버튼 표시
 
-settings_cache_interval=ìë°ì´í¸ íì¸ì ì¤ííë ê°ê²©
-settings_cache_interval_1h=ë§¤ìê°
-settings_cache_interval_12h=12 ìê°ë§ë¤
-settings_cache_interval_1d=íë£¨ì í ë²
-settings_cache_interval_7d=ë§¤ì£¼
-settings_cache_interval_14d=í ë¬ì ë ë²
-settings_cache_interval_1m=íë¬ì íë²
-settings_cache_interval_3m=3 ê°ìì í ë²
-settings_cache_interval_6m=ì¼ëì ë ë²
-settings_cache_interval_1y=ì¼ëì íë²
+settings_cache_interval=업데이트 확인을 실행하는 간격
+settings_cache_interval_1h=매시간
+settings_cache_interval_12h=12 시간마다
+settings_cache_interval_1d=하루에 한 번
+settings_cache_interval_7d=매주
+settings_cache_interval_14d=한 달에 두 번
+settings_cache_interval_1m=한달에 한번
+settings_cache_interval_3m=3 개월에 한 번
+settings_cache_interval_6m=일년에 두 번
+settings_cache_interval_1y=일년에 한번
 
-theme_xhred_reload_notification=íë§ êµ¬ì±ì´ ë³ê²½ëìì§ë§ ì ì¥ëì§ ìììµëë¤. íì¬ ì¤ì ì¼ë¡ ì¬ì¤ì íê¸° ìí´ íì´ì§ê° ë¤ìë¡ëë©ëë¤.
+theme_xhred_reload_notification=테마 구성이 변경되었지만 저장되지 않았습니다. 현재 설정으로 재설정하기 위해 페이지가 다시로드됩니다.
 
 # 19.22
-theme_xhred_global_save_as=ë¤ë¥¸ ì´ë¦ì¼ë¡ ì ì¥
-theme_xhred_editor_save_file_as=íì¼ì ë¤ë¥¸ ì´ë¦ì¼ë¡ ì ì¥
-theme_xhred_global_configuration=êµ¬ì±
+theme_xhred_global_save_as=다른 이름으로 저장
+theme_xhred_editor_save_file_as=파일을 다른 이름으로 저장
+theme_xhred_global_configuration=구성
 
-body_used_cached_total=ì´ $1 / $3 ìºì / $2 ì¬ì©
+body_used_cached_total=총 $1 / $3 캐시 / $2 사용
 
 # 19.30
-theme_xhred_favorites_add=ì¦ê²¨ ì°¾ê¸°ì ì¶ê°
-theme_xhred_favorites_remove=ì¦ê²¨ ì°¾ê¸°ìì ì­ì íê¸°
-theme_xhred_select_deselect=íì¬ í­ëª© ì í/ì í í´ì 
-theme_xhred_edit_current=íì¬ í­ëª© í¸ì§
-theme_xhred_search_in_file=íì¼ìì ê²ì
-left_toggle_navigation_menu=íì ê°ìì± ì í
-theme_xhred_side_slider_toggle=ì¬ì´ë ì¬ë¼ì´ë ê°ìì± ì í
-right_pagination_first=ë¨¼ì 
-right_pagination_last=ë§ì§ë§
-settings_leftmenu_custom_links=ì¶ê° í­ëª©
-theme_xhred_file_editor=íì¼ í¸ì§ê¸°
-theme_xhred_mail_no_mail=ë©ì¼ì´ ììµëë¤
-theme_xhred_mail_no_new_mail=ì ë©ì¼ì´ ììµëë¤
-theme_xhred_editor_set_syntax=êµ¬ë¬¸ ì¤ì 
-theme_xhred_global_menu=ë©ë´
-theme_xhred_shell_aborted=ììì´ ì¤ë¨ëììµëë¤
+theme_xhred_favorites_add=즐겨 찾기에 추가
+theme_xhred_favorites_remove=즐겨 찾기에서 삭제하기
+theme_xhred_select_deselect=현재 항목 선택/선택 해제
+theme_xhred_edit_current=현재 항목 편집
+theme_xhred_search_in_file=파일에서 검색
+left_toggle_navigation_menu=탐색 가시성 전환
+theme_xhred_side_slider_toggle=사이드 슬라이더 가시성 전환
+right_pagination_first=먼저
+right_pagination_last=마지막
+settings_leftmenu_custom_links=추가 항목
+theme_xhred_file_editor=파일 편집기
+theme_xhred_mail_no_mail=메일이 없습니다
+theme_xhred_mail_no_new_mail=새 메일이 없습니다
+theme_xhred_editor_set_syntax=구문 설정
+theme_xhred_global_menu=메뉴
+theme_xhred_shell_aborted=작업이 중단되었습니다
 
 # 19.32
-theme_xhred_connection_reboot=ì¬ë¶í
-theme_xhred_connection_reboot_details=ìë²ê° ì¬ë¶í ì¤ìëë¤. ê¸°ë¤ë ¤ì£¼ì¸ì ..
-settings_leftmenu_custom_links_description=íì ë©ë´ì ì¬ì©ì ì§ì  ì¶ê° ë§í¬ë¥¼ ì½ìí  ì ììµëë¤. <br><br> <em>ì ëª©</em>, <em>ë§í¬</em> ë° <em>ìì´ì½</em> í¤ê° íìí©ëë¤. ì íì ì¼ë¡ <em>level</em> í¤ë¥¼ ì§ì íê³  ê°ì ì¼íë¡ êµ¬ë¶ë ëª©ë¡ì¼ë¡ ì§ì íì¬ ë§í¬ê° íìëë ë¡ê·¸ì¸ ëª¨ëë¥¼ ì ìí  ì ììµëë¤. <br><br> <em>0</em > - ê´ë¦¬ì ë¡ê·¸ì¸; <br><em>1</em> - ë¦¬ìë¬ ë¡ê·¸ì¸,<br><em>2</em> - ìë² ìì ì ë¡ê·¸ì¸,<br><em>3</em> - ì¬ì©ì ë¡ê·¸ì¸,<br><em>4</em>- ìì¤í ìì ì ë¡ê·¸ì¸.<br><br> ìë ìì ê°ì´ ì í¨í JSON ê°ì²´ë¥¼ ë¬¸ìì´ë¡ ì ë¬í´ì¼ í©ëë¤.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
-left_favorites_edit=ì¦ê²¨ ì°¾ê¸° í¸ì§
-left_favorites_edit_desc=ì´ íì´ì§ë íë§ ì¦ê²¨ ì°¾ê¸° ì¬ì©ì íì¼ì ìëì¼ë¡ í¸ì§íë ë° ì¬ì©í  ì ììµëë¤. ë³ê²½ ì¬í­ì ëí´ êµ¬ë¬¸ ëë ê¸°í ì í¨ì± ê²ì¬ê° ìíëì§ ìì¼ë¯ë¡ ì ì¤íê² ìíí´ì¼í©ëë¤.
-theme_xhred_filemanager_records_for_server_pagination=ìë² íì´ì§ ë§¤ê¹ì ììíê¸°ìí ëë í ë¦¬ì ê¸°ë³¸ í­ëª© ì
+theme_xhred_connection_reboot=재부팅
+theme_xhred_connection_reboot_details=서버가 재부팅 중입니다. 기다려주세요 ..
+settings_leftmenu_custom_links_description=탐색 메뉴에 사용자 지정 추가 링크를 삽입할 수 있습니다. <br><br> <em>제목</em>, <em>링크</em> 및 <em>아이콘</em> 키가 필요합니다. 선택적으로 <em>level</em> 키를 지정하고 값을 쉼표로 구분된 목록으로 지정하여 링크가 표시되는 로그인 모드를 정의할 수 있습니다. <br><br> <em>0</em > - 관리자 로그인; <br><em>1</em> - 리셀러 로그인,<br><em>2</em> - 서버 소유자 로그인,<br><em>3</em> - 사용자 로그인,<br><em>4</em>- 시스템 소유자 로그인.<br><br> 아래 예와 같이 유효한 JSON 개체를 문자열로 전달해야 합니다.<hr><pre data-json>{"extra":[{"title": "Google Mail", "link": "https://gmail.com/", "icon": "google", "level": "0,1,2,3,4"}, {"title": "BIND DNS Server", "link": "/bind8", "icon": "server"}, {"title": "Usermin", "link": "/", "icon": "envelope", "port": "20000", "target": "_blank"}]}</pre>
+left_favorites_edit=즐겨 찾기 편집
+left_favorites_edit_desc=이 페이지는 테마 즐겨 찾기 사용자 파일을 수동으로 편집하는 데 사용할 수 있습니다. 변경 사항에 대해 구문 또는 기타 유효성 검사가 수행되지 않으므로 신중하게 수행해야합니다.
+theme_xhred_filemanager_records_for_server_pagination=서버 페이지 매김을 시작하기위한 디렉토리의 기본 항목 수
 
-filemanager_global_info_paginated_total1=$4 íì´ì§ì $3 í­ëª©ì $1 íì¼ ë° $2 ëë í ë¦¬
-filemanager_global_info_paginated_total2=$4 íì´ì§ì $3 í­ëª©ì $1 íì¼ ë° $2 ëë í ë¦¬
-filemanager_global_info_paginated_total3=$4 íì´ì§ì $3 í­ëª©ì ëí $1 íì¼ ë° $2 ëë í ë¦¬
-filemanager_global_info_paginated_total4=$4 íì´ì§ì $3 í­ëª©ì ëí $1 ê°ì íì¼ ë° $2 ëë í ë¦¬
-theme_xhred_filemanager_search_follow_symlinks=ì¬ë³¼ë¦­ ë§í¬ë¥¼ ë°ë¥´ì­ìì¤
-theme_xhred_filemanager_mass_select=%2 íì´ì§ìì %1 ê° í­ëª©ì ëª¨ë ì í íìê² ìµëê¹?
-theme_xhred_filemanager_mass_selected=íì¬ ëë í ë¦¬ìì ëª¨ë  %1 í­ëª©ì´ ì íëììµëë¤.
-theme_xhred_filemanager_mass_select_clear=ëªíí ì í
-theme_xhred_filemanager_mass_selected_for_delete=%1 ëë í ë¦¬ì ëª¨ë  í­ëª©
-theme_xhred_filemanager_mass_selected_no_zip=ëë í ë¦¬ì ëª¨ë  í­ëª©ì ëí´ ì¤íí  ë <tt>zip</tt> ëªë ¹ ì¬ì©ì´ ì§ìëì§ ììµëë¤
-filemanager_global_search_results=ê²ì ê²°ê³¼
-filemanager_global_paginated_results=íì´ì§ ë§¤ê¹
-filemanager_global_access_change_time=ë§ì§ë§ ì¡ì¸ì¤/ë³ê²½ ìê°
-filemanager_global_user_group_id=ì«ì ì¬ì©ì/ê·¸ë£¹
-theme_xhred_filemanager_global_size_in_bytes=ë°ì´í¸ ë¨ìì í¬ê¸°
-theme_xhred_global_command_completed=ëªë ¹ ìë£
-theme_xhred_global_toggle_password_visibility=ë¹ë°ë²í¸ ê³µê° ì¤ì  ì í
-theme_xhred_login_passphrase=ìí¸
-theme_xhred_filemanager_archive_gpg_no_keys=ì¬ì© ê°ë¥í í¤ê° ììµëë¤
-filemanager_archive_gpg_error=GPG ì¤ë¥
-filemanager_archive_move_to_archive_failed=ëì ì¤ë¥ë¡ ì¸í´ íì¼ì ìì¹´ì´ë¸ë¡ ì´ëí  ì ììµëë¤
-theme_xhred_filemanager_archive_move_to=ë³´ê´ì¼ë¡ ì´ë
-theme_xhred_global_encrypt=ìí¸í
-theme_xhred_filemanager_gpg_select_the_key=í¤ë¥¼ ì ííì­ìì¤
-theme_xhred_filemanager_context_extract_encrypted=ì¶ì¶ ìµì
-theme_xhred_filemanager_extract_encrypted_password_or_passphrase=ë¹ë°ë²í¸ ëë ë¹ë°ë²í¸ ë¬¸êµ¬
-theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=ìì¶ íì¼ì í´ëíë ¤ë©´ ë¹ë°ë²í¸ë¥¼ ìë ¥íì­ìì¤. ì¤ì ë ê²½ì° GPG í¤ì ìí¸ë¥¼ ìë ¥íì­ìì¤.
-theme_xhred_global_decrypt=í´ë
-filemanager_archive_password_required=ìì¹´ì´ë¸ë¥¼ í´ëíë ë° íìí ë¹ë°ë²í¸
-filemanager_archive_password_wrong=ì ê³µë ë¹ë°ë²í¸ê° ì¬ë°ë¥´ì§ ììµëë¤
-filemanager_archive_file_not_found=íì¼ì´ ì¡´ì¬íì§ ììµëë¤
-filemanager_archive_gpg_private_error=ì¬ì© ê°ë¥í ë¹ë° í¤ê° ìê±°ë í¤ ìí¸ê° ì¬ë°ë¥´ì§ ììµëë¤
-theme_xhred_filemanager_errors_extraction=ì¶ì¶íë ëì ë¤ì ì¤ë¥ê° ë°ìíìµëë¤
-theme_xhred_filemanager_extract_option_delete_afterwards=ì¶ì¶ ì±ê³µ í ìì¹´ì´ë¸ ì­ì 
+filemanager_global_info_paginated_total1=$4 페이지의 $3 항목의 $1 파일 및 $2 디렉토리
+filemanager_global_info_paginated_total2=$4 페이지의 $3 항목의 $1 파일 및 $2 디렉토리
+filemanager_global_info_paginated_total3=$4 페이지의 $3 항목에 대한 $1 파일 및 $2 디렉토리
+filemanager_global_info_paginated_total4=$4 페이지의 $3 항목에 대한 $1 개의 파일 및 $2 디렉토리
+theme_xhred_filemanager_search_follow_symlinks=심볼릭 링크를 따르십시오
+theme_xhred_filemanager_mass_select=%2 페이지에서 %1 개 항목을 모두 선택 하시겠습니까?
+theme_xhred_filemanager_mass_selected=현재 디렉토리에서 모든 %1 항목이 선택되었습니다.
+theme_xhred_filemanager_mass_select_clear=명확한 선택
+theme_xhred_filemanager_mass_selected_for_delete=%1 디렉토리의 모든 항목
+theme_xhred_filemanager_mass_selected_no_zip=디렉토리의 모든 항목에 대해 실행할 때 <tt>zip</tt> 명령 사용이 지원되지 않습니다
+filemanager_global_search_results=검색 결과
+filemanager_global_paginated_results=페이지 매김
+filemanager_global_access_change_time=마지막 액세스/변경 시간
+filemanager_global_user_group_id=숫자 사용자/그룹
+theme_xhred_filemanager_global_size_in_bytes=바이트 단위의 크기
+theme_xhred_global_command_completed=명령 완료
+theme_xhred_global_toggle_password_visibility=비밀번호 공개 설정 전환
+theme_xhred_login_passphrase=암호
+theme_xhred_filemanager_archive_gpg_no_keys=사용 가능한 키가 없습니다
+filemanager_archive_gpg_error=GPG 오류
+filemanager_archive_move_to_archive_failed=동시 오류로 인해 파일을 아카이브로 이동할 수 없습니다
+theme_xhred_filemanager_archive_move_to=보관으로 이동
+theme_xhred_global_encrypt=암호화
+theme_xhred_filemanager_gpg_select_the_key=키를 선택하십시오
+theme_xhred_filemanager_context_extract_encrypted=추출 옵션
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase=비밀번호 또는 비밀번호 문구
+theme_xhred_filemanager_extract_encrypted_password_or_passphrase_desc=압축 파일을 해독하려면 비밀번호를 입력하십시오. 설정된 경우 GPG 키의 암호를 입력하십시오.
+theme_xhred_global_decrypt=해독
+filemanager_archive_password_required=아카이브를 해독하는 데 필요한 비밀번호
+filemanager_archive_password_wrong=제공된 비밀번호가 올바르지 않습니다
+filemanager_archive_file_not_found=파일이 존재하지 않습니다
+filemanager_archive_gpg_private_error=사용 가능한 비밀 키가 없거나 키 암호가 올바르지 않습니다
+theme_xhred_filemanager_errors_extraction=추출하는 동안 다음 오류가 발생했습니다
+theme_xhred_filemanager_extract_option_delete_afterwards=추출 성공 후 아카이브 삭제
 
-theme_xhred_login_passphrase_desc=ì¤ì ë ê²½ì° GPG í¤ì ìí¸ë¥¼ ìë ¥íì­ìì¤.
-theme_xhred_filemanager_encrypt_option_delete_afterwards=ì±ê³µì ì¸ ìí¸í í íì¼ ì­ì 
-theme_xhred_filemanager_decrypt_option_delete_afterwards=ì±ê³µì ì¸ ìí¸ í´ë í íì¼ ì­ì 
-theme_xhred_filemanager_encrypt_gpg_key=í¤ ì¬ì©
-theme_xhred_filemanager_errors_encrypt=ìí¸ííë ëì ë¤ì ì¤ë¥ê° ë°ìíìµëë¤
-theme_xhred_filemanager_errors_decrypt=í´ëíë ëì ë¤ì ì¤ë¥ê° ë°ìíìµëë¤
-theme_xhred_filemanager_crypt_encrypt=íì¼ì´ ìí¸íëê³  ììµëë¤.
-theme_xhred_filemanager_crypt_decrypt=íì¼ì´ í´ëëê³  ììµëë¤.
-theme_xhred_filemanager_crypt_encrypted=ì íí íì¼ì ìí¸íì ì±ê³µíìµëë¤.
-theme_xhred_filemanager_crypt_decrypted=ì íí íì¼ì ìí¸ í´ëì ì±ê³µíìµëë¤.
-theme_xhred_filemanager_batch_error=ëí ìµìí %1 ì¤ë¥ì ìë¦° ê²°ê³¼ë í¬í¨ë©ëë¤.
+theme_xhred_login_passphrase_desc=설정된 경우 GPG 키의 암호를 입력하십시오.
+theme_xhred_filemanager_encrypt_option_delete_afterwards=성공적인 암호화 후 파일 삭제
+theme_xhred_filemanager_decrypt_option_delete_afterwards=성공적인 암호 해독 후 파일 삭제
+theme_xhred_filemanager_encrypt_gpg_key=키 사용
+theme_xhred_filemanager_errors_encrypt=암호화하는 동안 다음 오류가 발생했습니다
+theme_xhred_filemanager_errors_decrypt=해독하는 동안 다음 오류가 발생했습니다
+theme_xhred_filemanager_crypt_encrypt=파일이 암호화되고 있습니다.
+theme_xhred_filemanager_crypt_decrypt=파일이 해독되고 있습니다.
+theme_xhred_filemanager_crypt_encrypted=선택한 파일의 암호화에 성공했습니다.
+theme_xhred_filemanager_crypt_decrypted=선택한 파일의 암호 해독에 성공했습니다.
+theme_xhred_filemanager_batch_error=또한 익숙한 %1 오류의 잘린 결과도 포함됩니다.
 
-theme_xhred_global_preview_img=ë¯¸ë¦¬ë³´ê¸° ì´ë¯¸ì§
-theme_xhred_global_preview_img_sel=ì íí ì´ë¯¸ì§ ë¯¸ë¦¬ë³´ê¸°
-theme_xhred_global_preview_img_all=ëª¨ë  ì´ë¯¸ì§ ë¯¸ë¦¬ë³´ê¸°
-theme_xhred_filemanager_preview_images_building=ë¯¸ë¦¬ë³´ê¸°ë¥¼ ìí´ ì´ë¯¸ì§ ê°¤ë¬ë¦¬ê° ìì±ëê³  ììµëë¤.
-theme_xhred_filemanager_preview_images_deps_error1=ì´ ê¸°ë¥ì ì¬ì©íë ¤ë©´ ìì¤íì <code>ImageMagick</code> í¨í¤ì§ê° ì¤ì¹ëì´ ìì´ì¼í©ëë¤.
-theme_xhred_filemanager_preview_images_deps_error2=ìëì¼ë¡ ì¤ì¹ëëë¡ $1 í  ì ììµëë¤.
-theme_xhred_filemanager_preview_images_error=ì´ë¯¸ì§ ê°¤ë¬ë¦¬ë¥¼ ìì± í  ì ììµëë¤.
-global_deps_installed=$1 í¨í¤ì§ê° ì±ê³µì ì¼ë¡ ì¤ì¹ëììµëë¤.
-global_deps_error=$1 í¨í¤ì§ê° ì±ê³µì ì¼ë¡ ì¤ì¹ëì§ ìììµëë¤. ìëì¼ë¡ ì¤ì¹íì­ìì¤.
-global_deps_installing=$1 í¨í¤ì§ê° ì¤ì¹ ì¤ìëë¤.
-theme_xhred_global_toggle_fullscreen=ì ì²´ íë©´ ì í
-theme_xhred_global_zoom_in_out=íë/ì¶ì
-theme_xhred_global_prev_arrow_left=ì´ì  (ì¼ìª½ íì´í)
-theme_xhred_global_next_arrow_right=ë¤ì (ì¤ë¥¸ìª½ íì´í)
+theme_xhred_global_preview_img=미리보기 이미지
+theme_xhred_global_preview_img_sel=선택한 이미지 미리보기
+theme_xhred_global_preview_img_all=모든 이미지 미리보기
+theme_xhred_filemanager_preview_images_building=미리보기를 위해 이미지 갤러리가 생성되고 있습니다.
+theme_xhred_filemanager_preview_images_deps_error1=이 기능을 사용하려면 시스템에 <code>ImageMagick</code> 패키지가 설치되어 있어야합니다.
+theme_xhred_filemanager_preview_images_deps_error2=자동으로 설치되도록 $1 할 수 있습니다.
+theme_xhred_filemanager_preview_images_error=이미지 갤러리를 생성 할 수 없습니다.
+global_deps_installed=$1 패키지가 성공적으로 설치되었습니다.
+global_deps_error=$1 패키지가 성공적으로 설치되지 않았습니다. 수동으로 설치하십시오.
+global_deps_installing=$1 패키지가 설치 중입니다.
+theme_xhred_global_toggle_fullscreen=전체 화면 전환
+theme_xhred_global_zoom_in_out=확대/축소
+theme_xhred_global_prev_arrow_left=이전 (왼쪽 화살표)
+theme_xhred_global_next_arrow_right=다음 (오른쪽 화살표)
 
-theme_xhred_clear_cache_initiated=ìºì ì§ì°ê¸° ë° ë¤ìë¡ë
-settings_document_title=ë¬¸ì ì ëª© íì
-settings_document_title_option_3=êµ¬ì± ë¨ì
-settings_document_title_option_1=ëª¨ë $1 ë²ì  (OS ì í)
-settings_document_title_option_2=$1 ë²ì  (OS ì í) ëª¨ë
-settings_document_title_option_4=$1 ë²ì  (OS ì í)
-settings_document_title_option_5=í¸ì¤í¸ ì´ë¦-$1 ë²ì  (OS ì í) ëª¨ë
-settings_document_title_option_6=username@hostname-$1 ë²ì  (OS ì í) ëª¨ë
-settings_document_title_option_7=ëª¨ë $1
-settings_document_title_option_8=í¸ì¤í¸ ì´ë¦ ëª¨ë
-settings_document_title_option_9=username@hostname ëª¨ë
+theme_xhred_clear_cache_initiated=캐시 지우기 및 다시로드
+settings_document_title=문서 제목 형식
+settings_document_title_option_3=구성 단위
+settings_document_title_option_1=모듈 $1 버전 (OS 유형)
+settings_document_title_option_2=$1 버전 (OS 유형) 모듈
+settings_document_title_option_4=$1 버전 (OS 유형)
+settings_document_title_option_5=호스트 이름-$1 버전 (OS 유형) 모듈
+settings_document_title_option_6=username@hostname-$1 버전 (OS 유형) 모듈
+settings_document_title_option_7=모듈 $1
+settings_document_title_option_8=호스트 이름 모듈
+settings_document_title_option_9=username@hostname 모듈
 theme_xhred_csf=ConfigServer Security & Firewall
-theme_xhred_global_version=ë²ì 
-theme_xhred_notify_patching_module_style=$1ì ì´ê¸° UI í¨ì¹ë¥¼ ì ì©íê³  ë¤ìë¡ëíì­ìì¤.
-theme_xhred_global_error_more_details_online=ì°¸ê³  : ì¨ë¼ì¸ %1wiki íì´ì§ %1 ììì´ ì¤ë¥ ë° í´ê²° ë°©ë²ì ëí´ ìì¸í ììë³´ì­ìì¤.
+theme_xhred_global_version=버전
+theme_xhred_notify_patching_module_style=$1에 초기 UI 패치를 적용하고 다시로드하십시오.
+theme_xhred_global_error_more_details_online=참고 : 온라인 %1wiki 페이지 %1 에서이 오류 및 해결 방법에 대해 자세히 알아보십시오.
 
 # 19.33
-theme_xhred_filemanager_search_file_mask=íì¼ ë§ì¤í¬
-theme_xhred_filemanager_search_regex=ì ê·ì
-theme_xhred_upload_successful=<span>$1 íì¼</span>ì´ $2 ëë í ë¦¬ì ì±ê³µì ì¼ë¡ ìë¡ëëììµëë¤
-theme_xhred_upload_successful_single=<span>$1 íì¼</span>ì´ $2 ëë í ë¦¬ì ì±ê³µì ì¼ë¡ ìë¡ëëììµëë¤
-settings_usermin_default_module=ê¸°ë³¸ ëª¨ë
+theme_xhred_filemanager_search_file_mask=파일 마스크
+theme_xhred_filemanager_search_regex=정규식
+theme_xhred_upload_successful=<span>$1 파일</span>이 $2 디렉토리에 성공적으로 업로드되었습니다
+theme_xhred_upload_successful_single=<span>$1 파일</span>이 $2 디렉토리에 성공적으로 업로드되었습니다
+settings_usermin_default_module=기본 모듈
 
 # 19.34
-theme_xhred_search_in_file_open_external=ë³ëì í¸ì§ê¸°ë¡ íì¼ ë¶ë¦¬
-theme_xhred_path_to_console=í°ë¯¸ëìì íì¬ ê²½ë¡ ì´ê¸° <tt>(Alt + â§ + K)</tt>
-theme_xhred_filemanager_editor_revert_content=íì¼ ëëë¦¬ê¸°
-theme_xhred_filemanager_editor_reverting_content=ë³ê²½ ì¬í­ì ì­ì íê³  ìë íì¼ ë´ì©ì¼ë¡ ëëë¦½ëë¤.
+theme_xhred_search_in_file_open_external=별도의 편집기로 파일 분리
+theme_xhred_path_to_console=터미널에서 현재 경로 열기 <tt>(Alt + ⇧ + K)</tt>
+theme_xhred_filemanager_editor_revert_content=파일 되돌리기
+theme_xhred_filemanager_editor_reverting_content=변경 사항을 삭제하고 원래 파일 내용으로 되돌립니다.
 
 # 19.37
-theme_xhred_filemanager_exclude_dirs=í­ëª© ì ì¸
-theme_xhred_filemanager_exclude_dirs_desc=ì ì¸ í  ì¸ë¯¸ì½ë¡ ì¼ë¡ êµ¬ë¶ ë íì¼ ëë íì ëë í ë¦¬ ëª©ë¡
+theme_xhred_filemanager_exclude_dirs=항목 제외
+theme_xhred_filemanager_exclude_dirs_desc=제외 할 세미콜론으로 구분 된 파일 또는 하위 디렉토리 목록
 
 # 19.38
-theme_global_access_level=ì ê·¼ ìì¤
-theme_global_user_mode=ì¬ì©ì ëª¨ë
+theme_global_access_level=접근 수준
+theme_global_user_mode=사용자 모드
 
 # 19.40
-theme_xhred_global_attachments=ì²¨ë¶
-theme_xhred_mail_composer_send=ë³´ë´ë¤
-theme_xhred_mail_composer_schedule=ìê°í
-theme_xhred_mail_composer_attach=íì¼ ì²¨ë¶
-theme_xhred_mail_composer_toggle=HTML/ì¼ë° íì¤í¸ ëª¨ë ì í
-theme_xhred_mail_composer_discard=ì´ì ì­ì 
-theme_xhred_mail_composer_server_attach=ìë²ìì íì¼ ì²¨ë¶
-theme_xhred_mail_composer_addrecipients=ì£¼ìë¡ì ìì ì ì¶ê°
-theme_xhred_mail_composer_notifications_dsn=ë°°ì¡ ìí ìì²­
-theme_xhred_mail_composer_notifications_del=ì½ê¸° ììì¦ ìì²­
-theme_xhred_global_options=ìµì
-theme_xhred_mail_composer_draft_saving=ì´ì ì ì¥ ì¤. ..
-theme_xhred_mail_composer_draft_saved=ì´ìì´ ì ì¥ëììµëë¤.
-theme_xhred_mail_composer_server_attach_error_read=ìì²­í íì¼ì ì½ì ì ìê±°ë ê¶íì´ ê±°ë¶ëììµëë¤
-theme_xhred_mail_composer_server_attach_error_dir=ëë í ë¦¬ë ì²¨ë¶ í  ì ììµëë¤
-theme_xhred_mail_composer_discarded_draft=ì´ìì´ ì­ì ëììµëë¤.
-theme_xhred_global_undo=ì¤í ì·¨ì
+theme_xhred_global_attachments=첨부
+theme_xhred_mail_composer_send=보내다
+theme_xhred_mail_composer_schedule=시간표
+theme_xhred_mail_composer_attach=파일 첨부
+theme_xhred_mail_composer_toggle=HTML/일반 텍스트 모드 전환
+theme_xhred_mail_composer_discard=초안 삭제
+theme_xhred_mail_composer_server_attach=서버에서 파일 첨부
+theme_xhred_mail_composer_addrecipients=주소록에 수신자 추가
+theme_xhred_mail_composer_notifications_dsn=배송 상태 요청
+theme_xhred_mail_composer_notifications_del=읽기 영수증 요청
+theme_xhred_global_options=옵션
+theme_xhred_mail_composer_draft_saving=초안 저장 중. ..
+theme_xhred_mail_composer_draft_saved=초안이 저장되었습니다.
+theme_xhred_mail_composer_server_attach_error_read=요청한 파일을 읽을 수 없거나 권한이 거부되었습니다
+theme_xhred_mail_composer_server_attach_error_dir=디렉토리는 첨부 할 수 없습니다
+theme_xhred_mail_composer_discarded_draft=초안이 삭제되었습니다.
+theme_xhred_global_undo=실행 취소
 
-theme_xhred_global_today=ì¤ë
-theme_xhred_global_tomorrow=ë´ì¼
-theme_xhred_mail_composer_scheduled=%2 ìì %1 ë¥¼) ë³´ë´ì­ìì¤
-theme_global_core=íµì¬
-theme_dashboard_accordion_live_stats=íµê³ ê¸°ë¡
+theme_xhred_global_today=오늘
+theme_xhred_global_tomorrow=내일
+theme_xhred_mail_composer_scheduled=%2 에서 %1 를) 보내십시오
+theme_global_core=핵심
+theme_dashboard_accordion_live_stats=통계 기록
 theme_xhred_live_stats_cpu=CPU
-theme_xhred_live_stats_mem=ê¸°ìµ
-theme_xhred_live_stats_virt=êµí
-theme_xhred_live_stats_proc=ë°©ë²
-theme_xhred_live_stats_disk=ëì¤í¬ I/O
-theme_xhred_global_hour=ì
-theme_xhred_global_hours=ìê°
-theme_xhred_title_locale_time_format=ìê° íì
+theme_xhred_live_stats_mem=기억
+theme_xhred_live_stats_virt=교환
+theme_xhred_live_stats_proc=방법
+theme_xhred_live_stats_disk=디스크 I/O
+theme_xhred_global_hour=시
+theme_xhred_global_hours=시간
+theme_xhred_title_locale_time_format=시간 형식
 theme_xhred_nice_size_PIB=PiB
 theme_xhred_nice_size_TIB=TiB
-theme_xhred_nice_size_GIB=ìì½ìì´
+theme_xhred_nice_size_GIB=수코양이
 theme_xhred_nice_size_MIB=MiB
 theme_xhred_nice_size_kIB=KiB
-theme_xhred_live_stats_net=ë¤í¸ìí¬ I/O
+theme_xhred_live_stats_net=네트워크 I/O
 theme_xhred_nice_size_PBB=Pbps
 theme_xhred_nice_size_TBB=Tbps
 theme_xhred_nice_size_GBB=Gbps
 theme_xhred_nice_size_MBB=Mbps
 theme_xhred_nice_size_kBB=Kbps
-theme_xhred_global_rows=í
+theme_xhred_global_rows=행
 
 # 19.42
-settings_side_slider_blend=ìì
+settings_side_slider_blend=상속
 
 # 19.44
-theme_xhred_reload_lang_notification=íë§ ì¸ì´ê° ë³ê²½ëììµëë¤. ìë¡ì´ ì¤ì ì ì ì©íê¸° ìí´ íì´ì§ê° ìë¡ ê³ ì¹¨ë©ëë¤.
+theme_xhred_reload_lang_notification=테마 언어가 변경되었습니다. 새로운 설정을 적용하기 위해 페이지가 새로 고침됩니다.
 
 # 19.46
-theme_xhred_global_small=ìì
-theme_xhred_global_normal=íì¤
-theme_xhred_global_medium=ë§¤ì§
-theme_xhred_global_large=í°
-theme_xhred_global_huge=ê±°ëí
-theme_xhred_filemanager_editor_maximized=ììì í¸ì§ê¸° í¨ë ìµëí
+theme_xhred_global_small=작은
+theme_xhred_global_normal=표준
+theme_xhred_global_medium=매질
+theme_xhred_global_large=큰
+theme_xhred_global_huge=거대한
+theme_xhred_filemanager_editor_maximized=시작시 편집기 패널 최대화
 
 # 19.47
-theme_xhred_textarea_to_clipboard=ì íí íì¤í¸ ìì­ ë´ì©ì´ í´ë¦½ ë³´ëì ì±ê³µì ì¼ë¡ ë³µì¬ëììµëë¤
+theme_xhred_textarea_to_clipboard=선택한 텍스트 영역 내용이 클립 보드에 성공적으로 복사되었습니다
 
 # 19.48
-theme_xhred_global_alias=ë³ëª
+theme_xhred_global_alias=별명
 
 # 19.50
-theme_xhred_mail_composer_real_name=ì¤ì  ì´ë¦
-theme_xhred_mail_composer_username=ì¬ì©ì ì´ë¦
+theme_xhred_mail_composer_real_name=실제 이름
+theme_xhred_mail_composer_username=사용자 이름
 
 # 19.53
-settings_global_palette_unauthenticated=ë¡ê·¸ì¸ íì´ì§ ìì í
+settings_global_palette_unauthenticated=로그인 페이지 색상 표
 
 # 19.60
-settings_config_save_and_next=ì ì¥íê³  ë¤ì
-settings_config_configuration_category=êµ¬ì± ë²ì£¼
-config_search_options_all=ëª¨ë  ëª¨ë êµ¬ì± ìµì ê²ì
-theme_xhred_editing_config_file=êµ¬ì± íì¼ í¸ì§
+settings_config_save_and_next=저장하고 다음
+settings_config_configuration_category=구성 범주
+config_search_options_all=모든 모듈 구성 옵션 검색
+theme_xhred_editing_config_file=구성 파일 편집
 
 # 19.61
-theme_xhred_login_message_2fa=ì´ ì¬ì©ìê° ë¡ê·¸ì¸ í  ì ìëë¡ 2 ë¨ê³ ì¸ì¦ì´ íì±íëììµëë¤.
-theme_xhred_global_verify=ê²ì¦
-settings_show_terminal_link2=ëªë ¹ ì¸ ë²í¼ íì
-settings_hotkey_shell2=ëªë ¹ ì¸ ì´ê¸°
-theme_xhred_path_to_console2=ëªë ¹ ì¸ìì íì¬ ê²½ë¡ ì´ê¸° <tt>(Alt + â§ + K)</tt>
-theme_tooltip_terminal_link2=ëªë ¹ ì¸
+theme_xhred_login_message_2fa=이 사용자가 로그인 할 수 있도록 2 단계 인증이 활성화되었습니다.
+theme_xhred_global_verify=검증
+settings_show_terminal_link2=명령 셸 버튼 표시
+settings_hotkey_shell2=명령 셸 열기
+theme_xhred_path_to_console2=명령 셸에서 현재 경로 열기 <tt>(Alt + ⇧ + K)</tt>
+theme_tooltip_terminal_link2=명령 셸
 
 # 19.70
-theme_xhred_filemanager_context_view=ì ë§
-theme_xhred_file_viewer=íì¼ ë·°ì´
-theme_xhred_global_done=ëë.
-theme_xhred_filemanager_file_save_err=íì¼ì ì ì¥íë ì¤ì ì¤ë¥ê° ë°ìíìµëë¤.
-theme_xhred_filemanager_view_head=í¤ë íì¼ ì¶ë ¥
-theme_xhred_filemanager_view_head_and_reverse=í¤ë ë° ë¦¬ë²ì¤ íì¼ ì¶ë ¥
-theme_xhred_filemanager_view_tail=íì¼ íì¼ ì¶ë ¥
-theme_xhred_filemanager_view_tail_and_reverse=íì¼ ë° ë¦¬ë²ì¤ íì¼ ì¶ë ¥
-theme_xhred_filemanager_view_head_and_tail=í¤ë ë° íì¼ íì¼ ì¶ë ¥
+theme_xhred_filemanager_context_view=전망
+theme_xhred_file_viewer=파일 뷰어
+theme_xhred_global_done=끝난.
+theme_xhred_filemanager_file_save_err=파일을 저장하는 중에 오류가 발생했습니다.
+theme_xhred_filemanager_view_head=헤드 파일 출력
+theme_xhred_filemanager_view_head_and_reverse=헤드 및 리버스 파일 출력
+theme_xhred_filemanager_view_tail=테일 파일 출력
+theme_xhred_filemanager_view_tail_and_reverse=테일 및 리버스 파일 출력
+theme_xhred_filemanager_view_head_and_tail=헤드 및 테일 파일 출력
 
-theme_xhred_filemanager_search_info_search_dir=ëë í ë¦¬ ê²ì
-theme_xhred_filemanager_search_limit_user=ì¬ì©ì ìì 
-theme_xhred_filemanager_search_limit_group=ê·¸ë£¹ ìì 
-theme_xhred_filemanager_search_limit_type=íì¼ ì í
-theme_xhred_filemanager_search_limit_size=íì¼ í¬ê¸°
-theme_xhred_filemanager_search_limit_size_desc=ì : <2K ëë >3M-<5M
+theme_xhred_filemanager_search_info_search_dir=디렉토리 검색
+theme_xhred_filemanager_search_limit_user=사용자 소유
+theme_xhred_filemanager_search_limit_group=그룹 소유
+theme_xhred_filemanager_search_limit_type=파일 유형
+theme_xhred_filemanager_search_limit_size=파일 크기
+theme_xhred_filemanager_search_limit_size_desc=예 : <2K 또는 >3M-<5M
 
-theme_xhred_filemanager_context_move_to_trash=í´ì§íµì¼ë¡ ì´ë
-theme_xhred_filemanager_context_permanently_delete=ìêµ¬ì ì¼ë¡ ì­ì 
-theme_xhred_global_remove=ìì ë¤
-theme_xhred_filemanager_settings_deletion_mode=í´ì§íµì¼ë¡ ì´ëíì¬ ìì íê² íì¼ ì­ì 
-theme_xhred_filemanager_successful_removal=<tt>$1</tt> í´ì§íµì¼ë¡ ì±ê³µì ì¼ë¡ ì ê±°ëììµëë¤.
-theme_xhred_filemanager_removing_selected=ì íí í­ëª©ì ì ê±°í©ëë¤.
-theme_xhred_filemanager_remove_warning=ì ê±°ê° ì±ê³µì ì¼ë¡ ìë£ëìì§ë§ ëª¨ë  ê°ì²´ì ëí ê²ì ìëëë¤. ìì²­ ë ê°ì²´ê° ì ê±°ëê¸° ì ì <em>ì´ë¦ì´ ë°ëê±°ë</em> <em>ì´ë</em>ëìì ì ììµëë¤. ì íë ê¶í (ìì±)ì ë ë¤ë¥¸ ê°ë¥í ìì¸ìëë¤. ìë¬ ë©ìì§:
+theme_xhred_filemanager_context_move_to_trash=휴지통으로 이동
+theme_xhred_filemanager_context_permanently_delete=영구적으로 삭제
+theme_xhred_global_remove=없애다
+theme_xhred_filemanager_settings_deletion_mode=휴지통으로 이동하여 안전하게 파일 삭제
+theme_xhred_filemanager_successful_removal=<tt>$1</tt> 휴지통으로 성공적으로 제거되었습니다.
+theme_xhred_filemanager_removing_selected=선택한 항목을 제거합니다.
+theme_xhred_filemanager_remove_warning=제거가 성공적으로 완료되었지만 모든 개체에 대한 것은 아닙니다. 요청 된 개체가 제거되기 전에 <em>이름이 바뀌거나</em> <em>이동</em>되었을 수 있습니다. 제한된 권한 (속성)은 또 다른 가능한 원인입니다. 에러 메시지:
 
-theme_xhred_connection_error_details_ssl=<a>ìì²´ ìëª ë SSL ì¸ì¦ì</a> ê²½ê³  íì¸
+theme_xhred_connection_error_details_ssl=<a>자체 서명 된 SSL 인증서</a> 경고 확인
 
 # 19.71
-settings_sysinfo_hidden_panels_user=ì¨ê²¨ì§ ìì½ëì¸
-theme_xhred_tooltip_dashboard_panels_disable=$1 í¨ë ì¨ê¸°ê¸°
-theme_xhred_dashboard_panels_disabled_explain=ì¨ê²¨ì§ í¨ëì <tt>Theme Configuration: Dashboard and real-time monitoring</tt> íì´ì§ë¥¼ íµí´ ë¤ì íì±íí  ì ììµëë¤.
-settings_right_sysinfo_page_options=ëì ë³´ë ë° ì¤ìê° ëª¨ëí°ë§
-settings_right_navigation_menu_options=íì ë©ë´
-settings_right_notification_slider_options=ì¬ì´ë ì¬ë¼ì´ë
-settings_right_table_options=íì´ë¸ ëì¤íë ì´
-settings_right_hotkey_options=ë¨ì¶í¤
-settings_right_hotkey_custom_options=ì¬ì©ì ì ì ë§í¬ ë¨ì¶í¤
-settings_right_soft_updates_page_options=íë§ ìë°ì´í¸
-settings_global_general_options_title=ì¼ë° ê¸°ë³¸ê°
-theme_error_access_not_root_user=ì¡ì¸ì¤ ê±°ë¶ : ì¬ì©ìëì´ ì¹ìì í¸ì§ í  ê¶íì´ ììµëë¤.
-settings_theme_config_admins_only_privileged=ì¬ì©ìì íë§ êµ¬ì±ì ëí ì¡ì¸ì¤ ê¸ì§
-settings_theme_config_admins_only_privileged_description=ì´ ìµìì ìë² ê´ë¦¬ìê° ìííë ê²½ì° ê¶íì´ìë ì¼ë° ì¬ì©ììê² íë§ êµ¬ì± íì´ì§ë¥¼ ì¨ ê¹ëë¤. ê·¸ë¬ëì´ ìµìì ì¬ì©íì§ ìë ê²ì´ ì¢ìµëë¤. ì¼ë° ì¬ì©ìë ì´ë¯¸ íë§ êµ¬ì±ì ëí ì¡ì¸ì¤ê° ì íëì´ ìê³  ì¬ì©ì ë³ ìµìì ìµì ì§í© ë§ ë³ê²½í  ì ìê¸° ëë¬¸ìëë¤.
+settings_sysinfo_hidden_panels_user=숨겨진 아코디언
+theme_xhred_tooltip_dashboard_panels_disable=$1 패널 숨기기
+theme_xhred_dashboard_panels_disabled_explain=숨겨진 패널은 <tt>Theme Configuration: Dashboard and real-time monitoring</tt> 페이지를 통해 다시 활성화할 수 있습니다.
+settings_right_sysinfo_page_options=대시 보드 및 실시간 모니터링
+settings_right_navigation_menu_options=탐색 메뉴
+settings_right_notification_slider_options=사이드 슬라이더
+settings_right_table_options=테이블 디스플레이
+settings_right_hotkey_options=단축키
+settings_right_hotkey_custom_options=사용자 정의 링크 단축키
+settings_right_soft_updates_page_options=테마 업데이트
+settings_global_general_options_title=일반 기본값
+theme_error_access_not_root_user=액세스 거부 : 사용자는이 섹션을 편집 할 권한이 없습니다.
+settings_theme_config_admins_only_privileged=사용자의 테마 구성에 대한 액세스 금지
+settings_theme_config_admins_only_privileged_description=이 옵션은 서버 관리자가 시행하는 경우 권한이없는 일반 사용자에게 테마 구성 페이지를 숨 깁니다. 그러나이 옵션은 사용하지 않는 것이 좋습니다. 일반 사용자는 이미 테마 구성에 대한 액세스가 제한되어 있고 사용자 별 옵션의 최소 집합 만 변경할 수 있기 때문입니다.
 
 # 19.72
-theme_xhred_global_prefs=íê²½ ì¤ì 
-mconfig_eaccess=ì´ ëª¨ëì ì¡ì¸ì¤ í  ì ììµëë¤.
-mconfig_ecannot=ì´ ëª¨ëì ëí ì¬ì©ì ì ì êµ¬ì± íì¼ì´ ììµëë¤.
-theme_xhred_filemanager_mconfig_columns_selinux_disabled=ì´ ê¸°ë¥ì ì¬ì©íë ¤ë©´ <tt>SELinux</tt>ë¥¼ ì¤ì¹íê³  íì±íí´ì¼í©ëë¤.
-theme_xhred_filemanager_mconfig_columns_acls_disabled=ì´ ê¸°ë¥ì ì¬ì©íë ¤ë©´ <tt>ACL</tt>ì ì¼ê³  <kbd>getfacl</kbd> ëªë ¹ì ì¬ì©í  ììë ìíë¡ íì¼ ìì¤íì ë§ì´í¸í´ì¼í©ëë¤.
-theme_xhred_global_module_preferences=ëª¨ë íê²½ ì¤ì 
+theme_xhred_global_prefs=환경 설정
+mconfig_eaccess=이 모듈에 액세스 할 수 없습니다.
+mconfig_ecannot=이 모듈에 대한 사용자 정의 구성 파일이 없습니다.
+theme_xhred_filemanager_mconfig_columns_selinux_disabled=이 기능을 사용하려면 <tt>SELinux</tt>를 설치하고 활성화해야합니다.
+theme_xhred_filemanager_mconfig_columns_acls_disabled=이 기능을 사용하려면 <tt>ACL</tt>을 켜고 <kbd>getfacl</kbd> 명령을 사용할 수있는 상태로 파일 시스템을 마운트해야합니다.
+theme_xhred_global_module_preferences=모듈 환경 설정
 
 # 19.74
-theme_xhred_theme_update_available=ìë¡ì´ ë²ì ì Authentic Themeê° ì¤ì¹ëììµëë¤.
-settings_right_page_keep=ëë©ì¸ ì¤ìì¹ì ëì¼í íì´ì§ë¡ë
-settings_right_page_keep_description=ì´ ìµìì íì ë©ë´ ëë¡­ ë¤ì´ ëª©ë¡ìì ë³ê²½í  ë ëë©ì¸ ì íì ëì¼í íì´ì§ë¥¼ë¡ëíë ¤ê³ í©ëë¤.
+theme_xhred_theme_update_available=새로운 버전의 Authentic Theme가 설치되었습니다.
+settings_right_page_keep=도메인 스위치에 동일한 페이지로드
+settings_right_page_keep_description=이 옵션은 탐색 메뉴 드롭 다운 목록에서 변경할 때 도메인 선택시 동일한 페이지를로드하려고합니다.
 
 # 19.76
-theme_xhred_global_show_all=ëª¨ë íì
-theme_xhred_filemanager_context_prop_show_all=ëª¨ë  ìì±ë³´ê¸°
+theme_xhred_global_show_all=모두 표시
+theme_xhred_filemanager_context_prop_show_all=모든 속성보기
 
 # 19.84
-settings_right_table_links_type=íì´ë¸ ë§í¬ íì ì í
-settings_right_table_links_type_2=íì¤í¸ê° ìë í° ìì´ì½
-settings_right_table_links_type_1=í´í íì¤í¸ê° ìë ìì ìì´ì½
-settings_right_table_links_type_0=ìì´ì½ ìì, íì¤í¸ ë§í¬ë§ ìì
-settings_right_table_animate_icons=íì´ë¸ ìì´ì½ ë§í¬ì ëí ì ëë©ì´ì íì
-settings_right_table_grayscaled_icons=ë§ì°ì¤ë¥¼ ê°ì ¸ê°ì§ ìë í íì´ë¸ ìì´ì½ ë§í¬ë¥¼ íìì¡°ë¡ íì
-theme_xhred_upload_initial_info_dir=ì¬ê¸°ì ëë í ë¦¬ë¥¼ ëì´ë¤ ëê±°ë í´ë¦­íì¬ ì ííì­ìì¤
-theme_xhred_upload_one_dir_with=ëë í ë¦¬ 1ê°
-theme_xhred_upload_err_dir_mode=ì¤ë¥: ëë í ë¦¬ ìë¡ëê° íì±íë íì¼ ì¶ê° ìë
-theme_xhred_upload_err_files_mode=ì¤ë¥: íì¼ ì ì© ìë¡ë ëª¨ëìì ëë í ë¦¬ ì¶ê° ìë
-theme_xhred_filemanager_context_empty_trash=í ë¹ ì°ë ê¸°íµ
-theme_xhred_filemanager_empty_trash_button=í´ì§íµì ìë ëª¨ë  íì¼ ì ê±°
-theme_xhred_filemanager_emptying_trash_selected=í´ì§íµ ë¹ì°ê¸°.
-theme_xhred_filemanager_successful_emptying_trash=<tt>$1</tt> ëë í ë¦¬ ë¹ì°ê¸°ì ì±ê³µíìµëë¤.
-theme_xhred_notifications_motd=ê´ë¦¬ì ì°¸ê³  ì¬í­
-theme_xhred_notifications_motd2=ê´ë¦¬ì ë©ìì§
-theme_xhred_notifications_motd_says=$1 ë§íë¤
-theme_xhred_tooltip_side_slider_notifications_motd_add=ìì¤íì ë¤ë¥¸ ì¬ì©ììê² ë©ìì§ ë¸ë¡ëìºì¤í¸
-theme_xhred_modal_motd_title=ë°©ì¡ ìì¤í ë©ìì§
-theme_xhred_modal_motd_desc=ì´ ì¸í°íì´ì¤ë ìì¤íì ë¤ë¥¸ ì¬ì©ììê² ë©ìì§ë¥¼ ë¸ë¡ëìºì¤í¸íë ë° ì¬ì©í  ì ììµëë¤
-theme_xhred_global_message=ë©ì¸ì§
-theme_xhred_modal_motd_select_all=ëª¨ë  ì¬ì©ìë¤
-theme_xhred_modal_motd_select_adm=ë§ì¤í° ê´ë¦¬ì
-theme_xhred_modal_motd_select_res=ë¦¬ìë¬
-theme_xhred_modal_motd_select_vm=ìë² ìì ì
-theme_xhred_modal_motd_select_cm=ê¸°ê³ ìì ì
-theme_xhred_modal_motd_select_um=ë©ì¼ ì¬ì©ì
-theme_xhred_modal_motd_btn_add=ì ë©ìì§ ì¶ê°
-theme_xhred_modal_motd_btn_save=íì¬ ë©ìì§ ì¸í¸ ì ì¥ ë° ë¸ë¡ëìºì¤í¸
-theme_xhred_modal_motd_btn_rm=íì¬ ë©ìì§ ì ê±°
-theme_xhred_global_hide=ì¨ë¤
-body_cputemp=CPU ì¨ë
-theme_global_fan=ëê°ê¸°
-body_cpufans=CPU í¬
+settings_right_table_links_type=테이블 링크 표시 유형
+settings_right_table_links_type_2=텍스트가 있는 큰 아이콘
+settings_right_table_links_type_1=툴팁 텍스트가 있는 작은 아이콘
+settings_right_table_links_type_0=아이콘 없음, 텍스트 링크만 있음
+settings_right_table_animate_icons=테이블 아이콘 링크에 대한 애니메이션 표시
+settings_right_table_grayscaled_icons=마우스를 가져가지 않는 한 테이블 아이콘 링크를 회색조로 표시
+theme_xhred_upload_initial_info_dir=여기에 디렉토리를 끌어다 놓거나 클릭하여 선택하십시오
+theme_xhred_upload_one_dir_with=디렉토리 1개
+theme_xhred_upload_err_dir_mode=오류: 디렉토리 업로드가 활성화된 파일 추가 시도
+theme_xhred_upload_err_files_mode=오류: 파일 전용 업로드 모드에서 디렉토리 추가 시도
+theme_xhred_filemanager_context_empty_trash=텅 빈 쓰레기통
+theme_xhred_filemanager_empty_trash_button=휴지통에 있는 모든 파일 제거
+theme_xhred_filemanager_emptying_trash_selected=휴지통 비우기.
+theme_xhred_filemanager_successful_emptying_trash=<tt>$1</tt> 디렉토리 비우기에 성공했습니다.
+theme_xhred_notifications_motd=관리자 참고 사항
+theme_xhred_notifications_motd2=관리자 메시지
+theme_xhred_notifications_motd_says=$1 말한다
+theme_xhred_tooltip_side_slider_notifications_motd_add=시스템의 다른 사용자에게 메시지 브로드캐스트
+theme_xhred_modal_motd_title=방송 시스템 메시지
+theme_xhred_modal_motd_desc=이 인터페이스는 시스템의 다른 사용자에게 메시지를 브로드캐스트하는 데 사용할 수 있습니다
+theme_xhred_global_message=메세지
+theme_xhred_modal_motd_select_all=모든 사용자들
+theme_xhred_modal_motd_select_adm=마스터 관리자
+theme_xhred_modal_motd_select_res=리셀러
+theme_xhred_modal_motd_select_vm=서버 소유자
+theme_xhred_modal_motd_select_cm=기계 소유자
+theme_xhred_modal_motd_select_um=메일 사용자
+theme_xhred_modal_motd_btn_add=새 메시지 추가
+theme_xhred_modal_motd_btn_save=현재 메시지 세트 저장 및 브로드캐스트
+theme_xhred_modal_motd_btn_rm=현재 메시지 제거
+theme_xhred_global_hide=숨다
+body_cputemp=CPU 온도
+theme_global_fan=냉각기
+body_cpufans=CPU 팬
 body_cpufan_rpm=RPM
-body_cpufan=CPU í¬
-filemanager_symlink_exists=íì¼ì´ <tt>$2</tt> <tt>$1</tt> ë¥¼) ë§ë¤ ì ììµëë¤
+body_cpufan=CPU 팬
+filemanager_symlink_exists=파일이 <tt>$2</tt> <tt>$1</tt> 를) 만들 수 없습니다
 
 # 19.85
-theme_xhred_tooltip_side_slider_clipboard_sysinfo=ê¸°ë³¸ ìì¤í ì ë³´ë¥¼ í´ë¦½ë³´ëì ë³µì¬í©ëë¤. íì¥ ë³µì¬íë ¤ë©´ $1 í¤ë¥¼ ëë¥´ì­ìì¤. ë§í¬ë¤ì´ì´ ìë ì¼ë° íì¤í¸ ë°ì´í°ë¥¼ ë³µì¬íë ¤ë©´ $2 í¤ë¥¼ ëë¥´ì­ìì¤
-theme_xhred_tooltip_side_slider_clipboard_account=ëª¨ë  ê³ì  ì ë³´ë¥¼ í´ë¦½ë³´ëì ë³µì¬í©ëë¤. ë§í¬ë¤ì´ì´ ìë ì¼ë° íì¤í¸ ë°ì´í°ë¥¼ ë³µì¬íë ¤ë©´ $1 í¤ë¥¼ ëë¥´ì­ìì¤
-tooltip_back_to_servers_index_master=ë§ì¤í° ìì¤íì Webmin ìë² ìì¸ ëª¨ë
-tooltip_list_other_servers=ê¸°í ë±ë¡ë Webmin ìë² ëª©ë¡
-theme_xhred_status_module_mon_up=ìë¡
-theme_xhred_status_module_mon_down=ìëì
-theme_xhred_status_module_mon_webmin=ì¹ë¯¼ì´ ë¤ì´ëììµëë¤
-theme_xhred_status_module_mon_timed=ìê° ì´ê³¼
-theme_xhred_status_module_mon_not=ì¤ì¹ëì§ ìì
-theme_xhred_status_module_mon_skip=ê±´ëë
-theme_xhred_status_module_mon_quest=ì¬ì©í  ì ììµëë¤
-theme_xhred_webminlog_module_no_command_escapes=ì¤íë ëªë ¹ì ëí ë°±ì¬ëì ì í
-settings_navigation_auto_fold_category=ìë ì ê¸° ë¹íì± ì¹´íê³ ë¦¬
-theme_xhred_tooltip_virtualmin_templates_filter_generating=ííë¦¿ì ëí ê²ì ê°ë¥í ìµì ëª©ë¡ ìì±
-theme_xhred_tooltip_virtualmin_templates_filter=ííë¦¿ì ëª¨ë  ìµììì ê²ì
-theme_xhred_sysinfo_vmforum=ë²ì¶ì¼ë¯¼ ì»¤ë®¤ëí°
-theme_xhred_tooltip_support_ticket=ì²¨ë¶ë ìì¤í ì ë³´ì í¨ê» ì§ì í°ì¼ì ì ì¶íì­ìì¤. ì§ì ë§í¬ë¥¼ í´ë¦½ë³´ëì ë³µì¬íë ¤ë©´ $1 í¤ë¥¼ ëë¥´ê³  ê³ì­ìì¤
-theme_xhred_tooltip_side_slider_refresh_sysinfo=ìì¤í ì ë³´ë¥¼ ê°ì ë¡ ìë¡ ê³ ì¹¨
-theme_xhred_disk_quota_error_title=í ë¹ë ë¶ì¡±
-theme_xhred_disk_quota_error_message=ê¸°ê¸°ì ë¨ì ê³µê°ì´ ììµëë¤
-theme_xhred_filemanager_decrypt_option_use_master_admin_keys=ë³µí¸íì ë§ì¤í° ê´ë¦¬ì í¤ ì¬ì©
+theme_xhred_tooltip_side_slider_clipboard_sysinfo=기본 시스템 정보를 클립보드에 복사합니다. 확장 복사하려면 $1 키를 누르십시오. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 $2 키를 누르십시오
+theme_xhred_tooltip_side_slider_clipboard_account=모든 계정 정보를 클립보드에 복사합니다. 마크다운이 아닌 일반 텍스트 데이터를 복사하려면 $1 키를 누르십시오
+tooltip_back_to_servers_index_master=마스터 시스템의 Webmin 서버 색인 모듈
+tooltip_list_other_servers=기타 등록된 Webmin 서버 목록
+theme_xhred_status_module_mon_up=위로
+theme_xhred_status_module_mon_down=아래에
+theme_xhred_status_module_mon_webmin=웹민이 다운되었습니다
+theme_xhred_status_module_mon_timed=시간 초과
+theme_xhred_status_module_mon_not=설치되지 않음
+theme_xhred_status_module_mon_skip=건너뜀
+theme_xhred_status_module_mon_quest=사용할 수 없습니다
+theme_xhred_webminlog_module_no_command_escapes=실행된 명령에 대한 백슬래시 전환
+settings_navigation_auto_fold_category=자동 접기 비활성 카테고리
+theme_xhred_tooltip_virtualmin_templates_filter_generating=템플릿에 대한 검색 가능한 옵션 목록 생성
+theme_xhred_tooltip_virtualmin_templates_filter=템플릿의 모든 옵션에서 검색
+theme_xhred_sysinfo_vmforum=버추얼민 커뮤니티
+theme_xhred_tooltip_support_ticket=첨부된 시스템 정보와 함께 지원 티켓을 제출하십시오. 지원 링크를 클립보드에 복사하려면 $1 키를 누르고 계십시오
+theme_xhred_tooltip_side_slider_refresh_sysinfo=시스템 정보를 강제로 새로 고침
+theme_xhred_disk_quota_error_title=할당량 부족
+theme_xhred_disk_quota_error_message=기기에 남은 공간이 없습니다
+theme_xhred_filemanager_decrypt_option_use_master_admin_keys=복호화에 마스터 관리자 키 사용
 
 # 19.90
-settings_hotkey_toggle_hold_modifier=ìì ì í¤ ëë¥´ê¸°
+settings_hotkey_toggle_hold_modifier=수정자 키 누르기
 
 # 19.91
-theme_xhred_filemanager_files_mode_ask=í­ì ë¬¼ì´ë³´ë¤
-theme_xhred_filemanager_files_mode_ask_remember=í¥í ê¸°ë³¸ê°ì¼ë¡ ê¸°ìµ
-theme_xhred_filemanager_files_mode_ask_title=ê¸°ì¡´ ë®ì´ì°ê¸°
-theme_xhred_filemanager_files_mode_ask_title2=ê¸°ì¡´ íì¼ ë®ì´ì°ê¸°
-theme_xhred_filemanager_files_mode_ask_desc=ë¤ì ìììì ê¸°ì¡´ íì¼ì ë®ì´ì°ìê² ìµëê¹?
-theme_xhred_filemanager_files_mode_ask_title_yes=ì, ë®ì´ìëë¤
-theme_xhred_filemanager_files_mode_ask_title_no=ìëì, ê¸°ì¡´ ìíë¥¼ ì ì§í©ëë¤
-theme_xhred_filemanager_trash_empty_curr_user_single=ë¹ í´ì§íµ ëë í ë¦¬
-theme_xhred_filemanager_trash_empty_curr_user=íì¬ ì¬ì©ì í´ì§íµ ë¹ì°ê¸°
-theme_xhred_filemanager_trash_empty_all_users=ë¤ë¥¸ ëª¨ë  ì¬ì©ì í´ì§íµ ëë í ë¦¬ ë¹ì°ê¸°
-theme_xhred_filemanager_purge_trash_curr_start=$1 ëë í ë¦¬ë¥¼ ì ê±°íë ì¤ìëë¤.
-theme_xhred_filemanager_purge_trash_all_start=ë¤ë¥¸ ëª¨ë  ì¬ì©ìì í´ì§íµ ëë í ë¦¬ë¥¼ ì ê±°í©ëë¤.
-theme_xhred_filemanager_purge_trash_curr_end=$1 ëë í°ë¦¬ë¥¼ ì±ê³µì ì¼ë¡ ì ê±°íìµëë¤.
-theme_xhred_filemanager_purge_trash_all_end=ë¤ë¥¸ ëª¨ë  ì¬ì©ìì í´ì§íµ ëë í ë¦¬ë¥¼ ì±ê³µì ì¼ë¡ ì ê±°íìµëë¤.
-theme_error_access_dir_not_allowed=ì¡ì¸ì¤ ê±°ë¶: íì¼ì ì¡ì¸ì¤í  ì ììµëë¤
+theme_xhred_filemanager_files_mode_ask=항상 물어보다
+theme_xhred_filemanager_files_mode_ask_remember=향후 기본값으로 기억
+theme_xhred_filemanager_files_mode_ask_title=기존 덮어쓰기
+theme_xhred_filemanager_files_mode_ask_title2=기존 파일 덮어쓰기
+theme_xhred_filemanager_files_mode_ask_desc=다음 작업에서 기존 파일을 덮어쓰시겠습니까?
+theme_xhred_filemanager_files_mode_ask_title_yes=예, 덮어씁니다
+theme_xhred_filemanager_files_mode_ask_title_no=아니요, 기존 상태를 유지합니다
+theme_xhred_filemanager_trash_empty_curr_user_single=빈 휴지통 디렉토리
+theme_xhred_filemanager_trash_empty_curr_user=현재 사용자 휴지통 비우기
+theme_xhred_filemanager_trash_empty_all_users=다른 모든 사용자 휴지통 디렉토리 비우기
+theme_xhred_filemanager_purge_trash_curr_start=$1 디렉토리를 제거하는 중입니다.
+theme_xhred_filemanager_purge_trash_all_start=다른 모든 사용자의 휴지통 디렉토리를 제거합니다.
+theme_xhred_filemanager_purge_trash_curr_end=$1 디렉터리를 성공적으로 제거했습니다.
+theme_xhred_filemanager_purge_trash_all_end=다른 모든 사용자의 휴지통 디렉토리를 성공적으로 제거했습니다.
+theme_error_access_dir_not_allowed=액세스 거부: 파일에 액세스할 수 없습니다
 
 # 19.95
-theme_xhred_global_outdated_desc=ì¤ì¹ë ë²ì  $1ì´(ê°) ì¤ëëììµëë¤. ì¬ì© ê°ë¥í ìµì  ë²ì ì $2ìëë¤. ìµì  ë¦´ë¦¬ì¤ì ëí ìì¸í ë´ì©ì ë³´ë ¤ë©´ ìê·¸ë ì´ëíê±°ë í´ë¦­íì­ìì¤.
-theme_xhred_global_outdated_desc2=ì¤ì¹ë ë²ì  $1ì´(ê°) ì¤ëëììµëë¤. ì¬ì© ê°ë¥í ìµì  ë²ì ì $2ìëë¤.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=ì ííë ëì <tt>Ctrl</tt> í¤ë¥¼ ëë¥¸ ìíë¡ ì ì§
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=ì ííë ëì <tt>Command</tt> í¤ë¥¼ ëë¥¸ ìíë¡ ì ì§
+theme_xhred_global_outdated_desc=설치된 버전 $1이(가) 오래되었습니다. 사용 가능한 최신 버전은 $2입니다. 최신 릴리스에 대한 자세한 내용을 보려면 업그레이드하거나 클릭하십시오.
+theme_xhred_global_outdated_desc2=설치된 버전 $1이(가) 오래되었습니다. 사용 가능한 최신 버전은 $2입니다.
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=선택하는 동안 <tt>Ctrl</tt> 키를 누른 상태로 유지
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=선택하는 동안 <tt>Command</tt> 키를 누른 상태로 유지
 
 # 19.97
-theme_xhred_webmin_requires_restart=Webmin ì¹ ìë² ë°ëª¬ì´ ë§ì§ë§ í¨í¤ì§ ìê·¸ë ì´ëìì ì¬ë°ë¥´ê² ë¤ì ììëì§ ìì ê²ì¼ë¡ ê°ì§ëììµëë¤. <tt>$1</tt> ëªë ¹ì í¸ì¶íì¬ ì¹ ìë²ë¥¼ ìëì¼ë¡ ë¤ì ììíê¸° ìí´ íìí©ëë¤.
-theme_xhred_webmin_requires_restart_yes=ì, ë¤ì ììí´ ë³´ì¸ì
-theme_xhred_webmin_requires_restart_no=ìëì, ìëì¼ë¡ ë¤ì ììíê² ìµëë¤
+theme_xhred_webmin_requires_restart=Webmin 웹 서버 데몬이 마지막 패키지 업그레이드에서 올바르게 다시 시작되지 않은 것으로 감지되었습니다. <tt>$1</tt> 명령을 호출하여 웹 서버를 수동으로 다시 시작하기 위해 필요합니다.
+theme_xhred_webmin_requires_restart_yes=예, 다시 시작해 보세요
+theme_xhred_webmin_requires_restart_no=아니요, 수동으로 다시 시작하겠습니다
 
 # 19.99
-theme_xhred_filemanager_path_manual=ìëì¼ë¡ ê²½ë¡ ìë ¥(Ctrl + L)
+theme_xhred_filemanager_path_manual=수동으로 경로 입력(Ctrl + L)
 
 # 20.02
-theme_xhred_socket_conn_lost_title=ì°ê²° ëê¹
-theme_xhred_socket_conn_lost_reconnect=ë¤ì ì°ê²°
-theme_xhred_socket_conn_lost_connecting=ì°ê²° ì¤ ..
-theme_xhred_socket_conn_lost_try=ë¤ì ìëíì­ìì¤
-theme_xhred_socket_conn_parse_error=í°ë¯¸ë ë¡ë ì¤í¨: ìë²ìì ìëµ ê°ì²´ë¥¼ êµ¬ë¬¸ ë¶ìí  ì ììµëë¤
-theme_xhred_socket_conn_sock_error=í°ë¯¸ë ë¡ë ì¤í¨: WebSocket ì°ê²° ì¤ë¥
+theme_xhred_socket_conn_lost_title=연결 끊김
+theme_xhred_socket_conn_lost_reconnect=다시 연결
+theme_xhred_socket_conn_lost_connecting=연결 중 ..
+theme_xhred_socket_conn_lost_try=다시 시도하십시오
+theme_xhred_socket_conn_parse_error=터미널 로드 실패: 서버에서 응답 개체를 구문 분석할 수 없습니다
+theme_xhred_socket_conn_sock_error=터미널 로드 실패: WebSocket 연결 오류
 
 # 20.10
-theme_xhred_global_open=ì´ë ¤ ìë
-theme_xhred_xterm_error_title=ì°ê²°í  ì ììµëë¤
-theme_xhred_xterm_error=ìì¸í ë´ì©ì í°ë¯¸ë ëª¨ëë¡ ì´ë
+theme_xhred_global_open=열려 있는
+theme_xhred_xterm_error_title=연결할 수 없습니다
+theme_xhred_xterm_error=자세한 내용은 터미널 모듈로 이동
 
 # 20.11
-theme_xhred_global_error_fatal=ì¹ëªì  ì¤ë¥
+theme_xhred_global_error_fatal=치명적 오류
 
 # 20.20
-theme_xhred_global_automatic=ìëì  ì¸
-theme_xhred_filemanager_context_acls=ì¡ì¸ì¤ ì ì´ ëª©ë¡ ë³ê²½
-theme_xhred_filemanager_changing_acls=ì¡ì¸ì¤ ì ì´ ëª©ë¡ ë³ê²½.
-theme_xhred_filemanager_successful_acls_with_errors=ëª¨ë  ê°ì²´ì ëí´ ì¡ì¸ì¤ ì ì´ ëª©ë¡ì´ ì±ê³µì ì¼ë¡ ë³ê²½ëì§ ìììµëë¤
-theme_xhred_filemanager_successful_acls=ì¡ì¸ì¤ ì ì´ ëª©ë¡ì´ ì±ê³µì ì¼ë¡ ë³ê²½ëììµëë¤.
-theme_download_error=íì¼ì´ íì©ë ëë í°ë¦¬ ì¸ë¶ì ìê¸° ëë¬¸ì íì¼ì ë¤ì´ë¡ëíë ì¤ ì¤ë¥ ë°ì : $1
+theme_xhred_global_automatic=자동적 인
+theme_xhred_filemanager_context_acls=액세스 제어 목록 변경
+theme_xhred_filemanager_changing_acls=액세스 제어 목록 변경.
+theme_xhred_filemanager_successful_acls_with_errors=모든 개체에 대해 액세스 제어 목록이 성공적으로 변경되지 않았습니다
+theme_xhred_filemanager_successful_acls=액세스 제어 목록이 성공적으로 변경되었습니다.
+theme_download_error=파일이 허용된 디렉터리 외부에 있기 때문에 파일을 다운로드하는 중 오류 발생 : $1
 
 # 20.30
-theme_xhred_hotkeys_help=ëìë§(F1)
-theme_xhred_hotkeys_help_title=í¤ë³´ë ë¨ì¶í¤
-theme_xhred_hotkeys_help_title_docs=ì ì  ìë¥ ë¹ì¹
-theme_xhred_hotkeys_help_title_global=ì£¼ì 
-theme_xhred_hotkeys_help_title_module=ëª¨ëë³ ë°ë¡ ê°ê¸°
-theme_xhred_hotkeys_help_title_fm=íì¼ ê´ë¦¬ì
-theme_xhred_hotkeys_help_title_edit=í¸ì§ì
-theme_xhred_global_community=ì§ì­ ì¬í
-theme_xhred_hotkeys_server_error=ëìë§ íì¼ì ê²ìí  ì ììµëë¤
-theme_xhred_hotkeys_custom_to_opens=ì´ë¦°ë¤
-theme_xhred_hotkeys_custom_not_set=ì¤ì ëì§ ìì
-theme_xhred_hotkey_open_module_config_privileged=ëª¨ë êµ¬ì± ì´ê¸°
-theme_xhred_hotkey_open_theme_config=íë§ êµ¬ì± ì´ê¸°
-theme_xhred_hotkey_list_table=íì´ì§ê° ë§¤ê²¨ì§ íì´ë¸ ëì´
-theme_xhred_hotkey_list_tabs=ëª©ë¡ í­
-theme_xhred_hotkey_clear_cache=ìºì ì§ì°ê¸° ë° ë¤ì ë¡ë
-theme_xhred_hotkey_open_new=ì í­ì ë³µì 
-theme_xhred_hotkey_copy_to_clipboard=ìì ë°ì´í°ë¥¼ í´ë¦½ë³´ëì ë³µì¬
-theme_xhred_hotkey_copy_to_clipboard_click=ì¼ìª½ í´ë¦­
-theme_xhred_hotkey_print_title=ì íµ íë§ì Webmin ë¨ì¶í¤
-theme_xhred_global_success=ì±ê³µ
-theme_xhred_search_content=ì½íì¸  ê²ì
-theme_xhred_global_disabled=ì¥ì ê° ìë
-theme_xhred_connection_reset_title=ì°ê²° ì¬ì¤ì 
-theme_xhred_connection_reset_message=ìê²© ìë²ì ì°ê²°í  ì ììµëë¤
-right_file_is_being_prepared=íì¼ì ì¤ë¹ ì¤ìëë¤. ê¸°ë¤ë¦¬ì¸ì..
+theme_xhred_hotkeys_help=도움말(F1)
+theme_xhred_hotkeys_help_title=키보드 단축키
+theme_xhred_hotkeys_help_title_docs=선적 서류 비치
+theme_xhred_hotkeys_help_title_global=주제
+theme_xhred_hotkeys_help_title_module=모듈별 바로 가기
+theme_xhred_hotkeys_help_title_fm=파일 관리자
+theme_xhred_hotkeys_help_title_edit=편집자
+theme_xhred_global_community=지역 사회
+theme_xhred_hotkeys_server_error=도움말 파일을 검색할 수 없습니다
+theme_xhred_hotkeys_custom_to_opens=열린다
+theme_xhred_hotkeys_custom_not_set=설정되지 않음
+theme_xhred_hotkey_open_module_config_privileged=모듈 구성 열기
+theme_xhred_hotkey_open_theme_config=테마 구성 열기
+theme_xhred_hotkey_list_table=페이지가 매겨진 테이블 나열
+theme_xhred_hotkey_list_tabs=목록 탭
+theme_xhred_hotkey_clear_cache=캐시 지우기 및 다시 로드
+theme_xhred_hotkey_open_new=새 탭에 복제
+theme_xhred_hotkey_copy_to_clipboard=요소 데이터를 클립보드에 복사
+theme_xhred_hotkey_copy_to_clipboard_click=왼쪽 클릭
+theme_xhred_hotkey_print_title=정통 테마의 Webmin 단축키
+theme_xhred_global_success=성공
+theme_xhred_search_content=콘텐츠 검색
+theme_xhred_global_disabled=장애가 있는
+theme_xhred_connection_reset_title=연결 재설정
+theme_xhred_connection_reset_message=원격 서버에 연결할 수 없습니다
+right_file_is_being_prepared=파일을 준비 중입니다. 기다리세요..
 
-theme_xhred_global_paragraph=ì 
-theme_xhred_global_heading=íì 
-theme_xhred_editor_tb_font=ê¸ê¼´ ì´ë¦
-theme_xhred_editor_tb_font_fixed_width=ê³ ì  í­
-theme_xhred_editor_tb_size=ê¸ê¼´ í¬ê¸°
-theme_xhred_editor_tb_paragraph=ë¨ë½ ì¤íì¼
-theme_xhred_editor_tb_header=ë¨ë½ ì¤íì¼
-theme_xhred_editor_tb_bold=êµµê²(%cmd+B)
-theme_xhred_editor_tb_italic=ê¸°ì¸ìê¼´(%cmd+I)
-theme_xhred_editor_tb_underline=ë°ì¤(%cmd+U)
-theme_xhred_editor_tb_color=íì¤í¸ ìì
-theme_xhred_editor_tb_background=íì¤í¸ ë°°ê²½
-theme_xhred_editor_tb_align=ë§ì¶ë¤
-theme_xhred_editor_tb_list_ordered=ë²í¸ê° ë§¤ê²¨ì§ ëª©ë¡(%cmd+Shift+7)
-theme_xhred_editor_tb_list_bullet=ê¸ë¨¸ë¦¬ ê¸°í¸ ëª©ë¡(%cmd+Shift+8)
-theme_xhred_editor_tb_strike=ì·¨ìì 
-theme_xhred_editor_tb_blockquote=ê²¬ì (%cmd+Shift+9)
-theme_xhred_editor_tb_link=ë§í¬ ì½ì(%cmd+K)
-theme_xhred_editor_tb_image=ì¸ë¼ì¸ ì´ë¯¸ì§ ì½ì
-theme_xhred_editor_tb_clean=ìì ì ê±°
-theme_xhred_editor_tb_script_super=ì´ê¹¨ ê¸°í¸
-theme_xhred_editor_tb_script_sub=ìëì²¨ì
-theme_xhred_editor_tb_indent_+1=ë¤ì¬ì°ê¸° ì¦ê°
-theme_xhred_editor_tb_indent_-1=ë¤ì¬ì°ê¸° ì¤ì´ê¸°
-theme_xhred_editor_tb_code=ì½ë ë¸ë¡
-theme_xhred_editor_tb_code-block=ì½ë ë¸ë¡
-theme_xhred_editor_tb_direction=íì¤í¸ ë°©í¥
+theme_xhred_global_paragraph=절
+theme_xhred_global_heading=표제
+theme_xhred_editor_tb_font=글꼴 이름
+theme_xhred_editor_tb_font_fixed_width=고정 폭
+theme_xhred_editor_tb_size=글꼴 크기
+theme_xhred_editor_tb_paragraph=단락 스타일
+theme_xhred_editor_tb_header=단락 스타일
+theme_xhred_editor_tb_bold=굵게(%cmd+B)
+theme_xhred_editor_tb_italic=기울임꼴(%cmd+I)
+theme_xhred_editor_tb_underline=밑줄(%cmd+U)
+theme_xhred_editor_tb_color=텍스트 색상
+theme_xhred_editor_tb_background=텍스트 배경
+theme_xhred_editor_tb_align=맞추다
+theme_xhred_editor_tb_list_ordered=번호가 매겨진 목록(%cmd+Shift+7)
+theme_xhred_editor_tb_list_bullet=글머리 기호 목록(%cmd+Shift+8)
+theme_xhred_editor_tb_strike=취소선
+theme_xhred_editor_tb_blockquote=견적(%cmd+Shift+9)
+theme_xhred_editor_tb_link=링크 삽입(%cmd+K)
+theme_xhred_editor_tb_image=인라인 이미지 삽입
+theme_xhred_editor_tb_clean=서식 제거
+theme_xhred_editor_tb_script_super=어깨 기호
+theme_xhred_editor_tb_script_sub=아래첨자
+theme_xhred_editor_tb_indent_+1=들여쓰기 증가
+theme_xhred_editor_tb_indent_-1=들여쓰기 줄이기
+theme_xhred_editor_tb_code=코드 블록
+theme_xhred_editor_tb_code-block=코드 블록
+theme_xhred_editor_tb_direction=텍스트 방향
 
-settings_right_table_layout_control=ì½íì¸  ë ì´ìì ì»¨í¸ë¡¤ íì
-theme_xhred_tooltip_columns_layout=ì½íì¸  ë ì´ìì ì ì´
-theme_xhred_columns_layout_title=ì½íì¸  ë ì´ìì
-theme_xhred_columns_layout_variation=ë ì´ìì ë³í
-theme_xhred_global_vertical=ìì§ì
-theme_xhred_global_horizontal=ìíì
-theme_xhred_columns_layout_vertical_opts=ìì§ ë ì´ìì ìµì
-theme_xhred_columns_layout_vertical_opts_max_columns=ìµë ì´
-theme_xhred_columns_layout_vertical_opts_max_width=ìµì ì´ ëë¹
-theme_xhred_columns_layout_vertical_opts_break_title=ì´ ì¤ë²íë¡ ìì
-theme_xhred_columns_layout_vertical_opts_break_new=ë¶ìì§ë¤
-theme_xhred_columns_layout_vertical_opts_break_scroll=ì¤í¬ë¡¤
-theme_xhred_columns_layout_remove=ì´ ìì ¯ ì¨ê¸°ê¸°
-theme_xhred_columns_layout_remove_button=ì ì¥ ë° ì¨ê¸°ê¸°
-theme_xhred_columns_layout_variation_cannot_horizontal=ëª¨ë°ì¼ ëª¨ë, í¹í íë©´ ëë¹ê° 992px ë¯¸ë§ì¸ ê²½ì° ê°ë¡ ë ì´ììì ì¬ì©í  ì ììµëë¤
+settings_right_table_layout_control=콘텐츠 레이아웃 컨트롤 표시
+theme_xhred_tooltip_columns_layout=콘텐츠 레이아웃 제어
+theme_xhred_columns_layout_title=콘텐츠 레이아웃
+theme_xhred_columns_layout_variation=레이아웃 변형
+theme_xhred_global_vertical=수직의
+theme_xhred_global_horizontal=수평의
+theme_xhred_columns_layout_vertical_opts=수직 레이아웃 옵션
+theme_xhred_columns_layout_vertical_opts_max_columns=최대 열
+theme_xhred_columns_layout_vertical_opts_max_width=최소 열 너비
+theme_xhred_columns_layout_vertical_opts_break_title=열 오버플로 작업
+theme_xhred_columns_layout_vertical_opts_break_new=부서지다
+theme_xhred_columns_layout_vertical_opts_break_scroll=스크롤
+theme_xhred_columns_layout_remove=이 위젯 숨기기
+theme_xhred_columns_layout_remove_button=저장 및 숨기기
+theme_xhred_columns_layout_variation_cannot_horizontal=모바일 모드, 특히 화면 너비가 992px 미만인 경우 가로 레이아웃을 사용할 수 없습니다
 
-settings_auto_open_panels_on_proximity=ê·¼ì  ì ë«í í¨ë ìë ì´ê¸°
+settings_auto_open_panels_on_proximity=근접 시 닫힌 패널 자동 열기
 
-theme_xhred_config_portable_module_xterm_render_addon=WebGL ë ëë§ ì ëì¨ íì±í
+theme_xhred_config_portable_module_xterm_render_addon=WebGL 렌더링 애드온 활성화
 
 # 21.09.04
-theme_xhred_datatable_filter_and_export=ì½íì¸  íí°ë§ ë° ë´ë³´ë´ê¸°
+theme_xhred_datatable_filter_and_export=콘텐츠 필터링 및 내보내기
 
 # 21.10
-settings_hotkey_logout_dbl=ë¡ê·¸ ìì
-theme_xhred_hotkey_emsg=ë°±ì¬ëì í¤ë ë¨ì¶í¤ë¡ ì¬ì©í  ì ììµëë¤
-settings_embed_product_splash_privileged=ë¡ê·¸ì¸ í ë¸ëë© ì¤íëì íë©´ íì
-dashboard_status_running=ë¬ë¦¬ê¸°
-dashboard_status_stopped=ì¤ì§ë¨
+settings_hotkey_logout_dbl=로그 아웃
+theme_xhred_hotkey_emsg=백슬래시 키는 단축키로 사용할 수 없습니다
+settings_embed_product_splash_privileged=로그인 후 브랜딩 스플래시 화면 표시
+dashboard_status_running=달리기
+dashboard_status_stopped=중지됨
 
 # 21.11
-theme_xhred_global_watching=ë³´ê³  ìë¤
-theme_xhred_global_connected=ì°ê²°ë¨
-theme_xhred_global_disconnected=ì°ê²°ì´ ëê¹
-theme_xhred_global_connecting=ì°ê²° ì¤
-index_mods_missing=Perl ëª¨ë <tt>$1</tt>ì´(ê°) ììµëë¤.
-index_noadmin_eaccess=ë§ì¤í° ê´ë¦¬ìê° ìë ì¬ì©ìì ì ê·¼ì´ ê±°ë¶ëììµëë¤!
-theme_xhred_body_os=ì´ì ì²´ì 
-theme_xhred_theme_version=ì íµ íë§ ë²ì 
-theme_xhred_body_updates=í¨í¤ì§ ìë°ì´í¸
+theme_xhred_global_watching=보고 있다
+theme_xhred_global_connected=연결됨
+theme_xhred_global_disconnected=연결이 끊김
+theme_xhred_global_connecting=연결 중
+index_mods_missing=Perl 모듈 <tt>$1</tt>이(가) 없습니다.
+index_noadmin_eaccess=마스터 관리자가 아닌 사용자의 접근이 거부되었습니다!
+theme_xhred_body_os=운영 체제
+theme_xhred_theme_version=정통 테마 버전
+theme_xhred_body_updates=패키지 업데이트
 
 # 21.20
-theme_xhred_hotkey_switch_theme=íë§ ì í
+theme_xhred_hotkey_switch_theme=테마 전환
 
 # 21.20.2
-theme_xhred_filemanager_upload_status_ok=ìë¡ë ì±ê³µ
-theme_xhred_filemanager_upload_status_err=ìë¡ë ì¤í¨:
-theme_xhred_filemanager_download_status_err=ë¤ì´ë¡ë ì¤í¨:
+theme_xhred_filemanager_upload_status_ok=업로드 성공
+theme_xhred_filemanager_upload_status_err=업로드 실패:
+theme_xhred_filemanager_download_status_err=다운로드 실패:
 
 # 21.20.7
-theme_xhred_dashboard_chart_disk_read=ì½ë¤
-theme_xhred_dashboard_chart_disk_write=ì°ë¤
-theme_xhred_dashboard_chart_net_read=~ ìì
-theme_xhred_dashboard_chart_net_write=ë°ì¼ë¡
-theme_xhred_tooltip_dashboard_live_stats_offline=íë¡ì ëª¨ëìì ìì¤íì ì¡ì¸ì¤íë ê²½ì° ë¼ì´ë¸ íµê³ë¥¼ ì¬ì©í  ì ììµëë¤. ì´ì ì ìì§ë íµê³ë§ íìëë©° ì¬ì© ê°ë¥í ê²½ì°ìë§ íìëë©° ì´ë¬í íµê³ë¥¼ ìë°ì´í¸íë ¤ë©´ íì´ì§ë¥¼ ë¤ì ë¡ëí´ì¼ í©ëë¤
-settings_sysinfo_real_time_status_history1=ë¤, ê·¸ë¦¬ê³  íµê³ë¥¼ ì ì¥í©ëë¤
-settings_sysinfo_real_time_status_history2=ë¤, íµê³ë¥¼ ì ì¥íì§ ìê³ 
-settings_sysinfo_real_time_status_history_duration1=20ë¶
-settings_sysinfo_real_time_status_history_duration2=1ìê°
-settings_sysinfo_real_time_status_history_duration3=3ìê°
-settings_sysinfo_real_time_status_history_duration4=6ìê°
-settings_sysinfo_real_time_status_history_duration5=12ìê°
-settings_sysinfo_real_time_status_history_duration6=18ìê°
-settings_sysinfo_real_time_status_history_duration7=24ìê°
-theme_xhred_license_purchase=ë¼ì´ì¼ì¤ êµ¬ë§¤
-settings_right_table_links_sorted=íì´ë¸ ë§í¬ë¥¼ ìíë²³ìì¼ë¡ ì ë ¬
+theme_xhred_dashboard_chart_disk_read=읽다
+theme_xhred_dashboard_chart_disk_write=쓰다
+theme_xhred_dashboard_chart_net_read=~ 안에
+theme_xhred_dashboard_chart_net_write=밖으로
+theme_xhred_tooltip_dashboard_live_stats_offline=프록시 모드에서 시스템에 액세스하는 경우 라이브 통계를 사용할 수 없습니다. 이전에 수집된 통계만 표시되며 사용 가능한 경우에만 표시되며 이러한 통계를 업데이트하려면 페이지를 다시 로드해야 합니다
+settings_sysinfo_real_time_status_history1=네, 그리고 통계를 저장합니다
+settings_sysinfo_real_time_status_history2=네, 통계를 저장하지 않고
+settings_sysinfo_real_time_status_history_duration1=20분
+settings_sysinfo_real_time_status_history_duration2=1시간
+settings_sysinfo_real_time_status_history_duration3=3시간
+settings_sysinfo_real_time_status_history_duration4=6시간
+settings_sysinfo_real_time_status_history_duration5=12시간
+settings_sysinfo_real_time_status_history_duration6=18시간
+settings_sysinfo_real_time_status_history_duration7=24시간
+theme_xhred_license_purchase=라이센스 구매
+settings_right_table_links_sorted=테이블 링크를 알파벳순으로 정렬
 
 # 24.00
-session_error=ì¤ë¥
-session_success=ì±ê³µ
-session_cannot=ë¹ë°ë²í¸ ì¬ì¤ì ì ì¤í¨íìµëë¤. ì¬ì©ì ì´ë¦ì´ ììµëë¤.
-session_neterror=ë¤í¸ìí¬ìì ìëµì ë°ì ì ììµëë¤!
-session_unkerror=ìê¸°ì¹ ìì ì¤ë¥ê° ë°ìíìµëë¤. ëì¤ì ë¤ì ìëíì¸ì.
-session_conerror=ìë²ì ì ìí  ì ììµëë¤. ëì¤ì ë¤ì ìëíì¸ì.
-session_resetpass1=ìë¡ì´ ë¹ë°ë²í¸
-session_resetpass2=ì ë¹ë°ë²í¸ íì¸
-session_resetepassreq=ë¹ë°ë²í¸ê° íìí©ëë¤.
-session_pwdconf=ë¹ë°ë²í¸ íì¸ì´ íìí©ëë¤.
-session_pwdmatch=ë¹ë°ë²í¸ê° ì¼ì¹íì§ ììµëë¤.
-session_noid=ë³µêµ¬ IDë¥¼ ì°¾ì ì ììµëë¤!
-session_pwdsucc=ë¹ë°ë²í¸ê° ë³ê²½ëììµëë¤! ì´ì  ì ë¹ë°ë²í¸ë¡ ë¡ê·¸ì¸íì¤ ì ììµëë¤.
+session_error=오류
+session_success=성공
+session_cannot=비밀번호 재설정에 실패했습니다. 사용자 이름이 없습니다.
+session_neterror=네트워크에서 응답을 받을 수 없습니다!
+session_unkerror=예기치 않은 오류가 발생했습니다. 나중에 다시 시도하세요.
+session_conerror=서버에 접속할 수 없습니다. 나중에 다시 시도하세요.
+session_resetpass1=새로운 비밀번호
+session_resetpass2=새 비밀번호 확인
+session_resetepassreq=비밀번호가 필요합니다.
+session_pwdconf=비밀번호 확인이 필요합니다.
+session_pwdmatch=비밀번호가 일치하지 않습니다.
+session_noid=복구 ID를 찾을 수 없습니다!
+session_pwdsucc=비밀번호가 성공적으로 변경되었습니다. 이제 새로운 비밀번호로 로그인할 수 있습니다!

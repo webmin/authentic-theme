@@ -1,789 +1,790 @@
 body_cp=CPU
-body_cpu=CPU è´è½½
-body_cpuinfo=CPU ä¿¡æ¯
-body_cputemps=CPU æ¸©åº¦
-body_cputype=$5ï¼$8 æ ¸å¿
-body_disk=æ¬å°ç£çç©ºé´
-body_driveerr=$1 éè¯¯ï¼
-body_drivefailed=SMART æ£æµå¤±è´¥ï¼
-body_drivetemps=ç£çæ¸©åº¦
-body_firewall=é²ç«å¢çæ¬
-body_header0=ç³»ç»ä¿¡æ¯
-body_header1=è´¦å·ç³»ç»
-body_host=ç³»ç»ä¸»æºå
-body_kernel=åæ ¸å CPU
-body_kernelon=$1 $2 æ§è¡äº $3
-body_load=$1ï¼1 åéï¼$2ï¼5 åéï¼$3ï¼15 åéï¼
-body_os=æä½ç³»ç»
-body_procs=æ­£å¨è¿è¡çè¿ç¨
-body_real=ç©çåå­
-body_time=ç³»ç»æ¶é´
-body_updates=è½¯ä»¶åæ´æ°
-body_updays=$1 å¤©ï¼$2 å°æ¶ï¼$3 åé
-body_uphours=$1 å°æ¶ï¼$2 åé
-body_upmins=$1 åé
-body_upneed=$1 ä¸ªè½¯ä»¶åå¯æ´æ°
-body_upneed1=$1 ä¸ªè½¯ä»¶åå¯æ´æ°
-body_upok=ææå·²å®è£çè½¯ä»¶åé½æ¯ææ°ç
-body_upsec=$1 ä¸ªè½¯ä»¶åå¯æ´æ°ï¼å¶ä¸­ $2 æ¯å®å¨æ´æ°
-body_upsec1=$1 ä¸ªè½¯ä»¶åå¯æ´æ°ï¼å¶ä¸­ $2 æ¯å®å¨æ´æ°
-body_upsec2=$1 ä¸ªè½¯ä»¶åå¯æ´æ°ï¼å¶ä¸­ $2 æ¯å®å¨æ´æ°
-body_upsec3=$1 ä¸ªè½¯ä»¶åå¯æ´æ°ï¼å¶ä¸­ $2 æ¯å®å¨æ´æ°
-body_uptime=ç³»ç»å¨çº¿æ¶é´
-body_used=æ»è®¡ $1/å·²ä½¿ç¨ $2
-body_used_and_free=æ»è®¡ $1/ç©ºé² $2/å·²ç¨ $3
-body_usermin=Usermin çæ¬
-body_virt=èæåå­
-body_webmin=Webmin çæ¬
+body_cpu=CPU 负载
+body_cpuinfo=CPU 信息
+body_cputemps=CPU 温度
+body_cputype=$5，$8 核心
+body_disk=本地磁盘空间
+body_driveerr=$1 错误！
+body_drivefailed=SMART 检测失败！
+body_drivetemps=磁盘温度
+body_firewall=防火墙版本
+body_header0=系统信息
+body_header1=账号系统
+body_host=系统主机名
+body_kernel=内核和 CPU
+body_kernelon=$1 $2 执行于 $3
+body_load=$1（1 分钟）$2（5 分钟）$3（15 分钟）
+body_os=操作系统
+body_procs=正在运行的进程
+body_real=物理内存
+body_time=系统时间
+body_updates=软件包更新
+body_updays=$1 天，$2 小时，$3 分钟
+body_uphours=$1 小时，$2 分钟
+body_upmins=$1 分钟
+body_upneed=$1 个软件包可更新
+body_upneed1=$1 个软件包可更新
+body_upok=所有已安装的软件包都是最新的
+body_upsec=$1 个软件包可更新，其中 $2 是安全更新
+body_upsec1=$1 个软件包可更新，其中 $2 是安全更新
+body_upsec2=$1 个软件包可更新，其中 $2 是安全更新
+body_upsec3=$1 个软件包可更新，其中 $2 是安全更新
+body_uptime=系统在线时间
+body_used=总计 $1/已使用 $2
+body_used_and_free=总计 $1/空闲 $2/已用 $3
+body_usermin=Usermin 版本
+body_virt=虚拟内存
+body_webmin=Webmin 版本
 
-left_favorites=æ¶èå¤¹
-left_favorites_no=æ¶èå¤¹ä¸­è¿æªæ·»å åå®¹...
-left_feedback=åéåé¦
-theme_xhred_global_sys_info=ç³»ç»ä¿¡æ¯
-left_others=å¶ä»
-left_refresh_modules=å·æ°æ¨¡å
-left_search=æ¥æ¾
-left_statistics=ç³»ç»ç»è®¡
+left_favorites=收藏夹
+left_favorites_no=收藏夹中还未添加内容...
+left_feedback=发送反馈
+theme_xhred_global_sys_info=系统信息
+left_others=其他
+left_refresh_modules=刷新模块
+left_search=查找
+left_statistics=系统统计
 
-login_danger=å±é©ï¼
-login_message=æ¨å¿é¡»è¾å¥è´¦å·åå¯ç ä»¥ç»å½æå¡å¨
-theme_xhred_login_pass=å¯ç 
-login_save=è®°ä½æ
-login_signin=ç»å½
-login_success=æåï¼
-theme_xhred_login_token=ä»¤ç
-theme_xhred_login_user=ç¨æ·å
-login_warning=è­¦åï¼
+login_danger=危险！
+login_message=您必须输入账号和密码以登录服务器
+theme_xhred_login_pass=密码
+login_save=记住我
+login_signin=登录
+login_success=成功！
+theme_xhred_login_token=令牌
+theme_xhred_login_user=用户名
+login_warning=警告！
 
-right_aliases=æå¡å¨å«å
-right_bw=å¸¦å®½ä½¿ç¨åéå¶
-right_dom=æ¨çæå¡å¨å
-right_faliases=é®ä»¶å«å
-right_fdbs=æå¡å¨
-right_fdoms=èææå¡å¨
-right_from=ç»å½èª
-right_fusers2=FTP ç¨æ·
-right_fusers=é®ä»¶/FTP ç¨æ·
-right_fvm2=èææº
-right_fweb=èæç«ç¹
-right_licenceheader_vm2=Cloudmin è®¸å¯è¯
-right_login=ç»å½ä¸º
-right_not=æªå®è£
-right_of=$1 é¡¹ä¸­ $2 ä¸ª
-right_quota=ç£çç¨éåéé¢
-right_reselip=ï¼ç»éå $1ï¼
-right_sharedip=ï¼å±äº« IPï¼
-right_slcheck=éæ°æ£æ¥ Cloudmin è®¸å¯è¯
-right_subs=å­æå¡å¨
-right_virtdocs2=éå ææ¡£
-right_virtualmin=Virtualmin çæ¬
-right_vlcheck=éæ°æ£æ¥ Virtualmin è®¸å¯è¯
-right_vm2=Cloudmin çæ¬
+right_aliases=服务器别名
+right_bw=带宽使用和限制
+right_dom=您的服务器名
+right_faliases=邮件别名
+right_fdbs=服务器
+right_fdoms=虚拟服务器
+right_from=登录自
+right_fusers2=FTP 用户
+right_fusers=邮件/FTP 用户
+right_fvm2=虚拟机
+right_fweb=虚拟站点
+right_licenceheader_vm2=Cloudmin 许可证
+right_login=登录为
+right_not=未安装
+right_of=$1 项中 $2 个
+right_quota=磁盘用量和配额
+right_reselip=（经销商 $1）
+right_sharedip=（共享 IP）
+right_slcheck=重新检查 Cloudmin 许可证
+right_subs=子服务器
+right_virtdocs2=附加文档
+right_virtualmin=Virtualmin 版本
+right_vlcheck=重新检查 Virtualmin 许可证
+right_vm2=Cloudmin 版本
 
-theme_xhred_session_failed=ç»å½å¤±è´¥ãè¯·åè¯ä¸æ¬¡ã
-session_logout=ç»åºæåãä½¿ç¨ä¸é¢çè¡¨åéæ°ç»å½ã
-session_timed_out=å¨ $1 åéä¸æ´»å¨åä¼è¯è¶æ¶ã
-session_twofailed=ä¸¤æ­¥éªè¯å¤±è´¥ï¼$1
+theme_xhred_session_failed=登录失败。请再试一次。
+session_logout=登出成功。使用下面的表单重新登录。
+session_timed_out=在 $1 分钟不活动后会话超时。
+session_twofailed=两步验证失败：$1
 
-settings_right_options=éé¡¹
-settings_right_restore_defaults=æ¢å¤é»è®¤å¼
-settings_right_restored=æ¢å¤
-settings_right_restoring=æ­£å¨æ¢å¤
-settings_right_saved=å·²ä¿å­
-settings_right_saving=æ­£å¨ä¿å­
+settings_right_options=选项
+settings_right_restore_defaults=恢复默认值
+settings_right_restored=恢复
+settings_right_restoring=正在恢复
+settings_right_saved=已保存
+settings_right_saving=正在保存
 
-settings_right_theme_extensions=ä¸»é¢æ©å±
-settings_right_theme_extensions_title=ä¸»é¢æ©å±
-settings_right_file_edit=ç¼è¾æ©å±æä»¶ï¼
-settings_right_extensions_title=å¯æ©å±çä¸»é¢è®¾è®¡ï¼ä½¿æ¨å¯ä»¥è½»æ¾æä½çé¢çç®æ é¨åã
+settings_right_theme_extensions=主题扩展
+settings_right_theme_extensions_title=主题扩展
+settings_right_file_edit=编辑扩展文件：
+settings_right_extensions_title=可扩展的主题设计，使您可以轻松操作界面的目标部分。
 
-theme_xhred_settings_right_theme_logos=ä¸»é¢ Logo
-theme_xhred_settings_right_theme_logos_title=ä¸»é¢ Logo
-settings_right_logo_authenticated_users=å·²éªè¯ç¨æ· Logo
-settings_right_logo_unauthenticated_users=æªéªè¯ç¨æ· Logo
+theme_xhred_settings_right_theme_logos=主题 Logo
+theme_xhred_settings_right_theme_logos_title=主题 Logo
+settings_right_logo_authenticated_users=已验证用户 Logo
+settings_right_logo_unauthenticated_users=未验证用户 Logo
 
-settings_right_current_theme=å½åä¸»é¢
-settings_right_title=æ­¤é¡µé¢åè®¸æ¨éç½® <a href="https://github.com/authentic-theme/authentic-theme" target="_blank"> ä¸»é¢</a>çéé¡¹ãè®¾ç½®å°å¨ä¸»é¢æ´æ°æ¶ä¿å­ã
-settings_right_theme_left_configuration_title=Authentic ä¸»é¢éç½®
-settings_right_theme_left_extensions_title=Authentic ä¸»é¢æ©å±ç¼è¾å¨
-settings_right_theme_left_logo_title=Authentic ä¸»é¢ Logo æ§å¶
-settings_right_theme_configurable_options_title=Authentic ä¸»é¢çå¯éç½®éé¡¹
+settings_right_current_theme=当前主题
+settings_right_title=此页面允许您配置 <a href="https://github.com/authentic-theme/authentic-theme" target="_blank"> 主题</a>的选项。设置将在主题更新时保存。
+settings_right_theme_left_configuration_title=Authentic 主题配置
+settings_right_theme_left_extensions_title=Authentic 主题扩展编辑器
+settings_right_theme_left_logo_title=Authentic 主题 Logo 控制
+settings_right_theme_configurable_options_title=Authentic 主题的可配置选项
 
-settings_hotkey_custom_1_user=èªå®ä¹é¾æ¥ <code>1</code>
-settings_hotkey_custom_2_user=èªå®ä¹é¾æ¥ <code>2</code>
-settings_hotkey_custom_3_user=èªå®ä¹é¾æ¥ <code>3</code>
-settings_hotkey_custom_4_user=èªå®ä¹é¾æ¥ <code>4</code>
-settings_hotkey_custom_5_user=èªå®ä¹é¾æ¥ <code>5</code>
-settings_hotkey_custom_6_user=èªå®ä¹é¾æ¥ <code>6</code>
-settings_hotkey_custom_7_user=èªå®ä¹é¾æ¥ <code>7</code>
-settings_hotkey_custom_8_user=èªå®ä¹é¾æ¥ <code>8</code>
-settings_hotkey_custom_9_user=èªå®ä¹é¾æ¥ <code>9</code>
+settings_hotkey_custom_1_user=自定义链接 <code>1</code>
+settings_hotkey_custom_2_user=自定义链接 <code>2</code>
+settings_hotkey_custom_3_user=自定义链接 <code>3</code>
+settings_hotkey_custom_4_user=自定义链接 <code>4</code>
+settings_hotkey_custom_5_user=自定义链接 <code>5</code>
+settings_hotkey_custom_6_user=自定义链接 <code>6</code>
+settings_hotkey_custom_7_user=自定义链接 <code>7</code>
+settings_hotkey_custom_8_user=自定义链接 <code>8</code>
+settings_hotkey_custom_9_user=自定义链接 <code>9</code>
 
 settings_navigation_color=Color palette
-settings_loader_top=å¨å±å¹é¡¶é¨å¯ç¨é¡µé¢è¿åº¦å è½½ç¨åº
-settings_loader_left=å¯ç¨å¯¼èªèåå¾®è°
+settings_loader_top=在屏幕顶部启用页面进度加载程序
+settings_loader_left=启用导航菜单微调
 
-settings_leftmenu_section_hide_refresh_modules=éèå·æ°æ¨¡åé¾æ¥
-settings_leftmenu_section_hide_unused_modules=éèæªä½¿ç¨çæ¨¡åé¡¹
-settings_favorites=æ¾ç¤ºæ¶èå¤¹æé®
-settings_leftmenu_button_language=æ¾ç¤ºè¯­è¨æé®
-settings_leftmenu_button_refresh=æ¾ç¤ºéè½½æé®
+settings_leftmenu_section_hide_refresh_modules=隐藏刷新模块链接
+settings_leftmenu_section_hide_unused_modules=隐藏未使用的模块项
+settings_favorites=显示收藏夹按钮
+settings_leftmenu_button_language=显示语言按钮
+settings_leftmenu_button_refresh=显示重载按钮
 
-settings_theme_options_button=æ¾ç¤ºä¸»é¢è®¾ç½®æé®
+settings_theme_options_button=显示主题设置按钮
 
-settings_sysinfo_easypie_charts=æ¾ç¤ºå¾è¡¨
-settings_sysinfo_theme_updates=æ£æ¥ Authentic ä¸»é¢æ´æ°
-settings_sysinfo_drive_status_on_new_line=å¨æ°è¡ä¸æ¾ç¤º CPU åé©±å¨å¨ç¶æ
-settings_sysinfo_link_mini=å°ä»ªè¡¨æ¿é¾æ¥æ¾ç¤ºä¸ºæé®
+settings_sysinfo_easypie_charts=显示图表
+settings_sysinfo_theme_updates=检查 Authentic 主题更新
+settings_sysinfo_drive_status_on_new_line=在新行上显示 CPU 和驱动器状态
+settings_sysinfo_link_mini=将仪表板链接显示为按钮
 
-settings_right_page_defaults_title=é»è®¤é¡µ
-settings_right_default_tab_webmin=ç»å½ Webmin åçé»è®¤æ ç­¾
-settings_right_default_tab_usermin=ç»å½ Usermin åçé»è®¤æ ç­¾
-settings_right_virtualmin_default=ç»å½å° Virtualmin çé»è®¤é¡µ
-settings_right_cloudmin_default=Cloudmin é»è®¤é¡µ
+settings_right_page_defaults_title=默认页
+settings_right_default_tab_webmin=登录 Webmin 后的默认标签
+settings_right_default_tab_usermin=登录 Usermin 后的默认标签
+settings_right_virtualmin_default=登录到 Virtualmin 的默认页
+settings_right_cloudmin_default=Cloudmin 默认页
 
-settings_right_clear_local_cache=æ¸é¤ç¼å­
-settings_side_slider_fixed=å§ç»å¯è§
+settings_right_clear_local_cache=清除缓存
+settings_side_slider_fixed=始终可见
 
-settings_side_slider_enabled=å¯ç¨æ»å
-settings_leftmenu_user_html=æ¾ç¤º HTML çæ®µ
+settings_side_slider_enabled=启用滑块
+settings_leftmenu_user_html=显示 HTML 片段
 
-theme_changelog=æ´æ°æ¥å¿
-theme_conference=ä¸»é¢ä¼è®®
-theme_development_support=å¼åæ¯æ
-theme_donate=æèµ 
-theme_download=ä¸è½½
-theme_name=Authentic ä¸»é¢
-theme_update=æ´æ°
-theme_update_available=ææ°çæ¬
-theme_update_notice=æ´æ°éç¥
+theme_changelog=更新日志
+theme_conference=主题会议
+theme_development_support=开发支持
+theme_donate=捐赠
+theme_download=下载
+theme_name=Authentic 主题
+theme_update=更新
+theme_update_available=最新版本
+theme_update_notice=更新通知
 theme_version=Authentic theme version
 
 # 17.40
-theme_xhred_global_error=éè¯¯
-theme_global_warning=è­¦å
-theme_global_success=æå
-theme_global_info=ä¿¡æ¯
-sysinfo_system_status_warning=ä¸ºäºæ¾ç¤º<strong>ç³»ç»ä¿¡æ¯</strong>ï¼æ¨éè¦å¨ç¨æ·è®¾ç½®ä¸­å¯ç¨<em>ç³»ç»ç¶æ</em>æ¨¡åã
-settings_leftmenu_user_html_privileged=ä»ä¸ºç®¡çåæ¾ç¤º HTML ä»£ç æ®µ
+theme_xhred_global_error=错误
+theme_global_warning=警告
+theme_global_success=成功
+theme_global_info=信息
+sysinfo_system_status_warning=为了显示<strong>系统信息</strong>，您需要在用户设置中启用<em>系统状态</em>模块。
+settings_leftmenu_user_html_privileged=仅为管理员显示 HTML 代码段
 theme_fileformat_css=CSS
 theme_fileformat_json=JSON
 theme_fileformat_js=JavaScript
-theme_fileformat_plain_text=çº¯ææ¬
+theme_fileformat_plain_text=纯文本
 
 theme_xhred_titles_wm=Webmin
 theme_xhred_titles_um=Usermin
-theme_xhred_titles_dashboard=ä»ªè¡¨æ¿
-theme_xhred_titles_mail=é®ä»¶
+theme_xhred_titles_dashboard=仪表板
+theme_xhred_titles_mail=邮件
 theme_xhred_titles_vm=Virtualmin
 theme_xhred_titles_cm=Cloudmin
 theme_xhred_titles_thirdlane=Thirdlane
 
-theme_xhred_global_please_wait=è¯·ç¨å...
-theme_xhred_filemanager_copying_selected=æ­£å¨å¤å¶æéã
-theme_xhred_filemanager_cutting_selected=æ­£å¨åªåæéã
-theme_xhred_filemanager_pasting_selected=æ­£å¨ä»åªè´´æ¿ç²è´´ã
-theme_xhred_filemanager_unpacking_archive=æ­£å¨è§£åï¼å¤ä¸ªï¼éå®çæä»¶ã
-theme_xhred_filemanager_deleting_selected=æ­£å¨å é¤æéã
-theme_xhred_filemanager_renaming_selected=æ­£å¨éå½åå·²éã
-theme_xhred_filemanager_creating_directory=æ­£å¨åå»ºç®å½
-theme_xhred_filemanager_creating_file=æ­£å¨åµå»ºæä»¶
-theme_xhred_filemanager_downloading_from=æ­£å¨ä¸è½½èª
-theme_xhred_filemanager_compressing_selected=å¨åå°åç¼©éæ©çæä»¶ã
-theme_xhred_filemanager_refreshing=æ­£å¨å·æ°ç®å½å§å®¹ã
-theme_xhred_filemanager_copying_successful=å¤å¶å°åªè´´æ¿æåã
-theme_xhred_filemanager_cutting_successful=åªåå°åªè´´æ¿æåã
-theme_xhred_filemanager_pasting_successful=æ­£å¨ä»åªè´´æ¿ç²è´´ã
-theme_xhred_filemanager_search_founds=æ¾å° <strong>%value</strong> ä¸ªå¹éé¡¹ã
-theme_xhred_filemanager_search_found=æ¾å° <strong>1</strong> ä¸ªå¹éé¡¹ã
-theme_xhred_filemanager_search_no_matches=æ²ææ¾å°å¹éã
-theme_xhred_filemanager_nothing_is_selected=æ²¡æé¡¹ç®è¢«éæ©ï¼
-theme_xhred_filemanager_saving_file=æ­£å¨ä¿å­æä»¶â<strong><em>%value</em></strong>âã
-theme_xhred_filemanager_file_saved=æä»¶â<strong><em>%value</em></strong>âå·²è¢«æåä¿å­ã
-theme_xhred_filemanager_not_editable=æ æ³ç¼è¾éæ©çç±»åã
-theme_xhred_filemanager_not_decompressable=æ æ³è§£åç¼©æ­¤ç±»æä»¶ã
-theme_xhred_filemanager_no_selection_to_copy=æ²¡æéæ©è¦å¤å¶çç®å½/æä»¶ã
-theme_xhred_filemanager_no_selection_to_cut=æ²¡æéæ©è¦åªåçç®å½/æä»¶ã
-theme_xhred_filemanager_empty_clipboard=åªè´´æ¿æ¯ç©ºçã
+theme_xhred_global_please_wait=请稍候...
+theme_xhred_filemanager_copying_selected=正在复制所选。
+theme_xhred_filemanager_cutting_selected=正在剪切所选。
+theme_xhred_filemanager_pasting_selected=正在从剪贴板粘贴。
+theme_xhred_filemanager_unpacking_archive=正在解压（多个）选定的文件。
+theme_xhred_filemanager_deleting_selected=正在删除所选。
+theme_xhred_filemanager_renaming_selected=正在重命名已选。
+theme_xhred_filemanager_creating_directory=正在创建目录
+theme_xhred_filemanager_creating_file=正在創建文件
+theme_xhred_filemanager_downloading_from=正在下载自
+theme_xhred_filemanager_compressing_selected=在后台压缩选择的文件。
+theme_xhred_filemanager_refreshing=正在刷新目录內容。
+theme_xhred_filemanager_copying_successful=复制到剪贴板成功。
+theme_xhred_filemanager_cutting_successful=剪切到剪贴板成功。
+theme_xhred_filemanager_pasting_successful=正在从剪贴板粘贴。
+theme_xhred_filemanager_search_founds=找到 <strong>%value</strong> 个匹配项。
+theme_xhred_filemanager_search_found=找到 <strong>1</strong> 个匹配项。
+theme_xhred_filemanager_search_no_matches=沒有找到匹配。
+theme_xhred_filemanager_nothing_is_selected=没有项目被选择！
+theme_xhred_filemanager_saving_file=正在保存文件“<strong><em>%value</em></strong>”。
+theme_xhred_filemanager_file_saved=文件“<strong><em>%value</em></strong>”已被成功保存。
+theme_xhred_filemanager_not_editable=无法编辑选择的类型。
+theme_xhred_filemanager_not_decompressable=无法解压缩此类文件。
+theme_xhred_filemanager_no_selection_to_copy=没有选择要复制的目录/文件。
+theme_xhred_filemanager_no_selection_to_cut=没有选择要剪切的目录/文件。
+theme_xhred_filemanager_empty_clipboard=剪贴板是空的。
 
-theme_xhred_filemanager_successful_extraction=æåæéæä»¶æåã
-theme_xhred_filemanager_successful_deletion=å é¤æåã
-theme_xhred_filemanager_successful_permissions=æéå·²æåæ´æ¹ã
-theme_xhred_filemanager_successful_ownership=æææå·²æåæ´æ¹ã
-theme_xhred_filemanager_successful_compression=åç¼©å·²æåå®æã
+theme_xhred_filemanager_successful_extraction=提取所选文件成功。
+theme_xhred_filemanager_successful_deletion=删除成功。
+theme_xhred_filemanager_successful_permissions=权限已成功更改。
+theme_xhred_filemanager_successful_ownership=所有权已成功更改。
+theme_xhred_filemanager_successful_compression=压缩已成功完成。
 
-theme_xhred_notifications_packages_updates=è½¯ä»¶åæ´æ°
-theme_xhred_notifications_theme_update=ä¸»é¢æ´æ°
-theme_xhred_notifications_theme_update_message=<strong>Authentic ä¸»é¢</strong> <em>%v</em> çæ¬çæ´æ°ç®åå¯ç¨ãè¯·æ´æ°ã
-theme_xhred_notifications_firewall_update=é²ç«å¢æ´æ°
-theme_xhred_notifications_firewall_update_message=<strong>ConfigServer æå¡å¨å®å¨åé²ç«å¢</strong> <em>%v</em>çæ¬çæ´æ°ç®åå¯ç¨ãè¯·æ´æ°ã
+theme_xhred_notifications_packages_updates=软件包更新
+theme_xhred_notifications_theme_update=主题更新
+theme_xhred_notifications_theme_update_message=<strong>Authentic 主题</strong> <em>%v</em> 版本的更新目前可用。请更新。
+theme_xhred_notifications_firewall_update=防火墙更新
+theme_xhred_notifications_firewall_update_message=<strong>ConfigServer 服务器安全和防火墙</strong> <em>%v</em>版本的更新目前可用。请更新。
 
-theme_xhred_notifications_firewall_danger=é²ç«å¢å±é©
-theme_xhred_notifications_firewall_danger_message=ä¼¼ä¹ <strong>ConfigServer æå¡å¨å®å¨åé²ç«å¢</strong><i class="badge badge-danger">æªè¿è¡</i>æå·²åæ­¢ï¼ä¸è¦è®©æ¨çæå¡å¨æ´é²å¨å¬ç½ï¼è¯·æ£æ¥é²ç«å¢è®¾ç½®ï¼%vï¼
+theme_xhred_notifications_firewall_danger=防火墙危险
+theme_xhred_notifications_firewall_danger_message=似乎 <strong>ConfigServer 服务器安全和防火墙</strong><i class="badge badge-danger">未运行</i>或已停止！不要让您的服务器暴露在公网，请检查防火墙设置（%v）
 
-theme_xhred_notifications_firewall_warning=é²ç«å¢è­¦å
+theme_xhred_notifications_firewall_warning=防火墙警告
 
 # 17.50
-settings_grayscale_level_navigation=ç°åº¦æ»¤é
-settings_grayscale_level_navigation_description=é»è®¤/å½åå¼ <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
-settings_sepia_level_navigation=æ£è¤è²è¿æ»¤å¨
-settings_sepia_level_navigation_description=é»è®¤/å½åå¼ <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
-settings_saturation_level_navigation=é¥±åè¿æ»¤å¨
-settings_saturation_level_navigation_description=é»è®¤/å½åå¼ <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
-settings_hue_level_navigation=è²è°-æè½¬æ»¤é
-settings_hue_level_navigation_description=é»è®¤/å½åå¼ <code>0</code>Â°/<code data-name="settings_hue_level_navigation">0</code>Â°
-settings_invert_level_navigation=åè½¬æ»¤æ³¢å¨
-settings_invert_level_navigation_description=é»è®¤/å½åå¼ <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
-settings_brightness_level_navigation=äº®åº¦æ»¤é
-settings_brightness_level_navigation_description=é»è®¤/å½åå¼ <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
-settings_contrast_level_navigation=å¯¹æ¯åº¦æ»¤é
-settings_contrast_level_navigation_description=é»è®¤/å½åå¼ <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
+settings_grayscale_level_navigation=灰度滤镜
+settings_grayscale_level_navigation_description=默认/当前值 <code>0</code>/<code data-name="settings_grayscale_level_navigation">0</code>
+settings_sepia_level_navigation=棕褐色过滤器
+settings_sepia_level_navigation_description=默认/当前值 <code>0</code>/<code data-name="settings_sepia_level_navigation">0</code>
+settings_saturation_level_navigation=饱和过滤器
+settings_saturation_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_saturation_level_navigation">0</code>
+settings_hue_level_navigation=色调-旋转滤镜
+settings_hue_level_navigation_description=默认/当前值 <code>0</code>°/<code data-name="settings_hue_level_navigation">0</code>°
+settings_invert_level_navigation=反转滤波器
+settings_invert_level_navigation_description=默认/当前值 <code>0</code>/<code data-name="settings_invert_level_navigation">0</code>
+settings_brightness_level_navigation=亮度滤镜
+settings_brightness_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_brightness_level_navigation">0</code>
+settings_contrast_level_navigation=对比度滤镜
+settings_contrast_level_navigation_description=默认/当前值 <code>1</code>/<code data-name="settings_contrast_level_navigation">0</code>
 
 settings_cm_editor_palette=Code highlight color palette
 
-theme_xhred_filemanager_context_select_all=å¨é
-theme_xhred_filemanager_context_select_invert=ååéæ©
-theme_xhred_filemanager_context_refresh=å·æ°
-theme_xhred_filemanager_context_newfile=åå»ºæ°æä»¶
-theme_xhred_filemanager_context_newfoder=åå»ºæ°ç®å½
-theme_xhred_filemanager_context_copy=å¤å¶
-theme_xhred_filemanager_context_cut=åªå
-theme_xhred_filemanager_context_paste=ç²è´´
-theme_xhred_filemanager_context_chmod=æ´æ¹æé
-theme_xhred_filemanager_context_chown=æ´æ¹æææ
+theme_xhred_filemanager_context_select_all=全选
+theme_xhred_filemanager_context_select_invert=反向选择
+theme_xhred_filemanager_context_refresh=刷新
+theme_xhred_filemanager_context_newfile=创建新文件
+theme_xhred_filemanager_context_newfoder=创建新目录
+theme_xhred_filemanager_context_copy=复制
+theme_xhred_filemanager_context_cut=剪切
+theme_xhred_filemanager_context_paste=粘贴
+theme_xhred_filemanager_context_chmod=更改权限
+theme_xhred_filemanager_context_chown=更改所有权
 
 # 17.51
-theme_xhred_filemanager_context_new=æ°å»º
-theme_xhred_filemanager_context_newarchive=åå»ºæ°çåç¼©æ¡£
-theme_xhred_filemanager_context_delete=å é¤
-theme_xhred_filemanager_context_rename=éå½å
-theme_xhred_filemanager_context_edit=ç¼è¾
-theme_xhred_filemanager_context_extract=æå
-theme_xhred_filemanager_context_goto=æå¼é¡¹ç®ä½ç½®
-theme_xhred_filemanager_context_properties=å±æ§
-theme_xhred_filemanager_context_search=æ¥æ¾
+theme_xhred_filemanager_context_new=新建
+theme_xhred_filemanager_context_newarchive=创建新的压缩档
+theme_xhred_filemanager_context_delete=删除
+theme_xhred_filemanager_context_rename=重命名
+theme_xhred_filemanager_context_edit=编辑
+theme_xhred_filemanager_context_extract=提取
+theme_xhred_filemanager_context_goto=打开项目位置
+theme_xhred_filemanager_context_properties=属性
+theme_xhred_filemanager_context_search=查找
 
 # 17.52
-theme_xhred_filemanager_context_deselect_all=åæ¶å¨é
-theme_xhred_filemanager_context_upload=ä¸ä¼ å°å½åç®å½
-theme_xhred_filemanager_context_download=è¿ç¨ URL ä¸è½½
+theme_xhred_filemanager_context_deselect_all=取消全选
+theme_xhred_filemanager_context_upload=上传到当前目录
+theme_xhred_filemanager_context_download=远程 URL 下载
 
 # 17.53
-theme_config_virtualmin=Virtualmin èææå¡å¨
-theme_config_cloudmin=Cloudmin ç®¡çç³»ç»
-settings_right_thirdparties_options_title=ç¬¬ä¸æ¹æ¨¡åéé¡¹
-theme_xhred_filemanager_context_calculate_size=æä¸ç©ºæ ¼é®è®¡ç®å¤§å°
-theme_xhred_filemanager_context_bookmarks=ä¹¦ç­¾
-theme_xhred_filemanager_context_bookmark_current=ä¹¦ç­¾ç®åæå¼çè·¯å¾
-theme_xhred_filemanager_context_transfer=è½¬ç§»
+theme_config_virtualmin=Virtualmin 虚拟服务器
+theme_config_cloudmin=Cloudmin 管理系统
+settings_right_thirdparties_options_title=第三方模块选项
+theme_xhred_filemanager_context_calculate_size=按下空格键计算大小
+theme_xhred_filemanager_context_bookmarks=书签
+theme_xhred_filemanager_context_bookmark_current=书签目前打开的路径
+theme_xhred_filemanager_context_transfer=转移
 
 # 17.54
-theme_xhred_filemanager_title_symlink_target=é¾æ¥ç®æ 
+theme_xhred_filemanager_title_symlink_target=链接目标
 
 # 17.60
-right_unlimited=æ éå¶
-settings_leftmenu_width=é¦éå®½åº¦
-settings_leftmenu_width_description=é»è®¤/å½åå®½åº¦ <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
-settings_switch_rdisplay=æ¾ç¤ºå¼å³åè½¬
-settings_switch_rdisplay_description=æ­¤éé¡¹åè®¸æ¨ä¸ºå·¦ä¸è§å¼å³è®¾ç½®ä¸åçé¡ºåºãæ´æ¹æ­¤éé¡¹åï¼éè¦å®æé¡µé¢éæ°å è½½ã
+right_unlimited=无限制
+settings_leftmenu_width=首选宽度
+settings_leftmenu_width_description=默认/当前宽度 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
+settings_switch_rdisplay=显示开关反转
+settings_switch_rdisplay_description=此选项允许您为左上角开关设置不同的顺序。更改此选项后，需要完成页面重新加载。
 
 # 17.63
-theme_xhred_filemanager_context_calculate_selected_size=è®¡ç®æéæä»¶å¤§å°
-theme_xhred_filemanager_selected_entries=å·²éï¼%value æ¡ç®
-theme_xhred_filemanager_manual_path=æå¨è¾å¥è·¯å¾
+theme_xhred_filemanager_context_calculate_selected_size=计算所选文件大小
+theme_xhred_filemanager_selected_entries=已选：%value 条目
+theme_xhred_filemanager_manual_path=手动输入路径
 
-theme_xhred_datatable_semptytable=è¡¨ä¸­æ å¯ç¨æ°æ®
-theme_xhred_datatable_sinfo=æ¾ç¤º _START_ å° _END_ ç _TOTAL_ä¸ªæ¡ç®
-theme_xhred_datatable_sinfoempty=æ¾ç¤º 0 å° 0 ç 0ä¸ªæ¡ç®
-theme_xhred_datatable_slengthmenu=æ¾ç¤º _MENU_ æ¡ç®
-theme_xhred_datatable_sloadingrecords=æ­£å¨å è½½
-theme_xhred_datatable_sprocessing=æ­£å¨å¤ç...
-theme_xhred_datatable_szerorecords=æ²ææ¾å°å¹éçè®°å½
+theme_xhred_datatable_semptytable=表中无可用数据
+theme_xhred_datatable_sinfo=显示 _START_ 到 _END_ 的 _TOTAL_个条目
+theme_xhred_datatable_sinfoempty=显示 0 到 0 的 0个条目
+theme_xhred_datatable_slengthmenu=显示 _MENU_ 条目
+theme_xhred_datatable_sloadingrecords=正在加载
+theme_xhred_datatable_sprocessing=正在处理...
+theme_xhred_datatable_szerorecords=沒有找到匹配的记录
 
 # 17.64
-theme_xhred_filemanager_file_edit_but_not_saved=æä»¶å·²ç¼è¾ä½å°æªä¿å­ã
-theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=æ¨æ³åä»ä¹ï¼
-theme_xhred_global_save=ä¿å­
-theme_xhred_global_save_and_close=ä¿å­å¹¶å³é­
-theme_xhred_global_close_without_saving=å³é­ä½ä¸ä¿å­
-theme_xhred_global_continue_editing=ç»§ç»­ç¼è¾
-theme_xhred_filemanager_context_download_file=ä¸è½½
+theme_xhred_filemanager_file_edit_but_not_saved=文件已编辑但尚未保存。
+theme_xhred_filemanager_file_edit_but_not_saved_what_to_do=您想做什么？
+theme_xhred_global_save=保存
+theme_xhred_global_save_and_close=保存并关闭
+theme_xhred_global_close_without_saving=关闭但不保存
+theme_xhred_global_continue_editing=继续编辑
+theme_xhred_filemanager_context_download_file=下载
 
 # 17.65
-settings_sysinfo_easypie_charts_width=å¾è¡¨å®½åº¦
-settings_sysinfo_easypie_charts_scale=å¾è¡¨çæ¯ä¾é¿åº¦
+settings_sysinfo_easypie_charts_width=图表宽度
+settings_sysinfo_easypie_charts_scale=图表的比例长度
 
 # 17.80
-right_return_theme_options=ä¸»é¢éé¡¹
-theme_xhred_datatable_semptydirectory=ç®å½æ¯ç©ºç
-theme_xhred_filemanager_context_clipboard=å¤å¶è·¯å¾å°åªè´´æ¿
-theme_xhred_global_warning=è­¦å
-theme_xhred_global_close=å³é­
+right_return_theme_options=主题选项
+theme_xhred_datatable_semptydirectory=目录是空的
+theme_xhred_filemanager_context_clipboard=复制路径到剪贴板
+theme_xhred_global_warning=警告
+theme_xhred_global_close=关闭
 
-theme_xhred_filemanager__no_bookmarks=æ²¡æä¿å­çä¹¦ç­¾
-theme_xhred_filemanager_bookmark=ä¸ºå½åç®å½æ·»å ä¹¦ç­¾
-theme_xhred_filemanager_unbookmark=ä»ä¹¦ç­¾ä¸­ç§»é¤å½åç®å½
-theme_xhred_filemanager_move_into_self=æ¨æ æ³å°ç®å½ç§»å¨å°èªèº«ï¼ç®æ ç®å½ä½äºæºç®å½ä¸­ã
-theme_xhred_filemanager_pasting_and_copying_1=éæ©çæºå·²æåä»¥æ°åç§°ç²è´´ã
-theme_xhred_filemanager_pasting_and_copying_2=éæ©çæºå·²æåä»¥æ°åç§°ç²è´´ã
-theme_xhred_filemanager_pasting_and_replacing_1=ç°æç®æ å·²æåæ¿æ¢ä¸ºæ°ç®æ ã
-theme_xhred_filemanager_pasting_and_replacing_2=ç°æç®æ å·²æåæ¿æ¢ä¸ºæ°ç®æ ã
-theme_xhred_filemanager_target_conflict_1=ç®æ å²çª
-theme_xhred_filemanager_target_conflict_2=ç®æ å²çª
-theme_xhred_filemanager_target_conflict_message_1=ç²è´´ç®æ å·²ç»å­å¨ï¼æ¨æ³åä»ä¹ï¼
-theme_xhred_filemanager_target_conflict_message_2=ç²è´´ç®æ å·²ç»å­å¨ï¼æ¨æ³åä»ä¹ï¼
-theme_xhred_filemanager_target_conflict_replace=åå¹¶ä¸æ¿æ¢
-theme_xhred_filemanager_target_conflict_paste=ä»¥æ°åç§°ç²è´´
+theme_xhred_filemanager__no_bookmarks=没有保存的书签
+theme_xhred_filemanager_bookmark=为当前目录添加书签
+theme_xhred_filemanager_unbookmark=从书签中移除当前目录
+theme_xhred_filemanager_move_into_self=您无法将目录移动到自身！目标目录位于源目录中。
+theme_xhred_filemanager_pasting_and_copying_1=选择的源已成功以新名称粘贴。
+theme_xhred_filemanager_pasting_and_copying_2=选择的源已成功以新名称粘贴。
+theme_xhred_filemanager_pasting_and_replacing_1=现有目标已成功替换为新目标。
+theme_xhred_filemanager_pasting_and_replacing_2=现有目标已成功替换为新目标。
+theme_xhred_filemanager_target_conflict_1=目标冲突
+theme_xhred_filemanager_target_conflict_2=目标冲突
+theme_xhred_filemanager_target_conflict_message_1=粘贴目标已经存在！您想做什么？
+theme_xhred_filemanager_target_conflict_message_2=粘贴目标已经存在！您想做什么？
+theme_xhred_filemanager_target_conflict_replace=合并与替换
+theme_xhred_filemanager_target_conflict_paste=以新名称粘贴
 
-theme_xhred_editor_help_title=ç¼è¾å¨é®çå¿«æ·é®
+theme_xhred_editor_help_title=编辑器键盘快捷键
 
-theme_xhred_filemanager_hide_toolbar=éèå·¥å·æ 
-theme_xhred_filemanager_hide_actions=éèæä½å
-theme_xhred_filemanager_hovered_toolbar=å¨é¼ æ æ¬åæ¶æ¿æ´»å·¥å·æ ä¸­çä¸æåè¡¨
-theme_xhred_filemanager_context_delete_selected=å é¤æé
+theme_xhred_filemanager_hide_toolbar=隐藏工具栏
+theme_xhred_filemanager_hide_actions=隐藏操作列
+theme_xhred_filemanager_hovered_toolbar=在鼠标悬停时激活工具栏中的下拉列表
+theme_xhred_filemanager_context_delete_selected=删除所选
 
 # 17.83
-theme_xhred_database_adding_new_row=æ·»å æ°è¡
-theme_xhred_database_editing_row=æ­£å¨ç¼è¾éå®çè¡
-theme_xhred_database_editing_rows=æ­£å¨ç¼è¾éå®çè¡
-theme_xhred_database_adding_new_row_data=è®¾ç½®æ°æ®
+theme_xhred_database_adding_new_row=添加新行
+theme_xhred_database_editing_row=正在编辑选定的行
+theme_xhred_database_editing_rows=正在编辑选定的行
+theme_xhred_database_adding_new_row_data=设置数据
 
 # 17.84
-theme_xhred_datatable_filter=è¿æ»¤å¨
+theme_xhred_datatable_filter=过滤器
 
-theme_xhred_global_update=æ´æ°
-theme_xhred_global_update_and_return=æ´æ°å¹¶è¿å
-theme_xhred_global_update_and_close=æ´æ°å¹¶å³é­
-theme_xhred_global_back=è¿å
-theme_xhred_global_cancel=åæ¶
+theme_xhred_global_update=更新
+theme_xhred_global_update_and_return=更新并返回
+theme_xhred_global_update_and_close=更新并关闭
+theme_xhred_global_back=返回
+theme_xhred_global_cancel=取消
 
-theme_xhred_database_add_row_successful=å·²æåæ·»å æ°è¡
-theme_xhred_database_edit_row_successful=éå®çè¡å·²æåæ´æ°
-theme_xhred_database_edit_rows_successful=éå®çè¡å·²æåæ´æ°
-theme_xhred_database_edit_row_delete_successful=éå®çè¡å·²æåå é¤
-theme_xhred_database_edit_rows_delete_successful=éå®çè¡ <em>%n</em> å·²æåå é¤
-theme_xhred_database_edit_field_delete_successful=éå®çå­æ®µå·²æåå é¤
-theme_xhred_database_edit_fields_delete_successful=éå®çå­æ®µ <em>%n</em> å·²æåå é¤
-theme_xhred_database_edit_selected_row=ç¼è¾éå®çè¡
-theme_xhred_database_edit_selected_rows=ç¼è¾éå®çè¡
-theme_xhred_database_add_new_row=æ·»å è¡
-theme_xhred_database_delete_selected_row=å é¤æéè¡
-theme_xhred_database_delete_selected_rows=å é¤æéè¡
-theme_xhred_database_delete_selected_field=å é¤æéå­æ®µ
-theme_xhred_database_delete_selected_fields=å é¤æéå­æ®µ
-theme_xhred_database_object_selected_delete=å é¤éå®çå¯¹è±¡
-theme_xhred_database_objects_selected_delete=å é¤éå®çå¯¹è±¡
-theme_xhred_database_db_selected_drop=å é¤æéæ°æ®åº
-theme_xhred_database_dbs_selected_drop=å é¤éå®çæ°æ®åº
-theme_xhred_database_edit_but_not_saved=è¡¨æ°æ®å·²ç¼è¾ä½æªä¿å­ã
+theme_xhred_database_add_row_successful=已成功添加新行
+theme_xhred_database_edit_row_successful=选定的行已成功更新
+theme_xhred_database_edit_rows_successful=选定的行已成功更新
+theme_xhred_database_edit_row_delete_successful=选定的行已成功删除
+theme_xhred_database_edit_rows_delete_successful=选定的行 <em>%n</em> 已成功删除
+theme_xhred_database_edit_field_delete_successful=选定的字段已成功删除
+theme_xhred_database_edit_fields_delete_successful=选定的字段 <em>%n</em> 已成功删除
+theme_xhred_database_edit_selected_row=编辑选定的行
+theme_xhred_database_edit_selected_rows=编辑选定的行
+theme_xhred_database_add_new_row=添加行
+theme_xhred_database_delete_selected_row=删除所选行
+theme_xhred_database_delete_selected_rows=删除所选行
+theme_xhred_database_delete_selected_field=删除所选字段
+theme_xhred_database_delete_selected_fields=删除所选字段
+theme_xhred_database_object_selected_delete=删除选定的对象
+theme_xhred_database_objects_selected_delete=删除选定的对象
+theme_xhred_database_db_selected_drop=删除所选数据库
+theme_xhred_database_dbs_selected_drop=删除选定的数据库
+theme_xhred_database_edit_but_not_saved=表数据已编辑但未保存。
 
-theme_xhred_global_no_such_command=ä¼¼ä¹ <tt>$1</tt> å¯æ§è¡æä»¶æªå®è£ææªå®è£å¨ç³»ç»çè·¯å¾ä¸­ã
+theme_xhred_global_no_such_command=似乎 <tt>$1</tt> 可执行文件未安装或未安装在系统的路径中。
 
-theme_xhred_global_notice=æ³¨æ
+theme_xhred_global_notice=注意
 
-theme_xhred_updates_disabled_notice=æ£æµå°æ¨æ²¡æä¸º <em>Authentic ä¸»é¢</em> æ´æ°å¯ç¨éç¥ï¼ <br><br>å¨<a href="%link" class="label label-default"><strong><i class ="fa fa-cogs"></i>ä¸»é¢éç½®</strong>ä¸­å¯ç¨æ­¤åè½</a>å°å¸®å©æ¨å¨æ°çæ¬åå¸æ¶å¯éè¿åå»ç«å³æ´æ°ã
+theme_xhred_updates_disabled_notice=检测到您没有为 <em>Authentic 主题</em> 更新启用通知？ <br><br>在<a href="%link" class="label label-default"><strong><i class ="fa fa-cogs"></i>主题配置</strong>中启用此功能</a>将帮助您在新版本发布时可通过单击立即更新。
 
 # 18.00
-theme_xhred_global_file=æä»¶
-theme_xhred_global_directory=ç®å½
-theme_xhred_global_no_target=ç®æ ä¸å­å¨ææ æ³è®¿é®
-theme_xhred_global_error_code=éè¯¯ä»£ç 
-theme_xhred_global_on=å¼
-theme_xhred_global_off=å³é­
-theme_xhred_global_all=ææ
-theme_xhred_global_none=æ 
-theme_xhred_global_yes=æ¯
-theme_xhred_global_no=å¦
+theme_xhred_global_file=文件
+theme_xhred_global_directory=目录
+theme_xhred_global_no_target=目标不存在或无法访问
+theme_xhred_global_error_code=错误代码
+theme_xhred_global_on=开
+theme_xhred_global_off=关闭
+theme_xhred_global_all=所有
+theme_xhred_global_none=无
+theme_xhred_global_yes=是
+theme_xhred_global_no=否
 
-theme_xhred_datatable_no_search_results=<span class="h5">æ¥æ¾æ²¡æç»æ</span><br> è¯·å°è¯å¶å®æ¥æ¾
+theme_xhred_filemanager_new_tab=添加新标签（Ctrl + Space）
+theme_xhred_datatable_no_search_results=<span class="h5">查找没有结果</span><br> 请尝试其它查找
 
-theme_xhred_filemanager_buffer_error=æ æ³å°æä»¶ç²è´´å°ç¼å²åº - æéè¢«æç»ã
+theme_xhred_filemanager_buffer_error=无法将文件粘贴到缓冲区 - 权限被拒绝。
 
-theme_xhred_filemanager_paste_warning=ç²è´´ä¸ä¸ªï¼æå¤ä¸ªï¼å¯¹è±¡å¤±è´¥ãå¯è½è¯·æ±çå¯¹è±¡å¨ç²è´´æ¶å·²è¢«<em>éå½åï¼ç§»é¤</em>æ<em>å é¤</em>ãå¦ä¸ä¸ªå¯è½åå æ¯ï¼ç®æ ç®å½ä¸å¯åãè¯·æ£æ¥å¯¹è±¡çå±æ§ã
+theme_xhred_filemanager_paste_warning=粘贴一个（或多个）对象失败。可能请求的对象在粘贴时已被<em>重命名，移除</em>或<em>删除</em>。另一个可能原因是，目标目录不可写。请检查对象的属性。
 
-theme_xhred_filemanager_delete_warning=å é¤å·²æåå®æï¼ä½å¹¶éææå¯¹è±¡é½å·²å®æãå¨å é¤ä¹åï¼æè¯·æ±çå¯¹è±¡å¯è½å·²ç»<em>éå½å</em>æ<em>ç§»é¤</em>ãåéå¶çæéï¼å±æ§ï¼æ¯å¦ä¸ä¸ªå¯è½çåå ãéè¯¯ä¿¡æ¯ï¼
+theme_xhred_filemanager_delete_warning=删除已成功完成，但并非所有对象都已完成。在删除之前，所请求的对象可能已经<em>重命名</em>或<em>移除</em>。受限制的权限（属性）是另一个可能的原因。错误信息：
 
-filemanager_rename_denied=ä¸è½éå½å $3ã å¯è½æ¯æºæä»¶ $3 å·²è¢«ç§»é¤æå æééå¶ã
+filemanager_rename_denied=不能重命名 $3。 可能是源文件 $3 已被移除或因权限限制。
 
-filemanager_global_info_total1=æ»è®¡ï¼$1 ä¸ªæä»¶å $2 ä¸ªç®å½
-filemanager_global_info_total2=æ»è®¡ï¼$1 ä¸ªæä»¶å $2 ä¸ªç®å½
-filemanager_global_info_total3=æ»è®¡ï¼$1 ä¸ªæä»¶å $2 ä¸ªç®å½
-filemanager_global_info_total4=æ»è®¡ï¼$1 ä¸ªæä»¶å $2 ä¸ªç®å½
+filemanager_global_info_total1=总计：$1 个文件和 $2 个目录
+filemanager_global_info_total2=总计：$1 个文件和 $2 个目录
+filemanager_global_info_total3=总计：$1 个文件和 $2 个目录
+filemanager_global_info_total4=总计：$1 个文件和 $2 个目录
 
-theme_xhred_filemanager_selected_entry=å·²éï¼%value æ¡ç®
+theme_xhred_filemanager_selected_entry=已选：%value 条目
 
-theme_xhred_filemanager_search_query=æ¥è¯¢æ©ç 
-theme_xhred_filemanager_search_match=æ¥æ¾ç»æ
-theme_xhred_filemanager_search_replace=æ¿æ¢ç»æ
+theme_xhred_filemanager_search_query=查询掩码
+theme_xhred_filemanager_search_match=查找结果
+theme_xhred_filemanager_search_replace=替换结果
 
-theme_xhred_global_find=æ¥æ¾
-theme_xhred_global_replace=æ¿æ¢
+theme_xhred_global_find=查找
+theme_xhred_global_replace=替换
 
-theme_xhred_filemanager_search_replaced_multi=å¨ <strong>%value</strong> æä»¶ä¸­æ¥æ¾å¹¶æ¿æ¢ã
-theme_xhred_filemanager_search_replaced=å¨ <strong>1</strong> æä»¶ä¸­æ¥æ¾å¹¶æ¿æ¢ã
+theme_xhred_filemanager_search_replaced_multi=在 <strong>%value</strong> 文件中查找并替换。
+theme_xhred_filemanager_search_replaced=在 <strong>1</strong> 文件中查找并替换。
 
-theme_xhred_filemanager_successful_permissions_with_errors=æéå·²æåæ´æ¹ï¼ä½å¹¶éææå¯¹è±¡é½å·²æ´æ¹ï¼
+theme_xhred_filemanager_successful_permissions_with_errors=权限已成功更改，但并非所有对象都已更改：
 
-theme_xhred_filemanager_successful_ownership_with_errors=ææå¯¹è±¡çææææªæåæ´æ¹ï¼
-theme_xhred_filemanager_successful_ownership_with_errors_fatal=ç±äºä»¥ä¸éè¯¯ï¼æ æ³æ´æ¹æææï¼
+theme_xhred_filemanager_successful_ownership_with_errors=所有对象的所有权未成功更改：
+theme_xhred_filemanager_successful_ownership_with_errors_fatal=由于以下错误，无法更改所有权：
 
-theme_xhred_filemanager_successful_compression_with_errors=åç¼©å·²å®æä½åçä»¥ä¸éè¯¯ï¼
+theme_xhred_filemanager_successful_compression_with_errors=压缩已完成但发生以下错误：
 
-theme_xhred_filemanager_settings_notification_type=æ¾ç¤ºçéç¥ç±»å
-theme_xhred_filemanager_settings_notification_type_inf_warn_err=ä¿¡æ¯ãè­¦ååéè¯¯
-theme_xhred_filemanager_settings_notification_type_warn_err=è­¦ååéè¯¯
-theme_xhred_filemanager_settings_notification_type_err=ä»éè¯¯
+theme_xhred_filemanager_settings_notification_type=显示的通知类型
+theme_xhred_filemanager_settings_notification_type_inf_warn_err=信息、警告和错误
+theme_xhred_filemanager_settings_notification_type_warn_err=警告和错误
+theme_xhred_filemanager_settings_notification_type_err=仅错误
 
-theme_xhred_filemanager_settings_tabs_remember_state=é¦æ¬¡å è½½æ¶æ¢å¤ä»¥åä½¿ç¨çéé¡¹å¡
-theme_xhred_filemanager_context_open_new_tab=å¨æ°æ ç­¾æå¼
+theme_xhred_filemanager_settings_tabs_remember_state=首次加载时恢复以前使用的选项卡
+theme_xhred_filemanager_context_open_new_tab=在新标签打开
 
-theme_xhred_xsql_fit_content_screen_height=éåå±å¹é«åº¦çæ°æ®åºè¡¨åå®¹
+theme_xhred_xsql_fit_content_screen_height=适合屏幕高度的数据库表内容
 
-theme_xhred_datatable_filter_visible_tables=è¿æ»¤å¯è§è¡¨
-theme_xhred_module_help=æ¨¡åå¸®å©
+theme_xhred_datatable_filter_visible_tables=过滤可见表
+theme_xhred_module_help=模块帮助
 
-theme_xhred_server_process_running=æå¡å¨è¿ç¨ä»å¨è¿è¡ï¼ï¼æ¨ç¡®å®è¦å¯¼èªå¹¶ä¸æ æ³è®¿é®è¾åºä¿¡æ¯åï¼å³ä½¿æ¨ç°å¨ç¦»å¼ï¼è¯¥è¿ç¨ä¹ä¸ä¼ç»æ­¢ã
+theme_xhred_server_process_running=服务器进程仍在运行！？您确定要导航并且无法访问输出信息吗？即使您现在离开，该过程也不会终止。
 
 # 18.03
-settings_global_options_title=å¨å±éé¡¹
-theme_xhred_password_generator_new=çææ°å¯ç ï¼ç¹å»å¤å¶å°åªè´´æ¿ï¼
-theme_xhred_password_generator_new_success=çæçå¯ç  %password å·²è¢«æåå¤å¶å°åªè´´æ¿ã
+settings_global_options_title=全局选项
+theme_xhred_password_generator_new=生成新密码（点击复制到剪贴板）
+theme_xhred_password_generator_new_success=生成的密码 %password 已被成功复制到剪贴板。
 
 # 18.08
 theme_fileformat_perl=Perl
-theme_fileformat_perl_placeholder=è¯¥æä»¶å¿é¡»ä»¥â1;âç»ææè½æåè¿è¡ã
+theme_fileformat_perl_placeholder=该文件必须以“1;”结束才能成功运行。
 
 # 18.30
-settings_leftmenu_vm_cm_dropdown_icons=å¨ Virtualmin/Cloudmin ä¸­çä¸æåè¡¨ä¸­æ¾ç¤ºç¬¦å·å¾æ 
+settings_leftmenu_vm_cm_dropdown_icons=在 Virtualmin/Cloudmin 中的下拉列表中显示符号图标
 theme_xhred_global_shipped=Shipped
-theme_xhred_global_available=å¯ç¨
-theme_xhred_global_not_available=ä¸éç¨
-theme_xhred_global_default=é»è®¤
-theme_xhred_global_system_default=ç³»ç»é»è®¤
-theme_xhred_global_local_system_default=æ¬å°ç³»ç»é»è®¤
-theme_xhred_global_stats=ç»è®¡
-theme_xhred_global_notifications=æé
-theme_xhred_global_favorites=æ¶èå¤¹
-theme_xhred_global_cpu_load=CPU è´è½½
-theme_xhred_notification_none=æ²¡æéç¥
-theme_xhred_notification_no_data=æ²¡ææ¶éçæ°æ®
-theme_xhred_notification_no_favorites=æ²¡ææ¶èå¤¹æ°æ®
-theme_xhred_global_theme_version=ä¸»é¢çæ¬
+theme_xhred_global_available=可用
+theme_xhred_global_not_available=不适用
+theme_xhred_global_default=默认
+theme_xhred_global_system_default=系统默认
+theme_xhred_global_local_system_default=本地系统默认
+theme_xhred_global_stats=统计
+theme_xhred_global_notifications=提醒
+theme_xhred_global_favorites=收藏夹
+theme_xhred_global_cpu_load=CPU 负载
+theme_xhred_notification_none=没有通知
+theme_xhred_notification_no_data=没有收集的数据
+theme_xhred_notification_no_favorites=没有收藏夹数据
+theme_xhred_global_theme_version=主题版本
 
-settings_side_slider_sysinfo_enabled=æ¾ç¤ºä»ªè¡¨æ¿éé¡¹å¡
-settings_side_slider_notifications_enabled=æ¾ç¤ºéç¥æ ç­¾
-settings_side_slider_favorites_enabled=æ¾ç¤ºæ¶èå¤¹æ ç­¾
-settings_show_terminal_link=æ¾ç¤ºç»ç«¯æé®
+settings_side_slider_sysinfo_enabled=显示仪表板选项卡
+settings_side_slider_notifications_enabled=显示通知标签
+settings_side_slider_favorites_enabled=显示收藏夹标签
+settings_show_terminal_link=显示终端按钮
 
-theme_xhred_sysinfo_system_monitors=ç³»ç»çè§å¨
-theme_xhred_sysinfo_server_status=æå¡å¨ç¶æ
-theme_xhred_sysinfo_software_versions=è½¯ä»¶çæ¬
-theme_xhred_sysinfo_recent_logins=æè¿ç»å½
-theme_xhred_sysinfo_vm_package_updates=Virtualmin è½¯ä»¶åæ´æ°
-theme_xhred_sysinfo_disk_quotas=ç£çéé¢
-theme_xhred_sysinfo_bandwidth_quotas=å¸¦å®½éé¢
+theme_xhred_sysinfo_system_monitors=系统监视器
+theme_xhred_sysinfo_server_status=服务器状态
+theme_xhred_sysinfo_software_versions=软件版本
+theme_xhred_sysinfo_recent_logins=最近登录
+theme_xhred_sysinfo_vm_package_updates=Virtualmin 软件包更新
+theme_xhred_sysinfo_disk_quotas=磁盘配额
+theme_xhred_sysinfo_bandwidth_quotas=带宽配额
 
-left_netdata=å®æ¶çæ§
-settings_leftmenu_netdata=æ¾ç¤º Netdata å®æ¶çæ§é¾æ¥
-settings_leftmenu_netdata_link=Netdata æå¡å¨é¦éé¾æ¥
+left_netdata=实时监控
+settings_leftmenu_netdata=显示 Netdata 实时监控链接
+settings_leftmenu_netdata_link=Netdata 服务器首选链接
 
-theme_xhred_filemanager_context_chattr=æ´æ¹å±æ§
-theme_xhred_filemanager_successful_attributes_with_errors=å°æªä¸ºææå¯¹è±¡æåè®¾ç½®å±æ§ï¼
-theme_xhred_filemanager_successful_attributes=å±æ§å·²æåè®¾ç½®ã
+theme_xhred_filemanager_context_chattr=更改属性
+theme_xhred_filemanager_successful_attributes_with_errors=尚未为所有对象成功设置属性：
+theme_xhred_filemanager_successful_attributes=属性已成功设置。
 
-theme_xhred_filemanager_context_chcon=æ´æ¹å®å¨ä¸ä¸æ
-theme_xhred_filemanager_successful_secontext_with_errors=å°æªéå¯¹ææå¯¹è±¡æåæ´æ¹å®å¨ä¸ä¸æï¼
-theme_xhred_filemanager_successful_secontext=å®å¨ä¸ä¸æå·²æåæ´æ¹ã
+theme_xhred_filemanager_context_chcon=更改安全上下文
+theme_xhred_filemanager_successful_secontext_with_errors=尚未针对所有对象成功更改安全上下文：
+theme_xhred_filemanager_successful_secontext=安全上下文已成功更改。
 
-theme_xhred_global_no_results_found=æ²¡ææ¾å°ç»æ
+theme_xhred_global_no_results_found=没有找到结果
 
 # 18.40
-theme_new_password_header=ä¸ºç¨æ·è®¾ç½®æ°å¯ç 
-login_reset=éç½®å¯ç 
-theme_xhred_move_top=ç§»å¨å°é¡¶é¨
-theme_xhred_move_bottom=ç§»å¨å°åºé¨
-theme_xhred_move_up=åä¸ç§»å¨
-theme_xhred_move_down=åä¸ç§»å¨
-theme_xhred_add_after=å¨å§å®¹åæ·»å 
-theme_xhred_add_before=å¨å§å®¹åæ·»å 
-settings_show_night_mode_link=æ¾ç¤ºè°è²æ¿åæ¢
-settings_title=ä¸»é¢éç½®
-settings_subtitle=å¯¹äºç¨æ·
+theme_new_password_header=为用户设置新密码
+login_reset=重置密码
+theme_xhred_move_top=移动到顶部
+theme_xhred_move_bottom=移动到底部
+theme_xhred_move_up=向上移动
+theme_xhred_move_down=向下移动
+theme_xhred_add_after=在內容后添加
+theme_xhred_add_before=在內容前添加
+settings_show_night_mode_link=显示调色板切换
+settings_title=主题配置
+settings_subtitle=对于用户
 
-theme_tooltip_night_mode=æ¥/å¤æ¨¡å¼åæ¢
-theme_tooltip_terminal_link=ç»ç«¯
-theme_tooltip_language_link=è¯­è¨
-theme_xhred_tooltip_switch_user=åæ¢ç¨æ·
-theme_tooltip_logout=ç»åº
-theme_tooltip_edit_user=ç¼è¾ç¨æ·
+theme_tooltip_night_mode=日/夜模式切换
+theme_tooltip_terminal_link=终端
+theme_tooltip_language_link=语言
+theme_xhred_tooltip_switch_user=切换用户
+theme_tooltip_logout=登出
+theme_tooltip_edit_user=编辑用户
 
 # 18.45
-settings_sysinfo_easypie_charts_size=å¾è¡¨ç´å¾
-theme_xhred_global_choose=éæ©
-theme_xhred_global_select=éæ©
-theme_xhred_global_ok=ç¡®è®¤
-settings_sysinfo_theme_updates_description=ä¸ºäºä½¿æ­¤éé¡¹ææï¼å¿é¡»å¨ç³»ç»ä¸å®è£ <code>git</code> å½ä»¤
-theme_git_patch_available=ææ°å¼åçæ¬
-theme_git_patch_no_git_message=è¦ç´æ¥ä» GitHub å®è£ææ°æ´æ°ï¼æ¨å¿é¡»ç¡®ä¿å®è£äº <code>git</code> å½ä»¤ã
-theme_git_patch_update_success_message=Webmin çä¸»é¢æ´æ°æåãç®åå®è£ççæ¬æ¯ <tt>$1</tt>ãæ­£å¨éæ°è½½å¥...
-theme_git_patch_update_success_message2=Webmin å Usermin ä¸»é¢æ´æ°æåãç®åå®è£ççæ¬æ¯ <tt>$1</tt>ãæ­£å¨éæ°è½½å¥...
-theme_xhred_git_patch_update=ä¸»é¢æ´æ°å¤±è´¥ãå°è¯ä½¿ç¨æ§å¶å°æå¨æ§è¡æ­¤æä½ã
-theme_xhred_git_patch_initiated=ä¸»é¢æ´æ°å·²ç»å¯å¨ã
-theme_xhred_global_prev_page=ä¸ä¸é¡µ
-theme_xhred_global_help=å¸®å©
-theme_xhred_git_compare_changes=æ¯è¾åå¨
-theme_xhred_filemanager_link_to_clipboard=ç¬¦å·é¾æ¥çåç§°å·²å¤å¶å°åªè´´æ¿ã
+settings_sysinfo_easypie_charts_size=图表直径
+theme_xhred_global_choose=选择
+theme_xhred_global_select=选择
+theme_xhred_global_ok=确认
+settings_sysinfo_theme_updates_description=为了使此选项有效，必须在系统上安装 <code>git</code> 命令
+theme_git_patch_available=最新开发版本
+theme_git_patch_no_git_message=要直接从 GitHub 安装最新更新，您必须确保安装了 <code>git</code> 命令。
+theme_git_patch_update_success_message=Webmin 的主题更新成功。目前安装的版本是 <tt>$1</tt>。正在重新载入...
+theme_git_patch_update_success_message2=Webmin 和 Usermin 主题更新成功。目前安装的版本是 <tt>$1</tt>。正在重新载入...
+theme_xhred_git_patch_update=主题更新失败。尝试使用控制台手动执行此操作。
+theme_xhred_git_patch_initiated=主题更新已经启动。
+theme_xhred_global_prev_page=上一页
+theme_xhred_global_help=帮助
+theme_xhred_git_compare_changes=比较变动
+theme_xhred_filemanager_link_to_clipboard=符号链接的名称已复制到剪贴板。
 
 # 18.46
-theme_left_mail_prefs=é®ä»¶é¦éé¡¹
-theme_left_mail_change_password=æ´æ¹å¯ç 
-theme_left_mail_account_functions=å¸æ·åè½
-theme_xhred_global_dir_up=åå°ä¸ä¸ç®å½ï¼Backspaceï¼
-theme_xhred_global_module_config=æ¨¡åè®¾ç½®
-theme_xhred_global_return=è¿å
-theme_xhred_global_return_to_module_index=è¿åæ¨¡åç´¢å¼
+theme_left_mail_prefs=邮件首选项
+theme_left_mail_change_password=更改密码
+theme_left_mail_account_functions=帐户功能
+theme_xhred_global_dir_up=回到上一目录（Backspace）
+theme_xhred_global_module_config=模块设置
+theme_xhred_global_return=返回
+theme_xhred_global_return_to_module_index=返回模块索引
 
 # 18.47
-theme_xhred_global_complete_changelog=å®æçåæ´æ¥å¿
-theme_xhred_global_beta_version=Beta çæ¬
-theme_xhred_global_release=åå¸
-theme_xhred_global_released_on=åå¸äº
-theme_xhred_global_committed_on=è´åäº
-theme_xhred_global_resolved_issues=å¨ %value åå¸ä¸­å·²è§£å³çé®é¢
+theme_xhred_global_complete_changelog=完成的变更日志
+theme_xhred_global_beta_version=Beta 版本
+theme_xhred_global_release=发布
+theme_xhred_global_released_on=发布于
+theme_xhred_global_committed_on=致力于
+theme_xhred_global_resolved_issues=在 %value 发布中已解决的问题
 
 # 18.48
-theme_xhred_force_upgrade_beta=å®è£ææ°å¼åçæ¬ï¼æµè¯çï¼
-theme_xhred_force_upgrade_stable=å®è£ææ°åå¸çæ¬ï¼ç¨³å®ï¼
-theme_xhred_source_encoding=æºç¼ç 
-theme_xhred_encoding_manually_set=æå¨è®¾ç½®ç¼ç 
-theme_xhred_filemanager_save_to_change_encoding=å¿é¡»ä¿å­æä»¶ï¼ä»¥ä¾¿åè®¸æ´æ¹ç¼ç ã
+theme_xhred_force_upgrade_beta=安装最新开发版本（测试版）
+theme_xhred_force_upgrade_stable=安装最新发布版本（稳定）
+theme_xhred_source_encoding=源编码
+theme_xhred_encoding_manually_set=手动设置编码
+theme_xhred_filemanager_save_to_change_encoding=必须保存文件，以便允许更改编码。
 
 # 18.49
-theme_xhred_filemanager_user_switch=åæ¢å°ç¨æ·ï¼Ctrl+Mï¼
-theme_xhred_filemanager_user_switch_description=éè¿éæ©ä¸é¢ååºçç¨æ·åï¼æ¨å°ä½ä¸ºæ­¤ç¨æ·æ§è¡è¿ä¸æ­¥çæä½ã
-theme_xhred_filemanager_user_switch_description_back=è¦åæ¢åé»è®¤æ¨¡å¼ï¼è¯·éæ©ç¬¬ä¸ä¸ªéé¡¹ã
-theme_xhred_filemanager_user_switch_current_user=å½åç¨æ·
-theme_xhred_filemanager_user_switch_option=è¿å¥ä¸»ç®å½åèªå¨åæ¢å°ç¨æ·æ¨¡å¼
-theme_xhred_filemanager_editor_align_panels_horizontally=æ°´å¹³å¯¹é½é¢æ¿
-theme_xhred_filemanager_editor_align_panels_vertically=åç´å¯¹é½é¢æ¿
-theme_xhred_filemanager_editor_toggle_soft_wrap=åæ¢è½¯æ¢è¡
-theme_xhred_filemanager_editor_refresh_content=å·æ°åå®¹
-theme_xhred_filemanager_save_to_refresh_content=å¿é¡»ä¿å­æä»¶ï¼ä»¥ä¾¿å·æ°å¶åå®¹ã
-theme_xhred_filemanager_save_to_refresh_content_proc=æ­£å¨å·æ°æä»¶åå®¹ã
-theme_xhred_global_dark=æ
-theme_xhred_global_light=äº®
-theme_xhred_global_minimize=æå°å
-theme_xhred_global_maximize=æå¤§å
-theme_xhred_global_normalize=æ¢å¤
-theme_xhred_global_set_encoding=è®¾ç½®ç¼ç 
+theme_xhred_filemanager_user_switch=切换到用户（Ctrl+M）
+theme_xhred_filemanager_user_switch_description=通过选择下面列出的用户名，您将作为此用户执行进一步的操作。
+theme_xhred_filemanager_user_switch_description_back=要切换回默认模式，请选择第一个选项。
+theme_xhred_filemanager_user_switch_current_user=当前用户
+theme_xhred_filemanager_user_switch_option=进入主目录后自动切换到用户模式
+theme_xhred_filemanager_editor_align_panels_horizontally=水平对齐面板
+theme_xhred_filemanager_editor_align_panels_vertically=垂直对齐面板
+theme_xhred_filemanager_editor_toggle_soft_wrap=切换软换行
+theme_xhred_filemanager_editor_refresh_content=刷新内容
+theme_xhred_filemanager_save_to_refresh_content=必须保存文件，以便刷新其内容。
+theme_xhred_filemanager_save_to_refresh_content_proc=正在刷新文件内容。
+theme_xhred_global_dark=暗
+theme_xhred_global_light=亮
+theme_xhred_global_minimize=最小化
+theme_xhred_global_maximize=最大化
+theme_xhred_global_normalize=恢复
+theme_xhred_global_set_encoding=设置编码
 
 # 19.00
-theme_xhred_sysinfo_update_start=æ­£å¨éæ°æ¶éç³»ç»ä¿¡æ¯ã
-theme_xhred_sysinfo_update_end=ç³»ç»ä¿¡æ¯å·²æåéæ°æ¶éã
-theme_xhred_sysinfo_update_failed=ç³»ç»ä¿¡æ¯æ æ³éæ°æ¶éãç¨ååè¯ã
+theme_xhred_sysinfo_update_start=正在重新收集系统信息。
+theme_xhred_sysinfo_update_end=系统信息已成功重新收集。
+theme_xhred_sysinfo_update_failed=系统信息无法重新收集。稍后再试。
 
-theme_xhred_global_development_version=å¼åçæ¬
+theme_xhred_global_development_version=开发版本
 
-right_vm_server_summary=èææå¡å¨æ¦è§
+right_vm_server_summary=虚拟服务器概览
 
-theme_xhred_global_unbeforeunload_title=æ¨æåçæ´æ¹å¯è½æ æ³ä¿å­
-theme_xhred_global_unbeforeunload_message=å¦æç»§ç»­ï¼æ­¤é¡µé¢ä¸æªä¿å­çæ´æ¹å¯è½ä¼æ°¸ä¹ä¸¢å¤±ã
-theme_xhred_global_continue=ç»§ç»­
+theme_xhred_global_unbeforeunload_title=您所做的更改可能无法保存
+theme_xhred_global_unbeforeunload_message=如果继续，此页面上未保存的更改可能会永久丢失。
+theme_xhred_global_continue=继续
 
-theme_xhred_global_automatic_refresh=èªå¨å·æ°
-theme_xhred_global_second=ç§
-theme_xhred_global_seconds=ç§
-theme_xhred_global_minute=åé
-theme_xhred_global_minutes=åé
+theme_xhred_global_automatic_refresh=自动刷新
+theme_xhred_global_second=秒
+theme_xhred_global_seconds=秒
+theme_xhred_global_minute=分钟
+theme_xhred_global_minutes=分钟
 
 # 19.01
-theme_xhred_browser_warning=è¦å¨è®¡ç®æºä¸è·å¾æä½³çæå¡å¨é¢æ¿ä½éªï¼è¯·ä½¿ç¨æ¯æçææ°æµè§å¨ã<br><br>ä¸åæ¯æ <em>Internet Explorer</em>ã<br><br>æ¨èæµè§å¨æ¯ <em>Chrome</em>ï¼<em>Firefox</em>ï¼<em>Opera</em> æ <em>Safari</em>ï¼<em>Edge</em>ã <div class="alert alert-warning margined-top-10 margined-bottom-8">æ¨å¯ä»¥ä¸è½½ä¸éè¦å®è£çæµè§å¨çä¾¿æºçæ¬ï¼ä»¥ç»è¿æ½å çéå¶ã</div>
+theme_xhred_browser_warning=要在计算机上获得最佳的服务器面板体验，请使用支持的最新浏览器。<br><br>不再支持 <em>Internet Explorer</em>。<br><br>推荐浏览器是 <em>Chrome</em>，<em>Firefox</em>，<em>Opera</em> 或 <em>Safari</em>，<em>Edge</em>。 <div class="alert alert-warning margined-top-10 margined-bottom-8">您可以下载不需要安装的浏览器的便携版本，以绕过施加的限制。</div>
 
 # 19.02
-theme_xhred_filter_content=è¿æ»¤åå®¹
-theme_xhred_log_file_empty=æ¥å¿æä»¶ä¸ºç©º
+theme_xhred_filter_content=过滤内容
+theme_xhred_log_file_empty=日志文件为空
 
 # 19.03
-theme_xhred_config_configurable_options=å¯éç½®éé¡¹
-theme_xhred_filter_content_no_matches_query=æ²¡æåå®¹å¹é %str æ¥è¯¢
-theme_xhred_toggle_accordions=åæ¢æå å¯è§æ§
+theme_xhred_config_configurable_options=可配置选项
+theme_xhred_filter_content_no_matches_query=没有内容匹配 %str 查询
+theme_xhred_toggle_accordions=切换折叠可见性
 theme_xhred_global_whats_new=What's new
-theme_xhred_global_report_an_issue=æ¥åé®é¢
-theme_xhred_global_theme_configuration=ä¸»é¢éç½®
-theme_xhred_global_official_website=å®æ¹ç½ç«
-theme_xhred_global_about_theme=å³äºä¸»é¢
-theme_xhred_connection_error=è¿æ¥éè¯¯
-theme_xhred_connection_error_details=æ æ³å¨ <strong>%server</strong> ä¸æå¡å¨å»ºç«è¿æ¥ã<ul><li>æ£æ¥æå¡å¨ç¶æ</li><li>æ£æ¥è¿æ¥</li></ul>
-theme_xhred_session_expired=ä¼è¯å·²è¿æ
-theme_xhred_session_unlocked=ä¼è¯å·²è§£é
-theme_xhred_session_expired_details=ç±äºæ²¡ææ´»å¨ï¼æ¨å·²éåºã
-theme_xhred_signing_in=ç»å½ä¸­
-theme_xhred_signing_success=æåç»å½ï¼
-theme_xhred_session_failed_password=å¯ç éè¯¯ï¼è¯·åè¯ä¸æ¬¡ã
-theme_xhred_global_reauthenticate=éæ°éªè¯
+theme_xhred_global_report_an_issue=报告问题
+theme_xhred_global_theme_configuration=主题配置
+theme_xhred_global_official_website=官方网站
+theme_xhred_global_about_theme=关于主题
+theme_xhred_connection_error=连接错误
+theme_xhred_connection_error_details=无法在 <strong>%server</strong> 与服务器建立连接。<ul><li>检查服务器状态</li><li>检查连接</li></ul>
+theme_xhred_session_expired=会话已过期
+theme_xhred_session_unlocked=会话已解锁
+theme_xhred_session_expired_details=由于没有活动，您已退出。
+theme_xhred_signing_in=登录中
+theme_xhred_signing_success=成功登录！
+theme_xhred_session_failed_password=密码错误，请再试一次。
+theme_xhred_global_reauthenticate=重新验证
 
 # 19.04
-settings_sysinfo_real_time_status=å¯ç¨å®æ¶çæ§
-theme_xhred_global_redirecting=éå®å
+settings_sysinfo_real_time_status=启用实时监控
+theme_xhred_global_redirecting=重定向
 
 # 19.05
-body_no_javascript_title=JavaScript å·²ç¦ç¨
-body_no_javascript_message=è¯·å¯ç¨ javascript å¹¶å·æ°é¡µé¢
-theme_xhred_connection_lost=è¿æ¥ä¸¢å¤±
-theme_xhred_connection_success=è¿æ¥æå
-theme_xhred_connection_success_details=å·²éæ°å»ºç«å°æå¡å¨çè¿æ¥
+body_no_javascript_title=JavaScript 已禁用
+body_no_javascript_message=请启用 javascript 并刷新页面
+theme_xhred_connection_lost=连接丢失
+theme_xhred_connection_success=连接成功
+theme_xhred_connection_success_details=已重新建立到服务器的连接
 
 # 19.08
-theme_xhred_return_home=è¿åé¢æ¿ç´¢å¼
-theme_xhred_global_upload=ä¸ä¼ 
-theme_xhred_global_select_files=éæ©æä»¶
-theme_xhred_global_file_selected=æä»¶å·²éä¸­
-theme_xhred_global_files_selected=æä»¶å·²éä¸­
-theme_xhred_global_reset=éç½®
-theme_xhred_upload_initial_info=å¨æ­¤å¤ææ¾æä»¶æåå»ä»¥éä¸­
+theme_xhred_return_home=返回面板索引
+theme_xhred_global_upload=上传
+theme_xhred_global_select_files=选择文件
+theme_xhred_global_file_selected=文件已选中
+theme_xhred_global_files_selected=文件已选中
+theme_xhred_global_reset=重置
+theme_xhred_upload_initial_info=在此处拖放文件或单击以选中
 
 # 19.09
-theme_xhred_global_empty=ç©º
-theme_xhred_global_click_here=ç¹å»æ­¤å¤
-theme_git_patch_incompatible_message=å®è£æ­¤çæ¬ç $1 <em>$2</em>éè¦ææ°å/æå¯è½æªåå¸ç $3 <em>$4</em> å $5 <em>$6</em> çæ¬æè½æ­£å¸¸è¿è¡ã
-theme_git_patch_incompatible_message_s=å®è£æ­¤çæ¬ç $1 <em>$2</em> éè¦ææ°å/æå¯è½æªåå¸ç $3 <em>$4</em> çæ¬æè½æ­£å¸¸è¿è¡ã
+theme_xhred_global_empty=空
+theme_xhred_global_click_here=点击此处
+theme_git_patch_incompatible_message=安装此版本的 $1 <em>$2</em>需要最新和/或可能未发布的 $3 <em>$4</em> 和 $5 <em>$6</em> 版本才能正常运行。
+theme_git_patch_incompatible_message_s=安装此版本的 $1 <em>$2</em> 需要最新和/或可能未发布的 $3 <em>$4</em> 版本才能正常运行。
 
 # 19.10
-theme_xhred_filemanager_edit_html=ä½ä¸º HTML ç¼è¾
-theme_xhred_global_example=ç¤ºä¾
-theme_xhred_global_output_example=è¾åºç¤ºä¾
-theme_xhred_title_language_locale=è¯­è¨ååºå
-theme_xhred_global_manual=æå¨
-settings_navigation_always_collapse=æ»æ¯æå 
-theme_xhred_filemanager_records_per_page=æ¯é¡µçé»è®¤è®°å½æ°
-theme_xhred_filemanager_sorting=é»è®¤æåºç±»å
-theme_xhred_filemanager_sorting_asc=ååº
-theme_xhred_filemanager_sorting_desc=éåº
-theme_xhred_filemanager_sorting_by_name=æä»¶å
-theme_xhred_filemanager_sorting_by_type=ç±»å
-theme_xhred_filemanager_sorting_by_size=å¤§å°
-theme_xhred_filemanager_sorting_by_ownership=æ¥æè
-theme_xhred_filemanager_sorting_by_permissions=æé
-theme_xhred_filemanager_sorting_by_attributes=å±æ§
-theme_xhred_filemanager_sorting_by_selinux=å®å¨ä¸ä¸æ
-theme_xhred_filemanager_sorting_by_last_mod_time=æåä¿®æ¹æ¶é´
-theme_xhred_filemanager_tree_view_toggle=æ è§å¾åæ¢
-theme_xhred_filemanager_hide_tree_view=å¯ç¨æ è§å¾é¢æ¿
-theme_xhred_filemanager_tree_view_depth=åå§å è½½æ¶æåæ è§å¾æ·±åº¦ï¼è¶å°å è½½è¶å¿«ï¼
-theme_xhred_global_unlimited=ä¸é
-theme_xhred_filemanager_tree_exclude_on_first_load=å¨æ è§å¾çåå§å è½½ä¸­æé¤éå¿è¦çç®å½ï¼å è½½æ´å¿«ï¼
-theme_xhred_filemanager_tree_expand_search=å¨è¿æ»¤æ è§å¾æ¶å±å¼åå«å¹éé¡¹çææåæ¯
+theme_xhred_filemanager_edit_html=作为 HTML 编辑
+theme_xhred_global_example=示例
+theme_xhred_global_output_example=输出示例
+theme_xhred_title_language_locale=语言和区域
+theme_xhred_global_manual=手动
+settings_navigation_always_collapse=总是折叠
+theme_xhred_filemanager_records_per_page=每页的默认记录数
+theme_xhred_filemanager_sorting=默认排序类型
+theme_xhred_filemanager_sorting_asc=升序
+theme_xhred_filemanager_sorting_desc=降序
+theme_xhred_filemanager_sorting_by_name=文件名
+theme_xhred_filemanager_sorting_by_type=类型
+theme_xhred_filemanager_sorting_by_size=大小
+theme_xhred_filemanager_sorting_by_ownership=拥有者
+theme_xhred_filemanager_sorting_by_permissions=权限
+theme_xhred_filemanager_sorting_by_attributes=属性
+theme_xhred_filemanager_sorting_by_selinux=安全上下文
+theme_xhred_filemanager_sorting_by_last_mod_time=最后修改时间
+theme_xhred_filemanager_tree_view_toggle=树视图切换
+theme_xhred_filemanager_hide_tree_view=启用树视图面板
+theme_xhred_filemanager_tree_view_depth=初始加载时提取树视图深度（越小加载越快）
+theme_xhred_global_unlimited=不限
+theme_xhred_filemanager_tree_exclude_on_first_load=在树视图的初始加载中排除非必要的目录（加载更快）
+theme_xhred_filemanager_tree_expand_search=在过滤树视图时展开包含匹配项的所有分支
 
 # 19.12
-theme_xhred_tooltip_side_slider_go_to_dashboard=è½¬å°ä»ªè¡¨æ¿
-theme_xhred_tooltip_side_slider_open_favorites_control=æå¼æ¶èå¤¹æ§ä»¶
-theme_xhred_tooltip_side_slider_delete_all_notification=å é¤ææéç¥
-theme_xhred_tooltip_side_slider_mark_read_all_notification=å°ææéç¥æ è®°ä¸ºå·²è¯»
-theme_xhred_global_settings=è®¾ç½®
-theme_xhred_tooltip_side_slider_pinned=åºå®/åæ¶åºå®ä¾§æ»å
+theme_xhred_tooltip_side_slider_go_to_dashboard=转到仪表板
+theme_xhred_tooltip_side_slider_open_favorites_control=打开收藏夹控件
+theme_xhred_tooltip_side_slider_delete_all_notification=删除所有通知
+theme_xhred_tooltip_side_slider_mark_read_all_notification=将所有通知标记为已读
+theme_xhred_global_settings=设置
+theme_xhred_tooltip_side_slider_pinned=固定/取消固定侧滑块
 
 # 19.13
-settings_sysinfo_theme_updates_for_usermin=åæ¶ä¸º Usermin å®è£ä¸»é¢æ´æ°
-theme_xhred_global_installed_version=å·²å®è£ççæ¬
-theme_xhred_global_installed_and_latest_version=å·²å®è£ææ°çæ¬
-theme_xhred_global_latest_stable=ææ°ç¨³å®ç
-theme_xhred_global_latest_beta=ææ° beta ç
-theme_xhred_global_firewall=é²ç«å¢
+settings_sysinfo_theme_updates_for_usermin=同时为 Usermin 安装主题更新
+theme_xhred_global_installed_version=已安装的版本
+theme_xhred_global_installed_and_latest_version=已安装最新版本
+theme_xhred_global_latest_stable=最新稳定版
+theme_xhred_global_latest_beta=最新 beta 版
+theme_xhred_global_firewall=防火墙
 
 # 19.14
-theme_xhred_filemanager_preparing_download=æ­£å¨åå¤ä¸è½½ãæ­£å¨å½æ¡£ %number æä»¶ãè¯·ç­å¾%dots
-theme_xhred_filemanager_prepared_download=ä¸è½½å·²åå¤å°±ç»ªãå½æ¡£ %number ä¸ªæä»¶ã
-theme_xhred_filemanager_canceled_download=ä¸è½½å·²åæ¶ã
+theme_xhred_filemanager_preparing_download=正在准备下载。正在归档 %number 文件。请等待%dots
+theme_xhred_filemanager_prepared_download=下载已准备就绪。归档 %number 个文件。
+theme_xhred_filemanager_canceled_download=下载已取消。
 
 # 19.19
-theme_xhred_filemanager_settings_force_tar_download=ä¸è½½ä¸ºå­æ¡£æ¶ï¼å¼ºå¶ä½¿ç¨ <code>tar</code> å½ä»¤ï¼å³ä½¿ <code>zip</code> å¯ç¨
+theme_xhred_filemanager_settings_force_tar_download=下载为存档时，强制使用 <code>tar</code> 命令，即使 <code>zip</code> 可用
 theme_xhred_nice_size_PB=PB
 theme_xhred_nice_size_TB=TB
 theme_xhred_nice_size_GB=GB
 theme_xhred_nice_size_MB=MB
 theme_xhred_nice_size_kB=kB
 theme_xhred_nice_size_b=bytes
-theme_xhred_title_locale_non_ui_config=é UI æ ¼å¼ï¼å¦èªå¨çµå­é®ä»¶åå¯¼åºçæä»¶ï¼
+theme_xhred_title_locale_non_ui_config=非 UI 格式（如自动电子邮件和导出的文件）
 
 # 19.20
-extensions_mail_current_position=æ¶æ¯ $3 ç $1-$2
-extensions_mail_sort_by_sender=æåä»¶äººæåº
-extensions_mail_sort_by_recipient=ææ¶ä»¶äººæåº
-extensions_mail_sort_by_date=ææ¥ææåº
-extensions_mail_sort_by_size=æå¤§å°æåº
-extensions_mail_sort_by_spam=æåå¾é®ä»¶è¯åæåº
-extensions_mail_sort_by_subject=æä¸»é¢æåº
-extensions_mail_security_spf=åä»¶äººç­ç¥æ¡æ¶ <em>(SPF)</em>
-extensions_mail_security_dkim=ååå¯é¥è¯å«é®ä»¶æ å <em>(DKIM)</em>
-extensions_mail_flag_important=æ¶æ¯æ è®°ä¸ºéè¦
-extensions_mail_flag_attachment=æ¶æ¯åå«éä»¶
-extensions_mail_flag_spam_score=åå¾é®ä»¶è¯å
-extensions_mail_header_no_subject=ï¼æ ä¸»é¢ï¼
-extensions_mail_select_all=å¨é¨
-extensions_mail_select_none=æ 
-extensions_mail_select_invert=åå
-extensions_mail_select_read=å·²è¯»
-extensions_mail_select_unread=æªè¯»
-extensions_mail_mark_read=æ è®°ä¸ºå·²è¯»
-extensions_mail_mark_unread=æ è®°ä¸ºæªè¯»
-extensions_mail_mark_special=æ è®°ä¸ºç¹æ®
-extensions_mail_quota=$3 ç $1ï¼$2%ï¼å·²ç¨
-extensions_mail_pagination_right=ä¸ä¸å°
-extensions_mail_pagination_left=ä¸ä¸å°
-theme_xhred_global_move=ç§»å¨
-theme_xhred_global_copy=å¤å¶
-theme_xhred_mail_more=æ´å¤
-theme_xhred_mail_copy_only=ä¸è¦ç§»å¨ï¼ä»å¤å¶
-theme_xhred_global_sort=æåº
-theme_xhred_global_search=æç´¢
-theme_xhred_global_delete=å é¤
-theme_xhred_global_forward=åå
-theme_xhred_global_refresh=å·æ°
-theme_xhred_mail_pagination_first=ä»ç¬¬ä¸ä¸ªå¼å§ååº
-theme_xhred_mail_pagination_last=ä»æåä¸ä¸ªå¼å§ååº
-theme_xhred_global_starred=å·²å ææ 
-theme_xhred_global_unstarred=æªå ææ 
-extensions_mail_header_from=æ¥èª
-extensions_mail_header_reply_to=åå¤ç»
-extensions_mail_header_to=æ¶ä»¶äºº
-extensions_mail_header_cc=æé
-extensions_mail_header_bcc=æé
-extensions_mail_header_date=æ¥æ
-extensions_mail_header_spam=åå¾é®ä»¶
-extensions_mail_header_mailed_by=éä¿¡è
-extensions_mail_header_signed_by=ç­¾åé½
-extensions_mail_header_spf=æ¥æ¶ç spf
-extensions_mail_header_dkim=dkim ç­¾å
-extensions_mail_header_encrypted=å·²å å¯
-extensions_mail_mark_spam_view_razordel=æ è®°ä¸ºåå¾é®ä»¶å¹¶å é¤
-extensions_mail_mark_spam_view_razor=æ è®°ä¸ºåå¾é®ä»¶
-extensions_mail_mark_spam_mail_black=æ è®°ä¸ºé»åå
-extensions_mail_mark_spam_view_ham=æ è®°ä¸ºä¸æ¯åå¾é®ä»¶
-extensions_mail_mark_spam_view_hammove=æ è®°ä¸ºä¸æ¯åå¾é®ä»¶å¹¶ç§»å¨å°æ¶ä»¶ç®±
-extensions_mail_mark_spam_mail_white=æ è®°ä¸ºç½åå
-extensions_mail_mark_spam_mail_whitemove=æ è®°ä¸ºç½ååå¹¶ç§»å¨å°æ¶ä»¶ç®±
-extensions_mail_search_filter_reset=éç½®æåºè¿æ»¤å¨
-extensions_mail_move_copy_only=ä¸è¦ç§»å¨ï¼ä»å¤å¶
-theme_xhred_global_total=æ»è®¡
-theme_xhred_global_selected=å·²é
-theme_xhred_mail_new_message=æ°æ¶æ¯
+extensions_mail_current_position=消息 $3 的 $1-$2
+extensions_mail_sort_by_sender=按发件人排序
+extensions_mail_sort_by_recipient=按收件人排序
+extensions_mail_sort_by_date=按日期排序
+extensions_mail_sort_by_size=按大小排序
+extensions_mail_sort_by_spam=按垃圾邮件评分排序
+extensions_mail_sort_by_subject=按主题排序
+extensions_mail_security_spf=发件人策略框架 <em>(SPF)</em>
+extensions_mail_security_dkim=域名密钥识别邮件标准 <em>(DKIM)</em>
+extensions_mail_flag_important=消息标记为重要
+extensions_mail_flag_attachment=消息包含附件
+extensions_mail_flag_spam_score=垃圾邮件评分
+extensions_mail_header_no_subject=（无主题）
+extensions_mail_select_all=全部
+extensions_mail_select_none=无
+extensions_mail_select_invert=反向
+extensions_mail_select_read=已读
+extensions_mail_select_unread=未读
+extensions_mail_mark_read=标记为已读
+extensions_mail_mark_unread=标记为未读
+extensions_mail_mark_special=标记为特殊
+extensions_mail_quota=$3 的 $1（$2%）已用
+extensions_mail_pagination_right=下一封
+extensions_mail_pagination_left=上一封
+theme_xhred_global_move=移动
+theme_xhred_global_copy=复制
+theme_xhred_mail_more=更多
+theme_xhred_mail_copy_only=不要移动，仅复制
+theme_xhred_global_sort=排序
+theme_xhred_global_search=搜索
+theme_xhred_global_delete=删除
+theme_xhred_global_forward=向前
+theme_xhred_global_refresh=刷新
+theme_xhred_mail_pagination_first=从第一个开始列出
+theme_xhred_mail_pagination_last=从最后一个开始列出
+theme_xhred_global_starred=已加星标
+theme_xhred_global_unstarred=未加星标
+extensions_mail_header_from=来自
+extensions_mail_header_reply_to=回复给
+extensions_mail_header_to=收件人
+extensions_mail_header_cc=抄送
+extensions_mail_header_bcc=暗送
+extensions_mail_header_date=日期
+extensions_mail_header_spam=垃圾邮件
+extensions_mail_header_mailed_by=通信者
+extensions_mail_header_signed_by=签名都
+extensions_mail_header_spf=接收的 spf
+extensions_mail_header_dkim=dkim 签名
+extensions_mail_header_encrypted=已加密
+extensions_mail_mark_spam_view_razordel=标记为垃圾邮件并删除
+extensions_mail_mark_spam_view_razor=标记为垃圾邮件
+extensions_mail_mark_spam_mail_black=标记为黑名单
+extensions_mail_mark_spam_view_ham=标记为不是垃圾邮件
+extensions_mail_mark_spam_view_hammove=标记为不是垃圾邮件并移动到收件箱
+extensions_mail_mark_spam_mail_white=标记为白名单
+extensions_mail_mark_spam_mail_whitemove=标记为白名单并移动到收件箱
+extensions_mail_search_filter_reset=重置排序过滤器
+extensions_mail_move_copy_only=不要移动，仅复制
+theme_xhred_global_total=总计
+theme_xhred_global_selected=已选
+theme_xhred_mail_new_message=新消息
 
-theme_xhred_mail_search_simple=æ¾ç¤ºæç´¢éé¡¹
-theme_xhred_mail_search_advanced=éèæç´¢éé¡¹
-theme_xhred_mail_search_clear=æ¸é¤æç´¢ç»æ
-theme_xhred_mail_search_empty=æ²¡æç¬¦åæ¨æç´¢çæ¶æ¯
-theme_xhred_mail_search_search_mail=æç´¢é®ä»¶
-theme_xhred_mail_search_from=åä»¶äºº
-theme_xhred_mail_search_to=æ¶ä»¶äºº
-theme_xhred_mail_search_subject=ä¸»é¢
-theme_xhred_mail_search_has_words=åå«è¯è¯­
-theme_xhred_mail_search_doesnt_have_words=ä¸åå«
-theme_xhred_mail_search_with_status=ç¶æ
-theme_xhred_mail_search_with_status_any=ä»»æ
-theme_xhred_mail_search_with_status_unread=æªè¯»
-theme_xhred_mail_search_with_status_read=å·²è¯»
-theme_xhred_mail_search_with_status_special=ç¹æ®
-theme_xhred_mail_search_search_in=æç´¢èª
-theme_xhred_mail_search_limit_results=éå¶æç´¢ç»æ
-theme_xhred_mail_search_limit_results_yes=æ¯çï¼ä»éè¿ä»¥ä¸æç´¢
-theme_xhred_mail_search_has_attach=åå«éä»¶
+theme_xhred_mail_search_simple=显示搜索选项
+theme_xhred_mail_search_advanced=隐藏搜索选项
+theme_xhred_mail_search_clear=清除搜索结果
+theme_xhred_mail_search_empty=没有符合您搜索的消息
+theme_xhred_mail_search_search_mail=搜索邮件
+theme_xhred_mail_search_from=发件人
+theme_xhred_mail_search_to=收件人
+theme_xhred_mail_search_subject=主题
+theme_xhred_mail_search_has_words=包含词语
+theme_xhred_mail_search_doesnt_have_words=不包含
+theme_xhred_mail_search_with_status=状态
+theme_xhred_mail_search_with_status_any=任意
+theme_xhred_mail_search_with_status_unread=未读
+theme_xhred_mail_search_with_status_read=已读
+theme_xhred_mail_search_with_status_special=特殊
+theme_xhred_mail_search_search_in=搜索自
+theme_xhred_mail_search_limit_results=限制搜索结果
+theme_xhred_mail_search_limit_results_yes=是的，仅通过以下搜索
+theme_xhred_mail_search_has_attach=包含附件
