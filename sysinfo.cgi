@@ -175,7 +175,7 @@ if ($get_user_level ne '3') {
     }
 
     # Pre-load history data
-    print '<script type="text/javascript">vars.stats.history = ' .
+    print '<script type="application/javascript">vars.stats.history = ' .
         convert_to_json(get_stats_history()) . ';</script>' . "\n"
             if ($sysinfo && webmin_user_is_admin());
 
@@ -207,7 +207,7 @@ if ($get_user_level ne '3') {
 
 
     print get_extended_sysinfo(\@info, '-1');
-    print '<script type="text/javascript">typeof stats === "object" && stats.sys.preRender();</script>' . "\n" if ($sysinfo);
+    print '<script type="application/javascript">typeof stats === "object" && stats.sys.preRender();</script>' . "\n" if ($sysinfo);
 
 } else {
 

@@ -28,7 +28,7 @@ my @config_quick_access = @{ $settings_data->{'config_quick_access'} };
 
 my ($section, $sid, $sname);
 if (@sections > 1) {
-    print ' <script>';
+    print ' <script type="application/javascript">';
     print 'var config_quick_access = ' . convert_to_json(\@config_quick_access);
     print "</script>\n";
 

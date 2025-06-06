@@ -249,7 +249,7 @@ sub embed_header
     }
 
     # Print default options
-    print " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" .
+    print " <script type='application/javascript' src=\"$theme_webprefix/unauthenticated/js/defaults.js?" .
       theme_version('timestamped') . "\"></script>\n";
 
     #
@@ -295,7 +295,7 @@ sub embed_header
         }
         return "$var=$quote_opening$rs$quote_closing;";
     };
-    print ' <script>';
+    print ' <script type="application/javascript">';
     print &$_sstj('theme_server_data_available_acls',    'get_acls_status',    'filemin');
     print &$_sstj('theme_server_data_available_selinux', 'get_selinux_status', 'filemin');
     print "</script>\n";
@@ -307,7 +307,7 @@ sub embed_header
     embed_tconfig();
 
     # Print object with language strings
-    print ' <script>';
+    print ' <script type="application/javascript">';
     print 'var v___theme_language = ' . get_theme_language();
     print "</script>\n";
 
@@ -336,7 +336,7 @@ sub embed_header
                     next;
                 }
 
-                print ' <script src="' .
+                print ' <script type="application/javascript" src="' .
                   $theme_webprefix .
                   '/unauthenticated/js/' .
                   $js .
@@ -350,7 +350,7 @@ sub embed_header
     } else {
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
-                print ' <link href="' .
+                print ' <link type="text/css" href="' .
                   $theme_webprefix .
                   '/unauthenticated/css/' .
                   $css .
@@ -368,7 +368,7 @@ sub embed_header
         if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
         {
-            print ' <link href="' .
+            print ' <link type="text/css" href="' .
               $theme_webprefix .
               '/unauthenticated/css/palettes/' .
               (theme_night_mode() ? 'gunmetal' : lc($theme_config{'settings_navigation_color'})) . '.' .
@@ -390,7 +390,7 @@ sub embed_header
                     next;
                 }
 
-                print ' <script src="' .
+                print ' <script type="application/javascript" src="' .
                   $theme_webprefix .
                   '/unauthenticated/js/' .
                   $js .
@@ -474,7 +474,8 @@ sub embed_settings
         $admin_def_config_file = read_file_contents($admin_def_config_file);
         $admin_def_config_file =~ tr/\r\n/;/d;
         $admin_def_config_file =~ s/\s*(.*?=)'([\d\.]+)'(;)\s*/$1$2$3/g;
-        print ' <script>' . $admin_def_config_file . '</script>' . "\n";
+        print ' <script type="application/javascript">' .
+            $admin_def_config_file . '</script>' . "\n";
     }
 
     # Embed global configuration
@@ -482,7 +483,8 @@ sub embed_settings
         $global_config_file = read_file_contents($global_config_file);
         $global_config_file =~ tr/\r\n/;/d;
         $global_config_file =~ s/\s*(.*?=)'([\d\.]+)'(;)\s*/$1$2$3/g;
-        print ' <script>' . $global_config_file . '</script>' . "\n";
+        print ' <script type="application/javascript">' .
+            $global_config_file . '</script>' . "\n";
     }
 
     # Embed user configuration
@@ -490,19 +492,21 @@ sub embed_settings
         $user_config_file = read_file_contents($user_config_file);
         $user_config_file =~ tr/\r\n/;/d;
         $user_config_file =~ s/\s*(.*?=)'([\d\.]+)'(;)\s*/$1$2$3/g;
-        print ' <script>' . $user_config_file . '</script>' . "\n";
+        print ' <script type="application/javascript">' .
+            $user_config_file . '</script>' . "\n";
     }
 }
 
 sub embed_tconfig
 {
-    print ' <script>tconfig_beta_updates=' . ($tconfig{'beta_updates'} ne '1' ? 0 : 1) . '</script>' . "\n";
+    print ' <script type="application/javascript">tconfig_beta_updates=' .
+        ($tconfig{'beta_updates'} ne '1' ? 0 : 1) . '</script>' . "\n";
 }
 
 sub embed_styles
 {
     if ($theme_config{'settings_contrast_mode'} eq 'true') {
-        print ' <link href="' .
+        print ' <link type="text/css" href="' .
           $theme_webprefix .
           '/unauthenticated/css/high-contrast.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' .
@@ -512,7 +516,7 @@ sub embed_styles
 
     my $css = $config_directory . "/$current_theme/styles.css";
     if (-r $css && -s $css) {
-        print ' <link data-custom-style href="data:text/css;base64,' .
+        print ' <link type="text/css" data-custom-style href="data:text/css;base64,' .
           trim(encode_base64(read_file_contents($css))) . '" rel="stylesheet">' . "\n";
     }
 
@@ -565,7 +569,7 @@ sub embed_pm_scripts
 sub embed_css_fonts
 {
     my ($return) = @_;
-    my $font_link = ' <link href="' .
+    my $font_link = ' <link type="text/css" href="' .
       $theme_webprefix .
       '/unauthenticated/css/fonts-roboto.' .
       (theme_debug_mode() ? 'src' : 'min') . '.css?' .
@@ -582,7 +586,7 @@ sub embed_css_unbundled
 {
     load_devel_dependencies();
     foreach my $css (@theme_bundle_css) {
-        printf " <link href=\"%s/unauthenticated/css/%s.src.css?%s\" rel=\"stylesheet\">\n",
+        printf " <link type='text/css' href=\"%s/unauthenticated/css/%s.src.css?%s\" rel=\"stylesheet\">\n",
                $theme_webprefix,
                $css,
                theme_version('timestamped');
@@ -592,7 +596,7 @@ sub embed_css_unbundled
 
 sub embed_css_bundle
 {
-    print ' <link href="' .
+    print ' <link type="text/css" href="' .
       $theme_webprefix .
       '/unauthenticated/css/bundle.min.css?' .
       theme_version('timestamped') .
@@ -603,7 +607,7 @@ sub embed_css_bundle
 sub embed_css_night_rider
 {
     if (theme_night_mode_login() || theme_night_mode()) {
-        print ' <link href="' .
+        print ' <link type="text/css" href="' .
           $theme_webprefix .
           '/unauthenticated/css/palettes/nightrider.' .
           (theme_debug_mode() ? 'src' : 'min') . '.css?' .
@@ -614,7 +618,7 @@ sub embed_css_night_rider
 
 sub embed_js_bundle
 {
-    print ' <script src="' .
+    print ' <script type="application/javascript" src="' .
       $theme_webprefix .
       '/unauthenticated/js/bundle.min.js?' .
       theme_version('timestamped') .
@@ -629,7 +633,8 @@ sub embed_js_scripts
     my $js = $config_directory . "/$current_theme/scripts.js";
     if (-r $js && -s $js) {
         $js = read_file_contents($js);
-        print ' <script data-custom-script>' . $js . '</script>' . "\n";
+        print ' <script type="application/javascript" data-custom-script>' .
+            $js . '</script>' . "\n";
     }
 }
 
@@ -762,7 +767,7 @@ sub embed_footer
         if (get_module_name() =~ /mysql/ ||
             get_module_name() =~ /postgresql/)
         {
-            print ' <script src="' .
+            print ' <script type="application/javascript" src="' .
               $theme_webprefix .
               '/extensions/sql.' .
               ($args[0] ? 'src' : 'min') . '.js?' .
@@ -774,7 +779,7 @@ sub embed_footer
         if (get_module_name() =~ /file-manager/ ||
             get_module_name() =~ /filemin/)
         {
-            print ' <script src="' .
+            print ' <script type="application/javascript" src="' .
               $theme_webprefix .
               '/extensions/file-manager/file-manager.' .
               ($args[0] ? 'src' : 'min') . '.js?' .
@@ -1586,13 +1591,13 @@ sub embed_login_head
     print ' <meta name="color-scheme" content="only light">', "\n";
     embed_noscript();
     print ' <meta charset="utf-8">', "\n";
-    print ' <script type="text/javascript">try{const e=new URL(location.href),a=e.pathname,s=/\/(session_login|pam_login)\.cgi$/.test(a),t=e.searchParams.has("logout"),r=e.searchParams.has("returned-username")&&/^\S+$/.test(e.searchParams.get("returned-username"));(s&&t||r)&&(e.pathname=a.substring(0,a.lastIndexOf("/")),e.pathname.endsWith("/")||(e.pathname+="/"),e.searchParams.delete("logout"),e.searchParams.delete("returned-username"),history.pushState({},"",e))}catch(e){}</script>', "\n";
+    print ' <script type="application/javascript">try{const e=new URL(location.href),a=e.pathname,s=/\/(session_login|pam_login)\.cgi$/.test(a),t=e.searchParams.has("logout"),r=e.searchParams.has("returned-username")&&/^\S+$/.test(e.searchParams.get("returned-username"));(s&&t||r)&&(e.pathname=a.substring(0,a.lastIndexOf("/")),e.pathname.endsWith("/")||(e.pathname+="/"),e.searchParams.delete("logout"),e.searchParams.delete("returned-username"),history.pushState({},"",e))}catch(e){}</script>', "\n";
     embed_favicon('login-page');
     print ' <title>', $title, '</title>', "\n";
     print ' <meta name="viewport" content="width=device-width, initial-scale=1.0">' . "\n";
     # Print object with language strings
     if ($gconfig{'forgot_pass'}) {
-        print ' <script>';
+        print ' <script type="application/javascript">', "\n";
         print 'const theme_language = ' . get_theme_language_login();
         print "</script>\n";
     }
@@ -1621,7 +1626,7 @@ sub embed_login_head
             embed_css_bundle();
         }
 
-        print ' <script src="' .
+        print ' <script type="application/javascript" src="' .
               $theme_webprefix .
               "/unauthenticated/js/session-login.$ext.js?" .
               theme_version('timestamped') .
@@ -1634,7 +1639,7 @@ sub embed_login_head
     embed_styles();
     embed_overlay_head();
     if (get_env('script_name') =~ /password_change\.cgi$/) {
-        print '<script>';
+        print '<script type="application/javascript">';
         print 'document.addEventListener("DOMContentLoaded", function() {';
         my $palette = theme_night_mode_login() ? 'nightRider' : 'gainsboro';
             print 'document.querySelector("html").setAttribute("data-bgs", "' . $palette . '");';
@@ -2222,7 +2227,7 @@ sub embed_product_branding
     }
     $brand =
 "<div tabindex=\"1\" class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
-    $brand .= "<script>page.branding.process()</script>";
+    $brand .= "<script type='application/javascript'>page.branding.process()</script>";
     print $brand;
 }
 

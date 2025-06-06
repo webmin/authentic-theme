@@ -137,28 +137,28 @@ sub csf_mod
 
     print $fh '<link data-hostname="' . &get_display_hostname() . '" data-version="' .
       (theme_version('timestamped')) . '" rel="shortcut icon" href="' . $theme_webprefix . '/images/favicons/webmin/favicon.ico">' . "\n";
-    print $fh '<link href="' .
+    print $fh '<link type="text/css" href="' .
       $theme_webprefix . '/unauthenticated/css/bundle.min.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
-    print $fh '<link href="' . $theme_webprefix .
+    print $fh '<link type="text/css" href="' . $theme_webprefix .
       '/unauthenticated/css/palettes/nightrider.' . $ext . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
 
-    print $fh '<link href="' . $theme_webprefix .
+    print $fh '<link type="text/css" href="' . $theme_webprefix .
       '/unauthenticated/css/fonts-roboto.' . $ext . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
     
     # Print default options
-    print $fh " <script src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version('timestamped') . "\"></script>\n";
+    print $fh " <script type='application/javascript' src=\"$theme_webprefix/unauthenticated/js/defaults.js?" . theme_version('timestamped') . "\"></script>\n";
 
     # Print object with language strings
-    print $fh ' <script>';
+    print $fh ' <script type="application/javascript">';
     print $fh 'var v___theme_language = ' . get_theme_language();
     print $fh "</script>\n";
 
-    print $fh '<script src="' .
+    print $fh '<script type="application/javascript" src="' .
       $theme_webprefix . '/unauthenticated/js/bundle.min.js?' . theme_version('timestamped') . '"></script>' . "\n";
 
-    print $fh '<link href="' .
+    print $fh '<link type="text/css" href="' .
       $theme_webprefix . '/extensions/csf/csf.' . $ext . '.css?' . theme_version('timestamped') . '" rel="stylesheet">' . "\n";
-    print $fh '<script src="' .
+    print $fh '<script type="application/javascript" src="' .
       $theme_webprefix . '/extensions/csf/csf.' . $ext . '.js?' . theme_version('timestamped') . '"></script>' . "\n";
 
     close $fh;
@@ -168,7 +168,7 @@ sub csf_mod
     close $fh2;
 
     open(my $fh3, '>', $csf_footer_mod) or die $!;
-    print $fh3 '</div><script>!$.support.spa && csf_init()</script>' . "\n";
+    print $fh3 '</div><script type="application/javascript">!$.support.spa && csf_init()</script>' . "\n";
     close $fh3;
 
     open(my $fh4, '>', $csf_htmltag_mod) or die $!;

@@ -83,7 +83,7 @@ foreach my $i (@info_order) {
     }
 }
 if (@sections > 1) {
-    print ' <script>';
+    print ' <script type="application/javascript">';
     print 'var config_quick_access = ' . convert_to_json(\@config_quick_access);
     print "</script>\n";
 

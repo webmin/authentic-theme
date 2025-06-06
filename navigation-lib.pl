@@ -449,7 +449,7 @@ sub nav_detect_page
         $page =~ s/&amp;/&/g;
         my $last_id = $set_last ? nav_set_last_id($page) : undef;
         if ($last_id) {
-            $last_id = "<script>$last_id</script>";
+            $last_id = "<script type='application/javascript'>$last_id</script>";
         }
         $rv .= "<li data-goto=\"$page\" class=\"hidden\">$last_id</li>\n";
     }

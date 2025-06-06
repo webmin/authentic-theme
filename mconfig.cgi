@@ -70,7 +70,7 @@ if (-r $module_custom_config_file) {
         }
     }
     if (@sections > 1) {
-        print ' <script>';
+        print ' <script type="application/javascript">';
         print 'var config_quick_access = ' . convert_to_json(\@config_quick_access);
         print "</script>\n";
 
