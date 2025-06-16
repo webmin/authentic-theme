@@ -224,7 +224,7 @@ theme_xhred_filemanager_copying_successful=Copy to clipboard successful.
 theme_xhred_filemanager_cutting_successful=Cut to clipboard successful.
 theme_xhred_filemanager_pasting_successful=Paste from clipboard was successful.
 theme_xhred_filemanager_bookmark_success=Directory <tt>%value</tt> was successfully added to your bookmarks.
-theme_xhred_filemanager_searching=Searching for <tt>%value</tt> matching names of files/directories.
+theme_xhred_filemanager_searching=Searching files matching <tt>%value</tt> names.
 theme_xhred_filemanager_search_founds=Found <strong>%value</strong> matches.
 theme_xhred_filemanager_search_found=Found <strong>1</strong> match.
 theme_xhred_filemanager_search_no_matches=No matches found.
@@ -475,8 +475,8 @@ theme_xhred_filemanager_search_replace=Replace in results
 theme_xhred_global_find=Find
 theme_xhred_global_replace=Replace
 
-theme_xhred_filemanager_searching_matching=Searching for <tt>%value</tt> matching names of files/directories, containing <tt>%text</tt> text.
-theme_xhred_filemanager_searching_replacing=Replacing matches <tt>%text</tt> with <tt>%replace</tt> in files with names containing <tt>%value</tt>.
+theme_xhred_filemanager_searching_matching=Searching files matching <tt>%value</tt> that contain <tt>%text</tt>.
+theme_xhred_filemanager_searching_replacing=Replacing every <tt>%text</tt> with <tt>%replace</tt> in files whose names contain <tt>%value</tt>.
 
 theme_xhred_filemanager_search_replaced_multi=Found and replaced in <strong>%value</strong> files.
 theme_xhred_filemanager_search_replaced=Found and replaced in <strong>1</strong> file.
