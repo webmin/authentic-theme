@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 24.03 (June 30, 2025)
+* Fix styling of checkboxes and radios for backup and restore pages in Virtualmin
+* Fix periods shown in the option to select the retention period for live stats [#1712](https://github.com/webmin/authentic-theme/issues/1712)
+
 #### Version 24.02 (June 9, 2025)
 * Fix broken encoding for Japanese, Korean, and Chinese
 * Fix tab hotkeys so they don't trigger when other modifier keys are pressed

@@ -572,13 +572,14 @@ sub theme_settings_format
         my $duration_key = "${realtime}stored_duration";
         my $select = ui_select($duration_key, $theme_config{$duration_key},
                        [
-                        [(1200, $theme_text{"${realtime_pref}history_duration1"})],
-                        [(3600, $theme_text{"${realtime_pref}history_duration2"})],
-                        [(10800, $theme_text{"${realtime_pref}history_duration3"})],
-                        [(21600, $theme_text{"${realtime_pref}history_duration4"})],
-                        [(43200, $theme_text{"${realtime_pref}history_duration5"})],
-                        [(64800, $theme_text{"${realtime_pref}history_duration6"})],
-                        [(86400, $theme_text{"${realtime_pref}history_duration7"})]
+                        [(900, $theme_text{"${realtime_pref}history_duration1"})],
+                        [(1800, $theme_text{"${realtime_pref}history_duration2"})],
+                        [(2700, $theme_text{"${realtime_pref}history_duration3"})],
+                        [(3600, $theme_text{"${realtime_pref}history_duration4"})],
+                        [(21600, $theme_text{"${realtime_pref}history_duration5"})],
+                        [(43200, $theme_text{"${realtime_pref}history_duration6"})],
+                        [(64800, $theme_text{"${realtime_pref}history_duration7"})],
+                        [(86400, $theme_text{"${realtime_pref}history_duration8"})]
                        ]);
         $v = ui_radio($k, $v, [
             [1, $theme_text{"${realtime_pref}history1"}.$select],

@@ -161,7 +161,7 @@ var
     settings_leftmenu_vm_cm_dropdown_icons = true,
     settings_perform_content_scrolling = true,
     settings_sysinfo_real_time_run_rate = 1000, // 1 second tick rate (the higher the less CPU intensive it is)
-    settings_sysinfo_real_time_stored_duration = 1200, // 20 minutes of stored stats data (max: 3600; min: 300)
+    settings_sysinfo_real_time_stored_duration = 1800, // 30 minutes of stored stats data (max default: 3600; max manual: 86400-highly not recommended as will crash browser tab),
     settings_sysinfo_real_time_shutdown_on_last = false,
     settings_sysinfo_cache_timeout = 86400,
     settings_sysinfo_cpu_fans_base_rpm = 1000,
