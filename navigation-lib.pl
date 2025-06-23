@@ -401,6 +401,41 @@ sub nav_menu
     } else {
         $rv = nav_webmin_menu($page);
     }
+    if ($page =~ m{/link\.cgi}) {
+        $rv .= <<'SCRIPT';
+<script type="application/javascript">
+(function () {
+    if (window.v___initial_load) {
+        setTimeout(function () {
+            let tries = 0;
+            const maxTries = 2e4;
+            const trying = function (tries_exceeded) {
+                if (
+                    tries_exceeded ||
+                    (location.href.indexOf("link.cgi") !== -1 &&
+                     !$("body").hasClass("loading-bg"))
+                ) {
+                    clearInterval(timer);
+                    plugins.navigation.reload(-1, function () {
+                        plugins.navigation.sync(function () {
+                            plugins.navigation.load.initializing = 0;
+                            plugins.navigation.load.stop();
+                        });
+                    });
+                } else if (++tries >= maxTries) {
+                    clearInterval(timer);
+                    trying(true);
+                }
+            };
+            const timer = setInterval(trying, 10);
+        }, vars.event.double_click_delay);
+        plugins.navigation.load.initializing = 1;
+        plugins.navigation.load.start();
+    }
+})();
+</script>
+SCRIPT
+    }
     return $rv;
 }
 
