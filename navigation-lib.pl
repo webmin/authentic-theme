@@ -270,6 +270,18 @@ sub nav_detector
     $tab  = $nav_def_tab;
     $page = $page;
 
+    # Do we have navigation goto request for a module with its own switch?
+    if ($page) {
+        my ($nmod) = $page =~ /[?&]nmod=([0-9a-zA-Z-]+)/;
+        if (($nmod eq $mod_vm || $nmod eq $mod_cm) && foreign_available($nmod)) {
+            if ($nmod eq $mod_vm) {
+                $tab = $prd_vm;            # Override to use Virtualmin tab
+            } elsif ($nmod eq $mod_cm) {
+                $tab = $prd_cm;            # Override to use Cloudmin tab
+            }
+        }
+    }
+
     return ($tab, $page);
 }
 
@@ -737,7 +749,7 @@ sub nav_list_combined_menu
     my $search_bar = '';
 
     my $gwp = sub {
-        my ($link) = @_;
+        my ($link, $mod) = @_;
 
         # Link could but shouldn't end with just &
         $link =~ s/&amp;$//;
@@ -751,6 +763,11 @@ sub nav_list_combined_menu
                 $link = "/$link" if (!string_starts_with($link, "/"));
                 $link = "$theme_webprefix$link"
                   if ($link !~ /^\Q$theme_webprefix\E/);
+                # Add module reference to all non module links
+                if ($mod && $link !~ /$mod\// && $link !~ /[?&]nmod=/) {
+                    my $sep = ($link =~ /\?/) ? '&' : '?';
+                    $link .= "${sep}nmod=$mod";
+                }
             }
         }
         return $link;
@@ -774,11 +791,11 @@ sub nav_list_combined_menu
         }
         $search_bar = nav_search($vm_new_format);
     }
-
+    my $known_module = $modules ? $modules->[-1] : undef;
     foreach my $item (@$items) {
         if ((grep {$_ eq $item->{'module'}} @{$modules}) || $group) {
 
-            my $link = &$gwp($item->{'link'});
+            my $link = &$gwp($item->{'link'}, $item->{'module'} || $known_module);
             my $icon;
             my $rv_after_local;
 
