@@ -1028,7 +1028,7 @@ sub get_button_style
         $class = "default";
     } elsif (string_contains($keys, 'sform_ok')) {
         $icon  = "search";
-        $class = "info";
+        # $class = "info";
     } elsif (string_contains($keys, 'edit_createnow') || string_contains($keys, 'edit_savenow')) {
         $icon = "backup fa-1_25x";
     } elsif (string_contains($keys, "pass_ok")) {
@@ -1343,7 +1343,7 @@ sub get_button_style
              string_contains($keys, "scripts_findok") ||
              string_contains($keys, "kill_title"))
     {
-        $class = "info ";
+        # $class = "info ";
         $icon  = "search";
     } elsif (string_contains($keys, "dmass_move") ||
              string_contains($keys, "domains_move") ||
