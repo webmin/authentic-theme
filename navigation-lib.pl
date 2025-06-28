@@ -340,7 +340,7 @@ sub nav_virtualmin_menu
     $rv .= $menu->{'after'}
       if ($menu->{'after'});
     $rv .= nav_theme_links();
-    $rv .= nav_links($menu->{'mode'});
+    $rv .= nav_links($menu->{'mode'}, $mod);
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page, 1);
     $rv .= nav_detect_script(1);
@@ -357,7 +357,7 @@ sub nav_cloudmin_menu
     my $rv     = $menu->{'before'};
     $rv .= nav_link_sysinfo(undef, $mod);
     $rv .= nav_theme_links();
-    $rv .= nav_links($menu->{'mode'});
+    $rv .= nav_links($menu->{'mode'}, $mod);
     $rv .= nav_menu_html_snippet();
     $rv .= nav_detect_page($page);
     $rv .= nav_detect_script();
@@ -1037,7 +1037,7 @@ sub nav_list_combined_menu
 # Returns a list of tiny square buttons for navigation menu
 sub nav_links
 {
-    my ($login_mode) = @_;
+    my ($login_mode, $mod) = @_;
     my $rv;
     $rv =
       '<li class="menu-container"><ul class="user-links"><li data-collapse-trigger-container data-linked' .
@@ -1050,11 +1050,12 @@ sub nav_links
     if ($theme_config{'settings_sysinfo_link_mini'} eq 'true' &&
         dashboard_switch() ne '1')
     {
+        $mod = "?mod=$mod" if ($mod);
         $rv .= '<li data-linked' .
           get_button_tooltip('theme_xhred_titles_dashboard', 'settings_hotkey_sysinfo', 'auto top') . ' class="user-link">';
         $rv .=
           '<a tabindex="-1" class="menu-exclude-link sidebar_sysinfo_link" href="' .
-          $theme_webprefix . '/sysinfo.cgi"><i class="fa fa-fw fa-' .
+          $theme_webprefix . '/sysinfo.cgi'.$mod.'"><i class="fa fa-fw fa-' .
           ($get_user_level eq '3' ? 'user-circle' : 'dashboard') . '"></i></a>';
         $rv .= '</li>';
     }
