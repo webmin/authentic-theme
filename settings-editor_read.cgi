@@ -36,8 +36,8 @@ print '<div class="pull-right" style="margin-top: 15px; margin-right: 24px;"><sp
       $theme_text{'theme_fileformat_plain_text'}
   ) .
   '</span></div>';
-print "<input type=submit value='$theme_text{'settings_right_file_edit'}'>\n";
-print "<select name=\"file\">\n";
+print "$theme_text{'settings_right_file_edit'}&nbsp;\n";
+print "<select class='heighter-34' name=\"file\">\n";
 
 foreach my $f (@files) {
     printf "<option %s>%s</option>\n", $f eq $file ? 'selected' : '', $f;

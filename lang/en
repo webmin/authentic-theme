@@ -99,12 +99,12 @@ settings_right_saving=Saving
 
 settings_right_theme_extensions=Theme extensions
 settings_right_theme_extensions_title=Theme Extensions
-settings_right_file_edit=Edit extension file:
-settings_right_extensions_title=Theme extensive design, enables you easily manipulate on targeted parts of the interface.
+settings_right_file_edit=Edit extension file
+settings_right_extensions_title=This page makes it easy to customize and manage different parts of the interface, so you have more control over how it looks and works.
 
 theme_xhred_settings_right_theme_logos=Theme logos
 theme_xhred_settings_right_theme_logos_title=Theme Logos
-settings_right_logos_title=Theme logos can be easily set here, for both, authenticated and unauthenticated users. Recommended logo size is <em>180x90</em> pixels.
+settings_right_logos_title=This page lets you easily set theme logos for both logged-in and logged-out users. The recommended logo size is <em>180x90</em> pixels.
 settings_right_logo_authenticated_users=Logo for authenticated users
 settings_right_logo_unauthenticated_users=Logo for unauthenticated users
 settings_right_logos_error=Uploaded file is not an image
@@ -694,7 +694,7 @@ theme_xhred_global_theme_configuration=Theme configuration
 theme_xhred_global_official_website=Official website
 theme_xhred_global_about_theme=About theme
 theme_xhred_connection_error=Connection error
-theme_xhred_connection_error_details=Can’t establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
+theme_xhred_connection_error_details=Cannot establish a connection to the server at <strong>%server</strong>. <ul><li>Check the server status</li><li>Check the connection</li></ul>
 theme_xhred_session_expired=Session expired
 theme_xhred_session_unlocked=Session unlocked
 theme_xhred_session_expired_details=You have been logged out due to inactivity.
@@ -887,7 +887,7 @@ theme_xhred_mail_search_has_attach=Has attachment
 
 theme_xhred_settings_right_theme_bgs=Theme backgrounds
 theme_xhred_settings_right_theme_bgs_title=Theme Backgrounds
-settings_right_bgs_title=Theme background for login page can be set here.
+settings_right_bgs_title=This page lets you set the theme background for the login page.
 settings_right_bg_unauthenticated_users=Background for unauthenticated users
 settings_right_theme_left_background_title=Theme Background Control
 
@@ -1487,7 +1487,7 @@ theme_xhred_dashboard_chart_disk_read=Read
 theme_xhred_dashboard_chart_disk_write=Write
 theme_xhred_dashboard_chart_net_read=In
 theme_xhred_dashboard_chart_net_write=Out
-theme_xhred_tooltip_dashboard_live_stats_offline=Live stats aren’t available when the system is accessed in proxy mode; only previously collected stats will be displayed, and only if available, and the page will need to be reloaded to update these stats
+theme_xhred_tooltip_dashboard_live_stats_offline=Live stats are not available when the system is accessed in proxy mode; only previously collected stats will be displayed, and only if available, and the page will need to be reloaded to update these stats
 settings_sysinfo_real_time_status_history1=Yes, and store stats for
 settings_sysinfo_real_time_status_history2=Yes, without storing stats
 settings_sysinfo_real_time_status_history_duration1=15 minutes
