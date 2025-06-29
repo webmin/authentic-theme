@@ -42,6 +42,9 @@ print &ui_form_start("$webprefix/pam_login.cgi", "post", undef,
 	'form-signin session_login pam_login clearfix');
 print ui_hidden("cid", $in{'cid'});
 
+# Print login HTTP warning
+print_login_http_warning();
+
 # Add Webmin icon and title
 print_login_logo();
 

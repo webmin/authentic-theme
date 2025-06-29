@@ -165,6 +165,19 @@ else {
 	}
 }
 
+# print_login_http_warning()
+# Prints a warning if the connection is not secure
+sub print_login_http_warning
+{
+# If the connection is not secure, print a warning
+if (lc(get_env('https')) ne 'on') {
+	my $icon = ui_icon('unlock');
+	my $label = ui_tag('span', $theme_text{'session_https_off'});
+	print ui_tag('div', "$icon $label",
+		{ 'class' => 'badge badge-danger https-badge' });
+	}
+}
+
 # print_login_logo()
 # Prints the Webmin logo and title
 sub print_login_logo

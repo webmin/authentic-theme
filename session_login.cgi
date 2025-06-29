@@ -39,6 +39,9 @@ print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
 	'role="form" onsubmit="theme_spinner()"',
 	'form-signin session_login clearfix');
 
+# Print login HTTP warning
+print_login_http_warning();
+
 # Add Webmin icon and title
 print_login_logo();
 
