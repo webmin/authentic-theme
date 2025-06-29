@@ -171,10 +171,11 @@ sub print_login_http_warning
 {
 # If the connection is not secure, print a warning
 if (lc(get_env('https')) ne 'on') {
-	my $icon = ui_icon('unlock');
-	my $label = ui_tag('span', $theme_text{'session_https_off'});
+	my $icon = ui_icon('exclamation-triangle');
+	my $label = ui_tag('span', $theme_text{'login_notsecure'});
 	print ui_tag('div', "$icon $label",
-		{ 'class' => 'badge badge-danger https-badge' });
+		{ 'class' => 'badge badge-danger https-badge', 'data-tooltip' => 1,
+		  'aria-label' => $theme_text{'login_notsecure_desc'} });
 	}
 }
 
