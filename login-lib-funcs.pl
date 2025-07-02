@@ -171,9 +171,17 @@ sub print_login_http_warning
 {
 # If the connection is not secure, print a warning
 if (lc(get_env('https')) ne 'on') {
-	my $icon = ui_icon('exclamation-triangle');
-	my $label = ui_tag('span', $theme_text{'login_notsecure'});
-	print ui_tag('div', "$icon $label",
+	my $animated_class = 'faa faa-flash faa-slow animated';
+	my $icon = ui_icon('exclamation-triangle', { 'class' => $animated_class });
+	my $label = ui_tag('span', $theme_text{'login_notsecure'},
+		{ 'class' => $animated_class });
+	my $link = ui_tag('a', "$icon $label", 
+		{ 'href' => "javascript:void(0);",
+		  'class' => 'inherit-color',
+		  'onclick' => "window.location.href = ".
+		  	"window.location.href.replace(/^http:/, 'https:'); return false;",
+		});
+	print ui_tag('div', $link,
 		{ 'class' => 'badge badge-danger https-badge', 'data-tooltip' => 1,
 		  'aria-label' => $theme_text{'login_notsecure_desc'} });
 	}
