@@ -335,6 +335,17 @@ sub xhr
         }
     }
 
+    # Set session status based on user browser interaction
+    if ($type eq 'session') {
+        if ($subtype eq 'set') {
+            my $session = $main::session_id;
+            my $status  = $action eq '1' ? 1 : 0;
+            if ($session) {
+                &miniserv::session_state($session, $status);
+            }
+        }
+    }
+
     # Legacy calls from index page
     if (post_has('xhr-')) {
         head();
