@@ -113,7 +113,7 @@ Net::WebSocket::Server->new(
             undef($stats_period);
         }
         # If interval is set then sleep minus one
-        # second becase tick_period is one second
+        # second because tick_period is one second
         if ($serv->{'interval'} > 1) {
             sleep($serv->{'interval'}-1);
         }
