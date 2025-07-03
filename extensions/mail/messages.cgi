@@ -16,7 +16,8 @@ my %mails;
 open_dsn_hash();
 
 # Get all available folders
-my @folders = list_folders_sorted();
+foreign_require('mailbox');
+my @folders = mailbox::list_folders_sorted();
 
 # Get current folder
 if (defined($in{'id'}) && length $in{'id'}) {
