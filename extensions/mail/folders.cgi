@@ -14,7 +14,6 @@ our (%in);
 do($ENV{'THEME_ROOT'} . "/extensions/mail/mail-lib.pl");
 
 my %temporary;
-foreign_require('mailbox');
 my @folders_data = mailbox::list_folders_sorted();
 my @folders;
 foreach my $folder (@folders_data) {

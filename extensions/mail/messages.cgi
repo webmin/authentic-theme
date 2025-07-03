@@ -13,20 +13,19 @@ do($ENV{'THEME_ROOT'} . "/extensions/mail/mail-lib.pl");
 
 my %mails;
 
-open_dsn_hash();
+mailbox::open_dsn_hash();
 
 # Get all available folders
-foreign_require('mailbox');
 my @folders = mailbox::list_folders_sorted();
 
 # Get current folder
 if (defined($in{'id'}) && length $in{'id'}) {
-    my $id = find_named_folder($in{'id'}, \@folders);
+    my $id = mailbox::find_named_folder($in{'id'}, \@folders);
     if ($id) {
         $in{'folder'} = $id->{'index'};
     }
 } elsif (!defined($in{'folder'}) && $userconfig{'default_folder'}) {
-    my $df = find_named_folder($userconfig{'default_folder'}, \@folders);
+    my $df = mailbox::find_named_folder($userconfig{'default_folder'}, \@folders);
     if ($df) {
         $in{'folder'} = $df->{'index'};
     }
@@ -35,7 +34,7 @@ if (defined($in{'id'}) && length $in{'id'}) {
 my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;
 
 # Check mail quota
-my ($qtotal, $qcount, $totalquota, $countquota) = get_user_quota();
+my ($qtotal, $qcount, $totalquota, $countquota) = mailbox::get_user_quota();
 if ($totalquota) {
     $mails{'quota'} =
       text('extensions_mail_quota', theme_nice_size_local($qtotal), (int($qtotal * 100 / $totalquota)), theme_nice_size_local($totalquota));
@@ -153,8 +152,8 @@ $mails{'pagination_message'} =
 my $form_list_buttons;
 if (@mail) {
     my $folders_count   = scalar(@folders);
-    my $can_report_spam = (can_report_spam($folder) || $folder->{'spam'} ? 1 : 0);  #&& $userconfig{'spam_buttons'} =~ /list/
-    my $can_report_ham  = (can_report_ham($folder) || $folder->{'spam'} ? 1 : 0);   #&& $userconfig{'ham_buttons'} =~ /list/
+    my $can_report_spam = (mailbox::can_report_spam($folder) || $folder->{'spam'} ? 1 : 0);  #&& $userconfig{'spam_buttons'} =~ /list/
+    my $can_report_ham  = (mailbox::can_report_ham($folder) || $folder->{'spam'} ? 1 : 0);   #&& $userconfig{'ham_buttons'} =~ /list/
 
     $form_list_buttons = {
         'submit' => {
@@ -258,7 +257,7 @@ if ($in{'error_fatal'} eq '1' || $errors) {
 }
 
 # Mail list sorter
-my ($sorted) = get_sort_field($folder);
+my ($sorted) = mailbox::get_sort_field($folder);
 my $showfrom = $folder->{'show_from'};
 my $list_sort_from;
 if ($showfrom) {
@@ -303,7 +302,7 @@ $mails{'mail_system'} = $config{'mail_system'};
 $mails{'config'} = { 'g' => \%config,
                      'u' => \%userconfig, };
 
-save_last_folder_id($folder);
-pop3_logout();
+mailbox::save_last_folder_id($folder);
+mailbox::pop3_logout();
 
 print_json([\%mails]);

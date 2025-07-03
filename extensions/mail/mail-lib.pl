@@ -18,6 +18,8 @@ set_charset();
 %text = (load_language($current_theme), %text);
 %theme_text = %text;
 
+foreign_require('mailbox');
+
 sub get_env
 {
     my ($key) = @_;
@@ -133,7 +135,7 @@ sub folders_select
 
     foreach my $f (@$folders) {
         $f->{'name'} =~ tr/\./\//d;
-        $id = ($type ? folder_name($f) : $f->{'index'});
+        $id = ($type ? mailbox::folder_name($f) : $f->{'index'});
         if ($f->{'name'} =~ /^INBOX\//) {
             $f->{'name'} =~ tr/INBOX/Inbox/d;
             splice(@opts, (4 + $offset), 0, [$id, $f->{'name'}]);
@@ -149,13 +151,13 @@ sub folders_select
 sub folder_counts
 {
     my ($folder) = @_;
-    my $allowed = should_show_unread($folder);
+    my $allowed = mailbox::should_show_unread($folder);
     my $total;
     my $unread;
     my $special;
 
     if ($allowed) {
-        ($total, $unread, $special) = mailbox_folder_unread($folder);
+        ($total, $unread, $special) = mailbox::mailbox_folder_unread($folder);
     }
     return (int($total), int($unread), int($special), int($allowed));
 }
@@ -343,7 +345,7 @@ sub message_flags
 
     my @special;
     my $special;
-    my $read    = get_mail_read($folder, $mail);
+    my $read    = mailbox::get_mail_read($folder, $mail);
     my $unread  = 0;
     my $starred = $read & 2 ? 1 : 0;
     if ($starred) {
@@ -377,7 +379,7 @@ sub message_flags
         $all .= ui_mail_icon();
     }
 
-    if (mail_has_attachments($mail, $folder)) {
+    if (mailbox::mail_has_attachments($mail, $folder)) {
         $all .= ui_mail_icon('paperclip fa-rotate-315 mail-list-attachment',
                         (
                          ui_text(
@@ -393,8 +395,8 @@ sub message_flags
 
     my @dns;
     my $dns;
-    if ($showto && defined(&open_dsn_hash)) {
-        open_dsn_hash();
+    if ($showto && defined &mailbox::open_dsn_hash) {
+        mailbox::open_dsn_hash();
         my $mid = $mail->{'header'}->{'message-id'};
         if ($dsnreplies{$mid}) {
             $dns = ui_mail_icon('read text-primary mail-list-dns-reply');
@@ -453,7 +455,7 @@ sub message_pagination_link
 sub messages_sort_link
 {
     my ($title, $field, $folder, $start, %searched) = @_;
-    my ($sortfield, $sortdir) = get_sort_field($folder);
+    my ($sortfield, $sortdir) = mailbox::get_sort_field($folder);
     my $dir = $sortfield eq $field ? !$sortdir : 0;
     my $img =
       $sortfield eq $field && $dir  ? "sort-desc" :
@@ -472,8 +474,8 @@ sub messages_sort_link
 sub message_fetch
 {
     my ($id, $folder) = @_;
-    my $mail        = mailbox_get_mail($folder, $id, 0);
-    my $read_status = get_mail_read($folder, $mail);
+    my $mail        = mailbox::mailbox_get_mail($folder, $id, 0);
+    my $read_status = mailbox::get_mail_read($folder, $mail);
 
     return ($mail, $read_status);
 
@@ -485,7 +487,7 @@ sub message_mark_read
     my ($id, $folder) = @_;
     my ($mail, $read_status) = message_fetch($id, $folder);
     if (($read_status & 1) == 0) {
-        set_mail_read($folder, $mail, $read_status + 1);
+        mailbox::set_mail_read($folder, $mail, $read_status + 1);
     }
 }
 
@@ -495,7 +497,7 @@ sub message_mark_unread
     my ($id, $folder) = @_;
     my ($mail, $read_status) = message_fetch($id, $folder);
     if (($read_status & 1) == 1) {
-        set_mail_read($folder, $mail, $read_status - 1);
+        mailbox::set_mail_read($folder, $mail, $read_status - 1);
     }
 }
 
@@ -505,9 +507,9 @@ sub message_mark_starred
     my ($id, $folder, $state) = @_;
     my ($mail, $read_status) = message_fetch($id, $folder);
     if ($state eq 'unread') {
-        set_mail_read($folder, $mail, 2);
+        mailbox::set_mail_read($folder, $mail, 2);
     } elsif ($state eq 'read') {
-        set_mail_read($folder, $mail, 3);
+        mailbox::set_mail_read($folder, $mail, 3);
     }
 }
 
@@ -515,10 +517,10 @@ sub message_mark_starred
 sub messages_fetch
 {
     my ($start, $end, $perpage, $jump, $folder, $user_config, $error) = @_;
-    my @mail = mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
+    my @mail = mailbox::mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
     if ($start >= @mail && $jump) {
         $start = @mail - $perpage;
-        @mail  = mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
+        @mail  = mailbox::mailbox_list_mails_sorted($start, $end, $folder, $user_config, $error);
     }
     return ($start, @mail);
 }
@@ -531,7 +533,7 @@ sub messages_list
     my $list_mails;
 
     $list_mails .= ui_table_tbody_start();
-    mail_has_attachments([map {$mail[$_]} ($start .. $end)], $folder);
+    mailbox::mail_has_attachments([map {$mail[$_]} ($start .. $end)], $folder);
 
     for (my $i = $start; $i <= $end; $i++) {
         my @colattrs;
@@ -554,13 +556,13 @@ sub messages_list
         if ($showfrom) {
             $dcolumn .=
               ui_span_row('trow trow-from') .
-              view_mail_link($folder, $id, $start, encode_guess($m->{'header'}->{'from'}, 'from')) . ui_span_row();
+              mailbox::view_mail_link($folder, $id, $start, encode_guess($m->{'header'}->{'from'}, 'from')) . ui_span_row();
         }
         if ($showto) {
             $dcolumn .=
               ui_span_row('trow trow-to-pointer', 1) .
               ui_span_row('trow trow-to') . ($showfrom ? ui_mail_icon('long-arrow-right') : undef) .
-              view_mail_link($folder, $id, $start, encode_guess($m->{'header'}->{'to'}, 'to')) . ui_span_row();
+              mailbox::view_mail_link($folder, $id, $start, encode_guess($m->{'header'}->{'to'}, 'to')) . ui_span_row();
         }
         $dcolumn .= ui_span_row('trow trow-flag-security') . $flag_security . ui_span_row();
         $dcolumn .= ui_span_row();
@@ -571,14 +573,14 @@ sub messages_list
 
         my @bcolumn;
         my $bcolumn;
-        my $subject = simplify_subject($m->{'header'}->{'subject'});
+        my $subject = mailbox::simplify_subject($m->{'header'}->{'subject'});
         $bcolumn .= ui_span_row('mrow mrow-subject') . $flag_reply .
           ($subject ? $subject : $text{'extensions_mail_header_no_subject'}) . ui_span_row();
         my $preview;
         if ($userconfig{'show_body'}) {
             my $plen = $in{'show_body_len'} || $userconfig{'show_body_len'};
-            parse_mail($m);
-            my $preview_data = mail_preview($m, $plen);
+            mailbox::parse_mail($m);
+            my $preview_data = mailbox::mail_preview($m, $plen);
             if ($preview_data) {
                 $preview = html_escape($preview_data);
                 $preview = encode_guess($preview, 'preview');
@@ -614,7 +616,7 @@ sub messages_list
         my $scolumn;
         $scolumn = ui_span_row('srow srow-container');
 
-        my ($sorted) = get_sort_field($folder);
+        my ($sorted) = mailbox::get_sort_field($folder);
         if ($sorted eq 'size') {
             $scolumn .= ui_span_row('row brow brow-size') . theme_nice_size_local($m->{'size'}, 1024) . ui_span_row();
         } else {
@@ -645,7 +647,7 @@ sub messages_list
         }
 
         $list_mails .= ui_message_list_column(\@cols, \@colattrs, "d", $id, $m, $folder);
-        update_delivery_notification($mail[$i], $folder);
+        mailbox::update_delivery_notification($mail[$i], $folder);
     }
 
     $list_mails .= ui_table_tbody_end();
@@ -655,7 +657,7 @@ sub messages_list
 sub message_email_address
 {
     my ($message_header_addressee) = @_;
-    my @sender_addresses = split_addresses($message_header_addressee);
+    my @sender_addresses = mailbox::split_addresses($message_header_addressee);
     return $sender_addresses[0]->[0];
 }
 
@@ -666,7 +668,7 @@ sub message_select_link
     if ($folder) {
         for (my $i = $start; $i <= $end; $i++) {
             my $m    = $mail->[$i];
-            my $read = get_mail_read($folder, $m);
+            my $read = mailbox::get_mail_read($folder, $m);
             if ($status == 0 && !($read & 1) ||
                 $status == 1 && ($read & 1) ||
                 $status == 2 && ($read & 2))
@@ -684,7 +686,7 @@ sub ui_message_list_column
 {
     my ($cols, $trattrs, $checkname, $checkvalue, $message, $folder) = @_;
     my $rv;
-    my $editable = editable_mail($message);
+    my $editable = mailbox::editable_mail($message);
 
     $rv .= "<tr  " . $trattrs->[0] . " class='ui_checked_columns'>\n";
     $rv .= "<td class='" . ($editable ? 'ui_checked_checkbox' : undef) . "'>";

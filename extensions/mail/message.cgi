@@ -12,7 +12,6 @@ our (%in);
 
 do($ENV{'THEME_ROOT'} . "/extensions/mail/mail-lib.pl");
 
-foreign_require('mailbox');
 my @folders = mailbox::list_folders_sorted();
 my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;
 my @messages = sort {$a <=> $b} split(/\0/, $in{'d'});

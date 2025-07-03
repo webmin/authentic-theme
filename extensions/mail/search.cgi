@@ -59,18 +59,18 @@ if ($limit && $limit->{'latest'}) {
 	$limitmsg = &text('search_limit', $limit->{'latest'});
 	}
 
-my @folders = &list_folders();
+my @folders = mailbox::list_folders();
 if ($in{'lastfolder'}) {
-	my $fid = &get_last_folder_id();
+	my $fid = mailbox::get_last_folder_id();
 	if ($fid) {
-		$folder = &find_named_folder($fid, \@folders);
+		$folder = mailbox::find_named_folder($fid, \@folders);
 		if ($folder) {
 			$in{'folder'} = $folder->{'index'};
 			}
 		}
 	}
 if ($in{'id'}) {
-	$folder = &find_named_folder($in{'id'}, \@folders);
+	$folder = mailbox::find_named_folder($in{'id'}, \@folders);
 	$folder || &error("Failed to find folder $in{'id'}");
 	$in{'folder'} = $folder->{'index'};
 	}
@@ -88,23 +88,23 @@ my @sfolders;
 my $multi_folder;
 if ($in{'simple'}) {
 	# Just search by Subject and From (or To) in one folder
-	my ($mode, $words) = &parse_boolean($in{'search'});
+	my ($mode, $words) = mailbox::parse_boolean($in{'search'});
 	my $who = $folder->{'sent'} ? 'to' : 'from';
 	if ($mode == 0) {
 		# Search was like 'foo' or 'foo bar'
 		# Can just do a single 'or' search
 		my @searchlist = map { ( [ 'subject', $_ ],
 				      [ $who, $_ ] ) } @$words;
-		@rv = &mailbox_search_mail(\@searchlist, 0, $folder, $limit, 1);
+		@rv = mailbox::mailbox_search_mail(\@searchlist, 0, $folder, $limit, 1);
 		}
 	elsif ($mode == 1) {
 		# Search was like 'foo and bar'
 		# Need to do two 'and' searches and combine
 		my @searchlist1 = map { ( [ 'subject', $_ ] ) } @$words;
-		my @rv1 = &mailbox_search_mail(\@searchlist1, 1, $folder,
+		my @rv1 = mailbox::mailbox_search_mail(\@searchlist1, 1, $folder,
 					    $limit, 1);
 		my @searchlist2 = map { ( [ $who, $_ ] ) } @$words;
-		my @rv2 = &mailbox_search_mail(\@searchlist2, 1, $folder,
+		my @rv2 = mailbox::mailbox_search_mail(\@searchlist2, 1, $folder,
 					    $limit, 1);
 		@rv = @rv1;
 		my %gotid = map { $_->{'id'}, 1 } @rv;
@@ -119,14 +119,14 @@ if ($in{'simple'}) {
 		$mail->{'folder'} = $folder;
 		}
 	if ($statusmsg) {
-		@rv = &filter_by_status(\@rv, $in{'status'});
+		@rv = mailbox::filter_by_status(\@rv, $in{'status'});
 		}
 	$msg = &text('search_msg2', "<i>".$in{'search'}."</i>");
 	}
 elsif ($in{'spam'}) {
 	# Search by spam score, using X-Spam-Level header
 	my $stars = "*" x $in{'score'};
-	@rv = &mailbox_search_mail([ [ "x-spam-level", $stars ] ], 0, $folder,
+	@rv = mailbox::mailbox_search_mail([ [ "x-spam-level", $stars ] ], 0, $folder,
 				   $limit, 1);
 	foreach my $mail (@rv) {
 		$mail->{'folder'} = $folder;
@@ -153,14 +153,14 @@ else {
 		}
 	my @frv;
 	foreach my $sf (@sfolders) {
-		my @frv = &mailbox_search_mail(\@fields, $in{'and'}, $sf,
+		my @frv = mailbox::mailbox_search_mail(\@fields, $in{'and'}, $sf,
 						  $limit, 1);
 		foreach my $mail (@frv) {
 			$mail->{'folder'} = $sf;
 			}
 		if ($in{'attach'}) {
 			# Limit to those with an attachment
-			my @attach = &mail_has_attachments(\@frv, $sf);
+			my @attach = mailbox::mail_has_attachments(\@frv, $sf);
 			my @newfrv = ( );
 			for(my $i=0; $i<@frv; $i++) {
 				push(@newfrv, $frv[$i]) if ($attach[$i]);
@@ -171,7 +171,7 @@ else {
 		}
 	if ($statusmsg) {
 		# Limit by status (read, unread, special)
-		@rv = &filter_by_status(\@rv, $in{'status'});
+		@rv = mailbox::filter_by_status(\@rv, $in{'status'});
 		}
 	if (@fields == 1) {
 		my $stext = $fields[0]->[1];
@@ -224,12 +224,12 @@ else {
 	delete($virt->{'sent'});
 	delete($virt->{'drafts'});
 	}
-&delete_new_sort_index($virt);
-&save_folder($virt, $virt);
+mailbox::delete_new_sort_index($virt);
+mailbox::save_folder($virt, $virt);
 
 $search{'id'} = $virt->{'index'};
 $search{'query'} = $in{'search'};
 
 # Redirect to it
-&pop3_logout_all();
+mailbox::pop3_logout_all();
 print_json(\%search);
