@@ -758,7 +758,8 @@ sub nav_list_combined_menu
             if (!string_starts_with($link, "http") &&
                 !string_starts_with($link, "ftp") &&
                 !string_starts_with($link, "www") &&
-                !string_starts_with($link, "../"))
+                !string_starts_with($link, "../") &&
+                !string_contains($link, "config.cgi"))
             {
                 $link = "/$link" if (!string_starts_with($link, "/"));
                 $link = "$theme_webprefix$link"
