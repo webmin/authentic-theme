@@ -169,6 +169,7 @@ else {
 # Prints a warning if the connection is not secure
 sub print_login_http_warning
 {
+return unless ($miniserv->{'ssl'});
 # If the connection is not secure, print a warning
 if (lc(get_env('https')) ne 'on') {
 	my $animated_class = 'faa faa-flash faa-slow animated';
