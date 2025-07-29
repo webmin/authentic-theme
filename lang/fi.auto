@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Cloudmin oletussivu
 
 settings_right_clear_local_cache=Tyhjennä välimuisti
 settings_side_slider_fixed=Pidä aina näkyvissä
-settings_hotkey_toggle_slider=Vaihda sivuliukusäätimen näkyvyyttä
 
 settings_side_slider_enabled=Ota liukusäädin käyttöön
 settings_leftmenu_user_html=Näytä HTML-katkelma

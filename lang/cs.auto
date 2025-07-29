@@ -27,7 +27,6 @@ settings_hotkey_reload=Obnovit aktuální stránku
 
 settings_right_clear_local_cache=Vyčistit mezipaměť
 settings_side_slider_fixed=Udržujte vždy viditelné
-settings_hotkey_toggle_slider=Přepnout viditelnost bočního posuvníku
 
 settings_side_slider_enabled=Povolit posuvník
 settings_leftmenu_user_html=Zobrazit úryvek HTML

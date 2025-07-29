@@ -24,8 +24,6 @@ settings_hotkey_favorites=打开收藏夹
 settings_hotkey_focus_search=专注于搜索领域
 settings_hotkey_reload=刷新当前页面
 
-settings_hotkey_toggle_slider=切换侧滑块可见性
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin 文档
 theme_xhred_sysinfo_vmdocs=虚拟文档

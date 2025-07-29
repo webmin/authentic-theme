@@ -57,7 +57,6 @@ settings_right_cloudmin_default=Standaardpagina voor Cloudmin
 
 settings_right_clear_local_cache=Cache wissen
 settings_side_slider_fixed=Altijd zichtbaar houden
-settings_hotkey_toggle_slider=Schakel de zichtbaarheid van de schuifregelaar aan de zijkant in
 
 settings_side_slider_enabled=Schuifregelaar inschakelen
 settings_leftmenu_user_html=HTML-fragment weergeven

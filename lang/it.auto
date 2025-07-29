@@ -22,8 +22,6 @@ settings_hotkey_favorites=Apri i preferiti
 settings_hotkey_focus_search=Concentrati sul campo di ricerca
 settings_hotkey_reload=Aggiorna la pagina corrente
 
-settings_hotkey_toggle_slider=Attiva/disattiva la visibilità del cursore laterale
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Documentazione webmin
 theme_xhred_sysinfo_vmdocs=Documentazione Virtualmin

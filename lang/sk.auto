@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Predvolená stránka pre Cloudmin
 
 settings_right_clear_local_cache=Vymazať vyrovnávaciu pamäť
 settings_side_slider_fixed=Udržujte vždy viditeľné
-settings_hotkey_toggle_slider=Prepnúť viditeľnosť bočného posúvača
 
 settings_side_slider_enabled=Povoliť posúvač
 settings_leftmenu_user_html=Zobraziť útržok HTML

@@ -80,7 +80,6 @@ settings_right_cloudmin_default=Standardside for Cloudmin
 
 settings_right_clear_local_cache=Ryd cache
 settings_side_slider_fixed=Hold altid synlig
-settings_hotkey_toggle_slider=Skift sideskydersynlighed
 
 settings_side_slider_enabled=Aktivér skyderen
 settings_leftmenu_user_html=Vis HTML-kodestykke

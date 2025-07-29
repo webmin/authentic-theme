@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Lehenetsitako orria Cloudminen
 
 settings_right_clear_local_cache=Garbitu cachea
 settings_side_slider_fixed=Jarrai beti ikusgai
-settings_hotkey_toggle_slider=Aldatu alboko graduatzailearen ikusgarritasuna
 
 settings_side_slider_enabled=Gaitu graduatzailea
 settings_leftmenu_user_html=Erakutsi HTML fragmentua

@@ -166,7 +166,6 @@ settings_right_cloudmin_default=الصفحة الافتراضية لـ Cloudmin
 
 settings_right_clear_local_cache=مسح ذاكرة التخزين المؤقت
 settings_side_slider_fixed=ابق مرئيًا دائمًا
-settings_hotkey_toggle_slider=تبديل رؤية الجانب المنزلق
 
 settings_side_slider_enabled=تمكين شريط التمرير
 settings_leftmenu_user_html=إظهار مقتطف HTML

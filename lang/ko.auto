@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Cloudmin의 기본 페이지
 
 settings_right_clear_local_cache=캐시 지우기
 settings_side_slider_fixed=항상 보이게
-settings_hotkey_toggle_slider=측면 슬라이더 가시성 전환
 
 settings_side_slider_enabled=슬라이더 사용
 settings_leftmenu_user_html=HTML 스 니펫 표시

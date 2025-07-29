@@ -24,8 +24,6 @@ settings_hotkey_favorites=Buka kegemaran
 settings_hotkey_focus_search=Fokus pada medan carian
 settings_hotkey_reload=Muat semula halaman semasa
 
-settings_hotkey_toggle_slider=Togol keterlihatan peluncur sisi
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Dokumentasi webmin
 theme_xhred_sysinfo_vmdocs=dokumentasi Virtualmin

@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Standardseite für Cloudmin
 
 settings_right_clear_local_cache=Cache leeren
 settings_side_slider_fixed=Immer sichtbar halten
-settings_hotkey_toggle_slider=Seitenslider ein-/ausblenden
 
 settings_side_slider_enabled=Seitenslider aktivieren
 settings_leftmenu_user_html=HTML-Snippet anzeigen

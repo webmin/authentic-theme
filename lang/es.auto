@@ -80,7 +80,6 @@ settings_right_cloudmin_default=Página predeterminada para Cloudmin
 
 settings_right_clear_local_cache=Limpiar cache
 settings_side_slider_fixed=Mantener siempre visible
-settings_hotkey_toggle_slider=Alternar la visibilidad del control deslizante lateral
 
 settings_side_slider_enabled=Habilitar control deslizante
 settings_leftmenu_user_html=Mostrar fragmento de HTML

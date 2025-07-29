@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Cloudmin的默認頁面
 
 settings_right_clear_local_cache=清除緩存
 settings_side_slider_fixed=始終保持可見
-settings_hotkey_toggle_slider=切換側滑塊可見性
 
 settings_side_slider_enabled=啟用滑桿
 settings_leftmenu_user_html=顯示HTML代碼段

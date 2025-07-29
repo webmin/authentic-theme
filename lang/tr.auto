@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Cloudmin için varsayılan sayfa
 
 settings_right_clear_local_cache=Önbelleği temizle
 settings_side_slider_fixed=Her zaman görünür tutun
-settings_hotkey_toggle_slider=Yan kaydırıcı görünürlüğünü değiştir
 
 settings_side_slider_enabled=Kaydırıcıyı etkinleştir
 settings_leftmenu_user_html=HTML snippet'ini göster

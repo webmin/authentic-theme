@@ -162,7 +162,6 @@ settings_right_cloudmin_default=Domyślna strona dla Cloudmin
 
 settings_right_clear_local_cache=Wyczyść pamięć podręczną
 settings_side_slider_fixed=Zawsze widoczny
-settings_hotkey_toggle_slider=Przełącz widoczność bocznego suwaka
 
 settings_side_slider_enabled=Włącz suwak
 settings_leftmenu_user_html=Wyświetl fragment HTML

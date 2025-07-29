@@ -24,8 +24,6 @@ settings_hotkey_favorites=Åpne favoritter
 settings_hotkey_focus_search=Fokus på søkefeltet
 settings_hotkey_reload=Oppdater gjeldende side
 
-settings_hotkey_toggle_slider=Slå sideglidebryterens synlighet
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentasjon
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon

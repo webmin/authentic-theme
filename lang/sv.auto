@@ -22,8 +22,6 @@ settings_hotkey_favorites=Öppna favoriter
 settings_hotkey_focus_search=Fokusera på sökfältet
 settings_hotkey_reload=Uppdatera aktuell sida
 
-settings_hotkey_toggle_slider=Växla sidoreglagets synlighet
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation

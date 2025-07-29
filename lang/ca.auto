@@ -24,8 +24,6 @@ settings_hotkey_favorites=Obre els preferits
 settings_hotkey_focus_search=Centra't en el camp de cerca
 settings_hotkey_reload=Actualitza la pàgina actual
 
-settings_hotkey_toggle_slider=Commuta la visibilitat del control lliscant lateral
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Documentació de Webmin
 theme_xhred_sysinfo_vmdocs=Documentació de Virtualmin

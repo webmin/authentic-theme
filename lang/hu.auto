@@ -166,7 +166,6 @@ settings_right_cloudmin_default=Alapértelmezett oldal a Cloudmin számára
 
 settings_right_clear_local_cache=Tiszta gyorsítótár
 settings_side_slider_fixed=Mindig látható legyen
-settings_hotkey_toggle_slider=Az oldalsó csúszka láthatóságának váltása
 
 settings_side_slider_enabled=Csúszka engedélyezése
 settings_leftmenu_user_html=HTML kódrészlet megjelenítése

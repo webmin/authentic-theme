@@ -31,8 +31,6 @@ settings_hotkey_favorites=お気に入りを開く
 settings_hotkey_focus_search=検索フィールドにフォーカス
 settings_hotkey_reload=現在のページを更新
 
-settings_hotkey_toggle_slider=サイド スライダーの表示を切り替えます
-
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin ドキュメント
 theme_xhred_sysinfo_vmdocs=Virtualmin のドキュメント
