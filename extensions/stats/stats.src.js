@@ -58,6 +58,18 @@ const stats = {
             defaultClassLabel: "bg-semi-transparent",
             defaultSliderClassLabel: "bg-semi-transparent-dark",
         },
+        // Allow to start or pause check
+        isAllowed: function () {
+            // Check if the stats status
+            const allowed =
+                theme.visibility.get() && 
+                (
+                    plugins.dashboard.visible() ||
+                    plugins.slider.visible()
+                );
+            // console.warn("Allowed :", allowed ? 'yes' : 'no');
+            return allowed;
+        },
         // Get current data to submit to the socket
         getSocketDefs: function () {
             return {
@@ -122,32 +134,60 @@ const stats = {
                 this.enable();
             }, this.getInterval() * 1000 * 4);
         },
+        toggle: function () {
+            setTimeout(() => {
+                if (this.isAllowed()) {
+                    this.enable();
+                } else {
+                    this.disable();
+                }
+            }, 200); // Don't lock the page in any possible way
+        },
+        _toggleLimiter: (() => {
+            let timerId = null,
+                lastJob = null;
+            return (jobFn, ctx, args, delayMs) => {
+                lastJob = () => jobFn.apply(ctx, args);
+                clearTimeout(timerId);
+                timerId = setTimeout(() => {
+                    lastJob();
+                    lastJob = timerId = null;
+                }, delayMs);
+            };
+        })(),
         // Disable the stats broadcast for the client
-        disable: function () {
-            if (this.socket && this.socket.readyState === 1) {
-                // console.warn("Disabling stats broadcast");
+        _disableFn: function () {
+            if (this.socket && this.socket.readyState === 1 &&
+                this.socket.paused !== true && !this.isAllowed()) {
+                // console.warn("Disabling stats broadcast", this.socket);
                 const socketData = this.getSocketDefs();
                 socketData.paused = 1;
+                this.socket.paused = true;
                 this.socket.send(JSON.stringify(socketData));
             }
         },
         // Enable the stats broadcast for the client
-        enable: function () {
-            if (this.isEnabled()) {
-                // console.warn("Enabling stats broadcast");
+        _enableFn: function () {
+            if (this.isEnabled() && this.isAllowed()) {
+                // console.warn("Enabling stats broadcast", this.socket);
                 if (this.graphsCanPreRender()) {
                     this.preRender();
                 }
-                if (this.socket) {
+                if (this.socket && this.socket.paused !== false) {
                     // console.warn("Sending ..", this.socket.readyState === 1),
                     this.socket.readyState === 1 &&
                         this.socket.send(JSON.stringify(this.getSocketDefs()));
+                    this.socket.paused = false;
                 } else {
                     // console.warn("Activating .."),
                     this.activate();
                 }
             }
         },
+        enable:  function () { this._toggleLimiter(
+            this._enableFn,  this, arguments, 40); },
+        disable: function () { this._toggleLimiter(
+            this._disableFn, this, arguments, 4000); },
         // Shutdown the stats broadcast for all
         // clients by shutting down the socket
         shutdown: function () {
