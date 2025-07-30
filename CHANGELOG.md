@@ -1,8 +1,11 @@
 ## Changelog
 
-#### Version 24.03 (June 30, 2025)
+#### Version 24.03 (August 2, 2025)
+* Add support for conditionally controlling socket message flow with live stats for better performance
 * Fix styling of checkboxes and radios for backup and restore pages in Virtualmin
-* Fix periods shown in the option to select the retention period for live stats [#1712](https://github.com/webmin/authentic-theme/issues/1712)
+* Fix period selection for retention time for live stats [#1712](https://github.com/webmin/authentic-theme/issues/1712)
+* Fix navigation menu load in proxy mode  [webmin#2502](https://github.com/webmin/webmin/issues/2502)
+* Fix several UI issues for the upcoming Virtualmin WP Workbench Manager plugin
 
 #### Version 24.02 (June 9, 2025)
 * Fix broken encoding for Japanese, Korean, and Chinese
