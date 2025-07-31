@@ -33,20 +33,24 @@ $SIG{'ALRM'} = sub {
     };
 alarm(60);
 
-# Log successful connection
-error_stderr("WebSocket server is listening on port $port");
-
 # Current stats within a period
 my $stats_period;
+
+my %miniserv;
+get_miniserv_config(\%miniserv);
+my $host = $miniserv{'websocket_bind'} || '127.0.0.1';
 
 # Create socket
 my $server_socket = IO::Socket::INET->new(
     Listen    => 5,
+    LocalAddr => $host,
     LocalPort => $port,
     ReuseAddr => 1,
     Proto     => 'tcp',
-    LocalAddr => '127.0.0.1',
-) or die "Failed to listen on port $port : $!";
+) or die "Failed to listen on port $host:$port : $!";
+
+# Log successful connection
+error_stderr("WebSocket server is listening on $host:$port");
 
 # Start WebSocket server
 Net::WebSocket::Server->new(
