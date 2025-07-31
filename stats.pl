@@ -8,6 +8,7 @@
 use strict;
 
 use lib ("$ENV{'PERLLIB'}/vendor_perl");
+use IO::Socket::INET;
 use Net::WebSocket::Server;
 use utf8;
 
@@ -38,9 +39,18 @@ error_stderr("WebSocket server is listening on port $port");
 # Current stats within a period
 my $stats_period;
 
+# Create socket
+my $server_socket = IO::Socket::INET->new(
+    Listen    => 5,
+    LocalPort => $port,
+    ReuseAddr => 1,
+    Proto     => 'tcp',
+    LocalAddr => '127.0.0.1',
+) or die "Failed to listen on port $port : $!";
+
 # Start WebSocket server
 Net::WebSocket::Server->new(
-    listen     => $port,
+    listen     => $server_socket,
     tick_period => 1,
     on_tick => sub {
         my ($serv) = @_;
