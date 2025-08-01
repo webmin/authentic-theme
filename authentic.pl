@@ -909,7 +909,7 @@ sub theme_ui_textarea
 
 sub theme_ui_submit
 {
-    my ($label, $name, $dis, $tags, $icon_class, $btn_class_extra) = @_;
+    my ($label, $name, $dis, $tags, $icon_class, $btn_class_extra, $text_key) = @_;
     my ($keys, $class, $icon) = get_button_style($label);
     if ($icon_class && !$icon) {
         $icon = "<i class=\"$icon_class\"></i>";
@@ -918,8 +918,12 @@ sub theme_ui_submit
     $ids = "_s_$main::ui_submit_tcalled" if ($main::ui_submit_tcalled++);
 
     my $nbsp;
+    my $clabel;
     if ($label) {
         $nbsp = "&nbsp;";
+        if ($text_key && $text_key =~ /_compound_\w+/) {
+            $clabel = filter_label_compound($label, $text_key);
+        }
     }
     # Form attr has to be passed directly to input
     my $form_value = "";
@@ -932,7 +936,7 @@ sub theme_ui_submit
       ($name ne '' ? " name=\"" . &quote_escape($name) . "\""      : "") .
       ($name ne '' ? " id=\"" . &quote_escape($name . $ids) . "\"" : "") .
       ($dis        ? " disabled=true" : "") . ($tags ? " " . $tags : "") . ">" . $icon . "$nbsp<span data-entry=\"$keys\">" .
-      &html_escape($label) . "$nbsp</span></button>\n" . "<input$form_value class=\"hidden\" type=\"submit\""
+      ($clabel || (&html_escape($label) . "$nbsp"))."</span></button>\n" . "<input$form_value class=\"hidden\" type=\"submit\""
       .
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
           ""

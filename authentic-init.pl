@@ -1142,6 +1142,9 @@ sub get_button_style
     } elsif (string_contains($keys, "ifaces_apply")) {
         $class = "transparent-force ";
         $icon  = "toggle-switch  fa-1_05x";
+    } elsif ($keys eq 'scripts_kit_apply') {
+        $class = "info ";
+        $icon  = " fa2 fa2-marker-check fa-0_95x margined-top-1";
     } elsif (string_contains($keys, "apply")) {
         $class = "info ";
         $icon  = "check-circle-o";
@@ -1577,6 +1580,24 @@ sub get_button_style
     }
 
     return ($keys, $class, $icon);
+}
+
+# Special combined buttons labels depending on the currently selected tab
+# within nested forms
+sub filter_label_compound
+{
+    my ($label, $key) = @_;
+    my ($base) = $key =~ /^(.*?)(?:_n\d+)?$/;
+    my @out;
+    for my $i (1 .. 5) {
+        my $part_key = "${base}_n$i";
+        my $part     = text($part_key);
+        last if !defined $part || $part eq $part_key;
+        $part = &html_escape($part);
+        push @out, qq(<span data-compound="$i">$part</span>);
+    }
+    my $rs = @out > 1 ? join('', @out) : &html_escape($label);
+    return $rs."&nbsp;";
 }
 
 sub embed_login_head
