@@ -248,7 +248,8 @@ var
             {
                 'virtual-server': [
                     ['edit_newautoconfig', 'outlook thunderbird mailspring k-9 k9 mailclient autoconfig autodiscover'],
-                    ['edit_limits', 'jail chroot allowed acl shell'],
+                    ['edit_res', 'cpu memory disk process limits cgroup cgroups control groups'],
+                    ['edit_limits', 'jail cage chroot allowed acl shell isolation'],
                     ['rename_form', 'rename alter'],
                     ['edit_newmysqls', 'MySQL MariaDB'],
                     ['dkim', 'DKIM, opendkim email'],
