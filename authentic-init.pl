@@ -1034,6 +1034,8 @@ sub get_button_style
     } elsif (string_contains($keys, "pass_ok")) {
         $icon  = " fa2 fa2-key";
         $class = "warning ";
+    } elsif (string_contains($keys, "feat_backup_refresh")) {
+        $icon  = "refresh-mdi fa-1_25x margined-left--3";
     } elsif (string_ends_with($keys, "_gnupg") ||
              string_contains($keys, 'secret_setup') ||
              string_contains($keys, 'ssl_gen')      ||
