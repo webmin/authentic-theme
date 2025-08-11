@@ -1763,10 +1763,22 @@ sub theme_post_update
     }
 }
 
+sub theme_parse_proxy_redirect
+{
+my ($in, $env) = @_;
+if ($env->{'HTTP_REFERER'} && $env->{'HTTP_X_PJAX_URL'} &&
+    $env->{'HTTP_X_PJAX_URL'} =~ /(\S*?\/link\.cgi\/[\d]{8,16})/ && 
+    $in->{'proxy-redirect'} =~ /\S+/) {
+    return $in->{'proxy-redirect'};
+}
+return undef;
+}
+
 sub header_html_data
 {
     my ($module, $skip, @args) = @_;
-    my $redirect = get_theme_temp_data('redirected');
+    my $redirect = theme_parse_proxy_redirect(\%in, \%ENV) ||
+                   get_theme_temp_data('redirected');
     $redirect = "" if ($redirect eq "/");
     return 'data-redirect="' . $redirect .
 

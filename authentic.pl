@@ -1439,6 +1439,13 @@ sub theme_redirect
     my ($arg1, $arg2) = (navigation_link_clean($_[0]),
                          navigation_link_clean($_[1]));
 
+    # Bail out here if the proxy redirect is enforced
+    my ($url_ready, $no_proxy_redirect) = theme_no_proxy_url($_[1]);
+    if ($no_proxy_redirect && $url_ready) {
+        print "Location: $url_ready\n\n";
+        return;
+    }
+
     # Clean redirected links query string if requested
     if ($request_uri =~ /no-query=string/) {
         my $nocache = "no-cache=1";
@@ -1484,6 +1491,19 @@ sub theme_redirect
         };
         print "Location: $url\n\n";
     }
+}
+
+sub theme_no_proxy_url
+{
+my ($url) = @_;
+if ($url && $url =~ /proxy-redirect=(\S+)/) {
+        $url =~ s{/[^/]+/link\.cgi/\d+/}{/}g;
+        $url =~ s{[?&]proxy-redirect=\d+(?:&|$)}{};
+        $url =~ s/[?&]$//;
+        $url =~ s{^(?:[a-z][a-z0-9+.-]*:)?//[^/]*}{}i;
+        return ($url, 1);
+        }
+return ($url, 0);
 }
 
 sub theme_redirect_url_alterer
