@@ -1479,7 +1479,8 @@ sub get_button_style
         $icon  = "rotate-3d fa-1_25x margined-left--3 margined-right--3";
     } elsif (string_contains($keys, "csv")) {
         $icon = "export";
-    } elsif (string_contains($keys, "restore")) {
+    } elsif (string_contains($keys, "restore") ||
+             string_contains($keys, "feat_backuplog")) {
         $icon = "restore fa-1_25x";
         if (string_contains($keys, "restore_now2")) {
             $class = "success ";
