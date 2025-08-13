@@ -1480,10 +1480,12 @@ sub get_button_style
     } elsif (string_contains($keys, "csv")) {
         $icon = "export";
     } elsif (string_contains($keys, "restore") ||
-             string_contains($keys, "feat_backuplog")) {
+             $keys eq "feat_backuplog") {
         $icon = "restore fa-1_25x";
         if (string_contains($keys, "restore_now2")) {
             $class = "success ";
+        } elsif ($keys eq "feat_backuplog") {
+            $class = "grey ";
         }
     } elsif (string_contains($keys, "backup_title") ||
              string_contains($keys, "dbase_backup") ||
@@ -1493,6 +1495,9 @@ sub get_button_style
              string_contains($keys, "backup_now"))
     {
         $icon = "backup fa-1_25x";
+        if ($keys eq "feat_backup_now") {
+            $class = "info ";
+        }
     } elsif (string_contains($keys, "dbase_exec") ||
              string_contains($keys, "exec_exec")         ||
              string_contains($keys, "user_priv_execute") ||
