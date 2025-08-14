@@ -1026,6 +1026,9 @@ sub get_button_style
 
     if (string_contains($keys, 'mail_fchange')) {
         $class = "default";
+    } elsif (string_contains($keys, "cron_save")) {
+        $icon  = "clock";
+        $class = "success ";
     } elsif (string_contains($keys, 'sform_ok')) {
         $icon  = "search";
         # $class = "info";
@@ -1397,9 +1400,6 @@ sub get_button_style
         $icon = "stop";
     } elsif (string_contains($keys, "index_script")) {
         $icon = "update";
-    } elsif (string_contains($keys, "cron_ok")) {
-        $icon  = "check-circle-o";
-        $class = "success ";
     } elsif (string_contains($keys, "status")) {
         $icon = "info-circle";
     } elsif (string_contains($keys, "warnok")) {
