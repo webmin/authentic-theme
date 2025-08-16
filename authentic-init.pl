@@ -1320,7 +1320,13 @@ sub get_button_style
         $icon = "clear-all fa-1_25x";
     } elsif (string_contains($keys, "history_ok")) {
         $icon = "area-chart";
-    } elsif (string_contains($keys, "edit_open") || string_contains($keys, "edit_list")) {
+    } elsif ($keys eq "feat_backup_create") {
+        $icon = "plus-circle margined-right-3";
+        $class = "success ";
+    } elsif ($keys eq "feat_backup_backuplog") {
+        $icon = "backup fa-1_15x margined-left--1 margined-right-1";
+    } elsif (string_contains($keys, "edit_open") ||
+             string_contains($keys, "edit_list")) {
         $icon = "files-o";
     } elsif (string_contains($keys, "reboot") ||
              string_contains($keys, "view_refresh")  ||
@@ -1484,6 +1490,8 @@ sub get_button_style
         $icon = "restore fa-1_25x";
         if (string_contains($keys, "restore_now2")) {
             $class = "success ";
+        } elsif (string_contains($keys, "quick_restore")) {
+            $class = "info ";
         } elsif ($keys eq "feat_backuplog") {
             $class = "grey ";
         }
@@ -1510,7 +1518,10 @@ sub get_button_style
              string_contains($keys, "view_title1"))
     {
         $icon = "list";
-    } elsif (string_contains($keys, "table_data")) {
+    } elsif (string_contains($keys, "delnow")) {
+        $icon = "trash fa-1_05x";
+        $class = "danger ";
+    }  elsif (string_contains($keys, "table_data")) {
         $icon = "database-outline";
     } elsif (string_contains($keys, "index_title1") || string_contains($keys, "table_index")) {
         $icon = "key-plus fa-1_25x";
