@@ -416,6 +416,7 @@ sub nav_menu
     if ($page =~ m{/link\.cgi}) {
         $rv .= <<'SCRIPT';
 <script type="application/javascript">
+v___target_servers_index_loading = 1;
 (function () {
     if (window.v___initial_load) {
         setTimeout(function () {
