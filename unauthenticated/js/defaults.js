@@ -208,7 +208,7 @@ var
     settings_right_table_wrap_inside_scrolled_container = false,
     config_portable_table_rows_to_columns = true,
     config_portable_table_rows_to_columns_number = 2,
-    config_portable_table_rows_to_columns_width = 400,
+    config_portable_table_rows_to_columns_width = 340,
     config_portable_table_rows_to_columns_break = true,
 
     // This option can be set to any absolute or relative path
