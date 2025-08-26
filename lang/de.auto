@@ -1,5 +1,15 @@
 theme_xhred_filemanager_new_tab=Neuen Tab hinzufügen (Alt + Leertaste)
 
+# 19.71
+settings_right_hotkey_options=Tastenkombinationen
+settings_right_hotkey_custom_options=Benutzerdefinierte Verknüpfungen
+
+# 20.30
+theme_xhred_hotkey_print_title=Webmin-Tastaturkürzel mit Authentic Theme
+
+# 21.10
+theme_xhred_hotkey_emsg=Die Backslash-Taste kann nicht als Tastenkombination verwendet werden
+
 # 21.20.7
 settings_sysinfo_real_time_status_history_duration1=15 Minuten
 settings_sysinfo_real_time_status_history_duration2=30 Minuten

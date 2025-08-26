@@ -1153,8 +1153,6 @@ settings_right_sysinfo_page_options=Dashboard und Echtzeitüberwachung
 settings_right_navigation_menu_options=Navigationsmenü
 settings_right_notification_slider_options=Seitenslider
 settings_right_table_options=Tabellenanzeige
-settings_right_hotkey_options=Tastenkombinationen
-settings_right_hotkey_custom_options=Benutzerdefinierte Link-Kurzbefehle
 settings_right_soft_updates_page_options=Design-Updates
 settings_global_general_options_title=Allgemeine Standardwerte
 theme_error_access_not_root_user=Zugriff verweigert: Benutzer hat keine Berechtigung zum Bearbeiten dieses Bereichs
@@ -1318,7 +1316,6 @@ theme_xhred_hotkey_clear_cache=Cache leeren und neu laden
 theme_xhred_hotkey_open_new=In neuem Tab duplizieren
 theme_xhred_hotkey_copy_to_clipboard=Elementdaten in Zwischenablage kopieren
 theme_xhred_hotkey_copy_to_clipboard_click=Linksklick
-theme_xhred_hotkey_print_title=Webmin-Tastenkombinationen mit Authentic Theme
 theme_xhred_global_success=Erfolg
 theme_xhred_search_content=Inhalt durchsuchen
 theme_xhred_global_disabled=Deaktiviert
@@ -1379,7 +1376,6 @@ theme_xhred_datatable_filter_and_export=Inhalt filtern und exportieren
 
 # 21.10
 settings_hotkey_logout_dbl=Abmelden
-theme_xhred_hotkey_emsg=Die Rückschritttaste kann nicht als Hotkey verwendet werden
 settings_embed_product_splash_privileged=Branding-Splashscreen nach Anmeldung anzeigen
 dashboard_status_running=Läuft
 dashboard_status_stopped=Gestoppt

@@ -84,6 +84,8 @@ settings_hotkey_shell2=Apri la shell dei comandi
 
 # 19.71
 theme_xhred_dashboard_panels_disabled_explain=Il pannello nascosto può essere riattivato utilizzando <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
+settings_right_hotkey_options=Scorciatoie da tastiera
+settings_right_hotkey_custom_options=Collegamenti rapidi personalizzati
 
 # 19.84
 settings_right_table_links_type=Tipo di visualizzazione dei collegamenti alle tabelle
@@ -225,7 +227,7 @@ theme_xhred_hotkey_clear_cache=Svuota la cache e ricarica
 theme_xhred_hotkey_open_new=Duplica in una nuova scheda
 theme_xhred_hotkey_copy_to_clipboard=Copia i dati dell'elemento negli appunti
 theme_xhred_hotkey_copy_to_clipboard_click=clic sinistro
-theme_xhred_hotkey_print_title=Tasti di scelta rapida Webmin con tema autentico
+theme_xhred_hotkey_print_title=Scorciatoie da tastiera di Webmin con tema autentico
 theme_xhred_global_success=Successo
 theme_xhred_search_content=Cerca contenuto
 theme_xhred_global_disabled=Disabilitato
@@ -286,7 +288,7 @@ theme_xhred_datatable_filter_and_export=Filtra ed esporta contenuti
 
 # 21.10
 settings_hotkey_logout_dbl=Disconnettersi
-theme_xhred_hotkey_emsg=Il tasto barra rovesciata non può essere utilizzato come tasto di scelta rapida
+theme_xhred_hotkey_emsg=Il tasto barra rovesciata non può essere utilizzato come scorciatoia
 settings_embed_product_splash_privileged=Visualizza una schermata iniziale del branding dopo l'accesso
 dashboard_status_running=Corsa
 dashboard_status_stopped=Fermato

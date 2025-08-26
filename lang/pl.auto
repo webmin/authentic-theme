@@ -11,8 +11,16 @@ theme_xhred_filemanager_new_tab=Dodaj nową kartę (Alt + Spacja)
 # 19.30
 theme_xhred_favorites_add=Dodaj do ulubionych
 
+# 19.71
+settings_right_hotkey_options=Skróty klawiaturowe
+settings_right_hotkey_custom_options=Skróty niestandardowych łączy
+
 # 20.30
 theme_xhred_hotkey_list_tabs=Lista kart
+theme_xhred_hotkey_print_title=Skróty klawiaturowe Webmin z motywem Authentic
+
+# 21.10
+theme_xhred_hotkey_emsg=Klawisza ukośnika odwrotnego nie można używać jako skrótu
 
 # 21.20.7
 theme_xhred_dashboard_chart_disk_read=Czytać

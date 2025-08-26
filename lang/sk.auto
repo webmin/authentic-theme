@@ -1155,7 +1155,7 @@ settings_right_navigation_menu_options=Navigačné menu
 settings_right_notification_slider_options=Bočný posúvač
 settings_right_table_options=Stolový displej
 settings_right_hotkey_options=Klávesové skratky
-settings_right_hotkey_custom_options=Klávesové skratky s vlastnými odkazmi
+settings_right_hotkey_custom_options=Skratky pre vlastné odkazy
 settings_right_soft_updates_page_options=Aktualizácie tém
 settings_global_general_options_title=Všeobecné predvolené hodnoty
 theme_error_access_not_root_user=Prístup odmietnutý: Používateľ nemá oprávnenie upravovať túto sekciu
@@ -1380,7 +1380,7 @@ theme_xhred_datatable_filter_and_export=Filtrujte a exportujte obsah
 
 # 21.10
 settings_hotkey_logout_dbl=Odhlásiť sa
-theme_xhred_hotkey_emsg=Kláves spätného lomítka nemožno použiť ako klávesovú skratku
+theme_xhred_hotkey_emsg=Kláves spätného lomítka nemožno použiť ako skratku
 settings_embed_product_splash_privileged=Po prihlásení zobrazte úvodnú obrazovku značky
 dashboard_status_running=Beh
 dashboard_status_stopped=Zastavené

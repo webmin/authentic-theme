@@ -76,6 +76,8 @@ settings_hotkey_shell2=Öppna kommandoskalet
 
 # 19.71
 theme_xhred_dashboard_panels_disabled_explain=Dold panel kan återaktiveras med hjälp av <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
+settings_right_hotkey_options=Kortkommandon
+settings_right_hotkey_custom_options=Genvägar för anpassade länkar
 
 # 19.85
 theme_xhred_sysinfo_vmforum=Virtualmin Community
@@ -103,7 +105,7 @@ theme_xhred_hotkey_clear_cache=Rensa cache och ladda om
 theme_xhred_hotkey_open_new=Duplicera till en ny flik
 theme_xhred_hotkey_copy_to_clipboard=Kopiera elementdata till urklipp
 theme_xhred_hotkey_copy_to_clipboard_click=vänster klick
-theme_xhred_hotkey_print_title=Webmin snabbtangenter med autentiskt tema
+theme_xhred_hotkey_print_title=Webmin-kortkommandon med Autentiskt tema
 theme_xhred_global_success=Framgång
 theme_xhred_search_content=Sök innehåll
 theme_xhred_global_disabled=Inaktiverad
@@ -164,7 +166,7 @@ theme_xhred_datatable_filter_and_export=Filtrera och exportera innehåll
 
 # 21.10
 settings_hotkey_logout_dbl=Logga ut
-theme_xhred_hotkey_emsg=Omvänt snedstreckstangent kan inte användas som en snabbtangent
+theme_xhred_hotkey_emsg=Bakåtsnedstreckstangenten kan inte användas som genväg
 settings_embed_product_splash_privileged=Visa en startskärm för varumärke efter inloggning
 dashboard_status_running=Löpning
 dashboard_status_stopped=Slutade

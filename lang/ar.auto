@@ -1154,8 +1154,8 @@ settings_right_sysinfo_page_options=لوحة القيادة والمراقبة �
 settings_right_navigation_menu_options=قائمة الإبحار
 settings_right_notification_slider_options=المنزلق الجانبي
 settings_right_table_options=عرض الجدول
-settings_right_hotkey_options=مفاتيح التشغيل السريع
-settings_right_hotkey_custom_options=مفاتيح التشغيل السريع للروابط المخصصة
+settings_right_hotkey_options=اختصارات لوحة المفاتيح
+settings_right_hotkey_custom_options=اختصارات الروابط المخصصة
 settings_right_soft_updates_page_options=تحديثات الموضوع
 settings_global_general_options_title=الافتراضات العامة
 theme_error_access_not_root_user=الوصول مرفوض: المستخدم ليس له امتياز لتحرير هذا القسم
@@ -1319,7 +1319,7 @@ theme_xhred_hotkey_clear_cache=امسح ذاكرة التخزين المؤقت �
 theme_xhred_hotkey_open_new=تكرار لعلامة تبويب جديدة
 theme_xhred_hotkey_copy_to_clipboard=نسخ بيانات العنصر إلى الحافظة
 theme_xhred_hotkey_copy_to_clipboard_click=الزر الأيسر
-theme_xhred_hotkey_print_title=مفاتيح الاختصار Webmin مع موضوع أصيل
+theme_xhred_hotkey_print_title=اختصارات لوحة مفاتيح Webmin مع السمة الأصلية
 theme_xhred_global_success=نجاح
 theme_xhred_search_content=محتوى البحث
 theme_xhred_global_disabled=عاجز
@@ -1380,7 +1380,7 @@ theme_xhred_datatable_filter_and_export=تصفية وتصدير المحتوى
 
 # 21.10
 settings_hotkey_logout_dbl=تسجيل خروج
-theme_xhred_hotkey_emsg=لا يمكن استخدام مفتاح الخط المائل العكسي كمفتاح تشغيل سريع
+theme_xhred_hotkey_emsg=لا يمكن استخدام مفتاح الشرطة المائلة العكسية كاختصار
 settings_embed_product_splash_privileged=عرض شاشة البداية للعلامة التجارية بعد تسجيل الدخول
 dashboard_status_running=جري
 dashboard_status_stopped=توقفت

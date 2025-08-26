@@ -1380,7 +1380,7 @@ theme_xhred_datatable_filter_and_export=Suodata ja vie sisältöä
 
 # 21.10
 settings_hotkey_logout_dbl=Kirjautua ulos
-theme_xhred_hotkey_emsg=Kenoviivanäppäintä ei voi käyttää pikanäppäimenä
+theme_xhred_hotkey_emsg=Kenoviivaa ei voi käyttää pikanäppäimenä
 settings_embed_product_splash_privileged=Näytä brändäyksen aloitusnäyttö kirjautumisen jälkeen
 dashboard_status_running=Juoksemassa
 dashboard_status_stopped=Pysähtynyt
