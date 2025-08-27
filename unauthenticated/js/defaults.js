@@ -81,7 +81,7 @@ var
     settings_hotkey_focus_search = 's',
     settings_hotkey_reload = 'r',
     settings_hotkey_navigation = 'a',
-    settings_hotkey_slider = 'n',
+    settings_hotkey_slider = 'e',
     settings_hotkey_toggle_key_night_mode = 'l',
     settings_hotkey_logout_dbl = '[',
 
