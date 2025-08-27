@@ -414,12 +414,12 @@ theme_xhred_move_up=Posuňte se nahoru
 theme_xhred_move_down=Posunout dolů
 theme_xhred_add_after=Přidat po
 theme_xhred_add_before=Přidat dříve
-settings_show_night_mode_link=Tlačítko režimu den/noc
+settings_show_night_mode_link=Tlačítko pro zobrazení světlého/tmavého režimu
 settings_hotkey_toggle_key_night_mode=Přepnout paletu barev
 settings_title=Konfigurace motivu
 settings_subtitle=Pro uživatele
 
-theme_tooltip_night_mode=Přepínání režimu den/noc
+theme_tooltip_night_mode=Přepínání světlého/tmavého režimu
 theme_tooltip_terminal_link=Terminál
 theme_tooltip_language_link=Jazyk
 theme_xhred_tooltip_switch_user=Přepnout uživatele
@@ -1297,3 +1297,7 @@ session_pwdconf=Je vyžadováno potvrzení hesla.
 session_pwdmatch=Hesla se neshodují.
 session_noid=ID pro obnovení nebylo nalezeno!
 session_pwdsucc=Heslo bylo úspěšně změněno! Nyní se můžete přihlásit s novým heslem.
+
+# 24.10
+settings_palette_auto=Automatická barevná paleta
+settings_palette_auto_description=Automaticky vybrat barevnou paletu na základě předvoleb operačního systému nebo prohlížeče

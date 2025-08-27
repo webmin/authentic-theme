@@ -444,12 +444,12 @@ theme_xhred_move_up=Ga omhoog
 theme_xhred_move_down=Naar beneden verplaatsen
 theme_xhred_add_after=Voeg daarna toe
 theme_xhred_add_before=Voeg toe voor
-settings_show_night_mode_link=Knop voor dag-/nachtmodus weergeven
+settings_show_night_mode_link=Knop voor licht-/donkermodus weergeven
 settings_hotkey_toggle_key_night_mode=Schakel kleurenpalet in
 settings_title=Thema-configuratie
 settings_subtitle=Voor gebruiker
 
-theme_tooltip_night_mode=Schakelen tussen dag- en nachtmodus
+theme_tooltip_night_mode=Licht/donker-modus wisselen
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Taal
 theme_xhred_tooltip_switch_user=Verander gebruiker
@@ -1327,3 +1327,7 @@ session_pwdconf=Bevestiging van het wachtwoord is vereist.
 session_pwdmatch=Wachtwoorden komen niet overeen.
 session_noid=Herstel-ID is niet gevonden!
 session_pwdsucc=Wachtwoord succesvol gewijzigd! U kunt nu inloggen met het nieuwe wachtwoord.
+
+# 24.10
+settings_palette_auto=Automatisch kleurenpalet
+settings_palette_auto_description=Kies automatisch een kleurenpalet op basis van de voorkeuren van het besturingssysteem of de browser

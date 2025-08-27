@@ -554,12 +554,12 @@ theme_xhred_move_up=이동
 theme_xhred_move_down=아래로 이동
 theme_xhred_add_after=이후에 추가
 theme_xhred_add_before=전에 추가
-settings_show_night_mode_link=주야간 모드 버튼 표시
+settings_show_night_mode_link=밝음/어둠 모드 버튼 표시
 settings_hotkey_toggle_key_night_mode=색상 팔레트 전환
 settings_title=테마 구성
 settings_subtitle=사용자
 
-theme_tooltip_night_mode=주야간 모드 토글
+theme_tooltip_night_mode=밝음/어둠 모드 전환
 theme_tooltip_terminal_link=단말기
 theme_tooltip_language_link=언어
 theme_xhred_tooltip_switch_user=사용자 전환
@@ -1437,3 +1437,7 @@ session_pwdconf=비밀번호 확인이 필요합니다.
 session_pwdmatch=비밀번호가 일치하지 않습니다.
 session_noid=복구 ID를 찾을 수 없습니다!
 session_pwdsucc=비밀번호가 성공적으로 변경되었습니다. 이제 새로운 비밀번호로 로그인할 수 있습니다!
+
+# 24.10
+settings_palette_auto=자동 색상 팔레트
+settings_palette_auto_description=운영 체제 또는 브라우저 환경 설정에 따라 색상 팔레트를 자동으로 선택합니다

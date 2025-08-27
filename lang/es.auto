@@ -467,12 +467,12 @@ theme_xhred_move_up=Ascender
 theme_xhred_move_down=Mover hacia abajo
 theme_xhred_add_after=Agregar después
 theme_xhred_add_before=Agregar antes
-settings_show_night_mode_link=Mostrar botón de modo día/noche
+settings_show_night_mode_link=Mostrar el botón de modo claro/oscuro
 settings_hotkey_toggle_key_night_mode=Alternar paleta de colores
 settings_title=Configuración del tema
 settings_subtitle=Para el usuario
 
-theme_tooltip_night_mode=Cambio de modo día/noche
+theme_tooltip_night_mode=Alternar modo claro/oscuro
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Idioma
 theme_xhred_tooltip_switch_user=Cambiar de usuario
@@ -1349,3 +1349,7 @@ session_pwdconf=Se requiere confirmación de contraseña.
 session_pwdmatch=Las contraseñas no coinciden.
 session_noid=¡No se encontró el ID de recuperación!
 session_pwdsucc=¡Contraseña cambiada correctamente! Ya puedes iniciar sesión con la nueva contraseña.
+
+# 24.10
+settings_palette_auto=Paleta de colores automática
+settings_palette_auto_description=Elija automáticamente la paleta de colores según el sistema operativo o las preferencias del navegador

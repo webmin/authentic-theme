@@ -375,10 +375,10 @@ theme_xhred_move_up=Двигаться вверх
 theme_xhred_move_down=Двигаться вниз
 theme_xhred_add_after=Добавить после
 theme_xhred_add_before=Добавить до
-settings_show_night_mode_link=Показать кнопку режима день/ночь
+settings_show_night_mode_link=Показать кнопку светлого/темного режима
 settings_hotkey_toggle_key_night_mode=Переключить цветовую палитру
 
-theme_tooltip_night_mode=Переключение режима день/ночь
+theme_tooltip_night_mode=Переключение светлого/темного режима
 
 # 18.45
 settings_sysinfo_easypie_charts_size=Диаметр диаграмм
@@ -1232,3 +1232,7 @@ session_pwdconf=Требуется подтверждение пароля.
 session_pwdmatch=Пароли не совпадают.
 session_noid=Идентификатор восстановления не найден!
 session_pwdsucc=Пароль успешно изменен! Теперь вы можете войти с новым паролем.
+
+# 24.10
+settings_palette_auto=Автоматическая цветовая палитра
+settings_palette_auto_description=Автоматически выбирать цветовую палитру на основе настроек операционной системы или браузера

@@ -8,6 +8,11 @@ theme_xhred_datatable_filter=Filtr
 
 theme_xhred_filemanager_new_tab=Dodaj nową kartę (Alt + Spacja)
 
+# 18.40
+settings_show_night_mode_link=Pokaż przycisk trybu jasnego/ciemnego
+
+theme_tooltip_night_mode=Przełączanie trybu jasnego/ciemnego
+
 # 19.30
 theme_xhred_favorites_add=Dodaj do ulubionych
 
@@ -55,3 +60,7 @@ session_pwdconf=Wymagane jest potwierdzenie hasła.
 session_pwdmatch=Hasła nie są takie same.
 session_noid=Nie znaleziono identyfikatora odzyskiwania!
 session_pwdsucc=Hasło zostało pomyślnie zmienione! Teraz możesz się zalogować przy użyciu nowego hasła.
+
+# 24.10
+settings_palette_auto=Automatyczna paleta kolorów
+settings_palette_auto_description=Automatyczny wybór palety kolorów na podstawie preferencji systemu operacyjnego lub przeglądarki

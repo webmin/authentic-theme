@@ -554,12 +554,12 @@ theme_xhred_move_up=Menj fel
 theme_xhred_move_down=Menj le
 theme_xhred_add_after=Add után
 theme_xhred_add_before=Add hozzá
-settings_show_night_mode_link=A nappali/éjszakai üzemmód megjelenítése gomb
+settings_show_night_mode_link=Világos/sötét mód gomb megjelenítése
 settings_hotkey_toggle_key_night_mode=Színpaletta váltása
 settings_title=Téma konfigurálása
 settings_subtitle=Felhasználó számára
 
-theme_tooltip_night_mode=Nappali/éjszakai mód váltás
+theme_tooltip_night_mode=Világos/sötét mód váltás
 theme_tooltip_terminal_link=Terminál
 theme_tooltip_language_link=Nyelv
 theme_xhred_tooltip_switch_user=Felhasználót váltani
@@ -1437,3 +1437,7 @@ session_pwdconf=Jelszó megerősítése szükséges.
 session_pwdmatch=A jelszavak nem egyeznek.
 session_noid=Nem található helyreállítási azonosító!
 session_pwdsucc=Jelszó sikeresen megváltoztatva! Most már bejelentkezhet az új jelszóval.
+
+# 24.10
+settings_palette_auto=Automatikus színpaletta
+settings_palette_auto_description=Színpaletta automatikus kiválasztása az operációs rendszer vagy a böngésző beállításai alapján

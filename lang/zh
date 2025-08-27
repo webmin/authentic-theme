@@ -507,11 +507,9 @@ theme_xhred_move_up=向上移动
 theme_xhred_move_down=向下移动
 theme_xhred_add_after=在內容后添加
 theme_xhred_add_before=在內容前添加
-settings_show_night_mode_link=显示调色板切换
 settings_title=主题配置
 settings_subtitle=对于用户
 
-theme_tooltip_night_mode=日/夜模式切换
 theme_tooltip_terminal_link=终端
 theme_tooltip_language_link=语言
 theme_xhred_tooltip_switch_user=切换用户

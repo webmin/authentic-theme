@@ -554,12 +554,12 @@ theme_xhred_move_up=Pomaknite se gore
 theme_xhred_move_down=Pomicati prema dolje
 theme_xhred_add_after=Dodaj poslije
 theme_xhred_add_before=Dodaj prije
-settings_show_night_mode_link=Prikaži gumb načina rada dan/noć
+settings_show_night_mode_link=Prikaži gumb za svijetli/tamni način rada
 settings_hotkey_toggle_key_night_mode=Uključi/isključi paletu boja
 settings_title=Konfiguracija teme
 settings_subtitle=Za korisnika
 
-theme_tooltip_night_mode=Dan/noćni način rada
+theme_tooltip_night_mode=Prebacivanje svijetlog/tamnog načina rada
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Jezik
 theme_xhred_tooltip_switch_user=Promijeni korisnika
@@ -1437,3 +1437,7 @@ session_pwdconf=Potrebna je potvrda lozinke.
 session_pwdmatch=Lozinke se ne podudaraju.
 session_noid=ID za oporavak nije pronađen!
 session_pwdsucc=Lozinka je uspješno promijenjena! Sada se možete prijaviti s novom lozinkom.
+
+# 24.10
+settings_palette_auto=Automatska paleta boja
+settings_palette_auto_description=Automatski odabir palete boja na temelju postavki operativnog sustava ili preglednika

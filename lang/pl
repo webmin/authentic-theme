@@ -546,12 +546,10 @@ theme_xhred_move_up=Przenieś w górę
 theme_xhred_move_down=Przenieś w dół
 theme_xhred_add_after=Dodaj po
 theme_xhred_add_before=Dodaj przed
-settings_show_night_mode_link=Pokaż przycisk trybu dzień/noc
 settings_hotkey_toggle_key_night_mode=Przełącz paletę kolorów
 settings_title=Konfiguracja motywu
 settings_subtitle=Dla użytkownika
 
-theme_tooltip_night_mode=Przełączanie trybu dzień/noc
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Język
 theme_xhred_tooltip_switch_user=Zmień użytkownika

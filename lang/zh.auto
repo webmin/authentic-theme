@@ -60,7 +60,10 @@ theme_xhred_filemanager_changing_attributes=将所选文件的属性设置为<tt
 theme_xhred_filemanager_changing_secontext=将选定文件的安全上下文更改为<tt>%value</tt> 。
 
 # 18.40
+settings_show_night_mode_link=显示亮/暗模式按钮
 settings_hotkey_toggle_key_night_mode=切换调色板
+
+theme_tooltip_night_mode=亮/暗模式切换
 
 # 18.48
 theme_force_upgrade=更新主题
@@ -669,3 +672,7 @@ session_pwdconf=需要密码确认。
 session_pwdmatch=密码不匹配。
 session_noid=未找到恢复 ID！
 session_pwdsucc=密码更改成功您现在可以使用新密码登录！
+
+# 24.10
+settings_palette_auto=自动调色板
+settings_palette_auto_description=根据操作系统或浏览器偏好自动选择调色板

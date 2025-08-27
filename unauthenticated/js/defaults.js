@@ -8,6 +8,7 @@ var
     settings_right_page_keep = true,
     settings_right_reload = true,
     settings_document_title = 1,
+    settings_palette_auto = true,
     settings_cm_editor_palette = 'monokai',
     settings_global_palette_unauthenticated = 'light',
     settings_theme_config_admins_only_privileged = false,
@@ -82,7 +83,7 @@ var
     settings_hotkey_reload = 'r',
     settings_hotkey_navigation = 'a',
     settings_hotkey_slider = 'e',
-    settings_hotkey_toggle_key_night_mode = 'l',
+    settings_hotkey_toggle_key_night_mode = 't',
     settings_hotkey_logout_dbl = '[',
 
     // Custom links hotkeys options defaults

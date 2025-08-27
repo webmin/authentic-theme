@@ -554,12 +554,12 @@ theme_xhred_move_up=بالا بروید
 theme_xhred_move_down=حرکت به پایین
 theme_xhred_add_after=اضافه کردن بعد از
 theme_xhred_add_before=قبل اضافه کنید
-settings_show_night_mode_link=دکمه نمایش حالت روز/شب
+settings_show_night_mode_link=دکمه حالت روشن/تاریک را نشان بده
 settings_hotkey_toggle_key_night_mode=پالت رنگ را تغییر دهید
 settings_title=پیکربندی تم
 settings_subtitle=برای کاربر
 
-theme_tooltip_night_mode=حالت روز/شب ضامن
+theme_tooltip_night_mode=تغییر حالت روشن/تاریک
 theme_tooltip_terminal_link=پایانه
 theme_tooltip_language_link=زبان
 theme_xhred_tooltip_switch_user=تغییر کاربر
@@ -1437,3 +1437,7 @@ session_pwdconf=تایید رمز عبور الزامی است.
 session_pwdmatch=رمزهای عبور مطابقت ندارند.
 session_noid=شناسه بازیابی یافت نشد!
 session_pwdsucc=رمز عبور با موفقیت تغییر یافت! اکنون می‌توانید با رمز عبور جدید وارد شوید.
+
+# 24.10
+settings_palette_auto=پالت رنگ خودکار
+settings_palette_auto_description=انتخاب خودکار پالت رنگ بر اساس تنظیمات سیستم عامل یا مرورگر

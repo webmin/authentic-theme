@@ -33,6 +33,7 @@ sub theme_settings_raw
                        'settings_right_page_keep',
                        'settings_right_reload',
                        'settings_document_title',
+                       'settings_palette_auto',
                        'settings_cm_editor_palette',
                        'settings_global_palette_unauthenticated',
                        'settings_theme_config_admins_only_privileged',

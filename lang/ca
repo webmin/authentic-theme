@@ -506,11 +506,9 @@ theme_xhred_move_up=Moure a dalt
 theme_xhred_move_down=Moure a baix
 theme_xhred_add_after=Afegir després
 theme_xhred_add_before=Afegir abans
-settings_show_night_mode_link=Show day/night mode button
 settings_title=Configuració del tema
 settings_subtitle=Per a l'usuari
 
-theme_tooltip_night_mode=Canvi entre el mode clar i el mode fosc
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Idioma
 theme_xhred_tooltip_switch_user=Canviar d'usuari

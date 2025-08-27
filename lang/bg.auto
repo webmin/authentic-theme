@@ -554,12 +554,12 @@ theme_xhred_move_up=Движи се нагоре
 theme_xhred_move_down=Преместете се надолу
 theme_xhred_add_after=Добавете след
 theme_xhred_add_before=Добавете преди
-settings_show_night_mode_link=Показване на бутона за ден/нощ
+settings_show_night_mode_link=Бутон за показване на светъл/тъмен режим
 settings_hotkey_toggle_key_night_mode=Превключване на цветовата палитра
 settings_title=Конфигурация на темата
 settings_subtitle=За потребителя
 
-theme_tooltip_night_mode=Ден/нощен режим на превключване
+theme_tooltip_night_mode=Превключване на светъл/тъмен режим
 theme_tooltip_terminal_link=терминал
 theme_tooltip_language_link=език
 theme_xhred_tooltip_switch_user=Превключване на потребителя
@@ -1437,3 +1437,7 @@ session_pwdconf=Изисква се потвърждение на паролат
 session_pwdmatch=Паролите не съвпадат.
 session_noid=Идентификаторът за възстановяване не е намерен!
 session_pwdsucc=Паролата е променена успешно! Вече можете да влезете с новата парола.
+
+# 24.10
+settings_palette_auto=Автоматична цветова палитра
+settings_palette_auto_description=Автоматично избиране на цветова палитра въз основа на предпочитанията на операционната система или браузъра

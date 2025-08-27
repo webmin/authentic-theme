@@ -502,11 +502,9 @@ theme_xhred_move_up= 上に移動
 theme_xhred_move_down= 下に移動
 theme_xhred_add_after= 後に追加
 theme_xhred_add_before= 前に追加
-settings_show_night_mode_link= ライト/ダークモード切り替え
 settings_title= テーマ構成
 settings_subtitle= ユーザーの場合
 
-theme_tooltip_night_mode= 昼/夜モードの切り替え
 theme_tooltip_terminal_link= ターミナル
 theme_tooltip_language_link= 言語
 theme_xhred_tooltip_switch_user= ユーザーを切り替える

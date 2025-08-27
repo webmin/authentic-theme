@@ -507,11 +507,9 @@ theme_xhred_move_up=Flytta uppåt
 theme_xhred_move_down=Flytta neråt
 theme_xhred_add_after=Lägg till efter
 theme_xhred_add_before=Lägg till före
-settings_show_night_mode_link=Visa knapp för dag-/nattläge
 settings_title=Temakonfiguration
 settings_subtitle=För användaren
 
-theme_tooltip_night_mode=Växla mellan dag-/nattläge
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Språk
 theme_xhred_tooltip_switch_user=Växla användare

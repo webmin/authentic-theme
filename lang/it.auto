@@ -60,7 +60,10 @@ theme_xhred_filemanager_changing_attributes=Impostazione degli attributi su <tt>
 theme_xhred_filemanager_changing_secontext=Modifica del contesto di sicurezza in <tt>%value</tt> sui file selezionati.
 
 # 18.40
+settings_show_night_mode_link=Mostra il pulsante modalità chiaro/scuro
 settings_hotkey_toggle_key_night_mode=Attiva/disattiva la tavolozza dei colori
+
+theme_tooltip_night_mode=Attiva/disattiva modalità chiara/scura
 
 # 18.48
 theme_update_footer=Si prega di essere gentili nel segnalare bug al repository $1. Unisciti al nostro canale $2 per ricevere le ultime notizie.
@@ -346,3 +349,7 @@ session_pwdconf=È richiesta la conferma della password.
 session_pwdmatch=Le password non corrispondono.
 session_noid=ID di ripristino non trovato!
 session_pwdsucc=Password modificata con successo! Ora puoi accedere con la nuova password.
+
+# 24.10
+settings_palette_auto=Palette di colori automatica
+settings_palette_auto_description=Scegli automaticamente la tavolozza dei colori in base alle preferenze del sistema operativo o del browser

@@ -507,11 +507,9 @@ theme_xhred_move_up=Muovi su
 theme_xhred_move_down=Muovi giu
 theme_xhred_add_after=Aggiungi dopo
 theme_xhred_add_before=Aggiungi prima
-settings_show_night_mode_link=Mostra pulsante modalità giorno/notte
 settings_title=Configurazione tema
 settings_subtitle=Per utente
 
-theme_tooltip_night_mode=Interruttore modalità giorno/notte
 theme_tooltip_terminal_link=Terminale
 theme_tooltip_language_link=Lingua
 theme_xhred_tooltip_switch_user=Cambia utente

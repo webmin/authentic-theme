@@ -467,12 +467,12 @@ theme_xhred_move_up=Gå op
 theme_xhred_move_down=Flyt ned
 theme_xhred_add_after=Tilføj efter
 theme_xhred_add_before=Tilføj før
-settings_show_night_mode_link=Vis dag/nat-tilstandsknap
+settings_show_night_mode_link=Vis knappen til lys/mørk tilstand
 settings_hotkey_toggle_key_night_mode=Skift farvepalet
 settings_title=Tema Konfiguration
 settings_subtitle=Til bruger
 
-theme_tooltip_night_mode=Dag/nat-tilstand skifter
+theme_tooltip_night_mode=Lys/mørk tilstand skifte
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Sprog
 theme_xhred_tooltip_switch_user=Skift bruger
@@ -1350,3 +1350,7 @@ session_pwdconf=Adgangskodebekræftelse er påkrævet.
 session_pwdmatch=Adgangskoderne stemmer ikke overens.
 session_noid=Gendannelses-ID blev ikke fundet!
 session_pwdsucc=Adgangskoden er ændret! Du kan nu logge ind med den nye adgangskode.
+
+# 24.10
+settings_palette_auto=Automatisk farvepalet
+settings_palette_auto_description=Vælg automatisk farvepalet baseret på operativsystem eller browserpræferencer

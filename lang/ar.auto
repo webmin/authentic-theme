@@ -554,12 +554,12 @@ theme_xhred_move_up=تحرك
 theme_xhred_move_down=تحرك لأسفل
 theme_xhred_add_after=إضافة بعد
 theme_xhred_add_before=إضافة قبل
-settings_show_night_mode_link=إظهار زر وضع النهار/الليل
+settings_show_night_mode_link=إظهار زر الوضع الفاتح/الداكن
 settings_hotkey_toggle_key_night_mode=تبديل لوحة الألوان
 settings_title=تكوين السمة
 settings_subtitle=للمستخدم
 
-theme_tooltip_night_mode=تبديل وضع النهار/الليل
+theme_tooltip_night_mode=تبديل الوضع الفاتح/الداكن
 theme_tooltip_terminal_link=طرفية
 theme_tooltip_language_link=لغة
 theme_xhred_tooltip_switch_user=تغير المستخدم
@@ -1437,3 +1437,7 @@ session_pwdconf=يجب تأكيد كلمة المرور.
 session_pwdmatch=كلمات المرور غير متطابقة.
 session_noid=لم يتم العثور على معرف الاسترداد!
 session_pwdsucc=تم تغيير كلمة المرور بنجاح! يمكنك الآن تسجيل الدخول بكلمة المرور الجديدة.
+
+# 24.10
+settings_palette_auto=لوحة الألوان التلقائية
+settings_palette_auto_description=اختيار لوحة الألوان تلقائيًا استنادًا إلى نظام التشغيل أو تفضيلات المتصفح

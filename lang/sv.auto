@@ -60,7 +60,10 @@ theme_xhred_filemanager_changing_attributes=Ställer in attribut till <tt>%value
 theme_xhred_filemanager_changing_secontext=Ändra säkerhetskontext till <tt>%value</tt> på valda fil(er).
 
 # 18.40
+settings_show_night_mode_link=Visa knappen för ljust/mörkt läge
 settings_hotkey_toggle_key_night_mode=Växla färgpalett
+
+theme_tooltip_night_mode=Växla mellan ljus/mörkt läge
 
 settings_right_bgs_title=Temabakgrund för inloggningssida kan ställas in här.
 
@@ -224,3 +227,7 @@ session_pwdconf=Lösenordsbekräftelse krävs.
 session_pwdmatch=Lösenorden matchar inte.
 session_noid=Återställnings-ID hittades inte!
 session_pwdsucc=Lösenordet har ändrats! Du kan nu logga in med det nya lösenordet.
+
+# 24.10
+settings_palette_auto=Automatisk färgpalett
+settings_palette_auto_description=Välj automatiskt färgpalett baserat på operativsystem eller webbläsarinställningar

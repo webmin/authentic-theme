@@ -554,12 +554,12 @@ theme_xhred_move_up=Liiku ylös
 theme_xhred_move_down=Siirry alas
 theme_xhred_add_after=Lisää jälkeen
 theme_xhred_add_before=Lisää ennen
-settings_show_night_mode_link=Näytä päivä-/yötilan painike
+settings_show_night_mode_link=Näytä vaalea/tumma tila -painike
 settings_hotkey_toggle_key_night_mode=Vaihda väripalettia
 settings_title=Teeman kokoonpano
 settings_subtitle=Käyttäjälle
 
-theme_tooltip_night_mode=Päivän/yön tilan vaihto
+theme_tooltip_night_mode=Vaalean/tumman tilan vaihto
 theme_tooltip_terminal_link=terminaali
 theme_tooltip_language_link=Kieli
 theme_xhred_tooltip_switch_user=Vaihda käyttäjää
@@ -1437,3 +1437,7 @@ session_pwdconf=Salasanan vahvistus vaaditaan.
 session_pwdmatch=Salasanat eivät täsmää.
 session_noid=Palautustunnusta ei löydy!
 session_pwdsucc=Salasana vaihdettu onnistuneesti! Voit nyt kirjautua sisään uudella salasanalla.
+
+# 24.10
+settings_palette_auto=Automaattinen väripaletti
+settings_palette_auto_description=Valitse väripaletti automaattisesti käyttöjärjestelmän tai selaimen asetusten perusteella

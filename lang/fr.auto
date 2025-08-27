@@ -62,7 +62,10 @@ theme_xhred_filemanager_changing_attributes=Définition des attributs sur <tt>%v
 theme_xhred_filemanager_changing_secontext=Modification du contexte de sécurité en <tt>%value</tt> sur le(s) fichier(s) sélectionné(s).
 
 # 18.40
+settings_show_night_mode_link=Afficher le bouton du mode clair/sombre
 settings_hotkey_toggle_key_night_mode=Basculer la palette de couleurs
+
+theme_tooltip_night_mode=Basculement du mode clair/sombre
 
 # 18.48
 theme_force_upgrade=Mettre à jour le thème
@@ -407,3 +410,7 @@ session_pwdconf=La confirmation du mot de passe est requise.
 session_pwdmatch=Les mots de passe ne correspondent pas.
 session_noid=L'ID de récupération n'est pas trouvé !
 session_pwdsucc=Mot de passe modifié avec succès ! Vous pouvez maintenant vous connecter avec le nouveau mot de passe.
+
+# 24.10
+settings_palette_auto=Palette de couleurs automatique
+settings_palette_auto_description=Choisissez automatiquement la palette de couleurs en fonction des préférences du système d'exploitation ou du navigateur

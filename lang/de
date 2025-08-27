@@ -553,12 +553,10 @@ theme_xhred_move_up=Nach oben
 theme_xhred_move_down=Nach unten
 theme_xhred_add_after=Nach diesem hinzufügen
 theme_xhred_add_before=Vor diesem hinzufügen
-settings_show_night_mode_link=Tag-/Nachtmodus-Schaltfläche anzeigen
 settings_hotkey_toggle_key_night_mode=Farbpalette umschalten
 settings_title=Design-Konfiguration
 settings_subtitle=Für Benutzer
 
-theme_tooltip_night_mode=Tag-/Nachtmodus umschalten
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Sprache
 theme_xhred_tooltip_switch_user=Benutzer wechseln

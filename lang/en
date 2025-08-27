@@ -572,12 +572,12 @@ theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_show_night_mode_link=Show day/night mode button
+settings_show_night_mode_link=Show light/dark mode button
 settings_hotkey_toggle_key_night_mode=Toggle color palette
 settings_title=Theme Configuration
 settings_subtitle=For user
 
-theme_tooltip_night_mode=Day/night mode toggle
+theme_tooltip_night_mode=Light/dark mode toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
 theme_xhred_tooltip_switch_user=Switch user
@@ -1515,3 +1515,8 @@ session_pwdconf=Password confirmation is required.
 session_pwdmatch=Passwords do not match.
 session_noid=Recovery ID is not found!
 session_pwdsucc=Password changed successfully—you can now log in with your new password!
+
+
+# 24.10
+settings_palette_auto=Automatic color palette
+settings_palette_auto_description=Automatically choose color palette based on operating system or browser preferences

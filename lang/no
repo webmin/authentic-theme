@@ -505,11 +505,9 @@ theme_xhred_move_up=Flytt opp
 theme_xhred_move_down=Flytt ned
 theme_xhred_add_after=Legg til etter
 theme_xhred_add_before=Legg til før
-settings_show_night_mode_link=Vis knapp for dag/natt-modus
 settings_title=Tema konfigurasjon
 settings_subtitle=For bruker
 
-theme_tooltip_night_mode=Bytt mellom dag og natt modus
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Språk
 theme_xhred_tooltip_switch_user=Bytt bruker

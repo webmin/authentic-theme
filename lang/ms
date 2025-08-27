@@ -506,11 +506,9 @@ theme_xhred_move_up=Naikkan
 theme_xhred_move_down=Turunkan
 theme_xhred_add_after=Tambahkan setelah
 theme_xhred_add_before=Tambahkan sebelumnya
-settings_show_night_mode_link=Show day/night mode button
 settings_title=Konfigurasi Tema
 settings_subtitle=Untuk pengguna
 
-theme_tooltip_night_mode=Beralih mode Siang/malam
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Bahasa
 theme_xhred_tooltip_switch_user=Berganti pengguna

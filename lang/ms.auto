@@ -62,7 +62,10 @@ theme_xhred_filemanager_changing_attributes=Menetapkan atribut kepada <tt>%value
 theme_xhred_filemanager_changing_secontext=Menukar konteks keselamatan kepada <tt>%value</tt> pada fail yang dipilih.
 
 # 18.40
+settings_show_night_mode_link=Tunjukkan butang mod terang/gelap
 settings_hotkey_toggle_key_night_mode=Togol palet warna
+
+theme_tooltip_night_mode=Togol mod terang/gelap
 
 # 18.48
 theme_force_upgrade=Kemas kini tema
@@ -878,3 +881,7 @@ session_pwdconf=Pengesahan kata laluan diperlukan.
 session_pwdmatch=Kata laluan tidak sepadan.
 session_noid=ID Pemulihan tidak ditemui!
 session_pwdsucc=Kata laluan berjaya ditukar! Anda kini boleh log masuk dengan kata laluan baharu.
+
+# 24.10
+settings_palette_auto=Palet warna automatik
+settings_palette_auto_description=Pilih palet warna secara automatik berdasarkan sistem pengendalian atau pilihan penyemak imbas

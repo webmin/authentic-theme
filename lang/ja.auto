@@ -67,7 +67,10 @@ theme_xhred_filemanager_changing_attributes=選択したファイルの属性を
 theme_xhred_filemanager_changing_secontext=選択したファイルのセキュリティ コンテキストを<tt>%value</tt>に変更しています。
 
 # 18.40
+settings_show_night_mode_link=ライト/ダークモードボタンを表示
 settings_hotkey_toggle_key_night_mode=カラー パレットの切り替え
+
+theme_tooltip_night_mode=ライト/ダークモードの切り替え
 
 # 18.48
 theme_force_upgrade=テーマを更新
@@ -443,3 +446,7 @@ session_pwdconf=パスワードの確認が必要です。
 session_pwdmatch=パスワードが一致しません。
 session_noid=回復IDが見つかりません。
 session_pwdsucc=パスワードが正常に変更されました。新しいパスワードでログインできます。
+
+# 24.10
+settings_palette_auto=自動カラーパレット
+settings_palette_auto_description=オペレーティングシステムまたはブラウザの設定に基づいてカラーパレットを自動的に選択します

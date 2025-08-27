@@ -554,12 +554,12 @@ theme_xhred_move_up=提升
 theme_xhred_move_down=下移
 theme_xhred_add_after=加入後
 theme_xhred_add_before=加入之前
-settings_show_night_mode_link=顯示白天/夜晚模式按鈕
+settings_show_night_mode_link=顯示亮/暗模式按鈕
 settings_hotkey_toggle_key_night_mode=切換調色板
 settings_title=主題配置
 settings_subtitle=對於用戶
 
-theme_tooltip_night_mode=日/夜模式切換
+theme_tooltip_night_mode=亮/暗模式切換
 theme_tooltip_terminal_link=終奌站
 theme_tooltip_language_link=語言
 theme_xhred_tooltip_switch_user=切換用戶
@@ -1437,3 +1437,7 @@ session_pwdconf=需要密碼確認。
 session_pwdmatch=密碼不符。
 session_noid=未找到恢復 ID！
 session_pwdsucc=密碼更改成功您現在可以使用新密碼登入！
+
+# 24.10
+settings_palette_auto=自動調色板
+settings_palette_auto_description=根據作業系統或瀏覽器偏好自動選擇調色板

@@ -62,7 +62,10 @@ theme_xhred_filemanager_changing_attributes=Configurant els atributs a <tt>%valu
 theme_xhred_filemanager_changing_secontext=S'està canviant el context de seguretat a <tt>%value</tt> als fitxers seleccionats.
 
 # 18.40
+settings_show_night_mode_link=Mostra el botó del mode clar/fosc
 settings_hotkey_toggle_key_night_mode=Canvia la paleta de colors
+
+theme_tooltip_night_mode=Commutador del mode clar/fosc
 
 # 18.48
 theme_force_upgrade=Actualitza el tema
@@ -809,3 +812,7 @@ session_pwdconf=Cal confirmar la contrasenya.
 session_pwdmatch=Les contrasenyes no coincideixen.
 session_noid=No s'ha trobat l'ID de recuperació!
 session_pwdsucc=La contrasenya s'ha canviat correctament! Ara podeu iniciar la sessió amb la nova contrasenya.
+
+# 24.10
+settings_palette_auto=Paleta de colors automàtica
+settings_palette_auto_description=Tria automàticament la paleta de colors segons les preferències del sistema operatiu o del navegador

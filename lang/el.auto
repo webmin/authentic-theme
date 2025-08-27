@@ -554,12 +554,12 @@ theme_xhred_move_up=Ανεβείτε
 theme_xhred_move_down=Μετακινηθείτε προς τα κάτω
 theme_xhred_add_after=Προσθέστε μετά
 theme_xhred_add_before=Προσθέστε πριν
-settings_show_night_mode_link=Εμφάνιση κουμπιού λειτουργίας ημέρας/νύχτας
+settings_show_night_mode_link=Εμφάνιση κουμπιού φωτεινής/σκοτεινής λειτουργίας
 settings_hotkey_toggle_key_night_mode=Εναλλαγή παλέτας χρωμάτων
 settings_title=Διαμόρφωση θέματος
 settings_subtitle=Για τον χρήστη
 
-theme_tooltip_night_mode=Εναλλαγή λειτουργίας ημέρας/νύχτας
+theme_tooltip_night_mode=Εναλλαγή φωτεινής/σκοτεινής λειτουργίας
 theme_tooltip_terminal_link=Τερματικό
 theme_tooltip_language_link=Γλώσσα
 theme_xhred_tooltip_switch_user=Αλλαγή χρήστη
@@ -1437,3 +1437,7 @@ session_pwdconf=Απαιτείται επιβεβαίωση κωδικού πρ�
 session_pwdmatch=Οι κωδικοί πρόσβασης δεν ταιριάζουν.
 session_noid=Δεν βρέθηκε το αναγνωριστικό ανάκτησης!
 session_pwdsucc=Ο κωδικός πρόσβασης άλλαξε με επιτυχία! Μπορείτε πλέον να συνδεθείτε με τον νέο κωδικό πρόσβασης.
+
+# 24.10
+settings_palette_auto=Αυτόματη παλέτα χρωμάτων
+settings_palette_auto_description=Αυτόματη επιλογή παλέτας χρωμάτων με βάση τις προτιμήσεις του λειτουργικού συστήματος ή του προγράμματος περιήγησης
