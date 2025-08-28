@@ -71,6 +71,9 @@ theme_tooltip_night_mode=Lys/mørk modus-bryter
 theme_force_upgrade=Oppdater tema
 theme_update_footer=Vær så snill å rapportere feil til $1-depotet. Bli med på $2-kanalen vår for å få de siste nyhetene.
 
+# 18.49
+theme_xhred_global_auto=Bil
+
 settings_webmin_default_module=Standardside for Webmin
 
 # 19.09

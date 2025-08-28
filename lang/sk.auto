@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Prepnúť mäkký obal
 theme_xhred_filemanager_editor_refresh_content=Obnoviť obsah
 theme_xhred_filemanager_save_to_refresh_content=Súbor musí byť uložený, aby sa jeho obsah mohol obnoviť.
 theme_xhred_filemanager_save_to_refresh_content_proc=Obnovuje sa obsah súboru.
+theme_xhred_global_auto=Automaticky
 theme_xhred_global_dark=tmavý
 theme_xhred_global_light=Svetlo
 theme_xhred_global_minimize=minimalizovať

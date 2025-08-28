@@ -71,6 +71,9 @@ theme_tooltip_night_mode=Togol mod terang/gelap
 theme_force_upgrade=Kemas kini tema
 theme_update_footer=Sila berbaik hati melaporkan pepijat kepada $1 repositori. Sertai saluran $2 kami untuk mendapatkan berita terkini.
 
+# 18.49
+theme_xhred_global_auto=Auto
+
 # 19.00
 theme_xhred_sysinfo_update_start=Maklumat sistem dikenang.
 theme_xhred_sysinfo_update_end=Maklumat sistem berjaya dikenang semula.

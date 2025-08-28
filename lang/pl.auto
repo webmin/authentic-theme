@@ -13,6 +13,9 @@ settings_show_night_mode_link=Pokaż przycisk trybu jasnego/ciemnego
 
 theme_tooltip_night_mode=Przełączanie trybu jasnego/ciemnego
 
+# 18.49
+theme_xhred_global_auto=Automatyczny
+
 # 19.30
 theme_xhred_favorites_add=Dodaj do ulubionych
 

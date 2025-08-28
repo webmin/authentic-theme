@@ -606,7 +606,8 @@ sub embed_css_bundle
 
 sub embed_css_night_rider
 {
-    if (theme_night_mode_login() || theme_night_mode()) {
+    my $allow_auto = shift;
+    if (theme_night_mode_login() || theme_night_mode() || $allow_auto) {
         print ' <link type="text/css" href="' .
           $theme_webprefix .
           '/unauthenticated/css/palettes/nightrider.' .
@@ -1641,20 +1642,22 @@ sub embed_login_head
         print 'const theme_language = ' . get_theme_language_login();
         print "</script>\n";
     }
+    my $theme_night_mode_login_auto = theme_night_mode_login_auto();
     if ($inline) {
         my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/bundle.min.css");
         print '<style>';
         print $file_contents;
         print '</style>';
 
-        if (theme_night_mode_login()) {
+        if (theme_night_mode_login(1)) {
             my $file_contents =
               read_file_contents("$root_directory/$current_theme/unauthenticated/css/palettes/nightrider.min.css");
             print '<style>';
             print $file_contents;
             print '</style>';
+            print $theme_night_mode_login_auto if ($theme_night_mode_login_auto);
         }
-        my $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/fonts-roboto.min.css");
+        $file_contents = read_file_contents("$root_directory/$current_theme/unauthenticated/css/fonts-roboto.min.css");
         print '<style>';
         print $file_contents;
         print '</style>';
@@ -1672,7 +1675,10 @@ sub embed_login_head
               theme_version('timestamped') .
               '"></script>' . "\n";
         
-        embed_css_night_rider();
+        embed_css_night_rider(1);
+        if ($theme_night_mode_login_auto) {
+            print $theme_night_mode_login_auto;
+        }
     }
 
     embed_background();
@@ -1694,6 +1700,30 @@ sub theme_night_mode
 {
     if ($theme_config{'settings_force_night_mode'} eq '1') {
         return 1;
+    } else {
+        return 0;
+    }
+}
+
+sub theme_night_mode_login_auto
+{
+    if ($theme_config{'settings_global_palette_unauthenticated'} eq 'auto') {
+        my $detect;
+        $detect = '<script type="application/javascript">console.log("Auto dark mode");';
+        $detect .= 'if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {';
+        $detect .= 'document.querySelector("html").setAttribute("data-bgs", "nightRider")';
+        $detect .= '} else {';
+        $detect .= 'document.querySelector("html").setAttribute("data-bgs", "gainsboro");';
+        $detect .= '}';
+        $detect .= 'window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function(e) {';
+        $detect .= 'if(e.matches) {';
+        $detect .= 'document.querySelector("html").setAttribute("data-bgs", "nightRider");';
+        $detect .= '} else {';
+        $detect .= 'document.querySelector("html").setAttribute("data-bgs", "gainsboro");';
+        $detect .= '}';
+        $detect .= '});';
+        $detect .= '</script>';
+        return $detect;
     } else {
         return 0;
     }

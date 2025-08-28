@@ -68,6 +68,9 @@ theme_tooltip_night_mode=Attiva/disattiva modalità chiara/scura
 # 18.48
 theme_update_footer=Si prega di essere gentili nel segnalare bug al repository $1. Unisciti al nostro canale $2 per ricevere le ultime notizie.
 
+# 18.49
+theme_xhred_global_auto=Auto
+
 # 19.09
 theme_git_patch_incompatible_message_desc=Potrebbero esserci modifiche incompatibili, che potrebbero impedire al tema di funzionare come previsto. Non è possibile continuare l'operazione di aggiornamento utilizzando l'interfaccia utente.
 

@@ -76,6 +76,9 @@ theme_tooltip_night_mode=ライト/ダークモードの切り替え
 theme_force_upgrade=テーマを更新
 theme_update_footer=バグを $1リポジトリに報告してください。最新のニュースを入手するには、 $2チャネルに参加してください。
 
+# 18.49
+theme_xhred_global_auto=オート
+
 settings_webmin_default_module=Webminのデフォルトページ
 
 # 19.09

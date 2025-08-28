@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Превключва мека о
 theme_xhred_filemanager_editor_refresh_content=Обновяване на съдържанието
 theme_xhred_filemanager_save_to_refresh_content=Файлът трябва да бъде запазен, за да може да се обнови съдържанието му.
 theme_xhred_filemanager_save_to_refresh_content_proc=Освежаващо съдържание на файлове.
+theme_xhred_global_auto=Автоматично
 theme_xhred_global_dark=тъмен
 theme_xhred_global_light=Светлина
 theme_xhred_global_minimize=Минимизиране

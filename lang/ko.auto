@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=소프트 랩 전환
 theme_xhred_filemanager_editor_refresh_content=컨텐츠 새로 고침
 theme_xhred_filemanager_save_to_refresh_content=내용을 새로 고치려면 파일을 저장해야합니다.
 theme_xhred_filemanager_save_to_refresh_content_proc=파일 내용을 새로 고칩니다.
+theme_xhred_global_auto=자동
 theme_xhred_global_dark=어두운
 theme_xhred_global_light=빛
 theme_xhred_global_minimize=최소화

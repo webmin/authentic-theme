@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Alternar envoltório macio
 theme_xhred_filemanager_editor_refresh_content=Atualizar conteúdo
 theme_xhred_filemanager_save_to_refresh_content=O arquivo deve ser salvo, para permitir a atualização do seu conteúdo.
 theme_xhred_filemanager_save_to_refresh_content_proc=Atualizando o conteúdo do arquivo.
+theme_xhred_global_auto=Auto
 theme_xhred_global_dark=Sombrio
 theme_xhred_global_light=Leve
 theme_xhred_global_minimize=Minimizar

@@ -511,6 +511,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Schakel Soft Wrap in
 theme_xhred_filemanager_editor_refresh_content=Vernieuw inhoud
 theme_xhred_filemanager_save_to_refresh_content=Bestand moet worden opgeslagen om de inhoud te kunnen verversen.
 theme_xhred_filemanager_save_to_refresh_content_proc=Verfrissende bestandsinhoud.
+theme_xhred_global_auto=Auto
 theme_xhred_global_dark=Donker
 theme_xhred_global_light=Licht
 theme_xhred_global_minimize=Minimaliseren

@@ -562,7 +562,8 @@ sub theme_settings_format
     } elsif ($k eq 'settings_global_palette_unauthenticated') {
         $v = ui_select($k,
                        $v,
-                       [[('light', $theme_text{'theme_xhred_global_light'})],
+                       [[('auto', $theme_text{'theme_xhred_global_auto'})],
+                        [('light', $theme_text{'theme_xhred_global_light'})],
                         [('dark',  $theme_text{'theme_xhred_global_dark'})]
                        ]);
     } elsif ($k eq 'settings_document_title') {

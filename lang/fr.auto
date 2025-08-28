@@ -71,6 +71,9 @@ theme_tooltip_night_mode=Basculement du mode clair/sombre
 theme_force_upgrade=Mettre à jour le thème
 theme_update_footer=Merci de bien vouloir signaler les bogues au référentiel $1. Rejoignez notre chaîne $2 pour obtenir les dernières nouvelles.
 
+# 18.49
+theme_xhred_global_auto=Auto
+
 settings_webmin_default_module=Page par défaut pour Webmin
 
 # 19.09

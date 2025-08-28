@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Εναλλαγή μαλακού 
 theme_xhred_filemanager_editor_refresh_content=Ανανέωση περιεχομένου
 theme_xhred_filemanager_save_to_refresh_content=Το αρχείο πρέπει να αποθηκευτεί, προκειμένου να επιτρέπεται η ανανέωση του περιεχομένου του.
 theme_xhred_filemanager_save_to_refresh_content_proc=Ανανέωση περιεχομένου αρχείου.
+theme_xhred_global_auto=Αυτο
 theme_xhred_global_dark=Σκοτάδι
 theme_xhred_global_light=Φως
 theme_xhred_global_minimize=Περιορίζω

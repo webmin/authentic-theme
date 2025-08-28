@@ -65,6 +65,9 @@ settings_hotkey_toggle_key_night_mode=Växla färgpalett
 
 theme_tooltip_night_mode=Växla mellan ljus/mörkt läge
 
+# 18.49
+theme_xhred_global_auto=Bil
+
 settings_right_bgs_title=Temabakgrund för inloggningssida kan ställas in här.
 
 settings_hotkey_navigation=Växla tillstånd för navigeringsmeny

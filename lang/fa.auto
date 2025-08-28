@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=بسته نرم را تغییر 
 theme_xhred_filemanager_editor_refresh_content=تازه کردن محتوا
 theme_xhred_filemanager_save_to_refresh_content=برای اینکه بتوانید محتوای آن را تازه کنید باید پرونده را ذخیره کنید.
 theme_xhred_filemanager_save_to_refresh_content_proc=طراوت محتوای فایل
+theme_xhred_global_auto=خودکار
 theme_xhred_global_dark=تاریک
 theme_xhred_global_light=سبک
 theme_xhred_global_minimize=به حداقل رساندن

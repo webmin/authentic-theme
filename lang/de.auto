@@ -5,6 +5,9 @@ settings_show_night_mode_link=Schaltfläche „Hell-/Dunkelmodus anzeigen“
 
 theme_tooltip_night_mode=Hell-/Dunkelmodus umschalten
 
+# 18.49
+theme_xhred_global_auto=Auto
+
 # 19.71
 settings_right_hotkey_options=Tastenkombinationen
 settings_right_hotkey_custom_options=Benutzerdefinierte Verknüpfungen

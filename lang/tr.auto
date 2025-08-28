@@ -621,6 +621,7 @@ theme_xhred_filemanager_editor_toggle_soft_wrap=Yumuşak Sargıyı Aç / Kapat
 theme_xhred_filemanager_editor_refresh_content=İçeriği Yenile
 theme_xhred_filemanager_save_to_refresh_content=İçeriğinin yenilenebilmesi için dosyanın kaydedilmesi gerekir.
 theme_xhred_filemanager_save_to_refresh_content_proc=Dosya içeriği yenileniyor.
+theme_xhred_global_auto=Otomatik
 theme_xhred_global_dark=karanlık
 theme_xhred_global_light=ışık
 theme_xhred_global_minimize=küçültmek

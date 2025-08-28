@@ -69,6 +69,9 @@ theme_tooltip_night_mode=亮/暗模式切换
 theme_force_upgrade=更新主题
 theme_update_footer=请向 $1 存储库报告错误。加入我们的 $2 频道以获取最新消息。
 
+# 18.49
+theme_xhred_global_auto=汽车
+
 settings_webmin_default_module=Webmin的默认页面
 
 # 19.09

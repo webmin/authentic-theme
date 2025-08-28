@@ -10,7 +10,7 @@ var
     settings_document_title = 1,
     settings_palette_auto = true,
     settings_cm_editor_palette = 'monokai',
-    settings_global_palette_unauthenticated = 'light',
+    settings_global_palette_unauthenticated = 'auto',
     settings_theme_config_admins_only_privileged = false,
     settings_embed_product_splash_privileged = false,
 
