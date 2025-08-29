@@ -34,8 +34,8 @@ sub theme_settings_raw
                        'settings_right_reload',
                        'settings_document_title',
                        'settings_palette_auto',
-                       'settings_cm_editor_palette',
                        'settings_global_palette_unauthenticated',
+                       'settings_cm_editor_palette',
                        'settings_theme_config_admins_only_privileged',
                        'settings_embed_product_splash_privileged',
             ] }
@@ -557,8 +557,6 @@ sub theme_settings_format
 
     } elsif ($k eq 'settings_navigation_color') {
         $v = settings_get_select_navigation_color($v, $k);
-    } elsif ($k eq 'settings_cm_editor_palette') {
-        $v = settings_get_select_editor_color($v, $k);
     } elsif ($k eq 'settings_global_palette_unauthenticated') {
         $v = ui_select($k,
                        $v,
@@ -566,6 +564,8 @@ sub theme_settings_format
                         [('light', $theme_text{'theme_xhred_global_light'})],
                         [('dark',  $theme_text{'theme_xhred_global_dark'})]
                        ]);
+    } elsif ($k eq 'settings_cm_editor_palette') {
+        $v = settings_get_select_editor_color($v, $k);
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
     } elsif ($k eq 'settings_sysinfo_real_time_status') {
@@ -759,6 +759,9 @@ sub settings_get_select_editor_color
 {
     my ($v, $k) = @_;
     return '<select class="ui_select" name="' . $k . '">
+
+            <option value="auto"'
+      . ($v eq 'auto' && ' selected') . '>' . $theme_text{'theme_xhred_global_auto'} . '</option>
 
             <option value="monokai"'
       . ($v eq 'monokai' && ' selected') . '>' . $theme_text{'theme_xhred_global_dark'} . '</option>
