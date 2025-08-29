@@ -1,10 +1,27 @@
 ## Changelog
 
-#### Version 24.03 (August 2, 2025)
+#### Version 25.00 (September, 2025)
+* Add support to automatically set the color palette based on OS or browser preferences [virtualmin/virtualmin-gpl#535](https://github.com/virtualmin/virtualmin-gpl/issues/535)
 * Add support for conditionally controlling socket message flow with live stats for better performance
+* Add improvements to tooltips in dark palette
+* Change the default shortcut key for toggling the light/dark palette
+* Change the default shortcut key for toggling right slider
+* Change wording to use "shortcut" instead of "hotkey"
+* Change the default maximum column width
+* Fix navigation menu load in proxy mode [webmin#2502](https://github.com/webmin/webmin/issues/2502)
+* Fix navigation menu to always stay in sync with the product switch
+* Fix sporadic issue where the navigation menu disappeared and the content page was shifted
+* Fix the bug that broke global shortcuts in certain cases
+* Fix to avoid inserting right side slider in proxy mode
+* Fix info alert text color and button color in the dark palette
+* Fix template table header color in dark palette
 * Fix styling of checkboxes and radios for backup and restore pages in Virtualmin
+* Fix styling for extra backup destinations in Virtualmin
+* Fix active tab color in File Manager
+* Fix advanced schedule display in the cron chooser in Virtualmin
+* Fix icon in BIND module for DNS over TLS page
 * Fix period selection for retention time for live stats [#1712](https://github.com/webmin/authentic-theme/issues/1712)
-* Fix navigation menu load in proxy mode  [webmin#2502](https://github.com/webmin/webmin/issues/2502)
+* Fix recent logins button in the dashboard
 * Fix several UI issues for the upcoming Virtualmin WP Workbench Manager plugin
 
 #### Version 24.02 (June 9, 2025)
