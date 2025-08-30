@@ -24,6 +24,8 @@
 * Fix recent logins button in the dashboard
 * Fix several UI issues for the upcoming Virtualmin WP Workbench Manager plugin
 
+<!--- separator --->
+
 #### Version 24.02 (June 9, 2025)
 * Fix broken encoding for Japanese, Korean, and Chinese
 * Fix tab hotkeys so they don't trigger when other modifier keys are pressed
@@ -42,8 +44,6 @@
 * Add dozens of small improvements to the user interface
 * Fix to allow proxy links to open as they are if the referrer is trusted
 * Fix layout issues in Webmin Servers Index module
-
-<!--- separator --->
 
 #### Version 23.03.1 (March 16, 2025)
 * Add an API to allow modules to determine whether tables should be sortable
