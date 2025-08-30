@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 25.00 (September, 2025)
+#### Version 25.00 (August 30, 2025)
 * Add support to automatically set the color palette based on OS or browser preferences [virtualmin/virtualmin-gpl#535](https://github.com/virtualmin/virtualmin-gpl/issues/535)
 * Add support for conditionally controlling socket message flow with live stats for better performance
 * Add improvements to tooltips in dark palette
