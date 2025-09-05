@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 25.01 (September 5, 2025)
+* Fix broken editor in Bootup and Shutdown module [#1718](https://github.com/webmin/authentic-theme/issues/1718)
+
 #### Version 25.00 (August 30, 2025)
 * Add support to automatically set the color palette based on OS or browser preferences [virtualmin/virtualmin-gpl#535](https://github.com/virtualmin/virtualmin-gpl/issues/535)
 * Add support for conditionally controlling socket message flow with live stats for better performance
