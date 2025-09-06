@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 25.01 (September 5, 2025)
+#### Version 25.01 (September 6, 2025)
 * Fix broken editor in Bootup and Shutdown module [#1718](https://github.com/webmin/authentic-theme/issues/1718)
 
 #### Version 25.00 (August 30, 2025)
