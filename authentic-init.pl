@@ -1884,6 +1884,8 @@ sub header_html_data
       ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
       ' data-editor-palette="' .
       $theme_config{'settings_cm_editor_palette'} .
+      '" data-static-theme-version="' .
+      theme_version('version') .
       '" data-theme-version="' .
       theme_version('version') .
       '" data-theme-version-data="' .
