@@ -180,6 +180,9 @@ var
 
     // ConfigServer Security & Firewall related
     settings_sysinfo_csf_updates = true,
+    settings_csf_download_domain = 'download.configserver.com',
+    settings_csf_download_port = 443,
+    settings_csf_download_path = '/csf/version.txt',
     settings_sysinfo_csf_temp_list_privileged = true,
 
     // File Manager related
