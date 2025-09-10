@@ -414,10 +414,18 @@ sub nav_menu
         $rv = nav_webmin_menu($page);
     }
     if ($page =~ m{/link\.cgi}) {
+        # X10101
         $rv .= <<'SCRIPT';
 <script type="application/javascript">
 v___target_servers_index_loading = 1;
 (function () {
+    const loadedVersion = function() {
+        const m = document.querySelector('link[href*="fonts-roboto"]')?.href.match(/\?(\d{2})/);
+        return m ? parseInt(m[1], 10) : 25;
+    };
+    if (loadedVersion() < 25 || !vars.navigation.reload_timeout) {
+        return;
+    }
     if (window.v___initial_load) {
         setTimeout(function () {
             let tries = 0;
@@ -441,7 +449,7 @@ v___target_servers_index_loading = 1;
                 }
             };
             const timer = setInterval(trying, 10);
-        }, vars.event.double_click_delay);
+        }, vars.navigation.reload_timeout);
         plugins.navigation.load.initializing = 1;
         plugins.navigation.load.start();
     }

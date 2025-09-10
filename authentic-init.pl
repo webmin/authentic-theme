@@ -311,6 +311,11 @@ sub embed_header
     print 'var v___theme_language = ' . get_theme_language();
     print "</script>\n";
 
+    # Print server original webprefix for proxy setups
+    print ' <script type="application/javascript">';
+    print 'const v___server_webprefix = "'.($gconfig{'webprefix'} || '').'"';
+    print "</script>\n";
+
     if ($args[2]) {
         load_devel_dependencies();
     }
