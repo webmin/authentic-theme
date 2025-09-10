@@ -462,53 +462,46 @@ sub replace_meta
 
 sub product_version_update_remote
 {
-    my ($latest_known_versions_remote, $latest_known_versions_remote_error, %versions_available);
-    my $software_latest_cache       = theme_cached('software+latest');
-    my $software_latest_cache_extra = sub {
-        my ($software_latest_cache_original) = @_;
-        my $software_latest_cache_extra_csf  = theme_cached('version-csf-stable');
-        my $software_latest_cache_merged     = {};
+    my $cache_id = 'software+latest';
+    my $software_latest_cache       = theme_cache_read($cache_id);
+    $software_latest_cache = undef if (ref($software_latest_cache) ne 'HASH');
 
-        if ($software_latest_cache_original && $software_latest_cache_extra_csf) {
-            $software_latest_cache_extra_csf = { 'csf' => $software_latest_cache_extra_csf };
-            $software_latest_cache_merged    = { %{$software_latest_cache_original}, %{$software_latest_cache_extra_csf} };
-        } elsif (!$software_latest_cache_original && $software_latest_cache_extra_csf) {
-            $software_latest_cache_merged = { 'csf' => $software_latest_cache_extra_csf };
-        } elsif ($software_latest_cache_original && !$software_latest_cache_extra_csf) {
-            $software_latest_cache_merged = $software_latest_cache_original;
-        }
-        return $software_latest_cache_merged;
+    # Also get extra package versions not in repos if available
+    my $software_latest_cache_extra = sub {
+        my ($base) = @_;
+        my %out = $base ? %{$base} : ();
+        # Get CSF version if available
+        my $csf = theme_cache_read('version-csf-stable');
+        $out{csf} = $csf if ($csf);
+        # Return results
+        return \%out;
     };
 
-    if ($software_latest_cache) {
-        return &$software_latest_cache_extra($software_latest_cache);
-    } else {
-        my $packages_updates_mod = 'package-updates';
-        my $packages_updates     = &foreign_available($packages_updates_mod);
-        return { 'no-cache' => 1 }
-          if (!post_has('xhr-') ||
-              !$packages_updates);
-        if ($packages_updates) {
-            &foreign_require($packages_updates_mod);
-            my @packages_updates_current = &package_updates::list_for_mode('updates', 0);
-            if (@packages_updates_current) {
-                foreach my $package_current (@packages_updates_current) {
-                    my ($package, $version) = ($package_current->{'name'}, $package_current->{'version'});
-                    if ($package &&
-                        $version &&
-                        $package =~ /^(wbm|wbt|ust|webmin|usermin)/)
-                    {
-                        $package =~ s/^(wbm|wbt|ust|webmin|usermin)\-//;
-                        $versions_available{$package} = $version;
-                    }
+    # Return cached versions if cache is fresh
+    return $software_latest_cache_extra->($software_latest_cache)
+        if ($software_latest_cache && theme_cache_is_fresh($cache_id));
 
-                }
+    # No cache or stale cache, get new versions
+    my $packages_updates = &foreign_available('package-updates');
+    return { 'no-cache' => 1 } if (!post_has('xhr-') || !$packages_updates);
+    &foreign_require('package-updates');
+    my %versions_available;
+    my @packages_updates_current = &package_updates::list_for_mode('updates', 0);
+    if (@packages_updates_current) {
+        foreach my $package_current (@packages_updates_current) {
+            my ($package, $version) = ($package_current->{'name'}, $package_current->{'version'});
+            if ($package &&
+                $version &&
+                $package =~ /^(wbm|wbt|ust|webmin|usermin)/)
+            {
+                $package =~ s/^(wbm|wbt|ust|webmin|usermin)\-//;
+                $versions_available{$package} = $version;
             }
-        }
-        theme_cached('software+latest', \%versions_available);
-        return &$software_latest_cache_extra(\%versions_available);
-    }
 
+        }
+    }
+    theme_cache_write($cache_id, \%versions_available);
+    return $software_latest_cache_extra->(\%versions_available);
 }
 
 sub product_version_update

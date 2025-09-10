@@ -52,11 +52,13 @@ sub csf_strings
         &webmin_user_is_admin() &&
         $in{'xhr-info'} eq '1')
     {
-        $csf_remote_version = theme_cached('version-csf-stable');
-        if (!$csf_remote_version) {
+        my $cache_id = 'version-csf-stable';
+        $csf_remote_version = theme_cache_read($cache_id);
+        if (!$csf_remote_version ||
+            ($csf_remote_version && !theme_cache_is_fresh($cache_id))) {
             http_download('download.configserver.com', '80', '/csf/version.txt', \$csf_remote_version, \$error,
                           undef, undef, undef, undef, 30);
-            theme_cached('version-csf-stable', $csf_remote_version, $error);
+            theme_cache_write($cache_id, $csf_remote_version) if ($csf_remote_version && !$error);
         }
 
         # Trim versions' number

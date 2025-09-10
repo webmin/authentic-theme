@@ -1573,37 +1573,41 @@ sub theme_remote_version
     if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && post_has('xhr-'))
     {
         if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
+            my $cache_id = 'version-theme-development';
             if (!$nocache) {
-                $remote_version = theme_cached('version-theme-development');
+                $remote_version = theme_cache_read($cache_id);
             }
-            if (!$remote_version) {
+            if (!$remote_version || 
+                ($remote_version && !theme_cache_is_fresh($cache_id))) {
                 http_download('api.github.com',                                             '443',
-                              '/repos/authentic-theme/authentic-theme/contents/theme.info', \$remote_version,
+                              '/repos/webmin/authentic-theme/contents/theme.info', \$remote_version,
                               \$error,                                                      undef,
                               1,                                                            undef,
                               undef,                                                        30,
                               undef,                                                        undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
-                theme_cached('version-theme-development', $remote_version, $error);
+                theme_cache_write($cache_id, $remote_version) if ($remote_version && !$error);
 
             }
 
         } else {
+            my $cache_id = 'version-theme-stable';
             if (!$nocache) {
-                $remote_version = theme_cached('version-theme-stable');
+                $remote_version = theme_cache_read($cache_id);
             }
-            if (!$remote_version) {
-                http_download('api.github.com', '443', '/repos/authentic-theme/authentic-theme/releases/latest',
+            if (!$remote_version ||
+                ($remote_version && !theme_cache_is_fresh($cache_id))) {
+                http_download('api.github.com', '443', '/repos/webmin/authentic-theme/releases/latest',
                               \$remote_release, \$error, undef, 1, undef, undef, 30);
                 $remote_release =~ /tag_name":"(.*?)"/;
                 http_download('api.github.com',                                                            '443',
-                              '/repos/authentic-theme/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
+                              '/repos/webmin/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
                               \$error,                                                                     undef,
                               1,                                                                           undef,
                               undef,                                                                       30,
                               undef,                                                                       undef,
                               { 'accept', 'application/vnd.github.v3.raw' });
-                theme_cached('version-theme-stable', $remote_version, $error);
+                theme_cache_write($cache_id, $remote_version) if ($remote_version && !$error);
             }
         }
     }
@@ -1676,64 +1680,6 @@ sub theme_cache_write
 {
 	my ($id, $value) = @_;
     write_file_contents(theme_cache_path($id), serialise_variable($value));
-}
-
-sub theme_cached
-{
-    my ($id, $cvalue, $error, $cache_interval_option) = @_;
-    $id || die "Can't use undefined as cache filename";
-
-    my $theme_var_dir;
-    if (&webmin_user_is_admin()) {
-        ($theme_var_dir) = theme_var_dir();
-    } else {
-        $theme_var_dir = get_user_home() . "/tmp";
-        $theme_var_dir = tempname_dir() if (!-d $theme_var_dir);
-    }
-    my $fcached = "$theme_var_dir/$id";
-    my @cached  = stat($fcached);
-    my $ctime   = $cache_interval_option || $theme_config{'settings_cache_interval'} || 24 * 60 * 60;
-    my $cache   = read_file_contents($fcached);
-    my $cdata   = $cache ? unserialise_variable($cache) : undef;
-    my @data;
-
-    if (@cached && $cached[9] > time() - $ctime) {
-
-        # Use cache for now
-        if ($cdata) {
-            @data = @$cdata;
-        } else {
-            return undef;
-        }
-    } else {
-
-        # Error when catching remote data
-        if ($error) {
-            if ($cdata) {
-
-                # Error: Use current cache for another period
-                @data = @$cdata;
-            } else {
-
-                # Error: No cache available
-                return undef;
-            }
-        } elsif ($cvalue) {
-
-            # Use supplied data
-            push(@data, $cvalue);
-        }
-
-        if (@data) {
-
-            # Write cache
-            my $fh = "cache";
-            open_tempfile($fh, ">$fcached");
-            print_tempfile($fh, serialise_variable(\@data));
-            close_tempfile($fh);
-        }
-    }
-    return wantarray ? @data : $data[0];
 }
 
 sub theme_var_dir
