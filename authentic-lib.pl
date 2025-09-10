@@ -555,12 +555,11 @@ sub theme_list_combined_system_info
     my $skipmods;
     my $nocache = post_has('xhr-info') || post_has('no-cache') || string_contains(get_env('query_string'), 'no-cache');
     my $is_webmin = get_product_name() eq 'webmin';
-    my @opts   = ("combined-system-info-$remote_user", $theme_config{'settings_sysinfo_cache_timeout'}, 1);
+    my $cache_file   = theme_cache_user_file("combined-system-info");
     if (!$nocache && $is_webmin) {
         $skipmods = ['package-updates', 'webmin', 'cpuio'];
-        my $combined_system_info_cache = theme_cached($opts[0], undef, undef, $opts[1]);
-        return @{$combined_system_info_cache}
-          if ($combined_system_info_cache);
+        my $combined_system_info_cache = theme_cache_read($cache_file);
+        return @{$combined_system_info_cache} if ($combined_system_info_cache);
     }
     my @combined_system_info =
       &list_combined_system_info(
@@ -570,7 +569,7 @@ sub theme_list_combined_system_info
                                  undef,
                                  $skipmods);
     if ($nocache && $is_webmin) {
-        theme_cached($opts[0], \@combined_system_info, undef, $opts[2]);
+        theme_cache_write($cache_file, \@combined_system_info);
     }
     return @combined_system_info;
 }
@@ -1615,6 +1614,68 @@ sub theme_remote_version
         return $remote_version;
     }
 
+}
+
+# theme_cache_dir()
+# Returns directory for per-user/admin theme cache
+sub theme_cache_dir
+{
+	if (&webmin_user_is_admin()) {
+		my ($dir) = &theme_var_dir();
+		return $dir;
+	}
+	my $dir = &get_user_home()."/tmp";
+	$dir = &tempname_dir() if (!-d $dir);
+	return $dir;
+}
+
+# theme_cache_path(id)
+# Full path for a given theme cache id
+sub theme_cache_path
+{
+    my ($id) = @_;
+    $id || die "Can't use undefined as cache filename";
+    return &theme_cache_dir()."/$id";
+}
+
+# theme_cache_user_file(id, [user])
+# Returns cache filename with user suffix
+sub theme_cache_user_file
+{
+	my ($id, $user) = @_;
+	$id || die "Missing cache id";
+	$user ||= ($remote_user || $base_remote_user);
+	return "$id-$user";
+}
+
+# theme_cache_is_fresh(id, [interval_secs])
+# Returns 1 if cache file exists and is fresh enough
+sub theme_cache_is_fresh
+{
+	my ($id, $interval) = @_;
+	my $ttl  = $interval || $theme_config{'settings_cache_interval'} || 24*60*60;
+	my $path = theme_cache_path($id);
+	my @st   = stat($path);
+	return (@st && $st[9] > time() - $ttl) ? 1 : 0;
+}
+
+# theme_cache_read(id)
+# Returns deserialized arrayref or undef if missing/invalid
+sub theme_cache_read
+{
+	my ($id) = @_;
+	my $path = theme_cache_path($id);
+	return undef unless -e $path;
+	my $raw = read_file_contents($path) // return undef;
+	return unserialise_variable($raw);
+}
+
+# theme_cache_write(id, &data)
+# Serializes and writes data to cache
+sub theme_cache_write
+{
+	my ($id, $value) = @_;
+    write_file_contents(theme_cache_path($id), serialise_variable($value));
 }
 
 sub theme_cached
