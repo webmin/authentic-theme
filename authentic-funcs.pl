@@ -813,7 +813,8 @@ sub post_has
 }
 
 # Read file contents
-sub theme_read_file_contents {
+sub theme_read_file_contents
+{
     my ($filename) = @_;
     # Check if file is readable
     return undef unless -r $filename;
@@ -848,7 +849,8 @@ sub theme_read_file_contents {
 }
 
 # Write file contents
-sub theme_write_file_contents {
+sub theme_write_file_contents
+{
     my ($filename, $contents) = @_;
     my $fh;
     my $cleanup = sub {
@@ -904,6 +906,65 @@ sub theme_write_file_contents {
         };
     # Clean up and return success
     return $cleanup->(1, 1);
+}
+
+sub merge_stats_now_into_system_info_data
+{
+    my ($data_ref, $stats_json) = @_;
+    return unless $data_ref && ref($data_ref) eq 'ARRAY';
+
+    # Decode via your helper
+    my $stats = eval { &convert_from_json($stats_json // '{}') };
+    $stats = {} if $@ || ref($stats) ne 'HASH';
+
+    # Find the 'sysinfo' block that actually has 'raw'
+    my ($sys) = grep { ($_->{id}//'') eq 'sysinfo' && ref($_->{raw}) eq 'ARRAY' } @$data_ref
+        or return $data_ref;
+
+    my $raw0 = ($sys->{raw}[0] ||= {});
+
+    # 1) CPU: use first live value
+    if (ref($stats->{cpu}) eq 'ARRAY' && defined $stats->{cpu}[0]) {
+        $raw0->{cpu} = (ref($raw0->{cpu}) eq 'ARRAY') ? $raw0->{cpu} : [0,0,0,0,0];
+        $raw0->{cpu}[0] = 0 + $stats->{cpu}[0];
+    }
+
+    # 2) Sensors → cpufans / cputemps (empty arrays if none)
+    if (ref($stats->{sensors}) eq 'ARRAY' && ref($stats->{sensors}[0]) eq 'HASH') {
+        my $s = $stats->{sensors}[0];
+
+        # Fans -> cpufans
+        if (exists $s->{fans}) {
+            if (ref($s->{fans}) eq 'ARRAY') {
+                $raw0->{cpufans} = [
+                    map {
+                        ref($_) eq 'HASH'
+                            ? { fan => 0 + ($_->{fan}//0), rpm => 0 + ($_->{rpm}//0) }
+                            : ()
+                    } @{$s->{fans}}
+                ];
+            } else {
+                $raw0->{cpufans} = [];
+            }
+        }
+
+        # CPU temps -> cputemps
+        if (exists $s->{cpu}) {
+            if (ref($s->{cpu}) eq 'ARRAY') {
+                $raw0->{cputemps} = [
+                    map {
+                        ref($_) eq 'HASH'
+                            ? { core => 0 + ($_->{core}//0), temp => 0 + ($_->{temp}//0) }
+                            : ()
+                    } @{$s->{cpu}}
+                ];
+            } else {
+                $raw0->{cputemps} = [];
+            }
+        }
+    }
+
+    return $data_ref;
 }
 
 1;
