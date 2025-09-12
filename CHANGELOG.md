@@ -3,6 +3,7 @@
 #### Version 25.02 (September 12, 2025)
 * Add support to correctly reload the page in proxy mode
 * Fix the alert info box text color for dark mode
+* Fix critical lags and appearance of Custom Commands module
 
 #### Version 25.01 (September 6, 2025)
 * Fix broken editor in Bootup and Shutdown module [#1718](https://github.com/webmin/authentic-theme/issues/1718)
