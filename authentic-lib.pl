@@ -559,7 +559,13 @@ sub theme_list_combined_system_info
     if (!$nocache && $is_webmin) {
         $skipmods = ['package-updates', 'webmin', 'cpuio'];
         my $combined_system_info_cache = theme_cache_read($cache_file);
-        return @{$combined_system_info_cache} if ($combined_system_info_cache);
+        $combined_system_info_cache = $combined_system_info_cache->[0]
+            if ref($combined_system_info_cache) eq 'ARRAY' &&
+               ref($combined_system_info_cache->[0]) eq 'ARRAY';
+        
+        return @{$combined_system_info_cache}
+            if (ref($combined_system_info_cache) eq 'ARRAY' &&
+                @{$combined_system_info_cache});
     }
     my @combined_system_info =
       &list_combined_system_info(
