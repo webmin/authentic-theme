@@ -2,6 +2,7 @@
 
 #### Version 25.02 (September 12, 2025)
 * Add support to correctly reload the page in proxy mode
+* Add improvements to how the system cache for the dashboard is updated
 * Fix the alert info box text color for dark mode
 * Fix critical lags and appearance of Custom Commands module
 

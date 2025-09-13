@@ -307,6 +307,16 @@ sub save_stats_history
     undef($graphs);
 }
 
+sub save_stats_now
+{
+    # Store stats now data
+    my ($stats_now)  = @_;
+    delete($stats_now->{'graphs'});
+    theme_write_file_contents(
+        "$var_directory/modules/$current_theme/real-time-monitoring-now.json",
+        $json->encode($stats_now));
+}
+
 sub has_stats
 {
     my ($mod, $type) = @_;

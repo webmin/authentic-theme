@@ -127,6 +127,10 @@ Net::WebSocket::Server->new(
 		if ($serv->{'interval'} > 1) {
 			sleep($serv->{'interval'}-1);
 		}
+		# Save stats now data to the disk
+		if ($serv->{'ticked'} % 2 == 0) {
+			save_stats_now($stats_now) if ($stats_now);
+		}
 		# Release memory
 		undef($stats_now);
 		undef($stats_now_graphs);

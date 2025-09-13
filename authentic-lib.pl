@@ -552,32 +552,59 @@ sub print_easypie_chart
 
 sub theme_list_combined_system_info
 {
-    my $skipmods;
-    my $nocache = post_has('xhr-info') || post_has('no-cache') || string_contains(get_env('query_string'), 'no-cache');
+    my $nocache = post_has('xhr-info') || post_has('no-cache') ||
+                  string_contains(get_env('query_string'), 'no-cache');
     my $is_webmin = get_product_name() eq 'webmin';
-    my $cache_file   = theme_cache_user_file("combined-system-info");
-    if (!$nocache && $is_webmin) {
-        $skipmods = ['package-updates', 'webmin', 'cpuio'];
+    my $cache_file = theme_cache_user_file("combined-system-info");
+    my $cache_file_path = theme_cache_path($cache_file);
+    my @data;
+    # Return cached data if available
+    if (!$nocache && $is_webmin && -r $cache_file_path) {
         my $combined_system_info_cache = theme_cache_read($cache_file);
         $combined_system_info_cache = $combined_system_info_cache->[0]
             if ref($combined_system_info_cache) eq 'ARRAY' &&
                ref($combined_system_info_cache->[0]) eq 'ARRAY';
-        
-        return @{$combined_system_info_cache}
+        @data = @{$combined_system_info_cache}
             if (ref($combined_system_info_cache) eq 'ARRAY' &&
                 @{$combined_system_info_cache});
+        # Update the existing sysinfo cache on the fly if we have newer stats
+        if ( -r (my $file = theme_cache_path("real-time-monitoring-now.json")) ) {
+            my $stats_mtime = (stat($file))[9]            // 0;
+            my $cache_mtime = (stat($cache_file_path))[9] // 0;
+            merge_stats_now_into_system_info_data(
+                \@data, &read_file_contents($file))
+                    if ($stats_mtime > $cache_mtime);
+            # Data merged or skipped, delete transient file ether way
+            unlink_file($file) if (&is_under_directory(theme_cache_dir(), $file));
+        }
+    # Update all caches from scratch if cache is missing
+    } else {
+        if (&foreign_check("system-status")) {
+            &foreign_require("system-status");
+            &system_status::scheduled_collect_system_info('manual')
+                if ($system_status::config{'collect_interval'} ne 'none');
+        }
+        
+        # Update caches for Virtualmin-specific info if applicable
+        if (&foreign_check("virtual-server")) {
+            &foreign_require("virtual-server");
+            if ($virtual_server::config{'collect_interval'} ne 'none') {
+                my $info = &virtual_server::collect_system_info('manual');
+                &virtual_server::save_collected_info($info) if ($info);
+            }
+        }
+
+        # Return updated combined info
+        @data =
+            &list_combined_system_info(
+                { 'qshow' => 1,
+                  'max'   =>
+                    $theme_config{'settings_sysinfo_max_servers'} }, undef);
+            theme_cache_write($cache_file, \@data) if ($nocache && $is_webmin);
     }
-    my @combined_system_info =
-      &list_combined_system_info(
-                                 {  'qshow' => 1,
-                                    'max'   => $theme_config{'settings_sysinfo_max_servers'}
-                                 },
-                                 undef,
-                                 $skipmods);
-    if ($nocache && $is_webmin) {
-        theme_cache_write($cache_file, \@combined_system_info);
-    }
-    return @combined_system_info;
+
+    # Return data
+    return @data if @data;
 }
 
 sub show_sysinfo_section

@@ -908,14 +908,20 @@ sub theme_write_file_contents
     return $cleanup->(1, 1);
 }
 
+# merge_stats_now_into_system_info_data(sysinfo-data-arrref, stats-now-json-string)
+# - Updates cached system info data with live stats now data
+#     * cpu load
+#     * cpufans from sensors.fans
+#     * cputemps from sensors.cpu
 sub merge_stats_now_into_system_info_data
 {
     my ($data_ref, $stats_json) = @_;
     return unless $data_ref && ref($data_ref) eq 'ARRAY';
 
-    # Decode via your helper
+    # Decode JSON
     my $stats = eval { &convert_from_json($stats_json // '{}') };
     $stats = {} if $@ || ref($stats) ne 'HASH';
+    return $data_ref unless keys %$stats;
 
     # Find the 'sysinfo' block that actually has 'raw'
     my ($sys) = grep { ($_->{id}//'') eq 'sysinfo' && ref($_->{raw}) eq 'ARRAY' } @$data_ref
@@ -923,17 +929,17 @@ sub merge_stats_now_into_system_info_data
 
     my $raw0 = ($sys->{raw}[0] ||= {});
 
-    # 1) CPU: use first live value
+    # CPU live value
     if (ref($stats->{cpu}) eq 'ARRAY' && defined $stats->{cpu}[0]) {
         $raw0->{cpu} = (ref($raw0->{cpu}) eq 'ARRAY') ? $raw0->{cpu} : [0,0,0,0,0];
         $raw0->{cpu}[0] = 0 + $stats->{cpu}[0];
     }
 
-    # 2) Sensors → cpufans / cputemps (empty arrays if none)
+    # Sensors (empty arrays if none)
     if (ref($stats->{sensors}) eq 'ARRAY' && ref($stats->{sensors}[0]) eq 'HASH') {
         my $s = $stats->{sensors}[0];
 
-        # Fans -> cpufans
+        # CPU fans
         if (exists $s->{fans}) {
             if (ref($s->{fans}) eq 'ARRAY') {
                 $raw0->{cpufans} = [
@@ -948,7 +954,7 @@ sub merge_stats_now_into_system_info_data
             }
         }
 
-        # CPU temps -> cputemps
+        # CPU temps
         if (exists $s->{cpu}) {
             if (ref($s->{cpu}) eq 'ARRAY') {
                 $raw0->{cputemps} = [
