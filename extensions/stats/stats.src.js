@@ -479,35 +479,51 @@ const stats = {
                         // exist unless it's a re-draw
                         if (tg[0] && tg[0].textContent && cached !== 3) {
                             if (cached === 1) {
-                                let lf = parseInt(this.getStoredDuration());
-                                if (lf < 300 || lf > 86400) {
-                                    lf = 1200;
-                                }
-                                let tdata = sr,
-                                    cdata = this[`chart_${type}`].data.series,
-                                    cdata_start,
-                                    cdata_end,
-                                    cdata_ready = new Promise((resolve) => {
-                                        tdata.forEach(function (d, i, a) {
-                                            cdata_start =
-                                                cdata[i].data[0].x || cdata[i].data[0].data.x;
-                                            cdata_end =
-                                                cdata[i].data[cdata[i].data.length - 1].x ||
-                                                cdata[i].data[cdata[i].data.length - 1].data.x;
-                                            cdata[i].data.push(d.data[0]);
-                                            if (cdata_end - cdata_start > lf) {
-                                                cdata[i].data.shift();
-                                            }
-                                            if (i === a.length - 1) {
-                                                resolve();
-                                            }
-                                        });
-                                    });
-                                cdata_ready.then(() => {
-                                    this[`chart_${type}`].update({
-                                        series: cdata,
-                                    });
+                                let lf = parseInt(this.getStoredDuration(), 10);
+                                if (lf < 300 || lf > 86400) lf = getStoredDuration();
+                            
+                                const chart = this[`chart_${type}`],
+                                      cdata = chart.data.series;
+                                let   tdata = sr; // keep input series
+                            
+                                const getX = p => (p && (p.x != null ? p.x : (p.data && p.data.x))) || 0;
+                            
+                                // Append and trim to last `lf` seconds
+                                tdata.forEach((d, i) => {
+                                    const series = cdata[i].data,
+                                          newPt  = d.data[0];
+                                    series.push(newPt);
+                                
+                                    const lastX  = getX(series[series.length - 1]),
+                                          cutoff = lastX - lf;
+                                
+                                    // Dynamic trimming
+                                    let lo = 0, hi = series.length - 1, cutIdx = 0;
+                                    while (lo <= hi) {
+                                        const mid = (lo + hi) >> 1;
+                                        if (getX(series[mid]) < cutoff) {
+                                            lo = mid + 1;
+                                            cutIdx = lo;
+                                        } else {
+                                            hi = mid - 1;
+                                        }
+                                    }
+                                    if (cutIdx > 0) series.splice(0, cutIdx);
                                 });
+                            
+                                // Avoid empty leading space, and don't set low earlier than the first data point
+                                const lastXAll  = Math.max.apply(null, cdata.map(s => getX(s.data[s.data.length - 1] || s.data[0] || { x: 0 }))),
+                                      firstXAll = Math.min.apply(null, cdata.map(s => getX(s.data[0] || { x: lastXAll }))),
+                                      highX = lastXAll,
+                                      lowX  = Math.max(highX - lf, firstXAll),
+                                      // Merge and keep existing by patching low/high
+                                      opts = this._.chart.extend({}, chart.options, { axisX: this._.chart.extend({}, chart.options.axisX, {
+                                        low: lowX,
+                                        high: highX
+                                      }) });
+                            
+                                // Force full redraw so the window shifts every tick
+                                chart.update({ series: cdata }, opts, true);
                             }
                         }
 
