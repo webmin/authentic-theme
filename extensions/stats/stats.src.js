@@ -517,10 +517,26 @@ const stats = {
                                       highX = lastXAll,
                                       lowX  = Math.max(highX - lf, firstXAll),
                                       // Merge and keep existing by patching low/high
-                                      opts = this._.chart.extend({}, chart.options, { axisX: this._.chart.extend({}, chart.options.axisX, {
-                                        low: lowX,
-                                        high: highX
-                                      }) });
+                                      opts = this._.chart.extend({}, chart.options, {
+                                            axisX: this._.chart.extend({}, chart.options.axisX, {
+                                                low: lowX,
+                                                high: highX
+                                            })
+                                      });
+                                // Prevents left overflow
+                                cdata.forEach(s => {
+                                    const a = s.data;
+                                    let lo = 0, hi = a.length - 1, cut = 0;
+                                    while (lo <= hi) {
+                                        const mid = (lo + hi) >> 1;
+                                        if (getX(a[mid]) < lowX) {
+                                            lo = mid + 1; cut = lo;
+                                        } else { 
+                                            hi = mid - 1;
+                                        }
+                                    }
+                                    if (cut > 0) a.splice(0, cut);
+                                });
                             
                                 // Force full redraw so the window shifts every tick
                                 chart.update({ series: cdata }, opts, true);
