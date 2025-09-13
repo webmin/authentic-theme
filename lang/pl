@@ -126,7 +126,7 @@ settings_hotkey_custom_9_user=Niestandardowy Odnośnik <code>9</code>
 settings_navigation_color=Paleta kolorów
 settings_loader_top=Włącz wskaźnik postępu ładowania na górze ekranu
 settings_loader_left=Włącz spinner dla menu nawigacyjnego
-settings_right_reload=Ładuj domyślną stronę przy przełączaniu kart
+settings_right_sync=Ładuj domyślną stronę przy przełączaniu kart
 
 settings_leftmenu_section_hide_refresh_modules=Ukryj odnośnik odświeżania modułów
 settings_leftmenu_section_hide_unused_modules=Ukryj sekcję nieużywanych modułów

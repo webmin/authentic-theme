@@ -4,6 +4,7 @@
 * Add support to correctly reload the page in proxy mode
 * Add ability to dynamically trim graphs on the dashboard to avoid overfilling and lagging
 * Add improvements to how the system cache for the dashboard is updated
+* Add ability to choose if default page should load when switching navigation
 * Fix the alert info box text color for dark mode
 * Fix critical lags and appearance of Custom Commands module
 

@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=Спеціальне посилання <code>9</c
 settings_navigation_color=Колірна палітра
 settings_loader_top=Увімкнути завантажувач прогресу сторінки вгорі екрана
 settings_loader_left=Увімкнути спінер для навігаційного меню
-settings_right_reload=Завантажте сторінку за замовчуванням на перемикач вкладки
+settings_right_sync=Завантажте сторінку за замовчуванням на перемикач вкладки
 
 settings_leftmenu_section_hide_refresh_modules=Сховати посилання оновлення модулів
 settings_leftmenu_section_hide_unused_modules=Сховати розділ невикористаних модулів

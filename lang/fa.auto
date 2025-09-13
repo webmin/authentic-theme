@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=پیوند سفارشی <code>9</code>
 settings_navigation_color=پالت رنگ
 settings_loader_top=لودر پیشرفت صفحه را در بالای صفحه فعال کنید
 settings_loader_left=فعال کردن اسپینر برای منوی پیمایش
-settings_right_reload=صفحه پیش فرض را در سوئیچ تب بارگیری کنید
+settings_right_sync=صفحه پیش فرض را در سوئیچ تب بارگیری کنید
 
 settings_leftmenu_section_hide_refresh_modules=پیوند ماژول های تازه کردن را مخفی کنید
 settings_leftmenu_section_hide_unused_modules=بخش ماژول های استفاده نشده را مخفی کنید

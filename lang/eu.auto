@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=<code>9</code> lotura pertsonalizatua
 settings_navigation_color=Kolore paleta
 settings_loader_top=Gaitu orrialdearen aurrera kargatzailea pantailaren gainean
 settings_loader_left=Gaitu spinner nabigazio menua
-settings_right_reload=Kargatu lehenetsitako orria fitxa aldatzailean
+settings_right_sync=Kargatu lehenetsitako orria fitxa aldatzailean
 
 settings_leftmenu_section_hide_refresh_modules=Ezkutatu freskatze moduluen esteka
 settings_leftmenu_section_hide_unused_modules=Ezkutatu erabili gabeko moduluen atala

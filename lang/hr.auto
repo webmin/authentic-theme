@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=Prilagođena veza <code>9</code>
 settings_navigation_color=Paleta boja
 settings_loader_top=Omogućite program za učitavanje napredovanja stranice na vrhu zaslona
 settings_loader_left=Omogući spinner za navigacijski izbornik
-settings_right_reload=Učitajte zadanu stranicu na prekidač kartice
+settings_right_sync=Učitajte zadanu stranicu na prekidač kartice
 
 settings_leftmenu_section_hide_refresh_modules=Sakrij vezu za osvježavanje modula
 settings_leftmenu_section_hide_unused_modules=Sakrij odjeljak neiskorištenih modula

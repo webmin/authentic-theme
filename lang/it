@@ -122,7 +122,7 @@ settings_hotkey_custom_9_user=Link personalizzato <code>9</code>
 settings_navigation_color=Color palette
 settings_loader_top=Attiva la barra di caricamento della pagina nella parte superiore dello schermo
 settings_loader_left=Attiva spinner per il menu di navigazione
-settings_right_reload=Carica la pagina predefinita sull'interruttore di tabulazione
+settings_right_sync=Carica la pagina predefinita sull'interruttore di tabulazione
 
 settings_leftmenu_section_hide_refresh_modules=Nascondi il link Ricarica moduli
 settings_leftmenu_section_hide_unused_modules=Nascondi il link Moduli inutilizzati

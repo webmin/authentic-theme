@@ -9,7 +9,7 @@ settings_right_logos_error=Den opplastede filen er ikke et bilde
 
 settings_right_hotkey_custom_options_description=Egendefinerte lenker lar deg bruke sifre fra <code>1</code> til <code>9</code> for å få rask tilgang til alle gyldige panel-<code>URL.</code> <code>URL</code> kode> kan trekkes ut fra siden som er åpnet. For å raskt bytte til Apache-modul, sett for eksempel <code>apache</code> til <code>Egendefinert lenke 1</code>-feltet. Hvis standard modifikasjonsnøkkel er satt til <code>Alt,</code>, åpnes Apache-modulen ved å klikke <code>Alt + 1</code>.
 
-settings_right_reload=Last inn standardsiden på fanebryteren
+settings_right_sync=Last inn standardsiden på fanebryteren
 
 settings_hotkeys_active=Muliggjøre
 settings_hotkey_toggle_modifier=Modifikatortast

@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=Benutzerdefinierter Link 9
 settings_navigation_color=Farbpalette
 settings_loader_top=Ladebalken oben auf der Seite anzeigen
 settings_loader_left=Ladespinner im Navigationsmenü anzeigen
-settings_right_reload=Standardseite beim Tab-Wechsel laden
+settings_right_sync=Standardseite beim Tab-Wechsel laden
 
 settings_leftmenu_section_hide_refresh_modules=Link „Module aktualisieren“ ausblenden
 settings_leftmenu_section_hide_unused_modules=Abschnitt „Nicht verwendete Module“ ausblenden

@@ -44,7 +44,7 @@ settings_hotkey_custom_9_user=Brugerdefineret link <code>9</code>
 settings_navigation_color=Farvepalet
 settings_loader_top=Aktivér sidefremskyndelseslæsser øverst på skærmen
 settings_loader_left=Aktivér spinner til navigationsmenu
-settings_right_reload=Indlæs standardsiden på fanebladet
+settings_right_sync=Indlæs standardsiden på fanebladet
 
 settings_leftmenu_section_hide_refresh_modules=Skjul linket til opdateringsmoduler
 settings_leftmenu_section_hide_unused_modules=Skjul ikke-brugt modulssektion

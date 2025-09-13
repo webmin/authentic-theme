@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=Özel bağlantı <code>9</code>
 settings_navigation_color=Renk paleti
 settings_loader_top=Ekranın üst kısmındaki sayfa ilerleme yükleyicisini etkinleştir
 settings_loader_left=Gezinme menüsü için çeviriciyi etkinleştir
-settings_right_reload=Varsayılan sayfayı sekme anahtarına yükle
+settings_right_sync=Varsayılan sayfayı sekme anahtarına yükle
 
 settings_leftmenu_section_hide_refresh_modules=Yenileme modülleri bağlantısını gizle
 settings_leftmenu_section_hide_unused_modules=Kullanılmayan modüller bölümünü gizle

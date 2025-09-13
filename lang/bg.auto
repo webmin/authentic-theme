@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=Персонализирана връзка <code>
 settings_navigation_color=Цветова палитра
 settings_loader_top=Активирайте товарача за напредък на страницата в горната част на екрана
 settings_loader_left=Активиране на спинера за навигационното меню
-settings_right_reload=Заредете страницата по подразбиране в раздела за превключване
+settings_right_sync=Заредете страницата по подразбиране в раздела за превключване
 
 settings_leftmenu_section_hide_refresh_modules=Скриване на връзката за опресняване на модулите
 settings_leftmenu_section_hide_unused_modules=Скриване на раздела с неизползвани модули

@@ -6,7 +6,7 @@ var
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'index.cgi',
     settings_right_page_keep = true,
-    settings_right_reload = true,
+    settings_right_sync = 1,
     settings_document_title = 1,
     settings_palette_auto = true,
     settings_global_palette_unauthenticated = 'auto',

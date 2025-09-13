@@ -14,7 +14,7 @@ settings_right_logos_error=アップロードされたファイルは画像で�
 
 settings_right_hotkey_custom_options_description=カスタム リンクを使用すると、<code>1</code> から <code>9</code> までの数字を使用して、有効なパネルの <code>URL</code> にすばやくアクセスできます。<code>URL</code> は、現在開いているページから抽出できます。たとえば、Apache モジュールにすばやく切り替えるには、<code>apache</code> を <code>Custom link 1</code> フィールドに設定します。デフォルトの修飾キーが <code>Alt</code> に設定されている場合、<code>Alt + 1</code> をクリックすると、Apache モジュールが開きます。
 
-settings_right_reload=タブスイッチにデフォルトページをロード
+settings_right_sync=タブスイッチにデフォルトページをロード
 
 settings_favorites=お気に入りボタンを表示
 

@@ -130,7 +130,10 @@ settings_hotkey_custom_9_user=Custom link <code>9</code>
 settings_navigation_color=Color palette
 settings_loader_top=Enable page progress loader on top of the screen
 settings_loader_left=Enable spinner for navigation menu
-settings_right_reload=Load default page on tab switch
+settings_right_sync=Load default page on navigation switch
+settings_right_sync2=Yes, always
+settings_right_sync1=Yes, only on navigation switch
+settings_right_sync0=No, never
 
 settings_leftmenu_section_hide_refresh_modules=Hide refresh modules link
 settings_leftmenu_section_hide_unused_modules=Hide un-used modules section

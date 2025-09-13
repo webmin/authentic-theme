@@ -10,7 +10,7 @@ settings_right_logos_error=Nahraný soubor není obrázek
 settings_right_hotkey_custom_options_description=Vlastní odkazy vám umožňují používat číslice od <code>1</code> do <code>9</code> za účelem rychlého přístupu k libovolné platné <code>URL panelu</code> <code>URL</code> kód> lze extrahovat z aktuálně otevřené stránky. Chcete-li například rychle přepnout na modul Apache, nastavte <code>apache</code> na pole <code>Vlastní odkaz 1</code>. Pokud je výchozí modifikační klíč nastaven na <code>Alt</code>, kliknutím na <code>Alt + 1</code> se otevře modul Apache.
 
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
-settings_right_reload=Načíst výchozí stránku na přepínač kartě
+settings_right_sync=Načíst výchozí stránku na přepínač kartě
 
 settings_hotkeys_active=Umožnit
 settings_hotkey_toggle_modifier=Modifikační klíč

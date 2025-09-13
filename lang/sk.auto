@@ -130,7 +130,7 @@ settings_hotkey_custom_9_user=Vlastný odkaz <code>9</code>
 settings_navigation_color=Farebná paleta
 settings_loader_top=Povoľte v hornej časti obrazovky zavádzač priebehu stránky
 settings_loader_left=Povoliť rozmetávač pre navigačné menu
-settings_right_reload=Načítať predvolenú stránku pri prepínaní kariet
+settings_right_sync=Načítať predvolenú stránku pri prepínaní kariet
 
 settings_leftmenu_section_hide_refresh_modules=Skryť odkaz na obnovovacie moduly
 settings_leftmenu_section_hide_unused_modules=Skryť nepoužívané moduly

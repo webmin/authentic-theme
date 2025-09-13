@@ -122,7 +122,7 @@ settings_hotkey_custom_9_user=Egen länk <code>9</code>
 settings_navigation_color=Color palette
 settings_loader_top=Aktivera förloppsindikator överst på skärmen
 settings_loader_left=Aktivera roterande ikon för navigeringsmenyn
-settings_right_reload=Ladda standardsidan vid flikbyte
+settings_right_sync=Ladda standardsidan vid flikbyte
 
 settings_leftmenu_section_hide_refresh_modules=Dölj uppdateringslänk
 settings_leftmenu_section_hide_unused_modules=Dölj oanvända moduler

@@ -21,7 +21,7 @@ settings_hotkey_custom_9_user=Aangepaste link <code>9</code>
 settings_navigation_color=Kleurenpalet
 settings_loader_top=Schakel paginavoortganglader in bovenaan het scherm
 settings_loader_left=Schakel spinner in voor navigatiemenu
-settings_right_reload=Laad de standaardpagina op de tabschakelaar
+settings_right_sync=Laad de standaardpagina op de tabschakelaar
 
 settings_leftmenu_section_hide_refresh_modules=Verberg ververs modules link
 settings_leftmenu_section_hide_unused_modules=Verberg ongebruikte modules sectie

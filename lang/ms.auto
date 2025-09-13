@@ -9,7 +9,7 @@ settings_right_logos_error=Fail yang dimuat naik bukan imej
 
 settings_right_hotkey_custom_options_description=Pautan tersuai membolehkan anda menggunakan digit daripada <code>1</code> hingga <code>9</code> untuk mengakses pantas mana-mana panel <code>URL yang sah.</code> <code>URL</code> boleh diekstrak dari halaman yang sedang dibuka. Contohnya, untuk beralih pantas kepada modul Apache, tetapkan <code>apache</code> kepada medan <code>Pautan tersuai 1</code>. Jika kunci pengubah suai lalai ditetapkan kepada <code>Alt,</code> mengklik <code>Alt + 1</code>, akan membuka modul Apache anda.
 
-settings_right_reload=Muatkan halaman lalai pada suis tab
+settings_right_sync=Muatkan halaman lalai pada suis tab
 
 settings_hotkeys_active=Dayakan
 settings_hotkey_toggle_modifier=Kunci pengubah suai

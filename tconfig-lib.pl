@@ -31,7 +31,7 @@ sub theme_settings_raw
                        'settings_right_virtualmin_default',
                        'settings_right_cloudmin_default',
                        'settings_right_page_keep',
-                       'settings_right_reload',
+                       'settings_right_sync',
                        'settings_document_title',
                        'settings_palette_auto',
                        'settings_global_palette_unauthenticated',
@@ -182,7 +182,7 @@ sub theme_settings_filter
     {
         push(@theme_settings_filter,
              'settings_right_default_tab_webmin',
-             'settings_right_reload', 'settings_right_page_keep');
+             'settings_right_sync', 'settings_right_page_keep');
     }
 
     # Assign default for options provided by the server side
@@ -312,7 +312,7 @@ sub theme_settings_format
         }
     }
 
-    my $v = (length $theme_config{$k} ? $theme_config{$k} : $v);
+    $v = (length $theme_config{$k} ? $theme_config{$k} : $v);
 
     if ($v eq 'true' || $v eq 'false') {
         $v = ui_yesno_radio($k, $v, 'true', 'false');
@@ -566,6 +566,12 @@ sub theme_settings_format
                        ]);
     } elsif ($k eq 'settings_cm_editor_palette') {
         $v = settings_get_select_editor_color($v, $k);
+    } elsif ($k eq 'settings_right_sync') {
+        $v = ui_select($k, $v, [
+            [2, $theme_text{"settings_right_sync2"}],
+            [1, $theme_text{"settings_right_sync1"}],
+            [0, $theme_text{"settings_right_sync0"}]
+        ]);
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
     } elsif ($k eq 'settings_sysinfo_real_time_status') {
