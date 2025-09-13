@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 25.02 (September 12, 2025)
+#### Version 25.02 (September 14, 2025)
 * Add support to correctly reload the page in proxy mode
 * Add ability to dynamically trim graphs on the dashboard to avoid overfilling and lagging
 * Add improvements to how the system cache for the dashboard is updated
