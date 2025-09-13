@@ -131,6 +131,9 @@ settings_navigation_color=Paleta de cores
 settings_loader_top=Ativar o carregador de progresso da página na parte superior da tela
 settings_loader_left=Ativar o botão giratório para o menu de navegação
 settings_right_sync=Carregar página padrão na troca de guia
+settings_right_sync2=Sim, sempre
+settings_right_sync1=Sim, apenas no interruptor de navegação
+settings_right_sync0=Não, nunca
 
 settings_leftmenu_section_hide_refresh_modules=Ocultar link de módulos de atualização
 settings_leftmenu_section_hide_unused_modules=Ocultar seção de módulos não utilizados

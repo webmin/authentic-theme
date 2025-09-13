@@ -9,6 +9,10 @@ settings_right_logos_error=Il file caricato non è un'immagine
 
 settings_right_hotkey_custom_options_description=I collegamenti personalizzati ti consentono di utilizzare le cifre da <code>1</code> a <code>9</code> per accedere rapidamente a qualsiasi <code>URL</code> del pannello valido. L'<code>URL</code> code> può essere estratto dalla pagina attualmente aperta. Ad esempio, per passare rapidamente al modulo Apache, imposta <code>apache</code> nel campo <code>Link personalizzato 1</code>. Se il tasto modificatore predefinito è impostato su <code>Alt,</code> facendo clic su <code>Alt + 1</code>, si aprirà il modulo Apache.
 
+settings_right_sync2=Sì, sempre
+settings_right_sync1=Sì, solo sull'interruttore di navigazione
+settings_right_sync0=No, mai
+
 settings_hotkeys_active=Abilitare
 settings_hotkey_toggle_modifier=Tasto modificatore
 settings_hotkey_toggle_key_webmin=Carica il menu Webmin

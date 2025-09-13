@@ -11,6 +11,9 @@ settings_right_hotkey_custom_options_description=Vlastní odkazy vám umožňuj�
 
 settings_loader_top=V horní části obrazovky povolte zavaděč průběhu stránky
 settings_right_sync=Načíst výchozí stránku na přepínač kartě
+settings_right_sync2=Ano, vždy
+settings_right_sync1=Ano, pouze na navigačním spínači
+settings_right_sync0=Ne, nikdy
 
 settings_hotkeys_active=Umožnit
 settings_hotkey_toggle_modifier=Modifikační klíč

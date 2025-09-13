@@ -131,6 +131,9 @@ settings_navigation_color=Παλέτα χρωμάτων
 settings_loader_top=Ενεργοποίηση του προγράμματος φόρτωσης προόδου σελίδας στο πάνω μέρος της οθόνης
 settings_loader_left=Ενεργοποίηση spinner για μενού πλοήγησης
 settings_right_sync=Φόρτωση προεπιλεγμένης σελίδας στο διακόπτη καρτέλας
+settings_right_sync2=Ναι, πάντα
+settings_right_sync1=Ναι, μόνο στον διακόπτη πλοήγησης
+settings_right_sync0=Όχι, ποτέ
 
 settings_leftmenu_section_hide_refresh_modules=Απόκρυψη συνδέσμου μονάδων ανανέωσης
 settings_leftmenu_section_hide_unused_modules=Απόκρυψη ενότητας μη χρησιμοποιημένων ενοτήτων

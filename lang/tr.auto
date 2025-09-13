@@ -131,6 +131,9 @@ settings_navigation_color=Renk paleti
 settings_loader_top=Ekranın üst kısmındaki sayfa ilerleme yükleyicisini etkinleştir
 settings_loader_left=Gezinme menüsü için çeviriciyi etkinleştir
 settings_right_sync=Varsayılan sayfayı sekme anahtarına yükle
+settings_right_sync2=Evet, her zaman
+settings_right_sync1=Evet, yalnızca navigasyon anahtarında
+settings_right_sync0=Hayır, asla
 
 settings_leftmenu_section_hide_refresh_modules=Yenileme modülleri bağlantısını gizle
 settings_leftmenu_section_hide_unused_modules=Kullanılmayan modüller bölümünü gizle

@@ -131,6 +131,9 @@ settings_navigation_color=色彩調色板
 settings_loader_top=在屏幕頂部啟用頁面進度加載器
 settings_loader_left=啟用微調器的導航菜單
 settings_right_sync=在選項卡開關上加載默認頁面
+settings_right_sync2=是的，總是
+settings_right_sync1=是的，僅在導航開關上
+settings_right_sync0=不，永遠不會
 
 settings_leftmenu_section_hide_refresh_modules=隱藏刷新模塊鏈接
 settings_leftmenu_section_hide_unused_modules=隱藏未使用的模塊部分

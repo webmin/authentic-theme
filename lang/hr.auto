@@ -131,6 +131,9 @@ settings_navigation_color=Paleta boja
 settings_loader_top=Omogućite program za učitavanje napredovanja stranice na vrhu zaslona
 settings_loader_left=Omogući spinner za navigacijski izbornik
 settings_right_sync=Učitajte zadanu stranicu na prekidač kartice
+settings_right_sync2=Da, uvijek
+settings_right_sync1=Da, samo na navigacijskoj sklopki
+settings_right_sync0=Ne, nikad
 
 settings_leftmenu_section_hide_refresh_modules=Sakrij vezu za osvježavanje modula
 settings_leftmenu_section_hide_unused_modules=Sakrij odjeljak neiskorištenih modula

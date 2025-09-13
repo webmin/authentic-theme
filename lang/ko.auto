@@ -131,6 +131,9 @@ settings_navigation_color=색상 팔레트
 settings_loader_top=화면 상단에 페이지 진행 로더 사용
 settings_loader_left=탐색 메뉴에 스피너 사용
 settings_right_sync=탭 스위치에 기본 페이지로드
+settings_right_sync2=네, 항상 그렇죠
+settings_right_sync1=네, 내비게이션 스위치에서만 가능합니다
+settings_right_sync0=아니요, 절대요
 
 settings_leftmenu_section_hide_refresh_modules=새로 고침 모듈 링크 숨기기
 settings_leftmenu_section_hide_unused_modules=사용하지 않는 모듈 섹션 숨기기

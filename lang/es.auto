@@ -45,6 +45,9 @@ settings_navigation_color=Paleta de color
 settings_loader_top=Habilite el cargador de progreso de página en la parte superior de la pantalla
 settings_loader_left=Habilitar ruleta para el menú de navegación
 settings_right_sync=Cargar página predeterminada en el interruptor de pestaña
+settings_right_sync2=Sí, siempre
+settings_right_sync1=Sí, solo en el interruptor de navegación
+settings_right_sync0=No, nunca
 
 settings_leftmenu_section_hide_refresh_modules=Ocultar enlace de módulos de actualización
 settings_leftmenu_section_hide_unused_modules=Ocultar sección de módulos no utilizados

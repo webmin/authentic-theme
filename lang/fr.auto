@@ -10,6 +10,9 @@ settings_right_logos_error=Le fichier téléchargé n'est pas une image
 settings_right_hotkey_custom_options_description=Les liens personnalisés vous permettent d'utiliser des chiffres de <code>1</code> à <code>9</code> afin d'accéder rapidement à n'importe quelle <code>URL de panneau valide.</code> L'<code>URL</code> peut être extrait de la page actuellement ouverte. Par exemple, pour basculer rapidement vers le module Apache, définissez <code>apache</code> sur le champ <code>Lien personnalisé 1</code>. Si la touche de modification par défaut est définie sur <code>Alt,</code> en cliquant sur <code>Alt + 1</code>, vous ouvrirez le module Apache.
 
 settings_right_sync=Charger la page par défaut sur le commutateur d'onglet
+settings_right_sync2=Oui, toujours
+settings_right_sync1=Oui, uniquement sur le commutateur de navigation
+settings_right_sync0=Non, jamais
 
 settings_hotkeys_active=Activer
 settings_hotkey_toggle_modifier=Touche de modification

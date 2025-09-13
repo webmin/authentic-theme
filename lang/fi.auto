@@ -131,6 +131,9 @@ settings_navigation_color=Väripaletti
 settings_loader_top=Ota sivun edistymisen lataus käyttöön näytön yläreunaan
 settings_loader_left=Ota kehrä navigointivalikossa käyttöön
 settings_right_sync=Lataa oletussivu välilehden kytkimelle
+settings_right_sync2=Kyllä, aina
+settings_right_sync1=Kyllä, vain navigointikytkimellä
+settings_right_sync0=Ei, ei koskaan
 
 settings_leftmenu_section_hide_refresh_modules=Piilota päivitysmoduulilinkki
 settings_leftmenu_section_hide_unused_modules=Piilota käyttämättömät moduulit -osa

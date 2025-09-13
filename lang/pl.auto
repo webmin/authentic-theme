@@ -3,6 +3,10 @@ reset_message=Zamierzasz zresetować hasło użytkownika <tt>$1</tt> na
 login_recover=Poproś o zresetowanie hasła
 login_back=Wracać
 
+settings_right_sync2=Tak, zawsze
+settings_right_sync1=Tak, tylko na przełączniku nawigacyjnym
+settings_right_sync0=Nie, nigdy
+
 # 17.84
 theme_xhred_datatable_filter=Filtr
 

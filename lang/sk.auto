@@ -131,6 +131,9 @@ settings_navigation_color=Farebná paleta
 settings_loader_top=Povoľte v hornej časti obrazovky zavádzač priebehu stránky
 settings_loader_left=Povoliť rozmetávač pre navigačné menu
 settings_right_sync=Načítať predvolenú stránku pri prepínaní kariet
+settings_right_sync2=Áno, vždy
+settings_right_sync1=Áno, iba na navigačnom prepínači
+settings_right_sync0=Nie, nikdy
 
 settings_leftmenu_section_hide_refresh_modules=Skryť odkaz na obnovovacie moduly
 settings_leftmenu_section_hide_unused_modules=Skryť nepoužívané moduly

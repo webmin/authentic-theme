@@ -131,6 +131,9 @@ settings_navigation_color=لوحة الألوان
 settings_loader_top=تفعيل أداة تحميل تقدم الصفحة أعلى الشاشة
 settings_loader_left=تمكين الدوار لقائمة التنقل
 settings_right_sync=تحميل الصفحة الافتراضية على مفتاح التبويب
+settings_right_sync2=نعم دائما
+settings_right_sync1=نعم، فقط على مفتاح التنقل
+settings_right_sync0=لا، أبدا
 
 settings_leftmenu_section_hide_refresh_modules=إخفاء رابط وحدات التحديث
 settings_leftmenu_section_hide_unused_modules=إخفاء قسم الوحدات غير المستخدمة

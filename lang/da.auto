@@ -45,6 +45,9 @@ settings_navigation_color=Farvepalet
 settings_loader_top=Aktivér sidefremskyndelseslæsser øverst på skærmen
 settings_loader_left=Aktivér spinner til navigationsmenu
 settings_right_sync=Indlæs standardsiden på fanebladet
+settings_right_sync2=Ja, altid
+settings_right_sync1=Ja, kun på navigationsknappen
+settings_right_sync0=Nej, aldrig
 
 settings_leftmenu_section_hide_refresh_modules=Skjul linket til opdateringsmoduler
 settings_leftmenu_section_hide_unused_modules=Skjul ikke-brugt modulssektion

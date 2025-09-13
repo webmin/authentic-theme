@@ -1,3 +1,7 @@
+settings_right_sync2=Ja, immer
+settings_right_sync1=Ja, nur am Navigationsschalter
+settings_right_sync0=Nein, niemals
+
 theme_xhred_filemanager_new_tab=Neuen Tab hinzufügen (Alt + Leertaste)
 
 # 18.40

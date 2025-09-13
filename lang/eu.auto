@@ -131,6 +131,9 @@ settings_navigation_color=Kolore paleta
 settings_loader_top=Gaitu orrialdearen aurrera kargatzailea pantailaren gainean
 settings_loader_left=Gaitu spinner nabigazio menua
 settings_right_sync=Kargatu lehenetsitako orria fitxa aldatzailean
+settings_right_sync2=Bai, beti
+settings_right_sync1=Bai, nabigazio-etengailuan bakarrik
+settings_right_sync0=Ez, inoiz ez
 
 settings_leftmenu_section_hide_refresh_modules=Ezkutatu freskatze moduluen esteka
 settings_leftmenu_section_hide_unused_modules=Ezkutatu erabili gabeko moduluen atala

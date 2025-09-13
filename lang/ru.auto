@@ -48,6 +48,9 @@ settings_navigation_color=Цветовая палитра
 settings_loader_top=Включить загрузчик прогресса страницы в верхней части экрана
 settings_loader_left=Включить спиннер для меню навигации
 settings_right_sync=Загрузить страницу по умолчанию при переключении вкладки
+settings_right_sync2=Да, всегда
+settings_right_sync1=Да, только на переключателе навигации
+settings_right_sync0=Нет, никогда
 
 settings_hotkeys_active=Давать возможность
 settings_hotkey_toggle_modifier=Ключ модификатора

@@ -131,6 +131,9 @@ settings_navigation_color=Szín paletta
 settings_loader_top=Engedélyezze az oldalfejlesztőt a képernyő tetején
 settings_loader_left=Spinner engedélyezése a navigációs menüben
 settings_right_sync=Az alapértelmezett oldal betöltése a fülkapcsolóra
+settings_right_sync2=Igen, mindig
+settings_right_sync1=Igen, csak a navigációs kapcsolón
+settings_right_sync0=Nem, soha
 
 settings_leftmenu_section_hide_refresh_modules=A modulok frissítése link elrejtése
 settings_leftmenu_section_hide_unused_modules=A nem használt modulok rész elrejtése

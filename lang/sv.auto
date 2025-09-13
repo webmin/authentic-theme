@@ -9,6 +9,10 @@ settings_right_logos_error=Uppladdad fil är inte en bild
 
 settings_right_hotkey_custom_options_description=Anpassade länkar gör att du kan använda siffror från <code>1</code> till <code>9</code> för att snabbt komma åt alla giltiga <code>URL-adresser</code> <code>URL</code>. code> kan extraheras från den för närvarande öppnade sidan. Till exempel, för att snabbt växla till Apache-modul, ställ in <code>apache</code> till <code>Anpassad länk 1</code>-fält. Om standardnyckeln är inställd på <code>Alt,</code> öppnas din Apache-modul genom att klicka på <code>Alt + 1</code>.
 
+settings_right_sync2=Ja, alltid
+settings_right_sync1=Ja, bara på navigationsknappen
+settings_right_sync0=Nej, aldrig
+
 settings_hotkeys_active=Gör det möjligt
 settings_hotkey_toggle_modifier=Modifieringsknapp
 settings_hotkey_toggle_key_webmin=Ladda Webmin-menyn
