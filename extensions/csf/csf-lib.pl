@@ -54,14 +54,18 @@ sub csf_strings
     {
         my $cache_id = 'version-csf-stable';
         $csf_remote_version = theme_cache_read($cache_id);
-        my $download_server = $theme_config{'settings_csf_download_domain'};
-        my $download_port   = $theme_config{'settings_csf_download_port'};
-        my $download_path   = $theme_config{'settings_csf_download_path'};
+        $csf_remote_version = undef if !scalar $csf_remote_version;
+        my $download_server = $theme_config{'settings_csf_download_domain_privileged'};
+        my $download_port   = $theme_config{'settings_csf_download_port_privileged'};
+        my $download_path   = $theme_config{'settings_csf_download_path_privileged'};
+        my $ssl = ($download_port =~ /^\d+$/)
+                ? ($download_port == 80 || $download_port == 8080 ? 0 : 1)
+                : 0;
         if (!$csf_remote_version ||
             ($csf_remote_version && !theme_cache_is_fresh($cache_id))) {
             http_download($download_server, $download_port, $download_path,
                           \$csf_remote_version, \$error,
-                          undef, undef, undef, undef, 30);
+                          undef, $ssl, undef, undef, 30);
             theme_cache_write($cache_id, $csf_remote_version) if ($csf_remote_version && !$error);
         }
 
