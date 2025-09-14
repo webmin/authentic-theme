@@ -1096,7 +1096,15 @@ sub nav_links
           ' hidden'
       ) .
       '">';
-    $rv .= '<span><i class="fa fa-fw ' . (theme_night_mode() ? 'fa-sun' : 'fa-moon') . '"></i></span>';
+    $rv .= '<span><i class="fa fa-fw ' .
+        ($theme_config{'settings_palette_auto'} eq 'true'
+            ? ('fa-auto-palette' . (theme_night_mode()
+                ? ' sun-icon'
+                : ' moon-icon'))
+            : theme_night_mode()
+                ? 'fa-sun sun-icon'
+                : 'fa-moon moon-icon'
+        ) . '"></i></span>';
     $rv .= '</li>';
 
     if ((foreign_available("xterm") && $theme_config{'settings_show_terminal_link'} ne 'false') ||

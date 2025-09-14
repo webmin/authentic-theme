@@ -1,10 +1,11 @@
 ## Changelog
 
-#### Version 25.10 (September 14, 2025)
+#### Version 25.10 (September 15, 2025)
 * Add support to correctly reload the page in proxy mode
 * Add ability to dynamically trim graphs on the dashboard to avoid overfilling and lagging
 * Add improvements to how the system cache for the dashboard is updated
 * Add ability to choose if default page should load when switching navigation
+* Fix to ensure the color palette is preserved for the user [webmin#2537](https://github.com/webmin/webmin/issues/2537)
 * Fix the alert info box text color for dark mode
 * Fix critical lags and appearance of Custom Commands module
 

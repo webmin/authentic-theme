@@ -575,12 +575,12 @@ theme_xhred_move_up=Move up
 theme_xhred_move_down=Move down
 theme_xhred_add_after=Add after
 theme_xhred_add_before=Add before
-settings_show_night_mode_link=Show light/dark mode button
+settings_show_night_mode_link=Show light/dark color scheme toggle
 settings_hotkey_toggle_key_night_mode=Toggle color palette
 settings_title=Theme Configuration
 settings_subtitle=For user
 
-theme_tooltip_night_mode=Light/dark mode toggle
+theme_tooltip_night_mode=Light/dark color scheme toggle
 theme_tooltip_terminal_link=Terminal
 theme_tooltip_language_link=Language
 theme_xhred_tooltip_switch_user=Switch user
