@@ -6,6 +6,7 @@
 * Add improvements to how the system cache for the dashboard is updated
 * Add ability to choose if default page should load when switching navigation
 * Fix to ensure the color palette is preserved for the user [webmin#2537](https://github.com/webmin/webmin/issues/2537)
+* Fix algorithm for calculating rows per page in data table pagination
 * Fix the alert info box text color for dark mode
 * Fix critical lags and appearance of Custom Commands module
 
