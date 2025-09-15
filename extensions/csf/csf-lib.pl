@@ -52,26 +52,32 @@ sub csf_strings
         &webmin_user_is_admin() &&
         $in{'xhr-info'} eq '1')
     {
-        my $cache_id = 'version-csf-stable';
+        my $cache_id = 'version-csf';
         $csf_remote_version = theme_cache_read($cache_id);
-        $csf_remote_version = undef if !scalar $csf_remote_version;
         my $download_server = $theme_config{'settings_csf_download_domain_privileged'};
-        my $download_port   = $theme_config{'settings_csf_download_port_privileged'};
-        my $download_path   = $theme_config{'settings_csf_download_path_privileged'};
-        my $ssl = ($download_port =~ /^\d+$/)
-                ? ($download_port == 80 || $download_port == 8080 ? 0 : 1)
-                : 0;
-        if (!$csf_remote_version ||
-            ($csf_remote_version && !theme_cache_is_fresh($cache_id))) {
-            http_download($download_server, $download_port, $download_path,
-                          \$csf_remote_version, \$error,
-                          undef, $ssl, undef, undef, 30);
-            theme_cache_write($cache_id, $csf_remote_version) if ($csf_remote_version && !$error);
+        # If download server is set to discontinued "download.configserver.com",
+        # update cache with existing without trying to download anything
+        if ($download_server eq 'download.configserver.com') {
+            theme_cache_write($cache_id, $csf_remote_version);    
+            $csf_remote_version = '0';   
+        } else {
+            my $download_port   = $theme_config{'settings_csf_download_port_privileged'};
+            my $download_path   = $theme_config{'settings_csf_download_path_privileged'};
+            my $ssl = ($download_port =~ /^\d+$/)
+                    ? ($download_port == 80 || $download_port == 8080 ? 0 : 1)
+                    : 0;
+            if (!$csf_remote_version ||
+                ($csf_remote_version && !theme_cache_is_fresh($cache_id))) {
+                http_download($download_server, $download_port, $download_path,
+                            \$csf_remote_version, \$error,
+                            undef, $ssl, undef, undef, 30);
+                theme_cache_write($cache_id, $csf_remote_version) if ($csf_remote_version && !$error);
+            }
         }
-
         # Trim versions' number
-        $csf_installed_version =~ s/^\s+|\s+$//g;
-        $csf_remote_version    =~ s/^\s+|\s+$//g;
+        $csf_installed_version = &trim($csf_installed_version) if $csf_installed_version;
+        $csf_remote_version    = &trim($csf_remote_version) if $csf_remote_version;
+
     } else {
         $csf_remote_version = '0';
     }
