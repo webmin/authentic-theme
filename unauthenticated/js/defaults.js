@@ -147,7 +147,7 @@ var
     // E.g. to change options below, you would need to open browser's console,
     // change an option value and call `theme.config.save()` function.
     //
-    settings_table_auto_datatables = true,
+    settings_table_auto_dt = true,
     settings_table_init_datatables = 20000,
     settings_right_page_hide_persistent_vscroll = true,
     settings_hide_top_loader = false,
