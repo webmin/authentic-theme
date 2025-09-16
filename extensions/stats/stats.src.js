@@ -439,7 +439,7 @@ const stats = {
                                     threshold: function () {
                                         return this.type() ? -1 : 80;
                                     },
-                                    height: "100px",
+                                    height: "110px",
                                 },
                             },
                             lg = this._.language(`${this.selector.chart.container.parent}_${type}`),
@@ -554,7 +554,7 @@ const stats = {
                                 {
                                     axisX: {
                                         type: this._.chart.FixedScaleAxis,
-                                        divisor: 12,
+                                        divisor: 6,
                                         labelInterpolationFnc: (value) => {
                                             return this._.dayjs(value * 1000)
                                                 .utcOffset(this._.locale.offset())
@@ -563,7 +563,7 @@ const stats = {
                                     },
                                     height: options.chart.height,
                                     showArea: options.chart.fill(),
-                                    showPoint: !options.chart.fill(),
+                                    showPoint: false,
                                     high: options.chart.high(),
                                     low: 0,
                                     fullWidth: true,
