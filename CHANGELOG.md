@@ -1,10 +1,10 @@
 ## Changelog
 
 #### Version 25.10 (September 16, 2025)
-* Add support to correctly reload the page in proxy mode
 * Add optimizations to dashboard graphs with dynamic trimming to prevent page lagging
 * Add improvements to how the system cache for the dashboard is updated
-* Add ability to choose if default page should load when switching navigation
+* Add support to correctly reload the page in proxy mode
+* Add an option to choose if default page should always load when switching navigation
 * Fix to ensure the color palette is preserved for the user [webmin#2537](https://github.com/webmin/webmin/issues/2537)
 * Fix algorithm for calculating rows per page in data table pagination
 * Fix the alert info box text color for dark mode
