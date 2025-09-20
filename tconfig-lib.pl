@@ -181,8 +181,7 @@ sub theme_settings_filter
         !foreign_available("virtual-server"))
     {
         push(@theme_settings_filter,
-             'settings_right_default_tab_webmin',
-             'settings_right_sync', 'settings_right_page_keep');
+             'settings_right_default_tab_webmin', 'settings_right_page_keep');
     }
 
     # Assign default for options provided by the server side
