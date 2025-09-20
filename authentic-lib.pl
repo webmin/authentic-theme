@@ -751,17 +751,17 @@ sub get_sysinfo_vars
         # Virtualmin version
         if ($has_virtualmin) {
             &foreign_require("virtual-server");
-            if (defined(&virtual_server::get_module_version_and_type)) {
-                my ($major, $minor, $build) = &virtual_server::get_module_version_and_type(1);
+            if (defined(&virtual_server::get_module_version)) {
+                my ($major, $minor, $build) = &virtual_server::get_module_version();
                 my ($vs_license, $__virtual_server_version);
                 $vs_license               = check_pro_package('vm');
                 $__virtual_server_version = ("$major.$minor".(defined($build) ? ".$build" : '')."");
                 $virtualmin_version = (
                     product_version_update($__virtual_server_version, 'v') . " " . (
-                        $vs_license eq '0' ? '' :
+                        $vs_license eq '0' ? ' GPL&nbsp;&nbsp;' :
                         ''
 
-                        . ' Pro <div class="btn-group margined-left-4' . $is_hidden_link . '">'
+                        . ' Professional <div class="btn-group margined-left-4' . $is_hidden_link . '">'
                         .
                         ( ($vs_license eq '1') ?
                             ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
