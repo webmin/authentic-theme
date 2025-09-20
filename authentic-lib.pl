@@ -775,7 +775,7 @@ sub get_sysinfo_vars
                     '" href="https://forum.virtualmin.com" target="_blank"><i class="fa2 fa2-chat fa2-smallerified"></i></a>'
                     . '<a class="btn btn-default btn-xxs margined-left--1'
                     . $is_hidden_link . '" data-container="body" title="' . $theme_text{'theme_xhred_sysinfo_vmdocs'} .
-    '" href="http://www.virtualmin.com/documentation" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a>'
+    '" href="https://www.virtualmin.com/docs/" target="_blank"><i class="fa2 fa2-book fa2-smallerified2"></i></a>'
                 );
             } else {
                 $virtualmin_version = $virtual_server::module_info{'version'};
