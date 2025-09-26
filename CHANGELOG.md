@@ -2,6 +2,7 @@
 
 #### Version 25.20 (September 28, 2025)
 * Fix the text color when reading email in the Read User Mail module [webmin#2555](https://github.com/webmin/webmin/issues/2555)
+* Fix to ensure the selected color palette is correctly stored when changed manually [webmin#2552](https://github.com/webmin/webmin/issues/2552)
 
 #### Version 25.10 (September 16, 2025)
 * Add optimizations to dashboard graphs with dynamic trimming to prevent page lagging
