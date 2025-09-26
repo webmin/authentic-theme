@@ -282,6 +282,3 @@ var
 
     // Deprecated options
     settings_embed_product_branding_privileged = settings_embed_product_splash_privileged;
-//
-//
-//
