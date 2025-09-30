@@ -1,10 +1,11 @@
 ## Changelog
 
-#### Version 25.20 (September 29, 2025)
+#### Version 25.20 (September 30, 2025)
 * Fix the text color when reading email in the Read User Mail module [webmin#2555](https://github.com/webmin/webmin/issues/2555)
 * Fix to ensure the selected color palette is correctly stored when changed manually [webmin#2552](https://github.com/webmin/webmin/issues/2552)
-* Fix a bug when the Webmin version label was missing when copying system information from the dashboard
+* Fix a bug when the Webmin version label was missing when copying to clipboard system information from the dashboard
 * Fix spinner color in toast messages for dark palette
+* Fix other bugs and add various small improvements
 
 #### Version 25.10 (September 16, 2025)
 * Add optimizations to dashboard graphs with dynamic trimming to prevent page lagging
@@ -15,6 +16,8 @@
 * Fix algorithm for calculating rows per page in data table pagination
 * Fix the alert info box text color for dark mode
 * Fix critical lags and appearance of Custom Commands module
+
+<!--- separator --->
 
 #### Version 25.01 (September 6, 2025)
 * Fix broken editor in Bootup and Shutdown module [#1718](https://github.com/webmin/authentic-theme/issues/1718)
@@ -42,8 +45,6 @@
 * Fix period selection for retention time for live stats [#1712](https://github.com/webmin/authentic-theme/issues/1712)
 * Fix recent logins button in the dashboard
 * Fix several UI issues for the upcoming Virtualmin WP Workbench Manager plugin
-
-<!--- separator --->
 
 #### Version 24.02 (June 9, 2025)
 * Fix broken encoding for Japanese, Korean, and Chinese
