@@ -420,7 +420,7 @@ sub stats_network_netstat
     # Capture network stats
     my $get_net_stats = sub {
         my %stats;
-        open(my $netstat, '-|', 'netstat -ib');
+        open(my $netstat, '-|', 'netstat -ibn');
         while (<$netstat>) {
             next if $. == 1;  # Skip header
             my @fields = split;
