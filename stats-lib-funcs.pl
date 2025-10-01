@@ -353,13 +353,13 @@ sub stats_network_proc
 {
     # Return if not available
     state $no_stats_network_proc = 0;
-    return () if ($no_stats_network_proc);
+    return [] if ($no_stats_network_proc);
     # Get network data from all interfaces
     my ($await) = @_;
     my $file = "/proc/net/dev";
     if (!-r $file) {
         $no_stats_network_proc = 1;
-        return ();
+        return [];
     }
     # Read and parse network data
     my (@titles, %result);
@@ -409,11 +409,11 @@ sub stats_network_netstat
 {
     state $no_stats_network_netstat = 0;
     # Return if not available
-    return () if ($no_stats_network_netstat);
+    return [] if ($no_stats_network_netstat);
     # Check if netstat is available
     if (!has_command('netstat')) {
         $no_stats_network_netstat = 1;
-        return ();
+        return [];
     }
     # Quarter of a second interval
     my $interval = 0.25;
