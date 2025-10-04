@@ -70,7 +70,7 @@ if (!$cmd) {
             $types .= " " . join(' ', @extra);
         }
     }
-    my $args = quotemeta($action) . " " . $types . " " . quotemeta($recursive);
+    my $args = quotemeta($action) . " " . $types . " " . $recursive;
     $args =~ s/\s+/ /g;
     $args = &trim($args);
 
