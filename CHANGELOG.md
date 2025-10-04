@@ -7,6 +7,7 @@
 * Fix DNS query spike from network stats collection on FreeBSD [webmin#2556](https://github.com/webmin/webmin/issues/2556)
 * Fix to display the appropriate icon for proxy mode on new Bunny DNS
 * Fix spinner color in toast messages for dark palette
+* Fix not to quotemeta hardcoded flag in File Manager when setting file ACLs [webmin#2159](https://github.com/webmin/webmin/issues/2159)
 * Fix other bugs and add various small improvements
 
 #### Version 25.10 (September 16, 2025)
