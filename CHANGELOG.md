@@ -5,9 +5,9 @@
 * Fix to ensure the selected color palette is correctly stored when changed manually [webmin#2552](https://github.com/webmin/webmin/issues/2552)
 * Fix a bug when the Webmin version label was missing when copying to clipboard system information from the dashboard
 * Fix DNS query spike from network stats collection on FreeBSD [webmin#2556](https://github.com/webmin/webmin/issues/2556)
+* Fix not to quotemeta hardcoded flag in File Manager when setting file ACLs [webmin#2159](https://github.com/webmin/webmin/issues/2159)
 * Fix to display the appropriate icon for proxy mode on new Bunny DNS
 * Fix spinner color in toast messages for dark palette
-* Fix not to quotemeta hardcoded flag in File Manager when setting file ACLs [webmin#2159](https://github.com/webmin/webmin/issues/2159)
 * Fix other bugs and add various small improvements
 
 #### Version 25.10 (September 16, 2025)
