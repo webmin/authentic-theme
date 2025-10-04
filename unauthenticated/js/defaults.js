@@ -245,6 +245,7 @@ var
             { 'fail2ban': 'jail brute-force bruteforce firewall iptables' },
             { 'net': 'routing gateways hostname dns /etc/hosts ip addr netplan networkmanager' },
             { 'fdisk': 'fdisk' },
+            { 'logviewer': 'journal journalctl' },
             { 'lvm': 'lvm' },
             { 'csf': 'csf' },
             { 'xterm': 'ssh shell bash zsh login ajax xterm' },
