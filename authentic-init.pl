@@ -78,7 +78,7 @@ sub settings_filter
 sub get_theme_color
 {
     # Chrome application header color should be darker than the theme color
-    my %theme_colors = ('blue'   => '#003670', # '#033e86',
+    my %theme_colors = ('blue'   => '#003670', # '#003a83',
                         'teal'   => '#02474c', # '#034b53',
                         'green'  => '#234b2d', # '#2b5936',
                         'purple' => '#45345e', # '#4f3a6e',
@@ -116,7 +116,7 @@ sub embed_favicon
     }
 
     my $theme_config_dir = "$config_directory/$current_theme";
-    my $theme_user_color = get_theme_color() || "#033e86";
+    my $theme_user_color = get_theme_color() || "#003a83";
 
     my $favicon_path = $theme_webprefix . '/images/favicons/' . $product_name;
     my $ref_link     = 'data-link-ref';
