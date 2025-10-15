@@ -698,7 +698,7 @@ sub theme_ui_textbox
     my $ids;
     $ids = "_i_$main::ui_textbox_tcalled" if ($main::ui_textbox_tcalled++);
     $class = $class ? " $class" : "";
-    my $style = ' style="display: inline; width: auto; max-width: 100%; height: 28px; padding-top: 0; padding-bottom: 2px; vertical-align: middle"';
+    my $style = ' style="display: inline; width: auto; max-width: 100%; height: 28px; padding-top: 0; padding-bottom: 1px; vertical-align: middle"';
     $style = '' if ($nostyle);
     $rv .=
 "<input$style class=\"form-control ui_textbox$class\" type=\"text\" ";
@@ -719,7 +719,7 @@ sub theme_ui_password
     my ($name, $value, $size, $dis, $max, $tags, $class, $nostyle) = @_;
     $class = $class ? " $class" : "";
     my $style = ' style="display: inline; width: auto; height: 28px;'.
-                ' padding-top: 0; padding-bottom: 2px; vertical-align:middle"';
+                ' padding-top: 0; padding-bottom: 1px; vertical-align:middle"';
     $style = '' if ($nostyle);
     my $rv .=
 "<input$style class=\"form-control ui_password$class\" type=\"password\" ";
@@ -1219,7 +1219,7 @@ sub theme_ui_opt_textbox
       "\n";
     my $min_width = $size ? '' : ' min-width: 15%;';
     $rv .=
-"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 2px;$min_width' type='$type' name=\""
+"<span><input class='ui_opt_textbox form-control' style='display: inline; width: auto; height: 28px; padding-top: 0; padding-bottom: 1px;$min_width' type='$type' name=\""
       . &quote_escape($name)
       . "\" " . "size=$size value=\"" .
       &quote_escape($value) . "\"" . ($dis ? " disabled=true" : "") . ($max ? " maxlength=$max" : "") .
