@@ -1586,6 +1586,7 @@ sub get_button_style
         $class = "success ";
         $icon  = "key";
     } elsif (string_contains($keys, "letsencrypt_title") ||
+             string_contains($keys, "cert_letsok") ||
              string_contains($keys, "ssl_copycert"))
     {
         $class = "success ";
