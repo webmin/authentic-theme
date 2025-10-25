@@ -193,7 +193,7 @@ sub theme_footer
             $url = "$theme_webprefix$url" if ($url =~ /^\//);
             $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/ && $url !~ /[&?]/);
             print
-"<a style='margin-bottom: 15px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> <span>",
+"<a style='margin-bottom: 10px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> <span>",
               &text('main_return', $_[$i + 1]), "</span></a>&nbsp;&nbsp;\n";
         }
     }
