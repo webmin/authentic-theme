@@ -2,6 +2,7 @@
 
 var
     // General defaults
+    settings_roundish_corners = true,
     settings_right_default_tab_usermin = 'webmail',
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'index.cgi',
@@ -12,7 +13,6 @@ var
     settings_global_palette_unauthenticated = 'auto',
     settings_cm_editor_palette = 'monokai',
     settings_theme_config_admins_only_privileged = false,
-    settings_embed_product_splash_privileged = false,
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
@@ -33,8 +33,6 @@ var
     settings_brightness_level_navigation = '1',
     settings_contrast_level_navigation = '1',
     settings_navigation_always_collapse = false,
-    settings_leftmenu_width = 260,
-    settings_auto_open_panels_on_proximity = false,
     settings_switch_rdisplay = false,
     settings_leftmenu_section_hide_refresh_modules = false,
     settings_leftmenu_section_hide_unused_modules = false,
@@ -64,7 +62,6 @@ var
     settings_right_table_animate_icons = false,
     settings_right_table_links_sorted = false,
     settings_right_table_grayscaled_icons = true,
-    settings_right_table_layout_control = false,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
@@ -147,6 +144,10 @@ var
     // E.g. to change options below, you would need to open browser's console,
     // change an option value and call `theme.config.save()` function.
     //
+    settings_right_table_layout_control = false,
+    settings_leftmenu_width = 265,
+    settings_auto_open_panels_on_proximity = false,
+    settings_embed_product_splash_privileged = false,
     settings_table_auto_dt = true,
     settings_table_init_datatables = 20000,
     settings_right_page_hide_persistent_vscroll = true,

@@ -25,6 +25,7 @@ sub theme_settings_raw
          {  'id'    => 's1',
             'title' => &theme_text('settings_global_general_options_title'),
             'data'  => [
+                       'settings_roundish_corners',
                        'settings_right_default_tab_webmin',
                        'settings_right_default_tab_usermin',
                        'settings_webmin_default_module',
@@ -37,7 +38,6 @@ sub theme_settings_raw
                        'settings_global_palette_unauthenticated',
                        'settings_cm_editor_palette',
                        'settings_theme_config_admins_only_privileged',
-                       'settings_embed_product_splash_privileged',
             ] }
         ],
 
@@ -68,8 +68,6 @@ sub theme_settings_raw
                        'settings_brightness_level_navigation',
                        'settings_contrast_level_navigation',
                        'settings_navigation_always_collapse',
-                       'settings_leftmenu_width',
-                       'settings_auto_open_panels_on_proximity',
                        'settings_switch_rdisplay',
                        'settings_navigation_auto_fold_category',
                        'settings_leftmenu_section_hide_refresh_modules',
@@ -111,7 +109,6 @@ sub theme_settings_raw
                        'settings_right_table_links_sorted',
                        'settings_right_table_animate_icons',
                        'settings_right_table_grayscaled_icons',
-                       'settings_right_table_layout_control',
             ] }
         ],
 
@@ -251,7 +248,7 @@ sub theme_settings_filter
         push(@theme_settings_filter, 'settings_show_terminal_link', 'settings_hotkey_shell');
     }
 
-    # Limit to certain options for non privleged user
+    # Limit to certain options for non privileged user
     if (!&webmin_user_is_admin()) {
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
@@ -362,8 +359,7 @@ sub theme_settings_format
              $k eq 'settings_hue_level_navigation'        ||
              $k eq 'settings_invert_level_navigation'     ||
              $k eq 'settings_brightness_level_navigation' ||
-             $k eq 'settings_contrast_level_navigation'   ||
-             $k eq 'settings_leftmenu_width')
+             $k eq 'settings_contrast_level_navigation')
     {
 
         my $range_max = '1';
@@ -391,11 +387,6 @@ sub theme_settings_format
             $range_min  = '-360';
             $range_max  = '360';
             $range_step = '1';
-        } elsif ($k eq 'settings_leftmenu_width') {
-            $range_min  = '260';
-            $range_max  = '520';
-            $range_step = '1';
-            $iwidth     = '25';
         }
         $v = '
                 <input style="display: inline; width: ' .
@@ -598,7 +589,6 @@ sub theme_settings_format
                       $v,
                       [[2, $theme_text{'settings_right_table_links_type_2'}],
                        [1, $theme_text{'settings_right_table_links_type_1'}],
-                       [0, $theme_text{'settings_right_table_links_type_0'}]
                       ]);
     }
     my $description = $theme_text{ $k . '_description' };

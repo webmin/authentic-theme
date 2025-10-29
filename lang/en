@@ -141,7 +141,7 @@ settings_favorites=Show favorites button
 settings_leftmenu_button_language=Show language button
 settings_leftmenu_button_refresh=Show refresh button
 
-settings_theme_options_button=Show theme settings button
+settings_theme_options_button=Show theme configuration button
 
 settings_hotkeys_active=Enable
 settings_hotkey_toggle_modifier=Modifier key
@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new
 settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Default pages
+settings_roundish_corners=Use rounded corners
 settings_right_default_tab_webmin=Default tab after logging in to Webmin
 settings_right_default_tab_usermin=Default tab after logging in to Usermin
 settings_right_virtualmin_default=Default page for Virtualmin
@@ -323,8 +324,6 @@ theme_xhred_filemanager_title_symlink_target=Link target
 
 # 17.60
 right_unlimited=Unlimited
-settings_leftmenu_width=Preferable width
-settings_leftmenu_width_description=Default/current width <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Show switches reversed
 settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required
 
@@ -1247,7 +1246,6 @@ theme_xhred_filemanager_context_prop_show_all=Show all properties
 settings_right_table_links_type=Table links display type
 settings_right_table_links_type_2=Large icons with text
 settings_right_table_links_type_1=Small icons with tooltip text
-settings_right_table_links_type_0=No icons, just text links
 settings_right_table_animate_icons=Show on-hover animation for table icon links
 settings_right_table_grayscaled_icons=Show table icon links in grayscale unless hovered
 theme_xhred_upload_initial_info_dir=Drag and drop a directory here or click to select
@@ -1430,7 +1428,6 @@ theme_xhred_editor_tb_code=Code block
 theme_xhred_editor_tb_code-block=Code block
 theme_xhred_editor_tb_direction=Text direction
 
-settings_right_table_layout_control=Show content layout control
 theme_xhred_tooltip_columns_layout=Content layout control
 theme_xhred_columns_layout_title=Content layout
 theme_xhred_columns_layout_variation=Layout variation
@@ -1446,8 +1443,6 @@ theme_xhred_columns_layout_remove=Hide This Widget
 theme_xhred_columns_layout_remove_button=Save and Hide
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontal layout cannot be used in the mobile mode, specifically when the screen width is less than 992px
 
-settings_auto_open_panels_on_proximity=Auto open closed panels on proximity
-
 theme_xhred_config_portable_module_xterm_render_addon=Enable WebGL rendering addon
 
 
@@ -1458,7 +1453,6 @@ theme_xhred_datatable_filter_and_export=Filter and export content
 # 21.10
 settings_hotkey_logout_dbl=Sign out
 theme_xhred_hotkey_emsg=The backslash key cannot be used as a shortcut
-settings_embed_product_splash_privileged=Display a branding splash screen following login
 dashboard_status_running=Running
 dashboard_status_stopped=Stopped
 
