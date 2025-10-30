@@ -329,6 +329,7 @@ sub embed_header
         }
 
         embed_css_night_rider();
+        embed_rounded_corners();
 
         embed_background();
         embed_styles();
@@ -369,6 +370,7 @@ sub embed_header
         }
 
         embed_css_night_rider();
+        embed_rounded_corners();
 
         if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
@@ -619,6 +621,23 @@ sub embed_css_night_rider
           (theme_debug_mode() ? 'src' : 'min') . '.css?' .
           theme_version('timestamped') .
           '" rel="stylesheet" data-palette>' . "\n";
+    }
+}
+
+sub embed_rounded_corners
+{
+    if ($theme_config{'settings_roundish_corners'} eq 'true') {
+        print "<style>
+          :root {
+            --left-menu-width: ".$theme_config{'settings_leftmenu_width'}."px;
+          }
+        </style>\n";
+        print ' <link type="text/css" href="' .
+                  $theme_webprefix .
+                  '/unauthenticated/css/rounded.' .
+                  (theme_debug_mode() ? 'src.scss' : 'min.css') . '?' .
+                  theme_version('timestamped') .
+                  '" rel="stylesheet" data-palette>' . "\n";
     }
 }
 
@@ -1685,6 +1704,7 @@ sub embed_login_head
         if ($theme_night_mode_login_auto) {
             print $theme_night_mode_login_auto;
         }
+        embed_rounded_corners();
     }
 
     embed_background();
