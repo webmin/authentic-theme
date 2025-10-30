@@ -46,9 +46,6 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_sysinfo_page_options'),
             'data'  => [
                        'settings_sysinfo_easypie_charts',
-                       'settings_sysinfo_easypie_charts_size',
-                       'settings_sysinfo_easypie_charts_width',
-                       'settings_sysinfo_easypie_charts_scale',
                        'settings_sysinfo_hidden_panels_user',
                        'settings_sysinfo_max_servers',
                        'settings_sysinfo_real_time_status',
@@ -256,9 +253,6 @@ sub theme_settings_filter
              'settings_hotkey_slider',
              'settings_global_palette_unauthenticated',
              'settings_sysinfo_easypie_charts',
-             'settings_sysinfo_easypie_charts_size',
-             'settings_sysinfo_easypie_charts_width',
-             'settings_sysinfo_easypie_charts_scale',
              'settings_sysinfo_max_servers',
              'settings_sysinfo_real_time_status',
              'settings_sysinfo_real_time_stored_duration',
@@ -334,8 +328,6 @@ sub theme_settings_format
                             \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
         }
 
-    } elsif ($k eq 'settings_sysinfo_easypie_charts_size') {
-        $v = ui_textbox($k, $v, 3);
     } elsif ($k =~ /settings_hotkey_toggle_key_/ ||
              $k eq 'settings_hotkey_focus_search'  ||
              $k eq 'settings_hotkey_navigation'    ||
@@ -348,9 +340,7 @@ sub theme_settings_format
              $k eq 'settings_hotkey_favorites')
     {
         $v = ui_textbox($k, $v, 1, undef, 1);
-    } elsif ($k eq 'settings_sysinfo_easypie_charts_width' ||
-             $k eq 'settings_sysinfo_easypie_charts_scale' ||
-             $k eq 'settings_sysinfo_max_servers')
+    } elsif ($k eq 'settings_sysinfo_max_servers')
     {
         $v = ui_textbox($k, $v, 1);
     } elsif ($k eq 'settings_grayscale_level_navigation' ||
@@ -797,7 +787,6 @@ sub settings_get_select_document_title
       <option value="6"'
       . ($v eq '6' && ' selected') . '>' . theme_text('settings_document_title_option_6', ucfirst($prod_name)) . '</option>
       </select>';
-
 }
 
 sub settings_get_select_default_module

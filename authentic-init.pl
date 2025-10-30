@@ -635,7 +635,7 @@ sub embed_rounded_corners
         print ' <link type="text/css" href="' .
                   $theme_webprefix .
                   '/unauthenticated/css/rounded.' .
-                  (theme_debug_mode() ? 'src.scss' : 'min.css') . '?' .
+                  (theme_debug_mode() ? 'src.scss' : 'min') . '.css?' .
                   theme_version('timestamped') .
                   '" rel="stylesheet" data-palette>' . "\n";
     }

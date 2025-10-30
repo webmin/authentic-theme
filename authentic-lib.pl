@@ -481,8 +481,8 @@ sub print_sysstats_panel_start
     my %virtualmin_config = foreign_config('virtual-server');
     my %cloudmin_config   = foreign_config('server-manager');
 
-    print '<div id="system-status" class="panel panel-default" style="margin-bottom: 5px">' . "\n";
-    print '<div class="panel-heading">' . "\n";
+    print '<div id="system-status" class="panel panel-default dashboard" style="margin-bottom: 5px">' . "\n";
+    print '<div class="panel-heading">'."\n";
     my $debug_mode = theme_debug_mode() ? '&nbsp;&nbsp;<i class="fa2 fa2-bug fa-0_75x opacity-0_2"></i>' : "";
     print '<h3 class="panel-title">'
       .

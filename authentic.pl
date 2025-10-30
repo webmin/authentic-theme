@@ -59,7 +59,8 @@ sub theme_header
                   (@_ > 1 ? '1' : '0'),
                   ($tref  ? 1   : 0)));
     my $body_initial = !http_x_request() ? ' data-load-initial="1"' : undef;
-    print '<body data-initial-load="1" ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
+    my $data_round = $theme_config{'settings_roundish_corners'} ne 'false' ? 1 : 0;
+    print '<body data-round="'.$data_round.'" data-initial-load="1" ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!http_x_request());
 
     # Embed branding
@@ -1308,6 +1309,7 @@ sub theme_ui_hidden_table_start
     my $defclass =
       $status ? 'opener_shown' :
       'opener_hidden';
+    my $trigger_class = $status == 1 ? 'opener_container_opened' : 'opener_container_closed';
     my $text =
       defined($tconfig{'cs_text'}) ? $tconfig{'cs_text'} :
       defined($gconfig{'cs_text'}) ? $gconfig{'cs_text'} :
@@ -1319,7 +1321,7 @@ sub theme_ui_hidden_table_start
         $rv .= "<tr" . ($tb ? " " . $tb : "") . "><td>";
         if (defined($heading)) {
             $rv .=
-"<a tabindex='-1' class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
+"<a tabindex='-1' class='opener_trigger $trigger_class' href=\"javascript:hidden_opener('$divid', '$openerid')\" id='$openerid'></a> <a class='opener_trigger' href=\"javascript:hidden_opener('$divid', '$openerid')\">$heading</a></td>";
         }
         if (defined($rightheading)) {
             $rv .= "<td align=right>$rightheading</td>";
@@ -1329,7 +1331,7 @@ sub theme_ui_hidden_table_start
     }
     $rv .=
       "<tr" . ($cb ? " " . $cb : "") .
-      "><td class='opener_container' colspan=$colspan><div class='$defclass' id='$divid'><table width=100%>\n";
+      "><td class='opener_container panel-table-body' colspan=$colspan><div class='$defclass' id='$divid'><table width=100%>\n";
     $main::ui_table_cols        = $cols || 4;
     $main::ui_table_pos         = 0;
     $main::ui_table_default_tds = $tds;
