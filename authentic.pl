@@ -552,7 +552,7 @@ sub theme_ui_help
 {
     my ($title) = @_;
     return (
-"<sup class=\"ui_help\" data-container=\"body\" data-placement=\"auto right\" data-title=\"$title\" data-toggle=\"tooltip\"><i class=\"fa fa-0_80x fa-question-circle cursor-help\"></i></sup>"
+"<sup class=\"ui_help\" data-container=\"body\" data-placement=\"auto right\" data-title=\"$title\" data-toggle=\"tooltip\"><i class=\"fa fa-question-circle cursor-help ui_help_icon\"></i></sup>"
     );
 }
 

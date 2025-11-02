@@ -597,7 +597,7 @@ sub theme_settings_format
          (
           $description && (
               $k =~ /level_navigation|leftmenu_width/ ? undef :
-'<sup class="fa fa-fw fa-0_80x fa-question-circle module-help showpass-popover cursor-pointer tconfig-popover" data-html="true" data-toggle="popover" data-trigger="click" data-title="'
+'<sup class="fa fa-fw fa-question-circle module-help module-help-tconfig showpass-popover cursor-pointer tconfig-popover" data-html="true" data-toggle="popover" data-trigger="click" data-title="'
               . $theme_text{$k}
               . '" data-content="' . html_escape($description) . '"></sup>')
          ) .
