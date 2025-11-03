@@ -356,11 +356,16 @@ sub embed_header
     } else {
         if ($args[2]) {
             foreach my $css (@theme_bundle_css) {
+                my $ext = '.src.css';
+                if ($css =~ /\[scss\]$/) {
+                    $ext = '.src.scss.css';
+                    $css =~ s/\[scss\]$//;
+                }
                 print ' <link type="text/css" href="' .
                   $theme_webprefix .
                   '/unauthenticated/css/' .
                   $css .
-                  '.src.css?' .
+                  "$ext?" .
                   theme_version('timestamped') .
                   '" rel="stylesheet">' . "\n";
             }

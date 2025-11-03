@@ -141,7 +141,7 @@ var
     // change an option value and call `theme.config.save()` function.
     //
     settings_right_table_layout_control = false,
-    settings_leftmenu_width = 265,
+    settings_leftmenu_width = 270,
     settings_auto_open_panels_on_proximity = false,
     settings_embed_product_splash_privileged = false,
     settings_table_auto_dt = true,
