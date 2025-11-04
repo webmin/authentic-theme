@@ -123,17 +123,16 @@ sub csf_strings
               '<div class="btn-group">
               <a class="btn btn-xxs btn-success csf csf-submit" data-id="csf_upgrade"><i class="fa fa-fw fa-refresh">&nbsp;</i>'
               . $theme_text{'theme_update'} . '</a>
-              <a class="btn btn-xxs btn-info csf" target="_blank" href="https://download.configserver.com/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
+              <a class="btn btn-xxs btn-info csf" target="_blank" href="https://'.
+                $theme_config{'settings_csf_download_domain_privileged'}
+                .'/csf/changelog.txt"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
               . $theme_text{'theme_changelog'} . '</a>
-              <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://download.configserver.com/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
+              <a class="btn btn-xxs btn-warning csf" target="_blank" href="https://'.
+                $theme_config{'settings_csf_download_domain_privileged'}.'/csf.tgz"><i class="fa fa-fw fa-download">&nbsp;</i>'
               . $theme_text{'theme_download'} . '</a>
           </div>'
             :
-              '<div class="btn-group" data-no-update>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Search system logs" data-id="csf_search_system_log"><i class="fa fa-fw fa-filter"></i></a>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-toggle="tooltip" data-placement="auto top" data-container="body" data-title="Temporary IP entries" data-id="csf_temporary_ip_entries"><i class="fa fa-fw fa-ban"></i></a>
-             <a class="btn btn-default btn-xxs btn-hidden hidden csf csf-submit" data-id="csf_denyf"><i class="fa fa-fw fa-trash-o"></i> Flush all blocks</a>
-            </div>'
+              ''
           ) .
           '');
     return ($csf_title, $csf_data, $csf_remote_version);

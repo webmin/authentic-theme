@@ -761,14 +761,7 @@ sub get_sysinfo_vars
                         $vs_license eq '0' ? ' GPL&nbsp;&nbsp;' :
                         ''
 
-                        . ' Professional <div class="btn-group margined-left-4' . $is_hidden_link . '">'
-                        .
-                        ( ($vs_license eq '1') ?
-                            ' <a data-license class="btn btn-default btn-xxs" data-container="body" title="' .
-                            $theme_text{'right_vlcheck'} . '" href=\'' .
-                            $theme_webprefix . '/virtual-server/licence.cgi\'><i class="fa fa-refresh"></i></a></div>' :
-                            '</div>')
-                    ) .
+                        . ' Professional <div class="btn-group margined-left-4' . $is_hidden_link . '">' ) .
                     ($vs_license eq '1' ? '' : '&nbsp;') .
                     '<a class="btn btn-default btn-xxs margined-left--1" data-container="body" title="' .
                     $theme_text{'theme_xhred_sysinfo_vmforum'} .
