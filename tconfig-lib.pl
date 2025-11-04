@@ -25,7 +25,6 @@ sub theme_settings_raw
          {  'id'    => 's1',
             'title' => &theme_text('settings_global_general_options_title'),
             'data'  => [
-                       'settings_roundish_corners',
                        'settings_right_default_tab_webmin',
                        'settings_right_default_tab_usermin',
                        'settings_webmin_default_module',
@@ -56,6 +55,7 @@ sub theme_settings_raw
          {  'id'    => 's3',
             'title' => &theme_text('settings_right_navigation_menu_options'),
             'data'  => [
+                       'settings_roundish_corners',
                        'settings_navigation_color',
                        'settings_grayscale_level_navigation',
                        'settings_sepia_level_navigation',

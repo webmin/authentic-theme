@@ -162,7 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Show CPU and drives status each on new
 settings_sysinfo_link_mini=Show dashboard link as button
 
 settings_right_page_defaults_title=Default pages
-settings_roundish_corners=Enable smooth rounded layout
+settings_roundish_corners=Rounded menu corners
 settings_right_default_tab_webmin=Default tab after logging in to Webmin
 settings_right_default_tab_usermin=Default tab after logging in to Usermin
 settings_right_virtualmin_default=Default page for Virtualmin

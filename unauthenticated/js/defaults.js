@@ -1,7 +1,6 @@
 // Theme options defaults
 var
     // General defaults
-    settings_roundish_corners = true,
     settings_right_default_tab_usermin = 'webmail',
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'index.cgi',
@@ -19,6 +18,7 @@ var
     settings_sysinfo_real_time_status = 1,
 
     // Navigation menu options defaults
+    settings_roundish_corners = true,
     settings_navigation_color = 'blue',
     settings_navigation_auto_fold_category = true,
     settings_grayscale_level_navigation = '0',
