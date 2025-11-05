@@ -55,7 +55,7 @@ sub theme_settings_raw
          {  'id'    => 's3',
             'title' => &theme_text('settings_right_navigation_menu_options'),
             'data'  => [
-                       'settings_roundish_corners',
+                       'settings_roundish_menu',
                        'settings_navigation_color',
                        'settings_grayscale_level_navigation',
                        'settings_sepia_level_navigation',

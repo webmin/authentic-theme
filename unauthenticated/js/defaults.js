@@ -18,7 +18,7 @@ var
     settings_sysinfo_real_time_status = 1,
 
     // Navigation menu options defaults
-    settings_roundish_corners = true,
+    settings_roundish_menu = true,
     settings_navigation_color = 'blue',
     settings_navigation_auto_fold_category = true,
     settings_grayscale_level_navigation = '0',
