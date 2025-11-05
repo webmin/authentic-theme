@@ -1128,7 +1128,8 @@ sub get_button_style
     {
         $class = "warning ";
         $icon  = "stop";
-    } elsif (string_contains($keys, "mail_delete")) {
+    } elsif (string_contains($keys, "mail_delete") ||
+             string_contains($keys, "mail_delall")) {
         $icon  = "times-circle";
         $class = "danger ";
     } elsif (string_contains($keys, "mail_forward") ||
