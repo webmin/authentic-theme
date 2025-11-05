@@ -331,6 +331,7 @@ sub embed_header
         embed_css_night_rider();
         embed_css_inline();
         embed_rounded_menu();
+        embed_rounded_slider();
 
         embed_background();
         embed_styles();
@@ -378,6 +379,7 @@ sub embed_header
         embed_css_night_rider();
         embed_css_inline();
         embed_rounded_menu();
+        embed_rounded_slider();
 
         if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
@@ -647,10 +649,22 @@ sub embed_rounded_menu
     if ($theme_config{'settings_roundish_menu'} eq 'true') {
         print ' <link type="text/css" href="' .
                   $theme_webprefix .
-                  '/unauthenticated/css/rounded.' .
+                  '/unauthenticated/css/rounded-menu.' .
                   (theme_debug_mode() ? 'src.scss' : 'min') . '.css?' .
                   theme_version('timestamped') .
                   '" rel="stylesheet" data-rounded-menu>' . "\n";
+    }
+}
+
+sub embed_rounded_slider
+{
+    if ($theme_config{'settings_roundish_slider'} eq 'true') {
+        print ' <link type="text/css" href="' .
+                  $theme_webprefix .
+                  '/unauthenticated/css/rounded-slider.' .
+                  (theme_debug_mode() ? 'src.scss' : 'min') . '.css?' .
+                  theme_version('timestamped') .
+                  '" rel="stylesheet" data-rounded-slider>' . "\n";
     }
 }
 
@@ -1719,6 +1733,7 @@ sub embed_login_head
         }
         embed_css_inline();
         embed_rounded_menu();
+        embed_rounded_slider();
     }
 
     embed_background();
