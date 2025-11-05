@@ -90,6 +90,7 @@ sub theme_settings_raw
          {  'id'    => 's4',
             'title' => &theme_text('settings_right_notification_slider_options'),
             'data'  => [
+                       'settings_roundish_slider',
                        'settings_side_slider_enabled',
                        'settings_side_slider_fixed',
                        'settings_side_slider_sysinfo_enabled',

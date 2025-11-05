@@ -171,6 +171,7 @@ settings_right_cloudmin_default=Default page for Cloudmin
 settings_right_clear_local_cache=Clear cache
 settings_side_slider_fixed=Keep always visible
 
+settings_roundish_slider=Rounded slider corners
 settings_side_slider_enabled=Enable slider
 settings_leftmenu_user_html=Show HTML snippet
 

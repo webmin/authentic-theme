@@ -47,6 +47,7 @@ var
     settings_leftmenu_custom_links = '',
 
     // Side slider options
+    settings_roundish_slider = true,
     settings_side_slider_enabled = true,
     settings_side_slider_fixed = false,
     settings_side_slider_sysinfo_enabled = true,
