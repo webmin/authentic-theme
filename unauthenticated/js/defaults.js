@@ -55,7 +55,7 @@ var
     settings_side_slider_favorites_enabled = true,
 
     // Table options
-    config_portable_table_row_to_column_number = 2,
+    settings_right_table_force_single_column = false,
     settings_right_table_links_type = 2,
     settings_right_table_grayscaled_icons = true,
     settings_right_table_animate_icons = false,
@@ -208,6 +208,7 @@ var
 
     // Tables related
     settings_right_table_wrap_inside_scrolled_container = false,
+    config_portable_table_row_to_column_number = 2,
     config_portable_table_row_to_column_width = 340,  // max column width in pixels to break into single column [280, 340, 400, 460, 520, 580, 640]
 
     // This option can be set to any absolute or relative path

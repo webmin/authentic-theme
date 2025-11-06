@@ -1238,6 +1238,7 @@ theme_xhred_filemanager_context_prop_show_all=Show all properties
 
 
 # 19.84
+settings_right_table_force_single_column=Force single column mode
 settings_right_table_links_type=Table links display type
 settings_right_table_links_type_2=Large icons with text
 settings_right_table_links_type_1=Small icons with tooltip text
