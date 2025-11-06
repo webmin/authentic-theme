@@ -804,7 +804,7 @@ theme_xhred_editor_tb_code=Blok kod
 theme_xhred_editor_tb_code-block=Blok kod
 theme_xhred_editor_tb_direction=Arah teks
 
-settings_right_table_layout_control=Tunjukkan kawalan susun atur kandungan
+settings_right_table_layout_widget=Tunjukkan kawalan susun atur kandungan
 theme_xhred_tooltip_columns_layout=Kawalan susun atur kandungan
 theme_xhred_columns_layout_title=Susun atur kandungan
 theme_xhred_columns_layout_variation=Variasi reka letak

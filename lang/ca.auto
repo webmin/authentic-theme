@@ -735,7 +735,7 @@ theme_xhred_editor_tb_code=Bloc de codi
 theme_xhred_editor_tb_code-block=Bloc de codi
 theme_xhred_editor_tb_direction=Direcció del text
 
-settings_right_table_layout_control=Mostra el control de disseny del contingut
+settings_right_table_layout_widget=Mostra el control de disseny del contingut
 theme_xhred_tooltip_columns_layout=Control de disseny de contingut
 theme_xhred_columns_layout_title=Disseny de contingut
 theme_xhred_columns_layout_variation=Variació de maquetació

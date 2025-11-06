@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=코드 블록
 theme_xhred_editor_tb_code-block=코드 블록
 theme_xhred_editor_tb_direction=텍스트 방향
 
-settings_right_table_layout_control=콘텐츠 레이아웃 컨트롤 표시
+settings_right_table_layout_widget=콘텐츠 레이아웃 컨트롤 표시
 theme_xhred_tooltip_columns_layout=콘텐츠 레이아웃 제어
 theme_xhred_columns_layout_title=콘텐츠 레이아웃
 theme_xhred_columns_layout_variation=레이아웃 변형

@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=بلوک کد
 theme_xhred_editor_tb_code-block=بلوک کد
 theme_xhred_editor_tb_direction=جهت متن
 
-settings_right_table_layout_control=نمایش کنترل طرح بندی محتوا
+settings_right_table_layout_widget=نمایش کنترل طرح بندی محتوا
 theme_xhred_tooltip_columns_layout=کنترل چیدمان محتوا
 theme_xhred_columns_layout_title=چیدمان محتوا
 theme_xhred_columns_layout_variation=تنوع چیدمان

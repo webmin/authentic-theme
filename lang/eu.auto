@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Kode blokea
 theme_xhred_editor_tb_code-block=Kode blokea
 theme_xhred_editor_tb_direction=Testuaren norabidea
 
-settings_right_table_layout_control=Erakutsi edukiaren diseinuaren kontrola
+settings_right_table_layout_widget=Erakutsi edukiaren diseinuaren kontrola
 theme_xhred_tooltip_columns_layout=Edukien diseinuaren kontrola
 theme_xhred_columns_layout_title=Edukien diseinua
 theme_xhred_columns_layout_variation=Diseinuaren aldakuntza

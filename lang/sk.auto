@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Blok kódu
 theme_xhred_editor_tb_code-block=Blok kódu
 theme_xhred_editor_tb_direction=Smer textu
 
-settings_right_table_layout_control=Zobraziť ovládací prvok rozloženia obsahu
+settings_right_table_layout_widget=Zobraziť ovládací prvok rozloženia obsahu
 theme_xhred_tooltip_columns_layout=Ovládanie rozloženia obsahu
 theme_xhred_columns_layout_title=Rozloženie obsahu
 theme_xhred_columns_layout_variation=Variácia rozloženia

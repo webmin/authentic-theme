@@ -1271,7 +1271,7 @@ theme_xhred_editor_tb_code=Bloque de código
 theme_xhred_editor_tb_code-block=Bloque de código
 theme_xhred_editor_tb_direction=Dirección del texto
 
-settings_right_table_layout_control=Mostrar control de diseño de contenido
+settings_right_table_layout_widget=Mostrar control de diseño de contenido
 theme_xhred_tooltip_columns_layout=Control de diseño de contenido
 theme_xhred_columns_layout_title=Diseño de contenido
 theme_xhred_columns_layout_variation=Variación de diseño

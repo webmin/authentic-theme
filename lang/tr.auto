@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=kod bloğu
 theme_xhred_editor_tb_code-block=kod bloğu
 theme_xhred_editor_tb_direction=Metin yönü
 
-settings_right_table_layout_control=İçerik düzeni kontrolünü göster
+settings_right_table_layout_widget=İçerik düzeni kontrolünü göster
 theme_xhred_tooltip_columns_layout=İçerik düzeni kontrolü
 theme_xhred_columns_layout_title=içerik düzeni
 theme_xhred_columns_layout_variation=Düzen varyasyonu

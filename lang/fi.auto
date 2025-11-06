@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Koodilohko
 theme_xhred_editor_tb_code-block=Koodilohko
 theme_xhred_editor_tb_direction=Tekstin suunta
 
-settings_right_table_layout_control=Näytä sisällön asettelun ohjaus
+settings_right_table_layout_widget=Näytä sisällön asettelun ohjaus
 theme_xhred_tooltip_columns_layout=Sisällön asettelun hallinta
 theme_xhred_columns_layout_title=Sisällön asettelu
 theme_xhred_columns_layout_variation=Asettelun variaatio

@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Blok koda
 theme_xhred_editor_tb_code-block=Blok koda
 theme_xhred_editor_tb_direction=Smjer teksta
 
-settings_right_table_layout_control=Prikaži kontrolu izgleda sadržaja
+settings_right_table_layout_widget=Prikaži kontrolu izgleda sadržaja
 theme_xhred_tooltip_columns_layout=Kontrola izgleda sadržaja
 theme_xhred_columns_layout_title=Izgled sadržaja
 theme_xhred_columns_layout_variation=Varijacija rasporeda

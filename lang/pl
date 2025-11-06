@@ -1340,7 +1340,7 @@ theme_xhred_editor_tb_code=Blok kodu
 theme_xhred_editor_tb_code-block=Blok kodu
 theme_xhred_editor_tb_direction=Kierunek tekstu
 
-settings_right_table_layout_control=Pokaż kontrolę układu treści
+settings_right_table_layout_widget=Pokaż kontrolę układu treści
 theme_xhred_tooltip_columns_layout=Kontrola układu treści
 theme_xhred_columns_layout_title=Układ treści
 theme_xhred_columns_layout_variation=Wariant układu

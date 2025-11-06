@@ -1219,7 +1219,7 @@ theme_xhred_editor_tb_code=Blok kódu
 theme_xhred_editor_tb_code-block=Blok kódu
 theme_xhred_editor_tb_direction=Směr textu
 
-settings_right_table_layout_control=Zobrazit ovládací prvek rozvržení obsahu
+settings_right_table_layout_widget=Zobrazit ovládací prvek rozvržení obsahu
 theme_xhred_tooltip_columns_layout=Ovládání rozložení obsahu
 theme_xhred_columns_layout_title=Uspořádání obsahu
 theme_xhred_columns_layout_variation=Variace rozložení

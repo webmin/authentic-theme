@@ -595,7 +595,7 @@ theme_xhred_editor_tb_code=代码块
 theme_xhred_editor_tb_code-block=代码块
 theme_xhred_editor_tb_direction=文字方向
 
-settings_right_table_layout_control=显示内容布局控制
+settings_right_table_layout_widget=显示内容布局控制
 theme_xhred_tooltip_columns_layout=内容布局控制
 theme_xhred_columns_layout_title=内容布局
 theme_xhred_columns_layout_variation=布局变化

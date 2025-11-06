@@ -55,10 +55,11 @@ var
     settings_side_slider_favorites_enabled = true,
 
     // Table options
+    config_portable_table_row_to_column_number = 2,
     settings_right_table_links_type = 2,
+    settings_right_table_grayscaled_icons = true,
     settings_right_table_animate_icons = false,
     settings_right_table_links_sorted = false,
-    settings_right_table_grayscaled_icons = true,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
@@ -141,7 +142,6 @@ var
     // E.g. to change options below, you would need to open browser's console,
     // change an option value and call `theme.config.save()` function.
     //
-    settings_right_table_layout_control = false,
     settings_leftmenu_width = 270,
     settings_auto_open_panels_on_proximity = false,
     settings_embed_product_splash_privileged = false,
@@ -208,10 +208,7 @@ var
 
     // Tables related
     settings_right_table_wrap_inside_scrolled_container = false,
-    config_portable_table_rows_to_columns = true,
-    config_portable_table_rows_to_columns_number = 2,
-    config_portable_table_rows_to_columns_width = 340,
-    config_portable_table_rows_to_columns_break = true,
+    config_portable_table_row_to_column_width = 340,  // max column width in pixels to break into single column [280, 340, 400, 460, 520, 580, 640]
 
     // This option can be set to any absolute or relative path
     settings_usermin_default_module = 'sysinfo.cgi',
@@ -279,5 +276,10 @@ var
         ]
     },
 
-    // Deprecated options
-    settings_embed_product_branding_privileged = settings_embed_product_splash_privileged;
+    // Deprecated options names
+    settings_embed_product_branding_privileged = settings_embed_product_splash_privileged,
+
+    // Deprecated features
+    config_portable_table_row_to_column_break = true,  // layout breaking is always on and should never be disabled
+    settings_right_table_layout_widget = false,        // deprecated layout control
+    config_portable_table_row_to_column = true;        // disable ancient deprecated layout

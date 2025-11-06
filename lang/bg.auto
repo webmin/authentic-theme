@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Кодов блок
 theme_xhred_editor_tb_code-block=Кодов блок
 theme_xhred_editor_tb_direction=Посока на текста
 
-settings_right_table_layout_control=Показване на контрола за оформлението на съдържанието
+settings_right_table_layout_widget=Показване на контрола за оформлението на съдържанието
 theme_xhred_tooltip_columns_layout=Контрол на оформлението на съдържанието
 theme_xhred_columns_layout_title=Оформление на съдържанието
 theme_xhred_columns_layout_variation=Вариация на оформлението

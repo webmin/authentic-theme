@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Μπλοκ κωδικών
 theme_xhred_editor_tb_code-block=Μπλοκ κωδικών
 theme_xhred_editor_tb_direction=Διεύθυνση κειμένου
 
-settings_right_table_layout_control=Εμφάνιση ελέγχου διάταξης περιεχομένου
+settings_right_table_layout_widget=Εμφάνιση ελέγχου διάταξης περιεχομένου
 theme_xhred_tooltip_columns_layout=Έλεγχος διάταξης περιεχομένου
 theme_xhred_columns_layout_title=Διάταξη περιεχομένου
 theme_xhred_columns_layout_variation=Παραλλαγή διάταξης

@@ -273,7 +273,7 @@ theme_xhred_editor_tb_code=Blocco di codice
 theme_xhred_editor_tb_code-block=Blocco di codice
 theme_xhred_editor_tb_direction=Direzione del testo
 
-settings_right_table_layout_control=Mostra il controllo del layout del contenuto
+settings_right_table_layout_widget=Mostra il controllo del layout del contenuto
 theme_xhred_tooltip_columns_layout=Controllo della disposizione dei contenuti
 theme_xhred_columns_layout_title=Disposizione dei contenuti
 theme_xhred_columns_layout_variation=Variazione del layout

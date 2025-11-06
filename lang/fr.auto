@@ -333,7 +333,7 @@ theme_xhred_editor_tb_code=Bloc de code
 theme_xhred_editor_tb_code-block=Bloc de code
 theme_xhred_editor_tb_direction=Sens du texte
 
-settings_right_table_layout_control=Afficher le contrôle de la mise en page du contenu
+settings_right_table_layout_widget=Afficher le contrôle de la mise en page du contenu
 theme_xhred_tooltip_columns_layout=Contrôle de la mise en page du contenu
 theme_xhred_columns_layout_title=Mise en page du contenu
 theme_xhred_columns_layout_variation=Variante de mise en page

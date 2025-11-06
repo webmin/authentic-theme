@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=Кодовий блок
 theme_xhred_editor_tb_code-block=Кодовий блок
 theme_xhred_editor_tb_direction=Напрямок тексту
 
-settings_right_table_layout_control=Показати елемент керування макетом вмісту
+settings_right_table_layout_widget=Показати елемент керування макетом вмісту
 theme_xhred_tooltip_columns_layout=Контроль оформлення вмісту
 theme_xhred_columns_layout_title=Розмітка вмісту
 theme_xhred_columns_layout_variation=Варіація макета

@@ -1359,7 +1359,7 @@ theme_xhred_editor_tb_code=代碼塊
 theme_xhred_editor_tb_code-block=代碼塊
 theme_xhred_editor_tb_direction=文字方向
 
-settings_right_table_layout_control=顯示內容佈局控制
+settings_right_table_layout_widget=顯示內容佈局控制
 theme_xhred_tooltip_columns_layout=內容佈局控制
 theme_xhred_columns_layout_title=內容佈局
 theme_xhred_columns_layout_variation=佈局變化

@@ -1249,7 +1249,7 @@ theme_xhred_editor_tb_code=Code blok
 theme_xhred_editor_tb_code-block=Code blok
 theme_xhred_editor_tb_direction=Tekstrichting
 
-settings_right_table_layout_control=Beheer van inhoudslay-out weergeven
+settings_right_table_layout_widget=Beheer van inhoudslay-out weergeven
 theme_xhred_tooltip_columns_layout=Beheer van inhoudslay-out
 theme_xhred_columns_layout_title=Inhoud lay-out
 theme_xhred_columns_layout_variation=Lay-out variatie
