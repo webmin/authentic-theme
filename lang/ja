@@ -277,8 +277,6 @@ theme_xhred_filemanager_title_symlink_target=リンク先
 
 # 17.60
 right_unlimited= 無制限
-settings_leftmenu_width=好ましい幅
-settings_leftmenu_width_description=デフォルト/現在の幅 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=リバーススイッチ出力
 settings_switch_rdisplay_description=このオプションを使用すると、左上のスイッチに異なる順序を設定できます。このオプションを変更した後、新しい設定を適用するには、ページのリロードが必要です。
 
@@ -303,10 +301,6 @@ theme_xhred_global_save_and_close= 保存して閉じます
 theme_xhred_global_close_without_saving= 保存せずに閉じる
 theme_xhred_global_continue_editing= 編集を続ける
 theme_xhred_filemanager_context_download_file=ダウンロード
-
-# 17.65
-settings_sysinfo_easypie_charts_width= グラフの幅
-settings_sysinfo_easypie_charts_scale= グラフの長さのスケール
 
 # 17.80
 right_return_theme_options= テーマのオプション
@@ -512,7 +506,6 @@ theme_tooltip_logout= サインアウト
 theme_tooltip_edit_user= ユーザーを編集する
 
 # 18.45
-settings_sysinfo_easypie_charts_size= グラフの直径
 theme_xhred_global_choose= 選択する
 theme_xhred_global_select= 選択
 theme_xhred_global_ok=OK

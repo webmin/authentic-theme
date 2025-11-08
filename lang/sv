@@ -283,8 +283,6 @@ theme_xhred_filemanager_title_symlink_target=Länka målet
 
 # 17.60
 right_unlimited=Obegränsad
-settings_leftmenu_width=Önskvärd bredd
-settings_leftmenu_width_description=Standard/nuvarande bredd <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Omvänd utdata
 settings_switch_rdisplay_description=Detta alternativet låter dig ändra ordningen på knapparna till vänster. När du har ändrat detta alternativet, måste en fullständig uppdatering av sidan göras för att de nya inställningarna ska fungera.
 
@@ -309,10 +307,6 @@ theme_xhred_global_save_and_close=Spara och stäng
 theme_xhred_global_close_without_saving=Stäng utan att spara
 theme_xhred_global_continue_editing=Fortsätt redigera
 theme_xhred_filemanager_context_download_file=Ladda ner
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Diagrambredd
-settings_sysinfo_easypie_charts_scale=Skallängd på diagram
 
 # 17.80
 right_return_theme_options=temaalternativ
@@ -517,7 +511,6 @@ theme_tooltip_logout=Logga ut
 theme_tooltip_edit_user=Redigera användare
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diameter diagram
 theme_xhred_global_choose=Välj
 theme_xhred_global_select=Markera
 theme_xhred_global_ok=OK
@@ -1124,7 +1117,6 @@ theme_xhred_filemanager_context_prop_show_all=Visa alla egenskaper
 settings_right_table_links_type=Tabellänkar visar typ
 settings_right_table_links_type_2=Stora ikoner med text
 settings_right_table_links_type_1=Små ikoner med verktygstipstext
-settings_right_table_links_type_0=Inga ikoner, bara textlänkar
 settings_right_table_animate_icons=Visa on-hover-animering för tabellikonlänkar
 settings_right_table_grayscaled_icons=Visa länkar för tabellikoner i gråskala om de inte svävar
 theme_xhred_upload_initial_info_dir=Dra och släpp en katalog här eller klicka för att välja

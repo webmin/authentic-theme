@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=새 줄에 각각 CPU 및 드라이브
 settings_sysinfo_link_mini=대시 보드 링크를 버튼으로 표시
 
 settings_right_page_defaults_title=기본 페이지
+settings_roundish_menu=둥근 메뉴 모서리
 settings_right_default_tab_webmin=Webmin에 로그인 한 후 기본 탭
 settings_right_default_tab_usermin=Usermin에 로그인 한 후 기본 탭
 settings_right_virtualmin_default=Virtualmin의 기본 페이지
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Cloudmin의 기본 페이지
 settings_right_clear_local_cache=캐시 지우기
 settings_side_slider_fixed=항상 보이게
 
+settings_roundish_slider=둥근 슬라이더 모서리
 settings_side_slider_enabled=슬라이더 사용
 settings_leftmenu_user_html=HTML 스 니펫 표시
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=링크 대상
 
 # 17.60
 right_unlimited=제한 없는
-settings_leftmenu_width=바람직한 폭
-settings_leftmenu_width_description=기본 전류/폭 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=스위치를 반대로 표시
 settings_switch_rdisplay_description=이 옵션을 사용하면 왼쪽 상단 스위치에 대해 다른 순서를 설정할 수 있습니다. 이 옵션을 변경 한 후 전체 페이지를 다시로드해야합니다.
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=저장하고 닫습니다
 theme_xhred_global_close_without_saving=저장하지 않고 닫기
 theme_xhred_global_continue_editing=계속 편집
 theme_xhred_filemanager_context_download_file=다운로드
-
-# 17.65
-settings_sysinfo_easypie_charts_width=차트 너비
-settings_sysinfo_easypie_charts_scale=차트의 스케일 길이
 
 # 17.80
 right_return_theme_options=테마 옵션
@@ -570,7 +566,6 @@ theme_tooltip_logout=로그 아웃
 theme_tooltip_edit_user=사용자 편집
 
 # 18.45
-settings_sysinfo_easypie_charts_size=차트 지름
 theme_xhred_global_choose=고르다
 theme_xhred_global_select=고르다
 theme_xhred_global_ok=확인
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=모두 표시
 theme_xhred_filemanager_context_prop_show_all=모든 속성보기
 
 # 19.84
+settings_right_table_force_single_column=단일 열 모드 강제 적용
 settings_right_table_links_type=테이블 링크 표시 유형
 settings_right_table_links_type_2=텍스트가 있는 큰 아이콘
 settings_right_table_links_type_1=툴팁 텍스트가 있는 작은 아이콘
-settings_right_table_links_type_0=아이콘 없음, 텍스트 링크만 있음
 settings_right_table_animate_icons=테이블 아이콘 링크에 대한 애니메이션 표시
 settings_right_table_grayscaled_icons=마우스를 가져가지 않는 한 테이블 아이콘 링크를 회색조로 표시
 theme_xhred_upload_initial_info_dir=여기에 디렉토리를 끌어다 놓거나 클릭하여 선택하십시오
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=코드 블록
 theme_xhred_editor_tb_code-block=코드 블록
 theme_xhred_editor_tb_direction=텍스트 방향
 
-settings_right_table_layout_widget=콘텐츠 레이아웃 컨트롤 표시
 theme_xhred_tooltip_columns_layout=콘텐츠 레이아웃 제어
 theme_xhred_columns_layout_title=콘텐츠 레이아웃
 theme_xhred_columns_layout_variation=레이아웃 변형
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=이 위젯 숨기기
 theme_xhred_columns_layout_remove_button=저장 및 숨기기
 theme_xhred_columns_layout_variation_cannot_horizontal=모바일 모드, 특히 화면 너비가 992px 미만인 경우 가로 레이아웃을 사용할 수 없습니다
 
-settings_auto_open_panels_on_proximity=근접 시 닫힌 패널 자동 열기
-
 theme_xhred_config_portable_module_xterm_render_addon=WebGL 렌더링 애드온 활성화
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=콘텐츠 필터링 및 내보내기
 # 21.10
 settings_hotkey_logout_dbl=로그 아웃
 theme_xhred_hotkey_emsg=백슬래시 키는 단축키로 사용할 수 없습니다
-settings_embed_product_splash_privileged=로그인 후 브랜딩 스플래시 화면 표시
 dashboard_status_running=달리기
 dashboard_status_stopped=중지됨
 

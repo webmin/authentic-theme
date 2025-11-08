@@ -26,6 +26,10 @@ settings_hotkey_favorites=Apri i preferiti
 settings_hotkey_focus_search=Concentrati sul campo di ricerca
 settings_hotkey_reload=Aggiorna la pagina corrente
 
+settings_roundish_menu=Angoli del menu arrotondati
+
+settings_roundish_slider=Angoli arrotondati dello slider
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Documentazione webmin
 theme_xhred_sysinfo_vmdocs=Documentazione Virtualmin
@@ -98,10 +102,10 @@ settings_right_hotkey_options=Scorciatoie da tastiera
 settings_right_hotkey_custom_options=Collegamenti rapidi personalizzati
 
 # 19.84
+settings_right_table_force_single_column=Forza la modalità a colonna singola
 settings_right_table_links_type=Tipo di visualizzazione dei collegamenti alle tabelle
 settings_right_table_links_type_2=Icone grandi con testo
 settings_right_table_links_type_1=Piccole icone con testo del suggerimento
-settings_right_table_links_type_0=Nessuna icona, solo link di testo
 settings_right_table_animate_icons=Mostra l'animazione al passaggio del mouse per i collegamenti alle icone della tabella
 settings_right_table_grayscaled_icons=Mostra i collegamenti dell'icona della tabella in scala di grigi a meno che non sia passato il mouse
 theme_xhred_upload_initial_info_dir=Trascina e rilascia una directory qui o fai clic per selezionare
@@ -273,7 +277,6 @@ theme_xhred_editor_tb_code=Blocco di codice
 theme_xhred_editor_tb_code-block=Blocco di codice
 theme_xhred_editor_tb_direction=Direzione del testo
 
-settings_right_table_layout_widget=Mostra il controllo del layout del contenuto
 theme_xhred_tooltip_columns_layout=Controllo della disposizione dei contenuti
 theme_xhred_columns_layout_title=Disposizione dei contenuti
 theme_xhred_columns_layout_variation=Variazione del layout
@@ -289,8 +292,6 @@ theme_xhred_columns_layout_remove=Nascondi questo widget
 theme_xhred_columns_layout_remove_button=Salva e nascondi
 theme_xhred_columns_layout_variation_cannot_horizontal=Il layout orizzontale non può essere utilizzato in modalità mobile, in particolare quando la larghezza dello schermo è inferiore a 992 px
 
-settings_auto_open_panels_on_proximity=Apertura automatica dei pannelli chiusi in prossimità
-
 theme_xhred_config_portable_module_xterm_render_addon=Abilita il componente aggiuntivo di rendering WebGL
 
 # 21.09.04
@@ -299,7 +300,6 @@ theme_xhred_datatable_filter_and_export=Filtra ed esporta contenuti
 # 21.10
 settings_hotkey_logout_dbl=Disconnettersi
 theme_xhred_hotkey_emsg=Il tasto barra rovesciata non può essere utilizzato come scorciatoia
-settings_embed_product_splash_privileged=Visualizza una schermata iniziale del branding dopo l'accesso
 dashboard_status_running=Corsa
 dashboard_status_stopped=Fermato
 

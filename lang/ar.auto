@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=إظهار حالة وحدة المع�
 settings_sysinfo_link_mini=إظهار رابط لوحة المعلومات كزر
 
 settings_right_page_defaults_title=الصفحات الافتراضية
+settings_roundish_menu=زوايا القائمة المستديرة
 settings_right_default_tab_webmin=علامة التبويب الافتراضية بعد تسجيل الدخول إلى Webmin
 settings_right_default_tab_usermin=علامة التبويب الافتراضية بعد تسجيل الدخول إلى Usermin
 settings_right_virtualmin_default=الصفحة الافتراضية لـ Virtualmin
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=الصفحة الافتراضية لـ Cloudmin
 settings_right_clear_local_cache=مسح ذاكرة التخزين المؤقت
 settings_side_slider_fixed=ابق مرئيًا دائمًا
 
+settings_roundish_slider=زوايا منزلقة مستديرة
 settings_side_slider_enabled=تمكين شريط التمرير
 settings_leftmenu_user_html=إظهار مقتطف HTML
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=رابط الهدف
 
 # 17.60
 right_unlimited=غير محدود
-settings_leftmenu_width=عرض مفضل
-settings_leftmenu_width_description=الافتراضي/الحالي عرض <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=إظهار مفاتيح التبديل معكوسة
 settings_switch_rdisplay_description=يسمح لك هذا الخيار بتعيين ترتيب مختلف للمفاتيح العلوية اليسرى. بعد تغيير هذا الخيار ، يلزم إعادة تحميل الصفحة بالكامل
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=احفظ وأغلق
 theme_xhred_global_close_without_saving=أغلق دون حفظ
 theme_xhred_global_continue_editing=الاستمرار في التعديل
 theme_xhred_filemanager_context_download_file=تحميل
-
-# 17.65
-settings_sysinfo_easypie_charts_width=عرض الرسوم البيانية
-settings_sysinfo_easypie_charts_scale=طول مقياس الرسوم البيانية
 
 # 17.80
 right_return_theme_options=خيارات الموضوع
@@ -570,7 +566,6 @@ theme_tooltip_logout=خروج
 theme_tooltip_edit_user=تحرير العضو
 
 # 18.45
-settings_sysinfo_easypie_charts_size=قطر المخططات
 theme_xhred_global_choose=أختر
 theme_xhred_global_select=تحديد
 theme_xhred_global_ok=حسنا
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=عرض الكل
 theme_xhred_filemanager_context_prop_show_all=عرض كل الخصائص
 
 # 19.84
+settings_right_table_force_single_column=فرض وضع العمود الواحد
 settings_right_table_links_type=نوع عرض روابط الجدول
 settings_right_table_links_type_2=أيقونات كبيرة مع نص
 settings_right_table_links_type_1=أيقونات صغيرة مع نص تلميح
-settings_right_table_links_type_0=لا توجد رموز ، فقط روابط نصية
 settings_right_table_animate_icons=إظهار الرسوم المتحركة عند التمرير لروابط أيقونة الجدول
 settings_right_table_grayscaled_icons=إظهار ارتباطات أيقونات الجدول بتدرج الرمادي ما لم يتم تمرير الماوس فوقها
 theme_xhred_upload_initial_info_dir=قم بسحب وإسقاط دليل هنا أو انقر للتحديد
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=كتلة التعليمات البرمجية
 theme_xhred_editor_tb_code-block=كتلة التعليمات البرمجية
 theme_xhred_editor_tb_direction=اتجاه النص
 
-settings_right_table_layout_widget=إظهار عنصر تحكم تخطيط المحتوى
 theme_xhred_tooltip_columns_layout=التحكم في تخطيط المحتوى
 theme_xhred_columns_layout_title=تخطيط المحتوى
 theme_xhred_columns_layout_variation=تباين التخطيط
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=إخفاء هذه القطعة
 theme_xhred_columns_layout_remove_button=حفظ وإخفاء
 theme_xhred_columns_layout_variation_cannot_horizontal=لا يمكن استخدام التخطيط الأفقي في وضع الهاتف المحمول ، خاصة عندما يكون عرض الشاشة أقل من 992 بكسل
 
-settings_auto_open_panels_on_proximity=فتح لوحات مغلقة تلقائيًا على مقربة
-
 theme_xhred_config_portable_module_xterm_render_addon=تمكين ملحق عرض WebGL
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=تصفية وتصدير المحتوى
 # 21.10
 settings_hotkey_logout_dbl=تسجيل خروج
 theme_xhred_hotkey_emsg=لا يمكن استخدام مفتاح الشرطة المائلة العكسية كاختصار
-settings_embed_product_splash_privileged=عرض شاشة البداية للعلامة التجارية بعد تسجيل الدخول
 dashboard_status_running=جري
 dashboard_status_stopped=توقفت
 

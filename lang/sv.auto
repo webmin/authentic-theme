@@ -26,6 +26,10 @@ settings_hotkey_favorites=Öppna favoriter
 settings_hotkey_focus_search=Fokusera på sökfältet
 settings_hotkey_reload=Uppdatera aktuell sida
 
+settings_roundish_menu=Rundade menyhörn
+
+settings_roundish_slider=Rundade skjutreglagehörn
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentation
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentation
@@ -89,6 +93,9 @@ theme_xhred_dashboard_panels_disabled_explain=Dold panel kan återaktiveras med 
 settings_right_hotkey_options=Kortkommandon
 settings_right_hotkey_custom_options=Genvägar för anpassade länkar
 
+# 19.84
+settings_right_table_force_single_column=Tvinga fram läge för en enda kolumn
+
 # 19.85
 theme_xhred_sysinfo_vmforum=Virtualmin Community
 
@@ -151,7 +158,6 @@ theme_xhred_editor_tb_code=Kodblock
 theme_xhred_editor_tb_code-block=Kodblock
 theme_xhred_editor_tb_direction=Textriktning
 
-settings_right_table_layout_widget=Visa innehållslayoutkontroll
 theme_xhred_tooltip_columns_layout=Innehållslayoutkontroll
 theme_xhred_columns_layout_title=Innehållslayout
 theme_xhred_columns_layout_variation=Layoutvariation
@@ -167,8 +173,6 @@ theme_xhred_columns_layout_remove=Dölj den här widgeten
 theme_xhred_columns_layout_remove_button=Spara och dölj
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontell layout kan inte användas i mobilläget, speciellt när skärmbredden är mindre än 992px
 
-settings_auto_open_panels_on_proximity=Öppna stängda paneler automatiskt i närheten
-
 theme_xhred_config_portable_module_xterm_render_addon=Aktivera WebGL-renderingstillägg
 
 # 21.09.04
@@ -177,7 +181,6 @@ theme_xhred_datatable_filter_and_export=Filtrera och exportera innehåll
 # 21.10
 settings_hotkey_logout_dbl=Logga ut
 theme_xhred_hotkey_emsg=Bakåtsnedstreckstangenten kan inte användas som genväg
-settings_embed_product_splash_privileged=Visa en startskärm för varumärke efter inloggning
 dashboard_status_running=Löpning
 dashboard_status_stopped=Slutade
 

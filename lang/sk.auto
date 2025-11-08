@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Zobraziť stav CPU a jednotiek každý
 settings_sysinfo_link_mini=Zobraziť odkaz na ovládacom paneli ako tlačidlo
 
 settings_right_page_defaults_title=Predvolené stránky
+settings_roundish_menu=Zaoblené rohy ponuky
 settings_right_default_tab_webmin=Predvolená karta po prihlásení do služby Webmin
 settings_right_default_tab_usermin=Predvolená karta po prihlásení do služby Usermin
 settings_right_virtualmin_default=Predvolená stránka pre Virtualmin
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Predvolená stránka pre Cloudmin
 settings_right_clear_local_cache=Vymazať vyrovnávaciu pamäť
 settings_side_slider_fixed=Udržujte vždy viditeľné
 
+settings_roundish_slider=Zaoblené rohy posuvníka
 settings_side_slider_enabled=Povoliť posúvač
 settings_leftmenu_user_html=Zobraziť útržok HTML
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Cieľ odkazu
 
 # 17.60
 right_unlimited=neobmedzený
-settings_leftmenu_width=Preferovaná šírka
-settings_leftmenu_width_description=Východisková/prúd šírka <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Zobraziť prepínače obrátené
 settings_switch_rdisplay_description=Táto voľba umožňuje nastaviť rôzne poradie prepínačov vľavo hore. Po zmene tejto možnosti sa vyžaduje úplné načítanie stránky
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Uložiť a zavrieť
 theme_xhred_global_close_without_saving=Zatvorte bez uloženia
 theme_xhred_global_continue_editing=Pokračujte v úpravách
 theme_xhred_filemanager_context_download_file=Stiahnuť ▼
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Šírka grafov
-settings_sysinfo_easypie_charts_scale=Mierka dĺžky máp
 
 # 17.80
 right_return_theme_options=možnosti témy
@@ -570,7 +566,6 @@ theme_tooltip_logout=Odhlásiť Sa
 theme_tooltip_edit_user=Upraviť používateľa
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Priemer grafov
 theme_xhred_global_choose=zvoliť
 theme_xhred_global_select=vybrať
 theme_xhred_global_ok=OK
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Ukázať všetko
 theme_xhred_filemanager_context_prop_show_all=Zobraziť všetky vlastnosti
 
 # 19.84
+settings_right_table_force_single_column=Vynútiť režim jedného stĺpca
 settings_right_table_links_type=Typ zobrazenia odkazov na tabuľky
 settings_right_table_links_type_2=Veľké ikony s textom
 settings_right_table_links_type_1=Malé ikony s textom popisu
-settings_right_table_links_type_0=Žiadne ikony, iba textové odkazy
 settings_right_table_animate_icons=Zobraziť odkazy pri ikonách tabuľky na animáciu pri hovore
 settings_right_table_grayscaled_icons=Zobraziť odkazy na ikony tabuliek v odtieňoch sivej, pokiaľ nie sú umiestnené myšou
 theme_xhred_upload_initial_info_dir=Presuňte sem adresár alebo ho kliknutím vyberte
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Blok kódu
 theme_xhred_editor_tb_code-block=Blok kódu
 theme_xhred_editor_tb_direction=Smer textu
 
-settings_right_table_layout_widget=Zobraziť ovládací prvok rozloženia obsahu
 theme_xhred_tooltip_columns_layout=Ovládanie rozloženia obsahu
 theme_xhred_columns_layout_title=Rozloženie obsahu
 theme_xhred_columns_layout_variation=Variácia rozloženia
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Skryť tento widget
 theme_xhred_columns_layout_remove_button=Uložiť a skryť
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontálne rozloženie nie je možné použiť v mobilnom režime, konkrétne keď je šírka obrazovky menšia ako 992 pixelov
 
-settings_auto_open_panels_on_proximity=Automatické otváranie uzavretých panelov pri blízkosti
-
 theme_xhred_config_portable_module_xterm_render_addon=Povoliť doplnok vykresľovania WebGL
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Filtrujte a exportujte obsah
 # 21.10
 settings_hotkey_logout_dbl=Odhlásiť sa
 theme_xhred_hotkey_emsg=Kláves spätného lomítka nemožno použiť ako skratku
-settings_embed_product_splash_privileged=Po prihlásení zobrazte úvodnú obrazovku značky
 dashboard_status_running=Beh
 dashboard_status_stopped=Zastavené
 

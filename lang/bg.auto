@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Показване на състоян
 settings_sysinfo_link_mini=Показване на връзката на таблото за управление като бутон
 
 settings_right_page_defaults_title=Страници по подразбиране
+settings_roundish_menu=Заоблени ъгли на менюто
 settings_right_default_tab_webmin=Раздел по подразбиране след влизане в Webmin
 settings_right_default_tab_usermin=Раздел по подразбиране след влизане в Usermin
 settings_right_virtualmin_default=Страница по подразбиране за Virtualmin
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Страница по подразбиране �
 settings_right_clear_local_cache=Изтрий кеш-памет
 settings_side_slider_fixed=Дръжте винаги видим
 
+settings_roundish_slider=Заоблени ъгли на плъзгача
 settings_side_slider_enabled=Активиране на плъзгача
 settings_leftmenu_user_html=Покажете HTML фрагмент
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Целева връзка
 
 # 17.60
 right_unlimited=неограничен
-settings_leftmenu_width=Предпочитана ширина
-settings_leftmenu_width_description=По подразбиране/текущата ширина <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Показване на превключватели, обърнати
 settings_switch_rdisplay_description=Тази опция ви позволява да задавате различен ред за превключватели горе вляво. След промяна на тази опция е необходимо пълно презареждане на страницата
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Запази и затвори
 theme_xhred_global_close_without_saving=Затворете, без да спестявате
 theme_xhred_global_continue_editing=Продължете редактирането
 theme_xhred_filemanager_context_download_file=Изтегли
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Ширина на диаграмите
-settings_sysinfo_easypie_charts_scale=Дължина на мащаба на диаграмите
 
 # 17.80
 right_return_theme_options=опции за тема
@@ -570,7 +566,6 @@ theme_tooltip_logout=Отписване
 theme_tooltip_edit_user=Редактиране на потребител
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Диаметър на диаграмите
 theme_xhred_global_choose=Избирам
 theme_xhred_global_select=Изберете
 theme_xhred_global_ok=Добре
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Покажи всичко
 theme_xhred_filemanager_context_prop_show_all=Покажи всички имоти
 
 # 19.84
+settings_right_table_force_single_column=Принудителен режим на една колона
 settings_right_table_links_type=Тип на показване на връзки към таблица
 settings_right_table_links_type_2=Големи икони с текст
 settings_right_table_links_type_1=Малки икони с текст на подсказка
-settings_right_table_links_type_0=Без икони, само текстови връзки
 settings_right_table_animate_icons=Показване на анимация при задържане на курсора за връзки към икона на таблица
 settings_right_table_grayscaled_icons=Показвайте връзките към иконата на таблицата в сивата скала, освен ако не ги задържите
 theme_xhred_upload_initial_info_dir=Плъзнете и пуснете директория тук или щракнете, за да изберете
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Кодов блок
 theme_xhred_editor_tb_code-block=Кодов блок
 theme_xhred_editor_tb_direction=Посока на текста
 
-settings_right_table_layout_widget=Показване на контрола за оформлението на съдържанието
 theme_xhred_tooltip_columns_layout=Контрол на оформлението на съдържанието
 theme_xhred_columns_layout_title=Оформление на съдържанието
 theme_xhred_columns_layout_variation=Вариация на оформлението
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Скриване на тази джаджа
 theme_xhred_columns_layout_remove_button=Запазване и скриване
 theme_xhred_columns_layout_variation_cannot_horizontal=Хоризонталното оформление не може да се използва в мобилен режим, особено когато ширината на екрана е по-малка от 992px
 
-settings_auto_open_panels_on_proximity=Автоматично отваряне на затворени панели при близост
-
 theme_xhred_config_portable_module_xterm_render_addon=Активирайте добавката за изобразяване на WebGL
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Филтрирайте и експорт
 # 21.10
 settings_hotkey_logout_dbl=Излез от профила си
 theme_xhred_hotkey_emsg=Клавишът с обратна наклонена черта не може да се използва като пряк път
-settings_embed_product_splash_privileged=Показване на начален екран за брандиране след влизане
 dashboard_status_running=бягане
 dashboard_status_stopped=Спряна
 

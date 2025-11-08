@@ -76,6 +76,7 @@ settings_sysinfo_drive_status_on_new_line=Vis CPU og drev status hver på en ny 
 settings_sysinfo_link_mini=Vis link til instrumentbræt som knap
 
 settings_right_page_defaults_title=Standardsider
+settings_roundish_menu=Afrundede menuhjørner
 settings_right_default_tab_webmin=Standard fane efter logge ind på Webmin
 settings_right_default_tab_usermin=Standard fane efter logge ind på Usermin
 settings_right_virtualmin_default=Standardside for Virtualmin
@@ -84,6 +85,7 @@ settings_right_cloudmin_default=Standardside for Cloudmin
 settings_right_clear_local_cache=Ryd cache
 settings_side_slider_fixed=Hold altid synlig
 
+settings_roundish_slider=Afrundede skyderhjørner
 settings_side_slider_enabled=Aktivér skyderen
 settings_leftmenu_user_html=Vis HTML-kodestykke
 
@@ -230,8 +232,6 @@ theme_xhred_filemanager_title_symlink_target=Link mål
 
 # 17.60
 right_unlimited=Ubegrænset
-settings_leftmenu_width=Foretrukken bredde
-settings_leftmenu_width_description=Default/aktuelle bredde <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Vis switches reverseret
 settings_switch_rdisplay_description=Denne mulighed giver dig mulighed for at indstille anden rækkefølge for top-venstre switches. Når du har ændret denne mulighed, kræves fuldstændig genindlæsning af sider
 
@@ -256,10 +256,6 @@ theme_xhred_global_save_and_close=Gem og luk
 theme_xhred_global_close_without_saving=Luk uden at gemme
 theme_xhred_global_continue_editing=Fortsæt med at redigere
 theme_xhred_filemanager_context_download_file=Hent
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Bredde på diagrammer
-settings_sysinfo_easypie_charts_scale=Skala-længde på diagrammer
 
 # 17.80
 right_return_theme_options=tema muligheder
@@ -483,7 +479,6 @@ theme_tooltip_logout=Log ud
 theme_tooltip_edit_user=Rediger bruger
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diagrammets diameter
 theme_xhred_global_choose=Vælge
 theme_xhred_global_select=Vælg
 theme_xhred_global_ok=Okay
@@ -1097,10 +1092,10 @@ theme_xhred_global_show_all=Vis alt
 theme_xhred_filemanager_context_prop_show_all=Vis alle egenskaber
 
 # 19.84
+settings_right_table_force_single_column=Tving enkeltkolonnetilstand
 settings_right_table_links_type=Tabellinks viser type
 settings_right_table_links_type_2=Store ikoner med tekst
 settings_right_table_links_type_1=Små ikoner med værktøjstiptekst
-settings_right_table_links_type_0=Ingen ikoner, kun tekstlinks
 settings_right_table_animate_icons=Vis on-hover-animation for tabelikon-links
 settings_right_table_grayscaled_icons=Vis links til tabelikon i gråtoner, medmindre du holder markøren
 theme_xhred_upload_initial_info_dir=Træk og slip en mappe her, eller klik for at vælge
@@ -1272,7 +1267,6 @@ theme_xhred_editor_tb_code=Kodeblok
 theme_xhred_editor_tb_code-block=Kodeblok
 theme_xhred_editor_tb_direction=Tekst retning
 
-settings_right_table_layout_widget=Vis indholdslayoutkontrol
 theme_xhred_tooltip_columns_layout=Indholdslayoutkontrol
 theme_xhred_columns_layout_title=Indholdslayout
 theme_xhred_columns_layout_variation=Layout variation
@@ -1288,8 +1282,6 @@ theme_xhred_columns_layout_remove=Skjul denne widget
 theme_xhred_columns_layout_remove_button=Gem og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Vandret layout kan ikke bruges i mobiltilstand, specielt når skærmbredden er mindre end 992px
 
-settings_auto_open_panels_on_proximity=Åbn automatisk lukkede paneler i nærheden
-
 theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gengivelsestilføjelse
 
 # 21.09.04
@@ -1298,7 +1290,6 @@ theme_xhred_datatable_filter_and_export=Filtrer og eksporter indhold
 # 21.10
 settings_hotkey_logout_dbl=Log ud
 theme_xhred_hotkey_emsg=Omvendt skråstreg kan ikke bruges som genvej
-settings_embed_product_splash_privileged=Vis en branding-splash-skærm efter login
 dashboard_status_running=Løb
 dashboard_status_stopped=Holdt op
 

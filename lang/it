@@ -283,8 +283,6 @@ theme_xhred_filemanager_title_symlink_target=destinazione link
 
 # 17.60
 right_unlimited=Illimitato
-settings_leftmenu_width=Larghezza preferita
-settings_leftmenu_width_description=La larghezza predefinita/attuale è <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Visualizza interruttori invertiti
 settings_switch_rdisplay_description=Questa opzione consente di impostare un ordine diverso per gli interruttori in alto a sinistra. Dopo aver modificato questa opzione, è necessario ricaricare completamente la pagina.
 
@@ -309,10 +307,6 @@ theme_xhred_global_save_and_close=Salva e chiudi
 theme_xhred_global_close_without_saving=Chiudi senza salvare
 theme_xhred_global_continue_editing=Continua a modificare
 theme_xhred_filemanager_context_download_file=Scarica
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Larghezza grafici
-settings_sysinfo_easypie_charts_scale=Larghezza scala dei grafici
 
 # 17.80
 right_return_theme_options=opzioni tema
@@ -517,7 +511,6 @@ theme_tooltip_logout=Disconnettiti
 theme_tooltip_edit_user=Modifica utente
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diametro dei grafici
 theme_xhred_global_choose=Scegli
 theme_xhred_global_select=Seleziona
 theme_xhred_global_ok=OK

@@ -282,8 +282,6 @@ theme_xhred_filemanager_title_symlink_target=Lenke-mål
 
 # 17.60
 right_unlimited=Ubegrenset
-settings_leftmenu_width=Foretrukket bredde
-settings_leftmenu_width_description=Standard/gjeldende bredde <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Vis brytere reversert
 settings_switch_rdisplay_description=Dette alternativet lar deg angi annen rekkefølge på topp-venstre brytere. Etter å ha endret dette alternativet, må du foreta en fullstendig omlasting av siden for å ta i bruk nye innstillinger.
 
@@ -308,10 +306,6 @@ theme_xhred_global_save_and_close=Lagre og lukk
 theme_xhred_global_close_without_saving=Lukk uten lagring
 theme_xhred_global_continue_editing=Fortsett redigering
 theme_xhred_filemanager_context_download_file=Last ned
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Diagram bredde
-settings_sysinfo_easypie_charts_scale=Diagram skalalengde
 
 # 17.80
 right_return_theme_options=tema innstillinger
@@ -515,7 +509,6 @@ theme_tooltip_logout=Logg ut
 theme_tooltip_edit_user=Rediger bruker
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diameter for diagrammer
 theme_xhred_global_choose=Velg
 theme_xhred_global_select=Velg
 theme_xhred_global_ok=OK

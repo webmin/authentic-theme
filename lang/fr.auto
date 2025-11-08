@@ -27,6 +27,10 @@ settings_hotkey_favorites=Ouvrir les favoris
 settings_hotkey_focus_search=Focus sur le champ de recherche
 settings_hotkey_reload=Actualiser la page actuelle
 
+settings_roundish_menu=Coins arrondis du menu
+
+settings_roundish_slider=Coins arrondis des glissières
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Documentation Webmin
 theme_xhred_sysinfo_vmdocs=Documentation Virtualmin
@@ -158,10 +162,10 @@ theme_xhred_global_show_all=Afficher tout
 theme_xhred_filemanager_context_prop_show_all=Afficher toutes les propriétés
 
 # 19.84
+settings_right_table_force_single_column=Mode de force à une seule colonne
 settings_right_table_links_type=Type d'affichage des liens de table
 settings_right_table_links_type_2=Grandes icônes avec texte
 settings_right_table_links_type_1=Petites icônes avec texte d'info-bulle
-settings_right_table_links_type_0=Pas d'icônes, juste des liens texte
 settings_right_table_animate_icons=Afficher l'animation au survol pour les liens d'icônes de tableau
 settings_right_table_grayscaled_icons=Afficher les liens des icônes de tableau en niveaux de gris sauf si survolé
 theme_xhred_upload_initial_info_dir=Faites glisser et déposez un répertoire ici ou cliquez pour sélectionner
@@ -333,7 +337,6 @@ theme_xhred_editor_tb_code=Bloc de code
 theme_xhred_editor_tb_code-block=Bloc de code
 theme_xhred_editor_tb_direction=Sens du texte
 
-settings_right_table_layout_widget=Afficher le contrôle de la mise en page du contenu
 theme_xhred_tooltip_columns_layout=Contrôle de la mise en page du contenu
 theme_xhred_columns_layout_title=Mise en page du contenu
 theme_xhred_columns_layout_variation=Variante de mise en page
@@ -349,8 +352,6 @@ theme_xhred_columns_layout_remove=Masquer ce widget
 theme_xhred_columns_layout_remove_button=Enregistrer et masquer
 theme_xhred_columns_layout_variation_cannot_horizontal=La disposition horizontale ne peut pas être utilisée en mode mobile, en particulier lorsque la largeur de l'écran est inférieure à 992px
 
-settings_auto_open_panels_on_proximity=Ouverture automatique des panneaux fermés à proximité
-
 theme_xhred_config_portable_module_xterm_render_addon=Activer le module complémentaire de rendu WebGL
 
 # 21.09.04
@@ -359,7 +360,6 @@ theme_xhred_datatable_filter_and_export=Filtrer et exporter du contenu
 # 21.10
 settings_hotkey_logout_dbl=Se déconnecter
 theme_xhred_hotkey_emsg=La touche barre oblique inverse ne peut pas être utilisée comme raccourci
-settings_embed_product_splash_privileged=Afficher un écran de démarrage de marque après la connexion
 dashboard_status_running=En cours d'exécution
 dashboard_status_stopped=Arrêté
 

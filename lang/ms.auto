@@ -27,6 +27,10 @@ settings_hotkey_favorites=Buka kegemaran
 settings_hotkey_focus_search=Fokus pada medan carian
 settings_hotkey_reload=Muat semula halaman semasa
 
+settings_roundish_menu=Sudut menu bulat
+
+settings_roundish_slider=Sudut gelangsar bulat
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Dokumentasi webmin
 theme_xhred_sysinfo_vmdocs=dokumentasi Virtualmin
@@ -629,10 +633,10 @@ theme_xhred_global_show_all=Tunjukkan semua
 theme_xhred_filemanager_context_prop_show_all=Tunjukkan semua harta tanah
 
 # 19.84
+settings_right_table_force_single_column=Paksa mod lajur tunggal
 settings_right_table_links_type=Jenis paparan pautan jadual
 settings_right_table_links_type_2=Ikon besar dengan teks
 settings_right_table_links_type_1=Ikon kecil dengan teks petua alat
-settings_right_table_links_type_0=Tiada ikon, hanya pautan teks
 settings_right_table_animate_icons=Tunjukkan animasi on-hover untuk pautan ikon jadual
 settings_right_table_grayscaled_icons=Tunjukkan pautan ikon jadual dalam skala kelabu kecuali dituding
 theme_xhred_upload_initial_info_dir=Seret dan lepaskan direktori di sini atau klik untuk memilih
@@ -804,7 +808,6 @@ theme_xhred_editor_tb_code=Blok kod
 theme_xhred_editor_tb_code-block=Blok kod
 theme_xhred_editor_tb_direction=Arah teks
 
-settings_right_table_layout_widget=Tunjukkan kawalan susun atur kandungan
 theme_xhred_tooltip_columns_layout=Kawalan susun atur kandungan
 theme_xhred_columns_layout_title=Susun atur kandungan
 theme_xhred_columns_layout_variation=Variasi reka letak
@@ -820,8 +823,6 @@ theme_xhred_columns_layout_remove=Sembunyikan Widget Ini
 theme_xhred_columns_layout_remove_button=Simpan dan Sembunyikan
 theme_xhred_columns_layout_variation_cannot_horizontal=Reka letak mendatar tidak boleh digunakan dalam mod mudah alih, khususnya apabila lebar skrin kurang daripada 992px
 
-settings_auto_open_panels_on_proximity=Auto buka panel tertutup pada jarak dekat
-
 theme_xhred_config_portable_module_xterm_render_addon=Dayakan tambahan pemaparan WebGL
 
 # 21.09.04
@@ -830,7 +831,6 @@ theme_xhred_datatable_filter_and_export=Tapis dan eksport kandungan
 # 21.10
 settings_hotkey_logout_dbl=Log keluar
 theme_xhred_hotkey_emsg=Kekunci garis miring ke belakang tidak boleh digunakan sebagai pintasan
-settings_embed_product_splash_privileged=Paparkan skrin percikan penjenamaan selepas log masuk
 dashboard_status_running=Berlari
 dashboard_status_stopped=Berhenti
 

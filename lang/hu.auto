@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=A CPU és a meghajtók állapotának m
 settings_sysinfo_link_mini=Az irányítópult hivatkozásának megjelenítése gombként
 
 settings_right_page_defaults_title=Alapértelmezett oldalak
+settings_roundish_menu=Lekerekített menüsarkok
 settings_right_default_tab_webmin=Alapértelmezett fül a Webminbe való bejelentkezés után
 settings_right_default_tab_usermin=Alapértelmezett lap a Userminbe való bejelentkezés után
 settings_right_virtualmin_default=Alapértelmezett oldal a Virtualmin számára
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Alapértelmezett oldal a Cloudmin számára
 settings_right_clear_local_cache=Tiszta gyorsítótár
 settings_side_slider_fixed=Mindig látható legyen
 
+settings_roundish_slider=Lekerekített csúszósarkok
 settings_side_slider_enabled=Csúszka engedélyezése
 settings_leftmenu_user_html=HTML kódrészlet megjelenítése
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Link link
 
 # 17.60
 right_unlimited=Korlátlan
-settings_leftmenu_width=Előnyös szélesség
-settings_leftmenu_width_description=Alapérték/aktuális szélessége <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Show kapcsolók fordítva
 settings_switch_rdisplay_description=Ez az opció lehetővé teszi, hogy eltérő sorrendet állítson be a bal felső kapcsolókhoz. Az opció megváltoztatása után az oldal teljes újratöltése szükséges
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Mentés és bezárás
 theme_xhred_global_close_without_saving=Bezárás mentés nélkül
 theme_xhred_global_continue_editing=Folytassa a szerkesztést
 theme_xhred_filemanager_context_download_file=Letöltés
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Diagramok szélessége
-settings_sysinfo_easypie_charts_scale=A diagramok méretaránya
 
 # 17.80
 right_return_theme_options=téma beállítások
@@ -570,7 +566,6 @@ theme_tooltip_logout=Kijelentkezés
 theme_tooltip_edit_user=Felhasználó szerkesztése
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diagramok átmérője
 theme_xhred_global_choose=Választ
 theme_xhred_global_select=választ
 theme_xhred_global_ok=rendben
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Mutasd az összeset
 theme_xhred_filemanager_context_prop_show_all=Minden tulajdonság megjelenítése
 
 # 19.84
+settings_right_table_force_single_column=Egyoszlopos mód kényszerítése
 settings_right_table_links_type=A táblázat linkjeinek megjelenítési típusa
 settings_right_table_links_type_2=Nagy ikonok szöveggel
 settings_right_table_links_type_1=Kis ikonok tooltip szöveggel
-settings_right_table_links_type_0=Nincsenek ikonok, csak szöveges linkek
 settings_right_table_animate_icons=A táblázat ikonjainak linkjein mutató animáció megjelenítése
 settings_right_table_grayscaled_icons=A táblázat ikon linkjeinek megjelenítése szürkeárnyalatos, ha nem mozgatja
 theme_xhred_upload_initial_info_dir=Húzzon ide egy könyvtárat, vagy kattintson a kiválasztáshoz
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Kódblokk
 theme_xhred_editor_tb_code-block=Kódblokk
 theme_xhred_editor_tb_direction=Szöveg iránya
 
-settings_right_table_layout_widget=Tartalomelrendezés-vezérlő megjelenítése
 theme_xhred_tooltip_columns_layout=Tartalomelrendezés vezérlése
 theme_xhred_columns_layout_title=Tartalom elrendezése
 theme_xhred_columns_layout_variation=Elrendezés variáció
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=A widget elrejtése
 theme_xhred_columns_layout_remove_button=Mentés és elrejtés
 theme_xhred_columns_layout_variation_cannot_horizontal=A vízszintes elrendezés nem használható mobil módban, különösen akkor, ha a képernyő szélessége kisebb, mint 992 képpont
 
-settings_auto_open_panels_on_proximity=A zárt panelek automatikus nyitása a közelben
-
 theme_xhred_config_portable_module_xterm_render_addon=WebGL-megjelenítési bővítmény engedélyezése
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Tartalom szűrése és exportálása
 # 21.10
 settings_hotkey_logout_dbl=Kijelentkezés
 theme_xhred_hotkey_emsg=A fordított perjel billentyű nem használható gyorsbillentyűként
-settings_embed_product_splash_privileged=A bejelentkezést követően jelenítsen meg egy márkaépítési indítóképernyőt
 dashboard_status_running=Futás
 dashboard_status_stopped=Megállt
 

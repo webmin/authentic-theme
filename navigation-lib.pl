@@ -1046,7 +1046,7 @@ sub nav_list_combined_menu
                     }
                     my $data_title =
                       $item->{'module'} eq 'virtual-server' ? $theme_text{'right_fdoms'} : $theme_text{'right_fvm2'};
-                    my $select_width = ($theme_config{'settings_leftmenu_width'} - 11 * 2);
+                    my $select_width = ($theme_config{'settings_menu_width'} - 11 * 2);
                     my $style        = "data-autocomplete-title=\"$data_title\" style=\"width:${select_width}px;\"";
 
                     # Build select menu
@@ -1165,7 +1165,7 @@ sub nav_links
     }
     my $user_title = get_button_tooltip($title_proc, undef, 'auto top', 1, undef, "aside");
     my $menu_elem_br;
-    my $menu_width         = $theme_config{'settings_leftmenu_width'};
+    my $menu_width         = $theme_config{'settings_menu_width'};
     my $button_width       = 26;
     my $button_margin      = 2;
     my $char_width         = 5.73;

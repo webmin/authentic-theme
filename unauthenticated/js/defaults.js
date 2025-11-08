@@ -142,7 +142,7 @@ var
     // E.g. to change options below, you would need to open browser's console,
     // change an option value and call `theme.config.save()` function.
     //
-    settings_leftmenu_width = 270,
+    settings_menu_width = 270,
     settings_auto_open_panels_on_proximity = false,
     settings_embed_product_splash_privileged = false,
     settings_table_auto_dt = true,

@@ -282,8 +282,6 @@ theme_xhred_filemanager_title_symlink_target=Adreça de l'enllaç
 
 # 17.60
 right_unlimited=Il·limitat
-settings_leftmenu_width=Amplada del panell de navegació
-settings_leftmenu_width_description=Amplada per defecte/actual: <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Mostrar la pestanya Tauler en primer lloc
 settings_switch_rdisplay_description=Aquesta opció canvia l'ordre de les pestanyes. Has d'actualitzar la pàgina per aplicar la nova configuració.
 
@@ -308,10 +306,6 @@ theme_xhred_global_save_and_close=Desar i tancar
 theme_xhred_global_close_without_saving=Tancar sense desar
 theme_xhred_global_continue_editing=Continuar editant
 theme_xhred_filemanager_context_download_file=Descarregar
-
-# 17.65
-settings_sysinfo_easypie_charts_width= Amplada de línia
-settings_sysinfo_easypie_charts_scale= Escala
 
 # 17.80
 right_return_theme_options=opcions del tema
@@ -516,7 +510,6 @@ theme_tooltip_logout=Sortir
 theme_tooltip_edit_user=Editar l'usuari
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Mida de les gràfiques
 theme_xhred_global_choose=Escull
 theme_xhred_global_select=Selecciona
 theme_xhred_global_ok=D'acord

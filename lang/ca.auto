@@ -27,6 +27,10 @@ settings_hotkey_favorites=Obre els preferits
 settings_hotkey_focus_search=Centra't en el camp de cerca
 settings_hotkey_reload=Actualitza la pàgina actual
 
+settings_roundish_menu=Cantonades arrodonides del menú
+
+settings_roundish_slider=Cantonades arrodonides del control lliscant
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Documentació de Webmin
 theme_xhred_sysinfo_vmdocs=Documentació de Virtualmin
@@ -560,10 +564,10 @@ theme_xhred_global_show_all=Mostrar tots
 theme_xhred_filemanager_context_prop_show_all=Mostra totes les propietats
 
 # 19.84
+settings_right_table_force_single_column=Força el mode de columna única
 settings_right_table_links_type=Tipus de visualització d'enllaços de taula
 settings_right_table_links_type_2=Icones grans amb text
 settings_right_table_links_type_1=Icones petites amb text d’informació
-settings_right_table_links_type_0=No hi ha icones, només enllaços de text
 settings_right_table_animate_icons=Mostra l'animació per sobre dels enllaços d'icones de taula
 settings_right_table_grayscaled_icons=Mostra els enllaços d'icones de taula en escala de grisos tret que es passi el cursor
 theme_xhred_upload_initial_info_dir=Arrossegueu i deixeu anar un directori aquí o feu clic per seleccionar-lo
@@ -735,7 +739,6 @@ theme_xhred_editor_tb_code=Bloc de codi
 theme_xhred_editor_tb_code-block=Bloc de codi
 theme_xhred_editor_tb_direction=Direcció del text
 
-settings_right_table_layout_widget=Mostra el control de disseny del contingut
 theme_xhred_tooltip_columns_layout=Control de disseny de contingut
 theme_xhred_columns_layout_title=Disseny de contingut
 theme_xhred_columns_layout_variation=Variació de maquetació
@@ -751,8 +754,6 @@ theme_xhred_columns_layout_remove=Amaga aquest widget
 theme_xhred_columns_layout_remove_button=Desa i amaga
 theme_xhred_columns_layout_variation_cannot_horizontal=El disseny horitzontal no es pot utilitzar en el mode mòbil, concretament quan l'amplada de la pantalla és inferior a 992 píxels
 
-settings_auto_open_panels_on_proximity=Panells tancats oberts automàticament a proximitat
-
 theme_xhred_config_portable_module_xterm_render_addon=Activa el complement de representació de WebGL
 
 # 21.09.04
@@ -761,7 +762,6 @@ theme_xhred_datatable_filter_and_export=Filtrar i exportar contingut
 # 21.10
 settings_hotkey_logout_dbl=Tancar sessió
 theme_xhred_hotkey_emsg=La tecla de barra invertida no es pot utilitzar com a drecera
-settings_embed_product_splash_privileged=Mostra una pantalla de presentació de marca després de l'inici de sessió
 dashboard_status_running=Córrer
 dashboard_status_stopped=Parat
 

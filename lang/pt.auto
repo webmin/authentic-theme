@@ -81,6 +81,7 @@ settings_sysinfo_drive_status_on_new_line=Mostrar status da CPU e das unidades, 
 settings_sysinfo_link_mini=Mostrar link do painel como botão
 
 settings_right_page_defaults_title=Páginas padrão
+settings_roundish_menu=Cantos arredondados do menu
 settings_right_default_tab_webmin=Guia Padrão após efetuar login no Webmin
 settings_right_default_tab_usermin=Guia Padrão após efetuar login no Usermin
 settings_right_virtualmin_default=Página padrão do Virtualmin
@@ -89,6 +90,7 @@ settings_right_cloudmin_default=Página padrão para Cloudmin
 settings_right_clear_local_cache=Limpar cache
 settings_side_slider_fixed=Mantenha sempre visível
 
+settings_roundish_slider=Cantos arredondados do deslizador
 settings_side_slider_enabled=Ativar controle deslizante
 settings_leftmenu_user_html=Mostrar snippet HTML
 
@@ -235,8 +237,6 @@ theme_xhred_filemanager_title_symlink_target=Link alvo
 
 # 17.60
 right_unlimited=Ilimitado
-settings_leftmenu_width=Largura preferida
-settings_leftmenu_width_description=Padrão/atual largura de <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Mostrar interruptores invertidos
 settings_switch_rdisplay_description=Esta opção permite definir ordens diferentes para os switches do canto superior esquerdo. Depois de alterar esta opção, é necessário recarregar a página completa
 
@@ -261,10 +261,6 @@ theme_xhred_global_save_and_close=Salvar e fechar
 theme_xhred_global_close_without_saving=Fechar sem salvar
 theme_xhred_global_continue_editing=Continue editando
 theme_xhred_filemanager_context_download_file=Baixar
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Largura dos gráficos
-settings_sysinfo_easypie_charts_scale=Escalar o comprimento dos gráficos
 
 # 17.80
 right_return_theme_options=Opções de temas
@@ -488,7 +484,6 @@ theme_tooltip_logout=Sair
 theme_tooltip_edit_user=Editar usuário
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diâmetro dos gráficos
 theme_xhred_global_choose=Escolher
 theme_xhred_global_select=Selecione
 theme_xhred_global_ok=Está bem
@@ -1102,10 +1097,10 @@ theme_xhred_global_show_all=Mostre tudo
 theme_xhred_filemanager_context_prop_show_all=Mostrar todas as propriedades
 
 # 19.84
+settings_right_table_force_single_column=Forçar modo de coluna única
 settings_right_table_links_type=Tipo de exibição de links de tabela
 settings_right_table_links_type_2=Ícones grandes com texto
 settings_right_table_links_type_1=Ícones pequenos com texto de dica de ferramenta
-settings_right_table_links_type_0=Sem ícones, apenas links de texto
 settings_right_table_animate_icons=Mostrar animação ao passar o mouse para links de ícones de mesa
 settings_right_table_grayscaled_icons=Mostrar links de ícones de mesa em escala de cinza, a menos que seja pairado
 theme_xhred_upload_initial_info_dir=Arraste e solte um diretório aqui ou clique para selecionar
@@ -1277,7 +1272,6 @@ theme_xhred_editor_tb_code=bloco de código
 theme_xhred_editor_tb_code-block=bloco de código
 theme_xhred_editor_tb_direction=Direção do texto
 
-settings_right_table_layout_widget=Mostrar controle de layout de conteúdo
 theme_xhred_tooltip_columns_layout=Controle de layout de conteúdo
 theme_xhred_columns_layout_title=Layout de conteúdo
 theme_xhred_columns_layout_variation=variação de layout
@@ -1293,8 +1287,6 @@ theme_xhred_columns_layout_remove=Ocultar este widget
 theme_xhred_columns_layout_remove_button=Salvar e ocultar
 theme_xhred_columns_layout_variation_cannot_horizontal=O layout horizontal não pode ser usado no modo móvel, especificamente quando a largura da tela for menor que 992px
 
-settings_auto_open_panels_on_proximity=Painéis fechados de abertura automática na proximidade
-
 theme_xhred_config_portable_module_xterm_render_addon=Habilitar complemento de renderização WebGL
 
 # 21.09.04
@@ -1303,7 +1295,6 @@ theme_xhred_datatable_filter_and_export=Filtrar e exportar conteúdo
 # 21.10
 settings_hotkey_logout_dbl=Sair
 theme_xhred_hotkey_emsg=A tecla de barra invertida não pode ser usada como atalho
-settings_embed_product_splash_privileged=Exibir uma tela inicial da marca após o login
 dashboard_status_running=Correndo
 dashboard_status_stopped=Parou
 

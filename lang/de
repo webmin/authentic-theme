@@ -313,8 +313,6 @@ theme_xhred_filemanager_title_symlink_target=Verknüpfungsziel
 
 # 17.60
 right_unlimited=Unbegrenzt
-settings_leftmenu_width=Bevorzugte Breite
-settings_leftmenu_width_description=Standard-/aktuelle Breite 260/0
 settings_switch_rdisplay=Schalter umgekehrt anzeigen
 settings_switch_rdisplay_description=Diese Option ermöglicht eine andere Reihenfolge der Schalter oben links. Nach Änderung ist ein vollständiges Neuladen der Seite erforderlich
 
@@ -339,10 +337,6 @@ theme_xhred_global_save_and_close=Speichern und schließen
 theme_xhred_global_close_without_saving=Ohne Speichern schließen
 theme_xhred_global_continue_editing=Weiter bearbeiten
 theme_xhred_filemanager_context_download_file=Datei herunterladen
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Diagrammbreite
-settings_sysinfo_easypie_charts_scale=Diagrammskala
 
 # 17.80
 right_return_theme_options=Designoptionen
@@ -564,7 +558,6 @@ theme_tooltip_logout=Abmelden
 theme_tooltip_edit_user=Benutzer bearbeiten
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Durchmesser der Diagramme
 theme_xhred_global_choose=Auswählen
 theme_xhred_global_select=Auswählen
 theme_xhred_global_ok=OK
@@ -1178,7 +1171,6 @@ theme_xhred_filemanager_context_prop_show_all=Alle Eigenschaften anzeigen
 settings_right_table_links_type=Anzeigeart der Tabellenlinks
 settings_right_table_links_type_2=Große Symbole mit Text
 settings_right_table_links_type_1=Kleine Symbole mit Tooltip-Text
-settings_right_table_links_type_0=Keine Symbole, nur Textlinks
 settings_right_table_animate_icons=Animation bei Hover über Tabellensymbole anzeigen
 settings_right_table_grayscaled_icons=Tabellensymbole in Graustufen anzeigen, außer bei Hover
 theme_xhred_upload_initial_info_dir=Verzeichnis hierher ziehen oder klicken zum Auswählen
@@ -1349,7 +1341,6 @@ theme_xhred_editor_tb_code=Codeblock
 theme_xhred_editor_tb_code-block=Codeblock
 theme_xhred_editor_tb_direction=Textrichtung
 
-settings_right_table_layout_widget=Layout-Steuerung anzeigen
 theme_xhred_tooltip_columns_layout=Layout-Steuerung
 theme_xhred_columns_layout_title=Inhaltslayout
 theme_xhred_columns_layout_variation=Layoutvariante
@@ -1365,8 +1356,6 @@ theme_xhred_columns_layout_remove=Dieses Widget ausblenden
 theme_xhred_columns_layout_remove_button=Speichern und ausblenden
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontales Layout ist im mobilen Modus (unter 992px Breite) nicht verfügbar
 
-settings_auto_open_panels_on_proximity=Panels beim Nähern automatisch öffnen
-
 theme_xhred_config_portable_module_xterm_render_addon=WebGL-Rendering-Erweiterung aktivieren
 
 # 21.09.04
@@ -1374,7 +1363,6 @@ theme_xhred_datatable_filter_and_export=Inhalt filtern und exportieren
 
 # 21.10
 settings_hotkey_logout_dbl=Abmelden
-settings_embed_product_splash_privileged=Branding-Splashscreen nach Anmeldung anzeigen
 dashboard_status_running=Läuft
 dashboard_status_stopped=Gestoppt
 

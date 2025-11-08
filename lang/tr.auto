@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=CPU ve sürücülerin durumunu yeni sa
 settings_sysinfo_link_mini=Gösterge tablosu bağlantısını düğme olarak göster
 
 settings_right_page_defaults_title=Varsayılan sayfalar
+settings_roundish_menu=Yuvarlak menü köşeleri
 settings_right_default_tab_webmin=Webmin'de oturum açtıktan sonra varsayılan sekme
 settings_right_default_tab_usermin=Usermin'e giriş yaptıktan sonra varsayılan sekme
 settings_right_virtualmin_default=Virtualmin için varsayılan sayfa
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Cloudmin için varsayılan sayfa
 settings_right_clear_local_cache=Önbelleği temizle
 settings_side_slider_fixed=Her zaman görünür tutun
 
+settings_roundish_slider=Yuvarlatılmış kaydırıcı köşeler
 settings_side_slider_enabled=Kaydırıcıyı etkinleştir
 settings_leftmenu_user_html=HTML snippet'ini göster
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Bağlantı hedefi
 
 # 17.60
 right_unlimited=Sınırsız
-settings_leftmenu_width=Tercih edilen genişlik
-settings_leftmenu_width_description=Standart/mevcut genişlik <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Ters çevrilmiş anahtarları göster
 settings_switch_rdisplay_description=Bu seçenek, sol üstteki anahtarlar için farklı bir düzen ayarlamanızı sağlar. Bu seçeneği değiştirdikten sonra, tam sayfa yeniden yüklemesi gerekir
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Kaydet ve kapat
 theme_xhred_global_close_without_saving=Kaydetmeden kapat
 theme_xhred_global_continue_editing=Düzenlemeye devam et
 theme_xhred_filemanager_context_download_file=İndir
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Grafik genişliği
-settings_sysinfo_easypie_charts_scale=Grafiklerin ölçek uzunluğu
 
 # 17.80
 right_return_theme_options=tema ayarları
@@ -570,7 +566,6 @@ theme_tooltip_logout=oturumu Kapat
 theme_tooltip_edit_user=Kullanıcıyı düzenle
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Grafiklerin çapı
 theme_xhred_global_choose=Seç
 theme_xhred_global_select=seçmek
 theme_xhred_global_ok=tamam
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Hepsini Göster ↓
 theme_xhred_filemanager_context_prop_show_all=Tüm özellikleri göster
 
 # 19.84
+settings_right_table_force_single_column=Tek sütun modunu zorla
 settings_right_table_links_type=Tablo bağlantıları görüntüleme türü
 settings_right_table_links_type_2=Metin içeren büyük simgeler
 settings_right_table_links_type_1=Araç ipucu metni içeren küçük simgeler
-settings_right_table_links_type_0=Simge yok, sadece metin bağlantıları
 settings_right_table_animate_icons=Tablo simgesi bağlantıları için fareyle üzerine gelindiğinde animasyonu göster
 settings_right_table_grayscaled_icons=Üzerine gelinmediği sürece tablo simgesi bağlantılarını gri tonlamalı olarak göster
 theme_xhred_upload_initial_info_dir=Bir dizini buraya sürükleyip bırakın veya seçmek için tıklayın
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=kod bloğu
 theme_xhred_editor_tb_code-block=kod bloğu
 theme_xhred_editor_tb_direction=Metin yönü
 
-settings_right_table_layout_widget=İçerik düzeni kontrolünü göster
 theme_xhred_tooltip_columns_layout=İçerik düzeni kontrolü
 theme_xhred_columns_layout_title=içerik düzeni
 theme_xhred_columns_layout_variation=Düzen varyasyonu
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Bu Widget'ı Gizle
 theme_xhred_columns_layout_remove_button=Kaydet ve Gizle
 theme_xhred_columns_layout_variation_cannot_horizontal=Mobil modda, özellikle ekran genişliği 992 pikselden az olduğunda yatay düzen kullanılamaz
 
-settings_auto_open_panels_on_proximity=Yakınlıkta kapalı panelleri otomatik aç
-
 theme_xhred_config_portable_module_xterm_render_addon=WebGL oluşturma eklentisini etkinleştir
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=İçeriği filtreleme ve dışa aktarma
 # 21.10
 settings_hotkey_logout_dbl=Çıkış Yap
 theme_xhred_hotkey_emsg=Ters eğik çizgi tuşu kısayol olarak kullanılamaz
-settings_embed_product_splash_privileged=Giriş yaptıktan sonra marka bilinci oluşturma ekranı görüntüle
 dashboard_status_running=Koşma
 dashboard_status_stopped=Durduruldu
 

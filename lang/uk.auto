@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Показати стан процес
 settings_sysinfo_link_mini=Показати посилання на панелі інструментів
 
 settings_right_page_defaults_title=Сторінки за замовчуванням
+settings_roundish_menu=Закруглені кути меню
 settings_right_default_tab_webmin=Вкладка за замовчуванням після входу в Webmin
 settings_right_default_tab_usermin=Вкладка за замовчуванням після входу в Usermin
 settings_right_virtualmin_default=Сторінка за замовчуванням для Virtualmin
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Сторінка Cloudmin за замовчув�
 settings_right_clear_local_cache=Очистити кеш
 settings_side_slider_fixed=Зберігайте завжди видимим
 
+settings_roundish_slider=Закруглені кути слайдера
 settings_side_slider_enabled=Увімкнути повзунок
 settings_leftmenu_user_html=Показати фрагмент HTML
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Ціль посилання
 
 # 17.60
 right_unlimited=Необмежений
-settings_leftmenu_width=Переважна ширина
-settings_leftmenu_width_description=За замовчуванням/Поточна ширина <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Показати перемикачі, перевернені
 settings_switch_rdisplay_description=Ця опція дозволяє встановити інший порядок для вимикачів верхнього лівого кута. Після зміни цієї опції потрібно повне перезавантаження сторінки
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Збережіть і закрийте
 theme_xhred_global_close_without_saving=Закрийте, не економлячи
 theme_xhred_global_continue_editing=Продовжуйте редагування
 theme_xhred_filemanager_context_download_file=Завантажити
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Ширина діаграм
-settings_sysinfo_easypie_charts_scale=Довжина діаграм масштабу
 
 # 17.80
 right_return_theme_options=параметри теми
@@ -570,7 +566,6 @@ theme_tooltip_logout=Вийти з аккаунта
 theme_tooltip_edit_user=Редагувати користувача
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Діаметр діаграм
 theme_xhred_global_choose=Виберіть
 theme_xhred_global_select=Виберіть
 theme_xhred_global_ok=добре
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Покажи все
 theme_xhred_filemanager_context_prop_show_all=Показати всі властивості
 
 # 19.84
+settings_right_table_force_single_column=Примусово встановлювати режим одного стовпця
 settings_right_table_links_type=Тип відображення посилань на таблицю
 settings_right_table_links_type_2=Великі значки з текстом
 settings_right_table_links_type_1=Невеликі значки з текстом підказки
-settings_right_table_links_type_0=Ніяких значків, лише текстові посилання
 settings_right_table_animate_icons=Показувати анімацію при наведенні курсора для посилань на піктограми таблиці
 settings_right_table_grayscaled_icons=Показувати посилання на значок таблиці у відтінках сірого, якщо не навести курсор миші
 theme_xhred_upload_initial_info_dir=Перетягніть сюди каталог або клацніть, щоб вибрати
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Кодовий блок
 theme_xhred_editor_tb_code-block=Кодовий блок
 theme_xhred_editor_tb_direction=Напрямок тексту
 
-settings_right_table_layout_widget=Показати елемент керування макетом вмісту
 theme_xhred_tooltip_columns_layout=Контроль оформлення вмісту
 theme_xhred_columns_layout_title=Розмітка вмісту
 theme_xhred_columns_layout_variation=Варіація макета
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Приховати цей віджет
 theme_xhred_columns_layout_remove_button=Зберегти та приховати
 theme_xhred_columns_layout_variation_cannot_horizontal=Горизонтальний макет не можна використовувати в мобільному режимі, зокрема, коли ширина екрана менше 992 пікселів
 
-settings_auto_open_panels_on_proximity=Автоматичне відкриття закритих панелей на близькості
-
 theme_xhred_config_portable_module_xterm_render_addon=Увімкнути аддон візуалізації WebGL
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Фільтрувати та експор
 # 21.10
 settings_hotkey_logout_dbl=Вийти
 theme_xhred_hotkey_emsg=Клавішу зворотної скісної риски не можна використовувати як скорочення
-settings_embed_product_splash_privileged=Після входу відображати заставку бренду
 dashboard_status_running=Біг
 dashboard_status_stopped=Зупинився
 

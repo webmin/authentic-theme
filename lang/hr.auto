@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Prikažite status CPU-a i pogona svaki
 settings_sysinfo_link_mini=Prikaži gumb nadzorne ploče kao gumb
 
 settings_right_page_defaults_title=Zadane stranice
+settings_roundish_menu=Zaobljeni kutovi izbornika
 settings_right_default_tab_webmin=Zadana kartica nakon prijave u Webmin
 settings_right_default_tab_usermin=Zadana kartica nakon prijave u Usermin
 settings_right_virtualmin_default=Zadana stranica za Virtualmin
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Zadana stranica za Cloudmin
 settings_right_clear_local_cache=Očisti predmemoriju
 settings_side_slider_fixed=Budite uvijek vidljivi
 
+settings_roundish_slider=Zaobljeni kutovi klizača
 settings_side_slider_enabled=Omogući klizač
 settings_leftmenu_user_html=Pokažite HTML isječak
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Cilj veze
 
 # 17.60
 right_unlimited=Neograničen
-settings_leftmenu_width=Poželjna širina
-settings_leftmenu_width_description=Default/struja širina <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Pokažite prekidače obrnuto
 settings_switch_rdisplay_description=Ova opcija omogućuje vam postavljanje različitog redoslijeda za gornje lijeve sklopke. Nakon promjene ove opcije potrebno je potpuno ponovno učitavanje stranice
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Spremi i zatvori
 theme_xhred_global_close_without_saving=Zatvorite bez spremanja
 theme_xhred_global_continue_editing=Nastavite s uređivanjem
 theme_xhred_filemanager_context_download_file=preuzimanje datoteka
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Širina karata
-settings_sysinfo_easypie_charts_scale=Duljina ljestvice ljestvica
 
 # 17.80
 right_return_theme_options=opcije teme
@@ -570,7 +566,6 @@ theme_tooltip_logout=Odjavi se
 theme_tooltip_edit_user=Uređivanje korisnika
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Promjer grafikona
 theme_xhred_global_choose=izabrati
 theme_xhred_global_select=Odaberi
 theme_xhred_global_ok=u redu
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Pokaži sve
 theme_xhred_filemanager_context_prop_show_all=Prikaži sva svojstva
 
 # 19.84
+settings_right_table_force_single_column=Prisilno korištenje jednog stupca
 settings_right_table_links_type=Vrsta prikaza tabličnih veza
 settings_right_table_links_type_2=Velike ikone s tekstom
 settings_right_table_links_type_1=Male ikone s tekstom opisa
-settings_right_table_links_type_0=Nema ikona, samo tekstualne veze
 settings_right_table_animate_icons=Prikaz animacije pri držanju pokazivača za veze na ikone tablice
 settings_right_table_grayscaled_icons=Prikažite veze ikona tablice u sivim tonovima, osim ako zadržite pokazivač miša
 theme_xhred_upload_initial_info_dir=Povucite i ispustite direktorij ovdje ili kliknite za odabir
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Blok koda
 theme_xhred_editor_tb_code-block=Blok koda
 theme_xhred_editor_tb_direction=Smjer teksta
 
-settings_right_table_layout_widget=Prikaži kontrolu izgleda sadržaja
 theme_xhred_tooltip_columns_layout=Kontrola izgleda sadržaja
 theme_xhred_columns_layout_title=Izgled sadržaja
 theme_xhred_columns_layout_variation=Varijacija rasporeda
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Sakrij ovaj widget
 theme_xhred_columns_layout_remove_button=Spremi i sakrij
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontalni raspored ne može se koristiti u mobilnom načinu rada, posebno kada je širina zaslona manja od 992 px
 
-settings_auto_open_panels_on_proximity=Automatski otvara zatvorene ploče na blizinu
-
 theme_xhred_config_portable_module_xterm_render_addon=Omogući dodatak WebGL renderiranja
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Filtrirajte i izvezite sadržaj
 # 21.10
 settings_hotkey_logout_dbl=Odjavite se
 theme_xhred_hotkey_emsg=Tipka obrnuta kosa crta ne može se koristiti kao prečac
-settings_embed_product_splash_privileged=Prikažite uvodni zaslon robne marke nakon prijave
 dashboard_status_running=Trčanje
 dashboard_status_stopped=Zaustavljeno
 

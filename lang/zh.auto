@@ -27,6 +27,10 @@ settings_hotkey_favorites=打开收藏夹
 settings_hotkey_focus_search=专注于搜索领域
 settings_hotkey_reload=刷新当前页面
 
+settings_roundish_menu=菜单边角圆润
+
+settings_roundish_slider=圆角滑块
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin 文档
 theme_xhred_sysinfo_vmdocs=虚拟文档
@@ -420,10 +424,10 @@ theme_xhred_global_show_all=显示所有
 theme_xhred_filemanager_context_prop_show_all=显示所有属性
 
 # 19.84
+settings_right_table_force_single_column=强制单列模式
 settings_right_table_links_type=表格链接显示类型
 settings_right_table_links_type_2=带文字的大图标
 settings_right_table_links_type_1=带有工具提示文本的小图标
-settings_right_table_links_type_0=没有图标，只有文字链接
 settings_right_table_animate_icons=显示表格图标链接的悬停动画
 settings_right_table_grayscaled_icons=除非悬停，否则以灰度显示表格图标链接
 theme_xhred_upload_initial_info_dir=将目录拖放到此处或单击以选择
@@ -595,7 +599,6 @@ theme_xhred_editor_tb_code=代码块
 theme_xhred_editor_tb_code-block=代码块
 theme_xhred_editor_tb_direction=文字方向
 
-settings_right_table_layout_widget=显示内容布局控制
 theme_xhred_tooltip_columns_layout=内容布局控制
 theme_xhred_columns_layout_title=内容布局
 theme_xhred_columns_layout_variation=布局变化
@@ -611,8 +614,6 @@ theme_xhred_columns_layout_remove=隐藏此小部件
 theme_xhred_columns_layout_remove_button=保存并隐藏
 theme_xhred_columns_layout_variation_cannot_horizontal=移动模式下不能使用水平布局，特别是当屏幕宽度小于992px时
 
-settings_auto_open_panels_on_proximity=接近时自动打开关闭的面板
-
 theme_xhred_config_portable_module_xterm_render_addon=启用 WebGL 渲染插件
 
 # 21.09.04
@@ -621,7 +622,6 @@ theme_xhred_datatable_filter_and_export=过滤和导出内容
 # 21.10
 settings_hotkey_logout_dbl=登出
 theme_xhred_hotkey_emsg=反斜杠键不能用作快捷键
-settings_embed_product_splash_privileged=登录后显示品牌启动画面
 dashboard_status_running=跑步
 dashboard_status_stopped=已停止
 

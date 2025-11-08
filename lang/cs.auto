@@ -28,9 +28,12 @@ settings_hotkey_favorites=Otevřít oblíbené položky
 settings_hotkey_focus_search=Zaměřte se na vyhledávací pole
 settings_hotkey_reload=Obnovit aktuální stránku
 
+settings_roundish_menu=Zaoblené rohy menu
+
 settings_right_clear_local_cache=Vyčistit mezipaměť
 settings_side_slider_fixed=Udržujte vždy viditelné
 
+settings_roundish_slider=Zaoblené rohy posuvníku
 settings_side_slider_enabled=Povolit posuvník
 settings_leftmenu_user_html=Zobrazit úryvek HTML
 
@@ -177,8 +180,6 @@ theme_xhred_filemanager_title_symlink_target=Cíl odkazu
 
 # 17.60
 right_unlimited=Neomezený
-settings_leftmenu_width=Upřednostňovaná šířka
-settings_leftmenu_width_description=Výchozí/proud šířka <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Zobrazit přepínače obrácené
 settings_switch_rdisplay_description=Tato možnost umožňuje nastavit jiné pořadí přepínačů vlevo nahoře. Po změně této možnosti je nutné znovu načíst stránku
 
@@ -203,10 +204,6 @@ theme_xhred_global_save_and_close=Uložit a zavřít
 theme_xhred_global_close_without_saving=Zavřít bez uložení
 theme_xhred_global_continue_editing=Pokračujte v úpravách
 theme_xhred_filemanager_context_download_file=Stažení
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Šířka grafů
-settings_sysinfo_easypie_charts_scale=Měřítko délky grafů
 
 # 17.80
 right_return_theme_options=možnosti motivu
@@ -430,7 +427,6 @@ theme_tooltip_logout=Odhlásit se
 theme_tooltip_edit_user=Upravit uživatele
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Průměr grafů
 theme_xhred_global_choose=Vybrat
 theme_xhred_global_select=Vybrat
 theme_xhred_global_ok=OK
@@ -1044,10 +1040,10 @@ theme_xhred_global_show_all=Ukázat vše
 theme_xhred_filemanager_context_prop_show_all=Zobrazit všechny vlastnosti
 
 # 19.84
+settings_right_table_force_single_column=Vynutit režim jednoho sloupce
 settings_right_table_links_type=Typ zobrazení odkazů na tabulky
 settings_right_table_links_type_2=Velké ikony s textem
 settings_right_table_links_type_1=Malé ikony s textem popisku
-settings_right_table_links_type_0=Žádné ikony, pouze textové odkazy
 settings_right_table_animate_icons=Zobrazit odkazy na ikonu tabulky při vznášení
 settings_right_table_grayscaled_icons=Zobrazit odkazy na ikony tabulky ve stupních šedi, pokud nejsou umístěny kurzorem
 theme_xhred_upload_initial_info_dir=Přetáhněte sem adresář nebo jej vyberte kliknutím
@@ -1219,7 +1215,6 @@ theme_xhred_editor_tb_code=Blok kódu
 theme_xhred_editor_tb_code-block=Blok kódu
 theme_xhred_editor_tb_direction=Směr textu
 
-settings_right_table_layout_widget=Zobrazit ovládací prvek rozvržení obsahu
 theme_xhred_tooltip_columns_layout=Ovládání rozložení obsahu
 theme_xhred_columns_layout_title=Uspořádání obsahu
 theme_xhred_columns_layout_variation=Variace rozložení
@@ -1235,8 +1230,6 @@ theme_xhred_columns_layout_remove=Skrýt tento widget
 theme_xhred_columns_layout_remove_button=Uložit a skrýt
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontální rozložení nelze použít v mobilním režimu, konkrétně když je šířka obrazovky menší než 992 pixelů
 
-settings_auto_open_panels_on_proximity=Automatické otevírání uzavřených panelů při blízkosti
-
 theme_xhred_config_portable_module_xterm_render_addon=Povolit doplněk pro vykreslování WebGL
 
 # 21.09.04
@@ -1245,7 +1238,6 @@ theme_xhred_datatable_filter_and_export=Filtrujte a exportujte obsah
 # 21.10
 settings_hotkey_logout_dbl=Odhlásit se
 theme_xhred_hotkey_emsg=Zpětné lomítko nelze použít jako zkratku
-settings_embed_product_splash_privileged=Po přihlášení zobrazit úvodní obrazovku značky
 dashboard_status_running=Běh
 dashboard_status_stopped=Zastavil
 

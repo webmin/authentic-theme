@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Erakutsi CPU eta unitateen egoera lerr
 settings_sysinfo_link_mini=Erakutsi arbelaren esteka botoia gisa
 
 settings_right_page_defaults_title=Lehenetsitako orriak
+settings_roundish_menu=Menuaren ertz biribilduak
 settings_right_default_tab_webmin=Lehenetsitako fitxa Webmin saioa hasi ondoren
 settings_right_default_tab_usermin=Lehenetsitako fitxa Usermin saioan hasi ondoren
 settings_right_virtualmin_default=Lehenetsitako orria Virtualmin-en
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Lehenetsitako orria Cloudminen
 settings_right_clear_local_cache=Garbitu cachea
 settings_side_slider_fixed=Jarrai beti ikusgai
 
+settings_roundish_slider=Irristailuaren ertz biribilduak
 settings_side_slider_enabled=Gaitu graduatzailea
 settings_leftmenu_user_html=Erakutsi HTML fragmentua
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Loturaren helburua
 
 # 17.60
 right_unlimited=Mugarik gabe
-settings_leftmenu_width=Lehentasunezko zabalera
-settings_leftmenu_width_description=Lehenetsia/oraingo zabalera <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Erakutsi etengailuak alderantzikatuta
 settings_switch_rdisplay_description=Aukera honek goi-ezkerreko etengailuen orden desberdinak ezartzeko aukera ematen du. Aukera hau aldatu ondoren, orrialde osoa berriro kargatu behar da
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Gorde eta itxi
 theme_xhred_global_close_without_saving=Itxi aurreztu gabe
 theme_xhred_global_continue_editing=Jarraitu editatzen
 theme_xhred_filemanager_context_download_file=Deskarga
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Grafikoen zabalera
-settings_sysinfo_easypie_charts_scale=Grafikoen luzera eskala
 
 # 17.80
 right_return_theme_options=gaiaren aukerak
@@ -570,7 +566,6 @@ theme_tooltip_logout=Hasi saioa
 theme_tooltip_edit_user=Erabiltzailea editatu
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Grafikoen diametroa
 theme_xhred_global_choose=Aukeratu
 theme_xhred_global_select=Aukeratu
 theme_xhred_global_ok=Ados
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Erakutsi dena
 theme_xhred_filemanager_context_prop_show_all=Erakutsi propietate guztiak
 
 # 19.84
+settings_right_table_force_single_column=Behartu zutabe bakarreko modua
 settings_right_table_links_type=Taulako estekak bistaratzeko mota
 settings_right_table_links_type_2=Testuarekin ikono handiak
 settings_right_table_links_type_1=Aholku testua duten ikono txikiak
-settings_right_table_links_type_0=Ez dago ikonorik, testu estekak baizik
 settings_right_table_animate_icons=Erakutsi pasatzean animazioa taulako ikonoen esteketarako
 settings_right_table_grayscaled_icons=Erakutsi taulako ikonoen estekak grisen eskalan, kokatu ezean
 theme_xhred_upload_initial_info_dir=Arrastatu eta jaregin direktorio bat hemen edo egin klik hautatzeko
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Kode blokea
 theme_xhred_editor_tb_code-block=Kode blokea
 theme_xhred_editor_tb_direction=Testuaren norabidea
 
-settings_right_table_layout_widget=Erakutsi edukiaren diseinuaren kontrola
 theme_xhred_tooltip_columns_layout=Edukien diseinuaren kontrola
 theme_xhred_columns_layout_title=Edukien diseinua
 theme_xhred_columns_layout_variation=Diseinuaren aldakuntza
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Ezkutatu widget hau
 theme_xhred_columns_layout_remove_button=Gorde eta Ezkutatu
 theme_xhred_columns_layout_variation_cannot_horizontal=Diseinu horizontala ezin da erabili mugikor moduan, bereziki pantailaren zabalera 992 px baino txikiagoa denean
 
-settings_auto_open_panels_on_proximity=Hurbiltasunean automatikoki irekitzen diren panel itxiak
-
 theme_xhred_config_portable_module_xterm_render_addon=Gaitu WebGL errendatze gehigarria
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Iragazi eta esportatu edukia
 # 21.10
 settings_hotkey_logout_dbl=Saioa amaitu
 theme_xhred_hotkey_emsg=Alderantzizko barra tekla ezin da lasterbide gisa erabili
-settings_embed_product_splash_privileged=Erakutsi marka-pantaila bat saioa hasi ondoren
 dashboard_status_running=Korrika
 dashboard_status_stopped=Gelditu
 

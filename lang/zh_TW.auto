@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=在新行中分別顯示CPU和驅動�
 settings_sysinfo_link_mini=將儀表板鏈接顯示為按鈕
 
 settings_right_page_defaults_title=默認頁面
+settings_roundish_menu=菜單邊角圓潤
 settings_right_default_tab_webmin=登錄到Webmin後的“默認”選項卡
 settings_right_default_tab_usermin=登錄到Usermin後的默認選項卡
 settings_right_virtualmin_default=Virtualmin的默認頁面
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Cloudmin的默認頁面
 settings_right_clear_local_cache=清除緩存
 settings_side_slider_fixed=始終保持可見
 
+settings_roundish_slider=圓角滑塊
 settings_side_slider_enabled=啟用滑桿
 settings_leftmenu_user_html=顯示HTML代碼段
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=連結目標
 
 # 17.60
 right_unlimited=無限
-settings_leftmenu_width=理想寬度
-settings_leftmenu_width_description=默認/電流寬度<code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=顯示開關反轉
 settings_switch_rdisplay_description=此選項使您可以為左上方的開關設置不同的順序。更改此選項後，需要重新加載頁面
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=保存並關閉
 theme_xhred_global_close_without_saving=不保存即關閉
 theme_xhred_global_continue_editing=繼續編輯
 theme_xhred_filemanager_context_download_file=下載
-
-# 17.65
-settings_sysinfo_easypie_charts_width=圖表寬度
-settings_sysinfo_easypie_charts_scale=圖表比例尺長度
 
 # 17.80
 right_return_theme_options=主題選項
@@ -570,7 +566,6 @@ theme_tooltip_logout=登出
 theme_tooltip_edit_user=修改用戶
 
 # 18.45
-settings_sysinfo_easypie_charts_size=圖表直徑
 theme_xhred_global_choose=選擇
 theme_xhred_global_select=選擇
 theme_xhred_global_ok=好
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=顯示所有
 theme_xhred_filemanager_context_prop_show_all=顯示所有屬性
 
 # 19.84
+settings_right_table_force_single_column=強制單列模式
 settings_right_table_links_type=表格鏈接顯示類型
 settings_right_table_links_type_2=帶文字的大圖標
 settings_right_table_links_type_1=帶有工具提示文本的小圖標
-settings_right_table_links_type_0=沒有圖標，只有文字鏈接
 settings_right_table_animate_icons=顯示表格圖標鏈接的懸停動畫
 settings_right_table_grayscaled_icons=除非懸停，否則以灰度顯示表格圖標鏈接
 theme_xhred_upload_initial_info_dir=將目錄拖放到此處或單擊以選擇
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=代碼塊
 theme_xhred_editor_tb_code-block=代碼塊
 theme_xhred_editor_tb_direction=文字方向
 
-settings_right_table_layout_widget=顯示內容佈局控制
 theme_xhred_tooltip_columns_layout=內容佈局控制
 theme_xhred_columns_layout_title=內容佈局
 theme_xhred_columns_layout_variation=佈局變化
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=隱藏此小部件
 theme_xhred_columns_layout_remove_button=保存並隱藏
 theme_xhred_columns_layout_variation_cannot_horizontal=移動模式下不能使用水平佈局，特別是當屏幕寬度小於992px時
 
-settings_auto_open_panels_on_proximity=接近時自動打開關閉的面板
-
 theme_xhred_config_portable_module_xterm_render_addon=啟用 WebGL 渲染插件
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=過濾和匯出內容
 # 21.10
 settings_hotkey_logout_dbl=登出
 theme_xhred_hotkey_emsg=反斜線鍵不能當快捷鍵
-settings_embed_product_splash_privileged=登入後顯示品牌啟動畫面
 dashboard_status_running=跑步
 dashboard_status_stopped=已停止
 

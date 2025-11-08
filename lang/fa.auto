@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=نمایش CPU و وضعیت درای�
 settings_sysinfo_link_mini=نمایش لینک داشبورد به عنوان دکمه
 
 settings_right_page_defaults_title=صفحات پیش فرض
+settings_roundish_menu=گوشه‌های گرد منو
 settings_right_default_tab_webmin=برگه پیش فرض پس از ورود به وبمین
 settings_right_default_tab_usermin=برگه پیش فرض بعد از ورود به Usermin
 settings_right_virtualmin_default=صفحه پیش فرض برای Virtualmin
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=صفحه پیش فرض برای Cloudmin
 settings_right_clear_local_cache=پاک کردن حافظه پنهان
 settings_side_slider_fixed=همیشه قابل مشاهده باشید
 
+settings_roundish_slider=گوشه‌های کشویی گرد
 settings_side_slider_enabled=کشویی را فعال کنید
 settings_leftmenu_user_html=نمایش قطعه HTML
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=هدف پیوند
 
 # 17.60
 right_unlimited=نامحدود
-settings_leftmenu_width=عرض ترجیحی
-settings_leftmenu_width_description=پیش فرض/در حال حاضر عرض <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=نمایش سوئیچ ها معکوس شد
 settings_switch_rdisplay_description=این گزینه به شما امکان می دهد تا ترتیب های مختلفی را برای سوئیچ های بالا سمت چپ تنظیم کنید. پس از تغییر این گزینه ، بارگذاری مجدد صفحه مورد نیاز است
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=ذخیره کن و ببند
 theme_xhred_global_close_without_saving=بستن بدون صرفه جویی
 theme_xhred_global_continue_editing=ویرایش را ادامه دهید
 theme_xhred_filemanager_context_download_file=دانلود
-
-# 17.65
-settings_sysinfo_easypie_charts_width=عرض نمودار
-settings_sysinfo_easypie_charts_scale=طول مقیاس نمودار
 
 # 17.80
 right_return_theme_options=گزینه های تم
@@ -570,7 +566,6 @@ theme_tooltip_logout=خروج از سیستم
 theme_tooltip_edit_user=ویرایش کاربر
 
 # 18.45
-settings_sysinfo_easypie_charts_size=قطر نمودار
 theme_xhred_global_choose=انتخاب کنید
 theme_xhred_global_select=انتخاب کنید
 theme_xhred_global_ok=خوب
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=نمایش همه
 theme_xhred_filemanager_context_prop_show_all=نمایش تمام خصوصیات
 
 # 19.84
+settings_right_table_force_single_column=حالت تک ستونی را فعال کنید
 settings_right_table_links_type=نوع نمایش پیوندهای جدول
 settings_right_table_links_type_2=نمادهای بزرگ با متن
 settings_right_table_links_type_1=نمادهای کوچک با متن راهنمای ابزار
-settings_right_table_links_type_0=بدون آیکون ، فقط پیوندهای متنی
 settings_right_table_animate_icons=نمایش متحرک در حال حرکت برای پیوندهای نماد جدول
 settings_right_table_grayscaled_icons=پیوندهای نماد جدول را در مقیاس خاکستری نشان دهید مگر اینکه در حالت شناور باشد
 theme_xhred_upload_initial_info_dir=دایرکتوری را در اینجا بکشید و رها کنید یا برای انتخاب کلیک کنید
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=بلوک کد
 theme_xhred_editor_tb_code-block=بلوک کد
 theme_xhred_editor_tb_direction=جهت متن
 
-settings_right_table_layout_widget=نمایش کنترل طرح بندی محتوا
 theme_xhred_tooltip_columns_layout=کنترل چیدمان محتوا
 theme_xhred_columns_layout_title=چیدمان محتوا
 theme_xhred_columns_layout_variation=تنوع چیدمان
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=پنهان کردن این ویجت
 theme_xhred_columns_layout_remove_button=ذخیره و پنهان کردن
 theme_xhred_columns_layout_variation_cannot_horizontal=طرح افقی را نمی توان در حالت موبایل استفاده کرد، به ویژه زمانی که عرض صفحه کمتر از 992 پیکسل باشد
 
-settings_auto_open_panels_on_proximity=باز کردن خودکار پانل های بسته در مجاورت
-
 theme_xhred_config_portable_module_xterm_render_addon=افزونه رندر WebGL را فعال کنید
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=فیلتر کردن و صادرات مح
 # 21.10
 settings_hotkey_logout_dbl=خروج
 theme_xhred_hotkey_emsg=کلید بک اسلش را نمی‌توان به عنوان میانبر استفاده کرد
-settings_embed_product_splash_privileged=پس از ورود به سیستم، یک صفحه نمایش نام تجاری نمایش داده می شود
 dashboard_status_running=در حال دویدن
 dashboard_status_stopped=متوقف شد
 

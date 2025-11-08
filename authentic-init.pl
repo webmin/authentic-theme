@@ -638,7 +638,7 @@ sub embed_css_inline
 	print <<"EOF";
 <style>
     :root {
-    --left-menu-width: $theme_config{'settings_leftmenu_width'}px;
+    --left-menu-width: $theme_config{'settings_menu_width'}px;
     }
 </style>
 EOF

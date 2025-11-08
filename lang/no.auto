@@ -27,6 +27,10 @@ settings_hotkey_favorites=Åpne favoritter
 settings_hotkey_focus_search=Fokus på søkefeltet
 settings_hotkey_reload=Oppdater gjeldende side
 
+settings_roundish_menu=Avrundede menyhjørner
+
+settings_roundish_slider=Avrundede hjørner på glidebryteren
+
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentasjon
 theme_xhred_sysinfo_vmdocs=Virtualmin dokumentasjon
@@ -158,10 +162,10 @@ theme_xhred_global_show_all=Vis alt
 theme_xhred_filemanager_context_prop_show_all=Vis alle eiendommer
 
 # 19.84
+settings_right_table_force_single_column=Tving frem modus for én kolonne
 settings_right_table_links_type=Tabelllenker viser type
 settings_right_table_links_type_2=Store ikoner med tekst
 settings_right_table_links_type_1=Små ikoner med verktøytips
-settings_right_table_links_type_0=Ingen ikoner, bare tekstkoblinger
 settings_right_table_animate_icons=Vis animasjon på musen for lenker til tabellikon
 settings_right_table_grayscaled_icons=Vis koblinger for tabellikon i gråtoner med mindre du holder markøren
 theme_xhred_upload_initial_info_dir=Dra og slipp en katalog her eller klikk for å velge
@@ -333,7 +337,6 @@ theme_xhred_editor_tb_code=Kodeblokk
 theme_xhred_editor_tb_code-block=Kodeblokk
 theme_xhred_editor_tb_direction=Tekstretning
 
-settings_right_table_layout_widget=Vis innholdslayoutkontroll
 theme_xhred_tooltip_columns_layout=Innholdslayoutkontroll
 theme_xhred_columns_layout_title=Innholdslayout
 theme_xhred_columns_layout_variation=Variasjon i layout
@@ -349,8 +352,6 @@ theme_xhred_columns_layout_remove=Skjul denne widgeten
 theme_xhred_columns_layout_remove_button=Lagre og skjul
 theme_xhred_columns_layout_variation_cannot_horizontal=Horisontal layout kan ikke brukes i mobilmodus, spesielt når skjermbredden er mindre enn 992px
 
-settings_auto_open_panels_on_proximity=Automatisk åpne lukkede paneler i nærheten
-
 theme_xhred_config_portable_module_xterm_render_addon=Aktiver WebGL-gjengivelsestillegg
 
 # 21.09.04
@@ -359,7 +360,6 @@ theme_xhred_datatable_filter_and_export=Filtrer og eksporter innhold
 # 21.10
 settings_hotkey_logout_dbl=Logg ut
 theme_xhred_hotkey_emsg=Omvendt skråstrek-tast kan ikke brukes som en snarvei
-settings_embed_product_splash_privileged=Vis en splash-skjerm for merkevarebygging etter pålogging
 dashboard_status_running=Løping
 dashboard_status_stopped=Stoppet
 

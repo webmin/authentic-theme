@@ -309,8 +309,6 @@ theme_xhred_filemanager_title_symlink_target=Cel dowiązania
 
 # 17.60
 right_unlimited=Bez limitu
-settings_leftmenu_width=Preferowana szerokość
-settings_leftmenu_width_description=Domyślna/bieżąca szerokość <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Odwróć kolejność przełączników
 settings_switch_rdisplay_description=Ta opcja umożliwia ustawienie innej kolejności przełączników w lewym górnym rogu. Po zmianie tej opcji wymaga pełnego przeładowania strony.
 
@@ -335,10 +333,6 @@ theme_xhred_global_save_and_close=Zapisz oraz zamknij
 theme_xhred_global_close_without_saving=Zamknij bez zapisywania
 theme_xhred_global_continue_editing=Kontynuuj edytowanie
 theme_xhred_filemanager_context_download_file=Pobierz
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Szerokość wykresów
-settings_sysinfo_easypie_charts_scale=Skala długości wykresów
 
 # 17.80
 right_return_theme_options=opcje motywu
@@ -557,7 +551,6 @@ theme_tooltip_logout=Wyloguj się
 theme_tooltip_edit_user=Edytuj użytkownika
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Średnica wykresów
 theme_xhred_global_choose=Wybierz
 theme_xhred_global_select=Zaznacz
 theme_xhred_global_ok=OK
@@ -1170,7 +1163,6 @@ theme_xhred_filemanager_context_prop_show_all=Pokaż wszystkie właściwości
 settings_right_table_links_type=Typ wyświetlania linków w tabeli
 settings_right_table_links_type_2=Duże ikony z tekstem
 settings_right_table_links_type_1=Małe ikony z tekstem w podpowiedzi
-settings_right_table_links_type_0=Brak ikon, tylko tekstowe linki
 settings_right_table_animate_icons=Pokaż animację ikony przy najechaniu w tabeli
 settings_right_table_grayscaled_icons=Pokaż ikony w tabeli w odcieniach szarości, chyba że najedziesz kursorem
 theme_xhred_upload_initial_info_dir=Przeciągnij i upuść katalog tutaj lub kliknij, aby wybrać
@@ -1340,7 +1332,6 @@ theme_xhred_editor_tb_code=Blok kodu
 theme_xhred_editor_tb_code-block=Blok kodu
 theme_xhred_editor_tb_direction=Kierunek tekstu
 
-settings_right_table_layout_widget=Pokaż kontrolę układu treści
 theme_xhred_tooltip_columns_layout=Kontrola układu treści
 theme_xhred_columns_layout_title=Układ treści
 theme_xhred_columns_layout_variation=Wariant układu
@@ -1356,8 +1347,6 @@ theme_xhred_columns_layout_remove=Ukryj ten widget
 theme_xhred_columns_layout_remove_button=Zapisz i Ukryj
 theme_xhred_columns_layout_variation_cannot_horizontal=Układ poziomy nie może być używany w trybie mobilnym, gdy szerokość ekranu jest mniejsza niż 992px
 
-settings_auto_open_panels_on_proximity=Automatyczne otwieranie zamkniętych paneli w pobliżu
-
 theme_xhred_config_portable_module_xterm_render_addon=Włącz dodatek renderowania WebGL
 
 # 21.09.04
@@ -1365,7 +1354,6 @@ theme_xhred_datatable_filter_and_export=Filtruj i eksportuj zawartość
 
 # 21.10
 settings_hotkey_logout_dbl=Wyloguj się
-settings_embed_product_splash_privileged=Wyświetl ekran powitalny po zalogowaniu
 dashboard_status_running=Uruchomiony
 dashboard_status_stopped=Zatrzymany
 

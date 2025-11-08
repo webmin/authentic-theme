@@ -7,6 +7,10 @@ settings_right_sync2=Tak, zawsze
 settings_right_sync1=Tak, tylko na przełączniku nawigacyjnym
 settings_right_sync0=Nie, nigdy
 
+settings_roundish_menu=Zaokrąglone rogi menu
+
+settings_roundish_slider=Zaokrąglone rogi suwaka
+
 # 17.84
 theme_xhred_datatable_filter=Filtr
 
@@ -26,6 +30,9 @@ theme_xhred_favorites_add=Dodaj do ulubionych
 # 19.71
 settings_right_hotkey_options=Skróty klawiaturowe
 settings_right_hotkey_custom_options=Skróty niestandardowych łączy
+
+# 19.84
+settings_right_table_force_single_column=Wymuś tryb pojedynczej kolumny
 
 # 20.30
 theme_xhred_hotkey_list_tabs=Lista kart

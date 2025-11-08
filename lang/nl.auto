@@ -53,6 +53,7 @@ settings_sysinfo_drive_status_on_new_line=Toon de CPU- en schijfstatus elk op ee
 settings_sysinfo_link_mini=Dashboardlink weergeven als knop
 
 settings_right_page_defaults_title=Standaardpagina's
+settings_roundish_menu=Afgeronde menuhoeken
 settings_right_default_tab_webmin=Standaardtabblad na inloggen op Webmin
 settings_right_default_tab_usermin=Standaardtabblad na inloggen op Usermin
 settings_right_virtualmin_default=Standaardpagina voor Virtualmin
@@ -61,6 +62,7 @@ settings_right_cloudmin_default=Standaardpagina voor Cloudmin
 settings_right_clear_local_cache=Cache wissen
 settings_side_slider_fixed=Altijd zichtbaar houden
 
+settings_roundish_slider=Afgeronde schuifhoeken
 settings_side_slider_enabled=Schuifregelaar inschakelen
 settings_leftmenu_user_html=HTML-fragment weergeven
 
@@ -207,8 +209,6 @@ theme_xhred_filemanager_title_symlink_target=Doel koppelen
 
 # 17.60
 right_unlimited=Onbeperkt
-settings_leftmenu_width=Bij voorkeur breedte
-settings_leftmenu_width_description=Default/huidige breedte <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Toon schakelaars omgekeerd
 settings_switch_rdisplay_description=Met deze optie kunt u een andere volgorde instellen voor schakelaars linksboven. Na het wijzigen van deze optie is het volledig opnieuw laden van de pagina vereist
 
@@ -233,10 +233,6 @@ theme_xhred_global_save_and_close=Opslaan en afsluiten
 theme_xhred_global_close_without_saving=Sluiten zonder op te slaan
 theme_xhred_global_continue_editing=Ga door met bewerken
 theme_xhred_filemanager_context_download_file=Downloaden
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Breedte van grafieken
-settings_sysinfo_easypie_charts_scale=Schaallengte van grafieken
 
 # 17.80
 right_return_theme_options=thema opties
@@ -460,7 +456,6 @@ theme_tooltip_logout=Afmelden
 theme_tooltip_edit_user=Bewerk gebruiker
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diameter van grafieken
 theme_xhred_global_choose=Kiezen
 theme_xhred_global_select=Selecteer
 theme_xhred_global_ok=OK
@@ -1074,10 +1069,10 @@ theme_xhred_global_show_all=Toon alles
 theme_xhred_filemanager_context_prop_show_all=Toon alle eigendommen
 
 # 19.84
+settings_right_table_force_single_column=Forceer de modus voor één kolom
 settings_right_table_links_type=Weergavetype tabelkoppelingen
 settings_right_table_links_type_2=Grote pictogrammen met tekst
 settings_right_table_links_type_1=Kleine pictogrammen met knopinfotekst
-settings_right_table_links_type_0=Geen pictogrammen, alleen tekstlinks
 settings_right_table_animate_icons=On-hover-animatie weergeven voor koppelingen naar tabelpictogrammen
 settings_right_table_grayscaled_icons=Toon tabelpictogramkoppelingen in grijstinten, tenzij de muisaanwijzer erop staat
 theme_xhred_upload_initial_info_dir=Sleep een map hierheen of klik om te selecteren
@@ -1249,7 +1244,6 @@ theme_xhred_editor_tb_code=Code blok
 theme_xhred_editor_tb_code-block=Code blok
 theme_xhred_editor_tb_direction=Tekstrichting
 
-settings_right_table_layout_widget=Beheer van inhoudslay-out weergeven
 theme_xhred_tooltip_columns_layout=Beheer van inhoudslay-out
 theme_xhred_columns_layout_title=Inhoud lay-out
 theme_xhred_columns_layout_variation=Lay-out variatie
@@ -1265,8 +1259,6 @@ theme_xhred_columns_layout_remove=Verberg deze widget
 theme_xhred_columns_layout_remove_button=Opslaan en verbergen
 theme_xhred_columns_layout_variation_cannot_horizontal=Horizontale lay-out kan niet worden gebruikt in de mobiele modus, met name wanneer de schermbreedte minder is dan 992px
 
-settings_auto_open_panels_on_proximity=Open automatisch gesloten panelen bij nabijheid
-
 theme_xhred_config_portable_module_xterm_render_addon=Schakel de WebGL-rendering-add-on in
 
 # 21.09.04
@@ -1275,7 +1267,6 @@ theme_xhred_datatable_filter_and_export=Filter en exporteer inhoud
 # 21.10
 settings_hotkey_logout_dbl=Uitloggen
 theme_xhred_hotkey_emsg=De backslash-toets kan niet als sneltoets worden gebruikt
-settings_embed_product_splash_privileged=Geef na het inloggen een branding-splash-scherm weer
 dashboard_status_running=Rennen
 dashboard_status_stopped=Gestopt
 

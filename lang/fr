@@ -282,8 +282,6 @@ theme_xhred_filemanager_title_symlink_target=Lien cible
 
 # 17.60
 right_unlimited=Illimité
-settings_leftmenu_width=Largeur préférable
-settings_leftmenu_width_description=Largeur par défaut/actuelle <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Afficher les commutateurs inversés
 settings_switch_rdisplay_description=Cette option vous permet de définir un ordre différent pour les commutateurs en haut à gauche. Après avoir modifié cette option, un rechargement complet de la page est requis
 
@@ -308,10 +306,6 @@ theme_xhred_global_save_and_close=Sauvegarder et fermer
 theme_xhred_global_close_without_saving=Fermer sans sauvegarder
 theme_xhred_global_continue_editing=Continuer l'édition
 theme_xhred_filemanager_context_download_file=Télécharger
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Largeur des graphiques
-settings_sysinfo_easypie_charts_scale=Échelle de longueur des graphiques
 
 # 17.80
 right_return_theme_options=Options du thème
@@ -516,7 +510,6 @@ theme_tooltip_logout=Déconnexion
 theme_tooltip_edit_user=Modifier l'utilisateur
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diamètre des graphiques
 theme_xhred_global_choose=Choisir
 theme_xhred_global_select=Sélectionner
 theme_xhred_global_ok=OK

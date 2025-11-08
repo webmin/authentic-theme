@@ -282,8 +282,6 @@ theme_xhred_filemanager_title_symlink_target=Target tautan
 
 # 17.60
 right_unlimited=Tak terbatas
-settings_leftmenu_width=Lebar yang lebih disuka
-settings_leftmenu_width_description=Lebar default/saat ini <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Balikkan keluaran switch
 settings_switch_rdisplay_description=Pilihan ini memungkinkan Anda mengatur urutan yang berbeda untuk tombol kiri atas. Setepah mengubah pilihan ini, muat ulang halaman secara lengkap, hal ini diperlukan untuk menerapkan pengaturan baru.
 
@@ -308,10 +306,6 @@ theme_xhred_global_save_and_close=Simpan dan Tutup
 theme_xhred_global_close_without_saving=Tutup tanpa menyimpan
 theme_xhred_global_continue_editing=Lanjutkan menyunting
 theme_xhred_filemanager_context_download_file=Mengunduh
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Lebar grafik
-settings_sysinfo_easypie_charts_scale=Skala panjang grafik
 
 # 17.80
 right_return_theme_options=pilihan tema
@@ -516,7 +510,6 @@ theme_tooltip_logout=Keluar
 theme_tooltip_edit_user=Sunting pengguna
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Diameter grafik
 theme_xhred_global_choose=Pilih
 theme_xhred_global_select=Pilih
 theme_xhred_global_ok=OK

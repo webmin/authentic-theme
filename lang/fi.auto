@@ -162,6 +162,7 @@ settings_sysinfo_drive_status_on_new_line=Näytä prosessori ja taajuusmuuttajan
 settings_sysinfo_link_mini=Näytä kojetaulun linkki painikkeena
 
 settings_right_page_defaults_title=Oletussivut
+settings_roundish_menu=Pyöristetyt valikon kulmat
 settings_right_default_tab_webmin=Oletusvälilehti Webminiin kirjautumisen jälkeen
 settings_right_default_tab_usermin=Oletusvälilehti Userminiin kirjautumisen jälkeen
 settings_right_virtualmin_default=Virtualmin oletussivu
@@ -170,6 +171,7 @@ settings_right_cloudmin_default=Cloudmin oletussivu
 settings_right_clear_local_cache=Tyhjennä välimuisti
 settings_side_slider_fixed=Pidä aina näkyvissä
 
+settings_roundish_slider=Pyöristetyt liukusäätimen kulmat
 settings_side_slider_enabled=Ota liukusäädin käyttöön
 settings_leftmenu_user_html=Näytä HTML-katkelma
 
@@ -316,8 +318,6 @@ theme_xhred_filemanager_title_symlink_target=Linkki kohde
 
 # 17.60
 right_unlimited=Rajoittamaton
-settings_leftmenu_width=Suositeltava leveys
-settings_leftmenu_width_description=Default/nykyinen leveys <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=Näytä kytkimet käännettynä
 settings_switch_rdisplay_description=Tämän vaihtoehdon avulla voit asettaa eri järjestyksen vasemmalle yläkytkimille. Vaihdettuaan tämän vaihtoehdon, sivun täydellinen uudelleenlataus on tarpeen
 
@@ -342,10 +342,6 @@ theme_xhred_global_save_and_close=Tallenna ja sulje
 theme_xhred_global_close_without_saving=Sulje tallentamatta
 theme_xhred_global_continue_editing=Jatka muokkausta
 theme_xhred_filemanager_context_download_file=ladata
-
-# 17.65
-settings_sysinfo_easypie_charts_width=Kaavioiden leveys
-settings_sysinfo_easypie_charts_scale=Asteikon pituus kaavioita
 
 # 17.80
 right_return_theme_options=Teema-asetukset
@@ -570,7 +566,6 @@ theme_tooltip_logout=Kirjaudu ulos
 theme_tooltip_edit_user=Muokkaa käyttäjää
 
 # 18.45
-settings_sysinfo_easypie_charts_size=Karttojen halkaisija
 theme_xhred_global_choose=Valita
 theme_xhred_global_select=valita
 theme_xhred_global_ok=kunnossa
@@ -1184,10 +1179,10 @@ theme_xhred_global_show_all=Näytä kaikki
 theme_xhred_filemanager_context_prop_show_all=Näytä kaikki ominaisuudet
 
 # 19.84
+settings_right_table_force_single_column=Pakota yhden sarakkeen tila
 settings_right_table_links_type=Taulukolinkkien näyttötyyppi
 settings_right_table_links_type_2=Suuret kuvakkeet tekstillä
 settings_right_table_links_type_1=Pienet kuvakkeet työkaluvinkillä
-settings_right_table_links_type_0=Ei kuvakkeita, vain tekstilinkkejä
 settings_right_table_animate_icons=Näytä pöydän kuvakkeen linkkien päällä oleva animaatio
 settings_right_table_grayscaled_icons=Näytä taulukon kuvakkeiden linkit harmaasävyinä, ellei niitä vedetä
 theme_xhred_upload_initial_info_dir=Vedä ja pudota hakemisto tähän tai valitse napsauttamalla
@@ -1359,7 +1354,6 @@ theme_xhred_editor_tb_code=Koodilohko
 theme_xhred_editor_tb_code-block=Koodilohko
 theme_xhred_editor_tb_direction=Tekstin suunta
 
-settings_right_table_layout_widget=Näytä sisällön asettelun ohjaus
 theme_xhred_tooltip_columns_layout=Sisällön asettelun hallinta
 theme_xhred_columns_layout_title=Sisällön asettelu
 theme_xhred_columns_layout_variation=Asettelun variaatio
@@ -1375,8 +1369,6 @@ theme_xhred_columns_layout_remove=Piilota tämä widget
 theme_xhred_columns_layout_remove_button=Tallenna ja piilota
 theme_xhred_columns_layout_variation_cannot_horizontal=Vaakasuuntaista asettelua ei voi käyttää mobiilitilassa, varsinkin kun näytön leveys on alle 992 pikseliä
 
-settings_auto_open_panels_on_proximity=Avaa automaattisesti suljetut paneelit lähellä
-
 theme_xhred_config_portable_module_xterm_render_addon=Ota WebGL-renderöintilisäosa käyttöön
 
 # 21.09.04
@@ -1385,7 +1377,6 @@ theme_xhred_datatable_filter_and_export=Suodata ja vie sisältöä
 # 21.10
 settings_hotkey_logout_dbl=Kirjautua ulos
 theme_xhred_hotkey_emsg=Kenoviivaa ei voi käyttää pikanäppäimenä
-settings_embed_product_splash_privileged=Näytä brändäyksen aloitusnäyttö kirjautumisen jälkeen
 dashboard_status_running=Juoksemassa
 dashboard_status_stopped=Pysähtynyt
 

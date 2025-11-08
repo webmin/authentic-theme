@@ -282,8 +282,6 @@ theme_xhred_filemanager_title_symlink_target=链接目标
 
 # 17.60
 right_unlimited=无限制
-settings_leftmenu_width=首选宽度
-settings_leftmenu_width_description=默认/当前宽度 <code>260</code>/<code data-name="settings_leftmenu_width">0</code>
 settings_switch_rdisplay=显示开关反转
 settings_switch_rdisplay_description=此选项允许您为左上角开关设置不同的顺序。更改此选项后，需要完成页面重新加载。
 
@@ -308,10 +306,6 @@ theme_xhred_global_save_and_close=保存并关闭
 theme_xhred_global_close_without_saving=关闭但不保存
 theme_xhred_global_continue_editing=继续编辑
 theme_xhred_filemanager_context_download_file=下载
-
-# 17.65
-settings_sysinfo_easypie_charts_width=图表宽度
-settings_sysinfo_easypie_charts_scale=图表的比例长度
 
 # 17.80
 right_return_theme_options=主题选项
@@ -517,7 +511,6 @@ theme_tooltip_logout=登出
 theme_tooltip_edit_user=编辑用户
 
 # 18.45
-settings_sysinfo_easypie_charts_size=图表直径
 theme_xhred_global_choose=选择
 theme_xhred_global_select=选择
 theme_xhred_global_ok=确认

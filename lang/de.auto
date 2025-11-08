@@ -2,6 +2,10 @@ settings_right_sync2=Ja, immer
 settings_right_sync1=Ja, nur am Navigationsschalter
 settings_right_sync0=Nein, niemals
 
+settings_roundish_menu=Abgerundete Menüecken
+
+settings_roundish_slider=Abgerundete Schieberecken
+
 theme_xhred_filemanager_new_tab=Neuen Tab hinzufügen (Alt + Leertaste)
 
 # 18.40
@@ -15,6 +19,9 @@ theme_xhred_global_auto=Auto
 # 19.71
 settings_right_hotkey_options=Tastenkombinationen
 settings_right_hotkey_custom_options=Benutzerdefinierte Verknüpfungen
+
+# 19.84
+settings_right_table_force_single_column=Einzelspaltenmodus erzwingen
 
 # 20.30
 theme_xhred_hotkey_print_title=Webmin-Tastaturkürzel mit Authentic Theme
