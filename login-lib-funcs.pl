@@ -44,6 +44,7 @@ print ui_icon('exclamation-triangle', { 'class' => 'fa-3x' });
 print ui_br(), ui_br();
 my $banner = &read_file_contents($gconfig{'loginbanner'});
 my $page = $gconfig{'loginpage'} || $in{'page'} || $webprefix || '/';
+$page = &filter_javascript($page);
 $banner =~ s/LOGINURL/$page/g;
 print "$banner\n";
 print ui_tag_end('div');
