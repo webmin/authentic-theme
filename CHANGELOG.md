@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 26.00 (November 9, 2025)
+* Add a major UI update with many visual and structural improvements for a smoother and more modern experience
+
+<!--- separator --->
+
 #### Version 25.20 (September 30, 2025)
 * Fix the text color when reading email in the Read User Mail module [webmin#2555](https://github.com/webmin/webmin/issues/2555)
 * Fix to ensure the selected color palette is correctly stored when changed manually [webmin#2552](https://github.com/webmin/webmin/issues/2552)
@@ -19,8 +24,6 @@
 * Fix algorithm for calculating rows per page in data table pagination
 * Fix the alert info box text color for dark mode
 * Fix critical lags and appearance of Custom Commands module
-
-<!--- separator --->
 
 #### Version 25.01 (September 6, 2025)
 * Fix broken editor in Bootup and Shutdown module [#1718](https://github.com/webmin/authentic-theme/issues/1718)
