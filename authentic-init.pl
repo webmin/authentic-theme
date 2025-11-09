@@ -1543,7 +1543,7 @@ sub get_button_style
         if (string_contains($keys, "restore_now2")) {
             $class = "success ";
         } elsif (string_contains($keys, "quick_restore")) {
-            $class = "info ";
+            $class = "default ";
         } elsif ($keys eq "feat_backuplog") {
             $class = "grey ";
         }
