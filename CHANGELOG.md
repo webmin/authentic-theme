@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 26.10 (November 10, 2025)
+* Add a sticky header for the best experience
+* Fix the positioning and behavior of popovers
+
 #### Version 26.00 (November 9, 2025)
 * Add a major UI update with many visual and structural improvements for a smoother and more modern experience
 
