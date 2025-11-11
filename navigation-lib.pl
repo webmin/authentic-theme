@@ -767,14 +767,14 @@ sub nav_list_combined_menu
             if (!string_starts_with($link, "http") &&
                 !string_starts_with($link, "ftp") &&
                 !string_starts_with($link, "www") &&
-                !string_starts_with($link, "../") &&
-                !string_contains($link, "config.cgi"))
+                !string_starts_with($link, "../"))
             {
                 $link = "/$link" if (!string_starts_with($link, "/"));
                 $link = "$theme_webprefix$link"
                   if ($link !~ /^\Q$theme_webprefix\E/);
                 # Add module reference to all non module links
-                if ($mod && $link !~ /$mod\// && $link !~ /[?&]nmod=/) {
+                if ($mod && $link !~ /$mod\// && $link !~ /[?&]nmod=/ &&
+                    !string_contains($link, "config.cgi")) {
                     my $sep = ($link =~ /\?/) ? '&' : '?';
                     $link .= "${sep}nmod=$mod";
                 }
