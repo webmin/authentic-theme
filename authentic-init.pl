@@ -1521,7 +1521,9 @@ sub get_button_style
         $icon  = "plus-square-o";
     } elsif (
          (string_contains($keys, "add") &&
-          !string_contains($keys, "edit_addinc")) ||
+          !string_contains($keys, "edit_addinc") &&
+          !string_contains($keys, "index_madd") &&
+          !string_contains($keys, "index_zoneadd")) ||
          string_contains($keys, "create") ||
          string_contains($keys, "index_crnow") ||
          string_contains($keys, "view_new")    ||
