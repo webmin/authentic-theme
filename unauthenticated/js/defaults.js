@@ -150,7 +150,7 @@ var
     settings_right_page_hide_persistent_vscroll = true,
     settings_hide_top_loader = false,
     settings_theme_make_date = true,
-    settings_enable_container_offset = true,
+    settings_enable_container_offset = false,
     settings_contrast_mode = false,
     settings_sysinfo_remember_accordions = true,
     settings_sysinfo_expand_all_accordions = false,
