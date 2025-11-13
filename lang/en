@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Default page for Cloudmin
 
 settings_right_clear_local_cache=Clear cache
 settings_side_slider_fixed=Keep always visible
+settings_side_slider_fixed_description=This option fixes the side slider to the right side of the screen, keeping it always visible. It needs a minimum screen width of 1366 pixels to work properly.
 
 settings_roundish_slider=Rounded slider corners
 settings_side_slider_enabled=Enable slider
@@ -326,7 +327,7 @@ theme_xhred_filemanager_title_symlink_target=Link target
 # 17.60
 right_unlimited=Unlimited
 settings_switch_rdisplay=Show switches reversed
-settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required
+settings_switch_rdisplay_description=This option allows you to set different order for top-left switches. After changing this option, complete page reload is required.
 
 
 # 17.63
@@ -587,7 +588,7 @@ theme_tooltip_edit_user=Edit user
 theme_xhred_global_choose=Choose
 theme_xhred_global_select=Select
 theme_xhred_global_ok=OK
-settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system
+settings_sysinfo_theme_updates_description=In order to make this option work, <code>git</code> command has to be installed on your system.
 theme_git_patch_available=Latest development version
 theme_git_patch_no_git_message=In order to install latest updates directly from GitHub, you must make sure that <code>git</code> command is installed.
 theme_git_patch_update_success_message=Theme update for Webmin was successful. Currently installed version is <tt>$1</tt>. Reloading ..
@@ -1214,7 +1215,7 @@ settings_right_soft_updates_page_options=Theme updates
 settings_global_general_options_title=General defaults
 theme_error_access_not_root_user=Access denied: User is not privileged to edit this section
 settings_theme_config_admins_only_privileged=Forbid access to theme config for users
-settings_theme_config_admins_only_privileged_description=This option, if enforced by the server administrator, will hide the theme configuration page from regular, non-privileged users. However, this option is not recommended to be used, as regular users will already have limited access to theme configuration, and will only be able to change minimal set of user specific options
+settings_theme_config_admins_only_privileged_description=This option, if enforced by the server administrator, will hide the theme configuration page from regular, non-privileged users. However, this option is not recommended to be used, as regular users will already have limited access to theme configuration, and will only be able to change minimal set of user specific options.
 
 
 # 19.72
@@ -1229,7 +1230,7 @@ theme_xhred_global_module_preferences=Module preferences
 # 19.74
 theme_xhred_theme_update_available=A new version of Authentic Theme is installed
 settings_right_page_keep=Load same page on domain switch
-settings_right_page_keep_description=This option will try to load the same page upon domain select, when changed from the navigation menu dropdown list
+settings_right_page_keep_description=This option will try to load the same page upon domain select, when changed from the navigation menu dropdown list.
 
 
 # 19.76
@@ -1513,4 +1514,4 @@ session_pwdsucc=Password changed successfully—you can now log in with your new
 
 # 24.10
 settings_palette_auto=Automatic color palette
-settings_palette_auto_description=Automatically choose color palette based on operating system or browser preferences
+settings_palette_auto_description=Automatically choose color palette based on operating system or browser preferences.
