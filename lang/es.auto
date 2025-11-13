@@ -84,6 +84,7 @@ settings_right_cloudmin_default=Página predeterminada para Cloudmin
 
 settings_right_clear_local_cache=Limpiar cache
 settings_side_slider_fixed=Mantener siempre visible
+settings_side_slider_fixed_description=Esta opción fija el control deslizante lateral al lado derecho de la pantalla, manteniéndolo siempre visible. Requiere un ancho de pantalla mínimo de 1366 píxeles para funcionar correctamente.
 
 settings_roundish_slider=Esquinas redondeadas del deslizador
 settings_side_slider_enabled=Habilitar control deslizante

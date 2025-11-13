@@ -29,6 +29,8 @@ settings_hotkey_reload=Actualitza la pàgina actual
 
 settings_roundish_menu=Cantonades arrodonides del menú
 
+settings_side_slider_fixed_description=Aquesta opció fixa el control lliscant lateral a la part dreta de la pantalla, mantenint-lo sempre visible. Necessita una amplada de pantalla mínima de 1366 píxels per funcionar correctament.
+
 settings_roundish_slider=Cantonades arrodonides del control lliscant
 
 # 17.40

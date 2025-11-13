@@ -79,6 +79,7 @@ settings_right_cloudmin_default=Страница по умолчанию для 
 
 settings_right_clear_local_cache=Очистить кэш
 settings_side_slider_fixed=Держать всегда видимым
+settings_side_slider_fixed_description=Эта опция закрепляет боковой ползунок на правой стороне экрана, сохраняя его видимым всегда. Для корректной работы требуется экран шириной не менее 1366 пикселей.
 
 settings_roundish_slider=Закругленные углы слайдера
 settings_leftmenu_user_html=Показать фрагмент HTML

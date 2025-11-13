@@ -29,6 +29,8 @@ settings_hotkey_reload=Oppdater gjeldende side
 
 settings_roundish_menu=Avrundede menyhjørner
 
+settings_side_slider_fixed_description=Dette alternativet fester sideglidebryteren til høyre side av skjermen, slik at den alltid er synlig. Den trenger en minimum skjermbredde på 1366 piksler for å fungere ordentlig.
+
 settings_roundish_slider=Avrundede hjørner på glidebryteren
 
 # 17.40

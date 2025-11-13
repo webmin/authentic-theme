@@ -28,6 +28,8 @@ settings_hotkey_reload=Aggiorna la pagina corrente
 
 settings_roundish_menu=Angoli del menu arrotondati
 
+settings_side_slider_fixed_description=Questa opzione fissa il cursore laterale sul lato destro dello schermo, mantenendolo sempre visibile. Per funzionare correttamente, è necessaria una larghezza minima dello schermo di 1366 pixel.
+
 settings_roundish_slider=Angoli arrotondati dello slider
 
 # 17.40

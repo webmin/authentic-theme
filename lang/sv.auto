@@ -28,6 +28,8 @@ settings_hotkey_reload=Uppdatera aktuell sida
 
 settings_roundish_menu=Rundade menyhörn
 
+settings_side_slider_fixed_description=Det här alternativet fixerar sidoskjutreglaget till höger sida av skärmen, så att det alltid är synligt. Det behöver en minsta skärmbredd på 1366 pixlar för att fungera korrekt.
+
 settings_roundish_slider=Rundade skjutreglagehörn
 
 # 17.40

@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Προεπιλεγμένη σελίδα για �
 
 settings_right_clear_local_cache=Εκκαθάριση προσωρινής μνήμης
 settings_side_slider_fixed=Κρατήστε πάντα ορατό
+settings_side_slider_fixed_description=Αυτή η επιλογή διορθώνει το πλευρικό ρυθμιστικό στη δεξιά πλευρά της οθόνης, διατηρώντας το πάντα ορατό. Χρειάζεται ελάχιστο πλάτος οθόνης 1366 pixel για να λειτουργήσει σωστά.
 
 settings_roundish_slider=Στρογγυλεμένες γωνίες ρυθμιστικού
 settings_side_slider_enabled=Ενεργοποίηση ρυθμιστικού

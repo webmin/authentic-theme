@@ -29,6 +29,8 @@ settings_hotkey_reload=刷新当前页面
 
 settings_roundish_menu=菜单边角圆润
 
+settings_side_slider_fixed_description=此选项可将侧边滑块固定在屏幕右侧，使其始终可见。它需要至少 1366 像素的屏幕宽度才能正常工作。
+
 settings_roundish_slider=圆角滑块
 
 # 17.40

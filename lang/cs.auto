@@ -32,6 +32,7 @@ settings_roundish_menu=Zaoblené rohy menu
 
 settings_right_clear_local_cache=Vyčistit mezipaměť
 settings_side_slider_fixed=Udržujte vždy viditelné
+settings_side_slider_fixed_description=Tato možnost fixuje boční posuvník na pravou stranu obrazovky, takže bude vždy viditelný. Pro správné fungování je nutná minimální šířka obrazovky 1366 pixelů.
 
 settings_roundish_slider=Zaoblené rohy posuvníku
 settings_side_slider_enabled=Povolit posuvník

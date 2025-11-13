@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Cloudmin의 기본 페이지
 
 settings_right_clear_local_cache=캐시 지우기
 settings_side_slider_fixed=항상 보이게
+settings_side_slider_fixed_description=이 옵션은 측면 슬라이더를 화면 오른쪽에 고정하여 항상 보이도록 합니다. 제대로 작동하려면 최소 1366픽셀의 화면 너비가 필요합니다.
 
 settings_roundish_slider=둥근 슬라이더 모서리
 settings_side_slider_enabled=슬라이더 사용

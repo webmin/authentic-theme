@@ -29,6 +29,8 @@ settings_hotkey_reload=Muat semula halaman semasa
 
 settings_roundish_menu=Sudut menu bulat
 
+settings_side_slider_fixed_description=Pilihan ini membetulkan peluncur sisi ke sebelah kanan skrin, memastikan ia sentiasa kelihatan. Ia memerlukan lebar skrin minimum 1366 piksel untuk berfungsi dengan baik.
+
 settings_roundish_slider=Sudut gelangsar bulat
 
 # 17.40

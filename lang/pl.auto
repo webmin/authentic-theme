@@ -9,6 +9,8 @@ settings_right_sync0=Nie, nigdy
 
 settings_roundish_menu=Zaokrąglone rogi menu
 
+settings_side_slider_fixed_description=Ta opcja przytrzymuje suwak boczny po prawej stronie ekranu, dzięki czemu jest zawsze widoczny. Do prawidłowego działania wymagana jest minimalna szerokość ekranu 1366 pikseli.
+
 settings_roundish_slider=Zaokrąglone rogi suwaka
 
 # 17.84

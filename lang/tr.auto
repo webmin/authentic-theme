@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Cloudmin için varsayılan sayfa
 
 settings_right_clear_local_cache=Önbelleği temizle
 settings_side_slider_fixed=Her zaman görünür tutun
+settings_side_slider_fixed_description=Bu seçenek, yan kaydırıcıyı ekranın sağ tarafına sabitleyerek her zaman görünür kalmasını sağlar. Düzgün çalışması için minimum 1366 piksel ekran genişliği gerekir.
 
 settings_roundish_slider=Yuvarlatılmış kaydırıcı köşeler
 settings_side_slider_enabled=Kaydırıcıyı etkinleştir

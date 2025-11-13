@@ -170,6 +170,7 @@ settings_right_cloudmin_default=صفحه پیش فرض برای Cloudmin
 
 settings_right_clear_local_cache=پاک کردن حافظه پنهان
 settings_side_slider_fixed=همیشه قابل مشاهده باشید
+settings_side_slider_fixed_description=این گزینه، اسلایدر کناری را در سمت راست صفحه ثابت می‌کند و آن را همیشه قابل مشاهده نگه می‌دارد. برای عملکرد صحیح، به حداقل عرض صفحه نمایش ۱۳۶۶ پیکسل نیاز دارد.
 
 settings_roundish_slider=گوشه‌های کشویی گرد
 settings_side_slider_enabled=کشویی را فعال کنید

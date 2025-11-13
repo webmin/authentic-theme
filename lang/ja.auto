@@ -36,6 +36,8 @@ settings_hotkey_reload=現在のページを更新
 
 settings_roundish_menu=丸いメニューの角
 
+settings_side_slider_fixed_description=このオプションを選択すると、サイドスライダーが画面の右側に固定され、常に表示されます。正常に動作するには、画面幅が1366ピクセル以上必要です。
+
 settings_roundish_slider=丸みを帯びたスライダーの角
 
 # 17.40

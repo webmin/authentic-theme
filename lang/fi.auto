@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Cloudmin oletussivu
 
 settings_right_clear_local_cache=Tyhjennä välimuisti
 settings_side_slider_fixed=Pidä aina näkyvissä
+settings_side_slider_fixed_description=Tämä asetus kiinnittää sivuliukusäätimen näytön oikealle puolelle pitäen sen aina näkyvissä. Se tarvitsee toimiakseen oikein vähintään 1366 pikselin näytön leveyden.
 
 settings_roundish_slider=Pyöristetyt liukusäätimen kulmat
 settings_side_slider_enabled=Ota liukusäädin käyttöön

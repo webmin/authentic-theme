@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Lehenetsitako orria Cloudminen
 
 settings_right_clear_local_cache=Garbitu cachea
 settings_side_slider_fixed=Jarrai beti ikusgai
+settings_side_slider_fixed_description=Aukera honek alboko graduatzailea pantailaren eskuinaldean finkatzen du, beti ikusgai mantenduz. Gutxienez 1366 pixeleko pantaila-zabalera behar du behar bezala funtzionatzeko.
 
 settings_roundish_slider=Irristailuaren ertz biribilduak
 settings_side_slider_enabled=Gaitu graduatzailea

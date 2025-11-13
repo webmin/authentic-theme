@@ -84,6 +84,7 @@ settings_right_cloudmin_default=Standardside for Cloudmin
 
 settings_right_clear_local_cache=Ryd cache
 settings_side_slider_fixed=Hold altid synlig
+settings_side_slider_fixed_description=Denne indstilling fastgør sideskyderen til højre side af skærmen, så den altid er synlig. Den kræver en minimumsskærmbredde på 1366 pixels for at fungere korrekt.
 
 settings_roundish_slider=Afrundede skyderhjørner
 settings_side_slider_enabled=Aktivér skyderen

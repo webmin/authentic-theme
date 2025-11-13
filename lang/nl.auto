@@ -61,6 +61,7 @@ settings_right_cloudmin_default=Standaardpagina voor Cloudmin
 
 settings_right_clear_local_cache=Cache wissen
 settings_side_slider_fixed=Altijd zichtbaar houden
+settings_side_slider_fixed_description=Met deze optie wordt de schuifbalk aan de rechterkant van het scherm geplaatst, zodat deze altijd zichtbaar is. Een minimale schermbreedte van 1366 pixels is vereist om goed te werken.
 
 settings_roundish_slider=Afgeronde schuifhoeken
 settings_side_slider_enabled=Schuifregelaar inschakelen

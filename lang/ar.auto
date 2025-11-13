@@ -170,6 +170,7 @@ settings_right_cloudmin_default=الصفحة الافتراضية لـ Cloudmin
 
 settings_right_clear_local_cache=مسح ذاكرة التخزين المؤقت
 settings_side_slider_fixed=ابق مرئيًا دائمًا
+settings_side_slider_fixed_description=يُثبّت هذا الخيار شريط التمرير الجانبي على يمين الشاشة، مما يُبقيه مرئيًا دائمًا. يتطلب عرض شاشة لا يقل عن 1366 بكسل ليعمل بشكل صحيح.
 
 settings_roundish_slider=زوايا منزلقة مستديرة
 settings_side_slider_enabled=تمكين شريط التمرير

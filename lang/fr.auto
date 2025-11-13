@@ -29,6 +29,8 @@ settings_hotkey_reload=Actualiser la page actuelle
 
 settings_roundish_menu=Coins arrondis du menu
 
+settings_side_slider_fixed_description=Cette option fixe le curseur latéral à droite de l'écran, le rendant toujours visible. Elle nécessite une largeur d'écran minimale de 1366 pixels pour fonctionner correctement.
+
 settings_roundish_slider=Coins arrondis des glissières
 
 # 17.40

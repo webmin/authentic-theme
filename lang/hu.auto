@@ -170,6 +170,7 @@ settings_right_cloudmin_default=Alapértelmezett oldal a Cloudmin számára
 
 settings_right_clear_local_cache=Tiszta gyorsítótár
 settings_side_slider_fixed=Mindig látható legyen
+settings_side_slider_fixed_description=Ez a beállítás a képernyő jobb oldalára rögzíti az oldalsó csúszkát, így az mindig látható marad. A megfelelő működéshez legalább 1366 képpontos képernyőszélesség szükséges.
 
 settings_roundish_slider=Lekerekített csúszósarkok
 settings_side_slider_enabled=Csúszka engedélyezése
