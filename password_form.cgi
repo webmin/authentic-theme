@@ -28,15 +28,11 @@ embed_login_head();
 print '<body class="session_login">' . "\n";
 print '<div class="container session_login">' . "\n";
 
-if ($in{'expired'} == 2) {
-    print '<div class="alert alert-info">' . "\n";
-    print '<i class ="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;' . $text{'password_temp'} . '' . "\n";
-    print '</div>' . "\n";
-} else {
-    print '<div class="alert alert-info">' . "\n";
-    print '<i class ="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;' . $text{'password_expired'} . '' . "\n";
-    print '</div>' . "\n";
-}
+# Print the password expired alert
+print ui_alert(
+    $text{ $in{'expired'} == 2
+      ? 'password_temp'
+      : 'password_expired' }, 'warning');
 
 # Start of the form
 print "$text{'password_prefix'}\n";
