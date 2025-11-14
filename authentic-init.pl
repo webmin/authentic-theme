@@ -1772,7 +1772,7 @@ sub theme_night_mode_login_auto
 {
     if ($theme_config{'settings_global_palette_unauthenticated'} eq 'auto') {
         my $detect;
-        $detect = '<script type="application/javascript">console.log("Auto dark mode");';
+        $detect = '<script type="application/javascript">';
         $detect .= 'if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {';
         $detect .= 'document.querySelector("html").setAttribute("data-bgs", "nightRider")';
         $detect .= '} else {';
