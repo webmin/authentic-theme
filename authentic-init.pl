@@ -602,9 +602,15 @@ sub embed_css_unbundled
 {
     load_devel_dependencies();
     foreach my $css (@theme_bundle_css) {
-        printf " <link type='text/css' href=\"%s/unauthenticated/css/%s.src.css?%s\" rel=\"stylesheet\">\n",
+        my $ext = '.src.css';
+        if ($css =~ /\[scss\]$/) {
+            $ext = '.src.scss.css';
+            $css =~ s/\[scss\]$//;
+        }
+        printf " <link type='text/css' href=\"%s/unauthenticated/css/%s%s?%s\" rel=\"stylesheet\">\n",
                $theme_webprefix,
                $css,
+               $ext,
                theme_version('timestamped');
     }
     embed_css_fonts();
