@@ -42,17 +42,6 @@ sub theme_settings_raw
 
         [
          {  'id'    => 's2',
-            'title' => &theme_text('settings_right_sysinfo_page_options'),
-            'data'  => [
-                       'settings_sysinfo_easypie_charts',
-                       'settings_sysinfo_hidden_panels_user',
-                       'settings_sysinfo_max_servers',
-                       'settings_sysinfo_real_time_status',
-            ] }
-        ],
-
-        [
-         {  'id'    => 's3',
             'title' => &theme_text('settings_right_navigation_menu_options'),
             'data'  => [
                        'settings_roundish_menu',
@@ -86,6 +75,20 @@ sub theme_settings_raw
             ] }
         ],
 
+         [
+         {  'id'    => 's3',
+            'title' => &theme_text('settings_right_content_options'),
+            'data'  => [
+                       'settings_roundish_content',
+                       'settings_content_margin_multiplier',
+                       'settings_right_table_force_single_column',
+                       'settings_right_table_links_type',
+                       'settings_right_table_links_sorted',
+                       'settings_right_table_animate_icons',
+                       'settings_right_table_grayscaled_icons',
+            ] }
+        ],
+
         [
          {  'id'    => 's4',
             'title' => &theme_text('settings_right_notification_slider_options'),
@@ -101,15 +104,12 @@ sub theme_settings_raw
 
         [
          {  'id'    => 's5',
-            'title' => &theme_text('settings_right_content_options'),
+            'title' => &theme_text('settings_right_sysinfo_page_options'),
             'data'  => [
-                       'settings_roundish_content',
-                       'settings_content_margin_multiplier',
-                       'settings_right_table_force_single_column',
-                       'settings_right_table_links_type',
-                       'settings_right_table_links_sorted',
-                       'settings_right_table_animate_icons',
-                       'settings_right_table_grayscaled_icons',
+                       'settings_sysinfo_easypie_charts',
+                       'settings_sysinfo_hidden_panels_user',
+                       'settings_sysinfo_max_servers',
+                       'settings_sysinfo_real_time_status',
             ] }
         ],
 
