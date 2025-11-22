@@ -11,12 +11,7 @@ var
     settings_global_palette_unauthenticated = 'auto',
     settings_cm_editor_palette = 'monokai',
     settings_theme_config_admins_only_privileged = false,
-
-    // Dashboard and real-time monitoring
-    settings_sysinfo_easypie_charts = true,
-    settings_sysinfo_max_servers = 10,
-    settings_sysinfo_real_time_status = 1,
-
+    
     // Navigation menu options defaults
     settings_roundish_menu = true,
     settings_navigation_color = 'blue',
@@ -45,16 +40,8 @@ var
     settings_leftmenu_user_html = '',
     settings_leftmenu_user_html_privileged = false,
     settings_leftmenu_custom_links = '',
-
-    // Side slider options
-    settings_roundish_slider = true,
-    settings_side_slider_enabled = true,
-    settings_side_slider_fixed = false,
-    settings_side_slider_sysinfo_enabled = true,
-    settings_side_slider_notifications_enabled = true,
-    settings_side_slider_favorites_enabled = true,
-
-    // Table options
+    
+    // Content page options
     settings_roundish_content = false,
     settings_content_margin_multiplier_top = 0,
     settings_content_margin_multiplier_side = 1,
@@ -63,6 +50,19 @@ var
     settings_right_table_grayscaled_icons = true,
     settings_right_table_animate_icons = false,
     settings_right_table_links_sorted = false,
+
+    // Dashboard and real-time monitoring
+    settings_sysinfo_easypie_charts = true,
+    settings_sysinfo_max_servers = 10,
+    settings_sysinfo_real_time_status = 1,
+    
+    // Side slider options
+    settings_roundish_slider = true,
+    settings_side_slider_enabled = true,
+    settings_side_slider_fixed = false,
+    settings_side_slider_sysinfo_enabled = true,
+    settings_side_slider_notifications_enabled = true,
+    settings_side_slider_favorites_enabled = true,
 
     // Hotkeys options defaults
     settings_hotkeys_active = true,
