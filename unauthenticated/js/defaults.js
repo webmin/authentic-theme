@@ -1,8 +1,6 @@
 // Theme options defaults
 var
     // General defaults
-    settings_content_margin_multiplier_top = 0,
-    settings_content_margin_multiplier_side = 1,
     settings_right_default_tab_usermin = 'webmail',
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'index.cgi',
@@ -57,6 +55,9 @@ var
     settings_side_slider_favorites_enabled = true,
 
     // Table options
+    settings_roundish_content = false,
+    settings_content_margin_multiplier_top = 0,
+    settings_content_margin_multiplier_side = 1,
     settings_right_table_force_single_column = false,
     settings_right_table_links_type = 2,
     settings_right_table_grayscaled_icons = true,
