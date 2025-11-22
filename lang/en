@@ -1519,6 +1519,7 @@ settings_palette_auto_description=Automatically choose color palette based on op
 
 #26.10
 settings_right_content_options=Content page
+settings_roundish_content=Rounded content corners
 settings_content_margin_multiplier=Content page margin size
 settings_content_margin_multiplier_side=Side
 settings_content_margin_multiplier_top=Top

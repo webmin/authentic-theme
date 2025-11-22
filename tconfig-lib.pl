@@ -103,6 +103,7 @@ sub theme_settings_raw
          {  'id'    => 's5',
             'title' => &theme_text('settings_right_content_options'),
             'data'  => [
+                       'settings_roundish_content',
                        'settings_content_margin_multiplier',
                        'settings_right_table_force_single_column',
                        'settings_right_table_links_type',

@@ -332,6 +332,7 @@ sub embed_header
         embed_css_inline();
         embed_rounded_menu();
         embed_rounded_slider();
+        embed_rounded_content();
 
         embed_background();
         embed_styles();
@@ -380,6 +381,7 @@ sub embed_header
         embed_css_inline();
         embed_rounded_menu();
         embed_rounded_slider();
+        embed_rounded_content();
 
         if ((length $theme_config{'settings_navigation_color'} && $theme_config{'settings_navigation_color'} ne 'blue') ||
             theme_night_mode())
@@ -671,6 +673,18 @@ sub embed_rounded_slider
                   (theme_debug_mode() ? 'src.scss' : 'min') . '.css?' .
                   theme_version('timestamped') .
                   '" rel="stylesheet" data-rounded-slider>' . "\n";
+    }
+}
+
+sub embed_rounded_content
+{
+    if ($theme_config{'settings_roundish_content'} eq 'true') {
+        print ' <link type="text/css" href="' .
+                  $theme_webprefix .
+                  '/unauthenticated/css/rounded-content.' .
+                  (theme_debug_mode() ? 'src.scss' : 'min') . '.css?' .
+                  theme_version('timestamped') .
+                  '" rel="stylesheet" data-rounded-content>' . "\n";
     }
 }
 
@@ -1742,6 +1756,7 @@ sub embed_login_head
         embed_css_inline();
         embed_rounded_menu();
         embed_rounded_slider();
+        embed_rounded_content();
     }
 
     embed_background();
