@@ -1,7 +1,8 @@
 // Theme options defaults
 var
     // General defaults
-    settings_content_top_margin = false,
+    settings_content_margin_multiplier_top = 0,
+    settings_content_margin_multiplier_side = 1,
     settings_right_default_tab_usermin = 'webmail',
     settings_right_virtualmin_default = 'sysinfo.cgi',
     settings_right_cloudmin_default = 'index.cgi',

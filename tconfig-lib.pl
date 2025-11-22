@@ -25,9 +25,6 @@ sub theme_settings_raw
          {  'id'    => 's1',
             'title' => &theme_text('settings_global_general_options_title'),
             'data'  => [
-                       'settings_content_top_margin',
-                       'settings_content_margin_control_sides',
-                       'settings_content_margin_control_top',
                        'settings_right_default_tab_webmin',
                        'settings_right_default_tab_usermin',
                        'settings_webmin_default_module',
@@ -104,8 +101,9 @@ sub theme_settings_raw
 
         [
          {  'id'    => 's5',
-            'title' => &theme_text('settings_right_table_options'),
+            'title' => &theme_text('settings_right_content_options'),
             'data'  => [
+                       'settings_content_margin_multiplier',
                        'settings_right_table_force_single_column',
                        'settings_right_table_links_type',
                        'settings_right_table_links_sorted',
@@ -312,29 +310,24 @@ sub theme_settings_format
     if ($v eq 'true' || $v eq 'false') {
         $v = ui_yesno_radio($k, $v, 'true', 'false');
 
-    } elsif ($k eq 'settings_content_margin_control_sides' ||
-             $k eq 'settings_content_margin_control_top')
-    {
-
-        my $range_max = '1';
-        my $range_min = '0';
-        my $iwidth    = '80';
-        my $range_step;
-
-        $v = '
-                <input style="display: inline; width: ' .
-          $iwidth .
-          '%; height: 28px; vertical-align: middle;" class="form-control ui_textbox" type="range" min="' .
-          $range_min .
-          '" max="' .
-          $range_max .
-          '" step="' .
-          $range_step .
-          '" name="' .
-          $k .
-          '" value="' .
-          $v . '">
-            ';
+    } elsif ($k eq 'settings_content_margin_multiplier') {
+        my %val = (
+          '_side' => $theme_config{"${k}_side"},
+          '_top'  => $theme_config{"${k}_top"},
+        );
+        my $common = {
+          class => 'form-control ui_textbox', type  => 'range',
+          max   => 8, step  => 0.5,
+        };        
+        $v = join "\n", map {
+          ui_tag('input', undef, {
+            %$common,
+            name         => "${k}$_",
+            value        => $val{$_},
+            min          => ($_ eq '_side' ? 1 : 0.5),
+            'data-label' => $theme_text{"${k}$_"},
+          });
+        } qw(_side _top);
 
     } elsif ($k =~ /settings_sysinfo_hidden_panels_user/ &&
              $theme_config{'settings_sysinfo_hidden_panels_user'})

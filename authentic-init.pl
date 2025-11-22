@@ -1940,8 +1940,10 @@ sub header_html_data
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' .
       ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-content-margin="' .
-      ($theme_config{'settings_content_top_margin'} eq 'true' ? '1' : '0') .
+      ' data-content-top-margin="' .
+      $theme_config{'settings_content_margin_multiplier_top'} .
+      '" data-content-side-margin="' .
+      $theme_config{'settings_content_margin_multiplier_side'} .
       '" data-editor-palette="' .
       $theme_config{'settings_cm_editor_palette'} .
       '" data-static-theme-version="' .
