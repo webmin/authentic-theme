@@ -25,6 +25,7 @@ sub theme_settings_raw
          {  'id'    => 's1',
             'title' => &theme_text('settings_global_general_options_title'),
             'data'  => [
+                       'settings_content_margin',
                        'settings_right_default_tab_webmin',
                        'settings_right_default_tab_usermin',
                        'settings_webmin_default_module',

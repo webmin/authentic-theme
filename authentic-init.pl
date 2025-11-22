@@ -1940,7 +1940,9 @@ sub header_html_data
       ($skip ? '' : ' data-theme="' . (theme_night_mode() ? 'gunmetal' : $theme_config{'settings_navigation_color'}) . '"')
       . '' .
       ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
-      ' data-editor-palette="' .
+      ' data-content-margin="' .
+      ($theme_config{'settings_content_margin'} eq 'true' ? '1' : '0') .
+      '" data-editor-palette="' .
       $theme_config{'settings_cm_editor_palette'} .
       '" data-static-theme-version="' .
       theme_version('version') .
