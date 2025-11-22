@@ -1941,7 +1941,7 @@ sub header_html_data
       . '' .
       ($skip ? '' : ' data-default-theme="' . $theme_config{'settings_navigation_color'} . '"') .
       ' data-content-margin="' .
-      ($theme_config{'settings_content_margin'} eq 'true' ? '1' : '0') .
+      ($theme_config{'settings_content_top_margin'} eq 'true' ? '1' : '0') .
       '" data-editor-palette="' .
       $theme_config{'settings_cm_editor_palette'} .
       '" data-static-theme-version="' .

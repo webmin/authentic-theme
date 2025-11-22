@@ -1518,4 +1518,6 @@ settings_palette_auto_description=Automatically choose color palette based on op
 
 
 #26.10
-settings_content_margin=Add a content margin at the top of the page
+settings_content_top_margin=Add a margin at the top of the content page
+settings_content_margin_control_sides=Content page side margins size
+settings_content_margin_control_top=Content page top margin size
