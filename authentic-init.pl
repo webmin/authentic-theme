@@ -647,6 +647,8 @@ sub embed_css_inline
 <style>
     :root {
     --left-menu-width: $theme_config{'settings_menu_width'}px;
+    --gap-content-top: $theme_config{'settings_content_margin_multiplier_top'};
+    --gap-content-side: $theme_config{'settings_content_margin_multiplier_side'};
     }
 </style>
 EOF
