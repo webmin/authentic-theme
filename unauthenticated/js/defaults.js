@@ -53,6 +53,8 @@ var
 
     // Dashboard and real-time monitoring
     settings_sysinfo_easypie_charts = true,
+    settings_sysinfo_easypie_size = 0,
+    settings_sysinfo_easypie_width = 4,
     settings_sysinfo_max_servers = 10,
     settings_sysinfo_real_time_status = 1,
     
@@ -157,6 +159,7 @@ var
     settings_contrast_mode = false,
     settings_sysinfo_remember_accordions = true,
     settings_sysinfo_expand_all_accordions = false,
+    settings_sysinfo_easypie_scale_length = 8,
     settings_mail_ui = true,
     settings_mailbox_slash_delimiter = true,
     settings_leftmenu_vm_cm_dropdown_icons = true,

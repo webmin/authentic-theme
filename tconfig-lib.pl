@@ -107,9 +107,11 @@ sub theme_settings_raw
             'title' => &theme_text('settings_right_sysinfo_page_options'),
             'data'  => [
                        'settings_sysinfo_easypie_charts',
+                       'settings_sysinfo_easypie_size',
+                       'settings_sysinfo_easypie_width',
                        'settings_sysinfo_hidden_panels_user',
-                       'settings_sysinfo_max_servers',
                        'settings_sysinfo_real_time_status',
+                       'settings_sysinfo_max_servers',
             ] }
         ],
 
@@ -257,6 +259,8 @@ sub theme_settings_filter
              'settings_hotkey_slider',
              'settings_global_palette_unauthenticated',
              'settings_sysinfo_easypie_charts',
+             'settings_sysinfo_easypie_size',
+             'settings_sysinfo_easypie_width',
              'settings_sysinfo_max_servers',
              'settings_sysinfo_real_time_status',
              'settings_sysinfo_real_time_stored_duration',
@@ -577,6 +581,27 @@ sub theme_settings_format
         ]);
     } elsif ($k eq 'settings_document_title') {
         $v = settings_get_select_document_title($v, $k);
+    } elsif ($k eq 'settings_sysinfo_easypie_size') {
+        my $opts = [
+            [(146, $theme_text{'settings_sysinfo_easypie_size_smaller'})],
+            [(176, $theme_text{'settings_sysinfo_easypie_size_small'})],
+            [(186, $theme_text{'settings_sysinfo_easypie_size_medium'})],
+            [(0,   $theme_text{'settings_sysinfo_easypie_size_auto'})],
+            [(196, $theme_text{'settings_sysinfo_easypie_size_large'})],
+            [(206, $theme_text{'settings_sysinfo_easypie_size_extra_large'})]
+        ];
+        $v = &ui_select($k, $v, $opts);
+    } elsif ($k eq 'settings_sysinfo_easypie_width') {
+        my $common = {
+          class => 'form-control ui_textbox', type  => 'range',
+          max   => 7, step  => 1,
+        };        
+        $v = ui_tag('input', undef, {
+            %$common,
+            name         => $k,
+            value        => $v,
+            min          => 1,
+          });
     } elsif ($k eq 'settings_sysinfo_real_time_status') {
         my $realtime = 'settings_sysinfo_real_time_';
         my $realtime_pref = "${realtime}status_";
