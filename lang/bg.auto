@@ -1437,3 +1437,18 @@ session_pwdsucc=Паролата е променена успешно! Вече 
 # 24.10
 settings_palette_auto=Автоматична цветова палитра
 settings_palette_auto_description=Автоматично избиране на цветова палитра въз основа на предпочитанията на операционната система или браузъра
+
+#26.10
+settings_right_content_options=Страница със съдържание
+settings_roundish_content=Заоблени ъгли на страницата със съдържание
+settings_content_margin_multiplier=Размер на полетата на страницата със съдържание
+settings_content_margin_multiplier_side=Страна
+settings_content_margin_multiplier_top=Най-горе
+settings_sysinfo_easypie_size=Размер на кръговите диаграми
+settings_sysinfo_easypie_size_smaller=Изключително малък
+settings_sysinfo_easypie_size_small=Малък
+settings_sysinfo_easypie_size_medium=Среден
+settings_sysinfo_easypie_size_auto=Автоматично
+settings_sysinfo_easypie_size_large=Голям
+settings_sysinfo_easypie_size_extra_large=Много голям
+settings_sysinfo_easypie_width=Ширина на линията на кръговите диаграми

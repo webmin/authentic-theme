@@ -1437,3 +1437,18 @@ session_pwdsucc=Пароль успішно змінено! Тепер ви мо
 # 24.10
 settings_palette_auto=Автоматична кольорова палітра
 settings_palette_auto_description=Автоматичний вибір колірної палітри на основі налаштувань операційної системи або браузера
+
+#26.10
+settings_right_content_options=Сторінка вмісту
+settings_roundish_content=Закруглені кути сторінки вмісту
+settings_content_margin_multiplier=Розмір поля сторінки вмісту
+settings_content_margin_multiplier_side=Сторона
+settings_content_margin_multiplier_top=Верх
+settings_sysinfo_easypie_size=Розмір кругових діаграм
+settings_sysinfo_easypie_size_smaller=Дуже маленький
+settings_sysinfo_easypie_size_small=Малий
+settings_sysinfo_easypie_size_medium=Середній
+settings_sysinfo_easypie_size_auto=Автоматичний
+settings_sysinfo_easypie_size_large=Великий
+settings_sysinfo_easypie_size_extra_large=Дуже великий
+settings_sysinfo_easypie_width=Ширина лінії кругової діаграми

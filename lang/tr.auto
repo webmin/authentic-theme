@@ -1437,3 +1437,18 @@ session_pwdsucc=Şifre başarıyla değiştirildi! Artık yeni şifrenizle giri�
 # 24.10
 settings_palette_auto=Otomatik renk paleti
 settings_palette_auto_description=İşletim sistemi veya tarayıcı tercihlerine göre renk paletini otomatik olarak seçin
+
+#26.10
+settings_right_content_options=İçerik sayfası
+settings_roundish_content=Yuvarlatılmış içerik sayfa köşeleri
+settings_content_margin_multiplier=İçerik sayfası kenar boşluğu boyutu
+settings_content_margin_multiplier_side=Taraf
+settings_content_margin_multiplier_top=Tepe
+settings_sysinfo_easypie_size=Pasta grafiklerinin boyutu
+settings_sysinfo_easypie_size_smaller=Çok küçük
+settings_sysinfo_easypie_size_small=Küçük
+settings_sysinfo_easypie_size_medium=Orta
+settings_sysinfo_easypie_size_auto=Otomatik
+settings_sysinfo_easypie_size_large=Büyük
+settings_sysinfo_easypie_size_extra_large=Ekstra Büyük
+settings_sysinfo_easypie_width=Pasta grafikleri çizgi genişliği

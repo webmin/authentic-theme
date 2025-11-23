@@ -1437,3 +1437,18 @@ session_pwdsucc=비밀번호가 성공적으로 변경되었습니다. 이제 �
 # 24.10
 settings_palette_auto=자동 색상 팔레트
 settings_palette_auto_description=운영 체제 또는 브라우저 환경 설정에 따라 색상 팔레트를 자동으로 선택합니다
+
+#26.10
+settings_right_content_options=콘텐츠 페이지
+settings_roundish_content=둥근 콘텐츠 페이지 모서리
+settings_content_margin_multiplier=콘텐츠 페이지 여백 크기
+settings_content_margin_multiplier_side=옆
+settings_content_margin_multiplier_top=맨 위
+settings_sysinfo_easypie_size=파이 차트 크기
+settings_sysinfo_easypie_size_smaller=매우 작은
+settings_sysinfo_easypie_size_small=작은
+settings_sysinfo_easypie_size_medium=중간
+settings_sysinfo_easypie_size_auto=오토매틱
+settings_sysinfo_easypie_size_large=크기가 큰
+settings_sysinfo_easypie_size_extra_large=특대
+settings_sysinfo_easypie_width=파이 차트 선 너비

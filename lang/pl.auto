@@ -80,3 +80,18 @@ session_pwdsucc=Hasło zostało pomyślnie zmienione! Teraz możesz się zalogow
 # 24.10
 settings_palette_auto=Automatyczna paleta kolorów
 settings_palette_auto_description=Automatyczny wybór palety kolorów na podstawie preferencji systemu operacyjnego lub przeglądarki
+
+#26.10
+settings_right_content_options=Strona z treścią
+settings_roundish_content=Zaokrąglone rogi strony z treścią
+settings_content_margin_multiplier=Rozmiar marginesu strony z treścią
+settings_content_margin_multiplier_side=Strona
+settings_content_margin_multiplier_top=Szczyt
+settings_sysinfo_easypie_size=Rozmiar wykresów kołowych
+settings_sysinfo_easypie_size_smaller=Bardzo mały
+settings_sysinfo_easypie_size_small=Mały
+settings_sysinfo_easypie_size_medium=Średni
+settings_sysinfo_easypie_size_auto=Automatyczny
+settings_sysinfo_easypie_size_large=Duży
+settings_sysinfo_easypie_size_extra_large=Bardzo duży
+settings_sysinfo_easypie_width=Szerokość linii wykresów kołowych

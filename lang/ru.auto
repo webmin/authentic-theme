@@ -1232,3 +1232,18 @@ session_pwdsucc=Пароль успешно изменен! Теперь вы м
 # 24.10
 settings_palette_auto=Автоматическая цветовая палитра
 settings_palette_auto_description=Автоматически выбирать цветовую палитру на основе настроек операционной системы или браузера
+
+#26.10
+settings_right_content_options=Страница содержимого
+settings_roundish_content=Закругленные углы страницы содержимого
+settings_content_margin_multiplier=Размер полей страницы содержимого
+settings_content_margin_multiplier_side=Сторона
+settings_content_margin_multiplier_top=Вершина
+settings_sysinfo_easypie_size=Размер круговых диаграмм
+settings_sysinfo_easypie_size_smaller=Очень маленький
+settings_sysinfo_easypie_size_small=Маленький
+settings_sysinfo_easypie_size_medium=Середина
+settings_sysinfo_easypie_size_auto=Автоматический
+settings_sysinfo_easypie_size_large=Большой
+settings_sysinfo_easypie_size_extra_large=Очень большой
+settings_sysinfo_easypie_width=Ширина линии круговой диаграммы

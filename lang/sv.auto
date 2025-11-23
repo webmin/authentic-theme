@@ -243,3 +243,18 @@ session_pwdsucc=Lösenordet har ändrats! Du kan nu logga in med det nya löseno
 # 24.10
 settings_palette_auto=Automatisk färgpalett
 settings_palette_auto_description=Välj automatiskt färgpalett baserat på operativsystem eller webbläsarinställningar
+
+#26.10
+settings_right_content_options=Innehållssida
+settings_roundish_content=Rundade hörn på innehållssidan
+settings_content_margin_multiplier=Storlek på marginalen för innehållssidan
+settings_content_margin_multiplier_side=Sida
+settings_content_margin_multiplier_top=Bästa
+settings_sysinfo_easypie_size=Storlek på cirkeldiagram
+settings_sysinfo_easypie_size_smaller=Extra liten
+settings_sysinfo_easypie_size_small=Små
+settings_sysinfo_easypie_size_medium=Medium
+settings_sysinfo_easypie_size_auto=Automatisk
+settings_sysinfo_easypie_size_large=Stor
+settings_sysinfo_easypie_size_extra_large=Extra large
+settings_sysinfo_easypie_width=Linjebredd för cirkeldiagram

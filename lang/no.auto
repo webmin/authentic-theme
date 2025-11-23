@@ -422,3 +422,18 @@ session_pwdsucc=Passordet er endret! Du kan nå logge inn med det nye passordet.
 # 24.10
 settings_palette_auto=Automatisk fargepalett
 settings_palette_auto_description=Velg automatisk fargepalett basert på operativsystem- eller nettleserpreferanser
+
+#26.10
+settings_right_content_options=Innholdsside
+settings_roundish_content=Avrundede hjørner på innholdssiden
+settings_content_margin_multiplier=Størrelse på margen på innholdssiden
+settings_content_margin_multiplier_side=Side
+settings_content_margin_multiplier_top=Topp
+settings_sysinfo_easypie_size=Størrelse på kakediagrammer
+settings_sysinfo_easypie_size_smaller=Ekstra liten
+settings_sysinfo_easypie_size_small=Liten
+settings_sysinfo_easypie_size_medium=Medium
+settings_sysinfo_easypie_size_auto=Automatisk
+settings_sysinfo_easypie_size_large=Stor
+settings_sysinfo_easypie_size_extra_large=Ekstra stor
+settings_sysinfo_easypie_width=Linjebredde for kakediagrammer

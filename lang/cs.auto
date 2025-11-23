@@ -1298,3 +1298,18 @@ session_pwdsucc=Heslo bylo úspěšně změněno! Nyní se můžete přihlásit 
 # 24.10
 settings_palette_auto=Automatická barevná paleta
 settings_palette_auto_description=Automaticky vybrat barevnou paletu na základě předvoleb operačního systému nebo prohlížeče
+
+#26.10
+settings_right_content_options=Stránka s obsahem
+settings_roundish_content=Zaoblené rohy stránky s obsahem
+settings_content_margin_multiplier=Velikost okraje stránky s obsahem
+settings_content_margin_multiplier_side=Strana
+settings_content_margin_multiplier_top=Nahoře
+settings_sysinfo_easypie_size=Velikost koláčových grafů
+settings_sysinfo_easypie_size_smaller=Extra malý
+settings_sysinfo_easypie_size_small=Malý
+settings_sysinfo_easypie_size_medium=Střední
+settings_sysinfo_easypie_size_auto=Automatický
+settings_sysinfo_easypie_size_large=Velký
+settings_sysinfo_easypie_size_extra_large=Extra velké
+settings_sysinfo_easypie_width=Šířka čáry koláčových grafů

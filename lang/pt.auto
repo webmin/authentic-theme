@@ -1355,3 +1355,18 @@ session_pwdsucc=Senha alterada com sucesso! Agora você pode fazer login com a n
 # 24.10
 settings_palette_auto=Paleta de cores automática
 settings_palette_auto_description=Escolha automaticamente a paleta de cores com base no sistema operacional ou nas preferências do navegador
+
+#26.10
+settings_right_content_options=Página de conteúdo
+settings_roundish_content=Cantos arredondados da página de conteúdo
+settings_content_margin_multiplier=Tamanho da margem da página de conteúdo
+settings_content_margin_multiplier_side=Lado
+settings_content_margin_multiplier_top=Principal
+settings_sysinfo_easypie_size=tamanho dos gráficos de pizza
+settings_sysinfo_easypie_size_smaller=Extra pequeno
+settings_sysinfo_easypie_size_small=Pequeno
+settings_sysinfo_easypie_size_medium=Médio
+settings_sysinfo_easypie_size_auto=Automático
+settings_sysinfo_easypie_size_large=Grande
+settings_sysinfo_easypie_size_extra_large=Extra grande
+settings_sysinfo_easypie_width=largura da linha dos gráficos de pizza

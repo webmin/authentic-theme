@@ -1437,3 +1437,18 @@ session_pwdsucc=رمز عبور با موفقیت تغییر یافت! اکنو�
 # 24.10
 settings_palette_auto=پالت رنگ خودکار
 settings_palette_auto_description=انتخاب خودکار پالت رنگ بر اساس تنظیمات سیستم عامل یا مرورگر
+
+#26.10
+settings_right_content_options=صفحه محتوا
+settings_roundish_content=گوشه‌های صفحه محتوا گرد شده است
+settings_content_margin_multiplier=اندازه حاشیه صفحه محتوا
+settings_content_margin_multiplier_side=سمت
+settings_content_margin_multiplier_top=بالا
+settings_sysinfo_easypie_size=اندازه نمودارهای دایره‌ای
+settings_sysinfo_easypie_size_smaller=خیلی کوچک
+settings_sysinfo_easypie_size_small=کوچک
+settings_sysinfo_easypie_size_medium=متوسط
+settings_sysinfo_easypie_size_auto=خودکار
+settings_sysinfo_easypie_size_large=بزرگ
+settings_sysinfo_easypie_size_extra_large=خیلی بزرگ
+settings_sysinfo_easypie_width=عرض خط نمودارهای دایره‌ای

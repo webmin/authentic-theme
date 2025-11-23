@@ -1327,3 +1327,18 @@ session_pwdsucc=Wachtwoord succesvol gewijzigd! U kunt nu inloggen met het nieuw
 # 24.10
 settings_palette_auto=Automatisch kleurenpalet
 settings_palette_auto_description=Kies automatisch een kleurenpalet op basis van de voorkeuren van het besturingssysteem of de browser
+
+#26.10
+settings_right_content_options=Inhoudspagina
+settings_roundish_content=Afgeronde hoeken van inhoudspagina's
+settings_content_margin_multiplier=Margegrootte van de inhoudspagina
+settings_content_margin_multiplier_side=Kant
+settings_content_margin_multiplier_top=Bovenkant
+settings_sysinfo_easypie_size=Grootte van cirkeldiagrammen
+settings_sysinfo_easypie_size_smaller=Extra klein
+settings_sysinfo_easypie_size_small=Klein
+settings_sysinfo_easypie_size_medium=Medium
+settings_sysinfo_easypie_size_auto=Automatisch
+settings_sysinfo_easypie_size_large=Groot
+settings_sysinfo_easypie_size_extra_large=Extra groot
+settings_sysinfo_easypie_width=Lijnbreedte van cirkeldiagrammen

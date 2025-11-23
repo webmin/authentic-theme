@@ -458,3 +458,18 @@ session_pwdsucc=パスワードが正常に変更されました。新しいパ�
 # 24.10
 settings_palette_auto=自動カラーパレット
 settings_palette_auto_description=オペレーティングシステムまたはブラウザの設定に基づいてカラーパレットを自動的に選択します
+
+#26.10
+settings_right_content_options=コンテンツページ
+settings_roundish_content=コンテンツページの角を丸くする
+settings_content_margin_multiplier=コンテンツページの余白サイズ
+settings_content_margin_multiplier_side=側
+settings_content_margin_multiplier_top=トップ
+settings_sysinfo_easypie_size=円グラフのサイズ
+settings_sysinfo_easypie_size_smaller=エクストラスモール
+settings_sysinfo_easypie_size_small=小さい
+settings_sysinfo_easypie_size_medium=中くらい
+settings_sysinfo_easypie_size_auto=自動
+settings_sysinfo_easypie_size_large=大きい
+settings_sysinfo_easypie_size_extra_large=特大
+settings_sysinfo_easypie_width=円グラフの線幅

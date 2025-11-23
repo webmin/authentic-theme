@@ -1437,3 +1437,18 @@ session_pwdsucc=Pasahitza behar bezala aldatu da! Orain pasahitz berriarekin sai
 # 24.10
 settings_palette_auto=Kolore-paleta automatikoa
 settings_palette_auto_description=Aukeratu automatikoki kolore paleta sistema eragilearen edo arakatzailearen lehentasunen arabera
+
+#26.10
+settings_right_content_options=Eduki orria
+settings_roundish_content=Eduki-orrialdeko ertz biribilduak
+settings_content_margin_multiplier=Eduki-orrialdearen marjinaren tamaina
+settings_content_margin_multiplier_side=Alboko
+settings_content_margin_multiplier_top=Goian
+settings_sysinfo_easypie_size=Zirkulazio-diagramen tamaina
+settings_sysinfo_easypie_size_smaller=Oso txikia
+settings_sysinfo_easypie_size_small=Txikia
+settings_sysinfo_easypie_size_medium=Ertaina
+settings_sysinfo_easypie_size_auto=Automatikoa
+settings_sysinfo_easypie_size_large=Handia
+settings_sysinfo_easypie_size_extra_large=Oso handia
+settings_sysinfo_easypie_width=Sektore-diagramen lerro-zabalera

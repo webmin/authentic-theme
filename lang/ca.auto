@@ -824,3 +824,18 @@ session_pwdsucc=La contrasenya s'ha canviat correctament! Ara podeu iniciar la s
 # 24.10
 settings_palette_auto=Paleta de colors automàtica
 settings_palette_auto_description=Tria automàticament la paleta de colors segons les preferències del sistema operatiu o del navegador
+
+#26.10
+settings_right_content_options=Pàgina de contingut
+settings_roundish_content=Cantonades arrodonides de la pàgina de contingut
+settings_content_margin_multiplier=Mida del marge de la pàgina de contingut
+settings_content_margin_multiplier_side=Costat
+settings_content_margin_multiplier_top=Superior
+settings_sysinfo_easypie_size=Mida dels gràfics circulars
+settings_sysinfo_easypie_size_smaller=Extra petit
+settings_sysinfo_easypie_size_small=Petit
+settings_sysinfo_easypie_size_medium=Mitjà
+settings_sysinfo_easypie_size_auto=Automàtic
+settings_sysinfo_easypie_size_large=Gran
+settings_sysinfo_easypie_size_extra_large=Extra gran
+settings_sysinfo_easypie_width=Amplada de línia dels gràfics circulars

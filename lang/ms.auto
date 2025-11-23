@@ -893,3 +893,18 @@ session_pwdsucc=Kata laluan berjaya ditukar! Anda kini boleh log masuk dengan ka
 # 24.10
 settings_palette_auto=Palet warna automatik
 settings_palette_auto_description=Pilih palet warna secara automatik berdasarkan sistem pengendalian atau pilihan penyemak imbas
+
+#26.10
+settings_right_content_options=Halaman kandungan
+settings_roundish_content=Sudut halaman kandungan bulat
+settings_content_margin_multiplier=Saiz jidar halaman kandungan
+settings_content_margin_multiplier_side=sebelah
+settings_content_margin_multiplier_top=Atas
+settings_sysinfo_easypie_size=Saiz carta pai
+settings_sysinfo_easypie_size_smaller=Lebih kecil
+settings_sysinfo_easypie_size_small=Kecil
+settings_sysinfo_easypie_size_medium=Sederhana
+settings_sysinfo_easypie_size_auto=Automatik
+settings_sysinfo_easypie_size_large=besar
+settings_sysinfo_easypie_size_extra_large=Lebih Besar
+settings_sysinfo_easypie_width=Carta pai lebar garis

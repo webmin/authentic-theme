@@ -422,3 +422,18 @@ session_pwdsucc=Mot de passe modifié avec succès ! Vous pouvez maintenant vou
 # 24.10
 settings_palette_auto=Palette de couleurs automatique
 settings_palette_auto_description=Choisissez automatiquement la palette de couleurs en fonction des préférences du système d'exploitation ou du navigateur
+
+#26.10
+settings_right_content_options=Page de contenu
+settings_roundish_content=Coins arrondis des pages de contenu
+settings_content_margin_multiplier=taille de la marge de la page de contenu
+settings_content_margin_multiplier_side=Côté
+settings_content_margin_multiplier_top=Haut
+settings_sysinfo_easypie_size=Taille des diagrammes circulaires
+settings_sysinfo_easypie_size_smaller=Très petit
+settings_sysinfo_easypie_size_small=Petit
+settings_sysinfo_easypie_size_medium=Moyen
+settings_sysinfo_easypie_size_auto=Automatique
+settings_sysinfo_easypie_size_large=Grand
+settings_sysinfo_easypie_size_extra_large=Très grand
+settings_sysinfo_easypie_width=Largeur des lignes des graphiques circulaires

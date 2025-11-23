@@ -1437,3 +1437,18 @@ session_pwdsucc=Lozinka je uspješno promijenjena! Sada se možete prijaviti s n
 # 24.10
 settings_palette_auto=Automatska paleta boja
 settings_palette_auto_description=Automatski odabir palete boja na temelju postavki operativnog sustava ili preglednika
+
+#26.10
+settings_right_content_options=Stranica sa sadržajem
+settings_roundish_content=Zaobljeni kutovi stranice sadržaja
+settings_content_margin_multiplier=Veličina margine stranice sadržaja
+settings_content_margin_multiplier_side=Strana
+settings_content_margin_multiplier_top=Vrh
+settings_sysinfo_easypie_size=Veličina tortnih grafikona
+settings_sysinfo_easypie_size_smaller=Iznimno mali
+settings_sysinfo_easypie_size_small=Mali
+settings_sysinfo_easypie_size_medium=Srednji
+settings_sysinfo_easypie_size_auto=Automatski
+settings_sysinfo_easypie_size_large=Veliko
+settings_sysinfo_easypie_size_extra_large=Ekstra veliko
+settings_sysinfo_easypie_width=Širina linije tortnih grafikona

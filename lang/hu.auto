@@ -1437,3 +1437,18 @@ session_pwdsucc=Jelszó sikeresen megváltoztatva! Most már bejelentkezhet az �
 # 24.10
 settings_palette_auto=Automatikus színpaletta
 settings_palette_auto_description=Színpaletta automatikus kiválasztása az operációs rendszer vagy a böngésző beállításai alapján
+
+#26.10
+settings_right_content_options=Tartalom oldal
+settings_roundish_content=Lekerekített tartalomoldal sarkok
+settings_content_margin_multiplier=Tartalomoldal margómérete
+settings_content_margin_multiplier_side=Oldal
+settings_content_margin_multiplier_top=Felső
+settings_sysinfo_easypie_size=Kördiagramok mérete
+settings_sysinfo_easypie_size_smaller=Extra kicsi
+settings_sysinfo_easypie_size_small=Kicsi
+settings_sysinfo_easypie_size_medium=Közepes
+settings_sysinfo_easypie_size_auto=Automatikus
+settings_sysinfo_easypie_size_large=Nagy
+settings_sysinfo_easypie_size_extra_large=Extra nagy
+settings_sysinfo_easypie_width=Kördiagramok vonalvastagsága

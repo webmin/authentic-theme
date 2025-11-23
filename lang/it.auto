@@ -362,3 +362,18 @@ session_pwdsucc=Password modificata con successo! Ora puoi accedere con la nuova
 # 24.10
 settings_palette_auto=Palette di colori automatica
 settings_palette_auto_description=Scegli automaticamente la tavolozza dei colori in base alle preferenze del sistema operativo o del browser
+
+#26.10
+settings_right_content_options=Pagina dei contenuti
+settings_roundish_content=Angoli arrotondati della pagina dei contenuti
+settings_content_margin_multiplier=Dimensione del margine della pagina del contenuto
+settings_content_margin_multiplier_side=Lato
+settings_content_margin_multiplier_top=Superiore
+settings_sysinfo_easypie_size=Dimensioni dei grafici a torta
+settings_sysinfo_easypie_size_smaller=Molto piccolo
+settings_sysinfo_easypie_size_small=Piccolo
+settings_sysinfo_easypie_size_medium=Medio
+settings_sysinfo_easypie_size_auto=Automatico
+settings_sysinfo_easypie_size_large=Grande
+settings_sysinfo_easypie_size_extra_large=Extra Large
+settings_sysinfo_easypie_width=Larghezza della linea dei grafici a torta

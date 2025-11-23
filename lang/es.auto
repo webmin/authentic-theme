@@ -1349,3 +1349,18 @@ session_pwdsucc=¡Contraseña cambiada correctamente! Ya puedes iniciar sesión 
 # 24.10
 settings_palette_auto=Paleta de colores automática
 settings_palette_auto_description=Elija automáticamente la paleta de colores según el sistema operativo o las preferencias del navegador
+
+#26.10
+settings_right_content_options=Página de contenido
+settings_roundish_content=Esquinas de página de contenido redondeadas
+settings_content_margin_multiplier=Tamaño del margen de la página de contenido
+settings_content_margin_multiplier_side=Lado
+settings_content_margin_multiplier_top=Arriba
+settings_sysinfo_easypie_size=Tamaño de los gráficos circulares
+settings_sysinfo_easypie_size_smaller=Extra pequeño
+settings_sysinfo_easypie_size_small=Pequeño
+settings_sysinfo_easypie_size_medium=Medio
+settings_sysinfo_easypie_size_auto=Automático
+settings_sysinfo_easypie_size_large=Grande
+settings_sysinfo_easypie_size_extra_large=Extra grande
+settings_sysinfo_easypie_width=Ancho de línea de los gráficos circulares

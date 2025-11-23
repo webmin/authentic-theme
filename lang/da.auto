@@ -1350,3 +1350,18 @@ session_pwdsucc=Adgangskoden er ændret! Du kan nu logge ind med den nye adgangs
 # 24.10
 settings_palette_auto=Automatisk farvepalet
 settings_palette_auto_description=Vælg automatisk farvepalet baseret på operativsystem eller browserpræferencer
+
+#26.10
+settings_right_content_options=Indholdsside
+settings_roundish_content=Afrundede hjørner på indholdssiden
+settings_content_margin_multiplier=Størrelse på margenen på indholdssiden
+settings_content_margin_multiplier_side=Side
+settings_content_margin_multiplier_top=Top
+settings_sysinfo_easypie_size=Størrelse på cirkeldiagrammer
+settings_sysinfo_easypie_size_smaller=Ekstra lille
+settings_sysinfo_easypie_size_small=Lille
+settings_sysinfo_easypie_size_medium=Medium
+settings_sysinfo_easypie_size_auto=Automatisk
+settings_sysinfo_easypie_size_large=Stor
+settings_sysinfo_easypie_size_extra_large=Ekstra stor
+settings_sysinfo_easypie_width=Linjebredden på cirkeldiagrammer
