@@ -42,6 +42,20 @@ sub theme_settings_raw
 
         [
          {  'id'    => 's2',
+            'title' => &theme_text('settings_right_content_options'),
+            'data'  => [
+                       'settings_roundish_content',
+                       'settings_content_margin_multiplier',
+                       'settings_right_table_force_single_column',
+                       'settings_right_table_links_type',
+                       'settings_right_table_links_sorted',
+                       'settings_right_table_animate_icons',
+                       'settings_right_table_grayscaled_icons',
+            ] }
+        ],
+
+        [
+         {  'id'    => 's3',
             'title' => &theme_text('settings_right_navigation_menu_options'),
             'data'  => [
                        'settings_roundish_menu',
@@ -72,20 +86,6 @@ sub theme_settings_raw
                        'settings_leftmenu_user_html',
                        'settings_leftmenu_user_html_privileged',
                        'settings_leftmenu_custom_links',
-            ] }
-        ],
-
-         [
-         {  'id'    => 's3',
-            'title' => &theme_text('settings_right_content_options'),
-            'data'  => [
-                       'settings_roundish_content',
-                       'settings_content_margin_multiplier',
-                       'settings_right_table_force_single_column',
-                       'settings_right_table_links_type',
-                       'settings_right_table_links_sorted',
-                       'settings_right_table_animate_icons',
-                       'settings_right_table_grayscaled_icons',
             ] }
         ],
 
@@ -156,6 +156,7 @@ sub theme_settings_raw
                        'settings_hotkey_custom_9_user',
             ] }
         ]);
+
     # Add upgrade settings if available
     if ($theme_config{'settings_upgrade_allowed'} eq 'true') {
         push(@theme_settings_raw,
