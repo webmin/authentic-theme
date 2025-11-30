@@ -788,6 +788,7 @@ sub nav_list_combined_menu
                                $_->{'module'} eq 'virtual-server' } @$items;
     my $vm_has_menu = grep { $_->{'type'} eq 'menu' &&
                              $_->{'module'} eq 'virtual-server' } @$items;
+    my $is_vm = grep { $_->{'module'} eq 'virtual-server' } @$items;
     my $vm_has_new_domform = grep { $_->{'format'} eq 'link-new' &&
                                     $_->{'module'} eq 'virtual-server' } @$items;
     if ($vm_new_format) {
@@ -1001,9 +1002,10 @@ sub nav_list_combined_menu
                 $rv .= "</ul></li>\n";
             } elsif ($item->{'type'} eq 'hr') {
                 $nav_pos++;
-                my $separator = '<li class="menu-container menu-separator"><span class="hr"></span></li>';
+                my $no_vm_menu_class = $is_vm && !$vm_has_menu ? ' no_vm_menu' : '';
+                my $separator = "<li class=\"menu-container menu-separator$no_vm_menu_class\"><span class=\"hr\"></span></li>";
                 if ($vm_new_format) {
-                    if ($nav_pos eq '2') {
+                    if ($nav_pos eq '2' || $no_vm_menu_class) {
                         $rv .= $separator;
                     }
                 }
