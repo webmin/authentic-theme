@@ -1126,7 +1126,8 @@ sub get_button_style
     } elsif (string_contains($keys, "licence_manager") ||
              string_contains($keys, "licence_manager_change") ||
              string_contains($keys, "licence_manager_deregister") ||
-             string_contains($keys, "licence_recheck")) {
+             string_contains($keys, "licence_recheck") ||
+             string_contains($keys, "licence_manager_reposissue")) {
         $icon = "virtualmin fa-1_15x margined-left--2 margined-top-1";
         $class = "info ";
         if (string_contains($keys, "licence_recheck")) {
@@ -1134,6 +1135,10 @@ sub get_button_style
         } elsif (string_contains($keys, "licence_manager_goto")) {
             $class = "warning ";
             $icon = " fa2 fa2-key fa-1_15x margined-left--1";
+        }
+        if (string_contains($keys, "licence_manager_reposissue")) {
+            $class = "warning ";
+            $icon = "retweet fa-1_10x margined-left--2";
         }
         if (string_contains($keys, "licence_manager_change") ||
             string_contains($keys, "licence_manager_setup")) {
