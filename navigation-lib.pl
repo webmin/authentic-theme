@@ -1297,11 +1297,7 @@ sub print_switch_webmin
                            'auto bottom'
       ) .
       ' for="open_' . get_product_name() . '">
-                <i class="wbm-webmin wbm-sm"></i><span>'
-      . (&get_product_name() eq 'webmin' ? $theme_text{'theme_xhred_titles_wm'} :
-           $theme_text{'theme_xhred_titles_um'}
-      ) .
-      '</span></label>';
+                <i class="custom-ribbon-logo"></i><span>Ribbon</span></label>';
 }
 
 # XXX - needs further refactor
