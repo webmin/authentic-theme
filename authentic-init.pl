@@ -625,6 +625,11 @@ sub embed_css_bundle
       '/unauthenticated/css/bundle.min.css?' .
       theme_version('timestamped') .
       '" rel="stylesheet">' . "\n";
+    print ' <link type="text/css" href="' .
+      $theme_webprefix .
+      '/unauthenticated/css/custom-logo.css?' .
+      theme_version('timestamped') .
+      '" rel="stylesheet">' . "\n";
     embed_css_fonts();
 }
 

@@ -1,0 +1,19 @@
+/* Custom Ribbon Logo */
+.custom-ribbon-logo {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/ribbon-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+/* Adjust size if needed */
+/*
+.custom-ribbon-logo {
+    width: 20px;
+    height: 20px;
+}
+*/
