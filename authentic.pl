@@ -1732,7 +1732,6 @@ sub theme_error
         return $error_stack;
     };
     if (!$main_header) {
-        print "<hr>\n";
         print "<h3 data-fatal-error-text>$error</h3>\n";
         print &$get_error_stack();
         print "<hr>\n";
