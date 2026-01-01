@@ -1,5 +1,20 @@
 ## Changelog
 
+#### Version 26.20.1 (January 1, 2026)
+* Add support for multiple scrollable tabs in the File Manager
+* Fix displaying of the right-side toolbar in File Manager when using Safari
+* Fix issues with path popover in File Manager [#1726](https://github.com/webmin/authentic-theme/issues/1726)
+* Fix progressive page post complete adjustment
+* Fix to remove extra unnecessary horizontal rule from the error page
+* Fix to correctly handle the favorites button on unsupported, progressive pages
+* Fix to correctly display links in a colored text box
+* Fix to place theme config popup within container viewport
+* Fix background color for selected element on dropdowns in dark mode
+* Fix to print menu separator when no virtual servers are added yet in Virtualmin
+* Fix edit script page table bottom margin in Virtualmin
+* Fix exported file name in data tables
+* Fix bugs in white palette
+
 #### Version 26.20 (November 23, 2025)
 * Add a range slider to adjust content page margins more precisely
 * Add an option to enable rounded corners for content page
