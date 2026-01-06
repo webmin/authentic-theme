@@ -79,8 +79,24 @@ sub theme_header
         print $tconfig{'preheader'};
         print '<div class="header">
                 <div class="row">';
+        # Title
+        my $ts =
+            defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
+            "+2";
+        print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
+            ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
+        print "<br><span data-main_title_sub>$_[9]</span>\n" if ($_[9]);
+        if ($theme_ui_post_header_text) {
+            print "<span data-sub_title><br>$theme_ui_post_header_text</span>";
+        } else {
+            print "<p class=\"margined-bottom-5\"></p>";
+        }
+        if ($_[1]) {
+            print "<br><img data-module-image alt=\"$ttitle\" src=\"$_[1]\">\n";
+        }
+        print "</div>\n"; # header-center
+        
         print '<div data-header-left id="headln2l" class="invisible col-sm-4">';
-
         if (!$_[5] && !$tconfig{'noindex'}) {
             my @avail = &get_available_module_infos(1);
             my $nolo  = get_env('anonymous_user') ||
@@ -135,24 +151,7 @@ sub theme_header
                 print "<a href=\"$theme_webprefix/$cprog?module=", &get_module_name().$params . "\">", $text{'header_config'}, "</a><br>\n";
             }
         }
-        print "</div>\n";
-        if ($_[1]) {
-            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id=\"headln2c\" class=\"col-sm-4\">",
-              "<img alt=\"$ttitle\" src=\"$_[1]\"></td>\n";
-        } else {
-            my $ts =
-              defined($tconfig{'titlesize'}) ? $tconfig{'titlesize'} :
-              "+2";
-            print "<div data-current-module-name=\"$this_module_info{'desc'}\" id='headln2c' class=\"col-sm-4\">",
-              ($ts ? "<span data-main_title>" : ""), $ttitle, ($ts ? "</span>" : "");
-            print "<br><span data-main_title_sub>$_[9]</span>\n" if ($_[9]);
-            if ($theme_ui_post_header_text) {
-                print "<span data-sub_title><br>$theme_ui_post_header_text</span>";
-            } else {
-                print "<p class=\"margined-bottom-5\"></p>";
-            }
-            print "</div>\n";
-        }
+        print "</div>\n"; # header-left
         print "<div data-header-right id=\"headln2r\" class=\"col-sm-4\">";
         print $_[6];
         print "</div></div></div>\n";
