@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 26.20.2 (January 6, 2026)
+* Fix to correctly print the main header
+* Fix buttons margin when alert box is present in the form
+
 #### Version 26.20.1 (January 1, 2026)
 * Add support for multiple scrollable tabs in the File Manager
 * Fix displaying of the right-side toolbar in File Manager when using Safari
