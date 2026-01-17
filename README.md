@@ -98,7 +98,7 @@ Theme only re-renders this module and adds support for code highlight, when edit
 *ltc1qwgqxupqnpk7ttug9x7r84xmuf9ecck90scn8yp*
 
 ### The Open Network (TON)
-*EQBUGLcioULfX2N3F-JIr5KTtJ3LKi1pSC20HWqzec7xDL7H*
+*UQBUGLcioULfX2N3F-JIr5KTtJ3LKi1pSC20HWqzec7xDOMC*
 
 ## License
 
