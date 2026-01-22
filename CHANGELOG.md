@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 26.21 (January 23, 2026)
+* Add the ability to make the current page filter work with paginated search
+* Fix the `FilesMatch` block code highlighting for Apache config
+* Fix the custom hotkey to accept any valid link
+
 #### Version 26.20.2 (January 6, 2026)
 * Fix to correctly print the main header
 * Fix buttons margin when alert box is present in the form
