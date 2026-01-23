@@ -1473,6 +1473,7 @@ theme_xhred_hotkey_switch_theme=Switch theme
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Upload successful
 theme_xhred_filemanager_upload_status_err=Upload failed:
+theme_xhred_filemanager_upload_status_unknown=Upload failed with no response from the server. This likely means the virtual server user has run out of disk quota or the system is out of space.
 theme_xhred_filemanager_download_status_err=Download failed:
 
 
