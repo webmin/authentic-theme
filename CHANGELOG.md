@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 26.22 (January 24, 2026)
+* Fix the support for the cloned Terminal module
+* Fix error handling for file uploads when the user is out of quota or the system is out of disk space in the File Manager module
+* Fix to stop loading full file into memory for upload check to prevent memory leak on large uploads in the File Manager module
+
 #### Version 26.21 (January 23, 2026)
 * Add the ability to make the current page filter work with paginated search
 * Fix the `FilesMatch` block code highlighting for Apache config
