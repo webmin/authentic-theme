@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 26.23
+* Fix the real-time follow indicator when viewing the journal
+
 #### Version 26.22 (January 25, 2026)
 * Fix the support for the cloned Terminal module
 * Fix error handling for file uploads when the user is out of quota or the system is out of disk space in the File Manager module
