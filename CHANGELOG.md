@@ -2,6 +2,7 @@
 
 #### Version 26.23
 * Fix the real-time follow indicator when viewing the journal
+* Fix match highlighting with regex when viewing the journal
 
 #### Version 26.22 (January 25, 2026)
 * Fix the support for the cloned Terminal module
