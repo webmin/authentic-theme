@@ -1151,13 +1151,36 @@ const mail = (function() {
                                     // Adjust the size of editable area
                                     contenteditable: (panel) => {
                                         let target = panel.querySelector(`.${classes.panel.content}`),
-                                            container = target ? target.offsetHeight : window.innerHeight / 4,
-                                            top_block = panel.querySelector(`.${classes.form.header}`).offsetHeight,
-                                            editor_toolbar = panel.querySelector(`.${classes.editor.toolbar}`).offsetHeight,
+                                            container = target ? target.getBoundingClientRect().height : window.innerHeight / 4,
+                                            top_block = panel.querySelector(`.${classes.form.header}`),
+                                            compose_block = panel.querySelector('.compose-controls-block'),
                                             editor = panel.querySelector(`[${classes.editor.composer}]:not(.${classes.hidden})`),
-                                            offset = 50 + editor_toolbar,
-                                            height = `${container - top_block - offset}px`;
-                                        editor.style.height = height;
+                                            offset = 0,
+                                            height,
+                                            editor_content,
+                                            top_block_height = top_block ? top_block.getBoundingClientRect().height : 0,
+                                            editor_height = 0,
+                                            compose_block_height = 0;
+
+                                        if (!editor) {
+                                            return;
+                                        }
+
+                                        editor_height = editor.getBoundingClientRect().height;
+                                        compose_block_height = compose_block ? compose_block.getBoundingClientRect().height : 0;
+
+                                        // Derive non-editor space from actual rendered block height.
+                                        // This keeps HTML mode (extra toolbar row) and plain mode aligned.
+                                        offset = Math.max(compose_block_height - editor_height, 0);
+                                        height = Math.max(container - top_block_height - offset - 2, 120);
+                                        editor.style.height = `${height}px`;
+
+                                        // Prevent global Quill min-height rules from stretching the compose area.
+                                        editor.style.minHeight = '0';
+                                        editor_content = editor.querySelector(`.${classes.editor.content}`);
+                                        if (editor_content) {
+                                            editor_content.style.minHeight = '0';
+                                        }
                                     },
                                 },
                                 check = {
