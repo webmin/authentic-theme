@@ -3,6 +3,7 @@
 #### Version 26.23
 * Fix the real-time follow indicator when viewing the journal
 * Fix match highlighting with regex when viewing the journal
+* Fix mail compose panel sizing in HTML mode on low-DPR screens
 
 #### Version 26.22 (January 25, 2026)
 * Fix the support for the cloned Terminal module
