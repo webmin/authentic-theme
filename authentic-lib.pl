@@ -84,9 +84,7 @@ sub get_extended_sysinfo
                 $info->{'type'} ne 'link'            &&
                 $info->{'module'} ne 'mailbox'       &&
                 $info->{'module'} ne 'system-status' &&
-                $info->{'type'} ne 'warning'         &&
-                $a->{'type'} ne 'warning'            &&
-                $b->{'type'} ne 'warning')
+                $info->{'type'} ne 'warning')
             {
                 our $charts_not_supported = 'no';
                 if ($info->{'type'} eq 'chart') {
