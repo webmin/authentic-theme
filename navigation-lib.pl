@@ -889,7 +889,7 @@ sub nav_list_combined_menu
                 } elsif ($link =~ /\/virtual-server\/list_scripts\.cgi/)
                 {
                     $icon = '<i class="fa-fw fa-kit fa-stacked-cubes fa-1_15x margined-left--4_5 margined-right--1"></i>';
-                } elsif ($link =~ /\/virtualmin-containers/) {
+                } elsif ($link =~ /\/virtualmin-podman/) {
                     if ($link =~ /list_containers.cgi/) {
                         $icon = '<i class="fa-kit fa-container fa-1_15x margined-left--4 margined-right--0"></i>';
                     } else {
