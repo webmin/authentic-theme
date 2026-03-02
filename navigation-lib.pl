@@ -750,6 +750,56 @@ sub nav_theme_links
     return $rv;
 }
 
+# Sort Virtualmin domain menu links in a predictable order, even when some links
+# are missing, which is a somewhat hacky way to achieve the expected behavior,
+# as the API currently does not provide a way to precisely control the order of
+# domain links returned from other plugins
+sub nav_sort_virtualmin_shortcuts
+{
+    my ($items) = @_;
+    return $items if (ref($items) ne 'ARRAY');
+
+    my $item_rank = sub {
+        my ($item) = @_;
+        return undef if (ref($item) ne 'HASH' || $item->{'type'} ne 'item');
+        my $link = $item->{'link'} || '';
+
+        # Keep key Virtualmin actions in a predictable order even when some
+        # links are missing
+        return 0 if ($link =~ /virtual-server\/(view_domain|summary_domain)\.cgi/);
+        return 1 if ($link =~ /virtual-server\/list_users\.cgi/);
+        return 2 if ($link =~ /virtual-server\/list_databases\.cgi/);
+        return 3 if ($link =~ /virtualmin-podman\/list_containers\.cgi/);
+        return 4 if ($link =~ /virtual-server\/list_scripts\.cgi/);
+        return 5 if ($link =~ /filemin\/index\.cgi/);
+        return 6 if ($link =~ /xterm\/index\.cgi/);
+        return undef;
+    };
+
+    my @candidate_indexes;
+    foreach my $index (0 .. $#$items) {
+        push(@candidate_indexes, $index)
+            if (defined($item_rank->($items->[$index])));
+    }
+
+    return $items if (@candidate_indexes < 2);
+
+    my @sorted_items = map { $_->{'item'} }
+      sort { $a->{'rank'} <=> $b->{'rank'} || $a->{'index'} <=> $b->{'index'} }
+      map { {
+              'index' => $_,
+              'rank'  => $item_rank->($items->[$_]),
+              'item'  => $items->[$_] }
+      } @candidate_indexes;
+
+    my @sorted_menu = @$items;
+    foreach my $position (0 .. $#candidate_indexes) {
+        $sorted_menu[$candidate_indexes[$position]] = $sorted_items[$position];
+    }
+
+    return \@sorted_menu;
+}
+
 # Return HTML menu structure for given module
 sub nav_list_combined_menu
 {
@@ -791,6 +841,9 @@ sub nav_list_combined_menu
     my $is_vm = grep { $_->{'module'} eq 'virtual-server' } @$items;
     my $vm_has_new_domform = grep { $_->{'format'} eq 'link-new' &&
                                     $_->{'module'} eq 'virtual-server' } @$items;
+    if (!$group && $is_vm) {
+        $items = nav_sort_virtualmin_shortcuts($items);
+    }
     if ($vm_new_format) {
         if ($vm_has_new_domform) {
             my @vm_hr = grep { $_->{'type'} eq 'hr' &&
