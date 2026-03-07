@@ -1113,6 +1113,16 @@ sub get_button_style
         $class = "warning ";
     } elsif (string_contains($keys, "feat_backup_refresh")) {
         $icon  = "refresh-mdi fa-1_25x margined-left--3";
+    } elsif (string_contains($keys, "edit_bottom_logs")) {
+        $class = "info ";
+        $icon  = "file-text";
+    } elsif (string_contains($keys, "edit_bottom_logs")) {
+        $class = "grey ";
+        $icon  = " fa2 fa2-terminal fa-1_05x";
+    } elsif (string_contains($keys, "edit_bottom_stop") ||
+             string_contains($keys, "create_health_on_failure_stop")) {
+        $class = "danger ";
+        $icon  = "stop";
     } elsif (string_ends_with($keys, "_gnupg") ||
              string_contains($keys, 'secret_setup') ||
              string_contains($keys, 'ssl_gen')      ||
