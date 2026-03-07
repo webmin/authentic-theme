@@ -1116,7 +1116,7 @@ sub get_button_style
     } elsif (string_contains($keys, "edit_bottom_logs")) {
         $class = "info ";
         $icon  = "file-text";
-    } elsif (string_contains($keys, "edit_bottom_logs")) {
+    } elsif (string_contains($keys, "edit_bottom_terminal")) {
         $class = "grey ";
         $icon  = " fa2 fa2-terminal fa-1_05x";
     } elsif (string_contains($keys, "edit_bottom_stop") ||
