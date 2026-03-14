@@ -382,7 +382,7 @@ sub stats_network_proc
         my @rs;
         my $results = \%result;
         # Parse current data
-        foreach (%$results) {
+        foreach (keys %$results) {
             $rbytes += $results->{$_}->{'rbytes'};
             $tbytes += $results->{$_}->{'tbytes'};
         }
@@ -391,7 +391,7 @@ sub stats_network_proc
         select(undef, undef, undef, $wait_interval);
         $results = stats_network_proc(1);
         # Parse data after dalay
-        foreach (%$results) {
+        foreach (keys %$results) {
             $rbytes2 += $results->{$_}->{'rbytes'};
             $tbytes2 += $results->{$_}->{'tbytes'};
         }
