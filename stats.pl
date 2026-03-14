@@ -11,6 +11,7 @@ use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use IO::Socket::INET;
 use Net::WebSocket::Server;
 use utf8;
+use Scalar::Util qw(weaken);
 
 our ($current_theme, $json);
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
@@ -72,39 +73,41 @@ Net::WebSocket::Server->new(
 		# clients unless paused for some client
 		my $stats_now = get_stats_now();
 		my $stats_now_graphs = $stats_now->{'graphs'};
-		my $stats_now_json = $json->encode($stats_now);
-		utf8::decode($stats_now_json);
+		my $stats_now_json_shared = $json->encode($stats_now);
+		utf8::decode($stats_now_json_shared);
 		foreach my $conn_id (keys %{$serv->{'conns'}}) {
 			my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
 			if ($conn->{'verified'} && !$conn->{'paused'}) {
+				my $stats_now_json = $stats_now_json_shared;
 				# Unpaused connection needs full stats
 				if ($conn->{'pausing'}) {
 					$conn->{'pausing'} = 0;
+					my %stats_now_local = %$stats_now;
 					my $stats_updated;
 					# Merge stats from both disk data
 					# and currently cached data
 					if ($stats_history && $stats_period) {
-						$stats_now->{'graphs'} =
-							merge_stats($stats_history->{'graphs'},
+						$stats_now_local{'graphs'} =
+							merge_stats(jsonify($json->encode($stats_history->{'graphs'})),
 										$stats_period);
 						$stats_updated++;
 					# If no cached data then use history
 					} elsif ($stats_history) {
-						$stats_now->{'graphs'} = $stats_history->{'graphs'};
+						$stats_now_local{'graphs'} = jsonify($json->encode($stats_history->{'graphs'}));
 						$stats_updated++;
 					# If no history then use cached data
 					} elsif ($stats_period) {
 						$stats_updated++;
-						$stats_now->{'graphs'} = $stats_period;
+						$stats_now_local{'graphs'} = jsonify($json->encode($stats_period));
 					}
 					# If stats were updated then merge
 					# them with latest (now) data
 					if ($stats_updated) {
-						$stats_now->{'graphs'} =
-							merge_stats($stats_now->{'graphs'},
+						$stats_now_local{'graphs'} =
+							merge_stats($stats_now_local{'graphs'},
 										$stats_now_graphs);
 					}
-					$stats_now_json = $json->encode($stats_now);
+					$stats_now_json = $json->encode(\%stats_now_local);
 					utf8::decode($stats_now_json);
 				}
 				$conn->send_utf8($stats_now_json);
@@ -134,7 +137,7 @@ Net::WebSocket::Server->new(
 		# Release memory
 		undef($stats_now);
 		undef($stats_now_graphs);
-		undef($stats_now_json);
+		undef($stats_now_json_shared);
 		undef($stats_history);
 	},
 	on_connect => sub {
@@ -143,9 +146,13 @@ Net::WebSocket::Server->new(
 		$serv->{'clients_connected'}++;
 		alarm(0);
 		# Set post-connect activity timeout
+		my $wconn = $conn;
+		weaken($wconn);
 		$SIG{'ALRM'} = sub {
-			error_stderr("WebSocket connection $conn->{'port'} is closed due to inactivity");
-			$conn->disconnect();
+			if ($wconn) {
+				error_stderr("WebSocket connection $wconn->{'port'} is closed due to inactivity");
+				$wconn->disconnect();
+			}
 		};
 		alarm(30);
 		# Set maximum send size
