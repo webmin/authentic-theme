@@ -73,41 +73,39 @@ Net::WebSocket::Server->new(
 		# clients unless paused for some client
 		my $stats_now = get_stats_now();
 		my $stats_now_graphs = $stats_now->{'graphs'};
-		my $stats_now_json_shared = $json->encode($stats_now);
-		utf8::decode($stats_now_json_shared);
+		my $stats_now_json = $json->encode($stats_now);
+		utf8::decode($stats_now_json);
 		foreach my $conn_id (keys %{$serv->{'conns'}}) {
 			my $conn = $serv->{'conns'}->{$conn_id}->{'conn'};
 			if ($conn->{'verified'} && !$conn->{'paused'}) {
-				my $stats_now_json = $stats_now_json_shared;
 				# Unpaused connection needs full stats
 				if ($conn->{'pausing'}) {
 					$conn->{'pausing'} = 0;
-					my %stats_now_local = %$stats_now;
 					my $stats_updated;
 					# Merge stats from both disk data
 					# and currently cached data
 					if ($stats_history && $stats_period) {
-						$stats_now_local{'graphs'} =
-							merge_stats(jsonify($json->encode($stats_history->{'graphs'})),
+						$stats_now->{'graphs'} =
+							merge_stats($stats_history->{'graphs'},
 										$stats_period);
 						$stats_updated++;
 					# If no cached data then use history
 					} elsif ($stats_history) {
-						$stats_now_local{'graphs'} = jsonify($json->encode($stats_history->{'graphs'}));
+						$stats_now->{'graphs'} = $stats_history->{'graphs'};
 						$stats_updated++;
 					# If no history then use cached data
 					} elsif ($stats_period) {
 						$stats_updated++;
-						$stats_now_local{'graphs'} = jsonify($json->encode($stats_period));
+						$stats_now->{'graphs'} = $stats_period;
 					}
 					# If stats were updated then merge
 					# them with latest (now) data
 					if ($stats_updated) {
-						$stats_now_local{'graphs'} =
-							merge_stats($stats_now_local{'graphs'},
+						$stats_now->{'graphs'} =
+							merge_stats($stats_now->{'graphs'},
 										$stats_now_graphs);
 					}
-					$stats_now_json = $json->encode(\%stats_now_local);
+					$stats_now_json = $json->encode($stats_now);
 					utf8::decode($stats_now_json);
 				}
 				$conn->send_utf8($stats_now_json);
@@ -137,7 +135,7 @@ Net::WebSocket::Server->new(
 		# Release memory
 		undef($stats_now);
 		undef($stats_now_graphs);
-		undef($stats_now_json_shared);
+		undef($stats_now_json);
 		undef($stats_history);
 	},
 	on_connect => sub {
