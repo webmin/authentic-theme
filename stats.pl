@@ -11,6 +11,7 @@ use lib ("$ENV{'PERLLIB'}/vendor_perl");
 use IO::Socket::INET;
 use Net::WebSocket::Server;
 use utf8;
+use Scalar::Util qw(weaken);
 
 our ($current_theme, $json);
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
@@ -143,9 +144,13 @@ Net::WebSocket::Server->new(
 		$serv->{'clients_connected'}++;
 		alarm(0);
 		# Set post-connect activity timeout
+		my $wconn = $conn;
+		weaken($wconn);
 		$SIG{'ALRM'} = sub {
-			error_stderr("WebSocket connection $conn->{'port'} is closed due to inactivity");
-			$conn->disconnect();
+			if ($wconn) {
+				error_stderr("WebSocket connection $wconn->{'port'} is closed due to inactivity");
+				$wconn->disconnect();
+			}
 		};
 		alarm(30);
 		# Set maximum send size
