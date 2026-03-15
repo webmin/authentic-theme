@@ -5,6 +5,7 @@
 #
 use strict;
 use feature 'state';
+use Fcntl qw(:flock);
 
 our $json;
 eval "use JSON::XS";
@@ -43,6 +44,7 @@ my $acl_system_status = {
     temp => acl_system_status('temp'),
 };
 
+# Return localized stats text with placeholders expanded
 sub stats_text
 {
     my $rv = $stats_text{ $_[0] };
@@ -73,6 +75,7 @@ sub jsonify
     return (ref($json_obj) eq 'HASH' && keys %{$json_obj}) ? $json_obj : {};
 }
 
+# Build an empty stats payload with default graph points
 sub get_stats_empty
 {
     my $time = time();
@@ -93,6 +96,7 @@ sub get_stats_empty
     return $stats;
 }
 
+# Collect a current snapshot of system stats and graph points
 sub get_stats_now
 {
     my %data;
@@ -109,12 +113,17 @@ sub get_stats_now
     if ($foreign_check_proc) {
         # CPU stats
         if ($acl_system_status->{'cpu'}) {
-            my @cpuinfo  = defined(&proc::get_cpu_info)     ? proc::get_cpu_info()     : ();
-            my @cpuusage = defined(&proc::get_cpu_io_usage) ? proc::get_cpu_io_usage() : ();
+            my @cpuinfo  = defined(&proc::get_cpu_info)
+                ? proc::get_cpu_info()
+                : ();
+            my @cpuusage = defined(&proc::get_cpu_io_usage)
+                ? proc::get_cpu_io_usage()
+                : ();
             if (@cpuinfo && @cpuusage) {
                 # CPU load
                 my $cpu = int($cpuusage[0] + $cpuusage[1] + $cpuusage[3]);
-                $data{'cpu'} = [$cpu, stats_text('body_load', ($cpuinfo[0], $cpuinfo[1], $cpuinfo[2]))];
+                $data{'cpu'} = [$cpu, stats_text('body_load',
+                                ($cpuinfo[0], $cpuinfo[1], $cpuinfo[2]))];
                 $gadd->('cpu', $cpu);
                 # Disk I/O
                 my $in  = $cpuusage[5];
@@ -131,27 +140,31 @@ sub get_stats_now
         }
         # Memory stats
         if ($acl_system_status->{'mem'}) {
-            my @memory = defined(&proc::get_memory_info) ? proc::get_memory_info() : ();
+            my @memory = defined(&proc::get_memory_info)
+                ? proc::get_memory_info()
+                : ();
             if (@memory) {
                 $data{'mem'}  = [];
                 $data{'virt'} = [];
                 if (@memory && $memory[0] && $memory[0] > 0) {
                     my $mem = (100 - int(($memory[1] / $memory[0]) * 100));
-                    $data{'mem'} = [$mem,
-                                    stats_text(($memory[4] ? 'body_used_cached_total' : 'body_used'),
-                                            nice_size($memory[0] * 1024),
-                                            nice_size(($memory[0] - $memory[1]) * 1024),
-                                            ($memory[4] ? nice_size($memory[4] * 1024) : undef)
-                                    )];
+                    $data{'mem'} =
+                    [$mem, stats_text(($memory[4]
+                            ? 'body_used_cached_total'
+                            : 'body_used'),
+                                nice_size($memory[0] * 1024),
+                                nice_size(($memory[0] - $memory[1]) * 1024),
+                                ($memory[4] ? nice_size($memory[4] * 1024) : undef)
+                    )];
                     $gadd->('mem', $mem);
                 }
                 if (@memory && $memory[2] && $memory[2] > 0) {
                     my $virt = (100 - int(($memory[3] / $memory[2]) * 100));
-                    $data{'virt'} = [$virt,
-                                        stats_text('body_used',
-                                            nice_size(($memory[2]) * 1024),
-                                            nice_size(($memory[2] - $memory[3]) * 1024)
-                                        )];
+                    $data{'virt'} =
+                        [$virt, stats_text('body_used',
+                            nice_size(($memory[2]) * 1024),
+                            nice_size(($memory[2] - $memory[3]) * 1024)
+                        )];
                     $gadd->('virt', $virt);
                 }
                 # Release memory
@@ -204,16 +217,53 @@ sub get_stats_now
     return \%data;
 }
 
+# Return the on-disk path for persisted real-time history
 sub get_stats_history_file
 {
     return "$var_directory/modules/$current_theme/real-time-monitoring.json";
 }
 
+# Deep clone given data structures
+sub deep_clone
+{
+	my ($value) = @_;
+	my $reftype = ref($value);
+	return $value if (!$reftype);
+	if ($reftype eq 'ARRAY') {
+		return [map { deep_clone($_) } @{$value}];
+	}
+	if ($reftype eq 'HASH') {
+		my %copy = map { $_ => deep_clone($value->{$_}) } keys %{$value};
+		return \%copy;
+	}
+	return $value;
+}
+
+# Read persisted history chunks and return merged graph data
 sub get_stats_history
 {
     my ($noempty) = @_;
     my $file = get_stats_history_file();
-    my $graphs = jsonify(theme_read_file_contents($file));
+    my $graphs = {};
+    if (-r $file) {
+        my $fh;
+        if (!open($fh, '<', $file)) {
+            error_stderr("Failed to open file '$file' for reading: $!");
+        } elsif (!flock($fh, LOCK_SH)) {
+            error_stderr("Failed to acquire shared lock on file '$file': $!");
+            close($fh);
+        } else {
+            while (my $line = <$fh>) {
+                $line =~ s/^\s+|\s+$//g;
+                next if (!length($line));
+                my $chunk = jsonify($line);
+                next if (!keys %{$chunk});
+                $graphs = merge_stats($graphs, $chunk);
+            }
+            flock($fh, LOCK_UN);
+            close($fh);
+        }
+    }
     # No data yet
     if (!keys %{$graphs}) {
         unlink($file);
@@ -249,6 +299,7 @@ sub get_stats_history
     return { graphs => $graphs };
 }
 
+# Keep only graph points within configured retention window
 sub trim_stats_history
 {
     my ($graphs) = @_;
@@ -263,17 +314,23 @@ sub trim_stats_history
         $n = 1200;
     }
     foreach my $k (keys %{$graphs}) {
-        my @new_array;
-        foreach my $entry (@{ $graphs->{$k} }) {
+        my $graph = $graphs->{$k};
+        if (ref($graph) ne 'ARRAY') {
+            $graphs->{$k} = $get_default_graph->($k, $time);
+            next;
+        }
+        my $write_idx = 0;
+        foreach my $entry (@{$graph}) {
             if (defined($entry) && ($time - $entry->{'x'}) <= $n) {
-                push(@new_array, $entry);
+                $graph->[$write_idx++] = $entry;
             }
         }
-        $graphs->{$k} =
-            @new_array ? \@new_array : $get_default_graph->($k, $time);
+        $#{$graph} = $write_idx - 1;
+        $graphs->{$k} = $write_idx ? $graph : $get_default_graph->($k, $time);
     }
 }
 
+# Merge graph arrays from second hash into first hash in-place
 sub merge_stats {
     my ($graphs1, $graphs2) = @_;
     foreach my $key (keys %{$graphs2}) {
@@ -288,25 +345,69 @@ sub merge_stats {
     return $graphs1;
 }
 
-sub save_stats_history
+# Append one JSON graph chunk line to the history file
+sub append_stats_history_chunk
 {
-    # Store complete dataset
-    my ($graphs_chunk)  = @_;
-    # Load stored data
-    my $all_stats_histoy = get_stats_history()->{'graphs'};
-    # Merge data
-    my $graphs = merge_stats($all_stats_histoy, $graphs_chunk);
-    # Trim dataset
-    trim_stats_history($graphs);
-    # Save data
-    my $file = "$var_directory/modules/$current_theme/real-time-monitoring.json";
-    theme_write_file_contents($file, $json->encode($graphs));
-    # Release memory
-    undef($graphs_chunk);
-    undef($all_stats_histoy);
-    undef($graphs);
+    my ($file, $graphs_chunk) = @_;
+    my $chunk_json = $json->encode($graphs_chunk);
+    my $fh;
+    if (!open($fh, '+>>', $file)) {
+        error_stderr("Failed to open file '$file' for appending: $!");
+        return 0;
+    }
+    if (!flock($fh, LOCK_EX)) {
+        error_stderr("Failed to acquire exclusive lock on file '$file': $!");
+        close($fh);
+        return 0;
+    }
+    my $size = -s $fh;
+    if ($size) {
+        seek($fh, -1, 2);
+        my $last_char = '';
+        read($fh, $last_char, 1);
+        print $fh "\n" if ($last_char ne "\n");
+    }
+    if (!print $fh $chunk_json . "\n") {
+        error_stderr("Failed to append data to file '$file': $!");
+        flock($fh, LOCK_UN);
+        close($fh);
+        return 0;
+    }
+    flock($fh, LOCK_UN);
+    close($fh);
+    return 1;
 }
 
+# Compact chunked history into one merged snapshot line
+sub compact_stats_history_file
+{
+    my ($file) = @_;
+    my $history = get_stats_history(1);
+    if ($history && $history->{'graphs'} && keys %{$history->{'graphs'}}) {
+        theme_write_file_contents(
+            $file, $json->encode($history->{'graphs'}) . "\n");
+    } else {
+        unlink($file);
+    }
+}
+
+# Persist one history chunk and trigger periodic file compaction
+sub save_stats_history
+{
+    # Append chunk and periodically compact full history dataset
+    my ($graphs_chunk)  = @_;
+    my $file = get_stats_history_file();
+    append_stats_history_chunk($file, $graphs_chunk);
+    state $save_counter = 0;
+    $save_counter++;
+    if ($save_counter % 30 == 0 || (-s $file || 0) > 5 * 1024 * 1024) {
+        compact_stats_history_file($file);
+    }
+    # Release memory
+    undef($graphs_chunk);
+}
+
+# Persist non-graph "current stats" snapshot for quick reads
 sub save_stats_now
 {
     # Store stats now data
@@ -317,6 +418,7 @@ sub save_stats_now
         $json->encode($stats_now));
 }
 
+# Cache dynamic feature availability checks per module/type pair
 sub has_stats
 {
     my ($mod, $type) = @_;
@@ -329,6 +431,7 @@ sub has_stats
     return $cache{$cached_func};
 }
 
+# Detect whether virtual memory metrics are available
 sub has_stats_virt
 {
     state $has_virt_memory;
@@ -344,11 +447,13 @@ sub has_stats_virt
     return 0;
 }
 
+# Prefer /proc stats and fall back to netstat stats collection
 sub stats_network
 {
     return stats_network_proc() || stats_network_netstat();
 }
 
+# Read network I/O from /proc/net/dev and compute per-second rates
 sub stats_network_proc
 {
     # Return if not available
@@ -390,7 +495,7 @@ sub stats_network_proc
         my $wait_interval = 0.25;
         select(undef, undef, undef, $wait_interval);
         $results = stats_network_proc(1);
-        # Parse data after dalay
+        # Parse data after delay
         foreach (keys %$results) {
             $rbytes2 += $results->{$_}->{'rbytes'};
             $tbytes2 += $results->{$_}->{'tbytes'};
@@ -405,6 +510,7 @@ sub stats_network_proc
     return \%result;
 }
 
+# Fallback network I/O collector using netstat snapshots
 sub stats_network_netstat
 {
     state $no_stats_network_netstat = 0;
@@ -439,7 +545,8 @@ sub stats_network_netstat
     # Capture network statistics after the interval
     my $after_stats = $get_net_stats->();
     # Calculate the total received and transmitted bytes
-    my ($total_rx_before, $total_tx_before, $total_rx_after, $total_tx_after) = (0, 0, 0, 0);
+    my ($total_rx_before, $total_tx_before,
+        $total_rx_after, $total_tx_after) = (0, 0, 0, 0);
     foreach my $iface (keys %$before_stats) {
         $total_rx_before += $before_stats->{$iface}->[0];
         $total_tx_before += $before_stats->{$iface}->[1];
