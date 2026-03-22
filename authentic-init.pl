@@ -1522,6 +1522,9 @@ sub get_button_style
         $icon  = "pencil-square-o";
     } elsif (string_contains($keys, "clone")) {
         $icon = "clone";
+        if (string_contains($keys, "pods_clone_button")) {
+            $class = "success ";
+        }
     } elsif (string_contains($keys, "index_tmpls")) {
         $icon = "table-edit fa-1_25x";
     } elsif (string_contains($keys, "index_sched") ||
