@@ -204,6 +204,7 @@ theme_xhred_hotkey_switch_theme=Byt tema
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Uppladdningen lyckades
 theme_xhred_filemanager_upload_status_err=Uppladdningen misslyckades:
+theme_xhred_filemanager_upload_status_unknown=Uppladdningen misslyckades utan svar från servern. Detta betyder troligen att den virtuella serveranvändaren har slut på diskutrymme eller att systemet har slut på utrymme.
 theme_xhred_filemanager_download_status_err=Nedladdning misslyckad:
 
 # 21.20.7
@@ -258,3 +259,6 @@ settings_sysinfo_easypie_size_auto=Automatisk
 settings_sysinfo_easypie_size_large=Stor
 settings_sysinfo_easypie_size_extra_large=Extra large
 settings_sysinfo_easypie_width=Linjebredd för cirkeldiagram
+
+#26.20
+theme_xhred_global_filter_and_search=Skriv för att filtrera den här sidan eller tryck på Enter för att söka på alla sidor

@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=تبديل الموضوع
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=تحميل ناجح
 theme_xhred_filemanager_upload_status_err=التحميل فشل:
+theme_xhred_filemanager_upload_status_unknown=فشلت عملية التحميل لعدم وجود استجابة من الخادم. يُرجّح أن هذا يعني أن حصة القرص المخصصة لمستخدم الخادم الافتراضي قد نفدت أو أن النظام يعاني من نقص في المساحة.
 theme_xhred_filemanager_download_status_err=التحميل فشل:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=أوتوماتيكي
 settings_sysinfo_easypie_size_large=كبير
 settings_sysinfo_easypie_size_extra_large=كبير جدا
 settings_sysinfo_easypie_width=عرض خط المخططات الدائرية
+
+#26.20
+theme_xhred_global_filter_and_search=اكتب لتصفية هذه الصفحة، أو اضغط على مفتاح الإدخال للبحث في جميع الصفحات

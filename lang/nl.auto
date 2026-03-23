@@ -1288,6 +1288,7 @@ theme_xhred_hotkey_switch_theme=Van thema wisselen
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=succesvol geupload
 theme_xhred_filemanager_upload_status_err=Upload mislukt:
+theme_xhred_filemanager_upload_status_unknown=Het uploaden is mislukt omdat de server niet reageerde. Dit betekent waarschijnlijk dat de virtuele servergebruiker geen schijfruimte meer heeft of dat er geen schijfruimte meer beschikbaar is.
 theme_xhred_filemanager_download_status_err=Download mislukt:
 
 # 21.20.7
@@ -1342,3 +1343,6 @@ settings_sysinfo_easypie_size_auto=Automatisch
 settings_sysinfo_easypie_size_large=Groot
 settings_sysinfo_easypie_size_extra_large=Extra groot
 settings_sysinfo_easypie_width=Lijnbreedte van cirkeldiagrammen
+
+#26.20
+theme_xhred_global_filter_and_search=Typ om deze pagina te filteren, of druk op Enter om alle pagina's te doorzoeken

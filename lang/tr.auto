@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Temayı değiştir
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=yükleme başarılı
 theme_xhred_filemanager_upload_status_err=Yükleme başarısız:
+theme_xhred_filemanager_upload_status_unknown=Sunucudan yanıt alınamadığı için yükleme başarısız oldu. Bu muhtemelen sanal sunucu kullanıcısının disk kotasının tükendiği veya sistemin alanının yetersiz kaldığı anlamına gelir.
 theme_xhred_filemanager_download_status_err=Yükleme başarısız:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Otomatik
 settings_sysinfo_easypie_size_large=Büyük
 settings_sysinfo_easypie_size_extra_large=Ekstra Büyük
 settings_sysinfo_easypie_width=Pasta grafikleri çizgi genişliği
+
+#26.20
+theme_xhred_global_filter_and_search=Bu sayfayı filtrelemek için yazın veya tüm sayfalarda arama yapmak için Enter tuşuna basın

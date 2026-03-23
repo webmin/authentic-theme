@@ -43,6 +43,9 @@ theme_xhred_hotkey_print_title=Skróty klawiaturowe Webmin z motywem Authentic
 # 21.10
 theme_xhred_hotkey_emsg=Klawisza ukośnika odwrotnego nie można używać jako skrótu
 
+# 21.20.2
+theme_xhred_filemanager_upload_status_unknown=Przesyłanie nie powiodło się, a serwer nie odpowiedział. Prawdopodobnie oznacza to, że użytkownikowi serwera wirtualnego zabrakło miejsca na dysku lub w systemie zabrakło miejsca.
+
 # 21.20.7
 theme_xhred_dashboard_chart_disk_read=Czytać
 theme_xhred_dashboard_chart_disk_write=Pisać
@@ -95,3 +98,6 @@ settings_sysinfo_easypie_size_auto=Automatyczny
 settings_sysinfo_easypie_size_large=Duży
 settings_sysinfo_easypie_size_extra_large=Bardzo duży
 settings_sysinfo_easypie_width=Szerokość linii wykresów kołowych
+
+#26.20
+theme_xhred_global_filter_and_search=Wpisz, aby filtrować tę stronę lub naciśnij Enter, aby przeszukać wszystkie strony

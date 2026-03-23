@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Змінити тему
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Завантаження успішне
 theme_xhred_filemanager_upload_status_err=Помилка завантаження:
+theme_xhred_filemanager_upload_status_unknown=Завантаження не вдалося, сервер не відповів. Ймовірно, це означає, що користувач віртуального сервера вичерпав дискову квоту або в системі закінчилося місце.
 theme_xhred_filemanager_download_status_err=Помилка завантаження:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Автоматичний
 settings_sysinfo_easypie_size_large=Великий
 settings_sysinfo_easypie_size_extra_large=Дуже великий
 settings_sysinfo_easypie_width=Ширина лінії кругової діаграми
+
+#26.20
+theme_xhred_global_filter_and_search=Введіть запит, щоб відфільтрувати цю сторінку, або натисніть Enter, щоб шукати на всіх сторінках

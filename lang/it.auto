@@ -323,6 +323,7 @@ theme_xhred_hotkey_switch_theme=Cambia tema
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Caricamento riuscito
 theme_xhred_filemanager_upload_status_err=Caricamento fallito:
+theme_xhred_filemanager_upload_status_unknown=Caricamento non riuscito senza risposta dal server. Ciò probabilmente significa che l'utente del server virtuale ha esaurito la quota di spazio su disco o che il sistema non dispone di spazio sufficiente.
 theme_xhred_filemanager_download_status_err=Scaricamento fallito:
 
 # 21.20.7
@@ -377,3 +378,6 @@ settings_sysinfo_easypie_size_auto=Automatico
 settings_sysinfo_easypie_size_large=Grande
 settings_sysinfo_easypie_size_extra_large=Extra Large
 settings_sysinfo_easypie_width=Larghezza della linea dei grafici a torta
+
+#26.20
+theme_xhred_global_filter_and_search=Digita per filtrare questa pagina oppure premi Invio per cercare in tutte le pagine

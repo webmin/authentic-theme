@@ -419,6 +419,7 @@ theme_xhred_hotkey_switch_theme=テーマを切り替える
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=アップロードに成功しました
 theme_xhred_filemanager_upload_status_err=アップロードに失敗しました:
+theme_xhred_filemanager_upload_status_unknown=サーバーからの応答がなく、アップロードに失敗しました。これは、仮想サーバーユーザーのディスク容量が不足しているか、システムに空き容量がないことが原因である可能性があります。
 theme_xhred_filemanager_download_status_err=ダウンロードに失敗しました：
 
 # 21.20.7
@@ -473,3 +474,6 @@ settings_sysinfo_easypie_size_auto=自動
 settings_sysinfo_easypie_size_large=大きい
 settings_sysinfo_easypie_size_extra_large=特大
 settings_sysinfo_easypie_width=円グラフの線幅
+
+#26.20
+theme_xhred_global_filter_and_search=このページを絞り込むには入力するか、Enterキーを押してすべてのページを検索してください。

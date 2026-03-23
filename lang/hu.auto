@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Téma váltása
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Feltöltés sikeres
 theme_xhred_filemanager_upload_status_err=Feltöltés sikertelen:
+theme_xhred_filemanager_upload_status_unknown=A feltöltés sikertelen, a szerver nem válaszolt. Ez valószínűleg azt jelenti, hogy a virtuális szerver felhasználójának elfogyott a lemezkvótája, vagy a rendszernek elfogyott a helye.
 theme_xhred_filemanager_download_status_err=Sikertelen letöltés:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Automatikus
 settings_sysinfo_easypie_size_large=Nagy
 settings_sysinfo_easypie_size_extra_large=Extra nagy
 settings_sysinfo_easypie_width=Kördiagramok vonalvastagsága
+
+#26.20
+theme_xhred_global_filter_and_search=Írjon be egy billentyűt az oldal szűréséhez, vagy nyomja meg az Enter billentyűt az összes oldal kereséséhez

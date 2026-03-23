@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Vaihda teemaa
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Lataus onnistui
 theme_xhred_filemanager_upload_status_err=Lataus epäonnistui:
+theme_xhred_filemanager_upload_status_unknown=Lataus epäonnistui, eikä palvelimelta saatu vastausta. Tämä tarkoittaa todennäköisesti, että virtuaalipalvelimen käyttäjän levykiintiö on loppunut tai järjestelmässä ei ole tilaa.
 theme_xhred_filemanager_download_status_err=Lataus epäonnistui:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Automaattinen
 settings_sysinfo_easypie_size_large=Suuri
 settings_sysinfo_easypie_size_extra_large=Erittäin suuri
 settings_sysinfo_easypie_width=Ympyräkaavioiden viivan leveys
+
+#26.20
+theme_xhred_global_filter_and_search=Kirjoita suodattaaksesi tämän sivun tai paina Enter hakeaksesi kaikilta sivuilta

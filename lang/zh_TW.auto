@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=切換主題
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=上傳成功
 theme_xhred_filemanager_upload_status_err=上傳失敗：
+theme_xhred_filemanager_upload_status_unknown=上傳失敗，伺服器無回應。這很可能是因為虛擬伺服器使用者的磁碟配額已用完或系統空間不足。
 theme_xhred_filemanager_download_status_err=下載失敗：
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=自動的
 settings_sysinfo_easypie_size_large=大的
 settings_sysinfo_easypie_size_extra_large=特大號
 settings_sysinfo_easypie_width=圓餅圖線寬
+
+#26.20
+theme_xhred_global_filter_and_search=輸入文字篩選此頁面，或按 Enter 鍵搜尋所有頁面。

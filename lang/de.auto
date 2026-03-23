@@ -31,6 +31,9 @@ theme_xhred_hotkey_print_title=Webmin-Tastaturkürzel mit Authentic Theme
 # 21.10
 theme_xhred_hotkey_emsg=Die Backslash-Taste kann nicht als Tastenkombination verwendet werden
 
+# 21.20.2
+theme_xhred_filemanager_upload_status_unknown=Der Upload ist fehlgeschlagen, da keine Antwort vom Server kam. Dies bedeutet wahrscheinlich, dass der Benutzer des virtuellen Servers sein Speicherplatzlimit erreicht hat oder der Speicherplatz im System erschöpft ist.
+
 # 21.20.7
 settings_sysinfo_real_time_status_history_duration1=15 Minuten
 settings_sysinfo_real_time_status_history_duration2=30 Minuten
@@ -59,3 +62,6 @@ settings_sysinfo_easypie_size_auto=Automatisch
 settings_sysinfo_easypie_size_large=Groß
 settings_sysinfo_easypie_size_extra_large=Extra groß
 settings_sysinfo_easypie_width=Linienbreite von Kreisdiagrammen
+
+#26.20
+theme_xhred_global_filter_and_search=Geben Sie einen Suchbegriff ein, um diese Seite zu filtern, oder drücken Sie die Eingabetaste, um alle Seiten zu durchsuchen

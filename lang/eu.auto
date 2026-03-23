@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Aldatu gaia
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Kargatu ondo
 theme_xhred_filemanager_upload_status_err=Ezin izan da kargatu:
+theme_xhred_filemanager_upload_status_unknown=Kargatzeak huts egin du zerbitzariaren erantzunik jaso gabe. Horrek esan nahi du ziurrenik zerbitzari birtualaren erabiltzaileak disko-kuota agortu duela edo sistemak lekurik gabe dagoela.
 theme_xhred_filemanager_download_status_err=Deskargatu huts egin du:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Automatikoa
 settings_sysinfo_easypie_size_large=Handia
 settings_sysinfo_easypie_size_extra_large=Oso handia
 settings_sysinfo_easypie_width=Sektore-diagramen lerro-zabalera
+
+#26.20
+theme_xhred_global_filter_and_search=Idatzi orrialde hau iragazteko edo sakatu Sartu orrialde guztiak bilatzeko

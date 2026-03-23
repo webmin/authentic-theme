@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Превключване на темата
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Качването е успешно
 theme_xhred_filemanager_upload_status_err=Неуспешно качване:
+theme_xhred_filemanager_upload_status_unknown=Качването е неуспешно, без отговор от сървъра. Това вероятно означава, че потребителят на виртуалния сървър е изчерпал дисковата квота или системата няма място.
 theme_xhred_filemanager_download_status_err=Изтеглянето се провали:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Автоматично
 settings_sysinfo_easypie_size_large=Голям
 settings_sysinfo_easypie_size_extra_large=Много голям
 settings_sysinfo_easypie_width=Ширина на линията на кръговите диаграми
+
+#26.20
+theme_xhred_global_filter_and_search=Въведете текст, за да филтрирате тази страница, или натиснете Enter, за да търсите във всички страници

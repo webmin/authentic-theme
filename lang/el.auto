@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Εναλλαγή θέματος
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Επιτυχής μεταφόρτωση
 theme_xhred_filemanager_upload_status_err=Η μεταφόρτωση απέτυχε:
+theme_xhred_filemanager_upload_status_unknown=Η μεταφόρτωση απέτυχε χωρίς απάντηση από τον διακομιστή. Αυτό πιθανότατα σημαίνει ότι ο χρήστης του εικονικού διακομιστή έχει εξαντλήσει το όριο του δίσκου ή ότι το σύστημα δεν έχει χώρο.
 theme_xhred_filemanager_download_status_err=Η λήψη απέτυχε:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Αυτόματο
 settings_sysinfo_easypie_size_large=Μεγάλο
 settings_sysinfo_easypie_size_extra_large=Πολύ μεγάλο
 settings_sysinfo_easypie_width=Πλάτος γραμμής γραφημάτων πίτας
+
+#26.20
+theme_xhred_global_filter_and_search=Πληκτρολογήστε για να φιλτράρετε αυτήν τη σελίδα ή πατήστε Enter για να αναζητήσετε σε όλες τις σελίδες

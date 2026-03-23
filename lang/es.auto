@@ -1310,6 +1310,7 @@ theme_xhred_hotkey_switch_theme=Cambiar tema
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Subida exitosa
 theme_xhred_filemanager_upload_status_err=Subida fallida:
+theme_xhred_filemanager_upload_status_unknown=La carga falló sin que el servidor respondiera. Esto probablemente significa que el usuario del servidor virtual ha agotado su cuota de disco o que el sistema se ha quedado sin espacio.
 theme_xhred_filemanager_download_status_err=Descarga fracasó:
 
 # 21.20.7
@@ -1364,3 +1365,6 @@ settings_sysinfo_easypie_size_auto=Automático
 settings_sysinfo_easypie_size_large=Grande
 settings_sysinfo_easypie_size_extra_large=Extra grande
 settings_sysinfo_easypie_width=Ancho de línea de los gráficos circulares
+
+#26.20
+theme_xhred_global_filter_and_search=Escribe para filtrar esta página, o pulsa Intro para buscar en todas las páginas

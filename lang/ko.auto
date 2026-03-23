@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=테마 전환
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=업로드 성공
 theme_xhred_filemanager_upload_status_err=업로드 실패:
+theme_xhred_filemanager_upload_status_unknown=서버 응답이 없어 업로드에 실패했습니다. 이는 가상 서버 사용자의 디스크 할당량이 소진되었거나 시스템 공간이 부족함을 의미할 수 있습니다.
 theme_xhred_filemanager_download_status_err=다운로드 실패:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=오토매틱
 settings_sysinfo_easypie_size_large=크기가 큰
 settings_sysinfo_easypie_size_extra_large=특대
 settings_sysinfo_easypie_width=파이 차트 선 너비
+
+#26.20
+theme_xhred_global_filter_and_search=페이지를 필터링하려면 입력하거나, 모든 페이지를 검색하려면 Enter 키를 누르세요

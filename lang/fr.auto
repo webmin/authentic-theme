@@ -383,6 +383,7 @@ theme_xhred_hotkey_switch_theme=Changer de thème
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Téléchargement réussi
 theme_xhred_filemanager_upload_status_err=Échec du téléchargement :
+theme_xhred_filemanager_upload_status_unknown=Le chargement a échoué, le serveur n'ayant pas répondu. Cela signifie probablement que l'utilisateur du serveur virtuel a atteint sa limite de disque ou que le système manque d'espace.
 theme_xhred_filemanager_download_status_err=Échec du téléchargement:
 
 # 21.20.7
@@ -437,3 +438,6 @@ settings_sysinfo_easypie_size_auto=Automatique
 settings_sysinfo_easypie_size_large=Grand
 settings_sysinfo_easypie_size_extra_large=Très grand
 settings_sysinfo_easypie_width=Largeur des lignes des graphiques circulaires
+
+#26.20
+theme_xhred_global_filter_and_search=Saisissez du texte pour filtrer cette page, ou appuyez sur Entrée pour rechercher sur toutes les pages

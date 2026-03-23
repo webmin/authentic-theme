@@ -1259,6 +1259,7 @@ theme_xhred_hotkey_switch_theme=Přepnout téma
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Nahrání proběhlo úspěšně
 theme_xhred_filemanager_upload_status_err=Nahrávání selhalo:
+theme_xhred_filemanager_upload_status_unknown=Nahrávání se nezdařilo a server neodpověděl. Pravděpodobně to znamená, že uživatel virtuálního serveru vyčerpal diskovou kvótu nebo že systém nemá dostatek místa.
 theme_xhred_filemanager_download_status_err=Stažení se nezdařilo:
 
 # 21.20.7
@@ -1313,3 +1314,6 @@ settings_sysinfo_easypie_size_auto=Automatický
 settings_sysinfo_easypie_size_large=Velký
 settings_sysinfo_easypie_size_extra_large=Extra velké
 settings_sysinfo_easypie_width=Šířka čáry koláčových grafů
+
+#26.20
+theme_xhred_global_filter_and_search=Zadejte text pro filtrování této stránky nebo stiskněte Enter pro vyhledávání na všech stránkách

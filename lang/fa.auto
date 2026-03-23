@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=تغییر تم
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=آپلود با موفقیت انجام شد
 theme_xhred_filemanager_upload_status_err=آپلود انجام نشد:
+theme_xhred_filemanager_upload_status_unknown=آپلود بدون پاسخ از سرور انجام نشد. این احتمالاً به این معنی است که سهمیه دیسک کاربر سرور مجازی تمام شده است یا سیستم فضای کافی ندارد.
 theme_xhred_filemanager_download_status_err=دانلود نشد:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=خودکار
 settings_sysinfo_easypie_size_large=بزرگ
 settings_sysinfo_easypie_size_extra_large=خیلی بزرگ
 settings_sysinfo_easypie_width=عرض خط نمودارهای دایره‌ای
+
+#26.20
+theme_xhred_global_filter_and_search=برای فیلتر کردن این صفحه تایپ کنید، یا برای جستجوی همه صفحات، Enter را فشار دهید

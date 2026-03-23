@@ -854,6 +854,7 @@ theme_xhred_hotkey_switch_theme=Tukar tema
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Muat naik berjaya
 theme_xhred_filemanager_upload_status_err=Muatnaik gagal:
+theme_xhred_filemanager_upload_status_unknown=Muat naik gagal tanpa sebarang respons daripada pelayan. Ini mungkin bermakna pengguna pelayan maya telah kehabisan kuota cakera atau sistem kehabisan ruang.
 theme_xhred_filemanager_download_status_err=Muat turun gagal:
 
 # 21.20.7
@@ -908,3 +909,6 @@ settings_sysinfo_easypie_size_auto=Automatik
 settings_sysinfo_easypie_size_large=besar
 settings_sysinfo_easypie_size_extra_large=Lebih Besar
 settings_sysinfo_easypie_width=Carta pai lebar garis
+
+#26.20
+theme_xhred_global_filter_and_search=Taip untuk menapis halaman ini atau tekan Enter untuk mencari semua halaman

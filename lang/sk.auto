@@ -1398,6 +1398,7 @@ theme_xhred_hotkey_switch_theme=Prepnúť tému
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Odovzdanie bolo úspešné
 theme_xhred_filemanager_upload_status_err=Nahrávanie zlyhalo:
+theme_xhred_filemanager_upload_status_unknown=Nahrávanie zlyhalo a server neodpovedal. Pravdepodobne to znamená, že používateľ virtuálneho servera vyčerpal diskovú kvótu alebo systém nemá dostatok miesta.
 theme_xhred_filemanager_download_status_err=Sťahovanie zlyhalo:
 
 # 21.20.7
@@ -1452,3 +1453,6 @@ settings_sysinfo_easypie_size_auto=Automatické
 settings_sysinfo_easypie_size_large=Veľký
 settings_sysinfo_easypie_size_extra_large=Extra veľký
 settings_sysinfo_easypie_width=Šírka čiary koláčových grafov
+
+#26.20
+theme_xhred_global_filter_and_search=Zadajte text pre filtrovanie tejto stránky alebo stlačte kláves Enter pre vyhľadávanie na všetkých stránkach

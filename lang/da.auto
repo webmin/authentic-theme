@@ -1311,6 +1311,7 @@ theme_xhred_hotkey_switch_theme=Skift tema
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Upload gennemført
 theme_xhred_filemanager_upload_status_err=Upload fejlede:
+theme_xhred_filemanager_upload_status_unknown=Upload mislykkedes uden svar fra serveren. Dette betyder sandsynligvis, at den virtuelle serverbruger har løbet tør for diskkvote, eller at systemet ikke har mere plads.
 theme_xhred_filemanager_download_status_err=Download fejlede:
 
 # 21.20.7
@@ -1365,3 +1366,6 @@ settings_sysinfo_easypie_size_auto=Automatisk
 settings_sysinfo_easypie_size_large=Stor
 settings_sysinfo_easypie_size_extra_large=Ekstra stor
 settings_sysinfo_easypie_width=Linjebredden på cirkeldiagrammer
+
+#26.20
+theme_xhred_global_filter_and_search=Skriv for at filtrere denne side, eller tryk Enter for at søge på alle sider

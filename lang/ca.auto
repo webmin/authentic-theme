@@ -785,6 +785,7 @@ theme_xhred_hotkey_switch_theme=Canvia el tema
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Pujada correctament
 theme_xhred_filemanager_upload_status_err=La càrrega ha fallat:
+theme_xhred_filemanager_upload_status_unknown=La càrrega ha fallat sense resposta del servidor. Això probablement significa que l'usuari del servidor virtual s'ha quedat sense quota de disc o que el sistema no té espai.
 theme_xhred_filemanager_download_status_err=La baixada ha fallat:
 
 # 21.20.7
@@ -839,3 +840,6 @@ settings_sysinfo_easypie_size_auto=Automàtic
 settings_sysinfo_easypie_size_large=Gran
 settings_sysinfo_easypie_size_extra_large=Extra gran
 settings_sysinfo_easypie_width=Amplada de línia dels gràfics circulars
+
+#26.20
+theme_xhred_global_filter_and_search=Escriu per filtrar aquesta pàgina o prem Intro per cercar a totes les pàgines

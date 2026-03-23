@@ -1193,6 +1193,7 @@ theme_xhred_hotkey_switch_theme=Переключить тему
 # 21.20.2
 theme_xhred_filemanager_upload_status_ok=Загрузка успешна
 theme_xhred_filemanager_upload_status_err=Загрузка не удалась:
+theme_xhred_filemanager_upload_status_unknown=Загрузка не удалась, ответа от сервера нет. Вероятно, это означает, что у пользователя виртуального сервера закончилась дисковая квота или в системе недостаточно места.
 theme_xhred_filemanager_download_status_err=Загрузка не удалась:
 
 # 21.20.7
@@ -1247,3 +1248,6 @@ settings_sysinfo_easypie_size_auto=Автоматический
 settings_sysinfo_easypie_size_large=Большой
 settings_sysinfo_easypie_size_extra_large=Очень большой
 settings_sysinfo_easypie_width=Ширина линии круговой диаграммы
+
+#26.20
+theme_xhred_global_filter_and_search=Введите текст для фильтрации этой страницы или нажмите Enter для поиска по всем страницам
