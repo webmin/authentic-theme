@@ -1123,6 +1123,14 @@ sub get_button_style
              string_contains($keys, "create_health_on_failure_stop")) {
         $class = "danger ";
         $icon  = "stop";
+    } elsif (string_contains($keys, "list_images_button")) {
+        $class = "info ";
+        $icon  = "download-cloud fa-1_10x margined-left--2";
+    } elsif (string_contains($keys, "index_install_pod") ||
+             string_contains($keys, "index_install_new") ||
+             string_contains($keys, "pods_submit")) {
+        $class = "success ";
+        $icon  = "plus-circle";
     } elsif (string_ends_with($keys, "_gnupg") ||
              string_contains($keys, 'secret_setup') ||
              string_contains($keys, 'ssl_gen')      ||
@@ -1477,6 +1485,8 @@ sub get_button_style
     {
         $class = "danger ";
         $icon  = "stop";
+        $class = "warning "
+            if (string_contains($keys, "index_stop_sel"));
     } elsif (string_contains($keys, "ok_ok")) {
         $icon  = "check-square-o";
         $class = "success ";
@@ -1565,6 +1575,7 @@ sub get_button_style
           !string_contains($keys, "index_madd") &&
           !string_contains($keys, "index_zoneadd")) ||
          string_contains($keys, "create") ||
+         string_contains($keys, "pods_ptitle") ||
          string_contains($keys, "index_crnow") ||
          string_contains($keys, "view_new")    ||
          string_contains($keys, "mass_ok")     ||
