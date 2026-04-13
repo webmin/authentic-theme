@@ -14,6 +14,7 @@ var
 
     // Content page options
     settings_roundish_content = false,
+    settings_roundish_radius = 16,
     settings_content_margin_multiplier_top = 0,
     settings_content_margin_multiplier_side = 1,
     settings_right_table_force_single_column = false,

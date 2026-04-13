@@ -175,6 +175,7 @@ settings_side_slider_fixed_description=This option fixes the side slider to the 
 settings_roundish_slider=Rounded slider corners
 settings_side_slider_enabled=Enable slider
 settings_leftmenu_user_html=Show HTML snippet
+settings_roundish_radius_description=Controls the radius used for all rounded corners across the theme, including the content page, navigation menu, and side slider. It only has an effect when rounded corners are enabled in the corresponding configuration sections.
 
 theme_changelog=Changelog
 theme_conference=Theme Conference
@@ -1536,3 +1537,7 @@ settings_sysinfo_easypie_width=Pie charts line width
 
 #26.20
 theme_xhred_global_filter_and_search=Type to filter this page, or press Enter to search all pages
+
+
+#26.30
+settings_roundish_radius=Rounded corner radius

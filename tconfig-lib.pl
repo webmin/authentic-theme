@@ -37,6 +37,7 @@ sub theme_settings_raw
                        'settings_global_palette_unauthenticated',
                        'settings_cm_editor_palette',
                        'settings_theme_config_admins_only_privileged',
+                       'settings_roundish_radius',
             ] }
         ],
 
@@ -315,6 +316,19 @@ sub theme_settings_format
 
     if ($v eq 'true' || $v eq 'false') {
         $v = ui_yesno_radio($k, $v, 'true', 'false');
+
+    } elsif ($k eq 'settings_roundish_radius') {
+        my $radius_value = (defined($v) && $v ne '' ? $v : 16);
+        $v = ui_tag('input', undef, {
+            class => 'form-control ui_textbox',
+            type  => 'range',
+            name  => $k,
+            min   => 0,
+            max   => 21,
+            step  => 1,
+            value => $radius_value,
+            title => $radius_value,
+        });
 
     } elsif ($k eq 'settings_content_margin_multiplier') {
         my %val = (
