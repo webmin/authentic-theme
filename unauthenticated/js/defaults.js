@@ -253,8 +253,8 @@ var
             { 'lvm': 'lvm' },
             { 'csf': 'csf' },
             { 'xterm': 'ssh shell bash zsh login ajax xterm' },
-            { 'virtualmin-wp-workbench': 'wordpress classicpress' },
-            { 'virtualmin-podman': 'podman docker pods' },
+            { 'virtualmin-wp-workbench': [['index', 'wordpress classicpress wp admin']] },
+            { 'virtualmin-podman': [['list_containers', 'podman docker pods'], ['index', 'podman docker pods']] },
             {
                 'virtual-server': [
                     ['edit_newautoconfig', 'outlook thunderbird mailspring k-9 k9 mailclient autoconfig autodiscover'],
