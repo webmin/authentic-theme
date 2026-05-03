@@ -33,9 +33,6 @@ if ($gconfig{'loginbanner'} &&
 # Print login_start
 print_login_start('pam');
 
-# Print pre-login element
-print_login_fix($text{'pam_prefix'});
-
 # Print the form
 print &ui_form_start("$webprefix/pam_login.cgi", "post", undef,
 	'role="form" onsubmit="theme_spinner()"',
@@ -44,6 +41,9 @@ print ui_hidden("cid", $in{'cid'});
 
 # Print login HTTP warning
 print_login_http_warning();
+
+# Print pre-login element
+print_login_prefix($text{'pam_prefix'});
 
 # Add Webmin icon and title
 print_login_logo();
@@ -108,7 +108,7 @@ if ($gconfig{'forgot_pass'}) {
 	}
 
 # Print post-login element
-print_login_fix($text{'pam_postfix'});
+print_login_postfix($text{'pam_postfix'});
 
 print ui_tag_end('div');
 

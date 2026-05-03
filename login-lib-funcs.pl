@@ -149,11 +149,26 @@ print ui_tag_end('body');
 print ui_tag_end('html');
 }
 
-# print_login_fix(type)
-# Prints an auxiliary element for the login page before opening the form and
-# before closing it. If the type is "href", it will print a properly formatted
-# link to the login page.
-sub print_login_fix
+# print_login_prefix(content)
+# Prints the login MOTD prefix without changing legacy postfix behavior.
+sub print_login_prefix
+{
+my $content = shift;
+return if (!defined($content) || $content !~ /\S/);
+
+if ($content =~ "href") {
+	print_login_postfix($content);
+	}
+else {
+	print ui_alert("&nbsp;".$content, 'info', ['fa2 fa2-message', '', 1],
+		{ 'class' => 'login-prefix-alert' });
+	}
+}
+
+# print_login_postfix(type)
+# Prints the legacy raw/link post-login element. If the type is "href", it will
+# print a properly formatted link to the login page.
+sub print_login_postfix
 {
 my $type = shift;
 if ($type =~ "href") {

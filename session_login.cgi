@@ -31,9 +31,6 @@ if ($gconfig{'loginbanner'}              &&
 # Print login_start
 print_login_start('session');
 
-# Print pre-login element
-print_login_fix($text{'session_prefix'});
-
 # Print the form
 print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
 	'role="form" onsubmit="theme_spinner()"',
@@ -41,6 +38,9 @@ print &ui_form_start("$webprefix/session_login.cgi", "post", undef,
 
 # Print login HTTP warning
 print_login_http_warning();
+
+# Print pre-login element
+print_login_prefix($text{'session_prefix'});
 
 # Add Webmin icon and title
 print_login_logo();
@@ -103,7 +103,7 @@ if ($gconfig{'forgot_pass'}) {
 	}
 
 # Print post-login element
-print_login_fix($text{'session_postfix'});
+print_login_postfix($text{'session_postfix'});
 
 print ui_tag_end('div');
 
