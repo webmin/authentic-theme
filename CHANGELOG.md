@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 26.40 (May 4, 2026)
+* Add option to control corner roundness for the menu, content area and right-side slider
+* Change the content area to use rounded corners and a margin by default
+* Fix message of the day display in login page correctly [webmin#2555](https://github.com/webmin/webmin/issues/2685)
+* Fix tooltip visibility in dark palette
+* Fix session login button spinner
+* Fix various button styling issues (active state, tiny buttons, airy buttons, stack position)
+
+<!--- separator --->
+
 #### Version 26.30 (March 24, 2026)
 * Add a new airy button style to the light palette to match the dark one  
 * Fix to optimize stats server to reduce WebSocket memory usage  
@@ -54,8 +64,6 @@
 
 #### Version 26.00 (November 9, 2025)
 * Add a major UI update with many visual and structural improvements for a smoother and more modern experience
-
-<!--- separator --->
 
 #### Version 25.20 (September 30, 2025)
 * Fix the text color when reading email in the Read User Mail module [webmin#2555](https://github.com/webmin/webmin/issues/2555)
