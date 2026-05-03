@@ -242,6 +242,7 @@ var
             { 'sshd': '22 sftp' },
             { 'status': 'monitors' },
             { 'filemin': 'files nautilus krusader total double norton midnight commander mc far' },
+            { 'nftables': 'nftables' },
             { 'firewalld': 'iptables' },
             { 'firewall': 'iptables' },
             { 'firewall6': 'iptables' },
@@ -253,6 +254,7 @@ var
             { 'csf': 'csf' },
             { 'xterm': 'ssh shell bash zsh login ajax xterm' },
             { 'virtualmin-wp-workbench': 'wordpress classicpress' },
+            { 'virtualmin-podman': 'podman docker pods' },
             {
                 'virtual-server': [
                     ['edit_newautoconfig', 'outlook thunderbird mailspring k-9 k9 mailclient autoconfig autodiscover'],
