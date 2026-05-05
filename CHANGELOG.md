@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 26.41 (May 6, 2026)
+* Upgrade stats history graphs from laggy SVG to a blazing-fast canvas renderer
+
 #### Version 26.40 (May 4, 2026)
 * Add option to control corner roundness for the menu, content area and right-side slider
 * Change the content area to use rounded corners and a margin by default
