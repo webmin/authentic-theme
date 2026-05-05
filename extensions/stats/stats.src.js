@@ -589,16 +589,26 @@ const stats = {
                         values: (self, splits) => {
                             const scale = self.scales.x,
                                   plotRight = scale && Number.isFinite(scale.max) ?
-                                      self.valToPos(scale.max, "x") : 0;
+                                      self.valToPos(scale.max, "x") : 0,
+                                  seenLabels = new Set();
                             return splits.map((value) => {
+                                let label;
                                 // Hide only the right-edge label early enough
                                 // that it doesn't spill out
                                 if (plotRight && plotRight - self.valToPos(value, "x") < 50) {
                                     return "";
                                 }
-                                return this._.dayjs(value * 1000)
+                                label = this._.dayjs(value * 1000)
                                     .utcOffset(this._.locale.offset())
                                     .format(this._.locale.time);
+                                // Fresh history can produce several distinct
+                                // ticks that still format to the same minute;
+                                // keep the left-most label and blank repeats
+                                if (seenLabels.has(label)) {
+                                    return "";
+                                }
+                                seenLabels.add(label);
+                                return label;
                             });
                         },
                     },
