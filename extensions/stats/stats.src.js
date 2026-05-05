@@ -28,7 +28,7 @@ const stats = {
             convert: {
                 size: Convert.nice_size,
             },
-            chart: Chartist,
+            chart: uPlot,
             dayjs: dayjs,
             locale: {
                 time: config_portable_theme_locale_format_time,
@@ -283,8 +283,517 @@ const stats = {
             this.render(this._.getHistoryData(), 2);
         },
 
+        // Get graph style primitives for uPlot
+        getChartStyle: function () {
+            const rootStyle = getComputedStyle(document.documentElement),
+                  getVar = (name) => rootStyle.getPropertyValue(name).trim();
+            return {
+                blue: getVar("--stats-chart-color-blue"),
+                green: getVar("--stats-chart-color-green"),
+                greenFill: getVar("--stats-chart-color-green-fill"),
+                grid: getVar("--stats-chart-grid-color"),
+                axisLabel: getVar("--stats-chart-axis-label-color"),
+                axisLabelHover: getVar("--stats-chart-axis-label-hover-color"),
+                label: getVar("--stats-chart-label-color"),
+                red: getVar("--stats-chart-color-red"),
+                redFill: getVar("--stats-chart-color-red-fill"),
+            };
+        },
+
+        // Get stored graph duration with sane bounds
+        getChartDuration: function () {
+            let duration = parseInt(this.getStoredDuration(), 10);
+            if (duration < 300 || duration > 86400) {
+                duration = 1200;
+            }
+            return duration;
+        },
+
+        // Get graph pixel size, including a fallback for collapsed/empty panels
+        getChartSize: function (target, height) {
+            const rect = target.getBoundingClientRect(),
+                  parentRect = target.parentNode ?
+                      target.parentNode.getBoundingClientRect() : { width: 0 },
+                  width = rect.width || parentRect.width ||
+                      document.documentElement.clientWidth;
+            return {
+                width: Math.max(Math.floor(width - 6), 220),
+                height: parseInt(height, 10) || 110,
+            };
+        },
+
+        // Convert persisted `{x, y}` stats history into uPlot's aligned arrays
+        getChartData: function (array, type) {
+            const points = [],
+                  first = array && array[0],
+                  source = first && (first.data || first),
+                  multi = source && Array.isArray(source.y),
+                  seriesCount = multi ? source.y.length : 1,
+                  hasThreshold = type === "cpu" || type === "virt",
+                  data = [[]];
+            for (let i = 0; i < (hasThreshold ? 2 : seriesCount); i++) {
+                data.push([]);
+            }
+            (array || []).forEach((point) => {
+                const entry = point && (point.data || point),
+                      x = entry && parseFloat(entry.x);
+                if (!Number.isFinite(x)) {
+                    return;
+                }
+                points.push({
+                    x: x,
+                    y: entry.y,
+                });
+            });
+            points.sort((a, b) => a.x - b.x);
+            if (hasThreshold) {
+                return this.getThresholdChartData(points, 80);
+            }
+            points.forEach((point) => {
+                data[0].push(point.x);
+                if (multi) {
+                    for (let i = 0; i < seriesCount; i++) {
+                        data[i + 1].push(parseFloat(point.y[i]) || 0);
+                    }
+                } else {
+                    data[1].push(parseFloat(point.y) || 0);
+                }
+            });
+            return data;
+        },
+
+        // Split over-threshold percentage graphs without hiding isolated spikes
+        getThresholdChartData: function (points, threshold) {
+            const data = [[], [], []],
+                  addPoint = (x, lowValue, highValue) => {
+                      data[0].push(x);
+                      data[1].push(lowValue);
+                      data[2].push(highValue);
+                  };
+            points.forEach((point, index) => {
+                const value = parseFloat(point.y) || 0;
+                if (index > 0) {
+                    const prev = points[index - 1],
+                          prevValue = parseFloat(prev.y) || 0,
+                          crossed = (prevValue <= threshold && value > threshold) ||
+                              (prevValue > threshold && value <= threshold);
+                    if (crossed && value !== prevValue) {
+                        const ratio = (threshold - prevValue) / (value - prevValue),
+                              x = prev.x + ((point.x - prev.x) * ratio);
+                        addPoint(x, threshold, threshold);
+                    }
+                }
+                if (value > threshold) {
+                    addPoint(point.x, null, value);
+                } else {
+                    addPoint(point.x, value, null);
+                }
+            });
+            return data;
+        },
+
+        // Trim all aligned uPlot arrays to the selected time window
+        trimChartData: function (data, cutoff) {
+            const xdata = data[0];
+            let lo = 0,
+                hi = xdata.length - 1,
+                cut = 0;
+            while (lo <= hi) {
+                const mid = Math.floor((lo + hi) / 2);
+                if (xdata[mid] < cutoff) {
+                    lo = mid + 1;
+                    cut = lo;
+                } else {
+                    hi = mid - 1;
+                }
+            }
+            if (cut > 0) {
+                data.forEach((series) => series.splice(0, cut));
+            }
+        },
+
+        // Get the visible x-axis range for the current aligned data
+        getChartWindow: function (data) {
+            const xdata = data[0],
+                  duration = this.getChartDuration(),
+                  highX = xdata[xdata.length - 1] ||
+                      Math.floor(Date.now() / 1000),
+                  firstX = xdata[0] || highX;
+            let lowX = Math.max(highX - duration, firstX);
+            if (highX <= lowX) {
+                lowX = highX - Math.max(this.getInterval(), 1);
+            }
+            return {
+                low: lowX,
+                high: highX,
+            };
+        },
+
+        // Get a readable step for Chartist-like Network I/O y-axis labels
+        getNetworkChartStep: function (value) {
+            const magnitude = Math.pow(10, Math.floor(Math.log10(value))),
+                  normalized = value / magnitude,
+                  nice = normalized <= 1 ? 1 :
+                      normalized <= 2 ? 2 :
+                      normalized <= 2.5 ? 2.5 :
+                      normalized <= 5 ? 5 :
+                      normalized <= 7.5 ? 7.5 : 10;
+            return nice * magnitude;
+        },
+
+        // Get a Chartist-like padded Network I/O scale with more grid divisions
+        getNetworkChartScale: function (dataMax) {
+            const max = Math.max(dataMax || 1, 1),
+                  paddedMax = max * 1.25,
+                  step = this.getNetworkChartStep(paddedMax / 3);
+            return {
+                high: step * Math.ceil(paddedMax / step),
+                step: step,
+            };
+        },
+
+        // Get Network I/O y-axis splits with intermediate divisions
+        getNetworkChartSplits: function (scaleMax) {
+            const step = this.getNetworkChartStep(scaleMax / 3),
+                  splits = [];
+            for (let value = 0; value <= scaleMax + (step / 2); value += step) {
+                splits.push(value);
+            }
+            return splits;
+        },
+
+        // Format y-axis values exactly like the previous renderer
+        formatChartValue: function (type, value, hasArea, hasBandwidth) {
+            value = Math.round(value);
+            if (hasArea) {
+                return value ? value + "%" : value;
+            } else if (hasBandwidth) {
+                if (type === "net") {
+                    if (!value) {
+                        return value;
+                    }
+                    return this._.convert.size(value, {
+                        fixed: 0,
+                        bits: 1,
+                        round: 1,
+                    });
+                }
+                if (!value) {
+                    return value;
+                }
+                return this._.convert.size(value * 1024, {
+                    fixed: 0,
+                    round: 1,
+                });
+            }
+            return value;
+        },
+
+        // Build uPlot options for a single live-history graph
+        getChartOptions: function (type, label, data, graphOptions, target) {
+            const size = this.getChartSize(target, graphOptions.height),
+                  hasArea = graphOptions.fill(),
+                  hasBandwidth = graphOptions.bandwidth(),
+                  axisXFont = "11px RobotoLocal",
+                  axisYFont = "11px RobotoLocal",
+                  axisLabelFont = "12px RobotoLocal",
+                  // Resolve CSS vars lazily so a canvas repaint picks up
+                  // palette changes
+                  styleValue = (name) => {
+                      return () => this.getChartStyle()[name];
+                  },
+                  grid = {
+                      stroke: styleValue("grid"),
+                      width: 1,
+                      dash: [3, 4],
+                  },
+                  baseSeries = {
+                      points: {
+                          show: false,
+                      },
+                      width: hasArea ? 0.7 : 0.8,
+                  },
+                  series = [{}],
+                  chartLib = this._.chart;
+
+            if (type === "cpu" || type === "virt") {
+                series.push(chartLib.assign({}, baseSeries, {
+                    stroke: styleValue("green"),
+                    fill: styleValue("greenFill"),
+                    spanGaps: false,
+                }));
+                series.push(chartLib.assign({}, baseSeries, {
+                    stroke: styleValue("red"),
+                    fill: styleValue("redFill"),
+                    spanGaps: false,
+                }));
+            } else if (type === "disk" || type === "net") {
+                series.push(chartLib.assign({}, baseSeries, {
+                    stroke: styleValue("blue"),
+                }));
+                series.push(chartLib.assign({}, baseSeries, {
+                    stroke: styleValue("red"),
+                }));
+            } else {
+                series.push(chartLib.assign({}, baseSeries, {
+                    stroke: styleValue(type === "proc" ? "blue" : "green"),
+                    fill: hasArea ? styleValue("greenFill") : null,
+                }));
+            }
+
+            return {
+                width: size.width,
+                height: size.height,
+                cursor: {
+                    show: false,
+                },
+                legend: {
+                    show: false,
+                },
+                scales: {
+                    x: {
+                        time: true,
+                        range: (self) => {
+                            const range = this.getChartWindow(self.data || data);
+                            return [range.low, range.high];
+                        },
+                    },
+                    y: {
+                        range: hasArea ?
+                            (() => [0, 100]) :
+                            ((self, dataMin, dataMax) => {
+                                if (type === "net") {
+                                    return [0, this.getNetworkChartScale(dataMax).high];
+                                }
+                                const max = Math.max(dataMax || 1, 1),
+                                      range = chartLib.rangeNum(0, max, 0.1, true);
+                                range[0] = 0;
+                                return range;
+                            }),
+                    },
+                },
+                axes: [
+                    {
+                        stroke: styleValue("label"),
+                        grid: grid,
+                        ticks: {
+                            show: false,
+                        },
+                        border: {
+                            show: false,
+                        },
+                        font: axisXFont,
+                        align: 1,
+                        size: 24,
+                        space: 120,
+                        values: (self, splits) => {
+                            const scale = self.scales.x,
+                                  plotRight = scale && Number.isFinite(scale.max) ?
+                                      self.valToPos(scale.max, "x") : 0;
+                            return splits.map((value) => {
+                                // Hide only the right-edge label early enough
+                                // that it doesn't spill out
+                                if (plotRight && plotRight - self.valToPos(value, "x") < 50) {
+                                    return "";
+                                }
+                                return this._.dayjs(value * 1000)
+                                    .utcOffset(this._.locale.offset())
+                                    .format(this._.locale.time);
+                            });
+                        },
+                    },
+                    {
+                        stroke: styleValue("label"),
+                        grid: grid,
+                        ticks: {
+                            show: false,
+                        },
+                        border: {
+                            show: false,
+                        },
+                        label: "",
+                        font: axisYFont,
+                        labelFont: axisLabelFont,
+                        labelGap: 12,
+                        labelSize: 24,
+                        size: 60,
+                        splits: hasArea ? (() => [0, 50, 100]) :
+                            (type === "net" ?
+                                ((self, axisIdx, scaleMin, scaleMax) => {
+                                    return this.getNetworkChartSplits(scaleMax);
+                                }) : null),
+                        values: (self, splits) => {
+                            return splits.map((value) => {
+                                return this.formatChartValue(
+                                    type, value, hasArea, hasBandwidth);
+                            });
+                        },
+                    },
+                ],
+                hooks: {
+                    drawAxes: [
+                        (self) => {
+                            // uPlot colors the Y title and Y values with the
+                            // same stroke; draw the title ourselves so hover
+                            // opacity affects only it
+                            const axis = self.axes[1],
+                                  ctx = self.ctx,
+                                  pxRatio = self.ctx.canvas.width / self.width,
+                                  style = this.getChartStyle(),
+                                  fill = target.matches(":hover") ?
+                                      style.axisLabelHover : style.axisLabel;
+                            ctx.save();
+                            ctx.font = axis.labelFont[0];
+                            ctx.fillStyle = fill;
+                            ctx.textAlign = "center";
+                            ctx.textBaseline = "bottom";
+                            ctx.translate(
+                                // The extra nudge to keep the title in the lane
+                                Math.round((axis._lpos - axis.labelGap + 5) * pxRatio),
+                                Math.round(self.bbox.top + (self.bbox.height / 2))
+                            );
+                            ctx.rotate(-Math.PI / 2);
+                            ctx.fillText(label, 0, 0);
+                            ctx.restore();
+                        },
+                    ],
+                },
+                series: series,
+            };
+        },
+
+        // Keep uPlot charts responsive inside dashboard panels
+        bindChartResize: function (type, target, chart, height) {
+            const resize = () => {
+                const size = this.getChartSize(target, height);
+                if (chart.width !== size.width || chart.height !== size.height) {
+                    chart.setSize(size);
+                }
+            };
+            if (window.ResizeObserver) {
+                chart.resizeObserver = new ResizeObserver(resize);
+                chart.resizeObserver.observe(target.parentNode || target);
+            } else {
+                chart.resizeEvent = `resize.stats-chart-${type}`;
+                $(window).on(chart.resizeEvent, resize);
+            }
+        },
+
+        // Remove previous uPlot instance and listeners
+        destroyChart: function (type) {
+            const chart = this[`chart_${type}`];
+            if (!chart) {
+                return;
+            }
+            if (chart.resizeObserver) {
+                chart.resizeObserver.disconnect();
+            }
+            if (chart.resizeEvent) {
+                $(window).off(chart.resizeEvent);
+            }
+            if (chart.hoverEvent && chart.statsTarget) {
+                $(chart.statsTarget).off(chart.hoverEvent);
+            }
+            chart.destroy();
+            this[`chart_${type}`] = null;
+        },
+
+        // Redraw axis text on hover to mimic old Chartist title opacity
+        bindChartHover: function (type, target, chart) {
+            chart.hoverEvent = `mouseenter.stats-chart-${type} mouseleave.stats-chart-${type}`;
+            $(target)
+                .off(chart.hoverEvent)
+                .on(chart.hoverEvent, () => {
+                    // Hover changes canvas text color, so CSS alone cannot
+                    // update it
+                    chart.redraw(false, false);
+                });
+        },
+
+        // Repaint current charts after palette changes without restarting stats
+        repaintCharts: function () {
+            Object.keys(this).forEach((key) => {
+                if (key.indexOf("chart_") !== 0) {
+                    return;
+                }
+                const chart = this[key];
+                if (!chart || typeof chart.redraw !== "function") {
+                    return;
+                }
+                chart.redraw(false, false);
+            });
+        },
+
+        // Add hover-only read/write labels for two-series traffic graphs
+        addChartTrafficLabels: function (target, type) {
+            if (type !== "disk" && type !== "net") {
+                return;
+            }
+            const readLbl = this._.language(`dashboard_chart_${type}_read`),
+                  writeLbl = this._.language(`dashboard_chart_${type}_write`);
+            if (!readLbl || !writeLbl) {
+                return;
+            }
+            $(target).find(".uplot-traffic-labels").remove();
+            $("<span class=\"uplot-traffic-labels\" translate=\"no\"></span>")
+                .append($("<span class=\"uplot-traffic-read\"></span>").text(`▪ ${readLbl}`))
+                .append($("<span class=\"uplot-traffic-write\"></span>").text(`▪ ${writeLbl}`))
+                .appendTo(target);
+        },
+
+        // Create or fully replace a uPlot chart
+        drawChart: function (type, target, array, label, graphOptions) {
+            const data = this.getChartData(array, type);
+            if (!data[0].length) {
+                return;
+            }
+            const range = this.getChartWindow(data);
+            this.trimChartData(data, range.low);
+            target.classList.add("uplot-chart-ready");
+            this.destroyChart(type);
+            const chart = new this._.chart(
+                this.getChartOptions(type, label, data, graphOptions, target),
+                data,
+                target
+            );
+            this[`chart_${type}`] = chart;
+            chart.statsTarget = target;
+            this.bindChartResize(type, target, chart, graphOptions.height);
+            this.bindChartHover(type, target, chart);
+            this.addChartTrafficLabels(target, type);
+        },
+
+        // Append a live point to an existing uPlot chart
+        updateChart: function (type, array) {
+            const chart = this[`chart_${type}`],
+                  incoming = this.getChartData(array, type);
+            if (!chart || !incoming[0].length) {
+                return false;
+            }
+            if (incoming.length !== chart.data.length) {
+                return false;
+            }
+            incoming[0].forEach((x, pointIndex) => {
+                chart.data[0].push(x);
+                for (let i = 1; i < incoming.length; i++) {
+                    chart.data[i].push(incoming[i][pointIndex]);
+                }
+            });
+            const range = this.getChartWindow(chart.data);
+            this.trimChartData(chart.data, range.low);
+            chart.setData(chart.data, true);
+            chart.setScale("x", {
+                min: range.low,
+                max: range.high,
+            });
+            return true;
+        },
+
         // Display changes
         render: function (data, graphs) {
+            if (!data) {
+                return;
+            }
             // Iterate through response
             Object.entries(data).map(([target, data]) => {
                 let v = parseInt(data),
@@ -358,20 +867,21 @@ const stats = {
                                     // Replace only the numeric part, preserving unit (°C or RPM)
                                     $label.html(function (_, html) {
                                         const iSFahrenheit = html.includes("°F");
+                                        const value = sensor === "fans" ? data.rpm :
+                                            (iSFahrenheit ? Math.round((data.temp * 9) / 5 + 32) : data.temp);
                                         return html.replace(
                                             /\d+/,
-                                            sensor === "fans"
-                                                ? data.rpm
-                                                : (iSFahrenheit ? Math.round((data.temp * 9) / 5 + 32) : data.temp));
+                                            value);
                                     });
                                 } else {
                                     // Replace the numeric part after the colon, preserving prefix and unit
                                     $label.html(function (_, html) {
                                         const iSFahrenheit = html.includes("°F");
+                                        const value = sensor === "fans" ? data.rpm :
+                                            (iSFahrenheit ? Math.round((data.temp * 9) / 5 + 32) : data.temp);
                                         return html.replace(
                                             /: \d+/,
-                                            `: ${sensor === "fans" ? data.rpm :
-                                                (iSFahrenheit ? Math.round((data.temp * 9) / 5 + 32) : data.temp)}`
+                                            `: ${value}`
                                         );
                                     });
                                 }
@@ -379,9 +889,8 @@ const stats = {
                                 const label_text = $label.text().replace(/.*?\d+:\s*/, "");
                                 let className =
                                         HTML.label.textMaxLevels(sensor, label_text) ||
-                                        (sideSlider
-                                            ? this_.selector.defaultSliderClassLabel
-                                            : this_.selector.defaultClassLabel);
+                                        (sideSlider ? this_.selector.defaultSliderClassLabel :
+                                            this_.selector.defaultClassLabel);
                                 if (sideSlider && className === this_.selector.defaultClassLabel) {
                                     className = this_.selector.defaultSliderClassLabel;
                                 }
@@ -446,190 +955,35 @@ const stats = {
                             tg = $(`#${lds}`).find(
                                 `[${this.selector.chart.container.data}=${type}]`
                             ),
-                            sr = [
-                                {
-                                    name: `series-${type}`,
-                                    data: array,
-                                },
-                            ];
+                            chart = this[`chart_${type}`],
+                            chartTarget = chart && chart.statsTarget,
+                            // PJAX swaps the dashboard DOM while old uPlot
+                            // objects may still exist, so we need to redraw as
+                            // the stored target is stale
+                            drawRequired = !chart || cached === 2 || cached === 3 ||
+                                !chartTarget || chartTarget !== tg[0] ||
+                                !chartTarget.isConnected;
 
                         // Don't run further in case there is no container
                         if (!tg.length) {
                             return;
                         }
 
-                        // Extend data object expected way to draw multiple series in single graph
-                        if (array[0] && typeof array[0].y === "object") {
-                            sr = [];
-                            array[0].y.forEach(function (x, i) {
-                                let data = [];
-                                array.forEach(function (n) {
-                                    data.push({
-                                        data: { x: n.x, y: n.y[i] },
-                                    });
-                                });
-                                sr.push({
-                                    name: `series-${type}-${i}`,
-                                    data: data,
-                                });
-                            });
-                        }
-
                         // Update series if chart already
                         // exist unless it's a re-draw
-                        if (tg[0] && tg[0].textContent && cached !== 3) {
-                            if (cached === 1) {
-                                let lf = parseInt(this.getStoredDuration(), 10);
-                                if (lf < 300 || lf > 86400) lf = getStoredDuration();
-                            
-                                const chart = this[`chart_${type}`],
-                                      cdata = chart.data.series;
-                                let   tdata = sr; // keep input series
-                            
-                                const getX = p => (p && (p.x != null ? p.x : (p.data && p.data.x))) || 0;
-                            
-                                // Append and trim to last `lf` seconds
-                                tdata.forEach((d, i) => {
-                                    const series = cdata[i].data,
-                                          newPt  = d.data[0];
-                                    series.push(newPt);
-                                
-                                    const lastX  = getX(series[series.length - 1]),
-                                          cutoff = lastX - lf;
-                                
-                                    // Dynamic trimming
-                                    let lo = 0, hi = series.length - 1, cutIdx = 0;
-                                    while (lo <= hi) {
-                                        const mid = (lo + hi) >> 1;
-                                        if (getX(series[mid]) < cutoff) {
-                                            lo = mid + 1;
-                                            cutIdx = lo;
-                                        } else {
-                                            hi = mid - 1;
-                                        }
-                                    }
-                                    if (cutIdx > 0) series.splice(0, cutIdx);
-                                });
-                            
-                                // Avoid empty leading space, and don't set low earlier than the first data point
-                                const lastXAll  = Math.max.apply(null, cdata.map(s => getX(s.data[s.data.length - 1] || s.data[0] || { x: 0 }))),
-                                      firstXAll = Math.min.apply(null, cdata.map(s => getX(s.data[0] || { x: lastXAll }))),
-                                      highX = lastXAll,
-                                      lowX  = Math.max(highX - lf, firstXAll),
-                                      // Merge and keep existing by patching low/high
-                                      opts = this._.chart.extend({}, chart.options, {
-                                            axisX: this._.chart.extend({}, chart.options.axisX, {
-                                                low: lowX,
-                                                high: highX
-                                            })
-                                      });
-                                // Prevents left overflow
-                                cdata.forEach(s => {
-                                    const a = s.data;
-                                    let lo = 0, hi = a.length - 1, cut = 0;
-                                    while (lo <= hi) {
-                                        const mid = (lo + hi) >> 1;
-                                        if (getX(a[mid]) < lowX) {
-                                            lo = mid + 1; cut = lo;
-                                        } else { 
-                                            hi = mid - 1;
-                                        }
-                                    }
-                                    if (cut > 0) a.splice(0, cut);
-                                });
-                            
-                                // Force full redraw so the window shifts every tick
-                                chart.update({ series: cdata }, opts, true);
+                        if (!drawRequired) {
+                            if (cached === 1 &&
+                                !this.updateChart(type, array)) {
+                                this.drawChart(type, tg[0], array, lg, options.chart);
+                                ld.remove();
                             }
                         }
 
                         // Initialize chart the first time (2) or fully
                         // update (3) the chart if it's already drawn
-                        else if (cached === 2 || cached === 3) {
-                            this[`chart_${type}`] = new this._.chart.Line(
-                                tg[0],
-                                {
-                                    series: sr,
-                                },
-                                {
-                                    axisX: {
-                                        type: this._.chart.FixedScaleAxis,
-                                        divisor: 6,
-                                        labelInterpolationFnc: (value) => {
-                                            return this._.dayjs(value * 1000)
-                                                .utcOffset(this._.locale.offset())
-                                                .format(this._.locale.time);
-                                        },
-                                    },
-                                    height: options.chart.height,
-                                    showArea: options.chart.fill(),
-                                    showPoint: false,
-                                    high: options.chart.high(),
-                                    low: 0,
-                                    fullWidth: true,
-                                    chartPadding: {
-                                        left: 25,
-                                    },
-                                    axisY: {
-                                        onlyInteger: true,
-                                        labelInterpolationFnc: (value) => {
-                                            if (options.chart.fill()) {
-                                                return value ? value + "%" : value;
-                                            } else if (options.chart.bandwidth(value)) {
-                                                if (type === "net") {
-                                                    return value
-                                                        ? this._.convert.size(value, {
-                                                              fixed: 0,
-                                                              bits: 1,
-                                                              round: 1,
-                                                          })
-                                                        : value;
-                                                }
-                                                return value
-                                                    ? this._.convert.size(value * 1024, {
-                                                          fixed: 0,
-                                                          round: 1,
-                                                      })
-                                                    : value;
-                                            } else {
-                                                return value;
-                                            }
-                                        },
-                                    },
-                                    plugins: [
-                                        this._.chart.plugins.ctAxisTitle({
-                                            axisY: {
-                                                axisTitle: lg,
-                                                axisClass: "ct-axis-title",
-                                                offset: {
-                                                    x: 0,
-                                                    y: 9,
-                                                },
-                                                flipTitle: true,
-                                            },
-                                        }),
-                                        this._.chart.plugins.ctThreshold({
-                                            threshold: options.chart.threshold(),
-                                        }),
-                                    ],
-                                }
-                            );
-
-                            // Remove loader
-                            this[`chart_${type}`].on("created", (data) => {
-                                // Add labels to the first foreign object
-                                const ffObj = data.svg.getNode().querySelector('foreignObject');
-                                if (ffObj) {
-                                    const readLbl = this._.language(`dashboard_chart_${type}_read`),
-                                          writeLbl = this._.language(`dashboard_chart_${type}_write`);
-                                    if (readLbl && writeLbl) {
-                                        ffObj.setAttribute('data-label-read', `▪ ${readLbl}`);
-                                        ffObj.setAttribute('data-label-write', `▪ ${writeLbl}`);
-                                    }
-                                }
-                                // Clean-up loader
-                                ld.remove();
-                              });
+                        else if (drawRequired) {
+                            this.drawChart(type, tg[0], array, lg, options.chart);
+                            ld.remove();
                         }
                     });
                 }
