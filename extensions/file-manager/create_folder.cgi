@@ -10,37 +10,51 @@ use strict;
 
 our (%in, %text, $cwd, $path);
 
-require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'}."/extensions/file-manager/file-manager-lib.pl");
 
 my $path_urlized = urlize($path);
 
 if (!$in{'name'}) {
-    redirect_local(("list.cgi?path=$path_urlized&module=filemin" . extra_query()));
-}
+	redirect_local(("list.cgi?path=$path_urlized&module=filemin".extra_query()));
+	}
 
+my $file = fm_checked_cwd_path_or_error($in{'name'});
 my $type;
-if (-d "$cwd/$in{'name'}") {
-    $type = 'directory';
-} else {
-    $type = 'file';
-}
+if (-d $file) {
+	$type = 'directory';
+	}
+else {
+	$type = 'file';
+	}
 
-if (-f "$cwd/$in{'name'}" || -d "$cwd/$in{'name'}") {
-    print_error(
-                (
-                 text('filemanager_create_object_exists', html_escape($in{'name'}),
-                      html_escape($path),                 $text{ 'theme_xhred_global_' . $type . '' }
-                 )
-                ));
-} else {
-    if (mkdir("$cwd/$in{'name'}", oct(755))) {
-        redirect_local(("list.cgi?path=$path_urlized&module=filemin" . extra_query()));
-    } else {
-        print_error(
-                    (
-                     text('filemanager_create_object_denied', html_escape($in{'name'}),
-                          html_escape($path),                 $text{'theme_xhred_global_directory'}, $!
-                     )
-                    ));
-    }
-}
+if (-f $file || -d $file) {
+	print_error(
+		(
+			text(
+				'filemanager_create_object_exists',
+				html_escape($in{'name'}),
+				html_escape($path),
+				$text{'theme_xhred_global_'.$type.''}
+			)
+		)
+	);
+	}
+else {
+	if (mkdir($file, oct(755))) {
+		redirect_local(
+			("list.cgi?path=$path_urlized&module=filemin".extra_query()));
+		}
+	else {
+		print_error(
+			(
+				text(
+					'filemanager_create_object_denied',
+					html_escape($in{'name'}),
+					html_escape($path),
+					$text{'theme_xhred_global_directory'},
+					$!
+				)
+			)
+		);
+		}
+	}

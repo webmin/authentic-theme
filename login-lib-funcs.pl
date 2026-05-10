@@ -271,6 +271,23 @@ $username = ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
 $in->{'failed'} = $username;
 }
 
+# login_return_filter(&in)
+# Filters password-reset return URLs before they reach the browser
+sub login_return_filter
+{
+my ($in) = @_;
+my $return = $in->{'return'};
+if (defined($return)) {
+	$return =~ s/^\s+|\s+$//g;
+	my ($scheme) = $return =~ /^([A-Za-z][A-Za-z0-9+\-.]*):/;
+	$return = undef
+		if ($return =~ /[\x00-\x1f\x7f]/ ||
+		    $return =~ m!^//! ||
+		    ($scheme && lc($scheme) ne "http" && lc($scheme) ne "https"));
+	}
+$in->{'return'} = $return;
+}
+
 # login_params_populate(&in)
 # Populates the input data not passed back by the server
 sub login_params_populate
@@ -284,6 +301,7 @@ if ($gconfig{'forgot_pass'} && !$in->{'failed'}) {
 			if ($in->{'forgot'});
 	($in->{'return'}) = $request_uri_u =~ /[?&]return=([^&]+)/;
 	($in->{'returned'}) = $request_uri_u =~ /[?&]returned-username=([^&#]*)/;
+	&login_return_filter($in);
 	}
 }
 

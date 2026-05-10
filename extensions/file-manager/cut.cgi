@@ -10,15 +10,17 @@ use strict;
 
 our (%in, $path);
 
-require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
+require($ENV{'THEME_ROOT'}."/extensions/file-manager/file-manager-lib.pl");
+
+my @entries_list = get_entries_list();
 
 open(my $fh, ">", &get_paste_buffer_file()) or die "Error: $!";
 print $fh "cut\n";
 print $fh "$path\n";
 
-foreach my $name (split(/\0/, $in{'name'})) {
-    print $fh "$name\n";
-}
+foreach my $name (@entries_list) {
+	print $fh "$name\n";
+	}
 
 close($fh);
 
