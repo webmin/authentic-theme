@@ -1,5 +1,8 @@
 ## Changelog
 
+#### Version 26.41.1 (May 10, 2026)
+* Fix issue where the log type cannot be selected in the System Logs module #1733
+
 #### Version 26.41 (May 6, 2026)
 * Upgrade stats history graphs from laggy SVG to a blazing-fast canvas renderer
 
