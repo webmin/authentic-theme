@@ -557,7 +557,7 @@ sub theme_list_combined_system_info
     my $cache_file_path = theme_cache_path($cache_file);
     my @data;
     # Return cached data if available
-    if (!$nocache && $is_webmin && -r $cache_file_path) {
+    if (!$nocache && $is_webmin && theme_cache_trusted_stat($cache_file_path)) {
         my $combined_system_info_cache = theme_cache_read($cache_file);
         $combined_system_info_cache = $combined_system_info_cache->[0]
             if ref($combined_system_info_cache) eq 'ARRAY' &&
@@ -1645,15 +1645,16 @@ sub theme_remote_version
 }
 
 # theme_cache_dir()
-# Returns directory for per-user/admin theme cache
+# Returns trusted directory for theme cache
 sub theme_cache_dir
 {
-	if (&webmin_user_is_admin()) {
+	if ($> == 0) {
 		my ($dir) = &theme_var_dir();
 		return $dir;
 	}
-	my $dir = &get_user_home()."/tmp";
-	$dir = &tempname_dir() if (!-d $dir);
+	my $home = &get_user_home();
+	my $dir = $home ? "$home/tmp" : undef;
+	$dir = &tempname_dir() if (!$dir || !-d $dir);
 	return $dir;
 }
 
@@ -1683,8 +1684,21 @@ sub theme_cache_is_fresh
 	my ($id, $interval) = @_;
 	my $ttl  = $interval || $theme_config{'settings_cache_interval'} || 24*60*60;
 	my $path = theme_cache_path($id);
-	my @st   = stat($path);
-	return (@st && $st[9] > time() - $ttl) ? 1 : 0;
+	my $st   = theme_cache_trusted_stat($path);
+	return ($st && $st->[9] > time() - $ttl) ? 1 : 0;
+}
+
+# theme_cache_trusted_stat(path)
+# Returns stat arrayref if a cache file is safe to deserialize
+sub theme_cache_trusted_stat
+{
+	my ($path) = @_;
+	my @st = lstat($path);
+	return undef if (!@st);
+	return undef if (!-f _);
+	return undef if ($st[4] != $>);
+	return undef if ($st[2] & 022);
+	return \@st;
 }
 
 # theme_cache_read(id)
@@ -1693,7 +1707,7 @@ sub theme_cache_read
 {
 	my ($id) = @_;
 	my $path = theme_cache_path($id);
-	return undef unless -e $path;
+	return undef if (!theme_cache_trusted_stat($path));
 	my $raw = read_file_contents($path) // return undef;
 	return unserialise_variable($raw);
 }
@@ -1774,7 +1788,8 @@ sub clear_theme_cache
         }
     }
 
-    # Clear user cached collected info
+    # Clear active and legacy user cached collected info
+    unlink_file(theme_cache_path(theme_cache_user_file("combined-system-info")));
     unlink_file("$tmp_dir/combined-system-info-$remote_user");
     unlink_file("$home_tmp_dir/combined-system-info-$remote_user");
 
