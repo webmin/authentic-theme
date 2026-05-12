@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 26.41.2 (May 12, 2026)
+* Fix allowed path enforcement in File Manager module
+* Fix potential unsafe theme cache deserialization
+
 #### Version 26.41.1 (May 10, 2026)
 * Fix issue where the log type cannot be selected in the System Logs module #1733
 

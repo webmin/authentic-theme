@@ -3,12 +3,12 @@ longdesc=Webmin/Usermin/Virtualmin/Cloudmin theme based on Bootstrap and Font Aw
 bootstrap=3
 spa=1
 nomodcall=xnavigation=1
-version=26.41.1
+version=26.41.2
 mversion=0
 bversion=0
 webmin=1
 usermin=1
-depends=2.621 2.521
-depends_reason=https://github.com/webmin/webmin/commit/ad37eab
+depends=2.642 2.560
+depends_reason=https://github.com/webmin/webmin/commit/04ae776
 websockets=1
 config_link=tconfig.cgi
