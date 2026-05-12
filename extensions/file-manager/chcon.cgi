@@ -29,8 +29,8 @@ my @entries_list = get_entries_list();
 
 foreach my $file (@entries_list) {
 	my $file_ = $file;
-    $file = simplify_path($file);
-    if (system_logged("chcon $recursive " . quotemeta("$in{'label'}") . " " . quotemeta("$cwd/$file")) != 0) {
+    $file = fm_checked_cwd_path_or_error($file);
+    if (system_logged("chcon $recursive " . quotemeta("$in{'label'}") . " " . quotemeta($file)) != 0) {
         $errors{ $file_ } = lc("$text{'context_label_error_proc'}: $?");
     }
 }

@@ -302,9 +302,12 @@ sub fm_path_is_allowed
 {
 my ($file, $under_dir) = @_;
 return 0 if (!defined($file) || $file eq '' || $file =~ /[\0\r\n]/);
-return 0 if ($under_dir && !&is_under_directory($under_dir, $file));
+$file = &simplify_path($file);
+return 0 if (!defined($file));
+return 0 if ($under_dir &&
+	!&filemin_lexical_path_under_directory($under_dir, $file));
 foreach my $allowed_path (@allowed_paths) {
-	return 1 if (&is_under_directory($allowed_path, $file));
+	return 1 if (&filemin_path_under_directory($allowed_path, $file));
 	}
 return 0;
 }
@@ -540,6 +543,10 @@ my $show_dot_files = get_user_config_showhiddenfiles();
 
 my @results_cached = cache_search($fsid);
 if (@results_cached) {
+	@results_cached = grep {
+		my $file = $list ? $_ : &simplify_path("$cwd/$_");
+		fm_path_is_allowed($file, $cwd);
+		} @results_cached;
 	return @results_cached;
 	}
 
@@ -1159,8 +1166,13 @@ find(
 									!~ /\/\./
 								))
 							{
-								push(@results,
-									$found);
+								my $found_path = $list
+								    ? $found
+								    : &simplify_path("$cwd/$found");
+								if (fm_path_is_allowed($found_path, $cwd)) {
+									push(@results,
+										$found);
+									}
 								}
 							}
 						}
@@ -1176,7 +1188,8 @@ find(
 my @replaces;
 if (length($grep) || length($replace)) {
 	if (length($grep)) {
-		@results = map { &simplify_path("$cwd/$_") } @results;
+		@results = grep { fm_path_is_allowed($_, $cwd) }
+		    map { &simplify_path("$cwd/$_") } @results;
 		my @matched;
 		fdo {
 			my ($file, $line, $text) = @_;
@@ -1206,7 +1219,7 @@ if (length($grep) || length($replace)) {
 		}
 	if (length($replace)) {
 		foreach my $file (@replaces) {
-			if (-r $file) {
+			if (-r $file && fm_path_is_allowed($file, $cwd)) {
 				if ($caseins) {
 					(my $fc = read_file_contents($file)) =~
 					    s/$grep/$replace/gi;
@@ -1329,6 +1342,7 @@ if (server_pagination_enabled($totals, $max_allowed, $query)) {
 	}
 
 @list = map { &simplify_path("$cwd/$_") } @list;
+@list = grep { fm_path_is_allowed($_, $cwd) } @list;
 
 my %acls;
 my %attributes;

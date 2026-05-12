@@ -34,8 +34,8 @@ my @entries_list = get_entries_list();
 
 foreach my $file (@entries_list) {
 	my $file_ = $file;
-    $file = simplify_path($file);
-    my $out = &backquote_logged("chattr $recursive " . $label . " " . quotemeta("$cwd/$file"). " 2>&1 >/dev/null </dev/null");
+    $file = fm_checked_cwd_path_or_error($file);
+    my $out = &backquote_logged("chattr $recursive " . $label . " " . quotemeta($file). " 2>&1 >/dev/null </dev/null");
     if ($?) {
         $errors{ $file_ } = lc("$text{'attr_label_error_proc'}: $out");
     }

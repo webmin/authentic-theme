@@ -43,6 +43,7 @@ switch_to_given_unix_user($forceuser);
 foreach my $name (@entries_list) {
     my ($iname);
     my $gpg;
+    my $source = fm_checked_cwd_path_or_error($name);
 
     $iname = $name;
     $iname .= ($key ? ("_" . substr($key, 0, 6)) : '');
@@ -56,7 +57,7 @@ foreach my $name (@entries_list) {
     $ffext = ".gpg" if ($action eq "encrypt");
 
     # Check if file exist
-    if ($safe_mode && -e "$cwd/$iname$ffext") {
+    if ($safe_mode && -e fm_checked_cwd_path_or_error("$iname$ffext")) {
         my $__ = 0;
         for (;;) {
             $__++;
@@ -65,25 +66,26 @@ foreach my $name (@entries_list) {
                 my ($fname, $fext) = file_name_extension_splitter($iname);
                 $niname = "$fname(" . $__ . ")" . ($fext ? ".$fext" : '');
             }
-            if (!-e "$cwd/$niname$ffext") {
+            if (!-e fm_checked_cwd_path_or_error("$niname$ffext")) {
                 $iname = "$niname$ffext";
                 last;
             }
         }
     } else {
         $iname = "$iname$ffext";
-        unlink_file("$cwd/$iname$ffext") if (-e "$cwd/$iname$ffext");
+        my $old_output = fm_checked_cwd_path_or_error("$iname$ffext");
+        unlink_file($old_output) if (-e $old_output);
     }
+    my $output = fm_checked_cwd_path_or_error($iname);
     $status = 0;
 
     if ($action eq "encrypt") {
-        my $fpath = "$cwd/$name";
         $gpg =
-"cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($iname)]} --recipient $key @{[quotemeta($fpath)]}";
+"cd @{[quotemeta($cwd)]} && $gpgpath --encrypt --always-trust --output @{[quotemeta($output)]} --recipient $key @{[quotemeta($source)]}";
         $status = system($gpg);
 
         # Set file owner in case was encrypted usign master admin keys
-        system("chown --reference=" . quotemeta($cwd) . " " . quotemeta("$cwd/$iname"))
+        system("chown --reference=" . quotemeta($cwd) . " " . quotemeta($output))
           if (!$status && $homeuser && !$user_level);
 
     } elsif ($action eq "decrypt") {
@@ -97,20 +99,19 @@ foreach my $name (@entries_list) {
             }
             $extra .= "  --passphrase-fd 0 ";
         }
-        my $fpath = "$cwd/$name";
-        $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($iname)]} --decrypt @{[quotemeta($fpath)]}";
+        $gpg = "cd @{[quotemeta($cwd)]} && $gpgpath $extra --output @{[quotemeta($output)]} --decrypt @{[quotemeta($source)]}";
         open my $fh => "| $gpg" or $no_command = 1;
         print $fh $passphrase;
         close $fh;
         $status = $?;
 
         # Set file owner in case was decrypted usign master admin keys
-        system("chown --reference=" . quotemeta($cwd) . " " . quotemeta("$cwd/$iname"))
+        system("chown --reference=" . quotemeta($cwd) . " " . quotemeta($output))
           if (!$status && $homeuser && !$user_level);
     }
 
     if ($delete && $status == 0) {
-        unlink_file("$cwd/$name");
+        unlink_file($source);
     }
 
     if (!has_command($gpgpath) || $no_command) {

@@ -33,7 +33,7 @@ my $etrashed = 0;
 
 foreach my $name (@entries_list) {
 	my $name_ = $name;
-	$name = simplify_path($name);
+	my $file = fm_checked_cwd_path_or_error($name);
 	if ($in{'etrash'}) {
 		my $tdir = "$cwd/$tdirname/";
 		if (!can_write($tdir)) {
@@ -67,24 +67,24 @@ foreach my $name (@entries_list) {
 			$tfile = "$tdir/$name-$time";
 			&$mkpath_($tdir);
 			}
-		if (!move("$cwd/$name", $tfile || "$tdir/$name")) {
+		if (!move($file, $tfile || "$tdir/$name")) {
 
 			# Do not throw an error when moving .Trash inside the .Trash
 			if (
-				&is_under_directory("$cwd/$name",
+				&is_under_directory($file,
 					$tfile || "$tdir/$name")
 			    )
 			{
 				# If .Trash the only one in list, delete it
 				if (scalar(@entries_list) == 1) {
-					if (!can_write("$cwd/$name")) {
+					if (!can_write($file)) {
 						$errors{$name_} = lc(
 							$text{'error_delete'}.
 							    lc(" - $text{'error_write'}"
 							    )
 						);
 						}
-					elsif (!&unlink_file("$cwd/$name")) {
+					elsif (!&unlink_file($file)) {
 						$errors{$name_} =
 						    lc($text{'error_delete'}.
 							    lc(" - $!"));
@@ -104,11 +104,11 @@ foreach my $name (@entries_list) {
 			}
 		}
 	else {
-		if (!can_write($cwd.'/'.$name)) {
+		if (!can_write($file)) {
 			$errors{$name_} =
 			    lc($text{'error_delete'}.lc(" - $text{'error_write'}"));
 			}
-		elsif (!&unlink_file($cwd.'/'.$name)) {
+		elsif (!&unlink_file($file)) {
 			$errors{$name_} = lc($text{'error_delete'}.lc(" - $!"));
 			}
 		else {

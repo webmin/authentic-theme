@@ -43,8 +43,8 @@ my @entries_list = get_entries_list();
 if (!scalar %errors) {
     foreach my $name (@entries_list) {
         my $name_ = $name;
-        $name = simplify_path($name);
-        if (!$name || system_logged("chown $recursive $uid:$grid " . quotemeta("$cwd/$name")) != 0) {
+        my $file = fm_checked_cwd_path_or_error($name);
+        if (!$file || system_logged("chown $recursive $uid:$grid " . quotemeta($file)) != 0) {
             $errors{ $name_ } =  lc("$text{'error_chown'}: $?");
         }
     }

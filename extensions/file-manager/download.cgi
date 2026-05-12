@@ -87,14 +87,9 @@ else {
 
 		# Do extra check because zip actually resolves links by default
 		foreach my $name (@entries_list) {
-			my $ffile = &resolve_links(&simplify_path("$cwd/$name"));
-			my $error = 1;
-			for my $allowed_path (@allowed_paths) {
-				if (&is_under_directory($allowed_path, $ffile)) {
-					$error = 0;
-					}
-				}
-			if (-e $ffile && !$error) {
+			my $file = fm_checked_cwd_path_or_error($name);
+			my $ffile = &resolve_links($file);
+			if (-e $ffile && fm_path_is_allowed($ffile)) {
 				$command .= " ".quotemeta($name);
 				}
 			}

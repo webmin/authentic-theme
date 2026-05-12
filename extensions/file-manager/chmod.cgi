@@ -22,8 +22,8 @@ my @entries_list = get_entries_list();
 if ($in{'applyto'} eq '1') {
     foreach my $name (@entries_list) {
         my $name_ = $name;
-        $name = simplify_path($name);
-        if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
+        my $file = fm_checked_cwd_path_or_error($name);
+        if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta($file)) != 0) {
             $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
         }
     }
@@ -33,14 +33,14 @@ if ($in{'applyto'} eq '1') {
 if ($in{'applyto'} eq '2') {
     foreach my $name (@entries_list) {
         my $name_ = $name;
-        $name = simplify_path($name);
-        if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
+        my $file = fm_checked_cwd_path_or_error($name);
+        if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta($file)) != 0) {
             $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
         }
-        if (-d "$cwd/$name") {
+        if (-d $file) {
             if (
                 system_logged(
-                      "find " . quotemeta("$cwd/$name") . " -maxdepth 1 -type f -exec chmod " . quotemeta($perms) . " {} \\;"
+                      "find " . quotemeta($file) . " -maxdepth 1 -type f -exec chmod " . quotemeta($perms) . " {} \\;"
                 ) != 0)
             {
                 $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
@@ -53,8 +53,8 @@ if ($in{'applyto'} eq '2') {
 if ($in{'applyto'} eq '3') {
     foreach my $name (@entries_list) {
         my $name_ = $name;
-        $name = simplify_path($name);
-        if (system_logged("chmod -R " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
+        my $file = fm_checked_cwd_path_or_error($name);
+        if (system_logged("chmod -R " . quotemeta($perms) . " " . quotemeta($file)) != 0) {
             $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
         }
     }
@@ -64,13 +64,13 @@ if ($in{'applyto'} eq '3') {
 if ($in{'applyto'} eq '4') {
     foreach my $name (@entries_list) {
         my $name_ = $name;
-        $name = simplify_path($name);
-        if (-f "$cwd/$name") {
-            if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
+        my $file = fm_checked_cwd_path_or_error($name);
+        if (-f $file) {
+            if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta($file)) != 0) {
                 $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
         } else {
-            if (system_logged("find " . quotemeta("$cwd/$name") . " -type f -exec chmod " . quotemeta($perms) . " {} \\;")
+            if (system_logged("find " . quotemeta($file) . " -type f -exec chmod " . quotemeta($perms) . " {} \\;")
                 != 0)
             {
                 $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
@@ -82,14 +82,16 @@ if ($in{'applyto'} eq '4') {
 # Selected directories and subdirectories
 if ($in{'applyto'} eq '5') {
     foreach my $name (@entries_list) {
-        if (-d "$cwd/$name") {
-            if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta("$cwd/$name")) != 0) {
-                $errors{ $name } = lc("$text{'error_chmod'}: $?");
+        my $name_ = $name;
+        my $file = fm_checked_cwd_path_or_error($name);
+        if (-d $file) {
+            if (system_logged("chmod " . quotemeta($perms) . " " . quotemeta($file)) != 0) {
+                $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
-            if (system_logged("find " . quotemeta("$cwd/$name") . " -type d -exec chmod " . quotemeta($perms) . " {} \\;")
+            if (system_logged("find " . quotemeta($file) . " -type d -exec chmod " . quotemeta($perms) . " {} \\;")
                 != 0)
             {
-                $errors{ $name } = lc("$text{'error_chmod'}: $?");
+                $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
         }
     }

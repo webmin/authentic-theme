@@ -22,44 +22,47 @@ my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 
 foreach my $name (@entries_list) {
     my $no_command;
+    my $archive = fm_checked_cwd_path_or_error($name);
     $ecwd   = $cwd;
     $status = undef;
 
     # Based on options put extracted content to a separate directory
     if ($safe_mode) {
         my ($fname, $fext) = file_name_extension_splitter($name);
+        $fname ||= $name;
+        my $extract_dir = fm_checked_cwd_path_or_error($fname);
 
         # If directory exists add a numerable suffix
-        if (-e "$ecwd/$fname") {
+        if (-e $extract_dir) {
             my $__ = 1;
             for (;;) {
-                my $necwd = "$ecwd/$fname(" . $__++ . ")";
+                my $necwd = fm_checked_cwd_path_or_error($fname . "(" . $__++ . ")");
                 if (!-e $necwd) {
                     $ecwd = $necwd;
                     last;
                 }
             }
         } else {
-            $ecwd = "$ecwd/$fname";
+            $ecwd = $extract_dir;
         }
         my $qecwd = quotemeta($ecwd);
         system("mkdir $qecwd");
     }
 
-    my $archive_type = mimetype($cwd . '/' . $name);
+    my $archive_type = mimetype($archive);
     if ($archive_type =~ /x-tar/ || $archive_type =~ /-compressed-tar/ || $archive_type =~ /zstd/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         } else {
-            $status = system("$tar_cmd xpf " . quotemeta("$cwd/$name") . " -C " . quotemeta($ecwd));
+            $status = system("$tar_cmd xpf " . quotemeta($archive) . " -C " . quotemeta($ecwd));
         }
     } elsif ($archive_type =~ /x-bzip/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         } else {
-            $status = system("$tar_cmd xjfp " . quotemeta("$cwd/$name") . " -C " . quotemeta($ecwd));
+            $status = system("$tar_cmd xjfp " . quotemeta($archive) . " -C " . quotemeta($ecwd));
         }
     } elsif ($archive_type =~ /\/gzip/) {
         my $gz_cmd = has_command('gunzip') || has_command('gzip');
@@ -69,16 +72,23 @@ foreach my $name (@entries_list) {
             if ($ecwd ne $cwd) {
                 my $name_ = $name;
                 $name_ =~ s/\.gz$//g;
-                my $out = &backquote_command("$gz_cmd -d -f -k -c ".
-                    quotemeta("$cwd/$name"). " 2>&1".
-                    " > ".quotemeta($ecwd."/".$name_));
-                $status = $?;
-                if ($out && $status != 0) {
+                $name_ ||= $name;
+                my $out_file = fm_checked_path_under($ecwd, $name_);
+                if (!$out_file) {
                     $status = -999;
-                    $errors{$text{'theme_xhred_global_error'}} = $out;
+                    $errors{$name} = fm_not_allowed_error($name_);
+                } else {
+                    my $out = &backquote_command("$gz_cmd -d -f -k -c ".
+                        quotemeta($archive). " 2>&1".
+                        " > ".quotemeta($out_file));
+                    $status = $?;
+                    if ($out && $status != 0) {
+                        $status = -999;
+                        $errors{$text{'theme_xhred_global_error'}} = $out;
+                    }
                 }
             } else {
-                my $out = &backquote_command("$gz_cmd -d -f -k " . quotemeta("$cwd/$name") . " 2>&1");
+                my $out = &backquote_command("$gz_cmd -d -f -k " . quotemeta($archive) . " 2>&1");
                 $status = $?;
                 if ($out && $status != 0) {
                     $status = -999;
@@ -91,7 +101,7 @@ foreach my $name (@entries_list) {
         if (!$xz_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'xz');
         } else {
-            $status = system("$xz_cmd -d -f -k " . quotemeta("$cwd/$name"));
+            $status = system("$xz_cmd -d -f -k " . quotemeta($archive));
         }
     } elsif ($archive_type =~ /x-7z/ ||
              $archive_type =~ /x-raw-disk-image/ ||
@@ -104,7 +114,7 @@ foreach my $name (@entries_list) {
             if ($password) {
                 $pparam = (" -p" . quotemeta($password) . " ");
             }
-            $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($ecwd) . $pparam);
+            $status = system("$x7z_cmd x -aoa " . quotemeta($archive) . " -o" . quotemeta($ecwd) . $pparam);
         }
     } elsif ($archive_type =~ /\/zip/) {
         my $unzip_cmd = has_command('unzip');
@@ -114,14 +124,14 @@ foreach my $name (@entries_list) {
             my $x7z_cmd = has_command('7z');
             if ($password && $x7z_cmd) {
                 $pparam = (" -p" . quotemeta($password) . " ");
-                $status = system("$x7z_cmd x -aoa " . quotemeta("$cwd/$name") . " -o" . quotemeta($ecwd) . $pparam);
+                $status = system("$x7z_cmd x -aoa " . quotemeta($archive) . " -o" . quotemeta($ecwd) . $pparam);
             } else {
                 if ($password) {
                     $pparam = (" -P " . quotemeta($password) . " ");
                 }
                 my $unzip_out = `unzip --help`;
                 my $uu        = ($unzip_out =~ /-UU/ ? '-UU' : undef);
-                $status = system("$unzip_cmd $pparam $uu -q -o " . quotemeta("$cwd/$name") . " -d " . quotemeta($ecwd));
+                $status = system("$unzip_cmd $pparam $uu -q -o " . quotemeta($archive) . " -d " . quotemeta($ecwd));
             }
         }
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
@@ -133,13 +143,13 @@ foreach my $name (@entries_list) {
                 $pparam = (" -p " . quotemeta($password) . " ");
             }
             if ($unrar_cmd =~ /unar$/) {
-                $status = system("$unrar_cmd $pparam " . quotemeta("$cwd/$name") . " -o " . quotemeta($ecwd));
+                $status = system("$unrar_cmd $pparam " . quotemeta($archive) . " -o " . quotemeta($ecwd));
                 if ($status == 512) {
                     $status = 65280;
                 }
             } else {
                 $pparam =~ s/(?<=.)\s//;
-                $status = system("$unrar_cmd $pparam x -r -y -o+ " . quotemeta("$cwd/$name") . " " . quotemeta($ecwd));
+                $status = system("$unrar_cmd $pparam x -r -y -o+ " . quotemeta($archive) . " " . quotemeta($ecwd));
             }
         }
     } elsif ($archive_type =~ /\/(x-rpm|x-source-rpm)/) {
@@ -150,10 +160,10 @@ foreach my $name (@entries_list) {
         } elsif (!$cpio_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'cpio');
         } else {
-            my $dir  = fileparse("$cwd/$name", qr/\.[^.]*/);
-            my $path = quotemeta($safe_mode ? $ecwd : "$ecwd/$dir");
+            my $dir  = fileparse($name, qr/\.[^.]*/);
+            my $path = quotemeta($safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir));
             system("mkdir $path");
-            $status = system("($rpm2cpio_cmd " . quotemeta("$cwd/$name") . " | (cd " . $path . "; $cpio_cmd -idmv))");
+            $status = system("($rpm2cpio_cmd " . quotemeta($archive) . " | (cd " . $path . "; $cpio_cmd -idmv))");
         }
 
     } elsif ($archive_type =~ /\/x-deb|debian\.binary-package/) {
@@ -161,15 +171,15 @@ foreach my $name (@entries_list) {
         if (!$dpkg_cmd) {
             $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'dpkg');
         } else {
-            my $dir  = fileparse("$cwd/$name", qr/\.[^.]*/);
-            my $path = quotemeta($safe_mode ? $ecwd : "$ecwd/$dir");
+            my $dir  = fileparse($name, qr/\.[^.]*/);
+            my $path = quotemeta($safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir));
             system("mkdir $path");
-            $status = system("$dpkg_cmd -x " . quotemeta("$cwd/$name") . " " . $path);
+            $status = system("$dpkg_cmd -x " . quotemeta($archive) . " " . $path);
         }
     }
 
     if (!%errors && $delete && $status == 0) {
-        unlink_file("$cwd/$name");
+        unlink_file($archive);
     }
 
     if ($status != 0 && $status != -999) {
