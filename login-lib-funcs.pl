@@ -271,6 +271,228 @@ $username = ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
 $in->{'failed'} = $username;
 }
 
+# login_valid_miniserv_return_port(port)
+# Returns true if a miniserv return URL port is valid
+sub login_valid_miniserv_return_port
+{
+my $port = shift;
+return defined($port) && $port =~ /^\d+$/ && $port > 0 && $port <= 65535;
+}
+
+# login_miniserv_return_port_from_address(value)
+# Extracts a port from a miniserv socket/address value
+sub login_miniserv_return_port_from_address
+{
+my ($value) = @_;
+return undef if (!defined($value) || $value eq '');
+return $1 if ($value =~ /^(\d+)$/);
+return $1 if ($value =~ /^\[[^\]]+\]:(\d+)$/);
+return $1 if ($value =~ /^[^:]+:(\d+)$/);
+return undef;
+}
+
+# login_miniserv_return_ports(&miniserv-config)
+# Extracts configured miniserv listener ports
+sub login_miniserv_return_ports
+{
+my $miniserv = shift;
+my (%seen, @ports);
+foreach my $port ($miniserv->{'port'}, $miniserv->{'listen'}) {
+	if (&login_valid_miniserv_return_port($port) && !$seen{$port}++) {
+		push(@ports, $port);
+		}
+	}
+foreach my $sock (split(/\s+/, $miniserv->{'sockets'} || '')) {
+	my $port = &login_miniserv_return_port_from_address($sock);
+	if (&login_valid_miniserv_return_port($port) && !$seen{$port}++) {
+		push(@ports, $port);
+		}
+	}
+return @ports;
+}
+
+# login_valid_return_hostname(host)
+# Returns true if an ASCII/punycode return URL hostname has valid labels
+sub login_valid_return_hostname
+{
+my ($host) = @_;
+return 0 if (!defined($host) || $host eq '' || $host =~ /\.\./);
+foreach my $label (split(/\./, $host, -1)) {
+	return 0 if ($label eq '' || length($label) > 63);
+	return 0 if ($label !~ /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
+	}
+return 1;
+}
+
+# login_normalize_return_host(host, [allow-wildcards])
+# Normalizes a hostname from a URL or miniserv SNI key
+sub login_normalize_return_host
+{
+my ($host, $wildcards) = @_;
+return undef if (!defined($host));
+$host =~ s/^\s+|\s+$//g;
+$host =~ s/^\[//;
+$host =~ s/\]$//;
+$host =~ s/\.$//;
+$host = lc($host);
+return undef if ($host eq '' || $host =~ /[\x00-\x20\x7f\/\\\@]/);
+if ($wildcards && $host =~ s/^\*\.//) {
+	return undef if (!&login_valid_return_hostname($host));
+	return "*.$host";
+	}
+return $host if (&login_valid_return_hostname($host));
+return $host if ($host =~ /^[a-f0-9:]+$/ && $host =~ /:/);
+return undef;
+}
+
+# login_miniserv_return_hosts(&miniserv-config)
+# Extracts trusted return hostnames from miniserv SNI configuration
+sub login_miniserv_return_hosts
+{
+my $miniserv = shift;
+my @hosts;
+foreach my $key (keys(%$miniserv)) {
+	next if ($key !~ /^ipkey_(.+)$/);
+	push(@hosts, split(/\s*,\s*/, $1));
+	}
+push(@hosts, $miniserv->{'musthost'}) if ($miniserv->{'musthost'});
+my $system_host = eval { &get_system_hostname() };
+push(@hosts, $system_host) if ($system_host);
+return @hosts;
+}
+
+# login_add_return_service(&services, ssl, &ports, &hosts)
+# Adds an allowed return URL service definition
+sub login_add_return_service
+{
+my ($services, $ssl, $ports, $hosts) = @_;
+my (%ports, %hosts, @wildcards);
+foreach my $port (@$ports) {
+	$ports{$port} = 1 if (&login_valid_miniserv_return_port($port));
+	}
+foreach my $host (@$hosts) {
+	my $norm = &login_normalize_return_host($host, 1);
+	next if (!$norm);
+	if ($norm =~ /^\*\.(.+)$/) {
+		push(@wildcards, $1);
+		}
+	else {
+		$hosts{$norm} = 1;
+		}
+	}
+return if (!%ports || (!%hosts && !@wildcards));
+push(@$services, {
+	'ssl'       => $ssl ? 1 : 0,
+	'ports'     => \%ports,
+	'hosts'     => \%hosts,
+	'wildcards' => \@wildcards,
+	});
+}
+
+# login_add_miniserv_return_service(&services, &miniserv-config)
+# Adds return URLs for a miniserv service
+sub login_add_miniserv_return_service
+{
+my ($services, $miniserv) = @_;
+my @ports = &login_miniserv_return_ports($miniserv);
+my @hosts = &login_miniserv_return_hosts($miniserv);
+&login_add_return_service($services, $miniserv->{'ssl'}, \@ports, \@hosts);
+}
+
+# login_add_url_return_service(&services, url)
+# Adds return URL service from an explicitly configured URL
+sub login_add_url_return_service
+{
+my ($services, $url) = @_;
+return if (!$url);
+my ($host, $port, undef, $ssl) =
+	eval { &parse_http_url($url, undef, undef, undef, undef, undef, undef, 1) };
+return if ($@ || !$host || !defined($ssl) || $ssl == 2);
+$port ||= $ssl ? 443 : 80;
+&login_add_return_service($services, $ssl, [ $port ], [ $host ]);
+}
+
+# login_trusted_return_services([base-url])
+# Returns trusted Webmin/Usermin return URL services
+sub login_trusted_return_services
+{
+my $baseurl = shift;
+my @services;
+my @webmin_hosts;
+my %miniserv;
+if (&get_miniserv_config(\%miniserv)) {
+	@webmin_hosts = &login_miniserv_return_hosts(\%miniserv);
+	&login_add_miniserv_return_service(\@services, \%miniserv);
+	}
+&login_add_url_return_service(\@services, $baseurl);
+&login_add_url_return_service(\@services, eval { &get_webmin_email_url() });
+
+if (&foreign_check("usermin")) {
+	eval {
+		no warnings 'once';
+		local $main::error_must_die = 1;
+		&foreign_require("usermin");
+		my %uminiserv;
+		&usermin::get_usermin_miniserv_config(\%uminiserv);
+		if (%uminiserv) {
+			&login_add_miniserv_return_service(\@services, \%uminiserv);
+			my @uports = &login_miniserv_return_ports(\%uminiserv);
+			&login_add_return_service(\@services, $uminiserv{'ssl'},
+				\@uports, \@webmin_hosts);
+			&login_add_url_return_service(\@services,
+				$uminiserv{'redirect_url'});
+			}
+		&login_add_url_return_service(\@services,
+			&usermin::get_usermin_email_url());
+		};
+	}
+return @services;
+}
+
+# login_return_host_allowed(host, &service)
+# Returns true if the hostname matches a trusted return URL service
+sub login_return_host_allowed
+{
+my ($host, $service) = @_;
+return 1 if ($service->{'hosts'}->{$host});
+foreach my $suffix (@{$service->{'wildcards'}}) {
+	return 1 if ($host =~ /^[^.]+\.\Q$suffix\E$/);
+	}
+return 0;
+}
+
+# login_validate_forgot_return_url(return, [base-url])
+# Validates password-reset return URLs
+sub login_validate_forgot_return_url
+{
+my ($return, $baseurl) = @_;
+return undef if (!defined($return));
+$return =~ s/^\s+|\s+$//g;
+return undef if ($return eq '' || $return =~ /[\x00-\x1f\x7f\\]/);
+
+if ($return =~ m{^/}) {
+	return undef if ($return =~ m{^//});
+	return $return;
+	}
+
+return undef if ($return !~ m{^https?://}i ||
+		 $return =~ m{^https?://[^/]*\@}i);
+my ($host, $port, undef, $ssl) =
+	eval { &parse_http_url($return, undef, undef, undef, undef, undef, undef, 1) };
+return undef if ($@ || !$host || !defined($ssl) || $ssl == 2);
+$port ||= $ssl ? 443 : 80;
+return undef if (!&login_valid_miniserv_return_port($port));
+$host = &login_normalize_return_host($host);
+return undef if (!$host);
+
+foreach my $service (&login_trusted_return_services($baseurl)) {
+	next if ($service->{'ssl'} != ($ssl ? 1 : 0));
+	next if (!$service->{'ports'}->{$port});
+	return $return if (&login_return_host_allowed($host, $service));
+	}
+return undef;
+}
+
 # login_return_filter(&in)
 # Filters password-reset return URLs before they reach the browser
 sub login_return_filter
@@ -279,11 +501,7 @@ my ($in) = @_;
 my $return = $in->{'return'};
 if (defined($return)) {
 	$return =~ s/^\s+|\s+$//g;
-	my ($scheme) = $return =~ /^([A-Za-z][A-Za-z0-9+\-.]*):/;
-	$return = undef
-		if ($return =~ /[\x00-\x1f\x7f]/ ||
-		    $return =~ m!^//! ||
-		    ($scheme && lc($scheme) ne "http" && lc($scheme) ne "https"));
+	$return = &login_validate_forgot_return_url($return);
 	}
 $in->{'return'} = $return;
 }

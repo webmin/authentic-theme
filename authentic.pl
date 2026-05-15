@@ -1771,7 +1771,10 @@ sub theme_forgot_url
 {
     my ($baseurl, $id, $username) = @_;
     my $url = "$baseurl/?forgot=".&urlize($id)."&username=".&urlize($username);
-    $url .= "&return=".&urlize($in{'return'}) if ($in{'return'});
+    return $url if (!$in{'return'});
+    &load_login_lib();
+    my $return = &login_validate_forgot_return_url($in{'return'}, $baseurl);
+    $url .= "&return=".&urlize($return) if ($return);
     return $url;
 }
 
@@ -1783,7 +1786,9 @@ sub theme_forgot_handler
         # If called from the framed theme
         if ($page && $page =~ /forgot_form/ && $in{'return'}) {
             my $return = &un_urlize($in{'return'});
-            &redirect($prefix."?return=".&urlize($return));
+            &load_login_lib();
+            $return = &login_validate_forgot_return_url($return);
+            &redirect($prefix.($return ? "?return=".&urlize($return) : ""));
             exit;
         }
         # Create expected format forgot link that is sent in email

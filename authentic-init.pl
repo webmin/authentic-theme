@@ -100,6 +100,11 @@ do("$ENV{'THEME_ROOT'}/dependencies.pl")
     if (!@theme_bundle_css || !@theme_bundle_js);
 }
 
+sub load_login_lib
+{
+require("$ENV{'THEME_ROOT'}/login-lib-funcs.pl");
+}
+
 sub embed_favicon
 {
     my ($is_login_page) = @_;
