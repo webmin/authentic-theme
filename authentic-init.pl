@@ -1239,7 +1239,8 @@ sub get_button_style
     } elsif (string_contains($keys, "rmfeatures")) {
         $icon  = "question-circle";
         $class = "warning ";
-    } elsif (string_contains($keys, "newmxs_saveadd")) {
+    } elsif (string_contains($keys, "newmxs_saveadd") ||
+             string_contains($keys, "index_toggle")) {
         $icon  = "toggle-switch  fa-1_25x";
         $class = "warning ";
     } elsif (string_contains($keys, "save") ||
