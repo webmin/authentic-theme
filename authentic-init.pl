@@ -1243,6 +1243,14 @@ sub get_button_style
              string_contains($keys, "index_toggle")) {
         $icon  = "toggle-switch  fa-1_25x";
         $class = "warning ";
+    } elsif (string_contains($keys, "index_global_settings") ||
+             string_contains($keys, "index_ddns_settings") ||
+             string_contains($keys, "ddns_title")) {
+        $icon  = "settings";
+        $class = "info ";
+    } elsif (string_contains($keys, "index_runtime_status")) {
+        $icon  = " fa2 fa2-checklist fa-1_25x margined-left--2 margined-right--4";
+        $class = "success ";
     } elsif (string_contains($keys, "save") ||
              string_contains($keys, "backup_ok2")    ||
              string_contains($keys, "sharedips_ok")  ||
