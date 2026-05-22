@@ -1,4 +1,4 @@
-name: "webmin.dev: webmin/authentic-theme"
+name: Build
 
 on:
   push:
