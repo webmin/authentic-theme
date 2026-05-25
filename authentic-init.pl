@@ -1243,6 +1243,12 @@ sub get_button_style
              string_contains($keys, "index_toggle")) {
         $icon  = "toggle-switch  fa-1_25x";
         $class = "warning ";
+    } elsif (string_contains($keys, "index_view_status")) {
+        $icon  = "info-circle";
+        $class = "info ";
+    } elsif (string_contains($keys, "index_generate")) {
+        $icon  = "refresh-mdi fa-1_15x margined-left--2 margined-right--2";
+        $class = "warning ";
     } elsif (string_contains($keys, "index_global_settings") ||
              string_contains($keys, "index_ddns_settings") ||
              string_contains($keys, "ddns_title")) {
@@ -1250,7 +1256,7 @@ sub get_button_style
         $class = "info ";
     } elsif (string_contains($keys, "index_runtime_status")) {
         $icon  = " fa2 fa2-checklist fa-1_25x margined-left--2 margined-right--4";
-        $class = "success ";
+        $class = "success "; 
     } elsif (string_contains($keys, "save") ||
              string_contains($keys, "backup_ok2")    ||
              string_contains($keys, "sharedips_ok")  ||
