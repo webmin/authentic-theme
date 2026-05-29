@@ -1,5 +1,15 @@
 ## Changelog
 
+#### Version 26.50 (June, 2026)
+* Add ability for file editor save icon to reflect clean state
+* Fix catching errors when saving editor form in background
+* Fix iOS terminal viewport sizing
+* Fix popover positioning and border color
+* Fix file editor issues with border color in dark palette
+* Fix the editor size issue when manually editing a file in Safari
+
+<!--- separator --->
+
 #### Version 26.41.2 (May 12, 2026)
 * Fix allowed path enforcement in File Manager module
 * Fix potential unsafe theme cache deserialization
@@ -17,8 +27,6 @@
 * Fix tooltip visibility in dark palette
 * Fix session login button spinner
 * Fix various button styling issues (active state, tiny buttons, airy buttons, stack position)
-
-<!--- separator --->
 
 #### Version 26.30 (March 24, 2026)
 * Add a new airy button style to the light palette to match the dark one  
