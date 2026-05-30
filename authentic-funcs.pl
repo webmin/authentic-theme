@@ -46,9 +46,9 @@ sub settings
     }
 }
 
-# decode_utf8(\$scalar , [\$err])
+# decode_utf8_ref(\$scalar , [\$err])
 # Decode UTF-8 string by reference. Optionally, return error message
-sub decode_utf8 {
+sub decode_utf8_ref {
     my ($sref, $errref) = @_;
     return 0 unless defined($sref) && ref($sref) eq 'SCALAR';
     my $tmp = $$sref;

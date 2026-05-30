@@ -266,7 +266,7 @@ sub login_username_filter
 {
 my ($in) = @_;
 my $username = $in->{'failed'};
-decode_utf8(\$username);
+decode_utf8_ref(\$username);
 $username = ($username =~ /^[\p{L}\p{N}\@\_\.\-]+$/) ? $username : undef;
 $in->{'failed'} = $username;
 }
