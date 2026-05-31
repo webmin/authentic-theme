@@ -175,6 +175,7 @@ settings_side_slider_fixed_description=Aukera honek alboko graduatzailea pantail
 settings_roundish_slider=Irristailuaren ertz biribilduak
 settings_side_slider_enabled=Gaitu graduatzailea
 settings_leftmenu_user_html=Erakutsi HTML fragmentua
+settings_roundish_radius_description=Gai osoko ertz biribildu guztietarako erabiltzen den erradioa kontrolatzen du, edukien orria, nabigazio menua eta alboko graduatzailea barne. Dagokion konfigurazio ataletan ertz biribilduak gaituta daudenean bakarrik du eragina.
 
 theme_changelog=Aldaketen
 theme_conference=Gaiaren Konferentzia
@@ -1147,7 +1148,7 @@ theme_xhred_filemanager_remove_warning=Kentzea ongi amaitu da baina ez da objekt
 theme_xhred_connection_error_details_ssl=Begiratu <a>norberak sinatutako SSL ziurtagiria</a> abisua
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Ezkutuko akordeoiak
+settings_sysinfo_hidden_panels_user=Aginte-panelen
 theme_xhred_tooltip_dashboard_panels_disable=Ezkutatu $1 panela
 theme_xhred_dashboard_panels_disabled_explain=Ezkutuko panela berriro gaitu daiteke <tt>Theme Configuration: Dashboard and real-time monitoring</tt> orria erabiliz.
 settings_right_sysinfo_page_options=Arbel eta denbora errealeko monitorizazioa
@@ -1264,8 +1265,8 @@ theme_error_access_dir_not_allowed=Sarbidea ukatua: fitxategia ez da eskuragarri
 # 19.95
 theme_xhred_global_outdated_desc=$1 instalatutako bertsioa zaharkituta dago. Eskuragarri dagoen azken bertsioa $2 da. Mesedez, bertsio berritu edo egin klik azken bertsioari buruzko xehetasun gehiago lortzeko.
 theme_xhred_global_outdated_desc2=$1 instalatutako bertsioa zaharkituta dago. Eskuragarri dagoen azken bertsioa $2 da.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Eutsi sakatuta <tt>Ktrl</tt> aukeratzerakoan
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Eutsi sakatuta <tt>Komandoa</tt> aukeratzerakoan
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hautatu erakusteko panelak. Eduki <tt>Ctrl</tt> tekla sakatuta hautatzean
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hautatu erakusteko panelak. Eduki <tt>Command</tt> tekla sakatuta hautatzean
 
 # 19.97
 theme_xhred_webmin_requires_restart=Detektatu da Webmin web-zerbitzariaren deabrua ez dela behar bezala berrabiarazi azken paketearen bertsio berritzean. Hau beharrezkoa da web-zerbitzaria eskuz berrabiarazteko <tt>$1</tt> komandoa deituz.
@@ -1456,3 +1457,6 @@ settings_sysinfo_easypie_width=Sektore-diagramen lerro-zabalera
 
 #26.20
 theme_xhred_global_filter_and_search=Idatzi orrialde hau iragazteko edo sakatu Sartu orrialde guztiak bilatzeko
+
+#26.30
+settings_roundish_radius=Izkin biribilduen erradioa

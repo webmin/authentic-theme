@@ -32,6 +32,7 @@ settings_roundish_menu=Sudut menu bulat
 settings_side_slider_fixed_description=Pilihan ini membetulkan peluncur sisi ke sebelah kanan skrin, memastikan ia sentiasa kelihatan. Ia memerlukan lebar skrin minimum 1366 piksel untuk berfungsi dengan baik.
 
 settings_roundish_slider=Sudut gelangsar bulat
+settings_roundish_radius_description=Mengawal jejari yang digunakan untuk semua sudut bulat merentasi tema, termasuk halaman kandungan, menu navigasi dan gelangsar sisi. Ia hanya mempunyai kesan apabila sudut bulat diaktifkan dalam bahagian konfigurasi yang sepadan.
 
 # 17.40
 theme_xhred_sysinfo_wmdocs=Dokumentasi webmin
@@ -602,7 +603,7 @@ theme_xhred_filemanager_remove_warning=Pembuangan telah berjaya dilakukan tetapi
 theme_xhred_connection_error_details_ssl=Periksa amaran <a>sijil SSL yang ditandatangani sendiri</a>
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Akordeon tersembunyi
+settings_sysinfo_hidden_panels_user=Panel papan pemuka
 theme_xhred_tooltip_dashboard_panels_disable=Sembunyikan panel $1 
 theme_xhred_dashboard_panels_disabled_explain=Panel tersembunyi boleh didayakan semula menggunakan <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Papan pemuka dan pemantauan masa nyata
@@ -719,8 +720,8 @@ theme_error_access_dir_not_allowed=Akses dinafikan: Fail tidak boleh diakses
 # 19.95
 theme_xhred_global_outdated_desc=Versi $1 yang dipasang sudah lapuk. Versi terkini yang tersedia ialah $2. Sila tingkatkan atau klik untuk mendapatkan butiran lanjut tentang keluaran terbaru.
 theme_xhred_global_outdated_desc2=Versi $1 yang dipasang sudah lapuk. Versi terkini yang tersedia ialah $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Tahan kekunci <tt>Ctrl</tt> ditekan semasa pemilihan
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tahan kekunci <tt>Arahan</tt> ditekan semasa pemilihan
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Pilih panel untuk dipaparkan. Tekan dan tahan kekunci <tt>Ctrl</tt> semasa pemilihan
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pilih panel untuk dipaparkan. Tekan dan tahan kekunci <tt>Command</tt> semasa pemilihan
 
 # 19.97
 theme_xhred_webmin_requires_restart=Ia dikesan bahawa daemon pelayan web Webmin tidak dimulakan semula dengan betul pada peningkatan pakej terakhir. Ini adalah perlu untuk memulakan semula pelayan web secara manual dengan memanggil perintah <tt>$1</tt>.
@@ -912,3 +913,6 @@ settings_sysinfo_easypie_width=Carta pai lebar garis
 
 #26.20
 theme_xhred_global_filter_and_search=Taip untuk menapis halaman ini atau tekan Enter untuk mencari semua halaman
+
+#26.30
+settings_roundish_radius=Jejari sudut bulat

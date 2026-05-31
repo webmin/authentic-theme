@@ -175,6 +175,7 @@ settings_side_slider_fixed_description=Tämä asetus kiinnittää sivuliukusää
 settings_roundish_slider=Pyöristetyt liukusäätimen kulmat
 settings_side_slider_enabled=Ota liukusäädin käyttöön
 settings_leftmenu_user_html=Näytä HTML-katkelma
+settings_roundish_radius_description=Määrittää teeman kaikkien pyöristettyjen kulmien säteen, mukaan lukien sisältösivun, navigointivalikon ja sivuliukusäätimen. Tällä on vaikutusta vain, jos pyöristetyt kulmat on otettu käyttöön vastaavissa määritysosioissa.
 
 theme_changelog=changelog
 theme_conference=Teemakonferenssi
@@ -1147,7 +1148,7 @@ theme_xhred_filemanager_remove_warning=Poisto on suoritettu onnistuneesti, mutta
 theme_xhred_connection_error_details_ssl=Tarkista <a>itse allekirjoittama SSL-varmenne</a> -varoitus
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Piilotetut harmonikat
+settings_sysinfo_hidden_panels_user=Kojelaudan paneelit
 theme_xhred_tooltip_dashboard_panels_disable=Piilota $1 paneeli
 theme_xhred_dashboard_panels_disabled_explain=Piilotettu paneeli voidaan ottaa uudelleen käyttöön käyttämällä <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_sysinfo_page_options=Kojelauta ja reaaliaikainen seuranta
@@ -1264,8 +1265,8 @@ theme_error_access_dir_not_allowed=Pääsy kielletty: Tiedostoa ei voi käyttä�
 # 19.95
 theme_xhred_global_outdated_desc=$1:n asennettu versio on vanhentunut. Viimeisin saatavilla oleva versio on $2. Päivitä tai napsauta saadaksesi lisätietoja viimeisimmästä julkaisusta.
 theme_xhred_global_outdated_desc2=$1:n asennettu versio on vanhentunut. Viimeisin saatavilla oleva versio on $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Pidä <tt>Ctrl</tt>-näppäintä painettuna valinnan aikana
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Pidä <tt>Komento</tt>-näppäintä painettuna valinnan aikana
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Valitse näytettävät paneelit. Pidä <tt>Ctrl</tt>-näppäintä painettuna valinnan aikana
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Valitse näytettävät paneelit. Pidä <tt>Command</tt>-näppäintä painettuna valinnan aikana
 
 # 19.97
 theme_xhred_webmin_requires_restart=On havaittu, että Webmin-verkkopalvelindaemonia ei käynnistetty uudelleen oikein viimeisimmän paketin päivityksen yhteydessä. Tämä on tarpeen verkkopalvelimen käynnistämiseksi uudelleen manuaalisesti komennolla <tt>$1</tt>.
@@ -1456,3 +1457,6 @@ settings_sysinfo_easypie_width=Ympyräkaavioiden viivan leveys
 
 #26.20
 theme_xhred_global_filter_and_search=Kirjoita suodattaaksesi tämän sivun tai paina Enter hakeaksesi kaikilta sivuilta
+
+#26.30
+settings_roundish_radius=Pyöristetty kulman säde

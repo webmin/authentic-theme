@@ -175,6 +175,7 @@ settings_side_slider_fixed_description=این گزینه، اسلایدر کنا
 settings_roundish_slider=گوشه‌های کشویی گرد
 settings_side_slider_enabled=کشویی را فعال کنید
 settings_leftmenu_user_html=نمایش قطعه HTML
+settings_roundish_radius_description=شعاع مورد استفاده برای تمام گوشه‌های گرد در سراسر قالب، شامل صفحه محتوا، منوی ناوبری و اسلایدر کناری را کنترل می‌کند. این پارامتر فقط زمانی تأثیر دارد که گوشه‌های گرد در بخش‌های پیکربندی مربوطه فعال باشند.
 
 theme_changelog=تغییر
 theme_conference=کنفرانس موضوع
@@ -1147,7 +1148,7 @@ theme_xhred_filemanager_remove_warning=حذف با موفقیت به پایان 
 theme_xhred_connection_error_details_ssl=هشدار <a>گواهی SSL خود امضا شده</a> را بررسی کنید
 
 # 19.71
-settings_sysinfo_hidden_panels_user=آکاردئون پنهان
+settings_sysinfo_hidden_panels_user=پنل‌های داشبورد
 theme_xhred_tooltip_dashboard_panels_disable=پانل$1 پنهان شود
 theme_xhred_dashboard_panels_disabled_explain=پانل مخفی را می توان با استفاده از <tt>Theme Configuration: Dashboard and real-time monitoring</tt> دوباره فعال کرد.
 settings_right_sysinfo_page_options=داشبورد و نظارت بر زمان واقعی
@@ -1264,8 +1265,8 @@ theme_error_access_dir_not_allowed=دسترسی ممنوع شد: فایل قاب
 # 19.95
 theme_xhred_global_outdated_desc=نسخه نصب شده $1 قدیمی است. آخرین نسخه موجود $2 است. لطفاً برای دریافت جزئیات بیشتر درباره نسخه اخیر، آن را ارتقا دهید یا کلیک کنید.
 theme_xhred_global_outdated_desc2=نسخه نصب شده $1 قدیمی است. آخرین نسخه موجود $2 است.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=در حین انتخاب، کلید <tt>Ctrl</tt> را فشار داده نگه دارید
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=کلید <tt>Command</tt> را در حین انتخاب فشار داده نگه دارید
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=پنل‌ها را برای نمایش انتخاب کنید. هنگام انتخاب، کلید <tt>Ctrl</tt> را نگه دارید
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=پنل‌ها را برای نمایش انتخاب کنید. هنگام انتخاب، کلید <tt>Command</tt> را نگه دارید
 
 # 19.97
 theme_xhred_webmin_requires_restart=مشخص شده است که شبح وب سرور وبمین در آخرین ارتقاء بسته به درستی راه اندازی مجدد نشده است. این برای راه اندازی مجدد وب سرور به صورت دستی با فراخوانی فرمان <tt>$1</tt> ضروری است.
@@ -1456,3 +1457,6 @@ settings_sysinfo_easypie_width=عرض خط نمودارهای دایره‌ای
 
 #26.20
 theme_xhred_global_filter_and_search=برای فیلتر کردن این صفحه تایپ کنید، یا برای جستجوی همه صفحات، Enter را فشار دهید
+
+#26.30
+settings_roundish_radius=شعاع گوشه گرد

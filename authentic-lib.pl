@@ -101,28 +101,7 @@ sub get_extended_sysinfo
                     my $open =
                       ($info->{'open'} || $info->{'id'} eq 'domain') ? ' in' :
                       ($theme_config{'settings_sysinfo_expand_all_accordions'} eq 'true' ? ' in' : '');
-                    my $formatted_title = (
-                                        $info->{'id'} . '-' .
-                                          $info->{'module'} eq 'status_services-status' ?
-                                          $theme_text{'theme_xhred_sysinfo_system_monitors'} :
-                                          ($info->{'id'} . '-' .
-                                             $info->{'module'} eq 'sysinfo-virtual-server' ?
-                                             $theme_text{'theme_xhred_sysinfo_software_versions'} :
-                                             ($info->{'id'} . '-' .
-                                                $info->{'module'} eq 'status-virtual-server' ?
-                                                $theme_text{'theme_xhred_sysinfo_server_status'} :
-                                                ($info->{'id'} . '-' .
-                                                   $info->{'module'} eq 'quota-virtual-server' ?
-                                                   $theme_text{'theme_xhred_sysinfo_disk_quotas'} :
-                                                   ($info->{'id'} . '-' .
-                                                      $info->{'module'} eq 'bw-virtual-server' ?
-                                                      $theme_text{'theme_xhred_sysinfo_bandwidth_quotas'} :
-                                                      ($info->{'id'} . '-' .
-                                                         $info->{'module'} eq 'updates-virtual-server' ?
-                                                         $theme_text{'theme_xhred_sysinfo_vm_package_updates'} :
-                                                         ($info->{'id'} . '-' . $info->{'module'} eq 'acl_logins-acl' ?
-                                                            $theme_text{'theme_xhred_sysinfo_recent_logins'} :
-                                                            ($info->{'desc'}))))))));
+                    my $formatted_title = theme_sysinfo_accordion_title($info);
 
                     $returned_sysinfo .= '
                     <div draggable="false" data-referrer="' .
@@ -603,6 +582,67 @@ sub theme_list_combined_system_info
 
     # Return data
     return @data if @data;
+}
+
+sub theme_sysinfo_accordion_title
+{
+    my ($info) = @_;
+    my $key = $info->{'id'} . '-' . $info->{'module'};
+    return (
+        $key eq 'status_services-status' ? $theme_text{'theme_xhred_sysinfo_system_monitors'} :
+        $key eq 'sysinfo-virtual-server' ? $theme_text{'theme_xhred_sysinfo_software_versions'} :
+        $key eq 'status-virtual-server' ? $theme_text{'theme_xhred_sysinfo_server_status'} :
+        $key eq 'quota-virtual-server' ? $theme_text{'theme_xhred_sysinfo_disk_quotas'} :
+        $key eq 'bw-virtual-server' ? $theme_text{'theme_xhred_sysinfo_bandwidth_quotas'} :
+        $key eq 'updates-virtual-server' ? $theme_text{'theme_xhred_sysinfo_vm_package_updates'} :
+        $key eq 'acl_logins-acl' ? $theme_text{'theme_xhred_sysinfo_recent_logins'} :
+        $info->{'desc'});
+}
+
+sub theme_sysinfo_accordion_candidate
+{
+    my ($info) = @_;
+    return 0 if (ref($info) ne 'HASH');
+    return ($info->{'id'} && $info->{'module'} && exists($info->{'open'}));
+}
+
+sub theme_list_sysinfo_accordion_candidates
+{
+    my ($info_ref, $include_live_stats) = @_;
+    my @info = $info_ref ? @{$info_ref} : theme_list_combined_system_info();
+    my (@accordions, %seen);
+    foreach my $info (@info) {
+        next if (!theme_sysinfo_accordion_candidate($info));
+        my $id = $info->{'id'};
+        next if ($seen{$id}++);
+        push(@accordions, [$id, theme_sysinfo_accordion_title($info), $info->{'module'}]);
+    }
+    if ($include_live_stats && &webmin_user_is_admin() && !$seen{'live_stats'}++) {
+        push(@accordions, ['live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, 'A']);
+    }
+    my %panels_order = theme_sysinfo_panels_order();
+    if (%panels_order) {
+        foreach my $accordion (@accordions) {
+            next if ($accordion->[0] eq 'live_stats');
+            $accordion->[2] = $panels_order{$accordion->[0]}
+              if (exists($panels_order{$accordion->[0]}));
+        }
+    }
+    @accordions = sort { $a->[2] gt $b->[2] ? 1 : -1 } @accordions;
+    return map { [$_->[0], $_->[1]] } @accordions;
+}
+
+sub theme_sysinfo_panels_order
+{
+    my $data = $theme_config{'settings_sysinfo_panels_order'};
+    my %order;
+    return %order if (!$data || $data eq '[object Object]');
+    eval {
+        $data =~ s/'/"/g;
+        my $panels_order = convert_from_json($data);
+        %order = %{$panels_order} if (ref($panels_order) eq 'HASH');
+    };
+    return %order;
 }
 
 sub show_sysinfo_section

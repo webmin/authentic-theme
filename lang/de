@@ -1137,7 +1137,6 @@ theme_xhred_filemanager_remove_warning=Löschvorgang war erfolgreich, jedoch nic
 theme_xhred_connection_error_details_ssl=Prüfen Sie die Warnung zum selbstsignierten SSL-Zertifikat
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Ausgeblendete Panels
 theme_xhred_tooltip_dashboard_panels_disable=$1-Panel ausblenden
 theme_xhred_dashboard_panels_disabled_explain=Ausgeblendete Panels können auf der Seite Design-Konfiguration: Dashboard und Echtzeitüberwachung wieder aktiviert werden.
 settings_right_sysinfo_page_options=Dashboard und Echtzeitüberwachung
@@ -1251,8 +1250,6 @@ theme_error_access_dir_not_allowed=Zugriff verweigert: Datei ist nicht zugängli
 # 19.95
 theme_xhred_global_outdated_desc=Installierte Version von $1 ist veraltet. Neueste verfügbare Version ist $2. Bitte aktualisieren Sie oder klicken Sie für weitere Informationen zur aktuellen Veröffentlichung.
 theme_xhred_global_outdated_desc2=Installierte Version von $1 ist veraltet. Neueste verfügbare Version ist $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Strg-Taste beim Auswählen gedrückt halten
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Command-Taste beim Auswählen gedrückt halten
 
 # 19.97
 theme_xhred_webmin_requires_restart=Webmin-Dienst wurde nach letztem Paket-Update nicht korrekt neu gestartet. Ein manueller Neustart über $1 ist erforderlich.

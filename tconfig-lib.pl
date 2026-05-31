@@ -110,9 +110,9 @@ sub theme_settings_raw
                        'settings_sysinfo_easypie_charts',
                        'settings_sysinfo_easypie_size',
                        'settings_sysinfo_easypie_width',
-                       'settings_sysinfo_hidden_panels_user',
                        'settings_sysinfo_real_time_status',
                        'settings_sysinfo_max_servers',
+                       'settings_sysinfo_hidden_panels_user',
             ] }
         ],
 
@@ -208,11 +208,6 @@ sub theme_settings_filter
     if (!$theme_config{'settings_leftmenu_netdata_link'}) {
         $theme_config{'settings_leftmenu_netdata_link'} =
           ('//' . get_system_hostname() . ':19999');
-    }
-
-    # Exclude hidden panels if none
-    if (!$theme_config{'settings_sysinfo_hidden_panels_user'}) {
-        push(@theme_settings_filter, 'settings_sysinfo_hidden_panels_user');
     }
 
     # Exclude list of settings for Virtualmin
@@ -349,26 +344,27 @@ sub theme_settings_format
           });
         } qw(_side _top);
 
-    } elsif ($k =~ /settings_sysinfo_hidden_panels_user/ &&
-             $theme_config{'settings_sysinfo_hidden_panels_user'})
+    } elsif ($k =~ /settings_sysinfo_hidden_panels_user/)
     {
-        my $excluded_accordions;
-        my @excluded_accordions;
-        my @selected_excluded_accordions;
-        eval {
-            my $data = $theme_config{'settings_sysinfo_hidden_panels_user'};
-            $data =~ s/'/"/g;
-            $excluded_accordions          = convert_from_json($data);
-            @selected_excluded_accordions = keys %{$excluded_accordions};
-            foreach my $key (@selected_excluded_accordions) {
-                push(@excluded_accordions, [$key, $excluded_accordions->{$key}]);
-            }
-        };
-        if (!$@) {
-            $v = &ui_select("settings_sysinfo_hidden_panels_user",
-                            \@selected_excluded_accordions,
-                            \@excluded_accordions, scalar(@selected_excluded_accordions), 1);
+        my @available_accordions = theme_list_sysinfo_accordion_candidates(undef, 1);
+        my %hidden_accordions;
+        my @selected_visible_accordions;
+        if ($theme_config{'settings_sysinfo_hidden_panels_user'}) {
+            eval {
+                my $data = $theme_config{'settings_sysinfo_hidden_panels_user'};
+                $data =~ s/'/"/g;
+                my $hidden = convert_from_json($data);
+                %hidden_accordions = %{$hidden} if (ref($hidden) eq 'HASH');
+            };
         }
+        foreach my $accordion (@available_accordions) {
+            push(@selected_visible_accordions, $accordion->[0])
+              if (!$hidden_accordions{ $accordion->[0] });
+        }
+        $v = &ui_select("settings_sysinfo_hidden_panels_user",
+                        \@selected_visible_accordions,
+                        \@available_accordions, scalar(@available_accordions), 1, 0, 0,
+                        'data-save-inverse="1"');
 
     } elsif ($k =~ /settings_hotkey_toggle_key_/ ||
              $k eq 'settings_hotkey_focus_search'  ||

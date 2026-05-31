@@ -7,6 +7,7 @@ settings_roundish_menu=Abgerundete Menüecken
 settings_side_slider_fixed_description=Diese Option fixiert den seitlichen Schieberegler am rechten Bildschirmrand, sodass er immer sichtbar ist. Sie benötigt eine Mindestbildschirmbreite von 1366 Pixeln, um einwandfrei zu funktionieren.
 
 settings_roundish_slider=Abgerundete Schieberecken
+settings_roundish_radius_description=Steuert den Radius aller abgerundeten Ecken im gesamten Theme, einschließlich Inhaltsseite, Navigationsmenü und Seitenleiste. Die Einstellung ist nur wirksam, wenn abgerundete Ecken in den entsprechenden Konfigurationseinstellungen aktiviert sind.
 
 theme_xhred_filemanager_new_tab=Neuen Tab hinzufügen (Alt + Leertaste)
 
@@ -19,11 +20,16 @@ theme_tooltip_night_mode=Hell-/Dunkelmodus umschalten
 theme_xhred_global_auto=Auto
 
 # 19.71
+settings_sysinfo_hidden_panels_user=Dashboard-Panels
 settings_right_hotkey_options=Tastenkombinationen
 settings_right_hotkey_custom_options=Benutzerdefinierte Verknüpfungen
 
 # 19.84
 settings_right_table_force_single_column=Einzelspaltenmodus erzwingen
+
+# 19.95
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Wählen Sie die anzuzeigenden Bedienfelder aus. Halten Sie während der Auswahl die Strg-Taste gedrückt
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Wählen Sie die anzuzeigenden Bedienfelder aus. Halten Sie die <tt>Befehl</tt>-Taste während der Auswahl gedrückt
 
 # 20.30
 theme_xhred_hotkey_print_title=Webmin-Tastaturkürzel mit Authentic Theme
@@ -65,3 +71,6 @@ settings_sysinfo_easypie_width=Linienbreite von Kreisdiagrammen
 
 #26.20
 theme_xhred_global_filter_and_search=Geben Sie einen Suchbegriff ein, um diese Seite zu filtern, oder drücken Sie die Eingabetaste, um alle Seiten zu durchsuchen
+
+#26.30
+settings_roundish_radius=Abgerundeter Eckenradius

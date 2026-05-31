@@ -12,6 +12,7 @@ settings_roundish_menu=Zaokrąglone rogi menu
 settings_side_slider_fixed_description=Ta opcja przytrzymuje suwak boczny po prawej stronie ekranu, dzięki czemu jest zawsze widoczny. Do prawidłowego działania wymagana jest minimalna szerokość ekranu 1366 pikseli.
 
 settings_roundish_slider=Zaokrąglone rogi suwaka
+settings_roundish_radius_description=Kontroluje promień zaokrąglenia wszystkich narożników w motywie, w tym na stronie z treścią, w menu nawigacyjnym i w suwaku bocznym. Działa tylko wtedy, gdy zaokrąglanie narożników jest włączone w odpowiednich sekcjach konfiguracji.
 
 # 17.84
 theme_xhred_datatable_filter=Filtr
@@ -30,11 +31,16 @@ theme_xhred_global_auto=Automatyczny
 theme_xhred_favorites_add=Dodaj do ulubionych
 
 # 19.71
+settings_sysinfo_hidden_panels_user=Panele deski rozdzielczej
 settings_right_hotkey_options=Skróty klawiaturowe
 settings_right_hotkey_custom_options=Skróty niestandardowych łączy
 
 # 19.84
 settings_right_table_force_single_column=Wymuś tryb pojedynczej kolumny
+
+# 19.95
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Wybierz panele do wyświetlenia. Podczas zaznaczania przytrzymaj klawisz <tt>Ctrl</tt>
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Wybierz panele do wyświetlenia. Przytrzymaj klawisz <tt>Command</tt> podczas zaznaczania
 
 # 20.30
 theme_xhred_hotkey_list_tabs=Lista kart
@@ -101,3 +107,6 @@ settings_sysinfo_easypie_width=Szerokość linii wykresów kołowych
 
 #26.20
 theme_xhred_global_filter_and_search=Wpisz, aby filtrować tę stronę lub naciśnij Enter, aby przeszukać wszystkie strony
+
+#26.30
+settings_roundish_radius=Zaokrąglony promień narożnika

@@ -31,6 +31,7 @@ settings_roundish_menu=Rundade menyhörn
 settings_side_slider_fixed_description=Det här alternativet fixerar sidoskjutreglaget till höger sida av skärmen, så att det alltid är synligt. Det behöver en minsta skärmbredd på 1366 pixlar för att fungera korrekt.
 
 settings_roundish_slider=Rundade skjutreglagehörn
+settings_roundish_radius_description=Styr radien som används för alla rundade hörn i temat, inklusive innehållssidan, navigeringsmenyn och sidoskjutreglaget. Den har bara effekt när rundade hörn är aktiverade i motsvarande konfigurationsavsnitt.
 
 # 17.40
 theme_xhred_sysinfo_wmdocs=Webmin dokumentation
@@ -91,6 +92,7 @@ settings_leftmenu_custom_links_description=Det är möjligt att få anpassade, e
 settings_hotkey_shell2=Öppna kommandoskalet
 
 # 19.71
+settings_sysinfo_hidden_panels_user=Instrumentpaneler
 theme_xhred_dashboard_panels_disabled_explain=Dold panel kan återaktiveras med hjälp av <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_hotkey_options=Kortkommandon
 settings_right_hotkey_custom_options=Genvägar för anpassade länkar
@@ -103,6 +105,10 @@ theme_xhred_sysinfo_vmforum=Virtualmin Community
 
 # 19.90
 settings_hotkey_toggle_hold_modifier=Håll ned modifieringsknappen
+
+# 19.95
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Markera paneler som ska visas. Håll <tt>Ctrl</tt>-tangenten nedtryckt under valet
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Markera paneler som ska visas. Håll <tt>Kommando</tt>-tangenten nedtryckt under valet
 
 # 20.30
 theme_xhred_hotkeys_help=Hjälp (F1)
@@ -262,3 +268,6 @@ settings_sysinfo_easypie_width=Linjebredd för cirkeldiagram
 
 #26.20
 theme_xhred_global_filter_and_search=Skriv för att filtrera den här sidan eller tryck på Enter för att söka på alla sidor
+
+#26.30
+settings_roundish_radius=Rundad hörnradie

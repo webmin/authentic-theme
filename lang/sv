@@ -1084,7 +1084,6 @@ theme_xhred_filemanager_remove_warning=Borttagningen är klar men inte för alla
 theme_xhred_connection_error_details_ssl=Kontrollera <a>självsignerat SSL-certifikat</a>
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Dolda menyrader
 theme_xhred_tooltip_dashboard_panels_disable=Dölj panelen $1
 settings_right_sysinfo_page_options=Instrumentpanel och realtidsövervakning
 settings_right_navigation_menu_options=Navigeringsmeny
@@ -1193,8 +1192,6 @@ theme_error_access_dir_not_allowed=Åtkomst nekad: Filen är inte tillgänglig
 # 19.95
 theme_xhred_global_outdated_desc=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2. Uppgradera eller klicka för att få mer information om den senaste versionen.
 theme_xhred_global_outdated_desc2=Den installerade versionen av $1 är föråldrad. Den senaste tillgängliga versionen är $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Håll <tt>Ctrl</tt>-tangenten nedtryckt under valet
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Håll <tt>Kommando</tt>-tangenten nedtryckt under valet
 
 # 19.97
 theme_xhred_webmin_requires_restart=Det har upptäckts att Webmin-webbserverdemonen inte startades om korrekt vid den senaste paketuppgraderingen. Detta är nödvändigt för att starta om webbservern manuellt genom att anropa kommandot <tt>$1</tt>.

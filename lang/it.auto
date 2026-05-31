@@ -31,6 +31,7 @@ settings_roundish_menu=Angoli del menu arrotondati
 settings_side_slider_fixed_description=Questa opzione fissa il cursore laterale sul lato destro dello schermo, mantenendolo sempre visibile. Per funzionare correttamente, è necessaria una larghezza minima dello schermo di 1366 pixel.
 
 settings_roundish_slider=Angoli arrotondati dello slider
+settings_roundish_radius_description=Controlla il raggio utilizzato per tutti gli angoli arrotondati del tema, inclusi la pagina dei contenuti, il menu di navigazione e il cursore laterale. Ha effetto solo se gli angoli arrotondati sono abilitati nelle sezioni di configurazione corrispondenti.
 
 # 17.40
 theme_xhred_sysinfo_wmdocs=Documentazione webmin
@@ -99,6 +100,7 @@ theme_xhred_filemanager_mass_selected_for_delete=Tutti gli elementi nella direct
 settings_hotkey_shell2=Apri la shell dei comandi
 
 # 19.71
+settings_sysinfo_hidden_panels_user=Pannelli del cruscotto
 theme_xhred_dashboard_panels_disabled_explain=Il pannello nascosto può essere riattivato utilizzando <tt>Theme Configuration: Dashboard and real-time monitoring</tt>.
 settings_right_hotkey_options=Scorciatoie da tastiera
 settings_right_hotkey_custom_options=Collegamenti rapidi personalizzati
@@ -188,8 +190,8 @@ theme_error_access_dir_not_allowed=Accesso negato: il file non è accessibile
 # 19.95
 theme_xhred_global_outdated_desc=La versione installata di $1 è obsoleta. L'ultima versione disponibile è $2. Si prega di aggiornare o fare clic per ottenere maggiori dettagli sulla versione recente.
 theme_xhred_global_outdated_desc2=La versione installata di $1 è obsoleta. L'ultima versione disponibile è $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Tenere premuto il tasto <tt>Ctrl</tt> durante la selezione
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Tenere premuto il tasto <tt>Comando</tt> durante la selezione
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Seleziona i pannelli da visualizzare. Tieni premuto il tasto <tt>Ctrl</tt> durante la selezione
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Seleziona i pannelli da visualizzare. Tieni premuto il tasto <tt>Comando</tt> durante la selezione
 
 # 19.97
 theme_xhred_webmin_requires_restart=Viene rilevato che il daemon del server Web Webmin non è stato riavviato correttamente durante l'ultimo aggiornamento del pacchetto. Ciò è necessario per riavviare manualmente il server web chiamando il comando <tt>$1</tt>.
@@ -381,3 +383,6 @@ settings_sysinfo_easypie_width=Larghezza della linea dei grafici a torta
 
 #26.20
 theme_xhred_global_filter_and_search=Digita per filtrare questa pagina oppure premi Invio per cercare in tutte le pagine
+
+#26.30
+settings_roundish_radius=Raggio degli angoli arrotondati

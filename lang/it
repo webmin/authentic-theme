@@ -1081,7 +1081,6 @@ theme_xhred_filemanager_remove_warning=La rimozione è terminata con successo ma
 theme_xhred_connection_error_details_ssl=Controlla l'avviso <a>Certificato SSL autofirmato</a>
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Pannelli nascosti
 theme_xhred_tooltip_dashboard_panels_disable=Nascondi il pannello $1 
 settings_right_sysinfo_page_options=Dashboard e monitoraggio in tempo reale
 settings_right_navigation_menu_options=Menu di navigazione

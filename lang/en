@@ -1203,7 +1203,7 @@ theme_xhred_connection_error_details_ssl=Check <a>self-signed SSL certificate</a
 
 
 # 19.71
-settings_sysinfo_hidden_panels_user=Hidden accordions
+settings_sysinfo_hidden_panels_user=Dashboard panels
 theme_xhred_tooltip_dashboard_panels_disable=Hide $1 panel
 theme_xhred_dashboard_panels_disabled_explain=Hidden panel can be re-enabled using <tt>Theme Configuration: Dashboard and real-time monitoring</tt> page.
 settings_right_sysinfo_page_options=Dashboard and real-time monitoring
@@ -1328,8 +1328,8 @@ theme_error_access_dir_not_allowed=Access denied: File is not accessible
 # 19.95
 theme_xhred_global_outdated_desc=Installed version of $1 is outdated. Latest available version is $2. Please upgrade or click to get more details about recent release.
 theme_xhred_global_outdated_desc2=Installed version of $1 is outdated. Latest available version is $2.
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Hold <tt>Ctrl</tt> key pressed during selection
-theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Hold <tt>Command</tt> key pressed during selection
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_pc=Select panels to show. Hold <tt>Ctrl</tt> key pressed during selection
+theme_xhred_settings_sysinfo_hidden_panels_user_desc_mac=Select panels to show. Hold <tt>Command</tt> key pressed during selection
 
 
 # 19.97
