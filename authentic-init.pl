@@ -1243,9 +1243,13 @@ sub get_button_style
              string_contains($keys, "index_toggle")) {
         $icon  = "toggle-switch  fa-1_25x";
         $class = "warning ";
-    } elsif (string_contains($keys, "index_view_status")) {
+    } elsif (string_contains($keys, "index_view_status")||
+             string_contains($keys, "edit_statusnow")) {
         $icon  = "info-circle";
         $class = "info ";
+    } elsif (string_contains($keys, "edit_logsnow")) {
+        $icon  = "file-text";
+        $class = "primary ";
     } elsif (string_contains($keys, "index_generate")) {
         $icon  = "refresh-mdi fa-1_15x margined-left--2 margined-right--2";
         $class = "warning ";
