@@ -1,12 +1,13 @@
 ## Changelog
 
-#### Version 26.50 (June, 2026)
-* Add ability for file editor save icon to reflect clean state
-* Fix catching errors when saving editor form in background
+#### Version 26.50 (June 7, 2026)
+* Add ability to always show available dashboard panels in theme configuration
+* Add better support for the new Kea DHCP, Nginx, nftables and upcoming GRUB 2 Webmin modules
+* Fix to validate password reset return URLs
+* Fix editor save handling, clean-state icon and dirty reload guard
 * Fix iOS terminal viewport sizing
-* Fix popover positioning and border color
-* Fix file editor issues with border color in dark palette
-* Fix the editor size issue when manually editing a file in Safari
+* Fix popover positioning, z-index and border color for help bubbles
+* Fix dark palette border and text contrast issues
 
 <!--- separator --->
 
