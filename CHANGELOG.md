@@ -1,13 +1,15 @@
 ## Changelog
 
-#### Version 26.50 (June 7, 2026)
+#### Version 26.50 (June 9, 2026)
+* Add zooming to stats history graphs by holding shift and scrolling in the dashboard
+* Add support for saving live stats history for up to 24 hours without a serious performance impact
+* Add better support for the new Nginx, nftables, and upcoming Kea-DHCP, and GRUB 2 Webmin modules
 * Add ability to always show available dashboard panels in theme configuration
-* Add better support for the new Kea DHCP, Nginx, nftables and upcoming GRUB 2 Webmin modules
-* Fix to validate password reset return URLs
-* Fix editor save handling, clean-state icon and dirty reload guard
 * Fix iOS terminal viewport sizing
+* Fix editor save handling, clean-state indication and dirty reload guard
 * Fix popover positioning, z-index and border color for help bubbles
-* Fix dark palette border and text contrast issues
+* Fix the active product switch border in the navigation menu for the dark palette
+* Fix to validate password reset return URLs
 
 <!--- separator --->
 
