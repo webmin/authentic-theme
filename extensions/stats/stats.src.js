@@ -19,6 +19,7 @@ const stats = {
         activating: 0,
         requery: null,
         socket: null,
+        chartZoomRange: null,
         // Import globals
         /* jshint -W117 */
         _: {
@@ -429,6 +430,179 @@ const stats = {
             };
         },
 
+        // Get the complete x-axis bounds currently kept by a chart
+        getChartDataBounds: function (data) {
+            const xdata = data && data[0],
+                  low = xdata && xdata[0],
+                  high = xdata && xdata[xdata.length - 1];
+            if (!Number.isFinite(low) || !Number.isFinite(high)) {
+                return null;
+            }
+            return {
+                low: low,
+                high: high,
+            };
+        },
+
+        // Keep zoom useful but avoid collapsing to less than a few samples
+        getChartZoomMinSpan: function (bounds) {
+            return Math.min(
+                bounds.high - bounds.low,
+                Math.max(this.getInterval() * 4, 10)
+            );
+        },
+
+        // Clamp a requested x-axis range to the chart's available data
+        clampChartZoomRange: function (low, high, bounds) {
+            const maxSpan = bounds.high - bounds.low;
+            if (!Number.isFinite(maxSpan) || maxSpan <= 0) {
+                return {
+                    low: bounds.low,
+                    high: bounds.high,
+                };
+            }
+
+            let span = high - low;
+            if (!Number.isFinite(span) || span <= 0) {
+                span = maxSpan;
+            }
+            span = Math.min(
+                maxSpan,
+                Math.max(this.getChartZoomMinSpan(bounds), span)
+            );
+
+            if (!Number.isFinite(low)) {
+                low = bounds.high - span;
+            }
+            if (!Number.isFinite(high)) {
+                high = low + span;
+            }
+            if (low < bounds.low) {
+                low = bounds.low;
+                high = low + span;
+            }
+            if (high > bounds.high) {
+                high = bounds.high;
+                low = high - span;
+            }
+
+            return {
+                low: low,
+                high: high,
+            };
+        },
+
+        // Get the active x-axis range, honoring a user zoom if present
+        getChartVisibleRange: function (data) {
+            const zoomRange = this.chartZoomRange,
+                  bounds = zoomRange ? this.getChartDataBounds(data) : null;
+            if (zoomRange && bounds && bounds.high > bounds.low) {
+                return this.clampChartZoomRange(
+                    zoomRange.low,
+                    zoomRange.high,
+                    bounds
+                );
+            }
+            return this.getChartWindow(data);
+        },
+
+        // Apply the current shared zoom state to every rendered chart
+        syncChartZoomRange: function () {
+            Object.keys(this).forEach((key) => {
+                if (key.indexOf("chart_") !== 0) {
+                    return;
+                }
+                const chart = this[key];
+                if (!chart || typeof chart.setScale !== "function") {
+                    return;
+                }
+                this.applyChartZoomRange(chart);
+            });
+        },
+
+        // Set or clear the shared chart zoom range
+        setChartZoomRange: function (range) {
+            this.chartZoomRange = range ? {
+                low: range.low,
+                high: range.high,
+            } : null;
+            this.syncChartZoomRange();
+        },
+
+        // Apply the visible x-axis range to a single chart
+        applyChartZoomRange: function (chart) {
+            const range = this.getChartVisibleRange(chart.data);
+            chart.setScale("x", {
+                min: range.low,
+                max: range.high,
+            });
+        },
+
+        // Get the chart's current x-axis range with a data-based fallback
+        getCurrentChartScaleRange: function (chart) {
+            const scale = chart.scales && chart.scales.x,
+                  fallback = this.getChartVisibleRange(chart.data),
+                  low = scale && Number.isFinite(scale.min) ?
+                      scale.min : fallback.low,
+                  high = scale && Number.isFinite(scale.max) ?
+                      scale.max : fallback.high;
+            return {
+                low: low,
+                high: high,
+            };
+        },
+
+        // Normalize wheel deltas to pixels for consistent zoom/pan speed
+        getChartWheelDelta: function (event, delta) {
+            if (event.deltaMode === 1) {
+                return delta * 16;
+            }
+            if (event.deltaMode === 2) {
+                return delta * (
+                    window.innerHeight ||
+                    document.documentElement.clientHeight ||
+                    800
+                );
+            }
+            return delta;
+        },
+
+        // Get the interactive plot width for wheel-position math
+        getChartPlotWidth: function (target, chart) {
+            const rect = chart.over ?
+                      chart.over.getBoundingClientRect() :
+                      target.getBoundingClientRect(),
+                  width = rect.width || chart.width || target.clientWidth || 1;
+            return Math.max(width, 1);
+        },
+
+        // Pan the shared zoom window horizontally
+        panChartZoomRange: function (target, chart, delta, startRange) {
+            const bounds = this.getChartDataBounds(chart.data);
+            if (!this.chartZoomRange || !bounds || bounds.high <= bounds.low) {
+                return false;
+            }
+
+            const current = startRange || this.getCurrentChartScaleRange(chart),
+                  span = current.high - current.low,
+                  maxSpan = bounds.high - bounds.low;
+            if (!Number.isFinite(span) || span <= 0 ||
+                !Number.isFinite(maxSpan) || span >= maxSpan * 0.999) {
+                return false;
+            }
+
+            const offset = span * (
+                      delta / this.getChartPlotWidth(target, chart)
+                  ),
+                  range = this.clampChartZoomRange(
+                      current.low + offset,
+                      current.high + offset,
+                      bounds
+                  );
+            this.setChartZoomRange(range);
+            return true;
+        },
+
         // Get a readable step for Chartist-like Network I/O y-axis labels
         getNetworkChartStep: function (value) {
             const magnitude = Math.pow(10, Math.floor(Math.log10(value))),
@@ -489,6 +663,285 @@ const stats = {
             return value;
         },
 
+        // Build a hover readout value for the chart cursor index
+        getChartHoverValueRows: function (type, chart, index, hasArea, hasBandwidth) {
+            const rows = [],
+                  x = chart.data[0] && chart.data[0][index],
+                  time = Number.isFinite(x) ?
+                      this._.dayjs(x * 1000)
+                          .utcOffset(this._.locale.offset())
+                          .format(this._.locale.time) : "";
+
+            if (time) {
+                rows.push([time]);
+            }
+
+            if (type === "disk" || type === "net") {
+                const labels = [
+                    this._.language(`dashboard_chart_${type}_read`),
+                    this._.language(`dashboard_chart_${type}_write`),
+                ];
+                for (let i = 1; i < chart.data.length; i++) {
+                    const value = chart.data[i][index];
+                    if (value == null) {
+                        continue;
+                    }
+                    rows.push([
+                        labels[i - 1] || "",
+                        this.formatChartValue(type, value, hasArea, hasBandwidth),
+                    ]);
+                }
+            } else {
+                for (let i = 1; i < chart.data.length; i++) {
+                    const value = chart.data[i][index];
+                    if (value == null) {
+                        continue;
+                    }
+                    rows.push([
+                        this.formatChartValue(type, value, hasArea, hasBandwidth),
+                    ]);
+                    break;
+                }
+            }
+
+            return rows;
+        },
+
+        // Get values available at a data index for hover hit testing
+        getChartHoverValuesAtIndex: function (chart, index) {
+            const values = [];
+            for (let i = 1; i < chart.data.length; i++) {
+                const value = chart.data[i][index];
+                if (value != null && Number.isFinite(value)) {
+                    values.push(value);
+                }
+            }
+            return values;
+        },
+
+        // Prefer the visually closest nearby point for sharp spikes
+        getChartHoverValueIndex: function (chart, index) {
+            const xdata = chart.data[0];
+            if (index == null || !xdata || !chart.cursor) {
+                return index;
+            }
+
+            const cursorLeft = chart.cursor.left,
+                  cursorTop = chart.cursor.top,
+                  maxDistance = 8,
+                  maxNeighborPoints = 32,
+                  scoreIndex = (pointIndex) => {
+                      const x = xdata[pointIndex],
+                            values = this.getChartHoverValuesAtIndex(
+                                chart, pointIndex);
+                      if (!Number.isFinite(x) || !values.length) {
+                          return null;
+                      }
+
+                      const xPos = chart.valToPos(x, "x"),
+                            dx = Math.abs(xPos - cursorLeft);
+                      if (!Number.isFinite(dx) || dx > maxDistance) {
+                          return null;
+                      }
+
+                      let dy = Infinity;
+                      values.forEach((value) => {
+                          const yPos = chart.valToPos(value, "y"),
+                                distance = Math.abs(yPos - cursorTop);
+                          if (Number.isFinite(distance) && distance < dy) {
+                              dy = distance;
+                          }
+                      });
+                      if (!Number.isFinite(dy)) {
+                          return null;
+                      }
+
+                      return {
+                          index: pointIndex,
+                          score: dy + (dx * 0.35),
+                      };
+                  };
+
+            let best = scoreIndex(index) || {
+                index: index,
+                score: Infinity,
+            };
+            for (let direction = -1; direction <= 1; direction += 2) {
+                for (let i = index + direction, checked = 0;
+                     i >= 0 && i < xdata.length &&
+                     checked < maxNeighborPoints;
+                     i += direction, checked++) {
+                    const x = xdata[i],
+                          xPos = Number.isFinite(x) ?
+                              chart.valToPos(x, "x") : NaN,
+                          dx = Math.abs(xPos - cursorLeft);
+                    if (!Number.isFinite(dx) || dx > maxDistance) {
+                        break;
+                    }
+                    const candidate = scoreIndex(i);
+                    if (candidate && candidate.score < best.score) {
+                        best = candidate;
+                    }
+                }
+            }
+
+            return best.index;
+        },
+
+        // Create the small hover readout element on demand
+        getChartHoverValueElement: function (target, chart) {
+            if (!chart.hoverValueElement) {
+                const element = document.createElement("span");
+                element.className = "uplot-hover-value tooltip";
+                element.style.cssText = [
+                    "background:var(--authentic-tooltip-bg)",
+                    "border:1px solid var(--border-color-input,var(--border-color,rgba(255,255,255,0.14)))",
+                    "border-radius:6px",
+                    "box-shadow:0 4px 10px rgba(0,0,0,0.22)",
+                    "color:var(--authentic-tooltip-fg)",
+                    "display:none",
+                    "font-size:11px",
+                    "font-weight:500",
+                    "letter-spacing:0",
+                    "line-height:1.12",
+                    "padding:5px 7px 4px",
+                    "pointer-events:none",
+                    "position:absolute",
+                    "text-align:center",
+                    "white-space:nowrap",
+                    "width:max-content",
+                    "z-index:2",
+                ].join(";");
+                const content = document.createElement("span"),
+                      arrow = document.createElement("span");
+                content.style.display = "block";
+                arrow.style.cssText = [
+                    "border-left:5px solid transparent",
+                    "border-right:5px solid transparent",
+                    "height:0",
+                    "position:absolute",
+                    "width:0",
+                ].join(";");
+                element.appendChild(content);
+                element.appendChild(arrow);
+                target.appendChild(element);
+                chart.hoverValueElement = element;
+                chart.hoverValueContent = content;
+                chart.hoverValueArrow = arrow;
+            }
+            return chart.hoverValueElement;
+        },
+
+        // Hide the hover readout
+        hideChartHoverValue: function (chart) {
+            if (chart.hoverValueElement) {
+                chart.hoverValueElement.style.display = "none";
+                chart.hoverValueIndex = null;
+            }
+        },
+
+        // Render hover readout content as value(s), divider, then time
+        renderChartHoverValue: function (chart, rows) {
+            const time = rows.length && rows[0].length === 1 ? rows[0][0] : "",
+                  values = time ? rows.slice(1) : rows,
+                  valueText = values.map((row) => {
+                      return row.length > 1 ? `${row[0]}: ${row[1]}` : row[0];
+                  }).join(" · "),
+                  content = chart.hoverValueContent;
+            content.textContent = "";
+            if (valueText) {
+                const valueLine = document.createElement("span");
+                valueLine.style.display = "block";
+                valueLine.textContent = valueText;
+                content.appendChild(valueLine);
+            }
+            if (time && valueText) {
+                const divider = document.createElement("span");
+                divider.style.cssText = [
+                    "background-color:var(--authentic-tooltip-fg)",
+                    "display:block",
+                    "height:1px",
+                    "margin:4px 0 3px",
+                    "opacity:.50",
+                ].join(";");
+                content.appendChild(divider);
+            }
+            if (time) {
+                const timeLine = document.createElement("span");
+                timeLine.style.cssText = [
+                    "color:var(--authentic-tooltip-fg)",
+                    "display:block",
+                    "font-size:10px",
+                    "font-weight:400",
+                ].join(";");
+                timeLine.textContent = time;
+                content.appendChild(timeLine);
+            }
+        },
+
+        // Update the hover readout content and position
+        updateChartHoverValue: function (type, target, chart, hasArea, hasBandwidth) {
+            const index = chart.cursor && chart.cursor.idx,
+                  valueIndex = this.getChartHoverValueIndex(chart, index),
+                  element = chart.hoverValueElement ||
+                      (index == null ? null :
+                          this.getChartHoverValueElement(target, chart));
+            if (!element) {
+                return;
+            }
+            if (index == null || !chart.over || chart.zoomPanStart) {
+                this.hideChartHoverValue(chart);
+                return;
+            }
+
+            if (chart.hoverValueIndex !== valueIndex) {
+                const rows = this.getChartHoverValueRows(
+                    type, chart, valueIndex, hasArea, hasBandwidth);
+                if (!rows.length) {
+                    this.hideChartHoverValue(chart);
+                    return;
+                }
+                this.renderChartHoverValue(chart, rows);
+                chart.hoverValueIndex = valueIndex;
+            }
+
+            const targetRect = target.getBoundingClientRect(),
+                  overRect = chart.over.getBoundingClientRect(),
+                  width = targetRect.width || target.clientWidth,
+                  cursorLeft = chart.cursor.left || 0,
+                  cursorTop = chart.cursor.top || 0,
+                  anchorLeft = overRect.left - targetRect.left + cursorLeft,
+                  anchorTop = overRect.top - targetRect.top + cursorTop;
+
+            element.style.display = "block";
+            let left = anchorLeft - (element.offsetWidth / 2),
+                top = anchorTop - element.offsetHeight - 8,
+                arrowDown = true;
+            if (top < 4) {
+                top = anchorTop + 8;
+                arrowDown = false;
+            }
+            left = Math.min(
+                Math.max(left, 4),
+                Math.max(4, width - element.offsetWidth - 4)
+            );
+            element.style.left = `${Math.round(left)}px`;
+            element.style.top = `${Math.round(top)}px`;
+            if (chart.hoverValueArrow) {
+                const arrowLeft = Math.min(
+                    Math.max(anchorLeft - left, 8),
+                    element.offsetWidth - 8
+                );
+                chart.hoverValueArrow.style.left = `${Math.round(arrowLeft - 5)}px`;
+                chart.hoverValueArrow.style.top = arrowDown ? "auto" : "-5px";
+                chart.hoverValueArrow.style.bottom = arrowDown ? "-5px" : "auto";
+                chart.hoverValueArrow.style.borderTop = arrowDown ?
+                    "5px solid var(--authentic-tooltip-bg)" : "0";
+                chart.hoverValueArrow.style.borderBottom = arrowDown ?
+                    "0" : "5px solid var(--authentic-tooltip-bg)";
+            }
+        },
+
         // Build uPlot options for a single live-history graph
         getChartOptions: function (type, label, data, graphOptions, target) {
             const size = this.getChartSize(target, graphOptions.height),
@@ -545,7 +998,17 @@ const stats = {
                 width: size.width,
                 height: size.height,
                 cursor: {
-                    show: false,
+                    show: true,
+                    x: false,
+                    y: false,
+                    points: {
+                        show: false,
+                    },
+                    drag: {
+                        setScale: false,
+                        x: false,
+                        y: false,
+                    },
                 },
                 legend: {
                     show: false,
@@ -554,7 +1017,7 @@ const stats = {
                     x: {
                         time: true,
                         range: (self) => {
-                            const range = this.getChartWindow(self.data || data);
+                            const range = this.getChartVisibleRange(self.data || data);
                             return [range.low, range.high];
                         },
                     },
@@ -667,6 +1130,12 @@ const stats = {
                             ctx.restore();
                         },
                     ],
+                    setCursor: [
+                        (self) => {
+                            this.updateChartHoverValue(
+                                type, target, self, hasArea, hasBandwidth);
+                        },
+                    ],
                 },
                 series: series,
             };
@@ -704,6 +1173,38 @@ const stats = {
             if (chart.hoverEvent && chart.statsTarget) {
                 $(chart.statsTarget).off(chart.hoverEvent);
             }
+            if (chart.zoomEventTarget) {
+                chart.zoomEventTarget.removeEventListener(
+                    "wheel",
+                    chart.zoomWheelHandler
+                );
+                chart.zoomEventTarget.removeEventListener(
+                    "dblclick",
+                    chart.zoomResetHandler
+                );
+                chart.zoomEventTarget.removeEventListener(
+                    "pointerdown",
+                    chart.zoomPanStartHandler
+                );
+                chart.zoomEventTarget.removeEventListener(
+                    "pointermove",
+                    chart.zoomPanMoveHandler
+                );
+                chart.zoomEventTarget.removeEventListener(
+                    "pointerup",
+                    chart.zoomPanEndHandler
+                );
+                chart.zoomEventTarget.removeEventListener(
+                    "pointercancel",
+                    chart.zoomPanEndHandler
+                );
+            }
+            if (chart.hoverValueElement) {
+                chart.hoverValueElement.remove();
+                chart.hoverValueElement = null;
+                chart.hoverValueContent = null;
+                chart.hoverValueArrow = null;
+            }
             chart.destroy();
             this[`chart_${type}`] = null;
         },
@@ -718,6 +1219,127 @@ const stats = {
                     // update it
                     chart.redraw(false, false);
                 });
+        },
+
+        // Zoom and pan all stats history charts
+        bindChartZoom: function (target, chart) {
+            chart.zoomEventTarget = target;
+            chart.zoomWheelHandler = (event) => {
+                const deltaX = this.getChartWheelDelta(event, event.deltaX),
+                      deltaY = this.getChartWheelDelta(event, event.deltaY),
+                      delta = Math.abs(deltaX) > Math.abs(deltaY) ?
+                          deltaX : deltaY;
+
+                if (!event.shiftKey) {
+                    const panDelta = Math.abs(deltaX) > Math.abs(deltaY) ?
+                              deltaX : 0;
+                    if (panDelta &&
+                        this.panChartZoomRange(target, chart, panDelta)) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    return;
+                }
+
+                const bounds = this.getChartDataBounds(chart.data);
+                if (!bounds || bounds.high <= bounds.low) {
+                    return;
+                }
+
+                const current = this.getCurrentChartScaleRange(chart),
+                      span = current.high - current.low;
+                if (!delta || !Number.isFinite(span) || span <= 0) {
+                    return;
+                }
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                const overRect = chart.over ?
+                          chart.over.getBoundingClientRect() :
+                          target.getBoundingClientRect(),
+                      pointer = overRect.width ?
+                          (event.clientX - overRect.left) / overRect.width : 0.5,
+                      anchorRatio = Math.min(Math.max(pointer, 0), 1),
+                      anchor = current.low + (span * anchorRatio),
+                      zoomFactor = delta > 0 ? 1.25 : 0.8,
+                      requestedSpan = span * zoomFactor,
+                      anchorLowRatio = (anchor - current.low) / span,
+                      low = anchor - (requestedSpan * anchorLowRatio),
+                      high = low + requestedSpan,
+                      range = this.clampChartZoomRange(low, high, bounds),
+                      maxSpan = bounds.high - bounds.low;
+
+                if (range.high - range.low >= maxSpan * 0.999) {
+                    this.setChartZoomRange(null);
+                    return;
+                }
+
+                this.setChartZoomRange(range);
+            };
+            chart.zoomPanStartHandler = (event) => {
+                if (!this.chartZoomRange || event.button !== 0) {
+                    return;
+                }
+                const current = this.getCurrentChartScaleRange(chart);
+                chart.zoomPanStart = {
+                    x: event.clientX,
+                    range: {
+                        low: current.low,
+                        high: current.high,
+                    },
+                    pointerId: event.pointerId,
+                };
+                if (target.setPointerCapture) {
+                    target.setPointerCapture(event.pointerId);
+                }
+                this.hideChartHoverValue(chart);
+                event.preventDefault();
+            };
+            chart.zoomPanMoveHandler = (event) => {
+                const start = chart.zoomPanStart;
+                if (!start || start.pointerId !== event.pointerId) {
+                    return;
+                }
+                const delta = start.x - event.clientX;
+                if (Math.abs(delta) < 1) {
+                    return;
+                }
+                if (this.panChartZoomRange(
+                    target,
+                    chart,
+                    delta,
+                    start.range
+                )) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+            };
+            chart.zoomPanEndHandler = (event) => {
+                if (!chart.zoomPanStart ||
+                    chart.zoomPanStart.pointerId !== event.pointerId) {
+                    return;
+                }
+                if (target.releasePointerCapture &&
+                    (!target.hasPointerCapture ||
+                     target.hasPointerCapture(event.pointerId))) {
+                    target.releasePointerCapture(event.pointerId);
+                }
+                chart.zoomPanStart = null;
+            };
+            chart.zoomResetHandler = () => {
+                if (this.chartZoomRange) {
+                    this.setChartZoomRange(null);
+                }
+            };
+            target.addEventListener("wheel", chart.zoomWheelHandler, {
+                passive: false,
+            });
+            target.addEventListener("pointerdown", chart.zoomPanStartHandler);
+            target.addEventListener("pointermove", chart.zoomPanMoveHandler);
+            target.addEventListener("pointerup", chart.zoomPanEndHandler);
+            target.addEventListener("pointercancel", chart.zoomPanEndHandler);
+            target.addEventListener("dblclick", chart.zoomResetHandler);
         },
 
         // Repaint current charts after palette changes without restarting stats
@@ -770,6 +1392,7 @@ const stats = {
             chart.statsTarget = target;
             this.bindChartResize(type, target, chart, graphOptions.height);
             this.bindChartHover(type, target, chart);
+            this.bindChartZoom(target, chart);
             this.addChartTrafficLabels(target, type);
         },
 
@@ -792,10 +1415,7 @@ const stats = {
             const range = this.getChartWindow(chart.data);
             this.trimChartData(chart.data, range.low);
             chart.setData(chart.data, true);
-            chart.setScale("x", {
-                min: range.low,
-                max: range.high,
-            });
+            this.applyChartZoomRange(chart);
             return true;
         },
 
