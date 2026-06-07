@@ -705,6 +705,7 @@ theme_xhred_global_reauthenticate=Reauthenticate
 
 # 19.04
 settings_sysinfo_real_time_status=Enable real-time monitoring
+settings_sysinfo_real_time_status_description=Real-time monitoring updates dashboard values and, when history storage is enabled, saves samples for Stats History graphs. Use Shift + scroll to zoom graphs, drag or horizontal scroll to pan while zoomed, and double-click to reset. Longer history periods keep more samples, increasing the stats history file size and the initial graph load time, especially on slower networks or low-powered systems. Use a shorter period, or enable monitoring without storage, if you only need current live values.
 theme_xhred_global_redirecting=Redirecting
 
 
