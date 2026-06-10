@@ -1179,8 +1179,10 @@ sub get_button_style
     } elsif (string_contains($keys, "index_profile_setup")) {
         $class = "info ";
         $icon  = " fa2 fa2-settings";
-    } elsif (string_contains($keys, "index_edit_manual")) {
+    } elsif (string_contains($keys, "index_edit_manual") ||
+             string_contains($keys, "index_edit_files")) {
         $class = "warning ";
+        $class = "info " if (string_contains($keys, "index_edit_files"));
         $icon = " fa2 fa2-code fa-1_10x margined-top-05";
     } elsif (string_contains($keys, "index_bootup")) {
         $class = "success ";
@@ -1243,13 +1245,25 @@ sub get_button_style
              string_contains($keys, "index_toggle")) {
         $icon  = "toggle-switch  fa-1_25x";
         $class = "warning ";
-    } elsif (string_contains($keys, "index_view_status")||
-             string_contains($keys, "edit_statusnow")) {
+    } elsif (string_contains($keys, "index_view_status")) {
         $icon  = "info-circle";
         $class = "info ";
-    } elsif (string_contains($keys, "edit_logsnow")) {
-        $icon  = "file-text";
-        $class = "primary ";
+    } elsif (string_contains($keys, "_statusnow")) {
+        $icon  = " fa-kit fa-status";
+    } elsif (string_contains($keys, "_logsnow")) {
+        $icon  = " fa-kit fa-logs";
+    } elsif (string_contains($keys, "_depsnow")) {
+        $icon  = " fa-kit fa-deps";
+    } elsif (string_contains($keys, "_propsnow")) {
+        $icon  = "info-circle";
+    } elsif (string_contains($keys, "_overridenow")) {
+        $icon = "plus-circle";
+        $class = "info ";
+    } elsif (string_contains($keys, "_editoverridenow") ||
+             string_contains($keys, "_stockunitnow")) {
+        $icon  = "pencil-square-o";
+        $class = "info ";
+        $class = "warning " if (string_contains($keys, "_stockunitnow"));
     } elsif (string_contains($keys, "index_generate")) {
         $icon  = "refresh-mdi fa-1_15x margined-left--2 margined-right--2";
         $class = "warning ";
@@ -1524,6 +1538,10 @@ sub get_button_style
         $icon  = "stop";
         $class = "warning "
             if (string_contains($keys, "index_stop_sel"));
+    } elsif (string_contains($keys, "index_mask")) {
+        $icon  = "lock";
+    } elsif (string_contains($keys, "index_unmask")) {
+        $icon  = "unlock";
     } elsif (string_contains($keys, "ok_ok")) {
         $icon  = "check-square-o";
         $class = "success ";
