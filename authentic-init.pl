@@ -1258,12 +1258,11 @@ sub get_button_style
         $icon  = "info-circle";
     } elsif (string_contains($keys, "_overridenow")) {
         $icon = "plus-circle";
-        $class = "info ";
+        $class = "primary ";
     } elsif (string_contains($keys, "_editoverridenow") ||
              string_contains($keys, "_stockunitnow")) {
-        $icon  = "pencil-square-o";
-        $class = "info ";
-        $class = "warning " if (string_contains($keys, "_stockunitnow"));
+        $icon  = "editor fa-1_10x margined-top--1-5";
+        $class = "primary ";
     } elsif (string_contains($keys, "index_generate")) {
         $icon  = "refresh-mdi fa-1_15x margined-left--2 margined-right--2";
         $class = "warning ";
