@@ -1183,7 +1183,10 @@ sub get_button_style
              string_contains($keys, "index_edit_files")) {
         $class = "warning ";
         $class = "info " if (string_contains($keys, "index_edit_files"));
-        $icon = " fa2 fa2-code fa-1_10x margined-top-05";
+        $icon = " fa2 fa2-code margined-top--05 margined-left--1 margined-right--1 fa-1_15x";
+    } elsif (string_contains($keys, "index_dropins")) {
+        $class = "primary ";
+        $icon = " fa-kit fa-angles-down fa-0_90x margined-left-2 margined-right-1";
     } elsif (string_contains($keys, "index_bootup")) {
         $class = "success ";
         $icon = "toggle-switch-off fa-1_25x";
@@ -1263,6 +1266,7 @@ sub get_button_style
              string_contains($keys, "_stockunitnow")) {
         $icon  = "editor fa-1_10x margined-top--1-5";
         $class = "primary ";
+        $class = "info " if (string_contains($keys, "_stockunitnow"));
     } elsif (string_contains($keys, "index_generate")) {
         $icon  = "refresh-mdi fa-1_15x margined-left--2 margined-right--2";
         $class = "warning ";
