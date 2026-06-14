@@ -507,6 +507,12 @@ sub product_version_update_remote
 sub product_version_update
 {
     my ($product_local_version, $product_local_name) = @_;
+
+    # Normalize package release suffixes before any return path can display them.
+    if ($product_local_name =~ /^(w|u|v|c)$/ && $product_local_version) {
+        $product_local_version =~ s/^(.+?)-\d+(?:[.\w~+]*)(?:\.\w+)?$/$1/;
+    }
+
     return $product_local_version
       if ($theme_config{'settings_check_remote_updates'} eq 'false');
     my $software_versions_remote = product_version_update_remote();
