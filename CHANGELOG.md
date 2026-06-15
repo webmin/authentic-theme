@@ -1,9 +1,9 @@
 ## Changelog
 
-#### Version 26.50 (June 9, 2026)
+#### Version 26.50 (June 15, 2026)
 * Add zooming to stats history graphs by holding shift and scrolling in the dashboard
-* Add support for saving live stats history for up to 24 hours without a serious performance impact
-* Add better support for the new Nginx, nftables, and upcoming Kea-DHCP, and GRUB 2 Webmin modules
+* Add support for saving live stats history for up to 24 hours without performance impact
+* Add better support for the new Nginx, nftables, and upcoming systemd, Kea-DHCP, and GRUB 2 Webmin modules
 * Add ability to always show available dashboard panels in theme configuration
 * Fix iOS terminal viewport sizing
 * Fix editor save handling, clean-state indication and dirty reload guard
