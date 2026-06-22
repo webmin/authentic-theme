@@ -15,6 +15,7 @@ our (%in,
      $current_lang_info,
      $root_directory,
      $config_directory,
+     $var_directory,
      $current_theme,
      $theme_webprefix,
      $module_name,
@@ -912,6 +913,18 @@ sub theme_write_file_contents
         };
     # Clean up and return success
     return $cleanup->(1, 1);
+}
+
+# Return the on-disk path for persisted real-time history
+sub get_stats_history_file
+{
+    return "$var_directory/modules/$current_theme/real-time-monitoring.json";
+}
+
+# Return the on-disk path for cached real-time stats
+sub get_stats_now_file
+{
+    return "$var_directory/modules/$current_theme/real-time-monitoring-now.json";
 }
 
 # merge_stats_now_into_system_info_data(sysinfo-data-arrref, stats-now-json-string)

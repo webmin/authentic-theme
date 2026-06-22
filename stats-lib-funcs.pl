@@ -17,7 +17,7 @@ if (!$@) {
 }
 
 # Import global variables
-our ($config_directory, $var_directory, $current_theme);
+our ($config_directory, $current_theme);
 
 # Load theme language and settings
 our %stats_text = load_language($current_theme);
@@ -217,12 +217,6 @@ sub get_stats_now
     return \%data;
 }
 
-# Return the on-disk path for persisted real-time history
-sub get_stats_history_file
-{
-    return "$var_directory/modules/$current_theme/real-time-monitoring.json";
-}
-
 # Deep clone given data structures
 sub deep_clone
 {
@@ -414,8 +408,7 @@ sub save_stats_now
     my ($stats_now)  = @_;
     delete($stats_now->{'graphs'});
     theme_write_file_contents(
-        "$var_directory/modules/$current_theme/real-time-monitoring-now.json",
-        $json->encode($stats_now));
+        get_stats_now_file(), $json->encode($stats_now));
 }
 
 # Cache dynamic feature availability checks per module/type pair

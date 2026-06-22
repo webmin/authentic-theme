@@ -545,14 +545,15 @@ sub theme_list_combined_system_info
             if (ref($combined_system_info_cache) eq 'ARRAY' &&
                 @{$combined_system_info_cache});
         # Update the existing sysinfo cache on the fly if we have newer stats
-        if ( -r (my $file = theme_cache_path("real-time-monitoring-now.json")) ) {
+        if ( -r (my $file = get_stats_now_file()) ) {
             my $stats_mtime = (stat($file))[9]            // 0;
             my $cache_mtime = (stat($cache_file_path))[9] // 0;
             merge_stats_now_into_system_info_data(
                 \@data, &read_file_contents($file))
                     if ($stats_mtime > $cache_mtime);
-            # Data merged or skipped, delete transient file ether way
-            unlink_file($file) if (&is_under_directory(theme_cache_dir(), $file));
+            # Data merged or skipped, delete transient file either way
+            my ($stats_cache_dir) = theme_var_dir();
+            unlink_file($file) if (&is_under_directory($stats_cache_dir, $file));
         }
     # Update all caches from scratch if cache is missing
     } else {
@@ -1805,7 +1806,7 @@ sub clear_theme_cache
         opendir(my $dir, $theme_var_dir);
         grep {unlink_file("$theme_var_dir/$_") if (/^stats-server-\d+/)} readdir($dir);
         closedir($dir);
-        unlink_file("$theme_var_dir/real-time-monitoring.json");
+        unlink_file(get_stats_history_file());
         kill_byname("$current_theme/stats.pl", 9);
         unlink_file("$theme_var_dir/stats-$remote_user.json");
 
