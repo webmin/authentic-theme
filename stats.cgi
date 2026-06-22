@@ -11,10 +11,21 @@ require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 our ($config_directory, $current_theme, $root_directory, $var_directory,
      $base_remote_user, %stats_text);
 
+my $parent_path = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'} || '';
+my $link_proxy = $parent_path =~ /\/link\.cgi\/\d{8,16}/ ? 1 : 0;
+
+sub print_stats_json
+{
+    my ($data, $rewrite_links) = @_;
+    my $content_type = $link_proxy && $rewrite_links ? "text/html" : "application/json";
+    print "Content-type: $content_type;\n\n";
+    print convert_to_json($data);
+}
+
 # Check access
 init_prefail();
 if (!defined(&webmin_user_is_admin) || !webmin_user_is_admin()) {
-    print_json({ error => $stats_text{'index_noadmin_eaccess'}, access => 0 });
+    print_stats_json({ error => $stats_text{'index_noadmin_eaccess'}, access => 0 });
     exit;
 }
 
@@ -32,7 +43,7 @@ foreach my $modname (@modnames) {
     }
 }
 if (@errors) {
-    print_json({ error => $errors[2], 
+    print_stats_json({ error => $errors[2],
                  error_module => $errors[1],
                  error_stack => $errors[0] });
     exit;
@@ -79,15 +90,23 @@ foreach my $k (keys %miniserv) {
         my $err;
         open_socket($host, $port, my $fh, \$err);
         next if ($err);
-        print_json({ success => 1, port => $port, new => 0,
-                     socket => $get_socket->($port),
-                     errlog => $get_logfile->($port) });
+        my %rv = ( success => 1, port => $port, new => 0,
+                   socket => $get_socket->($port),
+                   errlog => $get_logfile->($port) );
+        if ($link_proxy) {
+            my ($backend_session) = $miniserv{$k} =~ /\bbackend_session=(\S+)/;
+            next if (!$backend_session);
+            $rv{'session'} = $backend_session;
+        }
+        print_stats_json(\%rv, 1);
         exit;
     }
 }
 
 # Allocate port
-my $port = allocate_miniserv_websocket($current_theme, $base_remote_user);
+my $websocket_session_id = $link_proxy ? generate_miniserv_websocket_token() : $main::session_id;
+my $port = allocate_miniserv_websocket(
+    $current_theme, $base_remote_user, ($link_proxy ? $websocket_session_id : undef));
 
 # Launch the stats server
 my $server_name = "stats.pl";
@@ -97,15 +116,18 @@ create_wrapper($statsserver_cmd, $current_theme, $server_name)
 
 # Launch the server in a sub-process (no fork)
 my $logfile = $get_logfile->($port);
+my $extra_env = $link_proxy ? "WEBSOCKET_SESSION_ID=$websocket_session_id " : "";
 my $rs = system_logged(
     "SESSION_ID=$main::session_id ".
+    $extra_env.
     "$statsserver_cmd @{[quotemeta($port)]} ".
     ">$logfile 2>&1 </dev/null &");
 
 # Return the result
-print_json({ success => !$rs, port => $port,
-             socket => $get_socket->($port),
-             new => 1, errlog => $logfile });
+my %rv = ( success => !$rs, port => $port, socket => $get_socket->($port),
+           new => 1, errlog => $logfile );
+$rv{'session'} = $websocket_session_id if ($link_proxy);
+print_stats_json(\%rv, $rv{'success'});
 
 # Make sure the server is up
 sleep(1);

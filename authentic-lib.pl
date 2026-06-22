@@ -216,7 +216,6 @@ sub get_extended_sysinfo
         if (&webmin_user_is_admin() &&
             $theme_config{'settings_sysinfo_hidden_panels_user'} !~ /\'live_stats\'/ &&
             $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
-            (!$theme_server_webprefix || $theme_server_webprefix && -r get_stats_history_file()) &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
         {
             my $data = '<div data-charts-loader class="text-muted loading-dots flex-center">
@@ -231,18 +230,11 @@ sub get_extended_sysinfo
                             <span data-chart="proc"></span>
                             <span data-chart="disk"></span>
                             <span data-chart="net"></span>';
-            my $live_stats_not_live; 
-            $live_stats_not_live =
-                '<span data-live="'.
-                        ($theme_server_webprefix ? 0 : 1).'"'.get_button_tooltip(
-                                theme_text('theme_xhred_tooltip_dashboard_live_stats_offline',
-                                undef), undef, 'auto right').
-                                    '></span>' if ($theme_server_webprefix);
             $returned_sysinfo .=
               print_panel(
                 1,
                 'live_stats',
-"$theme_text{'theme_dashboard_accordion_live_stats'}${live_stats_not_live}<span class=\"pull-right on-hover\"><i class=\"fa fa-fw fa-times-thin\" "
+"$theme_text{'theme_dashboard_accordion_live_stats'}<span class=\"pull-right on-hover\"><i class=\"fa fa-fw fa-times-thin\" "
                   .
                   get_button_tooltip(
                                      theme_text('theme_xhred_tooltip_dashboard_panels_disable',

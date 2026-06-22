@@ -1309,6 +1309,8 @@ sub nav_links
     } else {
         if ($theme_server_webprefix) {
             my $master_link           = "$gconfig{'webprefix'}/servers/";
+            $master_link              = "$1/"
+              if ($theme_webprefix =~ /^(.*?\/servers)\/link\.cgi\/\d{8,16}(?:\/|$)/);
             my $tooltip_go_to_master  = get_button_tooltip('tooltip_back_to_servers_index_master', undef, 'auto top');
             my $tooltip_other_servers = get_button_tooltip('tooltip_list_other_servers',           undef, 'auto top');
             $rv .= "<li class=\"user-link servers-index-link\">";

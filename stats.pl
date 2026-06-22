@@ -12,7 +12,9 @@ use IO::Socket::INET;
 use Net::WebSocket::Server;
 use utf8;
 
-our ($current_theme, $json);
+our ($current_theme, $json, $remote_user, $base_remote_user);
+my $websocket_session_id = $ENV{'WEBSOCKET_SESSION_ID'};
+delete($ENV{'WEBSOCKET_SESSION_ID'});
 require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 
 # Get port number
@@ -184,6 +186,10 @@ my $server_socket = IO::Socket::INET->new(
 					# Connection permission test unless already verified
 					if (!$conn->{'verified'}) {
 						my $user = verify_session_id($data->{'session'});
+						if (!$user && $websocket_session_id &&
+							$data->{'session'} eq $websocket_session_id) {
+							$user = $remote_user || $base_remote_user || 'websocket';
+						}
 						if ($user && webmin_user_is_admin()) {
 							# Set connection as verified and continue
 							error_stderr("WebSocket connection for user $user is granted");

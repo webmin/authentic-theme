@@ -19,6 +19,7 @@ const stats = {
         activating: 0,
         requery: null,
         socket: null,
+        socketSession: null,
         chartZoomRange: null,
         // Import globals
         /* jshint -W117 */
@@ -74,7 +75,7 @@ const stats = {
         // Get current data to submit to the socket
         getSocketDefs: function () {
             return {
-                session: session.server.data("session-hash"),
+                session: this.socketSession || session.server.data("session-hash"),
                 paused: !this.canRender() ? 1 : 0,
                 interval: this.getInterval(),
                 disable: !this.isEnabled() ? 1 : 0,
@@ -232,6 +233,7 @@ const stats = {
                 success: function (data) {
                     // Do we have socket opened?
                     if (data.success) {
+                        this.socketSession = data.session || null;
                         // Open socket
                         // console.warn("WebSocket connection opened", data);
                         this.socket = new WebSocket(data.socket);
