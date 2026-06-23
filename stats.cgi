@@ -116,12 +116,16 @@ create_wrapper($statsserver_cmd, $current_theme, $server_name)
 
 # Launch the server in a sub-process (no fork)
 my $logfile = $get_logfile->($port);
-my $extra_env = $link_proxy ? "WEBSOCKET_SESSION_ID=$websocket_session_id " : "";
+my $session_id_q = quotemeta($main::session_id);
+my $websocket_session_id_q = quotemeta($websocket_session_id);
+my $statsserver_cmd_q = quotemeta($statsserver_cmd);
+my $logfile_q = quotemeta($logfile);
+my $extra_env = $link_proxy ? "WEBSOCKET_SESSION_ID=$websocket_session_id_q " : "";
 my $rs = system_logged(
-    "SESSION_ID=$main::session_id ".
+    "SESSION_ID=$session_id_q ".
     $extra_env.
-    "$statsserver_cmd @{[quotemeta($port)]} ".
-    ">$logfile 2>&1 </dev/null &");
+    "$statsserver_cmd_q @{[quotemeta($port)]} ".
+    ">$logfile_q 2>&1 </dev/null &");
 
 # Return the result
 my %rv = ( success => !$rs, port => $port, socket => $get_socket->($port),
