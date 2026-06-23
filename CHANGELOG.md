@@ -1,5 +1,10 @@
 ## Changelog
 
+#### Version 26.50.1 (June 23, 2026)
+* Fix live stats and terminal WebSocket connections through Webmin Servers Index proxy links
+* Fix proxied module and asset paths when Webmin is accessed through a webprefix
+* Fix theme UI helpers to escape generated markup more safely
+
 #### Version 26.50 (June 15, 2026)
 * Add zooming to stats history graphs by holding shift and scrolling in the dashboard
 * Add support for saving live stats history for up to 24 hours without performance impact
