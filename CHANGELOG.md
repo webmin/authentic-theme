@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 26.50.1 (June 23, 2026)
+#### Version 26.50.1 (June 25, 2026)
 * Fix live stats and terminal WebSocket connections through Webmin Servers Index proxy links
 * Fix proxied module and asset paths when Webmin is accessed through a webprefix
 * Fix theme UI helpers to escape generated markup more safely
