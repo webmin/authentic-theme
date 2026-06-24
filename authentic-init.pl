@@ -1265,6 +1265,8 @@ sub get_button_style
     } elsif (string_contains($keys, "_editoverridenow") ||
              string_contains($keys, "_stockunitnow")) {
         $icon  = "editor fa-1_10x margined-top--1-5";
+        $icon  = "eye fa-1_05x margined-left--1"
+            if (string_contains($keys, "view_stockunitnow"));
         $class = "primary ";
         $class = "info " if (string_contains($keys, "_stockunitnow"));
     } elsif (string_contains($keys, "index_generate")) {
