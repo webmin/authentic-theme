@@ -21,6 +21,7 @@ my %errors;
 my @deleted_entries;
 
 my @entries_list = get_entries_list();
+@entries_list = sort_delete_entries(@entries_list);
 my $fsid = $in{'fsid'};
 my $time = strftime('%Y-%m-%d_%H:%M:%S', localtime());
 my $tdirname = '.Trash';
@@ -30,6 +31,35 @@ my $mkpath_ = sub {
 	return $rs;
 	};
 my $etrashed = 0;
+
+sub delete_entry_depth
+{
+my ($name) = @_;
+my $depth = 0;
+$depth++ while ($name =~ m!/!g);
+return $depth;
+}
+
+sub sort_delete_entries
+{
+my @entries = @_;
+my %seen;
+my %order;
+my @normalized;
+
+foreach my $name (@entries) {
+	$name = fm_normalize_path_name($name, $cwd);
+	next if (!defined($name) || $name eq '' || $seen{$name}++);
+	$order{$name} = scalar(@normalized);
+	push(@normalized, $name);
+	}
+
+# Search results can contain both a directory and its descendants.
+return sort {
+	delete_entry_depth($b) <=> delete_entry_depth($a) ||
+	    $order{$a} <=> $order{$b}
+	} @normalized;
+}
 
 foreach my $name (@entries_list) {
 	my $name_ = $name;
@@ -60,19 +90,20 @@ foreach my $name (@entries_list) {
 		my %mkpopts = {owner => int($in{'uid'}), group => int($in{'guid'})};
 		my $mkpathr = &$mkpath_($tdir);
 		my $tfile;
-		if (!$mkpathr && -f "$tdir/$name" && -r "$tdir/$name") {
-			$tfile = "$tdir/$name-$time";
-			}
-		elsif (!$mkpathr && glob("\Q$tdir/$name\E/*")) {
+		if (!$mkpathr && (-e "$tdir/$name" || -l "$tdir/$name")) {
 			$tfile = "$tdir/$name-$time";
 			&$mkpath_($tdir);
 			}
-		if (!move($file, $tfile || "$tdir/$name")) {
+		my $target = $tfile || "$tdir/$name";
+		if ($name =~ m!/!) {
+			(my $target_dir = $target) =~ s!/[^/]+$!!;
+			&$mkpath_($target_dir) if (!-d $target_dir);
+			}
+		if (!move($file, $target)) {
 
 			# Do not throw an error when moving .Trash inside the .Trash
 			if (
-				&is_under_directory($file,
-					$tfile || "$tdir/$name")
+				&is_under_directory($file, $target)
 			    )
 			{
 				# If .Trash the only one in list, delete it
