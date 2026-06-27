@@ -495,9 +495,10 @@ my ($id, $deleted_data) = @_;
 
 my @results_cached = cache_search($id);
 if (@results_cached) {
+	my @deleted = map { fm_normalize_path_name($_, $cwd) } @$deleted_data;
 	@results_cached = grep {
-		my $f = $_;
-		!grep $f =~ /^\Q$_\E/, @$deleted_data
+		my $f = fm_normalize_path_name($_, $cwd);
+		!grep { $f eq $_ || $f =~ /^\Q$_\E\// } @deleted
 		} @results_cached;
 	cache_search($id, \@results_cached);
 	}
@@ -544,7 +545,7 @@ my $show_dot_files = get_user_config_showhiddenfiles();
 my @results_cached = cache_search($fsid);
 if (@results_cached) {
 	@results_cached = grep {
-		my $file = $list ? $_ : &simplify_path("$cwd/$_");
+		my $file = fm_checked_cwd_path($_);
 		fm_path_is_allowed($file, $cwd);
 		} @results_cached;
 	return @results_cached;
