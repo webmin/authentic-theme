@@ -4,6 +4,7 @@
 * Fix search-result all-items delete in File Manager
 * Fix search-result delete ordering in File Manager
 * Fix to speed up search-result deletion cleanup in File Manager
+* Fix to refine editor and viewer panel sizing in File Manager
 
 #### Version 26.50.1 (June 25, 2026)
 * Add support for live stats and terminal WebSocket connections through Webmin Servers Index proxy links
