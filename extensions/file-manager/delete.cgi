@@ -45,18 +45,20 @@ sub sort_delete_entries
 my @entries = @_;
 my %seen;
 my %order;
+my %depth;
 my @normalized;
 
 foreach my $name (@entries) {
 	$name = fm_normalize_path_name($name, $cwd);
 	next if (!defined($name) || $name eq '' || $seen{$name}++);
 	$order{$name} = scalar(@normalized);
+	$depth{$name} = delete_entry_depth($name);
 	push(@normalized, $name);
 	}
 
 # Search results can contain both a directory and its descendants.
 return sort {
-	delete_entry_depth($b) <=> delete_entry_depth($a) ||
+	$depth{$b} <=> $depth{$a} ||
 	    $order{$a} <=> $order{$b}
 	} @normalized;
 }

@@ -495,10 +495,24 @@ my ($id, $deleted_data) = @_;
 
 my @results_cached = cache_search($id);
 if (@results_cached) {
-	my @deleted = map { fm_normalize_path_name($_, $cwd) } @$deleted_data;
+	my %deleted;
+	foreach my $file (@$deleted_data) {
+		$file = fm_normalize_path_name($file, $cwd);
+		$file =~ s!/+\z!! if (defined($file));
+		next if (!defined($file) || $file eq '');
+		$deleted{$file} = 1;
+		}
 	@results_cached = grep {
 		my $f = fm_normalize_path_name($_, $cwd);
-		!grep { $f eq $_ || $f =~ /^\Q$_\E\// } @deleted
+		$f =~ s!/+\z!! if (defined($f));
+		my $keep = 1;
+		if (defined($f) && $f ne '') {
+			$keep = !$deleted{$f};
+			while ($keep && $f =~ s!/[^/]+$!!) {
+				$keep = 0 if ($deleted{$f});
+				}
+			}
+		$keep
 		} @results_cached;
 	cache_search($id, \@results_cached);
 	}
