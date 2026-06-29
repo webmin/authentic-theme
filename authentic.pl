@@ -1599,7 +1599,7 @@ sub theme_redirect_download
 sub theme_js_redirect
 {
     my ($url, $window, $timeout) = @_;
-    $window = $window && $window =~ /^[A-Za-z_$][A-Za-z0-9_$]*(?:\.[A-Za-z_$][A-Za-z0-9_$]*)*$/
+    $window = $window && $window =~ /^[A-Za-z_\$][A-Za-z0-9_\$]*(?:\.[A-Za-z_\$][A-Za-z0-9_\$]*)*$/
         ? $window : "window";
     $timeout = $timeout ? int($timeout) : 100;
     if ($url =~ /^\//) {
