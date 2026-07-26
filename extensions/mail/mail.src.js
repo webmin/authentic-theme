@@ -1351,6 +1351,7 @@ const mail = (function() {
                                             };
 
                                         paneled && target.classList.add(classes.panel.container, classes.panel.container_shown);
+                                        paneled && panel.contentResize();
                                         adjust.contenteditable(target);
 
                                         // Reflect subject in panel title if exists
