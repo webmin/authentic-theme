@@ -1,5 +1,9 @@
 ## Changelog
 
+#### Version 26.50.4 (July 26, 2026)
+* Add improved support for the upcoming Virtualmin Podman plugin
+* Fix mail compose panel styling and sizing on initial load in Usermin
+
 #### Version 26.50.3 (July 16, 2026)
 * Fix inconsistent gaps around rounded UI elements
 * Fix CPU usage values exceeding 100% in the dashboard
