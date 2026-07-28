@@ -2,6 +2,7 @@
 
 #### Version 26.50.5 (July 28, 2026)
 * Fix disallowed entry handling in File Manager [forum.virtualmin.com/t/137654](https://forum.virtualmin.com/t/extra-admin-file-manager-permissions/137654?u=ilia)
+* Fix File Manager errors for Webmin-only users
 
 #### Version 26.50.4 (July 26, 2026)
 * Add improved support for the upcoming Virtualmin Podman plugin
