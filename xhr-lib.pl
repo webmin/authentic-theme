@@ -13,17 +13,19 @@ our (
 
 sub xhr_filemin_acl_user_info
 {
-my ($access, $path) = @_;
+my ($access, $path, $unix_user) = @_;
 my @user_info;
+my $switchto;
 
 if (get_product_name() eq 'usermin') {
+	$switchto = $remote_user;
 	@user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
 	}
 elsif ($access->{'work_as_root'}) {
+	$switchto = 'root';
 	@user_info = getpwnam('root');
 	}
 elsif ($access->{'work_as_dir'}) {
-	my $switchto;
 	foreach my $du (split(/\s+/, $access->{'work_as_dir'})) {
 		my ($user, $dir) = split(/:/, $du, 2);
 		if (is_under_directory($dir, $path)) {
@@ -35,21 +37,27 @@ elsif ($access->{'work_as_dir'}) {
 	@user_info = getpwnam($switchto) if ($switchto);
 	}
 elsif ($access->{'work_as_user'}) {
+	$switchto = $access->{'work_as_user'};
 	@user_info = getpwnam($access->{'work_as_user'});
 	}
 else {
+	$switchto = $remote_user;
 	@user_info = $remote_user ? getpwnam($remote_user) : getpwuid($<);
 	}
 
+$$unix_user = $switchto if ($unix_user);
 return @user_info;
 }
 
 sub xhr_filemin_allowed_paths
 {
-my ($module, $path) = @_;
-my %access = get_module_acl(undef, $module);
+my ($module, $path, $access_ref, $user_info_ref) = @_;
+my %access =
+    $access_ref ? %{$access_ref} : get_module_acl(undef, $module);
 my @paths = split(/\s+/, $access{'allowed_paths'});
-my @user_info = xhr_filemin_acl_user_info(\%access, $path);
+my @user_info = $user_info_ref
+    ? @{$user_info_ref}
+    : xhr_filemin_acl_user_info(\%access, $path);
 
 if (get_product_name() eq 'usermin') {
 	my %filemin_config = foreign_config($module);
@@ -75,7 +83,7 @@ return
 
 sub xhr_filemin_checked_path
 {
-my ($module, $path, $home_prefix) = @_;
+my ($module, $path, $home_prefix, $user_info_ref, $unix_user) = @_;
 return undef if (!defined($path) || $path =~ /[\0\r\n]/);
 
 if ($home_prefix && !string_starts_with($path, $home_prefix)) {
@@ -85,7 +93,14 @@ $path =~ s/\/+/\//g;
 $path = simplify_path($path);
 return undef if (!defined($path));
 
-foreach my $allowed_path (xhr_filemin_allowed_paths($module, $path)) {
+my %access = get_module_acl(undef, $module);
+my @user_info =
+    xhr_filemin_acl_user_info(\%access, $path, $unix_user);
+@{$user_info_ref} = @user_info if ($user_info_ref);
+
+foreach my $allowed_path (
+	xhr_filemin_allowed_paths($module, $path, \%access, \@user_info))
+{
 	return $path if (is_under_directory($allowed_path, $path));
 	}
 return undef;
@@ -381,31 +396,44 @@ if ($type eq 'file') {
 
 	# Generate given file info
 	if ($action eq 'stat') {
-		my ($module, $sumtype, $jailed_user, $jailed_user_home, $cfile,
+		my ($module, $sumtype, $jailed_user_home, $cfile, $unix_user,
 			$mime, $dir, $fzi, $fz, $fzx, $ft, $s, $sz, $nz);
+		my @user_info;
 		$module = 'filemin';    # $in{'module'};
 		if (!foreign_available($module)) {
 			$data{'module-access-denied'} = $module;
+			$data{'error'} = text('config_eaccess');
 			&$output(\%data);
 			exit;
 			}
 		$cfile = $in{'file'};
 		$sumtype = $in{'checksum'};
-		$jailed_user = get_fm_jailed_user($module, 1);
 		$jailed_user_home = get_fm_jailed_user($module);
 		$cfile = xhr_filemin_checked_path($module, $cfile,
-			$jailed_user_home);
-		if (!$cfile) {
-			$data{'file-access-denied'} = 1;
+			$jailed_user_home, \@user_info, \$unix_user);
+		if (defined($unix_user) && !@user_info) {
+			$data{'error'} =
+			    text('switch_remote_euser', $unix_user);
 			&$output(\%data);
 			exit;
 			}
-		if ($jailed_user) {
-			switch_to_given_unix_user($jailed_user);
+		if (!$cfile) {
+			$data{'file-access-denied'} = 1;
+			$data{'error'} =
+			    $theme_text{'theme_xhred_global_no_target'};
+			&$output(\%data);
+			exit;
 			}
-		else {
-			switch_to_remote_user_safe();
+		if (!@user_info) {
+			$data{'error'} =
+			    $theme_text{'theme_xhred_filemanager_no_unix_user'};
+			&$output(\%data);
+			exit;
 			}
+		switch_to_unix_user(\@user_info);
+		@WebminCore::remote_user_info = @user_info;
+		$ENV{'USER'} = $ENV{'LOGNAME'} = $user_info[0];
+		$ENV{'HOME'} = $user_info[7];
 
 		my $get_file_checksum = sub {
 			my ($cfile, $cmd) = @_;

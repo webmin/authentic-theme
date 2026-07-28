@@ -447,6 +447,7 @@ theme_xhred_filemanager_new_tab=Add new tab (Alt + Space)
 theme_xhred_datatable_no_search_results=<span class="h5">No results found</span><br>Try a different search
 
 theme_xhred_filemanager_buffer_error=Failed to paste files to the buffer - permission denied.
+theme_xhred_filemanager_no_unix_user=No Unix user is configured to access this path.
 
 filemanager_create_object_exists=$3 <tt>$1</tt> already exists in <tt>$2</tt>
 filemanager_create_object_denied=Can't create $3 <tt>$1</tt> in <tt>$2</tt> - permission denied : $4.
