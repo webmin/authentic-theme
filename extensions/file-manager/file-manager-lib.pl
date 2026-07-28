@@ -348,8 +348,9 @@ return $file;
 sub get_entries_list
 {
 my @entries_list;
+my $all_items = test_all_items_query();
 my $show_dot_files = get_user_config_showhiddenfiles();
-if (test_all_items_query()) {
+if ($all_items) {
 	if ($in{'query'}) {
 		@entries_list = exec_search('list');
 		}
@@ -380,11 +381,20 @@ if (test_all_items_query()) {
 else {
 	@entries_list = split(/\0/, $in{'name'});
 	}
+# Server-generated all-items lists may contain disallowed symlinks. Skip
+# those, while continuing to reject invalid user-submitted entries.
+my @checked_entries;
 foreach my $name (@entries_list) {
 	$name = fm_normalize_path_name($name, $cwd);
-	fm_checked_cwd_path_or_error($name);
+	if ($all_items) {
+		push(@checked_entries, $name) if (fm_checked_cwd_path($name));
+		}
+	else {
+		fm_checked_cwd_path_or_error($name);
+		push(@checked_entries, $name);
+		}
 	}
-return @entries_list;
+return @checked_entries;
 }
 
 sub extra_query
@@ -1294,25 +1304,18 @@ else {
 	closedir(DIR);
 	}
 
-# Filter out not allowed entries
+# Filter out lexically disallowed entries without filesystem lookups,
+# using precompiled patterns to keep huge directories fast
 if (test_allowed_paths()) {
-
-	# Leave only allowed
-	my @allowed_list;
-	for my $allowed_path (@allowed_paths) {
-		push(
-			@allowed_list,
-			grep {
-				my $list_path = &$clear_path("$cwd/$_");
-				$list_path =~ /^\Q$allowed_path\E\// ||
-				    $allowed_path =~ /^\Q$list_path\E/
-			    } @list
-		);
-		}
-
-	# Remove duplicates
-	my %hash = map { $_, 1 } @allowed_list;
-	@list = keys %hash;
+	my @allowed_paths_re =
+	    map { [ qr/^\Q$_\E\//, $_ ] } @allowed_paths;
+	@list = grep {
+		my $list_path = &$clear_path("$cwd/$_");
+		grep {
+			$list_path =~ $_->[0] ||
+			    index($_->[1], $list_path) == 0
+			} @allowed_paths_re;
+		} @list;
 	}
 
 my $page = 1;
@@ -1329,7 +1332,6 @@ if ($max_allowed !~ /^[0-9,.E]+$/ || $max_allowed < 100 || $max_allowed > 10000)
 	}
 
 my $totals = scalar(@list);
-my $totals_spliced = $totals;
 
 my $tuconfig_per_page =
     get_user_config('config_portable_module_filemanager_records_per_page');
@@ -1355,10 +1357,12 @@ if (server_pagination_enabled($totals, $max_allowed, $query)) {
 		    @list;
 		}
 	@list = splice(@list, $splice_start, $splice_end);
-	$totals_spliced = scalar(@list);
 	}
 
 @list = map { &simplify_path("$cwd/$_") } @list;
+
+# Resolve symlinks after pagination. Totals stay lexical because exact
+# authorized totals would require a filesystem lookup for every entry.
 @list = grep { fm_path_is_allowed($_, $cwd) } @list;
 
 my %acls;
@@ -1557,8 +1561,7 @@ push @ui_columns,
     if ($userconfig{'columns'} =~ /last_mod_time/);
 
 $list_data{'rows'} = '';
-for (my $count = 1 ; $count <= $totals_spliced ; $count++) {
-	if ($count > $totals) { last; }
+for (my $count = 1 ; $count <= scalar(@list) ; $count++) {
 	my $class = $count & 1 ? "odd" : "even";
 	my $link = $list[$count - 1][0];
 	$link =~ s/\Q$cwd\E\///;
