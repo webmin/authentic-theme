@@ -942,7 +942,7 @@ sub theme_ui_submit
       ( $name ne '' ? " name=\"" . &quote_escape($name) . "\" value=\"" . &quote_escape($label) . "\"" :
           ""
       ) .
-      " >\n";
+      ($dis ? " disabled=true" : "") . " >\n";
 }
 
 sub theme_ui_reset
@@ -1361,13 +1361,18 @@ sub theme_ui_buttons_start
 
 sub theme_ui_buttons_row
 {
-    my ($script, $label, $desc, $hiddens, $after, $before) = @_;
+    my ($script, $label, $desc, $hiddens, $after, $before,
+        $postmethod, $singlecell, $disabled) = @_;
     if (ref($hiddens)) {
         $hiddens = join("\n", map {&ui_hidden(@$_)} @$hiddens);
     }
     my $btn = ($before ? "$before " : "")
-            . &ui_submit($label)
+            . &ui_submit($label, '', $disabled)
             . ($after  ? " $after"  : "");
+    my $disabled_class = $disabled ? " disabled" : "";
+    my $button_cell_span = $singlecell ? " colspan='2'" : "";
+    my $description_cell = $singlecell ? "" :
+      "            <td class='ui_buttons_value'><span>$desc</span></td>\n";
     
     return <<"HTML";
 <tr data-ui-buttons-row-form-container>
@@ -1375,9 +1380,9 @@ sub theme_ui_buttons_row
     <form action='$script' method='get' class='ui_buttons_form'>
         $hiddens
         <table>
-        <tr class='ui_buttons_row'>
-            <td data-nowrap class='ui_buttons_label'>$btn</td>
-            <td class='ui_buttons_value'><span>$desc</span></td>
+        <tr class='ui_buttons_row$disabled_class'>
+            <td data-nowrap class='ui_buttons_label'$button_cell_span>$btn</td>
+$description_cell
         </tr>
         </table>
     </form>
