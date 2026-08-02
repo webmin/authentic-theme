@@ -1,10 +1,14 @@
 ## Changelog
 
+#### Version 26.50.6 (August 3, 2026)
+* Fix File Manager opening the wrong directory in Terminal for domain owners
+* Fix support for navigation detection for the upcoming Virtualmin Podman plugin
+* Fix change detection and submission for forms using grouped bottom action buttons
+* Fix inline images not displaying when printing emails in mailbox module in Usermin
+
 #### Version 26.50.5 (July 28, 2026)
 * Fix disallowed entry handling in File Manager [forum.virtualmin.com/t/137654](https://forum.virtualmin.com/t/extra-admin-file-manager-permissions/137654?u=ilia)
 * Fix File Manager errors for Webmin-only users
-* Fix File Manager opening the wrong directory in Terminal for domain owners
-* Fix support for navigation detection for the upcoming Virtualmin Podman plugin
 
 #### Version 26.50.4 (July 26, 2026)
 * Add improved support for the upcoming Virtualmin Podman plugin
