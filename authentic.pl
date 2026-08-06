@@ -179,6 +179,7 @@ sub theme_footer
     return if (fetch_content());
     ((!$miniserv::theme_header_captured && !$miniserv::page_capture) && return);
     my %this_module_info = &get_module_info(&get_module_name());
+    my $page_footer_actions;
     for (my $i = 0; $i + 1 < @_; $i += 2) {
         my $url = $_[$i];
         if ($url ne '/' || !$tconfig{'noindex'}) {
@@ -191,14 +192,16 @@ sub theme_footer
             }
             $url = "$theme_webprefix$url" if ($url =~ /^\//);
             $url = $url . "/"             if ($url =~ /[^\/]$/ && $url !~ /.cgi/ && $url !~ /javascript:history/ && $url !~ /[&?]/);
+            if (!$page_footer_actions) {
+                print ui_tag_start('span', { 'class' => 'page-footer-actions' });
+                $page_footer_actions = 1;
+            }
             print
 "<a style='margin-bottom: 3.5px;' class='btn btn-primary btn-lg page_footer_submit' href=\"$url\"><i class='fa fa-fw fa-arrow-left'>&nbsp;</i> <span>",
-              &text('main_return', $_[$i + 1]), "</span></a>".
-                &ui_tag('span', undef,
-                    { style => 'display: inline-block; width: 4px' })."\n";
+              &text('main_return', $_[$i + 1]), "</span></a>\n";
         }
     }
-
+    print ui_tag_end('span') if ($page_footer_actions);
     print "</div>\n";
     embed_port_shell() if (!http_x_request());
     embed_footer((theme_debug_mode()),
