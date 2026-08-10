@@ -185,23 +185,26 @@ else {
 # Prints a warning if the connection is not secure
 sub print_login_http_warning
 {
-return unless ($miniserv->{'ssl'});
-# If the connection is not secure, print a warning
-if (lc(get_env('https')) ne 'on') {
-	my $animated_class = 'faa faa-flash faa-slow animated';
-	my $icon = ui_icon('exclamation-triangle', { 'class' => $animated_class });
-	my $label = ui_tag('span', $theme_text{'login_notsecure'},
-		{ 'class' => $animated_class });
-	my $link = ui_tag('a', "$icon $label", 
+return if (lc(get_env('https')) eq 'on' ||
+           (!$miniserv->{'ssl'} && $miniserv->{'no_ssl_warn'}));
+my $animated_class = 'faa faa-flash faa-slow animated';
+my $icon = ui_icon('exclamation-triangle', { 'class' => $animated_class });
+my $label = ui_tag('span', $theme_text{'login_notsecure'},
+	{ 'class' => $animated_class });
+my $warning = "$icon $label";
+my $description = $theme_text{'login_notsecure_http_desc'};
+if ($miniserv->{'ssl'}) {
+	$warning = ui_tag('a', $warning,
 		{ 'href' => "javascript:void(0);",
 		  'class' => 'inherit-color',
 		  'onclick' => "window.location.href = ".
-		  	"window.location.href.replace(/^http:/, 'https:'); return false;",
+		    "window.location.href.replace(/^http:/, 'https:'); return false;",
 		});
-	print ui_tag('div', $link,
-		{ 'class' => 'badge badge-danger https-badge', 'data-tooltip' => 1,
-		  'aria-label' => $theme_text{'login_notsecure_desc'} });
+	$description = $theme_text{'login_notsecure_desc'};
 	}
+print ui_tag('div', $warning,
+	{ 'class' => 'badge badge-danger https-badge', 'data-tooltip' => 1,
+	  'aria-label' => $description });
 }
 
 # print_login_logo()

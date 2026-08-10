@@ -48,6 +48,7 @@ left_statistics=System Statistics
 
 login_danger=Danger
 login_message=You must enter a username and password to login to the server on
+login_notsecure_http_desc=This connection is not encrypted and could let a man-in-the-middle attack intercept your password or session cookie. HTTPS is not enabled in Webmin; enable it unless you are on a trusted local network or behind a secure reverse proxy.
 lost_message=If your account has a recovery email set, you can use this form to send yourself a password reset link
 reset_message=You are about to reset the password for user <tt>$1</tt> on
 theme_xhred_login_pass=Password
