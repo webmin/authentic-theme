@@ -1,6 +1,6 @@
 ## Changelog
 
-#### Version 26.60 (August 16, 2026)
+#### Version 26.60 (August 17, 2026)
 * Fix change detection and submission for forms using grouped bottom action buttons
 * Fix login page front side clipping and flip animation for long welcome messages
 * Fix opening the wrong directory in Terminal for domain owners in File Manager
