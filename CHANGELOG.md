@@ -1,10 +1,14 @@
 ## Changelog
 
-#### Version 26.50.6 (August 3, 2026)
-* Fix File Manager opening the wrong directory in Terminal for domain owners
-* Fix support for navigation detection for the upcoming Virtualmin Podman plugin
+#### Version 26.60 (August 16, 2026)
 * Fix change detection and submission for forms using grouped bottom action buttons
-* Fix inline images not displaying when printing emails in mailbox module in Usermin
+* Fix login page front side clipping and flip animation for long welcome messages
+* Fix opening the wrong directory in Terminal for domain owners in File Manager
+* Fix inline images not displaying when printing emails in Usermin
+* Fix navigation detection for the new Virtualmin Podman plugin
+* Fix bottom page action buttons wrapping and alignment
+
+<!--- separator --->
 
 #### Version 26.50.5 (July 28, 2026)
 * Fix disallowed entry handling in File Manager [forum.virtualmin.com/t/137654](https://forum.virtualmin.com/t/extra-admin-file-manager-permissions/137654?u=ilia)
@@ -41,8 +45,6 @@
 * Fix popover positioning, z-index and border color for help bubbles
 * Fix the active product switch border in the navigation menu for the dark palette
 * Fix to validate password reset return URLs
-
-<!--- separator --->
 
 #### Version 26.41.2 (May 12, 2026)
 * Fix allowed path enforcement in File Manager module
