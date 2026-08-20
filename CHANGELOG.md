@@ -5,6 +5,7 @@
 * Fix login page front side clipping and flip animation for long welcome messages
 * Fix opening the wrong directory in Terminal for domain owners in File Manager
 * Fix inline images not displaying when printing emails in Usermin
+* Fix various styling issues for ConfigServer Security & Firewall
 * Fix navigation detection for the new Virtualmin Podman plugin
 * Fix bottom page action buttons wrapping and alignment
 
