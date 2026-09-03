@@ -939,7 +939,15 @@ sub init_vars
     our $title   = &get_html_framed_title();
     our %cookies = get_cookies();
 
-    my $server_x_goto_ = get_theme_temp_data('goto');
+    # Only consume the one-shot goto page on a real page request (REQUEST_URI
+    # present). A background/non-CGI request with an empty REQUEST_URI could
+    # otherwise read and delete the goto file before the actual "/" request
+    # that follows an ?xnavigation=1 redirect, breaking page restore after a
+    # full page reload (e.g. Ctrl+F5).
+    my $server_x_goto_;
+    if ($ENV{'REQUEST_URI'}) {
+        $server_x_goto_ = get_theme_temp_data('goto');
+    }
     if ($server_x_goto_) {
         $server_x_goto = $server_x_goto_;
         setvar('theme-goto', $server_x_goto);
