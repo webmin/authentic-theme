@@ -2228,6 +2228,10 @@ sub get_theme_temp_data
 
     # Process multiple goto requests
     if ($key eq 'goto') {
+
+        # Without a session and user the patterns below would
+        # match and consume goto files of any user or session
+        return undef if (!$main::session_id || !$remote_user);
         my $tmp_dir = tempname_dir();
         opendir(my $dir, $tmp_dir);
         my @gotos = grep {/^\.theme_/ && /$salt/ && /$key/ && /$remote_user/} readdir($dir);
