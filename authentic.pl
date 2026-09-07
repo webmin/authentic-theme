@@ -478,8 +478,11 @@ sub theme_generate_icon
 
 sub theme_ui_columns_start
 {
-    my ($heads, $width, $noborder, $tdtags, $title, $sortable) = @_;
+    my ($heads, $width, $noborder, $tdtags, $title, $sortable, $class) = @_;
     my ($rv, $i);
+
+    # Extra classes asked for by the caller, such as no-hover
+    $class = $class ? " $class" : "";
 
     # Sortable tables carry both the class this theme keys on and the
     # data-sortable attribute the core library emits, so either works
@@ -487,7 +490,7 @@ sub theme_ui_columns_start
     $sortable = ' dtable-sortable' if ($sortable);
     my $width_;
     $width_ = ' w-auto-force" ' if ($width eq 'auto');
-    $rv .= "<table class=\"table table-striped table-hover table-condensed$sortable$width_\"$sortable_attr>" . "\n";
+    $rv .= "<table class=\"table table-striped table-hover table-condensed$sortable$class$width_\"$sortable_attr>" . "\n";
     if ($title) {
         $rv .= "<caption>$title</caption>\n";
     }
