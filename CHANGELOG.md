@@ -3,6 +3,7 @@
 * Add support for HTML signatures in Usermin
 * Fix data tables and their filter to be restored fully functional on history back navigation
 * Fix history back navigation after a full page reload
+* Fix disabled checked checkboxes showing a cross instead of a checkmark
 * Drop dashboard-managed CSF update checks
 
 #### Version 26.60 (August 17, 2026)
