@@ -86,24 +86,137 @@ sub xhr_filemin_checked_path
 my ($module, $path, $home_prefix, $user_info_ref, $unix_user) = @_;
 return undef if (!defined($path) || $path =~ /[\0\r\n]/);
 
-if ($home_prefix && !string_starts_with($path, $home_prefix)) {
-	$path = $home_prefix.$path;
-	}
 $path =~ s/\/+/\//g;
 $path = simplify_path($path);
 return undef if (!defined($path));
 
 my %access = get_module_acl(undef, $module);
-my @user_info =
-    xhr_filemin_acl_user_info(\%access, $path, $unix_user);
-@{$user_info_ref} = @user_info if ($user_info_ref);
+my $initial_unix_user;
+my @initial_user_info =
+    xhr_filemin_acl_user_info(\%access, $path, \$initial_unix_user);
+$home_prefix ||= $initial_user_info[7] if (@initial_user_info);
 
-foreach my $allowed_path (
-	xhr_filemin_allowed_paths($module, $path, \%access, \@user_info))
-{
-	return $path if (is_under_directory($allowed_path, $path));
+# Prefer an explicitly allowed absolute path. Only then try a home-relative path.
+my @candidates = ($path);
+if ($home_prefix && !is_under_directory($home_prefix, $path)) {
+	$home_prefix =~ s/\/$//;
+	my $relative_path = $path =~ /^\// ? $path : "/$path";
+	my $home_path = simplify_path($home_prefix.$relative_path);
+	push(@candidates, $home_path)
+		if (defined($home_path) && $home_path ne $path);
 	}
+
+my (@last_user_info, $last_unix_user);
+foreach my $candidate (@candidates) {
+	my $candidate_unix_user;
+	my @user_info = xhr_filemin_acl_user_info(
+		\%access, $candidate, \$candidate_unix_user);
+	@last_user_info = @user_info;
+	$last_unix_user = $candidate_unix_user;
+	next if (!@user_info);
+
+	foreach my $allowed_path (
+		xhr_filemin_allowed_paths(
+			$module, $candidate, \%access, \@user_info))
+	{
+		if (is_under_directory($allowed_path, $candidate)) {
+			@{$user_info_ref} = @user_info if ($user_info_ref);
+			$$unix_user = $candidate_unix_user if ($unix_user);
+			return $candidate;
+			}
+		}
+	}
+@{$user_info_ref} = @last_user_info if ($user_info_ref);
+$$unix_user = $last_unix_user || $initial_unix_user if ($unix_user);
 return undef;
+}
+
+# Switch to a complete Unix identity and verify that no broader identity remains.
+sub xhr_switch_to_user_info
+{
+my ($user_info, $supplementary_groups) = @_;
+return 0 if (!$user_info || !@{$user_info});
+
+my @allowed_groups = ($user_info->[3],
+	$supplementary_groups ? @{$supplementary_groups} :
+	$user_info->[0] ? other_groups($user_info->[0]) : ());
+my %allowed_groups = map { $_ => 1 } @allowed_groups;
+switch_to_unix_user($user_info);
+my $real_gid = $(;
+my ($effective_gid, @effective_supplementary_groups) = split(/\s+/, $));
+return 0 if ($< != $user_info->[2] || $> != $user_info->[2] ||
+	$real_gid != $user_info->[3] || $effective_gid != $user_info->[3] ||
+	grep { !$allowed_groups{$_} } @effective_supplementary_groups);
+
+@WebminCore::remote_user_info = @{$user_info};
+$ENV{'USER'} = $ENV{'LOGNAME'} = $user_info->[0];
+$ENV{'HOME'} = $user_info->[7];
+return 1;
+}
+
+# Check the path and use its File Manager Unix identity before accessing it.
+sub xhr_filemin_path_as_user
+{
+my ($module, $path, $home_prefix, $user_info_ref, $unix_user) = @_;
+my @user_info;
+$path = xhr_filemin_checked_path($module, $path, $home_prefix,
+	\@user_info, $unix_user);
+@{$user_info_ref} = @user_info if ($user_info_ref);
+return undef if (!$path || !@user_info);
+
+# Fail closed if the process cannot assume the configured Unix identity.
+xhr_switch_to_user_info(\@user_info) || return undef;
+return $path;
+}
+
+# Check a general file-chooser path and use its configured Unix identity.
+sub xhr_chooser_path_as_user
+{
+my ($path) = @_;
+return undef if (!defined($path) || $path =~ /[\0\r\n]/);
+$path = simplify_path($path);
+return undef if (!defined($path));
+
+# Use Webmin's canonical global file ACL check.
+can_read_file_under_global_acl($path) || return undef;
+
+return $path if (!supports_users());
+my ($username, $user_error) = global_acl_file_unix_user();
+return undef if ($user_error || !$username);
+my @user_info = getpwnam($username);
+return undef if (!@user_info || !xhr_switch_to_user_info(\@user_info));
+return $path;
+}
+
+# Apply the Shell module's configured Unix identity and optional chroot.
+sub xhr_shell_access_as_user
+{
+my $module = 'shell';
+my %access = get_module_acl(undef, $module);
+return \%access if (!supports_users());
+
+my $username = get_product_name() eq 'usermin'
+	? $remote_user : ($access{'user'} || $remote_user);
+my @user_info = $username ? getpwnam($username) : getpwuid($<);
+return undef if (!@user_info);
+my @supplementary_groups = $username ? other_groups($username) : ();
+
+# Enter the configured jail before dropping privileges, just like Shell commands.
+my $chroot = get_product_name() eq 'usermin'
+	? ($user_info[7] =~ /^(.*)\/\.\// ? $1 : undef)
+	: $access{'chroot'};
+if ($chroot && $chroot ne '/') {
+	$chroot = simplify_path($chroot);
+	return undef if (!defined($chroot) || $chroot !~ /^\// || !-d $chroot ||
+		$< != 0);
+	CORE::chroot($chroot) || return undef;
+	chdir('/') || return undef;
+	$user_info[7] =~ s/^\Q$chroot\E//;
+	$user_info[7] ||= '/';
+	}
+
+xhr_switch_to_user_info(\@user_info, \@supplementary_groups) || return undef;
+return \%access;
 }
 
 sub xhr
@@ -229,7 +342,7 @@ if ($type eq "cmd") {
 
 	# Fail state restart
 	if ($action eq "restart") {
-		if (webmin_user_is_admin()) {
+		if (webmin_user_is_admin() && foreign_available('webmin')) {
 			my $systemd = has_command('systemctl');
 			if ($systemd) {
 
@@ -396,7 +509,7 @@ if ($type eq 'file') {
 
 	# Generate given file info
 	if ($action eq 'stat') {
-		my ($module, $sumtype, $jailed_user_home, $cfile, $unix_user,
+		my ($module, $sumtype, $cfile, $unix_user,
 			$mime, $dir, $fzi, $fz, $fzx, $ft, $s, $sz, $nz);
 		my @user_info;
 		$module = 'filemin';    # $in{'module'};
@@ -408,9 +521,8 @@ if ($type eq 'file') {
 			}
 		$cfile = $in{'file'};
 		$sumtype = $in{'checksum'};
-		$jailed_user_home = get_fm_jailed_user($module);
-		$cfile = xhr_filemin_checked_path($module, $cfile,
-			$jailed_user_home, \@user_info, \$unix_user);
+		$cfile = xhr_filemin_path_as_user($module, $cfile, undef,
+			\@user_info, \$unix_user);
 		if (defined($unix_user) && !@user_info) {
 			$data{'error'} =
 			    text('switch_remote_euser', $unix_user);
@@ -430,11 +542,6 @@ if ($type eq 'file') {
 			&$output(\%data);
 			exit;
 			}
-		switch_to_unix_user(\@user_info);
-		@WebminCore::remote_user_info = @user_info;
-		$ENV{'USER'} = $ENV{'LOGNAME'} = $user_info[0];
-		$ENV{'HOME'} = $user_info[7];
-
 		my $get_file_checksum = sub {
 			my ($cfile, $cmd) = @_;
 			my $sum = 0;
@@ -559,36 +666,25 @@ if (post_has('xhr-')) {
 		print get_available_modules('json');
 		}
 
-# This should be split on next refactor to be used separately by modules (filemin/mailbox)
+	# Enforce the ACL for the UI that selected the requested path.
 	elsif ($in{'xhr-get_size'} eq '1') {
-		switch_to_remote_user_safe();
 		my $nodir = $in{'xhr-get_size_nodir'};
-		my $path = get_access_data('root').$in{'xhr-get_size_path'};
-		my $home = get_user_home();
-		my $module =
-		    $in{'xhr-get_size_cmodule'};  # $in{'xhr-get_size_cmodule'};
-		if ($module eq 'filemin') {
-			exit if (!foreign_available($module));
-			my $jailed_user_name = get_fm_jailed_user($module, 1);
-			my $jailed_user = get_fm_jailed_user($module);
-			if ($jailed_user) {
-				$home = $jailed_user;
-				$path = $home.$in{'xhr-get_size_path'};
-				}
-			if (($jailed_user || $get_user_level eq '3') &&
-				!string_starts_with($path, $home))
-			{
-				$path = $home.$path;
-				$path =~ s/\/\//\//g;
-				}
-			$path = xhr_filemin_checked_path($module, $path);
-			if (!$path) {
-				print
-				    "$theme_text{'theme_xhred_global_error'}|-1";
-				exit;
-				}
-			switch_to_given_unix_user($jailed_user_name)
-			    if ($jailed_user_name);
+		my $path = $in{'xhr-get_size_path'};
+		my $module = $in{'xhr-get_size_cmodule'} || 'chooser';
+		if ($module eq 'filemin' && foreign_available($module)) {
+			$path = xhr_filemin_path_as_user($module, $path);
+			}
+		elsif ($module eq 'chooser') {
+			# Chooser paths are relative to its global ACL root when configured.
+			$path = get_access_data('root').$path if (defined($path));
+			$path = xhr_chooser_path_as_user($path);
+			}
+		else {
+			$path = undef;
+			}
+		if (!$path) {
+			print "$theme_text{'theme_xhred_global_error'}|-1";
+			exit;
 			}
 		if ($nodir && -d $path) {
 			print "$theme_text{'theme_xhred_global_error'}|-2";
@@ -602,28 +698,16 @@ if (post_has('xhr-')) {
 			}
 		}
 	elsif ($in{'xhr-get_list'} eq '1') {
-		switch_to_remote_user_safe();
 		my $module = 'filemin';    # $in{'xhr-get_list_cmodule'};
 		exit if (!foreign_available($module));
 		my $path = "$in{'xhr-get_list_path'}";
 		my @dirs;
 
-		my $jailed_user_name = get_fm_jailed_user($module, 1);
-		my $jailed_user_home = get_fm_jailed_user($module);
-		if ($jailed_user_home ||
-			$get_user_level eq '2' ||
-			$get_user_level eq '4' ||
-			webmin_user_is('safe-user'))
-		{
-			$path = ($jailed_user_home || get_user_home()).$path;
-			}
-		$path = xhr_filemin_checked_path($module, $path);
+		$path = xhr_filemin_path_as_user($module, $path);
 		if (!$path) {
 			print convert_to_json(\@dirs);
 			exit;
 			}
-		switch_to_given_unix_user($jailed_user_name)
-		    if ($jailed_user_name);
 		opendir(my $dirs, $path);
 		while (my $dir = readdir $dirs) {
 			next unless -d $path.'/'.$dir;
@@ -639,18 +723,9 @@ if (post_has('xhr-')) {
 	elsif ($in{'xhr-encoding_convert'} eq '1') {
 		my $module = 'filemin';   # $in{'xhr-encoding_convert_cmodule'};
 		exit if (!foreign_available($module));
-		my $jailed_user = get_fm_jailed_user($module, 1);
-		my $jailed_user_home = get_fm_jailed_user($module);
 		my $cfile = $in{'xhr-encoding_convert_file'};
-		$cfile = xhr_filemin_checked_path($module, $cfile,
-			$jailed_user_home);
+		$cfile = xhr_filemin_path_as_user($module, $cfile);
 		exit if (!$cfile);
-		if ($jailed_user) {
-			switch_to_given_unix_user($jailed_user);
-			}
-		else {
-			switch_to_remote_user_safe();
-			}
 		my $data = &ui_read_file_contents_limit(
 			{
 				'file',
@@ -737,7 +812,7 @@ if (post_has('xhr-')) {
 		}
 	elsif ($in{'xhr-get_autocompletes'} eq '1') {
 		if (foreign_available("shell")) {
-			switch_to_remote_user_safe();
+			xhr_shell_access_as_user() || exit;
 			my @data = get_autocomplete_shell(
 				$in{'xhr-get_autocomplete_type'},
 				$in{'xhr-get_autocomplete_string'}
@@ -745,138 +820,9 @@ if (post_has('xhr-')) {
 			print convert_to_json(\@data);
 			}
 		}
-	elsif ($in{'xhr-theme_latest_version'} eq '1') {
-		my @current_versions;
-		my @remote_version = theme_remote_version(1, 0, 1);
-		my ($remote_version_number) =
-		    "@remote_version" =~ /^version=(.*)/m;
-		my ($remote_mversion_number) =
-		    "@remote_version" =~ /^mversion=(.*)/m;
-		if ($remote_mversion_number <= 1) {
-			$remote_mversion_number = "";
-			}
-		else {
-			$remote_mversion_number = "-$remote_mversion_number";
-			}
-		my ($remote_bversion_number) =
-		    "@remote_version" =~ /^bversion=(.*)/m;
-		if ($remote_bversion_number <= 1) {
-			$remote_bversion_number = "";
-			}
-		else {
-			$remote_bversion_number = ":$remote_bversion_number";
-			}
-		push(@current_versions,
-			(theme_remote_version(1, 1) =~ /^version=(.*)/m),
-			"$remote_version_number$remote_mversion_number$remote_bversion_number"
-		);
-		print convert_to_json(\@current_versions);
-		}
 	elsif ($in{'xhr-theme_clear_cache'} eq '1') {
 		clear_theme_cache(&webmin_user_is_admin(),
 			$in{'xhr-theme_clear_cache_full'});
-		}
-	elsif ($in{'xhr-update'} eq '1' &&
-		&webmin_user_is_admin() &&
-		$theme_config{'settings_upgrade_allowed'} eq 'true')
-	{
-		my @update_rs;
-		my $version_type =
-		    ($in{'xhr-update-type'} eq '-beta' ? '-beta' : '-release');
-		my $update_force = $in{'xhr-update-force'};
-		my $update_version = $in{'xhr-update-version'};
-		my $usermin_enabled_updates = (
-			$theme_config{
-				'settings_sysinfo_theme_updates_for_usermin'}
-			    ne 'false' ? 1 : 0
-		);
-		if (!has_command('git') ||
-			!has_command('curl') ||
-			!has_command('bash'))
-		{
-			@update_rs = {
-				"no_git" => replace(
-					(
-						!has_command('curl') ||
-						    !has_command('bash')
-						? '>git<'
-						: '~'
-					),
-					(
-						!has_command('curl') ? '>curl<'
-						: '>bash<'
-					),
-					$theme_text{
-						'theme_git_patch_no_git_message'
-					}
-				),
-			};
-			print convert_to_json(\@update_rs);
-			}
-		else {
-			if ($update_force ne "1" && !$update_version) {
-				my $authentic_remote_data;
-
-				if ($version_type eq '-release') {
-					$authentic_remote_data =
-					    theme_remote_version(1, 1, undef,
-						1);
-					}
-				else {
-					$authentic_remote_data =
-					    theme_remote_version(1, 0, 1, 1);
-					}
-
-				if ($authentic_remote_data eq '0') {
-					@update_rs =
-					    {"no_connection" =>
-						    $theme_text{
-							'theme_git_update_locked'
-						    }};
-					print convert_to_json(\@update_rs);
-					exit;
-					}
-
-				@update_rs = theme_update_incompatible(
-					$authentic_remote_data,
-					($version_type eq '-release' ? 1 : 0));
-				if (@update_rs) {
-					print convert_to_json(\@update_rs);
-					exit;
-					}
-				}
-			my $usermin =
-			    ($has_usermin && $usermin_enabled_updates);
-			my $usermin_root;
-			$version_type = "$version_type:$update_version"
-			    if ($update_version);
-			backquote_logged(
-				"yes | $root_directory/$current_theme/theme-update.sh $version_type -no-restart"
-			);
-			if ($usermin) {
-				$usermin_root = $root_directory;
-				$usermin_root =~ s/webmin/usermin/;
-				backquote_logged(
-					"yes | $usermin_root/$current_theme/theme-update.sh $version_type -no-restart"
-				);
-				}
-			my $tversion = theme_version('versionfull', 'no-cache');
-
-			@update_rs = {
-				"success" => (
-					$usermin
-					? theme_text(
-						'theme_git_patch_update_success_message2',
-						$tversion
-					    )
-					: theme_text(
-						'theme_git_patch_update_success_message',
-						$tversion
-					)
-				)
-			};
-			print convert_to_json(\@update_rs);
-			}
 		}
 	elsif ($in{'xhr-info'} eq '1') {
 		if (&foreign_available('virtual-server')) {
@@ -899,8 +845,7 @@ if (post_has('xhr-')) {
 			$load, $real_memory,
 			$virtual_memory, $disk_space,
 			$package_message, $csf_title,
-			$csf_data,
-			$authentic_remote_version, $local_motd
+			$csf_data, $local_motd
 		) = get_sysinfo_vars(\@info);
 
 		# Build update info
@@ -929,7 +874,6 @@ if (post_has('xhr-')) {
 			"virt" => $virtual_memory,
 			"disk" => $disk_space,
 			"package_message" => $package_message,
-			"authentic_remote_version" => $authentic_remote_version,
 			"local_motd" => $local_motd,
 			"csf_title" => $csf_title,
 			"csf_data" => $csf_data,
@@ -954,44 +898,39 @@ if (post_has('xhr-')) {
 	elsif ($in{'xhr-search-in-file'} eq '1') {
 		my $module = 'filemin';
 		exit if (!foreign_available($module));
-		my $jailed_user = get_fm_jailed_user($module, 1);
-		my $jailed_user_home = get_fm_jailed_user($module);
-		my @files = grep { defined($_) }
-		    map {
-			xhr_filemin_checked_path($module, $_, $jailed_user_home)
-			}
-		    split(/,/, $in{'xhr-search-in-file-files'});
 		my $match = trim($in{'xhr-search-in-file-string'});
 		my @match;
-		if ($jailed_user) {
-			switch_to_given_unix_user($jailed_user);
-			}
-		else {
-			switch_to_remote_user_safe();
-			}
-		fdo {
-			my ($file, $line, $text) = @_;
-			if ($text =~ /\Q$match\E/i) {
-				push(
-					@match,
-					(
-						[
-							$files[$file] => [
-								html_escape(
-									substr(
-										$text,
-										0
-										,
-										120
-									)),
-								$line
-							]
-						]
-					)
-				);
+		# Directory-based ACLs can select a different Unix user for each file.
+		foreach my $file (split(/,/, $in{'xhr-search-in-file-files'})) {
+			my @user_info;
+			$file = xhr_filemin_checked_path($module, $file,
+				undef, \@user_info);
+			next if (!$file || !@user_info);
+			my $search = sub {
+				my ($effective_gid) = split(/\s+/, $));
+				return if ($> != $user_info[2] ||
+					$effective_gid != $user_info[3]);
+				# Open a literal filename, without File::Grep's two-argument open.
+				open(my $fh, '<', $file) || return;
+				fdo {
+					my ($index, $line, $text) = @_;
+					if ($text =~ /\Q$match\E/i) {
+						push(@match, [ $file => [
+							html_escape(substr($text, 0, 120)),
+							$line ] ]);
+						}
+					} $fh;
+				close($fh);
+				};
+			if ($< == 0) {
+				# Restore root between files so each uses its own ACL identity.
+				eval_as_unix_user($user_info[0], $search);
+				}
+			else {
+				# An already unprivileged process can only read as its own user.
+				&$search();
 				}
 			}
-		@files;
 		print convert_to_json(\@match);
 		}
 	elsif ($in{'xhr-csf-unload'} eq '1') {
