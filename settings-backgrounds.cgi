@@ -11,7 +11,7 @@ our (%in, $theme_webprefix, $current_theme, $config_directory, $get_user_level, 
 
 do($ENV{'THEME_ROOT'} . "/authentic-lib.pl");
 
-&webmin_user_is_admin() ||
+&theme_user_can_manage() ||
   &error($theme_text{'theme_error_access_not_root_user'});
 
 &ui_print_header(undef, $theme_text{'theme_xhred_settings_right_theme_bgs_title'}, undef, undef, undef, 1);

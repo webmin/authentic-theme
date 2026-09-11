@@ -4,7 +4,7 @@
 * Fix data tables and their filter to be restored fully functional on history back navigation
 * Fix history back navigation after a full page reload
 * Fix disabled checked checkboxes showing a cross instead of a checkmark
-* Fix theme XHR actions to enforce modules permissions
+* Fix theme ACL enforcement for XHR file operations, global settings, and live stats
 * Drop server-side Perl customizations
 * Drop the built-in theme updater
 * Drop dashboard-managed CSF update checks

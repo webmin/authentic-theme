@@ -313,10 +313,10 @@ sub nav_webmin_menu
         }
     }
     if (!$extra_links++) {
-        if (&webmin_user_is_admin() || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
+        if (&theme_user_can_manage() || $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true') {
             $rv .= nav_cat_link("/tconfig.cgi", $theme_text{'settings_right_theme_left_configuration_title'}, 'hidden');
         }
-        if (&webmin_user_is_admin()) {
+        if (&theme_user_can_manage()) {
             $rv .=
               nav_cat_link("/settings-editor_read.cgi", $theme_text{'settings_right_theme_left_extensions_title'}, 'hidden');
             $rv .= nav_cat_link("/settings-logos.cgi", $theme_text{'settings_right_theme_left_logo_title'}, 'hidden');
@@ -687,9 +687,11 @@ sub nav_link_sysstat
 {
     my $link;
     if (&webmin_user_is_admin()) {
-        if (-d $root_directory . "/virtual-server/pro/timeplot") {
+        if (foreign_available('virtual-server') &&
+            -d $root_directory . "/virtual-server/pro/timeplot") {
             $link = 'virtual-server/pro';
-        } elsif (-d $root_directory . "/server-manager/timeplot") {
+        } elsif (foreign_available('server-manager') &&
+                 -d $root_directory . "/server-manager/timeplot") {
             $link = 'server-manager';
         }
         if ($link) {
@@ -701,7 +703,7 @@ sub nav_link_sysstat
 sub nav_link_netdata
 {
     my $link;
-    if (&webmin_user_is_admin()) {
+    if (&theme_user_can_view_system_status()) {
         if (has_command('netdata') &&
             $theme_config{'settings_leftmenu_netdata'} ne 'false')
         {
@@ -987,7 +989,7 @@ sub nav_list_combined_menu
                 $rv .= $menu->{'before'};
 
                 if (($item->{'id'} eq 'global_setting' || $item->{'id'} eq 'global_settings') &&
-                    &webmin_user_is_admin() &&
+                    &theme_user_can_manage() &&
                     !$extra_links++)
                 {
                     $rv .=
@@ -1011,7 +1013,7 @@ sub nav_list_combined_menu
                         $rv .= nav_cat_link("/server-manager/licence.cgi", $theme_text{'right_slcheck'}, 1);
                     }
 
-                } elsif (!&webmin_user_is_admin() &&
+                } elsif (!&theme_user_can_manage() &&
                          $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
                          !$extra_links++)
                 {
@@ -1147,8 +1149,8 @@ sub nav_links
     $rv .= '<span><i class="fa fa-fw fa-star"></i></span>';
     $rv .= '</li>';
 
-    if ((&webmin_user_is_admin()  && $theme_config{'settings_theme_options_button'} ne 'false') ||
-        (!&webmin_user_is_admin() &&
+    if ((&theme_user_can_manage()  && $theme_config{'settings_theme_options_button'} ne 'false') ||
+        (!&theme_user_can_manage() &&
             $theme_config{'settings_theme_config_admins_only_privileged'} ne 'true' &&
             $theme_config{'settings_theme_options_button'} ne 'false'))
     {
@@ -1563,7 +1565,7 @@ sub nav_menu_html_snippet
     $html_snippet =~ s/(<(\/|\s*)(html|head|meta|link|title|body).*?>)//g;
 
     if ($html_snippet_limited ne 'true' ||
-        ($html_snippet_limited eq 'true' && &webmin_user_is_admin()))
+        ($html_snippet_limited eq 'true' && &theme_user_can_manage()))
     {
         $rv = '<li class="menu-container"><ul class="user-html"><li class="user-html-string">';
         $rv .= $html_snippet;

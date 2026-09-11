@@ -14,7 +14,7 @@ do($ENV{'THEME_ROOT'} . "/settings-lib.pl");
 
 my @files = get_settings_editor_files();
 
-webmin_user_is_admin() ||
+theme_user_can_manage() ||
   error($theme_text{'theme_error_access_not_root_user'});
 if ($in{'file'}) {
   array_contains(\@files, $in{'file'}) ||

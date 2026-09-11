@@ -213,7 +213,7 @@ sub get_extended_sysinfo
                 }
             }
         }
-        if (&webmin_user_is_admin() &&
+        if (&theme_user_can_view_system_status() &&
             $theme_config{'settings_sysinfo_hidden_panels_user'} !~ /\'live_stats\'/ &&
             $theme_config{'settings_sysinfo_real_time_status'} ne '0'     &&
             (acl_system_status('cpu') || acl_system_status('mem') || acl_system_status('load')))
@@ -610,7 +610,7 @@ sub theme_list_sysinfo_accordion_candidates
         next if ($seen{$id}++);
         push(@accordions, [$id, theme_sysinfo_accordion_title($info), $info->{'module'}]);
     }
-    if ($include_live_stats && &webmin_user_is_admin() && !$seen{'live_stats'}++) {
+    if ($include_live_stats && &theme_user_can_view_system_status() && !$seen{'live_stats'}++) {
         push(@accordions, ['live_stats', $theme_text{'theme_dashboard_accordion_live_stats'}, 'A']);
     }
     my %panels_order = theme_sysinfo_panels_order();
@@ -1135,7 +1135,7 @@ sub get_all_users_motd_data
                 # Skip message if cannot be displayed for the given user
                 if ($specific_user ||
                     ($motd->{'target'} eq 'all' ||
-                        (&webmin_user_is_admin() && $motd->{'target'} eq 'adm') ||
+                        (&theme_user_can_manage() && $motd->{'target'} eq 'adm') ||
                         ($get_user_level eq '1'  && $motd->{'target'} eq 'res') ||
                         ($get_user_level eq '2'  && $motd->{'target'} eq 'vm')  ||
                         ($get_user_level eq '3'  && $motd->{'target'} eq 'um')  ||
@@ -1623,7 +1623,7 @@ sub clear_theme_cache
         &foreign_require("virtual-server");
 
         # Clear links cache
-        if (webmin_user_is_admin()) {
+        if (theme_user_can_manage()) {
             my $vm_links_cache_global = "$virtual_server::links_cache_dir/global";
             if (-r $vm_links_cache_global) {
                 unlink_file($vm_links_cache_global);
@@ -1680,10 +1680,10 @@ sub theme_make_config_dir
 
 sub get_theme_user_link
 {
-    my $is_hidden = (!foreign_available("webmin") &&
+    my $is_hidden = (!theme_user_can_manage() &&
                        $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true' ? ' hidden-force ' :
                        undef);
-    my $is_hidden_link = !&webmin_user_is_admin() ? ' hidden-force ' : undef;
+    my $is_hidden_link = !&theme_user_can_manage() ? ' hidden-force ' : undef;
     my $link           = '/tconfig.cgi';
 
     return '' . theme_version('versionfull') .
@@ -1881,7 +1881,7 @@ sub theme_config_save
 
     # Master administrator must also save certain options to
     # global `settings.js` config file to affect all users
-    if (&webmin_user_is_admin()) {
+    if (&theme_user_can_manage()) {
         delete @a{ grep(!/^settings_/, keys %a) };
 
         # Never save user-based options to global config
@@ -1908,7 +1908,7 @@ sub theme_config_restore
 {
     my $tuconfig_file = get_tuconfig_file();
     unlink_file($tuconfig_file);
-    if (&webmin_user_is_admin()) {
+    if (&theme_user_can_manage()) {
         my $tgconfig_file = get_tgconfig_file();
         unlink_file($tgconfig_file);
         if ($has_usermin) {

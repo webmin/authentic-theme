@@ -1076,7 +1076,7 @@ sub get_initial_wizard
 {
     # Prevent running Virtualmin post installation wizard
     my $mod_vm = 'virtual-server';
-    if (&webmin_user_is_admin() && foreign_exists($mod_vm)) {
+    if (&webmin_user_is_admin() && foreign_available($mod_vm)) {
         my %virtualmin_config = foreign_config($mod_vm);
         return $virtualmin_config{'wizard_run'};
     }
@@ -1972,7 +1972,7 @@ sub theme_post_update
 {
     my $update = $root_directory . "/$current_theme/update";
 
-    if (-f $update && &webmin_user_is_admin()) {
+    if (-f $update && &theme_user_can_manage()) {
         unlink $update;
         return '1';
     } else {

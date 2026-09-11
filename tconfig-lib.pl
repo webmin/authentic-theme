@@ -237,7 +237,7 @@ sub theme_settings_filter
     }
 
     # Limit to certain options for non privileged user
-    if (!&webmin_user_is_admin()) {
+    if (!&theme_user_can_manage()) {
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
              'settings_embed_product_splash_privileged',
@@ -670,7 +670,7 @@ sub theme_controls
                 <i class=\"fa fa-fw fa-hourglass-o\"></i><span>$theme_text{'settings_right_clear_local_cache'}</span>
             </a>
         </div>",
-        (&webmin_user_is_admin() ?
+        (&theme_user_can_manage() ?
            "<div class=\"btn-group\">
             <a tabindex='1' class=\"btn btn-default page_footer_ajax_submit capitalize\" id=\"edit_logos\" href=\"$theme_webprefix/settings-backgrounds.cgi\">
                 <i class=\"fa fa-fw fa-image\"></i><span>$theme_text{'theme_xhred_settings_right_theme_bgs'}</span>

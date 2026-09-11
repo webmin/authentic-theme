@@ -20,10 +20,10 @@ require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 # Get port number
 my ($port) = @ARGV;
 
-# Check if user is admin
-if (!webmin_user_is_admin()) {
+# Require administrator status and System Status module access.
+if (!theme_user_can_view_system_status()) {
 	remove_miniserv_websocket($port, $current_theme);
-	error_stderr("WebSocket server cannot be accessed because the user is not a master administrator");
+	error_stderr("WebSocket server cannot be accessed because the user is not authorized to view system status");
 	exit(2);
 }
 
@@ -190,7 +190,7 @@ my $server_socket = IO::Socket::INET->new(
 							$data->{'session'} eq $websocket_session_id) {
 							$user = $remote_user || $base_remote_user || 'websocket';
 						}
-						if ($user && webmin_user_is_admin()) {
+						if ($user && theme_user_can_view_system_status()) {
 							# Set connection as verified and continue
 							error_stderr("WebSocket connection for user $user is granted");
 							$conn->{'verified'} = 1;

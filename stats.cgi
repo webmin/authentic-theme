@@ -24,7 +24,8 @@ sub print_stats_json
 
 # Check access
 init_prefail();
-if (!defined(&webmin_user_is_admin) || !webmin_user_is_admin()) {
+if (!defined(&theme_user_can_view_system_status) ||
+    !theme_user_can_view_system_status()) {
     print_stats_json({ error => $stats_text{'index_noadmin_eaccess'}, access => 0 });
     exit;
 }

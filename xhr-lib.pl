@@ -495,7 +495,7 @@ if ($type eq 'file') {
 
 		# Save current user motd file
 		if ($subtype eq 'set' &&
-			webmin_user_is_admin())
+			theme_user_can_manage())
 		{
 			my $data = convert_from_json($in{'data'});
 			put_user_motd($data);
@@ -670,13 +670,14 @@ if (post_has('xhr-')) {
 	elsif ($in{'xhr-get_size'} eq '1') {
 		my $nodir = $in{'xhr-get_size_nodir'};
 		my $path = $in{'xhr-get_size_path'};
-		my $module = $in{'xhr-get_size_cmodule'} || 'chooser';
-		if ($module eq 'filemin' && foreign_available($module)) {
+		my $module = $in{'xhr-get_size_cmodule'};
+		$module = 'filemin'
+			if (defined($module) && $module eq 'file-manager');
+		if (defined($module) && $module eq 'filemin' &&
+			foreign_available($module)) {
 			$path = xhr_filemin_path_as_user($module, $path);
 			}
-		elsif ($module eq 'chooser') {
-			# Chooser paths are relative to its global ACL root when configured.
-			$path = get_access_data('root').$path if (defined($path));
+		elsif (defined($module) && $module eq 'chooser') {
 			$path = xhr_chooser_path_as_user($path);
 			}
 		else {
@@ -821,7 +822,7 @@ if (post_has('xhr-')) {
 			}
 		}
 	elsif ($in{'xhr-theme_clear_cache'} eq '1') {
-		clear_theme_cache(&webmin_user_is_admin(),
+		clear_theme_cache(&theme_user_can_manage(),
 			$in{'xhr-theme_clear_cache_full'});
 		}
 	elsif ($in{'xhr-info'} eq '1') {

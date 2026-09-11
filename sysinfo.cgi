@@ -175,7 +175,7 @@ if ($get_user_level ne '3') {
     # Pre-load history data
     print '<script type="application/javascript">vars.stats.history = ' .
         convert_to_json(get_stats_history()) . ';</script>' . "\n"
-            if ($sysinfo && webmin_user_is_admin());
+            if ($sysinfo && theme_user_can_view_system_status());
 
     # Print system info table
     if (@table_data) {

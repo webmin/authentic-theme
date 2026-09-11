@@ -1751,7 +1751,7 @@ const mail = (function() {
                                                     }).then(file => {
                                                         if (file) {
                                                             let suid = generate.random();
-                                                            fetch(xtarget.getSize + file, _.fetch.options).then(r => {
+                                                            fetch(xtarget.getSize + encodeURIComponent(file), _.fetch.options).then(r => {
                                                                 r.text().then(rs => {
                                                                     let s = rs.split(`|`),
                                                                         size = s[1].replace(/\s+/g, String());
