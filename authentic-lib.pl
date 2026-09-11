@@ -1968,7 +1968,10 @@ sub get_history_shell_file
     my $file;
     if ($in{'xhr-shell-cms'} eq "1") {
         my $id = $in{'xhr-shell-cmsid'};
-        $id =~ s/[^\p{L}\p{N}.\-\/]//g;
+
+        # Keep the Cloudmin system ID within the history directory
+        return undef if (!defined($id) || $id eq '.' || $id eq '..' ||
+                         $id !~ /\A[\p{L}\p{N}.\-]+\z/);
         $file = "$config_directory/server-manager/previous/$id";
     } else {
         $file = "$config_directory/shell/previous.$remote_user";

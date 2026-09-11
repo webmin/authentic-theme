@@ -795,6 +795,7 @@ if (post_has('xhr-')) {
 		}
 	elsif ($in{'xhr-shell-pop'}) {
 		my $file = get_history_shell_file();
+		defined($file) || exit;
 		my $index = (int($in{'xhr-shell-pop'}) - 1);
 		my $history = read_file_lines($file);
 		if (@$history[$index]) {
@@ -805,6 +806,7 @@ if (post_has('xhr-')) {
 		}
 	elsif ($in{'xhr-shell-insert'}) {
 		my $file = get_history_shell_file();
+		defined($file) || exit;
 		my $history = read_file_lines($file);
 		push(@$history, $in{'xhr-shell-inserted'})
 		    if ($in{'xhr-shell-inserted'});
