@@ -59,8 +59,7 @@ my ($cpu_percent,
     $disk_space,
     $package_message,
     $csf_title,
-    $csf_data,
-    $authentic_remote_version
+    $csf_data
 ) = get_sysinfo_vars(\@info);
 
 if ($get_user_level ne '3') {

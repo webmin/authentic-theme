@@ -98,11 +98,8 @@ var
     settings_hotkey_custom_8_user = '',
     settings_hotkey_custom_9_user = '',
 
-    // Theme updates options defaults
-    settings_upgrade_allowed = false,
-    settings_sysinfo_theme_updates = false,
+    // Server data cache default
     settings_cache_interval = 86400,
-    settings_sysinfo_theme_updates_for_usermin = true,
 
     // Default order for panels on Dashboard
     settings_sysinfo_panels_order = '{\'live_stats\':\'A\',\'acl_logins\':\'B\',\'status\':\'C\',\'status_services\':\'D\',\'net_net_info\':\'E\',\'ips\':\'F\',\'mount_disks_info\':\'F\',\'quota\':\'G\',\'bw\':\'I\',\'sysinfo\':\'H\',\'updates\':\'I\',\'ftypes\':\'J\',\'serial\':\'K\'}',

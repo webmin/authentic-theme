@@ -689,7 +689,6 @@ sub get_sysinfo_vars
         $package_message,
         $csf_title,
         $csf_data,
-        $authentic_remote_version,
         $local_motd);
 
     if (@info) {
@@ -832,70 +831,8 @@ sub get_sysinfo_vars
                   ));
         }
 
-        # Fetch theme version
-        if (&webmin_user_is_admin() && $theme_config{'settings_upgrade_allowed'} eq 'true') {
-
-            # Theme version/update
-            my $authentic_remote_data                = theme_remote_version(1);
-            my $authentic_installed_version          = theme_version('version');
-            my ($authentic_installed_version_parsed) = $authentic_installed_version =~ /([0-9\.]+)/;
-            my $authentic_installed_version_devel    = $authentic_installed_version =~ /alpha|beta|RC/;
-            my $incompatible                         = theme_update_incompatible($authentic_remote_data);
-
-            ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
-            my $authentic_remote_version_local = $authentic_remote_version;
-
-            if ($incompatible && $authentic_remote_version_local !~ /alpha|beta|RC/) {
-                $authentic_remote_version = $authentic_installed_version;
-            }
-
-            if (
-                $theme_config{'settings_sysinfo_theme_updates'} eq 'true' && (
-                       (!$incompatible || ($incompatible && $authentic_remote_version_local =~ /alpha|beta|RC/))
-                    &&
-                    (
-                        (($authentic_remote_version_local !~ /alpha|beta|RC/ && $authentic_installed_version_devel) &&
-                         lc($authentic_remote_version_local) ge $authentic_installed_version_parsed
-                        ) ||
-                        lc($authentic_remote_version_local) gt lc($authentic_installed_version))
-
-                ))
-            {
-                my $authentic_remote_beta        = $authentic_remote_version_local =~ /alpha|beta|RC/;
-                my $authentic_remote_alpha_beta  = $authentic_remote_version_local =~ /alpha|beta/;
-                my $authentic_remote_version_tag = $authentic_remote_version_local;
-                my @_remote_version_tag          = split /-/, $authentic_remote_version_tag;
-                $authentic_remote_version_tag = $_remote_version_tag[0];
-
-                $authentic_theme_version =
-                  '<a href="https://github.com/authentic-theme/authentic-theme" target="_blank">' .
-                  $theme_text{'theme_name'} . '</a> ' . $authentic_installed_version . '. ' .
-                  ($authentic_remote_beta ? $theme_text{'theme_git_patch_available'} : $theme_text{'theme_update_available'})
-                  . ' ' . $authentic_remote_version_local .
-                  '&nbsp;&nbsp;&nbsp;<div class="btn-group">' . '<a data-git="1" data-stable="' .
-                  ((($authentic_remote_beta && $tconfig{'beta_updates'} eq '1') || $authentic_installed_version_devel) ?
-                    0 : 1) .
-                  '" class="btn btn-xxs btn-' . ($authentic_remote_beta ? 'warning' : 'success') .
-                  ' authentic_update" href=\'' . $theme_webprefix . '/tconfig.cgi\'><i class="fa fa-fw ' .
-                  ($authentic_remote_beta ? 'fa-git-pull' : 'fa-refresh') . '">&nbsp;</i>' . $theme_text{'theme_update'} .
-                  '</a>' . '<a class="btn btn-xxs btn-info ' . ($authentic_remote_alpha_beta ? 'hidden' : 'btn-info') .
-'" target="_blank" href="https://github.com/authentic-theme/authentic-theme/blob/master/CHANGELOG.md"><i class="fa fa-fw fa-pencil-square-o">&nbsp;</i>'
-                  . $theme_text{'theme_changelog'}
-                  . '</a>' . '<a data-remove-version="' . $authentic_remote_version_local .
-                  '" class="btn btn-xxs btn-warning' . ($authentic_remote_beta ? ' hidden' : '') .
-                  '" target="_blank" href="https://github.com/authentic-theme/authentic-theme/releases/download/' .
-                  $authentic_remote_version_tag . '/authentic-theme-' . $authentic_remote_version_local .
-                  '.wbt.gz"><i class="fa fa-fw fa-download">&nbsp;</i>' . $theme_text{'theme_download'} .
-                  '</a>' . '<a class="btn btn-xxs btn-primary" href=\'' . $theme_webprefix . '/tconfig.cgi\' data-href=\'' .
-                  $theme_webprefix . '/tconfig.cgi\' ><i class="fa fa-fw fa-cogs">&nbsp;</i>' .
-                  $theme_text{'theme_xhred_global_configuration'} . '</a>' . '</div>';
-
-            } else {
-                $authentic_theme_version = get_theme_user_link();
-            }
-        } else {
-            $authentic_theme_version = get_theme_user_link();
-        }
+        # Display the installed theme version without performing remote update checks
+        $authentic_theme_version = get_theme_user_link();
 
         # Load ConfigServer Security & Firewall lib if available
         ($csf_title, $csf_data) = lib_csf_control('strings');
@@ -1148,7 +1085,6 @@ sub get_sysinfo_vars
             $package_message,
             $csf_title,
             $csf_data,
-            $authentic_remote_version,
             $local_motd);
 
 }
@@ -1496,181 +1432,6 @@ sub error_40x
     &footer();
 }
 
-sub theme_update_incompatible
-{
-    my ($authentic_remote_data, $force_stable) = @_;
-
-    my $webmin_compatible_version;
-    my $usermin_compatible_version;
-    my @notice;
-
-    $force_stable ||= 0;
-
-    my $force_button =
-      '<a data-git="1" data-stable="' .
-      $force_stable . '" data-force="1" class="authentic_update text-darker" href="javascript:;">' .
-      $theme_text{'theme_xhred_global_click_here'} . '</a>';
-    my $usermin_enabled_updates = ($theme_config{'settings_sysinfo_theme_updates_for_usermin'} ne 'false' ? 1 : 0);
-    my ($authentic_remote_version) = $authentic_remote_data =~ /^version=(.*)/gm;
-
-    $authentic_remote_data =~ /^depends=(\d.\d\d\d)\s+(\d.\d\d\d)|(\d.\d\d\d)/gm;
-    $webmin_compatible_version  = $3 ? $3 : $1;
-    $usermin_compatible_version = $2;
-
-    my $webmin_version_file  = "$root_directory/version";
-    my $usermin_version_file = "$has_usermin_root_dir/version";
-    my $get_latest_dev       = sub {
-        my ($file, $var) = @_;
-        if (-r $file) {
-            my $version_dev = read_file_lines($file, 1)->[0];
-            if ($version_dev =~ /\d\.\d{4,}/) {
-                my @file_stat = stat($file);
-                if ($file_stat[9] > time() - (60 * 60)) {
-                    ${$var} = 1;
-                }
-            }
-        }
-    };
-
-    # Do we have latest dev version of Webmin installed
-    &$get_latest_dev($webmin_version_file, \$webmin_compatible_version);
-
-    # Do we have latest dev version of Usermin installed
-    &$get_latest_dev($usermin_version_file, \$usermin_compatible_version);
-
-    if (
-
-        ($authentic_remote_version                           &&
-         $webmin_compatible_version                          &&
-         $usermin_compatible_version                         &&
-         (get_webmin_version() < $webmin_compatible_version) &&
-         ($has_usermin && $usermin_enabled_updates && $has_usermin_version < $usermin_compatible_version))
-
-      )
-    {
-        @notice = {
-                    "incompatible" => (
-                           theme_text('theme_git_patch_incompatible_message',
-                                      $theme_text{'theme_name'},
-                                      $authentic_remote_version,
-                                      $theme_text{'theme_xhred_titles_wm'},
-                                      $webmin_compatible_version,
-                                      $theme_text{'theme_xhred_titles_um'},
-                                      $usermin_compatible_version
-                             ) .
-                             " "
-                             .
-                             theme_text('theme_git_patch_incompatible_message_desc',
-                                        $force_button,
-                                        ($theme_text{'theme_xhred_titles_wm'} . "/" . $theme_text{'theme_xhred_titles_um'}))
-                    ) };
-    } elsif (
-
-        ($authentic_remote_version && $webmin_compatible_version && (get_webmin_version() < $webmin_compatible_version))
-
-      )
-    {
-        @notice = {
-                    "incompatible" => (
-                                       theme_text('theme_git_patch_incompatible_message_s',
-                                                  $theme_text{'theme_name'},
-                                                  $authentic_remote_version,
-                                                  $theme_text{'theme_xhred_titles_wm'},
-                                                  $webmin_compatible_version
-                                         ) .
-                                         " "
-                                         .
-                                         theme_text('theme_git_patch_incompatible_message_desc',
-                                                    $force_button,
-                                                    $theme_text{'theme_xhred_titles_wm'})
-                    ) };
-    } elsif (
-
-        ($authentic_remote_version   &&
-         $usermin_compatible_version &&
-         ($has_usermin && $usermin_enabled_updates && $has_usermin_version < $usermin_compatible_version))
-
-      )
-    {
-        @notice = {
-                    "incompatible" => (
-                                       theme_text('theme_git_patch_incompatible_message_s',
-                                                  $theme_text{'theme_name'},
-                                                  $authentic_remote_version,
-                                                  $theme_text{'theme_xhred_titles_um'},
-                                                  $usermin_compatible_version
-                                         ) .
-                                         " "
-                                         .
-                                         theme_text('theme_git_patch_incompatible_message_desc',
-                                                    $force_button,
-                                                    $theme_text{'theme_xhred_titles_um'})
-                    ) };
-    }
-
-    return @notice;
-}
-
-sub theme_remote_version
-{
-    return if ($theme_config{'settings_upgrade_allowed'} ne 'true');
-    my ($data, $force_stable_check, $force_beta_check, $nocache) = @_;
-
-    my $remote_version = 0;
-    my $remote_release;
-    my $error;
-    my $installed_version_devel = theme_version('version') =~ /alpha|beta|RC/;
-
-    if (($theme_config{'settings_sysinfo_theme_updates'} eq 'true' || $data) && &webmin_user_is_admin() && post_has('xhr-'))
-    {
-        if (($tconfig{'beta_updates'} eq '1' || $force_beta_check || $installed_version_devel) && !$force_stable_check) {
-            my $cache_id = 'version-theme-development';
-            if (!$nocache) {
-                $remote_version = theme_cache_read($cache_id);
-            }
-            if (!$remote_version || 
-                ($remote_version && !theme_cache_is_fresh($cache_id))) {
-                http_download('api.github.com',                                             '443',
-                              '/repos/webmin/authentic-theme/contents/theme.info', \$remote_version,
-                              \$error,                                                      undef,
-                              1,                                                            undef,
-                              undef,                                                        30,
-                              undef,                                                        undef,
-                              { 'accept', 'application/vnd.github.v3.raw' });
-                theme_cache_write($cache_id, $remote_version) if ($remote_version && !$error);
-
-            }
-
-        } else {
-            my $cache_id = 'version-theme-stable';
-            if (!$nocache) {
-                $remote_version = theme_cache_read($cache_id);
-            }
-            if (!$remote_version ||
-                ($remote_version && !theme_cache_is_fresh($cache_id))) {
-                http_download('api.github.com', '443', '/repos/webmin/authentic-theme/releases/latest',
-                              \$remote_release, \$error, undef, 1, undef, undef, 30);
-                $remote_release =~ /tag_name":"(.*?)"/;
-                http_download('api.github.com',                                                            '443',
-                              '/repos/webmin/authentic-theme/contents/theme.info?ref=' . $1 . '', \$remote_version,
-                              \$error,                                                                     undef,
-                              1,                                                                           undef,
-                              undef,                                                                       30,
-                              undef,                                                                       undef,
-                              { 'accept', 'application/vnd.github.v3.raw' });
-                theme_cache_write($cache_id, $remote_version) if ($remote_version && !$error);
-            }
-        }
-    }
-    if ($data) {
-        return $remote_version;
-    } else {
-        ($remote_version) = $remote_version =~ /^version=(.*)/m;
-        return $remote_version;
-    }
-
-}
-
 # theme_cache_dir()
 # Returns trusted directory for theme cache
 sub theme_cache_dir
@@ -1922,7 +1683,7 @@ sub get_theme_user_link
     my $is_hidden = (!foreign_available("webmin") &&
                        $theme_config{'settings_theme_config_admins_only_privileged'} eq 'true' ? ' hidden-force ' :
                        undef);
-    my $is_hidden_link = ((!&webmin_user_is_admin() || $theme_config{'settings_upgrade_allowed'} ne 'true') ? ' hidden-force ' : undef);
+    my $is_hidden_link = !&webmin_user_is_admin() ? ' hidden-force ' : undef;
     my $link           = '/tconfig.cgi';
 
     return '' . theme_version('versionfull') .

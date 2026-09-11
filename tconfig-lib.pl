@@ -113,6 +113,7 @@ sub theme_settings_raw
                        'settings_sysinfo_real_time_status',
                        'settings_sysinfo_max_servers',
                        'settings_sysinfo_hidden_panels_user',
+                       'settings_cache_interval',
             ] }
         ],
 
@@ -158,19 +159,6 @@ sub theme_settings_raw
             ] }
         ]);
 
-    # Add upgrade settings if available
-    if ($theme_config{'settings_upgrade_allowed'} eq 'true') {
-        push(@theme_settings_raw,
-        [
-         {  'id'    => 's8',
-            'title' => &theme_text('settings_right_soft_updates_page_options'),
-            'data'  => [
-                        'settings_sysinfo_theme_updates', 
-                        'settings_sysinfo_theme_updates_for_usermin',
-                        'settings_cache_interval'
-            ] }
-        ]);
-    }
     return @theme_settings_raw;
 }
 
@@ -225,7 +213,7 @@ sub theme_settings_filter
 
     # Exclude list of settings for Usermin
     if (!$has_usermin) {
-        push(@theme_settings_filter, 'settings_hotkey_toggle_key_usermin', 'settings_sysinfo_theme_updates_for_usermin');
+        push(@theme_settings_filter, 'settings_hotkey_toggle_key_usermin');
     }
 
     # Exclude list of settings for Webmail
@@ -271,8 +259,6 @@ sub theme_settings_filter
              'settings_side_slider_sysinfo_enabled',
              'settings_side_slider_notifications_enabled',
              'settings_side_slider_favorites_enabled',
-             'settings_sysinfo_theme_updates',
-             'settings_sysinfo_theme_updates_for_usermin',
              'settings_cache_interval');
         if ($get_user_level eq '3') {
             push(@theme_settings_filter, 'settings_hotkey_toggle_key_webmin');
@@ -664,68 +650,14 @@ sub theme_settings_format
            $theme_text{$k} .
            '</span>'
            .
-           (
-             $description && (
-                       $k =~ /level_navigation|leftmenu_width/ ?
-                       '<div class="smaller text-normal no-padding">' . $description . '</div>' :
-                       $k =~ /sysinfo_theme_updates/ &&
-                       '<div class="smaller text-normal no-padding margined-left-1 theme-version-installed-vs-remote"></div>'
-             ))
+           ($description && $k =~ /level_navigation|leftmenu_width/ ?
+              '<div class="smaller text-normal no-padding">' . $description . '</div>' : undef)
         ),
         "<span>$v</span>"];
 }
 
 sub theme_controls
 {
-    my ($section) = @_;
-    my $changelog_contents = read_file_contents($root_directory . '/' . $current_theme . "/CHANGELOG.md");
-    my @changelog_stable_versions =
-      ($changelog_contents =~ /####\s+Version\s+((?|\d+.\d+\s+|\d+.\d+.\d+\s+)\([\d\w\s,]+\))/g);
-    my $stable_versions_dropdown_submenu;
-    my $stable_versions_dropdown_submenu_content;
-    if (@changelog_stable_versions) {
-        $stable_versions_dropdown_submenu         = ' class="dropdown-submenu prelocked clickable"';
-        $stable_versions_dropdown_submenu_content = '<ul class="dropdown-menu theme-versions" role="menu">';
-        foreach my $ver (@changelog_stable_versions) {
-            my ($ver_str) = ($ver =~ /^(?|(\d+.\d+)\s+|(\d+.\d+.\d+)\s+)/);
-            $stable_versions_dropdown_submenu_content .=
-              '<li><a tabindex="-1" href="javascript:;" data-git="1" data-stable="1" data-version="' .
-              $ver_str .
-              '" class="authentic_update">&nbsp;' .
-              $ver .
-              '</a></li>';
-        }
-        $stable_versions_dropdown_submenu_content .= '</ul>';
-    }
-
-    my $update_dropdown = (
-        (&webmin_user_is_admin() && $section eq $theme_text{'settings_right_soft_updates_page_options'}) ?
-          '                     <span id="force_update_menu_cnt" class="dropup"'
-          .
-          ( has_command('git') ? '' :
-              get_button_tooltip('settings_sysinfo_theme_updates_description', undef, undef, 1, 1)
-          ) .
-          '>
-                                       <button class="btn btn-info dropdown-toggle margined-left--1 no-style-hover capitalize'
-          . (has_command('git') ? undef : ' disabled') .
-          '" type="button" id="force_update_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                         <i class="fa fa-fw fa-download-cloud margined-right-8"></i>' .
-          $theme_text{'theme_force_upgrade'} . '&nbsp;&nbsp;
-                                         <span class="caret"></span>
-                                       </button>
-                                       <ul class="dropdown-menu" aria-labelledby="force_update_menu">
-                                         <li' .
-          $stable_versions_dropdown_submenu .
-'><a data-git="1" data-stable="1" class="authentic_update" href="javascript:;"><i class="fa2 fa2-release-tagged fa-0_90x"></i>'
-          . $theme_text{'theme_xhred_force_upgrade_stable'}
-          . '</a>' .
-          $stable_versions_dropdown_submenu_content . '</li>
-                                         <li><a data-git="1" data-stable="0" class="authentic_update" href="javascript:;"><i class="fa2 fa2-release-master"></i>'
-          . $theme_text{'theme_xhred_force_upgrade_beta'} . '</a></li>
-                                       </ul>
-                                   </span>'
-        :
-          '');
     return (
         "<div class=\"btn-group\">
             <a tabindex='1' class=\"btn btn-success capitalize\" id=\"atsave\">
@@ -737,7 +669,6 @@ sub theme_controls
             <a tabindex='1' class=\"btn btn-default capitalize\" onclick=\"theme_cache_clear(this,1);\">
                 <i class=\"fa fa-fw fa-hourglass-o\"></i><span>$theme_text{'settings_right_clear_local_cache'}</span>
             </a>
-            $update_dropdown
         </div>",
         (&webmin_user_is_admin() ?
            "<div class=\"btn-group\">
