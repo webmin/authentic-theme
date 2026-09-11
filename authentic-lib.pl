@@ -1135,7 +1135,7 @@ sub get_all_users_motd_data
                 # Skip message if cannot be displayed for the given user
                 if ($specific_user ||
                     ($motd->{'target'} eq 'all' ||
-                        (&theme_user_can_manage() && $motd->{'target'} eq 'adm') ||
+                        (&webmin_user_is_admin() && $motd->{'target'} eq 'adm') ||
                         ($get_user_level eq '1'  && $motd->{'target'} eq 'res') ||
                         ($get_user_level eq '2'  && $motd->{'target'} eq 'vm')  ||
                         ($get_user_level eq '3'  && $motd->{'target'} eq 'um')  ||

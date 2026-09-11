@@ -20,7 +20,7 @@ require($ENV{'THEME_ROOT'} . "/stats-lib.pl");
 # Get port number
 my ($port) = @ARGV;
 
-# Require administrator status and System Status module access.
+# Require explicit System Status module access.
 if (!theme_user_can_view_system_status()) {
 	remove_miniserv_websocket($port, $current_theme);
 	error_stderr("WebSocket server cannot be accessed because the user is not authorized to view system status");

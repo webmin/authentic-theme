@@ -817,7 +817,7 @@ sub post_has
 # Check explicit permission to manage themes in Webmin Configuration.
 sub theme_user_can_manage
 {
-    return 0 if (!webmin_user_is_admin() || !foreign_available('webmin'));
+    return 0 if (!foreign_available('webmin'));
     my %access = get_module_acl(undef, 'webmin');
     my %allow = map {$_ => 1} grep {length($_)} split(/\s+/, $access{'allow'} || '');
     my %disallow = map {$_ => 1} grep {length($_)} split(/\s+/, $access{'disallow'} || '');
@@ -825,10 +825,10 @@ sub theme_user_can_manage
     return 1;
 }
 
-# Require both the administrator role and access to the status module.
+# Check explicit access to the System Status module.
 sub theme_user_can_view_system_status
 {
-    return webmin_user_is_admin() && foreign_available('system-status');
+    return foreign_available('system-status');
 }
 
 # Read file contents

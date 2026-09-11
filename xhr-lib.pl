@@ -342,7 +342,7 @@ if ($type eq "cmd") {
 
 	# Fail state restart
 	if ($action eq "restart") {
-		if (webmin_user_is_admin() && foreign_available('webmin')) {
+		if (foreign_available('webmin')) {
 			my $systemd = has_command('systemctl');
 			if ($systemd) {
 

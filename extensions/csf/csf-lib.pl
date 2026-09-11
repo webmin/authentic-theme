@@ -9,7 +9,7 @@ use Fcntl qw( :flock );
 
 our ($current_theme, $config_directory, $theme_webprefix, %theme_text);
 
-&webmin_user_is_admin() || &error($theme_text{'theme_error_access_dir_not_allowed'});
+&foreign_available('csf') || &error($theme_text{'theme_error_access_dir_not_allowed'});
 
 my $csf_conf     = "/etc/csf";
 my $csf_lib      = "/var/lib/csf";

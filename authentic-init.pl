@@ -1065,13 +1065,6 @@ sub get_user_icon
     return $user_icon;
 }
 
-sub switch_to_remote_user_safe
-{
-    if (!&webmin_user_is_admin() && $get_user_level ne '1') {
-        switch_to_remote_user();
-    }
-}
-
 sub get_initial_wizard
 {
     # Prevent running Virtualmin post installation wizard
@@ -2268,7 +2261,7 @@ sub get_fm_jailed_user
     }
     my $jailed_user = 0;
     my %fmaccess    = get_module_acl(undef, $_[0]);
-    if (&webmin_user_is_admin() && %fmaccess && $fmaccess{'work_as_user'} && $fmaccess{'work_as_user'} ne $remote_user) {
+    if (%fmaccess && $fmaccess{'work_as_user'} && $fmaccess{'work_as_user'} ne $remote_user) {
         my @user_info = getpwnam($fmaccess{'work_as_user'});
         $jailed_user = $_[1] ? $user_info[0] : $user_info[7];
     }
@@ -2416,8 +2409,7 @@ sub error_40x_handler
 sub lib_csf_control
 {
     my ($action) = @_;
-    if (webmin_user_is_admin() &&
-        foreign_check("csf")     &&
+    if (foreign_check("csf")     &&
         foreign_available("csf") &&
         has_command("csf")       &&
         $current_theme =~ /authentic-theme/)
