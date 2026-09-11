@@ -1542,3 +1542,8 @@ theme_xhred_global_filter_and_search=Type to filter this page, or press Enter to
 
 #26.30
 settings_roundish_radius=Rounded corner radius
+
+
+#26.70
+filemanager_acls_invalid_action=Invalid or missing ACL action
+filemanager_acls_invalid_manual=Invalid manual ACL parameters. Only ACL entries such as <tt>u:user:rwx</tt> and the <tt>-m</tt>, <tt>-x</tt>, <tt>-b</tt>, <tt>-k</tt> and <tt>-R</tt> options are accepted.

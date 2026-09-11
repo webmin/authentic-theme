@@ -39,12 +39,15 @@ my $extra = $in{'manual'};
 # Apply to (arr)
 my @apply_to = split(/\0/, $in{'apply_to'});
 
-# Parse the documented manual syntax without allowing arbitrary options
+# Parse the documented manual syntax without allowing arbitrary options.
+# Rejected input is reported through %errors as a theme language key, as
+# the dialog cannot display print_error() responses
 my @manual_entries;
+my $invalid;
 if ($extra) {
     foreach my $entry (split(/\s+/, trim($extra))) {
         if ($entry =~ /\A(?:-m|-x|-b|-k)\z/) {
-            print_error('Invalid manual ACL')
+            $invalid ||= 'filemanager_acls_invalid_manual'
                 if ($action && $action ne $entry);
             $action ||= $entry;
             next;
@@ -53,14 +56,14 @@ if ($extra) {
             $recursive = " -R";
             next;
         }
-        print_error('Invalid manual ACL')
+        $invalid ||= 'filemanager_acls_invalid_manual'
             if ($entry !~ /:/ || $entry =~ /^-/);
         push(@manual_entries, $entry);
     }
 }
-print_error('Invalid ACL action')
+$invalid ||= 'filemanager_acls_invalid_action'
     if (!defined($action) || $action !~ /\A(?:-m|-x|-b|-k)\z/);
-print_error('Invalid manual ACL')
+$invalid ||= 'filemanager_acls_invalid_manual'
     if (@manual_entries && ($action eq '-b' || $action eq '-k'));
 
 # Delete doesn't allow perms
@@ -81,8 +84,13 @@ foreach my $type (@apply_to) {
 }
 push(@types, @manual_entries);
 my $cmd = &has_command('setfacl');
+# Label errors with the theme string, as Webmin's global strings such as
+# $text{'error'} are not loaded in this context
 if (!$cmd) {
-    $errors{ $text{'error'} } = "$text{'acls_error'}";
+    $errors{ $text{'theme_xhred_global_error'} } = $text{'acls_error'};
+
+} elsif ($invalid) {
+    $errors{ $text{'theme_xhred_global_error'} } = $text{$invalid};
 
 } else {
     my $types;
