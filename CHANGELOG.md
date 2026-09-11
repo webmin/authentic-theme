@@ -1,13 +1,15 @@
 ## Changelog
-#### Version 26.61 (September, 2026)
+#### Version 26.70 (September 12, 2026)
 * Add support for HTML signatures in Usermin
 * Fix data tables and their filter to be restored fully functional on history back navigation
 * Fix history back navigation after a full page reload
 * Fix disabled checked checkboxes showing a cross instead of a checkmark
-* Fix theme ACL enforcement for XHR file operations, global settings, and live stats
+* Fix theme authorization to use explicit Webmin module ACLs for privileged actions
 * Drop server-side Perl customizations
 * Drop the built-in theme updater
 * Drop dashboard-managed CSF update checks
+
+<!--- separator --->
 
 #### Version 26.60 (August 17, 2026)
 * Fix change detection and submission for forms using grouped bottom action buttons
@@ -17,8 +19,6 @@
 * Fix various styling issues for ConfigServer Security & Firewall
 * Fix navigation detection for the new Virtualmin Podman plugin
 * Fix bottom page action buttons wrapping and alignment
-
-<!--- separator --->
 
 #### Version 26.50.5 (July 28, 2026)
 * Fix disallowed entry handling in File Manager [forum.virtualmin.com/t/137654](https://forum.virtualmin.com/t/extra-admin-file-manager-permissions/137654?u=ilia)
