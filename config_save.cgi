@@ -26,6 +26,10 @@ my (%access,
 
 $module = $in{'module'};
 &error_setup($text{'config_err'});
+
+# Reject paths before resolving or loading module files
+defined($module) && $module =~ /\A[A-Za-z0-9_-]+\z/ ||
+  &error($text{'config_emodule'});
 %module_info = &get_module_info($module);
 %module_info || &error($text{'config_emodule'});
 &foreign_available($module) || $module_info{'noacl'} || &error($text{'config_eaccess'});

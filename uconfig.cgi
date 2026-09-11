@@ -32,6 +32,10 @@ my (%access,
     %moduletext);
 
 $module = $in{'module'} || $ARGV[0];
+
+# Reject paths before resolving or loading module files
+defined($module) && $module =~ /\A[A-Za-z0-9_-]+\z/ ||
+  &error($text{'config_emodule'});
 &foreign_available($module) || &error($text{'config_eaccess'});
 &switch_to_remote_user();
 &create_user_config_dirs();
@@ -166,4 +170,3 @@ print &ui_form_end([["save", $text{'save'}], $section ? (["save_next", $theme_te
 
 %moduletext = &load_language($module);
 &ui_print_footer("/$module/", $moduletext{'index_return'} || $text{'index'});
-

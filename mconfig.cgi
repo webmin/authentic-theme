@@ -28,6 +28,10 @@ my (%module_info, %info, %newconfig, @info_order, @sections, $idx, $sname, $sect
     $module_custom_config_file, %moduletext);
 
 $module                    = $in{'module'} || $ARGV[0];
+
+# Reject paths before resolving or loading module files
+defined($module) && $module =~ /\A[A-Za-z0-9_-]+\z/ ||
+  &error($text{'config_emodule'});
 $module_custom_config_file = "$root_directory/$current_theme/modules/$module/config.info";
 
 &foreign_available($module) || &error($theme_text{'mconfig_eaccess'});

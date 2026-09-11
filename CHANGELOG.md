@@ -6,6 +6,7 @@
 * Fix disabled checked checkboxes showing a cross instead of a checkmark
 * Fix theme authorization to use explicit Webmin module ACLs for privileged actions
 * Fix Cloudmin shell history file path validation
+* Fix module name validation in configuration pages
 * Drop server-side Perl customizations
 * Drop the built-in theme updater
 * Drop dashboard-managed CSF update checks

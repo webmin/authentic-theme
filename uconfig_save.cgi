@@ -19,6 +19,10 @@ my (%newconfig, %oldconfig, %canconfig, $module, $module_dir, $custom_config, $c
 
 $module = $in{'module'};
 &error_setup($text{'config_err'});
+
+# Reject paths before resolving or loading module files
+defined($module) && $module =~ /\A[A-Za-z0-9_-]+\z/ ||
+  &error($text{'config_emodule'});
 &foreign_available($module) || &error($text{'config_eaccess'});
 &switch_to_remote_user();
 &create_user_config_dirs();
@@ -59,4 +63,3 @@ if ($in{'save_next'}) {
 } else {
     &redirect("/$module/");
 }
-

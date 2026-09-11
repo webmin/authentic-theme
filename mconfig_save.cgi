@@ -18,10 +18,14 @@ require("$root_directory/config-lib.pl");
 my (%newconfig, $module, $module_custom_config_file, $config_file);
 
 $module                    = $in{'module'};
+&error_setup($text{'config_err'});
+
+# Reject paths before resolving or loading module files
+defined($module) && $module =~ /\A[A-Za-z0-9_-]+\z/ ||
+  &error($text{'config_emodule'});
 $module_custom_config_file = "$root_directory/$current_theme/modules/$module/config.info";
 $config_file               = "$config_directory/$module/config";
 
-&error_setup($text{'config_err'});
 &foreign_available($module) || &error($theme_text{'config_eaccess'});
 
 mkdir("$config_directory/$module", 0700);
