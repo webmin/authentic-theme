@@ -32,7 +32,6 @@ print '<div class="pull-right settings-editor-read-badge"><span class="badge lab
   ( $file =~ /.css/    ? $theme_text{'theme_fileformat_css'} :
       $file =~ /.json/ ? $theme_text{'theme_fileformat_json'} :
       $file =~ /.js/   ? $theme_text{'theme_fileformat_js'} :
-      $file =~ /.pl/   ? $theme_text{'theme_fileformat_perl'} :
       $theme_text{'theme_fileformat_plain_text'}
   ) .
   '</span></div>';
@@ -53,11 +52,6 @@ print ui_textarea("data",
                       $data
                    ),
                    20, 80, undef, undef,
-                   "style='width: 100%' "
-                     .
-                     ( $file =~ '.pl' ? 'placeholder="' . $theme_text{'theme_fileformat_perl_placeholder'} . '"' :
-                         ''
-                     ) .
-                     "");
+                   "style='width: 100%'");
 print ui_form_end([["save", $theme_text{'theme_xhred_global_save'}]]);
 ui_print_footer("tconfig.cgi", $theme_text{'right_return_theme_options'});

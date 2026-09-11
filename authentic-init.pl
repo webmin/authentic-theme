@@ -309,7 +309,6 @@ sub embed_header
     #
 
     embed_settings();
-    embed_tconfig();
 
     # Print object with language strings
     print ' <script type="application/javascript">';
@@ -520,12 +519,6 @@ sub embed_settings
     }
 }
 
-sub embed_tconfig
-{
-    print ' <script type="application/javascript">tconfig_beta_updates=' .
-        ($tconfig{'beta_updates'} ne '1' ? 0 : 1) . '</script>' . "\n";
-}
-
 sub embed_styles
 {
     if ($theme_config{'settings_contrast_mode'} eq 'true') {
@@ -578,14 +571,6 @@ EOF
             $background_css =~ s/\s+/ /g;
             print $background_css, "\n";
         }
-    }
-}
-
-sub embed_pm_scripts
-{
-    my $scripts = "$config_directory/$current_theme/scripts.pl";
-    if (-r $scripts && -s $scripts) {
-        do($scripts);
     }
 }
 
@@ -2045,8 +2030,6 @@ sub header_html_data
       foreign_available("xterm") .
       '" data-shell="' .
       foreign_available("shell") .
-      '" data-upgrade="' .
-      ($theme_config{'settings_upgrade_allowed'} eq 'true' ? '1' : '0') .
       '" data-webmin="' .
       foreign_available("webmin") .
       '" data-usermin="' .

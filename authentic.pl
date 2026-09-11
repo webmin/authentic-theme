@@ -219,8 +219,6 @@ sub theme_footer
                  ),
                  $_[0]
     ) if (!http_x_request());
-    embed_pm_scripts();
-
     if ($theme_config{'settings_hide_top_loader'} ne 'true' &&
         get_env('script_name') ne '/session_login.cgi' &&
         get_env('script_name') ne '/pam_login.cgi'     &&

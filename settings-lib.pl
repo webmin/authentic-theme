@@ -11,7 +11,6 @@ sub get_settings_editor_files
 {
     return ($config_directory . "/$current_theme/styles.css",
             $config_directory . "/$current_theme/scripts.js",
-            $config_directory . "/$current_theme/scripts.pl",
             $config_directory . "/$current_theme/favorites-$remote_user.json",
             $config_directory . "/$current_theme/custom-lang");
 }
