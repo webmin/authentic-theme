@@ -196,13 +196,13 @@ my ($page, $pages, $query) = @_;
 
 our ($path);
 
-my $search_follow_symlinks = $in{'follow'};
-my $search_case_insensitive = $in{'caseins'};
-my $search_grep = $in{'grepstring'};
-my $fsid = $in{'fsid'};
-my $exclude = $in{'exclude'};
-my $regex = $in{'regex'};
-my $all_items = $in{'all_items'};
+my $search_follow_symlinks = urlize($in{'follow'});
+my $search_case_insensitive = urlize($in{'caseins'});
+my $search_grep = urlize($in{'grepstring'});
+my $fsid = urlize($in{'fsid'});
+my $exclude = urlize($in{'exclude'});
+my $regex = urlize($in{'regex'});
+my $all_items = urlize($in{'all_items'});
 
 my $left = $page - 2;
 my $right = $page + 3;
@@ -433,7 +433,7 @@ head();
 print $text{'errors_occured'};
 print "<ul>";
 foreach my $error (@errors) {
-	print("<li>$error</li>");
+	print("<li>".html_escape($error)."</li>");
 	}
 print "</ul>";
 }
