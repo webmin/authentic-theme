@@ -299,8 +299,17 @@ $mails{'list'} = {
     ) };
 
 $mails{'mail_system'} = $config{'mail_system'};
-$mails{'config'} = { 'g' => \%config,
-                     'u' => \%userconfig, };
+# Return only settings used by the client to avoid exposing server secrets
+$mails{'config'} = {
+    'g' => {
+        'edit_from' => $config{'edit_from'},
+    },
+    'u' => {
+        'html_edit'      => $userconfig{'html_edit'},
+        'html_edit_mode' => $userconfig{'html_edit_mode'},
+        'refresh'        => $userconfig{'refresh'},
+    },
+};
 
 mailbox::save_last_folder_id($folder);
 mailbox::pop3_logout();

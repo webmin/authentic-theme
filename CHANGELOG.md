@@ -8,6 +8,7 @@
 * Fix Cloudmin shell history file path validation
 * Fix module name validation in configuration pages
 * Fix ACL operations bypassing configured allowed paths in File Manager
+* Fix mail server credentials being exposed in Usermin responses
 * Drop server-side Perl customizations
 * Drop the built-in theme updater
 * Drop dashboard-managed CSF update checks
