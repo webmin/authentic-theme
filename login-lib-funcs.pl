@@ -45,6 +45,7 @@ print ui_br(), ui_br();
 my $banner = &read_file_contents($gconfig{'loginbanner'});
 my $page = $gconfig{'loginpage'} || $in{'page'} || $webprefix || '/';
 $page = &filter_javascript($page);
+$page = &html_escape($page);
 $banner =~ s/LOGINURL/$page/g;
 print "$banner\n";
 print ui_tag_end('div');
