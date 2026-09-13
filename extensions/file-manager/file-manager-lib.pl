@@ -1891,10 +1891,10 @@ my $wanted = sub {
 			return;
 			}
 
-		# Exclude non essentials on start
-		if ($e && $afic eq '/' && $dc == 1) {
+		# Exclude non-essential real directories on start, but keep links visible
+		if ($e && !$ltd && $afic eq '/' && $dc == 1) {
 			if ($td =~
-				/^\/(cdrom|dev|lib|lost\+found|proc|run|snaps|sys|tmp|.trash)/i
+				m{^/(?:cdrom|dev|lib(?:32|64|x32)?|lost\+found|proc|run|snaps|sys|tmp|\.trash)\z}i
 			    )
 			{
 				return;
