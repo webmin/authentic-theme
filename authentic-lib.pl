@@ -1398,10 +1398,11 @@ sub error_40x
     }
     $block_time += 5;
 
-    my $sec     = lc(get_env('https')) eq 'on' ? "; secure" : "";
+    my $sec = lc(get_env('https')) eq 'on' ? "; secure" : "";
+    $sec .= "; httpOnly" if (!$miniserv{'no_httponly'});
     my $sidname = "sid";
     print "Set-Cookie: $sidname=x; path=/$sec\r\n" if ($in{'logout'});
-    print "Set-Cookie: redirect=1; path=/\r\n";
+    print "Set-Cookie: redirect=1; path=/$sec\r\n";
     print "Set-Cookie: testing=1; path=/$sec\r\n";
     my $charset = &get_charset();
     &PrintHeader($charset);
