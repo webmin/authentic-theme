@@ -1,5 +1,5 @@
 ## Changelog
-#### Version 26.70 (September 13, 2026)
+#### Version 26.70 (September 20, 2026)
 * Add support for HTML signatures in Usermin
 * Fix light palette layout gaps to be slightly tighter to match dark palette better
 * Fix data tables and their filter to be restored fully functional on history back navigation
