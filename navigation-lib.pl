@@ -332,14 +332,6 @@ sub nav_webmin_menu
     $rv .= nav_link_sysinfo($get_user_level eq '3');
     $rv .= nav_link_netdata();
 
-    # The UI demo module, when it has been dropped into the Webmin root :
-    # a developers' reference that is not installed through the module
-    # installer, so it belongs to no category above and would otherwise
-    # have no way in
-    if (-d "$root_directory/ui-demo") {
-        my %ui_demo = get_module_info('ui-demo');
-        $rv .= nav_menu_link('/ui-demo/', $ui_demo{'desc'} || 'UI Demo', 'fa-cubes');
-    }
     $rv .= nav_theme_links();
     $rv .= nav_links();
     $rv .= nav_menu_html_snippet();
