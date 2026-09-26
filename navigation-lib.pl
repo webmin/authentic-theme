@@ -360,19 +360,23 @@ sub nav_virtualmin_menu
     return $rv;
 }
 
+# nav_cloudmin_menu([page])
+# Build the Cloudmin sidebar and optionally select the requested page.
 sub nav_cloudmin_menu
 {
     my ($page) = @_;
     my $mod    = 'server-manager';
     my $def    = nav_get_server_id($mod);
     my @menu   = list_combined_webmin_menu({ 'server' => "$def" }, \%in, $mod);
+    # Cloudmin 9 keeps its existing navigation behavior; newer menus opt in.
+    my $new_format = grep { $_->{'module'} eq $mod && $_->{'format'} eq 'new' } @menu;
     my $menu   = nav_list_combined_menu([$mod], \@menu, undef, undef, $page);
     my $rv     = $menu->{'before'};
     $rv .= nav_link_sysinfo(undef, $mod);
     $rv .= nav_theme_links();
     $rv .= nav_links($menu->{'mode'}, $mod);
     $rv .= nav_menu_html_snippet();
-    $rv .= nav_detect_page($page);
+    $rv .= nav_detect_page($page, $new_format);
     $rv .= nav_detect_script();
     return $rv;
 }
@@ -461,37 +465,36 @@ SCRIPT
     return $rv;
 }
 
+# nav_get_server_id(module)
+# Select a supported server ID from the saved default or direct link.
 sub nav_get_server_id
 {
     my ($module) = @_;
     my $default;
 
-    # Try to find default
-    my $module_ =
-      $module eq 'virtual-server' ? 'virtualmin' :
-      $module eq 'server-manager' ? 'cloudmin' :
-      $module;
-
-    if ($theme_config{ 'settings_right_' . $module_ . '_default' } =~ /^(\d+)$/) {
-        $default = "$1";
-    }
-
-    # If we have goto substitute default
-    if ($server_x_goto =~ /\/$module\// &&
-        ($server_x_goto =~ /dom=(\d+)/ || $server_x_goto =~ /id=(\d+)/))
-    {
-        my $id_ = "$1";
-        if ($id_ =~ /^(\d+)$/) {
-            $default = "$id_";
-        }
+    # Cloudmin uses libvirt UUIDs; legacy Cloudmin and Virtualmin use numbers.
+    my $module_ = $module eq 'virtual-server' ? 'virtualmin' :
+                  $module eq 'server-manager' ? 'cloudmin' : $module;
+    my $id_pattern = $module eq 'server-manager'
+        ? qr/(?:\d+|[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12})/i : qr/\d+/;
+    my $configured = $theme_config{'settings_right_' . $module_ . '_default'};
+    $default = $configured if ($configured =~ /\A$id_pattern\z/);
+    # A direct link to a guest selects that guest before the menu is rendered.
+    my $goto = un_urlize($server_x_goto);
+    if ($goto =~ m{/$module/} &&
+        $goto =~ /[?&](?:dom|id)=($id_pattern)(?:[&#]|$)/) {
+        $default = $1;
     }
     return $default;
 }
 
+# nav_set_last_id(link)
+# Remember a validated server ID for the client-side navigation selector.
 sub nav_set_last_id
 {
     my ($link) = @_;
-    if ($link && $link =~ /(id|dom)=(\d+)/) {
+    $link = un_urlize($link);
+    if ($link && $link =~ /[?&](id|dom)=(\d+|[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12})(?:[&#]|$)/i) {
         return "vars.navigation.select.last='$2';";
     }
     return undef;
@@ -786,18 +789,19 @@ sub nav_list_combined_menu
         return $link;
     };
     
-    # Support upcoming change to navigation menu in Virtualmin
+    # Share the selected-server layout between Virtualmin and modern Cloudmin.
     my $vm_new_format = grep { $_->{'format'} eq 'new' &&
-                               $_->{'module'} eq 'virtual-server' } @$items;
+                               ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
     my $vm_has_menu = grep { $_->{'type'} eq 'menu' &&
-                             $_->{'module'} eq 'virtual-server' } @$items;
-    my $is_vm = grep { $_->{'module'} eq 'virtual-server' } @$items;
+                             ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
+    my $is_vm = grep { ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
     my $vm_has_new_domform = grep { $_->{'format'} eq 'link-new' &&
-                                    $_->{'module'} eq 'virtual-server' } @$items;
+                                    ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
     if ($vm_new_format) {
         if ($vm_has_new_domform) {
+            # Remove dividers above creation and, without a selector, below it.
             my @vm_hr = grep { $_->{'type'} eq 'hr' &&
-                               $_->{'module'} eq 'virtual-server' } @$items;
+                               ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
                     if (@vm_hr > 2) {
                         $items = [ grep { $_ != $vm_hr[0] } @$items ];
                         $items = [ grep { $_ != $vm_hr[1] } @$items ] if (!$vm_has_menu);
@@ -864,7 +868,8 @@ sub nav_list_combined_menu
                     }
                 }
 
-                if ($link =~ /\/virtual-server\/domain_form\.cgi/) {
+                if ($link =~ /\/virtual-server\/domain_form\.cgi/ ||
+                    $link =~ /\/server-manager\/create_vm\.cgi/) {
                     if ($link =~ /to=/) {
                         $icon = '<i class="fa fa-fw fa-reply fa-flip-horizontal fa-0_90x margined-left--3 margined-right-3"></i>';
                     } elsif ($link =~ /parentuser/) {
@@ -877,9 +882,16 @@ sub nav_list_combined_menu
                          $link =~ /\/server-manager\/edit_serv\.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa2 fa2-settings"></i>';
-                } elsif ($link =~ /\/virtual-server\/(view_domain|summary_domain)\.cgi/ ) {
+                } elsif ($link =~ /\/virtual-server\/(view_domain|summary_domain)\.cgi/ ||
+                         $link =~ /\/server-manager\/vm\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
 
+                } elsif ($link =~ /\/server-manager\/images\.cgi/) {
+                    $icon = '<i class="fa fa-fw fa-file-image-o"></i>';
+                } elsif ($link =~ /\/server-manager\/storage\.cgi/) {
+                    $icon = '<i class="fa fa-fw fa-hdd-o fa-1_10x margined-left--1 margined-right--2"></i>';
+                } elsif ($link =~ /\/server-manager\/jobs\.cgi/) {
+                    $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_users\.cgi/) {
                     $icon = '<i class="fa fa-fw fa2 fa2-users-cog"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_aliases\.cgi/ && $id ne 'cat_mail') {
@@ -902,7 +914,8 @@ sub nav_list_combined_menu
                 } elsif ($link =~ /\/filemin\/index\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-file-manager scaled2"></i>';
 
-                } elsif ($link =~ /\/xterm\/index\.cgi\?user/) {
+                } elsif ($link =~ /\/xterm\/index\.cgi\?user/ ||
+                         $link =~ /\/server-manager\/terminal\.cgi/) {
                     $icon = '<i class="fa fa2 fa-fw fa2-terminal fa-1_10x margined-right--2"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/edit_html\.cgi/) {
