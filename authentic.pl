@@ -1656,6 +1656,8 @@ sub theme_post_save_domains
     print "</script>\n";
 }
 
+# theme_post_save_server(server, action)
+# Refreshes navigation after a guest change using a non-executable marker.
 sub theme_post_save_server
 {
     my ($s, $action) = @_;
@@ -1663,9 +1665,9 @@ sub theme_post_save_server
         $action eq 'delete' ||
         !$done_theme_post_save_server++)
     {
-        print '<script type="application/javascript">';
+        print "<!--\n";
         print 'theme_post_save=' . ($s->{'id'} ? $s->{'id'} : '-1') . '', "\n";
-        print "</script>\n";
+        print "-->\n";
     }
 }
 
@@ -1677,12 +1679,14 @@ sub theme_select_domain
     print "</script>\n";
 }
 
+# theme_select_server(server)
+# Selects numeric IDs and UUIDs without treating them as JavaScript expressions.
 sub theme_select_server
 {
     my ($s) = @_;
-    print '<script type="application/javascript">';
+    print "<!--\n";
     print 'theme_select_server=' . ($s->{'id'} ? $s->{'id'} : '0') . '', "\n";
-    print "</script>\n";
+    print "-->\n";
 }
 
 sub theme_post_change_theme
