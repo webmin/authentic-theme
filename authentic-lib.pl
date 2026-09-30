@@ -752,7 +752,8 @@ sub get_sysinfo_vars
         if ($gconfig{'os_version'} eq '*') {
             $os = $gconfig{'real_os_type'};
         } else {
-            $os = $gconfig{'real_os_type'} . ' ' . $gconfig{'real_os_version'};
+            $os = $gconfig{'real_os_type'} . ' ' .
+              ($gconfig{'real_os_version_full'} || $gconfig{'real_os_version'});
         }
         
         # EOL info
