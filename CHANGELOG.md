@@ -1,4 +1,9 @@
 ## Changelog
+#### Version 26.71 (October, 2026)
+* Add support for Terminal module color preferences
+* Add support for the new Cloudmin navigation, graphical console and live virtual machine controls
+* Fix spacing and borders in widgets, tables and tab panes
+
 #### Version 26.70 (September 20, 2026)
 * Add support for HTML signatures in Usermin
 * Fix light palette layout gaps to be slightly tighter to match dark palette better
