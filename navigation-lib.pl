@@ -822,10 +822,10 @@ sub nav_list_combined_menu
             {
 
                 # Define an icon for the link/accordion
-                if ($link =~ /virtual-server\/index\.cgi/ ||
-                    $link =~ /server-manager\/index\.cgi/)
-                {
+                if ($link =~ /virtual-server\/index\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
+                } elsif ($link =~ /server-manager\/index\.cgi/) {
+                    $icon = '<i class="fa fa-fw fa-server"></i>';
                 } elsif ($link =~ /\/virtualmin-wp-workbench/)
                 {
                     $icon = '<i class="fa fa-fw fa2 fa2-workbench margined-left--1 margined-right-1"></i>';
@@ -879,7 +879,7 @@ sub nav_list_combined_menu
                     }
 
                 } elsif ($link =~ /\/virtual-server\/edit_domain\.cgi/ ||
-                         $link =~ /\/server-manager\/edit_serv\.cgi/)
+                         $link =~ /\/server-manager\/(?:edit_serv|edit_vm)\.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa2 fa2-settings"></i>';
                 } elsif ($link =~ /\/virtual-server\/(view_domain|summary_domain)\.cgi/ ||
@@ -887,11 +887,15 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
 
                 } elsif ($link =~ /\/server-manager\/images\.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-file-image-o"></i>';
+                    $icon = '<i class="fa fa-fw fa2 fa2-disk"></i>';
                 } elsif ($link =~ /\/server-manager\/storage\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-hdd-o fa-1_10x margined-left--1 margined-right--2"></i>';
                 } elsif ($link =~ /\/server-manager\/jobs\.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-tasks"></i>';
+                    $icon = '<i class="fa fa-fw fa2 fa2-pulsate"></i>';
+                } elsif ($link =~ /\/webminlog\/search\.cgi\?/ &&
+                         $link =~ /[?&](?:amp;)?module=server-manager(?:&|$)/) {
+                    # Both guest and host action logs use Webmin's log search.
+                    $icon = '<i class="fa fa-fw fa-history"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_users\.cgi/) {
                     $icon = '<i class="fa fa-fw fa2 fa2-users-cog"></i>';
                 } elsif ($link =~ /\/virtual-server\/list_aliases\.cgi/ && $id ne 'cat_mail') {
@@ -916,10 +920,10 @@ sub nav_list_combined_menu
 
                 } elsif ($link =~ /\/xterm\/index\.cgi\?user/ ||
                          $link =~ /\/server-manager\/terminal\.cgi/) {
-                    $icon = '<i class="fa fa2 fa-fw fa2-terminal fa-1_10x margined-right--2"></i>';
+                    $icon = '<i class="fa fa2 fa-fw fa2-terminal fa-1_10x margined-left--1 margined-right--2_5"></i>';
 
                 } elsif ($link =~ /\/server-manager\/console\.cgi/) {
-                    $icon = '<i class="fa fa-fw fa-desktop"></i>';
+                    $icon = '<i class="fa fa-fw fa-desktop fa-0_95x margined-left--1"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/edit_html\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-globe"></i>';
