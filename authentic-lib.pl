@@ -2006,9 +2006,10 @@ sub get_autocomplete_shell
     }
 
     if ($command) {
-        @rs =
-          array_unique(
-               backquote_command($cd_cmd . "bash -c 'compgen " . $command . " '" . quotemeta($cmd2 ? $cmd2 : $string) . ""));
+        # Pass completion text as one literal argument, outside the Bash script.
+        @rs = array_unique(backquote_command(
+            $cd_cmd . "bash -c 'compgen " . $command . " -- \"\$1\"' -- " .
+            quotemeta($cmd2 ? $cmd2 : $string)));
 
     } else {
         if ($type eq 'service' && has_command('service')) {
