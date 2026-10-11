@@ -49,12 +49,17 @@ elsif ($in{'download'} eq '2') {
 	close FILE;
 	}
 elsif ($in{'download'} eq '1') {
-	my $file = simplify_path($target);
-	if (-e $file) {
-		my $size = -s "$target";
+	# Serve the archive built by the earlier request, accepting the
+	# other format too, in case the selection changed between the
+	# requests and the format was computed differently
+	my ($found) = grep { -e "$target_dir/$filename.$_" }
+		($extension, $extension eq 'zip' ? 'tar.gz' : 'zip');
+	if ($found) {
+		my $file = simplify_path("$target_dir/$filename.$found");
+		my $size = -s $file;
 		print "Content-Type: application/x-download\n";
 		print
-		    "Content-Disposition: attachment; filename=\"$filename.$extension\"\n";
+		    "Content-Disposition: attachment; filename=\"$filename.$found\"\n";
 		print "Content-Length: $size\n\n";
 		open(FILE, "< $file") or die "can't open $file: $!";
 		binmode FILE;
@@ -69,8 +74,8 @@ elsif ($in{'download'} eq '1') {
 	else {
 		print_error(
 			text(
-				'theme_download_error',
-				&html_escape(join(" , ", @allowed_paths))
+				'theme_download_error_missing',
+				&html_escape("$filename.$extension")
 			)
 		);
 		}
@@ -78,34 +83,52 @@ elsif ($in{'download'} eq '1') {
 else {
 	mkdir($target_dir, 0755);
 	my @entries_list = get_entries_list();
-	if ($has_zip && $do_zip && !test_all_items_query()) {
-		# Store symlinks as links, like tar does
+
+	# Pass the names through a list file, so that a name starting
+	# with a dash is not taken for an option
+	my $list = transname();
+	open(my $fh, ">", $list) or die $!;
+	print $fh "$_\n" for @entries_list;
+	close($fh);
+	if ($extension eq 'zip') {
+		# Store symlinks as links, and suppress normal per-file output
 		$command =
 		    "cd ".
 		    quotemeta($cwd)." && ".
-		    quotemeta($has_zip || 'zip')." -r -y ".
-		    quotemeta($target);
-		foreach my $name (@entries_list) {
-			$command .= " ".quotemeta($name);
-			}
+		    quotemeta($has_zip || 'zip')." -q -r -y ".
+		    quotemeta($target)." -@ < ".quotemeta($list);
 		}
 	else {
-		my $list = transname();
 		my $gnu_tar_param = get_tar_verbatim();
 
 		# No need to resolve links and do extra check
 		# because tar by default doesn't resolve links
-		open my $fh, ">", $list or die $!;
-		print $fh "$_\n" for @entries_list;
-		close $fh;
 		$command =
 		    "".
 		    quotemeta($has_tar || 'tar')." czf ".
 		    quotemeta($target)." -C ".
 		    quotemeta($cwd).
 		    "$gnu_tar_param -T ".
-		    $list;
+		    quotemeta($list);
 		}
-	system_logged($command);
+
+	# Report a failed archive command right away, instead of leaving
+	# the download request to find no archive. GNU tar exits with 1
+	# for warnings, such as a file changed while being read, with the
+	# archive still complete, so only higher codes count as failures.
+	my $out = &backquote_logged("($command) 2>&1");
+	my $code = $? >> 8;
+	unlink($list);
+	my $failed = $extension eq 'zip' ? $code != 0 : $code > 1;
+	if ($failed || !-s $target) {
+		unlink_file($target_dir);
+		$out =~ s/^\s+|\s+$//g;
+		print_error(
+			text(
+				'theme_download_error_create',
+				&html_escape($out || "exit status $code")
+			)
+		);
+		}
 	}
 head();
