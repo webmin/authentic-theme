@@ -79,19 +79,14 @@ else {
 	mkdir($target_dir, 0755);
 	my @entries_list = get_entries_list();
 	if ($has_zip && $do_zip && !test_all_items_query()) {
+		# Store symlinks as links, like tar does
 		$command =
 		    "cd ".
 		    quotemeta($cwd)." && ".
-		    quotemeta($has_zip || 'zip')." -r ".
+		    quotemeta($has_zip || 'zip')." -r -y ".
 		    quotemeta($target);
-
-		# Do extra check because zip actually resolves links by default
 		foreach my $name (@entries_list) {
-			my $file = fm_checked_cwd_path_or_error($name);
-			my $ffile = &resolve_links($file);
-			if (-e $ffile && fm_path_is_allowed($ffile)) {
-				$command .= " ".quotemeta($name);
-				}
+			$command .= " ".quotemeta($name);
 			}
 		}
 	else {
