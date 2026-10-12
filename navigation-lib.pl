@@ -926,7 +926,8 @@ sub nav_list_combined_menu
                          $link =~ /\/server-manager\/terminal\.cgi/) {
                     $icon = '<i class="fa fa2 fa-fw fa2-terminal fa-1_10x margined-left--1 margined-right--2_5"></i>';
 
-                } elsif ($link =~ /\/server-manager\/console\.cgi/) {
+                } elsif ($link =~ /\/server-manager\/remote_access\.cgi/) {
+                    # One monitor icon covers all three remote access tabs.
                     $icon = '<i class="fa fa-fw fa-desktop fa-0_95x margined-left--1"></i>';
 
                 } elsif ($link =~ /\/virtual-server\/edit_html\.cgi/) {

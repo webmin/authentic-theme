@@ -195,6 +195,9 @@ var
     // Graphical console zoom, as a percentage of the fitted display.
     config_portable_module_cloudmin_console_zoom = 100,
 
+    // Serial text size in pixels; zero uses the configured terminal default.
+    config_portable_module_cloudmin_serial_font_size = 0,
+
     // Custom password generator options
     config_portable_funcs_password_complexity_meter = '{}',
 
