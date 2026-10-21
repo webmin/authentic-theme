@@ -1117,7 +1117,17 @@ sub get_button_style
         $icon  = "stop";
     } elsif (string_contains($keys, "list_images_button")) {
         $class = "info ";
-        $icon  = "download-cloud fa-1_10x margined-left--2";
+        $icon  = "download margined-right-2";
+    } elsif ($keys eq "images_install" || $keys eq "images_install_title") {
+        $class = "success ";
+        $class = "info " if $keys eq "images_install_title";
+        $icon  = "download-cloud margined-left--2 margined-right-2";
+    } elsif ($keys eq "images_get_tags") {
+        $class = "info ";
+        $icon  = "tags margined-right-2";
+    } elsif ($keys eq "images_search") {
+        $class = "warning ";
+        $icon  = "search margined-top--1-5 margined-right-1";
     } elsif (string_contains($keys, "recipes_button")) {
         $class = "success ";
         $icon  = " fa-kit fa-stacked-cubes fa-fw fa-1_15x margined-left--2";
@@ -1305,7 +1315,7 @@ sub get_button_style
         $class = "success ";
         $icon  = " fa2 fa2-import";
     } elsif (string_contains($keys, "index_refresh")) {
-        $icon  = "refresh-mdi fa-1_25x";
+        $icon  = "refresh-mdi fa-1_25x margined-left--4 margined-right--2";
         $class = "success " if (string_contains($keys, "index_refresh_recipes"));
     } elsif (string_contains($keys, "update") ||
              string_contains($keys, "index_sync")) {
