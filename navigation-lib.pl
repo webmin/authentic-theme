@@ -869,7 +869,7 @@ sub nav_list_combined_menu
                 }
 
                 if ($link =~ /\/virtual-server\/domain_form\.cgi/ ||
-                    $link =~ /\/server-manager\/create_vm\.cgi/) {
+                    $link =~ /\/server-manager\/machine_form\.cgi/) {
                     if ($link =~ /to=/) {
                         $icon = '<i class="fa fa-fw fa-reply fa-flip-horizontal fa-0_90x margined-left--3 margined-right-3"></i>';
                     } elsif ($link =~ /parentuser/) {
@@ -879,11 +879,11 @@ sub nav_list_combined_menu
                     }
 
                 } elsif ($link =~ /\/virtual-server\/edit_domain\.cgi/ ||
-                         $link =~ /\/server-manager\/(?:edit_serv|edit_vm)\.cgi/)
+                         $link =~ /\/server-manager\/(?:edit_serv|edit_machine)\.cgi/)
                 {
                     $icon = '<i class="fa fa-fw fa2 fa2-settings"></i>';
                 } elsif ($link =~ /\/virtual-server\/(view_domain|summary_domain)\.cgi/ ||
-                         $link =~ /\/server-manager\/vm\.cgi/) {
+                         $link =~ /\/server-manager\/machine\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-info-circle"></i>';
 
                 } elsif ($link =~ /\/server-manager\/images\.cgi/) {
