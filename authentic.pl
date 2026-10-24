@@ -564,15 +564,6 @@ sub theme_ui_help
     );
 }
 
-sub theme_ui_tip
-{
-    my ($content, $tip) = @_;
-    $tip = &html_escape(&html_strip($tip), 1);
-    return (
-"<span class=\"ui_tip\" data-container=\"body\" data-title=\"$tip\" data-toggle=\"tooltip\">$content</span>"
-    );
-}
-
 sub theme_hlink
 {
     my ($txt, $page, $mod, $width, $height, $tmpl) = @_;
