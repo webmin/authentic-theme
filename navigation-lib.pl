@@ -894,6 +894,8 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa2 fa2-network"></i>';
                 } elsif ($link =~ /\/server-manager\/snapshots\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-clock"></i>';
+                } elsif ($link =~ /\/server-manager\/backups\.cgi/) {
+                    $icon = '<i class="fa fa-fw fa-backup fa-1_15x"></i>';
                 } elsif ($link =~ /\/server-manager\/jobs\.cgi/) {
                     $icon = '<i class="fa fa-fw fa2 fa2-pulsate"></i>';
                 } elsif ($link =~ /\/webminlog\/search\.cgi\?/ &&
