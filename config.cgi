@@ -123,7 +123,7 @@ if (@sections > 1) {
                                     &ui_submit($theme_text{'extensions_mail_pagination_left'},
                                                "nprev", undef, undef,
                                                "fa fa-fw fa-arrow-circle-o-left",
-                                               "heighter-28 margined-left-5")
+                                               "heighter-28 margined-left-7")
                                     .
                                     &ui_submit($theme_text{'extensions_mail_pagination_right'},
                                                "nnext", undef, undef, "fa fa-fw fa-arrow-circle-o-right",
