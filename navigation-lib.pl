@@ -799,13 +799,15 @@ sub nav_list_combined_menu
                                     ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
     if ($vm_new_format) {
         if ($vm_has_new_domform) {
-            # Remove dividers above creation and, without a selector, below it.
+            # Keep creation directly below search, with one divider after it
+            # when there is no server selector.
             my @vm_hr = grep { $_->{'type'} eq 'hr' &&
                                ($_->{'module'} eq 'virtual-server' || $_->{'module'} eq 'server-manager') } @$items;
-                    if (@vm_hr > 2) {
-                        $items = [ grep { $_ != $vm_hr[0] } @$items ];
-                        $items = [ grep { $_ != $vm_hr[1] } @$items ] if (!$vm_has_menu);
-                    }
+            if (@vm_hr > 1) {
+                $items = [ grep { $_ != $vm_hr[0] } @$items ];
+                $items = [ grep { $_ != $vm_hr[1] } @$items ]
+                  if (!$vm_has_menu && @vm_hr > 2);
+            }
         }
         $search_bar = nav_search($vm_new_format);
     }
