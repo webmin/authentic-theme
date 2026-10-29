@@ -8,13 +8,17 @@
 use strict;
 
 my %email;
-our (%in);
+our (%in, %text);
 
 do($ENV{'THEME_ROOT'} . "/extensions/mail/mail-lib.pl");
 
 my @folders = mailbox::list_folders_sorted();
 my ($folder) = grep {$_->{'index'} == $in{'folder'}} @folders;
-my @messages = sort {$a <=> $b} split(/\0/, $in{'d'});
+$folder || error($text{'view_efolder'});
+my @ids = split(/\0/, $in{'d'});
+
+# Fetch headers once so flag changes do not rescan and sort the whole folder.
+my @messages = grep { $_ } mailbox::mailbox_select_mails($folder, \@ids, 1);
 
 # Mark message as read
 if ($in{'mark'} eq 'read') {

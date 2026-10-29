@@ -470,11 +470,12 @@ sub messages_sort_link
     }
 }
 
-#Get single message and its read status
+# message_fetch(id|mail, folder)
+# Get headers and read status, reusing a message already fetched for a batch.
 sub message_fetch
 {
     my ($id, $folder) = @_;
-    my $mail        = mailbox::mailbox_get_mail($folder, $id, 0);
+    my $mail        = ref($id) ? $id : mailbox::mailbox_get_mail($folder, $id, 1, 1);
     my $read_status = mailbox::get_mail_read($folder, $mail);
 
     return ($mail, $read_status);
@@ -506,10 +507,11 @@ sub message_mark_starred
 {
     my ($id, $folder, $state) = @_;
     my ($mail, $read_status) = message_fetch($id, $folder);
+    # Keep the replied flag when changing the read state of starred messages.
     if ($state eq 'unread') {
-        mailbox::set_mail_read($folder, $mail, 2);
+        mailbox::set_mail_read($folder, $mail, ($read_status & 4) + 2);
     } elsif ($state eq 'read') {
-        mailbox::set_mail_read($folder, $mail, 3);
+        mailbox::set_mail_read($folder, $mail, ($read_status & 4) + 3);
     }
 }
 
