@@ -1076,6 +1076,7 @@ sub get_initial_wizard
     return 1;
 }
 
+# get_button_style(label) chooses a button icon and color from its language key.
 sub get_button_style
 {
 
@@ -1152,8 +1153,10 @@ sub get_button_style
     } elsif (string_contains($keys, "licence_manager") ||
              string_contains($keys, "licence_manager_change") ||
              string_contains($keys, "licence_manager_deregister") ||
+             string_contains($keys, "license_deregister") ||
              string_contains($keys, "licence_recheck") ||
              string_contains($keys, "licence_manager_reposissue")) {
+        # License actions share their styling across Virtualmin and Cloudmin.
         $icon = "virtualmin fa-1_15x margined-left--2 margined-top-1";
         $class = "info ";
         if (string_contains($keys, "licence_recheck")) {
@@ -1171,7 +1174,9 @@ sub get_button_style
             $class = "success ";
             $icon = "unlock fa-1_15x margined-left--2";
         }
-        if (string_contains($keys, "licence_manager_deregister")) {
+        # Both language-key spellings use the same removal icon.
+        if (string_contains($keys, "licence_manager_deregister") ||
+            string_contains($keys, "license_deregister")) {
             $class = "grey ";
             $icon = "lock fa-1_15x margined-left--2";
         }
