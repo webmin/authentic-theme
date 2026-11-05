@@ -320,6 +320,13 @@ sub embed_header
     print 'const v___server_webprefix = "'.($gconfig{'webprefix'} || '').'"';
     print "</script>\n";
 
+    # Load shared Webmin chart assets before theme styles and stats code.
+    if (get_product_name() eq 'webmin') {
+        my $version = theme_version('timestamped');
+        print " <link type='text/css' href=\"$theme_webprefix/unauthenticated/css/uplot.min.css?$version\" rel=\"stylesheet\">\n";
+        print " <script type='application/javascript' src=\"$theme_webprefix/unauthenticated/js/uplot.min.js?$version\"></script>\n";
+    }
+
     if ($args[2]) {
         load_devel_dependencies();
     }
