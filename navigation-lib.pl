@@ -828,6 +828,8 @@ sub nav_list_combined_menu
                     $icon = '<i class="fa fa-fw fa-tasks"></i>';
                 } elsif ($link =~ /server-manager\/index\.cgi/) {
                     $icon = '<i class="fa fa-fw fa-server"></i>';
+                } elsif ($link =~ /server-manager\/statistics\.cgi(?:\?|$)/) {
+                    $icon = '<i class="fa fa-fw fa-area-chart"></i>';
                 } elsif ($link =~ /\/virtualmin-wp-workbench/)
                 {
                     $icon = '<i class="fa fa-fw fa2 fa2-workbench margined-left--1 margined-right-1"></i>';
