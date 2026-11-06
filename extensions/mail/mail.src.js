@@ -1477,46 +1477,49 @@ const mail = (function() {
                                                         let tag = this.holder(),
                                                             input = tag.previousSibling;
 
-                                                        // Event to handle change date for scheduled mail
-                                                        tag.addEventListener('click', function() {
-                                                            $(input).datepicker('show');
-                                                        });
-
-                                                        $(input).datepicker({
+                                                        // Keep the display label and submitted date in sync.
+                                                        const minimum = new Date();
+                                                        minimum.setHours(0, 0, 0, 0);
+                                                        theme.api.datepicker.create(input, {
+                                                            anchor: tag,
+                                                            dateFormat: 'yyyy-M-d',
                                                             language: _.sdata("language"),
-                                                            todayHighlight: true,
-                                                            autoclose: true,
-                                                            startDate: "0d",
-                                                        }).on("changeDate", function(l) {
-                                                            let today = _.lang('global_today').toLowerCase(),
-                                                                tomorrow = _.lang('global_tomorrow').toLowerCase(),
-                                                                label = today,
-                                                                now = new Date(),
-                                                                y = now.getFullYear(),
-                                                                m = now.getMonth() + 1,
-                                                                d = now.getDate(),
-                                                                py = l.date.getFullYear(),
-                                                                pm = l.date.getMonth() + 1,
-                                                                pd = l.date.getDate(),
-                                                                date = l.dates[0],
-                                                                date_ = py + '-' + pm + '-' + pd,
-                                                                date_formatted = dayjs(date).format(_.variable.locale.short);
+                                                            minDate: minimum,
+                                                            readDate: function() {
+                                                                return theme.api.datepicker.parse(input.dataset.value, 'yyyy-M-d');
+                                                            },
+                                                            onSelect: function(selection) {
+                                                                if (!selection.date) return;
+                                                                let today = _.lang('global_today').toLowerCase(),
+                                                                    tomorrow = _.lang('global_tomorrow').toLowerCase(),
+                                                                    label = today,
+                                                                    now = new Date(),
+                                                                    y = now.getFullYear(),
+                                                                    m = now.getMonth() + 1,
+                                                                    d = now.getDate(),
+                                                                    py = selection.date.getFullYear(),
+                                                                    pm = selection.date.getMonth() + 1,
+                                                                    pd = selection.date.getDate(),
+                                                                    date = selection.date,
+                                                                    date_ = py + '-' + pm + '-' + pd,
+                                                                    date_formatted = dayjs(date).format(_.variable.locale.short);
 
-                                                            this.dataset.value = date_;
+                                                                input.dataset.value = date_;
 
-                                                            if (
-                                                                y === py && m === pm &&
-                                                                (d === pd || d + 1 === pd)
-                                                            ) {
-                                                                if (d + 1 === pd) {
-                                                                    label = tomorrow
+                                                                if (
+                                                                    y === py && m === pm &&
+                                                                    (d === pd || d + 1 === pd)
+                                                                ) {
+                                                                    if (d + 1 === pd) {
+                                                                        label = tomorrow
+                                                                    }
+                                                                } else {
+                                                                    label = date_formatted
                                                                 }
-                                                            } else {
-                                                                label = date_formatted
-                                                            }
 
-                                                            tag.textContent = label
-                                                        })
+                                                                tag.textContent = label
+                                                            },
+                                                        });
                                                     }
                                                 },
 
