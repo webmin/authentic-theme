@@ -485,7 +485,8 @@ sub theme_ui_columns_start
     # Sortable tables carry both the class this theme keys on and the
     # data-sortable attribute the core library emits, so either works
     my $sortable_attr = $sortable ? ' data-sortable="1"' : '';
-    $sortable = ' dtable-sortable' if ($sortable);
+    # A false sort flag must not become part of the table's CSS class.
+    $sortable = $sortable ? ' dtable-sortable' : '';
     my $width_;
     $width_ = ' w-auto-force" ' if ($width eq 'auto');
     $rv .= "<table class=\"table table-striped table-hover table-condensed$sortable$class$width_\"$sortable_attr>" . "\n";
