@@ -163,7 +163,10 @@ foreach my $name (@entries_list) {
             my $dir  = fileparse($name, qr/\.[^.]*/);
             my $path = quotemeta($safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir));
             system("mkdir $path");
-            $status = system("($rpm2cpio_cmd " . quotemeta($archive) . " | (cd " . $path . "; $cpio_cmd -idmv))");
+
+            # Keep absolute member names inside the target, and skip extraction
+            # if the target directory can't be entered
+            $status = system("($rpm2cpio_cmd " . quotemeta($archive) . " | (cd " . $path . " && $cpio_cmd -idmv --no-absolute-filenames))");
         }
 
     } elsif ($archive_type =~ /\/x-deb|debian\.binary-package/) {
