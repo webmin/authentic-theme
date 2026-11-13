@@ -1659,8 +1659,7 @@ for (my $count = 1 ; $count <= scalar(@list) ; $count++) {
 				/application-x-7z-compressed/ ||
 				$type_archive =~
 				/application-x-rar|application-vnd\.rar/ ||
-				$type_archive =~ /application-x-rpm/ ||
-				$type_archive =~ /application-x-source-rpm/ ||
+				$type_archive =~ /application-x-(source-)?rpm/ ||
 				$type_archive =~
 				/application-x-deb|debian\.binary-package/ ||
 				$type_archive =~

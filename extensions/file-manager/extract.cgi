@@ -22,9 +22,21 @@ my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 
 foreach my $name (@entries_list) {
     my $no_command;
+    my $created;
     my $archive = fm_checked_cwd_path_or_error($name);
     $ecwd   = $cwd;
     $status = undef;
+
+    # Check the RPM extractor before creating an output directory
+    my $archive_type = mimetype($archive);
+    my $bsdtar_cmd;
+    if ($archive_type =~ /\/(x-rpm|x-source-rpm)/) {
+        $bsdtar_cmd = has_command('bsdtar');
+        if (!$bsdtar_cmd) {
+            $errors{$name} = text('filemanager_archive_extract_missing_bsdtar', $name);
+            next;
+        }
+    }
 
     # Based on options put extracted content to a separate directory
     if ($safe_mode) {
@@ -46,10 +58,9 @@ foreach my $name (@entries_list) {
             $ecwd = $extract_dir;
         }
         my $qecwd = quotemeta($ecwd);
-        system("mkdir $qecwd");
+        $created = system("mkdir $qecwd") == 0;
     }
 
-    my $archive_type = mimetype($archive);
     if ($archive_type =~ /x-tar/ || $archive_type =~ /-compressed-tar/ || $archive_type =~ /zstd/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
@@ -153,20 +164,22 @@ foreach my $name (@entries_list) {
             }
         }
     } elsif ($archive_type =~ /\/(x-rpm|x-source-rpm)/) {
-        my $rpm2cpio_cmd = has_command('rpm2cpio');
-        my $cpio_cmd     = has_command('cpio');
-        if (!$rpm2cpio_cmd) {
-            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'rpm2cpio');
-        } elsif (!$cpio_cmd) {
-            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'cpio');
-        } else {
-            my $dir  = fileparse($name, qr/\.[^.]*/);
-            my $path = quotemeta($safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir));
-            system("mkdir $path");
+        my $dir = fileparse($name, qr/\.[^.]*/);
+        my $target = $safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir);
+        $created = mkdir($target) if (!$safe_mode && !-d $target);
 
-            # Keep absolute member names inside the target, and skip extraction
-            # if the target directory can't be entered
-            $status = system("($rpm2cpio_cmd " . quotemeta($archive) . " | (cd " . $path . " && $cpio_cmd -idmv --no-absolute-filenames))");
+        # Keep path protections enabled and omit archive ownership and privileges
+        my $cmd = quotemeta($bsdtar_cmd) . " -xf " . quotemeta($archive) .
+            " -C " . quotemeta($target) .
+            " --no-same-owner --no-same-permissions";
+        my $out = backquote_command("$cmd 2>&1 </dev/null");
+        $status = $?;
+        if ($status) {
+            # Retain failed archives and avoid treating extraction errors as bad passwords
+            $errors{$name} = text('filemanager_archive_extract_failed', $name, $out || $status);
+            # Remove only a new, empty directory after failure
+            rmdir($target) if ($created);
+            next;
         }
 
     } elsif ($archive_type =~ /\/x-deb|debian\.binary-package/) {
