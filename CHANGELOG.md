@@ -6,6 +6,8 @@
 * Fix zip download dropping symlinks and failing on dangling ones in File Manager module [webmin#1918](https://github.com/webmin/webmin/issues/1918)
 * Fix archive downloads to report the real archiving error in File Manager module
 
+<!--- separator --->
+
 #### Version 26.70 (September 20, 2026)
 * Add support for HTML signatures in Usermin
 * Fix light palette layout gaps to be slightly tighter to match dark palette better
@@ -20,8 +22,6 @@
 * Drop server-side Perl customizations
 * Drop the built-in theme updater
 * Drop dashboard-managed CSF update checks
-
-<!--- separator --->
 
 #### Version 26.60 (August 17, 2026)
 * Fix change detection and submission for forms using grouped bottom action buttons
