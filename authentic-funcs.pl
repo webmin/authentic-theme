@@ -393,7 +393,7 @@ sub theme_get_webprefix_local
     my $parent_proxy_detected = 0;
     my $parent_proxy          = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'};
     if ($parent_proxy) {
-        my ($parent_proxy_link)   = $parent_proxy      =~ /(\S*?\/link\.cgi\/[\d]{8,16})/;
+        my ($parent_proxy_link)   = $parent_proxy      =~ /(\S*?\/link\.cgi\/\d+)/;
         my ($parent_proxy_prefix) = $parent_proxy_link =~ /:\d+(\S*?\/link\.cgi\/\S*?\d+)/;
         if ($parent_proxy_prefix) {
             $webprefix             = $parent_proxy_prefix;

@@ -1999,7 +1999,7 @@ sub theme_parse_proxy_redirect
 {
 my ($in, $env) = @_;
 if ($env->{'HTTP_REFERER'} && $env->{'HTTP_X_PJAX_URL'} &&
-    $env->{'HTTP_X_PJAX_URL'} =~ /(\S*?\/link\.cgi\/[\d]{8,16})/ && 
+    $env->{'HTTP_X_PJAX_URL'} =~ /(\S*?\/link\.cgi\/\d+)/ &&
     $in->{'proxy-redirect'} =~ /\S+/) {
     return $in->{'proxy-redirect'};
 }

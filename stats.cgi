@@ -12,7 +12,7 @@ our ($config_directory, $current_theme, $root_directory, $var_directory,
      $base_remote_user, %stats_text);
 
 my $parent_path = $ENV{'HTTP_COMPLETE_WEBMIN_PATH'} || $ENV{'HTTP_WEBMIN_PATH'} || '';
-my $link_proxy = $parent_path =~ /\/link\.cgi\/\d{8,16}/ ? 1 : 0;
+my $link_proxy = $parent_path =~ /\/link\.cgi\/\d+/ ? 1 : 0;
 
 sub print_stats_json
 {
