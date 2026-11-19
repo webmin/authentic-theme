@@ -1839,15 +1839,17 @@ my $rp;
 my $df = int($d);
 my @ap = @allowed_paths;
 my $fr = scalar(@ap) > 1;
+
+# File::Find does not follow directory links. Check its starting path once.
+if (length($p)) {
+	return \@r if ($p !~ m!^/! || fm_path_name_invalid($p));
+	$p = &simplify_path($p);
+	return \@r if (!fm_path_is_allowed($p));
+	}
 my @af = length($p) ? ($p) : @ap;
 my $fu = scalar(@af) == 1;
 
 my $show_dot_files = get_user_config_showhiddenfiles();
-
-# Check the queried path is allowed in the first place
-if (length($p)) {
-	return \@r if (grep { $_ =~ /^\Q$p\E/ } @ap);
-	}
 
 my $wanted = sub {
 	my $td = $File::Find::name;
@@ -1884,11 +1886,6 @@ my $wanted = sub {
 		my ($ix) = grep { $af[$_] eq $td } (0 .. @af - 1);
 		$ic = $ix if (defined($ix));
 		my $afic = $af[$ic];
-		if (!grep { $afic =~ /^\Q$_\E/ } @ap &&
-			!grep { $td =~ /^\Q$_\E/ } @ap)
-		{
-			return;
-			}
 
 		# Exclude non-essential real directories on start, but keep links visible
 		if ($e && !$ltd && $afic eq '/' && $dc == 1) {
