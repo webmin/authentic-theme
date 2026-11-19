@@ -237,17 +237,20 @@ sub message_details
         my $cc  = message_addressee($header->{'cc'});
         my $bcc = message_addressee($header->{'bcc'});
 
-        my $date = $header->{'date'};
+        my $date = html_escape($header->{'date'});
 
         my @headers = map {ref $_ eq "ARRAY" ? @$_ : $_} @$headers;
         $headers = join(' ', @headers);
 
-        my ($source) = $headers =~ /eceived\sfrom\s(?!localhost)(.*?)\(.*?\[(?!127.0.0.1)(.*?)\]/;
-        if ($1 && $2) {
-            $source = $1 . " " . ui_text($2, 'light');
+        # Header values come from the sender, so show them as text only
+        my ($source, $source_ip) = $headers =~ /eceived\sfrom\s(?!localhost)(.*?)\(.*?\[(?!127.0.0.1)(.*?)\]/;
+        if ($source) {
+            $source = html_escape($source);
+            $source .= " " . ui_text(html_escape($source_ip), 'light') if ($source_ip);
         }
 
         my ($dkim_signature) = $headers =~ /dkim-signature.+?d=(.+?)[;|\s]/i;
+        $dkim_signature = html_escape($dkim_signature) if ($dkim_signature);
 
         my ($dkim) =
           (($header->{'authentication-results'} =~ /dkim=(pass)\s/) ||
