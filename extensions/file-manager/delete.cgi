@@ -11,7 +11,7 @@ use strict;
 use lib ($ENV{'LIBROOT'}."/vendor_perl");
 
 use File::Copy;
-use Fcntl qw(O_RDONLY O_NOFOLLOW O_NONBLOCK O_CREAT O_WRONLY O_EXCL);
+use File::Path;
 
 our (%in, %text, $cwd, $path, @allowed_paths);
 
@@ -25,77 +25,12 @@ my @entries_list = get_entries_list();
 my $fsid = $in{'fsid'};
 my $time = strftime('%Y-%m-%d_%H:%M:%S', localtime());
 my $tdirname = '.Trash';
+my $mkpath_ = sub {
+	my ($dir) = @_;
+	my $rs = mkpath($dir, {owner => int($in{'uid'}), group => int($in{'guid'})});
+	return $rs;
+	};
 my $etrashed = 0;
-
-# enter_trash_directory(home, relative-directory)
-# Enter each directory by handle so a renamed directory cannot redirect
-# later operations. New directories belong to the owner of the trash home.
-sub enter_trash_directory
-{
-my ($home, $relative) = @_;
-my $dh;
-sysopen($dh, $home, O_RDONLY | O_NOFOLLOW | O_NONBLOCK) && -d $dh && chdir($dh) ||
-	return;
-return if (!fm_path_is_allowed(Cwd::getcwd()));
-my @owner = (stat($dh))[4, 5];
-foreach my $part (split(m{/+}, $relative)) {
-	next if ($part eq '' || $part eq '.');
-	return if ($part eq '..');
-	my $created = mkdir($part, 0700);
-	return if (!$created && !$!{EEXIST});
-	sysopen($dh, $part, O_RDONLY | O_NOFOLLOW | O_NONBLOCK) && -d $dh && chdir($dh) ||
-		return;
-	return if ($created && $> == 0 && !chown(@owner, $dh));
-	}
-return $dh;
-}
-
-# trash_move(file, name, time)
-# The current directory is the verified trash destination. Reserve the
-# name so simultaneous deletions keep separate copies of the same file.
-sub trash_move
-{
-my ($file, $name, $time) = @_;
-my @src = lstat($file);
-return 0 if (!@src);
-my $isdir = -d _;
-my ($target, $fh);
-for (my $i = 0; ; $i++) {
-	$target = !$i ? $name : $i == 1 ? "$name-$time" : "$name-$time-$i";
-	last if ($isdir ? mkdir($target, 0700) :
-	    sysopen($fh, $target, O_WRONLY | O_CREAT | O_EXCL, 0600));
-	return 0 if (!$!{EEXIST});
-	}
-return 1 if (rename($file, $target));
-
-# Across filesystems a regular file must be copied before removing it.
-# Use open handles for the copy and keep the file's ordinary permissions
-# and timestamps. A symbolic link stays a link.
-my $err = $!;
-if ($!{EXDEV} && !$isdir) {
-	if (($src[2] & 0170000) == 0120000) {
-		my $link = readlink($file);
-		unlink($target) || return 0;
-		defined($link) && symlink($link, $target) || return 0;
-		return unlink($file);
-		}
-	my $in;
-	if (($src[2] & 0170000) == 0100000 &&
-	    sysopen($in, $file, O_RDONLY | O_NOFOLLOW | O_NONBLOCK) &&
-	    filemin_same_file(\@src, [ stat($in) ]) && copy($in, $fh) &&
-	    ($> != 0 || chown(@src[4, 5], $fh)) &&
-	    chmod($src[2] & 0777, $fh) && utime(@src[8, 9], $fh) &&
-	    close($fh)) {
-		return unlink($file);
-		}
-	if ($!) {
-		$err = $!;
-		}
-	}
-$isdir ? rmdir($target) : unlink($target);
-$! = $err;
-return 0;
-}
 
 sub delete_entry_depth
 {
@@ -164,7 +99,6 @@ foreach my $name (@entries_list) {
 			$errors{$name_} = fm_not_allowed_error($name_, $jdir);
 			next;
 			}
-
 		# Moving the trash into itself means emptying it only when
 		# the trash is the sole selection. Never remove an ancestor.
 		my $trash = simplify_path("$hdir/$tdirname");
@@ -186,18 +120,24 @@ foreach my $name (@entries_list) {
 			next;
 			}
 
-		opendir(my $orig, '.') || die "Cannot open current directory: $!";
-		my $dir = enter_trash_directory($hdir, $relative);
-		if (!$dir) {
-			$errors{$name_} = $text{'error_delete'}." - $!";
+		my $tdir = "$hdir/$tdirname/$cwd";
+		my $mkpathr = &$mkpath_($tdir);
+		my $tfile;
+		if (!$mkpathr && (-e "$tdir/$name" || -l "$tdir/$name")) {
+			$tfile = "$tdir/$name-$time";
+			&$mkpath_($tdir);
 			}
-		elsif (!trash_move($file, basename($name), $time)) {
-			$errors{$name_} = $text{'error_delete'}." - $!";
+		my $target = $tfile || "$tdir/$name";
+		if ($name =~ m!/!) {
+			(my $target_dir = $target) =~ s!/[^/]+$!!;
+			&$mkpath_($target_dir) if (!-d $target_dir);
+			}
+		if (!move($file, $target)) {
+			$errors{$name_} = lc($text{'error_delete'}.lc(" - $!"));
 			}
 		else {
 			push(@deleted_entries, $name);
 			}
-		chdir($orig) || die "Cannot return to original directory: $!";
 		}
 	elsif (!&unlink_file($file)) {
 		$errors{$name_} = lc($text{'error_delete'}.lc(" - $!"));

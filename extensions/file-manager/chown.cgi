@@ -39,25 +39,11 @@ if (!defined $grid) {
 }
 
 my @entries_list = get_entries_list();
-my $restricted = filemin_restricted_root() && !is_readonly_mode();
 
 if (!scalar %errors) {
     foreach my $name (@entries_list) {
         my $name_ = $name;
         my $file = fm_checked_cwd_path_or_error($name);
-
-        # Non-recursive chown follows a selected link. Clear privileged
-        # modes on the same object before handing it to another owner.
-        if ($restricted) {
-            if (!$recursive && -l $file) {
-                $file = abs_path($file);
-                if (!fm_path_is_allowed($file)) {
-                    $errors{$name_} = fm_not_allowed_error($name);
-                    next;
-                }
-            }
-            filemin_drop_setid($file, $recursive ? -1 : 0);
-        }
         if (!$file || system_logged("chown $recursive $uid:$grid " . quotemeta($file)) != 0) {
             $errors{ $name_ } =  lc("$text{'error_chown'}: $?");
         }

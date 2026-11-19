@@ -6,6 +6,7 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+use Fcntl qw(O_CREAT O_EXCL O_WRONLY);
 
 our (%in, %text, %config, $cwd, $path);
 
@@ -13,20 +14,19 @@ require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my @entries_list = get_entries_list();
 my %errors;
+my $status;
+my $pparam;
 my $password  = $in{'password'};
 my $delete    = $in{'delete'};
+my $ecwd      = $cwd;
 my $safe_mode = $in{'overwrite_efiles'} ne 'true';
 
 foreach my $name (@entries_list) {
+    my $no_command;
     my $created;
     my $archive = fm_checked_cwd_path_or_error($name);
-    my $ecwd = $cwd;
-    my $pparam = '';
-
-    # Each extractor writes into the private directory supplied below.
-    my ($cmd, $tar_archive);
-    my $unar;
-    my @stream_stat;
+    $ecwd   = $cwd;
+    $status = undef;
 
     # Check the RPM extractor before creating an output directory
     my $archive_type = mimetype($archive);
@@ -68,29 +68,88 @@ foreach my $name (@entries_list) {
     if ($archive_type =~ /x-tar/ || $archive_type =~ /-compressed-tar/ || $archive_type =~ /zstd/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
-            $errors{$name} = text('theme_xhred_global_no_such_command', 'tar');
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         } else {
-            $tar_archive = $archive;
-            $cmd = "$tar_cmd xpf " . quotemeta($archive);
+            $status = system("$tar_cmd xpf " . quotemeta($archive) . " -C " . quotemeta($ecwd));
         }
     } elsif ($archive_type =~ /x-bzip/) {
         my $tar_cmd = has_command('tar');
         if (!$tar_cmd) {
-            $errors{$name} = text('theme_xhred_global_no_such_command', 'tar');
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'tar');
         } else {
-            $tar_archive = $archive;
-            $cmd = "$tar_cmd xjpf " . quotemeta($archive);
+            $status = system("$tar_cmd xjfp " . quotemeta($archive) . " -C " . quotemeta($ecwd));
         }
-    } elsif ($archive_type =~ m{/gzip|/x-gzip|/x-xz}) {
-        my $xz = $archive_type =~ /x-xz/;
-        my $tool = $xz ? has_command('xz') : has_command('gunzip') || has_command('gzip');
-        if ($tool) {
-            # In overwrite mode a single compressed file expands beside its source.
-            $ecwd = dirname($archive) if (!$safe_mode);
-            @stream_stat = stat($archive);
-            $cmd = filemin_decompress_command($tool, $archive);
+    } elsif ($archive_type =~ /\/gzip/) {
+        my $gz_cmd = has_command('gunzip') || has_command('gzip');
+        if (!$gz_cmd) {
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'gzip/gunzip');
         } else {
-            $errors{$name} = text('theme_xhred_global_no_such_command', $xz ? 'xz' : 'gzip/gunzip');
+            if ($ecwd ne $cwd) {
+                my $name_ = $name;
+                $name_ =~ s/\.gz$//g;
+                $name_ ||= $name;
+                my $out_file = fm_checked_path_under($ecwd, $name_);
+                if (!$out_file) {
+                    $status = -999;
+                    $errors{$name} = fm_not_allowed_error($name_);
+                } else {
+                    my $out = &backquote_command("$gz_cmd -d -f -k -c ".
+                        quotemeta($archive). " 2>&1".
+                        " > ".quotemeta($out_file));
+                    $status = $?;
+                    if ($out && $status != 0) {
+                        $status = -999;
+                        $errors{$text{'theme_xhred_global_error'}} = $out;
+                    }
+                }
+            } else {
+                my $out = &backquote_command("$gz_cmd -d -f -k " . quotemeta($archive) . " 2>&1");
+                $status = $?;
+                if ($out && $status != 0) {
+                    $status = -999;
+                    $errors{$text{'theme_xhred_global_error'}} = $out;
+                }
+            }
+        }
+    } elsif ($archive_type =~ /x-xz/) {
+        my $xz_cmd = has_command('xz');
+        if (!$xz_cmd) {
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'xz');
+        } elsif ($safe_mode) {
+            # xz normally writes beside its input. Put the file in the chosen folder.
+            my $output = basename($archive);
+            $output .= '.out' unless $output =~ s/\.txz\z/.tar/i || $output =~ s/[-.]xz\z//i;
+            $output = 'output' if ($output =~ /^\.{0,2}\z/);
+            my $target = fm_checked_path_under($ecwd, $output);
+            my @st = stat($archive);
+            my $dest;
+            if (!$target || !@st || !sysopen($dest, $target, O_WRONLY | O_CREAT | O_EXCL, 0600)) {
+                $errors{$name} = $target ? html_escape("$!") : fm_not_allowed_error($output);
+                rmdir($ecwd);
+                next;
+            }
+            my $err;
+            if (open(my $input, '-|', $xz_cmd, '-dc', '--', $archive)) {
+                copy($input, $dest) || ($err = "$!");
+                close($input) || ($err ||= ($? >> 8) || "$!");
+            } else {
+                $err = "$!";
+            }
+            # Match the ownership, regular permissions and timestamps xz preserves.
+            if (!$err && !(($> != 0 || chown(@st[4, 5], $dest)) &&
+                           chmod($st[2] & 0777, $dest) && utime(@st[8, 9], $dest))) {
+                $err = "$!";
+            }
+            close($dest) || ($err ||= "$!");
+            if ($err) {
+                $errors{$name} = text('filemanager_archive_extract_failed', html_escape($name), html_escape($err));
+                unlink($target);
+                rmdir($ecwd);
+                next;
+            }
+            $status = 0;
+        } else {
+            $status = system("$xz_cmd -d -f -k " . quotemeta($archive));
         }
     } elsif ($archive_type =~ /x-7z/ ||
              $archive_type =~ /x-raw-disk-image/ ||
@@ -98,112 +157,104 @@ foreach my $name (@entries_list) {
     {
         my $x7z_cmd = has_command('7z');
         if (!$x7z_cmd) {
-            $errors{$name} = text('theme_xhred_global_no_such_command', '7z');
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', '7z');
         } else {
             if ($password) {
                 $pparam = (" -p" . quotemeta($password) . " ");
             }
-            $cmd = "$x7z_cmd x -aoa " . quotemeta($archive) . " -o." . $pparam;
+            $status = system("$x7z_cmd x -aoa " . quotemeta($archive) . " -o" . quotemeta($ecwd) . $pparam);
         }
     } elsif ($archive_type =~ /\/zip/) {
         my $unzip_cmd = has_command('unzip');
         if (!$unzip_cmd) {
-            $errors{$name} = text('theme_xhred_global_no_such_command', 'unzip');
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'unzip');
         } else {
             my $x7z_cmd = has_command('7z');
             if ($password && $x7z_cmd) {
                 $pparam = (" -p" . quotemeta($password) . " ");
-                $cmd = "$x7z_cmd x -aoa " . quotemeta($archive) . " -o." . $pparam;
+                $status = system("$x7z_cmd x -aoa " . quotemeta($archive) . " -o" . quotemeta($ecwd) . $pparam);
             } else {
                 if ($password) {
                     $pparam = (" -P " . quotemeta($password) . " ");
                 }
                 my $unzip_out = `unzip --help`;
                 my $uu        = ($unzip_out =~ /-UU/ ? '-UU' : undef);
-                $cmd = "$unzip_cmd $pparam $uu -q -o " . quotemeta($archive) . " -d .";
+                my $cmd = "$unzip_cmd $pparam $uu -q -o " . quotemeta($archive) . " -d " . quotemeta($ecwd);
+                my $diagnostic = qx{$cmd 2>&1 >/dev/null </dev/null};
+                $status = $?;
+                if ($status == (82 << 8) || ($status == 256 &&
+                    ($diagnostic !~ /\S/ || $diagnostic =~ /unable to get password|incorrect password/i))) {
+                    $errors{$name} = $text{$password ? 'filemanager_archive_password_wrong' : 'filemanager_archive_password_required'};
+                    next;
+                }
+                # unzip may extract files with a warning. Keep the original ZIP.
+                next if ($status == 256 && $diagnostic =~ /warning/i);
             }
         }
     } elsif ($archive_type =~ /\/x-rar|\/vnd\.rar/) {
         my $unrar_cmd = has_command('unar') || has_command('unrar');
         if (!$unrar_cmd) {
-            $errors{$name} = text('theme_xhred_global_no_such_command', 'unrar/unar');
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'unrar/unar');
         } else {
             if ($password) {
                 $pparam = (" -p " . quotemeta($password) . " ");
             }
             if ($unrar_cmd =~ /unar$/) {
-                $cmd  = "$unrar_cmd $pparam " . quotemeta($archive) . " -o .";
-                $unar = 1;
+                $status = system("$unrar_cmd $pparam " . quotemeta($archive) . " -o " . quotemeta($ecwd));
+                if ($status == 512) {
+                    $status = 65280;
+                }
             } else {
                 $pparam =~ s/(?<=.)\s//;
-                $cmd = "$unrar_cmd $pparam x -r -y -o+ " . quotemeta($archive) . " ./";
+                $status = system("$unrar_cmd $pparam x -r -y -o+ " . quotemeta($archive) . " " . quotemeta($ecwd));
             }
         }
     } elsif ($archive_type =~ /\/(x-rpm|x-source-rpm)/) {
         my $dir = fileparse($name, qr/\.[^.]*/);
-        $ecwd = fm_checked_cwd_path_or_error($dir) if (!$safe_mode);
-        # RPM payloads must not restore privileged permissions or archive owners.
-        $cmd = quotemeta($bsdtar_cmd) . " --no-same-owner --no-same-permissions -xf " . quotemeta($archive);
+        my $target = $safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir);
+        $created = mkdir($target) if (!$safe_mode && !-d $target);
+
+        # Keep path protections enabled and omit archive ownership and privileges
+        my $cmd = quotemeta($bsdtar_cmd) . " -xf " . quotemeta($archive) .
+            " -C " . quotemeta($target) .
+            " --no-same-owner --no-same-permissions";
+        my $out = backquote_command("$cmd 2>&1 </dev/null");
+        $status = $?;
+        if ($status) {
+            # Retain failed archives and avoid treating extraction errors as bad passwords
+            $errors{$name} = text('filemanager_archive_extract_failed', html_escape($name), html_escape($out || $status));
+            # Remove only a new, empty directory after failure
+            rmdir($target) if ($created);
+            next;
+        }
+
     } elsif ($archive_type =~ /\/x-deb|debian\.binary-package/) {
         my $dpkg_cmd = has_command('dpkg');
         if (!$dpkg_cmd) {
-            $errors{$name} = text('theme_xhred_global_no_such_command', 'dpkg');
+            $errors{ $text{'theme_xhred_global_error'} } = text('theme_xhred_global_no_such_command', 'dpkg');
         } else {
-            my $dir = fileparse($name, qr/\.[^.]*/);
-            $ecwd = fm_checked_cwd_path_or_error($dir) if (!$safe_mode);
-            $cmd = "$dpkg_cmd -x " . quotemeta($archive) . " .";
+            my $dir  = fileparse($name, qr/\.[^.]*/);
+            my $path = quotemeta($safe_mode ? $ecwd : fm_checked_cwd_path_or_error($dir));
+            system("mkdir $path");
+            $status = system("$dpkg_cmd -x " . quotemeta($archive) . " " . $path);
         }
     } else {
         $errors{$name} = $text{'extract_etype'};
     }
 
-    if ($cmd) {
-        # Follow the user's chosen directory link and check the actual destination.
-        $ecwd = abs_path($ecwd) if (-l $ecwd && ($ecwd eq $cwd || @stream_stat));
-        if (!fm_path_is_allowed($ecwd)) {
-            $errors{$name} = fm_not_allowed_error($name, $ecwd);
-            next;
-        }
-        # Package formats use a named output directory even in overwrite mode.
-        $created = mkdir($ecwd) if (!$safe_mode && !-e $ecwd && !-l $ecwd);
-        my @original = lstat($archive);
-        my $diagnostic;
-        my ($status, @errors) = extract_in_private_dir($ecwd, 1, sub {
-            $diagnostic = qx{($cmd) 2>&1 >/dev/null </dev/null};
-            my $result = $?;
-            # gzip and xz normally preserve file modes and timestamps. Restore
-            # them on the single output before it leaves the private directory.
-            if (!$result && @stream_stat) {
-                filemin_walk_tree(".", 1, sub {
-                    my ($output) = @_;
-                    if (!chmod($stream_stat[2] & 0777, $output) ||
-                        !utime(@stream_stat[8, 9], $output)) {
-                        $diagnostic = "$!";
-                        $result = -1;
-                    }
-                });
-            }
-            return $result;
-        }, (@stream_stat ? @stream_stat[4, 5] : (undef, undef)), $tar_archive);
-        if ($status && !@errors) {
-            # Quiet unzip signals a bad password with exit code 82.
-            if (($archive_type =~ /\/zip/ && $status == (82 << 8)) ||
-                ($unar && !$diagnostic && $status == 512) ||
-                ($archive_type =~ /zip|rar|7z/ && $diagnostic =~ /password|passphrase/i)) {
-                push(@errors, $text{$password ? 'filemanager_archive_password_wrong' : 'filemanager_archive_password_required'});
-            } else {
-                push(@errors, text('filemanager_archive_extract_failed', html_escape($name),
-                                   html_escape($diagnostic || ($status >> 8) || $status)));
-            }
-        }
-        if (@errors) {
-            $errors{$name} = join('<br>', @errors);
-        } elsif ($delete && filemin_same_file(\@original, [ lstat($archive) ])) {
-            # The archive may have contained a replacement with its own name.
-            unlink_file($archive) || ($errors{$name} = html_escape("$!"));
+    if (!%errors && $delete && defined($status) && $status == 0) {
+        unlink_file($archive);
+    }
+
+    if ($status != 0 && $status != -999) {
+        if ($status == 1280 || $status == 65280) {
+            $errors{$name} = $text{'filemanager_archive_password_required'};
+        } elsif ($status == 256 || $status == 512 || $status == 768 || $status == 20736 || $status == 20992) {
+            $errors{$name} = $text{'filemanager_archive_password_wrong'};
+        } elsif ($status == 2304 || $status == 2560) {
+            $errors{$name} = $text{'filemanager_archive_file_not_found'};
         }
     }
-    rmdir($ecwd) if ($created && exists($errors{$name}));
 }
 
 redirect_local(

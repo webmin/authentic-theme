@@ -1994,42 +1994,12 @@ else {
 		}
 	}
 my ($o, $e);
-my $restricted = filemin_restricted_root();
-# Both cp and move place a file inside an existing directory. Apply owner
-# and mode changes to that file alone.
-if ($restricted && !-d $s && -d $j) {
-	my $target = fm_checked_path_under($j, basename($s));
-	return fm_not_allowed_error($f) if (!$target);
-	$j = $target;
-	}
 if ($m) {
 	$o = move($s, $j);
-	if ($o) {
-		filemin_drop_setid($j, -1) if ($restricted);
-		&$zz($j, $z);
-		}
+	&$zz($j, $z) if ($o);
 	if (!$o && $!) {
 		$e = $!;
 		}
-	}
-elsif ($restricted) {
-	# Strip privileged modes before publishing the copy. Merging only the
-	# copied entries also preserves unrelated files in an existing folder.
-	my $parent = abs_path(dirname($j));
-	return fm_not_allowed_error($f) if (!$parent || !fm_path_is_allowed($parent));
-	return $text{'error_move'} if (-d $s && filemin_path_under_directory($s, $parent));
-	my ($uid, $gid);
-	if (length($z)) {
-		$uid = (getpwnam($z))[2];
-		$gid = getgrnam($z);
-		}
-	my ($status, @errors) = extract_in_private_dir($parent, 1, sub {
-		# A directory copy changes into the source before unpacking it.
-		my $private = Cwd::getcwd() or return -1;
-		($o, $e) = copy_source_dest($s, "$private/".basename($j));
-		return $o ? 0 : -1;
-		}, $uid, $gid);
-	$e ||= join('<br>', @errors) || $text{'error_move'} if ($status || @errors);
 	}
 else {
 	($o, $e) = copy_source_dest($s, $j);
