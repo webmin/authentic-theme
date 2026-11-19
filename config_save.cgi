@@ -83,7 +83,7 @@ if ($in{'skipredirect'}) {
 } else {
     if ($in{'save_next'}) {
         my $redir = &link_config_cparams($module, \%in, 1);
-        &redirect("config.cgi?module=$module&section=$in{'section_next'}".
+        &redirect("config.cgi?module=$module&section=" . &urlize($in{'section_next'}) .
             ($redir =~ /\?(.*)$/ ? "&".$1 : ""));
     } else {
         &redirect(&link_config_cparams($module, \%in));
