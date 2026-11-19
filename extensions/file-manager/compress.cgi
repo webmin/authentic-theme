@@ -25,7 +25,7 @@ my $password = $in{'arcencr_val'};
 my $key_id = quotemeta($in{'arkkey'});
 my $status;
 my $safe_mode = $in{'overwrite_efiles'} ne 'true';
-my $follow_symlinks = $in{'follow_symlinks'} eq 'true';
+my $follow_symlinks = $in{'follow_symlinks'} eq 'true' && !test_allowed_paths();
 
 if ($in{'method'} =~ /tar/ || $in{'method'} eq 'zip') {
 	my $list = transname();
@@ -76,9 +76,10 @@ if ($in{'method'} =~ /tar/ || $in{'method'} eq 'zip') {
 			}
 		my $fileq = quotemeta($file);
 		my $gnu_tar_param = get_tar_verbatim();
-		my $follow_symlinks = $follow_symlinks ? 'h' : '';
+		# Keep the archive filename immediately after the f option.
+		my $link_option = $follow_symlinks ? 'h' : '';
 		$command =
-		    "${tarcmd}f$follow_symlinks ".
+		    "${tarcmd}${link_option}f ".
 		    $fileq." -C ".
 		    quotemeta($cwd).
 		    "$gnu_tar_param -T ".
