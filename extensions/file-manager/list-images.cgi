@@ -164,30 +164,21 @@ if (has_command('identify')) {
 								}
 							}
 
-						# Extract smaller version of the file
-						my $file_out = "$file.bak~";
+						# Read the preview directly in the input image's format.
 						my $convert_size = (
 							($w > $h ? undef : 'x').
 							    (     $orientation > $factor
 								? $factor
 								: $orientation)
 						);
-						system(
-							"convert -quality 60% -resize $convert_size @{[quotemeta($file)]} $auto_orient @{[quotemeta($file_out)]}"
-						);
-
-						# Store smaller version data
-						$file_encoded = encode_base64(
-							read_file_contents($file_out));
+						my $preview = `convert -quality 60% -resize $convert_size @{[quotemeta($file)]} $auto_orient -`;
+						next if ($? || !length($preview));
+						$file_encoded = encode_base64($preview);
+						$processed = 1;
 						if ($orientation > $factor) {
-							$h = int($factor / ($w / $h));
-							$w = $factor;
+							($w, $h) = map { int($_ * $factor / $orientation + 0.5) } ($w, $h);
 							}
 
-						# Remove temporary file
-						unlink_file($file_out);
-
-						$processed++;
 						}
 					else {
 						$file_encoded = encode_base64(
