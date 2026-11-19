@@ -1971,11 +1971,20 @@ sub get_history_shell_file
     if ($in{'xhr-shell-cms'} eq "1") {
         my $id = $in{'xhr-shell-cmsid'};
 
+        # Only users of the Cloudmin module may use its shell history
+        return undef if (!foreign_available("server-manager"));
+
         # Keep the Cloudmin system ID within the history directory
         return undef if (!defined($id) || $id eq '.' || $id eq '..' ||
                          $id !~ /\A[\p{L}\p{N}.\-]+\z/);
+        # History has the same per-system permission as the Cloudmin shell.
+        foreign_require("server-manager", "server-manager-lib.pl");
+        my $server = server_manager::get_managed_server($id);
+        return undef if (!$server || !server_manager::can_action($server, "run"));
         $file = "$config_directory/server-manager/previous/$id";
     } else {
+        # Only users of the shell module may use its history
+        return undef if (!foreign_available("shell"));
         $file = "$config_directory/shell/previous.$remote_user";
     }
 
