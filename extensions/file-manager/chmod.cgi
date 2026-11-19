@@ -7,6 +7,7 @@
 # Licensed under MIT (https://github.com/authentic-theme/authentic-theme/blob/master/LICENSE)
 #
 use strict;
+use Fcntl qw(O_RDONLY O_NONBLOCK);
 
 our (%in, %text, $cwd, $path);
 
@@ -17,6 +18,17 @@ my %errors;
 my $perms = $in{'perms'};
 
 my @entries_list = get_entries_list();
+
+# Apply only ordinary permission bits to files. Directory group inheritance
+# is set separately so regular files never receive privileged bits.
+my $restricted = filemin_restricted_root();
+my $dir_setgid;
+if ($restricted) {
+    print_error($text{'filemanager_chmod_octal'}) if ($perms !~ /\A[0-7]{1,4}\z/);
+    $dir_setgid = oct($perms) & 02000;
+    # An explicit fifth digit lets chmod clear group inheritance on directories.
+    $perms = sprintf("%05o", oct($perms) & 01777);
+}
 
 # Selected directories and files only
 if ($in{'applyto'} eq '1') {
@@ -94,6 +106,26 @@ if ($in{'applyto'} eq '5') {
                 $errors{ $name_ } = lc("$text{'error_chmod'}: $?");
             }
         }
+    }
+}
+
+# Set group inheritance through an open directory handle. A replaced path
+# must never receive directory-only permissions.
+if ($dir_setgid && $in{'applyto'} =~ /\A[1235]\z/ && !is_readonly_mode()) {
+    foreach my $name (@entries_list) {
+        my $file = fm_checked_cwd_path_or_error($name);
+        next if ($errors{$name} || !-d $file);
+        my $setgid = sub {
+            my ($dir, $st) = @_;
+            return if (($st->[2] & 0170000) != 0040000);
+            my $dh;
+            if (!sysopen($dh, $dir, O_RDONLY | O_NONBLOCK) || !filemin_same_file($st, [ stat($dh) ]) ||
+                !chmod(oct($perms) | 02000, $dh)) {
+                $errors{$name} = $text{'error_chmod'};
+            }
+        };
+        $setgid->($file, [ stat($file) ]);
+        filemin_walk_tree($file, -1, $setgid) if ($in{'applyto'} eq '3' || $in{'applyto'} eq '5');
     }
 }
 
