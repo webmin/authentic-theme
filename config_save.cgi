@@ -27,6 +27,9 @@ my (%access,
 $module = $in{'module'};
 &error_setup($text{'config_err'});
 
+# Usermin has its own per-user configuration handler.
+&get_product_name() eq 'webmin' || &error($text{'config_ecannot'});
+
 # Reject paths before resolving or loading module files
 defined($module) && $module =~ /\A[A-Za-z0-9_-]+\z/ ||
   &error($text{'config_emodule'});

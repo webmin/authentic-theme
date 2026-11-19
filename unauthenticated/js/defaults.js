@@ -190,7 +190,7 @@ var
     // Terminal related custom options
     config_portable_module_xterm_options = '{}',
     config_portable_module_xterm_render_addon = true,
-    config_portable_module_xterm_font_size = 12,
+    config_portable_module_xterm_font_size = 0,
 
     // Graphical console zoom, as a percentage of the fitted display.
     config_portable_module_cloudmin_console_zoom = 100,
