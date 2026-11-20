@@ -253,7 +253,7 @@ sub theme_config_sections
     my (@options, $section, $category);
     foreach my $key (@{$fields->{'order'}}) {
         my ($label, $type) = split(/,/, $fields->{'info'}->{$key});
-        if ($type == 11) {
+        if (defined($type) && $type eq '11') {
             # Later options belong to this section.
             ($section, $category) = ($key, $label);
         } else {
