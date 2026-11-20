@@ -1586,10 +1586,9 @@ for (my $count = 1 ; $count <= scalar(@list) ; $count++) {
 
 	my $type = $list[$count - 1][14];
 	$type =~ s/\//\-/g;
-	my $img = "images/icons/mime/$type.png";
-	unless (-e $request_uri{'module'}.'/'.$img) {
-		$img = "images/icons/mime/unknown.png";
-		}
+	my $img = defined(&mime_icon) ? mime_icon($type, $module_path) :
+	    -f "$module_path/images/icons/mime/$type.png" ? "images/icons/mime/$type.png" :
+	    "images/icons/mime/unknown.png";
 	my $is_link = string_contains($type, 'symlink');
 
 	my $actions =
