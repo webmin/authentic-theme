@@ -245,6 +245,53 @@ sub theme_ui_print_header
     &header(@args);
 }
 
+# theme_config_sections(select, &fields)
+# Add option search and section navigation to Webmin's module editor.
+sub theme_config_sections
+{
+    my ($select, $fields) = @_;
+    my (@options, $section, $category);
+    foreach my $key (@{$fields->{'order'}}) {
+        my ($label, $type) = split(/,/, $fields->{'info'}->{$key});
+        if ($type == 11) {
+            # Later options belong to this section.
+            ($section, $category) = ($key, $label);
+        } else {
+            # Let search open the section that holds this option.
+            push(@options, { value => entities_to_ascii(html_strip($label)),
+                             section => $section, data => { category => $category } });
+        }
+    }
+    my $json = convert_to_json(\@options);
+    # An option label must never close the script element.
+    $json =~ s/</\\u003c/g;
+
+    my $search = ui_dropdown_local([ui_textbox('search')], {
+        'title'           => $theme_text{'config_search_options_all'},
+        'icon'            => 'fa fa-md fa-file-find',
+        'container-class' => 'elm-rel-z config-search',
+        'button-class'    => 'btn-default elm-rel-z heighter-28 pd-lr-8',
+        'ul-class'        => 'pd-tb-0',
+    });
+    my $class = 'heighter-28 margined-left-7';
+    my $prev = ui_submit($theme_text{'extensions_mail_pagination_left'}, 'nprev',
+                         undef, undef, 'fa fa-fw fa-arrow-circle-o-left', $class);
+    my $next = ui_submit($theme_text{'extensions_mail_pagination_right'}, 'nnext',
+                         undef, undef, 'fa fa-fw fa-arrow-circle-o-right', 'heighter-28');
+    return ui_tag('script', "var config_quick_access = $json;") .
+           ui_tag('span', $theme_text{'settings_config_configuration_category'},
+                  { 'class' => 'row-block-label' }) .
+           $select . ui_tag('div', $search . $prev . $next, { 'class' => 'btn-group end_submits' });
+}
+
+# theme_config_return_link(module, url, [footer-label])
+# Strip the background navigation parameter from visible return links.
+sub theme_config_return_link
+{
+    my ($module, $url, $label) = @_;
+    return (defined($label) ? navigation_link_clean($url) : $url, $label);
+}
+
 sub theme_popup_prehead
 {
     print '<style>#popup .ui_form_end_submit {display: none}</style>';
@@ -402,32 +449,14 @@ sub theme_icons_table {
 
 sub theme_generate_icon
 {
-    my ($icon, $title, $link, $href, $width, $height, $before, $after) = @_;
-    my $icon_outer = $icon;
-    my $wp         = $theme_webprefix;
-
+    my ($icon_url, $title, $link, $href, $width, $height, $before, $after) = @_;
     my $lt = $theme_config{'settings_right_table_links_type'};
-
-    $icon =~ s/^$wp//g if ($wp);
-    $icon =~ s/\/images//g;
-    $icon =~ s/images//g;
-
     my $grayscaled_table_icons = ($theme_config{'settings_right_table_grayscaled_icons'} ne 'false' ? 0 : 1);
     my $animate_table_icons = ($theme_config{'settings_right_table_animate_icons'} ne 'false' ? 0 :
                                  1);
-    (my $___svg = $icon) =~ s/.gif/.svg/;
-
-    (!-r $root_directory . "/" . get_module_name() . "/" . $icon_outer) &&
-      ($icon_outer = undef);
-
-    my $mod            = get_module_name();
-    my $images_modules = 'images/modules';
-    my $root_images    = $root_directory . "/$current_theme/$images_modules/";
-    my $__icon = (-r $root_images . $icon            ? $wp . "/$images_modules" . $icon :
-                    -r $root_images . $mod . $icon   ? $wp . "/$images_modules/" . $mod . $icon :
-                    -r $root_images . $mod . $___svg ? $wp . "/$images_modules/" . $mod . $___svg :
-                    $icon_outer                      ? $icon_outer :
-                    ($wp . "/images/not_found.svg"));
+    my $image = ui_tag('img', undef, {
+        'class' => 'ui_icon', 'src' => $icon_url, 'alt' => ''
+    });
 
     if ($lt eq '1') {
         print '<div class="col-xs-1 small-icons-container' .
@@ -443,8 +472,7 @@ sub theme_generate_icon
 "<span style='position: absolute; top:-2px; right: 2px;' class='hidden-forged hidden-forged-7 hidden-forged-7-small'>$_[7]</span>\n";
             }
         }
-        print "<a href=\"$link\" class=\"icon_link\">" . '<img class="ui_icon' .
-          ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt="">';
+        print "<a href=\"$link\" class=\"icon_link\">" . $image;
         print "<span class=\"hidden\">$title</span></a>\n";
         print '</div>';
     } else {
@@ -466,8 +494,7 @@ sub theme_generate_icon
               (string_contains($title, '<tt') ? "<span class='word-break-all'>$title</span>" : undef)
           ) .
           "\" data-toggle=\"tooltip\" data-placement=\"auto bottom\" data-container=\"body\" " .
-          (string_contains($title, '<tt') ? " data-fbplacement" : undef) . ">" . '<img class="ui_icon' .
-          ($icon_outer && ' ui_icon_protected') . '" src="' . $__icon . '" alt=""><br>';
+          (string_contains($title, '<tt') ? " data-fbplacement" : undef) . ">" . $image . '<br>';
         print "$title</a>\n";
         print "</div>\n";
     }
