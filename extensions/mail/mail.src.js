@@ -1238,7 +1238,7 @@ const mail = (function() {
                                                 initial: parseInt(data.hidden.html_edit_config),
                                             },
                                             config_update = function(option, value) {
-                                                _.update_mdata("/uconfig.cgi?mailbox", "/uconfig_save.cgi", {
+                                                _.update_mdata("/uconfig.cgi?module=mailbox&section=line0.7", "/uconfig_save.cgi", {
                                                     [option]: value
                                                 })
                                             },
