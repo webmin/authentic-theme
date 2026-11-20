@@ -147,7 +147,6 @@ var
     //
     settings_menu_width = 270,
     settings_auto_open_panels_on_proximity = false,
-    settings_embed_product_splash_privileged = false,
     settings_table_auto_dt = true,
     settings_table_init_datatables = 20000,
     settings_right_page_hide_persistent_vscroll = true,
@@ -200,10 +199,6 @@ var
 
     // Custom password generator options
     config_portable_funcs_password_complexity_meter = '{}',
-
-    // Control min and max time for branding to show in seconds
-    settings_product_branding_show_time_min_privileged = 1,
-    settings_product_branding_show_time_max_privileged = 6,
 
     // Embed default/custom favicons
     settings_embed_favicon_privileged = true,
@@ -284,9 +279,6 @@ var
             }
         ]
     },
-
-    // Deprecated options names
-    settings_embed_product_branding_privileged = settings_embed_product_splash_privileged,
 
     // Deprecated features
     config_portable_table_row_to_column_break = true,  // layout breaking is always on and should never be disabled

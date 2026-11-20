@@ -62,12 +62,6 @@ sub theme_header
     print '<body data-initial-load="1" ' . header_body_data(undef) . '' . $body_initial . ' ' . $tconfig{'inbody'} . '>' . "\n";
     embed_overlay_prebody() if (!http_x_request());
 
-    # Embed branding
-    embed_product_branding()
-      if (!http_x_request() &&
-          (!get_env('http_referer') || get_env('http_referer') =~ /(session|pam)_login\.cgi/) &&
-          !getvar('theme-goto', 'main', 'unset'));
-
     if (@_ > 1 && $_[1] ne 'stripped') {
 
         # Print default container

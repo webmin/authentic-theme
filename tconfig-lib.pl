@@ -240,7 +240,6 @@ sub theme_settings_filter
     if (!&theme_user_can_manage()) {
         push(@theme_settings_filter,
              'settings_theme_config_admins_only_privileged',
-             'settings_embed_product_splash_privileged',
              'settings_hotkey_slider',
              'settings_global_palette_unauthenticated',
              'settings_sysinfo_easypie_charts',

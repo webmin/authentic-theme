@@ -932,10 +932,7 @@ sub init_vars
     our %cookies = get_cookies();
 
     my $server_x_goto_ = get_theme_temp_data('goto');
-    if ($server_x_goto_) {
-        $server_x_goto = $server_x_goto_;
-        setvar('theme-goto', $server_x_goto);
-    }
+    $server_x_goto = $server_x_goto_ if ($server_x_goto_);
 
 }
 
@@ -2445,64 +2442,6 @@ sub lib_csf_control
             return csf_strings();
         }
     }
-}
-
-sub embed_product_branding
-{
-
-    return if (get_env('script_name') =~ /password_change\.cgi/);
-    return if (getvar('error-fatal'));
-    return if ($theme_config{"settings_embed_product_splash_privileged"} eq 'false');
-    return &custom_embed_product_branding(@_)
-      if (defined(&custom_embed_product_branding));
-
-    my ($brand,
-        $brand_name,
-        $brand_dir_default,
-        $brand_dir_custom,
-        $brand_dir,
-        $loader,
-        $vm_mod_name,
-        $vm_available,
-        $cm_mod_name,
-        $cm_available);
-
-    # Set brand directory
-    $brand_dir_default = "$root_directory/$current_theme/images/brand";
-    $brand_dir_custom  = "$config_directory/$current_theme/brand";
-    $brand_dir         = -r $brand_dir_custom ? $brand_dir_custom : $brand_dir_default;
-    $loader            = read_file_contents("$brand_dir/loader.html");
-
-    # Virtualmin available
-    $vm_mod_name  = "virtual-server";
-    $vm_available = foreign_available($vm_mod_name);
-
-    # Cloudmin available and requested
-    $cm_mod_name  = "server-manager";
-    $cm_available = foreign_available($cm_mod_name);
-
-    # Define brand image for Virtualmin
-    if ($vm_available && !$cm_available) {
-        $brand      = read_file_contents("$brand_dir/virtualmin.html");
-        $brand_name = "brand-virtualmin";
-    }
-
-    # Define brand image for Cloudmin
-    elsif ($cm_available) {
-        $brand      = read_file_contents("$brand_dir/cloudmin.html");
-        $brand_name = "brand-cloudmin";
-    }
-
-    # Webmin/Usermin brand image
-    else {
-        my $prod = get_product_name();
-        $brand      = read_file_contents("$brand_dir/$prod.html");
-        $brand_name = "brand-$prod";
-    }
-    $brand =
-"<div tabindex=\"1\" class=\"branding-backdrop $brand_name\"><div class=\"centered\">$brand<br><div class=\"branding-loader\">$loader</div></div></div>";
-    $brand .= "<script type='application/javascript'>page.branding.process()</script>";
-    print $brand;
 }
 
 sub navigation_link_clean
