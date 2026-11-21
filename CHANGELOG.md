@@ -1,5 +1,5 @@
 ## Changelog
-#### Version 26.80 (November 14, 2026)
+#### Version 26.80 (November 21, 2026)
 * Add support for Terminal module color preferences
 * Add support for the new Cloudmin navigation, graphical console and live virtual machine controls
 * Fix spacing and borders in widgets, tables and tab panes
