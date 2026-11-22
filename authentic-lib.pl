@@ -152,29 +152,19 @@ sub get_extended_sysinfo
                     }
                     my $status_icons_tpl = {
                         _fa => 'fa fa-fw fa',
-                        _fa2 => 'fa2 fa-fw fa2',
-                        _fa115x => 'fa-1_15x',
                         _falg => 'fa-lg',
-                        _text_succ => 'text-success',
                         _text_warn => 'text-warning text-warning-brighter',
-                        _text_dang => 'text-danger',
-                        _vert_algn_md => 'vertical-align-middle',
                     };
+                    # Running and stopped are shown with the pictures of Webmin's own
+                    # monitor list, so that both lists look alike
+                    my $status_images = $theme_webprefix . '/status/images';
                     my $status_icons = {
-                        up     => "<i data-toggle=\"tooltip\" title=\"$theme_text{'dashboard_status_running'}\" class=\"$status_icons_tpl->{'_fa'}-check $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_succ'}\"></i>",
+                        up     => "<img src=\"$status_images/up.svg\" alt=\"$theme_text{'dashboard_status_running'}\" data-toggle=\"tooltip\" title=\"$theme_text{'dashboard_status_running'}\">",
                         stop   => "<i class=\"$status_icons_tpl->{'_fa'}-times-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_warn'}\"></i>",
-                        down   => "<i data-toggle=\"tooltip\" title=\"$theme_text{'dashboard_status_stopped'}\" class=\"$status_icons_tpl->{'_fa'}-minus-circle $status_icons_tpl->{'_falg'} $status_icons_tpl->{'_text_dang'}\"></i>",
+                        down   => "<img src=\"$status_images/down.svg\" alt=\"$theme_text{'dashboard_status_stopped'}\" data-toggle=\"tooltip\" title=\"$theme_text{'dashboard_status_stopped'}\">",
                         start  => "<i class=\"$status_icons_tpl->{'_fa'}-play text-success $status_icons_tpl->{'_falg'}\"></i>",
                         reload => "<i class=\"$status_icons_tpl->{'_fa'}-refresh text-info $status_icons_tpl->{'_falg'}\"></i>",
-                        quest  => "<i class=\"$status_icons_tpl->{'_fa'}-question-circle $status_icons_tpl->{'_fa115x'}\"></i>",
-                        not    => "<i class=\"$status_icons_tpl->{'_fa2'}-not-interested $status_icons_tpl->{'_fa115x'}\"></i>",
-                        skip   => "<i class=\"$status_icons_tpl->{'_fa2'}-minus $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'}\"></i>",
-                        timed   => "<i class=\"$status_icons_tpl->{'_fa'}-clock $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'} $status_icons_tpl->{'_text_warn'}\"></i>",
-                        webmin   => "<i class=\"$status_icons_tpl->{'_fa'}-webmin $status_icons_tpl->{'_fa115x'} $status_icons_tpl->{'_vert_algn_md'} $status_icons_tpl->{'_text_warn'}\"></i>",
                     };
-                    if ($info->{'id'} eq 'status_services') {
-                        $info->{"html"} =~ s/<img src=.*?\/status\/images\/(\S+).gif.*?>/$status_icons->{$1}/g;
-                    }
 
                     if ($info->{'type'} eq 'table' &&
                         (   $info->{'module'} ne 'system-status' &&
@@ -536,6 +526,15 @@ sub theme_list_combined_system_info
         @data = @{$combined_system_info_cache}
             if (ref($combined_system_info_cache) eq 'ARRAY' &&
                 @{$combined_system_info_cache});
+        # Monitor visibility and service controls depend on the current ACLs.
+        if (foreign_check('status')) {
+            foreign_require('status', 'system_info.pl');
+            if (foreign_defined('status', 'module_dashboard_monitors')) {
+                @data = grep { !($_->{'module'} eq 'status' && $_->{'id'} eq 'status_services') } @data;
+                my @monitors = foreign_call('status', 'list_system_info', {}, {});
+                push(@data, map { +{ %$_, module => 'status' } } @monitors);
+            }
+        }
         # Update the existing sysinfo cache on the fly if we have newer stats
         if ( -r (my $file = get_stats_now_file()) ) {
             my $stats_mtime = (stat($file))[9]            // 0;
