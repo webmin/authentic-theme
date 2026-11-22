@@ -526,13 +526,28 @@ sub theme_list_combined_system_info
         @data = @{$combined_system_info_cache}
             if (ref($combined_system_info_cache) eq 'ARRAY' &&
                 @{$combined_system_info_cache});
-        # Monitor visibility and service controls depend on the current ACLs.
+        # The services panel is never taken from the cache, because it shows
+        # the current status of each service and the actions this user may
+        # take. A fresh copy takes the place of the cached one.
         if (foreign_check('status')) {
             foreign_require('status', 'system_info.pl');
             if (foreign_defined('status', 'module_dashboard_monitors')) {
-                @data = grep { !($_->{'module'} eq 'status' && $_->{'id'} eq 'status_services') } @data;
-                my @monitors = foreign_call('status', 'list_system_info', {}, {});
-                push(@data, map { +{ %$_, module => 'status' } } @monitors);
+                # A cache written before Virtualmin passed its services to
+                # this panel still holds Virtualmin's own list of them
+                my %vinfo = get_module_info('virtual-server');
+                @data = grep {
+                    !($vinfo{'status_dashboard'} &&
+                      $_->{'module'} eq 'virtual-server' && $_->{'id'} eq 'status')
+                } @data;
+
+                # Keep the panel where it was, or add it at the end if the
+                # cache had none
+                my ($at) = grep {
+                    $data[$_]->{'module'} eq 'status' && $data[$_]->{'id'} eq 'status_services'
+                } 0 .. $#data;
+                my @monitors = map { +{ %$_, module => 'status' } }
+                  foreign_call('status', 'list_system_info', {}, {});
+                splice(@data, $at // scalar(@data), defined($at) ? 1 : 0, @monitors);
             }
         }
         # Update the existing sysinfo cache on the fly if we have newer stats
