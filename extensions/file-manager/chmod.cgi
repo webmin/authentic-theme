@@ -14,6 +14,10 @@ require($ENV{'THEME_ROOT'} . "/extensions/file-manager/file-manager-lib.pl");
 
 my %errors;
 
+# The directory ACL limits which paths can be selected. On those paths,
+# chmod may set any mode the effective Unix user is allowed to set. A root
+# grant therefore includes setuid and setgid even with a directory limit.
+# Shared directories use setgid so new files inherit the directory's group.
 my $perms = $in{'perms'};
 
 my @entries_list = get_entries_list();
